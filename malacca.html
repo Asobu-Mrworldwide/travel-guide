@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マラッカ観光ガイド</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#006847;--red:#cc0001;--accent:#a02000;--bg:#f5f7f5;--card:#fff;--text:#222;--sub:#666}
+body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+.hero{background:linear-gradient(160deg,#7a1500 0%,#a02000 40%,#c84000 100%);padding:24px 20px 20px;color:#fff}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:6px 14px;border-radius:20px;font-size:0.8em;text-decoration:none;margin-bottom:14px}
+.hero-emoji{font-size:2.5em;margin-bottom:6px}
+.hero h1{font-size:1.5em;font-weight:900}
+.hero-sub{font-size:0.85em;opacity:0.85;margin-top:4px;line-height:1.5}
+.hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.75em}
+.container{max-width:820px;margin:0 auto;padding:14px}
+h2{font-size:1.1em;color:var(--accent);border-left:4px solid var(--accent);padding-left:10px;margin:20px 0 12px}
+.spot-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.spot-card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border-top:3px solid var(--accent)}
+.spot-card .ico{font-size:1.8em;margin-bottom:4px}
+.spot-card .num{font-size:0.75em;font-weight:700;color:var(--accent);margin-bottom:2px}
+.spot-card .name{font-size:0.95em;font-weight:700;color:#222;margin-bottom:4px}
+.spot-card .desc{font-size:0.78em;color:var(--sub);line-height:1.55}
+.spot-card .badge{display:inline-block;background:#fdf0ec;color:var(--accent);padding:2px 7px;border-radius:10px;font-size:0.7em;margin-top:5px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.info-card{background:var(--card);border-radius:12px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);text-align:center}
+.info-card .ico{font-size:1.6em;margin-bottom:4px}
+.info-card .lbl{font-size:0.72em;color:var(--sub);margin-bottom:2px}
+.info-card .val{font-size:0.85em;font-weight:700}
+@media(max-width:520px){.spot-grid,.info-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.spot-grid,.info-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="hero">
+  <a href="malaysia.html" class="back-btn">← マレーシアTOPへ</a>
+  <div class="hero-emoji">🏰</div>
+  <h1>マラッカ</h1>
+  <p class="hero-sub">ポルトガル・オランダ・イギリスの統治の歴史が息づく世界遺産都市。マレーシア最古の港町。</p>
+  <div class="hero-tags">
+    <span class="tag">🏛️ 世界遺産</span>
+    <span class="tag">🚌 KLから約2時間</span>
+    <span class="tag">🎨 歴史建築</span>
+    <span class="tag">🛍️ ジョンカーストリート</span>
+  </div>
+</div>
+<div class="container">
+  <h2>主要観光スポット</h2>
+  <div class="spot-grid">
+    <div class="spot-card"><div class="ico">🇳🇱</div><div class="num">No.01</div><div class="name">オランダ広場（スタダイス）</div><div class="desc">17世紀にオランダが建設した赤い建物が並ぶ広場。キリスト教会・時計塔・噴水が美しいマラッカの象徴。</div><span class="badge">📸 フォトスポット</span></div>
+    <div class="spot-card"><div class="ico">⛪</div><div class="num">No.02</div><div class="name">セントポール教会</div><div class="desc">16世紀にポルトガルが建設した丘の上の廃墟教会。フランシスコ・ザビエルが一時埋葬された場所。夕景が美しい。</div><span class="badge">🏛️ 歴史遺産</span></div>
+    <div class="spot-card"><div class="ico">🏮</div><div class="num">No.03</div><div class="name">ババニョニャ遺産博物館</div><div class="desc">中国系移民とマレー人の混血文化「プラナカン」の生活様式を展示。精巧な陶器・家具・衣装が見られる。</div><span class="badge">🏮 文化体験</span></div>
+    <div class="spot-card"><div class="ico">🛍️</div><div class="num">No.04</div><div class="name">ジョンカーストリート</div><div class="desc">アンティーク・土産物・屋台が並ぶ旧市街の目抜き通り。週末ナイトマーケットは地元グルメが充実。</div><span class="badge">🌙 ナイトマーケット</span></div>
+    <div class="spot-card"><div class="ico">🚤</div><div class="num">No.05</div><div class="name">マラッカ川クルーズ</div><div class="desc">カラフルな壁画・コロニアル建築を川から眺めるクルーズ。夜のライトアップが特に幻想的で人気。</div><span class="badge">🌃 夜景</span></div>
+    <div class="spot-card"><div class="ico">🇵🇹</div><div class="num">No.06</div><div class="name">ポルトガル村</div><div class="desc">16世紀のポルトガル統治時代の子孫が暮らすコミュニティ。週末はポルトガル料理・ダンスが楽しめる。</div><span class="badge">🍽️ グルメ</span></div>
+  </div>
+  <h2>基本情報</h2>
+  <div class="info-grid">
+    <div class="info-card"><div class="ico">🚌</div><div class="lbl">アクセス</div><div class="val">KLから高速バス約2時間</div></div>
+    <div class="info-card"><div class="ico">💡</div><div class="lbl">おすすめ滞在</div><div class="val">日帰り〜1泊</div></div>
+    <div class="info-card"><div class="ico">🌤️</div><div class="lbl">ベストシーズン</div><div class="val">3〜10月</div></div>
+    <div class="info-card"><div class="ico">🍜</div><div class="lbl">名物グルメ</div><div class="val">チキンライス・ニョニャ料理</div></div>
+    <div class="info-card"><div class="ico">💱</div><div class="lbl">通貨</div><div class="val">リンギット（RM）</div></div>
+    <div class="info-card"><div class="ico">📱</div><div class="lbl">交通</div><div class="val">トライショー・Grab</div></div>
+  </div>
+</div>
+</body>
+</html>
