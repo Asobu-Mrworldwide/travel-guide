@@ -161,10 +161,52 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .trans-item .t-info .t-name{font-size:0.88em;font-weight:700;margin-bottom:2px}
 .trans-item .t-info .t-desc{font-size:0.77em;color:var(--sub);line-height:1.5}
 
+/* QUICK STATS */
+.qs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.qs-card{background:var(--card);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+.qs-ico{font-size:1.4em;flex-shrink:0}
+.qs-lbl{font-size:0.65em;color:var(--sub)}
+.qs-val{font-size:0.82em;font-weight:700;line-height:1.2}
+
+/* TOP3 */
+.top3-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+.top3-card{background:var(--card);border-radius:10px;padding:12px;box-shadow:0 2px 6px rgba(0,0,0,0.06);border-top:3px solid var(--green)}
+.top3-card.food-card{border-top-color:var(--red)}
+.t3-num{font-size:0.65em;font-weight:700;color:var(--sub);margin-bottom:3px}
+.t3-ico{font-size:1.6em;margin-bottom:4px}
+.t3-name{font-size:0.82em;font-weight:700;color:#222;line-height:1.3}
+.t3-tag{font-size:0.65em;background:#f0f7f3;color:var(--green);padding:2px 6px;border-radius:8px;margin-top:5px;display:inline-block}
+.top3-card.food-card .t3-tag{background:#fff5f0;color:#c05000}
+.see-more{display:inline-block;font-size:0.78em;color:var(--green);font-weight:700;margin-bottom:16px;cursor:pointer;background:none;border:none;padding:0;text-decoration:underline}
+
+/* SEASON MINI */
+.season-mini{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin:8px 0 6px}
+.sm-col{text-align:center}
+.sm-lbl{font-size:0.6em;color:var(--sub);margin-bottom:2px}
+.sm-dot{height:20px;border-radius:3px;font-size:0.58em;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sm-best{background:var(--green);color:#fff}
+.sm-ok{background:#a8d5b5;color:#004d33}
+.sm-rain{background:#cce5ff;color:#004080}
+
+/* CITY GRID */
+.city-grid-wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.city-item{text-decoration:none;color:inherit;display:block;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.15s}
+.city-item:nth-child(3n){border-right:none}
+.city-item:hover{background:#f0f7f3}
+.ci-badge{font-size:0.65em;font-weight:700;color:var(--red);margin-bottom:2px}
+.ci-name{font-size:0.83em;font-weight:700}
+.ci-desc{font-size:0.68em;color:var(--sub);margin-top:2px;line-height:1.4}
+.ci-more{font-size:0.68em;color:var(--green);font-weight:700;margin-top:3px}
+
 @media(max-width:520px){
   .grid2,.grid3,.manner-grid,.item-grid,.prac-grid,.flag-meaning{grid-template-columns:1fr}
   .hero h1{font-size:1.3em}
   .season-grid{grid-template-columns:repeat(6,1fr)}
+  .qs-row{grid-template-columns:1fr 1fr}
+  .top3-grid{grid-template-columns:1fr 1fr 1fr}
+  .city-grid-wrap{grid-template-columns:1fr 1fr}
+  .city-item:nth-child(3n){border-right:1px solid #f0f0f0}
+  .city-item:nth-child(2n){border-right:none}
 }
 </style>
 </head>
@@ -203,152 +245,124 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
 <!-- 基本情報 -->
 <section id="basic" class="active">
-  <h2>国旗</h2>
-  <div class="flag-card">
-    <div class="flag-visual">
-      <div class="flag-blue"></div>
-      <div class="flag-moon">🌙</div>
-      <div class="flag-star">⭐</div>
+
+  <!-- 国旗 -->
+  <div style="background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-top:4px;margin-bottom:14px">
+    <div style="background:linear-gradient(to bottom,#cc0001 7.14%,#fff 7.14% 14.28%,#cc0001 14.28% 21.42%,#fff 21.42% 28.56%,#cc0001 28.56% 35.7%,#fff 35.7% 42.84%,#cc0001 42.84% 50%,#fff 50% 57.14%,#cc0001 57.14% 64.28%,#fff 64.28% 71.42%,#cc0001 71.42% 78.56%,#fff 78.56% 85.7%,#cc0001 85.7% 92.84%,#fff 92.84%);border-radius:8px;height:90px;position:relative;overflow:hidden;border:1px solid #eee;">
+      <div style="position:absolute;top:0;left:0;width:40%;height:57.14%;background:#003087;border-radius:8px 0 0 0"></div>
+      <div style="position:absolute;top:5px;left:5px;font-size:18px">🌙</div>
+      <div style="position:absolute;top:8px;left:22px;font-size:22px">⭐</div>
     </div>
-    <p style="font-weight:700;margin-bottom:4px">Jalur Gemilang（ジャルル・グミラン）</p>
-    <p style="font-size:0.78em;color:var(--sub);margin-bottom:8px">マレーシアの国旗の正式名称。マレー語で「栄光の縞」を意味する。</p>
-    <div class="flag-meaning">
-      <div class="flag-item"><strong>🔴⚪ 14本のストライプ</strong><br>13州＋連邦直轄区の統一を象徴</div>
-      <div class="flag-item"><strong>🟡 14角星</strong><br>13州と連邦の結束を象徴</div>
-      <div class="flag-item"><strong>🌙 三日月</strong><br>国教イスラム教を象徴</div>
-      <div class="flag-item"><strong>🔵 青い四角</strong><br>国民の団結と統一を象徴</div>
+    <p style="font-size:0.78em;color:var(--sub);margin-top:8px;text-align:center">🇲🇾 Jalur Gemilang（ジャルル・グミラン）― マレー語で「栄光の縞」</p>
+  </div>
+
+  <!-- ① クイックスペック -->
+  <div class="qs-row">
+    <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約7時間</div></div></div>
+    <div class="qs-card"><div class="qs-ico">🕐</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −1時間</div></div></div>
+    <div class="qs-card"><div class="qs-ico">🛂</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div></div></div>
+    <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div></div></div>
+    <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div></div></div>
+    <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div></div></div>
+  </div>
+
+  <!-- ② 観光スポット TOP3 -->
+  <h2>📍 おすすめ観光スポット</h2>
+  <div class="top3-grid">
+    <div class="top3-card"><div class="t3-num">No.1</div><div class="t3-ico">🏙️</div><div class="t3-name">ペトロナスツインタワー</div><span class="t3-tag">🏙️ KL</span></div>
+    <div class="top3-card"><div class="t3-num">No.2</div><div class="t3-ico">🌆</div><div class="t3-name">ペナン島・ジョージタウン</div><span class="t3-tag">🏛️ 世界遺産</span></div>
+    <div class="top3-card"><div class="t3-num">No.3</div><div class="t3-ico">🐒</div><div class="t3-name">バトゥ洞窟</div><span class="t3-tag">🏙️ KL近郊</span></div>
+  </div>
+  <button class="see-more" onclick="show('spots',document.querySelectorAll('nav button')[8])">観光スポット10選を見る →</button>
+
+  <!-- ③ グルメ TOP3 -->
+  <h2>🍜 おすすめグルメ</h2>
+  <div class="top3-grid">
+    <div class="top3-card food-card"><div class="t3-num">No.1</div><div class="t3-ico">🍚</div><div class="t3-name">ナシレマ</div><span class="t3-tag">🇲🇾 国民食</span></div>
+    <div class="top3-card food-card"><div class="t3-num">No.2</div><div class="t3-ico">🦐</div><div class="t3-name">アッサムラクサ</div><span class="t3-tag">🏆 世界的評価</span></div>
+    <div class="top3-card food-card"><div class="t3-num">No.3</div><div class="t3-ico">🫓</div><div class="t3-name">ロティチャナイ</div><span class="t3-tag">☕ 朝食定番</span></div>
+  </div>
+  <button class="see-more" onclick="show('food',document.querySelectorAll('nav button')[7])">グルメ10選を見る →</button>
+
+  <!-- ④ ベストシーズン（簡易） -->
+  <h2>🌤️ ベストシーズン</h2>
+  <div class="card" style="padding:14px">
+    <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">年間を通して25〜32℃の常夏。地域によって雨季・乾季が異なります。</p>
+    <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">🏙️ クアラルンプール</div>
+    <div class="season-mini">
+      <div class="sm-col"><div class="sm-lbl">1</div><div class="sm-dot sm-ok">◎</div></div>
+      <div class="sm-col"><div class="sm-lbl">2</div><div class="sm-dot sm-ok">◎</div></div>
+      <div class="sm-col"><div class="sm-lbl">3</div><div class="sm-dot sm-best">◎</div></div>
+      <div class="sm-col"><div class="sm-lbl">4</div><div class="sm-dot sm-best">★</div></div>
+      <div class="sm-col"><div class="sm-lbl">5</div><div class="sm-dot sm-best">★</div></div>
+      <div class="sm-col"><div class="sm-lbl">6</div><div class="sm-dot sm-best">★</div></div>
+      <div class="sm-col"><div class="sm-lbl">7</div><div class="sm-dot sm-best">★</div></div>
+      <div class="sm-col"><div class="sm-lbl">8</div><div class="sm-dot sm-best">★</div></div>
+      <div class="sm-col"><div class="sm-lbl">9</div><div class="sm-dot sm-best">★</div></div>
+      <div class="sm-col"><div class="sm-lbl">10</div><div class="sm-dot sm-rain">雨</div></div>
+      <div class="sm-col"><div class="sm-lbl">11</div><div class="sm-dot sm-rain">雨</div></div>
+      <div class="sm-col"><div class="sm-lbl">12</div><div class="sm-dot sm-ok">◎</div></div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:0.7em;color:var(--sub);margin-top:5px">
+      <span><span style="display:inline-block;width:8px;height:8px;background:var(--green);border-radius:2px;vertical-align:middle;margin-right:2px"></span>ベスト（3〜9月）</span>
+      <span><span style="display:inline-block;width:8px;height:8px;background:#a8d5b5;border-radius:2px;vertical-align:middle;margin-right:2px"></span>まずまず</span>
+      <span><span style="display:inline-block;width:8px;height:8px;background:#cce5ff;border-radius:2px;vertical-align:middle;margin-right:2px"></span>雨季</span>
+    </div>
+    <button class="see-more" style="margin-top:10px;margin-bottom:0" onclick="show('season',document.querySelectorAll('nav button')[1])">地域別ベストシーズンを詳しく見る →</button>
+  </div>
+
+  <!-- ⑤ 主要都市 -->
+  <h2>🗺️ 主要都市</h2>
+  <div class="card full" style="padding:0;overflow:hidden">
+    <div id="malaysia-map" style="width:100%;height:300px"></div>
+    <script>
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById('malaysia-map'), {
+          center: { lat: 4.0, lng: 109.5 }, zoom: 5,
+          mapTypeId: 'roadmap', language: 'ja',
+          mapId: 'ebb608e55ed157f8630c407e'
+        });
+        const cities = [
+          { name:'クアラルンプール', lat:3.1390, lng:101.6869, color:'#cc0001', label:'★' },
+          { name:'ペナン',           lat:5.4141, lng:100.3288, color:'#006847', label:'●' },
+          { name:'マラッカ',         lat:2.1896, lng:102.2501, color:'#006847', label:'●' },
+          { name:'ジョホールバル',   lat:1.4927, lng:103.7414, color:'#006847', label:'●' },
+          { name:'コタキナバル',     lat:5.9804, lng:116.0735, color:'#006847', label:'●' },
+          { name:'クチン',           lat:1.5533, lng:110.3592, color:'#006847', label:'●' },
+        ];
+        cities.forEach(city => {
+          const dot = document.createElement('div');
+          dot.style.cssText = `width:${city.label==='★'?'14px':'11px'};height:${city.label==='★'?'14px':'11px'};background:${city.color};border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4);`;
+          const label = document.createElement('div');
+          label.textContent = city.name;
+          label.style.cssText = `margin-top:4px;background:#fff;color:#cc0001;font-size:11px;font-weight:bold;padding:2px 6px;border-radius:10px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,0.3);font-family:sans-serif;`;
+          const container = document.createElement('div');
+          container.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer';
+          container.appendChild(dot); container.appendChild(label);
+          new google.maps.marker.AdvancedMarkerElement({ position:{lat:city.lat,lng:city.lng}, map, title:city.name, content:container });
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
+    <div class="city-grid-wrap">
+      <a href="kualalumpur.html" class="city-item"><div class="ci-badge">★ 首都</div><div class="ci-name">クアラルンプール</div><div class="ci-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div><div class="ci-more">詳細を見る →</div></a>
+      <a href="penang.html" class="city-item"><div class="ci-badge" style="color:var(--green)">🏛️ 世界遺産</div><div class="ci-name">ペナン</div><div class="ci-desc">多文化が交差するグルメと芸術の島</div><div class="ci-more">詳細を見る →</div></a>
+      <a href="malacca.html" class="city-item"><div class="ci-badge" style="color:var(--green)">🏛️ 世界遺産</div><div class="ci-name">マラッカ</div><div class="ci-desc">ポルトガル・オランダ統治の歴史が残る古都</div><div class="ci-more">詳細を見る →</div></a>
+      <a href="johorbahru.html" class="city-item"><div class="ci-badge" style="color:var(--green)">🌏 南端</div><div class="ci-name">ジョホールバル</div><div class="ci-desc">シンガポールと橋でつながる国境の街</div><div class="ci-more">詳細を見る →</div></a>
+      <a href="kotakinabalu.html" class="city-item"><div class="ci-badge" style="color:var(--green)">🌿 ボルネオ</div><div class="ci-name">コタキナバル</div><div class="ci-desc">海・山・ジャングルが揃うサバ州の州都</div><div class="ci-more">詳細を見る →</div></a>
+      <a href="kuching.html" class="city-item"><div class="ci-badge" style="color:var(--green)">🌿 ボルネオ</div><div class="ci-name">クチン</div><div class="ci-desc">「猫の街」として知られるサラワク州の州都</div><div class="ci-more">詳細を見る →</div></a>
     </div>
   </div>
 
-  <h2>基本データ</h2>
+  <!-- ⑥ 基本データ（補足） -->
+  <h2>🌍 基本データ</h2>
   <div class="grid2">
     <div class="card"><div class="lbl">👥 人口</div><div class="val">約3,350万人</div><div class="note">2023年 マレーシア統計局</div></div>
     <div class="card"><div class="lbl">📐 面積</div><div class="val">約33万 km²</div><div class="note">日本（37.8万km²）の約0.9倍</div></div>
     <div class="card"><div class="lbl">🏛️ 首都</div><div class="val">クアラルンプール</div><div class="note">行政首都：プトラジャヤ</div></div>
-    <div class="card"><div class="lbl">🗓️ 独立年</div><div class="val">1957年8月31日</div><div class="note">マラヤ連邦として独立<br>1963年9月16日：マレーシア成立</div></div>
-    <div class="card"><div class="lbl">💱 通貨</div><div class="val">リンギット（RM）</div><div class="note">1RM ≈ 約33〜40円（変動あり）</div></div>
-    <div class="card"><div class="lbl">🕐 時差</div><div class="val">日本より1時間遅い</div><div class="note">時差ボケほぼなし</div></div>
-    <div class="card full" style="padding:0;overflow:hidden">
-      <div style="padding:12px 14px 8px"><div class="lbl">🏙️ 主要都市</div></div>
-      <div id="malaysia-map" style="width:100%;height:300px"></div>
-      <script>
-        function initMap() {
-          const map = new google.maps.Map(document.getElementById('malaysia-map'), {
-            center: { lat: 4.0, lng: 109.5 },
-            zoom: 5,
-            mapTypeId: 'roadmap',
-            language: 'ja',
-            mapId: 'ebb608e55ed157f8630c407e'
-          });
-
-          const cities = [
-            { name: 'クアラルンプール', lat: 3.1390, lng: 101.6869, color: '#cc0001', label: '★' },
-            { name: 'ペナン',           lat: 5.4141, lng: 100.3288, color: '#006847', label: '●' },
-            { name: 'マラッカ',         lat: 2.1896, lng: 102.2501, color: '#006847', label: '●' },
-            { name: 'ジョホールバル',   lat: 1.4927, lng: 103.7414, color: '#006847', label: '●' },
-            { name: 'コタキナバル',     lat: 5.9804, lng: 116.0735, color: '#006847', label: '●' },
-            { name: 'クチン',           lat: 1.5533, lng: 110.3592, color: '#006847', label: '●' },
-          ];
-
-          cities.forEach(city => {
-            const dot = document.createElement('div');
-            dot.style.cssText = `
-              width:${city.label === '★' ? '14px' : '11px'};
-              height:${city.label === '★' ? '14px' : '11px'};
-              background:${city.color};
-              border:2px solid #fff;
-              border-radius:50%;
-              box-shadow:0 1px 4px rgba(0,0,0,0.4);
-            `;
-
-            const label = document.createElement('div');
-            label.textContent = city.name;
-            label.style.cssText = `
-              margin-top:4px;
-              background:#fff;
-              color:#cc0001;
-              font-size:11px;
-              font-weight:bold;
-              padding:2px 6px;
-              border-radius:10px;
-              white-space:nowrap;
-              box-shadow:0 1px 4px rgba(0,0,0,0.3);
-              font-family:sans-serif;
-            `;
-
-            const container = document.createElement('div');
-            container.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer';
-            container.appendChild(dot);
-            container.appendChild(label);
-
-            new google.maps.marker.AdvancedMarkerElement({
-              position: { lat: city.lat, lng: city.lng },
-              map,
-              title: city.name,
-              content: container,
-            });
-          });
-        }
-      </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
-
-      <!-- City info grid -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr)">
-        <a href="kualalumpur.html" style="text-decoration:none;color:inherit;display:block;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.2s" onmouseover="this.style.background='#f0f7f3'" onmouseout="this.style.background='transparent'">
-          <div style="font-size:0.7em;color:var(--red);font-weight:700;margin-bottom:2px">★ 首都</div>
-          <div style="font-size:0.85em;font-weight:700">クアラルンプール</div>
-          <div style="font-size:0.72em;color:var(--sub);margin-top:2px;line-height:1.4">ペトロナスツインタワーを擁する経済・文化の中心地</div>
-          <div style="font-size:0.72em;color:var(--green);margin-top:4px;font-weight:700">詳細を見る →</div>
-        </a>
-        <a href="penang.html" style="text-decoration:none;color:inherit;display:block;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.2s" onmouseover="this.style.background='#f0f7f3'" onmouseout="this.style.background='transparent'">
-          <div style="font-size:0.7em;color:var(--green);font-weight:700;margin-bottom:2px">🏛️ 世界遺産</div>
-          <div style="font-size:0.85em;font-weight:700">ペナン</div>
-          <div style="font-size:0.72em;color:var(--sub);margin-top:2px;line-height:1.4">多文化が交差するグルメと芸術の島</div>
-          <div style="font-size:0.72em;color:var(--green);margin-top:4px;font-weight:700">詳細を見る →</div>
-        </a>
-        <a href="malacca.html" style="text-decoration:none;color:inherit;display:block;padding:10px 12px;border-top:1px solid #f0f0f0;transition:background 0.2s" onmouseover="this.style.background='#f0f7f3'" onmouseout="this.style.background='transparent'">
-          <div style="font-size:0.7em;color:var(--green);font-weight:700;margin-bottom:2px">🏛️ 世界遺産</div>
-          <div style="font-size:0.85em;font-weight:700">マラッカ</div>
-          <div style="font-size:0.72em;color:var(--sub);margin-top:2px;line-height:1.4">ポルトガル・オランダ統治の歴史が残る古都</div>
-          <div style="font-size:0.72em;color:var(--green);margin-top:4px;font-weight:700">詳細を見る →</div>
-        </a>
-        <a href="johorbahru.html" style="text-decoration:none;color:inherit;display:block;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.2s" onmouseover="this.style.background='#f0f7f3'" onmouseout="this.style.background='transparent'">
-          <div style="font-size:0.7em;color:var(--green);font-weight:700;margin-bottom:2px">🌏 南端</div>
-          <div style="font-size:0.85em;font-weight:700">ジョホールバル</div>
-          <div style="font-size:0.72em;color:var(--sub);margin-top:2px;line-height:1.4">シンガポールと橋でつながる国境の街</div>
-          <div style="font-size:0.72em;color:var(--green);margin-top:4px;font-weight:700">詳細を見る →</div>
-        </a>
-        <a href="kotakinabalu.html" style="text-decoration:none;color:inherit;display:block;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.2s" onmouseover="this.style.background='#f0f7f3'" onmouseout="this.style.background='transparent'">
-          <div style="font-size:0.7em;color:var(--green);font-weight:700;margin-bottom:2px">🌿 ボルネオ島</div>
-          <div style="font-size:0.85em;font-weight:700">コタキナバル</div>
-          <div style="font-size:0.72em;color:var(--sub);margin-top:2px;line-height:1.4">海・山・ジャングルが揃うサバ州の州都</div>
-          <div style="font-size:0.72em;color:var(--green);margin-top:4px;font-weight:700">詳細を見る →</div>
-        </a>
-        <a href="kuching.html" style="text-decoration:none;color:inherit;display:block;padding:10px 12px;border-top:1px solid #f0f0f0;transition:background 0.2s" onmouseover="this.style.background='#f0f7f3'" onmouseout="this.style.background='transparent'">
-          <div style="font-size:0.7em;color:var(--green);font-weight:700;margin-bottom:2px">🌿 ボルネオ島</div>
-          <div style="font-size:0.85em;font-weight:700">クチン</div>
-          <div style="font-size:0.72em;color:var(--sub);margin-top:2px;line-height:1.4">「猫の街」として知られるサラワク州の州都</div>
-          <div style="font-size:0.72em;color:var(--green);margin-top:4px;font-weight:700">詳細を見る →</div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <h2>宗教</h2>
-  <div class="card">
-    <p style="font-size:0.8em;color:var(--sub);margin-bottom:10px">国教はイスラム教。仏教・キリスト教・ヒンドゥー教が共存する多宗教国家。</p>
-    <div class="rel-bar"><div class="row"><span>☪️ イスラム教（国教）</span><span>64%</span></div><div class="bar"><div class="fill" style="width:64%;background:var(--green)"></div></div></div>
-    <div class="rel-bar"><div class="row"><span>☸️ 仏教</span><span>19%</span></div><div class="bar"><div class="fill" style="width:19%;background:#f0a500"></div></div></div>
-    <div class="rel-bar"><div class="row"><span>✝️ キリスト教</span><span>9%</span></div><div class="bar"><div class="fill" style="width:9%;background:var(--red)"></div></div></div>
-    <div class="rel-bar"><div class="row"><span>🕉️ ヒンドゥー教</span><span>6%</span></div><div class="bar"><div class="fill" style="width:6%;background:#ff6600"></div></div></div>
-    <div class="rel-bar"><div class="row"><span>その他</span><span>2%</span></div><div class="bar"><div class="fill" style="width:2%;background:#aaa"></div></div></div>
-  </div>
-
-  <h2>民族構成</h2>
-  <div class="grid3">
-    <div class="card" style="text-align:center"><div style="font-size:1.8em">🕌</div><div class="val">約70%</div><div class="note">マレー系（ブミプトラ）</div></div>
-    <div class="card" style="text-align:center"><div style="font-size:1.8em">🏮</div><div class="val">約23%</div><div class="note">中国系</div></div>
-    <div class="card" style="text-align:center"><div style="font-size:1.8em">🪔</div><div class="val">約7%</div><div class="note">インド系</div></div>
+    <div class="card"><div class="lbl">🗓️ 独立年</div><div class="val">1957年8月31日</div><div class="note">1963年9月16日：マレーシア成立</div></div>
+    <div class="card"><div class="lbl">☪️ 宗教</div><div class="val">イスラム教（国教）64%</div><div class="note">仏教19%・キリスト教9%・ヒンドゥー6%</div></div>
+    <div class="card"><div class="lbl">🏳️ 民族</div><div class="val">マレー系 約70%</div><div class="note">中国系23%・インド系7%</div></div>
   </div>
 </section>
 
