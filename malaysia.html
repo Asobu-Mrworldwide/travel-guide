@@ -157,6 +157,13 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .cta-btn{background:#fff;color:var(--green);border:none;padding:11px 28px;border-radius:30px;font-weight:700;font-size:0.9em;cursor:pointer;transition:transform 0.2s}
 .cta-btn:hover{transform:scale(1.04)}
 
+/* TAB HEADER */
+.tab-header{display:none;background:linear-gradient(135deg,var(--green),#009060);color:#fff;border-radius:12px;padding:14px 16px;margin-bottom:14px;align-items:center;gap:12px}
+.tab-header.show{display:flex}
+.tab-header-ico{font-size:1.8em;flex-shrink:0}
+.tab-header-name{font-size:1.05em;font-weight:900;letter-spacing:0.5px}
+.tab-header-hint{font-size:0.75em;opacity:0.8;margin-top:3px}
+
 /* TRANSPORT */
 .trans-list{display:flex;flex-direction:column;gap:8px}
 .trans-item{background:#fff;border-radius:10px;padding:12px 14px;box-shadow:0 2px 6px rgba(0,0,0,0.06);display:flex;gap:12px;align-items:flex-start}
@@ -255,6 +262,15 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 </nav>
 
 <div class="container">
+
+<!-- タブヘッダー（基本情報以外で表示） -->
+<div id="tab-header" class="tab-header">
+  <div class="tab-header-ico" id="tab-header-ico"></div>
+  <div>
+    <div class="tab-header-name" id="tab-header-name"></div>
+    <div class="tab-header-hint">↑ 上のナビからタブを切り替えられます</div>
+  </div>
+</div>
 
 <!-- 基本情報 -->
 <section id="basic" class="active">
@@ -805,12 +821,39 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 </div>
 
 <script>
+const TAB_INFO = {
+  basic:     null,
+  season:    {ico:'🌤️', name:'ベストシーズン'},
+  budget:    {ico:'💰', name:'予算・費用'},
+  practical: {ico:'🧳', name:'旅の準備'},
+  manner:    {ico:'🙏', name:'マナー'},
+  transport: {ico:'🚇', name:'交通'},
+  phrases:   {ico:'💬', name:'フレーズ集'},
+  food:      {ico:'🍜', name:'グルメ10選'},
+  spots:     {ico:'📍', name:'観光スポット10選'},
+};
+
 function show(id, btn) {
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+
+  // ① ページトップへスクロール
+  window.scrollTo({top:0, behavior:'smooth'});
+  // ① アクティブタブをナビ中央に表示
+  btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+
+  // ② タブヘッダー更新
+  const header = document.getElementById('tab-header');
+  const info = TAB_INFO[id];
+  if (info) {
+    document.getElementById('tab-header-ico').textContent = info.ico;
+    document.getElementById('tab-header-name').textContent = info.name;
+    header.classList.add('show');
+  } else {
+    header.classList.remove('show');
+  }
 }
 </script>
 </body>
