@@ -9,9 +9,9 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --green:#006847;--red:#cc0001;--yellow:#ffc200;
-  --bg:#f5f7f5;--card:#fff;--text:#222;--sub:#666;
+  --bg:#f5f7f5;--card:#fff;--text:#1a1a1a;--sub:#555;
 }
-body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:15px}
 
 /* HEADER */
 .hero{
@@ -92,10 +92,12 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .season-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;margin:10px 0}
 .month-col{text-align:center}
 .month-lbl{font-size:0.65em;color:var(--sub);margin-bottom:3px}
-.month-dot{width:100%;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.65em;font-weight:700}
-.best{background:#006847;color:#fff}
-.ok{background:#a8d5b5;color:#004d33}
-.rain{background:#cce5ff;color:#004080}
+.month-dot{width:100%;height:42px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.72em;font-weight:700;flex-direction:column;gap:1px}
+.md-t{font-size:0.78em;font-weight:600;line-height:1;opacity:0.85}
+/* 気温帯カラー（暖色グラデーション） */
+.t-hot{background:linear-gradient(160deg,#ff5000,#ff9000);color:#5a1400}
+.t-warm{background:linear-gradient(160deg,#ff8400,#ffb200);color:#5a2800}
+.t-mild{background:linear-gradient(160deg,#ffb800,#ffe060);color:#4a3800}
 .city-season{margin-bottom:14px}
 .city-name{font-size:0.85em;font-weight:700;color:var(--green);margin-bottom:4px}
 
@@ -166,54 +168,64 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .qs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
 .qs-card{background:var(--card);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
 .qs-ico{font-size:1.4em;flex-shrink:0}
-.qs-lbl{font-size:0.65em;color:var(--sub)}
-.qs-val{font-size:0.82em;font-weight:700;line-height:1.2}
+.qs-lbl{font-size:0.7em;color:var(--sub)}
+.qs-val{font-size:0.88em;font-weight:700;line-height:1.2}
 
 /* TOP3 */
 .top3-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
 .top3-card{background:var(--card);border-radius:10px;padding:12px;box-shadow:0 2px 6px rgba(0,0,0,0.06);border-top:3px solid var(--green)}
 .top3-card.food-card{border-top-color:var(--red)}
-.t3-num{font-size:0.65em;font-weight:700;color:var(--sub);margin-bottom:3px}
-.t3-ico{font-size:1.6em;margin-bottom:4px}
-.t3-name{font-size:0.82em;font-weight:700;color:#222;line-height:1.3}
-.t3-tag{font-size:0.65em;background:#f0f7f3;color:var(--green);padding:2px 6px;border-radius:8px;margin-top:5px;display:inline-block}
+.t3-num{font-size:0.7em;font-weight:700;color:var(--sub);margin-bottom:3px}
+.t3-ico{font-size:1.8em;margin-bottom:4px}
+.t3-name{font-size:0.88em;font-weight:700;color:#1a1a1a;line-height:1.3}
+.t3-tag{font-size:0.7em;background:#f0f7f3;color:var(--green);padding:2px 6px;border-radius:8px;margin-top:5px;display:inline-block}
 .top3-card.food-card .t3-tag{background:#fff5f0;color:#c05000}
 .see-more{display:inline-block;font-size:0.78em;color:var(--green);font-weight:700;margin-bottom:16px;cursor:pointer;background:none;border:none;padding:0;text-decoration:underline}
 
 /* SEASON MINI */
 .season-mini{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin:8px 0 6px}
 .sm-col{text-align:center}
-.sm-lbl{font-size:0.6em;color:var(--sub);margin-bottom:2px}
-.sm-dot{height:20px;border-radius:3px;font-size:0.58em;font-weight:700;display:flex;align-items:center;justify-content:center}
-.sm-best{background:var(--green);color:#fff}
-.sm-ok{background:#a8d5b5;color:#004d33}
-.sm-rain{background:#cce5ff;color:#004080}
+.sm-lbl{font-size:0.62em;color:var(--sub);margin-bottom:2px;font-weight:600}
+.sm-dot{height:44px;border-radius:5px;font-size:0.9em;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px}
+.sm-t{font-size:0.58em;font-weight:700;line-height:1}
 
 /* CITY GRID */
 .city-grid-wrap{display:grid;grid-template-columns:repeat(3,1fr)}
 .city-item{text-decoration:none;color:inherit;display:block;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.15s}
 .city-item:nth-child(3n){border-right:none}
 .city-item:hover{background:#f0f7f3}
-.ci-badge{font-size:0.65em;font-weight:700;color:var(--red);margin-bottom:2px}
-.ci-name{font-size:0.83em;font-weight:700}
-.ci-desc{font-size:0.68em;color:var(--sub);margin-top:2px;line-height:1.4}
-.ci-more{font-size:0.68em;color:var(--green);font-weight:700;margin-top:3px}
+.ci-badge{font-size:0.7em;font-weight:700;color:var(--red);margin-bottom:2px}
+.ci-name{font-size:0.88em;font-weight:700}
+.ci-desc{font-size:0.75em;color:var(--sub);margin-top:2px;line-height:1.45}
+.ci-more{font-size:0.75em;color:var(--green);font-weight:700;margin-top:3px}
 
 @media(max-width:520px){
+  body{font-size:15px}
   .grid2,.grid3,.manner-grid,.item-grid,.prac-grid,.flag-meaning{grid-template-columns:1fr}
-  .hero h1{font-size:1.3em}
+  .hero h1{font-size:1.4em}
   .season-grid{grid-template-columns:repeat(6,1fr)}
   .qs-row{grid-template-columns:1fr 1fr}
+  .qs-val{font-size:0.92em}
   .top3-grid{grid-template-columns:1fr 1fr 1fr}
+  .t3-name{font-size:0.82em}
   .city-grid-wrap{grid-template-columns:1fr 1fr}
   .city-item:nth-child(3n){border-right:1px solid #f0f0f0}
   .city-item:nth-child(2n){border-right:none}
+  .sm-dot{height:40px;font-size:0.82em}
+  .month-dot{height:38px;font-size:0.65em}
+  .md-t{font-size:0.75em}
+  nav button{font-size:0.82em;padding:11px 10px}
+  .card .lbl{font-size:0.78em}
+  .card .val{font-size:1em}
+  .card .note{font-size:0.8em}
+  .see-more{font-size:0.85em}
 }
 </style>
 </head>
 <body>
 
 <div class="hero">
+  <a href="index.html" style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:6px 14px;border-radius:20px;font-size:0.8em;text-decoration:none;margin-bottom:14px">← 国一覧へ戻る</a>
   <div class="hero-top">
     <div>
       <h1>マレーシア</h1>
@@ -291,23 +303,24 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">年間を通して25〜32℃の常夏。地域によって雨季・乾季が異なります。</p>
     <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">🏙️ クアラルンプール</div>
     <div class="season-mini">
-      <div class="sm-col"><div class="sm-lbl">1</div><div class="sm-dot sm-ok">◎</div></div>
-      <div class="sm-col"><div class="sm-lbl">2</div><div class="sm-dot sm-ok">◎</div></div>
-      <div class="sm-col"><div class="sm-lbl">3</div><div class="sm-dot sm-best">◎</div></div>
-      <div class="sm-col"><div class="sm-lbl">4</div><div class="sm-dot sm-best">★</div></div>
-      <div class="sm-col"><div class="sm-lbl">5</div><div class="sm-dot sm-best">★</div></div>
-      <div class="sm-col"><div class="sm-lbl">6</div><div class="sm-dot sm-best">★</div></div>
-      <div class="sm-col"><div class="sm-lbl">7</div><div class="sm-dot sm-best">★</div></div>
-      <div class="sm-col"><div class="sm-lbl">8</div><div class="sm-dot sm-best">★</div></div>
-      <div class="sm-col"><div class="sm-lbl">9</div><div class="sm-dot sm-best">★</div></div>
-      <div class="sm-col"><div class="sm-lbl">10</div><div class="sm-dot sm-rain">雨</div></div>
-      <div class="sm-col"><div class="sm-lbl">11</div><div class="sm-dot sm-rain">雨</div></div>
-      <div class="sm-col"><div class="sm-lbl">12</div><div class="sm-dot sm-ok">◎</div></div>
+      <div class="sm-col"><div class="sm-lbl">1</div><div class="sm-dot t-mild">🌧️<span class="sm-t">27°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">2</div><div class="sm-dot t-warm">⛅<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">3</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">4</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">5</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">6</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">7</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">8</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">9</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">10</div><div class="sm-dot t-warm">🌧️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">11</div><div class="sm-dot t-mild">🌧️<span class="sm-t">27°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">12</div><div class="sm-dot t-mild">🌧️<span class="sm-t">27°</span></div></div>
     </div>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:0.7em;color:var(--sub);margin-top:5px">
-      <span><span style="display:inline-block;width:8px;height:8px;background:var(--green);border-radius:2px;vertical-align:middle;margin-right:2px"></span>ベスト（3〜9月）</span>
-      <span><span style="display:inline-block;width:8px;height:8px;background:#a8d5b5;border-radius:2px;vertical-align:middle;margin-right:2px"></span>まずまず</span>
-      <span><span style="display:inline-block;width:8px;height:8px;background:#cce5ff;border-radius:2px;vertical-align:middle;margin-right:2px"></span>雨季</span>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:0.72em;color:var(--sub);margin-top:8px;align-items:center">
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ff5000,#ff9000);border-radius:2px;vertical-align:middle;margin-right:3px"></span>29°C 最も暑い</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ff8400,#ffb200);border-radius:2px;vertical-align:middle;margin-right:3px"></span>28°C 暖かい</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ffb800,#ffe060);border-radius:2px;vertical-align:middle;margin-right:3px"></span>27°C やや低め</span>
+      <span style="margin-left:2px">｜ ☀️ 乾季　⛅ 曇り　🌧️ 雨季</span>
     </div>
     <button class="see-more" style="margin-top:10px;margin-bottom:0" onclick="show('season',document.querySelectorAll('nav button')[1])">地域別ベストシーズンを詳しく見る →</button>
   </div>
@@ -358,8 +371,48 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
   <!-- ⑥ 基本データ（補足） -->
   <h2>🌍 基本データ</h2>
   <div class="grid2">
-    <div class="card"><div class="lbl">👥 人口</div><div class="val">約3,350万人</div><div class="note">2023年 マレーシア統計局</div></div>
-    <div class="card"><div class="lbl">📐 面積</div><div class="val">約33万 km²</div><div class="note">日本（37.8万km²）の約0.9倍</div></div>
+    <!-- 人口比較 -->
+    <div class="card">
+      <div class="lbl">👥 人口</div>
+      <div class="val">約3,350万人</div>
+      <div style="margin-top:8px;background:#f5f7f5;border-radius:8px;padding:10px 12px">
+        <div style="font-size:0.72em;color:var(--sub);margin-bottom:8px">日本との比較</div>
+        <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center">
+          <div>
+            <div style="font-size:1.3em;line-height:1">🇯🇵</div>
+            <div style="font-size:0.6em;line-height:1.5;margin:5px 0 4px;letter-spacing:1px">🧑🧑🧑🧑🧑🧑🧑<br>🧑🧑🧑🧑🧑🧑</div>
+            <div style="font-size:0.68em;font-weight:700;color:#555">日本<br>1.25億人</div>
+          </div>
+          <div style="font-size:0.75em;color:#ccc;font-weight:700;padding:0 2px">vs</div>
+          <div>
+            <div style="font-size:1.3em;line-height:1">🇲🇾</div>
+            <div style="font-size:0.6em;line-height:1.5;margin:5px 0 4px;letter-spacing:1px">🧑🧑🧑</div>
+            <div style="font-size:0.68em;font-weight:700;color:var(--green)">マレーシア<br>3,350万人</div>
+            <div style="font-size:0.68em;color:var(--sub);margin-top:5px">日本の<br><span style="font-size:1.35em;font-weight:900;color:var(--green)">約¼</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 面積比較 -->
+    <div class="card">
+      <div class="lbl">📐 面積</div>
+      <div class="val">約33万 km²</div>
+      <div style="margin-top:8px;background:#f5f7f5;border-radius:8px;padding:10px 12px">
+        <div style="font-size:0.72em;color:var(--sub);margin-bottom:6px">日本との比較</div>
+        <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center">
+          <div>
+            <img src="nihonchizu_area.png" alt="日本地図" style="display:block;margin:0 auto;width:80px;height:auto;object-fit:contain;opacity:0.6"/>
+            <div style="font-size:0.68em;font-weight:700;color:#555;margin-top:2px">日本<br>37.8万km²</div>
+          </div>
+          <div style="font-size:0.75em;color:#ccc;font-weight:700;padding:0 2px">≈</div>
+          <div>
+            <img src="malaysia map.svg" alt="マレーシア地図" style="display:block;margin:0 auto;width:80px;height:auto;object-fit:contain;opacity:0.7"/>
+            <div style="font-size:0.68em;font-weight:700;color:var(--green);margin-top:2px">マレーシア<br>33万km²</div>
+            <div style="font-size:0.68em;color:var(--sub);margin-top:5px">日本の<br><span style="font-size:1.35em;font-weight:900;color:var(--green)">約0.9倍</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="card"><div class="lbl">🏛️ 首都</div><div class="val">クアラルンプール</div><div class="note">行政首都：プトラジャヤ</div></div>
     <div class="card"><div class="lbl">🗓️ 独立年</div><div class="val">1957年8月31日</div><div class="note">1963年9月16日：マレーシア成立</div></div>
     <div class="card"><div class="lbl">☪️ 宗教</div><div class="val">イスラム教（国教）64%</div><div class="note">仏教19%・キリスト教9%・ヒンドゥー6%</div></div>
@@ -371,69 +424,71 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 <section id="season">
   <h2>ベストシーズン</h2>
   <div class="card" style="margin-bottom:12px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">マレーシアは年間を通して気温25〜32℃の常夏。ただし地域によって雨季・乾季の時期が異なります。</p>
-    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
-      <span style="display:flex;align-items:center;gap:4px;font-size:0.75em"><span style="display:inline-block;width:14px;height:14px;background:var(--green);border-radius:3px"></span>最適</span>
-      <span style="display:flex;align-items:center;gap:4px;font-size:0.75em"><span style="display:inline-block;width:14px;height:14px;background:#a8d5b5;border-radius:3px"></span>まずまず</span>
-      <span style="display:flex;align-items:center;gap:4px;font-size:0.75em"><span style="display:inline-block;width:14px;height:14px;background:#cce5ff;border-radius:3px"></span>雨季（スコール多め）</span>
+    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">マレーシアは年間を通して27〜29℃の常夏。地域によって雨季・乾季の時期が異なります。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高く</span>、黄金色は比較的涼しい月です。</p>
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
+      <span><span style="display:inline-block;width:14px;height:10px;background:linear-gradient(90deg,#ff5000,#ff9000);border-radius:2px;vertical-align:middle;margin-right:3px"></span>29°C（最も暑い）</span>
+      <span><span style="display:inline-block;width:14px;height:10px;background:linear-gradient(90deg,#ff8400,#ffb200);border-radius:2px;vertical-align:middle;margin-right:3px"></span>28°C</span>
+      <span><span style="display:inline-block;width:14px;height:10px;background:linear-gradient(90deg,#ffb800,#ffe060);border-radius:2px;vertical-align:middle;margin-right:3px"></span>27°C（やや低め）</span>
+      <span style="color:#aaa">｜</span>
+      <span>☀️ 乾季　⛅ やや曇り　🌧️ 雨季</span>
     </div>
   </div>
 
   <div class="city-season card" style="margin-bottom:10px">
     <div class="city-name">🏙️ クアラルンプール（KL）</div>
     <div class="season-grid">
-      <div class="month-col"><div class="month-lbl">1</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">2</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">3</div><div class="month-dot best">◎</div></div>
-      <div class="month-col"><div class="month-lbl">4</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">5</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">6</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">7</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">8</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">9</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">10</div><div class="month-dot rain">雨</div></div>
-      <div class="month-col"><div class="month-lbl">11</div><div class="month-dot rain">雨</div></div>
-      <div class="month-col"><div class="month-lbl">12</div><div class="month-dot ok">◎</div></div>
+      <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">🌧️<span class="md-t">27°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-warm">⛅<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot">☀️<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-hot">☀️<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-hot">☀️<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-warm">🌧️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-mild">🌧️<span class="md-t">27°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">🌧️<span class="md-t">27°C</span></div></div>
     </div>
     <p style="font-size:0.75em;color:var(--sub);margin-top:6px">✅ ベスト：3〜9月（乾季）／ 雨季でもスコール程度で観光可能</p>
   </div>
 
   <div class="city-season card" style="margin-bottom:10px">
-    <div class="city-name">🌅 ペナン島・ランカウイ島</div>
+    <div class="city-name">🌅 ペナン島・ランカウイ島（西海岸）</div>
     <div class="season-grid">
-      <div class="month-col"><div class="month-lbl">1</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">2</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">3</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">4</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">5</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">6</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">7</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">8</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">9</div><div class="month-dot rain">雨</div></div>
-      <div class="month-col"><div class="month-lbl">10</div><div class="month-dot rain">雨</div></div>
-      <div class="month-col"><div class="month-lbl">11</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">12</div><div class="month-dot best">★</div></div>
+      <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">☀️<span class="md-t">27°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot">☀️<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot">⛅<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-hot">⛅<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-warm">⛅<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-warm">⛅<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-warm">⛅<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-warm">🌧️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-warm">🌧️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☀️<span class="md-t">27°C</span></div></div>
     </div>
-    <p style="font-size:0.75em;color:var(--sub);margin-top:6px">✅ ベスト：11〜4月（西海岸の乾季）</p>
+    <p style="font-size:0.75em;color:var(--sub);margin-top:6px">✅ ベスト：11〜4月（西海岸の乾季） ／ 9〜10月は北東モンスーンの影響で雨多め</p>
   </div>
 
   <div class="city-season card" style="margin-bottom:10px">
     <div class="city-name">🏝️ コタキナバル（ボルネオ島）</div>
     <div class="season-grid">
-      <div class="month-col"><div class="month-lbl">1</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">2</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">3</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">4</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">5</div><div class="month-dot best">★</div></div>
-      <div class="month-col"><div class="month-lbl">6</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">7</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">8</div><div class="month-dot ok">◎</div></div>
-      <div class="month-col"><div class="month-lbl">9</div><div class="month-dot rain">雨</div></div>
-      <div class="month-col"><div class="month-lbl">10</div><div class="month-dot rain">雨</div></div>
-      <div class="month-col"><div class="month-lbl">11</div><div class="month-dot rain">雨</div></div>
-      <div class="month-col"><div class="month-lbl">12</div><div class="month-dot ok">◎</div></div>
+      <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">☀️<span class="md-t">27°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot">☀️<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot">☀️<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-hot">⛅<span class="md-t">29°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-warm">⛅<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-warm">⛅<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-warm">⛅<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-warm">🌧️<span class="md-t">28°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-mild">🌧️<span class="md-t">27°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-mild">🌧️<span class="md-t">27°C</span></div></div>
+      <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">⛅<span class="md-t">27°C</span></div></div>
     </div>
-    <p style="font-size:0.75em;color:var(--sub);margin-top:6px">✅ ベスト：1〜5月（乾季・ダイビング最適）</p>
+    <p style="font-size:0.75em;color:var(--sub);margin-top:6px">✅ ベスト：1〜5月（乾季・ダイビング最適） ／ 9〜11月は雨季で海が荒れやすい</p>
   </div>
 
   <div class="card" style="background:#fffbf0;border-left:4px solid var(--yellow)">
