@@ -296,15 +296,17 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
     <p style="font-size:0.88em;color:var(--text)">東南アジアの中心に位置するマレーシアは、マレー系・中国系・インド系が共存する<strong>多民族・多文化国家</strong>。熱帯雨林の大自然、世界遺産の古都、近代的な都市が一度に楽しめるのが最大の魅力です。</p>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
-      <div style="background:#f8faf8;border-radius:10px;padding:10px 12px">
+      <div style="background:#f8faf8;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column">
         <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">📍 人気No.1観光地</div>
         <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ペトロナスツインタワー</div>
-        <div style="font-size:0.8em;color:var(--sub)">クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。</div>
+        <div style="font-size:0.8em;color:var(--sub);flex:1">クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。</div>
+        <button class="qs-link" style="margin-top:8px;align-self:flex-start" onclick="show('spots',document.querySelectorAll('nav button')[8])">観光スポットを見る →</button>
       </div>
-      <div style="background:#f8faf8;border-radius:10px;padding:10px 12px">
+      <div style="background:#f8faf8;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column">
         <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">🍜 人気No.1グルメ</div>
         <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ナシレマ</div>
-        <div style="font-size:0.8em;color:var(--sub)">ココナッツミルクで炊いたご飯の国民食。朝食から屋台まで幅広く楽しめる。</div>
+        <div style="font-size:0.8em;color:var(--sub);flex:1">ココナッツミルクで炊いたご飯の国民食。朝食から屋台まで幅広く楽しめる。</div>
+        <button class="qs-link" style="margin-top:8px;align-self:flex-start;background:#fff0f0;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[7])">グルメ10選を見る →</button>
       </div>
     </div>
 
@@ -341,24 +343,6 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
       💬 英語が広く通じビザも不要。物価は日本の約半分で初めての東南アジアにもおすすめ。イスラム文化への基本的な配慮があれば困ることはほぼなし。
     </div>
   </div>
-
-  <!-- ② 観光スポット TOP3 -->
-  <h2>📍 おすすめ観光スポット</h2>
-  <div class="top3-grid">
-    <div class="top3-card"><div class="t3-num">No.1</div><div class="t3-ico">🏙️</div><div class="t3-name">ペトロナスツインタワー</div><span class="t3-tag">🏙️ KL</span></div>
-    <div class="top3-card"><div class="t3-num">No.2</div><div class="t3-ico">🌆</div><div class="t3-name">ペナン島・ジョージタウン</div><span class="t3-tag">🏛️ 世界遺産</span></div>
-    <div class="top3-card"><div class="t3-num">No.3</div><div class="t3-ico">🐒</div><div class="t3-name">バトゥ洞窟</div><span class="t3-tag">🏙️ KL近郊</span></div>
-  </div>
-  <button class="see-more" onclick="show('spots',document.querySelectorAll('nav button')[8])">観光スポット10選を見る →</button>
-
-  <!-- ③ グルメ TOP3 -->
-  <h2>🍜 おすすめグルメ</h2>
-  <div class="top3-grid">
-    <div class="top3-card food-card"><div class="t3-num">No.1</div><div class="t3-ico">🍚</div><div class="t3-name">ナシレマ</div><span class="t3-tag">🇲🇾 国民食</span></div>
-    <div class="top3-card food-card"><div class="t3-num">No.2</div><div class="t3-ico">🦐</div><div class="t3-name">アッサムラクサ</div><span class="t3-tag">🏆 世界的評価</span></div>
-    <div class="top3-card food-card"><div class="t3-num">No.3</div><div class="t3-ico">🫓</div><div class="t3-name">ロティチャナイ</div><span class="t3-tag">☕ 朝食定番</span></div>
-  </div>
-  <button class="see-more" onclick="show('food',document.querySelectorAll('nav button')[7])">グルメ10選を見る →</button>
 
   <!-- ④ ベストシーズン（簡易） -->
   <h2>🌤️ ベストシーズン</h2>
