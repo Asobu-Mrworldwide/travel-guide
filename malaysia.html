@@ -164,6 +164,10 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .trans-item .t-info .t-name{font-size:0.88em;font-weight:700;margin-bottom:2px}
 .trans-item .t-info .t-desc{font-size:0.77em;color:var(--sub);line-height:1.5}
 
+/* QUICK STATS LINK */
+.qs-link{display:inline-block;margin-top:5px;font-size:0.7em;color:var(--green);font-weight:700;background:#e8f5ee;border:none;border-radius:20px;padding:2px 8px;cursor:pointer;white-space:nowrap}
+.qs-link:hover{background:#d0eedd}
+
 /* QUICK STATS */
 .qs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
 .qs-card{background:var(--card);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
@@ -297,9 +301,9 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
   <div class="qs-row">
     <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約7時間</div></div></div>
     <div class="qs-card"><div class="qs-ico">🕐</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −1時間</div></div></div>
-    <div class="qs-card"><div class="qs-ico">🛂</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div></div></div>
-    <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div></div></div>
-    <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div></div></div>
+    <div class="qs-card"><div class="qs-ico">🛂</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[3])">旅の準備を見る →</button></div></div>
+    <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[2])">予算・費用を見る →</button></div></div>
+    <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[6])">フレーズ集を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div></div></div>
   </div>
 
