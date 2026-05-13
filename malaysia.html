@@ -195,16 +195,16 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
 /* CITY GRID */
 .city-grid-wrap{display:grid;grid-template-columns:repeat(3,1fr)}
-.city-item{text-decoration:none;color:inherit;display:block;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.15s}
+.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.15s}
 .city-item:nth-child(3n){border-right:none}
 .city-item:hover{background:#f0f7f3}
 .ci-badge{font-size:0.7em;font-weight:700;color:var(--red);margin-bottom:2px}
 .ci-name{font-size:0.88em;font-weight:700}
-.ci-desc{font-size:0.75em;color:var(--sub);margin-top:2px;line-height:1.45}
-.ci-btns{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
+.ci-desc{font-size:0.75em;color:var(--sub);margin-top:2px;line-height:1.45;flex:1}
+.ci-btns{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
 .ci-more{font-size:0.72em;color:var(--green);font-weight:700}
-.ci-spots{font-size:0.72em;color:#fff;font-weight:700;background:var(--green);border:none;border-radius:10px;padding:2px 7px;cursor:pointer;line-height:1.6}
-.ci-spots:hover{background:#005538}
+.ci-spots{font-size:0.72em;color:var(--green);font-weight:700;background:#e8f5ee;border:none;border-radius:10px;padding:3px 8px;cursor:pointer;line-height:1.6}
+.ci-spots:hover{background:#d0eedd}
 
 /* CITY SECTION HEADER */
 .city-section-header{grid-column:1/-1;background:linear-gradient(135deg,#f0f7f3,#e8f5ee);border-radius:12px;padding:12px 14px;border-left:4px solid var(--green);margin-top:6px}
