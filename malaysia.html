@@ -118,8 +118,8 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
 /* FOOD / SPOTS */
 .item-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.item-card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border-top:3px solid var(--red)}
-.item-card.spot{border-top-color:var(--green)}
+.item-card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border-left:4px solid var(--red)}
+.item-card.spot{border-left-color:var(--green)}
 .item-card .ico{font-size:1.8em;margin-bottom:4px}
 .item-card .num{font-size:0.8em;font-weight:700;color:var(--red);margin-bottom:2px}
 .item-card.spot .num{color:var(--green)}
@@ -138,12 +138,14 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
 /* MANNERS */
 .manner-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.manner-card{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
+.manner-card{background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border-left:4px solid #eee}
+.manner-card.do{border-left-color:var(--green)}
+.manner-card.dont{border-left-color:var(--red)}
 .manner-card .m-ico{font-size:1.4em;margin-bottom:6px}
 .manner-card .m-title{font-size:0.92em;font-weight:700;margin-bottom:4px}
 .manner-card .m-desc{font-size:0.84em;color:var(--sub);line-height:1.6}
-.do{border-left:3px solid var(--green)}
-.dont{border-left:3px solid var(--red)}
+.do{border-left-color:var(--green);background:#f6fbf8}
+.dont{border-left-color:var(--red);background:#fff6f6}
 .do .m-title::before{content:'✅ '}
 .dont .m-title::before{content:'❌ '}
 
@@ -163,7 +165,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
 /* TRANSPORT */
 .trans-list{display:flex;flex-direction:column;gap:8px}
-.trans-item{background:#fff;border-radius:10px;padding:12px 14px;box-shadow:0 2px 6px rgba(0,0,0,0.06);display:flex;gap:12px;align-items:flex-start}
+.trans-item{background:#fff;border-radius:10px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;gap:12px;align-items:flex-start}
 .trans-item .t-ico{font-size:1.4em;flex-shrink:0}
 .trans-item .t-info .t-name{font-size:0.88em;font-weight:700;margin-bottom:2px}
 .trans-item .t-info .t-desc{font-size:0.77em;color:var(--sub);line-height:1.5}
@@ -174,14 +176,14 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
 /* QUICK STATS */
 .qs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
-.qs-card{background:var(--card);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
+.qs-card{background:var(--card);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
 .qs-ico{font-size:1.4em;flex-shrink:0}
 .qs-lbl{font-size:0.7em;color:var(--sub)}
 .qs-val{font-size:0.88em;font-weight:700;line-height:1.2}
 
 /* TOP3 */
 .top3-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
-.top3-card{background:var(--card);border-radius:10px;padding:12px;box-shadow:0 2px 6px rgba(0,0,0,0.06);border-top:3px solid var(--green)}
+.top3-card{background:var(--card);border-radius:10px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border-top:3px solid var(--green)}
 .top3-card.food-card{border-top-color:var(--red)}
 .t3-num{font-size:0.7em;font-weight:700;color:var(--sub);margin-bottom:3px}
 .t3-ico{font-size:1.8em;margin-bottom:4px}
