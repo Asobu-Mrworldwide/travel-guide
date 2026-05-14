@@ -218,6 +218,11 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .csh-item .csh-val{font-size:0.85em;font-weight:700;color:var(--text)}
 @media(max-width:520px){.csh-grid{grid-template-columns:1fr 1fr}}
 
+/* CHECK LIST */
+.check-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+.check-list li{font-size:0.85em;color:var(--text);line-height:1.5;padding-left:22px;position:relative}
+.check-list li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;font-size:0.95em}
+
 /* MUST VISIT */
 .item-card.must{position:relative}
 .must-badge{position:absolute;top:6px;right:8px;font-size:1.4em;line-height:1}
@@ -230,7 +235,12 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
 @media(max-width:520px){
   body{font-size:15px}
-  .grid2,.grid3,.manner-grid,.item-grid,.prac-grid,.flag-meaning{grid-template-columns:1fr}
+  .grid2,.grid3,.manner-grid,.item-grid,.flag-meaning{grid-template-columns:1fr}
+  .prac-grid{grid-template-columns:1fr 1fr}
+  .prac-card{padding:10px 8px}
+  .prac-card .p-ico{font-size:1.5em;margin-bottom:3px}
+  .prac-card .p-title{font-size:0.75em}
+  .prac-card .p-val{font-size:0.82em}
   .hero h1{font-size:1.4em}
   .season-grid{grid-template-columns:repeat(6,1fr)}
   .qs-row{grid-template-columns:1fr 1fr}
@@ -640,25 +650,25 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
   <h2>持ち物チェック</h2>
   <div class="grid2">
-    <div class="card">
-      <div class="lbl">🔌 必須</div>
-      <p style="font-size:0.8em;line-height:1.8;margin-top:4px">
-        ・変換アダプター（BFタイプ）<br>
-        ・日焼け止め・サングラス<br>
-        ・折りたたみ傘（スコール対策）<br>
-        ・ポケットティッシュ（有料トイレ対策）<br>
-        ・常備薬（胃腸薬など）
-      </p>
+    <div class="card" style="padding:16px">
+      <div class="lbl" style="margin-bottom:10px">🔌 必須アイテム</div>
+      <ul class="check-list">
+        <li>変換アダプター（BFタイプ）</li>
+        <li>日焼け止め・サングラス</li>
+        <li>折りたたみ傘（スコール対策）</li>
+        <li>ポケットティッシュ（有料トイレ対策）</li>
+        <li>常備薬（胃腸薬など）</li>
+      </ul>
     </div>
-    <div class="card">
-      <div class="lbl">👗 服装</div>
-      <p style="font-size:0.8em;line-height:1.8;margin-top:4px">
-        ・夏服が基本（薄手の長袖も）<br>
-        ・モスク入場時：肌の露出を避ける<br>
-        ・女性：スカーフ持参が便利<br>
-        ・冷房が強い室内用に1枚上着<br>
-        ・スマートカジュアルも1着あると◎
-      </p>
+    <div class="card" style="padding:16px">
+      <div class="lbl" style="margin-bottom:10px">👗 服装・ファッション</div>
+      <ul class="check-list">
+        <li>夏服が基本（薄手の長袖も）</li>
+        <li>モスク入場時：肌の露出を避ける</li>
+        <li>女性：スカーフ持参が便利</li>
+        <li>冷房対策に1枚上着</li>
+        <li>スマートカジュアルも1着あると◎</li>
+      </ul>
     </div>
   </div>
 </section>
