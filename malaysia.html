@@ -218,6 +218,11 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .csh-item .csh-val{font-size:0.85em;font-weight:700;color:var(--text)}
 @media(max-width:520px){.csh-grid{grid-template-columns:1fr 1fr}}
 
+/* MAP BTN */
+.map-btn{display:inline-block;margin-top:6px;font-size:0.72em;color:#1a73e8;font-weight:700;background:#e8f0fe;border-radius:20px;padding:3px 9px;text-decoration:none;white-space:nowrap}
+.map-btn:hover{background:#d2e3fc}
+.item-card.spot .badge{display:none}
+
 /* CHECK LIST */
 .check-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
 .check-list li{font-size:0.85em;color:var(--text);line-height:1.5;padding-left:22px;position:relative}
@@ -453,6 +458,19 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
         // リセットボタンを表示
         document.getElementById('map-reset-btn').style.display = 'inline-block';
       }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.item-card.spot').forEach(card => {
+          const name = card.querySelector('.name')?.textContent;
+          if (!name) return;
+          const btn = document.createElement('a');
+          btn.href = 'https://maps.google.com/?q=' + encodeURIComponent(name + ' マレーシア');
+          btn.target = '_blank';
+          btn.className = 'map-btn';
+          btn.textContent = '地図で見る';
+          card.appendChild(btn);
+        });
+      });
 
       function resetMap() {
         if (!window._map) return;
