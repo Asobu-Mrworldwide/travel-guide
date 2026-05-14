@@ -224,7 +224,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .check-list li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;font-size:0.95em}
 
 /* MUST VISIT */
-.item-card.must{position:relative}
+.item-card.must{position:relative;border:2px solid #f5c400;box-shadow:0 0 0 1px #f5c40033,0 4px 12px rgba(245,196,0,0.2)}
 .must-badge{position:absolute;top:6px;right:8px;font-size:1.4em;line-height:1}
 
 /* SPOT FILTER */
@@ -308,7 +308,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
     <p style="font-size:0.78em;color:var(--sub);margin-top:8px;text-align:center">🇲🇾 Jalur Gemilang（ジャルル・グミラン）― マレー語で「栄光の縞」</p>
   </div>
 
-  <!-- 概要 -->
+  <!-- 概要 + 旅行難易度 統合 -->
   <div class="card" style="margin-bottom:14px;line-height:1.8">
     <h2 style="margin:0 0 10px;font-size:1em">🌏 マレーシアってどんな国？</h2>
     <p style="font-size:0.88em;color:var(--text)">東南アジアの中心に位置するマレーシアは、マレー系・中国系・インド系が共存する<strong>多民族・多文化国家</strong>。熱帯雨林の大自然、世界遺産の古都、近代的な都市が一度に楽しめるのが最大の魅力です。</p>
@@ -332,6 +332,24 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
       <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
       <p style="font-size:0.84em;color:var(--text)">年間約40万人の日本人が訪れる人気旅行先。<strong>ビザ不要・英語が通じやすい・物価が安い</strong>の三拍子が揃い、初めての海外旅行先としても定番。日本食レストランも豊富で食事の心配も少ない。</p>
     </div>
+
+    <!-- 旅行難易度 -->
+    <div style="margin-top:12px;border-top:1px solid #f0f0f0;padding-top:12px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:1.3em">🧭</span>
+        <span style="font-size:0.82em;color:var(--sub);font-weight:600">旅行難易度</span>
+        <span style="margin-left:auto;background:#e8f5ee;color:var(--green);font-size:0.8em;font-weight:700;padding:3px 10px;border-radius:20px">やさしい</span>
+      </div>
+      <div style="background:#e8e8e8;border-radius:20px;height:12px;overflow:hidden">
+        <div style="width:28%;height:100%;background:linear-gradient(90deg,#00a86b,#66cc99);border-radius:20px;transition:width 1s"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
+        <span>← やさしい</span><span>むずかしい →</span>
+      </div>
+      <div style="margin-top:8px;font-size:0.84em;color:var(--sub);line-height:1.7">
+        💬 英語が広く通じビザも不要。物価は日本の約半分で初めての東南アジアにもおすすめ。イスラム文化への基本的な配慮があれば困ることはほぼなし。
+      </div>
+    </div>
   </div>
 
   <!-- ① クイックスペック -->
@@ -342,24 +360,6 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
     <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[2])">予算・費用を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[6])">フレーズ集を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div></div></div>
-  </div>
-
-  <!-- 旅行難易度 -->
-  <div class="card" style="margin-top:8px">
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-      <span style="font-size:1.3em">🧭</span>
-      <span style="font-size:0.82em;color:var(--sub);font-weight:600">旅行難易度</span>
-      <span style="margin-left:auto;background:#e8f5ee;color:var(--green);font-size:0.8em;font-weight:700;padding:3px 10px;border-radius:20px">やさしい</span>
-    </div>
-    <div style="background:#e8e8e8;border-radius:20px;height:12px;overflow:hidden">
-      <div style="width:28%;height:100%;background:linear-gradient(90deg,#00a86b,#66cc99);border-radius:20px;transition:width 1s"></div>
-    </div>
-    <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
-      <span>← やさしい</span><span>むずかしい →</span>
-    </div>
-    <div style="margin-top:10px;font-size:0.84em;color:var(--sub);line-height:1.7;border-top:1px solid #f0f0f0;padding-top:10px">
-      💬 英語が広く通じビザも不要。物価は日本の約半分で初めての東南アジアにもおすすめ。イスラム文化への基本的な配慮があれば困ることはほぼなし。
-    </div>
   </div>
 
   <!-- ④ ベストシーズン（簡易） -->
@@ -619,7 +619,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
   <div class="card" style="margin-top:12px;background:#f0f7f3;border-left:4px solid var(--green)">
     <p style="font-size:0.82em;font-weight:700;margin-bottom:4px">💡 節約ポイント</p>
     <p style="font-size:0.8em;color:var(--sub);line-height:1.7">
-      ・両替は現地（空港の銀行）がレートが良い<br>
+      ・両替は市内の両替専門店が最もレートが良い。到着直後の分だけ空港で両替し残りは市内で<br>
       ・チップ不要（特別なサービス時のみ任意）<br>
       ・屋台・フードコートで本格グルメが格安<br>
       ・Grabアプリはタクシーより安く安心
