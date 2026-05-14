@@ -111,6 +111,10 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 .ms{color:var(--green);font-weight:700;font-size:0.95em}
 .roma{color:#999;font-size:0.8em;display:block;margin-top:1px}
 .cat-hdr td{background:#f0f7f3!important;color:var(--green);font-weight:700;font-size:0.8em;padding:6px 12px}
+.play-btn{background:var(--green);border:none;border-radius:50%;width:30px;height:30px;color:#fff;font-size:0.75em;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;flex-shrink:0}
+.play-btn:hover{background:#004d35}
+.play-btn.playing{background:#e74c3c}
+.phrase-tbl .audio-td{width:38px;padding:4px 8px;text-align:center}
 
 /* FOOD / SPOTS */
 .item-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -608,7 +612,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
       ・両替は現地（空港の銀行）がレートが良い<br>
       ・チップ不要（特別なサービス時のみ任意）<br>
       ・屋台・フードコートで本格グルメが格安<br>
-      ・GrabアプリはタクシーよりAI安く安心
+      ・Grabアプリはタクシーより安く安心
     </p>
   </div>
 </section>
@@ -631,7 +635,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
   <h2>入国時の注意</h2>
   <div class="card" style="background:#fff8f0;border-left:4px solid #ff9900">
     <p style="font-size:0.85em;font-weight:700;margin-bottom:6px">📋 MDAC（デジタル入国カード）</p>
-    <p style="font-size:0.8em;color:var(--sub);line-height:1.7">マレーシア入国の3日前からオンライン登録が必要。子供も登録が必要。<br>URL: imigresen-online.imi.gov.my/mdac/main</p>
+    <p style="font-size:0.8em;color:var(--sub);line-height:1.7">マレーシア入国の3日前からオンライン登録が必要。子供も登録が必要。<br>URL: <a href="https://imigresen-online.imi.gov.my/mdac/main" target="_blank" style="color:#ff9900;font-weight:700">imigresen-online.imi.gov.my/mdac/main</a></p>
   </div>
 
   <h2>持ち物チェック</h2>
@@ -727,41 +731,41 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 <section id="phrases">
   <h2>マレー語 旅行フレーズ集</h2>
   <table class="phrase-tbl">
-    <tr><th>日本語</th><th>マレー語 / 読み方</th></tr>
-    <tr class="cat-hdr"><td colspan="2">👋 あいさつ</td></tr>
-    <tr><td class="jp">こんにちは</td><td class="ms">Selamat siang<span class="roma">スラマッ シアン</span></td></tr>
-    <tr><td class="jp">元気ですか？</td><td class="ms">Apa khabar?<span class="roma">アパ カバル？</span></td></tr>
-    <tr><td class="jp">元気です。あなたは？</td><td class="ms">Khabar baik. Awak?<span class="roma">カバル バイク。アワッ？</span></td></tr>
-    <tr><td class="jp">バイバイ</td><td class="ms">Selamat tinggal<span class="roma">スラマッ ティンガル</span></td></tr>
-    <tr class="cat-hdr"><td colspan="2">🙏 基本表現</td></tr>
-    <tr><td class="jp">ありがとう</td><td class="ms">Terima kasih<span class="roma">トゥリマ カシ</span></td></tr>
-    <tr><td class="jp">ごめんなさい</td><td class="ms">Minta maaf<span class="roma">ミンタ マーフ</span></td></tr>
-    <tr><td class="jp">大丈夫</td><td class="ms">Tidak apa-apa<span class="roma">ティダッ アパアパ</span></td></tr>
-    <tr><td class="jp">はい / いいえ</td><td class="ms">Ya / Tidak<span class="roma">ヤー / ティダッ</span></td></tr>
-    <tr class="cat-hdr"><td colspan="2">👤 自己紹介</td></tr>
-    <tr><td class="jp">名前は〜です</td><td class="ms">Nama saya ～<span class="roma">ナマ サヤ ～</span></td></tr>
-    <tr><td class="jp">名前は何ですか？</td><td class="ms">Siapa nama awak?<span class="roma">シアパ ナマ アワッ？</span></td></tr>
-    <tr class="cat-hdr"><td colspan="2">🍽️ レストラン</td></tr>
-    <tr><td class="jp">おいしい！</td><td class="ms">Sedap!<span class="roma">スダッ！</span></td></tr>
-    <tr><td class="jp">あまり好きじゃない</td><td class="ms">Saya tak suka sangat<span class="roma">サヤ タッ スカ サンガッ</span></td></tr>
-    <tr><td class="jp">おすすめは？</td><td class="ms">Apa yang disyorkan?<span class="roma">アパ ヤン ディショルカン？</span></td></tr>
-    <tr><td class="jp">辛い</td><td class="ms">Pedas<span class="roma">プダス</span></td></tr>
-    <tr><td class="jp">辛くない</td><td class="ms">Tidak pedas<span class="roma">ティダッ プダス</span></td></tr>
-    <tr><td class="jp">お会計お願いします</td><td class="ms">Boleh minta bil?<span class="roma">ボレ ミンタ ビル？</span></td></tr>
-    <tr><td class="jp">カード払い</td><td class="ms">Kad kredit<span class="roma">カッ クレディッ</span></td></tr>
-    <tr><td class="jp">現金</td><td class="ms">Tunai<span class="roma">トゥナイ</span></td></tr>
-    <tr class="cat-hdr"><td colspan="2">🛍️ ショッピング</td></tr>
-    <tr><td class="jp">これ</td><td class="ms">Ini<span class="roma">イニ</span></td></tr>
-    <tr><td class="jp">ください</td><td class="ms">Saya nak ini<span class="roma">サヤ ナッ イニ</span></td></tr>
-    <tr><td class="jp">いくらですか？</td><td class="ms">Berapa harga ini?<span class="roma">ブラパ ハルガ イニ？</span></td></tr>
-    <tr><td class="jp">結構です</td><td class="ms">Tak nak, terima kasih<span class="roma">タッ ナッ、トゥリマ カシ</span></td></tr>
-    <tr class="cat-hdr"><td colspan="2">🗺️ 移動・観光</td></tr>
-    <tr><td class="jp">ここに行きたい</td><td class="ms">Saya nak pergi ke sini<span class="roma">サヤ ナッ プルギ ク シニ</span></td></tr>
-    <tr><td class="jp">トイレどこですか？</td><td class="ms">Di mana tandas?<span class="roma">ディ マナ タンダス？</span></td></tr>
-    <tr><td class="jp">綺麗ですね！</td><td class="ms">Cantik sekali!<span class="roma">チャンティッ スカリ！</span></td></tr>
-    <tr class="cat-hdr"><td colspan="2">🔢 数字</td></tr>
-    <tr><td class="jp">1〜5</td><td class="ms">Satu・Dua・Tiga・Empat・Lima<span class="roma">サトゥ・ドゥア・ティガ・エンパッ・リマ</span></td></tr>
-    <tr><td class="jp">6〜10</td><td class="ms">Enam・Tujuh・Lapan・Sembilan・Sepuluh<span class="roma">エナム・トゥジュ・ラパン・スンビラン・スプル</span></td></tr>
+    <tr><th>日本語</th><th>マレー語 / 読み方</th><th style="width:38px"></th></tr>
+    <tr class="cat-hdr"><td colspan="3">👋 あいさつ</td></tr>
+    <tr><td class="jp">こんにちは</td><td class="ms">Selamat siang<span class="roma">スラマッ シアン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('selamat-siang.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">元気ですか？</td><td class="ms">Apa khabar?<span class="roma">アパ カバル？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('apa-khabar.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">元気です。あなたは？</td><td class="ms">Khabar baik. Awak?<span class="roma">カバル バイク。アワッ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('khabar-baik.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">バイバイ</td><td class="ms">Selamat tinggal<span class="roma">スラマッ ティンガル</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('selamat-tinggal.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">🙏 基本表現</td></tr>
+    <tr><td class="jp">ありがとう</td><td class="ms">Terima kasih<span class="roma">トゥリマ カシ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('terima-kasih.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">ごめんなさい</td><td class="ms">Minta maaf<span class="roma">ミンタ マーフ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('minta-maaf.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">大丈夫</td><td class="ms">Tidak apa-apa<span class="roma">ティダッ アパアパ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('tidak-apa-apa.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">はい / いいえ</td><td class="ms">Ya / Tidak<span class="roma">ヤー / ティダッ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('ya-tidak.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">👤 自己紹介</td></tr>
+    <tr><td class="jp">名前は〜です</td><td class="ms">Nama saya ～<span class="roma">ナマ サヤ ～</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('nama-saya.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">名前は何ですか？</td><td class="ms">Siapa nama awak?<span class="roma">シアパ ナマ アワッ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('siapa-nama.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">🍽️ レストラン</td></tr>
+    <tr><td class="jp">おいしい！</td><td class="ms">Sedap!<span class="roma">スダッ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('sedap.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">あまり好きじゃない</td><td class="ms">Saya tak suka sangat<span class="roma">サヤ タッ スカ サンガッ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('saya-tak-suka.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">おすすめは？</td><td class="ms">Apa yang disyorkan?<span class="roma">アパ ヤン ディショルカン？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('apa-yang-disyorkan.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">辛い</td><td class="ms">Pedas<span class="roma">プダス</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('pedas.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">辛くない</td><td class="ms">Tidak pedas<span class="roma">ティダッ プダス</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('tidak-pedas.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">お会計お願いします</td><td class="ms">Boleh minta bil?<span class="roma">ボレ ミンタ ビル？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('boleh-minta-bil.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">カード払い</td><td class="ms">Kad kredit<span class="roma">カッ クレディッ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('kad-kredit.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">現金</td><td class="ms">Tunai<span class="roma">トゥナイ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('tunai.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">🛍️ ショッピング</td></tr>
+    <tr><td class="jp">これ</td><td class="ms">Ini<span class="roma">イニ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('ini.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">ください</td><td class="ms">Saya nak ini<span class="roma">サヤ ナッ イニ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('saya-nak-ini.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">いくらですか？</td><td class="ms">Berapa harga ini?<span class="roma">ブラパ ハルガ イニ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('berapa-harga.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">結構です</td><td class="ms">Tak nak, terima kasih<span class="roma">タッ ナッ、トゥリマ カシ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('tak-nak.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">🗺️ 移動・観光</td></tr>
+    <tr><td class="jp">ここに行きたい</td><td class="ms">Saya nak pergi ke sini<span class="roma">サヤ ナッ プルギ ク シニ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('saya-nak-pergi.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">トイレどこですか？</td><td class="ms">Di mana tandas?<span class="roma">ディ マナ タンダス？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('di-mana-tandas.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">綺麗ですね！</td><td class="ms">Cantik sekali!<span class="roma">チャンティッ スカリ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('cantik-sekali.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">🔢 数字</td></tr>
+    <tr><td class="jp">1〜5</td><td class="ms">Satu・Dua・Tiga・Empat・Lima<span class="roma">サトゥ・ドゥア・ティガ・エンパッ・リマ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('satu-lima.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">6〜10</td><td class="ms">Enam・Tujuh・Lapan・Sembilan・Sepuluh<span class="roma">エナム・トゥジュ・ラパン・スンビラン・スプル</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('enam-sepuluh.mp3',this)">▶</button></td></tr>
   </table>
 
   <div class="cta" style="margin-top:20px">
@@ -918,6 +922,23 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 </div>
 
 <script>
+let _phraseAudio = null;
+let _phraseBtn = null;
+function playPhrase(file, btn) {
+  if (_phraseAudio) {
+    _phraseAudio.pause();
+    _phraseAudio = null;
+    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
+  }
+  const audio = new Audio('audio/phrases/' + file);
+  audio.play().catch(() => {});
+  _phraseAudio = audio;
+  _phraseBtn = btn;
+  btn.textContent = '■';
+  btn.classList.add('playing');
+  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
+}
+
 function show(id, btn) {
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
