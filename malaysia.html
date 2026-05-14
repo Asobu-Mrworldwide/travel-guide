@@ -199,7 +199,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
 /* CITY GRID */
 .city-grid-wrap{display:grid;grid-template-columns:repeat(3,1fr)}
-.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.15s}
+.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.15s;cursor:pointer}
 .city-item:nth-child(3n){border-right:none}
 .city-item:hover{background:#f0f7f3}
 .ci-badge{font-size:0.7em;font-weight:700;color:var(--red);margin-bottom:2px}
@@ -393,23 +393,30 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
   <!-- ⑤ 主要都市 -->
   <h2>🗺️ 主要都市</h2>
   <div class="card full" style="padding:0;overflow:hidden">
-    <div id="malaysia-map" style="width:100%;height:300px"></div>
+    <div style="position:relative">
+      <div id="malaysia-map" style="width:100%;height:300px"></div>
+      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
+        <a id="map-open-btn" href="#" target="_blank" style="display:none;background:var(--green);color:#fff;font-size:0.82em;font-weight:700;padding:8px 16px;border-radius:24px;text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,0.3);white-space:nowrap;align-items:center;gap:6px"></a>
+        <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2)">← マレーシア全体に戻る</button>
+      </div>
+    </div>
     <script>
+      const CITY_DATA = {
+        kl:      { name:'クアラルンプール', lat:3.1390,  lng:101.6869, zoom:12, color:'#cc0001', label:'★' },
+        penang:  { name:'ペナン',           lat:5.4141,  lng:100.3288, zoom:12, color:'#006847', label:'●' },
+        malacca: { name:'マラッカ',         lat:2.1896,  lng:102.2501, zoom:13, color:'#006847', label:'●' },
+        jb:      { name:'ジョホールバル',   lat:1.4927,  lng:103.7414, zoom:12, color:'#006847', label:'●' },
+        kk:      { name:'コタキナバル',     lat:5.9804,  lng:116.0735, zoom:12, color:'#006847', label:'●' },
+        kuching: { name:'クチン',           lat:1.5533,  lng:110.3592, zoom:12, color:'#006847', label:'●' },
+      };
+
       function initMap() {
-        const map = new google.maps.Map(document.getElementById('malaysia-map'), {
+        window._map = new google.maps.Map(document.getElementById('malaysia-map'), {
           center: { lat: 4.0, lng: 109.5 }, zoom: 5,
           mapTypeId: 'roadmap', language: 'ja',
           mapId: 'ebb608e55ed157f8630c407e'
         });
-        const cities = [
-          { name:'クアラルンプール', lat:3.1390, lng:101.6869, color:'#cc0001', label:'★' },
-          { name:'ペナン',           lat:5.4141, lng:100.3288, color:'#006847', label:'●' },
-          { name:'マラッカ',         lat:2.1896, lng:102.2501, color:'#006847', label:'●' },
-          { name:'ジョホールバル',   lat:1.4927, lng:103.7414, color:'#006847', label:'●' },
-          { name:'コタキナバル',     lat:5.9804, lng:116.0735, color:'#006847', label:'●' },
-          { name:'クチン',           lat:1.5533, lng:110.3592, color:'#006847', label:'●' },
-        ];
-        cities.forEach(city => {
+        Object.values(CITY_DATA).forEach(city => {
           const dot = document.createElement('div');
           dot.style.cssText = `width:${city.label==='★'?'14px':'11px'};height:${city.label==='★'?'14px':'11px'};background:${city.color};border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4);`;
           const label = document.createElement('div');
@@ -418,18 +425,43 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
           const container = document.createElement('div');
           container.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer';
           container.appendChild(dot); container.appendChild(label);
-          new google.maps.marker.AdvancedMarkerElement({ position:{lat:city.lat,lng:city.lng}, map, title:city.name, content:container });
+          new google.maps.marker.AdvancedMarkerElement({ position:{lat:city.lat,lng:city.lng}, map:window._map, title:city.name, content:container });
         });
+      }
+
+      function zoomToCity(key) {
+        const city = CITY_DATA[key];
+        if (!city || !window._map) return;
+        // 地図ズームイン
+        window._map.panTo({ lat: city.lat, lng: city.lng });
+        window._map.setZoom(city.zoom);
+        // 地図にスクロール
+        document.getElementById('malaysia-map').scrollIntoView({ behavior:'smooth', block:'center' });
+        // Googleマップボタンを表示
+        const btn = document.getElementById('map-open-btn');
+        btn.href = `https://maps.google.com/?q=${encodeURIComponent(city.name + ' マレーシア')}`;
+        btn.textContent = `📍 ${city.name}をGoogleマップで開く →`;
+        btn.style.display = 'flex';
+        // リセットボタンを表示
+        document.getElementById('map-reset-btn').style.display = 'inline-block';
+      }
+
+      function resetMap() {
+        if (!window._map) return;
+        window._map.panTo({ lat: 4.0, lng: 109.5 });
+        window._map.setZoom(5);
+        document.getElementById('map-open-btn').style.display = 'none';
+        document.getElementById('map-reset-btn').style.display = 'none';
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
     <div class="city-grid-wrap">
-      <div class="city-item"><div class="ci-badge">★ 首都</div><div class="ci-name">クアラルンプール</div><div class="ci-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div><div class="ci-btns"><button class="ci-spots" onclick="showFilteredSpots('kl')">🏙️ 観光地を見る</button></div></div>
-      <div class="city-item"><div class="ci-badge" style="color:var(--green)">🏛️ 世界遺産</div><div class="ci-name">ペナン</div><div class="ci-desc">多文化が交差するグルメと芸術の島</div><div class="ci-btns"><button class="ci-spots" onclick="showFilteredSpots('penang')">🌴 観光地を見る</button></div></div>
-      <div class="city-item"><div class="ci-badge" style="color:var(--green)">🏛️ 世界遺産</div><div class="ci-name">マラッカ</div><div class="ci-desc">ポルトガル・オランダ統治の歴史が残る古都</div><div class="ci-btns"><button class="ci-spots" onclick="showFilteredSpots('malacca')">🏛️ 観光地を見る</button></div></div>
-      <div class="city-item"><div class="ci-badge" style="color:var(--green)">🌏 南端</div><div class="ci-name">ジョホールバル</div><div class="ci-desc">シンガポールと橋でつながる国境の街</div><div class="ci-btns"><button class="ci-spots" onclick="showFilteredSpots('jb')">🌏 観光地を見る</button></div></div>
-      <div class="city-item"><div class="ci-badge" style="color:var(--green)">🌿 ボルネオ</div><div class="ci-name">コタキナバル</div><div class="ci-desc">海・山・ジャングルが揃うサバ州の州都</div><div class="ci-btns"><button class="ci-spots" onclick="showFilteredSpots('kk')">🏔️ 観光地を見る</button></div></div>
-      <div class="city-item"><div class="ci-badge" style="color:var(--green)">🌿 ボルネオ</div><div class="ci-name">クチン</div><div class="ci-desc">「猫の街」として知られるサラワク州の州都</div><div class="ci-btns"><button class="ci-spots" onclick="showFilteredSpots('kuching')">🐱 観光地を見る</button></div></div>
+      <div class="city-item" onclick="zoomToCity('kl')"><div class="ci-badge">★ 首都</div><div class="ci-name">クアラルンプール</div><div class="ci-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div><div class="ci-btns"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kl')">🏙️ 観光地を見る</button></div></div>
+      <div class="city-item" onclick="zoomToCity('penang')"><div class="ci-badge" style="color:var(--green)">🏛️ 世界遺産</div><div class="ci-name">ペナン</div><div class="ci-desc">多文化が交差するグルメと芸術の島</div><div class="ci-btns"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('penang')">🌴 観光地を見る</button></div></div>
+      <div class="city-item" onclick="zoomToCity('malacca')"><div class="ci-badge" style="color:var(--green)">🏛️ 世界遺産</div><div class="ci-name">マラッカ</div><div class="ci-desc">ポルトガル・オランダ統治の歴史が残る古都</div><div class="ci-btns"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('malacca')">🏛️ 観光地を見る</button></div></div>
+      <div class="city-item" onclick="zoomToCity('jb')"><div class="ci-badge" style="color:var(--green)">🌏 南端</div><div class="ci-name">ジョホールバル</div><div class="ci-desc">シンガポールと橋でつながる国境の街</div><div class="ci-btns"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('jb')">🌏 観光地を見る</button></div></div>
+      <div class="city-item" onclick="zoomToCity('kk')"><div class="ci-badge" style="color:var(--green)">🌿 ボルネオ</div><div class="ci-name">コタキナバル</div><div class="ci-desc">海・山・ジャングルが揃うサバ州の州都</div><div class="ci-btns"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kk')">🏔️ 観光地を見る</button></div></div>
+      <div class="city-item" onclick="zoomToCity('kuching')"><div class="ci-badge" style="color:var(--green)">🌿 ボルネオ</div><div class="ci-name">クチン</div><div class="ci-desc">「猫の街」として知られるサラワク州の州都</div><div class="ci-btns"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kuching')">🐱 観光地を見る</button></div></div>
     </div>
   </div>
 
