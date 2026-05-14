@@ -460,15 +460,26 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
       }
 
       document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.item-card.spot').forEach(card => {
-          const name = card.querySelector('.name')?.textContent;
-          if (!name) return;
+        // 各都市セクションヘッダーにまとめて地図ボタンを追加
+        document.querySelectorAll('.city-section-header').forEach(header => {
+          const city = header.dataset.city;
           const btn = document.createElement('a');
-          btn.href = 'https://maps.google.com/?q=' + encodeURIComponent(name + ' マレーシア');
           btn.target = '_blank';
           btn.className = 'map-btn';
-          btn.textContent = '地図で見る';
-          card.appendChild(btn);
+          btn.style.marginTop = '10px';
+          btn.style.display = 'inline-block';
+          btn.textContent = 'Open in Google Maps';
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const names = [];
+            document.querySelectorAll(`.item-card.spot[data-city="${city}"]`).forEach(card => {
+              const name = card.querySelector('.name')?.textContent;
+              if (name) names.push(name);
+            });
+            const query = names.join(' ') + ' マレーシア';
+            window.open('https://maps.google.com/?q=' + encodeURIComponent(query), '_blank');
+          });
+          header.appendChild(btn);
         });
       });
 
