@@ -412,7 +412,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
 
       function initMap() {
         window._map = new google.maps.Map(document.getElementById('malaysia-map'), {
-          center: { lat: 4.0, lng: 109.5 }, zoom: 5,
+          center: { lat: 4.0, lng: 109.5 }, zoom: 4,
           mapTypeId: 'roadmap', language: 'ja',
           mapId: 'ebb608e55ed157f8630c407e',
           disableDefaultUI: true,
@@ -453,7 +453,7 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
       function resetMap() {
         if (!window._map) return;
         window._map.panTo({ lat: 4.0, lng: 109.5 });
-        window._map.setZoom(5);
+        window._map.setZoom(4);
         document.getElementById('map-open-btn').style.display = 'none';
         document.getElementById('map-reset-btn').style.display = 'none';
       }
