@@ -415,11 +415,9 @@ h3{font-size:0.95em;color:var(--red);margin:14px 0 6px}
           center: { lat: 4.0, lng: 109.5 }, zoom: 5,
           mapTypeId: 'roadmap', language: 'ja',
           mapId: 'ebb608e55ed157f8630c407e',
-          mapTypeControl: false,
-          zoomControl: false,
-          panControl: false,
-          rotateControl: false,
-          tilt: 0,
+          disableDefaultUI: true,
+          streetViewControl: true,
+          fullscreenControl: true,
           gestureHandling: 'greedy'
         });
         Object.values(CITY_DATA).forEach(city => {
