@@ -417,7 +417,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
           a.href = 'https://maps.google.com/?q=' + encodeURIComponent(name + ' マレーシア');
           a.target = '_blank';
           a.textContent = 'Googleマップで見る →';
-          a.style.cssText = 'display:inline-block;margin-top:8px;font-size:0.78em;color:#1a73e8;font-weight:700;text-decoration:none;';
+          a.style.cssText = 'display:block;margin-top:8px;font-size:0.78em;color:#1a73e8;font-weight:700;text-decoration:none;text-align:right;';
           a.onmouseover = () => a.style.textDecoration = 'underline';
           a.onmouseout = () => a.style.textDecoration = 'none';
           card.appendChild(a);
@@ -1014,15 +1014,17 @@ function showFilteredSpots(city) {
 
 // スワイプでタブ切り替え
 (function() {
-  let startX = 0, startY = 0;
+  let startX = 0, startY = 0, startedOnNav = false;
   const THRESHOLD = 50; // スワイプ判定の最小px
 
   document.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
+    startedOnNav = !!e.target.closest('nav'); // navバー上のタッチを記録
   }, { passive: true });
 
   document.addEventListener('touchend', e => {
+    if (startedOnNav) return; // navバーのスクロールは無視
     const dx = e.changedTouches[0].clientX - startX;
     const dy = e.changedTouches[0].clientY - startY;
     // 縦スクロールより横方向が大きい場合のみ
