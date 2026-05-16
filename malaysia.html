@@ -107,14 +107,14 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 
 /* FOOD / SPOTS */
 .item-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.item-card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
+.item-card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;flex-direction:column}
 .item-card.spot{border-left:none}
 .item-card .ico{font-size:1.8em;margin-bottom:4px}
 .item-card .num{font-size:0.8em;font-weight:700;color:var(--red);margin-bottom:2px}
 .item-card.spot .num{color:var(--green)}
 .item-card .name{font-size:0.97em;font-weight:700;color:#222;margin-bottom:4px;line-height:1.4}
-.item-card .desc{font-size:0.83em;color:var(--sub);line-height:1.75}
-.item-card .badge{display:inline-block;background:#f0f7f3;color:var(--green);padding:2px 7px;border-radius:10px;font-size:0.78em;margin-top:5px}
+.item-card .desc{font-size:0.83em;color:var(--sub);line-height:1.75;flex:1}
+.item-card .badge{display:inline-block;background:#e8f5ee;color:var(--green);padding:2px 10px;border-radius:20px;font-size:0.68em;font-weight:700;margin-top:6px;align-self:flex-start}
 
 /* BUDGET */
 .budget-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f0}
@@ -559,6 +559,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☔<span class="md-t">27°C</span></div></div>
     </div>
     <p style="font-size:0.75em;color:var(--sub);margin-top:6px">✅ ベスト：3〜9月（乾季）／ 雨季でもスコール程度で観光可能</p>
+    <div style="text-align:right;margin-top:6px"><button onclick="showFilteredSpots('kl')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline">クアラルンプールの観光スポットを見る →</button></div>
   </div>
 
   <div class="city-season card" style="margin-bottom:10px">
@@ -578,6 +579,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☀️<span class="md-t">27°C</span></div></div>
     </div>
     <p style="font-size:0.75em;color:var(--sub);margin-top:6px">✅ ベスト：11〜4月（西海岸の乾季） ／ 9〜10月は北東モンスーンの影響で雨多め</p>
+    <div style="text-align:right;margin-top:6px"><button onclick="showFilteredSpots('penang')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline">ペナンの観光スポットを見る →</button></div>
   </div>
 
   <div class="city-season card" style="margin-bottom:10px">
@@ -597,6 +599,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">⛅<span class="md-t">27°C</span></div></div>
     </div>
     <p style="font-size:0.75em;color:var(--sub);margin-top:6px">✅ ベスト：1〜5月（乾季・ダイビング最適） ／ 9〜11月は雨季で海が荒れやすい</p>
+    <div style="text-align:right;margin-top:6px"><button onclick="showFilteredSpots('kk')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline">コタキナバルの観光スポットを見る →</button></div>
   </div>
 
   <div class="card" style="background:#fffbf0;border-left:4px solid var(--yellow)">
@@ -684,8 +687,8 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 
   <h2>入国時の注意</h2>
   <div class="card" style="background:#fff8f0;border-left:4px solid #ff9900">
-    <p style="font-size:0.85em;font-weight:700;margin-bottom:6px">📋 MDAC（デジタル入国カード）</p>
-    <p style="font-size:0.8em;color:var(--sub);line-height:1.7">マレーシア入国の3日前からオンライン登録が必要。子供も登録が必要。<br>URL: <a href="https://imigresen-online.imi.gov.my/mdac/main" target="_blank" style="color:#ff9900;font-weight:700">imigresen-online.imi.gov.my/mdac/main</a><span style="font-size:0.85em;color:#bbb;margin-left:8px">（2026年5月時点）</span></p>
+    <p style="font-size:0.85em;font-weight:700;margin-bottom:6px">💡 MDAC（デジタル入国カード）</p>
+    <p style="font-size:0.8em;color:var(--sub);line-height:1.7">マレーシア入国の3日前からオンライン登録が必要。子供も登録が必要。<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px"><span>URL: <a href="https://imigresen-online.imi.gov.my/mdac/main" target="_blank" style="color:#ff9900;font-weight:700">imigresen-online.imi.gov.my/mdac/main</a></span><span style="font-size:0.85em;color:#bbb;white-space:nowrap">（2026年5月時点）</span></span></p>
   </div>
 
   <h2>持ち物チェック</h2>
