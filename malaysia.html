@@ -192,11 +192,11 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 .city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.15s;cursor:pointer}
 .city-item:nth-child(3n){border-right:none}
 .city-item:hover{background:#f0f7f3}
-.ci-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
-.ci-badge{font-size:0.62em;font-weight:700;color:#cc0001;border:1.5px solid #cc0001;border-radius:4px;padding:1px 6px}
-.ci-badge.green{color:var(--green);border-color:var(--green)}
+.ci-badge{font-size:0.68em;font-weight:700;color:#cc0001;background:#fff0f0;border-radius:20px;padding:2px 10px}
+.ci-badge.green{color:var(--green);background:#e8f5ee}
 .ci-name{font-size:0.87em;font-weight:700;margin-bottom:3px}
-.ci-desc{font-size:0.75em;color:var(--sub);line-height:1.6}
+.ci-desc{font-size:0.75em;color:var(--sub);line-height:1.6;flex:1}
+.ci-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
 .ci-spots{font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap}
 .ci-spots:hover{opacity:0.7}
 
@@ -435,12 +435,12 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
     <div class="city-grid-wrap">
-      <div class="city-item" onclick="zoomToCity('kl')"><div class="ci-top"><div class="ci-badge">首都</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kl')">観光地を見る →</button></div><div class="ci-name">クアラルンプール</div><div class="ci-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div></div>
-      <div class="city-item" onclick="zoomToCity('penang')"><div class="ci-top"><div class="ci-badge green">世界遺産</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('penang')">観光地を見る →</button></div><div class="ci-name">ペナン</div><div class="ci-desc">多文化が交差するグルメと芸術の島</div></div>
-      <div class="city-item" onclick="zoomToCity('malacca')"><div class="ci-top"><div class="ci-badge green">世界遺産</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('malacca')">観光地を見る →</button></div><div class="ci-name">マラッカ</div><div class="ci-desc">ポルトガル・オランダ統治の歴史が残る古都</div></div>
-      <div class="city-item" onclick="zoomToCity('jb')"><div class="ci-top"><div class="ci-badge green">南端</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('jb')">観光地を見る →</button></div><div class="ci-name">ジョホールバル</div><div class="ci-desc">シンガポールと橋でつながる国境の街</div></div>
-      <div class="city-item" onclick="zoomToCity('kk')"><div class="ci-top"><div class="ci-badge green">ボルネオ</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kk')">観光地を見る →</button></div><div class="ci-name">コタキナバル</div><div class="ci-desc">海・山・ジャングルが揃うサバ州の州都</div></div>
-      <div class="city-item" onclick="zoomToCity('kuching')"><div class="ci-top"><div class="ci-badge green">ボルネオ</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kuching')">観光地を見る →</button></div><div class="ci-name">クチン</div><div class="ci-desc">「猫の街」として知られるサラワク州の州都</div></div>
+      <div class="city-item" onclick="zoomToCity('kl')"><div class="ci-name">クアラルンプール</div><div class="ci-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div><div class="ci-bottom"><div class="ci-badge">首都</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kl')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('penang')"><div class="ci-name">ペナン</div><div class="ci-desc">多文化が交差するグルメと芸術の島</div><div class="ci-bottom"><div class="ci-badge green">世界遺産</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('penang')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('malacca')"><div class="ci-name">マラッカ</div><div class="ci-desc">ポルトガル・オランダ統治の歴史が残る古都</div><div class="ci-bottom"><div class="ci-badge green">世界遺産</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('malacca')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('jb')"><div class="ci-name">ジョホールバル</div><div class="ci-desc">シンガポールと橋でつながる国境の街</div><div class="ci-bottom"><div class="ci-badge green">南端</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('jb')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('kk')"><div class="ci-name">コタキナバル</div><div class="ci-desc">海・山・ジャングルが揃うサバ州の州都</div><div class="ci-bottom"><div class="ci-badge green">ボルネオ</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kk')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('kuching')"><div class="ci-name">クチン</div><div class="ci-desc">「猫の街」として知られるサラワク州の州都</div><div class="ci-bottom"><div class="ci-badge green">ボルネオ</div><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kuching')">観光地を見る →</button></div></div>
     </div>
   </div>
 
