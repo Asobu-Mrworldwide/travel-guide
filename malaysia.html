@@ -201,12 +201,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 .ci-spots:hover{background:#d0eedd}
 
 /* CITY SECTION HEADER */
-.city-section-header{grid-column:1/-1;background:linear-gradient(135deg,#f0f7f3,#e8f5ee);border-radius:12px;padding:12px 14px;border-left:4px solid var(--green);margin-top:6px}
-.csh-title{font-size:1em;font-weight:900;color:var(--green);margin-bottom:8px}
-.csh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.csh-item .csh-lbl{font-size:0.72em;color:var(--sub);margin-bottom:2px}
-.csh-item .csh-val{font-size:0.85em;font-weight:700;color:var(--text)}
-@media(max-width:520px){.csh-grid{grid-template-columns:1fr 1fr}}
+.city-section-header{grid-column:1/-1;background:#fff;border-radius:12px;padding:12px 14px;border-top:4px solid var(--green);margin-top:6px;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
+.csh-title{font-size:1em;font-weight:900;color:var(--green);margin-bottom:3px}
+.csh-desc{font-size:0.8em;color:#666;margin-bottom:10px;line-height:1.5}
+.csh-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.csh-item{display:flex;gap:6px;align-items:baseline;padding:4px 0;border-bottom:1px solid #f5f5f5}
+.csh-item .csh-lbl{font-size:0.65em;color:#aaa;flex-shrink:0;width:7em}
+.csh-item .csh-val{font-size:0.8em;font-weight:700;color:var(--text)}
 
 /* MAP BTN */
 .map-btn{display:inline-block;margin-top:6px;font-size:0.72em;color:#1a73e8;font-weight:700;background:#e8f0fe;border-radius:20px;padding:3px 9px;text-decoration:none;white-space:nowrap}
@@ -858,12 +859,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <!-- KL -->
     <div class="city-section-header" data-city="kl">
       <div class="csh-title">クアラルンプール</div>
+      <div class="csh-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
       <div class="csh-grid">
-        <div class="csh-item"><div class="csh-lbl">✈️ アクセス</div><div class="csh-val">日本から直行便 約7時間</div></div>
-        <div class="csh-item"><div class="csh-lbl">🚆 空港↔市内</div><div class="csh-val">KLIAエクスプレス 約28分</div></div>
-        <div class="csh-item"><div class="csh-lbl">🌤️ ベストシーズン</div><div class="csh-val">3〜9月（乾季）</div></div>
-        <div class="csh-item"><div class="csh-lbl">🍜 名物グルメ</div><div class="csh-val">ナシレマ・ロティチャナイ</div></div>
-        <div class="csh-item"><div class="csh-lbl">🚗 市内交通</div><div class="csh-val">Grab・MRT・LRT</div></div>
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">直行便 約7時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">空港↔市内</div><div class="csh-val">KLIAエクスプレス 約28分</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜9月（乾季）</div></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">ナシレマ・ロティチャナイ</div></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・MRT・LRT</div></div>
       </div>
     </div>
     <div class="item-card spot must" data-city="kl"><div class="must-badge">⭐</div><div class="ico">🏙️</div><div class="num">KL 01</div><div class="name">ペトロナスツインタワー</div><div class="desc">高さ452mの双子タワー。88階のスカイブリッジと展望台からの夜景は圧巻。入場は要予約・有料。</div><span class="badge">クアラルンプール</span></div>
@@ -875,12 +877,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <!-- ペナン -->
     <div class="city-section-header" data-city="penang">
       <div class="csh-title">ペナン</div>
+      <div class="csh-desc">多文化が交差するグルメと芸術の島</div>
       <div class="csh-grid">
-        <div class="csh-item"><div class="csh-lbl">✈️ アクセス</div><div class="csh-val">KLから国内線 約1時間</div></div>
-        <div class="csh-item"><div class="csh-lbl">⛴️ フェリー</div><div class="csh-val">対岸（バターワース）から約15分</div></div>
-        <div class="csh-item"><div class="csh-lbl">🌤️ ベストシーズン</div><div class="csh-val">11〜4月（乾季）</div></div>
-        <div class="csh-item"><div class="csh-lbl">🍜 名物グルメ</div><div class="csh-val">アッサムラクサ・チャークェイティオ</div></div>
-        <div class="csh-item"><div class="csh-lbl">🚗 市内交通</div><div class="csh-val">Grab・バス・トライショー</div></div>
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">KLから国内線 約1時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">フェリー</div><div class="csh-val">バターワースから約15分</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">11〜4月（乾季）</div></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">アッサムラクサ・チャークェイティオ</div></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・バス・トライショー</div></div>
       </div>
     </div>
     <div class="item-card spot must" data-city="penang"><div class="must-badge">⭐</div><div class="ico">🏛️</div><div class="num">ペナン 01</div><div class="name">ジョージタウン旧市街</div><div class="desc">ユネスコ世界遺産。英国植民地時代の建築・中国系家屋・モスクが混在する多文化の街。壁画アートも必見。</div><span class="badge">世界遺産</span></div>
@@ -892,12 +895,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <!-- マラッカ -->
     <div class="city-section-header" data-city="malacca">
       <div class="csh-title">マラッカ</div>
+      <div class="csh-desc">ポルトガル・オランダ統治の歴史が残る古都</div>
       <div class="csh-grid">
-        <div class="csh-item"><div class="csh-lbl">🚌 アクセス</div><div class="csh-val">KLから高速バス 約2時間</div></div>
-        <div class="csh-item"><div class="csh-lbl">🏨 おすすめ滞在</div><div class="csh-val">日帰り〜1泊</div></div>
-        <div class="csh-item"><div class="csh-lbl">🌤️ ベストシーズン</div><div class="csh-val">3〜10月</div></div>
-        <div class="csh-item"><div class="csh-lbl">🍜 名物グルメ</div><div class="csh-val">チキンライス・ニョニャ料理</div></div>
-        <div class="csh-item"><div class="csh-lbl">🚗 市内交通</div><div class="csh-val">トライショー・Grab</div></div>
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">KLから高速バス 約2時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">おすすめ滞在</div><div class="csh-val">日帰り〜1泊</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜10月</div></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">チキンライス・ニョニャ料理</div></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">トライショー・Grab</div></div>
       </div>
     </div>
     <div class="item-card spot must" data-city="malacca"><div class="must-badge">⭐</div><div class="ico">🇳🇱</div><div class="num">マラッカ 01</div><div class="name">オランダ広場（スタダイス）</div><div class="desc">17世紀にオランダが建設した赤い建物が並ぶ広場。キリスト教会・時計塔・噴水が美しいマラッカの象徴。</div><span class="badge">フォトスポット</span></div>
@@ -909,12 +913,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <!-- JB -->
     <div class="city-section-header" data-city="jb">
       <div class="csh-title">ジョホールバル</div>
+      <div class="csh-desc">シンガポールと橋でつながる国境の街</div>
       <div class="csh-grid">
-        <div class="csh-item"><div class="csh-lbl">🚌 シンガポールから</div><div class="csh-val">バス 約1〜2時間</div></div>
-        <div class="csh-item"><div class="csh-lbl">✈️ KLから</div><div class="csh-val">飛行機 約45分</div></div>
-        <div class="csh-item"><div class="csh-lbl">🌤️ ベストシーズン</div><div class="csh-val">3〜9月</div></div>
-        <div class="csh-item"><div class="csh-lbl">🍜 名物グルメ</div><div class="csh-val">シーフード・ラクサ</div></div>
-        <div class="csh-item"><div class="csh-lbl">🚗 市内交通</div><div class="csh-val">Grab・タクシー</div></div>
+        <div class="csh-item"><div class="csh-lbl">シンガポールから</div><div class="csh-val">バス 約1〜2時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">KLから</div><div class="csh-val">飛行機 約45分</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜9月</div></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">シーフード・ラクサ</div></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div></div>
       </div>
     </div>
     <div class="item-card spot" data-city="jb"><div class="ico">🧱</div><div class="num">JB 01</div><div class="name">レゴランド・マレーシア</div><div class="desc">東南アジア初のレゴランド。ミニランド・アトラクション・ウォーターパークが一体となった家族向けテーマパーク。</div><span class="badge">ファミリー</span></div>
@@ -926,12 +931,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <!-- コタキナバル -->
     <div class="city-section-header" data-city="kk">
       <div class="csh-title">コタキナバル</div>
+      <div class="csh-desc">海・山・ジャングルが揃うサバ州の州都</div>
       <div class="csh-grid">
-        <div class="csh-item"><div class="csh-lbl">✈️ アクセス</div><div class="csh-val">KLから 約2時間</div></div>
-        <div class="csh-item"><div class="csh-lbl">🌤️ ベストシーズン</div><div class="csh-val">1〜5月（乾季）</div></div>
-        <div class="csh-item"><div class="csh-lbl">🤿 ダイビング適期</div><div class="csh-val">3〜5月</div></div>
-        <div class="csh-item"><div class="csh-lbl">🍜 名物グルメ</div><div class="csh-val">シーフード・サバ式ラクサ</div></div>
-        <div class="csh-item"><div class="csh-lbl">🚗 市内交通</div><div class="csh-val">Grab・タクシー</div></div>
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">KLから 約2時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">1〜5月（乾季）</div></div>
+        <div class="csh-item"><div class="csh-lbl">ダイビング適期</div><div class="csh-val">3〜5月</div></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">シーフード・サバ式ラクサ</div></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div></div>
       </div>
     </div>
     <div class="item-card spot must" data-city="kk"><div class="must-badge">⭐</div><div class="ico">⛰️</div><div class="num">KK 01</div><div class="name">キナバル山</div><div class="desc">東南アジア最高峰（4,095m）のユネスコ世界遺産。2日間のトレッキングで登頂可能。ガイド必須・事前予約が必要。</div><span class="badge">世界遺産</span></div>
@@ -943,12 +949,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <!-- クチン -->
     <div class="city-section-header" data-city="kuching">
       <div class="csh-title">クチン</div>
+      <div class="csh-desc">「猫の街」として知られるサラワク州の州都</div>
       <div class="csh-grid">
-        <div class="csh-item"><div class="csh-lbl">✈️ アクセス</div><div class="csh-val">KLから 約1.5時間</div></div>
-        <div class="csh-item"><div class="csh-lbl">🌤️ ベストシーズン</div><div class="csh-val">3〜10月</div></div>
-        <div class="csh-item"><div class="csh-lbl">🦧 餌付け時間</div><div class="csh-val">8〜10時・15〜17時</div></div>
-        <div class="csh-item"><div class="csh-lbl">🍜 名物グルメ</div><div class="csh-val">サラワクラクサ・コロミー</div></div>
-        <div class="csh-item"><div class="csh-lbl">🚗 市内交通</div><div class="csh-val">Grab・タクシー</div></div>
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">KLから 約1.5時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜10月</div></div>
+        <div class="csh-item"><div class="csh-lbl">餌付け時間</div><div class="csh-val">8〜10時・15〜17時</div></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">サラワクラクサ・コロミー</div></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div></div>
       </div>
     </div>
     <div class="item-card spot" data-city="kuching"><div class="ico">🏛️</div><div class="num">クチン 01</div><div class="name">サラワク博物館</div><div class="desc">東南アジア有数の博物館。ボルネオ先住民族の文化・自然史を詳しく展示。1891年創設の歴史ある博物館。</div><span class="badge">入場無料</span></div>
