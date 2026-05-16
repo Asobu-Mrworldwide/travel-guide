@@ -319,7 +319,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <!-- 旅行難易度 -->
     <div style="margin-top:12px;border-top:1px solid #f0f0f0;padding-top:12px">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-        <span style="font-size:1.3em">🧭</span>
+        <span style="font-size:1.3em">📌</span>
         <span style="font-size:0.82em;color:var(--sub);font-weight:600">旅行難易度</span>
         <span style="margin-left:auto;background:#e8f5ee;color:var(--green);font-size:0.8em;font-weight:700;padding:3px 10px;border-radius:20px">やさしい</span>
       </div>
@@ -343,34 +343,6 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[2])">予算・費用を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[6])">フレーズ集を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div></div></div>
-  </div>
-
-  <!-- ④ ベストシーズン（簡易） -->
-  <h2>🌤️ ベストシーズン</h2>
-  <div class="card" style="padding:14px">
-    <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">年間を通して25〜32℃の常夏。地域によって雨季・乾季が異なります。</p>
-    <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">クアラルンプール</div>
-    <div class="season-mini">
-      <div class="sm-col"><div class="sm-lbl">1月</div><div class="sm-dot t-mild">☔<span class="sm-t">27°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">2月</div><div class="sm-dot t-warm">⛅<span class="sm-t">28°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">3月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">4月</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">5月</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">6月</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">7月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">8月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">9月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">10月</div><div class="sm-dot t-warm">☔<span class="sm-t">28°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">11月</div><div class="sm-dot t-mild">☔<span class="sm-t">27°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">12月</div><div class="sm-dot t-mild">☔<span class="sm-t">27°</span></div></div>
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:0.72em;color:var(--sub);margin-top:8px;align-items:center">
-      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ff5000,#ff9000);border-radius:2px;vertical-align:middle;margin-right:3px"></span>29°C 最も暑い</span>
-      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ff8400,#ffb200);border-radius:2px;vertical-align:middle;margin-right:3px"></span>28°C 暖かい</span>
-      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ffb800,#ffe060);border-radius:2px;vertical-align:middle;margin-right:3px"></span>27°C やや低め</span>
-      <span style="margin-left:2px">｜ ☀️ 乾季　⛅ 曇り　☔ 雨季</span>
-    </div>
-    <button class="see-more" style="margin-top:10px;margin-bottom:0" onclick="show('season',document.querySelectorAll('nav button')[1])">地域別ベストシーズンを詳しく見る →</button>
   </div>
 
   <!-- ⑤ 主要都市 -->
@@ -478,6 +450,34 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="city-item" onclick="zoomToCity('kk')"><div class="ci-badge" style="color:var(--green)">🌿 ボルネオ</div><div class="ci-name">コタキナバル</div><div class="ci-desc">海・山・ジャングルが揃うサバ州の州都</div><div class="ci-btns"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kk')">観光地を見る</button></div></div>
       <div class="city-item" onclick="zoomToCity('kuching')"><div class="ci-badge" style="color:var(--green)">🌿 ボルネオ</div><div class="ci-name">クチン</div><div class="ci-desc">「猫の街」として知られるサラワク州の州都</div><div class="ci-btns"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kuching')">観光地を見る</button></div></div>
     </div>
+  </div>
+
+  <!-- ④ ベストシーズン（簡易） -->
+  <h2>🌤️ ベストシーズン</h2>
+  <div class="card" style="padding:14px">
+    <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">年間を通して25〜32℃の常夏。地域によって雨季・乾季が異なります。</p>
+    <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">クアラルンプール</div>
+    <div class="season-mini">
+      <div class="sm-col"><div class="sm-lbl">1月</div><div class="sm-dot t-mild">☔<span class="sm-t">27°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">2月</div><div class="sm-dot t-warm">⛅<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">3月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">4月</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">5月</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">6月</div><div class="sm-dot t-hot">☀️<span class="sm-t">29°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">7月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">8月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">9月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">10月</div><div class="sm-dot t-warm">☔<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">11月</div><div class="sm-dot t-mild">☔<span class="sm-t">27°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">12月</div><div class="sm-dot t-mild">☔<span class="sm-t">27°</span></div></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:0.72em;color:var(--sub);margin-top:8px;align-items:center">
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ff5000,#ff9000);border-radius:2px;vertical-align:middle;margin-right:3px"></span>29°C 最も暑い</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ff8400,#ffb200);border-radius:2px;vertical-align:middle;margin-right:3px"></span>28°C 暖かい</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ffb800,#ffe060);border-radius:2px;vertical-align:middle;margin-right:3px"></span>27°C やや低め</span>
+      <span style="margin-left:2px">｜ ☀️ 乾季　⛅ 曇り　☔ 雨季</span>
+    </div>
+    <button class="see-more" style="margin-top:10px;margin-bottom:0" onclick="show('season',document.querySelectorAll('nav button')[1])">地域別ベストシーズンを詳しく見る →</button>
   </div>
 
   <!-- ⑥ 基本データ（補足） -->
@@ -732,7 +732,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <div class="manner-card do"><div class="m-ico">🕌</div><div class="m-title">モスクでは肌を隠す</div><div class="m-desc">モスク見学時は肌の露出を控え、靴を脱ぐ。女性はスカーフで髪を覆う。</div></div>
     <div class="manner-card dont"><div class="m-ico">🚬</div><div class="m-title">屋内は全面禁煙</div><div class="m-desc">レストランなど屋内の公共の場は全面禁煙。喫煙は指定場所のみ。</div></div>
     <div class="manner-card do"><div class="m-ico">📸</div><div class="m-title">撮影前に一言</div><div class="m-desc">人物や宗教施設を撮影する際は必ず許可を取る。特にモスク・寺院は要注意。</div></div>
-    <div class="manner-card do"><div class="m-ico">🙏</div><div class="m-title">お祈り時間を尊重</div><div class="m-desc">イスラム教徒は1日5回お祈りをする。日没後1時間は電話・訪問を避けると丁寧。</div></div>
+    <div class="manner-card do"><div class="m-ico">☪️</div><div class="m-title">お祈り時間を尊重</div><div class="m-desc">イスラム教徒は1日5回お祈りをする。日没後1時間は電話・訪問を避けると丁寧。</div></div>
   </div>
 </section>
 
@@ -795,12 +795,12 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <tr><td class="jp">元気ですか？</td><td class="ms">Apa khabar?<span class="roma">アパ カバル？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('apa-khabar.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">元気です。あなたは？</td><td class="ms">Khabar baik. Awak?<span class="roma">カバル バイク。アワッ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('khabar-baik.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">バイバイ</td><td class="ms">Selamat tinggal<span class="roma">スラマッ ティンガル</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('selamat-tinggal.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">綺麗ですね！</td><td class="ms">Cantik sekali!<span class="roma">チャンティッ スカリ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('cantik-sekali.mp3',this)">▶</button></td></tr>
     <tr class="cat-hdr"><td colspan="3">🙏 基本表現</td></tr>
     <tr><td class="jp">ありがとう</td><td class="ms">Terima kasih<span class="roma">トゥリマ カシ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('terima-kasih.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">ごめんなさい</td><td class="ms">Minta maaf<span class="roma">ミンタ マーフ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('minta-maaf.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">大丈夫</td><td class="ms">Tidak apa-apa<span class="roma">ティダッ アパアパ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('tidak-apa-apa.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">はい / いいえ</td><td class="ms">Ya / Tidak<span class="roma">ヤー / ティダッ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('ya-tidak.mp3',this)">▶</button></td></tr>
-    <tr class="cat-hdr"><td colspan="3">👤 自己紹介</td></tr>
     <tr><td class="jp">名前は〜です</td><td class="ms">Nama saya ～<span class="roma">ナマ サヤ ～</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('nama-saya.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">名前は何ですか？</td><td class="ms">Siapa nama awak?<span class="roma">シアパ ナマ アワッ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('siapa-nama.mp3',this)">▶</button></td></tr>
     <tr class="cat-hdr"><td colspan="3">🍽️ レストラン</td></tr>
@@ -812,16 +812,14 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <tr><td class="jp">お会計お願いします</td><td class="ms">Boleh minta bil?<span class="roma">ボレ ミンタ ビル？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('boleh-minta-bil.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">カード払い</td><td class="ms">Kad kredit<span class="roma">カッ クレディッ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('kad-kredit.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">現金</td><td class="ms">Tunai<span class="roma">トゥナイ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('tunai.mp3',this)">▶</button></td></tr>
-    <tr class="cat-hdr"><td colspan="3">🛍️ ショッピング</td></tr>
+    <tr><td class="jp">トイレどこですか？</td><td class="ms">Di mana tandas?<span class="roma">ディ マナ タンダス？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('di-mana-tandas.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">これ</td><td class="ms">Ini<span class="roma">イニ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('ini.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">ください</td><td class="ms">Saya nak ini<span class="roma">サヤ ナッ イニ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('saya-nak-ini.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">いくらですか？</td><td class="ms">Berapa harga ini?<span class="roma">ブラパ ハルガ イニ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('berapa-harga.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">結構です</td><td class="ms">Tak nak, terima kasih<span class="roma">タッ ナッ、トゥリマ カシ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('tak-nak.mp3',this)">▶</button></td></tr>
-    <tr class="cat-hdr"><td colspan="3">🗺️ 移動・観光</td></tr>
     <tr><td class="jp">ここに行きたい</td><td class="ms">Saya nak pergi ke sini<span class="roma">サヤ ナッ プルギ ク シニ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('saya-nak-pergi.mp3',this)">▶</button></td></tr>
-    <tr><td class="jp">トイレどこですか？</td><td class="ms">Di mana tandas?<span class="roma">ディ マナ タンダス？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('di-mana-tandas.mp3',this)">▶</button></td></tr>
-    <tr><td class="jp">綺麗ですね！</td><td class="ms">Cantik sekali!<span class="roma">チャンティッ スカリ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('cantik-sekali.mp3',this)">▶</button></td></tr>
     <tr class="cat-hdr"><td colspan="3">🔢 数字</td></tr>
+    <tr><td class="jp">0</td><td class="ms">Kosong<span class="roma">コソン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('kosong.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">1〜5</td><td class="ms">Satu・Dua・Tiga・Empat・Lima<span class="roma">サトゥ・ドゥア・ティガ・エンパッ・リマ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('satu-lima.mp3',this)">▶</button></td></tr>
     <tr><td class="jp">6〜10</td><td class="ms">Enam・Tujuh・Lapan・Sembilan・Sepuluh<span class="roma">エナム・トゥジュ・ラパン・スンビラン・スプル</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('enam-sepuluh.mp3',this)">▶</button></td></tr>
   </table>
