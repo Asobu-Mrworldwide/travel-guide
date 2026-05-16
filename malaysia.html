@@ -82,7 +82,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 .month-col{text-align:center}
 .month-lbl{font-size:0.72em;color:var(--sub);margin-bottom:3px;font-weight:600}
 .month-dot{width:100%;height:62px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.9em;font-weight:700;flex-direction:column;gap:2px}
-.md-t{font-size:0.95em;font-weight:700;line-height:1}
+.md-t{font-size:0.95em;font-weight:700;line-height:1;text-align:center;width:100%}
 /* 気温帯カラー（暖色グラデーション） */
 .t-hot{background:linear-gradient(160deg,#ff5000,#ff9000);color:#5a1400}
 .t-warm{background:linear-gradient(160deg,#ff8400,#ffb200);color:#5a2800}
@@ -185,8 +185,8 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 .season-mini{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin:8px 0 6px}
 .sm-col{text-align:center}
 .sm-lbl{font-size:0.65em;color:var(--sub);margin-bottom:2px;font-weight:600}
-.sm-dot{height:52px;border-radius:5px;font-size:0.9em;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px}
-.sm-t{font-size:0.7em;font-weight:700;line-height:1}
+.sm-dot{height:52px;border-radius:5px;font-size:0.9em;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;width:100%}
+.sm-t{font-size:0.7em;font-weight:700;line-height:1;text-align:center;width:100%}
 
 /* CITY GRID */
 .city-grid-wrap{display:grid;grid-template-columns:repeat(3,1fr)}
@@ -339,7 +339,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
   <div class="qs-row">
     <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約7時間</div></div></div>
     <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −1時間</div></div></div>
-    <div class="qs-card"><div class="qs-ico">🛂</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[3])">旅の準備を見る →</button></div></div>
+    <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[3])">旅の準備を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[2])">予算・費用を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[6])">フレーズ集を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div></div></div>
@@ -652,12 +652,12 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="budget-price">500〜2,000円/日</div>
     </div>
     <div class="budget-row">
-      <div class="budget-ico">🎟️</div>
+      <div class="budget-ico">🎡</div>
       <div class="budget-info"><div class="b-title">観光・アクティビティ</div><div class="b-sub">無料スポット多数。モスク・公園など<br>有料でも入場料は安い</div></div>
       <div class="budget-price">500〜3,000円/日</div>
     </div>
     <div class="budget-row">
-      <div class="budget-ico">📱</div>
+      <div class="budget-ico">🌐</div>
       <div class="budget-info"><div class="b-title">SIM・Wi-Fi</div><div class="b-sub">空港でSIM購入が便利（7日間〜）<br>ホテル・カフェのWi-Fiは無料が多い</div></div>
       <div class="budget-price">500〜1,500円</div>
     </div>
@@ -687,6 +687,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <div class="prac-card"><div class="p-ico">🌴</div><div class="p-title">気温</div><div class="p-val">年中25〜32℃</div></div>
     <div class="prac-card"><div class="p-ico">🙏</div><div class="p-title">チップ</div><div class="p-val">基本不要</div></div>
     <div class="prac-card"><div class="p-ico">💧</div><div class="p-title">水道水</div><div class="p-val">飲用不可（ペットボトル推奨）</div></div>
+    <div class="prac-card"><div class="p-ico">💳</div><div class="p-title">カード払い</div><div class="p-val">ホテル・モール◎・屋台は現金</div></div>
   </div>
 
   <h2>入国時の注意</h2>
