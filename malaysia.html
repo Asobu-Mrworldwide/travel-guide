@@ -205,6 +205,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 .csh-title{font-size:1em;font-weight:900;color:var(--green);margin-bottom:3px}
 .csh-desc{font-size:0.8em;color:#666;margin-bottom:10px;line-height:1.5}
 .csh-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+@media(max-width:480px){.csh-grid{grid-template-columns:1fr}}
 .csh-item{display:flex;gap:6px;align-items:baseline;padding:4px 0;border-bottom:1px solid #f5f5f5}
 .csh-item .csh-lbl{font-size:0.65em;color:#aaa;flex-shrink:0;width:8.5em}
 .csh-item .csh-val{font-size:0.8em;font-weight:700;color:var(--text)}
@@ -558,7 +559,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-mild">☔<span class="md-t">27°C</span></div></div>
       <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☔<span class="md-t">27°C</span></div></div>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：3〜9月（乾季）／ 雨季でもスコール程度で観光可能</p><button onclick="showFilteredSpots('kl')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0">観光スポットを見る →</button></div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：3〜9月（乾季）／ 雨季でもスコール程度で観光可能</p><button onclick="showFilteredSpots('kl')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
   </div>
 
   <div class="city-season card" style="margin-bottom:10px">
@@ -577,7 +578,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
       <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☀️<span class="md-t">27°C</span></div></div>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：11〜4月（西海岸の乾季） ／ 9〜10月は北東モンスーンの影響で雨多め</p><button onclick="showFilteredSpots('penang')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0">観光スポットを見る →</button></div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：11〜4月（西海岸の乾季） ／ 9〜10月は北東モンスーンの影響で雨多め</p><button onclick="showFilteredSpots('penang')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
   </div>
 
   <div class="city-season card" style="margin-bottom:10px">
@@ -596,7 +597,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-mild">☔<span class="md-t">27°C</span></div></div>
       <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">⛅<span class="md-t">27°C</span></div></div>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：1〜5月（乾季・ダイビング最適） ／ 9〜11月は雨季で海が荒れやすい</p><button onclick="showFilteredSpots('kk')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0">観光スポットを見る →</button></div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：1〜5月（乾季・ダイビング最適） ／ 9〜11月は雨季で海が荒れやすい</p><button onclick="showFilteredSpots('kk')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
   </div>
 
   <div class="card" style="background:#fffbf0;border-left:4px solid var(--yellow)">
