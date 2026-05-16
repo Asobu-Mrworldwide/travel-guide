@@ -158,13 +158,14 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 .trans-item .t-info .t-desc{font-size:0.78em;color:var(--sub);line-height:1.7}
 
 /* QUICK STATS LINK */
-.qs-link{display:inline-block;margin-top:5px;font-size:0.7em;color:var(--green);font-weight:700;background:#e8f5ee;border:none;border-radius:20px;padding:2px 8px;cursor:pointer;white-space:nowrap}
+.qs-link{display:block;margin-top:5px;margin-left:auto;font-size:0.7em;color:var(--green);font-weight:700;background:#e8f5ee;border:none;border-radius:20px;padding:2px 8px;cursor:pointer;white-space:nowrap;width:fit-content}
 .qs-link:hover{background:#d0eedd}
 
 /* QUICK STATS */
 .qs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
 .qs-card{background:var(--card);border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
 .qs-ico{font-size:1.4em;flex-shrink:0}
+.qs-card > div:last-child{flex:1;min-width:0}
 .qs-lbl{font-size:0.7em;color:var(--sub)}
 .qs-val{font-size:0.88em;font-weight:700;line-height:1.2}
 
@@ -195,7 +196,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 .ci-badge.green{color:var(--green);border-color:var(--green)}
 .ci-name{font-size:0.87em;font-weight:700}
 .ci-desc{font-size:0.75em;color:var(--sub);margin-top:2px;line-height:1.6;flex:1}
-.ci-btns{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap}
+.ci-btns{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap;justify-content:flex-end}
 .ci-more{font-size:0.72em;color:var(--green);font-weight:700}
 .ci-spots{font-size:0.72em;color:var(--green);font-weight:700;background:#e8f5ee;border:none;border-radius:10px;padding:3px 8px;cursor:pointer;line-height:1.6}
 .ci-spots:hover{background:#d0eedd}
@@ -301,13 +302,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
         <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">📍 人気No.1観光地</div>
         <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ペトロナスツインタワー</div>
         <div style="font-size:0.8em;color:var(--sub);flex:1">クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。</div>
-        <button class="qs-link" style="margin-top:8px;align-self:flex-start" onclick="show('spots',document.querySelectorAll('nav button')[8])">観光スポットを見る →</button>
+        <button class="qs-link" style="margin-top:8px;align-self:flex-end" onclick="show('spots',document.querySelectorAll('nav button')[8])">観光スポットを見る →</button>
       </div>
       <div style="background:#f8faf8;border-radius:10px;padding:10px 12px;display:flex;flex-direction:column">
         <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">🍜 人気No.1グルメ</div>
         <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ナシレマ</div>
         <div style="font-size:0.8em;color:var(--sub);flex:1">ココナッツミルクで炊いたご飯の国民食。朝食から屋台まで幅広く楽しめる。</div>
-        <button class="qs-link" style="margin-top:8px;align-self:flex-start;background:#fff0f0;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[7])">グルメ10選を見る →</button>
+        <button class="qs-link" style="margin-top:8px;align-self:flex-end;background:#fff0f0;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[7])">グルメ10選を見る →</button>
       </div>
     </div>
 
@@ -469,7 +470,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ffb800,#ffe060);border-radius:2px;vertical-align:middle;margin-right:3px"></span>27°C やや低め</span>
       <span style="margin-left:2px">｜ ☀️ 乾季　⛅ 曇り　☔ 雨季</span>
     </div>
-    <button class="see-more" style="margin-top:10px;margin-bottom:0" onclick="show('season',document.querySelectorAll('nav button')[1])">地域別ベストシーズンを詳しく見る →</button>
+    <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[1])">地域別ベストシーズンを詳しく見る →</button>
   </div>
 
   <!-- ⑥ 基本データ（補足） -->
