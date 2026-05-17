@@ -67,6 +67,31 @@ footer{text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-to
   <div class="progress-label" id="progress-label">0 / 0 チェック済み</div>
   <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
 
+  <!-- 機内持ち込みルール -->
+  <div style="background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:12px">
+    <div style="font-size:0.85em;font-weight:900;color:var(--green);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #f0f0f0">✈️ 機内持ち込みルール</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+      <div style="background:#f5f7f5;border-radius:8px;padding:10px">
+        <div style="font-size:0.7em;color:var(--sub);font-weight:700;margin-bottom:3px">サイズ（目安）</div>
+        <div style="font-size:0.82em;font-weight:700">55×40×25 cm</div>
+        <div style="font-size:0.68em;color:var(--sub);margin-top:2px">3辺合計115cm以内が目安</div>
+      </div>
+      <div style="background:#f5f7f5;border-radius:8px;padding:10px">
+        <div style="font-size:0.7em;color:var(--sub);font-weight:700;margin-bottom:3px">重量（目安）</div>
+        <div style="font-size:0.82em;font-weight:700">7〜10 kg</div>
+        <div style="font-size:0.68em;color:var(--sub);margin-top:2px">LCCは7kg・一般航空は10kg前後</div>
+      </div>
+    </div>
+    <div style="background:#fff8f0;border-radius:8px;padding:10px;margin-bottom:8px">
+      <div style="font-size:0.75em;font-weight:700;margin-bottom:4px">💧 液体物ルール</div>
+      <ul style="font-size:0.73em;color:var(--sub);line-height:1.8;padding-left:16px">
+        <li>1容器あたり <strong style="color:var(--text)">100ml以下</strong></li>
+        <li>合計 <strong style="color:var(--text)">1L以内</strong>（1辺20cm程度の透明ジップロックに収める）</li>
+      </ul>
+    </div>
+    <div style="font-size:0.7em;color:#e07000;font-weight:600">⚠️ 航空会社によって異なる場合があります。搭乗前に必ず確認してください。</div>
+  </div>
+
   <!-- 必須書類 -->
   <div class="category">
     <div class="cat-header">
@@ -126,12 +151,14 @@ footer{text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-to
       <span class="cat-title">衣類・身の回り</span>
       <span class="cat-count" id="count-clothes"></span>
     </div>
+    <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ボディバッグ</div><div class="item-note">街歩きに便利。前掛けにするとスリ対策にもなる。</div></div><span class="item-tag tag-must">必須</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">財布</div><div class="item-note">海外ではスリ対策としてコンパクトな財布が◎。必要最低限のカードと現金だけ入れておくと安心。</div></div><span class="item-tag tag-must">必須</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">薄手の羽織もの・カーディガン</div><div class="item-note">ショッピングモール・機内の冷房は強め。夏でも1枚必須。</div></div><span class="item-tag tag-must">必須</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">歩きやすいサンダル・スニーカー</div><div class="item-note">観光で長距離歩くことが多い。宗教施設入場時はサンダル・露出が制限される場合あり。</div></div><span class="item-tag tag-must">必須</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">下着・靴下（日数分+α）</div><div class="item-note">毎日ホテルで洗濯するなら2日分あれば十分。予備あると安心。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">Tシャツ（日数分）</div><div class="item-note">マレーシアは年中暑いため、薄手・速乾素材のものが◎。洗濯する前提なら2枚あれば十分。</div></div><span class="item-tag tag-must">必須</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ウィンドブレーカー</div><div class="item-note">防風・防寒に。明るい色のウィンドブレーカーは写真映えもするのでおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
-    <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ウルトラライトダウン</div><div class="item-note">薄くてコンパクトに収納できる。機内や冷房の効いた室内での防寒に活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ウルトラライト ダウン</div><div class="item-note">薄くてコンパクトに収納できる。機内や冷房の効いた室内での防寒に活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">カーゴパンツ</div><div class="item-note">ポケットが多く、パスポートや現金を分散して収納できる。ひったくりや盗難に遭っても被害を最小限に抑えられる。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">帽子</div><div class="item-note">強い日差しや紫外線対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">サングラス</div><div class="item-note">強い紫外線対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
