@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海外旅行 持ち物チェックリスト</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#006847;--red:#cc0001;--bg:#f5f7f5;--card:#fff;--text:#1a1a1a;--sub:#555}
+body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+.page-header{background:var(--green);color:#fff;padding:16px 16px 14px}
+.page-header h1{font-size:1.05em;font-weight:900;letter-spacing:0.02em}
+.page-header p{font-size:0.78em;opacity:0.85;margin-top:4px}
+.back-link{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,0.8);font-size:0.78em;text-decoration:none;margin-bottom:10px}
+
+.container{max-width:820px;margin:0 auto;padding:14px}
+
+/* ACTIONS */
+.actions{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.btn{background:var(--green);color:#fff;border:none;padding:8px 16px;border-radius:20px;font-size:0.78em;font-weight:700;cursor:pointer}
+.btn.outline{background:#fff;color:var(--green);border:1.5px solid var(--green)}
+.progress-bar{background:#e0e0e0;border-radius:20px;height:8px;margin-bottom:16px;overflow:hidden}
+.progress-fill{height:100%;background:var(--green);border-radius:20px;transition:width 0.3s ease}
+.progress-label{font-size:0.75em;color:var(--sub);margin-bottom:6px}
+
+/* CATEGORY */
+.category{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:12px}
+.cat-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #f0f0f0}
+.cat-icon{font-size:1.3em}
+.cat-title{font-size:0.9em;font-weight:900;color:var(--green)}
+.cat-count{font-size:0.72em;color:var(--sub);margin-left:auto}
+
+/* ITEM */
+.item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f8f8f8;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.item:last-child{border-bottom:none}
+.item input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--green);cursor:pointer}
+.item-text{flex:1}
+.item-name{font-size:0.85em;font-weight:700;transition:color 0.2s}
+.item-note{font-size:0.73em;color:var(--sub);margin-top:1px;line-height:1.5}
+.item.checked .item-name{color:#bbb;text-decoration:line-through}
+.item.checked .item-note{color:#ccc}
+.item-tag{font-size:0.65em;font-weight:700;padding:1px 7px;border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:3px}
+.tag-must{background:#fff0f0;color:var(--red)}
+.tag-opt{background:#f0f0f0;color:#888}
+
+/* FOOTER */
+footer{text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-top:1px solid #e8e8e8;margin-top:8px}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a href="malaysia.html" class="back-link">← マレーシア旅行ガイドへ戻る</a>
+  <h1>📋 海外旅行 持ち物チェックリスト</h1>
+  <p>チェックしてそのまま持ち物確認に使えます。チェック状態は自動保存されます。</p>
+</div>
+
+<div class="container">
+
+  <div class="actions">
+    <button class="btn" onclick="checkAll()">すべてチェック</button>
+    <button class="btn outline" onclick="resetAll()">リセット</button>
+  </div>
+
+  <div class="progress-label" id="progress-label">0 / 0 チェック済み</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+
+  <!-- 必須書類 -->
+  <div class="category">
+    <div class="cat-header">
+      <span class="cat-icon">📄</span>
+      <span class="cat-title">必須書類</span>
+      <span class="cat-count" id="count-docs"></span>
+    </div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">パスポート</div><div class="item-note">残存有効期間6ヶ月以上が目安。入国時に提示。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">パスポートのコピー（2〜3枚）</div><div class="item-note">紛失時の再発行に必要。パスポートとは別の場所に保管。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">航空券・eチケット（印刷 or スクショ）</div><div class="item-note">スマホが使えない状況でも確認できるよう印刷推奨。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">ホテル予約確認書</div><div class="item-note">入国審査で宿泊先を聞かれることがある。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">海外旅行保険の証書・緊急連絡先</div><div class="item-note">病院受診時・緊急時に必要。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">MDAC登録の完了確認</div><div class="item-note">マレーシア入国3日前〜登録。完了画面のスクリーンショットを保存。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">クレジットカード（海外対応）</div><div class="item-note">Visa / Mastercardが便利。暗証番号を事前確認。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">現金（円 or リンギット）</div><div class="item-note">空港到着後にまず現地通貨が必要。最低5,000〜10,000円分は用意を。</div></div><span class="item-tag tag-must">必須</span></div>
+  </div>
+
+  <!-- 電子機器・充電 -->
+  <div class="category">
+    <div class="cat-header">
+      <span class="cat-icon">🔌</span>
+      <span class="cat-title">電子機器・充電</span>
+      <span class="cat-count" id="count-elec"></span>
+    </div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">スマートフォン・充電ケーブル</div><div class="item-note">地図・翻訳・Grabなどに必須。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">変換アダプター（BFタイプ・三又）</div><div class="item-note">マレーシアはイギリス式三又プラグ（BFタイプ）。変換なしでは使えない。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">モバイルバッテリー</div><div class="item-note">観光中・移動中の充電に。機内持ち込みOK（預け荷物はNG）。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">イヤホン</div><div class="item-note">機内・カフェでの使用に。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">カメラ・充電池</div><div class="item-note">スマホで代用する場合は不要。</div></div><span class="item-tag tag-opt">任意</span></div>
+  </div>
+
+  <!-- 衛生・健康 -->
+  <div class="category">
+    <div class="cat-header">
+      <span class="cat-icon">💊</span>
+      <span class="cat-title">衛生・健康</span>
+      <span class="cat-count" id="count-health"></span>
+    </div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">常備薬（頭痛・胃腸薬など）</div><div class="item-note">海外の薬は成分や量が異なることも。使い慣れた薬を持参。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">日焼け止め</div><div class="item-note">熱帯の日差しは強烈。SPF50+を推奨。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">虫除けスプレー</div><div class="item-note">デング熱予防に。熱帯地域は蚊が多い。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">ポケットティッシュ・ウェットティッシュ</div><div class="item-note">有料トイレや屋台利用時に重宝。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">マスク</div><div class="item-note">体調不良時・砂埃対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">目薬・コンタクト用品</div><div class="item-note">乾燥した機内や冷房対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
+  </div>
+
+  <!-- 衣類・身の回り -->
+  <div class="category">
+    <div class="cat-header">
+      <span class="cat-icon">👗</span>
+      <span class="cat-title">衣類・身の回り</span>
+      <span class="cat-count" id="count-clothes"></span>
+    </div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">薄手の羽織もの・カーディガン</div><div class="item-note">ショッピングモール・機内の冷房は強め。1枚必須。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">折りたたみ傘</div><div class="item-note">スコール（突然の豪雨）に備えて。コンパクトなものが便利。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">歩きやすいサンダル・スニーカー</div><div class="item-note">観光で長距離歩くことが多い。ビーサンはNG（モスク・寺院入場時も注意）。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">下着・靴下（日数分+α）</div><div class="item-note">現地洗濯も可能だが予備あると安心。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">スカーフ・ショール（女性）</div><div class="item-note">モスク・ヒンドゥー寺院の見学時に頭・肩を覆うために使用。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">サングラス</div><div class="item-note">強い紫外線対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
+  </div>
+
+  <!-- 便利グッズ -->
+  <div class="category">
+    <div class="cat-header">
+      <span class="cat-icon">🎒</span>
+      <span class="cat-title">便利グッズ</span>
+      <span class="cat-count" id="count-goods"></span>
+    </div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">エコバッグ・折りたたみトート</div><div class="item-note">マレーシアはレジ袋有料。観光・ショッピングにも使える。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">南京錠・鍵</div><div class="item-note">ゲストハウスや荷物の盗難対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">圧縮袋</div><div class="item-note">衣類をコンパクトに収納。帰りのスーツケースの空きを確保。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">緊急連絡先メモ（紙）</div><div class="item-note">大使館・保険会社・カード紛失連絡先。スマホとは別で携帯。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">戸籍謄本（コピー）</div><div class="item-note">海外緊急入院・大使館での手続き時に役立つことがある。</div></div><span class="item-tag tag-opt">任意</span></div>
+  </div>
+
+  <!-- 機内用 -->
+  <div class="category">
+    <div class="cat-header">
+      <span class="cat-icon">✈️</span>
+      <span class="cat-title">機内・移動用</span>
+      <span class="cat-count" id="count-flight"></span>
+    </div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">ネックピロー</div><div class="item-note">長時間フライト（約7時間）の睡眠に。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">アイマスク・耳栓</div><div class="item-note">夜行便・長距離移動での睡眠の質を上げる。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">機内用スリッパ</div><div class="item-note">LCCでは配られないことがある。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this)"><input type="checkbox"><div class="item-text"><div class="item-name">保湿クリーム・リップクリーム</div><div class="item-note">機内は非常に乾燥する。液体は100ml以下に。</div></div><span class="item-tag tag-opt">任意</span></div>
+  </div>
+
+</div>
+
+<footer>© 2026 海外旅行情報サイト</footer>
+
+<script>
+const STORAGE_KEY = 'checklist_malaysia';
+
+function getItems(){ return document.querySelectorAll('.item'); }
+
+function toggle(el){
+  const cb = el.querySelector('input[type="checkbox"]');
+  cb.checked = !cb.checked;
+  el.classList.toggle('checked', cb.checked);
+  save();
+  updateProgress();
+}
+
+function save(){
+  const state = {};
+  getItems().forEach((el, i) => {
+    state[i] = el.querySelector('input').checked;
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+
+function load(){
+  try {
+    const state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    getItems().forEach((el, i) => {
+      if(state[i]){
+        el.querySelector('input').checked = true;
+        el.classList.add('checked');
+      }
+    });
+  } catch(e){}
+}
+
+function updateProgress(){
+  const items = getItems();
+  const total = items.length;
+  const done = [...items].filter(el => el.querySelector('input').checked).length;
+  document.getElementById('progress-label').textContent = `${done} / ${total} チェック済み`;
+  document.getElementById('progress-fill').style.width = (total ? done/total*100 : 0) + '%';
+
+  // カテゴリ別カウント
+  document.querySelectorAll('.category').forEach(cat => {
+    const catItems = cat.querySelectorAll('.item');
+    const catDone = [...catItems].filter(el => el.querySelector('input').checked).length;
+    const countEl = cat.querySelector('[id^="count-"]');
+    if(countEl) countEl.textContent = `${catDone}/${catItems.length}`;
+  });
+}
+
+function checkAll(){
+  getItems().forEach(el => {
+    el.querySelector('input').checked = true;
+    el.classList.add('checked');
+  });
+  save(); updateProgress();
+}
+
+function resetAll(){
+  if(!confirm('チェックをすべてリセットしますか？')) return;
+  getItems().forEach(el => {
+    el.querySelector('input').checked = false;
+    el.classList.remove('checked');
+  });
+  localStorage.removeItem(STORAGE_KEY);
+  updateProgress();
+}
+
+// 初期化
+load();
+updateProgress();
+</script>
+</body>
+</html>
