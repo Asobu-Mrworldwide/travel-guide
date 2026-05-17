@@ -257,11 +257,11 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
   .see-more{font-size:0.85em}
 }
 /* ROADMAP TIMELINE */
-.rmw{display:flex}
-.rml{display:flex;flex-direction:column;align-items:center;width:24px;flex-shrink:0}
-.rml-dot{width:12px;height:12px;border-radius:50%;background:#fff;flex-shrink:0}
-.rml-seg{width:3px;flex-shrink:0;border-radius:2px}
-.rmr{flex:1;padding-left:14px;display:flex;flex-direction:column}
+.rm-item{display:flex}
+.rm-left{display:flex;flex-direction:column;align-items:center;width:24px;flex-shrink:0}
+.rm-dot{width:12px;height:12px;border-radius:50%;background:#fff;flex-shrink:0;margin-top:5px}
+.rm-bar{width:3px;flex:1;min-height:16px;border-radius:2px;margin:3px 0}
+.rm-right{flex:1;padding-left:14px;padding-bottom:18px}
 .rmr-title{font-size:0.85em;font-weight:700;margin-bottom:3px}
 .rmr-desc{font-size:0.73em;color:var(--sub);line-height:1.6}
 </style>
@@ -705,68 +705,77 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
   <!-- 2. 準備は早めに -->
   <h2>準備は早めに</h2>
   <div class="card">
-    <div class="rmw">
-      <!-- 左：バー列 -->
-      <div class="rml">
-        <div style="height:22px"></div>
-        <div class="rml-dot" style="border:3px solid #006847"></div>
-        <div class="rml-seg" style="height:68px;background:linear-gradient(to bottom,#006847,#1a8a5a)"></div>
-        <div class="rml-dot" style="border:3px solid #1a8a5a"></div>
-        <div class="rml-seg" style="height:74px;background:linear-gradient(to bottom,#1a8a5a,#b09000)"></div>
-        <div class="rml-dot" style="border:3px solid #b09000"></div>
-        <div class="rml-seg" style="height:60px;background:#b09000"></div>
-        <div class="rml-dot" style="border:3px solid #b09000"></div>
-        <div class="rml-seg" style="height:60px;background:linear-gradient(to bottom,#b09000,#cc5500)"></div>
-        <div class="rml-dot" style="border:3px solid #cc5500"></div>
-        <div class="rml-seg" style="height:60px;background:linear-gradient(to bottom,#cc5500,#cc0001)"></div>
-        <div class="rml-dot" style="border:3px solid #cc0001"></div>
-        <div style="font-size:0.6em;font-weight:700;color:#cc0001;margin-top:4px">出発</div>
-      </div>
-      <!-- 右：テキスト列 -->
-      <div class="rmr">
-        <div style="height:22px"></div>
-        <div style="height:80px">
+    <div style="padding-top:8px">
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #006847"></div>
+          <div class="rm-bar" style="background:linear-gradient(to bottom,#006847,#1a8a5a)"></div>
+        </div>
+        <div class="rm-right">
           <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
             <div class="rmr-title" style="margin:0">パスポート取得・更新</div>
             <span style="font-size:0.65em;color:#006847;font-weight:600;white-space:nowrap">1〜2ヶ月前</span>
           </div>
           <div class="rmr-desc">申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。査証スタンプ用の空白ページも<strong>2ページ以上</strong>必要。</div>
         </div>
-        <div style="height:86px">
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #1a8a5a"></div>
+          <div class="rm-bar" style="background:linear-gradient(to bottom,#1a8a5a,#b09000)"></div>
+        </div>
+        <div class="rm-right">
           <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
             <div class="rmr-title" style="margin:0">海外対応クレジットカードの申込</div>
             <span style="font-size:0.65em;color:#006847;font-weight:600;white-space:nowrap">1ヶ月前</span>
           </div>
-          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:8px">
-            <div class="rmr-desc" style="flex:1">審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。</div>
-            <a href="#money" style="color:var(--green);font-size:0.73em;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0">Wiseカードについて →</a>
-          </div>
+          <div class="rmr-desc">審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。<a href="#money" style="color:var(--green);font-size:0.9em;font-weight:600;text-decoration:none;white-space:nowrap;margin-left:6px">Wiseカードについて →</a></div>
         </div>
-        <div style="height:72px">
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #b09000"></div>
+          <div class="rm-bar" style="background:#b09000"></div>
+        </div>
+        <div class="rm-right">
           <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
             <div class="rmr-title" style="margin:0">航空券・ホテルの予約</div>
             <span style="font-size:0.65em;color:#b09000;font-weight:600;white-space:nowrap">早いほど安い</span>
           </div>
           <div class="rmr-desc">特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。ホテルはこだわらなければ前日予約も可能。</div>
         </div>
-        <div style="height:72px">
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #b09000"></div>
+          <div class="rm-bar" style="background:linear-gradient(to bottom,#b09000,#cc5500)"></div>
+        </div>
+        <div class="rm-right">
           <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
             <div class="rmr-title" style="margin:0">海外旅行保険の加入</div>
             <span style="font-size:0.65em;color:#b09000;font-weight:600;white-space:nowrap">出発前日まで</span>
           </div>
           <div class="rmr-desc">クレカ付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。</div>
         </div>
-        <div style="height:72px">
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #cc5500"></div>
+          <div class="rm-bar" style="background:linear-gradient(to bottom,#cc5500,#cc0001)"></div>
+        </div>
+        <div class="rm-right">
           <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
             <div class="rmr-title" style="margin:0">SIM・ポケットWi-Fiの予約</div>
             <span style="font-size:0.65em;color:#cc5500;font-weight:600;white-space:nowrap">1〜2週間前</span>
           </div>
-          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:8px">
-            <div class="rmr-desc" style="flex:1">trifaのeSIMならアプリから前日でも購入・設定ができるので焦らなくてOK。現地SIMを購入するのであれば出発前に比較して選んでおくと当日がスムーズ。</div>
-            <a href="#sim" style="color:var(--green);font-size:0.73em;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0">trifaについて →</a>
-          </div>
+          <div class="rmr-desc">trifaのeSIMならアプリから前日でも購入・設定ができるので焦らなくてOK。現地SIMを購入するのであれば出発前に比較して選んでおくと当日がスムーズ。<a href="#sim" style="color:var(--green);font-size:0.9em;font-weight:600;text-decoration:none;white-space:nowrap;margin-left:6px">trifaについて →</a></div>
         </div>
-        <div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #cc0001"></div>
+        </div>
+        <div class="rm-right">
           <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
             <div class="rmr-title" style="margin:0">MDAC（デジタル入国カード）登録</div>
             <span style="font-size:0.65em;color:#cc0001;font-weight:600;white-space:nowrap">入国3日前〜</span>
@@ -882,12 +891,12 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
   <h2 id="sim">SIM・Wi-Fi</h2>
   <div class="card">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:12px">現地SIMは安いが、空港や市内のショップで入手する手間と時間がかかる。ポケットWi-Fiは複数人で使えるが持ち運びの手間あり。日本出発前に準備しておくと到着後すぐ使えて便利。</p>
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:10px">
       <div>
         <div style="font-size:0.85em;font-weight:700;margin-bottom:4px">trifa</div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">海外eSIMアプリ利用者No.1。<br>マレーシア対応のeSIMプランをアプリから簡単に購入・設定できる。</div>
       </div>
-      <a href="https://www.trifa.co/ja" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;font-size:0.8em;font-weight:700;padding:9px 20px;border-radius:20px;text-decoration:none;white-space:nowrap;flex-shrink:0">trifaを見る →</a>
+      <a href="https://www.trifa.co/ja" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;font-size:0.8em;font-weight:700;padding:9px 20px;border-radius:20px;text-decoration:none;white-space:nowrap;align-self:flex-end">trifaを見る →</a>
     </div>
   </div>
 
