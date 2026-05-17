@@ -657,7 +657,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
       <div class="budget-price">500〜2,000円/日</div>
     </div>
     <div class="budget-row">
-      <div class="budget-ico">🎡</div>
+      <div class="budget-ico">📍</div>
       <div class="budget-info"><div class="b-title">観光・アクティビティ</div><div class="b-sub">無料スポット多数。モスク・公園など<br>有料でも入場料は安い</div></div>
       <div class="budget-price">500〜3,000円/日</div>
     </div>
@@ -1210,13 +1210,28 @@ function show(id, btn) {
 // ページ読み込み時・更新時にハッシュに対応したタブを表示
 (function() {
   const hash = location.hash.replace('#', '');
+  if (!hash) return;
   const btns = document.querySelectorAll('nav button');
+  // タブIDと一致する場合はそのタブを開く
   for (const btn of btns) {
     const onclick = btn.getAttribute('onclick') || '';
     const match = onclick.match(/show\('(\w+)'/);
-    if (match && match[1] === hash) {
-      btn.click();
-      return;
+    if (match && match[1] === hash) { btn.click(); return; }
+  }
+  // タブIDと一致しない場合、アンカー要素の親sectionを探してタブを開き、スクロール
+  const target = document.getElementById(hash);
+  if (target) {
+    const section = target.closest('section');
+    if (section) {
+      for (const btn of btns) {
+        const onclick = btn.getAttribute('onclick') || '';
+        const match = onclick.match(/show\('(\w+)'/);
+        if (match && match[1] === section.id) {
+          btn.click();
+          setTimeout(() => target.scrollIntoView({behavior:'smooth', block:'start'}), 150);
+          return;
+        }
+      }
     }
   }
 })();
