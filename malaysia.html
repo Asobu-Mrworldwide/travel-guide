@@ -256,6 +256,14 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
   .card .note{font-size:0.8em}
   .see-more{font-size:0.85em}
 }
+/* ROADMAP TIMELINE */
+.rmw{display:flex}
+.rml{display:flex;flex-direction:column;align-items:center;width:24px;flex-shrink:0}
+.rml-dot{width:12px;height:12px;border-radius:50%;background:#fff;flex-shrink:0}
+.rml-seg{width:3px;flex-shrink:0;border-radius:2px}
+.rmr{flex:1;padding-left:14px;display:flex;flex-direction:column}
+.rmr-title{font-size:0.85em;font-weight:700;margin-bottom:3px}
+.rmr-desc{font-size:0.73em;color:var(--sub);line-height:1.6}
 </style>
 </head>
 <body>
@@ -695,30 +703,70 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 
   <!-- 2. 準備は早めに -->
   <h2>準備は早めに</h2>
-  <div class="card" style="padding:0 14px">
-    <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid #f0f0f0">
-      <span style="font-size:0.68em;font-weight:700;color:#cc0001;background:#fff0f0;padding:2px 8px;border-radius:10px;flex-shrink:0;white-space:nowrap">1〜2ヶ月前</span>
-      <div><div style="font-size:0.84em;font-weight:700">パスポート取得・更新</div><div style="font-size:0.75em;color:var(--sub);margin-top:2px">申請から受領まで数週間かかる場合あり。残存有効期間に注意。</div></div>
-    </div>
-    <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid #f0f0f0">
-      <span style="font-size:0.68em;font-weight:700;color:#cc0001;background:#fff0f0;padding:2px 8px;border-radius:10px;flex-shrink:0;white-space:nowrap">1ヶ月前</span>
-      <div><div style="font-size:0.84em;font-weight:700">海外対応クレジットカードの申込</div><div style="font-size:0.75em;color:var(--sub);margin-top:2px">審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。</div></div>
-    </div>
-    <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid #f0f0f0">
-      <span style="font-size:0.68em;font-weight:700;color:#e07000;background:#fff8f0;padding:2px 8px;border-radius:10px;flex-shrink:0;white-space:nowrap">早いほど安い</span>
-      <div><div style="font-size:0.84em;font-weight:700">航空券・ホテルの予約</div><div style="font-size:0.75em;color:var(--sub);margin-top:2px">特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。</div></div>
-    </div>
-    <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid #f0f0f0">
-      <span style="font-size:0.68em;font-weight:700;color:#e07000;background:#fff8f0;padding:2px 8px;border-radius:10px;flex-shrink:0;white-space:nowrap">出発前日まで</span>
-      <div><div style="font-size:0.84em;font-weight:700">海外旅行保険の加入</div><div style="font-size:0.75em;color:var(--sub);margin-top:2px">クレカ付帯保険で代用できる場合もあるが、補償範囲を事前に確認しておくこと。</div></div>
-    </div>
-    <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid #f0f0f0">
-      <span style="font-size:0.68em;font-weight:700;color:#006847;background:#e8f5ee;padding:2px 8px;border-radius:10px;flex-shrink:0;white-space:nowrap">1〜2週間前</span>
-      <div><div style="font-size:0.84em;font-weight:700">SIM・ポケットWi-Fiの予約</div><div style="font-size:0.75em;color:var(--sub);margin-top:2px">現地SIM or レンタルWi-Fi を事前に比較・予約しておくとスムーズ。</div></div>
-    </div>
-    <div style="display:flex;align-items:baseline;gap:10px;padding:12px 0">
-      <span style="font-size:0.68em;font-weight:700;color:#006847;background:#e8f5ee;padding:2px 8px;border-radius:10px;flex-shrink:0;white-space:nowrap">入国3日前〜</span>
-      <div><div style="font-size:0.84em;font-weight:700">MDAC（デジタル入国カード）登録</div><div style="font-size:0.75em;color:var(--sub);margin-top:2px">マレーシア入国前にオンライン登録が必要。子供も対象。無料。</div></div>
+  <div class="card">
+    <div class="rmw">
+      <!-- 左：バー列 -->
+      <div class="rml">
+        <div style="font-size:0.58em;font-weight:700;color:#006847;text-align:center;line-height:1.2;height:22px;display:flex;align-items:center;justify-content:center">2ヶ月<br>前</div>
+        <div class="rml-dot" style="border:3px solid #006847"></div>
+        <div class="rml-seg" style="height:68px;background:linear-gradient(to bottom,#006847,#1a8a5a)"></div>
+        <div class="rml-dot" style="border:3px solid #1a8a5a"></div>
+        <div class="rml-seg" style="height:60px;background:linear-gradient(to bottom,#1a8a5a,#b09000)"></div>
+        <div class="rml-dot" style="border:3px solid #b09000"></div>
+        <div class="rml-seg" style="height:60px;background:#b09000"></div>
+        <div class="rml-dot" style="border:3px solid #b09000"></div>
+        <div class="rml-seg" style="height:60px;background:linear-gradient(to bottom,#b09000,#cc5500)"></div>
+        <div class="rml-dot" style="border:3px solid #cc5500"></div>
+        <div class="rml-seg" style="height:60px;background:linear-gradient(to bottom,#cc5500,#cc0001)"></div>
+        <div class="rml-dot" style="border:3px solid #cc0001"></div>
+        <div style="font-size:0.6em;font-weight:700;color:#cc0001;margin-top:4px">出発</div>
+      </div>
+      <!-- 右：テキスト列 -->
+      <div class="rmr">
+        <div style="height:22px"></div>
+        <div style="height:80px">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">パスポート取得・更新</div>
+            <span style="font-size:0.65em;color:#006847;font-weight:600;white-space:nowrap">1〜2ヶ月前</span>
+          </div>
+          <div class="rmr-desc">申請から受領まで数週間かかる場合あり。残存有効期間に注意。</div>
+        </div>
+        <div style="height:72px">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">海外対応クレジットカードの申込</div>
+            <span style="font-size:0.65em;color:#006847;font-weight:600;white-space:nowrap">1ヶ月前</span>
+          </div>
+          <div class="rmr-desc">審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。</div>
+        </div>
+        <div style="height:72px">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">航空券・ホテルの予約</div>
+            <span style="font-size:0.65em;color:#b09000;font-weight:600;white-space:nowrap">早いほど安い</span>
+          </div>
+          <div class="rmr-desc">特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。</div>
+        </div>
+        <div style="height:72px">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">海外旅行保険の加入</div>
+            <span style="font-size:0.65em;color:#b09000;font-weight:600;white-space:nowrap">出発前日まで</span>
+          </div>
+          <div class="rmr-desc">クレカ付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。</div>
+        </div>
+        <div style="height:72px">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">SIM・ポケットWi-Fiの予約</div>
+            <span style="font-size:0.65em;color:#cc5500;font-weight:600;white-space:nowrap">1〜2週間前</span>
+          </div>
+          <div class="rmr-desc">現地SIM or レンタルWi-Fi を事前に比較・予約しておくとスムーズ。</div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">MDAC（デジタル入国カード）登録</div>
+            <span style="font-size:0.65em;color:#cc0001;font-weight:600;white-space:nowrap">入国3日前〜</span>
+          </div>
+          <div class="rmr-desc">マレーシア入国前にオンライン登録が必要。子供も対象。無料。</div>
+        </div>
+      </div>
     </div>
   </div>
 
