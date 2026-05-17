@@ -81,7 +81,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 .season-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;margin:10px 0}
 .month-col{text-align:center}
 .month-lbl{font-size:0.72em;color:var(--sub);margin-bottom:3px;font-weight:600}
-.month-dot{width:100%;height:62px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.9em;font-weight:700;flex-direction:column;gap:2px}
+.month-dot{width:100%;height:62px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.9em;font-weight:700;flex-direction:column;gap:2px;text-align:center}
 .md-t{font-size:0.95em;font-weight:700;line-height:1;text-align:center;width:100%}
 /* 気温帯カラー（暖色グラデーション） */
 .t-hot{background:linear-gradient(160deg,#ff5000,#ff9000);color:#5a1400}
@@ -343,7 +343,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[5])">旅の準備を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[4])">予算・費用を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[7])">フレーズ集を見る →</button></div></div>
-    <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div></div></div>
+    <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1RM ≈ 33円</div></div></div>
   </div>
 
   <!-- ⑤ 主要都市 -->
@@ -857,13 +857,13 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
 
   <!-- フィルター -->
   <div class="filter-row">
-    <button class="filter-btn active" data-filter="all"     onclick="filterSpots('all',this)">🗺️ 全て</button>
-    <button class="filter-btn"        data-filter="kl"      onclick="filterSpots('kl',this)">🏙️ KL</button>
-    <button class="filter-btn"        data-filter="penang"  onclick="filterSpots('penang',this)">🌴 ペナン</button>
-    <button class="filter-btn"        data-filter="malacca" onclick="filterSpots('malacca',this)">🏛️ マラッカ</button>
-    <button class="filter-btn"        data-filter="jb"      onclick="filterSpots('jb',this)">🌏 JB</button>
-    <button class="filter-btn"        data-filter="kk"      onclick="filterSpots('kk',this)">🏔️ コタキナバル</button>
-    <button class="filter-btn"        data-filter="kuching" onclick="filterSpots('kuching',this)">🐱 クチン</button>
+    <button class="filter-btn active" data-filter="all"     onclick="filterSpots('all',this)">全て</button>
+    <button class="filter-btn"        data-filter="kl"      onclick="filterSpots('kl',this)">KL</button>
+    <button class="filter-btn"        data-filter="penang"  onclick="filterSpots('penang',this)">ペナン</button>
+    <button class="filter-btn"        data-filter="malacca" onclick="filterSpots('malacca',this)">マラッカ</button>
+    <button class="filter-btn"        data-filter="jb"      onclick="filterSpots('jb',this)">JB</button>
+    <button class="filter-btn"        data-filter="kk"      onclick="filterSpots('kk',this)">コタキナバル</button>
+    <button class="filter-btn"        data-filter="kuching" onclick="filterSpots('kuching',this)">クチン</button>
   </div>
 
   <div class="item-grid" id="spots-grid">
@@ -1032,17 +1032,17 @@ function showFilteredSpots(city) {
 
 // スワイプでタブ切り替え
 (function() {
-  let startX = 0, startY = 0, startedOnNav = false;
+  let startX = 0, startY = 0, startedOnExcluded = false;
   const THRESHOLD = 50; // スワイプ判定の最小px
 
   document.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
-    startedOnNav = !!e.target.closest('nav'); // navバー上のタッチを記録
+    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#malaysia-map')); // navバー・地図上のタッチを記録
   }, { passive: true });
 
   document.addEventListener('touchend', e => {
-    if (startedOnNav) return; // navバーのスクロールは無視
+    if (startedOnExcluded) return; // navバー・地図操作は無視
     const dx = e.changedTouches[0].clientX - startX;
     const dy = e.changedTouches[0].clientY - startY;
     // 縦スクロールより横方向が大きい場合のみ
