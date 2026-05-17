@@ -746,7 +746,7 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
             <div class="rmr-title" style="margin:0">航空券・ホテルの予約</div>
             <span style="font-size:0.65em;color:#b09000;font-weight:600;white-space:nowrap">早いほど安い</span>
           </div>
-          <div class="rmr-desc">特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。</div>
+          <div class="rmr-desc">特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。ホテルはこだわらなければ前日予約も可能。</div>
         </div>
         <div style="height:72px">
           <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
@@ -760,8 +760,8 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
             <div class="rmr-title" style="margin:0">SIM・ポケットWi-Fiの予約</div>
             <span style="font-size:0.65em;color:#cc5500;font-weight:600;white-space:nowrap">1〜2週間前</span>
           </div>
-          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
-            <div class="rmr-desc" style="flex:1">現地SIM or レンタルWi-Fi を事前に比較・予約しておくとスムーズ。</div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:8px">
+            <div class="rmr-desc" style="flex:1">トリファのeSIMならアプリから前日でも購入・設定ができるので焦らなくてOK。現地SIMを購入するのであれば出発前に比較して選んでおくと当日がスムーズ。</div>
             <a href="#sim" style="color:var(--green);font-size:0.73em;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0">トリファについて →</a>
           </div>
         </div>
@@ -774,6 +774,12 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- MDAC カード -->
+  <div class="card" style="background:#fff8f0;border-left:4px solid #ff9900">
+    <p style="font-size:0.85em;font-weight:700;margin-bottom:6px">💡 MDAC（デジタル入国カード）</p>
+    <p style="font-size:0.8em;color:var(--sub);line-height:1.7">マレーシア入国の3日前からオンライン登録が必要。子供も登録が必要。<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px"><span>URL: <a href="https://imigresen-online.imi.gov.my/mdac/main" target="_blank" style="color:#ff9900;font-weight:700">imigresen-online.imi.gov.my/mdac/main</a></span><span style="font-size:0.85em;color:#bbb;white-space:nowrap">（2026年5月時点）</span></span></p>
   </div>
 
   <!-- 3. 持ち物チェック -->
@@ -831,21 +837,46 @@ h3{font-size:0.93em;font-weight:700;color:var(--red);margin:14px 0 6px}
     </div>
   </div>
 
-  <!-- 5. 入国カード（MDAC） -->
-  <h2>入国カード（MDAC）</h2>
-  <div class="card" style="background:#fff8f0;border-left:4px solid #ff9900">
-    <p style="font-size:0.85em;font-weight:700;margin-bottom:6px">💡 MDAC（デジタル入国カード）</p>
-    <p style="font-size:0.8em;color:var(--sub);line-height:1.7">マレーシア入国の3日前からオンライン登録が必要。子供も登録が必要。<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px"><span>URL: <a href="https://imigresen-online.imi.gov.my/mdac/main" target="_blank" style="color:#ff9900;font-weight:700">imigresen-online.imi.gov.my/mdac/main</a></span><span style="font-size:0.85em;color:#bbb;white-space:nowrap">（2026年5月時点）</span></span></p>
+  <!-- 6. 両替・支払い -->
+  <h2 id="money">両替・支払い</h2>
+
+  <!-- 現金目安カード -->
+  <div class="card" style="padding:18px 16px">
+    <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
+    <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:14px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px">
+      <button onclick="changeDays(-1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">−</button>
+      <div style="text-align:center;min-width:60px">
+        <span id="cash-days" style="font-size:2.2em;font-weight:700;color:var(--green)">5</span>
+        <span style="font-size:0.82em;color:var(--sub)"> 日間</span>
+      </div>
+      <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
+        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">節約</div>
+        <div id="eco-myr" style="font-size:0.9em;font-weight:700">250 MYR</div>
+        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約8,300円</div>
+      </div>
+      <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #b8ddc8">
+        <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
+        <div id="std-myr" style="font-size:0.9em;font-weight:700;color:var(--green)">500 MYR</div>
+        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約16,500円</div>
+      </div>
+      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
+        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">ゆとり</div>
+        <div id="lux-myr" style="font-size:0.9em;font-weight:700">1,000 MYR</div>
+        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約33,000円</div>
+      </div>
+    </div>
+    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">レストラン・Grab・ホテルはカード払い可。現金は主に屋台・ローカル市場・お土産屋での支払い用。<br>1 MYR ≈ 33円で計算 ／ 節約 50・標準 100・ゆとり 200 MYR／日</div>
   </div>
 
-  <!-- 6. 両替・お金 -->
-  <h2 id="money">両替・お金</h2>
   <div class="card">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:12px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</p>
     <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
       <div>
         <div style="font-size:0.85em;font-weight:700;margin-bottom:4px">Wise（ワイズ）</div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">実勢レートで両替・送金できるサービス。<br>Wiseカードなら現地ATMから手数料を抑えて引き出せる。</div>
+        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">実勢レートで両替・送金できるサービス。事前にチャージしてデビットカードとしても利用可能。<br>現地ATMから手数料を抑えて引き出せる。</div>
       </div>
       <a href="https://wise.com/jp/" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;font-size:0.8em;font-weight:700;padding:9px 20px;border-radius:20px;text-decoration:none;white-space:nowrap;flex-shrink:0">Wiseを見る →</a>
     </div>
@@ -1151,6 +1182,21 @@ function playPhrase(file, btn) {
   btn.textContent = '■';
   btn.classList.add('playing');
   audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
+}
+
+/* 現金目安カード */
+let cashDays = 5;
+const RATE = 33;
+function changeDays(d) {
+  cashDays = Math.max(1, Math.min(30, cashDays + d));
+  const eco = cashDays * 50, std = cashDays * 100, lux = cashDays * 200;
+  document.getElementById('cash-days').textContent = cashDays;
+  document.getElementById('eco-myr').textContent = eco.toLocaleString() + ' MYR';
+  document.getElementById('eco-jpy').textContent = '約' + Math.round(eco * RATE / 1000) + ',000円';
+  document.getElementById('std-myr').textContent = std.toLocaleString() + ' MYR';
+  document.getElementById('std-jpy').textContent = '約' + Math.round(std * RATE / 1000) + ',000円';
+  document.getElementById('lux-myr').textContent = lux.toLocaleString() + ' MYR';
+  document.getElementById('lux-jpy').textContent = '約' + Math.round(lux * RATE / 1000) + ',000円';
 }
 
 function show(id, btn) {
