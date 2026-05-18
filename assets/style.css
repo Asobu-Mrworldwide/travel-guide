@@ -229,6 +229,9 @@ section.active{display:block}
   .grid2,.grid3,.manner-grid,.item-grid{grid-template-columns:1fr}
   .qs-row{grid-template-columns:1fr 1fr}
   .prac-grid{grid-template-columns:1fr 1fr}
+  .city-grid-wrap{grid-template-columns:1fr 1fr}
+  .city-item:nth-child(3n){border-right:1px solid #f0f0f0}
+  .city-item:nth-child(2n){border-right:none}
   .prac-card{padding:10px 8px}
   .prac-card .p-ico{font-size:1.5em;margin-bottom:3px}
   .prac-card .p-title{font-size:0.75em}
