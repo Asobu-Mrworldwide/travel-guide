@@ -24,17 +24,18 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 /* フィルターバー */
 .filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:12px 16px;position:sticky;top:49px;z-index:90;box-shadow:0 2px 6px rgba(0,0,0,0.06)}
 .filter-section{max-width:900px;margin:0 auto}
-.filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
-.filter-row:last-child{margin-bottom:0}
-.filter-label{font-size:0.72em;font-weight:700;color:var(--sub);white-space:nowrap;min-width:80px}
-.filter-chips{display:flex;flex-wrap:wrap;gap:5px;flex:1}
-.chip{padding:4px 11px;border-radius:20px;border:1.5px solid var(--border);background:#fff;color:var(--sub);font-size:0.75em;cursor:pointer;transition:all 0.15s;white-space:nowrap;user-select:none}
-.chip:hover{border-color:var(--primary);color:var(--primary)}
-.chip.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-.chip.current-month{border-color:#e8490f;color:#e8490f}
-.chip.current-month.active{background:#e8490f;border-color:#e8490f;color:#fff}
-.reset-btn{padding:4px 12px;border-radius:20px;border:1.5px solid #ccc;background:#fff;color:#999;font-size:0.72em;cursor:pointer;white-space:nowrap}
-.reset-btn:hover{border-color:#999;color:#666}
+.filter-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:6px 0;border-bottom:1px solid #f0f0f0}
+.filter-row:last-child{border-bottom:none;padding-bottom:0}
+.filter-label{font-size:0.7em;font-weight:700;color:#aaa;white-space:nowrap;width:90px;flex-shrink:0;letter-spacing:0.04em}
+.filter-chips{display:flex;flex-wrap:wrap;gap:5px;flex:1;align-items:center}
+.chip-divider{width:1px;background:#e5e7eb;align-self:stretch;margin:0 2px;flex-shrink:0}
+.chip{padding:4px 11px;border-radius:6px;border:none;background:#f3f4f6;color:#444;font-size:0.75em;cursor:pointer;transition:all 0.15s;white-space:nowrap;user-select:none;font-weight:600}
+.chip:hover{background:#e2e5ea;color:#111}
+.chip.active{background:var(--primary);color:#fff}
+.chip.current-month{outline:2px solid #e8490f;outline-offset:-2px;color:#e8490f}
+.chip.current-month.active{background:var(--primary);color:#fff;outline:none}
+.reset-btn{flex-shrink:0;font-size:0.72em;font-weight:700;color:#888;cursor:pointer;border:1.5px solid #ddd;background:#fff;padding:5px 12px;border-radius:20px;white-space:nowrap}
+.reset-btn:hover{color:#e8490f;border-color:#e8490f;background:#fff5f0}
 
 /* モバイル用トグルボタン */
 .filter-toggle-row{display:none;align-items:center;gap:8px}
@@ -131,17 +132,19 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
     <!-- フィルターパネル（PC常時表示・モバイルは開閉） -->
     <div class="filter-panel" id="filterPanel">
       <div class="filter-row">
-        <span class="filter-label">🌤️ ベストシーズン</span>
+        <span class="filter-label">ベストシーズン</span>
         <div class="filter-chips" id="monthChips"></div>
       </div>
       <div class="filter-row">
-        <span class="filter-label">💰 予算感</span>
+        <span class="filter-label">予算感</span>
         <div class="filter-chips">
-          <span class="chip" onclick="toggleBudget('budget1')" id="b-budget1" data-val="budget1">💚 格安</span>
-          <span class="chip" onclick="toggleBudget('budget2')" id="b-budget2" data-val="budget2">💛 中級</span>
-          <span class="chip" onclick="toggleBudget('budget3')" id="b-budget3" data-val="budget3">❤️ 高級</span>
+          <span class="chip" onclick="toggleBudget('budget1')" id="b-budget1">格安</span>
+          <span class="chip" onclick="toggleBudget('budget2')" id="b-budget2">中級</span>
+          <span class="chip" onclick="toggleBudget('budget3')" id="b-budget3">高級</span>
         </div>
-        <span class="filter-label" style="min-width:60px">🏷️ タグ</span>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">タグ</span>
         <div class="filter-chips">
           <span class="chip" onclick="toggleTag('ビーチ')" id="t-ビーチ">🏖️ ビーチ</span>
           <span class="chip" onclick="toggleTag('世界遺産')" id="t-世界遺産">🏛️ 世界遺産</span>
@@ -286,6 +289,13 @@ let selectedMonths = [];
 let selectedBudgets = [];
 let selectedTags = [];
 
+const HOLIDAYS = [
+  { label: '正月', months: [0] },
+  { label: 'GW', months: [3, 4] },
+  { label: 'お盆', months: [7] },
+  { label: 'シルバーウィーク', months: [8] },
+];
+
 // 月チップを生成
 function buildMonthChips() {
   const container = document.getElementById('monthChips');
@@ -297,6 +307,21 @@ function buildMonthChips() {
     span.onclick = () => toggleMonth(i);
     container.appendChild(span);
   });
+
+  // 区切り線
+  const divider = document.createElement('span');
+  divider.className = 'chip-divider';
+  container.appendChild(divider);
+
+  // 祝日チップ
+  HOLIDAYS.forEach(h => {
+    const span = document.createElement('span');
+    span.className = 'chip';
+    span.id = 'holiday-' + h.label;
+    span.textContent = h.label;
+    span.onclick = () => toggleHoliday(h);
+    container.appendChild(span);
+  });
 }
 
 function toggleMonth(i) {
@@ -304,7 +329,39 @@ function toggleMonth(i) {
   if (idx >= 0) selectedMonths.splice(idx, 1);
   else selectedMonths.push(i);
   document.getElementById('month-' + i).classList.toggle('active');
+  // 祝日チップの状態を同期
+  syncHolidayChips();
   renderCards();
+  updateFilterBadge();
+}
+
+function toggleHoliday(h) {
+  const chip = document.getElementById('holiday-' + h.label);
+  const isActive = chip.classList.contains('active');
+  h.months.forEach(m => {
+    const idx = selectedMonths.indexOf(m);
+    if (isActive) {
+      if (idx >= 0) selectedMonths.splice(idx, 1);
+    } else {
+      if (idx < 0) selectedMonths.push(m);
+    }
+    const monthChip = document.getElementById('month-' + m);
+    if (monthChip) monthChip.classList.toggle('active', !isActive);
+  });
+  chip.classList.toggle('active');
+  syncHolidayChips();
+  renderCards();
+  updateFilterBadge();
+}
+
+// 祝日チップのactive状態を月の選択に合わせて同期
+function syncHolidayChips() {
+  HOLIDAYS.forEach(h => {
+    const chip = document.getElementById('holiday-' + h.label);
+    if (!chip) return;
+    const allSelected = h.months.every(m => selectedMonths.includes(m));
+    chip.classList.toggle('active', allSelected);
+  });
 }
 
 function updateFilterBadge() {
@@ -336,6 +393,7 @@ function resetAll() {
   selectedBudgets = [];
   selectedTags = [];
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  syncHolidayChips();
   renderCards();
   updateFilterBadge();
 }
