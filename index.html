@@ -438,7 +438,7 @@ function matchesFilters(c) {
 
 function budgetLabel(budget) {
   const icons = {budget1:'格安', budget2:'中級', budget3:'高級'};
-  return budget.map(b => icons[b]).join(' / ');
+  return '⚖️ ' + budget.map(b => icons[b]).join(' / ');
 }
 
 function renderCards() {
@@ -465,7 +465,7 @@ function renderCards() {
     const btnHref = c.available ? `href="${c.url}"` : '';
     const cardClass = c.available ? 'country-card' : 'country-card unavailable';
     const badgeHtml = c.available
-      ? '<span class="card-badge ready">✅ 公開中</span>'
+      ? '<span class="card-badge ready">公開中</span>'
       : '<span class="card-badge">準備中</span>';
     return `
     <div class="${cardClass}" onclick="${c.available ? `location.href='${c.url}'` : 'void(0)'}">
