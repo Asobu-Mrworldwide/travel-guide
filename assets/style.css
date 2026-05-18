@@ -28,6 +28,7 @@ body{
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
   overflow-y:scroll; /* スクロールバー常時表示でタブ切替時のレイアウトずれを防止 */
+  overflow-x:clip;   /* ズーム時の横はみ出しを防止（stickyナビに影響しない） */
 }
 
 /* コンテナ */
