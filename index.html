@@ -36,6 +36,16 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 .reset-btn{padding:4px 12px;border-radius:20px;border:1.5px solid #ccc;background:#fff;color:#999;font-size:0.72em;cursor:pointer;white-space:nowrap}
 .reset-btn:hover{border-color:#999;color:#666}
 
+/* モバイル用トグルボタン */
+.filter-toggle-row{display:none;align-items:center;gap:8px}
+.filter-toggle-btn{display:flex;align-items:center;gap:6px;background:var(--primary);color:#fff;border:none;padding:8px 16px;border-radius:20px;font-size:0.82em;font-weight:700;cursor:pointer;flex:1;justify-content:center}
+.filter-toggle-btn .arrow{transition:transform 0.2s;font-style:normal}
+.filter-toggle-btn.open .arrow{transform:rotate(180deg)}
+.filter-badge{background:#e8490f;color:#fff;border-radius:50%;width:18px;height:18px;font-size:0.7em;font-weight:700;display:inline-flex;align-items:center;justify-content:center;line-height:1}
+.filter-badge:empty{display:none}
+.filter-panel{overflow:hidden;transition:max-height 0.3s ease,opacity 0.3s ease}
+.filter-panel.closed{max-height:0;opacity:0;pointer-events:none}
+
 /* メインコンテンツ */
 .main{max-width:900px;margin:0 auto;padding:20px 16px}
 .results-info{font-size:0.8em;color:var(--sub);margin-bottom:14px}
@@ -73,6 +83,28 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 
 /* フッター */
 .site-footer{text-align:center;padding:30px 20px;color:var(--sub);font-size:0.75em;border-top:1px solid var(--border);margin-top:40px}
+
+@media(max-width:520px){
+  .hero{padding:22px 16px}
+  .hero h1{font-size:1.3em}
+  .hero p{font-size:0.82em}
+  .filter-bar{padding:8px 12px;top:45px}
+  .filter-toggle-row{display:flex}
+  .filter-panel{margin-top:8px}
+  .filter-panel.closed{margin-top:0}
+  .filter-row{gap:5px;margin-bottom:6px}
+  .filter-label{font-size:0.68em;min-width:unset}
+  .filter-chips{gap:4px}
+  .chip{padding:3px 9px;font-size:0.72em}
+  #pcResetBtn{display:none}
+  .site-header{padding:10px 14px}
+  .site-logo{font-size:1.1em}
+  .site-tagline{font-size:0.7em}
+  .main{padding:14px 12px}
+  .card-body{padding:10px 12px 12px}
+  .card-hero{height:75px}
+  .card-flag{font-size:2.3em}
+}
 </style>
 </head>
 <body>
@@ -89,29 +121,39 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 
 <div class="filter-bar">
   <div class="filter-section">
-    <div class="filter-row">
-      <span class="filter-label">🌤️ ベストシーズン</span>
-      <div class="filter-chips" id="monthChips"></div>
+    <!-- モバイル用トグルボタン -->
+    <div class="filter-toggle-row" id="filterToggleRow">
+      <button class="filter-toggle-btn" id="filterToggleBtn" onclick="toggleFilterPanel()">
+        🔍 絞り込む <span class="filter-badge" id="filterBadge"></span> <i class="arrow">▼</i>
+      </button>
+      <button class="reset-btn" onclick="resetAll()">✕</button>
     </div>
-    <div class="filter-row">
-      <span class="filter-label">💰 予算感</span>
-      <div class="filter-chips">
-        <span class="chip" onclick="toggleBudget('budget1')" id="b-budget1" data-val="budget1">💚 格安</span>
-        <span class="chip" onclick="toggleBudget('budget2')" id="b-budget2" data-val="budget2">💛 中級</span>
-        <span class="chip" onclick="toggleBudget('budget3')" id="b-budget3" data-val="budget3">❤️ 高級</span>
+    <!-- フィルターパネル（PC常時表示・モバイルは開閉） -->
+    <div class="filter-panel" id="filterPanel">
+      <div class="filter-row">
+        <span class="filter-label">🌤️ ベストシーズン</span>
+        <div class="filter-chips" id="monthChips"></div>
       </div>
-      <span class="filter-label" style="min-width:60px">🏷️ タグ</span>
-      <div class="filter-chips">
-        <span class="chip" onclick="toggleTag('ビーチ')" id="t-ビーチ">🏖️ ビーチ</span>
-        <span class="chip" onclick="toggleTag('世界遺産')" id="t-世界遺産">🏛️ 世界遺産</span>
-        <span class="chip" onclick="toggleTag('グルメ')" id="t-グルメ">🍜 グルメ</span>
-        <span class="chip" onclick="toggleTag('自然')" id="t-自然">🌿 自然</span>
-        <span class="chip" onclick="toggleTag('都市')" id="t-都市">🏙️ 都市</span>
-        <span class="chip" onclick="toggleTag('リゾート')" id="t-リゾート">🌴 リゾート</span>
-        <span class="chip" onclick="toggleTag('歴史')" id="t-歴史">🏰 歴史</span>
-        <span class="chip" onclick="toggleTag('アウトドア')" id="t-アウトドア">🥾 アドベンチャー</span>
+      <div class="filter-row">
+        <span class="filter-label">💰 予算感</span>
+        <div class="filter-chips">
+          <span class="chip" onclick="toggleBudget('budget1')" id="b-budget1" data-val="budget1">💚 格安</span>
+          <span class="chip" onclick="toggleBudget('budget2')" id="b-budget2" data-val="budget2">💛 中級</span>
+          <span class="chip" onclick="toggleBudget('budget3')" id="b-budget3" data-val="budget3">❤️ 高級</span>
+        </div>
+        <span class="filter-label" style="min-width:60px">🏷️ タグ</span>
+        <div class="filter-chips">
+          <span class="chip" onclick="toggleTag('ビーチ')" id="t-ビーチ">🏖️ ビーチ</span>
+          <span class="chip" onclick="toggleTag('世界遺産')" id="t-世界遺産">🏛️ 世界遺産</span>
+          <span class="chip" onclick="toggleTag('グルメ')" id="t-グルメ">🍜 グルメ</span>
+          <span class="chip" onclick="toggleTag('自然')" id="t-自然">🌿 自然</span>
+          <span class="chip" onclick="toggleTag('都市')" id="t-都市">🏙️ 都市</span>
+          <span class="chip" onclick="toggleTag('リゾート')" id="t-リゾート">🌴 リゾート</span>
+          <span class="chip" onclick="toggleTag('歴史')" id="t-歴史">🏰 歴史</span>
+          <span class="chip" onclick="toggleTag('アウトドア')" id="t-アウトドア">🥾 アドベンチャー</span>
+        </div>
+        <button class="reset-btn" id="pcResetBtn" onclick="resetAll()">✕ リセット</button>
       </div>
-      <button class="reset-btn" onclick="resetAll()">✕ リセット</button>
     </div>
   </div>
 </div>
@@ -137,7 +179,7 @@ const COUNTRIES = [
     bestMonths:[2,3,4,5,6,7,8,9], bestLabel:'3〜10月',
     tags:['ビーチ','世界遺産','グルメ','自然','都市','歴史'],
     gradient:'linear-gradient(135deg,#006847 0%,#4a9a30 100%)',
-    url:'malaysia/', available:true
+    url:'malaysia/index.html', available:true
   },
   {
     name:'タイ', nameEn:'Thailand', flag:'🇹🇭',
@@ -265,12 +307,19 @@ function toggleMonth(i) {
   renderCards();
 }
 
+function updateFilterBadge() {
+  const count = selectedMonths.length + selectedBudgets.length + selectedTags.length;
+  const badge = document.getElementById('filterBadge');
+  if (badge) badge.textContent = count > 0 ? count : '';
+}
+
 function toggleBudget(val) {
   const idx = selectedBudgets.indexOf(val);
   if (idx >= 0) selectedBudgets.splice(idx, 1);
   else selectedBudgets.push(val);
   document.getElementById('b-' + val).classList.toggle('active');
   renderCards();
+  updateFilterBadge();
 }
 
 function toggleTag(val) {
@@ -279,6 +328,7 @@ function toggleTag(val) {
   else selectedTags.push(val);
   document.getElementById('t-' + val).classList.toggle('active');
   renderCards();
+  updateFilterBadge();
 }
 
 function resetAll() {
@@ -287,7 +337,39 @@ function resetAll() {
   selectedTags = [];
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   renderCards();
+  updateFilterBadge();
 }
+
+function toggleFilterPanel() {
+  const panel = document.getElementById('filterPanel');
+  const btn = document.getElementById('filterToggleBtn');
+  const isOpen = !panel.classList.contains('closed');
+  if (isOpen) {
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      panel.style.maxHeight = '0';
+      panel.style.opacity = '0';
+    });
+    panel.classList.add('closed');
+    btn.classList.remove('open');
+  } else {
+    panel.classList.remove('closed');
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    panel.style.opacity = '1';
+    btn.classList.add('open');
+    setTimeout(() => { panel.style.maxHeight = 'none'; }, 300);
+  }
+}
+
+// 初期化：モバイルでパネルを閉じた状態にする
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 520) {
+    const panel = document.getElementById('filterPanel');
+    panel.style.maxHeight = '0';
+    panel.style.opacity = '0';
+    panel.classList.add('closed');
+  }
+});
 
 function matchesFilters(c) {
   if (selectedMonths.length > 0 && !selectedMonths.some(m => c.bestMonths.includes(m))) return false;
