@@ -1223,17 +1223,22 @@ function showFilteredSpots(city) {
 
 // スワイプでタブ切り替え
 (function() {
-  let startX = 0, startY = 0, startedOnExcluded = false;
+  let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
   const THRESHOLD = 50; // スワイプ判定の最小px
 
   document.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
+    isMultiTouch = e.touches.length > 1; // ピンチズーム開始を検出
     startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#malaysia-map')); // navバー・地図上のタッチを記録
   }, { passive: true });
 
+  document.addEventListener('touchmove', e => {
+    if (e.touches.length > 1) isMultiTouch = true; // ズーム中に2本目の指が加わった場合
+  }, { passive: true });
+
   document.addEventListener('touchend', e => {
-    if (startedOnExcluded) return; // navバー・地図操作は無視
+    if (startedOnExcluded || isMultiTouch) return; // navバー・地図・ピンチズームは無視
     const dx = e.changedTouches[0].clientX - startX;
     const dy = e.changedTouches[0].clientY - startY;
     // 縦スクロールより横方向が大きい場合のみ
