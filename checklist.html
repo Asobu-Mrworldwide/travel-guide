@@ -4,18 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>海外旅行 持ち物チェックリスト</title>
+<link rel="stylesheet" href="../assets/style.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{--green:#006847;--red:#cc0001;--bg:#f5f7f5;--card:#fff;--text:#1a1a1a;--sub:#555}
-body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-
 /* HEADER */
 .page-header{background:var(--green);color:#fff;padding:16px 16px 14px}
 .page-header h1{font-size:1.05em;font-weight:900;letter-spacing:0.02em}
 .page-header p{font-size:0.78em;opacity:0.85;margin-top:4px}
 .back-link{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,0.8);font-size:0.78em;text-decoration:none;margin-bottom:10px}
-
-.container{max-width:820px;margin:0 auto;padding:14px}
 
 /* ACTIONS */
 .actions{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
@@ -45,14 +40,12 @@ body{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;background:var(--bg);
 .tag-must{background:#fff0f0;color:var(--red)}
 .tag-opt{background:#f0f0f0;color:#888}
 
-/* FOOTER */
-footer{text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-top:1px solid #e8e8e8;margin-top:8px}
 </style>
 </head>
 <body>
 
 <div class="page-header">
-  <a href="malaysia.html" class="back-link">← マレーシア旅行ガイドへ戻る</a>
+  <a id="back-link" href="malaysia.html" class="back-link">← マレーシア旅行ガイドへ戻る</a>
   <h1>📋 海外旅行 持ち物チェックリスト</h1>
   <p>チェックしてそのまま持ち物確認に使えます。チェック状態は自動保存されます。</p>
 </div>
@@ -156,7 +149,7 @@ footer{text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-to
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">薄手の羽織もの・カーディガン</div><div class="item-note">ショッピングモール・機内の冷房は強め。夏でも1枚必須。</div></div><span class="item-tag tag-must">必須</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">歩きやすいサンダル・スニーカー</div><div class="item-note">観光で長距離歩くことが多い。宗教施設入場時はサンダル・露出が制限される場合あり。</div></div><span class="item-tag tag-must">必須</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">下着・靴下（日数分+α）</div><div class="item-note">毎日ホテルで洗濯するなら2日分あれば十分。予備あると安心。</div></div><span class="item-tag tag-must">必須</span></div>
-    <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">Tシャツ（日数分）</div><div class="item-note">マレーシアは年中暑いため、薄手・速乾素材のものが◎。洗濯する前提なら2枚あれば十分。</div></div><span class="item-tag tag-must">必須</span></div>
+    <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">Tシャツ（日数分）</div><div class="item-note">熱帯・常夏の国では薄手・速乾素材のものが◎。洗濯する前提なら2枚あれば十分。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ウィンドブレーカー</div><div class="item-note">防風・防寒に。明るい色のウィンドブレーカーは写真映えもするのでおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ウルトラライト ダウン</div><div class="item-note">薄くてコンパクトに収納できる。機内や冷房の効いた室内での防寒に活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">カーゴパンツ</div><div class="item-note">ポケットが多く、パスポートや現金を分散して収納できる。ひったくりや盗難に遭っても被害を最小限に抑えられる。</div></div><span class="item-tag tag-opt">任意</span></div>
@@ -203,7 +196,7 @@ footer{text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-to
       <span class="cat-title">あると便利なアプリ</span>
       <span class="cat-count" id="count-useful"></span>
     </div>
-    <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">配車アプリ</div><div class="item-note">UberやGrabなど現地に対応した配車アプリ。流しのタクシーより安全・安心で料金も事前確定。出発前にDL推奨。</div></div><span class="item-tag tag-opt">任意</span></div>
+    <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">配車アプリ</div><div class="item-note">Uber・Grab・Bolt など現地に対応したアプリを出発前にDLしておこう。流しのタクシーより安全・安心で料金も事前確定。ぼったくりのリスクも避けられる。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">クラウドバックアップの設定（Google フォト・iCloud など）</div><div class="item-note">スマホ紛失時に最も精神的ダメージが大きいのは、それまでに撮った写真が消えること。出発前に自動バックアップをONにしておくことを強く推奨。Wi-Fi接続時に自動保存されるよう設定しておけば、万が一の際も写真を復元できる。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">WhatsApp（ワッツアップ）</div><div class="item-note">海外ではメッセージアプリはWhatsAppが主流。現地の人と仲良くなった際に電話番号を交換してそのままやり取りできる。ツアーの案内や予約確認がWhatsApp経由で届くことも多いので、出発前にインストールしておこう。</div></div><span class="item-tag tag-opt">任意</span></div>
     <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">モバイルデータ通信の使用制限設定</div><div class="item-note">データ容量を節約するため、設定からモバイルデータ通信を使用できるアプリを必要最低限に絞っておくと◎。動画・SNSアプリなどはWi-Fi接続時のみに制限しておくのがおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
@@ -302,6 +295,25 @@ function resetAll(){
   localStorage.removeItem(STORAGE_KEY);
   updateProgress();
 }
+
+// 戻るリンクをURLパラメータで動的に設定
+(function(){
+  const countryMap = {
+    malaysia:  { href: 'malaysia.html',          label: 'マレーシア旅行ガイド' },
+    thailand:  { href: '../thailand/index.html',  label: 'タイ旅行ガイド' },
+    singapore: { href: '../singapore/index.html', label: 'シンガポール旅行ガイド' },
+  };
+  // file://プロトコルでも動作するよう正規表現でパース
+  const match = location.href.match(/[?&]from=([^&]+)/);
+  const from = match ? decodeURIComponent(match[1]) : null;
+  if(from && countryMap[from]){
+    const el = document.getElementById('back-link');
+    if(el){
+      el.href = countryMap[from].href;
+      el.textContent = '← ' + countryMap[from].label + 'へ戻る';
+    }
+  }
+})();
 
 // 初期化
 load();
