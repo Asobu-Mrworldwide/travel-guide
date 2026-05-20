@@ -128,21 +128,21 @@ section.active{display:block}
 
 /* 予算・費用 */
 .budget-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f0}
-.budget-link{display:block;width:100%;text-align:right;font-size:0.75em;font-weight:700;color:var(--green);text-decoration:none;white-space:nowrap}
+.budget-link{display:block;width:100%;text-align:right;font-size:0.88em;font-weight:700;color:var(--green);text-decoration:none;white-space:nowrap}
 .budget-row:last-child{border-bottom:none}
 .budget-ico{font-size:1.4em;width:36px;text-align:center;flex-shrink:0}
 .budget-info{flex:1}
 .budget-info .b-title{font-size:0.9em;font-weight:700;line-height:1.4}
 .budget-info .b-sub{font-size:0.8em;color:var(--sub);margin-top:2px;line-height:1.65}
 .budget-price{font-weight:700;color:var(--green);font-size:0.9em;text-align:right;flex-shrink:0}
-.budget-table{width:100%;border-collapse:collapse;font-size:0.82em}
-.budget-table td{padding:9px 6px;border-bottom:1px solid #f5f5f5;vertical-align:middle;line-height:1.5}
+.budget-table{width:100%;border-collapse:collapse;font-size:0.83em}
+.budget-table td{padding:14px 8px;border-bottom:1px solid #efefef;vertical-align:middle}
 .budget-table tr:last-child td{border-bottom:none}
-.budget-table .ico-col{font-size:1.1em;width:30px;text-align:center;padding-left:0}
+.budget-table .ico-col{font-size:1.15em;width:32px;text-align:center;padding-left:0}
 .budget-table .price-col{text-align:right;padding-right:0;vertical-align:middle;white-space:nowrap}
-.td-price{display:block;font-weight:700;color:var(--green);font-size:0.9em}
-.td-name{font-weight:700;display:block}
-.td-sub{font-size:0.78em;color:var(--sub);margin-top:1px;display:block}
+.td-price{display:block;font-weight:700;color:var(--green);font-size:1.05em;margin-bottom:2px}
+.td-name{font-weight:700;display:block;margin-bottom:4px}
+.td-sub{font-size:0.79em;color:var(--sub);line-height:1.6;display:block}
 
 /* マナー */
 .manner-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
