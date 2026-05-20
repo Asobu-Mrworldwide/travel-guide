@@ -1248,9 +1248,13 @@ function showFilteredSpots(city) {
     const currentIdx = btns.findIndex(b => b.classList.contains('active'));
     if (currentIdx === -1) return;
 
+    const activeSection = document.querySelector('.tab-content.active');
+    const isCourse = activeSection && activeSection.id === 'course';
+
     let nextIdx;
     if (dx < 0) {
-      // 左スワイプ → 次のタブ
+      // 左スワイプ → 次のタブ（モデルコースタブでは無効）
+      if (isCourse) return;
       nextIdx = Math.min(currentIdx + 1, btns.length - 1);
     } else {
       // 右スワイプ → 前のタブ
