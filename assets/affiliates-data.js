@@ -23,23 +23,34 @@ const AFFILIATES = {
 
   flights: {
     name:  '航空券比較',
-    label: '航空券を比較する →',
+    label: '航空券予約サイトを比較する →',
     desc:  '複数の航空会社・予約サイトを一括比較して最安値を見つけよう。',
+    btn:   '比較ページを見る →',
     url:   '../compare/flights.html'
   },
 
   hotels: {
     name:  'ホテル比較',
-    label: 'ホテルを比較する →',
+    label: 'ホテル予約サイトを比較する →',
     desc:  'エリア・価格・口コミで人気ホテルを比較して選べる。',
+    btn:   '比較ページを見る →',
     url:   '../compare/hotels.html'
   },
 
   sim: {
     name:  'eSIM・SIM比較',
-    label: '海外SIMを比較する →',
+    label: '海外SIMサービスを比較する →',
     desc:  '渡航先・日数・データ容量に合ったeSIM・SIMを比較して選べる。',
+    btn:   '比較ページを見る →',
     url:   '../compare/sim.html'
+  },
+
+  grab: {
+    name:  'Grab',
+    label: 'Grabアプリを見る →',
+    desc:  '東南アジアで必須の配車アプリ。乗車前に料金が確定するためぼったくりゼロ。',
+    btn:   'Grabアプリを見る →',
+    url:   'https://www.grab.com/',
   },
 
   // TripAdvisor（後日判断）
@@ -47,6 +58,7 @@ const AFFILIATES = {
     name:  'TripAdvisor',
     label: 'TripAdvisorで探す →',
     desc:  '旅行者の口コミ・評判をチェックしてから観光スポットやレストランを選べる。',
+    btn:   'TripAdvisorで探す →',
     url:   'https://www.tripadvisor.jp/Tourism-g293951-Malaysia-Vacations.html'
   },
 
@@ -71,7 +83,7 @@ const AFFILIATE_CARDS = {
     note:  '※ 月2回・合計約5万円相当までは無料でATM引き出し可能（2025年時点）',
     btn:   '公式サイトを見る →',
     url:   'https://wise.com/jp/',
-    color: '#009e7e',
+    color: '#1a9068',
   },
 
   grab: {
@@ -87,7 +99,23 @@ const AFFILIATE_CARDS = {
     note:  '※ 出発前にアプリをインストールしておくとスムーズ',
     btn:   'Grabアプリを見る →',
     url:   'https://www.grab.com/',
-    color: '#00b14f',
+    color: '#1a9068',
+  },
+
+  sim_compare: {
+    icon:    '📶',
+    name:    '海外SIM・eSIM 比較',
+    tagline: '渡航先・日数・データ容量で最適なプランを選べる',
+    points: [
+      '複数のeSIM・SIMサービスを一括比較',
+      '国・地域ごとに対応プランを絞り込み',
+      'SIM vs eSIM の違いと選び方を解説',
+      '出発前にオンラインで申し込んですぐ使える',
+    ],
+    note:  '※ 掲載サービスは随時更新中',
+    btn:   '比較ページを見る →',
+    url:   '../compare/sim.html',
+    color: '#1a9068',
   },
 
 };

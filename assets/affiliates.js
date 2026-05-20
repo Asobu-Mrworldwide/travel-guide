@@ -122,7 +122,7 @@ function initAffiliates() {
     tooltip.innerHTML = `
       <div class="aff-tooltip-name">${aff.name}</div>
       <div class="aff-tooltip-desc">${aff.desc || ''}</div>
-      <a href="${aff.url}" target="_blank" rel="noopener" class="aff-tooltip-btn">公式サイトを見る →</a>`;
+      <a href="${aff.url}" target="_blank" rel="noopener" class="aff-tooltip-btn">${aff.btn || '詳しく見る →'}</a>`;
 
     const wrap = document.createElement('div');
     wrap.className = 'aff-wrap' + (isInline ? ' inline' : '');
