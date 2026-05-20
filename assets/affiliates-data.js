@@ -39,7 +39,7 @@ const AFFILIATES = {
     name:  'eSIM・SIM比較',
     label: '海外SIMを比較する →',
     desc:  '渡航先・日数・データ容量に合ったeSIM・SIMを比較して選べる。',
-    url:   '#'  // TODO: SIM比較ページURL
+    url:   '../compare/sim.html'
   },
 
   // TripAdvisor（後日判断）

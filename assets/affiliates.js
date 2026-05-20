@@ -111,14 +111,11 @@ function initAffiliates() {
 
     const linkClass = el.dataset.affiliateClass || 'budget-link';
     const isInline  = !!el.dataset.affiliateClass;
-    const descSnippet = aff.desc
-      ? `<span style="font-weight:400;opacity:0.75">${aff.desc.split('。')[0]}。</span>　`
-      : '';
 
     const a = document.createElement('a');
     a.href = aff.url; a.target = '_blank'; a.rel = 'noopener';
     a.className = linkClass;
-    a.innerHTML = descSnippet + aff.label;
+    a.textContent = aff.label;
 
     const tooltip = document.createElement('div');
     tooltip.className = 'aff-tooltip';
@@ -171,6 +168,36 @@ function initAffiliates() {
       </div>`;
 
     el.replaceWith(card);
+  });
+
+  // ── 統合カード用：外枠なし・中身だけ描画 ──
+  // 使い方: <div data-affiliate-card-inner="grab"></div>
+  // 親要素の .card の中に埋め込んで使う（区切り線は親側で用意）
+  document.querySelectorAll('[data-affiliate-card-inner]').forEach(el => {
+    const key = el.dataset.affiliateCardInner;
+    const c = AFFILIATE_CARDS[key];
+    if (!c) { console.warn('affiliates.js: unknown card key →', key); return; }
+
+    const inner = document.createElement('div');
+    inner.className = 'aff-card-inner';
+    inner.innerHTML = `
+      <div class="aff-card-header" style="padding:0 0 10px;border-bottom:none">
+        <span class="aff-card-icon">${c.icon}</span>
+        <div>
+          <div class="aff-card-name">${c.name}</div>
+          <div class="aff-card-tagline">${c.tagline}</div>
+        </div>
+      </div>
+      <ul class="aff-card-points">
+        ${c.points.map(p => `<li>${p}</li>`).join('')}
+      </ul>
+      ${c.note ? `<div class="aff-card-note">${c.note}</div>` : ''}
+      <a href="${c.url}" target="_blank" rel="noopener"
+         class="aff-card-btn" style="background:${c.color}">
+        ${c.btn}
+      </a>`;
+
+    el.replaceWith(inner);
   });
 }
 
