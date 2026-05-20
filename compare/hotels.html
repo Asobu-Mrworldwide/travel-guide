@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホテル比較 | WorldGuide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#1a3a5c;--accent:#e8490f;--green:#006847;--bg:#f4f6f8;--text:#222;--sub:#666;--border:#e0e4e8}
+body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+
+.site-header{background:var(--primary);padding:12px 20px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.site-logo{font-size:1.2em;font-weight:900;color:#fff;text-decoration:none}
+.site-logo span{color:#ffc200}
+.back-link{margin-left:auto;font-size:0.78em;color:rgba(255,255,255,0.7);text-decoration:none}
+.back-link:hover{color:#fff}
+
+.hero{background:linear-gradient(135deg,#1a3a5c 0%,#2d6a9f 60%,#1a3a5c 100%);padding:40px 20px 32px;text-align:center;color:#fff}
+.hero-icon{font-size:2.8em;margin-bottom:12px}
+.hero h1{font-size:1.6em;font-weight:900;margin-bottom:8px}
+.hero p{font-size:0.88em;opacity:0.85;line-height:1.7;max-width:500px;margin:0 auto}
+
+.container{max-width:720px;margin:0 auto;padding:24px 16px 60px}
+
+.points-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+@media(max-width:520px){.points-grid{grid-template-columns:1fr}}
+.point-card{background:#fff;border-radius:12px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
+.point-icon{font-size:1.8em;margin-bottom:8px}
+.point-title{font-size:0.85em;font-weight:700;margin-bottom:4px}
+.point-desc{font-size:0.75em;color:var(--sub);line-height:1.6}
+
+.section-title{font-size:1em;font-weight:900;color:var(--primary);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #e0e8f0}
+
+.wip-block{background:#fff;border-radius:14px;padding:32px 20px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:20px}
+.wip-icon{font-size:2.4em;margin-bottom:12px}
+.wip-title{font-size:0.95em;font-weight:700;margin-bottom:8px}
+.wip-desc{font-size:0.82em;color:var(--sub);line-height:1.7}
+
+.plan-list{background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:20px}
+.plan-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:0.83em}
+.plan-item:last-child{border-bottom:none}
+.plan-item-ico{flex-shrink:0;font-size:1.2em}
+.plan-item-text{color:var(--sub);line-height:1.6}
+.plan-item-text strong{color:var(--text)}
+
+.footer{text-align:center;padding:24px 16px;font-size:0.75em;color:var(--sub);border-top:1px solid var(--border);margin-top:40px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="../index.html">🌍 World<span>Guide</span></a>
+  <a class="back-link" href="javascript:history.back()">← 戻る</a>
+</header>
+
+<div class="hero">
+  <div class="hero-icon">🛏️</div>
+  <h1>ホテル比較</h1>
+  <p>エリア・予算・口コミで人気ホテルを比較。<br>旅のスタイルに合った宿泊先を見つけよう。</p>
+</div>
+
+<div class="container">
+
+  <div class="points-grid" style="margin-top:24px">
+    <div class="point-card">
+      <div class="point-icon">💰</div>
+      <div class="point-title">料金を比較</div>
+      <div class="point-desc">複数の予約サイトの価格をまとめて比較して最安値で予約できる</div>
+    </div>
+    <div class="point-card">
+      <div class="point-icon">⭐</div>
+      <div class="point-title">口コミで選ぶ</div>
+      <div class="point-desc">実際に泊まった旅行者の口コミを参考にして失敗しない宿選びができる</div>
+    </div>
+    <div class="point-card">
+      <div class="point-icon">🗺️</div>
+      <div class="point-title">エリアで絞り込む</div>
+      <div class="point-desc">観光地・空港・ビーチなど目的に合ったエリアのホテルを探せる</div>
+    </div>
+  </div>
+
+  <div class="section-title">サービス比較</div>
+  <div class="wip-block">
+    <div class="wip-icon">🚧</div>
+    <div class="wip-title">準備中です</div>
+    <div class="wip-desc">各予約サイトの手数料・キャンセルポリシー・使いやすさなどを比較した<br>コンテンツを鋭意作成中です。もうしばらくお待ちください。</div>
+  </div>
+
+  <div class="section-title">掲載予定のコンテンツ</div>
+  <div class="plan-list">
+    <div class="plan-item">
+      <span class="plan-item-ico">📊</span>
+      <div class="plan-item-text"><strong>サービス比較表</strong><br>Booking.com・Hotels.com・Agoda・じゃらん等の手数料・特徴を比較</div>
+    </div>
+    <div class="plan-item">
+      <span class="plan-item-ico">🏨</span>
+      <div class="plan-item-text"><strong>ホテルカテゴリ解説</strong><br>ゲストハウス・ブティックホテル・リゾートホテルの違いと選び方</div>
+    </div>
+    <div class="plan-item">
+      <span class="plan-item-ico">💡</span>
+      <div class="plan-item-text"><strong>お得に予約するコツ</strong><br>直前割・メンバー価格・ポイント活用など賢い予約テクニック</div>
+    </div>
+    <div class="plan-item">
+      <span class="plan-item-ico">🌏</span>
+      <div class="plan-item-text"><strong>目的地別おすすめ</strong><br>東南アジア・ヨーロッパなど旅先別のおすすめ予約サイト・宿泊スタイル</div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p><a href="../privacy.html" style="color:var(--sub);text-decoration:none">プライバシーポリシー</a> ｜ © 2026 WorldGuide</p>
+</footer>
+
+</body>
+</html>

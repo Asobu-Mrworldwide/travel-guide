@@ -25,14 +25,14 @@ const AFFILIATES = {
     name:  '航空券比較',
     label: '航空券を比較する →',
     desc:  '複数の航空会社・予約サイトを一括比較して最安値を見つけよう。',
-    url:   '#'  // TODO: 航空券比較ページURL
+    url:   '../compare/flights.html'
   },
 
   hotels: {
     name:  'ホテル比較',
     label: 'ホテルを比較する →',
     desc:  'エリア・価格・口コミで人気ホテルを比較して選べる。',
-    url:   '#'  // TODO: ホテル比較ページURL
+    url:   '../compare/hotels.html'
   },
 
   sim: {

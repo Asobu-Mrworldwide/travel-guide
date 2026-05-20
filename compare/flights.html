@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>航空券比較 | WorldGuide</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#1a3a5c;--accent:#e8490f;--green:#006847;--bg:#f4f6f8;--text:#222;--sub:#666;--border:#e0e4e8}
+body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:14px}
+
+.site-header{background:var(--primary);padding:12px 20px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.site-logo{font-size:1.2em;font-weight:900;color:#fff;text-decoration:none}
+.site-logo span{color:#ffc200}
+.back-link{margin-left:auto;font-size:0.78em;color:rgba(255,255,255,0.7);text-decoration:none}
+.back-link:hover{color:#fff}
+
+.hero{background:linear-gradient(135deg,#1a3a5c 0%,#2d6a9f 60%,#1a3a5c 100%);padding:40px 20px 32px;text-align:center;color:#fff}
+.hero-icon{font-size:2.8em;margin-bottom:12px}
+.hero h1{font-size:1.6em;font-weight:900;margin-bottom:8px}
+.hero p{font-size:0.88em;opacity:0.85;line-height:1.7;max-width:500px;margin:0 auto}
+
+.container{max-width:720px;margin:0 auto;padding:24px 16px 60px}
+
+/* ── ポイント説明 ── */
+.points-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+@media(max-width:520px){.points-grid{grid-template-columns:1fr}}
+.point-card{background:#fff;border-radius:12px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.07)}
+.point-icon{font-size:1.8em;margin-bottom:8px}
+.point-title{font-size:0.85em;font-weight:700;margin-bottom:4px}
+.point-desc{font-size:0.75em;color:var(--sub);line-height:1.6}
+
+/* ── 比較テーブル（準備中） ── */
+.section-title{font-size:1em;font-weight:900;color:var(--primary);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #e0e8f0}
+
+.wip-block{background:#fff;border-radius:14px;padding:32px 20px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:20px}
+.wip-icon{font-size:2.4em;margin-bottom:12px}
+.wip-title{font-size:0.95em;font-weight:700;margin-bottom:8px}
+.wip-desc{font-size:0.82em;color:var(--sub);line-height:1.7}
+
+/* ── 予定コンテンツ ── */
+.plan-list{background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:20px}
+.plan-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:0.83em}
+.plan-item:last-child{border-bottom:none}
+.plan-item-ico{flex-shrink:0;font-size:1.2em}
+.plan-item-text{color:var(--sub);line-height:1.6}
+.plan-item-text strong{color:var(--text)}
+
+.footer{text-align:center;padding:24px 16px;font-size:0.75em;color:var(--sub);border-top:1px solid var(--border);margin-top:40px}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="../index.html">🌍 World<span>Guide</span></a>
+  <a class="back-link" href="javascript:history.back()">← 戻る</a>
+</header>
+
+<div class="hero">
+  <div class="hero-icon">✈️</div>
+  <h1>航空券比較</h1>
+  <p>複数の航空会社・予約サイトを一括比較。<br>目的地・日程・予算に合った最安値を見つけよう。</p>
+</div>
+
+<div class="container">
+
+  <!-- ポイント -->
+  <div class="points-grid" style="margin-top:24px">
+    <div class="point-card">
+      <div class="point-icon">💰</div>
+      <div class="point-title">最安値を比較</div>
+      <div class="point-desc">複数サイトの価格をまとめて比較して一番安い便を探せる</div>
+    </div>
+    <div class="point-card">
+      <div class="point-icon">🔍</div>
+      <div class="point-title">LCC も網羅</div>
+      <div class="point-desc">格安航空会社（LCC）を含む幅広い選択肢から選べる</div>
+    </div>
+    <div class="point-card">
+      <div class="point-icon">📅</div>
+      <div class="point-title">日程を柔軟に</div>
+      <div class="point-desc">前後の日程で価格を比較して一番お得な日程を見つけられる</div>
+    </div>
+  </div>
+
+  <!-- 比較テーブル（準備中） -->
+  <div class="section-title">サービス比較</div>
+  <div class="wip-block">
+    <div class="wip-icon">🚧</div>
+    <div class="wip-title">準備中です</div>
+    <div class="wip-desc">各サービスの手数料・使いやすさ・対応路線などを比較した<br>コンテンツを鋭意作成中です。もうしばらくお待ちください。</div>
+  </div>
+
+  <!-- 掲載予定コンテンツ -->
+  <div class="section-title">掲載予定のコンテンツ</div>
+  <div class="plan-list">
+    <div class="plan-item">
+      <span class="plan-item-ico">📊</span>
+      <div class="plan-item-text"><strong>サービス比較表</strong><br>Skyscanner・Google フライト・エクスペディア等の手数料・使いやすさを比較</div>
+    </div>
+    <div class="plan-item">
+      <span class="plan-item-ico">🛫</span>
+      <div class="plan-item-text"><strong>LCC 徹底解説</strong><br>エアアジア・ジェットスター・ピーチ等のLCCごとの特徴・注意点</div>
+    </div>
+    <div class="plan-item">
+      <span class="plan-item-ico">💡</span>
+      <div class="plan-item-text"><strong>安く買うコツ</strong><br>予約タイミング・曜日・シーズンによる価格変動と節約テクニック</div>
+    </div>
+    <div class="plan-item">
+      <span class="plan-item-ico">🌏</span>
+      <div class="plan-item-text"><strong>目的地別おすすめ</strong><br>東南アジア・ヨーロッパなど目的地別のおすすめ航空会社・路線</div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p><a href="../privacy.html" style="color:var(--sub);text-decoration:none">プライバシーポリシー</a> ｜ © 2026 WorldGuide</p>
+</footer>
+
+</body>
+</html>
