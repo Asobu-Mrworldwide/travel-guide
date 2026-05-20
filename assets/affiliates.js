@@ -66,13 +66,14 @@ const AFFILIATES = {
    ツールチップCSS（PCのみ表示・モバイルは非表示）
    ===================================================== */
 const TOOLTIP_CSS = `
-.aff-wrap{position:relative;display:block}
-.aff-wrap.inline{display:inline}
+.aff-wrap{position:relative;display:block;width:100%}
+.aff-wrap.inline{display:inline;width:auto}
 .aff-tooltip{
   position:absolute;
   bottom:calc(100% + 10px);
-  left:50%;
-  transform:translateX(-50%);
+  right:0;
+  left:auto;
+  transform:none;
   width:240px;
   background:#fff;
   border:1px solid #dde2e8;
@@ -87,11 +88,18 @@ const TOOLTIP_CSS = `
   white-space:normal;
   line-height:1.5;
 }
+.aff-tooltip::before{
+  content:'';
+  position:absolute;
+  top:100%;left:0;right:0;
+  height:14px;
+}
 .aff-tooltip::after{
   content:'';
   position:absolute;
-  top:100%;left:50%;
-  transform:translateX(-50%);
+  top:100%;right:20px;
+  left:auto;
+  transform:none;
   border:7px solid transparent;
   border-top-color:#fff;
   filter:drop-shadow(0 2px 0 #dde2e8);

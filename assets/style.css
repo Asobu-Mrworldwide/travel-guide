@@ -128,7 +128,7 @@ section.active{display:block}
 
 /* 予算・費用 */
 .budget-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f0}
-.budget-row .budget-link{width:100%;text-align:right;font-size:0.75em;font-weight:700;color:var(--green);text-decoration:none;margin-top:2px}
+.budget-row .budget-link{display:block;width:100%;text-align:right;font-size:0.75em;font-weight:700;color:var(--green);text-decoration:none;margin-top:2px}
 .budget-row:last-child{border-bottom:none}
 .budget-ico{font-size:1.4em;width:36px;text-align:center;flex-shrink:0}
 .budget-info{flex:1}
