@@ -35,14 +35,14 @@
 <nav>
   <button class="active" onclick="show('basic',this)">🌍 基本情報</button>
   <button onclick="show('spots',this)">📍 観光スポット</button>
-  <button onclick="show('food',this)">🍜 グルメ10</button>
+  <button onclick="show('food',this)">🍜 グルメ</button>
+  <button onclick="show('course',this)">🗺️ モデルコース</button>
   <button onclick="show('season',this)">🌤️ ベストシーズン</button>
   <button onclick="show('budget',this)">💰 予算・費用</button>
   <button onclick="show('practical',this)">🧳 旅の準備</button>
   <button onclick="show('manner',this)">🙏 マナー</button>
   <button onclick="show('phrases',this)">💬 フレーズ</button>
   <button onclick="show('transport',this)">🚗 交通</button>
-  <button onclick="show('course',this)">🗺️ モデルコース</button>
   <button onclick="window.open('../checklist.html?from=malaysia','_blank')">📋 持ち物リスト</button>
 </nav>
 
@@ -78,7 +78,7 @@
         <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">🍜 人気No.1グルメ</div>
         <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ナシレマ</div>
         <div style="font-size:0.8em;color:var(--sub);flex:1">ココナッツミルクで炊いたご飯の国民食。朝食から屋台まで幅広く楽しめる。</div>
-        <button class="qs-link" style="margin-top:8px;align-self:flex-end;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ10選を見る →</button>
+        <button class="qs-link" style="margin-top:8px;align-self:flex-end;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ一覧を見る →</button>
       </div>
     </div>
 
@@ -110,9 +110,9 @@
   <div class="qs-row">
     <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約7時間</div></div></div>
     <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −1時間</div></div></div>
-    <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[5])">旅の準備を見る →</button></div></div>
-    <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[4])">予算・費用を見る →</button></div></div>
-    <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[7])">フレーズ集を見る →</button></div></div>
+    <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[6])">旅の準備を見る →</button></div></div>
+    <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
+    <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
     <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1RM ≈ 33円</div></div></div>
   </div>
 
@@ -240,7 +240,7 @@
       <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ffb800,#ffe060);border-radius:2px;vertical-align:middle;margin-right:3px"></span>27°C やや低め</span>
       <span style="margin-left:2px">｜ ☀️ 乾季　⛅ 曇り　☔ 雨季</span>
     </div>
-    <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[3])">地域別ベストシーズンを詳しく見る →</button>
+    <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[4])">地域別ベストシーズンを詳しく見る →</button>
   </div>
 
   <!-- ⑥ 基本データ（補足） -->
@@ -398,8 +398,10 @@
 
     <div style="margin-top:14px;background:#fffbf0;border-left:3px solid var(--yellow);border-radius:6px;padding:10px 12px;font-size:0.75em;color:#665500;line-height:1.7">💡 <strong>航空券が安い時期</strong><br>6〜7月はLCCの航空券が安くなりやすい時期。1月中旬〜3月も比較的ねらい目。年末年始・GW・お盆は高騰するので要注意。</div>
   </div>
-  <div style="margin-top:14px;text-align:right">
-    <button onclick="show('budget',document.querySelectorAll('nav button')[4])" style="font-size:0.78em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline">予算・費用を見る →</button>
+  <div class="tab-cta">
+    <div class="tab-cta-title">旅の予算を把握しよう！💰</div>
+    <p class="tab-cta-desc">航空券・ホテル・食費・交通費の目安を一覧でチェック。<br>節約ポイントやお金の持ち方も紹介しています。</p>
+    <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button>
   </div>
 </section>
 
@@ -461,7 +463,7 @@
   <div style="margin-top:20px;background:linear-gradient(135deg,#f0f7f3,#e6f2ec);border-radius:14px;padding:18px 20px;text-align:center">
     <div style="font-size:1em;font-weight:900;color:var(--green);margin-bottom:6px">さあ、旅の準備をはじめよう！ 🧳</div>
     <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
-    <button onclick="show('practical',document.querySelectorAll('nav button')[5])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
+    <button onclick="show('practical',document.querySelectorAll('nav button')[6])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
   </div>
 </section>
 
@@ -753,6 +755,12 @@
   <h2>🎟️ 現地ツアー・アクティビティ</h2>
   <div data-affiliate-card="klook"></div>
 
+  <div class="tab-cta">
+    <div class="tab-cta-title">出発前にマナーも確認しよう！🙏</div>
+    <p class="tab-cta-desc">イスラム教の国ならではのマナーを知っておくと現地での行動がスムーズ。<br>モスク見学・食事・服装など旅行者が知っておくべきポイントをまとめました。</p>
+    <button class="tab-cta-btn" onclick="show('manner',document.querySelectorAll('nav button')[7])">マナーを見る →</button>
+  </div>
+
 </section>
 
 <!-- マナー -->
@@ -768,8 +776,10 @@
     <div class="manner-card do"><div class="m-ico">📸</div><div class="m-title">撮影前に一言</div><div class="m-desc">人物や宗教施設を撮影する際は必ず許可を取る。特にモスク・寺院は要注意。</div></div>
     <div class="manner-card do"><div class="m-ico">☪️</div><div class="m-title">お祈り時間を尊重</div><div class="m-desc">イスラム教徒は1日5回お祈りをする。日没後1時間は電話・訪問を避けると丁寧。</div></div>
   </div>
-  <div style="margin-top:14px;text-align:right">
-    <button onclick="show('phrases',document.querySelectorAll('nav button')[7])" style="font-size:0.78em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline">フレーズ集を見る →</button>
+  <div class="tab-cta">
+    <div class="tab-cta-title">現地の言葉で話しかけてみよう！💬</div>
+    <p class="tab-cta-desc">マレー語・中国語・タミル語の簡単なフレーズ集。<br>挨拶ひとつで現地の人の反応がぐっと変わります。</p>
+    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button>
   </div>
 </section>
 
@@ -880,21 +890,31 @@
 
 <!-- グルメ -->
 <section id="food">
-  <h2>マレーシア グルメ10選</h2>
+  <h2>マレーシア グルメ</h2>
   <div class="item-grid">
-    <div class="item-card"><div class="ico">🍚</div><div class="num">No.01</div><div class="name">ナシレマ</div><div class="desc">ココナッツミルクで炊いたご飯にサンバルソース・ゆで卵・アンチョビ・ピーナッツを添えた国民食。朝食の定番。</div><span class="badge">国民食</span><a href="https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%B7%E3%83%AC%E3%83%9E%E3%83%83" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🍗</div><div class="num">No.02</div><div class="name">チキンライス</div><div class="desc">鶏のゆで汁で炊いたご飯に茹で・焼きチキンを乗せた一品。ペナン発祥のハイナニーズスタイルが有名。</div><span class="badge">ペナン名物</span><a href="https://ja.wikipedia.org/wiki/%E6%B5%B7%E5%8D%97%E9%B6%8F%E9%A3%AF" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🍢</div><div class="num">No.03</div><div class="name">サテー</div><div class="desc">鶏・牛肉を串に刺してスパイスで味付けし炭火焼きにした料理。甘みのあるピーナッツソースで食べる。</div><span class="badge">ハラール</span><a href="https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%86" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🦐</div><div class="num">No.04</div><div class="name">アッサムラクサ</div><div class="desc">酸味のきいたタマリンドスープと魚だしの麺料理。世界で最もおいしい料理ランキングにも選ばれた一品。</div><span class="badge">世界的評価</span><a href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B5" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🍛</div><div class="num">No.05</div><div class="name">ナシカンダール</div><div class="desc">ご飯に数種類のカレーやおかずをかけるペナン発のインド系ムスリム料理。豊富なトッピングが魅力。</div><span class="badge">スパイシー</span><a href="https://en.wikipedia.org/wiki/Nasi_kandar" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🍜</div><div class="num">No.06</div><div class="name">チャークェイティオ</div><div class="desc">平たい米粉麺をエビ・もやし・卵・貝などと強火で炒めた料理。ペナンが本場。</div><span class="badge">ペナン名物</span><a href="https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AF%E3%82%A4%E3%83%86%E3%82%A3%E3%82%AA" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🥘</div><div class="num">No.07</div><div class="name">ルンダン</div><div class="desc">牛肉やチキンをスパイスとココナッツミルクで長時間煮込んだコクのある料理。辛さの中に甘みがある。</div><span class="badge">ハラール</span><a href="https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%B3%E3%83%80%E3%83%B3" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🧊</div><div class="num">No.08</div><div class="name">チェンドル</div><div class="desc">緑色の細麺にかき氷・ヤシ砂糖シロップ・ ココナッツミルクをかけたデザート。暑い日の定番スイーツ。</div><span class="badge">スイーツ</span><a href="https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%B3%E3%83%89%E3%83%AB" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🫓</div><div class="num">No.09</div><div class="name">ロティチャナイ</div><div class="desc">薄く伸ばした生地を油で焼いたインド系のパン。カレーやダルにつけて食べる朝食の王様。</div><span class="badge">朝食定番</span><a href="https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%86%E3%82%A3%E3%83%81%E3%83%A3%E3%83%8A%E3%82%A4" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
-    <div class="item-card"><div class="ico">🍞</div><div class="num">No.10</div><div class="name">カヤトースト</div><div class="desc">ジャムとバターをトーストに塗り、半熟卵・コーヒーとセットで食べるコピティアムの定番朝食。</div><span class="badge">朝食定番</span><a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%A4%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍚</div><div class="num">No.01</div><div class="name-row"><div class="name">ナシレマ</div><span class="badge">国民食</span></div><div class="desc">ココナッツミルクで炊いたご飯にサンバルソース・ゆで卵・アンチョビ・ピーナッツを添えた国民食。朝食の定番。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%B7%E3%83%AC%E3%83%9E%E3%83%83" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍗</div><div class="num">No.02</div><div class="name-row"><div class="name">チキンライス</div><span class="badge">ペナン名物</span></div><div class="desc">鶏のゆで汁で炊いたご飯に茹で・焼きチキンを乗せた一品。ペナン発祥のハイナニーズスタイルが有名。</div><a href="https://ja.wikipedia.org/wiki/%E6%B5%B7%E5%8D%97%E9%B6%8F%E9%A3%AF" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍢</div><div class="num">No.03</div><div class="name-row"><div class="name">サテー</div><span class="badge">ハラール</span></div><div class="desc">鶏・牛肉を串に刺してスパイスで味付けし炭火焼きにした料理。甘みのあるピーナッツソースで食べる。</div><a href="https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%86" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🦐</div><div class="num">No.04</div><div class="name-row"><div class="name">アッサムラクサ</div><span class="badge">世界的評価</span></div><div class="desc">酸味のきいたタマリンドスープと魚だしの麺料理。世界で最もおいしい料理ランキングにも選ばれた一品。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B5" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍛</div><div class="num">No.05</div><div class="name-row"><div class="name">ナシカンダール</div><span class="badge">スパイシー</span></div><div class="desc">ご飯に数種類のカレーやおかずをかけるペナン発のインド系ムスリム料理。豊富なトッピングが魅力。</div><a href="https://en.wikipedia.org/wiki/Nasi_kandar" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍜</div><div class="num">No.06</div><div class="name-row"><div class="name">チャークェイティオ</div><span class="badge">ペナン名物</span></div><div class="desc">平たい米粉麺をエビ・もやし・卵・貝などと強火で炒めた料理。ペナンが本場。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AF%E3%82%A4%E3%83%86%E3%82%A3%E3%82%AA" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🥘</div><div class="num">No.07</div><div class="name-row"><div class="name">ルンダン</div><span class="badge">ハラール</span></div><div class="desc">牛肉やチキンをスパイスとココナッツミルクで長時間煮込んだコクのある料理。辛さの中に甘みがある。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%B3%E3%83%80%E3%83%B3" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🧊</div><div class="num">No.08</div><div class="name-row"><div class="name">チェンドル</div><span class="badge">スイーツ</span></div><div class="desc">緑色の細麺にかき氷・ヤシ砂糖シロップ・ ココナッツミルクをかけたデザート。暑い日の定番スイーツ。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%B3%E3%83%89%E3%83%AB" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🫓</div><div class="num">No.09</div><div class="name-row"><div class="name">ロティチャナイ</div><span class="badge">朝食定番</span></div><div class="desc">薄く伸ばした生地を油で焼いたインド系のパン。カレーやダルにつけて食べる朝食の王様。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%86%E3%82%A3%E3%83%81%E3%83%A3%E3%83%8A%E3%82%A4" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍞</div><div class="num">No.10</div><div class="name-row"><div class="name">カヤトースト</div><span class="badge">朝食定番</span></div><div class="desc">ジャムとバターをトーストに塗り、半熟卵・コーヒーとセットで食べるコピティアムの定番朝食。</div><a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%A4%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍺</div><div class="num">No.11</div><div class="name-row"><div class="name">タイガービール</div><span class="badge">ローカルビール</span></div><div class="desc">1932年創業のマレーシア定番ラガービール。すっきりした飲み口で屋台からバーまで幅広く親しまれている。非イスラム系の食堂や中華系コピティアムで気軽に注文できる。</div><a href="https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%82%AC%E3%83%BC%E3%83%93%E3%83%BC%E3%83%AB" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍶</div><div class="num">No.12</div><div class="name-row"><div class="name">トゥアック</div><span class="badge">伝統酒・ボルネオ</span></div><div class="desc">サラワク州ダヤク族が作る伝統的な米のお酒。本場はボルネオ島で、ロングハウス訪問や収穫祭「ガワイ」で振る舞われる。KLでは専門バー・酒屋で入手可能。度数3〜8%ほどで素朴な甘み。</div></div>
+    <div class="item-card"><div class="ico">🍲</div><div class="num">No.15</div><div class="name-row"><div class="name">ニョニャ料理</div><span class="badge">マラッカ名物</span></div><div class="desc">15世紀に中国系移民とマレー人の間に生まれたペラナカン文化の家庭料理。ココナッツミルク・レモングラス・タマリンドを使い、甘み・酸味・辛味が重なる複雑な味わい。マラッカの旧市街で本場の味が楽しめる。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%A9%E3%83%8A%E3%82%AB%E3%83%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🥧</div><div class="num">No.16</div><div class="name-row"><div class="name">エッグタルト</div><span class="badge">ペナン名物</span></div><div class="desc">ペナンで独自進化した焼き菓子。サクサクの多層パイ生地に、なめらかなカスタードフィリング。甘すぎず上品な味わいで、ジョージタウンの老舗パン屋（明香泰など）が有名。</div><a href="https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%83%E3%82%B0%E3%82%BF%E3%83%AB%E3%83%88" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">☕</div><div class="num">No.17</div><div class="name-row"><div class="name">白咖啡（ホワイトコーヒー）</div><span class="badge">イポー名物</span></div><div class="desc">イポー発祥のコーヒー。豆をマーガリンのみで焙煎し、練乳で割って飲む。まろやかな甘さとナッティな香りで苦みが少なく日本人にも飲みやすい。Lonely Planetが「世界トップ3のコーヒーの町」に選出。インスタント版はお土産にも人気。</div><a href="https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%9D%E3%83%BC%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍜</div><div class="num">No.18</div><div class="name-row"><div class="name">サバ式ラクサ</div><span class="badge">コタキナバル名物</span></div><div class="desc">ボルネオ・サバ州発祥のラクサ。約20種のスパイスを使ったクリーミーなスープに米粉麺・エビ・鶏肉・錦糸卵をのせた一杯。他のラクサより控えめな辛さで食べやすく、コタキナバルのコピティアムで人気のランチメニュー。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B5" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍜</div><div class="num">No.13</div><div class="name-row"><div class="name">サラワクラクサ</div><span class="badge">クチン名物</span></div><div class="desc">クチン発祥の絶品麺料理。20種以上のスパイスを使ったブロスにエビ・鶏肉・卵・ビーフンを合わせる。アンソニー・ボーデインが「神の朝食」と絶賛。アッサムラクサとは別物。</div><a href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B5" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
+    <div class="item-card"><div class="ico">🍝</div><div class="num">No.14</div><div class="name-row"><div class="name">コロミー</div><span class="badge">クチン名物</span></div><div class="desc">クチンの定番汁なし麺。細い卵麺を豚ラード・薄口醤油・酢で和えたシンプルな一品。チャーシューと揚げシャロットが決め手。サラワク外ではほぼ食べられない。</div><a href="https://en.wikipedia.org/wiki/Mee_kolo" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a></div>
   </div>
-  <div style="margin-top:14px;text-align:right">
-    <button onclick="show('season',document.querySelectorAll('nav button')[3])" style="font-size:0.78em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline">ベストシーズンを見る →</button>
+  <div class="tab-cta">
+    <div class="tab-cta-title">食べたいものが決まったら旅程を組もう！🗺️</div>
+    <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>管理人の実際の旅ルートもそのまま公開しています。</p>
+    <button class="tab-cta-btn" onclick="show('course',document.querySelectorAll('nav button')[3])">モデルコースを見る →</button>
   </div>
 </section>
 
@@ -921,9 +941,9 @@
       <div class="csh-grid">
         <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">直行便 約7時間</div></div>
         <div class="csh-item"><div class="csh-lbl">空港↔市内</div><div class="csh-val">KLIAエクスプレス 約28分</div></div>
-        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜9月（乾季）</div><button onclick="show('season',document.querySelectorAll('nav button')[3])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜9月（乾季）</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
         <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">ナシレマ・ロティチャナイ</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
-        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・MRT・LRT</div><button onclick="show('transport',document.querySelectorAll('nav button')[8])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・MRT・LRT</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
       </div>
     </div>
     <div class="item-card spot must" data-city="kl"><div class="must-badge">⭐</div><div class="ico">🏙️</div><div class="num">KL 01</div><div class="name">ペトロナスツインタワー</div><div class="desc">高さ452mの双子タワー。スカイブリッジ（41〜42F）と展望台（86F）からの夜景は圧巻。入場は有料・要予約。Klookで事前に押さえておこう。</div><span class="badge">クアラルンプール</span></div>
@@ -939,9 +959,9 @@
       <div class="csh-grid">
         <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">KLから国内線 約1時間</div></div>
         <div class="csh-item"><div class="csh-lbl">フェリー</div><div class="csh-val">バターワースから約15分</div></div>
-        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">11〜4月（乾季）</div><button onclick="show('season',document.querySelectorAll('nav button')[3])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">11〜4月（乾季）</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
         <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">アッサムラクサ・チャークェイティオ</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
-        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・バス・トライショー</div><button onclick="show('transport',document.querySelectorAll('nav button')[8])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・バス・トライショー</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
       </div>
     </div>
     <div class="item-card spot must" data-city="penang"><div class="must-badge">⭐</div><div class="ico">🏛️</div><div class="num">ペナン 01</div><div class="name">ジョージタウン旧市街</div><div class="desc">ユネスコ世界遺産。英国植民地時代の建築・中国系家屋・モスクが混在する多文化の街。壁画アートも必見。</div><span class="badge">世界遺産</span></div>
@@ -957,9 +977,9 @@
       <div class="csh-grid">
         <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">KLから高速バス 約2時間</div></div>
         <div class="csh-item"><div class="csh-lbl">おすすめ滞在</div><div class="csh-val">日帰り〜1泊</div></div>
-        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜10月</div><button onclick="show('season',document.querySelectorAll('nav button')[3])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜10月</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
         <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">チキンライス・ニョニャ料理</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
-        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">トライショー・Grab</div><button onclick="show('transport',document.querySelectorAll('nav button')[8])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">トライショー・Grab</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
       </div>
     </div>
     <div class="item-card spot must" data-city="malacca"><div class="must-badge">⭐</div><div class="ico">🇳🇱</div><div class="num">マラッカ 01</div><div class="name">オランダ広場（スタダイス）</div><div class="desc">17世紀にオランダが建設した赤い建物が並ぶ広場。キリスト教会・時計塔・噴水が美しいマラッカの象徴。</div><span class="badge">フォトスポット</span></div>
@@ -975,9 +995,9 @@
       <div class="csh-grid">
         <div class="csh-item"><div class="csh-lbl">シンガポールから</div><div class="csh-val">バス 約1〜2時間</div></div>
         <div class="csh-item"><div class="csh-lbl">KLから</div><div class="csh-val">飛行機 約45分</div></div>
-        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜9月</div><button onclick="show('season',document.querySelectorAll('nav button')[3])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜9月</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
         <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">シーフード・ラクサ</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
-        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div><button onclick="show('transport',document.querySelectorAll('nav button')[8])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
       </div>
     </div>
     <div class="item-card spot" data-city="jb"><div class="ico">🧱</div><div class="num">JB 01</div><div class="name">レゴランド・マレーシア</div><div class="desc">東南アジア初のレゴランド。ミニランド・アトラクション・ウォーターパークが一体となった家族向けテーマパーク。</div><span class="badge">ファミリー</span></div>
@@ -992,10 +1012,10 @@
       <div class="csh-desc">海・山・ジャングルが揃うサバ州の州都</div>
       <div class="csh-grid">
         <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">KLから国内線 約2時間</div></div>
-        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">1〜5月（乾季）</div><button onclick="show('season',document.querySelectorAll('nav button')[3])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">1〜5月（乾季）</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
         <div class="csh-item"><div class="csh-lbl">ダイビング適期</div><div class="csh-val">3〜5月</div></div>
         <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">シーフード・サバ式ラクサ</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
-        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div><button onclick="show('transport',document.querySelectorAll('nav button')[8])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
       </div>
     </div>
     <div class="item-card spot must" data-city="kk"><div class="must-badge">⭐</div><div class="ico">⛰️</div><div class="num">KK 01</div><div class="name">キナバル山</div><div class="desc">東南アジア最高峰（4,095m）のユネスコ世界遺産。2日間のトレッキングで登頂可能。ガイド必須・事前予約が必要。</div><span class="badge">世界遺産</span></div>
@@ -1010,10 +1030,10 @@
       <div class="csh-desc">「猫の街」として知られるサラワク州の州都</div>
       <div class="csh-grid">
         <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">KLから国内線 約1.5時間</div></div>
-        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜10月</div><button onclick="show('season',document.querySelectorAll('nav button')[3])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">3〜10月</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
         <div class="csh-item"><div class="csh-lbl">餌付け時間</div><div class="csh-val">8〜10時・15〜17時</div></div>
         <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">サラワクラクサ・コロミー</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
-        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div><button onclick="show('transport',document.querySelectorAll('nav button')[8])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
       </div>
     </div>
     <div class="item-card spot" data-city="kuching"><div class="ico">🏛️</div><div class="num">クチン 01</div><div class="name">サラワク博物館</div><div class="desc">東南アジア有数の博物館。ボルネオ先住民族の文化・自然史を詳しく展示。1891年創設の歴史ある博物館。</div><span class="badge">入場無料</span></div>
@@ -1052,22 +1072,22 @@
     <div class="course-plan-title">KL ＋ マラッカ　4泊5日</div>
     <div class="course-timeline">
       <div class="tl-day">
-        <div class="tl-badge green">Day 1</div>
+        <div class="tl-badge" style="background:#1e7e34">Day 1</div>
         <div class="tl-content"><strong>クアラルンプール到着</strong><br>KLIAエクスプレスで約28分、KLセントラルへ。ホテルに荷物を預けたらそのまま夜のジャランアローへ。屋台がずらりと並ぶ活気ある通りで、チキンウィングや炒麺をつまみながらKLの夜を満喫。</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge green">Day 2</div>
+        <div class="tl-badge" style="background:#8a9a20">Day 2</div>
         <div class="tl-content"><strong>バトゥケーブス → チャイナタウン</strong><br>早起きしてバトゥケーブスへ。272段のカラフルな階段を上ると巨大なヒンドゥー聖地が広がる。午後はチャイナタウンのペタリン通りでお土産探し、セントラルマーケットで工芸品をチェック。</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge green">Day 3</div>
+        <div class="tl-badge" style="background:#c88000">Day 3</div>
         <div class="tl-content"><strong>ペトロナスツインタワー → ブキッビンタン</strong><br>KLのシンボル、ペトロナスツインタワーへ（要早めの予約）。KLCC公園の噴水ショーを見てから、ブキッビンタンへ移動。ショッピングモールをはしごして夜景でKLを締めくくる。</div>
       </div>
       <div class="tl-transit">
         <div class="tl-transit-lbl">🚌<br>約2h</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge" style="background:#b09000">Day 4</div>
+        <div class="tl-badge" style="background:#cc0001">Day 4</div>
         <div class="tl-content"><strong>マラッカ日帰り</strong><br>世界遺産の古都へ日帰り旅。赤いオランダ広場・キリスト教会を見てから、ジョンカーストリートを散策。ポルトガル・中国・マレーが融合したニョニャ料理でランチ。カラフルなトライショーに乗るのもおすすめ。夕方KLへ戻る。</div>
       </div>
       <div class="tl-transit">
@@ -1087,30 +1107,30 @@
     <div class="course-plan-title">KL ＋ ペナン　6泊7日</div>
     <div class="course-timeline">
       <div class="tl-day">
-        <div class="tl-badge green">Day 1</div>
+        <div class="tl-badge" style="background:#1e7e34">Day 1</div>
         <div class="tl-content"><strong>クアラルンプール到着</strong><br>チェックイン後、夜のチャイナタウンへ。提灯が灯るペタリン通りの夜市は雰囲気満点。屋台でナシレマや揚げ豆腐をつまみながら、マレーシアの多文化な空気を最初の夜から体感できる。</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge green">Day 2</div>
+        <div class="tl-badge" style="background:#52a443">Day 2</div>
         <div class="tl-content"><strong>バトゥケーブス → ペトロナスツインタワー</strong><br>朝イチでバトゥケーブスへ。午後はKLCCへ移動してペトロナスツインタワーへ（要早めの予約）。夜はスカイブリッジから見るKLの夜景が圧巻。</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge green">Day 3</div>
+        <div class="tl-badge" style="background:#8a9a20">Day 3</div>
         <div class="tl-content"><strong>KLモスク観光 → ペナンへ移動</strong><br>午前中はブルーモスク（シャーアラム）とプトラジャヤのピンクモスク（プトラモスク）へ。マレーシアが誇る2大モスクを同じ日に訪れる贅沢なルート。夕方、国内線でペナンへ飛ぶ。</div>
       </div>
       <div class="tl-transit">
         <div class="tl-transit-lbl">✈️<br>約1h</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge red">Day 4</div>
+        <div class="tl-badge" style="background:#c88000">Day 4</div>
         <div class="tl-content"><strong>ジョージタウン旧市街</strong><br>世界遺産の旧市街を丸一日かけて歩く。壁画アートを探しながら路地を散策し、屋台街でペナングルメを食べ歩き。アッサムラクサ・チャークェイティオ・エッグタルトは絶対に外せない。</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge red">Day 5</div>
+        <div class="tl-badge" style="background:#c84020">Day 5</div>
         <div class="tl-content"><strong>ペナンヒル → ビーチでリゾート</strong><br>ケーブルカーでペナンヒルへ。頂上からはジョージタウンと海が一望できる絶景。午後はバトゥフェリンギビーチへ移動して、夕暮れまでゆったり過ごす。</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge red">Day 6</div>
+        <div class="tl-badge" style="background:#cc0001">Day 6</div>
         <div class="tl-content"><strong>ペナン最終日 → 帰国便へ</strong><br>午前中は行けなかったスポットを再訪したりお土産を購入。ペナン空港または夕方の便でKL経由で帰国の途へ。</div>
       </div>
       <div class="tl-day">
@@ -1127,7 +1147,7 @@
     <div class="course-type-title">マレー半島縦断ルート</div>
   </div>
 
-  <div class="card" style="border-left:4px solid #cc0001">
+  <div class="card">
     <div class="course-note">
       <span class="course-note-ico">✍️</span>
       <div>
@@ -1138,42 +1158,42 @@
 
     <div class="course-timeline">
       <div class="tl-day">
-        <div class="tl-badge red">Day 1</div>
+        <div class="tl-badge" style="background:#1e7e34">Day 1</div>
         <div class="tl-content"><strong>ペナン島</strong><br>直行便で約7時間。ジョージタウン旧市街を散策・ペナン名物のアッサムラクサで夕食。午後2〜3時には観光を切り上げ、フェリーで対岸のバターワースへ渡り、そこからバスでスンガイペタニへ移動。</div>
       </div>
       <div class="tl-transit">
         <div class="tl-transit-lbl">⛵30分<br>＋🚌</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge red">Day 2</div>
+        <div class="tl-badge" style="background:#52a443">Day 2</div>
         <div class="tl-content"><strong>スンガイペタニ</strong>（ケダー州）<br>観光地ではないが、ローカルな生活が息づく町。屋台で肉まんを買ったら売っていたのはインド系のおじさん。マレー・中華・インドが入り混じるマレーシアらしさをここで実感した。地元の人にベトン方面へのバス乗り場を教えてもらったが、待てど暮らせどバスが来ず、スコールまで降り始めたので諦めてタクシーに乗車した。</div>
       </div>
       <div class="tl-transit">
         <div class="tl-transit-lbl">🚕<br>約3〜4h</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge" style="background:#9c27b0">Day 3</div>
+        <div class="tl-badge" style="background:#8a9a20">Day 3</div>
         <div class="tl-content"><strong>ベトン</strong>（タイ・ヤラー県）<br>雲海を目当てにレンタルバイクで山を上るも、Googleマップが機能せず道に迷い辿り着いたのがドリアン農園。農園のおっちゃんに案内してもらい、雲海の上に広がるドリアン畑という絶景を体験。日本を知らないおっちゃんにジェスチャーで日本の位置を教えてあげたのが旅の中で一番記憶に残るひとコマ。</div>
       </div>
       <div class="tl-transit">
         <div class="tl-transit-lbl">🚕<br>約3〜4h</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge" style="background:#cc5500">Day 4</div>
+        <div class="tl-badge" style="background:#c88000">Day 4</div>
         <div class="tl-content"><strong>イポー</strong>（ペラ州）<br>マレーシアに再入国。コロニアル建築が残る旧市街を散策し、洞窟寺院も訪れた。イポーには洞窟探検ツアーもあり参加を検討したが、最低催行人数2名のため一人旅では断念。2人以上で訪れる方にはぜひ体験してほしいアクティビティ。イポー名物の白咖啡（ホワイトコーヒー）は必食。</div>
       </div>
       <div class="tl-transit">
         <div class="tl-transit-lbl">🚌<br>約2h</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge green">Day 5</div>
+        <div class="tl-badge" style="background:#c84020">Day 5</div>
         <div class="tl-content"><strong>クアラルンプール</strong><br>ブルーモスク（スルタン・サラフディン・アブドゥル・アジズ・モスク）にも足を運んだ。プトラジャヤのピンクモスク（プトラモスク）は時間の都合で行けなかったが、時間がある人は両方訪れるべき。ペトロナスツインタワーは直前に予約しようとしたら空きがなく断念。値段もそれなりにするので貧乏旅の自分にはちょうどいい言い訳になった。行く予定のある方は早めの予約を強くおすすめします。</div>
       </div>
       <div class="tl-transit">
         <div class="tl-transit-lbl">🚌<br>約4h</div>
       </div>
       <div class="tl-day">
-        <div class="tl-badge" style="background:#1a8a5a">Day 6</div>
+        <div class="tl-badge" style="background:#cc0001">Day 6</div>
         <div class="tl-content"><strong>ジョホールバル</strong><br>本当はそのままシンガポールまで突っ切りたかったが時間的に断念し1泊。夜はシーフードを食べたが、これが正解だった。翌朝コーズウェイを渡り陸路でシンガポールへ入国。陸路で国境を越えるという体験はなかなかできないので楽しかった。</div>
       </div>
       <div class="tl-transit">
@@ -1185,11 +1205,14 @@
       </div>
     </div>
 
-    <div class="course-footer">
-      <strong>総日数：</strong>6泊7日（お盆休み）　<strong>移動：</strong>フェリー・バス・タクシー　<strong>難易度：</strong>★★★★☆
-    </div>
+    <div class="course-tip">✅ 乗り継ぐたびに文化が変わる。マレー半島縦断で多様さを肌で感じる6泊7日。</div>
   </div>
 
+  <div class="tab-cta">
+    <div class="tab-cta-title">いつ行くかで旅は変わる！🌤️</div>
+    <p class="tab-cta-desc">雨季・乾季・地域別のベストシーズンをチェック。<br>日程が決まっていない人はここから逆算するのがおすすめ。</p>
+    <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
+  </div>
 
 </section>
 
