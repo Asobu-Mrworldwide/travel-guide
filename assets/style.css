@@ -254,5 +254,16 @@ section.active{display:block}
   .card .val{font-size:1em}
   .card .note{font-size:0.8em}
   .see-more{font-size:0.85em}
+  /* 予算テーブル：スマホでは縦積みに変換して説明文を広く使う */
+  .budget-table,.budget-table tbody{display:block}
+  .budget-table tr{display:flex;flex-wrap:wrap;align-items:flex-start;padding:12px 0;border-bottom:1px solid #efefef;gap:0}
+  .budget-table tr:last-child{border-bottom:none}
+  .budget-table td{border:none;padding:0}
+  .budget-table .ico-col{flex:0 0 26px;font-size:1.1em;text-align:center;padding-top:2px}
+  .budget-table td:nth-child(2){flex:1;padding-left:6px;min-width:0}
+  .budget-table .price-col{flex:0 0 100%;white-space:normal;margin-top:6px;text-align:right}
+  .budget-table .price-col .td-price{display:block;margin-bottom:2px}
+  .budget-table .aff-wrap{display:block;width:100%;text-align:right}
+  .budget-table .budget-link{font-size:0.8em}
 }
 @media(max-width:480px){.csh-grid{grid-template-columns:1fr}}
