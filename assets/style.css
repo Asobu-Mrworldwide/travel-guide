@@ -103,8 +103,10 @@ section.active{display:block}
 .item-card.spot .badge{display:none}
 .item-card.must{position:relative;border:2px solid #f5c400;box-shadow:0 0 0 1px #f5c40033,0 4px 12px rgba(245,196,0,0.2)}
 .must-badge{position:absolute;top:6px;right:8px;font-size:1.4em;line-height:1}
-.map-btn{display:inline-block;margin-top:6px;font-size:0.72em;color:#1a73e8;font-weight:700;background:#e8f0fe;border-radius:20px;padding:3px 9px;text-decoration:none;white-space:nowrap}
-.map-btn:hover{background:#d2e3fc}
+.map-btn{display:inline-block;margin-top:6px;font-size:0.72em;color:#1a73e8;font-weight:700;text-decoration:none;white-space:nowrap}
+.map-btn:hover{text-decoration:underline}
+.wiki-link{display:block;text-align:right;font-size:0.7em;color:#aaa;text-decoration:none;margin-top:auto;padding-top:8px;font-weight:600}
+.wiki-link:hover{color:#555;text-decoration:underline}
 .filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
 .filter-btn{background:#f0f0f0;border:2px solid transparent;border-radius:20px;padding:6px 13px;font-size:0.82em;font-weight:600;cursor:pointer;color:#555;transition:all 0.2s}
 .filter-btn:hover{background:#dde8e2;color:var(--green)}
@@ -180,6 +182,39 @@ section.active{display:block}
 .cta p{font-size:0.82em;opacity:0.9;margin-bottom:14px;line-height:1.6}
 .cta-btn{background:#fff;color:var(--green);border:none;padding:11px 28px;border-radius:30px;font-weight:700;font-size:0.9em;cursor:pointer;transition:transform 0.2s}
 .cta-btn:hover{transform:scale(1.04)}
+
+/* モデルコース */
+.course-type{display:flex;align-items:center;gap:8px;margin:18px 0 8px}
+.course-type-lbl{font-size:0.65em;font-weight:700;padding:3px 10px;border-radius:20px;color:#fff}
+.course-type-lbl.red{background:#cc0001}
+.course-type-lbl.green{background:var(--green)}
+.course-type-title{font-size:0.95em;font-weight:900}
+.course-plan-lbl{display:inline-block;font-size:0.65em;font-weight:700;padding:3px 10px;border-radius:20px;border:1.5px solid var(--green);color:var(--green);background:#e8f5ee;margin-bottom:10px}
+.course-plan-title{font-size:0.88em;font-weight:900;margin-bottom:14px}
+.course-note{background:#fff8f0;border-radius:8px;padding:10px 12px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
+.course-note-ico{font-size:1.3em;flex-shrink:0}
+.course-note-lbl{font-size:0.7em;font-weight:700;color:#cc5500;margin-bottom:4px}
+.course-note-txt{font-size:0.75em;color:var(--sub);line-height:1.7}
+.course-timeline{display:flex;flex-direction:column}
+.tl-day{display:flex;gap:12px;align-items:flex-start;padding-bottom:12px;position:relative}
+.tl-day:not(:last-child)::after{content:'';position:absolute;left:19px;top:26px;bottom:0;width:2px;background:#e8e8e8}
+.tl-day:last-child{padding-bottom:0}
+.tl-badge{width:40px;min-height:22px;border-radius:11px;color:#fff;font-size:0.6em;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;position:relative;z-index:1;padding:2px 0}
+.tl-badge.green{background:var(--green)}
+.tl-badge.red{background:#cc0001}
+.tl-badge.gray{background:#bbb}
+.tl-content{flex:1;font-size:0.78em;color:var(--sub);line-height:1.65;padding-top:3px}
+.course-footer{margin-top:12px;padding-top:10px;border-top:1px solid #f0f0f0;font-size:0.7em;color:var(--sub);line-height:1.8}
+.course-tip{margin-top:8px;font-size:0.72em;color:var(--green);font-weight:600}
+.tl-transit{display:flex;gap:12px;align-items:center;padding:2px 0;position:relative}
+.tl-transit::before{content:'';position:absolute;left:19px;top:0;bottom:0;width:2px;background:#e8e8e8;z-index:0}
+.tl-transit-lbl{width:40px;font-size:0.62em;color:#999;text-align:center;flex-shrink:0;position:relative;z-index:1;background:#fff;border-radius:6px;padding:3px 0;line-height:1.4}
+.course-city-list{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.course-city{display:flex;gap:10px;padding:10px;background:#f5f7f5;border-radius:8px;align-items:flex-start}
+.course-city-ico{text-align:center;min-width:40px;flex-shrink:0}
+.course-city-ico span{font-size:0.58em;font-weight:700;display:block;margin-top:2px}
+.course-city-name{font-size:0.8em;font-weight:700;margin-bottom:3px}
+.course-city-desc{font-size:0.72em;color:var(--sub);line-height:1.6}
 
 /* 交通手段 */
 .trans-list{display:flex;flex-direction:column;gap:8px}
