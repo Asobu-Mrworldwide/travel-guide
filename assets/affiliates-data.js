@@ -53,6 +53,22 @@ const AFFILIATES = {
     url:   'https://www.grab.com/',
   },
 
+  wise: {
+    name:  'Wise',
+    label: 'Wiseカードについて →',
+    desc:  '実勢レートに近いレートで両替・送金できるプリペイドカード。現地ATMでの引き出しも手数料が安い。',
+    btn:   '公式サイトを見る →',
+    url:   'https://wise.com/jp/'
+  },
+
+  trifa: {
+    name:  'trifa',
+    label: 'trifaについて →',
+    desc:  '日本発のeSIMサービス。渡航先・日数・容量から最適なプランを選べる。アプリから前日でも購入・設定可能。',
+    btn:   'trifaを見る →',
+    url:   'https://trifa.jp/'
+  },
+
   // TripAdvisor（後日判断）
   tripadvisor_malaysia: {
     name:  'TripAdvisor',
