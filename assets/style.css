@@ -22,7 +22,7 @@ body{
   font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium','游ゴシック Medium',YuGothic,'游ゴシック',Meiryo,sans-serif;
   background:var(--bg);
   color:var(--text);
-  font-size:17px;
+  font-size:18px;
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -135,14 +135,14 @@ section.active{display:block}
 .budget-info .b-title{font-size:0.9em;font-weight:700;line-height:1.4}
 .budget-info .b-sub{font-size:0.8em;color:var(--sub);margin-top:2px;line-height:1.65}
 .budget-price{font-weight:700;color:var(--green);font-size:0.9em;text-align:right;flex-shrink:0}
-.budget-table{width:100%;border-collapse:collapse;font-size:0.83em}
+.budget-table{width:100%;border-collapse:collapse;font-size:0.92em}
 .budget-table td{padding:14px 8px;border-bottom:1px solid #efefef;vertical-align:middle}
 .budget-table tr:last-child td{border-bottom:none}
 .budget-table .ico-col{font-size:1.15em;width:32px;text-align:center;padding-left:0}
 .budget-table .price-col{text-align:right;padding-right:0;vertical-align:middle;white-space:nowrap}
 .td-price{display:block;font-weight:700;color:var(--green);font-size:1.05em;margin-bottom:2px}
 .td-name{font-weight:700;display:block;margin-bottom:4px}
-.td-sub{font-size:0.79em;color:var(--sub);line-height:1.6;display:block}
+.td-sub{font-size:0.84em;color:var(--sub);line-height:1.6;display:block}
 
 /* マナー */
 .manner-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -206,7 +206,7 @@ section.active{display:block}
 .ci-name{font-size:0.87em;font-weight:700;margin-bottom:3px}
 .ci-desc{font-size:0.75em;color:var(--sub);line-height:1.6;flex:1}
 .ci-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
-.ci-spots{font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap}
+.ci-spots{font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;display:block}
 .ci-spots:hover{opacity:0.7}
 
 /* 都市セクションヘッダー */
@@ -234,11 +234,11 @@ section.active{display:block}
 
 /* レスポンシブ共通 */
 @media(max-width:520px){
-  body{font-size:16px}
+  body{font-size:17px}
   .grid2,.grid3,.manner-grid,.item-grid{grid-template-columns:1fr}
   .qs-row{grid-template-columns:1fr 1fr}
   .prac-grid{grid-template-columns:1fr 1fr}
-  .city-grid-wrap{grid-template-columns:1fr 1fr}
+  .city-grid-wrap{grid-template-columns:1fr}
   .city-item:nth-child(3n){border-right:1px solid #f0f0f0}
   .city-item:nth-child(2n){border-right:none}
   .prac-card{padding:10px 8px}
