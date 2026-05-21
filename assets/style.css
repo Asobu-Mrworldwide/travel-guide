@@ -139,8 +139,10 @@ section.active{display:block}
 .budget-table td{padding:14px 8px;border-bottom:1px solid #efefef;vertical-align:middle}
 .budget-table tr:last-child td{border-bottom:none}
 .budget-table .ico-col{font-size:1.15em;width:32px;text-align:center;padding-left:0}
-.budget-table .price-col{text-align:right;padding-right:0;vertical-align:middle;white-space:nowrap}
-.td-price{display:block;font-weight:700;color:var(--green);font-size:1.05em;margin-bottom:2px}
+.budget-table .price-col{text-align:right;padding-right:0;vertical-align:middle;white-space:nowrap;min-width:130px;position:relative;padding-bottom:32px}
+.budget-table .price-col .aff-wrap{position:absolute;bottom:14px;right:0;white-space:normal;width:auto}
+.budget-table td:nth-child(2){vertical-align:top}
+.td-price{display:block;font-weight:700;color:var(--green);font-size:1.05em}
 .td-name{font-weight:700;display:block;margin-bottom:4px}
 .td-sub{font-size:0.84em;color:var(--sub);line-height:1.6;display:block}
 
@@ -261,8 +263,9 @@ section.active{display:block}
   .budget-table td{border:none;padding:0}
   .budget-table .ico-col{flex:0 0 26px;font-size:1.1em;text-align:center;padding-top:2px}
   .budget-table td:nth-child(2){flex:1;padding-left:6px;min-width:0}
-  .budget-table .price-col{flex:0 0 100%;white-space:normal;margin-top:6px;text-align:right}
-  .budget-table .price-col .td-price{display:block;margin-bottom:2px}
+  .budget-table .price-col{flex:0 0 100%;display:block;white-space:normal;margin-top:6px;text-align:right;position:static;padding-bottom:0}
+  .budget-table .price-col .aff-wrap{position:static;white-space:normal;margin-top:4px}
+  .budget-table .price-col .td-price{display:block;margin-bottom:2px;margin-top:0}
   .budget-table .aff-wrap{display:block;width:100%;text-align:right}
   .budget-table .budget-link{font-size:0.8em}
 }
