@@ -69,14 +69,14 @@ const AFFILIATES = {
     url:   'https://trifa.jp/'
   },
 
-  // TripAdvisor（後日判断）
-  tripadvisor_malaysia: {
-    name:  'TripAdvisor',
-    label: 'TripAdvisorで探す →',
-    desc:  '旅行者の口コミ・評判をチェックしてから観光スポットやレストランを選べる。',
-    btn:   'TripAdvisorで探す →',
-    url:   'https://www.tripadvisor.jp/Tourism-g293951-Malaysia-Vacations.html'
+  klook: {
+    name:  'Klook',
+    label: 'Klookでツアーを探す →',
+    desc:  '観光スポットのチケットやオプショナルツアーを事前に予約できる。ペトロナスタワーなど人気スポットは売り切れ前に押さえよう。',
+    btn:   'Klookを見る →',
+    url:   'https://www.klook.com/ja/'
   },
+
 
 };
 
@@ -132,6 +132,22 @@ const AFFILIATE_CARDS = {
     btn:   '比較ページを見る →',
     url:   '../compare/sim.html',
     color: '#1a9068',
+  },
+
+  klook: {
+    icon:    '🎟️',
+    name:    'Klook',
+    tagline: '現地ツアー・チケットを事前に予約できる',
+    points: [
+      '観光スポットのチケットをオンラインで日本語予約',
+      '現地ツアー・アクティビティを口コミで選べる',
+      '当日キャンセル可能なプランも豊富',
+      '人気スポットは売り切れ前に事前確保できる',
+    ],
+    note:  '※ 繁忙期（GW・年末年始）は早めの予約がおすすめ',
+    btn:   'Klookでツアーを探す →',
+    url:   'https://www.klook.com/ja/',
+    color: '#ff5010',
   },
 
 };
