@@ -157,6 +157,16 @@ section.active{display:block}
 .do .m-title::before{content:'✅ '}
 .dont .m-title::before{content:'❌ '}
 
+/* 基本データグリッド */
+.bd-grid{display:grid;grid-template-columns:1fr 1fr}
+.bd-item{padding:14px 14px;border-bottom:1px solid #f0f0f0}
+.bd-item:nth-child(odd){border-right:1px solid #f0f0f0}
+.bd-item:nth-last-child(-n+2){border-bottom:none}
+.bd-lbl{font-size:0.78em;color:var(--sub);margin-bottom:4px}
+.bd-val{font-weight:700;font-size:1em}
+.bd-note{font-size:0.76em;color:var(--sub);margin-top:4px;line-height:1.5}
+.bd-cmp{background:#f5f7f5;border-radius:8px;padding:10px 12px;margin-top:10px}
+
 /* 旅の実用情報カード */
 .prac-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .prac-card{background:#fff;border-radius:12px;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);text-align:center}
@@ -270,3 +280,9 @@ section.active{display:block}
   .budget-table .budget-link{font-size:0.8em}
 }
 @media(max-width:480px){.csh-grid{grid-template-columns:1fr}}
+@media(max-width:520px){
+  .bd-grid{grid-template-columns:1fr}
+  .bd-item:nth-child(odd){border-right:none}
+  .bd-item:nth-last-child(-n+2){border-bottom:1px solid #f0f0f0}
+  .bd-item:last-child{border-bottom:none}
+}
