@@ -193,6 +193,7 @@ const COUNTRIES = [
     bestMonths:[2,3,4,5,6,7,8,9], bestLabel:'3〜10月',
     tags:['ビーチ','世界遺産','グルメ','自然','都市','歴史'],
     gradient:'linear-gradient(135deg,#006847 0%,#4a9a30 100%)',
+    cardImg:'malaysia/素材/ヒーロー画像.jpg',
     url:'malaysia/index.html', available:true
   },
   {
@@ -480,8 +481,8 @@ function renderCards() {
       : '<span class="card-badge">準備中</span>';
     return `
     <div class="${cardClass}" onclick="${c.available ? `location.href='${c.url}'` : 'void(0)'}">
-      <div class="card-hero" style="background:${c.gradient}">
-        <div class="card-flag">${c.flag}</div>
+      <div class="card-hero" style="${c.cardImg ? `background:url('${c.cardImg}') center/cover no-repeat` : `background:${c.gradient}`}">
+        ${c.cardImg ? '' : `<div class="card-flag">${c.flag}</div>`}
         ${badgeHtml}
       </div>
       <div class="card-body">
