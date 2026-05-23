@@ -1433,13 +1433,16 @@ function showFilteredSpots(city) {
 <script>
 function openFoodModal(ico, nameEn, nameJa, imgSrc) {
   const imgEl = document.getElementById('food-modal-img');
+  const icoEl = document.getElementById('food-modal-ico');
   if (imgSrc) {
     imgEl.src = imgSrc;
     imgEl.style.display = 'block';
+    icoEl.style.display = 'none';
   } else {
     imgEl.style.display = 'none';
+    icoEl.style.display = '';
   }
-  document.getElementById('food-modal-ico').textContent = ico;
+  icoEl.textContent = ico;
   document.getElementById('food-modal-en').textContent = nameEn;
   document.getElementById('food-modal-ja').textContent = nameJa;
   document.getElementById('food-modal').classList.add('open');
