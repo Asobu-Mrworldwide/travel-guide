@@ -87,14 +87,16 @@
         <div style="font-size:0.8em;color:var(--sub);flex:1">クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。</div>
         <button class="qs-link" style="margin-top:8px;align-self:flex-end" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
       </div>
-      <div style="background:#f8faf8;border-radius:10px;padding:10px 12px;display:flex;flex-direction:row;gap:8px;align-items:center">
+      <div style="background:#f8faf8;border-radius:10px;padding:10px 12px;display:flex;flex-direction:row;gap:8px;align-items:flex-start">
         <div style="flex:1;display:flex;flex-direction:column">
           <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">🍜 人気No.1グルメ</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ナシレマ</div>
-          <div style="font-size:0.8em;color:var(--sub);flex:1">ココナッツミルクで炊いたご飯の国民食。朝食から屋台まで幅広く楽しめる。</div>
-          <button class="qs-link" style="margin-top:8px;align-self:flex-end;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ一覧を見る →</button>
+          <div style="font-size:0.8em;color:var(--sub)">ココナッツミルクで炊いたご飯の国民食。朝食から屋台まで幅広く楽しめる。</div>
         </div>
-        <img src="素材/グルメ/ナシレマ.webp" alt="ナシレマ" style="width:80px;height:80px;object-fit:contain;flex-shrink:0">
+        <div style="display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0">
+          <img src="素材/グルメ/ナシレマ.webp" alt="ナシレマ" style="width:110px;height:110px;object-fit:contain">
+          <button class="qs-link" style="margin-top:4px;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ一覧を見る →</button>
+        </div>
       </div>
     </div>
 
