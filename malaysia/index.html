@@ -32,6 +32,9 @@
 #food-grid .item-card.has-img{padding-bottom:36px}
 #food-grid .item-card.has-img .desc{flex:none !important}
 
+/* クイックスペックカード（基本情報タブ） */
+#basic .qs-card{border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)}
+
 /* セクション間隔（全タブ共通） */
 #basic h2,#spots h2,#food h2,#course h2,#season h2,
 #budget h2,#practical h2,#manner h2,#phrases h2,#transport h2{margin-top:36px}
@@ -84,13 +87,13 @@
     </div>
 
     <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
-      <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 4px 6px rgba(0,0,0,0.18),0 1px 3px rgba(0,0,0,0.10)">
+      <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
         <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">📍 人気No.1観光地</div>
         <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ペトロナスツインタワー</div>
         <div style="font-size:0.8em;color:var(--sub);flex:1">クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。</div>
         <button class="qs-link" style="margin-top:8px;align-self:flex-end" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
       </div>
-      <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:row;gap:8px;align-items:flex-start;border:1px solid #e0e0e0;box-shadow:0 4px 6px rgba(0,0,0,0.18),0 1px 3px rgba(0,0,0,0.10)">
+      <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:row;gap:8px;align-items:flex-start;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
         <div style="flex:1;display:flex;flex-direction:column">
           <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">🍜 人気No.1グルメ</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ナシレマ</div>
@@ -125,16 +128,18 @@
       <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
       <p style="font-size:0.84em;color:var(--text)">年間約40万人の日本人が訪れる人気旅行先。<strong>ビザ不要・英語が通じやすい・物価が安い</strong>の三拍子が揃い、初めての海外旅行先としても定番。日本食レストランも豊富で食事の心配も少ない。</p>
     </div>
-  </div>
 
-  <!-- ① クイックスペック -->
-  <div class="qs-row">
-    <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約7時間</div></div></div>
-    <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −1時間</div></div></div>
-    <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[6])">旅の準備を見る →</button></div></div>
-    <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
-    <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
-    <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1RM ≈ 33円</div></div></div>
+    <!-- ① クイックスペック -->
+    <div style="border-top:1px solid #f0f0f0;margin-top:16px;padding-top:16px">
+      <div class="qs-row" style="margin-top:0">
+        <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約7時間</div></div></div>
+        <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −1時間</div></div></div>
+        <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（90日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[6])">旅の準備を見る →</button></div></div>
+        <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">7〜15万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
+        <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
+        <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">リンギット(RM)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1RM ≈ 33円</div></div></div>
+      </div>
+    </div>
   </div>
 
   <!-- ⑤ 主要都市 -->
