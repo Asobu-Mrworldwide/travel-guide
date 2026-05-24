@@ -41,13 +41,13 @@ total = 0
 for country_folder in os.listdir(BASE_DIR):
     material_dir = os.path.join(BASE_DIR, country_folder, '素材')
     if os.path.isdir(material_dir):
-        print(f"📁 {country_folder}/素材/")
+        print(f"[{country_folder}/素材/]")
         count = convert_to_webp(material_dir)
         total += count
 
 if total == 0:
     print("変換対象のファイルはありませんでした。")
 else:
-    print(f"\n✅ 合計 {total} ファイルを変換しました！")
+    print(f"\n完了: 合計 {total} ファイルを変換しました！")
 
 input("\nEnterキーで終了...")
