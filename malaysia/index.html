@@ -1345,8 +1345,9 @@ function filterSpots(city, btn) {
 
 function filterFood(dim, value, btn) {
   const rowId = dim === 'type' ? '#food-filter-type' : '#food-filter-city';
+  const isActive = btn.classList.contains('active');
   document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (!isActive) btn.classList.add('active');
   const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#food-grid .item-card').forEach(el => {
