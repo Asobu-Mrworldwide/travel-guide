@@ -1349,7 +1349,7 @@ function filterFood(dim, value, btn) {
   const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#food-grid .item-card').forEach(el => {
     const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
-    const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
+    const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity || el.dataset.fcity === 'national';
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });
 }
