@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<!-- updated -->
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZNX5SY0GSK');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>タイ旅行ガイド</title>
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/affiliates-data.js" defer></script>
+<script src="../assets/affiliates.js" defer></script>
+<style>
+/* HEADER */
+.hero-img{width:100%;height:200px;object-fit:cover;object-position:center 50%;display:block}
+.hero{position:relative}
+.hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
+
+/* FLAG（タイ固有） */
+.flag-meaning{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.flag-item{background:#f8faf8;border-radius:8px;padding:8px 10px;font-size:0.78em;line-height:1.5}
+.flag-item strong{color:var(--green)}
+
+/* フードカード画像 */
+.food-img{width:100%;height:180px;object-fit:contain;object-position:center bottom;display:block;margin-top:-10px;margin-bottom:-20px}
+#food-grid .item-card.has-img{padding-bottom:36px}
+#food-grid .item-card.has-img .desc{flex:none !important}
+
+/* クイックスペックカード（基本情報タブ） */
+#basic .qs-card{border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)}
+
+/* セクション間隔（全タブ共通） */
+#basic h2,#spots h2,#food h2,#course h2,#season h2,
+#budget h2,#practical h2,#manner h2,#phrases h2,#transport h2{margin-top:36px}
+#basic .qs-row{margin-top:28px}
+
+/* モバイル固有 */
+@media(max-width:520px){
+  .flag-meaning{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="素材/ヒーロー画像.webp" alt="タイの街並み" class="hero-img">
+  <a href="../index.html" class="hero-back">← 国一覧へ戻る</a>
+</div>
+
+<nav>
+  <button class="active" onclick="show('basic',this)">🌍 基本情報</button>
+  <button onclick="show('spots',this)">📍 観光スポット</button>
+  <button onclick="show('food',this)">🍜 グルメ</button>
+  <button onclick="show('course',this)">🗺️ モデルコース</button>
+  <button onclick="show('season',this)">🌤️ ベストシーズン</button>
+  <button onclick="show('budget',this)">💰 予算・費用</button>
+  <button onclick="show('practical',this)">🧳 旅の準備</button>
+  <button onclick="show('manner',this)">🙏 マナー</button>
+  <button onclick="show('phrases',this)">💬 フレーズ</button>
+  <button onclick="show('transport',this)">🚗 交通</button>
+  <button onclick="window.open('../checklist.html?from=thailand','_blank')">📋 持ち物リスト</button>
+</nav>
+
+<div class="container">
+<div id="slides-wrap">
+
+<!-- 基本情報 -->
+<section id="basic" class="active">
+
+  <!-- 概要 + 旅行難易度 統合 -->
+  <div class="card" style="margin-bottom:14px;line-height:1.8">
+    <h2 style="margin:0 0 10px;font-size:1em">タイってどんな国？</h2>
+    <p style="font-size:0.88em;color:var(--text)">東南アジアの中心に位置するタイは、「微笑みの国」として知られる<strong>仏教国</strong>。黄金の寺院群、熱帯ジャングル、白砂のリゾートビーチ、活気あふれる屋台グルメが一度に楽しめる、年間3,000万人以上が訪れる人気観光地です。</p>
+    <div style="margin-top:32px;margin-bottom:32px;text-align:center">
+      <div style="background:linear-gradient(to bottom,#a51931 16.67%,#fff 16.67% 33.33%,#2d4480 33.33% 66.67%,#fff 66.67% 83.33%,#a51931 83.33%);border-radius:6px;height:100px;width:160px;display:inline-block;border:1px solid #eee;"></div>
+      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">Thong Trairong（トン・トライロン）― タイ語で「三色旗」</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
+      <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
+        <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">📍 人気No.1観光地</div>
+        <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ワット・プラケオ（エメラルド寺院）</div>
+        <div style="font-size:0.8em;color:var(--sub);flex:1">バンコク王宮内に建つタイ最高の聖地。エメラルド色の翡翠で造られた仏像を安置し、境内の黄金の仏塔が圧巻。</div>
+        <button class="qs-link" style="margin-top:8px;align-self:flex-end" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
+      </div>
+      <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:row;gap:8px;align-items:flex-start;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
+        <div style="flex:1;display:flex;flex-direction:column">
+          <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">🍜 人気No.1グルメ</div>
+          <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">パッタイ</div>
+          <div style="font-size:0.8em;color:var(--sub)">米粉の細麺を卵・もやし・えび・豆腐と炒め、タマリンドソースで味付けしたタイを代表する麺料理。屋台から高級レストランまで広く親しまれる国民食。</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0">
+          <img src="素材/グルメ/パッタイ.webp" alt="パッタイ" style="width:110px;height:110px;object-fit:contain">
+          <button class="qs-link" style="margin-top:4px;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ一覧を見る →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 旅行難易度 -->
+    <div style="margin-top:12px;border-top:1px solid #f0f0f0;padding-top:12px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:1.3em">📌</span>
+        <span style="font-size:0.82em;color:var(--sub);font-weight:600">旅行難易度</span>
+        <span style="margin-left:auto;background:#e8f5ee;color:var(--green);font-size:0.8em;font-weight:700;padding:3px 10px;border-radius:20px">やさしい</span>
+      </div>
+      <div style="background:#e8e8e8;border-radius:20px;height:12px;overflow:hidden">
+        <div style="width:30%;height:100%;background:linear-gradient(90deg,#00a86b,#66cc99);border-radius:20px;transition:width 1s"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
+        <span>← やさしい</span><span>むずかしい →</span>
+      </div>
+      <div style="margin-top:8px;font-size:0.84em;color:var(--sub);line-height:1.7">
+        観光地では英語がほぼ通じ、ビザも不要。物価は日本の約1/3〜1/4と格安。屋台グルメや交通の使い方を少し覚えるだけで旅がぐっと快適になる。初めての東南アジアにも◎。
+      </div>
+    </div>
+
+    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
+      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
+      <p style="font-size:0.84em;color:var(--text)">年間約100万人の日本人が訪れるアジア屈指の人気旅行先。<strong>ビザ不要・物価安い・食事が美味しい・リゾートも充実</strong>の四拍子が揃い、バックパッカーからリゾート旅行者まで幅広く愛されている。</p>
+    </div>
+
+    <!-- ① クイックスペック -->
+    <div style="border-top:1px solid #f0f0f0;margin-top:16px;padding-top:16px">
+      <div class="qs-row" style="margin-top:0">
+        <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約6〜7時間</div></div></div>
+        <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −2時間</div></div></div>
+        <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（30日間）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[6])">旅の準備を見る →</button></div></div>
+        <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">8〜18万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
+        <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK（観光地）</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
+        <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">バーツ(THB)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1THB ≈ 4.3円</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ 主要都市 -->
+  <h2>主要都市</h2>
+  <div class="card full" style="padding:0;overflow:hidden">
+    <div style="position:relative">
+      <div id="thailand-map" style="width:100%;height:300px"></div>
+      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
+        <a id="map-open-btn" href="#" target="_blank" style="display:none;background:var(--green);color:#fff;font-size:0.82em;font-weight:700;padding:8px 16px;border-radius:24px;text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,0.3);white-space:nowrap;align-items:center;gap:6px"></a>
+        <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2)">← タイ全体に戻る</button>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;border-radius:0 0 12px 12px;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
+      <span>この人形をストリートビューを見たい場所にドラッグして配置してください</span>
+      <span style="flex-shrink:0;color:#888;font-weight:700;font-size:1.2em">↑</span>
+    </div>
+    <script>
+      const CITY_DATA = {
+        bangkok:   { name:'バンコク',   lat:13.7563, lng:100.5018, zoom:11, color:'#a51931', label:'★' },
+        chiangmai: { name:'チェンマイ', lat:18.7883, lng:98.9853,  zoom:12, color:'#2d4480', label:'●' },
+        phuket:    { name:'プーケット', lat:7.8804,  lng:98.3923,  zoom:11, color:'#2d4480', label:'●' },
+        pattaya:   { name:'パタヤ',     lat:12.9236, lng:100.8825, zoom:12, color:'#2d4480', label:'●' },
+        ayutthaya: { name:'アユタヤ',   lat:14.3533, lng:100.5680, zoom:12, color:'#2d4480', label:'●' },
+        samui:     { name:'コサムイ',   lat:9.5120,  lng:100.0136, zoom:11, color:'#2d4480', label:'●' },
+      };
+
+      function initMap() {
+        window._map = new google.maps.Map(document.getElementById('thailand-map'), {
+          center: { lat: 13.5, lng: 101.0 }, zoom: 5,
+          mapTypeId: 'roadmap', language: 'ja',
+          mapId: 'ebb608e55ed157f8630c407e',
+          disableDefaultUI: true,
+          streetViewControl: true,
+          fullscreenControl: true,
+          gestureHandling: 'greedy'
+        });
+        Object.values(CITY_DATA).forEach(city => {
+          const dot = document.createElement('div');
+          dot.style.cssText = `width:${city.label==='★'?'14px':'11px'};height:${city.label==='★'?'14px':'11px'};background:${city.color};border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4);`;
+          const label = document.createElement('div');
+          label.textContent = city.name;
+          label.style.cssText = `margin-top:4px;background:#fff;color:#a51931;font-size:11px;font-weight:bold;padding:2px 6px;border-radius:10px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,0.3);font-family:sans-serif;`;
+          const container = document.createElement('div');
+          container.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer';
+          container.appendChild(dot); container.appendChild(label);
+          new google.maps.marker.AdvancedMarkerElement({ position:{lat:city.lat,lng:city.lng}, map:window._map, title:city.name, content:container });
+        });
+      }
+
+      function zoomToCity(key) {
+        const city = CITY_DATA[key];
+        if (!city || !window._map) return;
+        window._map.panTo({ lat: city.lat, lng: city.lng });
+        window._map.setZoom(city.zoom);
+        document.getElementById('thailand-map').scrollIntoView({ behavior:'smooth', block:'center' });
+        const btn = document.getElementById('map-open-btn');
+        btn.href = `https://maps.google.com/?q=${encodeURIComponent(city.name + ' タイ')}`;
+        btn.textContent = `📍 ${city.name}をGoogleマップで開く →`;
+        btn.style.display = 'flex';
+        document.getElementById('map-reset-btn').style.display = 'inline-block';
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.item-card.spot').forEach(card => {
+          const name = card.querySelector('.name')?.textContent;
+          if (!name) return;
+          const a = document.createElement('a');
+          a.href = 'https://maps.google.com/?q=' + encodeURIComponent(name + ' タイ');
+          a.target = '_blank';
+          a.textContent = 'Googleマップで見る →';
+          a.style.cssText = 'display:block;margin-top:8px;font-size:0.78em;color:#1a73e8;font-weight:700;text-decoration:none;text-align:right;';
+          a.onmouseover = () => a.style.textDecoration = 'underline';
+          a.onmouseout = () => a.style.textDecoration = 'none';
+          card.appendChild(a);
+        });
+      });
+
+      function resetMap() {
+        if (!window._map) return;
+        window._map.panTo({ lat: 13.5, lng: 101.0 });
+        window._map.setZoom(5);
+        document.getElementById('map-open-btn').style.display = 'none';
+        document.getElementById('map-reset-btn').style.display = 'none';
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
+    <div class="city-grid-wrap">
+      <div class="city-item" onclick="zoomToCity('bangkok')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">バンコク</div><div class="ci-badge">首都</div></div><div class="ci-desc">黄金の寺院群と最先端のショッピングが共存する大都市</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('bangkok')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('chiangmai')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">チェンマイ</div><div class="ci-badge green">北部</div></div><div class="ci-desc">古都の趣と豊かな自然、エレファントサンクチュアリで有名</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('chiangmai')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('phuket')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">プーケット</div><div class="ci-badge green">南部</div></div><div class="ci-desc">アンダマン海に面した世界屈指のリゾートアイランド</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('phuket')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('pattaya')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">パタヤ</div><div class="ci-badge green">東部</div></div><div class="ci-desc">バンコクから約2時間、手軽に行けるビーチリゾート</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('pattaya')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('ayutthaya')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">アユタヤ</div><div class="ci-badge green">世界遺産</div></div><div class="ci-desc">14〜18世紀に栄えたタイ王国の古都・ユネスコ世界遺産</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('ayutthaya')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('samui')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">コサムイ</div><div class="ci-badge green">南部</div></div><div class="ci-desc">タイ湾に浮かぶ亜熱帯の楽園、コサムイ島</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('samui')">観光地を見る →</button></div></div>
+    </div>
+  </div>
+
+  <!-- ④ ベストシーズン（簡易） -->
+  <h2>ベストシーズン</h2>
+  <div class="card" style="padding:14px">
+    <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">涼季（11〜2月）が最も過ごしやすいベストシーズン。バンコクは年3シーズン制。</p>
+    <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">バンコク</div>
+    <div class="season-mini">
+      <div class="sm-col"><div class="sm-lbl">1月</div><div class="sm-dot t-mild">☀️<span class="sm-t">26°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">2月</div><div class="sm-dot t-warm">☀️<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">3月</div><div class="sm-dot t-hot">☀️<span class="sm-t">30°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">4月</div><div class="sm-dot t-hot">☀️<span class="sm-t">31°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">5月</div><div class="sm-dot t-hot">⛅<span class="sm-t">29°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">6月</div><div class="sm-dot t-warm">☔<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">7月</div><div class="sm-dot t-warm">☔<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">8月</div><div class="sm-dot t-warm">☔<span class="sm-t">28°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">9月</div><div class="sm-dot t-warm">☔<span class="sm-t">27°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">10月</div><div class="sm-dot t-warm">☔<span class="sm-t">27°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">11月</div><div class="sm-dot t-mild">⛅<span class="sm-t">26°</span></div></div>
+      <div class="sm-col"><div class="sm-lbl">12月</div><div class="sm-dot t-mild">☀️<span class="sm-t">25°</span></div></div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:0.72em;color:var(--sub);margin-top:8px;align-items:center">
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ff5000,#ff9000);border-radius:2px;vertical-align:middle;margin-right:3px"></span>30〜31°C 最も暑い</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ff8400,#ffb200);border-radius:2px;vertical-align:middle;margin-right:3px"></span>27〜29°C 暖かい</span>
+      <span><span style="display:inline-block;width:10px;height:10px;background:linear-gradient(135deg,#ffb800,#ffe060);border-radius:2px;vertical-align:middle;margin-right:3px"></span>25〜26°C やや低め</span>
+      <span style="margin-left:2px">｜ ☀️ 乾季　⛅ 曇り　☔ 雨季</span>
+    </div>
+    <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[4])">地域別ベストシーズンを詳しく見る →</button>
+  </div>
+
+  <!-- ⑥ 基本データ（補足） -->
+  <h2>基本データ</h2>
+  <div class="card" style="padding:0">
+    <div class="bd-grid">
+
+      <!-- 首都 -->
+      <div class="bd-item">
+        <div class="bd-lbl">首都</div>
+        <div class="bd-val">バンコク</div>
+        <div class="bd-note">正式名：クルンテープ・マハーナコーン（世界最長の首都名）</div>
+      </div>
+
+      <!-- 独立年 -->
+      <div class="bd-item">
+        <div class="bd-lbl">建国</div>
+        <div class="bd-val">1238年（スコータイ王朝）</div>
+        <div class="bd-note">植民地支配を受けなかった東南アジアで唯一の国</div>
+      </div>
+
+      <!-- 人口 -->
+      <div class="bd-item">
+        <div class="bd-lbl">人口</div>
+        <div class="bd-val">約7,000万人</div>
+        <div class="bd-cmp">
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center">
+            <div>
+              <div style="height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px">
+                <div style="font-size:0.75em;line-height:1.5;letter-spacing:1px">👤👤👤👤👤👤👤<br>👤👤👤👤👤👤</div>
+              </div>
+              <div style="font-size:0.68em;font-weight:700;color:#555">日本<br>1.25億人</div>
+            </div>
+            <div style="font-size:0.85em;color:#888;font-weight:700">vs</div>
+            <div>
+              <div style="height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px">
+                <div style="font-size:0.75em;line-height:1.5;letter-spacing:1px">👤👤👤👤👤👤</div>
+              </div>
+              <div style="font-size:0.68em;font-weight:700;color:var(--green)">タイ<br>7,000万人</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 面積 -->
+      <div class="bd-item">
+        <div class="bd-lbl">面積</div>
+        <div class="bd-val">約51万 km²</div>
+        <div class="bd-cmp">
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center">
+            <div>
+              <div style="height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px">
+                <img src="素材/Japan.webp" alt="日本地図" style="width:56px;height:auto;object-fit:contain;mix-blend-mode:multiply"/>
+              </div>
+              <div style="font-size:0.68em;font-weight:700;color:#555">日本<br>37.8万km²</div>
+            </div>
+            <div style="font-size:1em;color:#888;font-weight:700">≈</div>
+            <div>
+              <div style="height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px">
+                <img src="素材/Thailand.webp" alt="タイ地図" style="width:56px;height:auto;object-fit:contain;mix-blend-mode:multiply"/>
+              </div>
+              <div style="font-size:0.68em;font-weight:700;color:var(--green)">タイ<br>51万km²</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 宗教 -->
+      <div class="bd-item">
+        <div class="bd-lbl">宗教</div>
+        <div class="bd-val">仏教（上座部） 94%</div>
+        <div class="bd-note">イスラム教4%・キリスト教1%・その他1%</div>
+      </div>
+
+      <!-- 民族 -->
+      <div class="bd-item">
+        <div class="bd-lbl">民族</div>
+        <div class="bd-val">タイ族 約75%</div>
+        <div class="bd-note">中国系14%・マレー系3%・その他</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ベストシーズン -->
+<section id="season">
+  <h2>ベストシーズン</h2>
+  <div class="card">
+    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">タイは大きく3つのシーズンに分かれます。<strong>涼季（11〜2月）</strong>が最も過ごしやすいベストシーズン。地域によって乾季・雨季の時期が異なります。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高く</span>、黄金色は比較的涼しい月です。</p>
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
+      <span><span style="display:inline-block;width:14px;height:10px;background:linear-gradient(90deg,#ff5000,#ff9000);border-radius:2px;vertical-align:middle;margin-right:3px"></span>30〜31°C（最も暑い）</span>
+      <span><span style="display:inline-block;width:14px;height:10px;background:linear-gradient(90deg,#ff8400,#ffb200);border-radius:2px;vertical-align:middle;margin-right:3px"></span>27〜29°C</span>
+      <span><span style="display:inline-block;width:14px;height:10px;background:linear-gradient(90deg,#ffb800,#ffe060);border-radius:2px;vertical-align:middle;margin-right:3px"></span>25〜26°C（やや低め）</span>
+      <span style="color:#aaa">｜</span>
+      <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
+    </div>
+
+    <div class="city-season" style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px">
+      <div class="city-name">バンコク</div>
+      <div class="season-grid">
+        <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">☀️<span class="md-t">26°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot">☀️<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot">☀️<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-hot">⛅<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-warm">☔<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-warm">☔<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-warm">☔<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-warm">☔<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-warm">☔<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-mild">⛅<span class="md-t">26°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☀️<span class="md-t">25°C</span></div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：11〜2月（涼季・乾季）／ 雨季でもスコール程度で観光は可能</p><button onclick="showFilteredSpots('bangkok')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
+    </div>
+
+    <div class="city-season" style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px">
+      <div class="city-name">チェンマイ（北部）</div>
+      <div class="season-grid">
+        <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">☀️<span class="md-t">22°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-mild">☀️<span class="md-t">25°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot">⛅<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot">⛅<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-warm">☔<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-warm">☔<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-warm">☔<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-warm">☔<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-warm">☔<span class="md-t">26°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-mild">⛅<span class="md-t">25°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-mild">☀️<span class="md-t">23°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☀️<span class="md-t">21°C</span></div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：11〜2月（涼しく乾燥）／ 3〜5月は山焼きによるスモークシーズンで霞むことがある</p><button onclick="showFilteredSpots('chiangmai')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
+    </div>
+
+    <div class="city-season" style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px">
+      <div class="city-name">プーケット（アンダマン海側）</div>
+      <div class="season-grid">
+        <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot">☀️<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot">☀️<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-warm">☔<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-warm">☔<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-warm">☔<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-warm">☔<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-warm">☔<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-warm">☔<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-warm">⛅<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-warm">☀️<span class="md-t">28°C</span></div></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：11〜4月（乾季）／ 5〜10月は雨季でモンスーンの影響あり。波が高く遊泳注意の場合も</p><button onclick="showFilteredSpots('phuket')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
+    </div>
+
+    <div style="margin-top:14px;background:#fffbf0;border-left:3px solid var(--yellow);border-radius:6px;padding:10px 12px;font-size:0.75em;color:#665500;line-height:1.7">💡 <strong>航空券が安い時期</strong><br>6〜9月のグリーンシーズンはLCCの航空券が安くなりやすい。11〜2月のベストシーズンは旅行者が多く航空券・ホテルともに価格が上昇傾向。年末年始・GW・お盆は早めの予約が必須。</div>
+  </div>
+  <div class="tab-cta">
+    <div class="tab-cta-title">旅の予算を把握しよう！💰</div>
+    <p class="tab-cta-desc">航空券・ホテル・食費・交通費の目安を一覧でチェック。<br>節約ポイントやお金の持ち方も紹介しています。</p>
+    <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button>
+  </div>
+</section>
+
+<!-- 予算・費用 -->
+<section id="budget">
+  <h2>旅行費用の目安</h2>
+  <div class="grid2" style="margin-bottom:14px">
+    <div class="card" style="background:linear-gradient(135deg,#f0f7f3,#e0f0e8);border:1px solid #a8d5b5;text-align:center">
+      <div style="font-size:0.75em;color:var(--sub)">3泊5日（1人）</div>
+      <div style="font-size:1.4em;font-weight:900;color:var(--green);margin:4px 0">8〜16万円</div>
+      <div style="font-size:0.72em;color:var(--sub)">LCC利用・中級ホテル</div>
+    </div>
+    <div class="card" style="background:linear-gradient(135deg,#f7f3f0,#f0e8e0);border:1px solid #d5b5a8;text-align:center">
+      <div style="font-size:0.75em;color:var(--sub)">4泊6日（1人）</div>
+      <div style="font-size:1.4em;font-weight:900;color:var(--red);margin:4px 0">10〜20万円</div>
+      <div style="font-size:0.72em;color:var(--sub)">標準的な旅行スタイル</div>
+    </div>
+  </div>
+
+  <h2>費用の内訳</h2>
+  <div class="card" style="padding:6px 16px 10px">
+    <table class="budget-table">
+      <tbody>
+        <tr>
+          <td class="ico-col">✈️</td>
+          <td><span class="td-name">航空券（往復）</span><span class="td-sub">ZIPAIR・ピーチなどLCCが安い<br>タイ航空・JALは快適性◎</span></td>
+          <td class="price-col"><span class="td-price">4〜16万円</span><span data-affiliate="flights"></span></td>
+        </tr>
+        <tr>
+          <td class="ico-col">🛏️</td>
+          <td><span class="td-name">ホテル（1泊）</span><span class="td-sub">ゲストハウス：500〜1,500円・中級：3,000〜8,000円<br>リゾートホテルでも日本より格安</span></td>
+          <td class="price-col"><span class="td-price">〜2万円/泊</span><span data-affiliate="hotels"></span></td>
+        </tr>
+        <tr>
+          <td class="ico-col">🍜</td>
+          <td><span class="td-name">食費（1日）</span><span class="td-sub">屋台なら1食100〜300円が当たり前<br>レストランでも500〜1,500円以内が多い<br>屋台では現金払いが基本。WiseカードはATM引き出しに便利。</span></td>
+          <td class="price-col"><span class="td-price">500〜2,000円/日</span><span data-affiliate="wise"></span></td>
+        </tr>
+        <tr>
+          <td class="ico-col">🚕</td>
+          <td><span class="td-name">交通費（1日）</span><span class="td-sub">BTS・MRTなど公共交通が便利・格安<br>Grabで移動するとぼったくりなしで安心</span></td>
+          <td class="price-col"><span class="td-price">300〜1,500円/日</span><span data-affiliate="grab"></span></td>
+        </tr>
+        <tr>
+          <td class="ico-col">📍</td>
+          <td><span class="td-name">観光・アクティビティ</span><span class="td-sub">寺院の入場料は50〜500THB程度<br>離島クルーズ・象さんツアーなども格安</span></td>
+          <td class="price-col"><span class="td-price">500〜3,000円/日</span><span data-affiliate="klook"></span></td>
+        </tr>
+        <tr>
+          <td class="ico-col">🌐</td>
+          <td><span class="td-name">SIM・Wi-Fi</span><span class="td-sub">空港・コンビニ（7-Eleven）でSIM購入可<br>eSIMなら出発前にアプリで設定完了</span></td>
+          <td class="price-col"><span class="td-price">300〜1,000円</span><span data-affiliate="sim"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:10px;background:#fffbf0;border-left:3px solid var(--yellow);border-radius:6px;padding:10px 12px;font-size:0.75em;color:#665500;line-height:1.7">💡 <strong>節約ポイント</strong><br>・屋台・コンビニ（セブンイレブン）活用で食費を大幅節約<br>・BTS/MRTのラビットカード・MRTカードが便利でお得<br>・チップはレストランで10〜20THB程度が目安（義務ではない）</div>
+  </div>
+
+  <div style="margin-top:20px;background:linear-gradient(135deg,#f0f7f3,#e6f2ec);border-radius:14px;padding:18px 20px;text-align:center">
+    <div style="font-size:1em;font-weight:900;color:var(--green);margin-bottom:6px">さあ、旅の準備をはじめよう！ 🧳</div>
+    <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
+    <button onclick="show('practical',document.querySelectorAll('nav button')[6])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
+  </div>
+</section>
+
+<!-- 旅の準備 -->
+<section id="practical">
+
+  <!-- 1. 旅の実用情報 -->
+  <h2>旅の実用情報</h2>
+  <div class="prac-grid">
+    <div class="prac-card"><div class="p-ico">📄</div><div class="p-title">ビザ</div><div class="p-val">不要（30日間）</div></div>
+    <div class="prac-card"><div class="p-ico">💱</div><div class="p-title">通貨</div><div class="p-val">タイバーツ（THB）</div></div>
+    <div class="prac-card"><div class="p-ico">🔌</div><div class="p-title">コンセント</div><div class="p-val">Aタイプ（日本と同じ）</div></div>
+    <div class="prac-card"><div class="p-ico">⚡</div><div class="p-title">電圧</div><div class="p-val">220V（変換注意）</div></div>
+    <div class="prac-card"><div class="p-ico">🛜</div><div class="p-title">Wi-Fi</div><div class="p-val">空港・カフェ・ホテル無料多</div></div>
+    <div class="prac-card"><div class="p-ico">⌚</div><div class="p-title">時差</div><div class="p-val">日本−2時間</div></div>
+    <div class="prac-card"><div class="p-ico">🌴</div><div class="p-title">気温</div><div class="p-val">年中25〜35℃</div></div>
+    <div class="prac-card"><div class="p-ico">🙏</div><div class="p-title">チップ</div><div class="p-val">任意（レストラン10〜20THB）</div></div>
+    <div class="prac-card"><div class="p-ico">💧</div><div class="p-title">水道水</div><div class="p-val">飲用不可（ペットボトル推奨）</div></div>
+    <div class="prac-card"><div class="p-ico">💳</div><div class="p-title">カード払い</div><div class="p-val">ホテル・モール◎・屋台は現金</div></div>
+  </div>
+
+  <!-- 2. 準備は早めに -->
+  <h2>準備は早めに</h2>
+  <div class="card">
+    <div style="padding-top:8px">
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #006847"></div>
+          <div class="rm-bar" style="background:linear-gradient(to bottom,#006847,#1a8a5a)"></div>
+        </div>
+        <div class="rm-right">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">パスポート取得・更新</div>
+            <span style="font-size:0.65em;color:#006847;font-weight:600;white-space:nowrap">1〜2ヶ月前</span>
+          </div>
+          <div class="rmr-desc">申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。査証スタンプ用の空白ページも<strong>2ページ以上</strong>必要。</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #1a8a5a"></div>
+          <div class="rm-bar" style="background:linear-gradient(to bottom,#1a8a5a,#b09000)"></div>
+        </div>
+        <div class="rm-right">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">海外対応クレジットカードの申込</div>
+            <span style="font-size:0.65em;color:#006847;font-weight:600;white-space:nowrap">1ヶ月前</span>
+          </div>
+          <div class="rmr-desc">審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #b09000"></div>
+          <div class="rm-bar" style="background:#b09000"></div>
+        </div>
+        <div class="rm-right">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">航空券・ホテルの予約</div>
+            <span style="font-size:0.65em;color:#b09000;font-weight:600;white-space:nowrap">早いほど安い</span>
+          </div>
+          <div class="rmr-desc">特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。ホテルはこだわらなければ前日予約も可能。</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #b09000"></div>
+          <div class="rm-bar" style="background:linear-gradient(to bottom,#b09000,#cc5500)"></div>
+        </div>
+        <div class="rm-right">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">海外旅行保険の加入</div>
+            <span style="font-size:0.65em;color:#b09000;font-weight:600;white-space:nowrap">出発前日まで</span>
+          </div>
+          <div class="rmr-desc">クレカ付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。</div>
+        </div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid #cc5500"></div>
+        </div>
+        <div class="rm-right">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">SIM・ポケットWi-Fiの準備</div>
+            <span style="font-size:0.65em;color:#cc5500;font-weight:600;white-space:nowrap">1〜2週間前</span>
+          </div>
+          <div class="rmr-desc">eSIMならアプリから前日でも購入・設定ができる。現地ではスワンナプーム空港・コンビニ（セブンイレブン）でSIMカード購入も可能。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A. 航空券の予約 -->
+  <h2>航空券の予約</h2>
+  <div class="card" style="padding:0 14px 14px">
+    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">日本〜バンコク（スワンナプーム/ドンムアン）間は多数の航空会社が就航。LCCを活用すれば閑散期は4〜8万円台で往復できる。</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">ZIPAIR・ピーチ</div>
+        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">日本発のLCC。成田・関西発バンコク行き。格安チケットが出やすい。</div>
+        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 4〜9万円</div>
+      </div>
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">エアアジア・エックス</div>
+        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">東南アジア系LCC。バンコク・チェンマイ行きが選べる。</div>
+        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 5〜11万円</div>
+      </div>
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">タイ航空</div>
+        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">フラッグキャリア。サービスが良くマイルも貯まる。成田・関西発。</div>
+        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 8〜18万円</div>
+      </div>
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">JAL・ANA</div>
+        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">快適性・マイル◎。直行便でバンコクへ。</div>
+        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 10〜20万円</div>
+      </div>
+    </div>
+    <div style="background:#f0f7f3;border-radius:10px;padding:12px 14px;font-size:0.78em;line-height:1.7;margin-bottom:8px">
+      <div style="font-weight:700;margin-bottom:4px">📅 予約タイミングの目安</div>
+      <div style="color:var(--sub)">・GW・年末年始・お盆は2〜3ヶ月前から価格が上がりやすい<br>・グリーンシーズン（6〜9月）は直前でも安値が出ることがある<br>・複数サイトを比較して最安値を見つけよう</div>
+    </div>
+    <span data-affiliate="flights"></span>
+  </div>
+
+  <!-- B. ホテルの選び方 -->
+  <h2>ホテルの選び方</h2>
+  <div class="card" style="padding:0 14px 14px">
+    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">バンコクはエリアによって観光・交通・グルメの利便性が変わる。BTS沿線が移動に便利。</div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="font-weight:700;font-size:0.84em">スクンビット（BTS沿線）</div>
+          <div style="font-size:0.68em;color:var(--green);background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">観光・ビジネス向け</div>
+        </div>
+        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">BTS直結ホテルが多く移動が楽。高級ホテル〜ゲストハウスまで幅広い。ショッピングモールやレストランが充実。</div>
+        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 4,000〜10,000円／泊　高級 15,000円〜</div>
+        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Sukhumvit,+Bangkok" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
+      </div>
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="font-weight:700;font-size:0.84em">カオサン通り周辺</div>
+          <div style="font-size:0.68em;color:#b09000;background:#fff8e6;border-radius:20px;padding:2px 8px;font-weight:600">バックパッカー向け</div>
+        </div>
+        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">世界中のバックパッカーが集まる活気ある通り。ゲストハウスが格安。ワット・プラケオ・王宮へも徒歩圏内。</div>
+        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 500〜2,000円／泊</div>
+        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Khao+San+Road,+Bangkok" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
+      </div>
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <div style="font-weight:700;font-size:0.84em">シーロム・サトーン</div>
+          <div style="font-size:0.68em;color:var(--green);background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">ビジネス・高級</div>
+        </div>
+        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">バンコクのビジネス街。BTS沿線で移動便利。高級ホテルやルーフトップバーが集中。</div>
+        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 6,000〜12,000円　高級 20,000円〜</div>
+        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Silom,+Bangkok" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
+      </div>
+    </div>
+    <div style="background:#fff8e6;border-left:3px solid #f5a623;border-radius:6px;padding:10px 12px;font-size:0.78em;color:#7a5200;line-height:1.7;margin-bottom:8px">💡 <strong>選び方のコツ</strong><br>初めてのバンコクはBTS沿線（スクンビット・シーロム）が移動に便利。チェンマイは旧市街（オールドシティ）周辺に泊まると徒歩観光がしやすい。プーケットはパトンビーチ周辺が活気があり便利。</div>
+    <span data-affiliate="hotels"></span>
+  </div>
+
+  <!-- 3. 持ち物チェック -->
+  <h2>持ち物チェック</h2>
+  <div class="grid2">
+    <div class="card" style="padding:16px">
+      <div class="lbl" style="margin-bottom:10px">🇹🇭 タイ特有の持ち物</div>
+      <ul class="check-list">
+        <li>日焼け止め（強烈な熱帯の日差し対策）</li>
+        <li>折りたたみ傘（スコール対策）</li>
+        <li>薄手の羽織もの（冷房対策・寺院内）</li>
+        <li>虫除けスプレー（デング熱を媒介する蚊対策）</li>
+        <li>腹巻き・整腸剤（屋台グルメの食べ過ぎ対策）</li>
+        <li>スカーフ・長ズボン（寺院見学時の服装用）</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px;background:#f8faf8">
+      <div style="font-size:1.6em">📋</div>
+      <div style="font-size:0.85em;font-weight:700;color:var(--text)">一般的な持ち物</div>
+      <div style="font-size:0.78em;color:var(--sub);line-height:1.7">パスポート・充電器・クレカなど<br>旅行全般に必要なものを<br>チェックリストで確認できます</div>
+      <a href="../checklist.html?from=thailand" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;font-size:0.8em;font-weight:700;padding:9px 20px;border-radius:20px;text-decoration:none;white-space:nowrap">チェックリストを見る →</a>
+    </div>
+  </div>
+
+  <!-- C. 事前にDLすべきアプリ -->
+  <h2>事前にDLすべきアプリ</h2>
+  <div class="card" style="padding:0 14px">
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0">
+      <span style="font-size:1.4em;flex-shrink:0;width:28px;text-align:center">🚗</span>
+      <div style="flex:1">
+        <div style="font-size:0.84em;font-weight:700">Grab（グラブ）</div>
+        <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">配車・フードデリバリー</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">東南アジア版Uber。乗車前に料金が確定するためぼったくりゼロ。バンコク・チェンマイ・プーケットで使える。タイ旅行では必須アプリ。</div>
+        <span data-affiliate="grab"></span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0">
+      <span style="font-size:1.4em;flex-shrink:0;width:28px;text-align:center">🗺️</span>
+      <div style="flex:1">
+        <div style="font-size:0.84em;font-weight:700">Google マップ</div>
+        <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">地図・ナビ（オフライン対応）</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">出発前にバンコク・訪問エリアをオフラインDLしておこう。BTSやMRTの乗り換えナビにも対応。</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0">
+      <span style="font-size:1.4em;flex-shrink:0;width:28px;text-align:center">🈳</span>
+      <div style="flex:1">
+        <div style="font-size:0.84em;font-weight:700">Google 翻訳</div>
+        <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">翻訳・カメラ翻訳</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">タイ語メニューや看板をカメラで写すだけで翻訳できる。タイ語パックを事前にDLしておけばオフラインでも使える。</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0">
+      <span style="font-size:1.4em;flex-shrink:0;width:28px;text-align:center">🎟️</span>
+      <div style="flex:1">
+        <div style="font-size:0.84em;font-weight:700">Klook（クルック）</div>
+        <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">現地ツアー・チケット事前予約</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">観光スポットのチケットやオプショナルツアーを事前に予約できる。エレファントサンクチュアリや離島クルーズなど人気ツアーは要予約。</div>
+        <span data-affiliate="klook"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 両替・支払い -->
+  <h2 id="money">両替・支払い</h2>
+
+  <!-- 現金目安カード -->
+  <div class="card" style="padding:18px 16px">
+    <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
+    <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内のスーパーリッチ等の両替専門店やWiseカードの利用がおすすめ。</div>
+    <div style="background:#fff8e6;border-left:3px solid #f5a623;border-radius:6px;padding:8px 12px;font-size:0.75em;color:#7a5200;line-height:1.7;margin-bottom:14px">💡 <strong>小額紙幣を用意しておこう</strong><br>屋台・トゥクトゥク・ローカルマーケットではお釣りが出ないことが多い。20THB・50THB・100THBの小額紙幣を多めに準備しておくとスムーズ。</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px">
+      <button onclick="changeDays(-1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">−</button>
+      <div style="text-align:center;min-width:60px">
+        <span id="cash-days" style="font-size:2.2em;font-weight:700;color:var(--green)">5</span>
+        <span style="font-size:0.82em;color:var(--sub)"> 日間</span>
+      </div>
+      <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
+        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">節約</div>
+        <div id="eco-thb" style="font-size:0.9em;font-weight:700">2,500 THB</div>
+        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約10,800円</div>
+      </div>
+      <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #b8ddc8">
+        <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
+        <div id="std-thb" style="font-size:0.9em;font-weight:700;color:var(--green)">7,500 THB</div>
+        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約32,300円</div>
+      </div>
+      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
+        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">ゆとり</div>
+        <div id="lux-thb" style="font-size:0.9em;font-weight:700">15,000 THB</div>
+        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約64,500円</div>
+      </div>
+    </div>
+    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">レストラン・ホテルはカード払い可。現金は主に屋台・ローカルマーケット・チップ・トゥクトゥクでの支払い用。<br>1 THB ≈ 4.3円で計算 ／ 節約 500・標準 1,500・ゆとり 3,000 THB／日</div>
+    <hr style="border:none;border-top:1px solid #f0f0f0;margin:16px 0">
+    <div data-affiliate-card-inner="wise"></div>
+  </div>
+
+  <!-- 7. SIM・Wi-Fi -->
+  <h2 id="sim">SIM・Wi-Fi</h2>
+  <div data-affiliate-card="sim_compare"></div>
+
+  <!-- D. 現地ツアー・アクティビティ -->
+  <h2>現地ツアー・アクティビティ</h2>
+  <div data-affiliate-card="klook"></div>
+
+  <div class="tab-cta">
+    <div class="tab-cta-title">出発前にマナーも確認しよう！🙏</div>
+    <p class="tab-cta-desc">仏教国ならではのマナーを知っておくと現地での行動がスムーズ。<br>寺院・王室・食事など旅行者が知っておくべきポイントをまとめました。</p>
+    <button class="tab-cta-btn" onclick="show('manner',document.querySelectorAll('nav button')[7])">マナーを見る →</button>
+  </div>
+
+</section>
+
+<!-- グルメ -->
+<section id="food">
+  <h2>タイ グルメ</h2>
+  <!-- フィルター -->
+  <div class="filter-group">
+    <div class="filter-label">カテゴリー</div>
+    <div class="filter-row" id="food-filter-type">
+      <button class="filter-btn active" data-filter="all"    onclick="filterFood('type','all',this)">すべて</button>
+      <button class="filter-btn"        data-filter="rice"   onclick="filterFood('type','rice',this)">ご飯もの</button>
+      <button class="filter-btn"        data-filter="noodle" onclick="filterFood('type','noodle',this)">麺料理</button>
+      <button class="filter-btn"        data-filter="side"   onclick="filterFood('type','side',this)">おかず・カレー</button>
+      <button class="filter-btn"        data-filter="sweet"  onclick="filterFood('type','sweet',this)">スイーツ</button>
+      <button class="filter-btn"        data-filter="drink"  onclick="filterFood('type','drink',this)">飲み物</button>
+    </div>
+  </div>
+  <div class="filter-group">
+    <div class="filter-label">都市・エリア</div>
+    <div class="filter-row" id="food-filter-city">
+      <button class="filter-btn" data-filter="bangkok"   onclick="filterFood('city','bangkok',this)">バンコク</button>
+      <button class="filter-btn" data-filter="chiangmai" onclick="filterFood('city','chiangmai',this)">チェンマイ</button>
+      <button class="filter-btn" data-filter="phuket"    onclick="filterFood('city','phuket',this)">プーケット</button>
+    </div>
+  </div>
+
+  <div class="item-grid" id="food-grid">
+    <div class="item-card has-img" data-ftype="noodle" data-fcity="national"><div class="num">No.01</div><div class="name-row"><div class="name">パッタイ</div><span class="badge">国民食</span></div><div class="desc">米粉の細麺を卵・もやし・えび・豆腐と炒め、タマリンドソースで味付けしたタイを代表する麺料理。ライムを絞って食べるのが定番。</div><img src="素材/グルメ/パッタイ.webp" alt="パッタイ" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%83%E3%82%BF%E3%82%A4" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🍜','Pad Thai','パッタイ','素材/グルメ/パッタイ.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="side" data-fcity="national"><div class="num">No.02</div><div class="name-row"><div class="name">トムヤムクン</div><span class="badge">世界三大スープ</span></div><div class="desc">エビ・レモングラス・カフィルライムリーフ・唐辛子を使った酸味と辛味が特徴のスープ。「トムヤム」はスープ、「クン」はエビの意。</div><img src="素材/グルメ/トムヤムクン.webp" alt="トムヤムクン" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A0%E3%83%A4%E3%83%A0%E3%82%AF%E3%83%B3" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🍲','Tom Yum Goong','トムヤムクン','素材/グルメ/トムヤムクン.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="side" data-fcity="national"><div class="num">No.03</div><div class="name-row"><div class="name">グリーンカレー</div><span class="badge">タイカレー定番</span></div><div class="desc">青唐辛子・バジル・ナス・ハーブを使ったタイカレーの定番。ココナッツミルクのまろやかさと香草の香りが特徴。辛さは段階的に選べる店が多い。</div><img src="素材/グルメ/グリーンカレー.webp" alt="グリーンカレー" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%AB%E3%83%AC%E3%83%BC" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🍛','Gaeng Keow Wan','グリーンカレー','素材/グルメ/グリーンカレー.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="sweet" data-fcity="national"><div class="num">No.04</div><div class="name-row"><div class="name">マンゴースティッキーライス</div><span class="badge">絶品スイーツ</span></div><div class="desc">熟したマンゴーと甘いもち米にコcoナッツミルクをかけたデザート。旬の4〜6月が最高においしい。屋台からレストランまで広く愛される定番スイーツ。</div><img src="素材/グルメ/マンゴースティッキーライス.webp" alt="マンゴースティッキーライス" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%AA%E3%83%8B%E3%83%A3%E3%82%AA%E3%83%9E%E3%83%A0%E3%82%A2%E3%83%B3" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🥭','Khao Niao Mamuang','マンゴースティッキーライス','素材/グルメ/マンゴースティッキーライス.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="side" data-fcity="national"><div class="num">No.05</div><div class="name-row"><div class="name">ソムタム</div><span class="badge">イサーン料理</span></div><div class="desc">青パパイヤを千切りにしてにんにく・唐辛子・ライム・ナンプラーで和えたサラダ。東北部（イサーン地方）発祥で、辛さは「マイペット」と伝えよう。</div><img src="素材/グルメ/ソムタム.webp" alt="ソムタム" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%A0%E3%82%BF%E3%83%A0" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🥗','Som Tum','ソムタム','素材/グルメ/ソムタム.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="rice" data-fcity="national"><div class="num">No.06</div><div class="name-row"><div class="name">カオマンガイ</div><span class="badge">朝食定番</span></div><div class="desc">鶏のゆで汁で炊いたご飯に茹で鶏をのせ、にんにく・生姜・豆板醤ベースのタレで食べるタイ版チキンライス。シンプルながら奥深い味わい。</div><img src="素材/グルメ/カオマンガイ.webp" alt="カオマンガイ" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%AA%E3%83%9E%E3%83%B3%E3%82%AC%E3%82%A4" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🍗','Khao Man Gai','カオマンガイ','素材/グルメ/カオマンガイ.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="rice" data-fcity="national"><div class="num">No.07</div><div class="name-row"><div class="name">ガパオライス</div><span class="badge">ランチの王様</span></div><div class="desc">豚・鶏のひき肉をホーリーバジル・唐辛子・ナンプラーで炒め、ご飯の上にのせた料理。目玉焼きをトッピングするのが定番。タイ人もよく食べる日常食。</div><img src="素材/グルメ/ガパオライス.webp" alt="ガパオライス" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%91%E3%82%AA%E3%83%A9%E3%82%A4%E3%82%B9" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🌿','Pad Kra Pao','ガパオライス','素材/グルメ/ガパオライス.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="side" data-fcity="national"><div class="num">No.08</div><div class="name-row"><div class="name">マッサマンカレー</div><span class="badge">CNN絶賛</span></div><div class="desc">ペルシャ・インドの影響を受けたタイ南部のカレー。ジャガイモ・ピーナッツ・スパイスを使い甘くまろやかな味わい。CNNトラベルの「世界で最もおいしい料理」1位に輝いたことも。</div><img src="素材/グルメ/マッサマンカレー.webp" alt="マッサマンカレー" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%83%E3%82%B5%E3%83%9E%E3%83%B3%E3%82%AB%E3%83%AC%E3%83%BC" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🥘','Massaman Curry','マッサマンカレー','素材/グルメ/マッサマンカレー.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="side" data-fcity="national"><div class="num">No.09</div><div class="name-row"><div class="name">トムカーガイ</div><span class="badge">マイルドスープ</span></div><div class="desc">ガランガル・レモングラス・ライムリーフで風味づけしたcocoナッツミルクと鶏肉のスープ。トムヤムより辛くなくまろやか。辛さが苦手な方でも食べやすい。</div><img src="素材/グルメ/トムカーガイ.webp" alt="トムカーガイ" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%A0%E3%82%AB%E3%83%BC%E3%82%AC%E3%82%A4" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🍲','Tom Kha Gai','トムカーガイ','素材/グルメ/トムカーガイ.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="noodle" data-fcity="chiangmai"><div class="num">No.10</div><div class="name-row"><div class="name">カオソーイ</div><span class="badge">チェンマイ名物</span></div><div class="desc">チェンマイを代表するカレーラーメン。ミャンマー・雲南省の影響を受けた黄色いカレースープに卵麺を入れ、揚げ麺をトッピング。チェンマイでは必食の一杯。</div><img src="素材/グルメ/カオソーイ.webp" alt="カオソーイ" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%AA%E3%82%BD%E3%83%BC%E3%82%A4" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🍜','Khao Soi','カオソーイ','素材/グルメ/カオソーイ.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="side" data-fcity="chiangmai"><div class="num">No.11</div><div class="name-row"><div class="name">ラープ</div><span class="badge">チェンマイ名物</span></div><div class="desc">豚・鶏のひき肉をライム・ナンプラー・ハーブ・炒り米で和えたイサーン・北部料理のサラダ。「幸運」を意味する名前で祝いの席でも出される。もち米と一緒に食べるのが定番。</div><img src="素材/グルメ/ラープ.webp" alt="ラープ" class="food-img"><a href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%97" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🥩','Larb','ラープ','素材/グルメ/ラープ.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="side" data-fcity="bangkok"><div class="num">No.12</div><div class="name-row"><div class="name">プーパッポンカリー</div><span class="badge">バンコク名物</span></div><div class="desc">ソフトシェルクラブや渡り蟹を卵・カレー粉・ナンプラーで炒めたバンコクのシーフード料理。コクのある黄色いソースが絶品。値段は高めだが一度は食べたい名物料理。</div><img src="素材/グルメ/プーパッポンカリー.webp" alt="プーパッポンカリー" class="food-img"><a href="https://en.wikipedia.org/wiki/Poo_pad_pong_karee" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🦀','Poo Pad Pong Karee','プーパッポンカリー','素材/グルメ/プーパッポンカリー.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="sweet" data-fcity="national"><div class="num">No.13</div><div class="name-row"><div class="name">ロティ</div><span class="badge">屋台スイーツ</span></div><div class="desc">薄い生地をバターでカリッと焼き、バナナや卵・練乳・チョコをトッピングした屋台デザート。カオサン通りや夜市で必ず見かける人気の甘いスナック。</div><img src="素材/グルメ/ロティ.webp" alt="ロティ" class="food-img"><a href="https://en.wikipedia.org/wiki/Roti_(Thai_cuisine)" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🥞','Roti','ロティ','素材/グルメ/ロティ.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="side" data-fcity="national"><div class="num">No.14</div><div class="name-row"><div class="name">ムーピン</div><span class="badge">朝の屋台定番</span></div><div class="desc">豚肉をナンプラー・にんにく・ヤシ砂糖で漬け込んで炭火焼きにした串焼き。朝の屋台で必ず見かけるタイの定番朝ごはんのおかず。もち米（カオニャオ）と合わせて食べる。</div><img src="素材/グルメ/ムーピン.webp" alt="ムーピン" class="food-img"><a href="https://en.wikipedia.org/wiki/Moo_ping" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🍢','Moo Ping','ムーピン','素材/グルメ/ムーピン.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="drink" data-fcity="national"><div class="num">No.15</div><div class="name-row"><div class="name">チャーイェン</div><span class="badge">国民的ドリンク</span></div><div class="desc">タイの紅茶に砂糖・練乳・ミルクを加えてたっぷりの氷で冷やしたオレンジ色の甘いミルクティー。暑い日に飲む一杯が格別。屋台・コンビニで手軽に手に入る。</div><img src="素材/グルメ/チャーイェン.webp" alt="チャーイェン" class="food-img"><a href="https://en.wikipedia.org/wiki/Thai_tea" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🧋','Cha Yen','チャーイェン','素材/グルメ/チャーイェン.webp')">店員に聞く</button></div>
+    <div class="item-card has-img" data-ftype="sweet" data-fcity="national"><div class="num">No.16</div><div class="name-row"><div class="name">カノムクロック</div><span class="badge">ストリートフード</span></div><div class="desc">半球型の型でこんがり焼いたcocoナッツミルクと米粉のプリン。外はカリッと、中はトロッとした食感が特徴。屋台で熱々を食べるのが美味しい定番スナック。</div><img src="素材/グルメ/カノムクロック.webp" alt="カノムクロック" class="food-img"><a href="https://en.wikipedia.org/wiki/Khanom_krok" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a><button class="order-btn" onclick="openFoodModal('🍮','Khanom Krok','カノムクロック','素材/グルメ/カノムクロック.webp')">店員に聞く</button></div>
+  </div>
+  <div class="tab-cta">
+    <div class="tab-cta-title">食べたいものが決まったら旅程を組もう！🗺️</div>
+    <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>バンコク連泊から北部・南部まで網羅しています。</p>
+    <button class="tab-cta-btn" onclick="show('course',document.querySelectorAll('nav button')[3])">モデルコースを見る →</button>
+  </div>
+</section>
+
+<!-- マナー -->
+<section id="manner">
+  <h2>文化・マナー</h2>
+  <div class="manner-grid">
+    <div class="manner-card dont"><div class="m-ico">🦶</div><div class="m-title">足で指さない</div><div class="m-desc">足は身体の最も不浄な部分とされる。仏像・人・頭に向けて足を向けたり指したりしてはいけない。</div></div>
+    <div class="manner-card dont"><div class="m-ico">👤</div><div class="m-title">頭を触らない</div><div class="m-desc">頭は身体で最も神聖な部分。子供でも頭を撫でてはいけない。</div></div>
+    <div class="manner-card do"><div class="m-ico">👟</div><div class="m-title">寺院では靴を脱ぐ</div><div class="m-desc">寺院・仏堂に入る前は必ず靴を脱ぐ。また肌の露出は控え、肩・膝が隠れる服装で。スカーフ・長ズボンを持参しよう。</div></div>
+    <div class="manner-card dont"><div class="m-ico">👑</div><div class="m-title">王室を侮辱しない</div><div class="m-desc">タイには不敬罪（lèse-majesté）があり、王室への侮辱は犯罪。国王・王室の写真や肖像を粗末に扱ってはいけない。</div></div>
+    <div class="manner-card dont"><div class="m-ico">🧘</div><div class="m-title">女性は僧侶に触れない</div><div class="m-desc">女性は僧侶に直接触れてはいけない。物を渡す際も直接手渡しは避け、置いて渡すか男性を介する。</div></div>
+    <div class="manner-card do"><div class="m-ico">🙏</div><div class="m-title">ワイで挨拶</div><div class="m-desc">両手を合わせて軽くお辞儀する「ワイ」がタイ式の挨拶。相手からワイをされたら同様に返礼するのがマナー。</div></div>
+    <div class="manner-card do"><div class="m-ico">💵</div><div class="m-title">チップの習慣がある</div><div class="m-desc">レストランやマッサージ店ではチップが期待されることが多い。食事後20〜50THB、マッサージ後50〜100THBが目安。義務ではないが心付けとして。</div></div>
+    <div class="manner-card do"><div class="m-ico">📸</div><div class="m-title">撮影前に一言</div><div class="m-desc">人物や寺院内の仏像を撮影する際は必ず許可を取る。寺院によっては撮影禁止エリアや有料エリアもある。</div></div>
+  </div>
+  <div class="tab-cta">
+    <div class="tab-cta-title">現地の言葉で話しかけてみよう！💬</div>
+    <p class="tab-cta-desc">タイ語の簡単なフレーズ集。<br>挨拶ひとつで現地の人の反応がぐっと変わります。</p>
+    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button>
+  </div>
+</section>
+
+<!-- 交通 -->
+<section id="transport">
+  <h2>現地交通ガイド</h2>
+  <div class="card" style="padding:0 14px">
+
+    <div class="trans-item">
+      <div class="t-ico">🚕</div>
+      <div class="t-info">
+        <div class="t-name">Grab（グラブ）— 最もおすすめ</div>
+        <div class="t-desc">東南アジア版Uber。アプリで呼べて料金が事前確定。バンコクのタクシーはメーター無視のぼったくりが多いため、Grabを使うのが安全で確実。出発前にダウンロード推奨。</div>
+        <span data-affiliate="grab"></span>
+      </div>
+    </div>
+
+    <div class="trans-item">
+      <div class="t-ico">🚆</div>
+      <div class="t-info">
+        <div class="t-name">BTS スカイトレイン（バンコク市内）</div>
+        <div class="t-desc">バンコクの高架電車。スクンビット線・シーロム線の2路線。渋滞を避けて移動でき、観光スポットへのアクセスに便利。ラビットカードで乗り降りがスムーズ。</div>
+      </div>
+    </div>
+
+    <div class="trans-item">
+      <div class="t-ico">🚇</div>
+      <div class="t-info">
+        <div class="t-name">MRT（バンコク地下鉄）</div>
+        <div class="t-desc">バンコクの地下鉄。BTSと乗り換えでき、ルンピニー公園・チャイナタウン・バンコク駅へのアクセスに便利。BTSとは別会社なので乗り換えは改札を出て再入場。</div>
+      </div>
+    </div>
+
+    <div class="trans-item">
+      <div class="t-ico">🛺</div>
+      <div class="t-info">
+        <div class="t-name">トゥクトゥク</div>
+        <div class="t-desc">タイを象徴する三輪タクシー。短距離移動や観光用に人気。料金は乗る前に交渉必須。Grabよりは高くなりやすいが、体験として楽しい乗り物。</div>
+      </div>
+    </div>
+
+    <div class="trans-item">
+      <div class="t-ico">🚐</div>
+      <div class="t-info">
+        <div class="t-name">ソンテウ（乗り合いトラック）</div>
+        <div class="t-desc">荷台に乗客を乗せる乗り合いトラック。チェンマイではルート毎に色が異なり、地元民の足として活躍。料金は一律20〜30THBが多く格安。</div>
+      </div>
+    </div>
+
+    <div class="trans-item">
+      <div class="t-ico">⛵</div>
+      <div class="t-info">
+        <div class="t-name">フェリー・水上バス</div>
+        <div class="t-desc">バンコクはチャオプラヤー川の水上バスが観光に便利。プーケット・コサムイ等の離島へはフェリーで移動。</div>
+      </div>
+    </div>
+
+    <div class="trans-item">
+      <div class="t-ico">✈️</div>
+      <div class="t-info">
+        <div class="t-name">国内線</div>
+        <div class="t-desc">バンコク→チェンマイ・プーケット・コサムイへはタイ・エアアジア・ノックエアなどLCCで格安移動可能。バンコク〜チェンマイ間は約1時間、早めの予約で数百THB〜も。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- フレーズ -->
+<section id="phrases">
+  <h2>タイ語 旅行フレーズ集</h2>
+  <table class="phrase-tbl">
+    <tr><th>日本語</th><th>タイ語 / 読み方</th><th style="width:38px"></th></tr>
+    <tr class="cat-hdr"><td colspan="3">👋 あいさつ</td></tr>
+    <tr><td class="jp">こんにちは</td><td class="ms">สวัสดี<span class="roma">サワッディー</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('sawasdee.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">元気ですか？</td><td class="ms">สบายดีไหม?<span class="roma">サバイディー マイ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('sabaidi-mai.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">元気です</td><td class="ms">สบายดี<span class="roma">サバイディー</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('sabaidi.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">さようなら</td><td class="ms">ลาก่อน<span class="roma">ラーコン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('lakon.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">綺麗ですね！<span style="font-size:0.8em;color:#999;display:block">景色や人を褒めるときに</span></td><td class="ms">สวยมาก!<span class="roma">スワイ マーク！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('suay-mak.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">🙏 基本表現</td></tr>
+    <tr><td class="jp">ありがとう</td><td class="ms">ขอบคุณ<span class="roma">コップクン（クラップ/カー）</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('khobkhun.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">ごめんなさい</td><td class="ms">ขอโทษ<span class="roma">コートート</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('khotot.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">大丈夫・気にしないで</td><td class="ms">ไม่เป็นไร<span class="roma">マイペンライ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('maippenrai.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">はい / いいえ</td><td class="ms">ใช่ / ไม่ใช่<span class="roma">チャイ / マイチャイ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('chai-maichai.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">名前は〜です</td><td class="ms">ผม/ฉันชื่อ ～<span class="roma">ポム/チャン チュー ～</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('pom-chu.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">日本人です</td><td class="ms">เป็นคนญี่ปุ่น<span class="roma">ペン コン イープン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('pen-kon-yipun.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">🍽️ レストラン・ショッピング</td></tr>
+    <tr><td class="jp">おいしい！</td><td class="ms">อร่อย!<span class="roma">アロイ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('aroi.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">辛い</td><td class="ms">เผ็ด<span class="roma">ペット</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('phet.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">辛くしないでください</td><td class="ms">ไม่เผ็ด<span class="roma">マイペット</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('mai-phet.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">〜はありますか？</td><td class="ms">มี ～ ไหม?<span class="roma">ミー ～ マイ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('mee-mai.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">お会計お願いします</td><td class="ms">เก็บเงินด้วย<span class="roma">ゲップグン ドゥアイ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('gebngern.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">カード払い</td><td class="ms">จ่ายบัตร<span class="roma">ジャーイ バット</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('jai-bat.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">現金</td><td class="ms">เงินสด<span class="roma">グン ソット</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('ngern-sot.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">トイレどこですか？</td><td class="ms">ห้องน้ำอยู่ไหน?<span class="roma">ホンナム ユー ナイ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('hongnam-yunai.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">これください</td><td class="ms">ขออันนี้<span class="roma">コー アン ニー</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('kho-an-nee.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">いくらですか？</td><td class="ms">ราคาเท่าไหร่?<span class="roma">ラーカー タオライ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('rakha-taorai.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">高い・安くしてください</td><td class="ms">แพงไป ลดได้ไหม?<span class="roma">ペーン パイ、ロット ダイ マイ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('phaeng-lot.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">ここに行きたい</td><td class="ms">อยากไปที่นี่<span class="roma">ヤーク パイ ティーニー</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('yak-pai-thinee.mp3',this)">▶</button></td></tr>
+    <tr class="cat-hdr"><td colspan="3">🔢 数字</td></tr>
+    <tr><td class="jp">0〜5</td><td class="ms">ศูนย์・หนึ่ง・สอง・สาม・สี่・ห้า<span class="roma">スーン・ヌン・ソーン・サーム・シー・ハー</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('sun-ha.mp3',this)">▶</button></td></tr>
+    <tr><td class="jp">6〜10</td><td class="ms">หก・เจ็ด・แปด・เก้า・สิบ<span class="roma">ホック・ジェット・ペート・ガーオ・シップ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('hok-sip.mp3',this)">▶</button></td></tr>
+  </table>
+
+  <div class="cta" style="margin-top:20px">
+    <h3>🃏 タイ語 単語カード</h3>
+    <p>旅行前にフレーズをマスターしよう！<br>印刷できる単語カードを販売中。</p>
+    <button class="cta-btn">単語カードを見る →</button>
+  </div>
+</section>
+
+<!-- 観光地 -->
+<section id="spots">
+  <h2>都市別観光スポット</h2>
+
+  <!-- フィルター -->
+  <div class="filter-row" id="spots-filter-row">
+    <button class="filter-btn active" data-filter="all"       onclick="filterSpots('all',this)">全て</button>
+    <button class="filter-btn"        data-filter="bangkok"   onclick="filterSpots('bangkok',this)">バンコク</button>
+    <button class="filter-btn"        data-filter="chiangmai" onclick="filterSpots('chiangmai',this)">チェンマイ</button>
+    <button class="filter-btn"        data-filter="phuket"    onclick="filterSpots('phuket',this)">プーケット</button>
+    <button class="filter-btn"        data-filter="pattaya"   onclick="filterSpots('pattaya',this)">パタヤ</button>
+    <button class="filter-btn"        data-filter="ayutthaya" onclick="filterSpots('ayutthaya',this)">アユタヤ</button>
+    <button class="filter-btn"        data-filter="samui"     onclick="filterSpots('samui',this)">コサムイ</button>
+  </div>
+
+  <div class="item-grid" id="spots-grid">
+    <!-- バンコク -->
+    <div class="city-section-header" data-city="bangkok">
+      <div class="csh-title">バンコク</div>
+      <div class="csh-desc">黄金の寺院群と最先端のショッピングが共存する大都市</div>
+      <div class="csh-grid">
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">直行便 約6〜7時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">空港↔市内</div><div class="csh-val">エアポートレールリンク 約30分</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">11〜2月（涼季）</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">パッタイ・ガパオライス</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">BTS・MRT・Grab・トゥクトゥク</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+      </div>
+    </div>
+    <div class="item-card spot must" data-city="bangkok"><div class="must-badge">⭐</div><div class="ico">🛕</div><div class="num">BK 01</div><div class="name">ワット・プラケオ（エメラルド寺院）</div><div class="desc">バンコク王宮内に建つタイ最高の聖地。翡翠製の仏像・黄金の仏塔・精巧な壁画が圧巻。境内は広大で見どころが多い。入場料500THB。肌の露出は厳禁。</div><span class="badge">王宮</span></div>
+    <div class="item-card spot must" data-city="bangkok"><div class="must-badge">⭐</div><div class="ico">🏯</div><div class="num">BK 02</div><div class="name">王宮（グランドパレス）</div><div class="desc">チャクリー王朝の歴代王が暮らした宮殿。ヨーロッパ様式とタイ伝統建築が融合した豪華な建物群。ワット・プラケオと隣接しており同チケットで見学可能。</div><span class="badge">世界的観光地</span></div>
+    <div class="item-card spot must" data-city="bangkok"><div class="must-badge">⭐</div><div class="ico">🙏</div><div class="num">BK 03</div><div class="name">ワット・ポー（涅槃仏寺院）</div><div class="desc">全長46m・高さ15mの黄金の涅槃仏（寝仏）が有名。タイ式マッサージ発祥の地でもあり、境内のマッサージスクールは伝統的に有名。王宮から徒歩圏内。</div><span class="badge">寺院</span></div>
+    <div class="item-card spot must" data-city="bangkok"><div class="must-badge">⭐</div><div class="ico">🌅</div><div class="num">BK 04</div><div class="name">ワット・アルン（暁の寺）</div><div class="desc">チャオプラヤー川西岸に建つバンコクのシンボル。陶器のモザイクで覆われた高さ82mの尖塔が美しく、日没後のライトアップは特に幻想的。川向かいから眺めるのもおすすめ。</div><span class="badge">夜景</span></div>
+    <div class="item-card spot" data-city="bangkok"><div class="ico">🛍️</div><div class="num">BK 05</div><div class="name">カオサン通り</div><div class="desc">世界中のバックパッカーが集まる活気あふれる通り。屋台グルメ・マッサージ・土産店・ゲストハウスが立ち並ぶ。夜は特に賑わいバンコク観光の定番スポット。</div><span class="badge">ナイトライフ</span></div>
+    <div class="item-card spot" data-city="bangkok"><div class="ico">🌿</div><div class="num">BK 06</div><div class="name">チャトゥチャック週末市場</div><div class="desc">土日のみ開催されるアジア最大級の屋外マーケット。約15,000店舗が集まり、ファッション・雑貨・食器・植物・食べ物まで何でも揃う。BTS Mochit駅すぐ。</div><span class="badge">週末限定</span></div>
+    <div class="item-card spot" data-city="bangkok"><div class="ico">🎭</div><div class="num">BK 07</div><div class="name">アイコンサイアム</div><div class="desc">チャオプラヤー川沿いの超高級ショッピングモール。伝統的なタイ様式の水上マーケット「スームサイアム」が館内に。ルーフトップレストランから川の夜景も絶景。</div><span class="badge">ショッピング</span></div>
+    <div class="item-card spot" data-city="bangkok"><div class="ico">🌃</div><div class="num">BK 08</div><div class="name">ルーフトップバー（レベル高め）</div><div class="desc">バンコクにはルーフトップバーが数多くあり、夜景が絶景。スカイバー（レバノン）やオクターブ（バンコクマリオット）が有名。ドレスコードがある場合も多いので要確認。</div><span class="badge">夜景</span></div>
+    <!-- チェンマイ -->
+    <div class="city-section-header" data-city="chiangmai">
+      <div class="csh-title">チェンマイ</div>
+      <div class="csh-desc">古都の趣と豊かな自然、エレファントサンクチュアリで有名</div>
+      <div class="csh-grid">
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">バンコクから国内線 約1時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">11〜2月（涼季）</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">カオソーイ・ラープ</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">ソンテウ・Grab・レンタルバイク</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+      </div>
+    </div>
+    <div class="item-card spot must" data-city="chiangmai"><div class="must-badge">⭐</div><div class="ico">⛰️</div><div class="num">CM 01</div><div class="name">ワット・ドイステープ</div><div class="desc">市街を見下ろす1,080mの山頂に建つチェンマイのシンボル的寺院。306段の階段または車でアクセス可。山頂からチェンマイ市街を一望できる絶景が魅力。</div><span class="badge">絶景</span></div>
+    <div class="item-card spot must" data-city="chiangmai"><div class="must-badge">⭐</div><div class="ico">🐘</div><div class="num">CM 02</div><div class="name">エレファントサンクチュアリ</div><div class="desc">象に乗らず間近で触れ合える倫理的な象の保護施設。象への給餌・沐浴体験が人気。チェンマイ周辺にいくつかの施設があり、半日〜1日ツアーで体験できる。事前予約推奨。</div><span class="badge">体験</span></div>
+    <div class="item-card spot" data-city="chiangmai"><div class="ico">🏯</div><div class="num">CM 03</div><div class="name">旧市街・お堀</div><div class="desc">正方形のお堀に囲まれた旧市街には寺院が30以上密集。チェンマイ最古のワット・チェディルアン・ワット・プラシンなどが歩いて回れる。自転車観光がおすすめ。</div><span class="badge">歴史地区</span></div>
+    <div class="item-card spot" data-city="chiangmai"><div class="ico">🌙</div><div class="num">CM 04</div><div class="name">サンデー＆サタデーナイトバザール</div><div class="desc">週末に開かれる規模の大きなナイトマーケット。手作り工芸品・洋服・食べ物が並ぶ。地元グルメも充実しており、観光客と地元民が一緒に楽しむ活気ある市場。</div><span class="badge">週末限定</span></div>
+    <div class="item-card spot" data-city="chiangmai"><div class="ico">🌸</div><div class="num">CM 05</div><div class="name">チェンマイ花祭り（1〜2月）</div><div class="desc">毎年2月第1週末に開催される花の祭典。市内が色とりどりの花で飾られ、フラワーフロート・パレードが見どころ。チェンマイ旅行のベストタイミングのひとつ。</div><span class="badge">季節イベント</span></div>
+    <div class="item-card spot" data-city="chiangmai"><div class="ico">💆</div><div class="num">CM 06</div><div class="name">タイ古式マッサージ</div><div class="desc">チェンマイはマッサージが格安で質が高いと評判。旧市街周辺に多くの老舗マッサージ店が集まる。1時間200〜400THBが目安。足裏・全身・ハーブボールなど種類も豊富。</div><span class="badge">体験</span></div>
+    <!-- プーケット -->
+    <div class="city-section-header" data-city="phuket">
+      <div class="csh-title">プーケット</div>
+      <div class="csh-desc">アンダマン海に面した世界屈指のリゾートアイランド</div>
+      <div class="csh-grid">
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">バンコクから国内線 約1.5時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">11〜4月（乾季）</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">名物グルメ</div><div class="csh-val">シーフード・南部タイカレー</div><button onclick="show('food',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・タクシー・ソンテウ</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+      </div>
+    </div>
+    <div class="item-card spot must" data-city="phuket"><div class="must-badge">⭐</div><div class="ico">🏖️</div><div class="num">PH 01</div><div class="name">パトンビーチ</div><div class="desc">プーケット最大のビーチリゾート。白砂のビーチ・ウォータースポーツ・ナイトライフが充実。バングラ通りの夜の賑わいも有名。初めてのプーケットにおすすめのエリア。</div><span class="badge">ビーチ</span></div>
+    <div class="item-card spot must" data-city="phuket"><div class="must-badge">⭐</div><div class="ico">⛵</div><div class="num">PH 02</div><div class="name">ファンガー湾（ジェームズボンド島）</div><div class="desc">石灰岩の奇岩が点在する絶景の湾。映画「007 黄金銃を持つ男」の舞台として有名。カヤック・ボートツアーで島巡りができる。プーケットから日帰りツアーが豊富。</div><span class="badge">絶景クルーズ</span></div>
+    <div class="item-card spot" data-city="phuket"><div class="ico">🗿</div><div class="num">PH 03</div><div class="name">ビッグブッダ</div><div class="desc">丘の上に建つ高さ45mの白い大仏像。プーケットのどこからでも見える島のシンボル。展望台からの360度のパノラマビューが絶景。入場無料。服装規定あり。</div><span class="badge">入場無料</span></div>
+    <div class="item-card spot" data-city="phuket"><div class="ico">🏘️</div><div class="num">PH 04</div><div class="name">プーケットオールドタウン</div><div class="desc">中国系移民が築いたシノポルトガル建築が並ぶ旧市街。カラフルな壁画・カフェ・ギャラリーが点在しフォトジェニック。毎週日曜の「ウォーキングストリート」は必見。</div><span class="badge">フォトスポット</span></div>
+    <div class="item-card spot" data-city="phuket"><div class="ico">🐠</div><div class="num">PH 05</div><div class="name">シミラン諸島</div><div class="desc">世界ダイビングスポットランキング上位の透明度を誇る離島。プーケットからボートで約2時間。海の美しさは圧巻。10月〜5月のみオープン。Klookで事前ツアー予約を。</div><span class="badge">ダイビング</span></div>
+    <div class="item-card spot" data-city="phuket"><div class="ico">🌅</div><div class="num">PH 06</div><div class="name">カロンビーチ・カタビーチ</div><div class="desc">パトンより静かで落ち着いた雰囲気のビーチ。カロンは白砂が美しくファミリー向け、カタはサーフィンスポットとしても人気。ローカル感あるシーフードレストランも点在。</div><span class="badge">ビーチ</span></div>
+    <!-- パタヤ -->
+    <div class="city-section-header" data-city="pattaya">
+      <div class="csh-title">パタヤ</div>
+      <div class="csh-desc">バンコクから約2時間、手軽に行けるビーチリゾート</div>
+      <div class="csh-grid">
+        <div class="csh-item"><div class="csh-lbl">バンコクから</div><div class="csh-val">バス 約2〜3時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">おすすめ滞在</div><div class="csh-val">日帰り〜2泊</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">11〜4月</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">ソンテウ・Grab・バイタク</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+      </div>
+    </div>
+    <div class="item-card spot must" data-city="pattaya"><div class="must-badge">⭐</div><div class="ico">🏝️</div><div class="num">PA 01</div><div class="name">コーラン島（サンゴ礁の島）</div><div class="desc">パタヤからフェリーで約45分。透明度の高いサンゴ礁の海が広がるリゾート島。シュノーケリング・パラセーリング・バナナボートが楽しめる。日帰り旅行に最適。</div><span class="badge">シュノーケリング</span></div>
+    <div class="item-card spot" data-city="pattaya"><div class="ico">🐘</div><div class="num">PA 02</div><div class="name">ノンノク・ガーデン（農場・象ショー）</div><div class="desc">果物農場・トロピカルガーデン・象ショー・動植物が一体となった大型テーマパーク。世界最大の熱帯庭園としてギネス認定。家族連れに人気。</div><span class="badge">ファミリー</span></div>
+    <div class="item-card spot" data-city="pattaya"><div class="ico">🕍</div><div class="num">PA 03</div><div class="name">サンクチュアリ・オブ・トゥルース</div><div class="desc">木材のみで建てられた高さ105mの巨大木造寺院。職人による精巧な彫刻が全面を覆い圧巻。まだ建設中の生きた建築として40年以上かけて建設継続中。</div><span class="badge">唯一無二</span></div>
+    <div class="item-card spot" data-city="pattaya"><div class="ico">🎭</div><div class="num">PA 04</div><div class="name">ティファニーショー</div><div class="desc">世界的に有名なレディーボーイによるカバレショー。豪華な衣装・ダンス・音楽が見どころ。毎晩数回公演があり、バンコクからのツアーでも訪れる人が多い。</div><span class="badge">エンターテイメント</span></div>
+    <!-- アユタヤ -->
+    <div class="city-section-header" data-city="ayutthaya">
+      <div class="csh-title">アユタヤ</div>
+      <div class="csh-desc">14〜18世紀に栄えたタイ王国の古都・ユネスコ世界遺産</div>
+      <div class="csh-grid">
+        <div class="csh-item"><div class="csh-lbl">バンコクから</div><div class="csh-val">電車・バス 約1.5〜2時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">おすすめ滞在</div><div class="csh-val">日帰り〜1泊</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">11〜2月</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">レンタルバイク・トゥクトゥク・Grab</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+      </div>
+    </div>
+    <div class="item-card spot must" data-city="ayutthaya"><div class="must-badge">⭐</div><div class="ico">🏛️</div><div class="num">AY 01</div><div class="name">アユタヤ歴史公園</div><div class="desc">ユネスコ世界遺産に登録された遺跡群。ワット・プラシーサンペット・ワット・チャイワタナラームなど多数の遺跡が点在。レンタルバイクで巡るのがおすすめ。</div><span class="badge">世界遺産</span></div>
+    <div class="item-card spot must" data-city="ayutthaya"><div class="must-badge">⭐</div><div class="ico">🌳</div><div class="num">AY 02</div><div class="name">ワット・マハタート（木に埋まる仏頭）</div><div class="desc">菩提樹の根に包まれた仏頭が有名。なぜ木に埋まったのかは謎のまま。アユタヤで最も写真映えするスポットとして世界中からの観光客が訪れる。</div><span class="badge">フォトスポット</span></div>
+    <div class="item-card spot" data-city="ayutthaya"><div class="ico">🐘</div><div class="num">AY 03</div><div class="name">アユタヤ象乗り体験</div><div class="desc">古都を象に乗って巡る伝統的な観光体験。アユタヤ歴史公園周辺で体験可能。倫理的な扱いをする施設を選ぶことが重要。</div><span class="badge">体験</span></div>
+    <div class="item-card spot" data-city="ayutthaya"><div class="ico">⛵</div><div class="num">AY 04</div><div class="name">チャオプラヤー川クルーズ</div><div class="desc">バンコクからアユタヤへの移動をクルーズ船で行うツアーが人気。川から眺める寺院群・田園風景が特別な体験。片道クルーズ＋復路は電車も選べる。</div><span class="badge">クルーズ</span></div>
+    <!-- コサムイ -->
+    <div class="city-section-header" data-city="samui">
+      <div class="csh-title">コサムイ</div>
+      <div class="csh-desc">タイ湾に浮かぶ亜熱帯の楽園、コサムイ島</div>
+      <div class="csh-grid">
+        <div class="csh-item"><div class="csh-lbl">アクセス</div><div class="csh-val">バンコクから国内線 約1.5時間</div></div>
+        <div class="csh-item"><div class="csh-lbl">ベストシーズン</div><div class="csh-val">1〜9月（乾季）</div><button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+        <div class="csh-item"><div class="csh-lbl">名物</div><div class="csh-val">ダイビング・フルムーンパーティー</div></div>
+        <div class="csh-item"><div class="csh-lbl">市内交通</div><div class="csh-val">Grab・ソンテウ・レンタルバイク</div><button onclick="show('transport',document.querySelectorAll('nav button')[9])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button></div>
+      </div>
+    </div>
+    <div class="item-card spot must" data-city="samui"><div class="must-badge">⭐</div><div class="ico">🏖️</div><div class="num">SM 01</div><div class="name">チャウエンビーチ</div><div class="desc">コサムイ最大・最も人気のビーチ。白砂と透き通る海が6km続く。ホテル・レストラン・ナイトライフが集中する島のメインエリア。夜はビーチ沿いのバーが賑わう。</div><span class="badge">ビーチ</span></div>
+    <div class="item-card spot" data-city="samui"><div class="ico">🌙</div><div class="num">SM 02</div><div class="name">フルムーンパーティー</div><div class="desc">コサムイ近隣のパンガン島で毎月満月の夜に開催される世界最大級のビーチパーティー。世界中から3万人以上が集まる。コサムイからフェリーで約30分。</div><span class="badge">月1回開催</span></div>
+    <div class="item-card spot" data-city="samui"><div class="ico">🐠</div><div class="num">SM 03</div><div class="name">アンソン国立公園（ダイビング）</div><div class="desc">コサムイ沖の国立公園。透明度の高い海でダイビング・シュノーケリングが楽しめる。ウミガメの目撃情報も多い。ボートツアーで日帰りアクセス可能。</div><span class="badge">ダイビング</span></div>
+    <div class="item-card spot" data-city="samui"><div class="ico">🗿</div><div class="num">SM 04</div><div class="name">ビッグブッダ寺院</div><div class="desc">海中道路で繋がった小島に建つ高さ15mの黄金の仏像。コサムイ北部の海を見渡せる絶景スポット。入場無料。</div><span class="badge">入場無料</span></div>
+  </div>
+
+  <div class="tab-cta">
+    <div class="tab-cta-title">観光地が決まったら名物グルメもチェック！🍜</div>
+    <p class="tab-cta-desc">各都市の名物料理から定番スイーツ・ドリンクまで。<br>食べてみたいものをここで探して旅の計画に加えよう。</p>
+    <button class="tab-cta-btn" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button>
+  </div>
+
+</section>
+
+<!-- モデルコース -->
+<section id="course">
+  <h2>モデルコース</h2>
+
+  <div class="card" style="margin-bottom:4px">
+    <p style="font-size:0.82em;color:var(--sub);line-height:1.7">旅のスタイルに合わせた2タイプのモデルコースを紹介。初めてのタイでも安心な<strong>バンコク連泊プラン</strong>から、北部・南部まで欲張る<strong>縦断ルート</strong>まで。どちらもアレンジ自由です。</p>
+  </div>
+
+  <!-- 安定タイプ -->
+  <div class="course-type">
+    <span class="course-type-lbl green">安定タイプ</span>
+    <div class="course-type-title">連泊でじっくりプラン</div>
+  </div>
+
+  <!-- プランA -->
+  <div class="card" style="margin-bottom:10px">
+    <div class="course-plan-lbl">プランA</div>
+    <div class="course-plan-title">バンコク 4泊5日</div>
+    <div class="course-timeline">
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#1e7e34">Day 1</div>
+        <div class="tl-content"><strong>バンコク到着</strong><br>スワンナプーム空港からエアポートレールリンクで約30分、市内へ。ホテルへ荷物を預けたらカオサン通りへ。世界中のバックパッカーが集まる通りで、屋台グルメをつまみながらバンコクの夜の空気を全身で感じよう。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#8a9a20">Day 2</div>
+        <div class="tl-content"><strong>王宮エリア観光</strong><br>朝早めにワット・プラケオ（エメラルド寺院）と王宮へ。観光客が多いので開門直後（8:30〜）がおすすめ。午後はチャオプラヤー川を渡ってワット・アルン（暁の寺）へ。夕暮れ時の川沿いの景色が絶景。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#c88000">Day 3</div>
+        <div class="tl-content"><strong>ワット・ポー → BTS観光</strong><br>午前中にワット・ポーで涅槃仏を拝観後、院内でタイ式マッサージ体験（要予約）。午後はBTSでスクンビットへ移動。ショッピング・ルーフトップバーで夜景を楽しんで締めくくる。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#c84020">Day 4</div>
+        <div class="tl-content"><strong>チャトゥチャック週末市場 / 近郊日帰り</strong><br>土日ならチャトゥチャック市場でショッピングを満喫。平日ならアユタヤへ日帰り旅（電車で約1.5時間）。世界遺産の遺跡群とワット・マハタート（木に埋まる仏頭）を見学。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge gray">Day 5</div>
+        <div class="tl-content"><strong>帰国</strong><br>午前中は最後の街歩きやお土産購入。スワンナプーム空港へ移動して帰国便へ。</div>
+      </div>
+    </div>
+    <div class="course-tip">✅ バンコク連泊ベース・移動ゼロ　スーツケースを動かす必要なし</div>
+  </div>
+
+  <!-- プランB -->
+  <div class="card" style="margin-bottom:10px">
+    <div class="course-plan-lbl">プランB</div>
+    <div class="course-plan-title">バンコク ＋ チェンマイ　6泊7日</div>
+    <div class="course-timeline">
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#1e7e34">Day 1</div>
+        <div class="tl-content"><strong>バンコク到着</strong><br>到着後はホテルにチェックイン。夜のカオサン通りか夜市で屋台グルメを食べ歩き。パッタイ・ガパオライス・マンゴースティッキーライスはこの夜に制覇しよう。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#52a443">Day 2</div>
+        <div class="tl-content"><strong>バンコク寺院めぐり</strong><br>ワット・プラケオ・王宮・ワット・ポー・ワット・アルンを1日かけてめぐる王道コース。川沿いをのんびり歩きながら、ローカルの食堂でランチを。夜はルーフトップバーで夜景を。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#8a9a20">Day 3</div>
+        <div class="tl-content"><strong>バンコク自由行動 → チェンマイへ</strong><br>午前中はチャトゥチャック市場やアイコンサイアムでショッピング。夕方の国内線でチェンマイへ（約1時間）。到着後はチェンマイの夜市（サンデー/サタデーバザール）へ。</div>
+      </div>
+      <div class="tl-transit">
+        <div class="tl-transit-lbl">✈️<br>約1h</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#c88000">Day 4</div>
+        <div class="tl-content"><strong>エレファントサンクチュアリ</strong><br>チェンマイ最大の目玉、エレファントサンクチュアリへ（半日〜1日ツアー）。倫理的な環境で象に近づき・餌やり・沐浴を体験。午後は旧市街の寺院散策とタイ古式マッサージで疲れを癒す。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#c84020">Day 5</div>
+        <div class="tl-content"><strong>ワット・ドイステープ → チェンマイ自由行動</strong><br>山頂のワット・ドイステープで朝の参拝。街を一望する絶景を楽しんだ後、旧市街でカオソーイランチ。午後はカフェ巡り・雑貨ショッピングでチェンマイの最後を満喫。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#cc0001">Day 6</div>
+        <div class="tl-content"><strong>チェンマイ最終日 → バンコク経由帰国便</strong><br>最後の朝市で朝ごはん。チェンマイ空港からバンコク経由で帰国便へ、または直行便があれば直接帰国。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge gray">Day 7</div>
+        <div class="tl-content"><strong>帰国</strong></div>
+      </div>
+    </div>
+    <div class="course-tip">✅ バンコク2連泊・チェンマイ3連泊　荷物の移動は1回だけ</div>
+  </div>
+
+  <!-- 冒険タイプ -->
+  <div class="course-type" style="margin-top:22px">
+    <span class="course-type-lbl red">冒険タイプ</span>
+    <div class="course-type-title">バンコク → チェンマイ → プーケット 縦断ルート</div>
+  </div>
+
+  <div class="card">
+    <div class="course-note">
+      <span class="course-note-ico">✍️</span>
+      <div>
+        <div class="course-note-lbl">管理人より</div>
+        <p class="course-note-txt">このルートは管理人がGWに実際に旅したコースです。バンコクの都市・チェンマイの自然・プーケットのビーチを全部味わいたくて、国内線を駆使して縦断しました。タイは国土が広く南北で文化も気候も全然違う。それを一度の旅で体感できるのがこのルートの醍醐味です。プーケット最終日は夕日を見ながら「またいつか来たい」と思い続けている場所です。</p>
+      </div>
+    </div>
+
+    <div class="course-timeline">
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#1e7e34">Day 1</div>
+        <div class="tl-content"><strong>バンコク到着</strong><br>直行便で約6時間。深夜便なら翌朝到着、そのままホテルに荷物を預けてワット・プラケオへ直行。観光後カオサン通りで屋台グルメを食べ、バンコクの熱気を肌で感じる。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#52a443">Day 2</div>
+        <div class="tl-content"><strong>バンコク観光</strong><br>ワット・ポー・ワット・アルンを巡った後、BTSでスクンビットへ。夜はチャオプラヤー川のクルーズディナーでバンコクの夜景を船上から楽しむのが格別。</div>
+      </div>
+      <div class="tl-transit">
+        <div class="tl-transit-lbl">✈️<br>約1h</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#8a9a20">Day 3</div>
+        <div class="tl-content"><strong>チェンマイ移動・到着</strong><br>午前の便でチェンマイへ。午後は旧市街・お堀エリアを自転車で散策。夕方はサタデーナイトバザールで雑貨を物色しながら、カオソーイとラープで北部タイ料理を堪能。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#c88000">Day 4</div>
+        <div class="tl-content"><strong>エレファントサンクチュアリ</strong><br>半日ツアーで象と触れ合い。午後はワット・ドイステープへ（ソンテウで30分）。山頂からチェンマイ市街を一望し、夕日が沈む時間帯が一番美しい。夜はローカル食堂で地元の人と同じものを食べる。</div>
+      </div>
+      <div class="tl-transit">
+        <div class="tl-transit-lbl">✈️<br>約1.5h</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#c84020">Day 5</div>
+        <div class="tl-content"><strong>プーケット移動・到着</strong><br>午前の便でプーケットへ。チェンマイの涼しさから一転、南国の熱気に包まれる。ホテルへチェックインしたらそのままパトンビーチへ。夕暮れのビーチで海を眺めながら飲む一杯が最高。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge" style="background:#cc0001">Day 6</div>
+        <div class="tl-content"><strong>ファンガー湾クルーズ / ビーチ三昧</strong><br>ファンガー湾（ジェームズボンド島）への日帰りボートツアーに参加。奇岩の絶景とカヤックを楽しんだ後、夕方はビッグブッダで絶景に感動。夜は新鮮なシーフードでプーケット最後の夜を締める。</div>
+      </div>
+      <div class="tl-day">
+        <div class="tl-badge gray">Day 7</div>
+        <div class="tl-content"><strong>帰国</strong><br>プーケット空港から帰国便へ。南国の風を胸に焼き付けて日本へ。</div>
+      </div>
+    </div>
+
+    <div class="course-tip">✅ バンコク都市・チェンマイ自然・プーケットビーチ。タイの三つの顔を一度に体感できる6泊7日。</div>
+  </div>
+
+  <div class="tab-cta">
+    <div class="tab-cta-title">いつ行くかで旅は変わる！🌤️</div>
+    <p class="tab-cta-desc">雨季・乾季・地域別のベストシーズンをチェック。<br>日程が決まっていない人はここから逆算するのがおすすめ。</p>
+    <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
+  </div>
+
+</section>
+
+</div><!-- /slides-wrap -->
+</div><!-- /container -->
+
+<script>
+let _phraseAudio = null;
+let _phraseBtn = null;
+function playPhrase(file, btn) {
+  if (_phraseAudio) {
+    _phraseAudio.pause();
+    _phraseAudio = null;
+    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
+  }
+  const audio = new Audio('audio/phrases/' + file);
+  audio.play().catch(() => {});
+  _phraseAudio = audio;
+  _phraseBtn = btn;
+  btn.textContent = '■';
+  btn.classList.add('playing');
+  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
+}
+
+/* 現金目安カード */
+let cashDays = 5;
+const RATE = 4.3;
+function changeDays(d) {
+  cashDays = Math.max(1, Math.min(30, cashDays + d));
+  const eco = cashDays * 500, std = cashDays * 1500, lux = cashDays * 3000;
+  document.getElementById('cash-days').textContent = cashDays;
+  document.getElementById('eco-thb').textContent = eco.toLocaleString() + ' THB';
+  document.getElementById('eco-jpy').textContent = '約' + Math.round(eco * RATE / 1000) + ',000円';
+  document.getElementById('std-thb').textContent = std.toLocaleString() + ' THB';
+  document.getElementById('std-jpy').textContent = '約' + Math.round(std * RATE / 1000) + ',000円';
+  document.getElementById('lux-thb').textContent = lux.toLocaleString() + ' THB';
+  document.getElementById('lux-jpy').textContent = '約' + Math.round(lux * RATE / 1000) + ',000円';
+}
+
+function show(id, btn) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+  btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+  history.replaceState(null, '', '#' + id);
+}
+
+// ページ読み込み時・更新時にハッシュに対応したタブを表示
+(function() {
+  const hash = location.hash.replace('#', '');
+  if (!hash) return;
+  const btns = document.querySelectorAll('nav button');
+  for (const btn of btns) {
+    const onclick = btn.getAttribute('onclick') || '';
+    const match = onclick.match(/show\('(\w+)'/);
+    if (match && match[1] === hash) { btn.click(); return; }
+  }
+  const target = document.getElementById(hash);
+  if (target) {
+    const section = target.closest('section');
+    if (section) {
+      for (const btn of btns) {
+        const onclick = btn.getAttribute('onclick') || '';
+        const match = onclick.match(/show\('(\w+)'/);
+        if (match && match[1] === section.id) {
+          btn.click();
+          setTimeout(() => target.scrollIntoView({behavior:'smooth', block:'start'}), 150);
+          return;
+        }
+      }
+    }
+  }
+})();
+
+function filterSpots(city, btn) {
+  document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#spots-grid .item-card, #spots-grid .city-section-header').forEach(el => {
+    el.style.display = (city === 'all' || el.dataset.city === city) ? '' : 'none';
+  });
+}
+
+function filterFood(dim, value, btn) {
+  const rowId = dim === 'type' ? '#food-filter-type' : '#food-filter-city';
+  const isActive = btn.classList.contains('active');
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
+  if (!isActive) btn.classList.add('active');
+  const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
+  document.querySelectorAll('#food-grid .item-card').forEach(el => {
+    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity || el.dataset.fcity === 'national';
+    el.style.display = (typeOk && cityOk) ? '' : 'none';
+  });
+}
+
+function showFilteredSpots(city) {
+  const spotsBtn = document.querySelectorAll('nav button')[1];
+  show('spots', spotsBtn);
+  setTimeout(() => {
+    const btn = document.querySelector(`.filter-btn[data-filter="${city}"]`);
+    if (btn) filterSpots(city, btn);
+  }, 50);
+}
+
+// スワイプでタブ切り替え
+(function() {
+  let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
+  const THRESHOLD = 50;
+
+  document.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isMultiTouch = e.touches.length > 1;
+    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#thailand-map'));
+  }, { passive: true });
+
+  document.addEventListener('touchmove', e => {
+    if (e.touches.length > 1) isMultiTouch = true;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    if (startedOnExcluded || isMultiTouch) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) < THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
+
+    const btns = Array.from(document.querySelectorAll('nav button'));
+    const currentIdx = btns.findIndex(b => b.classList.contains('active'));
+    if (currentIdx === -1) return;
+
+    const activeSection = document.querySelector('.tab-content.active');
+    const isCourse = activeSection && activeSection.id === 'course';
+
+    let nextIdx;
+    if (dx < 0) {
+      if (isCourse) return;
+      nextIdx = Math.min(currentIdx + 1, btns.length - 1);
+    } else {
+      nextIdx = Math.max(currentIdx - 1, 0);
+    }
+
+    if (nextIdx !== currentIdx) btns[nextIdx].click();
+  }, { passive: true });
+})();
+</script>
+
+<footer style="text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-top:1px solid #e8e8e8;margin-top:20px">
+  <a href="../privacy.html" style="color:#aaa;text-decoration:none;margin:0 10px">プライバシーポリシー</a>
+  <span>｜</span>
+  <span style="margin:0 10px">© 2026 ZenWorldGuide</span>
+</footer>
+
+<!-- 指差しモーダル -->
+<div id="food-modal" class="food-modal-overlay" onclick="closeFoodModal()">
+  <div class="food-modal-card" onclick="event.stopPropagation()">
+    <button class="food-modal-close" onclick="closeFoodModal()">✕</button>
+    <img id="food-modal-img" src="" alt="" style="width:100%;border-radius:8px;margin-bottom:10px;display:none">
+    <div id="food-modal-ico" class="food-modal-ico"></div>
+    <div id="food-modal-en" class="food-modal-en"></div>
+    <div id="food-modal-ja" class="food-modal-ja"></div>
+    <div class="food-modal-phrase">
+      <div class="food-modal-phrase-main">มีอันนี้ไหม?</div>
+      <div class="food-modal-phrase-sub">ミー アン ニー マイ ＝「これはありますか？」</div>
+    </div>
+    <div class="food-modal-hint">この画面を店員さんに見せてください</div>
+  </div>
+</div>
+
+<script>
+function openFoodModal(ico, nameEn, nameJa, imgSrc) {
+  const imgEl = document.getElementById('food-modal-img');
+  const icoEl = document.getElementById('food-modal-ico');
+  if (imgSrc) {
+    imgEl.src = imgSrc;
+    imgEl.style.display = 'block';
+    icoEl.style.display = 'none';
+  } else {
+    imgEl.style.display = 'none';
+    icoEl.style.display = '';
+  }
+  icoEl.textContent = ico;
+  document.getElementById('food-modal-en').textContent = nameEn;
+  document.getElementById('food-modal-ja').textContent = nameJa;
+  document.getElementById('food-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeFoodModal() {
+  document.getElementById('food-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+</body>
+</html>
