@@ -1,0 +1,501 @@
+{
+  "id": "malaysia",
+  "name": "マレーシア",
+  "name_en": "Malaysia",
+  "page_title": "マレーシア旅行ガイド",
+  "hero_image": "素材/ヒーロー画像3.webp",
+  "hero_alt": "マレーシアの街並み",
+
+  "overview": {
+    "country_question": "マレーシアってどんな国？",
+    "description_html": "東南アジアの中心に位置するマレーシアは、マレー系・中国系・インド系が共存する<strong>多民族・多文化国家</strong>。熱帯雨林の大自然、世界遺産の古都、近代的な都市が一度に楽しめるのが最大の魅力です。",
+    "flag_html": "<div style=\"background:linear-gradient(to bottom,#cc0001 7.14%,#fff 7.14% 14.28%,#cc0001 14.28% 21.42%,#fff 21.42% 28.56%,#cc0001 28.56% 35.7%,#fff 35.7% 42.84%,#cc0001 42.84% 50%,#fff 50% 57.14%,#cc0001 57.14% 64.28%,#fff 64.28% 71.42%,#cc0001 71.42% 78.56%,#fff 78.56% 85.7%,#cc0001 85.7% 92.84%,#fff 92.84%);border-radius:6px;height:100px;width:200px;display:inline-block;position:relative;overflow:hidden;border:1px solid #eee;\"><div style=\"position:absolute;top:0;left:0;width:40%;height:57.14%;background:#003087;border-radius:6px 0 0 0\"></div><div style=\"position:absolute;top:6px;left:7px;font-size:18px\">🌙</div><div style=\"position:absolute;top:10px;left:28px;font-size:22px\">⭐</div></div>",
+    "flag_caption": "Jalur Gemilang（ジャルル・グミラン）― マレー語で「栄光の縞」",
+    "top_spot_name": "ペトロナスツインタワー",
+    "top_spot_desc": "クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。",
+    "top_food_name": "ナシレマ",
+    "top_food_desc": "ココナッツミルクで炊いたご飯にサンバルソース・ゆで卵・アンチョビ・ピーナッツを添えた国民食。朝食の定番。",
+    "top_food_image": "素材/グルメ/ナシレマ.webp",
+    "difficulty_label": "やさしい",
+    "difficulty_label_bg": "#e8f5ee",
+    "difficulty_label_color": "var(--green)",
+    "difficulty_pct": "28",
+    "difficulty_bar": "linear-gradient(90deg,#00a86b,#66cc99)",
+    "difficulty_desc": "英語が広く通じビザも不要。物価は日本の約半分で初めての東南アジアにもおすすめ。イスラム文化への基本的な配慮があれば困ることはほぼなし。",
+    "japan_popularity_html": "年間約40万人の日本人が訪れる人気旅行先。<strong>ビザ不要・英語が通じやすい・物価が安い</strong>の三拍子が揃い、初めての海外旅行先としても定番。日本食レストランも豊富で食事の心配も少ない。",
+    "flight_hours": "約7時間",
+    "timezone": "日本 −1時間",
+    "visa": "不要（90日）",
+    "budget_range": "7〜15万円",
+    "language": "英語OK",
+    "currency_name": "リンギット(RM)",
+    "currency_rate": "1RM ≈ 33円"
+  },
+
+  "map": {
+    "element_id": "malaysia-map",
+    "center_lat": "4.0",
+    "center_lng": "109.5",
+    "zoom": "4",
+    "map_id": "ebb608e55ed157f8630c407e",
+    "country_label": "マレーシア"
+  },
+
+  "cities": [
+    { "id": "kl",      "name": "クアラルンプール", "lat": "3.1390",  "lng": "101.6869", "zoom": "12", "color": "#cc0001", "marker_size": "14", "marker_label": "★", "badge": "首都",   "badge_class": "",      "description": "ペトロナスツインタワーを擁する経済・文化の中心地" },
+    { "id": "penang",  "name": "ペナン",           "lat": "5.4141",  "lng": "100.3288", "zoom": "12", "color": "#006847", "marker_size": "11", "marker_label": "●", "badge": "世界遺産", "badge_class": "green", "description": "多文化が交差するグルメと芸術の島" },
+    { "id": "malacca", "name": "マラッカ",         "lat": "2.1896",  "lng": "102.2501", "zoom": "13", "color": "#006847", "marker_size": "11", "marker_label": "●", "badge": "世界遺産", "badge_class": "green", "description": "ポルトガル・オランダ統治の歴史が残る古都" },
+    { "id": "jb",      "name": "ジョホールバル",   "lat": "1.4927",  "lng": "103.7414", "zoom": "12", "color": "#006847", "marker_size": "11", "marker_label": "●", "badge": "南端",   "badge_class": "green", "description": "シンガポールと橋でつながる国境の街" },
+    { "id": "kk",      "name": "コタキナバル",     "lat": "5.9804",  "lng": "116.0735", "zoom": "12", "color": "#006847", "marker_size": "11", "marker_label": "●", "badge": "ボルネオ", "badge_class": "green", "description": "海・山・ジャングルが揃うサバ州の州都" },
+    { "id": "kuching", "name": "クチン",           "lat": "1.5533",  "lng": "110.3592", "zoom": "12", "color": "#006847", "marker_size": "11", "marker_label": "●", "badge": "ボルネオ", "badge_class": "green", "description": "「猫の街」として知られるサラワク州の州都" }
+  ],
+
+  "season_mini": {
+    "description": "年間を通して25〜32℃の常夏。地域によって雨季・乾季が異なります。",
+    "city_name": "クアラルンプール",
+    "months": [
+      { "icon": "☔", "temp": "27°", "type": "t-mild" },
+      { "icon": "⛅", "temp": "28°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "28°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "29°", "type": "t-hot" },
+      { "icon": "☀️", "temp": "29°", "type": "t-hot" },
+      { "icon": "☀️", "temp": "29°", "type": "t-hot" },
+      { "icon": "☀️", "temp": "28°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "28°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "28°", "type": "t-warm" },
+      { "icon": "☔", "temp": "28°", "type": "t-warm" },
+      { "icon": "☔", "temp": "27°", "type": "t-mild" },
+      { "icon": "☔", "temp": "27°", "type": "t-mild" }
+    ]
+  },
+
+  "basic_data": [
+    { "label": "首都",   "value": "クアラルンプール",    "note": "行政首都：プトラジャヤ",                       "compare_html": "" },
+    { "label": "独立年", "value": "1957年8月31日",       "note": "1963年9月16日：マレーシア成立",               "compare_html": "" },
+    { "label": "人口",   "value": "約3,350万人",         "note": "",
+      "compare_html": "<div style=\"display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center\"><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><div style=\"font-size:0.75em;line-height:1.5;letter-spacing:1px\">👤👤👤👤👤👤👤<br>👤👤👤👤👤👤</div></div><div style=\"font-size:0.68em;font-weight:700;color:#555\">日本<br>1.25億人</div></div><div style=\"font-size:0.85em;color:#888;font-weight:700\">vs</div><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><div style=\"font-size:0.75em;line-height:1.5;letter-spacing:1px\">👤👤👤</div></div><div style=\"font-size:0.68em;font-weight:700;color:var(--green)\">マレーシア<br>3,350万人</div></div></div>" },
+    { "label": "面積",   "value": "約33万 km²",          "note": "",
+      "compare_html": "<div style=\"display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center\"><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><img src=\"../素材/Japan.webp\" alt=\"日本地図\" style=\"width:56px;height:auto;object-fit:contain;mix-blend-mode:multiply\"/></div><div style=\"font-size:0.68em;font-weight:700;color:#555\">日本<br>37.8万km²</div></div><div style=\"font-size:1em;color:#888;font-weight:700\">≈</div><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><img src=\"素材/Malaysia.webp\" alt=\"マレーシア地図\" style=\"width:56px;height:auto;object-fit:contain;mix-blend-mode:multiply\"/></div><div style=\"font-size:0.68em;font-weight:700;color:var(--green)\">マレーシア<br>33万km²</div></div></div>" },
+    { "label": "宗教",   "value": "イスラム教（国教）64%", "note": "仏教19%・キリスト教9%・ヒンドゥー6%",          "compare_html": "" },
+    { "label": "民族",   "value": "マレー系 約70%",       "note": "中国系23%・インド系7%",                       "compare_html": "" }
+  ],
+
+  "season": {
+    "description_html": "マレーシアは年間を通して27〜29℃の常夏。地域によって雨季・乾季の時期が異なります。<br><span style=\"font-weight:700;color:#555\">色が濃いオレンジほど気温が高く</span>、黄金色は比較的涼しい月です。",
+    "tip_html": "💡 <strong>航空券が安い時期</strong><br>6〜7月はLCCの航空券が安くなりやすい時期。1月中旬〜3月も比較的ねらい目。年末年始・GW・お盆は高騰するので要注意。",
+    "cities": [
+      {
+        "name": "クアラルンプール（KL）",
+        "city_id": "kl",
+        "best_note": "✅ ベスト：3〜9月（乾季）／ 雨季でもスコール程度で観光可能",
+        "months": [
+          { "icon": "☔", "temp": "27°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "29°C", "type": "t-hot" },
+          { "icon": "☀️", "temp": "29°C", "type": "t-hot" },
+          { "icon": "☀️", "temp": "29°C", "type": "t-hot" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "27°C", "type": "t-mild" },
+          { "icon": "☔", "temp": "27°C", "type": "t-mild" }
+        ]
+      },
+      {
+        "name": "ペナン島・ランカウイ島（西海岸）",
+        "city_id": "penang",
+        "best_note": "✅ ベスト：11〜4月（西海岸の乾季） ／ 9〜10月は北東モンスーンの影響で雨多め",
+        "months": [
+          { "icon": "☀️", "temp": "27°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "29°C", "type": "t-hot" },
+          { "icon": "⛅", "temp": "29°C", "type": "t-hot" },
+          { "icon": "⛅", "temp": "29°C", "type": "t-hot" },
+          { "icon": "⛅", "temp": "28°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "28°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "27°C", "type": "t-mild" }
+        ]
+      },
+      {
+        "name": "コタキナバル（ボルネオ島）",
+        "city_id": "kk",
+        "best_note": "✅ ベスト：1〜5月（乾季・ダイビング最適） ／ 9〜11月は雨季で海が荒れやすい",
+        "months": [
+          { "icon": "☀️", "temp": "27°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "29°C", "type": "t-hot" },
+          { "icon": "☀️", "temp": "29°C", "type": "t-hot" },
+          { "icon": "⛅", "temp": "29°C", "type": "t-hot" },
+          { "icon": "⛅", "temp": "28°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "28°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "27°C", "type": "t-mild" },
+          { "icon": "☔", "temp": "27°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "27°C", "type": "t-mild" }
+        ]
+      }
+    ]
+  },
+
+  "budget": {
+    "plan1_label": "3泊5日（1人）",
+    "plan1_range": "7〜15万円",
+    "plan1_note":  "LCC利用・中級ホテル",
+    "plan2_label": "4泊6日（1人）",
+    "plan2_range": "8〜17万円",
+    "plan2_note":  "標準的な旅行スタイル",
+    "items": [
+      { "icon": "✈️", "name": "航空券（往復）",      "detail_html": "エアアジア・バティックエアなどLCCが安い<br>早期予約ほど安く、直前は高騰しやすい",                        "price": "4〜18万円",       "affiliate": "flights" },
+      { "icon": "🛏️", "name": "ホテル（1泊）",       "detail_html": "ゲストハウス：1,500〜3,000円・中級：4,000〜8,000円<br>5つ星ホテルでも1〜2万円台が多くコスパ高め",            "price": "〜2万円/泊",      "affiliate": "hotels" },
+      { "icon": "🍜", "name": "食費（1日）",         "detail_html": "ホーカーセンター・屋台なら1食300〜500円<br>モールのフードコートでも1,000円以内が多い<br>屋台・市場は現金払いが多いので現地ATMで引き出せるWiseが便利。", "price": "1,000〜3,000円/日", "affiliate": "wise" },
+      { "icon": "🚕", "name": "交通費（1日）",       "detail_html": "Grabで乗車前に料金確定・ぼったくりなし<br>LRT・モノレールなど公共交通も安くて便利",                     "price": "500〜2,000円/日", "affiliate": "grab" },
+      { "icon": "📍", "name": "観光・アクティビティ", "detail_html": "ペトロナスツインタワーなど有料スポットも点在<br>モスク・公園など無料スポットも豊富",                        "price": "500〜3,000円/日", "affiliate": "klook" },
+      { "icon": "🌐", "name": "SIM・Wi-Fi",          "detail_html": "到着後すぐ空港でSIM購入が便利<br>短期旅行ならeSIMを出発前に準備しておくのもおすすめ",                "price": "500〜1,500円",    "affiliate": "sim" }
+    ],
+    "savings_tips_html": "・チップ不要（特別なサービス時のみ任意）<br>・屋台・フードコートで本格グルメが格安<br>・Grabアプリはタクシーより安く安心"
+  },
+
+  "practical": {
+    "prac_cards": [
+      { "icon": "📄", "title": "ビザ",      "value": "不要（90日間）" },
+      { "icon": "💱", "title": "通貨",      "value": "リンギット（RM）" },
+      { "icon": "🔌", "title": "コンセント", "value": "BFタイプ（三又）" },
+      { "icon": "⚡", "title": "電圧",      "value": "220V（変換注意）" },
+      { "icon": "🛜", "title": "Wi-Fi",     "value": "空港・カフェ無料多" },
+      { "icon": "⌚", "title": "時差",      "value": "日本−1時間" },
+      { "icon": "🌴", "title": "気温",      "value": "年中25〜32℃" },
+      { "icon": "🙏", "title": "チップ",    "value": "基本不要" },
+      { "icon": "💧", "title": "水道水",    "value": "飲用不可（ペットボトル推奨）" },
+      { "icon": "💳", "title": "カード払い", "value": "ホテル・モール◎・屋台は現金" }
+    ],
+    "prep_steps": [
+      { "title": "パスポート取得・更新",           "timing": "1〜2ヶ月前",  "timing_color": "#006847", "border_color": "#006847", "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)", "desc_html": "申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。査証スタンプ用の空白ページも<strong>2ページ以上</strong>必要。" },
+      { "title": "海外対応クレジットカードの申込",  "timing": "1ヶ月前",     "timing_color": "#006847", "border_color": "#1a8a5a", "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)", "desc_html": "審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。" },
+      { "title": "航空券・ホテルの予約",            "timing": "早いほど安い", "timing_color": "#b09000", "border_color": "#b09000", "bar_color": "#b09000",                                  "desc_html": "特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。ホテルはこだわらなければ前日予約も可能。" },
+      { "title": "海外旅行保険の加入",              "timing": "出発前日まで", "timing_color": "#b09000", "border_color": "#b09000", "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)", "desc_html": "クレカ付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。" },
+      { "title": "SIM・ポケットWi-Fiの予約",       "timing": "1〜2週間前",  "timing_color": "#cc5500", "border_color": "#cc5500", "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)", "desc_html": "trifaのeSIMならアプリから前日でも購入・設定ができるので焦らなくてOK。現地SIMを購入するのであれば出発前に比較して選んでおくと当日がスムーズ。" },
+      { "title": "MDAC（デジタル入国カード）登録",  "timing": "入国3日前〜",  "timing_color": "#cc0001", "border_color": "#cc0001", "bar_color": "",                                         "desc_html": "マレーシア入国前にオンライン登録が必要。子供も対象。無料。" }
+    ],
+    "special_note_title": "MDAC（デジタル入国カード）について",
+    "special_note_html": "入国の3日前からオンライン登録が必要。子供も登録が必要。",
+    "special_note_url": "https://imigresen-online.imi.gov.my/mdac/main",
+    "special_note_url_label": "imigresen-online.imi.gov.my/mdac/main",
+    "flight_intro": "日本〜クアラルンプール間は複数の航空会社が就航。LCCを活用すれば閑散期は4〜8万円台で往復できる。",
+    "airlines": [
+      { "name": "エアアジア",     "desc": "東南アジア最大のLCC。成田・羽田・関西・名古屋発。直行便あり。", "price": "往復 4〜9万円" },
+      { "name": "バティックエア", "desc": "コスパ良く座席が広め。成田・大阪発。直行便あり。",               "price": "往復 5〜10万円" },
+      { "name": "マレーシア航空", "desc": "フラッグキャリア。サービスが良くマイルも貯まる。",               "price": "往復 7〜15万円" },
+      { "name": "JAL・ANA",       "desc": "快適性・マイル◎。コードシェアで乗り継ぎ便も選べる。",          "price": "往復 10〜18万円" }
+    ],
+    "flight_tip_html": "・GW・年末年始・お盆は2〜3ヶ月前から価格が上がりやすい<br>・閑散期（6〜7月）は直前でも安値が出ることがある<br>・複数サイトを比較して最安値を見つけよう",
+    "hotel_intro": "クアラルンプールはエリアによって観光・交通・グルメの利便性が変わる。旅のスタイルで選ぼう。",
+    "hotel_areas": [
+      { "name": "KLCC周辺",             "tag": "観光・ビジネス向け", "tag_color": "green",  "desc": "ペトロナスツインタワー目の前。ショッピングモール直結ホテルが多く買い物・食事に便利。", "price": "中級 6,000〜12,000円／泊　高級 15,000円〜", "maps_url": "https://www.google.com/maps/place/KLCC,+Kuala+Lumpur" },
+      { "name": "ブキッビンタン",         "tag": "繁華街・初めてのKLに◎", "tag_color": "green", "desc": "最大の繁華街。飲食店・ナイトライフ・買い物に便利。LRTでどこへでも移動しやすい。幅広い価格帯のホテルが揃う。", "price": "格安 2,000〜4,000円　中級 5,000〜10,000円", "maps_url": "https://www.google.com/maps/place/Bukit+Bintang,+Kuala+Lumpur" },
+      { "name": "チャイナタウン（プタリン街）", "tag": "格安・下町派", "tag_color": "yellow", "desc": "リーズナブルなゲストハウスが多い。屋台グルメが充実。バックパッカーや節約旅行者に人気。", "price": "格安 1,500〜3,000円／泊", "maps_url": "https://www.google.com/maps/search/Chinatown+Kuala+Lumpur" }
+    ],
+    "hotel_tip": "初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。",
+    "apps": [
+      { "icon": "🚗", "name": "Grab（グラブ）",    "type_label": "配車・フードデリバリー",       "desc": "東南アジア版Uber。乗車前に料金が確定するためぼったくりゼロ。フードデリバリーにも使える。マレーシア旅行では必須アプリ。出発前にインストールしておこう。",                                        "affiliate": "grab",  "is_last": false },
+      { "icon": "🗺️", "name": "Google マップ",     "type_label": "地図・ナビ（オフライン対応）",   "desc": "出発前にクアラルンプール・訪問エリアをオフラインDLしておこう。Wi-Fiなしでも地図・ナビが使えて安心。",                                                                                              "affiliate": "",      "is_last": false },
+      { "icon": "🈳", "name": "Google 翻訳",        "type_label": "翻訳・カメラ翻訳",             "desc": "メニューや看板をカメラで写すだけで翻訳できる。マレー語パックを事前にDLしておけばオフラインでもテキスト翻訳が使える。",                                                                            "affiliate": "",      "is_last": false },
+      { "icon": "💬", "name": "WhatsApp",            "type_label": "メッセージ・現地連絡",         "desc": "マレーシアでのメッセージアプリはWhatsAppが主流。ホテル・ツアー会社の予約確認もWhatsApp経由が多い。出発前にインストールしておこう。",                                                            "affiliate": "",      "is_last": false },
+      { "icon": "🎟️", "name": "Klook（クルック）",  "type_label": "現地ツアー・チケット事前予約", "desc": "観光スポットのチケットやオプショナルツアーを事前に予約できる。ペトロナスタワー展望台など人気スポットは要予約。売り切れ前に事前確保がおすすめ。",                                              "affiliate": "klook", "is_last": true }
+    ],
+    "country_items_label": "🇲🇾 マレーシア特有の持ち物",
+    "country_items": [
+      "変換アダプター（BFタイプ・三又）",
+      "日焼け止め（強烈な熱帯の日差し対策）",
+      "折りたたみ傘（スコール対策）",
+      "薄手の羽織もの（冷房対策）",
+      "虫除けスプレー（デング熱を媒介する蚊が多い）",
+      "モスク用スカーフ（女性・見学時／現地調達も可）"
+    ],
+    "currency_code": "MYR",
+    "exchange_rate": "33",
+    "eco_daily": "50",
+    "std_daily": "100",
+    "lux_daily": "200",
+    "cash_note": "レストラン・Grab・ホテルはカード払い可。現金は主に屋台・ローカル市場・お土産屋での支払い用。<br>1 MYR ≈ 33円で計算 ／ 節約 50・標準 100・ゆとり 200 MYR／日",
+    "cash_small_tip_html": "💡 <strong>小額紙幣を用意しておこう</strong><br>屋台やローカル市場ではお釣りが出ないことが多い。両替時は大きな紙幣だけでなく、1RM・5RM・10RMの小額紙幣を多めに用意しておくとスムーズ。",
+    "cta_title": "出発前にマナーも確認しよう！🙏",
+    "cta_desc": "イスラム教の国ならではのマナーを知っておくと現地での行動がスムーズ。<br>モスク見学・食事・服装など旅行者が知っておくべきポイントをまとめました。"
+  },
+
+  "manner_cards": [
+    { "type": "do",   "icon": "🤝", "title": "握手は右手で",        "desc": "左手は不浄とされるため、物の受け渡しや握手は必ず右手を使う。" },
+    { "type": "dont", "icon": "🐷", "title": "豚・酒に注意",        "desc": "イスラム教徒の前で豚肉・アルコールを勧めてはいけない。ハラール認証を確認しよう。" },
+    { "type": "dont", "icon": "👆", "title": "人差し指で指ささない", "desc": "人を指す場合は親指を使う。人差し指での指差しは失礼とされる。" },
+    { "type": "dont", "icon": "👶", "title": "子供の頭を触らない",   "desc": "頭は身体の神聖な部分とされているため、かわいくても頭を撫でない。" },
+    { "type": "do",   "icon": "🕌", "title": "モスクでは肌を隠す",   "desc": "モスク見学時は肌の露出を控え、靴を脱ぐ。女性はスカーフで髪を覆う。" },
+    { "type": "dont", "icon": "🚬", "title": "屋内は全面禁煙",       "desc": "レストランなど屋内の公共の場は全面禁煙。喫煙は指定場所のみ。" },
+    { "type": "do",   "icon": "📸", "title": "撮影前に一言",         "desc": "人物や宗教施設を撮影する際は必ず許可を取る。特にモスク・寺院は要注意。" },
+    { "type": "do",   "icon": "☪️", "title": "お祈り時間を尊重",    "desc": "イスラム教徒は1日5回お祈りをする。日没後1時間は電話・訪問を避けると丁寧。" }
+  ],
+  "manner_cta_title": "現地の言葉で話しかけてみよう！💬",
+  "manner_cta_desc": "マレー語・中国語・タミル語の簡単なフレーズ集。<br>挨拶ひとつで現地の人の反応がぐっと変わります。",
+
+  "phrases": {
+    "language_name": "マレー語",
+    "card_title": "🃏 マレー語 単語カード",
+    "categories": [
+      {
+        "label": "👋 あいさつ",
+        "items": [
+          { "jp": "こんにちは",               "foreign": "Selamat siang",              "reading": "スラマッ シアン",        "audio": "selamat-siang.mp3" },
+          { "jp": "元気ですか？",              "foreign": "Apa khabar?",                "reading": "アパ カバル？",          "audio": "apa-khabar.mp3" },
+          { "jp": "元気です。あなたは？",       "foreign": "Khabar baik. Awak?",         "reading": "カバル バイク。アワッ？", "audio": "khabar-baik.mp3" },
+          { "jp": "バイバイ",                  "foreign": "Selamat tinggal",            "reading": "スラマッ ティンガル",     "audio": "selamat-tinggal.mp3" },
+          { "jp": "綺麗ですね！",              "foreign": "Cantik sekali!",             "reading": "チャンティッ スカリ！",   "audio": "cantik-sekali.mp3" }
+        ]
+      },
+      {
+        "label": "🙏 基本表現",
+        "items": [
+          { "jp": "ありがとう",    "foreign": "Terima kasih",    "reading": "トゥリマ カシ",    "audio": "terima-kasih.mp3" },
+          { "jp": "ごめんなさい",  "foreign": "Minta maaf",      "reading": "ミンタ マーフ",    "audio": "minta-maaf.mp3" },
+          { "jp": "大丈夫",        "foreign": "Tidak apa-apa",   "reading": "ティダッ アパアパ", "audio": "tidak-apa-apa.mp3" },
+          { "jp": "はい / いいえ", "foreign": "Ya / Tidak",      "reading": "ヤー / ティダッ",  "audio": "ya-tidak.mp3" },
+          { "jp": "名前は〜です",  "foreign": "Nama saya ～",    "reading": "ナマ サヤ ～",     "audio": "nama-saya.mp3" },
+          { "jp": "名前は何ですか？","foreign": "Siapa nama awak?","reading": "シアパ ナマ アワッ？","audio": "siapa-nama.mp3" }
+        ]
+      },
+      {
+        "label": "🍽️ レストラン・ショッピング",
+        "items": [
+          { "jp": "おいしい！",            "foreign": "Sedap!",                     "reading": "スダッ！",              "audio": "sedap.mp3" },
+          { "jp": "おすすめは？",           "foreign": "Apa yang disyorkan?",        "reading": "アパ ヤン ディショルカン？","audio": "apa-yang-disyorkan.mp3" },
+          { "jp": "辛くしないでください",   "foreign": "Jangan pedas",              "reading": "ジャンガン プダス",      "audio": "jangan-pedas.mp3" },
+          { "jp": "お会計お願いします",     "foreign": "Boleh minta bil?",          "reading": "ボレ ミンタ ビル？",     "audio": "boleh-minta-bil.mp3" },
+          { "jp": "いくらですか？",         "foreign": "Berapa harga ini?",         "reading": "ブラパ ハルガ イニ？",   "audio": "berapa-harga.mp3" },
+          { "jp": "トイレどこですか？",     "foreign": "Di mana tandas?",           "reading": "ディ マナ タンダス？",   "audio": "di-mana-tandas.mp3" },
+          { "jp": "これください",           "foreign": "Saya nak ini",             "reading": "サヤ ナッ イニ",        "audio": "saya-nak-ini.mp3" },
+          { "jp": "高い、安くしてください", "foreign": "Mahal, boleh murah sikit?", "reading": "マハル、ボレ ムラ シキッ？","audio": "mahal-murah.mp3" }
+        ]
+      },
+      {
+        "label": "🔢 数字",
+        "items": [
+          { "jp": "0",    "foreign": "Kosong",                                          "reading": "コソン",                          "audio": "kosong.mp3" },
+          { "jp": "1〜5", "foreign": "Satu・Dua・Tiga・Empat・Lima",                   "reading": "サトゥ・ドゥア・ティガ・エンパッ・リマ",  "audio": "satu-lima.mp3" },
+          { "jp": "6〜10","foreign": "Enam・Tujuh・Lapan・Sembilan・Sepuluh",          "reading": "エナム・トゥジュ・ラパン・スンビラン・スプル","audio": "enam-sepuluh.mp3" }
+        ]
+      }
+    ]
+  },
+
+  "food_section_title": "マレーシア グルメ",
+  "food_filter_types": [
+    { "id": "all",    "label": "すべて",  "active": true  },
+    { "id": "rice",   "label": "ご飯もの","active": false },
+    { "id": "noodle", "label": "麺料理",  "active": false },
+    { "id": "side",   "label": "おかず",  "active": false },
+    { "id": "sweet",  "label": "スイーツ","active": false },
+    { "id": "drink",  "label": "飲み物",  "active": false }
+  ],
+  "food_filter_cities": [
+    { "id": "kl",       "label": "KL" },
+    { "id": "penang",   "label": "ペナン" },
+    { "id": "malacca",  "label": "マラッカ" },
+    { "id": "kk",       "label": "コタキナバル" },
+    { "id": "kuching",  "label": "クチン" }
+  ],
+  "food_items": [
+    { "num": "No.01", "name": "ナシレマ",              "badge": "国民食",          "type": "rice",   "city": "national", "desc": "ココナッツミルクで炊いたご飯にサンバルソース・ゆで卵・アンチョビ・ピーナッツを添えた国民食。朝食の定番。",                                                       "image": "素材/グルメ/ナシレマ.webp",     "wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%8A%E3%82%B7%E3%83%AC%E3%83%9E%E3%83%83",   "order_ico": "🍚", "order_name_en": "Nasi Lemak" },
+    { "num": "No.02", "name": "海南鶏飯",              "badge": "ペナン名物",       "type": "rice",   "city": "national", "desc": "鶏のゆで汁で炊いたご飯に茹で・焼きチキンを乗せた一品。ペナン発祥のハイナニーズスタイルが有名。",                                                             "image": "素材/グルメ/海南鶏飯.webp",     "wiki_url": "https://ja.wikipedia.org/wiki/%E6%B5%B7%E5%8D%97%E9%B6%8F%E9%A3%AF",           "order_ico": "🍗", "order_name_en": "Chicken Rice" },
+    { "num": "No.03", "name": "サテー",                "badge": "ハラール",         "type": "side",   "city": "national", "desc": "鶏・牛肉を串に刺してスパイスで味付けし炭火焼きにした料理。甘みのあるピーナッツソースで食べる。",                                                             "image": "素材/グルメ/サテー.webp",       "wiki_url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%86",                               "order_ico": "🍢", "order_name_en": "Satay" },
+    { "num": "No.04", "name": "アッサムラクサ",         "badge": "世界的評価",      "type": "noodle", "city": "penang",   "desc": "酸味のきいたタマリンドスープと魚だしの麺料理。世界で最もおいしい料理ランキングにも選ばれた一品。",                                                           "image": "素材/グルメ/アッサムラクサ.webp","wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B5",                     "order_ico": "🦐", "order_name_en": "Assam Laksa" },
+    { "num": "No.05", "name": "ナシカンダール",         "badge": "スパイシー",       "type": "rice",   "city": "penang",   "desc": "ご飯に数種類のカレーやおかずをかけるペナン発のインド系ムスリム料理。豊富なトッピングが魅力。",                                                             "image": "素材/グルメ/ナシカンダール.webp","wiki_url": "https://en.wikipedia.org/wiki/Nasi_kandar",                                      "order_ico": "🍛", "order_name_en": "Nasi Kandar" },
+    { "num": "No.06", "name": "チャークイティオ",       "badge": "ペナン名物",       "type": "noodle", "city": "penang",   "desc": "平たい米粉麺をエビ・もやし・卵・貝などと強火で炒めた料理。ペナンが本場。",                                                                               "image": "素材/グルメ/チャークイティオ.webp","wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AF%E3%82%A4%E3%83%86%E3%82%A3%E3%82%AA", "order_ico": "🍜", "order_name_en": "Char Kway Teow" },
+    { "num": "No.07", "name": "ルンダン",              "badge": "ハラール",         "type": "side",   "city": "national", "desc": "牛肉やチキンをスパイスとココナッツミルクで長時間煮込んだコクのある料理。辛さの中に甘みがある。",                                                             "image": "素材/グルメ/ルンダン.webp",     "wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%83%B3%E3%83%80%E3%83%B3",           "order_ico": "🥘", "order_name_en": "Rendang" },
+    { "num": "No.08", "name": "チェンドル",            "badge": "スイーツ",         "type": "sweet",  "city": "national", "desc": "緑色の細麺にかき氷・ヤシ砂糖シロップ・ ココナッツミルクをかけたデザート。暑い日の定番スイーツ。",                                                       "image": "素材/グルメ/チェンドル.webp",   "wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%81%E3%82%A7%E3%83%B3%E3%83%89%E3%83%AB", "order_ico": "🧊", "order_name_en": "Cendol" },
+    { "num": "No.09", "name": "ロティチャナイ",         "badge": "朝食定番",         "type": "side",   "city": "national", "desc": "薄く伸ばした生地を油で焼いたインド系のパン。カレーやダルにつけて食べる朝食の王様。",                                                                   "image": "素材/グルメ/ロティチャナイ.webp","wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%AD%E3%83%86%E3%82%A3%E3%83%81%E3%83%A3%E3%83%8A%E3%82%A4", "order_ico": "🫓", "order_name_en": "Roti Canai" },
+    { "num": "No.10", "name": "カヤトースト",          "badge": "朝食定番",         "type": "side",   "city": "national", "desc": "ジャムとバターをトーストに塗り、半熟卵・コーヒーとセットで食べるコピティアムの定番朝食。",                                                                 "image": "素材/グルメ/カヤトースト.webp", "wiki_url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%A4%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88", "order_ico": "🍞", "order_name_en": "Kaya Toast" },
+    { "num": "No.11", "name": "タイガービール",        "badge": "ローカルビール",   "type": "drink",  "city": "national", "desc": "1932年創業のマレーシア定番ラガービール。すっきりした飲み口で屋台からバーまで幅広く親しまれている。",                                                     "image": "素材/グルメ/タイガービール.webp","wiki_url": "https://ja.wikipedia.org/wiki/%E3%82%BF%E3%82%A4%E3%82%AC%E3%83%BC%E3%83%93%E3%83%BC%E3%83%AB", "order_ico": "🍺", "order_name_en": "Tiger Beer" },
+    { "num": "No.12", "name": "テータリク",            "badge": "国民的飲み物",     "type": "drink",  "city": "national", "desc": "マレーシアを代表するミルクティー。高い位置から低い容器へ何度も引っ張るように注ぎ、泡立てながら混ぜるのが特徴。甘くてコクがある。",                     "image": "素材/グルメ/テータリク.webp",   "wiki_url": "https://en.wikipedia.org/wiki/Teh_tarik",                                        "order_ico": "🍵", "order_name_en": "Teh Tarik" },
+    { "num": "No.13", "name": "サラワクラクサ",        "badge": "クチン名物",       "type": "noodle", "city": "kuching",  "desc": "クチン発祥の絶品麺料理。20種以上のスパイスを使ったブロスにエビ・鶏肉・卵・ビーフンを合わせる。アンソニー・ボーデインが「神の朝食」と絶賛。",           "image": "素材/グルメ/サラワクラクサ.webp","wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B5",                     "order_ico": "🍜", "order_name_en": "Sarawak Laksa" },
+    { "num": "No.14", "name": "コロミー",              "badge": "クチン名物",       "type": "noodle", "city": "kuching",  "desc": "クチンの定番汁なし麺。細い卵麺を豚ラード・薄口醤油・酢で和えたシンプルな一品。チャーシューと揚げシャロットが決め手。",                               "image": "素材/グルメ/コロミー.webp",     "wiki_url": "https://en.wikipedia.org/wiki/Mee_kolo",                                         "order_ico": "🍝", "order_name_en": "Kolo Mee" },
+    { "num": "No.15", "name": "ニョニャ料理",          "badge": "マラッカ名物",     "type": "side",   "city": "malacca",  "desc": "15世紀に中国系移民とマレー人の間に生まれたペラナカン文化の家庭料理。ココナッツミルク・レモングラス・タマリンドを使い複雑な味わい。",               "image": "素材/グルメ/ニョニャ料理.webp", "wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%A9%E3%83%8A%E3%82%AB%E3%83%B3%E6%96%99%E7%90%86", "order_ico": "🍲", "order_name_en": "Nyonya Food" },
+    { "num": "No.16", "name": "エッグタルト",          "badge": "ペナン名物",       "type": "sweet",  "city": "national", "desc": "ペナンで独自進化した焼き菓子。サクサクの多層パイ生地に、なめらかなカスタードフィリング。甘すぎず上品な味わい。",                                   "image": "素材/グルメ/エッグタルト.webp", "wiki_url": "https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%83%E3%82%B0%E3%82%BF%E3%83%AB%E3%83%88", "order_ico": "🥧", "order_name_en": "Egg Tart" },
+    { "num": "No.17", "name": "白咖啡（ホワイトコーヒー）","badge": "イポー名物",   "type": "drink",  "city": "national", "desc": "イポー発祥のコーヒー。豆をマーガリンのみで焙煎し、練乳で割って飲む。まろやかな甘さとナッティな香りで苦みが少なく日本人にも飲みやすい。",             "image": "素材/グルメ/ホワイトコーヒー.webp","wiki_url": "https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%9D%E3%83%BC%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC", "order_ico": "☕", "order_name_en": "White Coffee" },
+    { "num": "No.18", "name": "サバ式ラクサ",          "badge": "コタキナバル名物", "type": "noodle", "city": "kk",       "desc": "ボルネオ・サバ州発祥のラクサ。約20種のスパイスを使ったクリーミーなスープに米粉麺・エビ・鶏肉・錦糸卵をのせた一杯。",                                   "image": "素材/グルメ/サバ式ラクサ.webp", "wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B5",                     "order_ico": "🍜", "order_name_en": "Sabah Laksa" }
+  ],
+
+  "spots_section_title": "都市別観光スポット",
+  "spots_filter_cities": [
+    { "id": "all",     "label": "全て",         "active": true  },
+    { "id": "kl",      "label": "KL",           "active": false },
+    { "id": "penang",  "label": "ペナン",       "active": false },
+    { "id": "malacca", "label": "マラッカ",     "active": false },
+    { "id": "jb",      "label": "JB",           "active": false },
+    { "id": "kk",      "label": "コタキナバル", "active": false },
+    { "id": "kuching", "label": "クチン",       "active": false }
+  ],
+  "spot_sections": [
+    {
+      "city_id": "kl", "city_name": "クアラルンプール", "city_desc": "ペトロナスツインタワーを擁する経済・文化の中心地",
+      "city_info": [
+        { "label": "アクセス",       "value": "直行便 約7時間",          "link_section": "", "link_btn_index": "" },
+        { "label": "空港↔市内",      "value": "KLIAエクスプレス 約28分", "link_section": "", "link_btn_index": "" },
+        { "label": "ベストシーズン", "value": "3〜9月（乾季）",          "link_section": "season",    "link_btn_index": "4" },
+        { "label": "名物グルメ",     "value": "ナシレマ・ロティチャナイ", "link_section": "food",      "link_btn_index": "2" },
+        { "label": "市内交通",       "value": "Grab・MRT・LRT",          "link_section": "transport", "link_btn_index": "9" }
+      ],
+      "spots": [
+        { "must": true,  "icon": "🏙️", "num": "KL 01",    "name": "ペトロナスツインタワー",            "desc": "高さ452mの双子タワー。スカイブリッジ（41〜42F）と展望台（86F）からの夜景は圧巻。入場は有料・要予約。Klookで事前に押さえておこう。", "badge": "クアラルンプール" },
+        { "must": false, "icon": "🗼",  "num": "KL 02",    "name": "KLタワー",                         "desc": "高さ421mの通信塔。展望台から360度のパノラマビュー。夜景が特に美しく、ガラス床の展望デッキも人気。", "badge": "夜景" },
+        { "must": true,  "icon": "🐒",  "num": "KL 03",    "name": "バトゥ洞窟",                       "desc": "KL近郊の巨大ヒンドゥー聖地。272段の虹色の階段と42mのムルガン像。タイプーサム祭りは圧巻。", "badge": "KL近郊" },
+        { "must": false, "icon": "🛍️", "num": "KL 04",    "name": "ブキッビンタン",                   "desc": "KL最大の繁華街。大型ショッピングモール・ナイトマーケット・グルメが集結。観光の中心地。", "badge": "ショッピング" },
+        { "must": false, "icon": "🕌",  "num": "KL 05",    "name": "マスジッドネガラ（国立モスク）",   "desc": "1万8千人を収容できるマレーシア最大のモスク。イスラム建築の美しさが際立つ。無料で見学可能。", "badge": "入場無料" },
+        { "must": true,  "icon": "🕌",  "num": "KL 07",    "name": "ブルーモスク",                     "desc": "正式名：スルタン・サラフディン・アブドゥル・アジズ・モスク。シャーアラムにある青銀のドームが美しいモスク。KLから車で約30分。", "badge": "KL近郊" }
+      ]
+    },
+    {
+      "city_id": "penang", "city_name": "ペナン", "city_desc": "多文化が交差するグルメと芸術の島",
+      "city_info": [
+        { "label": "アクセス",       "value": "KLから国内線 約1時間",  "link_section": "", "link_btn_index": "" },
+        { "label": "フェリー",       "value": "バターワースから約15分", "link_section": "", "link_btn_index": "" },
+        { "label": "ベストシーズン", "value": "11〜4月（乾季）",        "link_section": "season",    "link_btn_index": "4" },
+        { "label": "名物グルメ",     "value": "アッサムラクサ・チャークイティオ", "link_section": "food", "link_btn_index": "2" },
+        { "label": "市内交通",       "value": "Grab・バス・トライショー","link_section": "transport", "link_btn_index": "9" }
+      ],
+      "spots": [
+        { "must": true,  "icon": "🏛️", "num": "ペナン 01", "name": "ジョージタウン旧市街",           "desc": "ユネスコ世界遺産。英国植民地時代の建築・中国系家屋・モスクが混在する多文化の街。壁画アートも必見。", "badge": "世界遺産" },
+        { "must": false, "icon": "⛰️",  "num": "ペナン 02", "name": "ペナンヒル",                     "desc": "標高830mの丘陵。ケーブルカーで登頂でき、頂上からペナン大橋・海峡を見渡せる絶景スポット。", "badge": "絶景" },
+        { "must": false, "icon": "🏯",  "num": "ペナン 03", "name": "クー・コンシー（邸宅）",         "desc": "19世紀に建設された中国系一族の豪華な邸宅。精巧な彫刻・壁画・池で囲まれた建築美が圧巻。", "badge": "中国文化" },
+        { "must": false, "icon": "🏖️", "num": "ペナン 04", "name": "バトゥ・フェリンギビーチ",       "desc": "ペナン北部の人気ビーチリゾート。ウォータースポーツ・シーフードレストラン・ナイトバザールが充実。", "badge": "ビーチ" },
+        { "must": false, "icon": "🌿",  "num": "ペナン 05", "name": "ペナン国立公園",                 "desc": "マレーシア最小の国立公園。熱帯雨林トレッキング・亀の産卵地・マングローブを堪能できる自然の宝庫。", "badge": "自然" },
+        { "must": false, "icon": "🚢",  "num": "ペナン 06", "name": "クラン・ジェッティ（桟橋集落）", "desc": "海上に建つ中国系一族の水上集落。それぞれの一族が管理する桟橋が続く独特の景観。", "badge": "フォトスポット" }
+      ]
+    },
+    {
+      "city_id": "malacca", "city_name": "マラッカ", "city_desc": "ポルトガル・オランダ統治の歴史が残る古都",
+      "city_info": [
+        { "label": "アクセス",         "value": "KLから高速バス 約2時間", "link_section": "", "link_btn_index": "" },
+        { "label": "おすすめ滞在",     "value": "日帰り〜1泊",            "link_section": "", "link_btn_index": "" },
+        { "label": "ベストシーズン",   "value": "3〜10月",                "link_section": "season", "link_btn_index": "4" },
+        { "label": "名物グルメ",       "value": "チキンライス・ニョニャ料理","link_section": "food", "link_btn_index": "2" },
+        { "label": "市内交通",         "value": "トライショー・Grab",      "link_section": "transport", "link_btn_index": "9" }
+      ],
+      "spots": [
+        { "must": true,  "icon": "🇳🇱", "num": "マラッカ 01", "name": "オランダ広場（スタダイス）",   "desc": "17世紀にオランダが建設した赤い建物が並ぶ広場。キリスト教会・時計塔・噴水が美しいマラッカの象徴。", "badge": "フォトスポット" },
+        { "must": false, "icon": "⛪",   "num": "マラッカ 02", "name": "セントポール教会",             "desc": "16世紀にポルトガルが建設した丘の上の廃墟教会。フランシスコ・ザビエルが一時埋葬された場所。夕景が美しい。", "badge": "歴史遺産" },
+        { "must": false, "icon": "🏮",  "num": "マラッカ 03", "name": "ババニョニャ遺産博物館",       "desc": "中国系移民とマレー人の混血文化「プラナカン」の生活様式を展示。精巧な陶器・家具・衣装が見られる。", "badge": "文化体験" },
+        { "must": false, "icon": "🛍️", "num": "マラッカ 04", "name": "ジョンカーストリート",         "desc": "アンティーク・土産物・屋台が並ぶ旧市街の目抜き通り。週末ナイトマーケットは地元グルメが充実。", "badge": "ナイトマーケット" },
+        { "must": false, "icon": "🚤",  "num": "マラッカ 05", "name": "マラッカ川クルーズ",           "desc": "カラフルな壁画・コロニアル建築を川から眺めるクルーズ。夜のライトアップが特に幻想的で人気。", "badge": "夜景" },
+        { "must": false, "icon": "🇵🇹", "num": "マラッカ 06", "name": "ポルトガル村",                 "desc": "16世紀のポルトガル統治時代の子孫が暮らすコミュニティ。週末はポルトガル料理・ダンスが楽しめる。", "badge": "グルメ" }
+      ]
+    },
+    {
+      "city_id": "kk", "city_name": "コタキナバル", "city_desc": "海・山・ジャングルが揃うサバ州の州都",
+      "city_info": [
+        { "label": "アクセス",       "value": "KLから国内線 約2時間", "link_section": "", "link_btn_index": "" },
+        { "label": "ベストシーズン", "value": "1〜5月（乾季）",       "link_section": "season",    "link_btn_index": "4" },
+        { "label": "ダイビング適期", "value": "3〜5月",               "link_section": "", "link_btn_index": "" },
+        { "label": "名物グルメ",     "value": "シーフード・サバ式ラクサ","link_section": "food",     "link_btn_index": "2" },
+        { "label": "市内交通",       "value": "Grab・タクシー",        "link_section": "transport", "link_btn_index": "9" }
+      ],
+      "spots": [
+        { "must": true,  "icon": "⛰️",  "num": "KK 01", "name": "キナバル山",                   "desc": "東南アジア最高峰（4,095m）のユネスコ世界遺産。2日間のトレッキングで登頂可能。ガイド必須・事前予約が必要。", "badge": "世界遺産" },
+        { "must": false, "icon": "🦧",  "num": "KK 02", "name": "セピロクオランウータン保護区", "desc": "野生のオランウータンへの餌付け体験ができる世界的に有名な保護区。間近で見られる貴重な体験。", "badge": "野生動物" },
+        { "must": false, "icon": "🏝️", "num": "KK 03", "name": "マヌカン島",                   "desc": "市内からボートで20分のサンゴ礁の島。シュノーケリング・ダイビング・白砂ビーチが楽しめるリゾート。", "badge": "シュノーケリング" },
+        { "must": false, "icon": "🐠",  "num": "KK 04", "name": "シパダン島",                   "desc": "世界トップクラスのダイビングスポット。ウミガメの群れ・バラクーダの竜巻が見られる海の楽園。入島許可証が必要。", "badge": "ダイビング聖地" },
+        { "must": false, "icon": "🛒",  "num": "KK 05", "name": "フィリピン市場",               "desc": "フィリピン人商人が集まる水上市場。新鮮な魚介類・真珠・土産物が格安で手に入る活気ある市場。", "badge": "シーフード" },
+        { "must": false, "icon": "🌅",  "num": "KK 06", "name": "ガヤ・ストリート（日曜市）",   "desc": "毎週日曜朝に開かれる地元民憩いの朝市。地元フード・野菜・民芸品・植物など多彩な商品が並ぶ。", "badge": "日曜限定" }
+      ]
+    },
+    {
+      "city_id": "kuching", "city_name": "クチン", "city_desc": "「猫の街」として知られるサラワク州の州都",
+      "city_info": [
+        { "label": "アクセス",       "value": "KLから国内線 約1.5時間", "link_section": "", "link_btn_index": "" },
+        { "label": "ベストシーズン", "value": "3〜10月",                "link_section": "season",    "link_btn_index": "4" },
+        { "label": "餌付け時間",     "value": "8〜10時・15〜17時",       "link_section": "", "link_btn_index": "" },
+        { "label": "名物グルメ",     "value": "サラワクラクサ・コロミー", "link_section": "food",      "link_btn_index": "2" },
+        { "label": "市内交通",       "value": "Grab・タクシー",          "link_section": "transport", "link_btn_index": "9" }
+      ],
+      "spots": [
+        { "must": false, "icon": "🏛️", "num": "クチン 01", "name": "サラワク博物館",               "desc": "東南アジア有数の博物館。ボルネオ先住民族の文化・自然史を詳しく展示。1891年創設の歴史ある博物館。", "badge": "入場無料" },
+        { "must": false, "icon": "🌿",  "num": "クチン 02", "name": "バコ国立公園",                 "desc": "サラワク最古の国立公園。テングザル・ウツボカズラ・ビーチ・マングローブが揃う自然の宝庫。ボートでアクセス。", "badge": "国立公園" },
+        { "must": false, "icon": "🦧",  "num": "クチン 03", "name": "セメンゴ野生動物センター",     "desc": "半野生のオランウータンへの餌付けが見られる保護区。朝・夕方の餌付け時間が見どころ。", "badge": "野生動物" },
+        { "must": false, "icon": "🎭",  "num": "クチン 04", "name": "サラワク・カルチャービレッジ", "desc": "ボルネオ先住民族7グループの伝統家屋・文化・踊りを体験できる民俗村。ダンス公演も見られる。", "badge": "文化体験" },
+        { "must": false, "icon": "🚶",  "num": "クチン 05", "name": "クチン旧市街・ウォーターフロント","desc": "クチン川沿いの遊歩道。コロニアル建築・中華寺院・モスクが立ち並ぶ歴史地区。夜はライトアップが美しい。", "badge": "夜景" },
+        { "must": false, "icon": "🐱",  "num": "クチン 06", "name": "クチン猫博物館",               "desc": "猫の街クチンならではの博物館。世界各地の猫にまつわるコレクション・彫刻・絵画を展示するユニークな施設。", "badge": "猫の街" }
+      ]
+    }
+  ],
+
+  "transport_items": [
+    { "icon": "🚕", "name": "Grab（グラブ）— 最もおすすめ",     "desc": "東南アジア版Uber。アプリで呼べて料金が事前確定。ぼったくりなし。クアラルンプールでは必須アプリ。出発前にダウンロード推奨。", "affiliate": "grab", "is_last": false },
+    { "icon": "🚆", "name": "KLIAエクスプレス（空港↔KL市内）",  "desc": "クアラルンプール国際空港からKLセントラル駅まで約28分。料金は片道約35RM（約1,400円）。最速で確実な移動手段。",         "affiliate": "",     "is_last": false },
+    { "icon": "🚇", "name": "LRT・MRT・モノレール（KL市内）",    "desc": "クアラルンプール市内は鉄道網が発達。Touch 'n Goカードが便利（各路線共通）。初乗りは数十セン〜数RM程度と格安。",         "affiliate": "",     "is_last": false },
+    { "icon": "🚌", "name": "バス",                               "desc": "市内バス（RapidKL）は安いが路線がわかりにくい。Googleマップ活用がおすすめ。長距離バスで都市間移動も可能。",             "affiliate": "",     "is_last": false },
+    { "icon": "✈️", "name": "国内線（島・ボルネオへ）",          "desc": "ペナン・コタキナバル・クチンなどへはエアアジアなどLCCで格安移動可能。国内線で数千円〜。予約は早めに。",               "affiliate": "",     "is_last": false },
+    { "icon": "⛵", "name": "フェリー",                           "desc": "ペナン島、ランカウイ島などへはフェリーで移動。比較的安価で景色も楽しめる移動手段。予約不要で当日港で乗船券を購入できる。", "affiliate": "",     "is_last": true }
+  ],
+
+  "courses": {
+    "intro": "旅のスタイルに合わせた2タイプのモデルコースを紹介。初めてのマレーシアでも安心な<strong>連泊プラン</strong>から、マレー半島を丸ごと味わう<strong>縦断ルート</strong>まで。どちらもアレンジ自由です。",
+    "stable_title": "連泊でじっくりプラン",
+    "adventure_title": "マレー半島縦断ルート",
+    "adventure_note_html": "このルートは管理人がお盆休みに実際に旅したコースです。SIMなしのスマホをカメラ＆オフライン地図として使いながら、地元の人に聞いて移動するスタイルで南下しました。観光地化されていないローカルエリアを通るからこそ、ガイドブックには載らない出会いや景色があります。計画通りにいかないことも含めて旅だと実感できる、そんなルートです。",
+    "stable_plans": [
+      {
+        "label": "プランA", "title": "KL ＋ マラッカ　4泊5日",
+        "tip": "✅ KL連泊ベース・マラッカは日帰り　スーツケースを動かす必要なし",
+        "days": [
+          { "transit": false, "badge_style": "background:#1e7e34", "badge_class": "", "label": "Day 1", "content_html": "<strong>クアラルンプール到着</strong><br>KLIAエクスプレスで約28分、KLセントラルへ。ホテルに荷物を預けたらそのまま夜のジャランアローへ。屋台がずらりと並ぶ活気ある通りで、チキンウィングや炒麺をつまみながらKLの夜を満喫。" },
+          { "transit": false, "badge_style": "background:#8a9a20", "badge_class": "", "label": "Day 2", "content_html": "<strong>バトゥケーブス → チャイナタウン</strong><br>早起きしてバトゥケーブスへ。272段のカラフルな階段を上ると巨大なヒンドゥー聖地が広がる。午後はチャイナタウンのペタリン通りでお土産探し、セントラルマーケットで工芸品をチェック。" },
+          { "transit": false, "badge_style": "background:#c88000", "badge_class": "", "label": "Day 3", "content_html": "<strong>ペトロナスツインタワー → ブキッビンタン</strong><br>KLのシンボル、ペトロナスツインタワーへ（要早めの予約）。KLCC公園の噴水ショーを見てから、ブキッビンタンへ移動。ショッピングモールをはしごして夜景でKLを締めくくる。" },
+          { "transit": true,  "icon": "🚌", "duration": "約2h" },
+          { "transit": false, "badge_style": "background:#cc0001", "badge_class": "", "label": "Day 4", "content_html": "<strong>マラッカ日帰り</strong><br>世界遺産の古都へ日帰り旅。赤いオランダ広場・キリスト教会を見てから、ジョンカーストリートを散策。ポルトガル・中国・マレーが融合したニョニャ料理でランチ。カラフルなトライショーに乗るのもおすすめ。夕方KLへ戻る。" },
+          { "transit": true,  "icon": "🚌", "duration": "約2h" },
+          { "transit": false, "badge_style": "", "badge_class": "gray", "label": "Day 5", "content_html": "<strong>帰国</strong><br>午前中は最後のKL散策やお土産購入。KLIAへ移動して帰国便へ。" }
+        ]
+      },
+      {
+        "label": "プランB", "title": "KL ＋ ペナン　6泊7日",
+        "tip": "✅ KL3連泊・ペナン3連泊　荷物の移動は1回だけ",
+        "days": [
+          { "transit": false, "badge_style": "background:#1e7e34", "badge_class": "", "label": "Day 1", "content_html": "<strong>クアラルンプール到着</strong><br>チェックイン後、夜のチャイナタウンへ。提灯が灯るペタリン通りの夜市は雰囲気満点。屋台でナシレマや揚げ豆腐をつまみながら、マレーシアの多文化な空気を最初の夜から体感できる。" },
+          { "transit": false, "badge_style": "background:#52a443", "badge_class": "", "label": "Day 2", "content_html": "<strong>バトゥケーブス → ペトロナスツインタワー</strong><br>朝イチでバトゥケーブスへ。午後はKLCCへ移動してペトロナスツインタワーへ（要早めの予約）。夜はスカイブリッジから見るKLの夜景が圧巻。" },
+          { "transit": false, "badge_style": "background:#8a9a20", "badge_class": "", "label": "Day 3", "content_html": "<strong>KLモスク観光 → ペナンへ移動</strong><br>午前中はブルーモスクとピンクモスクへ。マレーシアが誇る2大モスクを同じ日に訪れる贅沢なルート。夕方、国内線でペナンへ飛ぶ。" },
+          { "transit": true,  "icon": "✈️", "duration": "約1h" },
+          { "transit": false, "badge_style": "background:#c88000", "badge_class": "", "label": "Day 4", "content_html": "<strong>ジョージタウン旧市街</strong><br>世界遺産の旧市街を丸一日かけて歩く。壁画アートを探しながら路地を散策し、屋台街でペナングルメを食べ歩き。アッサムラクサ・チャークイティオ・エッグタルトは絶対に外せない。" },
+          { "transit": false, "badge_style": "background:#c84020", "badge_class": "", "label": "Day 5", "content_html": "<strong>ペナンヒル → ビーチでリゾート</strong><br>ケーブルカーでペナンヒルへ。頂上からはジョージタウンと海が一望できる絶景。午後はバトゥフェリンギビーチへ移動して、夕暮れまでゆったり過ごす。" },
+          { "transit": false, "badge_style": "background:#cc0001", "badge_class": "", "label": "Day 6", "content_html": "<strong>ペナン最終日 → 帰国便へ</strong><br>午前中は行けなかったスポットを再訪したりお土産を購入。ペナン空港または夕方の便でKL経由で帰国の途へ。" },
+          { "transit": false, "badge_style": "", "badge_class": "gray", "label": "Day 7", "content_html": "<strong>帰国</strong>" }
+        ]
+      }
+    ],
+    "adventure_plan": {
+      "tip": "✅ 乗り継ぐたびに文化が変わる。マレー半島縦断で多様さを肌で感じる6泊7日。",
+      "days": [
+        { "transit": false, "badge_style": "background:#1e7e34", "badge_class": "", "label": "Day 1", "content_html": "<strong>ペナン島</strong><br>直行便で約7時間。ジョージタウン旧市街を散策・ペナン名物のアッサムラクサで夕食。午後2〜3時には観光を切り上げ、フェリーで対岸のバターワースへ渡り、そこからバスでスンガイペタニへ移動。" },
+        { "transit": true,  "icon": "⛵30分", "duration": "＋🚌" },
+        { "transit": false, "badge_style": "background:#52a443", "badge_class": "", "label": "Day 2", "content_html": "<strong>スンガイペタニ</strong>（ケダー州）<br>観光地ではないが、ローカルな生活が息づく町。屋台で肉まんを買ったら売っていたのはインド系のおじさん。マレー・中華・インドが入り混じるマレーシアらしさをここで実感した。地元の人にベトン方面へのバス乗り場を教えてもらったが、待てど暮らせどバスが来ず、スコールまで降り始めたので諦めてタクシーに乗車した。" },
+        { "transit": true,  "icon": "🚕", "duration": "約3〜4h" },
+        { "transit": false, "badge_style": "background:#8a9a20", "badge_class": "", "label": "Day 3", "content_html": "<strong>ベトン</strong>（タイ・ヤラー県）<br>雲海を目当てにレンタルバイクで山を上るも、Googleマップが機能せず道に迷い辿り着いたのがドリアン農園。農園のおっちゃんに案内してもらい、雲海の上に広がるドリアン畑という絶景を体験。" },
+        { "transit": true,  "icon": "🚕", "duration": "約3〜4h" },
+        { "transit": false, "badge_style": "background:#c88000", "badge_class": "", "label": "Day 4", "content_html": "<strong>イポー</strong>（ペラ州）<br>マレーシアに再入国。コロニアル建築が残る旧市街を散策し、洞窟寺院も訪れた。イポー名物の白咖啡（ホワイトコーヒー）は必食。" },
+        { "transit": true,  "icon": "🚌", "duration": "約2h" },
+        { "transit": false, "badge_style": "background:#c84020", "badge_class": "", "label": "Day 5", "content_html": "<strong>クアラルンプール</strong><br>ブルーモスクとピンクモスクへ。ペトロナスツインタワーは直前に予約しようとしたら空きがなく断念。行く予定のある方は早めの予約を強くおすすめします。" },
+        { "transit": true,  "icon": "🚌", "duration": "約4h" },
+        { "transit": false, "badge_style": "background:#cc0001", "badge_class": "", "label": "Day 6", "content_html": "<strong>ジョホールバル</strong><br>本当はそのままシンガポールまで突っ切りたかったが時間的に断念し1泊。夜はシーフードを食べたが、これが正解だった。翌朝コーズウェイを渡り陸路でシンガポールへ入国。" },
+        { "transit": true,  "icon": "🚶", "duration": "徒歩" },
+        { "transit": false, "badge_style": "", "badge_class": "gray", "label": "Day 7", "content_html": "<strong>シンガポール → 帰国</strong><br>チャンギ空港から帰国便へ。" }
+      ]
+    },
+    "cta_title": "いつ行くかで旅は変わる！🌤️",
+    "cta_desc": "雨季・乾季・地域別のベストシーズンをチェック。<br>日程が決まっていない人はここから逆算するのがおすすめ。"
+  },
+
+  "food_modal_phrase_main": "Ada ini?",
+  "food_modal_phrase_sub": "アダ イニ？ ＝「これはありますか？」"
+}
