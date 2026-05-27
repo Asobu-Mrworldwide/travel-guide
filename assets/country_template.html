@@ -26,6 +26,12 @@
 #food-grid .item-card.has-img{padding-bottom:36px}
 #food-grid .item-card.has-img .desc{flex:none !important}
 
+/* 観光スポットカード画像・絵文字 */
+.spot-img{width:100%;height:160px;object-fit:cover;object-position:center;display:block;border-radius:8px;margin-top:4px;margin-bottom:-20px}
+.spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:4px;margin-bottom:-20px}
+#spots-grid .item-card.has-spot-img{padding-bottom:36px}
+#spots-grid .item-card.has-spot-img .desc{flex:none !important}
+
 /* クイックスペックカード（基本情報タブ） */
 #basic .qs-card{border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)}
 
@@ -367,7 +373,7 @@
       </div>
       {% endfor %}
     </div>
-    <div style="margin-top:14px;background:#fff8f0;border-left:3px solid #ff9900;border-radius:6px;padding:10px 12px;font-size:0.75em;color:#7a4400;line-height:1.7">💡 <strong>{{practical.special_note_title}}</strong><br>{{practical.special_note_html}}<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:4px"><span>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#ff9900;font-weight:700">{{practical.special_note_url_label}}</a></span><span style="color:#bbb;white-space:nowrap;margin-left:auto">（2026年5月時点）</span></span></div>
+    {% if practical.special_note_title %}<div style="margin-top:14px;background:#fff8f0;border-left:3px solid #ff9900;border-radius:6px;padding:10px 12px;font-size:0.75em;color:#7a4400;line-height:1.7">💡 <strong>{{practical.special_note_title}}</strong><br>{{practical.special_note_html}}<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:4px"><span>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#ff9900;font-weight:700">{{practical.special_note_url_label}}</a></span><span style="color:#bbb;white-space:nowrap;margin-left:auto">（2026年5月時点）</span></span></div>{% endif %}
   </div>
 
   <h2>航空券の予約</h2>
@@ -462,18 +468,18 @@
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
       <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
         <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">節約</div>
-        <div id="eco-myr" style="font-size:0.9em;font-weight:700">{{practical.eco_daily}}0 MYR</div>
-        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約{{practical.eco_daily}}00円</div>
+        <div id="eco-cur" style="font-size:0.9em;font-weight:700">-</div>
+        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
       </div>
       <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #b8ddc8">
         <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
-        <div id="std-myr" style="font-size:0.9em;font-weight:700;color:var(--green)">{{practical.std_daily}}0 MYR</div>
-        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約{{practical.std_daily}}00円</div>
+        <div id="std-cur" style="font-size:0.9em;font-weight:700;color:var(--green)">-</div>
+        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
       </div>
       <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
         <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">ゆとり</div>
-        <div id="lux-myr" style="font-size:0.9em;font-weight:700">{{practical.lux_daily}}0 MYR</div>
-        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約{{practical.lux_daily}}000円</div>
+        <div id="lux-cur" style="font-size:0.9em;font-weight:700">-</div>
+        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
       </div>
     </div>
     <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">{{practical.cash_note}}</div>
@@ -611,12 +617,12 @@
       </div>
     </div>
     {% for spot in section.spots %}
-    <div class="item-card spot {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}">
+    <div class="item-card spot has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}">
       {% if spot.must %}<div class="must-badge">⭐</div>{% endif %}
-      <div class="ico">{{spot.icon}}</div>
       <div class="num">{{spot.num}}</div>
       <div class="name">{{spot.name}}</div>
       <div class="desc">{{spot.desc}}</div>
+      {% if spot.image %}<img src="{{spot.image}}" alt="{{spot.name}}" class="spot-img">{% else %}<div class="spot-ico-large">{{spot.icon}}</div>{% endif %}
       <span class="badge">{{spot.badge}}</span>
     </div>
     {% endfor %}
@@ -726,6 +732,7 @@ function playPhrase(file, btn) {
 
 /* 現金目安カード */
 let cashDays = 5;
+const CURRENCY = '{{practical.currency_code}}';
 const RATE = {{practical.exchange_rate}};
 const ECO_DAILY = {{practical.eco_daily}};
 const STD_DAILY = {{practical.std_daily}};
@@ -734,13 +741,14 @@ function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const eco = cashDays * ECO_DAILY, std = cashDays * STD_DAILY, lux = cashDays * LUX_DAILY;
   document.getElementById('cash-days').textContent = cashDays;
-  document.getElementById('eco-myr').textContent = eco.toLocaleString() + ' MYR';
+  document.getElementById('eco-cur').textContent = eco.toLocaleString() + ' ' + CURRENCY;
   document.getElementById('eco-jpy').textContent = '約' + Math.round(eco * RATE / 1000) + ',000円';
-  document.getElementById('std-myr').textContent = std.toLocaleString() + ' MYR';
+  document.getElementById('std-cur').textContent = std.toLocaleString() + ' ' + CURRENCY;
   document.getElementById('std-jpy').textContent = '約' + Math.round(std * RATE / 1000) + ',000円';
-  document.getElementById('lux-myr').textContent = lux.toLocaleString() + ' MYR';
+  document.getElementById('lux-cur').textContent = lux.toLocaleString() + ' ' + CURRENCY;
   document.getElementById('lux-jpy').textContent = '約' + Math.round(lux * RATE / 1000) + ',000円';
 }
+changeDays(0);
 
 function show(id, btn) {
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
