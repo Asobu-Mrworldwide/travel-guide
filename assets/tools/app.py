@@ -475,19 +475,24 @@ with tab4:
 
     if st.button("🚀 generate.py を実行", type="primary"):
         with st.spinner("実行中..."):
-            result = subprocess.run(
-                [sys.executable, str(GENERATE_PY), country_id],
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-                cwd=str(TOOLS_DIR),
-            )
-        if result.returncode == 0:
+            try:
+                result = subprocess.run(
+                    [sys.executable, "-X", "utf8", str(GENERATE_PY), country_id],
+                    capture_output=True,
+                    cwd=str(TOOLS_DIR),
+                )
+                stdout = result.stdout.decode("utf-8", errors="replace")
+                stderr = result.stderr.decode("utf-8", errors="replace")
+                returncode = result.returncode
+            except Exception as e:
+                stdout, stderr, returncode = "", str(e), -1
+
+        if returncode == 0:
             st.success("✅ 生成完了！")
         else:
-            st.error("❌ エラーが発生しました。")
+            st.error(f"❌ エラーが発生しました（returncode={returncode}）")
 
-        if result.stdout:
-            st.text_area("stdout", result.stdout, height=100)
-        if result.stderr:
-            st.text_area("stderr", result.stderr, height=100)
+        if stdout:
+            st.text_area("stdout", stdout, height=120)
+        if stderr:
+            st.text_area("stderr（エラー詳細）", stderr, height=200)

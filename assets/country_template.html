@@ -43,10 +43,13 @@
 </head>
 <body>
 
+{{custom_before_hero}}
 <div class="hero">
   <img src="{{hero_image}}" alt="{{hero_alt}}" class="hero-img">
   <a href="../index.html" class="hero-back">← 国一覧へ戻る</a>
+  {{custom_inside_hero}}
 </div>
+{{custom_after_hero}}
 
 <nav>
   <button class="active" onclick="show('basic',this)">🌍 基本情報</button>
@@ -67,7 +70,7 @@
 
 <!-- 基本情報 -->
 <section id="basic" class="active">
-
+{{custom_top_basic}}
   <div class="card" style="margin-bottom:14px;line-height:1.8">
     <h2 style="margin:0 0 10px;font-size:1em">{{overview.country_question}}</h2>
     <p style="font-size:0.88em;color:var(--text)">{{overview.description_html}}</p>
@@ -260,10 +263,12 @@
       {% endfor %}
     </div>
   </div>
+  {{custom_bottom_basic}}
 </section>
 
 <!-- ベストシーズン -->
 <section id="season">
+{{custom_top_season}}
   <h2>ベストシーズン</h2>
   <div class="card">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
@@ -303,10 +308,12 @@
     <p class="tab-cta-desc">航空券・ホテル・食費・交通費の目安を一覧でチェック。<br>節約ポイントやお金の持ち方も紹介しています。</p>
     <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button>
   </div>
+  {{custom_bottom_season}}
 </section>
 
 <!-- 予算・費用 -->
 <section id="budget">
+{{custom_top_budget}}
   <h2>旅行費用の目安</h2>
   <div class="grid2" style="margin-bottom:14px">
     <div class="card" style="background:linear-gradient(135deg,#f0f7f3,#e0f0e8);border:1px solid #a8d5b5;text-align:center">
@@ -342,6 +349,7 @@
     <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
     <button onclick="show('practical',document.querySelectorAll('nav button')[6])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
   </div>
+  {{custom_bottom_budget}}
 </section>
 
 <!-- 旅の準備 -->
@@ -555,6 +563,7 @@
 
 <!-- グルメ -->
 <section id="food">
+{{custom_top_food}}
   <h2>{{food_section_title}}</h2>
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
@@ -590,9 +599,12 @@
     <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>管理人の実際の旅ルートもそのまま公開しています。</p>
     <button class="tab-cta-btn" onclick="show('course',document.querySelectorAll('nav button')[3])">モデルコースを見る →</button>
   </div>
+  {{custom_inside_food}}
 </section>
+{{custom_after_food}}
 
 <!-- 観光地 -->
+{{custom_before_spots}}
 <section id="spots">
   <h2>{{spots_section_title}}</h2>
   <div class="filter-row" id="spots-filter-row">
@@ -634,9 +646,12 @@
     <p class="tab-cta-desc">各都市の名物料理から定番スイーツ・ドリンクまで。<br>食べてみたいものをここで探して旅の計画に加えよう。</p>
     <button class="tab-cta-btn" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button>
   </div>
+  {{custom_inside_spots}}
 </section>
+{{custom_after_spots}}
 
 <!-- モデルコース -->
+{{custom_before_course}}
 <section id="course">
   <h2>モデルコース</h2>
 
@@ -706,8 +721,9 @@
     <p class="tab-cta-desc">{{courses.cta_desc}}</p>
     <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
   </div>
-
+  {{custom_inside_course}}
 </section>
+{{custom_after_course}}
 
 </div><!-- /slides-wrap -->
 </div><!-- /container -->
