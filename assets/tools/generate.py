@@ -153,10 +153,13 @@ def _find_if(text, start):
 # ──────────────────────────────────────────
 
 def generate(country_id):
-    base     = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(base, '..', country_id, f'{country_id}.json')
-    tpl_path  = os.path.join(base, 'country_template.html')
-    out_path  = os.path.join(base, '..', country_id, 'index.html')
+    tools_dir  = os.path.dirname(os.path.abspath(__file__))  # assets/tools/
+    assets_dir = os.path.join(tools_dir, '..')               # assets/
+    root_dir   = os.path.join(tools_dir, '..', '..')         # World guide/
+
+    json_path = os.path.join(root_dir, country_id, f'{country_id}.json')
+    tpl_path  = os.path.join(assets_dir, 'country_template.html')
+    out_path  = os.path.join(root_dir, country_id, 'index.html')
 
     if not os.path.exists(json_path):
         print(f'❌ JSONファイルが見つかりません: {json_path}')
@@ -172,7 +175,7 @@ def generate(country_id):
 
     html = _render(tpl, data)
 
-    country_dir = os.path.join(base, '..', country_id)
+    country_dir = os.path.join(root_dir, country_id)
     os.makedirs(os.path.join(country_dir, '素材', 'グルメ'),       exist_ok=True)
     os.makedirs(os.path.join(country_dir, '素材', '観光スポット'), exist_ok=True)
     os.makedirs(os.path.join(country_dir, 'audio'),                exist_ok=True)
