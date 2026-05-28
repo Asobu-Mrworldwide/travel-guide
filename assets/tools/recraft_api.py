@@ -16,6 +16,14 @@ def _auth_headers() -> dict:
     return {"Authorization": f"Bearer {API_KEY}"}
 
 
+def get_credits() -> int:
+    """現在のクレジット残高を返す。失敗時は -1"""
+    resp = requests.get(f"{BASE_URL}/users/me", headers=_auth_headers())
+    if resp.status_code == 200:
+        return resp.json().get("credits", -1)
+    return -1
+
+
 def generate_image(prompt: str, plate_color: str, model: str = "recraft20b",
                    width: int = 1024, height: int = 1024) -> tuple[bytes, int]:
     """
