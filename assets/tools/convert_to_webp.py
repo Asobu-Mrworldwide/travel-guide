@@ -8,7 +8,7 @@ from PIL import Image
 import os
 
 # 変換対象フォルダ（サブフォルダも含む）
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
 def convert_to_webp(folder):
     converted = 0

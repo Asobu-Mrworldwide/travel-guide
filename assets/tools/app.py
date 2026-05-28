@@ -153,6 +153,15 @@ with tab2:
     col_l, col_r = st.columns(2)
 
     with col_l:
+        # 既存画像を左に表示
+        existing_path = ROOT_DIR / country_id / sel_item.get("image", "")
+        if existing_path.exists() and sel_item.get("image"):
+            st.caption("現在の画像")
+            st.image(str(existing_path), use_container_width=True)
+        else:
+            st.info("画像未生成")
+
+    with col_r:
         st.markdown(f"**{sel_item.get('name', '')}**")
         prompt_val      = st.text_area(
             "プロンプト（英語）",
@@ -175,38 +184,40 @@ with tab2:
 
         gen_btn = st.button("🎨 生成実行", type="primary", disabled=not prompt_val.strip())
 
-    with col_r:
-        if "gen_result" not in st.session_state:
-            st.session_state["gen_result"]      = None
-            st.session_state["gen_result_name"] = None
-            st.session_state["gen_ext"]         = "webp"
+    # 生成結果エリア（全幅）
+    if "gen_result" not in st.session_state:
+        st.session_state["gen_result"]      = None
+        st.session_state["gen_result_name"] = None
+        st.session_state["gen_ext"]         = "webp"
 
-        if gen_btn:
-            if not prompt_val.strip():
-                st.warning("プロンプトを入力してください。")
-            else:
-                with st.spinner("生成中..."):
-                    try:
-                        img_bytes, cr1 = recraft_api.generate_image(
-                            prompt=prompt_val,
-                            plate_color=plate_color_val,
-                            model=model_key,
-                        )
-                        total_cr = cr1
-                        ext = "webp"
-                        if remove_bg:
-                            img_bytes, cr2 = recraft_api.remove_background(img_bytes)
-                            total_cr += cr2
-                            ext = "png"
-                        st.session_state["gen_result"]      = img_bytes
-                        st.session_state["gen_result_name"] = sel_item.get("name", "output")
-                        st.session_state["gen_ext"]         = ext
-                        st.success(f"生成完了！　消費クレジット: {total_cr}")
-                    except RuntimeError as e:
-                        st.error(str(e))
+    if gen_btn:
+        if not prompt_val.strip():
+            st.warning("プロンプトを入力してください。")
+        else:
+            with st.spinner("生成中..."):
+                try:
+                    img_bytes, cr1 = recraft_api.generate_image(
+                        prompt=prompt_val,
+                        plate_color=plate_color_val,
+                        model=model_key,
+                    )
+                    total_cr = cr1
+                    ext = "webp"
+                    if remove_bg:
+                        img_bytes, cr2 = recraft_api.remove_background(img_bytes)
+                        total_cr += cr2
+                        ext = "png"
+                    st.session_state["gen_result"]      = img_bytes
+                    st.session_state["gen_result_name"] = sel_item.get("name", "output")
+                    st.session_state["gen_ext"]         = ext
+                    st.success(f"生成完了！　消費クレジット: {total_cr}")
+                except RuntimeError as e:
+                    st.error(str(e))
 
-        if st.session_state["gen_result"] is not None:
-            st.image(st.session_state["gen_result"], caption="プレビュー", use_container_width=True)
+    if st.session_state["gen_result"] is not None:
+        st.divider()
+        st.caption("新しく生成した画像")
+        st.image(st.session_state["gen_result"], use_container_width=True)
 
             save_col, regen_col = st.columns(2)
             with save_col:
