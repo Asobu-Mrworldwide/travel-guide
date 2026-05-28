@@ -2,6 +2,7 @@
 Recraft 画像生成管理アプリ
 起動: python -m streamlit run assets/tools/app.py
 """
+import io
 import json
 import os
 import shutil
@@ -10,6 +11,7 @@ import sys
 from pathlib import Path
 
 import streamlit as st
+from PIL import Image
 
 import recraft_api
 
@@ -21,6 +23,14 @@ ASSETS_DIR  = TOOLS_DIR.parent              # assets/
 ROOT_DIR    = ASSETS_DIR.parent             # World guide/
 GENERATE_PY = TOOLS_DIR / "generate.py"
 LAST_STATE  = TOOLS_DIR / ".last_state.json"
+
+
+def to_webp(image_bytes: bytes, quality: int = 85) -> bytes:
+    """PNG / JPG バイナリを WebP バイナリに変換する（透過チャンネル保持）"""
+    img = Image.open(io.BytesIO(image_bytes))
+    buf = io.BytesIO()
+    img.save(buf, format="webp", lossless=False, quality=quality)
+    return buf.getvalue()
 
 
 def load_last_state() -> dict:
@@ -77,6 +87,12 @@ def food_dir(country_id: str) -> Path:
 # ページ設定
 # ──────────────────────────────────────────────────────────
 st.set_page_config(page_title="Recraft 画像生成ツール", layout="wide")
+st.markdown("""
+<style>
+.stApp { background-color: #ddeaf5; }
+[data-testid="stSidebar"] { background-color: #ccdff0; }
+</style>
+""", unsafe_allow_html=True)
 st.title("🎨 Recraft 画像生成ツール")
 
 # 国選択
@@ -103,7 +119,12 @@ with col_info:
 
 with col_cr:
     credits = recraft_api.get_credits()
-    st.metric("Recraftクレジット", f"{credits:,}" if credits >= 0 else "取得失敗")
+    if credits >= 0:
+        yen = credits * 0.16
+        st.metric("Recraftクレジット", f"{credits:,} cr")
+        st.markdown(f"<p style='font-size:1.4em;font-weight:700;margin-top:-12px;color:#1a6fa8;'>≈ ¥{yen:,.0f}</p>", unsafe_allow_html=True)
+    else:
+        st.metric("Recraftクレジット", "取得失敗")
 
 st.divider()
 
@@ -177,110 +198,168 @@ with tab2:
     save_last_state({"country": country_id, "dish": sel_item.get("name", "")})
 
     st.divider()
-    col_l, col_r = st.columns(2)
 
-    with col_l:
-        # 既存画像を左に表示
-        existing_path = ROOT_DIR / country_id / sel_item.get("image", "")
-        if existing_path.exists() and sel_item.get("image"):
-            st.caption("現在の画像")
-            st.image(str(existing_path), use_container_width=True)
-        else:
-            st.info("画像未生成")
+    # ── カラム描画より先に値を確定（col_l の保存ボタンで参照するため）──
+    item_key   = sel_item.get("num", "0").replace(".", "_")
+    key_prompt = f"gen_prompt_{item_key}"
+    if not st.session_state.get(key_prompt) and sel_item.get("prompt_en"):
+        st.session_state[key_prompt] = sel_item["prompt_en"]
 
-    with col_r:
-        st.markdown(f"**{sel_item.get('name', '')}**")
-        item_key   = sel_item.get("num", "0").replace(".", "_")
-        key_prompt = f"gen_prompt_{item_key}"
-        # セッションキャッシュが空でJSONに値があれば強制セット
-        if not st.session_state.get(key_prompt) and sel_item.get("prompt_en"):
-            st.session_state[key_prompt] = sel_item["prompt_en"]
+    SHAPES = {
+        "プレート":             "ceramic plate",
+        "ボウル":               "ceramic bowl",
+        "深めのボウル":         "deep ceramic bowl",
+        "グラス":               "tall glass",
+        "カップ":               "ceramic cup",
+        "鉄鍋":                 "cast iron pan",
+        "木の皿":               "wooden plate",
+        "紙皿":                 "paper plate",
+        "紙カップ":             "paper cup",
+        "バナナの葉":           "banana leaf",
+        "竹かご":               "bamboo basket",
+        "新聞紙":               "newspaper",
+        "クラフト紙（敷き紙）": "kraft paper laid flat",
+    }
+    COLORS = {
+        "白":             "white",
+        "オフホワイト":   "off-white",
+        "ベージュ":       "beige",
+        "クリーム":       "cream",
+        "水色":           "light blue",
+        "ブルー":         "blue",
+        "ネイビー":       "navy",
+        "グリーン":       "green",
+        "セージグリーン": "sage green",
+        "イエロー":       "yellow",
+        "オレンジ":       "orange",
+        "テラコッタ":     "terracotta",
+        "レッド":         "red",
+        "ピンク":         "pink",
+        "パープル":       "purple",
+        "ブラウン":       "brown",
+        "ダーク":         "dark",
+        "ブラック":       "black",
+        "グレー":         "gray",
+        "なし":           "",
+    }
 
-        prompt_val = st.text_area(
-            "プロンプト（英語）",
-            height=140,
-            key=key_prompt,
-        )
+    # 既存 plate_color から形状・色を逆引きしてデフォルト値を決定
+    saved_plate   = sel_item.get("plate_color", "white ceramic plate")
+    default_shape = "プレート"
+    default_color = "白"
+    for jp_s, en_s in SHAPES.items():
+        if en_s in saved_plate:
+            default_shape = jp_s
+            break
+    for jp_c, en_c in COLORS.items():
+        if en_c and en_c in saved_plate:
+            default_color = jp_c
+            break
 
-        # 皿の形状・色をセレクトボックスで選択
-        SHAPES = {
-            "プレート":       "ceramic plate",
-            "ボウル":         "ceramic bowl",
-            "深めのボウル":   "deep ceramic bowl",
-            "グラス":         "tall glass",
-            "カップ":         "ceramic cup",
-            "鉄鍋":           "cast iron pan",
-            "木の皿":         "wooden plate",
-        }
-        COLORS = {
-            "白":           "white",
-            "オフホワイト": "off-white",
-            "ベージュ":     "beige",
-            "クリーム":     "cream",
-            "水色":         "light blue",
-            "ブルー":       "blue",
-            "ネイビー":     "navy",
-            "グリーン":     "green",
-            "セージグリーン": "sage green",
-            "イエロー":     "yellow",
-            "オレンジ":     "orange",
-            "テラコッタ":   "terracotta",
-            "レッド":       "red",
-            "ピンク":       "pink",
-            "パープル":     "purple",
-            "ブラウン":     "brown",
-            "ダーク":       "dark",
-            "ブラック":     "black",
-            "グレー":       "gray",
-            "なし":         "",
-        }
+    shape_key  = f"gen_shape_{item_key}"
+    color_key  = f"gen_color_{item_key}"
+    _shape_now = st.session_state.get(shape_key, default_shape)
+    _color_now = st.session_state.get(color_key, default_color)
+    if _shape_now not in SHAPES: _shape_now = default_shape
+    if _color_now not in COLORS: _color_now = default_color
 
-        # 既存の plate_color から形状・色を逆引き（初期値設定）
-        saved_plate = sel_item.get("plate_color", "white ceramic plate")
-        default_shape = "プレート"
-        default_color = "白"
-        for jp_s, en_s in SHAPES.items():
-            if en_s in saved_plate:
-                default_shape = jp_s
-                break
-        for jp_c, en_c in COLORS.items():
-            if en_c and en_c in saved_plate:
-                default_color = jp_c
-                break
+    en_shape        = SHAPES[_shape_now]
+    en_color        = COLORS[_color_now]
+    plate_color_val = f"{en_color} {en_shape}".strip() if en_color else en_shape
+    prompt_val      = st.session_state.get(key_prompt, sel_item.get("prompt_en", ""))
 
-        sc1, sc2 = st.columns(2)
-        with sc1:
-            shape_sel = st.selectbox(
-                "皿の形状",
-                list(SHAPES.keys()),
-                index=list(SHAPES.keys()).index(default_shape),
-                key=f"gen_shape_{item_key}",
-            )
-        with sc2:
-            color_sel = st.selectbox(
-                "皿の色",
-                list(COLORS.keys()),
-                index=list(COLORS.keys()).index(default_color),
-                key=f"gen_color_{item_key}",  # item_keyはすでに._置換済み
-            )
-
-        en_shape = SHAPES[shape_sel]
-        en_color = COLORS[color_sel]
-        plate_color_val = f"{en_color} {en_shape}".strip() if en_color else en_shape
-        st.caption(f"→ `{plate_color_val}`")
-        model_val = st.radio(
-            "モデル",
-            ["recraft20b (~22cr)", "recraftv3 (~40cr)"],
-            horizontal=True,
-        )
-        model_key = "recraft20b" if "recraft20b" in model_val else "recraftv3"
-        gen_btn = st.button("🎨 生成実行", type="primary", disabled=not prompt_val.strip())
-
-    # 生成結果エリア（全幅）
     if "gen_result" not in st.session_state:
         st.session_state["gen_result"]      = None
         st.session_state["gen_result_name"] = None
         st.session_state["gen_ext"]         = "webp"
+        st.session_state["gen_credits"]     = None
+
+    col_l, col_r = st.columns(2)
+
+    with col_l:
+        if st.session_state.get("gen_result") is not None:
+            ext_label = "PNG（背景透過）" if st.session_state["gen_ext"] == "png" else "WebP"
+            cr_used   = st.session_state.get("gen_credits", "")
+            cr_str    = f"　消費: {cr_used}cr" if cr_used else ""
+            st.caption(f"✅ 生成完了（{ext_label}）{cr_str}")
+            st.image(st.session_state["gen_result"], use_container_width=True)
+            btn1, btn2, btn3 = st.columns(3)
+            with btn1:
+                if st.button("💾 保存", type="primary"):
+                    name     = st.session_state["gen_result_name"]
+                    out_dir  = food_dir(country_id)
+                    out_dir.mkdir(parents=True, exist_ok=True)
+                    webp_bytes = to_webp(st.session_state["gen_result"])
+                    out_path = out_dir / f"{name}.webp"
+                    out_path.write_bytes(webp_bytes)
+                    rel_path = f"素材/グルメ/{name}.webp"
+                    for fi in food_items:
+                        if fi.get("name") == name:
+                            fi["image"]       = rel_path
+                            fi["prompt_en"]   = prompt_val
+                            fi["plate_color"] = plate_color_val
+                            break
+                    data["food_items"] = food_items
+                    save_json(country_id, data)
+                    st.success(f"✅ 保存: {out_path.name}")
+                    st.session_state["gen_result"] = None
+                    st.rerun()
+            with btn2:
+                if st.button("✂️ 背景除去"):
+                    with st.spinner("処理中..."):
+                        try:
+                            bg_bytes, cr2 = recraft_api.remove_background(
+                                st.session_state["gen_result"]
+                            )
+                            st.session_state["gen_result"] = bg_bytes
+                            st.session_state["gen_ext"]    = "png"
+                            st.rerun()
+                        except RuntimeError as e:
+                            st.error(str(e))
+            with btn3:
+                if st.button("🔄 再生成"):
+                    st.session_state["gen_result"] = None
+                    st.rerun()
+        else:
+            existing_path = ROOT_DIR / country_id / sel_item.get("image", "")
+            if existing_path.exists() and sel_item.get("image"):
+                st.caption("現在の画像")
+                st.image(str(existing_path), use_container_width=True)
+            else:
+                st.info("画像未生成")
+
+    with col_r:
+        st.markdown(f"**{sel_item.get('name', '')}**")
+        st.text_area("プロンプト（英語）", height=140, key=key_prompt)
+
+        sc1, sc2 = st.columns(2)
+        with sc1:
+            st.selectbox(
+                "皿の形状",
+                list(SHAPES.keys()),
+                index=list(SHAPES.keys()).index(_shape_now),
+                key=shape_key,
+            )
+        with sc2:
+            st.selectbox(
+                "皿の色",
+                list(COLORS.keys()),
+                index=list(COLORS.keys()).index(_color_now),
+                key=color_key,
+            )
+
+        st.markdown(
+            f"<p style='font-size:1.1em;font-weight:600;color:#444;margin:2px 0 8px;'>"
+            f"→ {plate_color_val}</p>",
+            unsafe_allow_html=True,
+        )
+        model_val = st.radio(
+            "モデル",
+            ["recraft20b  22cr ≈ ¥3.5/枚", "recraftv3  40cr ≈ ¥6.4/枚"],
+            horizontal=True,
+        )
+        model_key_r = "recraft20b" if "recraft20b" in model_val else "recraftv3"
+        gen_btn = st.button("🎨 生成実行", type="primary", disabled=not prompt_val.strip())
 
     if gen_btn:
         if not prompt_val.strip():
@@ -291,62 +370,17 @@ with tab2:
                     img_bytes, cr1 = recraft_api.generate_image(
                         prompt=prompt_val,
                         plate_color=plate_color_val,
-                        model=model_key,
+                        model=model_key_r,
                     )
                     st.session_state["gen_result"]      = img_bytes
                     st.session_state["gen_result_name"] = sel_item.get("name", "output")
                     st.session_state["gen_ext"]         = "webp"
-                    st.success(f"生成完了！　消費クレジット: {cr1}")
+                    st.session_state["gen_credits"]     = cr1
                 except RuntimeError as e:
                     st.error(str(e))
+        if st.session_state.get("gen_result") is not None:
+            st.rerun()
 
-    if st.session_state["gen_result"] is not None:
-        st.divider()
-        ext_label = "PNG（背景透過）" if st.session_state["gen_ext"] == "png" else "WebP"
-        st.caption(f"新しく生成した画像（{ext_label}）")
-        st.image(st.session_state["gen_result"], use_container_width=True)
-
-        btn1, btn2, btn3 = st.columns(3)
-
-        with btn1:
-            if st.button("💾 この画像を保存", type="primary"):
-                name    = st.session_state["gen_result_name"]
-                ext     = st.session_state["gen_ext"]
-                out_dir = food_dir(country_id)
-                out_dir.mkdir(parents=True, exist_ok=True)
-                out_path = out_dir / f"{name}.{ext}"
-                out_path.write_bytes(st.session_state["gen_result"])
-                rel_path = f"素材/グルメ/{name}.{ext}"
-                for fi in food_items:
-                    if fi.get("name") == name:
-                        fi["image"]       = rel_path
-                        fi["prompt_en"]   = prompt_val
-                        fi["plate_color"] = plate_color_val
-                        break
-                data["food_items"] = food_items
-                save_json(country_id, data)
-                st.success(f"✅ 保存: {out_path.name}")
-                st.session_state["gen_result"] = None
-                st.rerun()
-
-        with btn2:
-            if st.button("✂️ 背景除去（+10cr）"):
-                with st.spinner("背景除去中..."):
-                    try:
-                        bg_bytes, cr2 = recraft_api.remove_background(
-                            st.session_state["gen_result"]
-                        )
-                        st.session_state["gen_result"] = bg_bytes
-                        st.session_state["gen_ext"]    = "png"
-                        st.success(f"背景除去完了！　消費クレジット: {cr2}")
-                        st.rerun()
-                    except RuntimeError as e:
-                        st.error(str(e))
-
-        with btn3:
-            if st.button("🔄 破棄して再生成"):
-                st.session_state["gen_result"] = None
-                st.rerun()
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -362,6 +396,34 @@ with tab3:
         exts  = {".webp", ".png", ".jpg", ".jpeg"}
         files = sorted([f for f in img_dir.iterdir() if f.suffix.lower() in exts])
 
+        # PNG / JPG が存在する場合は一括変換ボタンを表示
+        non_webp = [f for f in files if f.suffix.lower() in {".png", ".jpg", ".jpeg"}]
+        if non_webp:
+            if st.button(f"🔄 WebP一括変換（{len(non_webp)}枚）", type="primary"):
+                converted = 0
+                for fpath in non_webp:
+                    try:
+                        webp_bytes = to_webp(fpath.read_bytes())
+                        new_path   = fpath.with_suffix(".webp")
+                        new_path.write_bytes(webp_bytes)
+                        # JSON の image パスを更新
+                        rel_old = f"素材/グルメ/{fpath.name}"
+                        rel_new = f"素材/グルメ/{new_path.name}"
+                        for fi in food_items:
+                            if fi.get("image") == rel_old:
+                                fi["image"] = rel_new
+                                break
+                        if fpath != new_path:
+                            fpath.unlink()
+                        converted += 1
+                    except Exception as e:
+                        st.error(f"{fpath.name}: {e}")
+                if converted:
+                    data["food_items"] = food_items
+                    save_json(country_id, data)
+                    st.success(f"✅ {converted}枚をWebPに変換しました")
+                    st.rerun()
+
         if not files:
             st.info("画像ファイルがありません。")
         else:
@@ -370,10 +432,38 @@ with tab3:
             for i, fpath in enumerate(files):
                 with cols[i % 4]:
                     st.image(str(fpath), caption=fpath.name, use_container_width=True)
-                    if st.button("🗑️ 削除", key=f"del_{fpath.name}"):
-                        fpath.unlink()
-                        st.success(f"削除: {fpath.name}")
-                        st.rerun()
+                    b1, b2 = st.columns(2)
+                    with b1:
+                        if st.button("🗑️", key=f"del_{fpath.name}", help="削除"):
+                            fpath.unlink()
+                            st.success(f"削除: {fpath.name}")
+                            st.rerun()
+                    with b2:
+                        is_png = fpath.suffix.lower() == ".png"
+                        if st.button("✂️", key=f"bg_{fpath.name}", help="背景透過（+10cr）",
+                                     disabled=is_png):
+                            with st.spinner("処理中..."):
+                                try:
+                                    bg_bytes, cr2 = recraft_api.remove_background(fpath.read_bytes())
+                                    # 背景除去後も WebP で保存（透過チャンネル保持）
+                                    webp_bytes = to_webp(bg_bytes)
+                                    new_path   = fpath.with_suffix(".webp")
+                                    new_path.write_bytes(webp_bytes)
+                                    # JSON の image パスを更新
+                                    rel_old = f"素材/グルメ/{fpath.name}"
+                                    rel_new = f"素材/グルメ/{new_path.name}"
+                                    for fi in food_items:
+                                        if fi.get("image") == rel_old:
+                                            fi["image"] = rel_new
+                                            break
+                                    data["food_items"] = food_items
+                                    save_json(country_id, data)
+                                    if fpath != new_path:
+                                        fpath.unlink()
+                                    st.success(f"完了 -{cr2}cr → {new_path.name}")
+                                    st.rerun()
+                                except RuntimeError as e:
+                                    st.error(str(e))
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
