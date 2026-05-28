@@ -599,13 +599,12 @@
     <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>管理人の実際の旅ルートもそのまま公開しています。</p>
     <button class="tab-cta-btn" onclick="show('course',document.querySelectorAll('nav button')[3])">モデルコースを見る →</button>
   </div>
-  {{custom_inside_food}}
+  {{custom_bottom_food}}
 </section>
-{{custom_after_food}}
 
 <!-- 観光地 -->
-{{custom_before_spots}}
 <section id="spots">
+{{custom_top_spots}}
   <h2>{{spots_section_title}}</h2>
   <div class="filter-row" id="spots-filter-row">
     {% for fc in spots_filter_cities %}
@@ -646,13 +645,12 @@
     <p class="tab-cta-desc">各都市の名物料理から定番スイーツ・ドリンクまで。<br>食べてみたいものをここで探して旅の計画に加えよう。</p>
     <button class="tab-cta-btn" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button>
   </div>
-  {{custom_inside_spots}}
+  {{custom_bottom_spots}}
 </section>
-{{custom_after_spots}}
 
 <!-- モデルコース -->
-{{custom_before_course}}
 <section id="course">
+{{custom_top_course}}
   <h2>モデルコース</h2>
 
   <div class="card" style="margin-bottom:4px">
@@ -721,9 +719,8 @@
     <p class="tab-cta-desc">{{courses.cta_desc}}</p>
     <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
   </div>
-  {{custom_inside_course}}
+  {{custom_bottom_course}}
 </section>
-{{custom_after_course}}
 
 </div><!-- /slides-wrap -->
 </div><!-- /container -->
