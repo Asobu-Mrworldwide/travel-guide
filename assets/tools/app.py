@@ -268,58 +268,62 @@ with tab2:
     plate_color_val = f"{en_color} {en_shape}".strip() if en_color else en_shape
     prompt_val      = st.session_state.get(key_prompt, sel_item.get("prompt_en", ""))
 
-    if "gen_result" not in st.session_state:
-        st.session_state["gen_result"]      = None
-        st.session_state["gen_result_name"] = None
-        st.session_state["gen_ext"]         = "webp"
-        st.session_state["gen_credits"]     = None
+    if "gen_results" not in st.session_state:
+        st.session_state["gen_results"] = []   # [{bytes, ext, credits, name}, ...]
 
     col_l, col_r = st.columns(2)
 
     with col_l:
-        if st.session_state.get("gen_result") is not None:
-            ext_label = "PNG（背景透過）" if st.session_state["gen_ext"] == "png" else "WebP"
-            cr_used   = st.session_state.get("gen_credits", "")
-            cr_str    = f"　消費: {cr_used}cr" if cr_used else ""
-            st.caption(f"✅ 生成完了（{ext_label}）{cr_str}")
-            st.image(st.session_state["gen_result"], use_container_width=True)
-            btn1, btn2, btn3 = st.columns(3)
-            with btn1:
-                if st.button("💾 保存", type="primary"):
-                    name     = st.session_state["gen_result_name"]
-                    out_dir  = food_dir(country_id)
-                    out_dir.mkdir(parents=True, exist_ok=True)
-                    webp_bytes = to_webp(st.session_state["gen_result"])
-                    out_path = out_dir / f"{name}.webp"
-                    out_path.write_bytes(webp_bytes)
-                    rel_path = f"素材/グルメ/{name}.webp"
-                    for fi in food_items:
-                        if fi.get("name") == name:
-                            fi["image"]       = rel_path
-                            fi["prompt_en"]   = prompt_val
-                            fi["plate_color"] = plate_color_val
-                            break
-                    data["food_items"] = food_items
-                    save_json(country_id, data)
-                    st.success(f"✅ 保存: {out_path.name}")
-                    st.session_state["gen_result"] = None
+        results = st.session_state.get("gen_results", [])
+        if results:
+            hdr_l, hdr_r = st.columns([4, 1])
+            with hdr_l:
+                st.caption(f"生成した画像 ({len(results)}枚) — 保存したい1枚を選んでください")
+            with hdr_r:
+                if st.button("🗑️ 全削除", help="生成画像をすべて破棄"):
+                    st.session_state["gen_results"] = []
                     st.rerun()
-            with btn2:
-                if st.button("✂️ 背景除去"):
-                    with st.spinner("処理中..."):
-                        try:
-                            bg_bytes, cr2 = recraft_api.remove_background(
-                                st.session_state["gen_result"]
-                            )
-                            st.session_state["gen_result"] = bg_bytes
-                            st.session_state["gen_ext"]    = "png"
+
+            ncols = min(len(results), 2)
+            img_cols = st.columns(ncols)
+            for i, res in enumerate(results):
+                with img_cols[i % ncols]:
+                    cr_str = f"消費: {res['credits']}cr" if res.get("credits") else ""
+                    st.caption(f"#{i+1}　{cr_str}")
+                    st.image(res["bytes"], use_container_width=True)
+                    b1, b2, b3 = st.columns(3)
+                    with b1:
+                        if st.button("💾 保存", key=f"save_{i}", type="primary"):
+                            name    = res.get("name", sel_item.get("name", "output"))
+                            out_dir = food_dir(country_id)
+                            out_dir.mkdir(parents=True, exist_ok=True)
+                            out_path = out_dir / f"{name}.webp"
+                            out_path.write_bytes(to_webp(res["bytes"]))
+                            rel_path = f"素材/グルメ/{name}.webp"
+                            for fi in food_items:
+                                if fi.get("name") == name:
+                                    fi["image"]       = rel_path
+                                    fi["prompt_en"]   = prompt_val
+                                    fi["plate_color"] = plate_color_val
+                                    break
+                            data["food_items"] = food_items
+                            save_json(country_id, data)
+                            st.success(f"✅ 保存: {out_path.name}")
+                            st.session_state["gen_results"] = []
                             st.rerun()
-                        except RuntimeError as e:
-                            st.error(str(e))
-            with btn3:
-                if st.button("🔄 再生成"):
-                    st.session_state["gen_result"] = None
-                    st.rerun()
+                    with b2:
+                        if st.button("✂️", key=f"bg_{i}", help="背景除去"):
+                            with st.spinner("処理中..."):
+                                try:
+                                    bg_bytes, _ = recraft_api.remove_background(res["bytes"])
+                                    st.session_state["gen_results"][i]["bytes"] = to_webp(bg_bytes)
+                                    st.rerun()
+                                except RuntimeError as e:
+                                    st.error(str(e))
+                    with b3:
+                        if st.button("🗑️", key=f"del_{i}", help="この画像を削除"):
+                            st.session_state["gen_results"].pop(i)
+                            st.rerun()
         else:
             existing_path = ROOT_DIR / country_id / sel_item.get("image", "")
             if existing_path.exists() and sel_item.get("image"):
@@ -372,13 +376,15 @@ with tab2:
                         plate_color=plate_color_val,
                         model=model_key_r,
                     )
-                    st.session_state["gen_result"]      = img_bytes
-                    st.session_state["gen_result_name"] = sel_item.get("name", "output")
-                    st.session_state["gen_ext"]         = "webp"
-                    st.session_state["gen_credits"]     = cr1
+                    st.session_state["gen_results"].append({
+                        "bytes":   img_bytes,
+                        "ext":     "webp",
+                        "credits": cr1,
+                        "name":    sel_item.get("name", "output"),
+                    })
                 except RuntimeError as e:
                     st.error(str(e))
-        if st.session_state.get("gen_result") is not None:
+        if st.session_state.get("gen_results"):
             st.rerun()
 
 

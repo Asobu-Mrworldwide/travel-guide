@@ -173,6 +173,40 @@ def generate(country_id):
     with open(tpl_path, encoding='utf-8') as f:
         tpl = f.read()
 
+    # ── グルメ・観光スポット画像の自動検出 ──────────────────────
+    # 素材/グルメ/<料理名>.webp または 素材/観光スポット/<スポット名>.webp が
+    # 存在すれば image フィールドを自動補完し JSON を更新する
+    json_updated = False
+
+    food_dir = os.path.join(root_dir, country_id, '素材', 'グルメ')
+    for item in data.get('food_items', []):
+        name     = item.get('name', '')
+        img_path = os.path.join(food_dir, f'{name}.webp')
+        rel_path = f'素材/グルメ/{name}.webp'
+        if os.path.exists(img_path) and item.get('image') != rel_path:
+            item['image'] = rel_path
+            json_updated  = True
+            print(f'  🖼️  グルメ画像を自動検出: {name}.webp')
+
+    spot_dir = os.path.join(root_dir, country_id, '素材', '観光スポット')
+    for section in data.get('spot_sections', []):
+        for spot in section.get('spots', []):
+            name     = spot.get('name', '')
+            img_path = os.path.join(spot_dir, f'{name}.webp')
+            rel_path = f'素材/観光スポット/{name}.webp'
+            if os.path.exists(img_path) and spot.get('image') != rel_path:
+                spot['image'] = rel_path
+                json_updated  = True
+                print(f'  🖼️  スポット画像を自動検出: {name}.webp')
+
+    if json_updated:
+        import shutil
+        shutil.copy2(json_path, json_path + '.bak')
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f'  💾 JSON更新: {os.path.basename(json_path)}')
+    # ────────────────────────────────────────────────────────────
+
     html = _render(tpl, data)
 
     country_dir = os.path.join(root_dir, country_id)
