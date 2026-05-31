@@ -389,6 +389,7 @@ with tab2:
 
         SHAPES = {
             "指定なし":             "",
+            "皿なし":               "no plate",
             "プレート":             "ceramic plate",
             "ボウル":               "ceramic bowl",
             "深めのボウル":         "deep ceramic bowl",
@@ -427,7 +428,7 @@ with tab2:
         }
 
         saved_plate   = sel_item.get("plate_color", "")
-        default_shape = "プレート"
+        default_shape = "指定なし"
         default_color = "なし"
         for jp_s, en_s in SHAPES.items():
             if en_s in saved_plate:
@@ -628,10 +629,16 @@ with tab2:
             ratio_sel  = st.selectbox("縦横比", list(ASPECT_RATIOS.keys()), index=0, key=f"gen_ratio_{item_key}")
             gen_width, gen_height = ASPECT_RATIOS[ratio_sel]
             _base        = (angle_prefix + " " + prompt_val).strip() if angle_prefix else prompt_val
-            _blue_plates = {"light blue", "blue", "navy"}
-            _bg_suffix   = (", pure solid white background, isolated on white"
-                            if en_color_r in _blue_plates
-                            else ", pure solid light blue background, isolated on light blue")
+            # 自然素材・皿なし はsolid背景と矛盾するので _bg_suffix を付けない
+            _NO_BG_SHAPES = {"banana leaf", "no plate", "bamboo basket",
+                             "newspaper", "kraft paper laid flat", "wooden plate"}
+            _blue_plates  = {"light blue", "blue", "navy"}
+            if en_shape_r in _NO_BG_SHAPES:
+                _bg_suffix = ""
+            else:
+                _bg_suffix = (", pure solid white background, isolated on white"
+                              if en_color_r in _blue_plates
+                              else ", pure solid light blue background, isolated on light blue")
             final_prompt = _base + _bg_suffix
             # 送信プロンプト確認（plate_color を含む完全な文字列を表示）
             _preview_plate = f", served on a {plate_color_val}." if plate_color_val else ""

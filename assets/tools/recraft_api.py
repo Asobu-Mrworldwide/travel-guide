@@ -52,7 +52,10 @@ def generate_image(prompt: str, plate_color: str, model: str = "recraft20b",
     """
     # watercolor20b 等はプレフィックスでスタイルを補強
     prefix = PROMPT_PREFIXES.get(model, "")
-    if plate_color:
+    if plate_color == "no plate":
+        content = (f"{prompt}, no plate, no dish, no bowl, no tableware, "
+                   "food only, isolated on plain background.")
+    elif plate_color:
         content = f"{prompt}, served on a {plate_color}."
     else:
         content = prompt
