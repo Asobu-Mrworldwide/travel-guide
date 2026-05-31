@@ -149,6 +149,87 @@ def _find_if(text, start):
 
 
 # ──────────────────────────────────────────
+# 国一覧 (index.html) 自動更新
+# ──────────────────────────────────────────
+
+def _esc(s):
+    """JS文字列内のシングルクォートをエスケープ"""
+    return str(s).replace("'", "\\'")
+
+def update_index(country_id, data, root_dir):
+    """
+    index.html の COUNTRIES 配列に国カードを追加する（未登録の場合のみ）。
+    JSON に index_card フィールドがない場合はスキップ。
+    """
+    card = data.get('index_card')
+    if not card:
+        return
+
+    index_path = os.path.normpath(os.path.join(root_dir, 'index.html'))
+    if not os.path.exists(index_path):
+        print(f'  ⚠️  index.html が見つかりません: {index_path}')
+        return
+
+    with open(index_path, encoding='utf-8') as f:
+        html = f.read()
+
+    url = f"{country_id}/index.html"
+    if f"url:'{url}'" in html:
+        print(f'  ℹ️  国一覧: 登録済みのためスキップ')
+        return
+
+    # カード情報を組み立て
+    name       = _esc(data.get('name', ''))
+    name_en    = _esc(data.get('name_en', ''))
+    flag       = _esc(card.get('flag', ''))
+    catch_     = _esc(card.get('catch', ''))
+    region     = _esc(card.get('region', ''))
+    flight     = _esc(data.get('overview', {}).get('flight_hours', ''))
+    best_label = _esc(card.get('best_label', ''))
+    gradient   = _esc(card.get('gradient', ''))
+    card_img   = _esc(f"{country_id}/{data.get('hero_image', '')}")
+    budget_str = ','.join(f"'{b}'" for b in card.get('budget', []))
+    months_str = ','.join(str(m) for m in card.get('best_months', []))
+    tags_str   = ','.join(f"'{_esc(t)}'" for t in card.get('tags', []))
+
+    new_entry = (
+        f"  {{\n"
+        f"    name:'{name}', nameEn:'{name_en}', flag:'{flag}',\n"
+        f"    catch:'{catch_}',\n"
+        f"    region:'{region}', flight:'{flight}', budget:[{budget_str}],\n"
+        f"    bestMonths:[{months_str}], bestLabel:'{best_label}',\n"
+        f"    tags:[{tags_str}],\n"
+        f"    gradient:'{gradient}',\n"
+        f"    cardImg:'{card_img}',\n"
+        f"    url:'{url}', available:true\n"
+        f"  }},\n"
+    )
+
+    # 最初の available:false ブロックの直前に挿入
+    pos = html.find('available:false')
+    if pos != -1:
+        block_start = html.rfind('  {', 0, pos)
+        if block_start == -1:
+            print('  ⚠️  挿入位置が特定できませんでした')
+            return
+        html = html[:block_start] + new_entry + html[block_start:]
+    else:
+        # unavailable エントリがない場合は COUNTRIES 配列末尾へ
+        arr_start = html.find('const COUNTRIES')
+        end_pos   = html.find('];', arr_start)
+        if end_pos == -1:
+            print('  ⚠️  COUNTRIES配列が見つかりません')
+            return
+        html = html[:end_pos] + new_entry + html[end_pos:]
+
+    import shutil
+    shutil.copy2(index_path, index_path + '.bak')
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+    print(f'  📋 国一覧に追加: {name}')
+
+
+# ──────────────────────────────────────────
 # メイン処理
 # ──────────────────────────────────────────
 
@@ -217,6 +298,8 @@ def generate(country_id):
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(html)
     print(f'✅ 生成完了: {out_path}')
+
+    update_index(country_id, data, root_dir)
 
 
 if __name__ == '__main__':
