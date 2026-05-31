@@ -365,6 +365,22 @@ with tab2:
         _p_dict = {**last_state.get("prompts", {}), f"{country_id}_{item_key}": prompt_val}
         save_last_state({"prompts": _p_dict})
 
+        # ── 背景除去の事前処理（col_l 描画より前に実行してから表示） ──
+        if "pending_bg_idx" in st.session_state:
+            _bg_i    = st.session_state.pop("pending_bg_idx")
+            _results = st.session_state.get("gen_results", [])
+            if 0 <= _bg_i < len(_results):
+                with st.spinner("背景除去中..."):
+                    try:
+                        _res      = _results[_bg_i]
+                        bg_bytes, _ = recraft_api.remove_background(_res["bytes"])
+                        new_bytes = to_webp(bg_bytes)
+                        new_list  = list(_results)
+                        new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
+                        st.session_state["gen_results"] = new_list
+                    except Exception as e:
+                        st.error(f"背景除去失敗: {e}")
+
         col_l, col_r = st.columns(2)
 
         with col_l:
@@ -410,16 +426,8 @@ with tab2:
                                 st.rerun()
                         with b2:
                             if st.button("✂️", key=f"bg_{i}", help="背景除去"):
-                                with st.spinner("処理中..."):
-                                    try:
-                                        bg_bytes, _ = recraft_api.remove_background(res["bytes"])
-                                        new_bytes = to_webp(bg_bytes)
-                                        new_list  = list(results)
-                                        new_list[i] = _temp_save({**res, "bytes": new_bytes})
-                                        st.session_state["gen_results"] = new_list
-                                        st.rerun()
-                                    except RuntimeError as e:
-                                        st.error(str(e))
+                                st.session_state["pending_bg_idx"] = i
+                                st.rerun()
                         with b3:
                             if st.button("🗑️", key=f"del_{i}", help="この画像を削除"):
                                 _temp_delete(res.get("tmp_id", ""))
@@ -535,6 +543,22 @@ with tab2:
         if not st.session_state.get(hero_prompt_key):
             st.session_state[hero_prompt_key] = data.get("hero_prompt", "")
 
+        # 背景除去の事前処理
+        if "pending_bg_idx" in st.session_state:
+            _bg_i    = st.session_state.pop("pending_bg_idx")
+            _results = st.session_state.get("gen_results", [])
+            if 0 <= _bg_i < len(_results):
+                with st.spinner("背景除去中..."):
+                    try:
+                        _res      = _results[_bg_i]
+                        bg_bytes, _ = recraft_api.remove_background(_res["bytes"])
+                        new_bytes = to_webp(bg_bytes)
+                        new_list  = list(_results)
+                        new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
+                        st.session_state["gen_results"] = new_list
+                    except Exception as e:
+                        st.error(f"背景除去失敗: {e}")
+
         col_l, col_r = st.columns(2)
 
         with col_l:
@@ -572,16 +596,8 @@ with tab2:
                                 st.rerun()
                         with b2:
                             if st.button("✂️", key=f"hero_bg_{i}", help="背景除去"):
-                                with st.spinner("処理中..."):
-                                    try:
-                                        bg_bytes, _ = recraft_api.remove_background(res["bytes"])
-                                        new_bytes = to_webp(bg_bytes)
-                                        new_list  = list(results)
-                                        new_list[i] = _temp_save({**res, "bytes": new_bytes})
-                                        st.session_state["gen_results"] = new_list
-                                        st.rerun()
-                                    except RuntimeError as e:
-                                        st.error(str(e))
+                                st.session_state["pending_bg_idx"] = i
+                                st.rerun()
                         with b3:
                             if st.button("🗑️", key=f"hero_del_{i}", help="削除"):
                                 _temp_delete(res.get("tmp_id", ""))
@@ -669,6 +685,23 @@ with tab2:
                 st.session_state[city_prompt_key] = sel_city.get("city_prompt", "")
 
             st.divider()
+
+            # 背景除去の事前処理
+            if "pending_bg_idx" in st.session_state:
+                _bg_i    = st.session_state.pop("pending_bg_idx")
+                _results = st.session_state.get("gen_results", [])
+                if 0 <= _bg_i < len(_results):
+                    with st.spinner("背景除去中..."):
+                        try:
+                            _res      = _results[_bg_i]
+                            bg_bytes, _ = recraft_api.remove_background(_res["bytes"])
+                            new_bytes = to_webp(bg_bytes)
+                            new_list  = list(_results)
+                            new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
+                            st.session_state["gen_results"] = new_list
+                        except Exception as e:
+                            st.error(f"背景除去失敗: {e}")
+
             col_l, col_r = st.columns(2)
 
             with col_l:
@@ -708,16 +741,8 @@ with tab2:
                                     st.rerun()
                             with b2:
                                 if st.button("✂️", key=f"city_bg_{i}", help="背景除去"):
-                                    with st.spinner("処理中..."):
-                                        try:
-                                            bg_bytes, _ = recraft_api.remove_background(res["bytes"])
-                                            new_bytes = to_webp(bg_bytes)
-                                            new_list  = list(results)
-                                            new_list[i] = _temp_save({**res, "bytes": new_bytes})
-                                            st.session_state["gen_results"] = new_list
-                                            st.rerun()
-                                        except RuntimeError as e:
-                                            st.error(str(e))
+                                    st.session_state["pending_bg_idx"] = i
+                                    st.rerun()
                             with b3:
                                 if st.button("🗑️", key=f"city_del_{i}", help="削除"):
                                     _temp_delete(res.get("tmp_id", ""))
