@@ -19,7 +19,7 @@ from rembg import remove as rembg_remove, new_session as rembg_new_session
 @st.cache_resource
 def _get_rembg_session():
     """起動時に1回だけモデルをロードしてキャッシュ"""
-    return rembg_new_session("isnet-general-use")  # 高精度・中速モデル
+    return rembg_new_session("birefnet-general")  # 高精度モデル（BiRefNet）
 
 # ──────────────────────────────────────────────────────────
 # パス定義
@@ -116,6 +116,7 @@ def detect_countries() -> list[str]:
     return result
 
 
+@st.cache_data
 def load_json(country_id: str) -> dict:
     path = ROOT_DIR / country_id / f"{country_id}.json"
     with open(path, encoding="utf-8") as f:
@@ -127,6 +128,7 @@ def save_json(country_id: str, data: dict):
     shutil.copy2(path, path.with_suffix(".json.bak"))
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    load_json.clear()  # 保存後にキャッシュをクリアして次回読み直し
 
 
 def image_exists(country_id: str, item: dict) -> bool:
@@ -233,7 +235,7 @@ components.html(f"""
 # ──────────────────────────────────────────────────────────
 # タブ
 # ──────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4 = st.tabs(["📋 料理一覧", "✨ 画像生成", "🖼️ 画像管理", "🚀 サイト更新"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 料理一覧", "✨ 画像生成", "🖼️ 画像管理", "🚀 サイト更新", "🌍 新規作成"])
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -243,10 +245,11 @@ with tab1:
     # ── グルメ ──
     if gen_category == "🍜 グルメ":
         st.subheader("料理一覧・プロンプト編集")
+        # 既存アイテムを名前でインデックス（フィールド保全用）
+        _orig_by_name = {item.get("name"): item for item in food_items if item.get("name")}
         rows = []
         for item in food_items:
             rows.append({
-                "num":         item.get("num", ""),
                 "name":        item.get("name", ""),
                 "画像":        "✅" if image_exists(country_id, item) else "❌",
                 "plate_color": item.get("plate_color", ""),
@@ -255,21 +258,34 @@ with tab1:
         edited = st.data_editor(
             rows,
             column_config={
-                "num":         st.column_config.TextColumn("No.", disabled=True, width="small"),
-                "name":        st.column_config.TextColumn("料理名", disabled=True, width="medium"),
+                "name":        st.column_config.TextColumn("料理名", width="medium"),
                 "画像":        st.column_config.TextColumn("画像", disabled=True, width="small"),
                 "plate_color": st.column_config.TextColumn("皿の色（英語）", width="medium"),
                 "prompt_en":   st.column_config.TextColumn("プロンプト（英語）", width="large"),
             },
             use_container_width=True,
-            num_rows="fixed",
+            num_rows="dynamic",
             key="food_editor",
         )
         if st.button("💾 JSONを保存", type="primary", key="t1_food_save"):
-            for i, row in enumerate(edited):
-                food_items[i]["plate_color"] = row["plate_color"]
-                food_items[i]["prompt_en"]   = row["prompt_en"]
-            data["food_items"] = food_items
+            new_food_items = []
+            for row in edited:
+                name = (row.get("name") or "").strip()
+                if not name:          # 空行はスキップ
+                    continue
+                orig = _orig_by_name.get(name, {})
+                new_food_items.append({
+                    "num":         f"No.{len(new_food_items)+1}",
+                    "name":        name,
+                    "badge":       orig.get("badge", ""),
+                    "type":        orig.get("type", "main"),
+                    "city":        orig.get("city", "national"),
+                    "desc":        orig.get("desc", ""),
+                    "image":       orig.get("image", ""),
+                    "plate_color": (row.get("plate_color") or orig.get("plate_color", "")).strip(),
+                    "prompt_en":   (row.get("prompt_en")   or orig.get("prompt_en",   "")).strip(),
+                })
+            data["food_items"] = new_food_items
             save_json(country_id, data)
             save_last_state({"tab": 0})
             for k in list(st.session_state.keys()):
@@ -295,34 +311,45 @@ with tab1:
     elif gen_category == "🏙️ 都市カード":
         st.subheader("都市カード・プロンプト編集")
         spot_secs = data.get("spot_sections", [])
-        if not spot_secs:
-            st.warning("spot_sections が空です。")
-        else:
-            city_rows = []
-            for s in spot_secs:
-                city_rows.append({
-                    "city_name":   s.get("city_name", ""),
-                    "city_id":     s.get("city_id", ""),
-                    "画像":        "✅" if (ROOT_DIR / country_id / s.get("city_image","X")).exists() else "❌",
-                    "city_prompt": s.get("city_prompt", ""),
+        _orig_city_by_id = {s.get("city_id"): s for s in spot_secs if s.get("city_id")}
+        city_rows = []
+        for s in spot_secs:
+            city_rows.append({
+                "city_id":     s.get("city_id", ""),
+                "city_name":   s.get("city_name", ""),
+                "画像":        "✅" if (ROOT_DIR / country_id / s.get("city_image","X")).exists() else "❌",
+                "city_prompt": s.get("city_prompt", ""),
+            })
+        edited_cities = st.data_editor(
+            city_rows,
+            column_config={
+                "city_id":     st.column_config.TextColumn("ID（英語）", width="small"),
+                "city_name":   st.column_config.TextColumn("都市名", width="medium"),
+                "画像":        st.column_config.TextColumn("画像", disabled=True, width="small"),
+                "city_prompt": st.column_config.TextColumn("プロンプト（英語）", width="large"),
+            },
+            use_container_width=True,
+            num_rows="dynamic",
+            key="city_editor",
+        )
+        if st.button("💾 JSONを保存", type="primary", key="t1_city_save"):
+            new_spot_secs = []
+            for i, row in enumerate(edited_cities):
+                cid = (row.get("city_id") or "").strip()
+                if not cid:
+                    continue
+                orig = _orig_city_by_id.get(cid, {})
+                new_spot_secs.append({
+                    "city_id":     cid,
+                    "city_name":   (row.get("city_name") or orig.get("city_name", "")).strip(),
+                    "city_image":  orig.get("city_image", ""),
+                    "city_prompt": (row.get("city_prompt") or orig.get("city_prompt", "")).strip(),
+                    "city_desc":   orig.get("city_desc", ""),
+                    "spots":       orig.get("spots", []),
                 })
-            edited_cities = st.data_editor(
-                city_rows,
-                column_config={
-                    "city_name":   st.column_config.TextColumn("都市名", disabled=True, width="medium"),
-                    "city_id":     st.column_config.TextColumn("ID", disabled=True, width="small"),
-                    "画像":        st.column_config.TextColumn("画像", disabled=True, width="small"),
-                    "city_prompt": st.column_config.TextColumn("プロンプト（英語）", width="large"),
-                },
-                use_container_width=True,
-                num_rows="fixed",
-                key="city_editor",
-            )
-            if st.button("💾 JSONを保存", type="primary", key="t1_city_save"):
-                for i, row in enumerate(edited_cities):
-                    data["spot_sections"][i]["city_prompt"] = row["city_prompt"]
-                save_json(country_id, data)
-                st.success("✅ 保存しました")
+            data["spot_sections"] = new_spot_secs
+            save_json(country_id, data)
+            st.success("✅ 保存しました")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -919,7 +946,7 @@ with tab3:
     exts = {".webp", ".png", ".jpg", ".jpeg"}
 
     def _img_grid(files, del_key_prefix, json_rel_prefix=None):
-        """画像グリッド表示（削除・背景除去ボタン付き）"""
+        """画像グリッド表示（削除・背景除去・元に戻すボタン付き）"""
         if not files:
             st.info("画像ファイルがありません。")
             return
@@ -928,19 +955,40 @@ with tab3:
         for i, fpath in enumerate(files):
             with cols[i % 4]:
                 st.image(str(fpath), caption=fpath.name, use_container_width=True)
-                b1, b2 = st.columns(2)
+                orig_backup = fpath.parent / f"{fpath.stem}_orig.webp"
+                has_orig = orig_backup.exists()
+                _del_pending_key = f"{del_key_prefix}del_pending_{fpath.name}"
+                b1, b2, b3 = st.columns(3)
                 with b1:
-                    if st.button("🗑️", key=f"{del_key_prefix}del_{fpath.name}", help="削除"):
-                        fpath.unlink()
-                        st.success(f"削除: {fpath.name}")
-                        st.rerun()
+                    if st.session_state.get(_del_pending_key):
+                        # 2段階目: 確認ボタン
+                        if st.button("本当に削除", key=f"{del_key_prefix}del_confirm_{fpath.name}",
+                                     type="primary", help="クリックで完全削除"):
+                            fpath.unlink()
+                            if orig_backup.exists():
+                                orig_backup.unlink()
+                            st.session_state.pop(_del_pending_key, None)
+                            st.rerun()
+                        if st.button("✕", key=f"{del_key_prefix}del_cancel_{fpath.name}", help="キャンセル"):
+                            st.session_state.pop(_del_pending_key, None)
+                            st.rerun()
+                    else:
+                        # 1段階目: 削除ボタン
+                        if st.button("🗑️", key=f"{del_key_prefix}del_{fpath.name}", help="削除（確認あり）"):
+                            st.session_state[_del_pending_key] = True
+                            st.rerun()
                 with b2:
                     if st.button("✂️", key=f"{del_key_prefix}bg_{fpath.name}", help="背景除去"):
                         with st.spinner("処理中（ローカル処理）..."):
                             try:
-                                bg_bytes   = rembg_remove(fpath.read_bytes(), session=_get_rembg_session())
+                                orig_bytes = fpath.read_bytes()
+                                bg_bytes   = rembg_remove(orig_bytes, session=_get_rembg_session())
                                 webp_bytes = to_webp(bg_bytes)
                                 new_path   = fpath.with_suffix(".webp")
+                                # 元画像をバックアップ（まだバックアップがない場合のみ）
+                                bak_path = new_path.parent / f"{new_path.stem}_orig.webp"
+                                if not bak_path.exists():
+                                    bak_path.write_bytes(orig_bytes)
                                 new_path.write_bytes(webp_bytes)
                                 if json_rel_prefix:
                                     rel_old = f"{json_rel_prefix}{fpath.name}"
@@ -957,6 +1005,13 @@ with tab3:
                                 st.rerun()
                             except Exception as e:
                                 st.error(str(e))
+                with b3:
+                    if has_orig:
+                        if st.button("↩️", key=f"{del_key_prefix}undo_{fpath.name}", help="元に戻す"):
+                            fpath.write_bytes(orig_backup.read_bytes())
+                            orig_backup.unlink()
+                            st.success(f"元に戻しました: {fpath.name}")
+                            st.rerun()
 
     # ── グルメ ──
     if gen_category == "🍜 グルメ":
@@ -1042,3 +1097,212 @@ with tab4:
             st.text_area("stdout", stdout, height=120)
         if stderr:
             st.text_area("stderr（エラー詳細）", stderr, height=200)
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# タブ5: 新規国を作成
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+import copy as _copy
+
+# テンプレートファイルの保存先
+COUNTRY_TEMPLATE_PATH = TOOLS_DIR / "_country_template.json"
+
+# ── コンテンツフィールドをクリアして1件の food_item スキーマを返す ──
+def _blank_food_item(i: int, src: dict) -> dict:
+    d = _copy.deepcopy(src)
+    d.update({
+        "num": f"No.{i+1}", "name": "", "badge": "", "desc": "",
+        "image": "", "prompt_en": "", "plate_color": "white ceramic plate",
+        "city": "national",
+    })
+    return d
+
+def _blank_spot_section(i: int, src: dict) -> dict:
+    d = _copy.deepcopy(src)
+    d.update({
+        "city_id": f"city{i+1}", "city_name": "", "city_image": "",
+        "city_prompt": "", "city_desc": "", "spots": [],
+    })
+    return d
+
+def _build_template_from(base_id: str) -> dict:
+    """ベース国の JSON からスキーマだけ残した空テンプレートを生成して保存。"""
+    base = load_json(base_id)
+    base_foods  = base.get("food_items",    [])
+    base_cities = base.get("spot_sections", [])
+    months = [_copy.deepcopy(m) for m in base.get("season_mini", {}).get("months", [])][:12]
+    while len(months) < 12:
+        months.append({"icon": "☀️", "temp": "--°", "type": "t-warm"})
+
+    tmpl = {
+        "id": "__template__", "name": "", "name_en": "", "page_title": "",
+        "hero_image": "", "hero_alt": "", "hero_prompt": "",
+        "overview": {k: "" for k in base.get("overview", {}).keys()},
+        "map": {
+            "element_id": "", "center_lat": "0", "center_lng": "0",
+            "zoom": "5", "map_id": "", "country_label": "",
+        },
+        "cities": [],
+        "season_mini": {"description": "", "city_name": "", "months": months},
+        "food_items":    [],
+        "spot_sections": [],
+    }
+    # overview の固定値フィールドはデフォルト値を維持
+    tmpl["overview"].update({
+        "difficulty_label_bg":    "#e8f5ee",
+        "difficulty_label_color": "var(--green)",
+        "difficulty_pct":         "50",
+        "difficulty_bar":         "linear-gradient(90deg,#00a86b,#66cc99)",
+    })
+    COUNTRY_TEMPLATE_PATH.write_text(
+        json.dumps(tmpl, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return tmpl
+
+
+def _new_country_from_template(cid: str, name_ja: str, name_en: str) -> dict:
+    """テンプレートをコピーして id / name だけ差し替えた新規国JSONを返す。"""
+    tmpl = json.loads(COUNTRY_TEMPLATE_PATH.read_text(encoding="utf-8"))
+    tmpl["id"]            = cid
+    tmpl["name"]          = name_ja
+    tmpl["name_en"]       = name_en
+    tmpl["page_title"]    = f"{name_ja}旅行ガイド"
+    tmpl["hero_alt"]      = f"{name_ja}の風景"
+    tmpl["map"]["element_id"]    = f"{cid}-map"
+    tmpl["map"]["country_label"] = name_ja
+    tmpl["overview"]["country_question"] = f"{name_ja}ってどんな国？"
+    return tmpl
+
+
+with tab5:
+    st.subheader("新しい国のページを作成")
+
+    # ════════════════════════════════
+    # セクション1: テンプレート管理
+    # ════════════════════════════════
+    st.markdown("#### 📄 テンプレート管理")
+    if COUNTRY_TEMPLATE_PATH.exists():
+        _tmpl_mtime = COUNTRY_TEMPLATE_PATH.stat().st_mtime
+        import datetime as _dt
+        _tmpl_date  = _dt.datetime.fromtimestamp(_tmpl_mtime).strftime("%Y-%m-%d %H:%M")
+        st.success(f"✅ テンプレートあり　（更新: {_tmpl_date}）")
+    else:
+        st.warning("⚠️ テンプレートがまだありません。下のボタンで作成してください。")
+
+    tc1, tc2 = st.columns([3, 2])
+    with tc1:
+        _tmpl_base = st.selectbox(
+            "ベースにする国", countries,
+            index=countries.index("malaysia") if "malaysia" in countries else 0,
+            key="tmpl_base_sel",
+            help="このJSONのフィールド構成・件数をテンプレートとして保存します",
+        )
+    with tc2:
+        st.write("")
+        st.write("")
+        if st.button("🔄 テンプレートを作成／更新", key="tmpl_create_btn"):
+            _build_template_from(_tmpl_base)
+            st.success(f"✅ {_tmpl_base} をベースにテンプレートを保存しました")
+            st.rerun()
+
+    st.divider()
+
+    # ════════════════════════════════
+    # セクション2: 新規国を作成
+    # ════════════════════════════════
+    st.markdown("#### 🌍 新規国を作成")
+
+    _tmpl_ok = COUNTRY_TEMPLATE_PATH.exists()
+    if not _tmpl_ok:
+        st.info("先にテンプレートを作成してください。")
+
+    import re as _re
+
+    # 日本語国名 → 英語名 変換辞書
+    _JA_TO_EN = {
+        "日本": "Japan", "アメリカ": "United States", "アメリカ合衆国": "United States",
+        "イギリス": "United Kingdom", "フランス": "France", "ドイツ": "Germany",
+        "イタリア": "Italy", "スペイン": "Spain", "ポルトガル": "Portugal",
+        "オランダ": "Netherlands", "ベルギー": "Belgium", "スイス": "Switzerland",
+        "オーストリア": "Austria", "ギリシャ": "Greece", "トルコ": "Turkey",
+        "ロシア": "Russia", "ウクライナ": "Ukraine", "ポーランド": "Poland",
+        "チェコ": "Czech Republic", "ハンガリー": "Hungary", "ルーマニア": "Romania",
+        "ブルガリア": "Bulgaria", "クロアチア": "Croatia", "セルビア": "Serbia",
+        "スウェーデン": "Sweden", "ノルウェー": "Norway", "デンマーク": "Denmark",
+        "フィンランド": "Finland", "アイスランド": "Iceland",
+        "中国": "China", "韓国": "South Korea", "台湾": "Taiwan",
+        "タイ": "Thailand", "ベトナム": "Vietnam", "カンボジア": "Cambodia",
+        "ラオス": "Laos", "ミャンマー": "Myanmar", "マレーシア": "Malaysia",
+        "シンガポール": "Singapore", "インドネシア": "Indonesia",
+        "フィリピン": "Philippines", "インド": "India", "スリランカ": "Sri Lanka",
+        "ネパール": "Nepal", "バングラデシュ": "Bangladesh", "パキスタン": "Pakistan",
+        "アフガニスタン": "Afghanistan", "イラン": "Iran", "イラク": "Iraq",
+        "サウジアラビア": "Saudi Arabia", "アラブ首長国連邦": "United Arab Emirates",
+        "UAE": "United Arab Emirates", "イスラエル": "Israel",
+        "ヨルダン": "Jordan", "レバノン": "Lebanon", "シリア": "Syria",
+        "エジプト": "Egypt", "モロッコ": "Morocco", "チュニジア": "Tunisia",
+        "アルジェリア": "Algeria", "リビア": "Libya", "エチオピア": "Ethiopia",
+        "ケニア": "Kenya", "タンザニア": "Tanzania", "ウガンダ": "Uganda",
+        "ルワンダ": "Rwanda", "南アフリカ": "South Africa",
+        "南アフリカ共和国": "South Africa", "ナイジェリア": "Nigeria",
+        "ガーナ": "Ghana", "セネガル": "Senegal", "マダガスカル": "Madagascar",
+        "オーストラリア": "Australia", "ニュージーランド": "New Zealand",
+        "カナダ": "Canada", "メキシコ": "Mexico", "ブラジル": "Brazil",
+        "アルゼンチン": "Argentina", "チリ": "Chile", "ペルー": "Peru",
+        "コロンビア": "Colombia", "ベネズエラ": "Venezuela", "エクアドル": "Ecuador",
+        "ボリビア": "Bolivia", "パラグアイ": "Paraguay", "ウルグアイ": "Uruguay",
+        "キューバ": "Cuba", "ジャマイカ": "Jamaica", "ハイチ": "Haiti",
+        "ウズベキスタン": "Uzbekistan", "カザフスタン": "Kazakhstan",
+        "キルギス": "Kyrgyzstan", "タジキスタン": "Tajikistan",
+        "トルクメニスタン": "Turkmenistan", "ジョージア": "Georgia",
+        "アゼルバイジャン": "Azerbaijan", "アルメニア": "Armenia",
+        "モルディブ": "Maldives", "スリランカ": "Sri Lanka",
+        "パプアニューギニア": "Papua New Guinea", "フィジー": "Fiji",
+    }
+
+    def _to_id(en: str) -> str:
+        return _re.sub(r"[^a-z0-9]+", "_", en.lower()).strip("_")
+
+    def _sync_from_ja():
+        ja = st.session_state.get("nc_name_ja", "").strip()
+        en = _JA_TO_EN.get(ja, "")
+        if en:
+            st.session_state["nc_name_en"] = en
+            st.session_state["nc_id"]      = _to_id(en)
+
+    def _sync_from_en():
+        en = st.session_state.get("nc_name_en", "")
+        st.session_state["nc_id"] = _to_id(en)
+
+    nc1, nc2 = st.columns(2)
+    with nc1:
+        st.text_input("国名（日本語）", placeholder="南アフリカ共和国",
+                      key="nc_name_ja", disabled=not _tmpl_ok, on_change=_sync_from_ja)
+        st.text_input("国名（英語）",   placeholder="South Africa",
+                      key="nc_name_en", disabled=not _tmpl_ok, on_change=_sync_from_en)
+        st.text_input("国ID（自動入力・変更可）", placeholder="south_africa",
+                      key="nc_id", disabled=not _tmpl_ok)
+    with nc2:
+        if _tmpl_ok:
+            st.info("フォルダとJSONの骨格を作成します。\n\nグルメ・都市の内容はこのチャットでClaudeに依頼してください。")
+
+    new_id      = st.session_state.get("nc_id", "")
+    new_name_ja = st.session_state.get("nc_name_ja", "")
+    new_name_en = st.session_state.get("nc_name_en", "")
+    _can_create = _tmpl_ok and bool(new_id.strip() and new_name_ja.strip())
+    if st.button("🌍 フォルダ＆JSONを作成", type="primary", disabled=not _can_create):
+        _cid   = new_id.strip().lower().replace(" ", "_")
+        _jpath = ROOT_DIR / _cid / f"{_cid}.json"
+
+        if _jpath.exists():
+            st.error(f"すでに存在します: {_jpath}")
+        else:
+            (ROOT_DIR / _cid / "素材" / "グルメ").mkdir(parents=True, exist_ok=True)
+            (ROOT_DIR / _cid / "素材" / "都市").mkdir(parents=True, exist_ok=True)
+            _new_data = _new_country_from_template(_cid, new_name_ja.strip(), new_name_en.strip())
+            with open(_jpath, "w", encoding="utf-8") as _f:
+                json.dump(_new_data, _f, ensure_ascii=False, indent=2)
+            st.success("✅ 作成完了！")
+            st.code(str(_jpath), language=None)
+            st.info("F5 でドロップダウンに反映されます。グルメ・都市の追加はチャットでClaudeに依頼してください。")
+            load_json.clear()
