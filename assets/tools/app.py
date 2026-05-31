@@ -169,6 +169,23 @@ with col_cr:
     else:
         st.metric("Recraftクレジット", "取得失敗")
 
+# カテゴリ選択（全タブ共通）
+gen_category = st.radio(
+    "カテゴリ",
+    ["🍜 グルメ", "🏔️ ヒーロー画像", "🏙️ 都市カード"],
+    horizontal=True,
+    label_visibility="collapsed",
+    key="gen_category_global",
+)
+
+# gen_results 管理（初回ロード復元 / カテゴリ切り替えリセット）
+if "gen_results" not in st.session_state:
+    st.session_state["gen_results"] = _temp_load_all()
+    st.session_state["_gen_cat"]    = gen_category
+elif st.session_state.get("_gen_cat") != gen_category:
+    st.session_state["_gen_cat"]    = gen_category
+    st.session_state["gen_results"] = []
+
 st.divider()
 
 # ──────────────────────────────────────────────────────────
@@ -205,48 +222,92 @@ tab1, tab2, tab3, tab4 = st.tabs(["📋 料理一覧", "✨ 画像生成", "🖼
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# タブ1: 料理一覧 / プロンプト編集
+# タブ1: 一覧 / プロンプト編集（カテゴリ対応）
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab1:
-    st.subheader("料理一覧・プロンプト編集")
+    # ── グルメ ──
+    if gen_category == "🍜 グルメ":
+        st.subheader("料理一覧・プロンプト編集")
+        rows = []
+        for item in food_items:
+            rows.append({
+                "num":         item.get("num", ""),
+                "name":        item.get("name", ""),
+                "画像":        "✅" if image_exists(country_id, item) else "❌",
+                "plate_color": item.get("plate_color", ""),
+                "prompt_en":   item.get("prompt_en", ""),
+            })
+        edited = st.data_editor(
+            rows,
+            column_config={
+                "num":         st.column_config.TextColumn("No.", disabled=True, width="small"),
+                "name":        st.column_config.TextColumn("料理名", disabled=True, width="medium"),
+                "画像":        st.column_config.TextColumn("画像", disabled=True, width="small"),
+                "plate_color": st.column_config.TextColumn("皿の色（英語）", width="medium"),
+                "prompt_en":   st.column_config.TextColumn("プロンプト（英語）", width="large"),
+            },
+            use_container_width=True,
+            num_rows="fixed",
+            key="food_editor",
+        )
+        if st.button("💾 JSONを保存", type="primary", key="t1_food_save"):
+            for i, row in enumerate(edited):
+                food_items[i]["plate_color"] = row["plate_color"]
+                food_items[i]["prompt_en"]   = row["prompt_en"]
+            data["food_items"] = food_items
+            save_json(country_id, data)
+            save_last_state({"tab": 0})
+            for k in list(st.session_state.keys()):
+                if k.startswith("gen_prompt_"):
+                    del st.session_state[k]
+            st.success("✅ 保存しました（バックアップ: .json.bak）")
+            st.rerun()
 
-    rows = []
-    for item in food_items:
-        rows.append({
-            "num":         item.get("num", ""),
-            "name":        item.get("name", ""),
-            "画像":        "✅" if image_exists(country_id, item) else "❌",
-            "plate_color": item.get("plate_color", ""),
-            "prompt_en":   item.get("prompt_en", ""),
-        })
+    # ── ヒーロー画像 ──
+    elif gen_category == "🏔️ ヒーロー画像":
+        st.subheader("ヒーロー画像・プロンプト編集")
+        _hpk = f"t1_hero_prompt_{country_id}"
+        if not st.session_state.get(_hpk):
+            st.session_state[_hpk] = data.get("hero_prompt", "")
+        st.text_area("プロンプト（英語）", height=200, key=_hpk,
+                     placeholder="e.g. Aerial panoramic view of...")
+        if st.button("💾 JSONを保存", type="primary", key="t1_hero_save"):
+            data["hero_prompt"] = st.session_state.get(_hpk, "")
+            save_json(country_id, data)
+            st.success("✅ 保存しました")
 
-    edited = st.data_editor(
-        rows,
-        column_config={
-            "num":         st.column_config.TextColumn("No.", disabled=True, width="small"),
-            "name":        st.column_config.TextColumn("料理名", disabled=True, width="medium"),
-            "画像":        st.column_config.TextColumn("画像", disabled=True, width="small"),
-            "plate_color": st.column_config.TextColumn("皿の色（英語）", width="medium"),
-            "prompt_en":   st.column_config.TextColumn("プロンプト（英語）", width="large"),
-        },
-        use_container_width=True,
-        num_rows="fixed",
-        key="food_editor",
-    )
-
-    if st.button("💾 JSONを保存", type="primary"):
-        for i, row in enumerate(edited):
-            food_items[i]["plate_color"] = row["plate_color"]
-            food_items[i]["prompt_en"]   = row["prompt_en"]
-        data["food_items"] = food_items
-        save_json(country_id, data)
-        save_last_state({"tab": 0})
-        # タブ2のプロンプトキャッシュをクリアして最新JSONを反映させる
-        for k in list(st.session_state.keys()):
-            if k.startswith("gen_prompt_"):
-                del st.session_state[k]
-        st.success("✅ 保存しました（バックアップ: .json.bak）")
-        st.rerun()
+    # ── 都市カード ──
+    elif gen_category == "🏙️ 都市カード":
+        st.subheader("都市カード・プロンプト編集")
+        spot_secs = data.get("spot_sections", [])
+        if not spot_secs:
+            st.warning("spot_sections が空です。")
+        else:
+            city_rows = []
+            for s in spot_secs:
+                city_rows.append({
+                    "city_name":   s.get("city_name", ""),
+                    "city_id":     s.get("city_id", ""),
+                    "画像":        "✅" if (ROOT_DIR / country_id / s.get("city_image","X")).exists() else "❌",
+                    "city_prompt": s.get("city_prompt", ""),
+                })
+            edited_cities = st.data_editor(
+                city_rows,
+                column_config={
+                    "city_name":   st.column_config.TextColumn("都市名", disabled=True, width="medium"),
+                    "city_id":     st.column_config.TextColumn("ID", disabled=True, width="small"),
+                    "画像":        st.column_config.TextColumn("画像", disabled=True, width="small"),
+                    "city_prompt": st.column_config.TextColumn("プロンプト（英語）", width="large"),
+                },
+                use_container_width=True,
+                num_rows="fixed",
+                key="city_editor",
+            )
+            if st.button("💾 JSONを保存", type="primary", key="t1_city_save"):
+                for i, row in enumerate(edited_cities):
+                    data["spot_sections"][i]["city_prompt"] = row["city_prompt"]
+                save_json(country_id, data)
+                st.success("✅ 保存しました")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -254,22 +315,6 @@ with tab1:
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab2:
     st.subheader("画像生成")
-
-    gen_category = st.radio(
-        "カテゴリ",
-        ["🍜 グルメ", "🏔️ ヒーロー画像", "🏙️ 都市カード"],
-        horizontal=True,
-        label_visibility="collapsed",
-    )
-
-    # 初回ロード時は一時ファイルから復元、カテゴリ切り替え時のみリセット
-    if "gen_results" not in st.session_state:
-        st.session_state["gen_results"] = _temp_load_all()
-        st.session_state["_gen_cat"]    = gen_category
-    elif st.session_state.get("_gen_cat") != gen_category:
-        st.session_state["_gen_cat"]    = gen_category
-        st.session_state["gen_results"] = []
-
     st.divider()
 
     # ────────────────── 🍜 グルメ ──────────────────
@@ -813,86 +858,105 @@ with tab2:
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# タブ3: 画像管理
+# タブ3: 画像管理（カテゴリ対応）
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab3:
     st.subheader("画像管理")
-    img_dir = food_dir(country_id)
+    exts = {".webp", ".png", ".jpg", ".jpeg"}
 
-    if not img_dir.exists():
-        st.info("素材/グルメ/ フォルダがまだ存在しません。")
-    else:
-        exts  = {".webp", ".png", ".jpg", ".jpeg"}
-        files = sorted([f for f in img_dir.iterdir() if f.suffix.lower() in exts])
-
-        # PNG / JPG が存在する場合は一括変換ボタンを表示
-        non_webp = [f for f in files if f.suffix.lower() in {".png", ".jpg", ".jpeg"}]
-        if non_webp:
-            if st.button(f"🔄 WebP一括変換（{len(non_webp)}枚）", type="primary"):
-                converted = 0
-                for fpath in non_webp:
-                    try:
-                        webp_bytes = to_webp(fpath.read_bytes())
-                        new_path   = fpath.with_suffix(".webp")
-                        new_path.write_bytes(webp_bytes)
-                        # JSON の image パスを更新
-                        rel_old = f"素材/グルメ/{fpath.name}"
-                        rel_new = f"素材/グルメ/{new_path.name}"
-                        for fi in food_items:
-                            if fi.get("image") == rel_old:
-                                fi["image"] = rel_new
-                                break
-                        if fpath != new_path:
-                            fpath.unlink()
-                        converted += 1
-                    except Exception as e:
-                        st.error(f"{fpath.name}: {e}")
-                if converted:
-                    data["food_items"] = food_items
-                    save_json(country_id, data)
-                    st.success(f"✅ {converted}枚をWebPに変換しました")
-                    st.rerun()
-
+    def _img_grid(files, del_key_prefix, json_rel_prefix=None):
+        """画像グリッド表示（削除・背景除去ボタン付き）"""
         if not files:
             st.info("画像ファイルがありません。")
-        else:
-            st.caption(f"{len(files)} 枚")
-            cols = st.columns(4)
-            for i, fpath in enumerate(files):
-                with cols[i % 4]:
-                    st.image(str(fpath), caption=fpath.name, use_container_width=True)
-                    b1, b2 = st.columns(2)
-                    with b1:
-                        if st.button("🗑️", key=f"del_{fpath.name}", help="削除"):
-                            fpath.unlink()
-                            st.success(f"削除: {fpath.name}")
-                            st.rerun()
-                    with b2:
-                        is_png = fpath.suffix.lower() == ".png"
-                        if st.button("✂️", key=f"bg_{fpath.name}", help="背景透過（+10cr）",
-                                     disabled=is_png):
-                            with st.spinner("処理中..."):
-                                try:
-                                    bg_bytes, cr2 = recraft_api.remove_background(fpath.read_bytes())
-                                    # 背景除去後も WebP で保存（透過チャンネル保持）
-                                    webp_bytes = to_webp(bg_bytes)
-                                    new_path   = fpath.with_suffix(".webp")
-                                    new_path.write_bytes(webp_bytes)
-                                    # JSON の image パスを更新
-                                    rel_old = f"素材/グルメ/{fpath.name}"
-                                    rel_new = f"素材/グルメ/{new_path.name}"
+            return
+        st.caption(f"{len(files)} 枚")
+        cols = st.columns(4)
+        for i, fpath in enumerate(files):
+            with cols[i % 4]:
+                st.image(str(fpath), caption=fpath.name, use_container_width=True)
+                b1, b2 = st.columns(2)
+                with b1:
+                    if st.button("🗑️", key=f"{del_key_prefix}del_{fpath.name}", help="削除"):
+                        fpath.unlink()
+                        st.success(f"削除: {fpath.name}")
+                        st.rerun()
+                with b2:
+                    is_png = fpath.suffix.lower() == ".png"
+                    if st.button("✂️", key=f"{del_key_prefix}bg_{fpath.name}",
+                                 help="背景除去", disabled=is_png):
+                        with st.spinner("処理中..."):
+                            try:
+                                bg_bytes, cr2 = recraft_api.remove_background(fpath.read_bytes())
+                                webp_bytes = to_webp(bg_bytes)
+                                new_path   = fpath.with_suffix(".webp")
+                                new_path.write_bytes(webp_bytes)
+                                if json_rel_prefix:
+                                    rel_old = f"{json_rel_prefix}{fpath.name}"
+                                    rel_new = f"{json_rel_prefix}{new_path.name}"
                                     for fi in food_items:
                                         if fi.get("image") == rel_old:
                                             fi["image"] = rel_new
                                             break
                                     data["food_items"] = food_items
                                     save_json(country_id, data)
-                                    if fpath != new_path:
-                                        fpath.unlink()
-                                    st.success(f"完了 -{cr2}cr → {new_path.name}")
-                                    st.rerun()
-                                except RuntimeError as e:
-                                    st.error(str(e))
+                                if fpath != new_path:
+                                    fpath.unlink()
+                                st.success(f"完了 -{cr2}cr → {new_path.name}")
+                                st.rerun()
+                            except RuntimeError as e:
+                                st.error(str(e))
+
+    # ── グルメ ──
+    if gen_category == "🍜 グルメ":
+        img_dir = food_dir(country_id)
+        if not img_dir.exists():
+            st.info("素材/グルメ/ フォルダがまだ存在しません。")
+        else:
+            files   = sorted([f for f in img_dir.iterdir() if f.suffix.lower() in exts])
+            non_webp = [f for f in files if f.suffix.lower() in {".png", ".jpg", ".jpeg"}]
+            if non_webp:
+                if st.button(f"🔄 WebP一括変換（{len(non_webp)}枚）", type="primary"):
+                    converted = 0
+                    for fpath in non_webp:
+                        try:
+                            new_path = fpath.with_suffix(".webp")
+                            new_path.write_bytes(to_webp(fpath.read_bytes()))
+                            rel_old = f"素材/グルメ/{fpath.name}"
+                            rel_new = f"素材/グルメ/{new_path.name}"
+                            for fi in food_items:
+                                if fi.get("image") == rel_old:
+                                    fi["image"] = rel_new; break
+                            if fpath != new_path: fpath.unlink()
+                            converted += 1
+                        except Exception as e:
+                            st.error(f"{fpath.name}: {e}")
+                    if converted:
+                        data["food_items"] = food_items
+                        save_json(country_id, data)
+                        st.success(f"✅ {converted}枚をWebPに変換しました")
+                        st.rerun()
+            _img_grid(files, "g3_", "素材/グルメ/")
+
+    # ── ヒーロー画像 ──
+    elif gen_category == "🏔️ ヒーロー画像":
+        hero_path = ROOT_DIR / country_id / "素材" / "ヒーロー.webp"
+        if hero_path.exists():
+            st.image(str(hero_path), caption="ヒーロー.webp", use_container_width=True)
+            if st.button("🗑️ 削除", key="t3_hero_del"):
+                hero_path.unlink()
+                st.success("削除しました")
+                st.rerun()
+        else:
+            st.info("ヒーロー画像がまだありません。")
+
+    # ── 都市カード ──
+    elif gen_category == "🏙️ 都市カード":
+        city_img_dir = ROOT_DIR / country_id / "素材" / "都市"
+        if not city_img_dir.exists():
+            st.info("素材/都市/ フォルダがまだ存在しません。")
+        else:
+            files = sorted([f for f in city_img_dir.iterdir() if f.suffix.lower() in exts])
+            _img_grid(files, "g3c_")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
