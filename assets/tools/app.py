@@ -1157,34 +1157,132 @@ def _blank_spot_section(i: int, src: dict) -> dict:
     return d
 
 def _build_template_from(base_id: str) -> dict:
-    """ベース国の JSON からスキーマだけ残した空テンプレートを生成して保存。"""
+    """ベース国の JSON から全フィールドを引き継ぎ、内容だけ空にしたテンプレートを生成。"""
     base = load_json(base_id)
-    base_foods  = base.get("food_items",    [])
-    base_cities = base.get("spot_sections", [])
-    months = [_copy.deepcopy(m) for m in base.get("season_mini", {}).get("months", [])][:12]
-    while len(months) < 12:
-        months.append({"icon": "☀️", "temp": "--°", "type": "t-warm"})
+    tmpl = _copy.deepcopy(base)
 
-    tmpl = {
+    # ── トップレベル識別子をクリア ──
+    tmpl.update({
         "id": "__template__", "name": "", "name_en": "", "page_title": "",
         "hero_image": "", "hero_alt": "", "hero_prompt": "",
-        "overview": {k: "" for k in base.get("overview", {}).keys()},
-        "map": {
-            "element_id": "", "center_lat": "0", "center_lng": "0",
-            "zoom": "5", "map_id": "", "country_label": "",
-        },
-        "cities": [],
-        "season_mini": {"description": "", "city_name": "", "months": months},
-        "food_items":    [],
-        "spot_sections": [],
-    }
-    # overview の固定値フィールドはデフォルト値を維持
-    tmpl["overview"].update({
-        "difficulty_label_bg":    "#e8f5ee",
-        "difficulty_label_color": "var(--green)",
-        "difficulty_pct":         "50",
-        "difficulty_bar":         "linear-gradient(90deg,#00a86b,#66cc99)",
     })
+
+    # ── overview: テキスト値を空に（スタイル系は保持） ──
+    _KEEP_OV = {"difficulty_label_bg", "difficulty_label_color",
+                "difficulty_pct", "difficulty_bar"}
+    for k in tmpl.get("overview", {}):
+        if k not in _KEEP_OV:
+            tmpl["overview"][k] = ""
+
+    # ── map ──
+    tmpl["map"] = {
+        "element_id": "", "center_lat": "0", "center_lng": "0",
+        "zoom": "5", "map_id": "", "country_label": "",
+    }
+
+    # ── cities / food_items / spot_sections は 0件スタート ──
+    tmpl["cities"]        = []
+    tmpl["food_items"]    = []
+    tmpl["spot_sections"] = []
+
+    # ── season_mini ──
+    sm = tmpl.get("season_mini", {})
+    sm["description"] = ""
+    sm["city_name"]   = ""
+    # months は構造（icon/temp/type）だけ保持して値を空に
+    for m in sm.get("months", []):
+        m["icon"] = ""; m["temp"] = "--°"
+
+    # ── basic_data: 値のみ空に ──
+    for item in tmpl.get("basic_data", []):
+        item["value"] = ""; item["note"] = ""; item["compare_html"] = ""
+
+    # ── season（詳細）: テキストのみ空に ──
+    s = tmpl.get("season", {})
+    s["description_html"] = ""; s["tip_html"] = ""
+    for city in s.get("cities", []):
+        city["name"] = ""; city["city_id"] = ""; city["best_note"] = ""
+
+    # ── budget ──
+    b = tmpl.get("budget", {})
+    for k in ("plan1_label","plan1_range","plan1_note",
+              "plan2_label","plan2_range","plan2_note","savings_tips_html"):
+        if k in b: b[k] = ""
+    for item in b.get("items", []):
+        item["detail_html"] = ""; item["price"] = ""
+
+    # ── practical ──
+    p = tmpl.get("practical", {})
+    for card in p.get("prac_cards", []):
+        card["value"] = ""
+    for step in p.get("prep_steps", []):
+        step["desc_html"] = ""
+    for k in ("special_note_title","special_note_html","special_note_url",
+              "special_note_url_label","flight_intro","flight_tip_html",
+              "hotel_intro","hotel_tip","cash_small_tip_html","cash_note",
+              "cta_title","cta_desc"):
+        if k in p: p[k] = ""
+    for airline in p.get("airlines", []):
+        airline.update({"name": "", "desc": "", "price": ""})
+    for area in p.get("hotel_areas", []):
+        area.update({"name": "", "tag": "", "desc": "", "price": "", "maps_url": ""})
+    p["country_items_label"] = ""; p["country_items"] = []
+    for app_ in p.get("apps", []):
+        app_.update({"name": "", "type_label": "", "desc": ""})
+    for k in ("currency_code","exchange_rate","eco_daily","std_daily","lux_daily"):
+        if k in p: p[k] = "0"
+
+    # ── manner_cards: type/icon は保持、テキストのみ空に ──
+    for card in tmpl.get("manner_cards", []):
+        card["title"] = ""; card["desc"] = ""
+    tmpl["manner_cta_title"] = ""; tmpl["manner_cta_desc"] = ""
+
+    # ── phrases ──
+    ph = tmpl.get("phrases", {})
+    ph["language_name"] = ""; ph["card_title"] = ""
+    for cat in ph.get("categories", []):
+        cat["label"] = ""
+        for item in cat.get("items", []):
+            item.update({"jp": "", "foreign": "", "reading": "", "audio": ""})
+
+    # ── transport_items ──
+    for item in tmpl.get("transport_items", []):
+        item["name"] = ""; item["desc"] = ""
+
+    # ── courses ──
+    c = tmpl.get("courses", {})
+    for k in ("intro","stable_title","adventure_title",
+              "adventure_note_html","cta_title","cta_desc"):
+        if k in c: c[k] = ""
+    for plan in c.get("stable_plans", []):
+        plan.update({"label": "", "title": "", "tip": ""})
+        for day in plan.get("days", []):
+            day["content_html"] = ""
+            if "duration" in day: day["duration"] = ""
+    ap = c.get("adventure_plan", {})
+    if ap:
+        ap["tip"] = ""
+        for day in ap.get("days", []):
+            day["content_html"] = ""
+            if "duration" in day: day["duration"] = ""
+
+    # ── food / spots セクション設定 ──
+    tmpl["food_section_title"]  = ""
+    tmpl["food_filter_cities"]  = []
+    tmpl["spots_section_title"] = ""
+    tmpl["spots_filter_cities"] = []
+
+    # ── food modal ──
+    tmpl["food_modal_phrase_main"] = ""
+    tmpl["food_modal_phrase_sub"]  = ""
+
+    # ── index_card ──
+    if "index_card" in tmpl:
+        ic = tmpl["index_card"]
+        for k in list(ic.keys()):
+            if isinstance(ic[k], str):  ic[k] = ""
+            elif isinstance(ic[k], list): ic[k] = []
+
     COUNTRY_TEMPLATE_PATH.write_text(
         json.dumps(tmpl, ensure_ascii=False, indent=2), encoding="utf-8"
     )

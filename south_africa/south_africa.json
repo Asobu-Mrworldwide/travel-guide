@@ -26,7 +26,7 @@
     "flight_hours": "約17〜18時間",
     "timezone": "日本 −7時間",
     "visa": "不要（30日）",
-    "budget_range": "25〜45万円",
+    "budget_range": "25〜50万円",
     "language": "英語OK",
     "currency_name": "ランド(ZAR)",
     "currency_rate": "1ZAR ≈ 7.5円"
@@ -124,6 +124,435 @@
       { "icon": "☀️", "temp": "25°", "type": "t-hot" }
     ]
   },
+  "basic_data": [
+    {
+      "label": "首都",
+      "value": "プレトリア（行政）/ ケープタウン（立法）",
+      "note": "ブルームフォンテーン（司法）を含む世界でも珍しい3首都制",
+      "compare_html": ""
+    },
+    {
+      "label": "独立年",
+      "value": "1910年5月31日",
+      "note": "1961年共和国宣言、1994年民主化選挙（アパルトヘイト終結）",
+      "compare_html": ""
+    },
+    {
+      "label": "人口",
+      "value": "約6,200万人",
+      "note": "",
+      "compare_html": "<div style=\"display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center\"><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><div style=\"font-size:0.75em;line-height:1.5;letter-spacing:1px\">👤👤👤👤👤👤👤<br>👤👤👤👤👤👤</div></div><div style=\"font-size:0.68em;font-weight:700;color:#555\">日本<br>1.25億人</div></div><div style=\"font-size:0.85em;color:#888;font-weight:700\">vs</div><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><div style=\"font-size:0.75em;line-height:1.5;letter-spacing:1px\">👤👤👤👤👤</div></div><div style=\"font-size:0.68em;font-weight:700;color:var(--green)\">南アフリカ<br>6,200万人</div></div></div>"
+    },
+    {
+      "label": "面積",
+      "value": "約122万 km²",
+      "note": "日本の約3.2倍",
+      "compare_html": ""
+    },
+    {
+      "label": "宗教",
+      "value": "キリスト教 約79%",
+      "note": "伝統宗教15%・イスラム教1.5%・ヒンドゥー教1.2%",
+      "compare_html": ""
+    },
+    {
+      "label": "民族",
+      "value": "ズールー族24%・コサ族18%",
+      "note": "白人系9%・カラード9%など11の公認民族",
+      "compare_html": ""
+    }
+  ],
+  "season": {
+    "description_html": "南アフリカは南半球に位置するため<strong>季節は日本と逆転</strong>。ただし地域によって気候が大きく異なります。ケープタウンは地中海性気候（夏は乾燥・冬は雨）、ヨハネスブルク・クルーガーは高原性気候（夏は雨季・冬は乾燥）です。<br><span style=\"font-weight:700;color:#555\">色が濃いオレンジほど気温が高く</span>、サファリは乾季（5〜9月）が動物を見やすいベストシーズンです。",
+    "tip_html": "💡 <strong>航空券が安い時期</strong><br>日本の連休（GW・お盆・年末年始）は航空券が高騰。3〜4月や9〜10月の連休前後は比較的リーズナブル。カタール/エミレーツ航空は早期予約ほど安い傾向。",
+    "cities": [
+      {
+        "name": "ケープタウン",
+        "city_id": "cape_town",
+        "best_note": "✅ ベスト：11月〜3月（南半球の夏・乾季）／ 6〜8月は雨季で強風。ただし観光自体は年中可能。",
+        "months": [
+          { "icon": "☀️", "temp": "26°C", "type": "t-hot" },
+          { "icon": "☀️", "temp": "26°C", "type": "t-hot" },
+          { "icon": "⛅", "temp": "23°C", "type": "t-warm" },
+          { "icon": "🌥️", "temp": "20°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "16°C", "type": "t-mild" },
+          { "icon": "☔", "temp": "13°C", "type": "t-mild" },
+          { "icon": "☔", "temp": "12°C", "type": "t-mild" },
+          { "icon": "☔", "temp": "13°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "15°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "19°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "22°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "25°C", "type": "t-hot" }
+        ]
+      },
+      {
+        "name": "ヨハネスブルク / クルーガー国立公園",
+        "city_id": "johannesburg",
+        "best_note": "✅ ベスト（サファリ）：5月〜9月（乾季）／動物が水辺に集まり視界も開けて見やすい。10〜4月は雨季で草が茂り動物が見づらい。",
+        "months": [
+          { "icon": "☔", "temp": "26°C", "type": "t-hot" },
+          { "icon": "☔", "temp": "25°C", "type": "t-hot" },
+          { "icon": "⛅", "temp": "23°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "20°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "18°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "15°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "14°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "17°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "20°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "22°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "24°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "25°C", "type": "t-hot" }
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "plan1_label": "5泊7日（1人）",
+    "plan1_range": "25〜35万円",
+    "plan1_note": "乗り継ぎ便・中級ホテル・ケープタウン集中",
+    "plan2_label": "7泊9日（1人）",
+    "plan2_range": "35〜55万円",
+    "plan2_note": "ケープタウン＋サファリ・標準的な旅行スタイル",
+    "items": [
+      {
+        "icon": "✈️",
+        "name": "航空券（往復）",
+        "detail_html": "直行便なし。カタール/エミレーツ/エチオピア航空で乗り継ぎ1回<br>早期予約（3〜6ヶ月前）ほど安い。GW・年末年始は高騰",
+        "price": "15〜35万円",
+        "affiliate": "flights"
+      },
+      {
+        "icon": "🛏️",
+        "name": "ホテル（1泊）",
+        "detail_html": "ゲストハウス：3,000〜6,000円・中級：8,000〜20,000円<br>ケープタウン・ウォーターフロント周辺は高め。郊外はコスパ良",
+        "price": "〜3万円/泊",
+        "affiliate": "hotels"
+      },
+      {
+        "icon": "🍜",
+        "name": "食費（1日）",
+        "detail_html": "ローカルレストランで1食700〜2,000円、カフェ・高級は2,000〜5,000円<br>スーパー（Woolworths/Checkers）は日本並みの品揃えで便利",
+        "price": "2,000〜6,000円/日",
+        "affiliate": ""
+      },
+      {
+        "icon": "🚕",
+        "name": "交通費（1日）",
+        "detail_html": "Uber/Bolt中心（市内移動500〜2,000円）<br>ケープタウン市内バス（MyCiTi）も利用可。レンタカーはガソリン込み",
+        "price": "1,000〜5,000円/日",
+        "affiliate": ""
+      },
+      {
+        "icon": "📍",
+        "name": "観光・アクティビティ",
+        "detail_html": "テーブルマウンテンロープウェイ往復約4,500円<br>サファリゲームドライブ（半日）約8,000〜15,000円",
+        "price": "2,000〜15,000円/日",
+        "affiliate": "klook"
+      },
+      {
+        "icon": "🌐",
+        "name": "SIM・Wi-Fi",
+        "detail_html": "現地空港でSIM購入が便利（Vodacom/MTN）<br>eSIMは出発前に準備しておくとスムーズ",
+        "price": "1,500〜3,000円",
+        "affiliate": "sim"
+      }
+    ],
+    "savings_tips_html": "・チップ10〜15%が目安（請求書に含まれていない場合）<br>・Uber/Boltで流しのタクシーより安全かつ安く移動<br>・国立公園は宿泊込みパッケージがお得な場合が多い"
+  },
+  "practical": {
+    "prac_cards": [
+      { "icon": "📄", "title": "ビザ", "value": "不要（30日）" },
+      { "icon": "💱", "title": "通貨", "value": "ランド（ZAR）" },
+      { "icon": "🔌", "title": "コンセント", "value": "Mタイプ（3ピン丸）" },
+      { "icon": "⚡", "title": "電圧", "value": "220V（変換注意）" },
+      { "icon": "🛜", "title": "Wi-Fi", "value": "都市部◎" },
+      { "icon": "⌚", "title": "時差", "value": "日本−7時間" },
+      { "icon": "🌡️", "title": "気温", "value": "12〜26°C（地域差大）" },
+      { "icon": "💰", "title": "チップ", "value": "10〜15%が目安" },
+      { "icon": "💧", "title": "水道水", "value": "飲用不可（ペットボトル推奨）" },
+      { "icon": "🔒", "title": "治安", "value": "都市部は要注意" }
+    ],
+    "prep_steps": [
+      {
+        "title": "パスポート取得・更新",
+        "timing": "1〜2ヶ月前",
+        "timing_color": "#006847",
+        "border_color": "#006847",
+        "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+        "desc_html": "申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。査証スタンプ用の空白ページも<strong>2ページ以上</strong>必要。"
+      },
+      {
+        "title": "海外対応クレジットカードの申込",
+        "timing": "1ヶ月前",
+        "timing_color": "#006847",
+        "border_color": "#1a8a5a",
+        "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+        "desc_html": "審査・発行に2〜3週間かかることがある。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。南アフリカではカード払いが広く普及。"
+      },
+      {
+        "title": "航空券・ホテルの予約",
+        "timing": "3〜6ヶ月前",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "#b09000",
+        "desc_html": "直行便がなく乗り継ぎルートが複数あるため、早めに比較検討を。カタール航空・エミレーツ航空が人気。サファリロッジは早期予約で希望の部屋が取りやすい。"
+      },
+      {
+        "title": "海外旅行保険の加入",
+        "timing": "出発前日まで",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+        "desc_html": "クレカ付帯保険で代用できる場合もあるが補償範囲を要確認。野生動物・アクティビティ関連の事故もカバーできるプランを選ぼう。"
+      },
+      {
+        "title": "SIM・ポケットWi-Fiの準備",
+        "timing": "1〜2週間前",
+        "timing_color": "#cc5500",
+        "border_color": "#cc5500",
+        "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+        "desc_html": "現地空港でVodacom・MTNのSIMが購入可能。eSIMを出発前に準備しておくと到着後すぐ使えて安心。国立公園内は電波が届かないエリアも多い。"
+      },
+      {
+        "title": "外務省 安全情報の確認",
+        "timing": "出発前",
+        "timing_color": "#cc0001",
+        "border_color": "#cc0001",
+        "bar_color": "",
+        "desc_html": "ヨハネスブルクなど一部エリアの危険度を確認。外務省「たびレジ」への登録もおすすめ。緊急連絡先（在南アフリカ日本大使館）をスマホに保存しておこう。"
+      }
+    ],
+    "special_note_title": "治安について（必読）",
+    "special_note_html": "ヨハネスブルクやケープタウン市街地では、スマートフォンの「ひったくり」や「強盗」が報告されています。夜間の一人歩き・人通りの少ない路地は避け、移動はUber/Boltを活用してください。",
+    "special_note_url": "https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_189.html",
+    "special_note_url_label": "外務省 南アフリカ危険・スポット情報",
+    "flight_intro": "日本〜南アフリカ間に直行便はなく、ドーハ・ドバイ・アジスアベバなどを経由する乗り継ぎ便を利用。合計所要時間は約17〜20時間。",
+    "airlines": [
+      {
+        "name": "カタール航空",
+        "desc": "ドーハ(DOH)経由。成田・羽田・大阪発。乗り継ぎ時間が短めで人気。",
+        "price": "往復 18〜32万円"
+      },
+      {
+        "name": "エミレーツ航空",
+        "desc": "ドバイ(DXB)経由。成田・羽田・関西発。快適なサービスが評判。",
+        "price": "往復 18〜35万円"
+      },
+      {
+        "name": "エチオピア航空",
+        "desc": "アジスアベバ(ADD)経由。コスパが良くアフリカ便に強い。",
+        "price": "往復 15〜28万円"
+      },
+      {
+        "name": "シンガポール航空",
+        "desc": "シンガポール(SIN)経由。快適性◎・マイルも貯まる。乗り継ぎ観光も可。",
+        "price": "往復 20〜38万円"
+      }
+    ],
+    "flight_tip_html": "・GW・年末年始・お盆は3〜6ヶ月前から価格が上がりやすい<br>・3〜4月・9〜10月の閑散期は比較的安値が出やすい<br>・複数サイト（Skyscanner・Google Flights等）で比較を",
+    "hotel_intro": "ケープタウンは観光の拠点となるエリアが集中しており、目的に合わせて滞在エリアを選ぼう。",
+    "hotel_areas": [
+      {
+        "name": "V&Aウォーターフロント周辺",
+        "tag": "観光・ショッピング向け",
+        "tag_color": "green",
+        "desc": "テーブルマウンテンを望む港湾エリア。ショッピングモール・レストラン・観光アクティビティが集中。安全性も高い。",
+        "price": "中級 10,000〜20,000円／泊　高級 25,000円〜",
+        "maps_url": "https://www.google.com/maps/place/V%26A+Waterfront,+Cape+Town"
+      },
+      {
+        "name": "シーポイント",
+        "tag": "地元人気・コスパ良",
+        "tag_color": "green",
+        "desc": "大西洋沿いのローカルエリア。プロムナードの散歩が気持ちよく、カフェや地元レストランも充実。ウォーターフロントまで徒歩圏内。",
+        "price": "中級 7,000〜15,000円／泊",
+        "maps_url": "https://www.google.com/maps/place/Sea+Point,+Cape+Town"
+      },
+      {
+        "name": "シティボウル（市街中心部）",
+        "tag": "交通便利",
+        "tag_color": "",
+        "desc": "ケープタウン市街の中心。各種交通機関へのアクセスが良く観光の起点に最適。ロングストリートのバー・レストランも近い。",
+        "price": "格安 4,000〜8,000円　中級 8,000〜15,000円",
+        "maps_url": "https://www.google.com/maps/place/Cape+Town+City+Centre"
+      }
+    ],
+    "hotel_tip": "初めてのケープタウンはV&Aウォーターフロント〜シーポイント周辺が観光・安全・食事の三拍子揃っておすすめ。サファリはクルーガー内のSANParksキャンプか公園外のロッジを早めに予約しよう。",
+    "apps": [
+      {
+        "icon": "🚗",
+        "name": "Uber / Bolt",
+        "type_label": "配車アプリ（必須）",
+        "desc": "南アフリカでは流しのタクシーよりUber/Boltが安全。乗車前に料金が確定するためぼったくりゼロ。ケープタウン・ヨハネスブルク・ダーバンで利用可。出発前にインストールしておこう。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "🗺️",
+        "name": "Google マップ",
+        "type_label": "地図・ナビ（オフライン対応）",
+        "desc": "出発前にケープタウン・訪問エリアをオフラインDLしておこう。国立公園内は電波が入らないエリアも多いため事前ダウンロードが必須。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "🈳",
+        "name": "Google 翻訳",
+        "type_label": "翻訳・カメラ翻訳",
+        "desc": "英語が通じるが、アフリカーンス語や現地語の看板はカメラ翻訳が役立つ。英語パックを事前にDLしておけばオフラインでも使える。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "💬",
+        "name": "WhatsApp",
+        "type_label": "メッセージ・現地連絡",
+        "desc": "南アフリカでのメッセージアプリはWhatsAppが主流。ホテル・ツアー会社の予約確認やサファリガイドとの連絡もWhatsApp経由が多い。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "🎟️",
+        "name": "Klook（クルック）",
+        "type_label": "現地ツアー・チケット事前予約",
+        "desc": "テーブルマウンテンロープウェイ・ロベン島ツアーなど人気スポットは売り切れ前に事前予約がおすすめ。サファリツアーもクルックで探せる。",
+        "affiliate": "klook",
+        "is_last": true
+      }
+    ],
+    "country_items_label": "🇿🇦 南アフリカ特有の持ち物",
+    "country_items": [
+      "変換アダプター（Mタイプ・3ピン丸型）",
+      "日焼け止め（紫外線が非常に強い）",
+      "防犯ポーチ（貴重品は分散して携帯）",
+      "軽いジャケット（朝晩の冷え込み対策・特にクルーガー早朝）",
+      "双眼鏡（サファリ必須）",
+      "虫除けスプレー（マラリア予防・特にクルーガー周辺）",
+      "モバイルバッテリー（停電・ロードシェディング対策）"
+    ],
+    "currency_code": "ZAR",
+    "exchange_rate": "7.5",
+    "eco_daily": "500",
+    "std_daily": "1000",
+    "lux_daily": "2500",
+    "cash_note": "レストラン・ホテル・大型スーパーはカード払い可。現金は屋台・ローカル市場・チップ用に必要。<br>1 ZAR ≈ 7.5円で計算 ／ 節約 500・標準 1,000・ゆとり 2,500 ZAR／日",
+    "cash_small_tip_html": "💡 <strong>小額紙幣を用意しておこう</strong><br>チップやローカルマーケットでは10・20・50ZARの小額紙幣が必要。サファリガイドへのチップは1日100〜200ZAR（約750〜1,500円）が目安。",
+    "cta_title": "出発前にマナーも確認しよう！🙏",
+    "cta_desc": "チップの目安・野生動物への注意・治安情報など、南アフリカ旅行者が知っておくべきポイントをまとめました。"
+  },
+  "manner_cards": [
+    {
+      "type": "do",
+      "icon": "💰",
+      "title": "チップは10〜15%",
+      "desc": "レストランやタクシーではチップが期待されている。請求書にサービス料が含まれていない場合は10〜15%を目安に渡そう。"
+    },
+    {
+      "type": "dont",
+      "icon": "🔒",
+      "title": "貴重品を見せない",
+      "desc": "スマートフォン・カメラ・財布を人目につく場所で使わない。特に路上でのスマホ操作はひったくりの標的になりやすい。"
+    },
+    {
+      "type": "dont",
+      "icon": "🦁",
+      "title": "野生動物に近づかない",
+      "desc": "サファリ中は必ず車内にとどまる。動物に近づいたり餌を与えたりしてはいけない。予測不能な行動をとることがある。"
+    },
+    {
+      "type": "do",
+      "icon": "🤝",
+      "title": "多文化への敬意",
+      "desc": "ズールー族・コサ族・白人系・インド系など多民族国家。人種・文化に関する不用意な発言は慎もう。「レインボーネーション」の誇りを大切に。"
+    },
+    {
+      "type": "dont",
+      "icon": "🍺",
+      "title": "公共飲酒に注意",
+      "desc": "公共の場でのアルコール飲酒が禁止されているエリアがある。ビーチや公園での飲酒は場所によって罰則あり。"
+    },
+    {
+      "type": "do",
+      "icon": "📸",
+      "title": "撮影前に一言",
+      "desc": "スラム街・軍・警察施設の撮影は禁止。人物（特に地元の人）を撮影する際は必ず事前に許可を取ろう。"
+    },
+    {
+      "type": "do",
+      "icon": "🔦",
+      "title": "停電（ロードシェディング）に備える",
+      "desc": "南アフリカでは計画停電（ロードシェディング）が頻繁に発生。モバイルバッテリー・懐中電灯を持参しよう。EskomSePushアプリで停電スケジュールが確認できる。"
+    },
+    {
+      "type": "do",
+      "icon": "🚗",
+      "title": "夜間はUberを利用",
+      "desc": "夜間の外出には必ずUber/Boltを利用。見知らぬタクシーへの乗車・夜の一人歩きは避けること。ホテルのスタッフに安全な移動方法を相談しよう。"
+    }
+  ],
+  "manner_cta_title": "英語でコミュニケーションしよう！💬",
+  "manner_cta_desc": "南アフリカは英語が公用語のひとつ。基本フレーズを覚えておくと現地の人との交流がぐっと楽しくなります。",
+  "phrases": {
+    "language_name": "英語",
+    "card_title": "🃏 英語 旅行フレーズカード",
+    "categories": [
+      {
+        "label": "👋 あいさつ",
+        "items": [
+          { "jp": "こんにちは", "foreign": "Hello!", "reading": "ハロー！", "audio": "hello.mp3" },
+          { "jp": "お元気ですか？", "foreign": "How are you?", "reading": "ハウ アー ユー？", "audio": "how-are-you.mp3" },
+          { "jp": "元気です、ありがとう", "foreign": "I'm fine, thank you!", "reading": "アイム ファイン、サンキュー！", "audio": "im-fine.mp3" },
+          { "jp": "さようなら", "foreign": "Goodbye!", "reading": "グッバイ！", "audio": "goodbye.mp3" },
+          { "jp": "はじめまして", "foreign": "Nice to meet you!", "reading": "ナイス トゥ ミート ユー！", "audio": "nice-to-meet.mp3" }
+        ]
+      },
+      {
+        "label": "🙏 基本表現",
+        "items": [
+          { "jp": "ありがとう", "foreign": "Thank you", "reading": "サンキュー", "audio": "thank-you.mp3" },
+          { "jp": "すみません", "foreign": "Excuse me", "reading": "エクスキューズ ミー", "audio": "excuse-me.mp3" },
+          { "jp": "ごめんなさい", "foreign": "I'm sorry", "reading": "アイム ソーリー", "audio": "im-sorry.mp3" },
+          { "jp": "はい / いいえ", "foreign": "Yes / No", "reading": "イエス / ノー", "audio": "yes-no.mp3" },
+          { "jp": "わかりません", "foreign": "I don't understand", "reading": "アイ ドント アンダースタンド", "audio": "dont-understand.mp3" },
+          { "jp": "もう一度言ってください", "foreign": "Could you say that again?", "reading": "クッジュ セイ ダット アゲン？", "audio": "say-again.mp3" }
+        ]
+      },
+      {
+        "label": "🍽️ レストラン・ショッピング",
+        "items": [
+          { "jp": "おすすめは何ですか？", "foreign": "What do you recommend?", "reading": "ワット ドゥ ユー レコメンド？", "audio": "recommend.mp3" },
+          { "jp": "これをください", "foreign": "I'll have this, please.", "reading": "アイル ハブ ディス プリーズ", "audio": "ill-have-this.mp3" },
+          { "jp": "お会計をお願いします", "foreign": "Can I have the bill?", "reading": "キャン アイ ハブ ザ ビル？", "audio": "the-bill.mp3" },
+          { "jp": "いくらですか？", "foreign": "How much is this?", "reading": "ハウ マッチ イズ ディス？", "audio": "how-much.mp3" },
+          { "jp": "トイレはどこですか？", "foreign": "Where is the toilet?", "reading": "ウェア イズ ザ トイレット？", "audio": "where-toilet.mp3" },
+          { "jp": "辛くしないでください", "foreign": "Not too spicy, please.", "reading": "ノット トゥー スパイシー プリーズ", "audio": "not-spicy.mp3" },
+          { "jp": "おいしい！", "foreign": "This is delicious!", "reading": "ディス イズ デリシャス！", "audio": "delicious.mp3" }
+        ]
+      },
+      {
+        "label": "🦒 サファリ・観光",
+        "items": [
+          { "jp": "チケットを1枚ください", "foreign": "One ticket, please.", "reading": "ワン チケット プリーズ", "audio": "one-ticket.mp3" },
+          { "jp": "写真を撮ってもいいですか？", "foreign": "May I take a photo?", "reading": "メイ アイ テイク ア フォウトウ？", "audio": "take-photo.mp3" },
+          { "jp": "安全ですか？", "foreign": "Is it safe?", "reading": "イズ イット セーフ？", "audio": "is-safe.mp3" },
+          { "jp": "助けてください！", "foreign": "Help!", "reading": "ヘルプ！", "audio": "help.mp3" }
+        ]
+      }
+    ]
+  },
+  "food_section_title": "南アフリカ グルメ",
+  "food_filter_types": [
+    { "id": "all",     "label": "すべて",     "active": true  },
+    { "id": "main",    "label": "メイン料理", "active": false },
+    { "id": "snack",   "label": "スナック",   "active": false },
+    { "id": "side",    "label": "サイドメニュー", "active": false },
+    { "id": "dessert", "label": "デザート",   "active": false },
+    { "id": "drink",   "label": "飲み物",     "active": false }
+  ],
+  "food_filter_cities": [
+    { "id": "cape_town", "label": "ケープタウン" },
+    { "id": "durban",    "label": "ダーバン" }
+  ],
   "food_items": [
     {
       "num": "No.1",
@@ -134,7 +563,10 @@
       "desc": "南アフリカ版BBQ。毎週末に家族・友人と炭火を囲む国民的な食文化。羊・牛・鶏などを豪快に焼き上げる。",
       "image": "",
       "prompt_en": "Braai, South African barbecue, grilled lamb chops and boerewors sausage on charcoal grill",
-      "plate_color": "white ceramic plate"
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://en.wikipedia.org/wiki/Braai",
+      "order_ico": "🍖",
+      "order_name_en": "Braai"
     },
     {
       "num": "No.2",
@@ -145,7 +577,10 @@
       "desc": "コリアンダーとナツメグで香りをつけた牛・豚のコイル状ソーセージ。ブライに欠かせない一品。",
       "image": "",
       "prompt_en": "Boerewors, South African coiled spiced sausage, grilled with golden brown char marks",
-      "plate_color": "white ceramic plate"
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://en.wikipedia.org/wiki/Boerewors",
+      "order_ico": "🌭",
+      "order_name_en": "Boerewors"
     },
     {
       "num": "No.3",
@@ -156,7 +591,10 @@
       "desc": "ビネガーとコリアンダーで味付けし乾燥熟成させた牛肉。ジャーキーより柔らかくスパイシーで、スーパーでも手軽に買える。",
       "image": "",
       "prompt_en": "Biltong, South African dried cured meat strips, dark brown seasoned beef on wooden board",
-      "plate_color": "wooden plate"
+      "plate_color": "wooden plate",
+      "wiki_url": "https://en.wikipedia.org/wiki/Biltong",
+      "order_ico": "🥩",
+      "order_name_en": "Biltong"
     },
     {
       "num": "No.4",
@@ -167,7 +605,10 @@
       "desc": "ダーバン発祥のインド系料理。食パンをくり抜いてカレーを詰めた豪快なB級グルメ。手で食べるのがダーバン流。",
       "image": "",
       "prompt_en": "Bunny Chow, South African curry served inside hollowed quarter loaf of white bread, Durban street food",
-      "plate_color": "white ceramic plate"
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://en.wikipedia.org/wiki/Bunny_chow",
+      "order_ico": "🍞",
+      "order_name_en": "Bunny Chow"
     },
     {
       "num": "No.5",
@@ -178,7 +619,10 @@
       "desc": "スパイスとドライフルーツを混ぜたひき肉の上にエッグカスタードをかけてオーブン焼きにした料理。南アフリカの国民料理のひとつ。",
       "image": "",
       "prompt_en": "Bobotie, South African baked minced meat dish with golden egg custard topping, served with yellow rice",
-      "plate_color": "dark ceramic plate"
+      "plate_color": "dark ceramic plate",
+      "wiki_url": "https://en.wikipedia.org/wiki/Bobotie",
+      "order_ico": "🥘",
+      "order_name_en": "Bobotie"
     },
     {
       "num": "No.6",
@@ -189,7 +633,10 @@
       "desc": "三本脚の鋳鉄鍋「ポトジェ」で肉・野菜をじっくり炭火で煮込んだシチュー。アウトドアやキャンプ文化に欠かせない料理。",
       "image": "",
       "prompt_en": "Potjiekos, South African slow-cooked stew in a black cast iron three-legged pot with meat and vegetables",
-      "plate_color": "dark ceramic bowl"
+      "plate_color": "dark ceramic bowl",
+      "wiki_url": "https://en.wikipedia.org/wiki/Potjiekos",
+      "order_ico": "🍲",
+      "order_name_en": "Potjiekos"
     },
     {
       "num": "No.7",
@@ -200,7 +647,10 @@
       "desc": "トウモロコシ粉で作った白い粥状の主食。南アフリカ全土の家庭料理に欠かせないスタープル。肉料理や野菜スープと合わせる。",
       "image": "",
       "prompt_en": "Mieliepap, South African white maize porridge in a bowl, smooth corn meal staple food",
-      "plate_color": "white ceramic bowl"
+      "plate_color": "white ceramic bowl",
+      "wiki_url": "https://en.wikipedia.org/wiki/Mieliepap",
+      "order_ico": "🥣",
+      "order_name_en": "Mieliepap"
     },
     {
       "num": "No.8",
@@ -211,7 +661,10 @@
       "desc": "マレー系移民が伝えた甘みとスパイスが絶妙なカレー。シナモン・カルダモン・ドライアプリコットを加えた独特の風味が特徴。",
       "image": "",
       "prompt_en": "Cape Malay Curry, aromatic South African curry with tender chicken, dried apricots and warm spices, Cape Town specialty",
-      "plate_color": "terracotta ceramic plate"
+      "plate_color": "terracotta ceramic plate",
+      "wiki_url": "https://en.wikipedia.org/wiki/Cape_Malay_cuisine",
+      "order_ico": "🍛",
+      "order_name_en": "Cape Malay Curry"
     },
     {
       "num": "No.9",
@@ -222,7 +675,10 @@
       "desc": "アプリコットジャムを使ったしっとり甘いスポンジプディング。温かいバタークリームソースをかけて食べる南アフリカの定番デザート。",
       "image": "",
       "prompt_en": "Malva Pudding, South African sticky sweet sponge cake dessert with apricot jam, served warm with cream sauce",
-      "plate_color": "white ceramic plate"
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://en.wikipedia.org/wiki/Malva_pudding",
+      "order_ico": "🍮",
+      "order_name_en": "Malva Pudding"
     },
     {
       "num": "No.10",
@@ -233,7 +689,10 @@
       "desc": "南アフリカ原産の赤いハーブティー。カフェインゼロで抗酸化作用が高く、世界的に人気が高まっている。",
       "image": "",
       "prompt_en": "Rooibos tea, red South African herbal tea in a ceramic cup, with dried rooibos leaves on saucer",
-      "plate_color": "white ceramic cup"
+      "plate_color": "white ceramic cup",
+      "wiki_url": "https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%A4%E3%83%9C%E3%82%B9",
+      "order_ico": "☕",
+      "order_name_en": "Rooibos Tea"
     },
     {
       "num": "No.11",
@@ -244,7 +703,10 @@
       "desc": "アフリカン・バードズアイペッパー（ペリペリ）で味付けしたグリルチキン。ポルトガル植民地文化の影響を受けた一品。",
       "image": "",
       "prompt_en": "Peri-peri chicken, South African spicy grilled half chicken with red bird's eye chili marinade and char marks",
-      "plate_color": "white ceramic plate"
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://en.wikipedia.org/wiki/Peri-peri",
+      "order_ico": "🍗",
+      "order_name_en": "Peri-Peri Chicken"
     },
     {
       "num": "No.12",
@@ -255,8 +717,19 @@
       "desc": "インド系南アフリカ人が広めた三角形の揚げ餃子。スパイシーな肉・野菜の具材入りで、チャツネと一緒に食べる。",
       "image": "",
       "prompt_en": "Samoosas, South African fried triangular pastry filled with spiced minced meat, golden brown crispy",
-      "plate_color": "white ceramic plate"
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%A2%E3%82%B5",
+      "order_ico": "🥟",
+      "order_name_en": "Samoosa"
     }
+  ],
+  "spots_section_title": "南アフリカ 観光スポット",
+  "spots_filter_cities": [
+    { "id": "all",          "label": "すべて",           "active": true  },
+    { "id": "cape_town",    "label": "ケープタウン",     "active": false },
+    { "id": "johannesburg", "label": "ヨハネスブルク",   "active": false },
+    { "id": "durban",       "label": "ダーバン",         "active": false },
+    { "id": "kruger",       "label": "クルーガー",       "active": false }
   ],
   "spot_sections": [
     {
@@ -265,6 +738,11 @@
       "city_image": "",
       "city_prompt": "Aerial view of Cape Town with flat-topped Table Mountain, Victoria and Alfred Waterfront, Atlantic Ocean coastline, golden hour light, travel photography",
       "city_desc": "テーブルマウンテンを仰ぐ世界有数の美港都市。ビーチ・ワイン産地・カラフルなボカープ地区など見どころが集中する。",
+      "city_info": [
+        { "label": "アクセス", "value": "日本から乗り継ぎ約17〜18時間（CPT着）" },
+        { "label": "おすすめ時期", "value": "11月〜3月（夏・乾季）", "link_section": "season", "link_btn_index": 4 },
+        { "label": "宿泊エリア", "value": "V&Aウォーターフロント / シーポイント周辺" }
+      ],
       "spots": []
     },
     {
@@ -273,6 +751,11 @@
       "city_image": "",
       "city_prompt": "Johannesburg cityscape with modern skyscrapers, Soweto township panorama, vibrant African city, travel photography",
       "city_desc": "アフリカ最大の経済都市。アパルトヘイト博物館とソウェト歴史地区でネルソン・マンデラの足跡をたどれる。",
+      "city_info": [
+        { "label": "アクセス", "value": "ケープタウンから国内線約2時間（JNB着）" },
+        { "label": "おすすめ時期", "value": "4月〜9月（乾季・観光しやすい）", "link_section": "season", "link_btn_index": 4 },
+        { "label": "宿泊エリア", "value": "サントン / メルローズアーチ周辺（治安◎）" }
+      ],
       "spots": []
     },
     {
@@ -281,6 +764,11 @@
       "city_image": "",
       "city_prompt": "Durban Golden Mile beachfront, Indian Ocean waves, palm trees and promenade, South Africa coastal city, travel photography",
       "city_desc": "インド洋に面するビーチシティ。インド系文化と南アフリカ文化が融合した独自の食文化とマーケットが魅力。",
+      "city_info": [
+        { "label": "アクセス", "value": "ヨハネスブルクから国内線約1時間（DUR着）" },
+        { "label": "おすすめ時期", "value": "5月〜8月（温暖・乾燥・泳ぎやすい）", "link_section": "season", "link_btn_index": 4 },
+        { "label": "宿泊エリア", "value": "ゴールデンマイル（ビーチフロント）周辺" }
+      ],
       "spots": []
     },
     {
@@ -289,7 +777,222 @@
       "city_image": "",
       "city_prompt": "Kruger National Park savanna with African elephants and acacia trees, golden sunset, wildlife safari, South Africa",
       "city_desc": "ビッグファイブ（ライオン・ゾウ・バッファロー・ヒョウ・サイ）が生息する世界最大級の国立公園。",
+      "city_info": [
+        { "label": "アクセス", "value": "ヨハネスブルクから車で約4〜5時間 or 国内線でスカークスダール空港へ" },
+        { "label": "おすすめ時期", "value": "5月〜9月（乾季・動物が水辺に集まる）", "link_section": "season", "link_btn_index": 4 },
+        { "label": "宿泊", "value": "公園内SANParksキャンプ / 公園外プライベートロッジ" }
+      ],
       "spots": []
     }
-  ]
+  ],
+  "courses": {
+    "intro": "南アフリカはケープタウンを起点に、国内線でヨハネスブルクやクルーガーへアクセスできる。初めての旅はケープタウン集中か、ケープタウン＋サファリの組み合わせがおすすめ。直行便がなく移動に時間がかかる分、現地での滞在日数を十分に確保しよう。",
+    "stable_title": "ケープタウン完全攻略コース",
+    "stable_plans": [
+      {
+        "label": "7日間プラン",
+        "title": "ケープタウンを5泊でじっくり満喫",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "",
+            "badge_style": "background:#999;color:#fff",
+            "content_html": "<strong>日本出発</strong> → ドーハ/ドバイで乗り継ぎ → <strong>ヨハネスブルク</strong>着 → 国内線でケープタウン(CPT)へ → ホテルチェックイン・休養"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "green",
+            "badge_style": "",
+            "content_html": "<strong>テーブルマウンテン</strong>（午前・ロープウェイで頂上へ、360°の絶景）→ <strong>ボカープ地区</strong>（カラフルなマレー系住宅街で写真撮影）→ <strong>V&Aウォーターフロント</strong>（夕食・ブライ体験）"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "green",
+            "badge_style": "",
+            "content_html": "<strong>ケープポイント半島ドライブ</strong> → <strong>ボルダーズビーチ</strong>（ケープペンギンとの記念撮影）→ <strong>喜望峰</strong>（アフリカ大陸最南西端）→ ケープポイント展望台"
+          },
+          {
+            "transit": false,
+            "label": "Day 4",
+            "badge_class": "green",
+            "badge_style": "",
+            "content_html": "<strong>ワインランド日帰り</strong>：ステレンボッシュのワイナリー巡り → <strong>フランシューク</strong>の山岳景観 → ワイン＆チーズのランチ → 夕方ケープタウンに戻りシーフードディナー"
+          },
+          {
+            "transit": false,
+            "label": "Day 5",
+            "badge_class": "green",
+            "badge_style": "",
+            "content_html": "<strong>ロベン島</strong>（マンデラ元大統領が収容された島、世界遺産）→ <strong>シグナルヒル</strong>（ケープタウン市街のパノラマ）→ グリーンポイントで夕食"
+          },
+          {
+            "transit": false,
+            "label": "Day 6",
+            "badge_class": "",
+            "badge_style": "background:#bbb;color:#fff",
+            "content_html": "<strong>フリータイム</strong>：V&Aウォーターフロントでショッピング / シーポイントのビーチでリラックス / ケープマレーカレーランチ → 夕方・帰国フライトへ"
+          },
+          {
+            "transit": true,
+            "icon": "✈️",
+            "duration": "乗り継ぎ経由 約17〜18時間"
+          },
+          {
+            "transit": false,
+            "label": "Day 7",
+            "badge_class": "",
+            "badge_style": "background:#999;color:#fff",
+            "content_html": "<strong>帰国</strong>（日本着）"
+          }
+        ],
+        "tip": "テーブルマウンテンは天気に左右されるため、滞在序盤に登るのがおすすめ。ロープウェイは強風・霧のときは運休するので当日の天気を確認しよう。"
+      }
+    ],
+    "adventure_title": "ケープタウン＋サファリ 欲張りコース",
+    "adventure_note_html": "ケープタウン（4泊）→ ヨハネスブルク（1泊）→ クルーガー国立公園（2泊）の10日間ルート。移動が多めですが、テーブルマウンテンの絶景とビッグファイブサファリの両方を一度で楽しめる充実コースです。",
+    "adventure_plan": {
+      "days": [
+        {
+          "transit": false,
+          "label": "Day 1",
+          "badge_class": "",
+          "badge_style": "background:#999;color:#fff",
+          "content_html": "<strong>日本出発</strong> → 乗り継ぎ → <strong>ケープタウン</strong>着・ホテルチェックイン"
+        },
+        {
+          "transit": false,
+          "label": "Day 2",
+          "badge_class": "green",
+          "badge_style": "",
+          "content_html": "<strong>テーブルマウンテン</strong> + <strong>ボカープ地区</strong> + <strong>V&Aウォーターフロント</strong>"
+        },
+        {
+          "transit": false,
+          "label": "Day 3",
+          "badge_class": "green",
+          "badge_style": "",
+          "content_html": "<strong>ケープポイント半島ドライブ</strong>：ボルダーズビーチ（ペンギン）・喜望峰"
+        },
+        {
+          "transit": false,
+          "label": "Day 4",
+          "badge_class": "green",
+          "badge_style": "",
+          "content_html": "<strong>ワインランド</strong>（ステレンボッシュ・フランシューク）日帰りツアー"
+        },
+        {
+          "transit": false,
+          "label": "Day 5",
+          "badge_class": "green",
+          "badge_style": "",
+          "content_html": "<strong>ロベン島</strong>（世界遺産・マンデラ収容所）午前 → 午後フリー → 空港へ"
+        },
+        {
+          "transit": true,
+          "icon": "✈️",
+          "duration": "ケープタウン→ヨハネスブルク（国内線 約2時間）"
+        },
+        {
+          "transit": false,
+          "label": "Day 6",
+          "badge_class": "red",
+          "badge_style": "",
+          "content_html": "<strong>ヨハネスブルク</strong>：<strong>ソウェト</strong>（マンデラハウス・ヴィラカジ通り）→ <strong>アパルトヘイト博物館</strong>（歴史を学ぶ） → 宿泊（サントン地区）"
+        },
+        {
+          "transit": true,
+          "icon": "🚗",
+          "duration": "ヨハネスブルク→クルーガー国立公園（車 約4〜5時間）"
+        },
+        {
+          "transit": false,
+          "label": "Day 7",
+          "badge_class": "red",
+          "badge_style": "",
+          "content_html": "<strong>クルーガー国立公園</strong>：早朝サンライズ・ゲームドライブ（ライオン・ゾウを探す）→ 休憩 → 夕方サンセット・ゲームドライブ"
+        },
+        {
+          "transit": false,
+          "label": "Day 8",
+          "badge_class": "red",
+          "badge_style": "",
+          "content_html": "<strong>クルーガー二日目</strong>：早朝ドライブ（ヒョウ・サイを探す）→ 昼間はロッジでリラックス → 夕方ドライブ → 夜間ドライブ（オプション）"
+        },
+        {
+          "transit": true,
+          "icon": "✈️",
+          "duration": "クルーガー→ヨハネスブルク→乗り継ぎ 約17〜18時間"
+        },
+        {
+          "transit": false,
+          "label": "Day 9-10",
+          "badge_class": "",
+          "badge_style": "background:#999;color:#fff",
+          "content_html": "<strong>帰国</strong>（機内泊・日本着）"
+        }
+      ],
+      "tip": "クルーガー国立公園のロッジ・キャンプは人気が高く早期完売することがある。サファリの日程が決まったら最初に予約しよう（SANParksの公式サイトが確実）。"
+    },
+    "cta_title": "ベストシーズンもチェックしよう！🌤️",
+    "cta_desc": "ケープタウンとサファリでは最適な訪問時期が異なります。旅の目的に合わせてシーズンを選びましょう。"
+  },
+  "transport_items": [
+    {
+      "icon": "✈️",
+      "name": "国際線（乗り継ぎ）",
+      "desc": "直行便なし。カタール/エミレーツ/エチオピア/シンガポール航空でドーハ・ドバイ・アジスアベバなど経由。ヨハネスブルク(JNB)またはケープタウン(CPT)着。総飛行時間約17〜20時間。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "✈️",
+      "name": "国内線",
+      "desc": "ケープタウン↔ヨハネスブルク約2時間。FlySafair・SA Express・Airlinkなどが就航。早期予約で格安チケットも。国内移動の基本手段。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚗",
+      "name": "レンタカー",
+      "desc": "ケープタウン周辺やケープポイント半島のドライブには最適。左側通行（日本と同じ）。国際免許証が必要。主要都市間の移動は距離があるため国内線の方が現実的。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "📱",
+      "name": "Uber / Bolt",
+      "desc": "ケープタウン・ヨハネスブルク・ダーバンで利用可能。乗車前に料金が確定し流しのタクシーよりも安全。地元の流しタクシー（ミニバスタクシー）は旅行者には不推奨。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚌",
+      "name": "長距離バス / 観光バス",
+      "desc": "Intercapeなどの長距離バスが都市間を結ぶ。ケープタウン市内はMyCiTiバスが便利。ホップオンホップオフバスは観光地を効率よく回れる。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🦒",
+      "name": "サファリ車（ゲームドライブ）",
+      "desc": "クルーガー国立公園内は公認ガイド同乗のオープン型ゲームドライブ車が基本。早朝と夕方が動物に出会えるベストタイム。レンタカーでの自走も可能（自己責任）。",
+      "affiliate": "klook",
+      "is_last": true
+    }
+  ],
+  "food_modal_phrase_main": "I would like to order this, please.",
+  "food_modal_phrase_sub": "Can I have this? ／ Could you bring me this?",
+  "index_card": {
+    "flag": "🇿🇦",
+    "catch": "レインボーネーション・サファリの聖地",
+    "region": "アフリカ",
+    "best_months": [9, 10, 11],
+    "best_label": "9〜11月",
+    "tags": ["サファリ", "絶景", "世界遺産", "グルメ"],
+    "gradient": "linear-gradient(135deg,#DE3831 0%,#FFB612 50%,#007A4D 100%)",
+    "budget": ["25万円〜", "50万円〜"]
+  }
 }
