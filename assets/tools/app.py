@@ -189,7 +189,7 @@ with col_cr:
 # カテゴリ選択（全タブ共通）
 gen_category = st.radio(
     "カテゴリ",
-    ["🍜 グルメ", "🏔️ ヒーロー画像", "🏙️ 都市カード"],
+    ["🍜 グルメ", "🏔️ ヒーロー画像", "🗺️ 観光スポット"],
     horizontal=True,
     label_visibility="collapsed",
     key="gen_category_global",
@@ -307,49 +307,53 @@ with tab1:
             save_json(country_id, data)
             st.success("✅ 保存しました")
 
-    # ── 都市カード ──
-    elif gen_category == "🏙️ 都市カード":
-        st.subheader("都市カード・プロンプト編集")
+    # ── 観光スポット ──
+    elif gen_category == "🗺️ 観光スポット":
+        st.subheader("観光スポット・プロンプト編集")
         spot_secs = data.get("spot_sections", [])
-        _orig_city_by_id = {s.get("city_id"): s for s in spot_secs if s.get("city_id")}
-        city_rows = []
+        # 全セクションのスポットをフラット化
+        spot_rows = []
         for s in spot_secs:
-            city_rows.append({
-                "city_id":     s.get("city_id", ""),
-                "city_name":   s.get("city_name", ""),
-                "画像":        "✅" if (ROOT_DIR / country_id / s.get("city_image","X")).exists() else "❌",
-                "city_prompt": s.get("city_prompt", ""),
-            })
-        edited_cities = st.data_editor(
-            city_rows,
-            column_config={
-                "city_id":     st.column_config.TextColumn("ID（英語）", width="small"),
-                "city_name":   st.column_config.TextColumn("都市名", width="medium"),
-                "画像":        st.column_config.TextColumn("画像", disabled=True, width="small"),
-                "city_prompt": st.column_config.TextColumn("プロンプト（英語）", width="large"),
-            },
-            use_container_width=True,
-            num_rows="dynamic",
-            key="city_editor",
-        )
-        if st.button("💾 JSONを保存", type="primary", key="t1_city_save"):
-            new_spot_secs = []
-            for i, row in enumerate(edited_cities):
-                cid = (row.get("city_id") or "").strip()
-                if not cid:
-                    continue
-                orig = _orig_city_by_id.get(cid, {})
-                new_spot_secs.append({
-                    "city_id":     cid,
-                    "city_name":   (row.get("city_name") or orig.get("city_name", "")).strip(),
-                    "city_image":  orig.get("city_image", ""),
-                    "city_prompt": (row.get("city_prompt") or orig.get("city_prompt", "")).strip(),
-                    "city_desc":   orig.get("city_desc", ""),
-                    "spots":       orig.get("spots", []),
+            cid   = s.get("city_id", "")
+            cname = s.get("city_name", "")
+            for spot in s.get("spots", []):
+                sname = spot.get("name", "")
+                spot_rows.append({
+                    "city_id":   cid,
+                    "都市":      cname,
+                    "スポット名": sname,
+                    "画像":      "✅" if (ROOT_DIR / country_id / spot.get("image", "X")).exists() else "❌",
+                    "prompt_en": spot.get("prompt_en", ""),
                 })
-            data["spot_sections"] = new_spot_secs
-            save_json(country_id, data)
-            st.success("✅ 保存しました")
+        if not spot_rows:
+            st.warning("スポットが登録されていません。JSONの spot_sections > spots を確認してください。")
+        else:
+            edited_spots = st.data_editor(
+                spot_rows,
+                column_config={
+                    "city_id":   None,
+                    "都市":      st.column_config.TextColumn("都市", disabled=True, width="small"),
+                    "スポット名": st.column_config.TextColumn("スポット名", disabled=True, width="medium"),
+                    "画像":      st.column_config.TextColumn("画像", disabled=True, width="small"),
+                    "prompt_en": st.column_config.TextColumn("プロンプト（英語）", width="large"),
+                },
+                use_container_width=True,
+                key="spot_editor",
+            )
+            if st.button("💾 JSONを保存", type="primary", key="t1_spot_save"):
+                # (city_id, spot_name) → prompt_en のルックアップを構築
+                prompt_lookup = {
+                    (r.get("city_id", ""), r.get("スポット名", "")): r.get("prompt_en", "")
+                    for r in edited_spots
+                }
+                for s in data.get("spot_sections", []):
+                    cid = s.get("city_id", "")
+                    for spot in s.get("spots", []):
+                        key = (cid, spot.get("name", ""))
+                        if key in prompt_lookup:
+                            spot["prompt_en"] = prompt_lookup[key]
+                save_json(country_id, data)
+                st.success("✅ 保存しました")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -824,24 +828,41 @@ with tab2:
 
 
     # ────────────────── 🏙️ 都市カード ──────────────────
-    elif gen_category == "🏙️ 都市カード":
+    elif gen_category == "🗺️ 観光スポット":
 
         spot_secs = data.get("spot_sections", [])
-        if not spot_secs:
-            st.warning("spot_sections が空です。JSONを確認してください。")
+        # 全スポットをフラット化（未生成を優先ソート）
+        _all_spots_flat = []
+        for _si, _s in enumerate(spot_secs):
+            for _pi, _sp in enumerate(_s.get("spots", [])):
+                _all_spots_flat.append({
+                    "sec_idx":   _si,
+                    "spot_idx":  _pi,
+                    "city_name": _s.get("city_name", ""),
+                    "city_id":   _s.get("city_id", ""),
+                    "spot":      _sp,
+                })
+
+        if not _all_spots_flat:
+            st.warning("スポットが登録されていません。JSONの spot_sections > spots を確認してください。")
         else:
-            city_options = [
-                f"{s.get('city_name', '')}（{s.get('city_id', '')}）"
-                for s in spot_secs
+            def _spot_has_img(entry):
+                img = entry["spot"].get("image", "")
+                return bool(img) and (ROOT_DIR / country_id / img).exists()
+
+            _sorted_spots  = sorted(_all_spots_flat, key=lambda e: (1 if _spot_has_img(e) else 0, e["city_name"]))
+            _spot_labels   = [
+                f"{'✅' if _spot_has_img(e) else '❌'} {e['city_name']} / {e['spot'].get('name','')}"
+                for e in _sorted_spots
             ]
-            sel_city_label  = st.selectbox("都市を選択", city_options, key="city_sel")
-            sel_city_idx    = city_options.index(sel_city_label)
-            sel_city        = spot_secs[sel_city_idx]
-            city_id_local   = sel_city.get("city_id", "")
-            city_name_loc   = sel_city.get("city_name", "")
-            city_prompt_key = f"city_prompt_{country_id}_{city_id_local}"
-            if not st.session_state.get(city_prompt_key):
-                st.session_state[city_prompt_key] = sel_city.get("city_prompt", "")
+            sel_spot_label = st.selectbox("スポットを選択", _spot_labels, key="spot_sel")
+            sel_spot_entry = _sorted_spots[_spot_labels.index(sel_spot_label)]
+            sel_spot       = sel_spot_entry["spot"]
+            spot_name      = sel_spot.get("name", "")
+            spot_city_name = sel_spot_entry["city_name"]
+            spot_prompt_key = f"spot_prompt_{country_id}_{sel_spot_entry['city_id']}_{spot_name}"
+            if not st.session_state.get(spot_prompt_key):
+                st.session_state[spot_prompt_key] = sel_spot.get("prompt_en", "")
 
             st.divider()
 
@@ -856,7 +877,6 @@ with tab2:
                             bg_bytes  = rembg_remove(_res["bytes"], session=_get_rembg_session())
                             new_bytes = to_webp(bg_bytes)
                             new_list  = list(_results)
-                            # 元画像をoriginal_bytesとして保持
                             orig = _res.get("original_bytes") or _res["bytes"]
                             new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes, "original_bytes": orig})
                             st.session_state["gen_results"] = new_list
@@ -873,7 +893,7 @@ with tab2:
                     with hdr_l:
                         st.caption(f"生成した画像 ({len(results)}枚)")
                     with hdr_r:
-                        if st.button("🗑️ 全削除", key="city_delall"):
+                        if st.button("🗑️ 全削除", key="spot_delall"):
                             for r in results:
                                 _temp_delete(r.get("tmp_id", ""))
                             st.session_state["gen_results"] = []
@@ -886,15 +906,18 @@ with tab2:
                             st.image(res["bytes"], use_container_width=True)
                             b1, b2, b3, b4 = st.columns(4)
                             with b1:
-                                if st.button("💾 保存", key=f"city_save_{i}", type="primary"):
-                                    city_img_dir = ROOT_DIR / country_id / "素材" / "都市"
-                                    city_img_dir.mkdir(parents=True, exist_ok=True)
-                                    fname    = f"{city_id_local}.webp"
-                                    out_path = city_img_dir / fname
+                                if st.button("💾 保存", key=f"spot_save_{i}", type="primary"):
+                                    spot_img_dir = ROOT_DIR / country_id / "素材" / "観光スポット"
+                                    spot_img_dir.mkdir(parents=True, exist_ok=True)
+                                    fname    = f"{spot_name}.webp"
+                                    out_path = spot_img_dir / fname
                                     out_path.write_bytes(to_webp(res["bytes"]))
-                                    rel = f"素材/都市/{fname}"
-                                    data["spot_sections"][sel_city_idx]["city_image"]  = rel
-                                    data["spot_sections"][sel_city_idx]["city_prompt"] = st.session_state.get(city_prompt_key, "")
+                                    rel = f"素材/観光スポット/{fname}"
+                                    # JSONのspot.imageとprompt_enを更新
+                                    _sec_idx  = sel_spot_entry["sec_idx"]
+                                    _sp_idx   = sel_spot_entry["spot_idx"]
+                                    data["spot_sections"][_sec_idx]["spots"][_sp_idx]["image"]     = rel
+                                    data["spot_sections"][_sec_idx]["spots"][_sp_idx]["prompt_en"] = st.session_state.get(spot_prompt_key, "")
                                     save_json(country_id, data)
                                     for r in results:
                                         _temp_delete(r.get("tmp_id", ""))
@@ -902,17 +925,17 @@ with tab2:
                                     st.session_state["gen_results"] = []
                                     st.rerun()
                             with b2:
-                                if st.button("✂️", key=f"city_bg_{i}", help="背景除去"):
+                                if st.button("✂️", key=f"spot_bg_{i}", help="背景除去"):
                                     st.session_state["pending_bg_idx"] = i
                                     st.rerun()
                             with b3:
-                                if st.button("🗑️", key=f"city_del_{i}", help="削除"):
+                                if st.button("🗑️", key=f"spot_del_{i}", help="削除"):
                                     _temp_delete(res.get("tmp_id", ""))
                                     st.session_state["gen_results"] = [r for j, r in enumerate(results) if j != i]
                                     st.rerun()
                             with b4:
                                 if res.get("original_bytes"):
-                                    if st.button("↩️", key=f"city_undo_{i}", help="背景除去を元に戻す"):
+                                    if st.button("↩️", key=f"spot_undo_{i}", help="背景除去を元に戻す"):
                                         _restored = {k: v for k, v in res.items() if k not in ("original_bytes", "has_original")}
                                         _restored["bytes"] = res["original_bytes"]
                                         _new_list = list(results)
@@ -920,66 +943,74 @@ with tab2:
                                         st.session_state["gen_results"] = _new_list
                                         st.rerun()
                 else:
-                    city_img      = sel_city.get("city_image", "")
-                    city_img_path = (ROOT_DIR / country_id / city_img) if city_img else None
-                    if city_img_path and city_img_path.exists():
-                        st.caption("現在の都市画像")
-                        st.image(str(city_img_path), use_container_width=True)
+                    spot_img      = sel_spot.get("image", "")
+                    spot_img_path = (ROOT_DIR / country_id / spot_img) if spot_img else None
+                    if spot_img_path and spot_img_path.exists():
+                        st.caption("現在のスポット画像")
+                        st.image(str(spot_img_path), use_container_width=True)
                     else:
-                        st.info(f"{city_name_loc} の都市画像未設定")
+                        st.info(f"{spot_name} の画像未設定")
 
-            city_prompt_val_now = ""
+            spot_prompt_val_now = ""
             with col_r:
-                st.markdown(f"**{city_name_loc}**")
-                st.caption(sel_city.get("city_desc", ""))
+                st.markdown(f"**{spot_name}**　*{spot_city_name}*")
                 st.text_area(
                     "プロンプト（英語）",
                     height=200,
-                    key=city_prompt_key,
-                    placeholder=f"e.g. Panoramic view of {city_name_loc}, historic architecture, warm golden light, travel photography",
+                    key=spot_prompt_key,
+                    placeholder=f"e.g. {spot_name}, scenic landscape, detailed illustration",
                 )
-                city_model_val = st.radio(
+                spot_model_val = st.radio(
                     "モデル",
                     [
-                        "recraft20b  22cr ≈ ¥3.5/枚",
-                        "recraftv3   40cr ≈ ¥6.4/枚",
+                        "recraft20b       22cr ≈ ¥3.5/枚",
+                        "recraftv3        40cr ≈ ¥6.4/枚",
+                        "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
                     ],
-                    horizontal=True,
-                    key="city_model",
+                    horizontal=False,
+                    key="spot_model",
                 )
-                if "recraft20b" in city_model_val:
-                    city_model_key = "recraft20b"
+                if "watercolor20b" in spot_model_val:
+                    spot_model_key = "watercolor20b"
+                elif "recraftv3" in spot_model_val:
+                    spot_model_key = "recraftv3"
                 else:
-                    city_model_key = "recraftv3"
-                _city_ratios = {
+                    spot_model_key = "recraft20b"
+                spot_use_style = st.toggle(
+                    "スタイルID を使用",
+                    value=True,
+                    key="spot_use_style",
+                )
+                _spot_ratios = {
                     "1:1  (1024×1024)": (1024, 1024),
                     "4:3  (1024×768)":  (1024, 768),
                     "16:9 (1365×768)":  (1365, 768),
                     "3:4  (768×1024)":  (768,  1024),
                 }
-                city_ratio_sel = st.selectbox("縦横比", list(_city_ratios.keys()), index=0, key="city_ratio")
-                city_w, city_h = _city_ratios[city_ratio_sel]
-                city_prompt_val_now = st.session_state.get(city_prompt_key, "")
-                city_gen_btn        = st.button(
-                    "🎨 生成実行", type="primary", key="city_gen",
-                    disabled=not city_prompt_val_now.strip(),
+                spot_ratio_sel      = st.selectbox("縦横比", list(_spot_ratios.keys()), index=1, key="spot_ratio")
+                spot_w, spot_h      = _spot_ratios[spot_ratio_sel]
+                spot_prompt_val_now = st.session_state.get(spot_prompt_key, "")
+                spot_gen_btn        = st.button(
+                    "🎨 生成実行", type="primary", key="spot_gen",
+                    disabled=not spot_prompt_val_now.strip(),
                 )
 
-            if city_gen_btn:
+            if spot_gen_btn:
                 with st.spinner("生成中..."):
                     try:
                         img_bytes, cr1 = recraft_api.generate_image(
-                            prompt=city_prompt_val_now,
+                            prompt=spot_prompt_val_now,
                             plate_color="",
-                            model=city_model_key,
-                            width=city_w,
-                            height=city_h,
+                            model=spot_model_key,
+                            use_style=spot_use_style,
+                            width=spot_w,
+                            height=spot_h,
                         )
                         new_item = _temp_save({
                             "bytes":   img_bytes,
                             "ext":     "webp",
                             "credits": cr1,
-                            "name":    city_id_local,
+                            "name":    spot_name,
                         })
                         st.session_state["gen_results"] = (
                             st.session_state.get("gen_results", []) + [new_item]
@@ -1108,14 +1139,14 @@ with tab3:
         else:
             st.info("ヒーロー画像がまだありません。")
 
-    # ── 都市カード ──
-    elif gen_category == "🏙️ 都市カード":
-        city_img_dir = ROOT_DIR / country_id / "素材" / "都市"
-        if not city_img_dir.exists():
-            st.info("素材/都市/ フォルダがまだ存在しません。")
+    # ── 観光スポット ──
+    elif gen_category == "🗺️ 観光スポット":
+        spot_img_dir = ROOT_DIR / country_id / "素材" / "観光スポット"
+        if not spot_img_dir.exists():
+            st.info("素材/観光スポット/ フォルダがまだ存在しません。")
         else:
-            files = sorted([f for f in city_img_dir.iterdir() if f.suffix.lower() in exts])
-            _img_grid(files, "g3c_")
+            files = sorted([f for f in spot_img_dir.iterdir() if f.suffix.lower() in exts])
+            _img_grid(files, "g3s_")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
