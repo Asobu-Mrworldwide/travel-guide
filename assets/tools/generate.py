@@ -280,6 +280,18 @@ def generate(country_id):
                 json_updated  = True
                 print(f'  🖼️  スポット画像を自動検出: {name}.webp')
 
+    city_img_dir = os.path.join(root_dir, country_id, '素材', '都市')
+    for section in data.get('spot_sections', []):
+        city_id_key = section.get('city_id', '')
+        if not city_id_key:
+            continue
+        img_path = os.path.join(city_img_dir, f'{city_id_key}.webp')
+        rel_path = f'素材/都市/{city_id_key}.webp'
+        if os.path.exists(img_path) and section.get('city_image') != rel_path:
+            section['city_image'] = rel_path
+            json_updated = True
+            print(f'  🖼️  都市画像を自動検出: {city_id_key}.webp')
+
     if json_updated:
         import shutil
         shutil.copy2(json_path, json_path + '.bak')
@@ -293,6 +305,7 @@ def generate(country_id):
     country_dir = os.path.join(root_dir, country_id)
     os.makedirs(os.path.join(country_dir, '素材', 'グルメ'),       exist_ok=True)
     os.makedirs(os.path.join(country_dir, '素材', '観光スポット'), exist_ok=True)
+    os.makedirs(os.path.join(country_dir, '素材', '都市'),         exist_ok=True)
     os.makedirs(os.path.join(country_dir, 'audio'),                exist_ok=True)
 
     with open(out_path, 'w', encoding='utf-8') as f:

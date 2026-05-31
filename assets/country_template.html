@@ -615,6 +615,7 @@
   <div class="item-grid" id="spots-grid">
     {% for section in spot_sections %}
     <div class="city-section-header" data-city="{{section.city_id}}">
+      {% if section.city_image %}<img src="{{section.city_image}}" alt="{{section.city_name}}" class="csh-img">{% endif %}
       <div class="csh-title">{{section.city_name}}</div>
       <div class="csh-desc">{{section.city_desc}}</div>
       <div class="csh-grid">
