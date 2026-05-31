@@ -608,6 +608,15 @@ with tab2:
                 model_key_r = "recraft20b"
             else:
                 model_key_r = "recraftv3"
+            ASPECT_RATIOS = {
+                "1:1  (1024×1024)": (1024, 1024),
+                "4:3  (1024×768)":  (1024, 768),
+                "3:4  (768×1024)":  (768,  1024),
+                "16:9 (1365×768)":  (1365, 768),
+                "9:16 (768×1365)":  (768,  1365),
+            }
+            ratio_sel  = st.selectbox("縦横比", list(ASPECT_RATIOS.keys()), index=0, key=f"gen_ratio_{item_key}")
+            gen_width, gen_height = ASPECT_RATIOS[ratio_sel]
             _base        = (angle_prefix + " " + prompt_val).strip() if angle_prefix else prompt_val
             _blue_plates = {"light blue", "blue", "navy"}
             _bg_suffix   = (", pure solid white background, isolated on white"
@@ -629,6 +638,8 @@ with tab2:
                             plate_color=plate_color_val,
                             model=model_key_r,
                             use_style=use_style_val,
+                            width=gen_width,
+                            height=gen_height,
                         )
                         new_item = _temp_save({
                             "bytes":   img_bytes,
@@ -753,6 +764,14 @@ with tab2:
                 hero_model_key = "recraft20b"
             else:
                 hero_model_key = "recraftv3"
+            _hero_ratios = {
+                "16:9 (1365×768)":  (1365, 768),
+                "1:1  (1024×1024)": (1024, 1024),
+                "4:3  (1024×768)":  (1024, 768),
+                "9:16 (768×1365)":  (768,  1365),
+            }
+            hero_ratio_sel = st.selectbox("縦横比", list(_hero_ratios.keys()), index=0, key="hero_ratio")
+            hero_w, hero_h = _hero_ratios[hero_ratio_sel]
             hero_prompt_val = st.session_state.get(hero_prompt_key, "")
             hero_gen_btn    = st.button(
                 "🎨 生成実行", type="primary", key="hero_gen",
@@ -766,6 +785,8 @@ with tab2:
                         prompt=hero_prompt_val,
                         plate_color="",
                         model=hero_model_key,
+                        width=hero_w,
+                        height=hero_h,
                     )
                     new_item = _temp_save({
                         "bytes":   img_bytes,
@@ -909,6 +930,14 @@ with tab2:
                     city_model_key = "recraft20b"
                 else:
                     city_model_key = "recraftv3"
+                _city_ratios = {
+                    "1:1  (1024×1024)": (1024, 1024),
+                    "4:3  (1024×768)":  (1024, 768),
+                    "16:9 (1365×768)":  (1365, 768),
+                    "3:4  (768×1024)":  (768,  1024),
+                }
+                city_ratio_sel = st.selectbox("縦横比", list(_city_ratios.keys()), index=0, key="city_ratio")
+                city_w, city_h = _city_ratios[city_ratio_sel]
                 city_prompt_val_now = st.session_state.get(city_prompt_key, "")
                 city_gen_btn        = st.button(
                     "🎨 生成実行", type="primary", key="city_gen",
@@ -922,6 +951,8 @@ with tab2:
                             prompt=city_prompt_val_now,
                             plate_color="",
                             model=city_model_key,
+                            width=city_w,
+                            height=city_h,
                         )
                         new_item = _temp_save({
                             "bytes":   img_bytes,

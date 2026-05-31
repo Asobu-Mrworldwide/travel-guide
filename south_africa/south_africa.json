@@ -4,108 +4,292 @@
   "name_en": "South Africa",
   "page_title": "南アフリカ共和国旅行ガイド",
   "hero_image": "",
-  "hero_alt": "南アフリカ共和国の風景",
-  "hero_prompt": "",
+  "hero_alt": "ケープタウンとテーブルマウンテンの風景",
+  "hero_prompt": "Aerial panoramic view of Cape Town with flat-topped Table Mountain and Lion's Head peak, turquoise Atlantic Ocean, colorful Bo-Kaap houses, golden hour light, ultra-wide travel banner",
   "overview": {
     "country_question": "南アフリカ共和国ってどんな国？",
-    "description_html": "",
-    "flag_html": "",
-    "flag_caption": "",
-    "top_spot_name": "",
-    "top_spot_desc": "",
-    "top_food_name": "",
-    "top_food_desc": "",
+    "description_html": "アフリカ大陸最南端に位置する南アフリカは、<strong>「レインボーネーション」</strong>と呼ばれる多民族・多文化国家。ケープタウンのテーブルマウンテン、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、<strong>圧倒的なスケールの自然と歴史的観光地</strong>が共存する唯一無二の国です。",
+    "flag_html": "<div style=\"position:relative;border-radius:6px;height:100px;width:200px;display:inline-block;overflow:hidden;border:1px solid #eee;background:linear-gradient(to bottom,#DE3831 0% 33%,#FFFFFF 33% 36%,#007A4D 36% 64%,#FFFFFF 64% 67%,#002395 67% 100%)\"><div style=\"position:absolute;top:0;left:0;width:0;height:0;border-style:solid;border-width:50px 0 50px 62px;border-color:transparent transparent transparent #000\"></div><div style=\"position:absolute;top:3px;left:0;width:0;height:0;border-style:solid;border-width:47px 0 47px 57px;border-color:transparent transparent transparent #FFB612\"></div><div style=\"position:absolute;top:6px;left:0;width:0;height:0;border-style:solid;border-width:44px 0 44px 52px;border-color:transparent transparent transparent #007A4D\"></div></div>",
+    "flag_caption": "南アフリカの国旗。6色の「レインボーフラッグ」は民主化と多民族の共生を象徴する。",
+    "top_spot_name": "テーブルマウンテン",
+    "top_spot_desc": "ケープタウンを見下ろす標高1,086mの平頂山。ロープウェイで頂上へ行けば南大西洋を一望できる世界自然遺産。",
+    "top_food_name": "ブライ",
+    "top_food_desc": "南アフリカ版BBQ。毎週末に家族・友人と炭火を囲む国民的な食文化で、肉の種類や焼き方にこだわりが深い。",
     "top_food_image": "",
-    "difficulty_label": "",
-    "difficulty_label_bg": "#e8f5ee",
-    "difficulty_label_color": "var(--green)",
-    "difficulty_pct": "50",
-    "difficulty_bar": "linear-gradient(90deg,#00a86b,#66cc99)",
-    "difficulty_desc": "",
-    "japan_popularity_html": "",
-    "flight_hours": "",
-    "timezone": "",
-    "visa": "",
-    "budget_range": "",
-    "language": "",
-    "currency_name": "",
-    "currency_rate": ""
+    "difficulty_label": "やや難しい",
+    "difficulty_label_bg": "#fff3e0",
+    "difficulty_label_color": "#e65100",
+    "difficulty_pct": "55",
+    "difficulty_bar": "linear-gradient(90deg,#ff9800,#ffcc80)",
+    "difficulty_desc": "英語が公用語のひとつで意思疎通は比較的容易。日本人はビザ不要（30日）。一方、日本から直行便はなく乗り継ぎが必要（約17〜18時間）。ヨハネスブルクなど大都市では治安に注意が必要。サファリや自然観光は現地ツアーの利用が安心。",
+    "japan_popularity_html": "年間約3,000〜4,000人の日本人が訪れる旅行先。まだ認知度は高くないが、<strong>ケープタウンの絶景・ビッグファイブサファリ・多彩なグルメ</strong>の魅力に気づく旅好きの間で注目が高まっている。ドーハ・ドバイ・香港経由の乗り継ぎが一般的。",
+    "flight_hours": "約17〜18時間",
+    "timezone": "日本 −7時間",
+    "visa": "不要（30日）",
+    "budget_range": "25〜45万円",
+    "language": "英語OK",
+    "currency_name": "ランド(ZAR)",
+    "currency_rate": "1ZAR ≈ 7.5円"
   },
   "map": {
     "element_id": "south_africa-map",
-    "center_lat": "0",
-    "center_lng": "0",
+    "center_lat": "-29.0",
+    "center_lng": "25.0",
     "zoom": "5",
     "map_id": "",
     "country_label": "南アフリカ共和国"
   },
-  "cities": [],
+  "cities": [
+    {
+      "id": "cape_town",
+      "name": "ケープタウン",
+      "lat": "-33.9249",
+      "lng": "18.4241",
+      "zoom": "11",
+      "color": "#DE3831",
+      "marker_size": "14",
+      "marker_label": "★",
+      "badge": "立法首都",
+      "badge_class": "",
+      "description": "テーブルマウンテンを仰ぐ南アフリカ最大の観光都市"
+    },
+    {
+      "id": "johannesburg",
+      "name": "ヨハネスブルク",
+      "lat": "-26.2041",
+      "lng": "28.0473",
+      "zoom": "11",
+      "color": "#007A4D",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "最大都市",
+      "badge_class": "green",
+      "description": "アフリカ最大の経済都市。ソウェトとアパルトヘイト博物館が有名"
+    },
+    {
+      "id": "durban",
+      "name": "ダーバン",
+      "lat": "-29.8587",
+      "lng": "31.0218",
+      "zoom": "12",
+      "color": "#007A4D",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "海の玄関口",
+      "badge_class": "green",
+      "description": "インド洋に面する港町。インド系文化とビーチが融合"
+    },
+    {
+      "id": "pretoria",
+      "name": "プレトリア",
+      "lat": "-25.7479",
+      "lng": "28.2293",
+      "zoom": "12",
+      "color": "#007A4D",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "行政首都",
+      "badge_class": "green",
+      "description": "ジャカランダの花で知られる行政の中心地"
+    },
+    {
+      "id": "kruger",
+      "name": "クルーガー国立公園",
+      "lat": "-24.0",
+      "lng": "31.5",
+      "zoom": "7",
+      "color": "#8B6914",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "サファリ",
+      "badge_class": "green",
+      "description": "ビッグファイブが生息する世界最大級の国立公園"
+    }
+  ],
   "season_mini": {
-    "description": "",
-    "city_name": "",
+    "description": "南半球のため季節は日本と逆。ケープタウンは夏（12〜2月）が乾燥・快晴、冬（6〜8月）が雨季。",
+    "city_name": "ケープタウン",
     "months": [
-      {
-        "icon": "☔",
-        "temp": "27°",
-        "type": "t-mild"
-      },
-      {
-        "icon": "⛅",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☀️",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☀️",
-        "temp": "29°",
-        "type": "t-hot"
-      },
-      {
-        "icon": "☀️",
-        "temp": "29°",
-        "type": "t-hot"
-      },
-      {
-        "icon": "☀️",
-        "temp": "29°",
-        "type": "t-hot"
-      },
-      {
-        "icon": "☀️",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☀️",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☀️",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☔",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☔",
-        "temp": "27°",
-        "type": "t-mild"
-      },
-      {
-        "icon": "☔",
-        "temp": "27°",
-        "type": "t-mild"
-      }
+      { "icon": "☀️", "temp": "26°", "type": "t-hot" },
+      { "icon": "☀️", "temp": "26°", "type": "t-hot" },
+      { "icon": "⛅", "temp": "23°", "type": "t-warm" },
+      { "icon": "🌥️", "temp": "20°", "type": "t-warm" },
+      { "icon": "☔", "temp": "16°", "type": "t-mild" },
+      { "icon": "☔", "temp": "13°", "type": "t-mild" },
+      { "icon": "☔", "temp": "12°", "type": "t-mild" },
+      { "icon": "☔", "temp": "13°", "type": "t-mild" },
+      { "icon": "⛅", "temp": "15°", "type": "t-mild" },
+      { "icon": "⛅", "temp": "19°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "22°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "25°", "type": "t-hot" }
     ]
   },
-  "food_items": [],
-  "spot_sections": []
+  "food_items": [
+    {
+      "num": "No.1",
+      "name": "ブライ",
+      "badge": "国民食",
+      "type": "main",
+      "city": "national",
+      "desc": "南アフリカ版BBQ。毎週末に家族・友人と炭火を囲む国民的な食文化。羊・牛・鶏などを豪快に焼き上げる。",
+      "image": "",
+      "prompt_en": "Braai, South African barbecue, grilled lamb chops and boerewors sausage on charcoal grill",
+      "plate_color": "white ceramic plate"
+    },
+    {
+      "num": "No.2",
+      "name": "ボーワース",
+      "badge": "BBQの定番",
+      "type": "main",
+      "city": "national",
+      "desc": "コリアンダーとナツメグで香りをつけた牛・豚のコイル状ソーセージ。ブライに欠かせない一品。",
+      "image": "",
+      "prompt_en": "Boerewors, South African coiled spiced sausage, grilled with golden brown char marks",
+      "plate_color": "white ceramic plate"
+    },
+    {
+      "num": "No.3",
+      "name": "ビルトン",
+      "badge": "定番スナック",
+      "type": "snack",
+      "city": "national",
+      "desc": "ビネガーとコリアンダーで味付けし乾燥熟成させた牛肉。ジャーキーより柔らかくスパイシーで、スーパーでも手軽に買える。",
+      "image": "",
+      "prompt_en": "Biltong, South African dried cured meat strips, dark brown seasoned beef on wooden board",
+      "plate_color": "wooden plate"
+    },
+    {
+      "num": "No.4",
+      "name": "バニーチョウ",
+      "badge": "ダーバン名物",
+      "type": "main",
+      "city": "durban",
+      "desc": "ダーバン発祥のインド系料理。食パンをくり抜いてカレーを詰めた豪快なB級グルメ。手で食べるのがダーバン流。",
+      "image": "",
+      "prompt_en": "Bunny Chow, South African curry served inside hollowed quarter loaf of white bread, Durban street food",
+      "plate_color": "white ceramic plate"
+    },
+    {
+      "num": "No.5",
+      "name": "ボボティ",
+      "badge": "ケープマレー料理",
+      "type": "main",
+      "city": "cape_town",
+      "desc": "スパイスとドライフルーツを混ぜたひき肉の上にエッグカスタードをかけてオーブン焼きにした料理。南アフリカの国民料理のひとつ。",
+      "image": "",
+      "prompt_en": "Bobotie, South African baked minced meat dish with golden egg custard topping, served with yellow rice",
+      "plate_color": "dark ceramic plate"
+    },
+    {
+      "num": "No.6",
+      "name": "ポトジェコス",
+      "badge": "郷土料理",
+      "type": "main",
+      "city": "national",
+      "desc": "三本脚の鋳鉄鍋「ポトジェ」で肉・野菜をじっくり炭火で煮込んだシチュー。アウトドアやキャンプ文化に欠かせない料理。",
+      "image": "",
+      "prompt_en": "Potjiekos, South African slow-cooked stew in a black cast iron three-legged pot with meat and vegetables",
+      "plate_color": "dark ceramic bowl"
+    },
+    {
+      "num": "No.7",
+      "name": "ミーリーパップ",
+      "badge": "主食",
+      "type": "side",
+      "city": "national",
+      "desc": "トウモロコシ粉で作った白い粥状の主食。南アフリカ全土の家庭料理に欠かせないスタープル。肉料理や野菜スープと合わせる。",
+      "image": "",
+      "prompt_en": "Mieliepap, South African white maize porridge in a bowl, smooth corn meal staple food",
+      "plate_color": "white ceramic bowl"
+    },
+    {
+      "num": "No.8",
+      "name": "ケープマレーカレー",
+      "badge": "ケープタウン名物",
+      "type": "main",
+      "city": "cape_town",
+      "desc": "マレー系移民が伝えた甘みとスパイスが絶妙なカレー。シナモン・カルダモン・ドライアプリコットを加えた独特の風味が特徴。",
+      "image": "",
+      "prompt_en": "Cape Malay Curry, aromatic South African curry with tender chicken, dried apricots and warm spices, Cape Town specialty",
+      "plate_color": "terracotta ceramic plate"
+    },
+    {
+      "num": "No.9",
+      "name": "マルバプディング",
+      "badge": "定番デザート",
+      "type": "dessert",
+      "city": "national",
+      "desc": "アプリコットジャムを使ったしっとり甘いスポンジプディング。温かいバタークリームソースをかけて食べる南アフリカの定番デザート。",
+      "image": "",
+      "prompt_en": "Malva Pudding, South African sticky sweet sponge cake dessert with apricot jam, served warm with cream sauce",
+      "plate_color": "white ceramic plate"
+    },
+    {
+      "num": "No.10",
+      "name": "ロイボスティー",
+      "badge": "国産ハーブティー",
+      "type": "drink",
+      "city": "national",
+      "desc": "南アフリカ原産の赤いハーブティー。カフェインゼロで抗酸化作用が高く、世界的に人気が高まっている。",
+      "image": "",
+      "prompt_en": "Rooibos tea, red South African herbal tea in a ceramic cup, with dried rooibos leaves on saucer",
+      "plate_color": "white ceramic cup"
+    },
+    {
+      "num": "No.11",
+      "name": "ペリペリチキン",
+      "badge": "スパイシーグリル",
+      "type": "main",
+      "city": "national",
+      "desc": "アフリカン・バードズアイペッパー（ペリペリ）で味付けしたグリルチキン。ポルトガル植民地文化の影響を受けた一品。",
+      "image": "",
+      "prompt_en": "Peri-peri chicken, South African spicy grilled half chicken with red bird's eye chili marinade and char marks",
+      "plate_color": "white ceramic plate"
+    },
+    {
+      "num": "No.12",
+      "name": "サモサ",
+      "badge": "インド系スナック",
+      "type": "snack",
+      "city": "durban",
+      "desc": "インド系南アフリカ人が広めた三角形の揚げ餃子。スパイシーな肉・野菜の具材入りで、チャツネと一緒に食べる。",
+      "image": "",
+      "prompt_en": "Samoosas, South African fried triangular pastry filled with spiced minced meat, golden brown crispy",
+      "plate_color": "white ceramic plate"
+    }
+  ],
+  "spot_sections": [
+    {
+      "city_id": "cape_town",
+      "city_name": "ケープタウン",
+      "city_image": "",
+      "city_prompt": "Aerial view of Cape Town with flat-topped Table Mountain, Victoria and Alfred Waterfront, Atlantic Ocean coastline, golden hour light, travel photography",
+      "city_desc": "テーブルマウンテンを仰ぐ世界有数の美港都市。ビーチ・ワイン産地・カラフルなボカープ地区など見どころが集中する。",
+      "spots": []
+    },
+    {
+      "city_id": "johannesburg",
+      "city_name": "ヨハネスブルク",
+      "city_image": "",
+      "city_prompt": "Johannesburg cityscape with modern skyscrapers, Soweto township panorama, vibrant African city, travel photography",
+      "city_desc": "アフリカ最大の経済都市。アパルトヘイト博物館とソウェト歴史地区でネルソン・マンデラの足跡をたどれる。",
+      "spots": []
+    },
+    {
+      "city_id": "durban",
+      "city_name": "ダーバン",
+      "city_image": "",
+      "city_prompt": "Durban Golden Mile beachfront, Indian Ocean waves, palm trees and promenade, South Africa coastal city, travel photography",
+      "city_desc": "インド洋に面するビーチシティ。インド系文化と南アフリカ文化が融合した独自の食文化とマーケットが魅力。",
+      "spots": []
+    },
+    {
+      "city_id": "kruger",
+      "city_name": "クルーガー国立公園",
+      "city_image": "",
+      "city_prompt": "Kruger National Park savanna with African elephants and acacia trees, golden sunset, wildlife safari, South Africa",
+      "city_desc": "ビッグファイブ（ライオン・ゾウ・バッファロー・ヒョウ・サイ）が生息する世界最大級の国立公園。",
+      "spots": []
+    }
+  ]
 }
