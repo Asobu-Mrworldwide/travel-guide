@@ -1255,7 +1255,7 @@ def _build_template_from(base_id: str) -> dict:
     # ── map ──
     tmpl["map"] = {
         "element_id": "", "center_lat": "0", "center_lng": "0",
-        "zoom": "5", "map_id": "", "country_label": "",
+        "zoom": "5", "map_id": "ebb608e55ed157f8630c407e", "country_label": "",
     }
 
     # ── cities / food_items / spot_sections は 0件スタート ──
