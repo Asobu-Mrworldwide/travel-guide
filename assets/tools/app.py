@@ -625,10 +625,10 @@ with tab2:
                 model_key_r = "recraft20b"
             ASPECT_RATIOS = {
                 "1:1  (1024×1024)": (1024, 1024),
-                "4:3  (1024×768)":  (1024, 768),
-                "3:4  (768×1024)":  (768,  1024),
-                "16:9 (1365×768)":  (1365, 768),
-                "9:16 (768×1365)":  (768,  1365),
+                "4:3  (1365×1024)": (1365, 1024),
+                "3:4  (1024×1365)": (1024, 1365),
+                "16:9 (1820×1024)": (1820, 1024),
+                "9:16 (1024×1820)": (1024, 1820),
             }
             ratio_sel  = st.selectbox("縦横比", list(ASPECT_RATIOS.keys()), index=0, key=f"gen_ratio_{item_key}")
             gen_width, gen_height = ASPECT_RATIOS[ratio_sel]
@@ -790,10 +790,10 @@ with tab2:
             else:
                 hero_model_key = "recraftv3"
             _hero_ratios = {
-                "16:9 (1365×768)":  (1365, 768),
+                "16:9 (1820×1024)": (1820, 1024),
                 "1:1  (1024×1024)": (1024, 1024),
-                "4:3  (1024×768)":  (1024, 768),
-                "9:16 (768×1365)":  (768,  1365),
+                "4:3  (1365×1024)": (1365, 1024),
+                "9:16 (1024×1820)": (1024, 1820),
             }
             hero_ratio_sel = st.selectbox("縦横比", list(_hero_ratios.keys()), index=0, key="hero_ratio")
             hero_w, hero_h = _hero_ratios[hero_ratio_sel]
@@ -983,9 +983,9 @@ with tab2:
                 )
                 _spot_ratios = {
                     "1:1  (1024×1024)": (1024, 1024),
-                    "4:3  (1024×768)":  (1024, 768),
-                    "16:9 (1365×768)":  (1365, 768),
-                    "3:4  (768×1024)":  (768,  1024),
+                    "4:3  (1365×1024)": (1365, 1024),
+                    "16:9 (1820×1024)": (1820, 1024),
+                    "3:4  (1024×1365)": (1024, 1365),
                 }
                 spot_ratio_sel      = st.selectbox("縦横比", list(_spot_ratios.keys()), index=1, key="spot_ratio")
                 spot_w, spot_h      = _spot_ratios[spot_ratio_sel]
@@ -1152,34 +1152,60 @@ with tab3:
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # タブ4: サイト更新
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+def _run_generate(cid: str) -> tuple[int, str, str]:
+    """generate.py を実行して (returncode, stdout, stderr) を返す"""
+    try:
+        r = subprocess.run(
+            [sys.executable, "-X", "utf8", str(GENERATE_PY), cid],
+            capture_output=True,
+            cwd=str(TOOLS_DIR),
+        )
+        return r.returncode, r.stdout.decode("utf-8", errors="replace"), r.stderr.decode("utf-8", errors="replace")
+    except Exception as e:
+        return -1, "", str(e)
+
 with tab4:
     st.subheader("サイト更新（generate.py 実行）")
-    st.info(f"対象: **{country_id}** の index.html を再生成します。")
 
-    if st.button("🚀 generate.py を実行", type="primary"):
-        save_last_state({"tab": 3})
-        with st.spinner("実行中..."):
-            try:
-                result = subprocess.run(
-                    [sys.executable, "-X", "utf8", str(GENERATE_PY), country_id],
-                    capture_output=True,
-                    cwd=str(TOOLS_DIR),
-                )
-                stdout = result.stdout.decode("utf-8", errors="replace")
-                stderr = result.stderr.decode("utf-8", errors="replace")
-                returncode = result.returncode
-            except Exception as e:
-                stdout, stderr, returncode = "", str(e), -1
+    t4_col1, t4_col2 = st.columns(2)
 
-        if returncode == 0:
-            st.success("✅ 生成完了！")
-        else:
-            st.error(f"❌ エラーが発生しました（returncode={returncode}）")
+    # ── 現在の国だけ更新 ──
+    with t4_col1:
+        st.markdown(f"**現在の国のみ**")
+        st.caption(f"{country_id} の index.html を再生成")
+        if st.button("🚀 この国を更新", type="primary", key="t4_single"):
+            save_last_state({"tab": 3})
+            with st.spinner(f"{country_id} を生成中..."):
+                rc, out, err = _run_generate(country_id)
+            if rc == 0:
+                st.success(f"✅ {country_id} 完了")
+            else:
+                st.error(f"❌ エラー (code={rc})")
+            if out: st.text_area("stdout", out, height=120, key="t4s_out")
+            if err: st.text_area("stderr", err, height=150, key="t4s_err")
 
-        if stdout:
-            st.text_area("stdout", stdout, height=120)
-        if stderr:
-            st.text_area("stderr（エラー詳細）", stderr, height=200)
+    # ── 全国一括更新 ──
+    with t4_col2:
+        all_countries = detect_countries()
+        st.markdown(f"**全国一括**")
+        st.caption(f"{len(all_countries)} か国を順に再生成")
+        if st.button(f"🌏 全 {len(all_countries)} か国を更新", key="t4_all"):
+            save_last_state({"tab": 3})
+            results_log = []
+            progress = st.progress(0, text="準備中...")
+            for idx, cid in enumerate(all_countries):
+                progress.progress((idx) / len(all_countries), text=f"処理中: {cid} ({idx+1}/{len(all_countries)})")
+                rc, out, err = _run_generate(cid)
+                mark = "✅" if rc == 0 else "❌"
+                results_log.append(f"{mark} {cid}" + (f"  — {err.strip()[:80]}" if rc != 0 else ""))
+            progress.progress(1.0, text="完了！")
+            ok  = sum(1 for l in results_log if l.startswith("✅"))
+            ng  = len(results_log) - ok
+            if ng == 0:
+                st.success(f"✅ 全 {ok} か国の更新が完了しました")
+            else:
+                st.warning(f"完了: {ok} 成功 / {ng} 失敗")
+            st.text_area("実行ログ", "\n".join(results_log), height=300, key="t4a_log")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
