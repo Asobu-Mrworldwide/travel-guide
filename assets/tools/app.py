@@ -208,7 +208,6 @@ tab1, tab2, tab3, tab4 = st.tabs(["📋 料理一覧", "✨ 画像生成", "🖼
 # タブ1: 料理一覧 / プロンプト編集
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab1:
-    st.session_state["active_tab"] = 0
     st.subheader("料理一覧・プロンプト編集")
 
     rows = []
@@ -242,6 +241,10 @@ with tab1:
         data["food_items"] = food_items
         save_json(country_id, data)
         save_last_state({"tab": 0})
+        # タブ2のプロンプトキャッシュをクリアして最新JSONを反映させる
+        for k in list(st.session_state.keys()):
+            if k.startswith("gen_prompt_"):
+                del st.session_state[k]
         st.success("✅ 保存しました（バックアップ: .json.bak）")
         st.rerun()
 
@@ -250,7 +253,6 @@ with tab1:
 # タブ2: 画像生成
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab2:
-    st.session_state["active_tab"] = 1
     st.subheader("画像生成")
 
     gen_category = st.radio(
@@ -260,12 +262,13 @@ with tab2:
         label_visibility="collapsed",
     )
 
-    # カテゴリ切り替え時に生成結果をリセット
-    if st.session_state.get("_gen_cat") != gen_category:
-        st.session_state["_gen_cat"]    = gen_category
-        st.session_state["gen_results"] = []
+    # 初回ロード時は一時ファイルから復元、カテゴリ切り替え時のみリセット
     if "gen_results" not in st.session_state:
         st.session_state["gen_results"] = _temp_load_all()
+        st.session_state["_gen_cat"]    = gen_category
+    elif st.session_state.get("_gen_cat") != gen_category:
+        st.session_state["_gen_cat"]    = gen_category
+        st.session_state["gen_results"] = []
 
     st.divider()
 
@@ -292,8 +295,10 @@ with tab2:
 
         item_key   = sel_item.get("num", "0").replace(".", "_")
         key_prompt = f"gen_prompt_{item_key}"
-        if not st.session_state.get(key_prompt) and sel_item.get("prompt_en"):
-            st.session_state[key_prompt] = sel_item["prompt_en"]
+        if not st.session_state.get(key_prompt):
+            # 優先順: last_state（前回編集値）→ JSON（保存済み）
+            _saved_prompt = last_state.get("prompts", {}).get(f"{country_id}_{item_key}", "")
+            st.session_state[key_prompt] = _saved_prompt or sel_item.get("prompt_en", "")
 
         SHAPES = {
             "プレート":             "ceramic plate",
@@ -356,6 +361,9 @@ with tab2:
         en_color        = COLORS[_color_now]
         plate_color_val = f"{en_color} {en_shape}".strip() if en_color else en_shape
         prompt_val      = st.session_state.get(key_prompt, sel_item.get("prompt_en", ""))
+        # ページ更新後も復元できるよう last_state に保存
+        _p_dict = {**last_state.get("prompts", {}), f"{country_id}_{item_key}": prompt_val}
+        save_last_state({"prompts": _p_dict})
 
         col_l, col_r = st.columns(2)
 
@@ -476,10 +484,19 @@ with tab2:
             )
             model_val = st.radio(
                 "モデル",
-                ["recraft20b  22cr ≈ ¥3.5/枚", "🎨 水彩  40cr ≈ ¥6.4/枚", "recraftv3  40cr ≈ ¥6.4/枚"],
+                [
+                    "🎨 水彩20b  22cr ≈ ¥3.5/枚",
+                    "recraft20b  22cr ≈ ¥3.5/枚",
+                    "recraftv3   40cr ≈ ¥6.4/枚",
+                ],
                 horizontal=True,
             )
-            model_key_r = "recraft20b" if "recraft20b" in model_val else ("watercolor" if "水彩" in model_val else "recraftv3")
+            if "水彩20b" in model_val:
+                model_key_r = "watercolor20b"
+            elif "recraft20b" in model_val:
+                model_key_r = "recraft20b"
+            else:
+                model_key_r = "recraftv3"
             final_prompt = (angle_prefix + " " + prompt_val).strip() if angle_prefix else prompt_val
             if angle_prefix:
                 st.caption(f"📤 先頭付与: `{angle_prefix[:60]}…`")
@@ -506,6 +523,7 @@ with tab2:
                         st.session_state["gen_results"] = (
                             st.session_state.get("gen_results", []) + [new_item]
                         )
+                        st.rerun()
                     except RuntimeError as e:
                         st.error(str(e))
 
@@ -588,11 +606,20 @@ with tab2:
             )
             hero_model_val = st.radio(
                 "モデル",
-                ["recraft20b  22cr ≈ ¥3.5/枚", "🎨 水彩  40cr ≈ ¥6.4/枚", "recraftv3  40cr ≈ ¥6.4/枚"],
+                [
+                    "🎨 水彩20b  22cr ≈ ¥3.5/枚",
+                    "recraft20b  22cr ≈ ¥3.5/枚",
+                    "recraftv3   40cr ≈ ¥6.4/枚",
+                ],
                 horizontal=True,
                 key="hero_model",
             )
-            hero_model_key  = "recraft20b" if "recraft20b" in hero_model_val else ("watercolor" if "水彩" in hero_model_val else "recraftv3")
+            if "水彩20b" in hero_model_val:
+                hero_model_key = "watercolor20b"
+            elif "recraft20b" in hero_model_val:
+                hero_model_key = "recraft20b"
+            else:
+                hero_model_key = "recraftv3"
             hero_prompt_val = st.session_state.get(hero_prompt_key, "")
             hero_gen_btn    = st.button(
                 "🎨 生成実行", type="primary", key="hero_gen",
@@ -616,6 +643,7 @@ with tab2:
                     st.session_state["gen_results"] = (
                         st.session_state.get("gen_results", []) + [new_item]
                     )
+                    st.rerun()
                 except RuntimeError as e:
                     st.error(str(e))
 
@@ -716,11 +744,20 @@ with tab2:
                 )
                 city_model_val = st.radio(
                     "モデル",
-                    ["recraft20b  22cr ≈ ¥3.5/枚", "🎨 水彩  40cr ≈ ¥6.4/枚", "recraftv3  40cr ≈ ¥6.4/枚"],
+                    [
+                        "🎨 水彩20b  22cr ≈ ¥3.5/枚",
+                        "recraft20b  22cr ≈ ¥3.5/枚",
+                        "recraftv3   40cr ≈ ¥6.4/枚",
+                    ],
                     horizontal=True,
                     key="city_model",
                 )
-                city_model_key      = "recraft20b" if "recraft20b" in city_model_val else ("watercolor" if "水彩" in city_model_val else "recraftv3")
+                if "水彩20b" in city_model_val:
+                    city_model_key = "watercolor20b"
+                elif "recraft20b" in city_model_val:
+                    city_model_key = "recraft20b"
+                else:
+                    city_model_key = "recraftv3"
                 city_prompt_val_now = st.session_state.get(city_prompt_key, "")
                 city_gen_btn        = st.button(
                     "🎨 生成実行", type="primary", key="city_gen",
@@ -744,6 +781,7 @@ with tab2:
                         st.session_state["gen_results"] = (
                             st.session_state.get("gen_results", []) + [new_item]
                         )
+                        st.rerun()
                     except RuntimeError as e:
                         st.error(str(e))
 
@@ -753,7 +791,6 @@ with tab2:
 # タブ3: 画像管理
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab3:
-    st.session_state["active_tab"] = 2
     st.subheader("画像管理")
     img_dir = food_dir(country_id)
 
@@ -837,7 +874,6 @@ with tab3:
 # タブ4: サイト更新
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab4:
-    st.session_state["active_tab"] = 3
     st.subheader("サイト更新（generate.py 実行）")
     st.info(f"対象: **{country_id}** の index.html を再生成します。")
 
