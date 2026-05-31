@@ -14,7 +14,12 @@ import streamlit as st
 from PIL import Image
 
 import recraft_api
-from rembg import remove as rembg_remove
+from rembg import remove as rembg_remove, new_session as rembg_new_session
+
+@st.cache_resource
+def _get_rembg_session():
+    """起動時に1回だけモデルをロードしてキャッシュ"""
+    return rembg_new_session("isnet-general-use")  # 高精度・中速モデル
 
 # ──────────────────────────────────────────────────────────
 # パス定義
@@ -34,8 +39,13 @@ def _temp_save(item: dict) -> dict:
     """gen_results の1件をディスクに一時保存してtmp_idを付与して返す"""
     tid = item.get("tmp_id") or _uuid.uuid4().hex[:10]
     (TEMP_DIR / f"{tid}.webp").write_bytes(item["bytes"])
-    meta = {k: v for k, v in item.items() if k != "bytes"}
+    # original_bytes がある場合は別ファイルに保存
+    if "original_bytes" in item:
+        (TEMP_DIR / f"{tid}_orig.webp").write_bytes(item["original_bytes"])
+    meta = {k: v for k, v in item.items() if k not in ("bytes", "original_bytes")}
     meta["tmp_id"] = tid
+    if "original_bytes" in item:
+        meta["has_original"] = True
     (TEMP_DIR / f"{tid}.json").write_text(
         json.dumps(meta, ensure_ascii=False), encoding="utf-8")
     return {**item, "tmp_id": tid}
@@ -43,7 +53,7 @@ def _temp_save(item: dict) -> dict:
 
 def _temp_delete(tmp_id: str):
     """一時ファイルを削除"""
-    for ext in (".webp", ".json"):
+    for ext in (".webp", ".json", "_orig.webp"):
         p = TEMP_DIR / f"{tmp_id}{ext}"
         if p.exists():
             p.unlink()
@@ -59,6 +69,10 @@ def _temp_load_all() -> list[dict]:
         try:
             meta  = json.loads(meta_path.read_text(encoding="utf-8"))
             bdata = img_path.read_bytes()
+            # original_bytes の復元
+            orig_path = TEMP_DIR / f"{meta.get('tmp_id', '')}_orig.webp"
+            if orig_path.exists():
+                meta["original_bytes"] = orig_path.read_bytes()
             results.append({**meta, "bytes": bdata})
         except Exception:
             pass
@@ -347,6 +361,7 @@ with tab2:
             st.session_state[key_prompt] = _saved_prompt or sel_item.get("prompt_en", "")
 
         SHAPES = {
+            "指定なし":             "",
             "プレート":             "ceramic plate",
             "ボウル":               "ceramic bowl",
             "深めのボウル":         "deep ceramic bowl",
@@ -396,16 +411,20 @@ with tab2:
                 default_color = jp_c
                 break
 
-        shape_key  = f"gen_shape_{item_key}"
-        color_key  = f"gen_color_{item_key}"
-        _shape_now = st.session_state.get(shape_key, default_shape)
-        _color_now = st.session_state.get(color_key, default_color)
+        shape_key   = f"gen_shape_{item_key}"
+        color_key   = f"gen_color_{item_key}"
+        pattern_key = f"gen_pattern_{item_key}"
+        _shape_now  = st.session_state.get(shape_key, default_shape)
+        _color_now  = st.session_state.get(color_key, default_color)
         if _shape_now not in SHAPES: _shape_now = default_shape
         if _color_now not in COLORS: _color_now = default_color
 
         en_shape        = SHAPES[_shape_now]
         en_color        = COLORS[_color_now]
-        plate_color_val = f"{en_color} {en_shape}".strip() if en_color else en_shape
+        _use_pattern    = st.session_state.get(pattern_key, False)
+        _pattern_str    = " with decorative pattern" if _use_pattern and en_shape else ""
+        plate_color_val = (f"{en_color} {en_shape}{_pattern_str}".strip()
+                           if en_color else f"{en_shape}{_pattern_str}".strip())
         prompt_val      = st.session_state.get(key_prompt, sel_item.get("prompt_en", ""))
         # ページ更新後も復元できるよう last_state に保存
         _p_dict = {**last_state.get("prompts", {}), f"{country_id}_{item_key}": prompt_val}
@@ -419,11 +438,14 @@ with tab2:
                 with st.spinner("背景除去中（ローカル処理）..."):
                     try:
                         _res      = _results[_bg_i]
-                        bg_bytes  = rembg_remove(_res["bytes"])
+                        bg_bytes  = rembg_remove(_res["bytes"], session=_get_rembg_session())
                         new_bytes = to_webp(bg_bytes)
                         new_list  = list(_results)
-                        new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
+                        # 元画像をoriginal_bytesとして保持
+                        orig = _res.get("original_bytes") or _res["bytes"]
+                        new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes, "original_bytes": orig})
                         st.session_state["gen_results"] = new_list
+                        st.rerun()
                     except Exception as e:
                         st.error(f"背景除去失敗: {e}")
 
@@ -448,7 +470,7 @@ with tab2:
                         cr_str = f"消費: {res['credits']}cr" if res.get("credits") else ""
                         st.caption(f"#{i+1}　{cr_str}")
                         st.image(res["bytes"], use_container_width=True)
-                        b1, b2, b3 = st.columns(3)
+                        b1, b2, b3, b4 = st.columns(4)
                         with b1:
                             if st.button("💾 保存", key=f"save_{i}", type="primary"):
                                 name    = res.get("name", sel_item.get("name", "output"))
@@ -479,6 +501,15 @@ with tab2:
                                 _temp_delete(res.get("tmp_id", ""))
                                 st.session_state["gen_results"] = [r for j, r in enumerate(results) if j != i]
                                 st.rerun()
+                        with b4:
+                            if res.get("original_bytes"):
+                                if st.button("↩️", key=f"undo_{i}", help="背景除去を元に戻す"):
+                                    _restored = {k: v for k, v in res.items() if k not in ("original_bytes", "has_original")}
+                                    _restored["bytes"] = res["original_bytes"]
+                                    _new_list = list(results)
+                                    _new_list[i] = _temp_save(_restored)
+                                    st.session_state["gen_results"] = _new_list
+                                    st.rerun()
             else:
                 existing_path = ROOT_DIR / country_id / sel_item.get("image", "")
                 if existing_path.exists() and sel_item.get("image"):
@@ -512,11 +543,11 @@ with tab2:
             angle_prefix = ANGLES[angle_sel]
             use_style_key = f"gen_style_{item_key}"
             use_style_val = st.toggle(
-                "スタイルID を使用（オフ＝アングル指示が通りやすい）",
+                "スタイルID を使用（オフ＝背景色・アングル指示が通りやすい）",
                 value=True,
                 key=use_style_key,
             )
-            sc1, sc2 = st.columns(2)
+            sc1, sc2, sc3 = st.columns([2, 2, 1])
             with sc1:
                 st.selectbox(
                     "皿の形状",
@@ -531,6 +562,8 @@ with tab2:
                     index=list(COLORS.keys()).index(_color_now),
                     key=color_key,
                 )
+            with sc3:
+                st.toggle("柄あり", key=pattern_key)
             st.markdown(
                 f"<p style='font-size:1.1em;font-weight:600;color:#444;margin:2px 0 8px;'>"
                 f"→ {plate_color_val}</p>",
@@ -539,20 +572,21 @@ with tab2:
             model_val = st.radio(
                 "モデル",
                 [
-                    "🎨 水彩20b  22cr ≈ ¥3.5/枚",
                     "recraft20b  22cr ≈ ¥3.5/枚",
                     "recraftv3   40cr ≈ ¥6.4/枚",
                 ],
                 horizontal=True,
             )
-            if "水彩20b" in model_val:
-                model_key_r = "watercolor20b"
-            elif "recraft20b" in model_val:
+            if "recraft20b" in model_val:
                 model_key_r = "recraft20b"
             else:
                 model_key_r = "recraftv3"
             _base        = (angle_prefix + " " + prompt_val).strip() if angle_prefix else prompt_val
-            final_prompt = _base + ", pure solid bright green background, chroma key green background, isolated on green"
+            _blue_plates = {"light blue", "blue", "navy"}
+            _bg_suffix   = (", pure solid white background, isolated on white"
+                            if en_color in _blue_plates
+                            else ", pure solid light blue background, isolated on light blue")
+            final_prompt = _base + _bg_suffix
             if angle_prefix:
                 st.caption(f"📤 先頭付与: `{angle_prefix[:60]}…`")
             gen_btn = st.button("🎨 生成実行", type="primary", disabled=not prompt_val.strip())
@@ -598,11 +632,14 @@ with tab2:
                 with st.spinner("背景除去中（ローカル処理）..."):
                     try:
                         _res      = _results[_bg_i]
-                        bg_bytes  = rembg_remove(_res["bytes"])
+                        bg_bytes  = rembg_remove(_res["bytes"], session=_get_rembg_session())
                         new_bytes = to_webp(bg_bytes)
                         new_list  = list(_results)
-                        new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
+                        # 元画像をoriginal_bytesとして保持
+                        orig = _res.get("original_bytes") or _res["bytes"]
+                        new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes, "original_bytes": orig})
                         st.session_state["gen_results"] = new_list
+                        st.rerun()
                     except Exception as e:
                         st.error(f"背景除去失敗: {e}")
 
@@ -626,7 +663,7 @@ with tab2:
                     with img_cols[i % ncols]:
                         st.caption(f"#{i+1}　消費: {res.get('credits', 0)}cr")
                         st.image(res["bytes"], use_container_width=True)
-                        b1, b2, b3 = st.columns(3)
+                        b1, b2, b3, b4 = st.columns(4)
                         with b1:
                             if st.button("💾 保存", key=f"hero_save_{i}", type="primary"):
                                 hero_dir = ROOT_DIR / country_id / "素材"
@@ -650,6 +687,15 @@ with tab2:
                                 _temp_delete(res.get("tmp_id", ""))
                                 st.session_state["gen_results"] = [r for j, r in enumerate(results) if j != i]
                                 st.rerun()
+                        with b4:
+                            if res.get("original_bytes"):
+                                if st.button("↩️", key=f"hero_undo_{i}", help="背景除去を元に戻す"):
+                                    _restored = {k: v for k, v in res.items() if k not in ("original_bytes", "has_original")}
+                                    _restored["bytes"] = res["original_bytes"]
+                                    _new_list = list(results)
+                                    _new_list[i] = _temp_save(_restored)
+                                    st.session_state["gen_results"] = _new_list
+                                    st.rerun()
             else:
                 hero_path = ROOT_DIR / country_id / data.get("hero_image", "NOEXIST")
                 if hero_path.exists():
@@ -670,16 +716,13 @@ with tab2:
             hero_model_val = st.radio(
                 "モデル",
                 [
-                    "🎨 水彩20b  22cr ≈ ¥3.5/枚",
                     "recraft20b  22cr ≈ ¥3.5/枚",
                     "recraftv3   40cr ≈ ¥6.4/枚",
                 ],
                 horizontal=True,
                 key="hero_model",
             )
-            if "水彩20b" in hero_model_val:
-                hero_model_key = "watercolor20b"
-            elif "recraft20b" in hero_model_val:
+            if "recraft20b" in hero_model_val:
                 hero_model_key = "recraft20b"
             else:
                 hero_model_key = "recraftv3"
@@ -741,11 +784,14 @@ with tab2:
                     with st.spinner("背景除去中（ローカル処理）..."):
                         try:
                             _res      = _results[_bg_i]
-                            bg_bytes  = rembg_remove(_res["bytes"])
+                            bg_bytes  = rembg_remove(_res["bytes"], session=_get_rembg_session())
                             new_bytes = to_webp(bg_bytes)
                             new_list  = list(_results)
-                            new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
+                            # 元画像をoriginal_bytesとして保持
+                            orig = _res.get("original_bytes") or _res["bytes"]
+                            new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes, "original_bytes": orig})
                             st.session_state["gen_results"] = new_list
+                            st.rerun()
                         except Exception as e:
                             st.error(f"背景除去失敗: {e}")
 
@@ -769,7 +815,7 @@ with tab2:
                         with img_cols[i % ncols]:
                             st.caption(f"#{i+1}　消費: {res.get('credits', 0)}cr")
                             st.image(res["bytes"], use_container_width=True)
-                            b1, b2, b3 = st.columns(3)
+                            b1, b2, b3, b4 = st.columns(4)
                             with b1:
                                 if st.button("💾 保存", key=f"city_save_{i}", type="primary"):
                                     city_img_dir = ROOT_DIR / country_id / "素材" / "都市"
@@ -795,6 +841,15 @@ with tab2:
                                     _temp_delete(res.get("tmp_id", ""))
                                     st.session_state["gen_results"] = [r for j, r in enumerate(results) if j != i]
                                     st.rerun()
+                            with b4:
+                                if res.get("original_bytes"):
+                                    if st.button("↩️", key=f"city_undo_{i}", help="背景除去を元に戻す"):
+                                        _restored = {k: v for k, v in res.items() if k not in ("original_bytes", "has_original")}
+                                        _restored["bytes"] = res["original_bytes"]
+                                        _new_list = list(results)
+                                        _new_list[i] = _temp_save(_restored)
+                                        st.session_state["gen_results"] = _new_list
+                                        st.rerun()
                 else:
                     city_img      = sel_city.get("city_image", "")
                     city_img_path = (ROOT_DIR / country_id / city_img) if city_img else None
@@ -817,16 +872,13 @@ with tab2:
                 city_model_val = st.radio(
                     "モデル",
                     [
-                        "🎨 水彩20b  22cr ≈ ¥3.5/枚",
                         "recraft20b  22cr ≈ ¥3.5/枚",
                         "recraftv3   40cr ≈ ¥6.4/枚",
                     ],
                     horizontal=True,
                     key="city_model",
                 )
-                if "水彩20b" in city_model_val:
-                    city_model_key = "watercolor20b"
-                elif "recraft20b" in city_model_val:
+                if "recraft20b" in city_model_val:
                     city_model_key = "recraft20b"
                 else:
                     city_model_key = "recraftv3"
@@ -886,7 +938,7 @@ with tab3:
                     if st.button("✂️", key=f"{del_key_prefix}bg_{fpath.name}", help="背景除去"):
                         with st.spinner("処理中（ローカル処理）..."):
                             try:
-                                bg_bytes   = rembg_remove(fpath.read_bytes())
+                                bg_bytes   = rembg_remove(fpath.read_bytes(), session=_get_rembg_session())
                                 webp_bytes = to_webp(bg_bytes)
                                 new_path   = fpath.with_suffix(".webp")
                                 new_path.write_bytes(webp_bytes)
