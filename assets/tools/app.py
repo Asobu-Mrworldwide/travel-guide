@@ -426,9 +426,9 @@ with tab2:
             "なし":           "",
         }
 
-        saved_plate   = sel_item.get("plate_color", "white ceramic plate")
+        saved_plate   = sel_item.get("plate_color", "")
         default_shape = "プレート"
-        default_color = "白"
+        default_color = "なし"
         for jp_s, en_s in SHAPES.items():
             if en_s in saved_plate:
                 default_shape = jp_s
@@ -576,21 +576,27 @@ with tab2:
             )
             sc1, sc2, sc3 = st.columns([2, 2, 1])
             with sc1:
-                st.selectbox(
+                shape_sel = st.selectbox(
                     "皿の形状",
                     list(SHAPES.keys()),
                     index=list(SHAPES.keys()).index(_shape_now),
                     key=shape_key,
                 )
             with sc2:
-                st.selectbox(
+                color_sel = st.selectbox(
                     "皿の色",
                     list(COLORS.keys()),
                     index=list(COLORS.keys()).index(_color_now),
                     key=color_key,
                 )
             with sc3:
-                st.toggle("柄あり", key=pattern_key)
+                pattern_sel = st.toggle("柄あり", key=pattern_key)
+            # セレクトボックスの戻り値から plate_color_val を再計算（確実に最新値を使う）
+            en_shape_r      = SHAPES[shape_sel]
+            en_color_r      = COLORS[color_sel]
+            _pstr_r         = " with decorative pattern" if pattern_sel and en_shape_r else ""
+            plate_color_val = (f"{en_color_r} {en_shape_r}{_pstr_r}".strip()
+                               if en_color_r else f"{en_shape_r}{_pstr_r}".strip())
             st.markdown(
                 f"<p style='font-size:1.1em;font-weight:600;color:#444;margin:2px 0 8px;'>"
                 f"→ {plate_color_val}</p>",
@@ -599,15 +605,19 @@ with tab2:
             model_val = st.radio(
                 "モデル",
                 [
-                    "recraft20b  22cr ≈ ¥3.5/枚",
-                    "recraftv3   40cr ≈ ¥6.4/枚",
+                    "recraft20b       22cr ≈ ¥3.5/枚",
+                    "recraftv3        40cr ≈ ¥6.4/枚",
+                    "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
                 ],
-                horizontal=True,
+                horizontal=False,
+                key=f"gen_model_{item_key}",
             )
-            if "recraft20b" in model_val:
-                model_key_r = "recraft20b"
-            else:
+            if "watercolor20b" in model_val:
+                model_key_r = "watercolor20b"
+            elif "recraftv3" in model_val:
                 model_key_r = "recraftv3"
+            else:
+                model_key_r = "recraft20b"
             ASPECT_RATIOS = {
                 "1:1  (1024×1024)": (1024, 1024),
                 "4:3  (1024×768)":  (1024, 768),
@@ -620,11 +630,15 @@ with tab2:
             _base        = (angle_prefix + " " + prompt_val).strip() if angle_prefix else prompt_val
             _blue_plates = {"light blue", "blue", "navy"}
             _bg_suffix   = (", pure solid white background, isolated on white"
-                            if en_color in _blue_plates
+                            if en_color_r in _blue_plates
                             else ", pure solid light blue background, isolated on light blue")
             final_prompt = _base + _bg_suffix
-            if angle_prefix:
-                st.caption(f"📤 先頭付与: `{angle_prefix[:60]}…`")
+            # 送信プロンプト確認（plate_color を含む完全な文字列を表示）
+            _preview_plate = f", served on a {plate_color_val}." if plate_color_val else ""
+            _preview_full  = final_prompt + _preview_plate
+            with st.expander("📤 送信プロンプト確認（クリックで展開）", expanded=False):
+                st.code(_preview_full, language=None)
+                st.caption(f"皿: {plate_color_val or '（指定なし）'}　サイズ: {gen_width}×{gen_height}")
             gen_btn = st.button("🎨 生成実行", type="primary", disabled=not prompt_val.strip())
 
         if gen_btn:

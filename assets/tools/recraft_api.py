@@ -62,8 +62,7 @@ def generate_image(prompt: str, plate_color: str, model: str = "recraft20b",
     payload = {
         "prompt": full_prompt,
         "model":  actual_model,
-        "width":  width,
-        "height": height,
+        "size":   f"{width}x{height}",
     }
     if use_style and model in STYLE_IDS:
         payload["style_id"] = STYLE_IDS[model]
