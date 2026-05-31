@@ -23,7 +23,7 @@
 
 /* フードカード画像 */
 .food-img{width:100%;height:auto;max-height:220px;object-fit:contain;display:block;margin-top:6px}
-#food-grid .item-card.has-img{padding-bottom:36px}
+#food-grid .item-card.has-img{padding-bottom:36px !important}
 #food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
 
 /* 観光スポットカード画像・絵文字 */
@@ -574,8 +574,9 @@
     </div>
   </div>
   <div class="filter-group">
-    <div class="filter-label">都市・エリア</div>
+    <div class="filter-label">エリア限定</div>
     <div class="filter-row" id="food-filter-city">
+      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
       {% for fc in food_filter_cities %}
       <button class="filter-btn" data-filter="{{fc.id}}" onclick="filterFood('city','{{fc.id}}',this)">{{fc.label}}</button>
       {% endfor %}

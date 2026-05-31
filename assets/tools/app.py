@@ -14,6 +14,7 @@ import streamlit as st
 from PIL import Image
 
 import recraft_api
+from rembg import remove as rembg_remove
 
 # ──────────────────────────────────────────────────────────
 # パス定義
@@ -415,10 +416,10 @@ with tab2:
             _bg_i    = st.session_state.pop("pending_bg_idx")
             _results = st.session_state.get("gen_results", [])
             if 0 <= _bg_i < len(_results):
-                with st.spinner("背景除去中..."):
+                with st.spinner("背景除去中（ローカル処理）..."):
                     try:
                         _res      = _results[_bg_i]
-                        bg_bytes, _ = recraft_api.remove_background(_res["bytes"])
+                        bg_bytes  = rembg_remove(_res["bytes"])
                         new_bytes = to_webp(bg_bytes)
                         new_list  = list(_results)
                         new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
@@ -594,10 +595,10 @@ with tab2:
             _bg_i    = st.session_state.pop("pending_bg_idx")
             _results = st.session_state.get("gen_results", [])
             if 0 <= _bg_i < len(_results):
-                with st.spinner("背景除去中..."):
+                with st.spinner("背景除去中（ローカル処理）..."):
                     try:
                         _res      = _results[_bg_i]
-                        bg_bytes, _ = recraft_api.remove_background(_res["bytes"])
+                        bg_bytes  = rembg_remove(_res["bytes"])
                         new_bytes = to_webp(bg_bytes)
                         new_list  = list(_results)
                         new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
@@ -737,10 +738,10 @@ with tab2:
                 _bg_i    = st.session_state.pop("pending_bg_idx")
                 _results = st.session_state.get("gen_results", [])
                 if 0 <= _bg_i < len(_results):
-                    with st.spinner("背景除去中..."):
+                    with st.spinner("背景除去中（ローカル処理）..."):
                         try:
                             _res      = _results[_bg_i]
-                            bg_bytes, _ = recraft_api.remove_background(_res["bytes"])
+                            bg_bytes  = rembg_remove(_res["bytes"])
                             new_bytes = to_webp(bg_bytes)
                             new_list  = list(_results)
                             new_list[_bg_i] = _temp_save({**_res, "bytes": new_bytes})
@@ -882,12 +883,10 @@ with tab3:
                         st.success(f"削除: {fpath.name}")
                         st.rerun()
                 with b2:
-                    is_png = fpath.suffix.lower() == ".png"
-                    if st.button("✂️", key=f"{del_key_prefix}bg_{fpath.name}",
-                                 help="背景除去", disabled=is_png):
-                        with st.spinner("処理中..."):
+                    if st.button("✂️", key=f"{del_key_prefix}bg_{fpath.name}", help="背景除去"):
+                        with st.spinner("処理中（ローカル処理）..."):
                             try:
-                                bg_bytes, cr2 = recraft_api.remove_background(fpath.read_bytes())
+                                bg_bytes   = rembg_remove(fpath.read_bytes())
                                 webp_bytes = to_webp(bg_bytes)
                                 new_path   = fpath.with_suffix(".webp")
                                 new_path.write_bytes(webp_bytes)
@@ -902,9 +901,9 @@ with tab3:
                                     save_json(country_id, data)
                                 if fpath != new_path:
                                     fpath.unlink()
-                                st.success(f"完了 -{cr2}cr → {new_path.name}")
+                                st.success(f"完了 → {new_path.name}")
                                 st.rerun()
-                            except RuntimeError as e:
+                            except Exception as e:
                                 st.error(str(e))
 
     # ── グルメ ──
