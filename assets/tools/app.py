@@ -550,7 +550,8 @@ with tab2:
                 model_key_r = "recraft20b"
             else:
                 model_key_r = "recraftv3"
-            final_prompt = (angle_prefix + " " + prompt_val).strip() if angle_prefix else prompt_val
+            _base        = (angle_prefix + " " + prompt_val).strip() if angle_prefix else prompt_val
+            final_prompt = _base + ", pure solid bright green background, chroma key green background, isolated on green"
             if angle_prefix:
                 st.caption(f"📤 先頭付与: `{angle_prefix[:60]}…`")
             gen_btn = st.button("🎨 生成実行", type="primary", disabled=not prompt_val.strip())

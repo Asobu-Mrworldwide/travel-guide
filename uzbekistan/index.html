@@ -22,9 +22,9 @@
 .hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
 
 /* フードカード画像 */
-.food-img{width:100%;height:180px;object-fit:contain;object-position:center bottom;display:block;margin-top:-10px;margin-bottom:-20px}
+.food-img{width:100%;height:auto;max-height:220px;object-fit:contain;display:block;margin-top:6px}
 #food-grid .item-card.has-img{padding-bottom:36px}
-#food-grid .item-card.has-img .desc{flex:none !important}
+#food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{width:100%;height:160px;object-fit:cover;object-position:center;display:block;border-radius:8px;margin-top:4px;margin-bottom:-20px}
@@ -1140,6 +1140,7 @@
   <div class="item-grid" id="spots-grid">
     
     <div class="city-section-header" data-city="tashkent">
+      
       <div class="csh-title">タシュケント</div>
       <div class="csh-desc">国の玄関口。近代的な街並みとバザール・モスクが共存する中央アジア最大の都市</div>
       <div class="csh-grid">
@@ -1224,6 +1225,7 @@
     
     
     <div class="city-section-header" data-city="samarkand">
+      
       <div class="csh-title">サマルカンド</div>
       <div class="csh-desc">レギスタン広場を擁するシルクロード最大の古都</div>
       <div class="csh-grid">
@@ -1308,6 +1310,7 @@
     
     
     <div class="city-section-header" data-city="bukhara">
+      
       <div class="csh-title">ブハラ</div>
       <div class="csh-desc">旧市街全体が世界遺産のイスラム文化の聖地</div>
       <div class="csh-grid">
@@ -1392,6 +1395,7 @@
     
     
     <div class="city-section-header" data-city="khiva">
+      
       <div class="csh-title">ヒヴァ</div>
       <div class="csh-desc">砂漠の中に残る城壁に囲まれた中世の城塞都市</div>
       <div class="csh-grid">
@@ -1467,6 +1471,7 @@
     
     
     <div class="city-section-header" data-city="fergana">
+      
       <div class="csh-title">フェルガナ</div>
       <div class="csh-desc">豊かなフェルガナ渓谷の中心地。陶芸と絹織物の産地</div>
       <div class="csh-grid">
@@ -1533,6 +1538,7 @@
     
     
     <div class="city-section-header" data-city="nukus">
+      
       <div class="csh-title">ヌクス</div>
       <div class="csh-desc">前衛芸術を集めるサヴィツキー美術館とアラル海の玄関口</div>
       <div class="csh-grid">

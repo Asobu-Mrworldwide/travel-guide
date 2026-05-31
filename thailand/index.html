@@ -22,9 +22,9 @@
 .hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
 
 /* フードカード画像 */
-.food-img{width:100%;height:180px;object-fit:contain;object-position:center bottom;display:block;margin-top:-10px;margin-bottom:-20px}
+.food-img{width:100%;height:auto;max-height:220px;object-fit:contain;display:block;margin-top:6px}
 #food-grid .item-card.has-img{padding-bottom:36px}
-#food-grid .item-card.has-img .desc{flex:none !important}
+#food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{width:100%;height:160px;object-fit:cover;object-position:center;display:block;border-radius:8px;margin-top:4px;margin-bottom:-20px}
@@ -1172,6 +1172,7 @@
   <div class="item-grid" id="spots-grid">
     
     <div class="city-section-header" data-city="bangkok">
+      
       <div class="csh-title">バンコク</div>
       <div class="csh-desc">黄金の寺院群と最先端のショッピングが共存する大都市</div>
       <div class="csh-grid">
@@ -1283,6 +1284,7 @@
     
     
     <div class="city-section-header" data-city="chiangmai">
+      
       <div class="csh-title">チェンマイ</div>
       <div class="csh-desc">古都の趣と豊かな自然、エレファントサンクチュアリで有名</div>
       <div class="csh-grid">
@@ -1370,6 +1372,7 @@
     
     
     <div class="city-section-header" data-city="phuket">
+      
       <div class="csh-title">プーケット</div>
       <div class="csh-desc">アンダマン海に面した世界屈指のリゾートアイランド</div>
       <div class="csh-grid">
@@ -1457,6 +1460,7 @@
     
     
     <div class="city-section-header" data-city="pattaya">
+      
       <div class="csh-title">パタヤ</div>
       <div class="csh-desc">バンコクから約2時間、手軽に行けるビーチリゾート</div>
       <div class="csh-grid">
@@ -1526,6 +1530,7 @@
     
     
     <div class="city-section-header" data-city="ayutthaya">
+      
       <div class="csh-title">アユタヤ</div>
       <div class="csh-desc">14〜18世紀に栄えたタイ王国の古都・ユネスコ世界遺産</div>
       <div class="csh-grid">
@@ -1595,6 +1600,7 @@
     
     
     <div class="city-section-header" data-city="samui">
+      
       <div class="csh-title">コサムイ</div>
       <div class="csh-desc">タイ湾に浮かぶ亜熱帯の楽園、コサムイ島</div>
       <div class="csh-grid">

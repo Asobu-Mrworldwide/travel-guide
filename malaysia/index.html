@@ -22,9 +22,9 @@
 .hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
 
 /* フードカード画像 */
-.food-img{width:100%;height:180px;object-fit:contain;object-position:center bottom;display:block;margin-top:-10px;margin-bottom:-20px}
+.food-img{width:100%;height:auto;max-height:220px;object-fit:contain;display:block;margin-top:6px}
 #food-grid .item-card.has-img{padding-bottom:36px}
-#food-grid .item-card.has-img .desc{flex:none !important}
+#food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{width:100%;height:160px;object-fit:cover;object-position:center;display:block;border-radius:8px;margin-top:4px;margin-bottom:-20px}
@@ -43,10 +43,13 @@
 </head>
 <body>
 
+
 <div class="hero">
   <img src="素材/ヒーロー画像3.webp" alt="マレーシアの街並み" class="hero-img">
   <a href="../index.html" class="hero-back">← 国一覧へ戻る</a>
+  
 </div>
+
 
 <nav>
   <button class="active" onclick="show('basic',this)">🌍 基本情報</button>
@@ -315,10 +318,12 @@
       
     </div>
   </div>
+  
 </section>
 
 <!-- ベストシーズン -->
 <section id="season">
+
   <h2>ベストシーズン</h2>
   <div class="card">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">マレーシアは年間を通して27〜29℃の常夏。地域によって雨季・乾季の時期が異なります。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高く</span>、黄金色は比較的涼しい月です。</p>
@@ -396,10 +401,12 @@
     <p class="tab-cta-desc">航空券・ホテル・食費・交通費の目安を一覧でチェック。<br>節約ポイントやお金の持ち方も紹介しています。</p>
     <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button>
   </div>
+  
 </section>
 
 <!-- 予算・費用 -->
 <section id="budget">
+
   <h2>旅行費用の目安</h2>
   <div class="grid2" style="margin-bottom:14px">
     <div class="card" style="background:linear-gradient(135deg,#f0f7f3,#e0f0e8);border:1px solid #a8d5b5;text-align:center">
@@ -465,6 +472,7 @@
     <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
     <button onclick="show('practical',document.querySelectorAll('nav button')[6])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
   </div>
+  
 </section>
 
 <!-- 旅の準備 -->
@@ -769,18 +777,18 @@
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
       <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
         <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">節約</div>
-        <div id="eco-myr" style="font-size:0.9em;font-weight:700">500 MYR</div>
-        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約5000円</div>
+        <div id="eco-cur" style="font-size:0.9em;font-weight:700">-</div>
+        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
       </div>
       <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #b8ddc8">
         <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
-        <div id="std-myr" style="font-size:0.9em;font-weight:700;color:var(--green)">1000 MYR</div>
-        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約10000円</div>
+        <div id="std-cur" style="font-size:0.9em;font-weight:700;color:var(--green)">-</div>
+        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
       </div>
       <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
         <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">ゆとり</div>
-        <div id="lux-myr" style="font-size:0.9em;font-weight:700">2000 MYR</div>
-        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">約200000円</div>
+        <div id="lux-cur" style="font-size:0.9em;font-weight:700">-</div>
+        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
       </div>
     </div>
     <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">レストラン・Grab・ホテルはカード払い可。現金は主に屋台・ローカル市場・お土産屋での支払い用。<br>1 MYR ≈ 33円で計算 ／ 節約 50・標準 100・ゆとり 200 MYR／日</div>
@@ -966,6 +974,7 @@
 
 <!-- グルメ -->
 <section id="food">
+
   <h2>マレーシア グルメ</h2>
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
@@ -1172,10 +1181,12 @@
     <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>管理人の実際の旅ルートもそのまま公開しています。</p>
     <button class="tab-cta-btn" onclick="show('course',document.querySelectorAll('nav button')[3])">モデルコースを見る →</button>
   </div>
+  
 </section>
 
 <!-- 観光地 -->
 <section id="spots">
+
   <h2>都市別観光スポット</h2>
   <div class="filter-row" id="spots-filter-row">
     
@@ -1198,6 +1209,7 @@
   <div class="item-grid" id="spots-grid">
     
     <div class="city-section-header" data-city="kl">
+      
       <div class="csh-title">クアラルンプール</div>
       <div class="csh-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
       <div class="csh-grid">
@@ -1291,6 +1303,7 @@
     
     
     <div class="city-section-header" data-city="penang">
+      
       <div class="csh-title">ペナン</div>
       <div class="csh-desc">多文化が交差するグルメと芸術の島</div>
       <div class="csh-grid">
@@ -1384,6 +1397,7 @@
     
     
     <div class="city-section-header" data-city="malacca">
+      
       <div class="csh-title">マラッカ</div>
       <div class="csh-desc">ポルトガル・オランダ統治の歴史が残る古都</div>
       <div class="csh-grid">
@@ -1477,6 +1491,7 @@
     
     
     <div class="city-section-header" data-city="kk">
+      
       <div class="csh-title">コタキナバル</div>
       <div class="csh-desc">海・山・ジャングルが揃うサバ州の州都</div>
       <div class="csh-grid">
@@ -1570,6 +1585,7 @@
     
     
     <div class="city-section-header" data-city="kuching">
+      
       <div class="csh-title">クチン</div>
       <div class="csh-desc">「猫の街」として知られるサラワク州の州都</div>
       <div class="csh-grid">
@@ -1669,10 +1685,12 @@
     <p class="tab-cta-desc">各都市の名物料理から定番スイーツ・ドリンクまで。<br>食べてみたいものをここで探して旅の計画に加えよう。</p>
     <button class="tab-cta-btn" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button>
   </div>
+  
 </section>
 
 <!-- モデルコース -->
 <section id="course">
+
   <h2>モデルコース</h2>
 
   <div class="card" style="margin-bottom:4px">
@@ -1915,7 +1933,7 @@
     <p class="tab-cta-desc">雨季・乾季・地域別のベストシーズンをチェック。<br>日程が決まっていない人はここから逆算するのがおすすめ。</p>
     <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
   </div>
-
+  
 </section>
 
 </div><!-- /slides-wrap -->
@@ -1941,6 +1959,7 @@ function playPhrase(file, btn) {
 
 /* 現金目安カード */
 let cashDays = 5;
+const CURRENCY = 'MYR';
 const RATE = 33;
 const ECO_DAILY = 50;
 const STD_DAILY = 100;
@@ -1949,13 +1968,14 @@ function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const eco = cashDays * ECO_DAILY, std = cashDays * STD_DAILY, lux = cashDays * LUX_DAILY;
   document.getElementById('cash-days').textContent = cashDays;
-  document.getElementById('eco-myr').textContent = eco.toLocaleString() + ' MYR';
+  document.getElementById('eco-cur').textContent = eco.toLocaleString() + ' ' + CURRENCY;
   document.getElementById('eco-jpy').textContent = '約' + Math.round(eco * RATE / 1000) + ',000円';
-  document.getElementById('std-myr').textContent = std.toLocaleString() + ' MYR';
+  document.getElementById('std-cur').textContent = std.toLocaleString() + ' ' + CURRENCY;
   document.getElementById('std-jpy').textContent = '約' + Math.round(std * RATE / 1000) + ',000円';
-  document.getElementById('lux-myr').textContent = lux.toLocaleString() + ' MYR';
+  document.getElementById('lux-cur').textContent = lux.toLocaleString() + ' ' + CURRENCY;
   document.getElementById('lux-jpy').textContent = '約' + Math.round(lux * RATE / 1000) + ',000円';
 }
+changeDays(0);
 
 function show(id, btn) {
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
