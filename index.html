@@ -12,7 +12,7 @@
   gtag('config', 'G-ZNX5SY0GSK');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZenWorldGuide - 世界の旅行ガイド</title>
+<title>World Mappy - 世界の旅行ガイド</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--primary:#1a3a5c;--accent:#e8490f;--bg:#f4f6f8;--card:#fff;--text:#222;--sub:#666;--border:#e0e4e8}
@@ -84,9 +84,6 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 .card-meta-item{display:flex;align-items:center;gap:3px;font-size:0.68em;color:#555}
 .card-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
 .card-tag{background:#f0f2f5;color:#555;padding:2px 7px;border-radius:8px;font-size:0.65em}
-.card-btn{display:block;text-align:center;padding:7px;border-radius:8px;font-size:0.78em;font-weight:700;text-decoration:none;background:var(--primary);color:#fff;transition:background 0.15s}
-.card-btn:hover{background:#2d6a9f}
-.card-btn.soon{background:#ccc;color:#999;cursor:default}
 
 /* 空状態 */
 .empty-state{text-align:center;padding:60px 20px;color:var(--sub)}
@@ -122,8 +119,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 <body>
 
 <header class="site-header">
-  <div class="site-logo">🌍 ZenWorldGuide</div>
-  <div class="site-tagline">世界の旅行情報まとめ</div>
+  <div class="site-logo">🌍 World Mappy</div>
+  <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
 </header>
 
 <div class="hero">
@@ -178,7 +175,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 </div>
 
 <footer class="site-footer">
-  <p><a href="privacy.html" style="color:var(--sub);text-decoration:none">プライバシーポリシー</a> ｜ © 2026 ZenWorldGuide — 楽しい旅を！</p>
+  <p><a href="privacy.html" style="color:var(--sub);text-decoration:none">プライバシーポリシー</a> ｜ © 2026 World Mappy — 楽しい旅を！</p>
 </footer>
 
 <script>
@@ -493,9 +490,6 @@ function renderCards() {
 
   grid.innerHTML = filtered.map(c => {
     const tagHtml = c.tags.slice(0,4).map(t => `<span class="card-tag">${t}</span>`).join('');
-    const btnClass = c.available ? 'card-btn' : 'card-btn soon';
-    const btnText = c.available ? '詳しく見る →' : '近日公開';
-    const btnHref = c.available ? `href="${c.url}"` : '';
     const cardClass = c.available ? 'country-card' : 'country-card unavailable';
     const badgeHtml = c.available
       ? '<span class="card-badge ready">公開中</span>'
@@ -515,7 +509,6 @@ function renderCards() {
           <span class="card-meta-item">${budgetLabel(c.budget)}</span>
         </div>
         <div class="card-tags">${tagHtml}</div>
-        <a class="${btnClass}" ${btnHref}>${btnText}</a>
       </div>
     </div>`;
   }).join('');
