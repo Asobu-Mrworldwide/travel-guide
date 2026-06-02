@@ -779,14 +779,17 @@ with tab2:
             hero_model_val = st.radio(
                 "モデル",
                 [
-                    "recraft20b  22cr ≈ ¥3.5/枚",
-                    "recraftv3   40cr ≈ ¥6.4/枚",
+                    "recraft20b   22cr ≈ ¥3.5/枚",
+                    "recraftv3    40cr ≈ ¥6.4/枚",
+                    "vector_art   40cr ≈ ¥6.4/枚  （フラットベクターイラスト）",
                 ],
-                horizontal=True,
+                horizontal=False,
                 key="hero_model",
             )
             if "recraft20b" in hero_model_val:
                 hero_model_key = "recraft20b"
+            elif "vector_art" in hero_model_val:
+                hero_model_key = "vector_art"
             else:
                 hero_model_key = "recraftv3"
             _hero_ratios = {

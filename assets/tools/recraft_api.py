@@ -7,9 +7,11 @@ API_KEY  = "Wo1jeJZqRrD88QF8tRLGuYCCM8oBzYEYA8wptkXgaKP4hKLEWuM37k80C72MJpd3"
 BASE_URL = "https://external.api.recraft.ai/v1"
 
 STYLE_IDS = {
-    "recraftv3":  "b516fe3c-488e-4156-8d6f-cf4001afabaf",  # ~40cr/枚
-    "recraft20b": "22e8c6e6-6115-4a87-9947-97f30035270d",  # ~22cr/枚
-    "watercolor": "8e7eb6b9-3323-460c-b48c-6f5a9dfe5796",  # 水彩 ~40cr/枚
+    "recraftv3":   "b516fe3c-488e-4156-8d6f-cf4001afabaf",  # ~40cr/枚
+    "recraft20b":  "22e8c6e6-6115-4a87-9947-97f30035270d",  # ~22cr/枚
+    "watercolor":  "8e7eb6b9-3323-460c-b48c-6f5a9dfe5796",  # 水彩 ~40cr/枚
+    "vector_art":  "641438a8-5f63-4710-b7e9-52bd3eab4c46",  # フラットベクターイラスト ~40cr/枚
+    "style_new":   "87bd8c4b-3fde-41cf-a6e1-a8fad8b3ef89",  # 新スタイル (recraft20bベース)
     # watercolor20b は style_id なし（プロンプト強化で代替）
 }
 
@@ -17,8 +19,10 @@ STYLE_IDS = {
 BASE_MODELS = {
     "recraftv3":    "recraftv3",
     "recraft20b":   "recraft20b",
-    "watercolor":   "recraftv3",    # 水彩スタイルは recraftv3 ベース
-    "watercolor20b":"recraft20b",   # 安価な水彩: recraft20b + プロンプト強化
+    "watercolor":   "recraftv3",
+    "watercolor20b":"recraft20b",
+    "vector_art":   "recraft20b",   # フラットベクター: recraft20b ベース
+    "style_new":    "recraft20b",   # 新スタイル: recraft20b ベース
 }
 
 # モデルキーごとにプロンプト先頭に自動付与するプレフィックス
