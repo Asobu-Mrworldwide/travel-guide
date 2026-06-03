@@ -12,6 +12,7 @@ STYLE_IDS = {
     "watercolor":  "8e7eb6b9-3323-460c-b48c-6f5a9dfe5796",  # 水彩 ~40cr/枚
     "vector_art":  "641438a8-5f63-4710-b7e9-52bd3eab4c46",  # フラットベクターイラスト ~40cr/枚
     "style_new":   "87bd8c4b-3fde-41cf-a6e1-a8fad8b3ef89",  # 新スタイル (recraft20bベース)
+    "style_spot":  "b2b0bc9d-430e-4bbe-a021-598140916fff",  # 観光スポット用スタイル
     # watercolor20b は style_id なし（プロンプト強化で代替）
 }
 
@@ -23,6 +24,7 @@ BASE_MODELS = {
     "watercolor20b":"recraft20b",
     "vector_art":   "recraft20b",   # フラットベクター: recraft20b ベース
     "style_new":    "recraft20b",   # 新スタイル: recraft20b ベース
+    "style_spot":   "recraftv3",    # 観光スポット用スタイル: recraftv3 ベース
 }
 
 # モデルキーごとにプロンプト先頭に自動付与するプレフィックス

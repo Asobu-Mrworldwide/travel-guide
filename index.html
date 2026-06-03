@@ -89,6 +89,24 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
 .empty-state .ico{font-size:3em;margin-bottom:12px}
 .empty-state p{font-size:0.9em;line-height:1.6}
 
+/* 国一覧リンクセクション */
+.country-links{background:#f6f4ef;border-top:1px solid var(--border);padding:32px 20px}
+.country-links-inner{max-width:1200px;margin:0 auto}
+.cl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 32px}
+.cl-col ul{list-style:none;margin:0;padding:0}
+.cl-col li{font-size:0.78em;padding:3px 0;line-height:1.5}
+.cl-region{font-size:0.7em;font-weight:700;color:#888;letter-spacing:0.06em;margin:0 0 8px}
+.cl-col a{color:#555;text-decoration:none}
+.cl-col a:hover{color:var(--primary);text-decoration:underline}
+.cl-unavailable{color:#bbb}
+.cl-mobile{display:none}
+@media(max-width:900px){.cl-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){
+  .cl-grid{display:none}
+  .cl-mobile{display:flex;flex-wrap:wrap;gap:8px}
+  .cl-region-link{font-size:0.8em;color:#555;text-decoration:none;padding:4px 12px;border:1px solid var(--border);border-radius:20px;background:#fff}
+}
+
 /* フッター */
 .site-footer{text-align:center;padding:36px 20px;color:var(--sub);font-size:0.75em;border-top:1px solid var(--border);margin-top:40px}
 
@@ -139,6 +157,19 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
     <!-- フィルターパネル（PC常時表示・モバイルは開閉） -->
     <div class="filter-panel" id="filterPanel">
       <div class="filter-row">
+        <span class="filter-label">エリア</span>
+        <div class="filter-chips">
+          <span class="chip" onclick="toggleRegion('東南アジア')" id="r-東南アジア">東南アジア</span>
+          <span class="chip" onclick="toggleRegion('東アジア')" id="r-東アジア">東アジア</span>
+          <span class="chip" onclick="toggleRegion('中央アジア')" id="r-中央アジア">中央アジア</span>
+          <span class="chip" onclick="toggleRegion('南アジア')" id="r-南アジア">南アジア</span>
+          <span class="chip" onclick="toggleRegion('アフリカ')" id="r-アフリカ">アフリカ</span>
+          <span class="chip" onclick="toggleRegion('ヨーロッパ')" id="r-ヨーロッパ">ヨーロッパ</span>
+          <span class="chip" onclick="toggleRegion('オセアニア')" id="r-オセアニア">オセアニア</span>
+          <span class="chip" onclick="toggleRegion('北アメリカ')" id="r-北アメリカ">北アメリカ</span>
+        </div>
+      </div>
+      <div class="filter-row">
         <span class="filter-label">ベストシーズン</span>
         <div class="filter-chips" id="monthChips"></div>
       </div>
@@ -173,6 +204,7 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
   <div class="country-grid" id="countryGrid"></div>
 </div>
 
+<script src="assets/country-links.js"></script>
 <footer class="site-footer">
   <p><a href="privacy.html" style="color:var(--sub);text-decoration:none">プライバシーポリシー</a> ｜ © 2026 World Mappy — 楽しい旅を！</p>
 </footer>
@@ -317,6 +349,7 @@ const COUNTRIES = [
 let selectedMonths = [];
 let selectedBudgets = [];
 let selectedTags = [];
+let selectedRegions = [];
 
 const HOLIDAYS = [
   { label: '正月', months: [0] },
@@ -413,10 +446,20 @@ function toggleTag(val) {
   updateFilterBadge();
 }
 
+function toggleRegion(val) {
+  const idx = selectedRegions.indexOf(val);
+  if (idx >= 0) selectedRegions.splice(idx, 1);
+  else selectedRegions.push(val);
+  document.getElementById('r-' + val).classList.toggle('active');
+  renderCards();
+  updateFilterBadge();
+}
+
 function resetAll() {
   selectedMonths = [];
   selectedBudgets = [];
   selectedTags = [];
+  selectedRegions = [];
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   syncHolidayChips();
   renderCards();
@@ -444,7 +487,7 @@ function toggleFilterPanel() {
   }
 }
 
-// 初期化：モバイルでパネルを閉じた状態にする
+// 初期化：モバイルでパネルを閉じた状態にする + URLパラメータ読み込み
 window.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 520) {
     const panel = document.getElementById('filterPanel');
@@ -452,12 +495,21 @@ window.addEventListener('DOMContentLoaded', () => {
     panel.style.opacity = '0';
     panel.classList.add('closed');
   }
+  // ?region=xxx でエリアフィルターを自動適用
+  const params = new URLSearchParams(location.search);
+  const region = params.get('region');
+  if (region && document.getElementById('r-' + region)) {
+    selectedRegions.push(region);
+    document.getElementById('r-' + region).classList.add('active');
+    renderCards();
+  }
 });
 
 function matchesFilters(c) {
   if (selectedMonths.length > 0 && !selectedMonths.some(m => c.bestMonths.includes(m))) return false;
   if (selectedBudgets.length > 0 && !selectedBudgets.some(b => c.budget.includes(b))) return false;
   if (selectedTags.length > 0 && !selectedTags.every(t => c.tags.includes(t))) return false;
+  if (selectedRegions.length > 0 && !selectedRegions.includes(c.region)) return false;
   return true;
 }
 

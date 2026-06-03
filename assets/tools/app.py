@@ -31,6 +31,8 @@ GENERATE_PY = TOOLS_DIR / "generate.py"
 LAST_STATE  = TOOLS_DIR / ".last_state.json"
 TEMP_DIR    = TOOLS_DIR / ".gen_temp"
 TEMP_DIR.mkdir(exist_ok=True)
+GEN_ARCHIVE = TOOLS_DIR / "generated_images"
+GEN_ARCHIVE.mkdir(exist_ok=True)
 
 
 import uuid as _uuid
@@ -39,6 +41,10 @@ def _temp_save(item: dict) -> dict:
     """gen_results の1件をディスクに一時保存してtmp_idを付与して返す"""
     tid = item.get("tmp_id") or _uuid.uuid4().hex[:10]
     (TEMP_DIR / f"{tid}.webp").write_bytes(item["bytes"])
+    # generated_images フォルダに全画像を自動アーカイブ
+    import datetime as _dt
+    _ts = _dt.datetime.now().strftime("%Y%m%d_%H%M%S")
+    (GEN_ARCHIVE / f"{_ts}_{tid}.webp").write_bytes(item["bytes"])
     # original_bytes がある場合は別ファイルに保存
     if "original_bytes" in item:
         (TEMP_DIR / f"{tid}_orig.webp").write_bytes(item["original_bytes"])
@@ -107,6 +113,19 @@ def save_last_state(state: dict):
 # ──────────────────────────────────────────────────────────
 # ユーティリティ
 # ──────────────────────────────────────────────────────────
+def _run_generate(cid: str) -> tuple[int, str, str]:
+    """generate.py を実行して (returncode, stdout, stderr) を返す"""
+    try:
+        r = subprocess.run(
+            [sys.executable, "-X", "utf8", str(GENERATE_PY), cid],
+            capture_output=True,
+            cwd=str(TOOLS_DIR),
+        )
+        return r.returncode, r.stdout.decode("utf-8", errors="replace"), r.stderr.decode("utf-8", errors="replace")
+    except Exception as e:
+        return -1, "", str(e)
+
+
 def detect_countries() -> list[str]:
     """ROOT_DIR 直下で <name>.json が存在するフォルダを列挙"""
     result = []
@@ -116,7 +135,6 @@ def detect_countries() -> list[str]:
     return result
 
 
-@st.cache_data
 def load_json(country_id: str) -> dict:
     path = ROOT_DIR / country_id / f"{country_id}.json"
     with open(path, encoding="utf-8") as f:
@@ -128,7 +146,6 @@ def save_json(country_id: str, data: dict):
     shutil.copy2(path, path.with_suffix(".json.bak"))
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    load_json.clear()  # 保存後にキャッシュをクリアして次回読み直し
 
 
 def image_exists(country_id: str, item: dict) -> bool:
@@ -162,7 +179,7 @@ if not countries:
     st.error("国フォルダが見つかりません。World guide/ 直下に <country>/<country>.json を用意してください。")
     st.stop()
 
-col_sel, col_info, col_cr = st.columns([2, 3, 2])
+col_sel, col_info, col_cr, col_update = st.columns([2, 3, 2, 2])
 with col_sel:
     last_country = last_state.get("country", countries[0])
     country_idx  = countries.index(last_country) if last_country in countries else 0
@@ -186,6 +203,25 @@ with col_cr:
     else:
         st.metric("Recraftクレジット", "取得失敗")
 
+with col_update:
+    st.markdown("**サイト更新**")
+    _all_c = detect_countries()
+    st.caption(f"全 {len(_all_c)} か国を再生成")
+    if st.button(f"🌏 全国更新", key="top_update_all", type="primary"):
+        save_last_state({"tab": 3})
+        _log = []
+        _prog = st.progress(0, text="準備中...")
+        for _i, _cid in enumerate(_all_c):
+            _prog.progress(_i / len(_all_c), text=f"{_cid} ({_i+1}/{len(_all_c)})")
+            _rc, _out, _err = _run_generate(_cid)
+            _log.append(("✅" if _rc == 0 else "❌") + f" {_cid}")
+        _prog.progress(1.0, text="完了！")
+        _ok = sum(1 for l in _log if l.startswith("✅"))
+        if _ok == len(_log):
+            st.success(f"✅ 全 {_ok} か国 完了")
+        else:
+            st.warning("\n".join(_log))
+
 # カテゴリ選択（全タブ共通）
 gen_category = st.radio(
     "カテゴリ",
@@ -197,7 +233,7 @@ gen_category = st.radio(
 
 # gen_results 管理（初回ロード復元 / カテゴリ切り替えリセット）
 if "gen_results" not in st.session_state:
-    st.session_state["gen_results"] = _temp_load_all()
+    st.session_state["gen_results"] = []
     st.session_state["_gen_cat"]    = gen_category
 elif st.session_state.get("_gen_cat") != gen_category:
     st.session_state["_gen_cat"]    = gen_category
@@ -863,9 +899,11 @@ with tab2:
             sel_spot       = sel_spot_entry["spot"]
             spot_name      = sel_spot.get("name", "")
             spot_city_name = sel_spot_entry["city_name"]
-            spot_prompt_key = f"spot_prompt_{country_id}_{sel_spot_entry['city_id']}_{spot_name}"
-            if not st.session_state.get(spot_prompt_key):
-                st.session_state[spot_prompt_key] = sel_spot.get("prompt_en", "")
+            _safe_name = "".join(c if c.isalnum() or c in "-_" else "_" for c in spot_name)
+            spot_prompt_key = f"spot_prompt_{country_id}_{sel_spot_entry['city_id']}_{_safe_name}"
+            json_prompt = sel_spot.get("prompt_en", "")
+            if spot_prompt_key not in st.session_state or (not st.session_state[spot_prompt_key] and json_prompt):
+                st.session_state[spot_prompt_key] = json_prompt
 
             st.divider()
 
@@ -969,6 +1007,7 @@ with tab2:
                         "recraft20b       22cr ≈ ¥3.5/枚",
                         "recraftv3        40cr ≈ ¥6.4/枚",
                         "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
+                        "style_spot       22cr ≈ ¥3.5/枚  (観光スポット用スタイル)",
                     ],
                     horizontal=False,
                     key="spot_model",
@@ -977,6 +1016,8 @@ with tab2:
                     spot_model_key = "watercolor20b"
                 elif "recraftv3" in spot_model_val:
                     spot_model_key = "recraftv3"
+                elif "style_spot" in spot_model_val:
+                    spot_model_key = "style_spot"
                 else:
                     spot_model_key = "recraft20b"
                 spot_use_style = st.toggle(
@@ -1155,60 +1196,8 @@ with tab3:
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # タブ4: サイト更新
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-def _run_generate(cid: str) -> tuple[int, str, str]:
-    """generate.py を実行して (returncode, stdout, stderr) を返す"""
-    try:
-        r = subprocess.run(
-            [sys.executable, "-X", "utf8", str(GENERATE_PY), cid],
-            capture_output=True,
-            cwd=str(TOOLS_DIR),
-        )
-        return r.returncode, r.stdout.decode("utf-8", errors="replace"), r.stderr.decode("utf-8", errors="replace")
-    except Exception as e:
-        return -1, "", str(e)
-
 with tab4:
-    st.subheader("サイト更新（generate.py 実行）")
-
-    t4_col1, t4_col2 = st.columns(2)
-
-    # ── 現在の国だけ更新 ──
-    with t4_col1:
-        st.markdown(f"**現在の国のみ**")
-        st.caption(f"{country_id} の index.html を再生成")
-        if st.button("🚀 この国を更新", type="primary", key="t4_single"):
-            save_last_state({"tab": 3})
-            with st.spinner(f"{country_id} を生成中..."):
-                rc, out, err = _run_generate(country_id)
-            if rc == 0:
-                st.success(f"✅ {country_id} 完了")
-            else:
-                st.error(f"❌ エラー (code={rc})")
-            if out: st.text_area("stdout", out, height=120, key="t4s_out")
-            if err: st.text_area("stderr", err, height=150, key="t4s_err")
-
-    # ── 全国一括更新 ──
-    with t4_col2:
-        all_countries = detect_countries()
-        st.markdown(f"**全国一括**")
-        st.caption(f"{len(all_countries)} か国を順に再生成")
-        if st.button(f"🌏 全 {len(all_countries)} か国を更新", key="t4_all"):
-            save_last_state({"tab": 3})
-            results_log = []
-            progress = st.progress(0, text="準備中...")
-            for idx, cid in enumerate(all_countries):
-                progress.progress((idx) / len(all_countries), text=f"処理中: {cid} ({idx+1}/{len(all_countries)})")
-                rc, out, err = _run_generate(cid)
-                mark = "✅" if rc == 0 else "❌"
-                results_log.append(f"{mark} {cid}" + (f"  — {err.strip()[:80]}" if rc != 0 else ""))
-            progress.progress(1.0, text="完了！")
-            ok  = sum(1 for l in results_log if l.startswith("✅"))
-            ng  = len(results_log) - ok
-            if ng == 0:
-                st.success(f"✅ 全 {ok} か国の更新が完了しました")
-            else:
-                st.warning(f"完了: {ok} 成功 / {ng} 失敗")
-            st.text_area("実行ログ", "\n".join(results_log), height=300, key="t4a_log")
+    st.info("サイト更新はページ上部の「🌏 全国更新」ボタンから実行できます。")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
