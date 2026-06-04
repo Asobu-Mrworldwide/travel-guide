@@ -543,7 +543,7 @@ function renderCards() {
       : '<span class="card-badge">準備中</span>';
     return `
     <div class="${cardClass}" onclick="${c.available ? `location.href='${c.url}'` : 'void(0)'}">
-      <div class="card-hero" style="${c.cardImg ? `background:url('${c.cardImg}') center/cover no-repeat` : `background:${c.gradient}`}">
+      <div class="card-hero" style="${c.cardImg ? `background:url('${c.cardImg}') center/cover no-repeat` : `background:#cdd0d9`}">
         ${c.cardImg ? '' : `<div class="card-flag">${c.flag}</div>`}
         ${badgeHtml}
       </div>
