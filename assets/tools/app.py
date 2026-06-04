@@ -1010,6 +1010,7 @@ with tab2:
                         "style_spot       22cr ≈ ¥3.5/枚  (観光スポット用スタイル)",
                     ],
                     horizontal=False,
+                    index=3,
                     key="spot_model",
                 )
                 if "watercolor20b" in spot_model_val:
@@ -1031,7 +1032,7 @@ with tab2:
                     "16:9 (1820×1024)": (1820, 1024),
                     "3:4  (1024×1365)": (1024, 1365),
                 }
-                spot_ratio_sel      = st.selectbox("縦横比", list(_spot_ratios.keys()), index=1, key="spot_ratio")
+                spot_ratio_sel      = st.selectbox("縦横比", list(_spot_ratios.keys()), index=2, key="spot_ratio")
                 spot_w, spot_h      = _spot_ratios[spot_ratio_sel]
                 spot_prompt_val_now = st.session_state.get(spot_prompt_key, "")
                 spot_gen_btn        = st.button(
