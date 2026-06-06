@@ -41,10 +41,21 @@ def _temp_save(item: dict) -> dict:
     """gen_results の1件をディスクに一時保存してtmp_idを付与して返す"""
     tid = item.get("tmp_id") or _uuid.uuid4().hex[:10]
     (TEMP_DIR / f"{tid}.webp").write_bytes(item["bytes"])
-    # generated_images フォルダに全画像を自動アーカイブ
+    # generated_images フォルダにカテゴリ別で自動アーカイブ
     import datetime as _dt
     _ts = _dt.datetime.now().strftime("%Y%m%d_%H%M%S")
-    (GEN_ARCHIVE / f"{_ts}_{tid}.webp").write_bytes(item["bytes"])
+    _cat = st.session_state.get("gen_category_global", "")
+    if "ヒーロー" in _cat:
+        _sub = "ヒーロー"
+    elif "観光スポット" in _cat:
+        _sub = "観光スポット"
+    elif "グルメ" in _cat:
+        _sub = "グルメ"
+    else:
+        _sub = "その他"
+    _archive_dir = GEN_ARCHIVE / _sub
+    _archive_dir.mkdir(exist_ok=True)
+    (_archive_dir / f"{_ts}_{tid}.webp").write_bytes(item["bytes"])
     # original_bytes がある場合は別ファイルに保存
     if "original_bytes" in item:
         (TEMP_DIR / f"{tid}_orig.webp").write_bytes(item["original_bytes"])
@@ -647,7 +658,7 @@ with tab2:
                 "モデル",
                 [
                     "recraft20b       22cr ≈ ¥3.5/枚",
-                    "recraftv3        40cr ≈ ¥6.4/枚",
+                    "recraftv3        40cr ≈ ¥6.4/枚  （水彩）",
                     "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
                 ],
                 horizontal=False,
@@ -796,8 +807,9 @@ with tab2:
                                     st.session_state["gen_results"] = _new_list
                                     st.rerun()
             else:
-                hero_path = ROOT_DIR / country_id / data.get("hero_image", "NOEXIST")
-                if hero_path.exists():
+                _hero_img = data.get("hero_image", "")
+                hero_path = ROOT_DIR / country_id / _hero_img if _hero_img else None
+                if hero_path and hero_path.exists() and hero_path.is_file():
                     st.caption("現在のヒーロー画像")
                     st.image(str(hero_path), use_container_width=True)
                 else:
@@ -816,13 +828,16 @@ with tab2:
                 "モデル",
                 [
                     "recraft20b   22cr ≈ ¥3.5/枚",
-                    "recraftv3    40cr ≈ ¥6.4/枚",
+                    "recraftv3    40cr ≈ ¥6.4/枚  （水彩）",
                     "vector_art   40cr ≈ ¥6.4/枚  （フラットベクターイラスト）",
+                    "style_spot   22cr ≈ ¥3.5/枚  （観光スポット用スタイル）",
                 ],
                 horizontal=False,
                 key="hero_model",
             )
-            if "recraft20b" in hero_model_val:
+            if "style_spot" in hero_model_val:
+                hero_model_key = "style_spot"
+            elif "recraft20b" in hero_model_val:
                 hero_model_key = "recraft20b"
             elif "vector_art" in hero_model_val:
                 hero_model_key = "vector_art"
@@ -1005,7 +1020,7 @@ with tab2:
                     "モデル",
                     [
                         "recraft20b       22cr ≈ ¥3.5/枚",
-                        "recraftv3        40cr ≈ ¥6.4/枚",
+                        "recraftv3        40cr ≈ ¥6.4/枚  （水彩）",
                         "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
                         "style_spot       22cr ≈ ¥3.5/枚  (観光スポット用スタイル)",
                     ],
