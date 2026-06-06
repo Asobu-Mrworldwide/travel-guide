@@ -66,13 +66,20 @@
 </style>
 
 <script>
-window.addEventListener('load', function() {
-  setTimeout(function() {
+(function() {
+  var start = Date.now();
+  var MIN = 2000;
+  function hideSplash() {
     var s = document.getElementById('splash');
     s.classList.add('hide');
     setTimeout(function(){ s.style.display='none'; }, 600);
-  }, 2000);
-});
+  }
+  window.addEventListener('load', function() {
+    var elapsed = Date.now() - start;
+    var remaining = Math.max(0, MIN - elapsed);
+    setTimeout(hideSplash, remaining);
+  });
+})();
 </script>
 
 {{custom_before_hero}}
