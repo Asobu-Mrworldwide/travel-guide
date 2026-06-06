@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<script>var _splashKey='visited_'+location.pathname;if(sessionStorage.getItem(_splashKey)){document.write('<style>#splash{display:none!important}</style>');}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
 <script>
@@ -72,20 +73,9 @@
   function hideSplash() {
     var s = document.getElementById('splash');
     if (s) { s.classList.add('hide'); setTimeout(function(){ s.style.display='none'; }, 150); }
+    sessionStorage.setItem(_splashKey, '1');
   }
-  window.addEventListener('pageshow', function(e) {
-    if (e.persisted) {
-      var s = document.getElementById('splash');
-      if (s) s.style.display = 'none';
-    }
-  });
   window.addEventListener('load', function() {
-    var nav = performance.getEntriesByType('navigation')[0];
-    if (nav && nav.type === 'back_forward') {
-      var s = document.getElementById('splash');
-      if (s) s.style.display = 'none';
-      return;
-    }
     var elapsed = Date.now() - start;
     setTimeout(hideSplash, Math.max(0, MIN - elapsed));
   });
