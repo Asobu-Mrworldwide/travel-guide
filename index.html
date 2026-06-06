@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<script>if(sessionStorage.getItem('back_index')){sessionStorage.removeItem('back_index');document.write('<style>#splash{display:none!important}</style>');}</script>
 <meta name="google-site-verification" content="cswgJ8fPsFfHMtJB4HYCRX4ZBEXtLzndpL14GKMPXs4" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
@@ -153,24 +152,34 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
 #splash-name{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;font-size:1.8em;font-weight:900;color:#6495ed;letter-spacing:-0.5px}
 #splash-tagline{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;font-size:0.72em;color:#aaa;margin-top:-8px}
 #splash-bar{width:160px;height:3px;background:#e4eaf5;border-radius:4px;overflow:hidden;margin-top:8px}
-#splash-bar-fill{height:100%;width:0;background:#6495ed;border-radius:4px;animation:splash-progress 0.7s ease forwards}
+#splash-bar-fill{height:100%;width:0;background:#6495ed;border-radius:4px;animation:splash-progress 5s linear forwards}
 @keyframes splash-progress{0%{width:0}100%{width:100%}}
 </style>
 <script>
 (function() {
-  var start = Date.now();
-  var MIN = 700;
+  var MAX = 5000;
+  var done = false;
   function hideSplash() {
+    if (done) return;
+    done = true;
     var s = document.getElementById('splash');
-    if (s) { s.classList.add('hide'); setTimeout(function(){ s.style.display='none'; }, 150); }
-
+    if (s) s.style.display = 'none';
   }
+  // 上限5秒
+  var timer = setTimeout(hideSplash, MAX);
+  // 全画像読み込み完了で即切り替え
   window.addEventListener('load', function() {
-    var elapsed = Date.now() - start;
-    setTimeout(hideSplash, Math.max(0, MIN - elapsed));
-  });
-  window.addEventListener('pagehide', function() {
-    sessionStorage.setItem('back_index', '1');
+    var imgs = document.querySelectorAll('img');
+    if (imgs.length === 0) { clearTimeout(timer); hideSplash(); return; }
+    var loaded = 0;
+    function onLoad() {
+      loaded++;
+      if (loaded >= imgs.length) { clearTimeout(timer); hideSplash(); }
+    }
+    imgs.forEach(function(img) {
+      if (img.complete) { onLoad(); }
+      else { img.addEventListener('load', onLoad); img.addEventListener('error', onLoad); }
+    });
   });
 })();
 </script>
