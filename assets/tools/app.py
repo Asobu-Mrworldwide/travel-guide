@@ -657,7 +657,7 @@ with tab2:
             model_val = st.radio(
                 "モデル",
                 [
-                    "recraft20b       22cr ≈ ¥3.5/枚",
+                    "recraft20b       22cr ≈ ¥3.5/枚  （水彩）",
                     "recraftv3        40cr ≈ ¥6.4/枚  （水彩）",
                     "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
                 ],
@@ -827,10 +827,10 @@ with tab2:
             hero_model_val = st.radio(
                 "モデル",
                 [
-                    "recraft20b   22cr ≈ ¥3.5/枚",
+                    "recraft20b   22cr ≈ ¥3.5/枚  （水彩）",
                     "recraftv3    40cr ≈ ¥6.4/枚  （水彩）",
                     "vector_art   40cr ≈ ¥6.4/枚  （フラットベクターイラスト）",
-                    "style_spot   22cr ≈ ¥3.5/枚  （観光スポット用スタイル）",
+                    "style_spot   22cr ≈ ¥3.5/枚  （フラットベクター）",
                 ],
                 horizontal=False,
                 key="hero_model",
@@ -1019,10 +1019,10 @@ with tab2:
                 spot_model_val = st.radio(
                     "モデル",
                     [
-                        "recraft20b       22cr ≈ ¥3.5/枚",
+                        "recraft20b       22cr ≈ ¥3.5/枚  （水彩）",
                         "recraftv3        40cr ≈ ¥6.4/枚  （水彩）",
                         "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
-                        "style_spot       22cr ≈ ¥3.5/枚  (観光スポット用スタイル)",
+                        "style_spot       22cr ≈ ¥3.5/枚  （フラットベクター）",
                     ],
                     horizontal=False,
                     index=3,

@@ -5,18 +5,32 @@
   "page_title": "ウズベキスタン旅行ガイド",
   "hero_image": "素材/ヒーロー.webp",
   "hero_alt": "サマルカンド・レギスタン広場",
-
+  "hero_prompt": "Registan Square in Samarkand at golden hour, three grand madrasas with turquoise mosaic domes and intricate tilework, local people in traditional Uzbek clothing walking across the vast plaza, clear blue sky, warm amber light",
   "index_card": {
     "flag": "🇺🇿",
     "catch": "シルクロードの古都が残る中央アジアの秘境。青タイルの霊廟と圧倒的なホスピタリティ",
     "region": "中央アジア",
-    "budget": ["budget1", "budget2"],
-    "best_months": [3, 4, 5, 8, 9],
+    "budget": [
+      "budget1",
+      "budget2"
+    ],
+    "best_months": [
+      3,
+      4,
+      5,
+      8,
+      9
+    ],
     "best_label": "4〜6月・9〜10月",
-    "tags": ["世界遺産", "歴史", "グルメ", "自然", "都市"],
+    "tags": [
+      "世界遺産",
+      "歴史",
+      "グルメ",
+      "自然",
+      "都市"
+    ],
     "gradient": "linear-gradient(135deg,#1EB7D4 0%,#009A44 100%)"
   },
-
   "overview": {
     "country_question": "ウズベキスタンってどんな国？",
     "description_html": "中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた<strong>古都が点在する国</strong>。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知らぬ旅人を家に招くウズベク人のホスピタリティが、この国の旅を忘れがたいものにしてくれる。",
@@ -42,7 +56,6 @@
     "currency_name": "スム（UZS）",
     "currency_rate": "1万UZS ≈ 116円"
   },
-
   "map": {
     "element_id": "uzbekistan-map",
     "center_lat": "40.5",
@@ -51,46 +64,190 @@
     "map_id": "ebb608e55ed157f8630c407e",
     "country_label": "ウズベキスタン"
   },
-
   "cities": [
-    { "id": "tashkent",  "name": "タシュケント", "lat": "41.2995", "lng": "69.2401", "zoom": "12", "color": "#1EB7D4", "marker_size": "14", "marker_label": "★", "badge": "首都",   "badge_class": "",      "description": "国の玄関口。近代的な街並みとバザール・モスクが共存する中央アジア最大の都市" },
-    { "id": "samarkand", "name": "サマルカンド", "lat": "39.6542", "lng": "66.9597", "zoom": "13", "color": "#009A44", "marker_size": "13", "marker_label": "●", "badge": "世界遺産", "badge_class": "green", "description": "レギスタン広場を擁するシルクロード最大の古都" },
-    { "id": "bukhara",   "name": "ブハラ",       "lat": "39.7675", "lng": "64.4231", "zoom": "13", "color": "#009A44", "marker_size": "12", "marker_label": "●", "badge": "世界遺産", "badge_class": "green", "description": "旧市街全体が世界遺産のイスラム文化の聖地" },
-    { "id": "khiva",     "name": "ヒヴァ",       "lat": "41.3775", "lng": "60.3633", "zoom": "14", "color": "#009A44", "marker_size": "11", "marker_label": "●", "badge": "世界遺産", "badge_class": "green", "description": "砂漠の中に残る城壁に囲まれた中世の城塞都市" },
-    { "id": "fergana",   "name": "フェルガナ",   "lat": "40.3842", "lng": "71.7843", "zoom": "12", "color": "#009A44", "marker_size": "10", "marker_label": "●", "badge": "絹の道",  "badge_class": "green", "description": "豊かなフェルガナ渓谷の中心地。陶芸と絹織物の産地" },
-    { "id": "nukus",     "name": "ヌクス",       "lat": "42.4661", "lng": "59.6070", "zoom": "12", "color": "#009A44", "marker_size": "10", "marker_label": "●", "badge": "アラル海", "badge_class": "green", "description": "前衛芸術を集めるサヴィツキー美術館とアラル海の玄関口" }
+    {
+      "id": "tashkent",
+      "name": "タシュケント",
+      "lat": "41.2995",
+      "lng": "69.2401",
+      "zoom": "12",
+      "color": "#1EB7D4",
+      "marker_size": "14",
+      "marker_label": "★",
+      "badge": "首都",
+      "badge_class": "",
+      "description": "国の玄関口。近代的な街並みとバザール・モスクが共存する中央アジア最大の都市"
+    },
+    {
+      "id": "samarkand",
+      "name": "サマルカンド",
+      "lat": "39.6542",
+      "lng": "66.9597",
+      "zoom": "13",
+      "color": "#009A44",
+      "marker_size": "13",
+      "marker_label": "●",
+      "badge": "世界遺産",
+      "badge_class": "green",
+      "description": "レギスタン広場を擁するシルクロード最大の古都"
+    },
+    {
+      "id": "bukhara",
+      "name": "ブハラ",
+      "lat": "39.7675",
+      "lng": "64.4231",
+      "zoom": "13",
+      "color": "#009A44",
+      "marker_size": "12",
+      "marker_label": "●",
+      "badge": "世界遺産",
+      "badge_class": "green",
+      "description": "旧市街全体が世界遺産のイスラム文化の聖地"
+    },
+    {
+      "id": "khiva",
+      "name": "ヒヴァ",
+      "lat": "41.3775",
+      "lng": "60.3633",
+      "zoom": "14",
+      "color": "#009A44",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "世界遺産",
+      "badge_class": "green",
+      "description": "砂漠の中に残る城壁に囲まれた中世の城塞都市"
+    },
+    {
+      "id": "fergana",
+      "name": "フェルガナ",
+      "lat": "40.3842",
+      "lng": "71.7843",
+      "zoom": "12",
+      "color": "#009A44",
+      "marker_size": "10",
+      "marker_label": "●",
+      "badge": "絹の道",
+      "badge_class": "green",
+      "description": "豊かなフェルガナ渓谷の中心地。陶芸と絹織物の産地"
+    },
+    {
+      "id": "nukus",
+      "name": "ヌクス",
+      "lat": "42.4661",
+      "lng": "59.6070",
+      "zoom": "12",
+      "color": "#009A44",
+      "marker_size": "10",
+      "marker_label": "●",
+      "badge": "アラル海",
+      "badge_class": "green",
+      "description": "前衛芸術を集めるサヴィツキー美術館とアラル海の玄関口"
+    }
   ],
-
   "season_mini": {
     "description": "夏は40℃近くになる乾燥した大陸性気候。4〜6月と9〜10月が旅行のベストシーズン。冬は氷点下になる地域も。",
     "city_name": "タシュケント",
     "months": [
-      { "icon": "❄️", "temp": "2°",  "type": "t-mild" },
-      { "icon": "❄️", "temp": "4°",  "type": "t-mild" },
-      { "icon": "⛅",  "temp": "12°", "type": "t-mild" },
-      { "icon": "🌸",  "temp": "19°", "type": "t-warm" },
-      { "icon": "☀️", "temp": "25°", "type": "t-warm" },
-      { "icon": "☀️", "temp": "30°", "type": "t-hot"  },
-      { "icon": "☀️", "temp": "33°", "type": "t-hot"  },
-      { "icon": "☀️", "temp": "31°", "type": "t-hot"  },
-      { "icon": "⛅",  "temp": "25°", "type": "t-warm" },
-      { "icon": "🍂",  "temp": "16°", "type": "t-mild" },
-      { "icon": "🌧",  "temp": "8°",  "type": "t-mild" },
-      { "icon": "❄️", "temp": "3°",  "type": "t-mild" }
+      {
+        "icon": "❄️",
+        "temp": "2°",
+        "type": "t-mild"
+      },
+      {
+        "icon": "❄️",
+        "temp": "4°",
+        "type": "t-mild"
+      },
+      {
+        "icon": "⛅",
+        "temp": "12°",
+        "type": "t-mild"
+      },
+      {
+        "icon": "🌸",
+        "temp": "19°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "25°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "30°",
+        "type": "t-hot"
+      },
+      {
+        "icon": "☀️",
+        "temp": "33°",
+        "type": "t-hot"
+      },
+      {
+        "icon": "☀️",
+        "temp": "31°",
+        "type": "t-hot"
+      },
+      {
+        "icon": "⛅",
+        "temp": "25°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "🍂",
+        "temp": "16°",
+        "type": "t-mild"
+      },
+      {
+        "icon": "🌧",
+        "temp": "8°",
+        "type": "t-mild"
+      },
+      {
+        "icon": "❄️",
+        "temp": "3°",
+        "type": "t-mild"
+      }
     ]
   },
-
   "basic_data": [
-    { "label": "首都",   "value": "タシュケント",               "note": "独立後1991年よりウズベキスタン共和国として発足",   "compare_html": "" },
-    { "label": "独立年", "value": "1991年9月1日",               "note": "旧ソビエト連邦から独立",                          "compare_html": "" },
-    { "label": "人口",   "value": "約3,600万人",                "note": "",
-      "compare_html": "<div style=\"display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center\"><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><div style=\"font-size:0.75em;line-height:1.5;letter-spacing:1px\">👤👤👤👤👤👤👤<br>👤👤👤👤👤👤</div></div><div style=\"font-size:0.68em;font-weight:700;color:#555\">日本<br>1.25億人</div></div><div style=\"font-size:0.85em;color:#888;font-weight:700\">vs</div><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><div style=\"font-size:0.75em;line-height:1.5;letter-spacing:1px\">👤👤👤<br>👤</div></div><div style=\"font-size:0.68em;font-weight:700;color:var(--green)\">ウズベキスタン<br>3,600万人</div></div></div>" },
-    { "label": "面積",   "value": "約44.9万 km²",              "note": "日本（37.8万km²）より広い内陸国",
-      "compare_html": "<div style=\"display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center\"><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><img src=\"../素材/Japan.webp\" alt=\"日本地図\" style=\"width:56px;height:auto;object-fit:contain;mix-blend-mode:multiply\"/></div><div style=\"font-size:0.68em;font-weight:700;color:#555\">日本<br>37.8万km²</div></div><div style=\"font-size:1em;color:#888;font-weight:700\">＜</div><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><img src=\"素材/Uzbekistan.webp\" alt=\"ウズベキスタン地図\" style=\"width:56px;height:auto;object-fit:contain;mix-blend-mode:multiply\"/></div><div style=\"font-size:0.68em;font-weight:700;color:var(--green)\">ウズベキスタン<br>44.9万km²</div></div></div>" },
-    { "label": "宗教",   "value": "イスラム教（スンニ派）約90%", "note": "ロシア正教・ユダヤ教など",                         "compare_html": "" },
-    { "label": "民族",   "value": "ウズベク人 約83%",           "note": "ロシア人5%・タジク人4%・カザフ人3%ほか",            "compare_html": "" }
+    {
+      "label": "首都",
+      "value": "タシュケント",
+      "note": "独立後1991年よりウズベキスタン共和国として発足",
+      "compare_html": ""
+    },
+    {
+      "label": "独立年",
+      "value": "1991年9月1日",
+      "note": "旧ソビエト連邦から独立",
+      "compare_html": ""
+    },
+    {
+      "label": "人口",
+      "value": "約3,600万人",
+      "note": "",
+      "compare_html": "<div style=\"display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center\"><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><div style=\"font-size:0.75em;line-height:1.5;letter-spacing:1px\">👤👤👤👤👤👤👤<br>👤👤👤👤👤👤</div></div><div style=\"font-size:0.68em;font-weight:700;color:#555\">日本<br>1.25億人</div></div><div style=\"font-size:0.85em;color:#888;font-weight:700\">vs</div><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><div style=\"font-size:0.75em;line-height:1.5;letter-spacing:1px\">👤👤👤<br>👤</div></div><div style=\"font-size:0.68em;font-weight:700;color:var(--green)\">ウズベキスタン<br>3,600万人</div></div></div>"
+    },
+    {
+      "label": "面積",
+      "value": "約44.9万 km²",
+      "note": "日本（37.8万km²）より広い内陸国",
+      "compare_html": "<div style=\"display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:center;text-align:center\"><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><img src=\"../素材/Japan.webp\" alt=\"日本地図\" style=\"width:56px;height:auto;object-fit:contain;mix-blend-mode:multiply\"/></div><div style=\"font-size:0.68em;font-weight:700;color:#555\">日本<br>37.8万km²</div></div><div style=\"font-size:1em;color:#888;font-weight:700\">＜</div><div><div style=\"height:50px;display:flex;align-items:center;justify-content:center;margin-bottom:4px\"><img src=\"素材/Uzbekistan.webp\" alt=\"ウズベキスタン地図\" style=\"width:56px;height:auto;object-fit:contain;mix-blend-mode:multiply\"/></div><div style=\"font-size:0.68em;font-weight:700;color:var(--green)\">ウズベキスタン<br>44.9万km²</div></div></div>"
+    },
+    {
+      "label": "宗教",
+      "value": "イスラム教（スンニ派）約90%",
+      "note": "ロシア正教・ユダヤ教など",
+      "compare_html": ""
+    },
+    {
+      "label": "民族",
+      "value": "ウズベク人 約83%",
+      "note": "ロシア人5%・タジク人4%・カザフ人3%ほか",
+      "compare_html": ""
+    }
   ],
-
   "season": {
     "description_html": "大陸性気候のウズベキスタンは季節の変化が激しく、夏と冬で気候がまるで違う。<br><span style=\"font-weight:700;color:#555\">色が濃いオレンジほど気温が高く</span>、黄金色は比較的過ごしやすい月です。",
     "tip_html": "💡 <strong>ベストシーズン</strong><br>4月下旬〜6月が最適。花が咲き乱れ気温も20〜25℃前後で快適。9〜10月は果物が旬でこれも良い時期。7〜8月はタシュケントで35℃超、砂漠地帯は40℃近くになることもあり体への負担が大きい。<br><br>⚠️ <strong>9〜10月は日本の台風シーズンと重なる</strong><br>ウズベキスタン自体は台風とは無縁だが、日本出発便（成田・羽田など）が台風の影響で遅延・欠航するリスクがある。予約時に欠航・遅延時のチケット払い戻し規定を確認しておこう。",
@@ -100,18 +257,66 @@
         "city_id": "tashkent",
         "best_note": "✅ ベスト：4〜6月・9〜10月 ／ 冬は氷点下になることも",
         "months": [
-          { "icon": "❄️", "temp": "2°C",  "type": "t-mild" },
-          { "icon": "❄️", "temp": "4°C",  "type": "t-mild" },
-          { "icon": "⛅",  "temp": "12°C", "type": "t-mild" },
-          { "icon": "🌸",  "temp": "19°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "25°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "30°C", "type": "t-hot"  },
-          { "icon": "☀️", "temp": "33°C", "type": "t-hot"  },
-          { "icon": "☀️", "temp": "31°C", "type": "t-hot"  },
-          { "icon": "⛅",  "temp": "25°C", "type": "t-warm" },
-          { "icon": "🍂",  "temp": "16°C", "type": "t-mild" },
-          { "icon": "🌧",  "temp": "8°C",  "type": "t-mild" },
-          { "icon": "❄️", "temp": "3°C",  "type": "t-mild" }
+          {
+            "icon": "❄️",
+            "temp": "2°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "❄️",
+            "temp": "4°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "12°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌸",
+            "temp": "19°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "30°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "☀️",
+            "temp": "33°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "☀️",
+            "temp": "31°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "⛅",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "🍂",
+            "temp": "16°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧",
+            "temp": "8°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "❄️",
+            "temp": "3°C",
+            "type": "t-mild"
+          }
         ]
       },
       {
@@ -119,18 +324,66 @@
         "city_id": "samarkand",
         "best_note": "✅ ベスト：4月〜6月・9〜10月 ／ 冬は降雪もあり遺跡が閉鎖されることも",
         "months": [
-          { "icon": "❄️", "temp": "1°C",  "type": "t-mild" },
-          { "icon": "❄️", "temp": "3°C",  "type": "t-mild" },
-          { "icon": "⛅",  "temp": "11°C", "type": "t-mild" },
-          { "icon": "🌸",  "temp": "18°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "24°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "30°C", "type": "t-hot"  },
-          { "icon": "☀️", "temp": "33°C", "type": "t-hot"  },
-          { "icon": "☀️", "temp": "31°C", "type": "t-hot"  },
-          { "icon": "⛅",  "temp": "25°C", "type": "t-warm" },
-          { "icon": "🍂",  "temp": "15°C", "type": "t-mild" },
-          { "icon": "🌧",  "temp": "7°C",  "type": "t-mild" },
-          { "icon": "❄️", "temp": "2°C",  "type": "t-mild" }
+          {
+            "icon": "❄️",
+            "temp": "1°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "❄️",
+            "temp": "3°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "11°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌸",
+            "temp": "18°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "30°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "☀️",
+            "temp": "33°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "☀️",
+            "temp": "31°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "⛅",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "🍂",
+            "temp": "15°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧",
+            "temp": "7°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "❄️",
+            "temp": "2°C",
+            "type": "t-mild"
+          }
         ]
       },
       {
@@ -138,61 +391,225 @@
         "city_id": "khiva",
         "best_note": "✅ ベスト：4〜5月・9〜10月 ／ 夏は40℃近くになる乾燥した砂漠気候",
         "months": [
-          { "icon": "❄️", "temp": "-2°C", "type": "t-mild" },
-          { "icon": "❄️", "temp": "1°C",  "type": "t-mild" },
-          { "icon": "⛅",  "temp": "9°C",  "type": "t-mild" },
-          { "icon": "🌸",  "temp": "18°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "26°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "32°C", "type": "t-hot"  },
-          { "icon": "☀️", "temp": "36°C", "type": "t-hot"  },
-          { "icon": "☀️", "temp": "34°C", "type": "t-hot"  },
-          { "icon": "⛅",  "temp": "26°C", "type": "t-warm" },
-          { "icon": "🍂",  "temp": "15°C", "type": "t-mild" },
-          { "icon": "🌧",  "temp": "6°C",  "type": "t-mild" },
-          { "icon": "❄️", "temp": "0°C",  "type": "t-mild" }
+          {
+            "icon": "❄️",
+            "temp": "-2°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "❄️",
+            "temp": "1°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "9°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌸",
+            "temp": "18°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "26°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "32°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "☀️",
+            "temp": "36°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "☀️",
+            "temp": "34°C",
+            "type": "t-hot"
+          },
+          {
+            "icon": "⛅",
+            "temp": "26°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "🍂",
+            "temp": "15°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧",
+            "temp": "6°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "❄️",
+            "temp": "0°C",
+            "type": "t-mild"
+          }
         ]
       }
     ]
   },
-
   "budget": {
     "plan1_label": "5泊7日（1人）",
     "plan1_range": "8〜14万円",
-    "plan1_note":  "乗継便利用・中級ホテル",
+    "plan1_note": "乗継便利用・中級ホテル",
     "plan2_label": "7泊9日（1人）",
     "plan2_range": "12〜20万円",
-    "plan2_note":  "サマルカンド・ブハラ・ヒヴァ周遊",
+    "plan2_note": "サマルカンド・ブハラ・ヒヴァ周遊",
     "items": [
-      { "icon": "✈️", "name": "航空券（往復）",      "detail_html": "直行便はウズベキスタン航空（成田〜タシュケント週3〜4便）<br>大韓航空・中国南方航空などの乗継便も利用可能",                                         "price": "7〜18万円",        "affiliate": "flights" },
-      { "icon": "🛏️", "name": "ホテル（1泊）",       "detail_html": "ゲストハウス：1,500〜3,500円・中級：4,000〜9,000円<br>サマルカンド旧市街内のブティックホテルは雰囲気◎",                                      "price": "〜1万円/泊",       "affiliate": "hotels" },
-      { "icon": "🍜", "name": "食費（1日）",         "detail_html": "バザールや大衆食堂なら1食200〜500円<br>プロフ・シャシリクなどの定番料理は安くてボリューム満点",                                            "price": "500〜1,500円/日", "affiliate": "wise" },
-      { "icon": "🚕", "name": "交通費（1日）",       "detail_html": "市内はYandex.TaxiやInDriverが便利<br>都市間は共有タクシー（サービ）かアフロシヨブ号（高速鉄道）",                                        "price": "500〜3,000円/日", "affiliate": "" },
-      { "icon": "📍", "name": "観光・アクティビティ", "detail_html": "レギスタン・イチャン・カラなど有料スポットが多い<br>世界遺産の入場料はまとめると意外と積み上がる",                                            "price": "500〜2,000円/日", "affiliate": "klook" },
-      { "icon": "🌐", "name": "SIM・Wi-Fi",          "detail_html": "現地SIMはタシュケント空港で購入可能（数百円〜）<br>Ucell・Beeline・UMS等が主要キャリア。eSIMも対応しつつある",                             "price": "300〜1,000円",    "affiliate": "sim" }
+      {
+        "icon": "✈️",
+        "name": "航空券（往復）",
+        "detail_html": "直行便はウズベキスタン航空（成田〜タシュケント週3〜4便）<br>大韓航空・中国南方航空などの乗継便も利用可能",
+        "price": "7〜18万円",
+        "affiliate": "flights"
+      },
+      {
+        "icon": "🛏️",
+        "name": "ホテル（1泊）",
+        "detail_html": "ゲストハウス：1,500〜3,500円・中級：4,000〜9,000円<br>サマルカンド旧市街内のブティックホテルは雰囲気◎",
+        "price": "〜1万円/泊",
+        "affiliate": "hotels"
+      },
+      {
+        "icon": "🍜",
+        "name": "食費（1日）",
+        "detail_html": "バザールや大衆食堂なら1食200〜500円<br>プロフ・シャシリクなどの定番料理は安くてボリューム満点",
+        "price": "500〜1,500円/日",
+        "affiliate": "wise"
+      },
+      {
+        "icon": "🚕",
+        "name": "交通費（1日）",
+        "detail_html": "市内はYandex.TaxiやInDriverが便利<br>都市間は共有タクシー（サービ）かアフロシヨブ号（高速鉄道）",
+        "price": "500〜3,000円/日",
+        "affiliate": ""
+      },
+      {
+        "icon": "📍",
+        "name": "観光・アクティビティ",
+        "detail_html": "レギスタン・イチャン・カラなど有料スポットが多い<br>世界遺産の入場料はまとめると意外と積み上がる",
+        "price": "500〜2,000円/日",
+        "affiliate": "klook"
+      },
+      {
+        "icon": "🌐",
+        "name": "SIM・Wi-Fi",
+        "detail_html": "現地SIMはタシュケント空港で購入可能（数百円〜）<br>Ucell・Beeline・UMS等が主要キャリア。eSIMも対応しつつある",
+        "price": "300〜1,000円",
+        "affiliate": "sim"
+      }
     ],
     "savings_tips_html": "・チップは基本不要（ガイドへは1万〜2万UZS程度が相場）<br>・バザールの大衆食堂でのランチは1食300〜500円と格安<br>・アフロシヨブ号（高速鉄道）は快適かつ都市間移動の最安手段"
   },
-
   "practical": {
     "prac_cards": [
-      { "icon": "📄", "title": "ビザ",      "value": "不要（電子ビザ30日）" },
-      { "icon": "💱", "title": "通貨",      "value": "スム（UZS）" },
-      { "icon": "🔌", "title": "コンセント", "value": "Cタイプ（丸2穴）" },
-      { "icon": "⚡", "title": "電圧",      "value": "220V（変換注意）" },
-      { "icon": "🛜", "title": "Wi-Fi",     "value": "都市部ホテル・カフェ" },
-      { "icon": "⌚", "title": "時差",      "value": "日本−4時間" },
-      { "icon": "🏔️", "title": "気温",     "value": "夏35°超・冬氷点下も" },
-      { "icon": "🙏", "title": "チップ",    "value": "ガイドのみ少額" },
-      { "icon": "💧", "title": "水道水",    "value": "飲用不可（ペットボトル推奨）" },
-      { "icon": "💳", "title": "カード払い", "value": "都市部◎・農村は現金" }
+      {
+        "icon": "📄",
+        "title": "ビザ",
+        "value": "不要（電子ビザ30日）"
+      },
+      {
+        "icon": "💱",
+        "title": "通貨",
+        "value": "スム（UZS）"
+      },
+      {
+        "icon": "🔌",
+        "title": "コンセント",
+        "value": "Cタイプ（丸2穴）"
+      },
+      {
+        "icon": "⚡",
+        "title": "電圧",
+        "value": "220V（変換注意）"
+      },
+      {
+        "icon": "🛜",
+        "title": "Wi-Fi",
+        "value": "都市部ホテル・カフェ"
+      },
+      {
+        "icon": "⌚",
+        "title": "時差",
+        "value": "日本−4時間"
+      },
+      {
+        "icon": "🏔️",
+        "title": "気温",
+        "value": "夏35°超・冬氷点下も"
+      },
+      {
+        "icon": "🙏",
+        "title": "チップ",
+        "value": "ガイドのみ少額"
+      },
+      {
+        "icon": "💧",
+        "title": "水道水",
+        "value": "飲用不可（ペットボトル推奨）"
+      },
+      {
+        "icon": "💳",
+        "title": "カード払い",
+        "value": "都市部◎・農村は現金"
+      }
     ],
     "prep_steps": [
-      { "title": "パスポート取得・更新",    "timing": "2〜3ヶ月前",  "timing_color": "#006847", "border_color": "#006847", "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)", "desc_html": "申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。" },
-      { "title": "電子ビザ（eビザ）申請",   "timing": "2〜4週間前",  "timing_color": "#1a8a5a", "border_color": "#1a8a5a", "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)", "desc_html": "公式サイト（e-visa.gov.uz）でオンライン申請。費用は20USD前後で、審査に通常2〜3営業日かかる。日本国籍は30日間ビザが取得可能。" },
-      { "title": "航空券・ホテルの予約",    "timing": "早いほど安い", "timing_color": "#b09000", "border_color": "#b09000", "bar_color": "#b09000", "desc_html": "ウズベキスタン航空の直行便は便数が少なく早期完売しやすい。2〜3ヶ月前が狙い目。ホテルは古都内のブティックホテルが人気のため早めに確保を。" },
-      { "title": "海外旅行保険の加入",      "timing": "出発前日まで", "timing_color": "#b09000", "border_color": "#b09000", "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)", "desc_html": "クレジットカード付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。" },
-      { "title": "SIM・eSIMの準備",        "timing": "1〜2週間前",  "timing_color": "#cc5500", "border_color": "#cc5500", "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)", "desc_html": "eSIMなら出発前に購入・設定ができてスムーズ。現地SIMはタシュケント空港でも購入可能。Ucell・UMSが広域対応。" },
-      { "title": "現地通貨・両替の確認",    "timing": "出発1週間前",  "timing_color": "#cc0001", "border_color": "#cc0001", "bar_color": "", "desc_html": "タシュケント空港や市内の両替所ではUSDまたはEURからの両替が最も有利。日本円でも両替できる場所はあるが、USD準備があると安心。" }
+      {
+        "title": "パスポート取得・更新",
+        "timing": "2〜3ヶ月前",
+        "timing_color": "#006847",
+        "border_color": "#006847",
+        "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+        "desc_html": "申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。"
+      },
+      {
+        "title": "電子ビザ（eビザ）申請",
+        "timing": "2〜4週間前",
+        "timing_color": "#1a8a5a",
+        "border_color": "#1a8a5a",
+        "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+        "desc_html": "公式サイト（e-visa.gov.uz）でオンライン申請。費用は20USD前後で、審査に通常2〜3営業日かかる。日本国籍は30日間ビザが取得可能。"
+      },
+      {
+        "title": "航空券・ホテルの予約",
+        "timing": "早いほど安い",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "#b09000",
+        "desc_html": "ウズベキスタン航空の直行便は便数が少なく早期完売しやすい。2〜3ヶ月前が狙い目。ホテルは古都内のブティックホテルが人気のため早めに確保を。"
+      },
+      {
+        "title": "海外旅行保険の加入",
+        "timing": "出発前日まで",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+        "desc_html": "クレジットカード付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。"
+      },
+      {
+        "title": "SIM・eSIMの準備",
+        "timing": "1〜2週間前",
+        "timing_color": "#cc5500",
+        "border_color": "#cc5500",
+        "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+        "desc_html": "eSIMなら出発前に購入・設定ができてスムーズ。現地SIMはタシュケント空港でも購入可能。Ucell・UMSが広域対応。"
+      },
+      {
+        "title": "現地通貨・両替の確認",
+        "timing": "出発1週間前",
+        "timing_color": "#cc0001",
+        "border_color": "#cc0001",
+        "bar_color": "",
+        "desc_html": "タシュケント空港や市内の両替所ではUSDまたはEURからの両替が最も有利。日本円でも両替できる場所はあるが、USD準備があると安心。"
+      }
     ],
     "special_note_title": "電子ビザ（eビザ）について",
     "special_note_html": "日本国籍者はオンラインで電子ビザを申請できる。有効期間30日。申請には証明写真・パスポート情報・宿泊先が必要。",
@@ -200,24 +617,89 @@
     "special_note_url_label": "e-visa.gov.uz",
     "flight_intro": "日本からタシュケントへはウズベキスタン航空の直行便（週3〜4便）が利用できる。乗継便ならソウル・広州・イスタンブール経由など選択肢が広がる。",
     "airlines": [
-      { "name": "ウズベキスタン航空", "desc": "成田〜タシュケント直行便あり（週3〜4便）。飛行時間は約10〜11時間。フラッグキャリアならではのサービス。",   "price": "往復 8〜16万円" },
-      { "name": "大韓航空",           "desc": "ソウル（仁川）乗継でタシュケントへ。便数が多く日本全国からアクセスしやすい。",                                     "price": "往復 9〜16万円" },
-      { "name": "中国南方航空",       "desc": "広州乗継。乗継時間がやや長い場合もあるが、比較的安価なことが多い。",                                               "price": "往復 7〜14万円" },
-      { "name": "トルコ航空",         "desc": "イスタンブール乗継。乗継時間を利用してイスタンブール観光も可能。中央アジア路線に強い。",                           "price": "往復 10〜18万円" }
+      {
+        "name": "ウズベキスタン航空",
+        "desc": "成田〜タシュケント直行便あり（週3〜4便）。飛行時間は約10〜11時間。フラッグキャリアならではのサービス。",
+        "price": "往復 8〜16万円"
+      },
+      {
+        "name": "大韓航空",
+        "desc": "ソウル（仁川）乗継でタシュケントへ。便数が多く日本全国からアクセスしやすい。",
+        "price": "往復 9〜16万円"
+      },
+      {
+        "name": "中国南方航空",
+        "desc": "広州乗継。乗継時間がやや長い場合もあるが、比較的安価なことが多い。",
+        "price": "往復 7〜14万円"
+      },
+      {
+        "name": "トルコ航空",
+        "desc": "イスタンブール乗継。乗継時間を利用してイスタンブール観光も可能。中央アジア路線に強い。",
+        "price": "往復 10〜18万円"
+      }
     ],
     "flight_tip_html": "・GW・お盆・年末年始は2〜3ヶ月前から価格が上がりやすい<br>・直行便は便数が限られるため、希望の日程は早めに押さえること<br>・乗継便は比較して安い場合が多く、乗継国でのトランジット観光も楽しみの一つ",
     "hotel_intro": "古都の旧市街に宿泊すると、観光スポットへ歩いてアクセスでき移動の負担が少ない。タシュケントは空港へのアクセスも考慮してエリアを選ぼう。",
     "hotel_areas": [
-      { "name": "サマルカンド旧市街（レギスタン周辺）", "tag": "観光に最適",        "tag_color": "green",  "desc": "レギスタン広場まで徒歩圏のブティックホテルが集中。昔のキャラバンサライ（隊商宿）を改装したホテルもある。夕暮れのレギスタンが窓から見えるホテルも。", "price": "中級 4,000〜8,000円／泊", "maps_url": "https://www.google.com/maps/place/Registan,+Samarkand,+Uzbekistan" },
-      { "name": "タシュケント旧市街（チョルスー周辺）", "tag": "ローカルな雰囲気",   "tag_color": "green",  "desc": "バザールや旧市街モスクに近いエリア。空港からはタクシーで20〜30分。ビジネスホテルも多く予算に応じて選べる幅がある。",                               "price": "格安 2,000〜4,000円・中級 5,000〜10,000円", "maps_url": "https://www.google.com/maps/place/Chorsu+Bazaar,+Tashkent,+Uzbekistan" },
-      { "name": "ブハラ旧市街（ラビ・ハウズ周辺）",     "tag": "世界遺産の中心",    "tag_color": "green",  "desc": "ラビ・ハウズの池を囲むカフェ・レストランが夜遅くまで賑わう。旧市街内のゲストハウスは独特の雰囲気でコスパも良い。",                               "price": "格安 2,000〜4,000円／泊", "maps_url": "https://www.google.com/maps/place/Lyab-i+Hauz,+Bukhara,+Uzbekistan" }
+      {
+        "name": "サマルカンド旧市街（レギスタン周辺）",
+        "tag": "観光に最適",
+        "tag_color": "green",
+        "desc": "レギスタン広場まで徒歩圏のブティックホテルが集中。昔のキャラバンサライ（隊商宿）を改装したホテルもある。夕暮れのレギスタンが窓から見えるホテルも。",
+        "price": "中級 4,000〜8,000円／泊",
+        "maps_url": "https://www.google.com/maps/place/Registan,+Samarkand,+Uzbekistan"
+      },
+      {
+        "name": "タシュケント旧市街（チョルスー周辺）",
+        "tag": "ローカルな雰囲気",
+        "tag_color": "green",
+        "desc": "バザールや旧市街モスクに近いエリア。空港からはタクシーで20〜30分。ビジネスホテルも多く予算に応じて選べる幅がある。",
+        "price": "格安 2,000〜4,000円・中級 5,000〜10,000円",
+        "maps_url": "https://www.google.com/maps/place/Chorsu+Bazaar,+Tashkent,+Uzbekistan"
+      },
+      {
+        "name": "ブハラ旧市街（ラビ・ハウズ周辺）",
+        "tag": "世界遺産の中心",
+        "tag_color": "green",
+        "desc": "ラビ・ハウズの池を囲むカフェ・レストランが夜遅くまで賑わう。旧市街内のゲストハウスは独特の雰囲気でコスパも良い。",
+        "price": "格安 2,000〜4,000円／泊",
+        "maps_url": "https://www.google.com/maps/place/Lyab-i+Hauz,+Bukhara,+Uzbekistan"
+      }
     ],
     "hotel_tip": "ヒヴァのイチャン・カラ（旧市街）内には城壁内に泊まれるユニークなホテルがある。旧市街を夕暮れや早朝の静かな時間帯に歩けるのは宿泊者だけの特権。",
     "apps": [
-      { "icon": "🗺️", "name": "Yandex Maps",      "type_label": "地図・ナビ",                   "desc": "ウズベキスタンではGoogle MapsよりYandex Mapsの方が細かい道まで対応していることが多い。オフラインマップDLも可能。", "affiliate": "", "is_last": false },
-      { "icon": "💬", "name": "Telegram",          "type_label": "メッセージ・現地連絡",         "desc": "ウズベキスタンで最もよく使われるSNS兼メッセージアプリ。ホテルやツアー会社との連絡はTelegram経由が多い。",         "affiliate": "", "is_last": false },
-      { "icon": "🚗", "name": "Yandex Taxi / InDriver", "type_label": "配車アプリ",              "desc": "タシュケントではYandex Taxiが普及。InDriverは条件を交渉してドライバーとマッチングするアプリで地方でも使える。", "affiliate": "", "is_last": false },
-      { "icon": "🈳", "name": "Google 翻訳",        "type_label": "翻訳（ウズベク語・ロシア語）", "desc": "ウズベク語・ロシア語のパックを事前にDLしておくとオフラインでも使える。キリル文字のメニューや看板の読み取りに必須。", "affiliate": "", "is_last": true }
+      {
+        "icon": "🗺️",
+        "name": "Yandex Maps",
+        "type_label": "地図・ナビ",
+        "desc": "ウズベキスタンではGoogle MapsよりYandex Mapsの方が細かい道まで対応していることが多い。オフラインマップDLも可能。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "💬",
+        "name": "Telegram",
+        "type_label": "メッセージ・現地連絡",
+        "desc": "ウズベキスタンで最もよく使われるSNS兼メッセージアプリ。ホテルやツアー会社との連絡はTelegram経由が多い。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "🚗",
+        "name": "Yandex Taxi / InDriver",
+        "type_label": "配車アプリ",
+        "desc": "タシュケントではYandex Taxiが普及。InDriverは条件を交渉してドライバーとマッチングするアプリで地方でも使える。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "🈳",
+        "name": "Google 翻訳",
+        "type_label": "翻訳（ウズベク語・ロシア語）",
+        "desc": "ウズベク語・ロシア語のパックを事前にDLしておくとオフラインでも使える。キリル文字のメニューや看板の読み取りに必須。",
+        "affiliate": "",
+        "is_last": true
+      }
     ],
     "country_items_label": "🇺🇿 ウズベキスタン特有の持ち物",
     "country_items": [
@@ -238,20 +720,58 @@
     "cta_title": "出発前にマナーも確認しよう！🙏",
     "cta_desc": "イスラム文化と旧ソ連の歴史が交差する国ならではのマナー。<br>モスク見学・食事・服装など旅行者が知っておくべきポイントをまとめました。"
   },
-
   "manner_cards": [
-    { "type": "do",   "icon": "🤝", "title": "右手での受け渡し",          "desc": "物の受け渡しや握手は右手で行う。左手は不浄とされており、両手を使うのがより丁寧。" },
-    { "type": "do",   "icon": "👋", "title": "「アッサローム」で挨拶",    "desc": "「Assalomu alaykum（アッサローム アライクム）」はウズベク語の挨拶。声をかけると相手がとても喜んでくれる。旅の鉄板フレーズ。" },
-    { "type": "dont", "icon": "🕌", "title": "モスクでは服装に注意",      "desc": "肌の露出を控え、女性はスカーフで頭を覆う。入口で服を貸してくれる場所も多いが、あらかじめ羽織ものを持参すると安心。" },
-    { "type": "do",   "icon": "🍽️", "title": "食事への招待は喜んで",     "desc": "「ゲストは神様」という文化が根づいており、家庭への招待を断るのは失礼にあたる場合がある。招かれたら遠慮せずに応じよう。" },
-    { "type": "dont", "icon": "📸", "title": "軍・政府施設の撮影禁止",    "desc": "軍・警察・政府施設の撮影は厳しく禁止されている。また人物を撮影する際は必ず許可を取ること。" },
-    { "type": "dont", "icon": "🥂", "title": "公共の場でのアルコール",    "desc": "飲酒自体は禁止されていないが、ラマダン期間中やモスク付近など公の場での飲酒は控えたい。" },
-    { "type": "do",   "icon": "💬", "title": "ロシア語が通じる場面も",    "desc": "英語はほとんど通じないが、ロシア語なら意外と通じる。数字・料金・方向など基本単語を覚えておくと助かる場面が多い。" },
-    { "type": "dont", "icon": "🦶", "title": "足の裏を向けない",          "desc": "座るときに足の裏を相手に向けるのは失礼とされる。絨毯の上に座る場面も多いため足の向きに気をつけよう。" }
+    {
+      "type": "do",
+      "icon": "🤝",
+      "title": "右手での受け渡し",
+      "desc": "物の受け渡しや握手は右手で行う。左手は不浄とされており、両手を使うのがより丁寧。"
+    },
+    {
+      "type": "do",
+      "icon": "👋",
+      "title": "「アッサローム」で挨拶",
+      "desc": "「Assalomu alaykum（アッサローム アライクム）」はウズベク語の挨拶。声をかけると相手がとても喜んでくれる。旅の鉄板フレーズ。"
+    },
+    {
+      "type": "dont",
+      "icon": "🕌",
+      "title": "モスクでは服装に注意",
+      "desc": "肌の露出を控え、女性はスカーフで頭を覆う。入口で服を貸してくれる場所も多いが、あらかじめ羽織ものを持参すると安心。"
+    },
+    {
+      "type": "do",
+      "icon": "🍽️",
+      "title": "食事への招待は喜んで",
+      "desc": "「ゲストは神様」という文化が根づいており、家庭への招待を断るのは失礼にあたる場合がある。招かれたら遠慮せずに応じよう。"
+    },
+    {
+      "type": "dont",
+      "icon": "📸",
+      "title": "軍・政府施設の撮影禁止",
+      "desc": "軍・警察・政府施設の撮影は厳しく禁止されている。また人物を撮影する際は必ず許可を取ること。"
+    },
+    {
+      "type": "dont",
+      "icon": "🥂",
+      "title": "公共の場でのアルコール",
+      "desc": "飲酒自体は禁止されていないが、ラマダン期間中やモスク付近など公の場での飲酒は控えたい。"
+    },
+    {
+      "type": "do",
+      "icon": "💬",
+      "title": "ロシア語が通じる場面も",
+      "desc": "英語はほとんど通じないが、ロシア語なら意外と通じる。数字・料金・方向など基本単語を覚えておくと助かる場面が多い。"
+    },
+    {
+      "type": "dont",
+      "icon": "🦶",
+      "title": "足の裏を向けない",
+      "desc": "座るときに足の裏を相手に向けるのは失礼とされる。絨毯の上に座る場面も多いため足の向きに気をつけよう。"
+    }
   ],
   "manner_cta_title": "現地のウズベク語で話しかけてみよう！💬",
   "manner_cta_desc": "ウズベク語・ロシア語の簡単なフレーズ集。<br>「ラフマット（ありがとう）」一言で、相手の表情がぐっと和らぎます。",
-
   "phrases": {
     "language_name": "ウズベク語",
     "card_title": "🃏 ウズベク語 単語カード",
@@ -259,283 +779,901 @@
       {
         "label": "👋 あいさつ",
         "items": [
-          { "jp": "こんにちは",          "foreign": "Assalomu alaykum",  "reading": "アッサローム アライクム", "audio": "assalomu-alaykum.mp3" },
-          { "jp": "元気ですか？",        "foreign": "Qandaysiz?",         "reading": "カンダイシズ？",          "audio": "qandaysiz.mp3" },
-          { "jp": "元気です",            "foreign": "Yaxshiman",          "reading": "ヤフシマン",              "audio": "yaxshiman.mp3" },
-          { "jp": "さようなら",          "foreign": "Xayr",               "reading": "ハイル",                  "audio": "xayr.mp3" },
-          { "jp": "ありがとう",          "foreign": "Rahmat",             "reading": "ラフマット",              "audio": "rahmat.mp3" }
+          {
+            "jp": "こんにちは",
+            "foreign": "Assalomu alaykum",
+            "reading": "アッサローム アライクム",
+            "audio": "assalomu-alaykum.mp3"
+          },
+          {
+            "jp": "元気ですか？",
+            "foreign": "Qandaysiz?",
+            "reading": "カンダイシズ？",
+            "audio": "qandaysiz.mp3"
+          },
+          {
+            "jp": "元気です",
+            "foreign": "Yaxshiman",
+            "reading": "ヤフシマン",
+            "audio": "yaxshiman.mp3"
+          },
+          {
+            "jp": "さようなら",
+            "foreign": "Xayr",
+            "reading": "ハイル",
+            "audio": "xayr.mp3"
+          },
+          {
+            "jp": "ありがとう",
+            "foreign": "Rahmat",
+            "reading": "ラフマット",
+            "audio": "rahmat.mp3"
+          }
         ]
       },
       {
         "label": "🙏 基本表現",
         "items": [
-          { "jp": "すみません",          "foreign": "Kechirasiz",          "reading": "ケチラシズ",              "audio": "kechirasiz.mp3" },
-          { "jp": "はい / いいえ",       "foreign": "Ha / Yo'q",           "reading": "ハー / ヨック",           "audio": "ha-yoq.mp3" },
-          { "jp": "名前は〜です",        "foreign": "Mening ismim ～",     "reading": "メニン イスミム ～",      "audio": "mening-ismim.mp3" },
-          { "jp": "わかりません",        "foreign": "Tushunmayapman",      "reading": "トゥシュンマヤプマン",    "audio": "tushunmayapman.mp3" },
-          { "jp": "助けてください",      "foreign": "Yordam bering!",      "reading": "ヨルダム ベリン！",       "audio": "yordam-bering.mp3" }
+          {
+            "jp": "すみません",
+            "foreign": "Kechirasiz",
+            "reading": "ケチラシズ",
+            "audio": "kechirasiz.mp3"
+          },
+          {
+            "jp": "はい / いいえ",
+            "foreign": "Ha / Yo'q",
+            "reading": "ハー / ヨック",
+            "audio": "ha-yoq.mp3"
+          },
+          {
+            "jp": "名前は〜です",
+            "foreign": "Mening ismim ～",
+            "reading": "メニン イスミム ～",
+            "audio": "mening-ismim.mp3"
+          },
+          {
+            "jp": "わかりません",
+            "foreign": "Tushunmayapman",
+            "reading": "トゥシュンマヤプマン",
+            "audio": "tushunmayapman.mp3"
+          },
+          {
+            "jp": "助けてください",
+            "foreign": "Yordam bering!",
+            "reading": "ヨルダム ベリン！",
+            "audio": "yordam-bering.mp3"
+          }
         ]
       },
       {
         "label": "🍽️ レストラン・ショッピング",
         "items": [
-          { "jp": "おいしい！",          "foreign": "Mazali!",                  "reading": "マザリ！",                    "audio": "mazali.mp3" },
-          { "jp": "いくらですか？",      "foreign": "Qancha turadi?",           "reading": "カンチャ トゥラディ？",       "audio": "qancha-turadi.mp3" },
-          { "jp": "お会計お願いします",  "foreign": "Hisob qiling",             "reading": "ヒソブ キリング",             "audio": "hisob-qiling.mp3" },
-          { "jp": "安くして",            "foreign": "Arzonroq bo'lsin",         "reading": "アルゾンロック ボルシン",     "audio": "arzonroq.mp3" },
-          { "jp": "トイレどこですか？",  "foreign": "Hojatxona qayerda?",       "reading": "ホジャットホナ カイエルダ？", "audio": "hojatxona.mp3" },
-          { "jp": "これください",        "foreign": "Shuni bering",             "reading": "シュニ ベリン",               "audio": "shuni-bering.mp3" },
-          { "jp": "辛くしないで",        "foreign": "Achchiq qilmang",          "reading": "アッチック キルマン",         "audio": "achchiq.mp3" },
-          { "jp": "おすすめは？",        "foreign": "Nima tavsiya qilasiz?",    "reading": "ニマ タフシヤ キラシズ？",   "audio": "nima-tavsiya.mp3" }
+          {
+            "jp": "おいしい！",
+            "foreign": "Mazali!",
+            "reading": "マザリ！",
+            "audio": "mazali.mp3"
+          },
+          {
+            "jp": "いくらですか？",
+            "foreign": "Qancha turadi?",
+            "reading": "カンチャ トゥラディ？",
+            "audio": "qancha-turadi.mp3"
+          },
+          {
+            "jp": "お会計お願いします",
+            "foreign": "Hisob qiling",
+            "reading": "ヒソブ キリング",
+            "audio": "hisob-qiling.mp3"
+          },
+          {
+            "jp": "安くして",
+            "foreign": "Arzonroq bo'lsin",
+            "reading": "アルゾンロック ボルシン",
+            "audio": "arzonroq.mp3"
+          },
+          {
+            "jp": "トイレどこですか？",
+            "foreign": "Hojatxona qayerda?",
+            "reading": "ホジャットホナ カイエルダ？",
+            "audio": "hojatxona.mp3"
+          },
+          {
+            "jp": "これください",
+            "foreign": "Shuni bering",
+            "reading": "シュニ ベリン",
+            "audio": "shuni-bering.mp3"
+          },
+          {
+            "jp": "辛くしないで",
+            "foreign": "Achchiq qilmang",
+            "reading": "アッチック キルマン",
+            "audio": "achchiq.mp3"
+          },
+          {
+            "jp": "おすすめは？",
+            "foreign": "Nima tavsiya qilasiz?",
+            "reading": "ニマ タフシヤ キラシズ？",
+            "audio": "nima-tavsiya.mp3"
+          }
         ]
       },
       {
         "label": "🔢 数字",
         "items": [
-          { "jp": "1〜5",  "foreign": "Bir・Ikki・Uch・To'rt・Besh",              "reading": "ビル・イッキ・ウチ・トゥルット・ベシュ",   "audio": "bir-besh.mp3" },
-          { "jp": "6〜10", "foreign": "Olti・Yetti・Sakkiz・To'qqiz・O'n",        "reading": "オルティ・イェッティ・サッキズ・トッキズ・オン", "audio": "olti-on.mp3" },
-          { "jp": "100・1000", "foreign": "Yuz・Ming",                            "reading": "ユズ・ミン",                                   "audio": "yuz-ming.mp3" }
+          {
+            "jp": "1〜5",
+            "foreign": "Bir・Ikki・Uch・To'rt・Besh",
+            "reading": "ビル・イッキ・ウチ・トゥルット・ベシュ",
+            "audio": "bir-besh.mp3"
+          },
+          {
+            "jp": "6〜10",
+            "foreign": "Olti・Yetti・Sakkiz・To'qqiz・O'n",
+            "reading": "オルティ・イェッティ・サッキズ・トッキズ・オン",
+            "audio": "olti-on.mp3"
+          },
+          {
+            "jp": "100・1000",
+            "foreign": "Yuz・Ming",
+            "reading": "ユズ・ミン",
+            "audio": "yuz-ming.mp3"
+          }
         ]
       }
     ]
   },
-
   "food_section_title": "ウズベキスタン グルメ",
   "food_filter_types": [
-    { "id": "all",      "label": "すべて",    "active": true  },
-    { "id": "rice",     "label": "ご飯もの",  "active": false },
-    { "id": "meat",     "label": "肉料理",    "active": false },
-    { "id": "noodle",   "label": "麺料理",    "active": false },
-    { "id": "dumpling", "label": "点心",      "active": false },
-    { "id": "bread",    "label": "パン・焼き物","active": false },
-    { "id": "sweet",    "label": "スイーツ",  "active": false },
-    { "id": "drink",    "label": "飲み物",    "active": false }
+    {
+      "id": "all",
+      "label": "すべて",
+      "active": true
+    },
+    {
+      "id": "rice",
+      "label": "ご飯もの",
+      "active": false
+    },
+    {
+      "id": "meat",
+      "label": "肉料理",
+      "active": false
+    },
+    {
+      "id": "noodle",
+      "label": "麺料理",
+      "active": false
+    },
+    {
+      "id": "dumpling",
+      "label": "点心",
+      "active": false
+    },
+    {
+      "id": "bread",
+      "label": "パン・焼き物",
+      "active": false
+    },
+    {
+      "id": "sweet",
+      "label": "スイーツ",
+      "active": false
+    },
+    {
+      "id": "drink",
+      "label": "飲み物",
+      "active": false
+    }
   ],
   "food_filter_cities": [
-    { "id": "tashkent",  "label": "タシュケント" },
-    { "id": "samarkand", "label": "サマルカンド" },
-    { "id": "bukhara",   "label": "ブハラ" },
-    { "id": "khiva",     "label": "ヒヴァ" },
-    { "id": "fergana",   "label": "フェルガナ" },
-    { "id": "nukus",     "label": "ヌクス" }
+    {
+      "id": "tashkent",
+      "label": "タシュケント"
+    },
+    {
+      "id": "samarkand",
+      "label": "サマルカンド"
+    },
+    {
+      "id": "bukhara",
+      "label": "ブハラ"
+    },
+    {
+      "id": "khiva",
+      "label": "ヒヴァ"
+    },
+    {
+      "id": "fergana",
+      "label": "フェルガナ"
+    },
+    {
+      "id": "nukus",
+      "label": "ヌクス"
+    }
   ],
   "food_items": [
     {
-      "num": "No.01", "name": "プロフ", "badge": "国民食", "type": "rice", "city": "national",
+      "num": "No.01",
+      "name": "プロフ",
+      "badge": "国民食",
+      "type": "rice",
+      "city": "national",
       "desc": "「プロフなしに祝宴なし」と言われるほどウズベキスタンで愛される米料理。羊肉・人参・玉ねぎを大鍋で炒め、米を加えて蒸し炊きにする。シルクロードの旅人を支えてきた味で、料理人によって素材や炊き方が微妙に異なる。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Plov",
-      "order_ico": "🍚", "order_name_en": "Plov",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Plov",
+      "order_ico": "🍚",
+      "order_name_en": "Plov",
       "prompt_en": "Uzbek Plov rice dish in a large round traditional ceramic bowl viewed from 45-degree overhead angle, yellow saffron rice with orange carrots, lamb meat chunks, chickpeas and raisins, whole garlic head on top, natural window lighting, food photography, white marble background",
       "plate_color": "traditional blue ceramic bowl"
     },
     {
-      "num": "No.02", "name": "シャシリク", "badge": "炭火焼き", "type": "meat", "city": "national",
+      "num": "No.02",
+      "name": "シャシリク",
+      "badge": "炭火焼き",
+      "type": "meat",
+      "city": "national",
       "desc": "炭火で豪快に焼いた串焼き肉。バザールや路上でもうもうと煙が上がる光景はウズベキスタン旅行の定番風景。羊・牛・鶏・内臓と種類も多く、塩胡椒とスパイスのシンプルな味付けが肉本来の旨みを引き出す。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Shashlik",
-      "order_ico": "🍢", "order_name_en": "Shashlik",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Shashlik",
+      "order_ico": "🍢",
+      "order_name_en": "Shashlik",
       "prompt_en": "Uzbek Shashlik grilled lamb skewers on metal skewers, viewed from slightly above at side angle, charred juicy meat pieces with spices, served on a wooden board with sliced raw onions and flatbread, wisps of smoke, food photography style",
       "plate_color": "rustic wooden board"
     },
     {
-      "num": "No.03", "name": "サムサ", "badge": "焼きたて必食", "type": "bread", "city": "national",
+      "num": "No.03",
+      "name": "サムサ",
+      "badge": "焼きたて必食",
+      "type": "bread",
+      "city": "national",
       "desc": "タンドール窯で焼いたウズベキスタン版肉まん。三角形に折られた生地の中にスパイシーな羊肉と玉ねぎがぎっしり詰まっている。バザールの窯の前で焼きたてを買ってその場で食べるのが現地流。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Samsa_(food)",
-      "order_ico": "🥟", "order_name_en": "Samsa",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Samsa_(food)",
+      "order_ico": "🥟",
+      "order_name_en": "Samsa",
       "prompt_en": "Uzbek Samsa triangular baked pastries viewed from 45-degree overhead, three pieces on white ceramic plate, golden brown flaky crust with sesame seeds on top, one piece cut open showing spiced meat filling, sesame scattered around",
       "plate_color": "white ceramic plate"
     },
     {
-      "num": "No.04", "name": "ラグマン", "badge": "フェルガナ名物", "type": "noodle", "city": "fergana",
+      "num": "No.04",
+      "name": "ラグマン",
+      "badge": "フェルガナ名物",
+      "type": "noodle",
+      "city": "fergana",
       "desc": "フェルガナ渓谷発祥の手打ち麺料理。小麦粉を手で引き伸ばした太めの麺に、羊肉・パプリカ・トマト・人参などの野菜を炒め合わせたソースをかける。汁あり・汁なし両方ある。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Laghman_(noodles)",
-      "order_ico": "🍜", "order_name_en": "Lagman",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Laghman_(noodles)",
+      "order_ico": "🍜",
+      "order_name_en": "Lagman",
       "prompt_en": "Uzbek Lagman hand-pulled noodle dish in a deep white bowl viewed from slightly above, thick chewy noodles with lamb, bell peppers, tomatoes, carrots in savory broth, garnished with fresh cilantro and parsley, steam rising gently",
       "plate_color": "white deep ceramic bowl"
     },
     {
-      "num": "No.05", "name": "マンティ", "badge": "点心", "type": "dumpling", "city": "national",
+      "num": "No.05",
+      "name": "マンティ",
+      "badge": "点心",
+      "type": "dumpling",
+      "city": "national",
       "desc": "蒸し器で蒸し上げた大型の包み料理。薄い皮の中に羊肉と玉ねぎのみじん切りが包まれており、一個がかなりのボリューム。ヨーグルトソースや赤唐辛子オイルをつけて食べる。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Manti_(food)",
-      "order_ico": "🥟", "order_name_en": "Manti",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Manti_(food)",
+      "order_ico": "🥟",
+      "order_name_en": "Manti",
       "prompt_en": "Uzbek Manti steamed dumplings in a bamboo steamer viewed from 45-degree overhead, large plump dumplings with pinched tops arranged neatly in two rows, small bowl of white yogurt sauce and red chili oil on the side",
       "plate_color": "bamboo steamer basket"
     },
     {
-      "num": "No.06", "name": "シュルパ", "badge": "定番スープ", "type": "meat", "city": "national",
+      "num": "No.06",
+      "name": "シュルパ",
+      "badge": "定番スープ",
+      "type": "meat",
+      "city": "national",
       "desc": "羊肉をじっくり煮込んだ塩気のあるスープ。骨付き肉ごとと野菜が丸ごと入った見た目のインパクトも大きい。バザールの食堂の定番で、朝から食べている地元の人も多い。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Shorba",
-      "order_ico": "🍲", "order_name_en": "Shurpa",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Shorba",
+      "order_ico": "🍲",
+      "order_name_en": "Shurpa",
       "prompt_en": "Uzbek Shurpa lamb soup in a large deep terracotta bowl viewed from slightly above, rich amber broth with large lamb bone-in chunks, whole potatoes and carrots, topped with fresh herbs, rustic food photography",
       "plate_color": "deep terracotta bowl"
     },
     {
-      "num": "No.07", "name": "ナン", "badge": "主食", "type": "bread", "city": "national",
+      "num": "No.07",
+      "name": "ナン",
+      "badge": "主食",
+      "type": "bread",
+      "city": "national",
       "desc": "タンドール窯の側面に貼り付けて焼くウズベキスタンの丸いパン。中央にスタンプで模様が押されているのが特徴で、焼きたては外がカリッ・中がもちっとしている。食卓に必ず登場する主食。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Non_(bread)",
-      "order_ico": "🫓", "order_name_en": "Non (Naan)",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Non_(bread)",
+      "order_ico": "🫓",
+      "order_name_en": "Non (Naan)",
       "prompt_en": "Uzbek Non flatbread on a wooden surface viewed from 45-degree overhead, large round bread with decorative stamped geometric pattern in center, golden brown surface with sesame seeds, slightly puffed edges, fresh from tandoor oven",
       "plate_color": "natural wooden board"
     },
     {
-      "num": "No.08", "name": "チュチバラ", "badge": "タシュケント名物", "type": "dumpling", "city": "tashkent",
+      "num": "No.08",
+      "name": "チュチバラ",
+      "badge": "タシュケント名物",
+      "type": "dumpling",
+      "city": "tashkent",
       "desc": "マンティより一回り小さい水餃子風の包み料理。スープに浮かべて出てくることが多く、上にヨーグルトと乾燥ミントをのせるのがウズベキスタン式。繊細な皮と肉の風味が合わさって優しい味。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Chuchvara",
-      "order_ico": "🥟", "order_name_en": "Chuchvara",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Chuchvara",
+      "order_ico": "🥟",
+      "order_name_en": "Chuchvara",
       "prompt_en": "Uzbek Chuchvara small dumplings in clear broth in a white ceramic bowl viewed from above, tiny square-folded boiled dumplings floating in golden soup, topped with a dollop of white yogurt and dried mint flakes, steam rising",
       "plate_color": "white ceramic bowl"
     },
     {
-      "num": "No.09", "name": "ノリン", "badge": "郷土料理", "type": "noodle", "city": "tashkent",
+      "num": "No.09",
+      "name": "ノリン",
+      "badge": "郷土料理",
+      "type": "noodle",
+      "city": "tashkent",
       "desc": "手打ち麺に馬肉または羊肉の薄切りと細かく刻んだ玉ねぎをのせた料理。冷たくして食べることが多く、さっぱりとした味わい。お祝いの席にも出てくる伝統的な一皿。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Norin_(dish)",
-      "order_ico": "🍝", "order_name_en": "Norin",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Norin_(dish)",
+      "order_ico": "🍝",
+      "order_name_en": "Norin",
       "prompt_en": "Uzbek Norin cold noodle dish on a flat white ceramic plate viewed from 45-degree overhead, thin hand-cut noodles with thin-sliced boiled horse meat, finely chopped raw onions scattered on top, light sauce drizzled, simple rustic presentation",
       "plate_color": "white flat ceramic plate"
     },
     {
-      "num": "No.10", "name": "ハルバ", "badge": "お土産に◎", "type": "sweet", "city": "national",
+      "num": "No.10",
+      "name": "ハルバ",
+      "badge": "お土産に◎",
+      "type": "sweet",
+      "city": "national",
       "desc": "胡麻・砂糖・油脂を混ぜ合わせて固めた伝統菓子。口の中でほろりとくずれる食感と濃厚な胡麻の香りが特徴で、ピスタチオやアーモンドが入ったものもある。バザールで量り売りで買えるお土産の定番。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Halva",
-      "order_ico": "🍬", "order_name_en": "Halva",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Halva",
+      "order_ico": "🍬",
+      "order_name_en": "Halva",
       "prompt_en": "Uzbek Halva sesame confection cut into squares on an ornate blue ceramic plate viewed from 45-degree overhead, golden-brown crumbly texture with some pieces showing cross-section, sprinkled with crushed pistachios and almonds",
       "plate_color": "ornate blue ceramic plate"
     },
     {
-      "num": "No.11", "name": "ニシャッロ", "badge": "サマルカンド名物", "type": "sweet", "city": "samarkand",
+      "num": "No.11",
+      "name": "ニシャッロ",
+      "badge": "サマルカンド名物",
+      "type": "sweet",
+      "city": "samarkand",
       "desc": "卵白・砂糖・甘草の根を泡立てて作った雪のような白い菓子。軽くてふわっとしており、甘さも控えめ。春になるとバザールに並びはじめ、チャイとセットで食べるのが定番。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Nishallo",
-      "order_ico": "🍮", "order_name_en": "Nishallo",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Nishallo",
+      "order_ico": "🍮",
+      "order_name_en": "Nishallo",
       "prompt_en": "Uzbek Nishallo sweet white foam dessert in a clear glass bowl viewed from slightly above, cloud-like white fluffy whipped texture, swirled into peaks, glistening, decorated with a single dried rose petal on top",
       "plate_color": "clear glass bowl"
     },
     {
-      "num": "No.12", "name": "チョイ（緑茶）", "badge": "食後の定番", "type": "drink", "city": "national",
+      "num": "No.12",
+      "name": "チョイ（緑茶）",
+      "badge": "食後の定番",
+      "type": "drink",
+      "city": "national",
       "desc": "ウズベキスタンでは食後や来客時に必ずといっていいほど出てくる緑茶。「ピアラ」と呼ばれる取っ手のない小さな陶器に注がれ、砂糖なしで飲むのが本来のスタイル。ハーブを混ぜたものも人気。",
-      "image": "", "wiki_url": "https://en.wikipedia.org/wiki/Green_tea",
-      "order_ico": "🍵", "order_name_en": "Choy (Green Tea)",
+      "image": "",
+      "wiki_url": "https://en.wikipedia.org/wiki/Green_tea",
+      "order_ico": "🍵",
+      "order_name_en": "Choy (Green Tea)",
       "prompt_en": "Uzbek green tea Choy poured into a traditional piala handleless ceramic cup viewed from slightly above at angle, pale green tea steaming gently, ornate blue and white ceramic teapot beside it on a wooden tray, warm golden light",
       "plate_color": "traditional blue and white piala teacup"
     }
   ],
-
   "spots_section_title": "都市別観光スポット",
   "spots_filter_cities": [
-    { "id": "all",       "label": "全て",         "active": true  },
-    { "id": "tashkent",  "label": "タシュケント", "active": false },
-    { "id": "samarkand", "label": "サマルカンド", "active": false },
-    { "id": "bukhara",   "label": "ブハラ",       "active": false },
-    { "id": "khiva",     "label": "ヒヴァ",       "active": false },
-    { "id": "fergana",   "label": "フェルガナ",   "active": false },
-    { "id": "nukus",     "label": "ヌクス",       "active": false }
+    {
+      "id": "all",
+      "label": "全て",
+      "active": true
+    },
+    {
+      "id": "tashkent",
+      "label": "タシュケント",
+      "active": false
+    },
+    {
+      "id": "samarkand",
+      "label": "サマルカンド",
+      "active": false
+    },
+    {
+      "id": "bukhara",
+      "label": "ブハラ",
+      "active": false
+    },
+    {
+      "id": "khiva",
+      "label": "ヒヴァ",
+      "active": false
+    },
+    {
+      "id": "fergana",
+      "label": "フェルガナ",
+      "active": false
+    },
+    {
+      "id": "nukus",
+      "label": "ヌクス",
+      "active": false
+    }
   ],
   "spot_sections": [
     {
-      "city_id": "tashkent", "city_name": "タシュケント", "city_desc": "国の玄関口。近代的な街並みとバザール・モスクが共存する中央アジア最大の都市",
+      "city_id": "tashkent",
+      "city_name": "タシュケント",
+      "city_desc": "国の玄関口。近代的な街並みとバザール・モスクが共存する中央アジア最大の都市",
       "city_info": [
-        { "label": "アクセス",       "value": "日本から乗継便 約10〜14時間",  "link_section": "", "link_btn_index": "" },
-        { "label": "空港↔市内",      "value": "タクシー 約20〜30分",          "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜6月・9〜10月",              "link_section": "season",    "link_btn_index": "4" },
-        { "label": "名物グルメ",     "value": "チュチバラ・プロフ",            "link_section": "food",      "link_btn_index": "2" },
-        { "label": "市内交通",       "value": "地下鉄・Yandex Taxi",          "link_section": "transport", "link_btn_index": "9" }
+        {
+          "label": "アクセス",
+          "value": "日本から乗継便 約10〜14時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー 約20〜30分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "チュチバラ・プロフ",
+          "link_section": "food",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "市内交通",
+          "value": "地下鉄・Yandex Taxi",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
       ],
       "spots": [
-        { "must": true,  "icon": "🏪",  "num": "TAS 01", "name": "チョルスー・バザール",        "desc": "中央アジア最大級のドーム型バザール。香辛料・乾燥フルーツ・手工芸品が並び、地元民の日常が垣間見える。朝の賑わいは特に圧巻。迷い込むだけで楽しい。", "badge": "フォトスポット" },
-        { "must": false, "icon": "🕌",  "num": "TAS 02", "name": "ハズラティ・イモーム広場",   "desc": "ウズベキスタン最大のイスラム複合施設。カラオル・モスク・ムイ・ムボラク図書館（世界最古のコーラン写本を所蔵）などが集まる聖地。", "badge": "聖地" },
-        { "must": false, "icon": "🚇",  "num": "TAS 03", "name": "タシュケント地下鉄",         "desc": "1977年開通の旧ソ連式地下鉄。各駅が異なる建築様式で装飾された「世界一美しい地下鉄」との呼び声も。乗車は数十UZSと格安。移動手段にもなる観光スポット。", "badge": "旧ソ連遺産" },
-        { "must": false, "icon": "🌳",  "num": "TAS 04", "name": "独立広場（ムスタキリク広場）", "desc": "1991年の独立を記念した大広場。整備された庭園と永遠の炎が印象的。夕方になると地元市民が涼を求めて集まる。", "badge": "入場無料" },
-        { "must": false, "icon": "🏛️", "num": "TAS 05", "name": "国立工芸博物館",             "desc": "19世紀の富豪邸宅を利用した博物館。建物の壁面を覆う精巧なイスラム装飾と、伝統工芸品の展示が見もの。入場料も安め。", "badge": "工芸品" }
+        {
+          "must": true,
+          "icon": "🏪",
+          "num": "TAS 01",
+          "name": "チョルスー・バザール",
+          "desc": "中央アジア最大級のドーム型バザール。香辛料・乾燥フルーツ・手工芸品が並び、地元民の日常が垣間見える。朝の賑わいは特に圧巻。迷い込むだけで楽しい。",
+          "badge": "フォトスポット"
+        },
+        {
+          "must": false,
+          "icon": "🕌",
+          "num": "TAS 02",
+          "name": "ハズラティ・イモーム広場",
+          "desc": "ウズベキスタン最大のイスラム複合施設。カラオル・モスク・ムイ・ムボラク図書館（世界最古のコーラン写本を所蔵）などが集まる聖地。",
+          "badge": "聖地"
+        },
+        {
+          "must": false,
+          "icon": "🚇",
+          "num": "TAS 03",
+          "name": "タシュケント地下鉄",
+          "desc": "1977年開通の旧ソ連式地下鉄。各駅が異なる建築様式で装飾された「世界一美しい地下鉄」との呼び声も。乗車は数十UZSと格安。移動手段にもなる観光スポット。",
+          "badge": "旧ソ連遺産"
+        },
+        {
+          "must": false,
+          "icon": "🌳",
+          "num": "TAS 04",
+          "name": "独立広場（ムスタキリク広場）",
+          "desc": "1991年の独立を記念した大広場。整備された庭園と永遠の炎が印象的。夕方になると地元市民が涼を求めて集まる。",
+          "badge": "入場無料"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "TAS 05",
+          "name": "国立工芸博物館",
+          "desc": "19世紀の富豪邸宅を利用した博物館。建物の壁面を覆う精巧なイスラム装飾と、伝統工芸品の展示が見もの。入場料も安め。",
+          "badge": "工芸品"
+        }
       ]
     },
     {
-      "city_id": "samarkand", "city_name": "サマルカンド", "city_desc": "レギスタン広場を擁するシルクロード最大の古都",
+      "city_id": "samarkand",
+      "city_name": "サマルカンド",
+      "city_desc": "レギスタン広場を擁するシルクロード最大の古都",
       "city_info": [
-        { "label": "アクセス",       "value": "タシュケントから高速鉄道 約2時間", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜6月・9〜10月",                  "link_section": "season",    "link_btn_index": "4" },
-        { "label": "名物グルメ",     "value": "プロフ・ニシャッロ・ナン",          "link_section": "food",      "link_btn_index": "2" },
-        { "label": "市内交通",       "value": "タクシー・マルシュルートカ",        "link_section": "transport", "link_btn_index": "9" },
-        { "label": "観光拠点",       "value": "レギスタン周辺",                    "link_section": "", "link_btn_index": "" }
+        {
+          "label": "アクセス",
+          "value": "タシュケントから高速鉄道 約2時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "プロフ・ニシャッロ・ナン",
+          "link_section": "food",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "市内交通",
+          "value": "タクシー・マルシュルートカ",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        },
+        {
+          "label": "観光拠点",
+          "value": "レギスタン周辺",
+          "link_section": "",
+          "link_btn_index": ""
+        }
       ],
       "spots": [
-        { "must": true,  "icon": "🕌",  "num": "SAM 01", "name": "レギスタン広場",             "desc": "3つの壮麗なメドレセ（神学校）が向き合うサマルカンドの象徴。青タイルのモザイクと巨大なアーチが組み合わさった景観は写真では伝わりにくい。圧倒的な存在感がある。", "badge": "世界遺産" },
-        { "must": true,  "icon": "⚰️",  "num": "SAM 02", "name": "シャフリサブズィンダ廟群",   "desc": "ティムール朝の王族・聖人が眠る霊廟群が小路沿いに続く。青・緑・金のタイル装飾が細部まで施されており、その密度に圧倒される。夕暮れ時がとくに美しい。", "badge": "世界遺産" },
-        { "must": false, "icon": "🏛️", "num": "SAM 03", "name": "グリ・アミール廟",           "desc": "ティムール（タメルレーン）の墓廟。玉ねぎ型の青いドームと精巧な黄金の装飾が美しい。サマルカンドを統治したティムールが眠る聖地。", "badge": "ティムール廟" },
-        { "must": false, "icon": "🔭",  "num": "SAM 04", "name": "ウルグ・ベク天文台",         "desc": "15世紀の天文学者・ウルグ・ベクが建設した天文台の遺跡。当時の精度で恒星の位置を計算していた技術の高さに驚く。博物館も併設。", "badge": "遺跡・博物館" },
-        { "must": false, "icon": "🕌",  "num": "SAM 05", "name": "ビビ・ハニム・モスク",       "desc": "ティムールが愛妻のために建設した巨大モスク。かつては中央アジア最大のモスクだったが地震で崩壊し、現在は修復済み。正門の巨大なアーチが見もの。", "badge": "修復済遺跡" }
+        {
+          "must": true,
+          "icon": "🕌",
+          "num": "SAM 01",
+          "name": "レギスタン広場",
+          "desc": "3つの壮麗なメドレセ（神学校）が向き合うサマルカンドの象徴。青タイルのモザイクと巨大なアーチが組み合わさった景観は写真では伝わりにくい。圧倒的な存在感がある。",
+          "badge": "世界遺産"
+        },
+        {
+          "must": true,
+          "icon": "⚰️",
+          "num": "SAM 02",
+          "name": "シャフリサブズィンダ廟群",
+          "desc": "ティムール朝の王族・聖人が眠る霊廟群が小路沿いに続く。青・緑・金のタイル装飾が細部まで施されており、その密度に圧倒される。夕暮れ時がとくに美しい。",
+          "badge": "世界遺産"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "SAM 03",
+          "name": "グリ・アミール廟",
+          "desc": "ティムール（タメルレーン）の墓廟。玉ねぎ型の青いドームと精巧な黄金の装飾が美しい。サマルカンドを統治したティムールが眠る聖地。",
+          "badge": "ティムール廟"
+        },
+        {
+          "must": false,
+          "icon": "🔭",
+          "num": "SAM 04",
+          "name": "ウルグ・ベク天文台",
+          "desc": "15世紀の天文学者・ウルグ・ベクが建設した天文台の遺跡。当時の精度で恒星の位置を計算していた技術の高さに驚く。博物館も併設。",
+          "badge": "遺跡・博物館"
+        },
+        {
+          "must": false,
+          "icon": "🕌",
+          "num": "SAM 05",
+          "name": "ビビ・ハニム・モスク",
+          "desc": "ティムールが愛妻のために建設した巨大モスク。かつては中央アジア最大のモスクだったが地震で崩壊し、現在は修復済み。正門の巨大なアーチが見もの。",
+          "badge": "修復済遺跡"
+        }
       ]
     },
     {
-      "city_id": "bukhara", "city_name": "ブハラ", "city_desc": "旧市街全体が世界遺産のイスラム文化の聖地",
+      "city_id": "bukhara",
+      "city_name": "ブハラ",
+      "city_desc": "旧市街全体が世界遺産のイスラム文化の聖地",
       "city_info": [
-        { "label": "アクセス",       "value": "タシュケントから特急 約4時間 / サマルカンドから約2.5時間", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜5月・9〜10月",                                          "link_section": "season",    "link_btn_index": "4" },
-        { "label": "名物グルメ",     "value": "サムサ・シャシリク・プロフ",                               "link_section": "food",      "link_btn_index": "2" },
-        { "label": "市内交通",       "value": "徒歩・タクシー",                                            "link_section": "transport", "link_btn_index": "9" },
-        { "label": "観光拠点",       "value": "ラビ・ハウズ周辺",                                          "link_section": "", "link_btn_index": "" }
+        {
+          "label": "アクセス",
+          "value": "タシュケントから特急 約4時間 / サマルカンドから約2.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜5月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "サムサ・シャシリク・プロフ",
+          "link_section": "food",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "市内交通",
+          "value": "徒歩・タクシー",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        },
+        {
+          "label": "観光拠点",
+          "value": "ラビ・ハウズ周辺",
+          "link_section": "",
+          "link_btn_index": ""
+        }
       ],
       "spots": [
-        { "must": true,  "icon": "🏗️", "num": "BUK 01", "name": "カラン・ミナレット",          "desc": "1127年建設の高さ47mのミナレット。チンギス・ハンでさえも頭を下げたと伝わる。隣接するカラン・モスクとミル・アラブ・メドレセとセットで眺めたい。ブハラの定番風景。", "badge": "12世紀建造" },
-        { "must": false, "icon": "🏯",  "num": "BUK 02", "name": "アルク城塞",                  "desc": "2,000年以上の歴史を持つブハラ・ハン国の宮殿兼要塞。内部はハン国の歴史が展示される博物館になっており、王宮の暮らしが垣間見える。", "badge": "古代要塞" },
-        { "must": false, "icon": "⛩️",  "num": "BUK 03", "name": "イスマイル・サーマーニー廟",  "desc": "10世紀建造の中央アジア最古のイスラム建築の一つ。煉瓦の積み方で生まれる光の陰影が美しく、時間帯によって表情が変わる。静かな公園の中に佇む。", "badge": "10世紀建造" },
-        { "must": false, "icon": "🌊",  "num": "BUK 04", "name": "ラビ・ハウズ",                "desc": "旧市街の中心にある人工池を囲む広場。夕暮れ時になると地元の人が涼を求めて集まり、カフェやレストランも活気を帯びる。ブハラ滞在の拠点にもなる場所。", "badge": "夕暮れ絶景" },
-        { "must": false, "icon": "🌸",  "num": "BUK 05", "name": "バハウッディン廟",            "desc": "スーフィズムの高名な聖人の廟。世界各地からイスラム教巡礼者が訪れる聖地で、祈りを捧げる人々の姿も見られる。旧市街から少し離れた場所にある。", "badge": "巡礼地" }
+        {
+          "must": true,
+          "icon": "🏗️",
+          "num": "BUK 01",
+          "name": "カラン・ミナレット",
+          "desc": "1127年建設の高さ47mのミナレット。チンギス・ハンでさえも頭を下げたと伝わる。隣接するカラン・モスクとミル・アラブ・メドレセとセットで眺めたい。ブハラの定番風景。",
+          "badge": "12世紀建造"
+        },
+        {
+          "must": false,
+          "icon": "🏯",
+          "num": "BUK 02",
+          "name": "アルク城塞",
+          "desc": "2,000年以上の歴史を持つブハラ・ハン国の宮殿兼要塞。内部はハン国の歴史が展示される博物館になっており、王宮の暮らしが垣間見える。",
+          "badge": "古代要塞"
+        },
+        {
+          "must": false,
+          "icon": "⛩️",
+          "num": "BUK 03",
+          "name": "イスマイル・サーマーニー廟",
+          "desc": "10世紀建造の中央アジア最古のイスラム建築の一つ。煉瓦の積み方で生まれる光の陰影が美しく、時間帯によって表情が変わる。静かな公園の中に佇む。",
+          "badge": "10世紀建造"
+        },
+        {
+          "must": false,
+          "icon": "🌊",
+          "num": "BUK 04",
+          "name": "ラビ・ハウズ",
+          "desc": "旧市街の中心にある人工池を囲む広場。夕暮れ時になると地元の人が涼を求めて集まり、カフェやレストランも活気を帯びる。ブハラ滞在の拠点にもなる場所。",
+          "badge": "夕暮れ絶景"
+        },
+        {
+          "must": false,
+          "icon": "🌸",
+          "num": "BUK 05",
+          "name": "バハウッディン廟",
+          "desc": "スーフィズムの高名な聖人の廟。世界各地からイスラム教巡礼者が訪れる聖地で、祈りを捧げる人々の姿も見られる。旧市街から少し離れた場所にある。",
+          "badge": "巡礼地"
+        }
       ]
     },
     {
-      "city_id": "khiva", "city_name": "ヒヴァ", "city_desc": "砂漠の中に残る城壁に囲まれた中世の城塞都市",
+      "city_id": "khiva",
+      "city_name": "ヒヴァ",
+      "city_desc": "砂漠の中に残る城壁に囲まれた中世の城塞都市",
       "city_info": [
-        { "label": "アクセス",       "value": "タシュケントから飛行機 約1時間 / ヌクスから車 約3時間", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜6月・9〜10月",                                        "link_section": "season",    "link_btn_index": "4" },
-        { "label": "名物グルメ",     "value": "シャシリク・ナン・プロフ",                               "link_section": "food",      "link_btn_index": "2" },
-        { "label": "観光拠点",       "value": "イチャン・カラ（旧市街）内",                              "link_section": "", "link_btn_index": "" },
-        { "label": "市内交通",       "value": "旧市街内は徒歩",                                          "link_section": "transport", "link_btn_index": "9" }
+        {
+          "label": "アクセス",
+          "value": "タシュケントから飛行機 約1時間 / ヌクスから車 約3時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "シャシリク・ナン・プロフ",
+          "link_section": "food",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "観光拠点",
+          "value": "イチャン・カラ（旧市街）内",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内交通",
+          "value": "旧市街内は徒歩",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
       ],
       "spots": [
-        { "must": true,  "icon": "🏰",  "num": "KHI 01", "name": "イチャン・カラ（旧市街）",   "desc": "城壁に囲まれた旧市街全体がユネスコ世界遺産。迷路のような路地に霊廟・ミナレット・モスクが密集し、中世の時が止まったような空間が広がる。日没後は観光客が減り静寂が戻る。", "badge": "世界遺産" },
-        { "must": false, "icon": "🏗️", "num": "KHI 02", "name": "カルタ・ミノル",             "desc": "1852年に着工されたが建主の死により未完成のまま残ったミナレット。太くて低い独特の形と鮮やかな青タイルがフォトスポットとして人気。", "badge": "未完の塔" },
-        { "must": false, "icon": "🔭",  "num": "KHI 03", "name": "イスラム・ホジャ・ミナレット","desc": "ヒヴァで最も高い（57m）ミナレット。頂上まで登ることができ、旧市街の全景と周囲に広がる砂漠が一望できる絶景スポット。", "badge": "絶景スポット" },
-        { "must": false, "icon": "🏛️", "num": "KHI 04", "name": "クフナ・アルク宮殿",         "desc": "ヒヴァ・ハン国の歴代ハンが暮らした宮殿。ハーレム・玉座の間・モスクなどが残り、ハン国の華やかな暮らしが垣間見える。", "badge": "王宮遺跡" }
+        {
+          "must": true,
+          "icon": "🏰",
+          "num": "KHI 01",
+          "name": "イチャン・カラ（旧市街）",
+          "desc": "城壁に囲まれた旧市街全体がユネスコ世界遺産。迷路のような路地に霊廟・ミナレット・モスクが密集し、中世の時が止まったような空間が広がる。日没後は観光客が減り静寂が戻る。",
+          "badge": "世界遺産"
+        },
+        {
+          "must": false,
+          "icon": "🏗️",
+          "num": "KHI 02",
+          "name": "カルタ・ミノル",
+          "desc": "1852年に着工されたが建主の死により未完成のまま残ったミナレット。太くて低い独特の形と鮮やかな青タイルがフォトスポットとして人気。",
+          "badge": "未完の塔"
+        },
+        {
+          "must": false,
+          "icon": "🔭",
+          "num": "KHI 03",
+          "name": "イスラム・ホジャ・ミナレット",
+          "desc": "ヒヴァで最も高い（57m）ミナレット。頂上まで登ることができ、旧市街の全景と周囲に広がる砂漠が一望できる絶景スポット。",
+          "badge": "絶景スポット"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "KHI 04",
+          "name": "クフナ・アルク宮殿",
+          "desc": "ヒヴァ・ハン国の歴代ハンが暮らした宮殿。ハーレム・玉座の間・モスクなどが残り、ハン国の華やかな暮らしが垣間見える。",
+          "badge": "王宮遺跡"
+        }
       ]
     },
     {
-      "city_id": "fergana", "city_name": "フェルガナ", "city_desc": "豊かなフェルガナ渓谷の中心地。陶芸と絹織物の産地",
+      "city_id": "fergana",
+      "city_name": "フェルガナ",
+      "city_desc": "豊かなフェルガナ渓谷の中心地。陶芸と絹織物の産地",
       "city_info": [
-        { "label": "アクセス",       "value": "タシュケントから車 約4時間 / 飛行機 約1時間", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜6月・9〜10月",                              "link_section": "season",    "link_btn_index": "4" },
-        { "label": "名物",           "value": "リシタン陶芸・マルギラン絹",                  "link_section": "", "link_btn_index": "" },
-        { "label": "名物グルメ",     "value": "ラグマン・サムサ",                              "link_section": "food",      "link_btn_index": "2" },
-        { "label": "市内交通",       "value": "タクシー・マルシュルートカ",                    "link_section": "transport", "link_btn_index": "9" }
+        {
+          "label": "アクセス",
+          "value": "タシュケントから車 約4時間 / 飛行機 約1時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物",
+          "value": "リシタン陶芸・マルギラン絹",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "名物グルメ",
+          "value": "ラグマン・サムサ",
+          "link_section": "food",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "市内交通",
+          "value": "タクシー・マルシュルートカ",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
       ],
       "spots": [
-        { "must": false, "icon": "🏺",  "num": "FER 01", "name": "リシタン（陶芸の街）",       "desc": "車で約1時間のリシタンはウズベキスタン最高の陶芸産地。職人のアトリエを訪問し、青と白の伝統文様「イシコル」の陶器が生まれる工程を見学できる。購入もその場で。", "badge": "工芸体験" },
-        { "must": false, "icon": "🧵",  "num": "FER 02", "name": "マルギラン絹工場",           "desc": "シルクロードを支えてきた絹の産地・マルギランで工場見学が楽しめる。繭から絹糸を手で紡ぐ工程を間近で見られる。「アドラス」と呼ばれる伝統絹織物のお土産が充実。", "badge": "絹の道" },
-        { "must": false, "icon": "🏛️", "num": "FER 03", "name": "フェルガナ歴史博物館",       "desc": "フェルガナ渓谷の歴史と考古学遺物を展示。農業と交易で栄えたこの地の背景を理解できる。入場料は安い。", "badge": "博物館" }
+        {
+          "must": false,
+          "icon": "🏺",
+          "num": "FER 01",
+          "name": "リシタン（陶芸の街）",
+          "desc": "車で約1時間のリシタンはウズベキスタン最高の陶芸産地。職人のアトリエを訪問し、青と白の伝統文様「イシコル」の陶器が生まれる工程を見学できる。購入もその場で。",
+          "badge": "工芸体験"
+        },
+        {
+          "must": false,
+          "icon": "🧵",
+          "num": "FER 02",
+          "name": "マルギラン絹工場",
+          "desc": "シルクロードを支えてきた絹の産地・マルギランで工場見学が楽しめる。繭から絹糸を手で紡ぐ工程を間近で見られる。「アドラス」と呼ばれる伝統絹織物のお土産が充実。",
+          "badge": "絹の道"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "FER 03",
+          "name": "フェルガナ歴史博物館",
+          "desc": "フェルガナ渓谷の歴史と考古学遺物を展示。農業と交易で栄えたこの地の背景を理解できる。入場料は安い。",
+          "badge": "博物館"
+        }
       ]
     },
     {
-      "city_id": "nukus", "city_name": "ヌクス", "city_desc": "前衛芸術を集めるサヴィツキー美術館とアラル海の玄関口",
+      "city_id": "nukus",
+      "city_name": "ヌクス",
+      "city_desc": "前衛芸術を集めるサヴィツキー美術館とアラル海の玄関口",
       "city_info": [
-        { "label": "アクセス",       "value": "タシュケントから飛行機 約1.5時間", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜6月・9〜10月（夏は40℃超）",   "link_section": "season",    "link_btn_index": "4" },
-        { "label": "見どころ",       "value": "サヴィツキー美術館・アラル海",    "link_section": "", "link_btn_index": "" },
-        { "label": "アラル海",       "value": "車で約2〜3時間（ムイナク経由）",  "link_section": "", "link_btn_index": "" },
-        { "label": "市内交通",       "value": "タクシー",                          "link_section": "transport", "link_btn_index": "9" }
+        {
+          "label": "アクセス",
+          "value": "タシュケントから飛行機 約1.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月（夏は40℃超）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "見どころ",
+          "value": "サヴィツキー美術館・アラル海",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "アラル海",
+          "value": "車で約2〜3時間（ムイナク経由）",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内交通",
+          "value": "タクシー",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
       ],
       "spots": [
-        { "must": true,  "icon": "🖼️",  "num": "NUK 01", "name": "サヴィツキー美術館",         "desc": "「砂漠のルーブル」と呼ばれる世界屈指の前衛芸術コレクション。スターリン時代に弾圧された画家の作品を館長サヴィツキーが保護した物語は映画にもなった。外観は地味でも中身は圧巻。", "badge": "必訪" },
-        { "must": true,  "icon": "🚢",  "num": "NUK 02", "name": "アラル海（船の墓場）",        "desc": "かつて世界第4位の湖だったアラル海が農業用水の過剰取水で干上がった跡地。錆びついた漁船が砂漠に転がる光景は環境破壊の象徴として世界的に知られる。ムイナクから車で30〜40分。", "badge": "世界的絶景" },
-        { "must": false, "icon": "🛒",  "num": "NUK 03", "name": "ミールザラップ・バザール",    "desc": "地元民の生活が息づくヌクスのローカル市場。観光地化されていない素朴な雰囲気で、カラカルパク地方の文化を身近に感じられる。", "badge": "ローカル" }
+        {
+          "must": true,
+          "icon": "🖼️",
+          "num": "NUK 01",
+          "name": "サヴィツキー美術館",
+          "desc": "「砂漠のルーブル」と呼ばれる世界屈指の前衛芸術コレクション。スターリン時代に弾圧された画家の作品を館長サヴィツキーが保護した物語は映画にもなった。外観は地味でも中身は圧巻。",
+          "badge": "必訪"
+        },
+        {
+          "must": true,
+          "icon": "🚢",
+          "num": "NUK 02",
+          "name": "アラル海（船の墓場）",
+          "desc": "かつて世界第4位の湖だったアラル海が農業用水の過剰取水で干上がった跡地。錆びついた漁船が砂漠に転がる光景は環境破壊の象徴として世界的に知られる。ムイナクから車で30〜40分。",
+          "badge": "世界的絶景"
+        },
+        {
+          "must": false,
+          "icon": "🛒",
+          "num": "NUK 03",
+          "name": "ミールザラップ・バザール",
+          "desc": "地元民の生活が息づくヌクスのローカル市場。観光地化されていない素朴な雰囲気で、カラカルパク地方の文化を身近に感じられる。",
+          "badge": "ローカル"
+        }
       ]
     }
   ],
-
   "transport_items": [
-    { "icon": "🚆", "name": "アフロシヨブ号（高速鉄道）— 最もおすすめ", "desc": "タシュケント〜サマルカンド間を約2時間、タシュケント〜ブハラ間を約4時間で結ぶ高速鉄道。快適で安全、運賃も手頃なため都市間移動の定番。チケットは事前購入がおすすめ。", "affiliate": "", "is_last": false },
-    { "icon": "🚗", "name": "共有タクシー（サービ）",                     "desc": "同方向の乗客が集まって出発する相乗りタクシー。鉄道が通っていない都市間（ブハラ〜ヒヴァなど）はこれが主な手段。安いが出発時間は流動的。", "affiliate": "", "is_last": false },
-    { "icon": "✈️", "name": "国内線",                                    "desc": "タシュケント〜ウルゲンチ（ヒヴァ近郊）・ヌクス・フェルガナなどへは国内線が便利。陸路では距離が長い場所へは飛行機で一気に移動できる。", "affiliate": "", "is_last": false },
-    { "icon": "🚕", "name": "Yandex Taxi / InDriver（市内）",            "desc": "タシュケントではYandex Taxiが普及。InDriverは行き先と希望金額を提示してドライバーと交渉するアプリで地方都市でも使えることが多い。", "affiliate": "", "is_last": false },
-    { "icon": "🚌", "name": "マルシュルートカ（ミニバス）",               "desc": "市内・近郊の移動に使われる小型バス。運賃は数百UZS〜と非常に安いが、路線がわかりにくく、慣れないと難しい。Yandex Mapsで路線を確認しながら活用しよう。", "affiliate": "", "is_last": true }
+    {
+      "icon": "🚆",
+      "name": "アフロシヨブ号（高速鉄道）— 最もおすすめ",
+      "desc": "タシュケント〜サマルカンド間を約2時間、タシュケント〜ブハラ間を約4時間で結ぶ高速鉄道。快適で安全、運賃も手頃なため都市間移動の定番。チケットは事前購入がおすすめ。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚗",
+      "name": "共有タクシー（サービ）",
+      "desc": "同方向の乗客が集まって出発する相乗りタクシー。鉄道が通っていない都市間（ブハラ〜ヒヴァなど）はこれが主な手段。安いが出発時間は流動的。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "✈️",
+      "name": "国内線",
+      "desc": "タシュケント〜ウルゲンチ（ヒヴァ近郊）・ヌクス・フェルガナなどへは国内線が便利。陸路では距離が長い場所へは飛行機で一気に移動できる。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚕",
+      "name": "Yandex Taxi / InDriver（市内）",
+      "desc": "タシュケントではYandex Taxiが普及。InDriverは行き先と希望金額を提示してドライバーと交渉するアプリで地方都市でも使えることが多い。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚌",
+      "name": "マルシュルートカ（ミニバス）",
+      "desc": "市内・近郊の移動に使われる小型バス。運賃は数百UZS〜と非常に安いが、路線がわかりにくく、慣れないと難しい。Yandex Mapsで路線を確認しながら活用しよう。",
+      "affiliate": "",
+      "is_last": true
+    }
   ],
-
   "courses": {
     "intro": "旅のスタイルに合わせた2タイプのモデルコースを紹介。サマルカンドとブハラを軸に据えた<strong>古都連泊プラン</strong>から、全都市を繋ぐ<strong>シルクロード縦断</strong>まで。どちらもアレンジ自由です。",
     "stable_title": "古都をじっくり巡るプラン",
@@ -543,62 +1681,247 @@
     "adventure_note_html": "「シルクロードを端から端まで歩いてみたい」そんな気持ちで組んだのがこのルートです。フェルガナの工房でリシタン陶器職人のおじさんと片言ロシア語で話し、サマルカンドでは人で混み合う昼間を避けて早朝5時にレギスタン広場を訪れました。最後にたどり着いたアラル海の船の墓場では、錆びついた漁船が砂漠に並ぶ光景の前で言葉が出なかった。シルクロードの栄光と時代の変化、それでもここに暮らす人たちの逞しさ。そういうものを全部ひっくるめて感じられる旅ができる国だと思います。",
     "stable_plans": [
       {
-        "label": "プランA", "title": "サマルカンド ＋ ブハラ　5泊6日",
+        "label": "プランA",
+        "title": "サマルカンド ＋ ブハラ　5泊6日",
         "tip": "✅ タシュケント1泊・サマルカンド2泊・ブハラ2泊　荷物の移動は2回",
         "days": [
-          { "transit": false, "badge_style": "background:#1e7e34", "badge_class": "", "label": "Day 1", "content_html": "<strong>タシュケント到着</strong><br>空港から市内へタクシーで移動。チェックイン後、夜のチョルスー・バザール周辺を散策。屋台でサムサとシャシリクを食べながらウズベキスタンの空気に慣れる。地下鉄も試してみよう。" },
-          { "transit": true, "icon": "🚆", "duration": "約2時間" },
-          { "transit": false, "badge_style": "background:#52a443", "badge_class": "", "label": "Day 2", "content_html": "<strong>サマルカンド 1日目</strong><br>高速鉄道で移動後、まず腹ごしらえにプロフを食べてからレギスタン広場へ。午後はシャフリサブズィンダ廟群をゆっくり歩く。日没後もライトアップされたレギスタンを眺めたい。" },
-          { "transit": false, "badge_style": "background:#8a9a20", "badge_class": "", "label": "Day 3", "content_html": "<strong>サマルカンド 2日目</strong><br>グリ・アミール廟→ビビ・ハニム・モスク→ウルグ・ベク天文台と回る。午後は旧市街のバザールでハルバやニシャッロを探す。翌日のブハラ行きは早朝の列車がおすすめ。" },
-          { "transit": true, "icon": "🚆", "duration": "約2.5時間" },
-          { "transit": false, "badge_style": "background:#c88000", "badge_class": "", "label": "Day 4", "content_html": "<strong>ブハラ 1日目</strong><br>到着後はラビ・ハウズ周辺のホテルにチェックイン。カラン・ミナレット→ミル・アラブ・メドレセ→アルク城塞を見て回る。夕暮れのラビ・ハウズに座ってチャイを一杯。" },
-          { "transit": false, "badge_style": "background:#cc5500", "badge_class": "", "label": "Day 5", "content_html": "<strong>ブハラ 2日目</strong><br>イスマイル・サーマーニー廟は朝の光の中で見ると格別。旧市街の工芸品バザールでシルクや陶器のお土産を選び、夕方まで路地を気ままに歩く。" },
-          { "transit": true, "icon": "🚆", "duration": "約4時間" },
-          { "transit": false, "badge_style": "", "badge_class": "gray", "label": "Day 6", "content_html": "<strong>タシュケント → 帰国</strong><br>タシュケントに戻り、空港近くで最後の食事。チョルスー・バザールに立ち寄れる時間があればお土産の追加購入も。" }
+          {
+            "transit": false,
+            "badge_style": "background:#1e7e34",
+            "badge_class": "",
+            "label": "Day 1",
+            "content_html": "<strong>タシュケント到着</strong><br>空港から市内へタクシーで移動。チェックイン後、夜のチョルスー・バザール周辺を散策。屋台でサムサとシャシリクを食べながらウズベキスタンの空気に慣れる。地下鉄も試してみよう。"
+          },
+          {
+            "transit": true,
+            "icon": "🚆",
+            "duration": "約2時間"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#52a443",
+            "badge_class": "",
+            "label": "Day 2",
+            "content_html": "<strong>サマルカンド 1日目</strong><br>高速鉄道で移動後、まず腹ごしらえにプロフを食べてからレギスタン広場へ。午後はシャフリサブズィンダ廟群をゆっくり歩く。日没後もライトアップされたレギスタンを眺めたい。"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#8a9a20",
+            "badge_class": "",
+            "label": "Day 3",
+            "content_html": "<strong>サマルカンド 2日目</strong><br>グリ・アミール廟→ビビ・ハニム・モスク→ウルグ・ベク天文台と回る。午後は旧市街のバザールでハルバやニシャッロを探す。翌日のブハラ行きは早朝の列車がおすすめ。"
+          },
+          {
+            "transit": true,
+            "icon": "🚆",
+            "duration": "約2.5時間"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#c88000",
+            "badge_class": "",
+            "label": "Day 4",
+            "content_html": "<strong>ブハラ 1日目</strong><br>到着後はラビ・ハウズ周辺のホテルにチェックイン。カラン・ミナレット→ミル・アラブ・メドレセ→アルク城塞を見て回る。夕暮れのラビ・ハウズに座ってチャイを一杯。"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#cc5500",
+            "badge_class": "",
+            "label": "Day 5",
+            "content_html": "<strong>ブハラ 2日目</strong><br>イスマイル・サーマーニー廟は朝の光の中で見ると格別。旧市街の工芸品バザールでシルクや陶器のお土産を選び、夕方まで路地を気ままに歩く。"
+          },
+          {
+            "transit": true,
+            "icon": "🚆",
+            "duration": "約4時間"
+          },
+          {
+            "transit": false,
+            "badge_style": "",
+            "badge_class": "gray",
+            "label": "Day 6",
+            "content_html": "<strong>タシュケント → 帰国</strong><br>タシュケントに戻り、空港近くで最後の食事。チョルスー・バザールに立ち寄れる時間があればお土産の追加購入も。"
+          }
         ]
       },
       {
-        "label": "プランB", "title": "シルクロード完全制覇　7泊8日",
+        "label": "プランB",
+        "title": "シルクロード完全制覇　7泊8日",
         "tip": "✅ タシュケント2泊・サマルカンド1泊・ブハラ2泊・ヒヴァ1泊　飛行機でタシュケントに戻る",
         "days": [
-          { "transit": false, "badge_style": "background:#1e7e34", "badge_class": "", "label": "Day 1", "content_html": "<strong>タシュケント到着</strong><br>到着後は体を慣らす意味でもゆっくり過ごす。近くのローカル食堂でプロフとチョイ（緑茶）。夜は地下鉄に乗って各駅の装飾を見比べる地下鉄観光がおすすめ。" },
-          { "transit": false, "badge_style": "background:#2ea44f", "badge_class": "", "label": "Day 2", "content_html": "<strong>タシュケント観光</strong><br>チョルスー・バザールで朝食→ハズラティ・イモーム広場→国立工芸博物館。午後は独立広場を散策し、翌朝の高速鉄道チケットを確認。" },
-          { "transit": true, "icon": "🚆", "duration": "約2時間" },
-          { "transit": false, "badge_style": "background:#8a9a20", "badge_class": "", "label": "Day 3", "content_html": "<strong>サマルカンド</strong><br>1日でレギスタン・シャフリサブズィンダ・グリ・アミールを集中して回る。歩き疲れたらラグマンで栄養補給。翌朝早い便でブハラに向かうので移動の準備も忘れずに。" },
-          { "transit": true, "icon": "🚆", "duration": "約2.5時間" },
-          { "transit": false, "badge_style": "background:#9aaa10", "badge_class": "", "label": "Day 4", "content_html": "<strong>ブハラ 1日目</strong><br>カラン・ミナレット・アルク城塞・ラビ・ハウズを中心に旧市街を歩く。夜は池のほとりのレストランで夕食。ブハラの静かな夜の雰囲気を楽しんで。" },
-          { "transit": false, "badge_style": "background:#c88000", "badge_class": "", "label": "Day 5", "content_html": "<strong>ブハラ 2日目</strong><br>イスマイル・サーマーニー廟→バハウッディン廟（少し郊外）→旧市街バザールでお土産探し。翌日の長距離移動に備えて早めに休む。" },
-          { "transit": true, "icon": "🚕", "duration": "約5〜6時間（共有タクシー）" },
-          { "transit": false, "badge_style": "background:#cc0001", "badge_class": "", "label": "Day 6", "content_html": "<strong>ヒヴァ</strong><br>砂漠を越えてきた甲斐がある城塞都市。イチャン・カラ（旧市街）に入ると空気が変わる。カルタ・ミノル・クフナ・アルク宮殿・イスラム・ホジャ・ミナレットを一気に制覇。城壁内に1泊すると夜の静けさも体験できる。" },
-          { "transit": true, "icon": "✈️", "duration": "約1時間（ウルゲンチ発）" },
-          { "transit": false, "badge_style": "", "badge_class": "gray", "label": "Day 7〜8", "content_html": "<strong>タシュケント → 帰国</strong><br>飛行機でタシュケントへ戻り、そのまま帰国便または1泊してから帰国。" }
+          {
+            "transit": false,
+            "badge_style": "background:#1e7e34",
+            "badge_class": "",
+            "label": "Day 1",
+            "content_html": "<strong>タシュケント到着</strong><br>到着後は体を慣らす意味でもゆっくり過ごす。近くのローカル食堂でプロフとチョイ（緑茶）。夜は地下鉄に乗って各駅の装飾を見比べる地下鉄観光がおすすめ。"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#2ea44f",
+            "badge_class": "",
+            "label": "Day 2",
+            "content_html": "<strong>タシュケント観光</strong><br>チョルスー・バザールで朝食→ハズラティ・イモーム広場→国立工芸博物館。午後は独立広場を散策し、翌朝の高速鉄道チケットを確認。"
+          },
+          {
+            "transit": true,
+            "icon": "🚆",
+            "duration": "約2時間"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#8a9a20",
+            "badge_class": "",
+            "label": "Day 3",
+            "content_html": "<strong>サマルカンド</strong><br>1日でレギスタン・シャフリサブズィンダ・グリ・アミールを集中して回る。歩き疲れたらラグマンで栄養補給。翌朝早い便でブハラに向かうので移動の準備も忘れずに。"
+          },
+          {
+            "transit": true,
+            "icon": "🚆",
+            "duration": "約2.5時間"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#9aaa10",
+            "badge_class": "",
+            "label": "Day 4",
+            "content_html": "<strong>ブハラ 1日目</strong><br>カラン・ミナレット・アルク城塞・ラビ・ハウズを中心に旧市街を歩く。夜は池のほとりのレストランで夕食。ブハラの静かな夜の雰囲気を楽しんで。"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#c88000",
+            "badge_class": "",
+            "label": "Day 5",
+            "content_html": "<strong>ブハラ 2日目</strong><br>イスマイル・サーマーニー廟→バハウッディン廟（少し郊外）→旧市街バザールでお土産探し。翌日の長距離移動に備えて早めに休む。"
+          },
+          {
+            "transit": true,
+            "icon": "🚕",
+            "duration": "約5〜6時間（共有タクシー）"
+          },
+          {
+            "transit": false,
+            "badge_style": "background:#cc0001",
+            "badge_class": "",
+            "label": "Day 6",
+            "content_html": "<strong>ヒヴァ</strong><br>砂漠を越えてきた甲斐がある城塞都市。イチャン・カラ（旧市街）に入ると空気が変わる。カルタ・ミノル・クフナ・アルク宮殿・イスラム・ホジャ・ミナレットを一気に制覇。城壁内に1泊すると夜の静けさも体験できる。"
+          },
+          {
+            "transit": true,
+            "icon": "✈️",
+            "duration": "約1時間（ウルゲンチ発）"
+          },
+          {
+            "transit": false,
+            "badge_style": "",
+            "badge_class": "gray",
+            "label": "Day 7〜8",
+            "content_html": "<strong>タシュケント → 帰国</strong><br>飛行機でタシュケントへ戻り、そのまま帰国便または1泊してから帰国。"
+          }
         ]
       }
     ],
     "adventure_plan": {
       "tip": "✅ フェルガナ渓谷からアラル海まで。シルクロードを端から端まで走り抜ける8泊9日。",
       "days": [
-        { "transit": false, "badge_style": "background:#1e7e34", "badge_class": "", "label": "Day 1", "content_html": "<strong>タシュケント → フェルガナ</strong><br>到着後すぐ国内線か車でフェルガナへ移動。緑豊かな渓谷の景色にまず驚く。" },
-        { "transit": true, "icon": "✈️", "duration": "約1時間 or 🚗 約4時間" },
-        { "transit": false, "badge_style": "background:#2ea44f", "badge_class": "", "label": "Day 2", "content_html": "<strong>フェルガナ渓谷</strong><br>午前はリシタンの陶芸工房を訪問。職人が何百年も変わらない技法で青い器を作る場面は圧倒的だった。午後はマルギランの絹工場へ。繭から手で糸を引く女性たちの作業を見学。" },
-        { "transit": true, "icon": "🚗", "duration": "約3〜4時間" },
-        { "transit": false, "badge_style": "background:#52a443", "badge_class": "", "label": "Day 3", "content_html": "<strong>サマルカンド</strong><br>早朝のレギスタン広場は人がほとんどおらず、広場を独り占めできる貴重な時間。シャフリサブズィンダも朝一に行くと光が美しい。" },
-        { "transit": true, "icon": "🚆", "duration": "約2.5時間" },
-        { "transit": false, "badge_style": "background:#8a9a20", "badge_class": "", "label": "Day 4", "content_html": "<strong>ブハラ</strong><br>カラン・ミナレット周辺を歩き、夕暮れのラビ・ハウズでゆっくり過ごす。ブハラは歩いて回れる規模なので、地図なしで路地に迷い込む楽しさもある。" },
-        { "transit": false, "badge_style": "background:#9aaa10", "badge_class": "", "label": "Day 5", "content_html": "<strong>ブハラ 2日目</strong><br>旧市街の奥にあるイスマイル・サーマーニー廟は静かで落ち着いている。午後はバザールでハルバを買いながら地元の人と片言ロシア語で話してみる。" },
-        { "transit": true, "icon": "🚕", "duration": "約5〜6時間（共有タクシー）" },
-        { "transit": false, "badge_style": "background:#c88000", "badge_class": "", "label": "Day 6", "content_html": "<strong>ヒヴァ</strong><br>砂漠を越えてたどり着いたイチャン・カラは、本当に別世界だった。城壁内に泊まって夜も旧市街を歩く。観光客が引けた夜のヒヴァは静かで幻想的。" },
-        { "transit": true, "icon": "🚕", "duration": "約2〜3時間" },
-        { "transit": false, "badge_style": "background:#c84020", "badge_class": "", "label": "Day 7", "content_html": "<strong>ヌクス</strong><br>まずサヴィツキー美術館へ。砂漠の辺境にこれだけの前衛芸術コレクションが存在することへの驚きが止まらない。夜はムイナクへの移動を準備。" },
-        { "transit": false, "badge_style": "background:#cc0001", "badge_class": "", "label": "Day 8", "content_html": "<strong>アラル海（船の墓場）</strong><br>ムイナクから車で30〜40分、砂漠の中に錆びた漁船が転がるアラル海跡地へ。かつてここが湖だったとは信じられない光景。言葉より先に体で感じる場所。午後はヌクスに戻り飛行機でタシュケントへ。" },
-        { "transit": true, "icon": "✈️", "duration": "約1.5時間" },
-        { "transit": false, "badge_style": "", "badge_class": "gray", "label": "Day 9", "content_html": "<strong>タシュケント → 帰国</strong><br>最後にチョルスー・バザールでお土産を購入して帰国の途へ。" }
+        {
+          "transit": false,
+          "badge_style": "background:#1e7e34",
+          "badge_class": "",
+          "label": "Day 1",
+          "content_html": "<strong>タシュケント → フェルガナ</strong><br>到着後すぐ国内線か車でフェルガナへ移動。緑豊かな渓谷の景色にまず驚く。"
+        },
+        {
+          "transit": true,
+          "icon": "✈️",
+          "duration": "約1時間 or 🚗 約4時間"
+        },
+        {
+          "transit": false,
+          "badge_style": "background:#2ea44f",
+          "badge_class": "",
+          "label": "Day 2",
+          "content_html": "<strong>フェルガナ渓谷</strong><br>午前はリシタンの陶芸工房を訪問。職人が何百年も変わらない技法で青い器を作る場面は圧倒的だった。午後はマルギランの絹工場へ。繭から手で糸を引く女性たちの作業を見学。"
+        },
+        {
+          "transit": true,
+          "icon": "🚗",
+          "duration": "約3〜4時間"
+        },
+        {
+          "transit": false,
+          "badge_style": "background:#52a443",
+          "badge_class": "",
+          "label": "Day 3",
+          "content_html": "<strong>サマルカンド</strong><br>早朝のレギスタン広場は人がほとんどおらず、広場を独り占めできる貴重な時間。シャフリサブズィンダも朝一に行くと光が美しい。"
+        },
+        {
+          "transit": true,
+          "icon": "🚆",
+          "duration": "約2.5時間"
+        },
+        {
+          "transit": false,
+          "badge_style": "background:#8a9a20",
+          "badge_class": "",
+          "label": "Day 4",
+          "content_html": "<strong>ブハラ</strong><br>カラン・ミナレット周辺を歩き、夕暮れのラビ・ハウズでゆっくり過ごす。ブハラは歩いて回れる規模なので、地図なしで路地に迷い込む楽しさもある。"
+        },
+        {
+          "transit": false,
+          "badge_style": "background:#9aaa10",
+          "badge_class": "",
+          "label": "Day 5",
+          "content_html": "<strong>ブハラ 2日目</strong><br>旧市街の奥にあるイスマイル・サーマーニー廟は静かで落ち着いている。午後はバザールでハルバを買いながら地元の人と片言ロシア語で話してみる。"
+        },
+        {
+          "transit": true,
+          "icon": "🚕",
+          "duration": "約5〜6時間（共有タクシー）"
+        },
+        {
+          "transit": false,
+          "badge_style": "background:#c88000",
+          "badge_class": "",
+          "label": "Day 6",
+          "content_html": "<strong>ヒヴァ</strong><br>砂漠を越えてたどり着いたイチャン・カラは、本当に別世界だった。城壁内に泊まって夜も旧市街を歩く。観光客が引けた夜のヒヴァは静かで幻想的。"
+        },
+        {
+          "transit": true,
+          "icon": "🚕",
+          "duration": "約2〜3時間"
+        },
+        {
+          "transit": false,
+          "badge_style": "background:#c84020",
+          "badge_class": "",
+          "label": "Day 7",
+          "content_html": "<strong>ヌクス</strong><br>まずサヴィツキー美術館へ。砂漠の辺境にこれだけの前衛芸術コレクションが存在することへの驚きが止まらない。夜はムイナクへの移動を準備。"
+        },
+        {
+          "transit": false,
+          "badge_style": "background:#cc0001",
+          "badge_class": "",
+          "label": "Day 8",
+          "content_html": "<strong>アラル海（船の墓場）</strong><br>ムイナクから車で30〜40分、砂漠の中に錆びた漁船が転がるアラル海跡地へ。かつてここが湖だったとは信じられない光景。言葉より先に体で感じる場所。午後はヌクスに戻り飛行機でタシュケントへ。"
+        },
+        {
+          "transit": true,
+          "icon": "✈️",
+          "duration": "約1.5時間"
+        },
+        {
+          "transit": false,
+          "badge_style": "",
+          "badge_class": "gray",
+          "label": "Day 9",
+          "content_html": "<strong>タシュケント → 帰国</strong><br>最後にチョルスー・バザールでお土産を購入して帰国の途へ。"
+        }
       ]
     },
     "cta_title": "いつ行くかで旅は変わる！🌤️",
     "cta_desc": "春の花・秋の果物・砂漠の夕景。季節ごとに異なる表情があります。<br>日程が決まっていない人はベストシーズンから逆算するのがおすすめ。"
   },
-
   "food_modal_phrase_main": "Bu bormi?",
   "food_modal_phrase_sub": "ブ ボルミ？ ＝「これはありますか？」"
 }
