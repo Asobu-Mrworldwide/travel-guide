@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<script>if(sessionStorage.getItem('visited_index')){document.write('<style>#splash{display:none!important}</style>');}</script>
+<script>if(sessionStorage.getItem('back_index')){sessionStorage.removeItem('back_index');document.write('<style>#splash{display:none!important}</style>');}</script>
 <meta name="google-site-verification" content="cswgJ8fPsFfHMtJB4HYCRX4ZBEXtLzndpL14GKMPXs4" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
@@ -163,11 +163,14 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
   function hideSplash() {
     var s = document.getElementById('splash');
     if (s) { s.classList.add('hide'); setTimeout(function(){ s.style.display='none'; }, 150); }
-    sessionStorage.setItem('visited_index', '1');
+
   }
   window.addEventListener('load', function() {
     var elapsed = Date.now() - start;
     setTimeout(hideSplash, Math.max(0, MIN - elapsed));
+  });
+  window.addEventListener('pagehide', function() {
+    sessionStorage.setItem('back_index', '1');
   });
 })();
 </script>

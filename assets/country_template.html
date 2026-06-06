@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<script>var _splashKey='visited_'+location.pathname;if(sessionStorage.getItem(_splashKey)){document.write('<style>#splash{display:none!important}</style>');}</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
 <script>
@@ -43,44 +42,6 @@
 </style>
 </head>
 <body>
-
-<!-- スプラッシュ画面 -->
-<div id="splash">
-  <div id="splash-inner">
-    <div id="splash-logo"><img src="../素材/ロゴ.webp" alt="World Mappy" style="width:100%;height:100%;object-fit:contain;border-radius:24px;display:none" id="splash-logo-img" onload="this.style.display='block'"></div>
-    <div id="splash-name">World Mappy</div>
-    <div id="splash-tagline">まっぴー｜世界の旅行情報まとめ</div>
-    <div id="splash-bar"><div id="splash-bar-fill"></div></div>
-  </div>
-</div>
-
-<style>
-#splash{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.15s ease}
-#splash.hide{opacity:0;pointer-events:none}
-#splash-inner{display:flex;flex-direction:column;align-items:center;gap:16px}
-#splash-logo{width:120px;height:120px;background:#f0f4ff;border-radius:24px}
-#splash-name{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;font-size:1.8em;font-weight:900;color:#6495ed;letter-spacing:-0.5px}
-#splash-tagline{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;font-size:0.72em;color:#aaa;margin-top:-8px}
-#splash-bar{width:160px;height:3px;background:#e4eaf5;border-radius:4px;overflow:hidden;margin-top:8px}
-#splash-bar-fill{height:100%;width:0;background:#6495ed;border-radius:4px;animation:splash-progress 0.7s ease forwards}
-@keyframes splash-progress{0%{width:0}100%{width:100%}}
-</style>
-
-<script>
-(function() {
-  var start = Date.now();
-  var MIN = 700;
-  function hideSplash() {
-    var s = document.getElementById('splash');
-    if (s) { s.classList.add('hide'); setTimeout(function(){ s.style.display='none'; }, 150); }
-    sessionStorage.setItem(_splashKey, '1');
-  }
-  window.addEventListener('load', function() {
-    var elapsed = Date.now() - start;
-    setTimeout(hideSplash, Math.max(0, MIN - elapsed));
-  });
-})();
-</script>
 
 {{custom_before_hero}}
 <div class="hero">
