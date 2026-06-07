@@ -27,10 +27,11 @@
 #food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
 
 /* 観光スポットカード画像・絵文字 */
-.spot-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;border-radius:8px;margin-top:4px;margin-bottom:0}
-.spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:4px;margin-bottom:-20px}
+.spot-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;border-radius:8px;margin-top:auto;margin-bottom:0}
+.spot-img-wrap{margin-top:12px;border-radius:8px;overflow:hidden}
+.spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px;margin-bottom:-20px}
 #spots-grid .item-card.has-spot-img{padding-bottom:12px}
-#spots-grid .item-card.has-spot-img .desc{flex:none !important}
+#spots-grid .item-card.has-spot-img .desc{flex:1}
 
 /* クイックスペックカード（基本情報タブ） */
 #basic .qs-card{border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)}
@@ -71,13 +72,14 @@
 <!-- 基本情報 -->
 <section id="basic" class="active">
 
-  <div class="card" style="margin-bottom:14px;line-height:1.8">
+  <div style="margin-bottom:14px;line-height:1.8">
     <h2 style="margin:0 0 10px;font-size:1em">ウズベキスタンってどんな国？</h2>
     <p style="font-size:0.88em;color:var(--text)">中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた<strong>古都が点在する国</strong>。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知らぬ旅人を家に招くウズベク人のホスピタリティが、この国の旅を忘れがたいものにしてくれる。</p>
     <div style="margin-top:32px;margin-bottom:32px;text-align:center">
       <div style="background:linear-gradient(to bottom,#1EB7D4 0%,#1EB7D4 30%,#CC0000 30%,#CC0000 33%,#FFFFFF 33%,#FFFFFF 64%,#CC0000 64%,#CC0000 67%,#009A44 67%,#009A44 100%);border-radius:6px;height:100px;width:200px;display:inline-block;position:relative;overflow:hidden;border:1px solid #eee;"><div style="position:absolute;top:6px;left:8px;color:white;font-size:13px;">🌙</div><div style="position:absolute;top:9px;left:30px;color:white;font-size:7px;letter-spacing:3px;">★★★★★★★★★★★★</div></div>
       <p style="font-size:0.75em;color:var(--sub);margin-top:6px">ウズベキスタン国旗 ― 青はシル川・アム川の水と空、白は平和と純粋、緑は豊かな自然を表す。三日月と12の星がイスラムの象徴。</p>
     </div>
+    <hr style="border:none;border-top:1px solid #d0d0d0;margin:16px 0">
 
     <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
       <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
@@ -100,7 +102,8 @@
     </div>
 
     <!-- 旅行難易度 -->
-    <div style="margin-top:12px;border-top:1px solid #f0f0f0;padding-top:12px">
+    <hr style="border:none;border-top:1px solid #d0d0d0;margin:16px 0">
+    <div style="margin-top:0">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
         <span style="font-size:1.3em">📌</span>
         <span style="font-size:0.82em;color:var(--sub);font-weight:600">旅行難易度</span>
@@ -121,15 +124,14 @@
     </div>
 
     <!-- クイックスペック -->
-    <div style="border-top:1px solid #f0f0f0;margin-top:16px;padding-top:16px">
-      <div class="qs-row" style="margin-top:0">
-        <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約10〜14時間（乗継）</div></div></div>
-        <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −4時間</div></div></div>
-        <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（電子ビザ30日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[6])">旅の準備を見る →</button></div></div>
-        <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">8〜18万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
-        <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">ロシア語で少し可</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
-        <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">スム（UZS）</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1万UZS ≈ 116円</div></div></div>
-      </div>
+    <hr style="border:none;border-top:1px solid #d0d0d0;margin:16px 0">
+    <div class="qs-row" style="margin-top:0">
+      <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約10〜14時間（乗継）</div></div></div>
+      <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −4時間</div></div></div>
+      <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">不要（電子ビザ30日）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[6])">旅の準備を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">8〜18万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">ロシア語で少し可</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">スム（UZS）</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1万UZS ≈ 116円</div></div></div>
     </div>
   </div>
 
@@ -241,7 +243,7 @@
 
   <!-- ベストシーズン（簡易） -->
   <h2>ベストシーズン</h2>
-  <div class="card" style="padding:14px">
+  <div>
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">夏は40℃近くになる乾燥した大陸性気候。4〜6月と9〜10月が旅行のベストシーズン。冬は氷点下になる地域も。</p>
     <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">タシュケント</div>
     <div class="season-mini">
@@ -269,7 +271,7 @@
 
   <!-- 基本データ -->
   <h2>基本データ</h2>
-  <div class="card" style="padding:0">
+  <div>
     <div class="bd-grid">
       
       <div class="bd-item">
@@ -323,7 +325,7 @@
 <section id="season">
 
   <h2>ベストシーズン</h2>
-  <div class="card">
+  <div>
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">大陸性気候のウズベキスタンは季節の変化が激しく、夏と冬で気候がまるで違う。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高く</span>、黄金色は比較的過ごしやすい月です。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span><span style="display:inline-block;width:14px;height:10px;background:linear-gradient(90deg,#ff5000,#ff9000);border-radius:2px;vertical-align:middle;margin-right:3px"></span>最も暑い</span>
@@ -334,7 +336,7 @@
     </div>
 
     
-    <div class="city-season" style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px">
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #d0d0d0;margin-bottom:14px">
       <div class="city-name">タシュケント</div>
       <div class="season-grid">
         <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">❄️<span class="md-t">2°C</span></div></div>
@@ -353,7 +355,7 @@
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：4〜6月・9〜10月 ／ 冬は氷点下になることも</p><button onclick="showFilteredSpots('tashkent')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
     </div>
     
-    <div class="city-season" style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px">
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #d0d0d0;margin-bottom:14px">
       <div class="city-name">サマルカンド・ブハラ（南中部）</div>
       <div class="season-grid">
         <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">❄️<span class="md-t">1°C</span></div></div>
@@ -372,7 +374,7 @@
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：4月〜6月・9〜10月 ／ 冬は降雪もあり遺跡が閉鎖されることも</p><button onclick="showFilteredSpots('samarkand')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
     </div>
     
-    <div class="city-season" style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px">
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #d0d0d0;margin-bottom:14px">
       <div class="city-name">ヒヴァ・ヌクス（西部・砂漠地帯）</div>
       <div class="season-grid">
         <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">❄️<span class="md-t">-2°C</span></div></div>
@@ -420,7 +422,7 @@
   </div>
 
   <h2>費用の内訳</h2>
-  <div class="card" style="padding:6px 16px 10px">
+  <div>
     <table class="budget-table">
       <tbody>
         
@@ -502,7 +504,7 @@
   </div>
 
   <h2>準備は早めに</h2>
-  <div class="card">
+  <div>
     <div style="padding-top:8px">
       
       <div class="rm-item">
@@ -594,7 +596,7 @@
   </div>
 
   <h2>航空券の予約</h2>
-  <div class="card" style="padding:0 14px 14px">
+  <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">日本からタシュケントへはウズベキスタン航空の直行便（週3〜4便）が利用できる。乗継便ならソウル・広州・イスタンブール経由など選択肢が広がる。</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
       
@@ -631,7 +633,7 @@
   </div>
 
   <h2>ホテルの選び方</h2>
-  <div class="card" style="padding:0 14px 14px">
+  <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">古都の旧市街に宿泊すると、観光スポットへ歩いてアクセスでき移動の負担が少ない。タシュケントは空港へのアクセスも考慮してエリアを選ぼう。</div>
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
       
@@ -705,7 +707,7 @@
   </div>
 
   <h2>事前にDLすべきアプリ</h2>
-  <div class="card" style="padding:0 14px">
+  <div>
     
     <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid #f0f0f0">
       <span style="font-size:1.4em;flex-shrink:0;width:28px;text-align:center">🗺️</span>
@@ -750,7 +752,7 @@
   </div>
 
   <h2 id="money">両替・支払い</h2>
-  <div class="card" style="padding:18px 16px">
+  <div>
     <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
     <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
     <div style="background:#fff8e6;border-left:3px solid #f5a623;border-radius:6px;padding:8px 12px;font-size:0.75em;color:#7a5200;line-height:1.7;margin-bottom:14px">💡 <strong>現地通貨の単位に慣れよう</strong><br>ウズベキスタンのスム（UZS）は単位が大きく、1万円相当で86,000UZS程度になる。両替後は計算慣れするまで時間がかかるため、最初はスマホの電卓を活用しよう。</div>
@@ -830,7 +832,7 @@
 <!-- 交通 -->
 <section id="transport">
   <h2>現地交通ガイド</h2>
-  <div class="card" style="padding:0 14px">
+  <div>
     
     <div class="trans-item" style="border-bottom:1px solid #f0f0f0">
       <div class="t-ico">🚆</div>
@@ -1182,8 +1184,8 @@
       <div class="num">TAS 01</div>
       <div class="name">チョルスー・バザール</div>
       <div class="desc">中央アジア最大級のドーム型バザール。香辛料・乾燥フルーツ・手工芸品が並び、地元民の日常が垣間見える。朝の賑わいは特に圧巻。迷い込むだけで楽しい。</div>
-      <div class="spot-ico-large">🏪</div>
       <span class="badge">フォトスポット</span>
+      <div class="spot-ico-large">🏪</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent">
@@ -1191,8 +1193,8 @@
       <div class="num">TAS 02</div>
       <div class="name">ハズラティ・イモーム広場</div>
       <div class="desc">ウズベキスタン最大のイスラム複合施設。カラオル・モスク・ムイ・ムボラク図書館（世界最古のコーラン写本を所蔵）などが集まる聖地。</div>
-      <div class="spot-ico-large">🕌</div>
       <span class="badge">聖地</span>
+      <div class="spot-ico-large">🕌</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent">
@@ -1200,8 +1202,8 @@
       <div class="num">TAS 03</div>
       <div class="name">タシュケント地下鉄</div>
       <div class="desc">1977年開通の旧ソ連式地下鉄。各駅が異なる建築様式で装飾された「世界一美しい地下鉄」との呼び声も。乗車は数十UZSと格安。移動手段にもなる観光スポット。</div>
-      <div class="spot-ico-large">🚇</div>
       <span class="badge">旧ソ連遺産</span>
+      <div class="spot-ico-large">🚇</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent">
@@ -1209,8 +1211,8 @@
       <div class="num">TAS 04</div>
       <div class="name">独立広場（ムスタキリク広場）</div>
       <div class="desc">1991年の独立を記念した大広場。整備された庭園と永遠の炎が印象的。夕方になると地元市民が涼を求めて集まる。</div>
-      <div class="spot-ico-large">🌳</div>
       <span class="badge">入場無料</span>
+      <div class="spot-ico-large">🌳</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent">
@@ -1218,8 +1220,8 @@
       <div class="num">TAS 05</div>
       <div class="name">国立工芸博物館</div>
       <div class="desc">19世紀の富豪邸宅を利用した博物館。建物の壁面を覆う精巧なイスラム装飾と、伝統工芸品の展示が見もの。入場料も安め。</div>
-      <div class="spot-ico-large">🏛️</div>
       <span class="badge">工芸品</span>
+      <div class="spot-ico-large">🏛️</div>
     </div>
     
     
@@ -1267,8 +1269,8 @@
       <div class="num">SAM 01</div>
       <div class="name">レギスタン広場</div>
       <div class="desc">3つの壮麗なメドレセ（神学校）が向き合うサマルカンドの象徴。青タイルのモザイクと巨大なアーチが組み合わさった景観は写真では伝わりにくい。圧倒的な存在感がある。</div>
-      <div class="spot-ico-large">🕌</div>
       <span class="badge">世界遺産</span>
+      <div class="spot-ico-large">🕌</div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="samarkand">
@@ -1276,8 +1278,8 @@
       <div class="num">SAM 02</div>
       <div class="name">シャフリサブズィンダ廟群</div>
       <div class="desc">ティムール朝の王族・聖人が眠る霊廟群が小路沿いに続く。青・緑・金のタイル装飾が細部まで施されており、その密度に圧倒される。夕暮れ時がとくに美しい。</div>
-      <div class="spot-ico-large">⚰️</div>
       <span class="badge">世界遺産</span>
+      <div class="spot-ico-large">⚰️</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samarkand">
@@ -1285,8 +1287,8 @@
       <div class="num">SAM 03</div>
       <div class="name">グリ・アミール廟</div>
       <div class="desc">ティムール（タメルレーン）の墓廟。玉ねぎ型の青いドームと精巧な黄金の装飾が美しい。サマルカンドを統治したティムールが眠る聖地。</div>
-      <div class="spot-ico-large">🏛️</div>
       <span class="badge">ティムール廟</span>
+      <div class="spot-ico-large">🏛️</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samarkand">
@@ -1294,8 +1296,8 @@
       <div class="num">SAM 04</div>
       <div class="name">ウルグ・ベク天文台</div>
       <div class="desc">15世紀の天文学者・ウルグ・ベクが建設した天文台の遺跡。当時の精度で恒星の位置を計算していた技術の高さに驚く。博物館も併設。</div>
-      <div class="spot-ico-large">🔭</div>
       <span class="badge">遺跡・博物館</span>
+      <div class="spot-ico-large">🔭</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samarkand">
@@ -1303,8 +1305,8 @@
       <div class="num">SAM 05</div>
       <div class="name">ビビ・ハニム・モスク</div>
       <div class="desc">ティムールが愛妻のために建設した巨大モスク。かつては中央アジア最大のモスクだったが地震で崩壊し、現在は修復済み。正門の巨大なアーチが見もの。</div>
-      <div class="spot-ico-large">🕌</div>
       <span class="badge">修復済遺跡</span>
+      <div class="spot-ico-large">🕌</div>
     </div>
     
     
@@ -1352,8 +1354,8 @@
       <div class="num">BUK 01</div>
       <div class="name">カラン・ミナレット</div>
       <div class="desc">1127年建設の高さ47mのミナレット。チンギス・ハンでさえも頭を下げたと伝わる。隣接するカラン・モスクとミル・アラブ・メドレセとセットで眺めたい。ブハラの定番風景。</div>
-      <div class="spot-ico-large">🏗️</div>
       <span class="badge">12世紀建造</span>
+      <div class="spot-ico-large">🏗️</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara">
@@ -1361,8 +1363,8 @@
       <div class="num">BUK 02</div>
       <div class="name">アルク城塞</div>
       <div class="desc">2,000年以上の歴史を持つブハラ・ハン国の宮殿兼要塞。内部はハン国の歴史が展示される博物館になっており、王宮の暮らしが垣間見える。</div>
-      <div class="spot-ico-large">🏯</div>
       <span class="badge">古代要塞</span>
+      <div class="spot-ico-large">🏯</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara">
@@ -1370,8 +1372,8 @@
       <div class="num">BUK 03</div>
       <div class="name">イスマイル・サーマーニー廟</div>
       <div class="desc">10世紀建造の中央アジア最古のイスラム建築の一つ。煉瓦の積み方で生まれる光の陰影が美しく、時間帯によって表情が変わる。静かな公園の中に佇む。</div>
-      <div class="spot-ico-large">⛩️</div>
       <span class="badge">10世紀建造</span>
+      <div class="spot-ico-large">⛩️</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara">
@@ -1379,8 +1381,8 @@
       <div class="num">BUK 04</div>
       <div class="name">ラビ・ハウズ</div>
       <div class="desc">旧市街の中心にある人工池を囲む広場。夕暮れ時になると地元の人が涼を求めて集まり、カフェやレストランも活気を帯びる。ブハラ滞在の拠点にもなる場所。</div>
-      <div class="spot-ico-large">🌊</div>
       <span class="badge">夕暮れ絶景</span>
+      <div class="spot-ico-large">🌊</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara">
@@ -1388,8 +1390,8 @@
       <div class="num">BUK 05</div>
       <div class="name">バハウッディン廟</div>
       <div class="desc">スーフィズムの高名な聖人の廟。世界各地からイスラム教巡礼者が訪れる聖地で、祈りを捧げる人々の姿も見られる。旧市街から少し離れた場所にある。</div>
-      <div class="spot-ico-large">🌸</div>
       <span class="badge">巡礼地</span>
+      <div class="spot-ico-large">🌸</div>
     </div>
     
     
@@ -1437,8 +1439,8 @@
       <div class="num">KHI 01</div>
       <div class="name">イチャン・カラ（旧市街）</div>
       <div class="desc">城壁に囲まれた旧市街全体がユネスコ世界遺産。迷路のような路地に霊廟・ミナレット・モスクが密集し、中世の時が止まったような空間が広がる。日没後は観光客が減り静寂が戻る。</div>
-      <div class="spot-ico-large">🏰</div>
       <span class="badge">世界遺産</span>
+      <div class="spot-ico-large">🏰</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva">
@@ -1446,8 +1448,8 @@
       <div class="num">KHI 02</div>
       <div class="name">カルタ・ミノル</div>
       <div class="desc">1852年に着工されたが建主の死により未完成のまま残ったミナレット。太くて低い独特の形と鮮やかな青タイルがフォトスポットとして人気。</div>
-      <div class="spot-ico-large">🏗️</div>
       <span class="badge">未完の塔</span>
+      <div class="spot-ico-large">🏗️</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva">
@@ -1455,8 +1457,8 @@
       <div class="num">KHI 03</div>
       <div class="name">イスラム・ホジャ・ミナレット</div>
       <div class="desc">ヒヴァで最も高い（57m）ミナレット。頂上まで登ることができ、旧市街の全景と周囲に広がる砂漠が一望できる絶景スポット。</div>
-      <div class="spot-ico-large">🔭</div>
       <span class="badge">絶景スポット</span>
+      <div class="spot-ico-large">🔭</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva">
@@ -1464,8 +1466,8 @@
       <div class="num">KHI 04</div>
       <div class="name">クフナ・アルク宮殿</div>
       <div class="desc">ヒヴァ・ハン国の歴代ハンが暮らした宮殿。ハーレム・玉座の間・モスクなどが残り、ハン国の華やかな暮らしが垣間見える。</div>
-      <div class="spot-ico-large">🏛️</div>
       <span class="badge">王宮遺跡</span>
+      <div class="spot-ico-large">🏛️</div>
     </div>
     
     
@@ -1513,8 +1515,8 @@
       <div class="num">FER 01</div>
       <div class="name">リシタン（陶芸の街）</div>
       <div class="desc">車で約1時間のリシタンはウズベキスタン最高の陶芸産地。職人のアトリエを訪問し、青と白の伝統文様「イシコル」の陶器が生まれる工程を見学できる。購入もその場で。</div>
-      <div class="spot-ico-large">🏺</div>
       <span class="badge">工芸体験</span>
+      <div class="spot-ico-large">🏺</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="fergana">
@@ -1522,8 +1524,8 @@
       <div class="num">FER 02</div>
       <div class="name">マルギラン絹工場</div>
       <div class="desc">シルクロードを支えてきた絹の産地・マルギランで工場見学が楽しめる。繭から絹糸を手で紡ぐ工程を間近で見られる。「アドラス」と呼ばれる伝統絹織物のお土産が充実。</div>
-      <div class="spot-ico-large">🧵</div>
       <span class="badge">絹の道</span>
+      <div class="spot-ico-large">🧵</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="fergana">
@@ -1531,8 +1533,8 @@
       <div class="num">FER 03</div>
       <div class="name">フェルガナ歴史博物館</div>
       <div class="desc">フェルガナ渓谷の歴史と考古学遺物を展示。農業と交易で栄えたこの地の背景を理解できる。入場料は安い。</div>
-      <div class="spot-ico-large">🏛️</div>
       <span class="badge">博物館</span>
+      <div class="spot-ico-large">🏛️</div>
     </div>
     
     
@@ -1580,8 +1582,8 @@
       <div class="num">NUK 01</div>
       <div class="name">サヴィツキー美術館</div>
       <div class="desc">「砂漠のルーブル」と呼ばれる世界屈指の前衛芸術コレクション。スターリン時代に弾圧された画家の作品を館長サヴィツキーが保護した物語は映画にもなった。外観は地味でも中身は圧巻。</div>
-      <div class="spot-ico-large">🖼️</div>
       <span class="badge">必訪</span>
+      <div class="spot-ico-large">🖼️</div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="nukus">
@@ -1589,8 +1591,8 @@
       <div class="num">NUK 02</div>
       <div class="name">アラル海（船の墓場）</div>
       <div class="desc">かつて世界第4位の湖だったアラル海が農業用水の過剰取水で干上がった跡地。錆びついた漁船が砂漠に転がる光景は環境破壊の象徴として世界的に知られる。ムイナクから車で30〜40分。</div>
-      <div class="spot-ico-large">🚢</div>
       <span class="badge">世界的絶景</span>
+      <div class="spot-ico-large">🚢</div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="nukus">
@@ -1598,8 +1600,8 @@
       <div class="num">NUK 03</div>
       <div class="name">ミールザラップ・バザール</div>
       <div class="desc">地元民の生活が息づくヌクスのローカル市場。観光地化されていない素朴な雰囲気で、カラカルパク地方の文化を身近に感じられる。</div>
-      <div class="spot-ico-large">🛒</div>
       <span class="badge">ローカル</span>
+      <div class="spot-ico-large">🛒</div>
     </div>
     
     
@@ -1618,9 +1620,7 @@
 
   <h2>モデルコース</h2>
 
-  <div class="card" style="margin-bottom:4px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.7">旅のスタイルに合わせた2タイプのモデルコースを紹介。サマルカンドとブハラを軸に据えた<strong>古都連泊プラン</strong>から、全都市を繋ぐ<strong>シルクロード縦断</strong>まで。どちらもアレンジ自由です。</p>
-  </div>
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:14px">旅のスタイルに合わせた2タイプのモデルコースを紹介。サマルカンドとブハラを軸に据えた<strong>古都連泊プラン</strong>から、全都市を繋ぐ<strong>シルクロード縦断</strong>まで。どちらもアレンジ自由です。</p>
 
   <div class="course-type">
     <span class="course-type-lbl green">安定タイプ</span>
@@ -1628,7 +1628,7 @@
   </div>
 
   
-  <div class="card" style="margin-bottom:10px">
+  <div style="margin-bottom:10px">
     <div class="course-plan-lbl">プランA</div>
     <div class="course-plan-title">サマルカンド ＋ ブハラ　5泊6日</div>
     <div class="course-timeline">
@@ -1697,7 +1697,7 @@
     <div class="course-tip">✅ タシュケント1泊・サマルカンド2泊・ブハラ2泊　荷物の移動は2回</div>
   </div>
   
-  <div class="card" style="margin-bottom:10px">
+  <div style="margin-bottom:10px">
     <div class="course-plan-lbl">プランB</div>
     <div class="course-plan-title">シルクロード完全制覇　7泊8日</div>
     <div class="course-timeline">
@@ -1785,7 +1785,7 @@
     <div class="course-type-title">フェルガナ〜アラル海縦断ルート</div>
   </div>
 
-  <div class="card">
+  <div>
     <div class="course-note">
       <span class="course-note-ico">✍️</span>
       <div>

@@ -116,7 +116,7 @@ section.active{display:block;padding-top:8px}
 /* 観光スポット・グルメカード（全国共通） */
 .item-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .item-card{background:#fff;border-radius:14px;padding:18px;border:1px solid #c8d0e0;box-shadow:none;display:flex;flex-direction:column;position:relative}
-.item-card.spot{border-left:none}
+.item-card.spot{border-left:1px solid #c8d0e0;overflow:hidden}
 .item-card .ico{font-size:1.8em;margin-bottom:4px}
 .item-card .num{font-size:0.8em;font-weight:700;color:var(--red);margin-bottom:2px}
 .item-card.spot .num{color:var(--green)}
@@ -166,7 +166,7 @@ section.active{display:block;padding-top:8px}
 /* フレーズテーブル（全国共通） */
 .phrase-tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #c8d0e0;box-shadow:none}
 .phrase-tbl th{background:var(--green);color:#fff;padding:10px 12px;font-size:0.8em;text-align:left}
-.phrase-tbl td{padding:9px 12px;border-bottom:1px solid #f0f0f0;vertical-align:middle}
+.phrase-tbl td{padding:9px 12px;border-bottom:1px solid #b8b8b8;vertical-align:middle}
 .phrase-tbl tr:last-child td{border-bottom:none}
 .phrase-tbl tr:nth-child(even) td{background:#f8faf8}
 .jp{color:#333;font-size:0.9em}
@@ -179,7 +179,7 @@ section.active{display:block;padding-top:8px}
 .phrase-tbl .audio-td{width:38px;padding:4px 8px;text-align:center}
 
 /* 予算・費用 */
-.budget-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 0;border-bottom:1px solid #f0f0f0}
+.budget-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 0;border-bottom:1px solid #b8b8b8}
 .budget-link{display:block;width:100%;text-align:right;font-size:0.88em;font-weight:700;color:var(--green);text-decoration:none;white-space:nowrap}
 .budget-row:last-child{border-bottom:none}
 .budget-ico{font-size:1.4em;width:36px;text-align:center;flex-shrink:0}
@@ -188,7 +188,7 @@ section.active{display:block;padding-top:8px}
 .budget-info .b-sub{font-size:0.8em;color:var(--sub);margin-top:2px;line-height:1.65}
 .budget-price{font-weight:700;color:var(--green);font-size:0.9em;text-align:right;flex-shrink:0}
 .budget-table{width:100%;border-collapse:collapse;font-size:0.92em}
-.budget-table td{padding:14px 8px;border-bottom:1px solid #efefef;vertical-align:middle}
+.budget-table td{padding:14px 8px;border-bottom:1px solid #b8b8b8;vertical-align:middle}
 .budget-table tr:last-child td{border-bottom:none}
 .budget-table .ico-col{font-size:1.15em;width:32px;text-align:center;padding-left:0}
 .budget-table .price-col{text-align:right;padding-right:0;vertical-align:middle;white-space:nowrap;min-width:130px;position:relative;padding-bottom:32px}
@@ -211,8 +211,8 @@ section.active{display:block;padding-top:8px}
 
 /* 基本データグリッド */
 .bd-grid{display:grid;grid-template-columns:1fr 1fr}
-.bd-item{padding:14px 14px;border-bottom:1px solid #f0f0f0}
-.bd-item:nth-child(odd){border-right:1px solid #f0f0f0}
+.bd-item{padding:14px 14px;border-bottom:1px solid #b8b8b8}
+.bd-item:nth-child(odd){border-right:1px solid #b8b8b8}
 .bd-item:nth-last-child(-n+2){border-bottom:none}
 .bd-lbl{font-size:0.78em;color:var(--sub);margin-bottom:4px}
 .bd-val{font-weight:700;font-size:1em}
@@ -254,7 +254,7 @@ section.active{display:block;padding-top:8px}
 .tl-badge.red{background:#cc0001}
 .tl-badge.gray{background:#bbb}
 .tl-content{flex:1;font-size:0.78em;color:var(--sub);line-height:1.65;padding-top:3px}
-.course-footer{margin-top:12px;padding-top:10px;border-top:1px solid #f0f0f0;font-size:0.7em;color:var(--sub);line-height:1.8}
+.course-footer{margin-top:12px;padding-top:10px;border-top:1px solid #b8b8b8;font-size:0.7em;color:var(--sub);line-height:1.8}
 .course-tip{margin-top:8px;font-size:0.72em;color:var(--green);font-weight:600}
 .tl-transit{display:flex;gap:12px;align-items:center;padding:2px 0;position:relative}
 .tl-transit::before{content:'';position:absolute;left:19px;top:0;bottom:0;width:2px;background:#e8e8e8;z-index:0}
@@ -268,7 +268,7 @@ section.active{display:block;padding-top:8px}
 
 /* 交通手段 */
 .trans-list{display:flex;flex-direction:column;gap:8px}
-.trans-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f0f0f0}
+.trans-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #b8b8b8}
 .trans-item:last-child{border-bottom:none}
 .trans-item .t-ico{font-size:1.4em;flex-shrink:0;width:28px;text-align:center}
 .trans-item .t-info{flex:1;min-width:0}
@@ -297,7 +297,7 @@ section.active{display:block;padding-top:8px}
 
 /* 都市グリッド */
 .city-grid-wrap{display:grid;grid-template-columns:repeat(3,1fr)}
-.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:10px 12px;border-right:1px solid #f0f0f0;border-top:1px solid #f0f0f0;transition:background 0.15s;cursor:pointer}
+.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:10px 12px;border-right:1px solid #b8b8b8;border-top:1px solid #b8b8b8;transition:background 0.15s;cursor:pointer}
 .city-item:nth-child(3n){border-right:none}
 .city-item:hover{background:#f0f7f3}
 .ci-badge{font-size:0.68em;font-weight:700;color:#cc0001;background:#fff0f0;border-radius:20px;padding:2px 10px}
@@ -309,12 +309,12 @@ section.active{display:block;padding-top:8px}
 .ci-spots:hover{opacity:0.7}
 
 /* 都市セクションヘッダー */
-.city-section-header{grid-column:1/-1;background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #c8d0e0;border-top:4px solid var(--green);margin-top:6px;box-shadow:none}
+.city-section-header{grid-column:1/-1;padding:14px 0;border-top:2px solid #d0d0d0;margin-top:6px}
 .csh-title{font-size:1em;font-weight:900;color:var(--green);margin-bottom:3px}
 .csh-desc{font-size:0.8em;color:#666;margin-bottom:10px;line-height:1.5}
 .csh-img{display:block;width:calc(100% + 28px);margin:-12px -14px 12px;height:140px;object-fit:cover;border-radius:8px 8px 0 0}
 .csh-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
-.csh-item{display:flex;gap:6px;align-items:baseline;padding:4px 0;border-bottom:1px solid #f5f5f5}
+.csh-item{display:flex;gap:6px;align-items:baseline;padding:4px 0;border-bottom:1px solid #b8b8b8}
 .csh-item .csh-lbl{font-size:0.65em;color:#aaa;flex-shrink:0;width:8.5em}
 .csh-item .csh-val{font-size:0.8em;font-weight:700;color:var(--text)}
 
@@ -339,7 +339,7 @@ section.active{display:block;padding-top:8px}
   .qs-row{grid-template-columns:1fr 1fr}
   .prac-grid{grid-template-columns:1fr 1fr}
   .city-grid-wrap{grid-template-columns:1fr}
-  .city-item:nth-child(3n){border-right:1px solid #f0f0f0}
+  .city-item:nth-child(3n){border-right:1px solid #b8b8b8}
   .city-item:nth-child(2n){border-right:none}
   .prac-card{padding:10px 8px}
   .prac-card .p-ico{font-size:1.5em;margin-bottom:3px}
@@ -358,7 +358,7 @@ section.active{display:block;padding-top:8px}
   .see-more{font-size:0.85em}
   /* 予算テーブル：スマホでは縦積みに変換して説明文を広く使う */
   .budget-table,.budget-table tbody{display:block}
-  .budget-table tr{display:flex;flex-wrap:wrap;align-items:flex-start;padding:12px 0;border-bottom:1px solid #efefef;gap:0}
+  .budget-table tr{display:flex;flex-wrap:wrap;align-items:flex-start;padding:12px 0;border-bottom:1px solid #b8b8b8;gap:0}
   .budget-table tr:last-child{border-bottom:none}
   .budget-table td{border:none;padding:0}
   .budget-table .ico-col{flex:0 0 26px;font-size:1.1em;text-align:center;padding-top:2px}
@@ -373,6 +373,6 @@ section.active{display:block;padding-top:8px}
 @media(max-width:520px){
   .bd-grid{grid-template-columns:1fr}
   .bd-item:nth-child(odd){border-right:none}
-  .bd-item:nth-last-child(-n+2){border-bottom:1px solid #f0f0f0}
+  .bd-item:nth-last-child(-n+2){border-bottom:1px solid #b8b8b8}
   .bd-item:last-child{border-bottom:none}
 }

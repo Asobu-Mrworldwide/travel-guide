@@ -28,7 +28,7 @@
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;border-radius:8px;margin-top:auto;margin-bottom:0}
-.spot-img-wrap{margin-top:auto;border-radius:0 0 12px 12px;overflow:hidden;margin-left:-18px;margin-right:-18px;margin-bottom:-18px}
+.spot-img-wrap{margin-top:12px;border-radius:8px;overflow:hidden}
 .spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px;margin-bottom:-20px}
 #spots-grid .item-card.has-spot-img{padding-bottom:12px}
 #spots-grid .item-card.has-spot-img .desc{flex:1}
@@ -72,13 +72,14 @@
 <!-- 基本情報 -->
 <section id="basic" class="active">
 {{custom_top_basic}}
-  <div class="card" style="margin-bottom:14px;line-height:1.8">
+  <div style="margin-bottom:14px;line-height:1.8">
     <h2 style="margin:0 0 10px;font-size:1em">{{overview.country_question}}</h2>
     <p style="font-size:0.88em;color:var(--text)">{{overview.description_html}}</p>
     <div style="margin-top:32px;margin-bottom:32px;text-align:center">
       {{overview.flag_html}}
       <p style="font-size:0.75em;color:var(--sub);margin-top:6px">{{overview.flag_caption}}</p>
     </div>
+    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
     <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
       <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
@@ -101,7 +102,8 @@
     </div>
 
     <!-- 旅行難易度 -->
-    <div style="margin-top:12px;border-top:1px solid #f0f0f0;padding-top:12px">
+    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
+    <div style="margin-top:0">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
         <span style="font-size:1.3em">📌</span>
         <span style="font-size:0.82em;color:var(--sub);font-weight:600">旅行難易度</span>
@@ -122,15 +124,14 @@
     </div>
 
     <!-- クイックスペック -->
-    <div style="border-top:1px solid #f0f0f0;margin-top:16px;padding-top:16px">
-      <div class="qs-row" style="margin-top:0">
-        <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">{{overview.flight_hours}}</div></div></div>
-        <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">{{overview.timezone}}</div></div></div>
-        <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">{{overview.visa}}</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[6])">旅の準備を見る →</button></div></div>
-        <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">{{overview.budget_range}}</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
-        <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">{{overview.language}}</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
-        <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">{{overview.currency_name}}</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">{{overview.currency_rate}}</div></div></div>
-      </div>
+    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
+    <div class="qs-row" style="margin-top:0">
+      <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">{{overview.flight_hours}}</div></div></div>
+      <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">{{overview.timezone}}</div></div></div>
+      <div class="qs-card"><div class="qs-ico">📄</div><div><div class="qs-lbl">ビザ</div><div class="qs-val">{{overview.visa}}</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[6])">旅の準備を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">{{overview.budget_range}}</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">{{overview.language}}</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">{{overview.currency_name}}</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">{{overview.currency_rate}}</div></div></div>
     </div>
   </div>
 
@@ -222,7 +223,7 @@
 
   <!-- ベストシーズン（簡易） -->
   <h2>ベストシーズン</h2>
-  <div class="card" style="padding:14px">
+  <div>
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">{{season_mini.description}}</p>
     <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">{{season_mini.city_name}}</div>
     <div class="season-mini">
@@ -250,7 +251,7 @@
 
   <!-- 基本データ -->
   <h2>基本データ</h2>
-  <div class="card" style="padding:0">
+  <div>
     <div class="bd-grid">
       {% for item in basic_data %}
       <div class="bd-item">
@@ -269,7 +270,7 @@
 <section id="season">
 {{custom_top_season}}
   <h2>ベストシーズン</h2>
-  <div class="card">
+  <div>
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span><span style="display:inline-block;width:14px;height:10px;background:linear-gradient(90deg,#ff5000,#ff9000);border-radius:2px;vertical-align:middle;margin-right:3px"></span>最も暑い</span>
@@ -280,7 +281,7 @@
     </div>
 
     {% for city in season.cities %}
-    <div class="city-season" style="border-top:1px solid #f0f0f0;margin-top:14px;padding-top:14px">
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
       <div class="city-name">{{city.name}}</div>
       <div class="season-grid">
         <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot {{city.months.0.type}}">{{city.months.0.icon}}<span class="md-t">{{city.months.0.temp}}</span></div></div>
@@ -328,7 +329,7 @@
   </div>
 
   <h2>費用の内訳</h2>
-  <div class="card" style="padding:6px 16px 10px">
+  <div>
     <table class="budget-table">
       <tbody>
         {% for item in budget.items %}
@@ -362,7 +363,7 @@
   </div>
 
   <h2>準備は早めに</h2>
-  <div class="card">
+  <div>
     <div style="padding-top:8px">
       {% for step in practical.prep_steps %}
       <div class="rm-item">
@@ -384,7 +385,7 @@
   </div>
 
   <h2>航空券の予約</h2>
-  <div class="card" style="padding:0 14px 14px">
+  <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">{{practical.flight_intro}}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
       {% for airline in practical.airlines %}
@@ -403,7 +404,7 @@
   </div>
 
   <h2>ホテルの選び方</h2>
-  <div class="card" style="padding:0 14px 14px">
+  <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">{{practical.hotel_intro}}</div>
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
       {% for area in practical.hotel_areas %}
@@ -445,7 +446,7 @@
   </div>
 
   <h2>事前にDLすべきアプリ</h2>
-  <div class="card" style="padding:0 14px">
+  <div>
     {% for app in practical.apps %}
     <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;{% if app.is_last %}{% else %}border-bottom:1px solid #f0f0f0{% endif %}">
       <span style="font-size:1.4em;flex-shrink:0;width:28px;text-align:center">{{app.icon}}</span>
@@ -460,7 +461,7 @@
   </div>
 
   <h2 id="money">両替・支払い</h2>
-  <div class="card" style="padding:18px 16px">
+  <div>
     <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
     <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
     <div style="background:#fff8e6;border-left:3px solid #f5a623;border-radius:6px;padding:8px 12px;font-size:0.75em;color:#7a5200;line-height:1.7;margin-bottom:14px">{{practical.cash_small_tip_html}}</div>
@@ -526,9 +527,9 @@
 <!-- 交通 -->
 <section id="transport">
   <h2>現地交通ガイド</h2>
-  <div class="card" style="padding:0 14px">
+  <div>
     {% for item in transport_items %}
-    <div class="trans-item" {% if item.is_last %}{% else %}style="border-bottom:1px solid #f0f0f0"{% endif %}>
+    <div class="trans-item" {% if item.is_last %}{% else %}style="border-bottom:1px solid #b8b8b8"{% endif %}>
       <div class="t-ico">{{item.icon}}</div>
       <div class="t-info">
         <div class="t-name">{{item.name}}</div>
@@ -654,9 +655,7 @@
 {{custom_top_course}}
   <h2>モデルコース</h2>
 
-  <div class="card" style="margin-bottom:4px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.7">{{courses.intro}}</p>
-  </div>
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:14px">{{courses.intro}}</p>
 
   <div class="course-type">
     <span class="course-type-lbl green">安定タイプ</span>
@@ -664,7 +663,7 @@
   </div>
 
   {% for plan in courses.stable_plans %}
-  <div class="card" style="margin-bottom:10px">
+  <div style="margin-bottom:10px">
     <div class="course-plan-lbl">{{plan.label}}</div>
     <div class="course-plan-title">{{plan.title}}</div>
     <div class="course-timeline">
@@ -690,7 +689,7 @@
     <div class="course-type-title">{{courses.adventure_title}}</div>
   </div>
 
-  <div class="card">
+  <div>
     <div class="course-note">
       <span class="course-note-ico">✍️</span>
       <div>
