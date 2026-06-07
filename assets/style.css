@@ -93,7 +93,7 @@ nav button:hover{color:var(--green);border-bottom-color:var(--green)}
 
 /* セクション切り替えアニメーション */
 section{display:none;animation:fadeIn 0.25s}
-section.active{display:block;padding-top:16px}
+section.active{display:block;padding-top:0}
 @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 
 /* ベストシーズン（全国共通） */
@@ -211,9 +211,9 @@ section.active{display:block;padding-top:16px}
 .dont .m-title::before{content:'❌ '}
 
 /* 基本データグリッド */
-.bd-grid{display:grid;grid-template-columns:1fr 1fr}
+.bd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:24px}
 .bd-item{padding:14px 14px;border-bottom:1px solid #b8b8b8}
-.bd-item:nth-child(odd){border-right:1px solid #b8b8b8}
+.bd-item:nth-child(odd){border-right:none}
 .bd-item:nth-last-child(-n+2){border-bottom:none}
 .bd-lbl{font-size:0.78em;color:var(--sub);margin-bottom:4px}
 .bd-val{font-weight:700;font-size:1em}
