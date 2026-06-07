@@ -27,10 +27,12 @@
 #food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
 
 /* 観光スポットカード画像・絵文字 */
-.spot-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block;border-radius:8px;margin-top:auto;margin-bottom:0}
-.spot-img-wrap{margin-top:12px;border-radius:8px;overflow:hidden}
+.spot-img{display:none}
+.spot-img-wrap{margin-top:auto;height:150px;margin-left:-18px;margin-right:-18px;margin-bottom:-18px;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat}
+.spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
+.spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
 .spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px;margin-bottom:-20px}
-#spots-grid .item-card.has-spot-img{padding-bottom:12px}
+#spots-grid .item-card.has-spot-img{padding-bottom:18px}
 #spots-grid .item-card.has-spot-img .desc{flex:1}
 
 /* クイックスペックカード（基本情報タブ） */
@@ -79,7 +81,7 @@
       <div style="position:relative;border-radius:6px;height:100px;width:200px;display:inline-block;overflow:hidden;border:1px solid #eee;background:linear-gradient(to bottom,#DE3831 0% 33%,#FFFFFF 33% 36%,#007A4D 36% 64%,#FFFFFF 64% 67%,#002395 67% 100%)"><div style="position:absolute;top:0;left:0;width:0;height:0;border-style:solid;border-width:50px 0 50px 62px;border-color:transparent transparent transparent #000"></div><div style="position:absolute;top:3px;left:0;width:0;height:0;border-style:solid;border-width:47px 0 47px 57px;border-color:transparent transparent transparent #FFB612"></div><div style="position:absolute;top:6px;left:0;width:0;height:0;border-style:solid;border-width:44px 0 44px 52px;border-color:transparent transparent transparent #007A4D"></div></div>
       <p style="font-size:0.75em;color:var(--sub);margin-top:6px">南アフリカの国旗。6色の「レインボーフラッグ」は民主化と多民族の共生を象徴する。</p>
     </div>
-    <hr style="border:none;border-top:1px solid #d0d0d0;margin:16px 0">
+    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
     <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
       <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
@@ -102,7 +104,7 @@
     </div>
 
     <!-- 旅行難易度 -->
-    <hr style="border:none;border-top:1px solid #d0d0d0;margin:16px 0">
+    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
     <div style="margin-top:0">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
         <span style="font-size:1.3em">📌</span>
@@ -124,7 +126,7 @@
     </div>
 
     <!-- クイックスペック -->
-    <hr style="border:none;border-top:1px solid #d0d0d0;margin:16px 0">
+    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
     <div class="qs-row" style="margin-top:0">
       <div class="qs-card"><div class="qs-ico">✈️</div><div><div class="qs-lbl">直行便</div><div class="qs-val">約17〜18時間</div></div></div>
       <div class="qs-card"><div class="qs-ico">⌚</div><div><div class="qs-lbl">時差</div><div class="qs-val">日本 −7時間</div></div></div>
@@ -332,7 +334,7 @@
     </div>
 
     
-    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #d0d0d0;margin-bottom:14px">
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
       <div class="city-name">ケープタウン</div>
       <div class="season-grid">
         <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-hot">☀️<span class="md-t">26°C</span></div></div>
@@ -351,7 +353,7 @@
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：11月〜3月（南半球の夏・乾季）／ 6〜8月は雨季で強風。ただし観光自体は年中可能。</p><button onclick="showFilteredSpots('cape_town')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
     </div>
     
-    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #d0d0d0;margin-bottom:14px">
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
       <div class="city-name">ヨハネスブルク / クルーガー国立公園</div>
       <div class="season-grid">
         <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-hot">☔<span class="md-t">26°C</span></div></div>
@@ -823,7 +825,7 @@
   <h2>現地交通ガイド</h2>
   <div>
     
-    <div class="trans-item" style="border-bottom:1px solid #f0f0f0">
+    <div class="trans-item" style="border-bottom:1px solid #b8b8b8">
       <div class="t-ico">✈️</div>
       <div class="t-info">
         <div class="t-name">国際線（乗り継ぎ）</div>
@@ -832,7 +834,7 @@
       </div>
     </div>
     
-    <div class="trans-item" style="border-bottom:1px solid #f0f0f0">
+    <div class="trans-item" style="border-bottom:1px solid #b8b8b8">
       <div class="t-ico">✈️</div>
       <div class="t-info">
         <div class="t-name">国内線</div>
@@ -841,7 +843,7 @@
       </div>
     </div>
     
-    <div class="trans-item" style="border-bottom:1px solid #f0f0f0">
+    <div class="trans-item" style="border-bottom:1px solid #b8b8b8">
       <div class="t-ico">🚗</div>
       <div class="t-info">
         <div class="t-name">レンタカー</div>
@@ -850,7 +852,7 @@
       </div>
     </div>
     
-    <div class="trans-item" style="border-bottom:1px solid #f0f0f0">
+    <div class="trans-item" style="border-bottom:1px solid #b8b8b8">
       <div class="t-ico">📱</div>
       <div class="t-info">
         <div class="t-name">Uber / Bolt</div>
@@ -859,7 +861,7 @@
       </div>
     </div>
     
-    <div class="trans-item" style="border-bottom:1px solid #f0f0f0">
+    <div class="trans-item" style="border-bottom:1px solid #b8b8b8">
       <div class="t-ico">🚌</div>
       <div class="t-info">
         <div class="t-name">長距離バス / 観光バス</div>
