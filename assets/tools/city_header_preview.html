@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>都市ヘッダー デザイン比較</title>
+<style>
+  :root { --green: #2a9d6e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f4f6f8; padding: 24px; }
+  h1 { font-size: 1.1em; color: #444; margin-bottom: 24px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media(max-width:700px){ .grid { grid-template-columns: 1fr; } }
+
+  .case { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .case-label { font-size: 0.72em; font-weight: 700; color: #aaa; letter-spacing: 1px; margin-bottom: 12px; }
+
+  /* ダミーカード */
+  .dummy-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+  .dummy-card { background: #f8f8f8; border: 1px solid #e0e0e0; border-radius: 8px; padding: 10px; font-size: 0.72em; color: #888; height: 60px; }
+
+  /* ── 案1: 緑トップライン ── */
+  .d1-header { border-top: 2px solid var(--green); padding-top: 16px; }
+  .d1-title { font-size: 1.15em; font-weight: 900; color: #222; margin-bottom: 4px; }
+  .d1-desc { font-size: 0.78em; color: #777; line-height: 1.5; }
+
+  /* ── 案2: 左ボーダー＋大きめ ── */
+  .d2-header { padding: 4px 0 4px 14px; border-left: 4px solid var(--green); margin: 4px 0; }
+  .d2-title { font-size: 1.2em; font-weight: 900; color: var(--green); margin-bottom: 3px; }
+  .d2-desc { font-size: 0.78em; color: #777; line-height: 1.5; }
+
+  /* ── 案3: 淡い緑背景帯 ── */
+  .d3-header { background: #edf7f2; border-radius: 8px; padding: 12px 14px; margin: 4px -4px; }
+  .d3-title { font-size: 1.1em; font-weight: 900; color: var(--green); margin-bottom: 4px; }
+  .d3-desc { font-size: 0.78em; color: #555; line-height: 1.5; }
+
+  /* ── 案4: ダークバー（全幅） ── */
+  .d4-header { background: #1e2a24; border-radius: 8px; padding: 12px 14px; margin: 4px -4px; }
+  .d4-title { font-size: 1.1em; font-weight: 900; color: #fff; margin-bottom: 4px; }
+  .d4-desc { font-size: 0.78em; color: #9ec9b0; line-height: 1.5; }
+
+  /* ── 案5: タイトル下線 ── */
+  .d5-header { padding: 8px 0; }
+  .d5-title { display: inline-block; font-size: 1.15em; font-weight: 900; color: #222; border-bottom: 2.5px solid var(--green); padding-bottom: 3px; margin-bottom: 8px; }
+  .d5-desc { font-size: 0.78em; color: #777; line-height: 1.5; }
+
+  /* ── 案6: 📍アイコン＋タイトル ── */
+  .d6-header { padding: 8px 0; }
+  .d6-title { font-size: 1.1em; font-weight: 900; color: #222; margin-bottom: 6px; }
+  .d6-title::before { content: '📍'; font-size: 0.9em; margin-right: 5px; }
+  .d6-desc { font-size: 0.78em; color: #777; line-height: 1.5; padding-left: 22px; }
+
+  /* ── 案7: グレー背景＋緑アクセント左線 ── */
+  .d7-header { background: #f5f5f5; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 4px -4px 4px -8px; }
+  .d7-title { font-size: 1.1em; font-weight: 900; color: #222; margin-bottom: 4px; }
+  .d7-desc { font-size: 0.78em; color: #666; line-height: 1.5; }
+
+  /* ── 案8: バッジ風（都市名だけ色付きpill） ── */
+  .d8-header { padding: 8px 0 12px; }
+  .d8-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--green); color: #fff; font-size: 0.82em; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 8px; }
+  .d8-desc { font-size: 0.78em; color: #777; line-height: 1.5; }
+
+  /* ── 案9: 見出し大きく＋サブカラー概要 ── */
+  .d9-header { padding: 8px 0 12px; }
+  .d9-title { font-size: 1.4em; font-weight: 900; color: #1a1a1a; margin-bottom: 5px; letter-spacing: -0.5px; }
+  .d9-desc { font-size: 0.78em; color: var(--green); font-weight: 600; line-height: 1.5; }
+
+  /* ── 案10: 背景グラデーション＋白文字 ── */
+  .d10-header { background: linear-gradient(135deg, #1e6b4a 0%, #2a9d6e 100%); border-radius: 10px; padding: 14px 16px; margin: 4px -4px; }
+  .d10-title { font-size: 1.1em; font-weight: 900; color: #fff; margin-bottom: 5px; }
+  .d10-desc { font-size: 0.78em; color: rgba(255,255,255,0.82); line-height: 1.5; }
+</style>
+</head>
+<body>
+<h1>都市セクションヘッダー デザイン比較 10案</h1>
+<div class="grid">
+
+  <!-- 案1 -->
+  <div class="case">
+    <div class="case-label">案1 ▸ 緑トップライン（現状）</div>
+    <div class="d1-header">
+      <div class="d1-title">クアラルンプール</div>
+      <div class="d1-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案2 -->
+  <div class="case">
+    <div class="case-label">案2 ▸ 左ボーダー＋緑文字</div>
+    <div class="d2-header">
+      <div class="d2-title">クアラルンプール</div>
+      <div class="d2-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案3 -->
+  <div class="case">
+    <div class="case-label">案3 ▸ 淡い緑背景帯</div>
+    <div class="d3-header">
+      <div class="d3-title">クアラルンプール</div>
+      <div class="d3-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案4 -->
+  <div class="case">
+    <div class="case-label">案4 ▸ ダークバー</div>
+    <div class="d4-header">
+      <div class="d4-title">クアラルンプール</div>
+      <div class="d4-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案5 -->
+  <div class="case">
+    <div class="case-label">案5 ▸ タイトル下線のみ</div>
+    <div class="d5-header">
+      <div class="d5-title">クアラルンプール</div>
+      <div class="d5-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案6 -->
+  <div class="case">
+    <div class="case-label">案6 ▸ 📍アイコン＋黒太字</div>
+    <div class="d6-header">
+      <div class="d6-title">クアラルンプール</div>
+      <div class="d6-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案7 -->
+  <div class="case">
+    <div class="case-label">案7 ▸ グレー背景＋緑左線</div>
+    <div class="d7-header">
+      <div class="d7-title">クアラルンプール</div>
+      <div class="d7-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案8 -->
+  <div class="case">
+    <div class="case-label">案8 ▸ 緑バッジ＋概要テキスト</div>
+    <div class="d8-header">
+      <div class="d8-badge">📍 クアラルンプール</div>
+      <div class="d8-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案9 -->
+  <div class="case">
+    <div class="case-label">案9 ▸ 大見出し＋緑サブテキスト</div>
+    <div class="d9-header">
+      <div class="d9-title">クアラルンプール</div>
+      <div class="d9-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案10 -->
+  <div class="case">
+    <div class="case-label">案10 ▸ 緑グラデーション背景</div>
+    <div class="d10-header">
+      <div class="d10-title">クアラルンプール</div>
+      <div class="d10-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+</div>
+</body>
+</html>

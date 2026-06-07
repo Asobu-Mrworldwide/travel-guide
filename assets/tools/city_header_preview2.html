@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>都市ヘッダー デザイン比較 vol.2</title>
+<style>
+  :root { --green: #2a9d6e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f0f2f5; padding: 24px; }
+  h1 { font-size: 1em; color: #555; margin-bottom: 20px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media(max-width:680px){ .grid { grid-template-columns: 1fr; } }
+
+  .case { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); overflow: hidden; }
+  .case-label { font-size: 0.68em; font-weight: 700; color: #bbb; letter-spacing: 1px; margin-bottom: 14px; }
+
+  .dummy-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .dummy-card { background: #f6f6f6; border: 1px solid #e8e8e8; border-radius: 8px; height: 56px; }
+
+  /* ── 案A: 番号＋日英2段 ── */
+  .dA-header { display: flex; align-items: center; gap: 12px; padding: 6px 0 12px; border-bottom: 1px solid #e8e8e8; }
+  .dA-num { font-size: 2.2em; font-weight: 900; color: #e8e8e8; line-height: 1; letter-spacing: -2px; flex-shrink: 0; }
+  .dA-title { font-size: 1.1em; font-weight: 900; color: #1a1a1a; line-height: 1.2; }
+  .dA-en { font-size: 0.7em; font-weight: 600; color: #aaa; letter-spacing: 1px; margin-top: 2px; }
+  .dA-desc { font-size: 0.72em; color: #999; margin-top: 3px; }
+
+  /* ── 案B: 中央線＋日英縦並び ── */
+  .dB-header { position: relative; text-align: center; margin: 8px 0 12px; }
+  .dB-line { border: none; border-top: 1.5px solid #d0d0d0; }
+  .dB-title-wrap { display: flex; justify-content: center; margin-top: -14px; }
+  .dB-pill { display: inline-block; background: #fff; padding: 0 14px; }
+  .dB-title { font-size: 1em; font-weight: 900; color: #222; }
+  .dB-en { font-size: 0.65em; color: #bbb; letter-spacing: 1px; }
+  .dB-desc { font-size: 0.74em; color: #999; text-align: center; margin-top: 8px; }
+
+  /* ── 案C: グラデ背景＋英語上・日本語大 ── */
+  .dC-header { border-radius: 8px; overflow: hidden; margin: 0 -20px; background: linear-gradient(160deg, #0f3d27 0%, #1e6b4a 60%, #2a9d6e 100%); padding: 16px 20px 14px; }
+  .dC-en { font-size: 0.62em; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 3px; }
+  .dC-title { font-size: 1.3em; font-weight: 900; color: #fff; margin-bottom: 5px; }
+  .dC-desc { font-size: 0.74em; color: rgba(255,255,255,0.72); line-height: 1.6; }
+
+  /* ── 案D: ドット＋日英横並び ── */
+  .dD-header { padding: 6px 0 12px; }
+  .dD-top { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+  .dD-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-bottom: 1px; align-self: center; }
+  .dD-title { font-size: 1.1em; font-weight: 900; color: #1a1a1a; }
+  .dD-en { font-size: 0.7em; color: #bbb; letter-spacing: 1px; margin-left: 2px; }
+  .dD-desc { font-size: 0.74em; color: #888; line-height: 1.6; padding-left: 17px; }
+
+  /* ── 案E: 上下線＋日英2段 ── */
+  .dE-header { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 10px 0; margin: 4px 0 12px; }
+  .dE-en { font-size: 0.65em; color: #bbb; letter-spacing: 1px; margin-bottom: 2px; }
+  .dE-title { font-size: 1.05em; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
+  .dE-desc { font-size: 0.72em; color: #999; }
+
+  /* ── 案F: ラベル＋大見出し＋英語小さく ── */
+  .dF-header { padding: 6px 0 12px; }
+  .dF-tag { font-size: 0.62em; font-weight: 700; color: var(--green); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
+  .dF-title { font-size: 1.4em; font-weight: 900; color: #1a1a1a; letter-spacing: -0.5px; line-height: 1.1; }
+  .dF-en { font-size: 0.68em; color: #bbb; letter-spacing: 1px; margin: 3px 0 6px; }
+  .dF-desc { font-size: 0.74em; color: #888; line-height: 1.6; }
+
+  /* ── 案G: 緑トップライン＋英語上・日本語下 ── */
+  .dG-header { padding: 10px 0 10px; border-top: 3px solid var(--green); }
+  .dG-en { font-size: 0.62em; font-weight: 700; color: var(--green); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+  .dG-title { font-size: 1.15em; font-weight: 900; color: #1a1a1a; margin-bottom: 4px; }
+  .dG-desc { font-size: 0.74em; color: #888; line-height: 1.6; }
+
+  /* ── 案H: グレー帯＋日英 ── */
+  .dH-wrap { margin: 0 -20px; background: #f2f2f2; padding: 12px 20px; margin-bottom: 12px; }
+  .dH-en { font-size: 0.62em; color: #bbb; letter-spacing: 1px; margin-bottom: 2px; }
+  .dH-title { font-size: 1.05em; font-weight: 900; color: #222; margin-bottom: 3px; }
+  .dH-desc { font-size: 0.72em; color: #777; }
+
+  /* ── 案I: アイコン横並び＋日英2段 ── */
+  .dI-header { display: flex; align-items: center; gap: 12px; padding: 6px 0 12px; border-bottom: 1px solid #ebebeb; }
+  .dI-icon { font-size: 2em; flex-shrink: 0; }
+  .dI-en { font-size: 0.65em; color: #bbb; letter-spacing: 1px; margin-bottom: 1px; }
+  .dI-title { font-size: 1.05em; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
+  .dI-desc { font-size: 0.72em; color: #999; line-height: 1.5; }
+
+  /* ── 案J: 写真ヘッダー＋英語サブ ── */
+  .dJ-header { border-radius: 8px; overflow: hidden; margin: 0 -20px 0; position: relative; height: 90px; background: linear-gradient(135deg,#0f3d27,#2a9d6e); }
+  .dJ-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 10px 16px; }
+  .dJ-en { font-size: 0.62em; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+  .dJ-title { font-size: 1.1em; font-weight: 900; color: #fff; }
+</style>
+</head>
+<body>
+<h1>都市セクションヘッダー vol.2 — 10案（英語表記あり）</h1>
+<div class="grid">
+
+  <!-- 案A -->
+  <div class="case">
+    <div class="case-label">案A ▸ 番号＋日英2段</div>
+    <div class="dA-header">
+      <div class="dA-num">01</div>
+      <div>
+        <div class="dA-title">クアラルンプール</div>
+        <div class="dA-en">Kuala Lumpur</div>
+        <div class="dA-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      </div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案B -->
+  <div class="case">
+    <div class="case-label">案B ▸ 中央線に日英が乗る</div>
+    <div class="dB-header">
+      <hr class="dB-line">
+      <div class="dB-title-wrap">
+        <div class="dB-pill">
+          <div class="dB-title">クアラルンプール</div>
+          <div class="dB-en">Kuala Lumpur</div>
+        </div>
+      </div>
+      <div class="dB-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案C -->
+  <div class="case" style="padding-left:0;padding-right:0;padding-top:0;">
+    <div style="padding:16px 20px 6px;"><div class="case-label">案C ▸ グラデ背景＋英語上・日本語大</div></div>
+    <div class="dC-header">
+      <div class="dC-en">Kuala Lumpur</div>
+      <div class="dC-title">クアラルンプール</div>
+      <div class="dC-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards" style="margin:10px 20px;"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案D -->
+  <div class="case">
+    <div class="case-label">案D ▸ 緑ドット＋日英横並び</div>
+    <div class="dD-header">
+      <div class="dD-top">
+        <div class="dD-dot"></div>
+        <div class="dD-title">クアラルンプール</div>
+        <div class="dD-en">Kuala Lumpur</div>
+      </div>
+      <div class="dD-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案E -->
+  <div class="case">
+    <div class="case-label">案E ▸ 上下2本線＋英語上</div>
+    <div class="dE-header">
+      <div class="dE-en">Kuala Lumpur</div>
+      <div class="dE-title">クアラルンプール</div>
+      <div class="dE-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案F -->
+  <div class="case">
+    <div class="case-label">案F ▸ ラベル＋大見出し＋英語</div>
+    <div class="dF-header">
+      <div class="dF-tag">▸ Area 01</div>
+      <div class="dF-title">クアラルンプール</div>
+      <div class="dF-en">Kuala Lumpur</div>
+      <div class="dF-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案G -->
+  <div class="case">
+    <div class="case-label">案G ▸ 緑トップライン＋英語上・日本語下</div>
+    <div class="dG-header">
+      <div class="dG-en">Kuala Lumpur</div>
+      <div class="dG-title">クアラルンプール</div>
+      <div class="dG-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案H -->
+  <div class="case" style="padding:0;">
+    <div style="padding:16px 20px 6px;"><div class="case-label">案H ▸ 全幅グレー帯＋英語サブ</div></div>
+    <div class="dH-wrap">
+      <div class="dH-en">Kuala Lumpur</div>
+      <div class="dH-title">クアラルンプール</div>
+      <div class="dH-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards" style="margin:0 20px 20px;"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案I -->
+  <div class="case">
+    <div class="case-label">案I ▸ アイコン横並び＋日英2段</div>
+    <div class="dI-header">
+      <div class="dI-icon">🏙️</div>
+      <div>
+        <div class="dI-en">Kuala Lumpur</div>
+        <div class="dI-title">クアラルンプール</div>
+        <div class="dI-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      </div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- 案J -->
+  <div class="case" style="padding:0;">
+    <div style="padding:16px 20px 6px;"><div class="case-label">案J ▸ 写真ヘッダー＋英語・日本語重ね</div></div>
+    <div class="dJ-header">
+      <div class="dJ-overlay">
+        <div class="dJ-en">Kuala Lumpur</div>
+        <div class="dJ-title">クアラルンプール</div>
+      </div>
+    </div>
+    <div class="dummy-cards" style="margin:10px 20px 20px;"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+</div>
+</body>
+</html>

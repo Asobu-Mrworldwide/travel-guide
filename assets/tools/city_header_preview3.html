@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>都市ヘッダー 案A・E派生 10案</title>
+<style>
+  :root { --green: #2a9d6e; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f0f2f5; padding: 24px; }
+  h1 { font-size: 1em; color: #555; margin-bottom: 6px; }
+  .subtitle { font-size: 0.78em; color: #aaa; margin-bottom: 22px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media(max-width:680px){ .grid { grid-template-columns: 1fr; } }
+
+  .case { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); overflow: hidden; }
+  .case-label { font-size: 0.65em; font-weight: 700; color: #ccc; letter-spacing: 1px; margin-bottom: 14px; }
+  .case-base { font-size: 0.6em; color: #bbb; margin-bottom: 12px; }
+
+  .dummy-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+  .dummy-card { background: #f6f6f6; border: 1px solid #e8e8e8; border-radius: 8px; height: 52px; }
+
+  /* ════════════ 案A派生 ════════════ */
+
+  /* A-1: 原案に近い・数字グレー */
+  .a1 { display: flex; align-items: center; gap: 12px; padding: 8px 0 12px; border-bottom: 1px solid #e8e8e8; }
+  .a1-num { font-size: 2.4em; font-weight: 900; color: #e4e4e4; line-height: 1; letter-spacing: -2px; flex-shrink: 0; }
+  .a1-title { font-size: 1.1em; font-weight: 900; color: #1a1a1a; }
+  .a1-en { font-size: 0.68em; color: #bbb; letter-spacing: 1px; margin-top: 2px; }
+  .a1-desc { font-size: 0.72em; color: #999; margin-top: 4px; }
+
+  /* A-2: 数字を緑に */
+  .a2 { display: flex; align-items: center; gap: 12px; padding: 8px 0 12px; border-bottom: 1px solid #e8e8e8; }
+  .a2-num { font-size: 2.4em; font-weight: 900; color: var(--green); opacity: 0.25; line-height: 1; letter-spacing: -2px; flex-shrink: 0; }
+  .a2-title { font-size: 1.1em; font-weight: 900; color: #1a1a1a; }
+  .a2-en { font-size: 0.68em; color: var(--green); letter-spacing: 1px; margin-top: 2px; font-weight: 600; }
+  .a2-desc { font-size: 0.72em; color: #999; margin-top: 4px; }
+
+  /* A-3: 数字大きく・縦線で区切り */
+  .a3 { display: flex; align-items: stretch; gap: 0; padding: 8px 0 12px; border-bottom: 1px solid #e8e8e8; }
+  .a3-num { font-size: 2em; font-weight: 900; color: #e8e8e8; line-height: 1; letter-spacing: -2px; flex-shrink: 0; padding-right: 14px; border-right: 2px solid #e8e8e8; margin-right: 14px; display: flex; align-items: center; }
+  .a3-title { font-size: 1.05em; font-weight: 900; color: #1a1a1a; margin-bottom: 2px; }
+  .a3-en { font-size: 0.67em; color: #bbb; letter-spacing: 1px; margin-bottom: 4px; }
+  .a3-desc { font-size: 0.71em; color: #999; }
+
+  /* A-4: 数字なし・英語を大きく前面に */
+  .a4 { padding: 8px 0 12px; border-bottom: 1px solid #e8e8e8; }
+  .a4-en { font-size: 1.15em; font-weight: 900; color: #e4e4e4; letter-spacing: 1px; line-height: 1; margin-bottom: 2px; }
+  .a4-title { font-size: 1.05em; font-weight: 900; color: #1a1a1a; margin-bottom: 4px; }
+  .a4-desc { font-size: 0.72em; color: #999; }
+
+  /* A-5: 番号＋緑タグ右に */
+  .a5 { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0 12px; border-bottom: 1px solid #e8e8e8; }
+  .a5-num { font-size: 1.5em; font-weight: 900; color: #e4e4e4; line-height: 1.2; flex-shrink: 0; letter-spacing: -1px; }
+  .a5-body { flex: 1; }
+  .a5-top { display: flex; align-items: baseline; gap: 8px; }
+  .a5-title { font-size: 1.05em; font-weight: 900; color: #1a1a1a; }
+  .a5-en { font-size: 0.65em; color: #bbb; letter-spacing: 1px; }
+  .a5-desc { font-size: 0.71em; color: #999; margin-top: 4px; }
+
+  /* ════════════ 案E派生 ════════════ */
+
+  /* E-1: 原案・上下1px線 */
+  .e1 { border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 10px 0; margin-bottom: 0; }
+  .e1-en { font-size: 0.63em; color: #bbb; letter-spacing: 1.5px; margin-bottom: 2px; }
+  .e1-title { font-size: 1.08em; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
+  .e1-desc { font-size: 0.72em; color: #999; }
+
+  /* E-2: 上線を緑に太く */
+  .e2 { border-top: 2.5px solid var(--green); border-bottom: 1px solid #e0e0e0; padding: 10px 0; }
+  .e2-en { font-size: 0.63em; color: var(--green); letter-spacing: 1.5px; font-weight: 700; margin-bottom: 2px; }
+  .e2-title { font-size: 1.08em; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
+  .e2-desc { font-size: 0.72em; color: #999; }
+
+  /* E-3: 上線のみ・下線なし */
+  .e3 { border-top: 1px solid #ccc; padding: 10px 0 12px; }
+  .e3-en { font-size: 0.63em; color: #bbb; letter-spacing: 1.5px; margin-bottom: 2px; }
+  .e3-title { font-size: 1.08em; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
+  .e3-desc { font-size: 0.72em; color: #999; }
+
+  /* E-4: 英語と日本語を横並び・下線 */
+  .e4 { border-bottom: 1px solid #e0e0e0; padding: 6px 0 10px; }
+  .e4-top { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .e4-title { font-size: 1.08em; font-weight: 900; color: #1a1a1a; }
+  .e4-en { font-size: 0.7em; color: #bbb; letter-spacing: 1px; }
+  .e4-desc { font-size: 0.72em; color: #999; }
+
+  /* E-5: 上下線の間に背景色 */
+  .e5 { border-top: 1px solid #d8d8d8; border-bottom: 1px solid #d8d8d8; background: #fafafa; padding: 10px 12px; margin: 0 -12px; }
+  .e5-en { font-size: 0.63em; color: #bbb; letter-spacing: 1.5px; margin-bottom: 2px; }
+  .e5-title { font-size: 1.08em; font-weight: 900; color: #1a1a1a; margin-bottom: 3px; }
+  .e5-desc { font-size: 0.72em; color: #888; }
+</style>
+</head>
+<body>
+<h1>案A・E 派生 10案</h1>
+<p class="subtitle">上5つ → 案A（番号系）の派生　／　下5つ → 案E（上下線系）の派生</p>
+<div class="grid">
+
+  <!-- A-1 -->
+  <div class="case">
+    <div class="case-label">A-1 ▸ 数字グレー・下線（原案寄り）</div>
+    <div class="a1">
+      <div class="a1-num">01</div>
+      <div>
+        <div class="a1-title">クアラルンプール</div>
+        <div class="a1-en">Kuala Lumpur</div>
+        <div class="a1-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      </div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- A-2 -->
+  <div class="case">
+    <div class="case-label">A-2 ▸ 数字を薄緑・英語も緑</div>
+    <div class="a2">
+      <div class="a2-num">01</div>
+      <div>
+        <div class="a2-title">クアラルンプール</div>
+        <div class="a2-en">Kuala Lumpur</div>
+        <div class="a2-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      </div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- A-3 -->
+  <div class="case">
+    <div class="case-label">A-3 ▸ 縦線で数字と本文を仕切る</div>
+    <div class="a3">
+      <div class="a3-num">01</div>
+      <div>
+        <div class="a3-en">Kuala Lumpur</div>
+        <div class="a3-title">クアラルンプール</div>
+        <div class="a3-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      </div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- A-4 -->
+  <div class="case">
+    <div class="case-label">A-4 ▸ 英語を薄く大きく背後に</div>
+    <div class="a4">
+      <div class="a4-en">Kuala Lumpur</div>
+      <div class="a4-title">クアラルンプール</div>
+      <div class="a4-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- A-5 -->
+  <div class="case">
+    <div class="case-label">A-5 ▸ 番号小さめ・日英横並び</div>
+    <div class="a5">
+      <div class="a5-num">01</div>
+      <div class="a5-body">
+        <div class="a5-top">
+          <div class="a5-title">クアラルンプール</div>
+          <div class="a5-en">Kuala Lumpur</div>
+        </div>
+        <div class="a5-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      </div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- E-1 -->
+  <div class="case">
+    <div class="case-label">E-1 ▸ 上下1px線・英語上（原案寄り）</div>
+    <div class="e1">
+      <div class="e1-en">Kuala Lumpur</div>
+      <div class="e1-title">クアラルンプール</div>
+      <div class="e1-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- E-2 -->
+  <div class="case">
+    <div class="case-label">E-2 ▸ 上線を緑・英語も緑</div>
+    <div class="e2">
+      <div class="e2-en">Kuala Lumpur</div>
+      <div class="e2-title">クアラルンプール</div>
+      <div class="e2-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- E-3 -->
+  <div class="case">
+    <div class="case-label">E-3 ▸ 上線のみ・下線なし</div>
+    <div class="e3">
+      <div class="e3-en">Kuala Lumpur</div>
+      <div class="e3-title">クアラルンプール</div>
+      <div class="e3-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- E-4 -->
+  <div class="case">
+    <div class="case-label">E-4 ▸ 日英横並び・下線のみ</div>
+    <div class="e4">
+      <div class="e4-top">
+        <div class="e4-title">クアラルンプール</div>
+        <div class="e4-en">Kuala Lumpur</div>
+      </div>
+      <div class="e4-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- E-5 -->
+  <div class="case">
+    <div class="case-label">E-5 ▸ 上下線＋ごく薄いグレー背景</div>
+    <div class="e5">
+      <div class="e5-en">Kuala Lumpur</div>
+      <div class="e5-title">クアラルンプール</div>
+      <div class="e5-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+</div>
+</body>
+</html>

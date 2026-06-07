@@ -40,7 +40,7 @@
 
 /* セクション間隔（全タブ共通） */
 #basic h2,#spots h2,#food h2,#course h2,#season h2,
-#budget h2,#practical h2,#manner h2,#phrases h2,#transport h2{margin-top:36px}
+#budget h2,#practical h2,#manner h2,#phrases h2,#transport h2{margin-top:0}
 #basic .qs-row{margin-top:28px}
 </style>
 </head>
@@ -75,7 +75,7 @@
 <section id="basic" class="active">
 {{custom_top_basic}}
   <div style="margin-bottom:14px;line-height:1.8">
-    <h2 style="margin:0 0 10px;font-size:1em">{{overview.country_question}}</h2>
+    <h2 style="margin:0 0 10px">{{overview.country_question}}</h2>
     <p style="font-size:0.88em;color:var(--text)">{{overview.description_html}}</p>
     <div style="margin-top:32px;margin-bottom:32px;text-align:center">
       {{overview.flag_html}}

@@ -49,7 +49,7 @@ body{
 .grid2 > *,.grid3 > *,.qs-row > *,.top3-grid > *,.item-grid > *{min-width:0}
 
 /* 見出し */
-h2{font-size:1.05em;font-weight:900;color:#1a1a1a;border-left:4px solid var(--green);padding-left:11px;margin:28px 0 14px;letter-spacing:0.02em}
+h2{font-size:1.45em;font-weight:900;color:#1a1a1a;border-left:4px solid var(--green);padding-left:11px;margin:10px 0 14px;letter-spacing:0.02em}
 h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 
 /* ボタン共通 */
@@ -93,7 +93,7 @@ nav button:hover{color:var(--green);border-bottom-color:var(--green)}
 
 /* セクション切り替えアニメーション */
 section{display:none;animation:fadeIn 0.25s}
-section.active{display:block;padding-top:8px}
+section.active{display:block;padding-top:16px}
 @keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 
 /* ベストシーズン（全国共通） */
@@ -138,6 +138,7 @@ section.active{display:block;padding-top:8px}
 .tab-cta-btn:hover{background:#008a5a}
 .filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
 .filter-group{margin-bottom:8px}
+#food-grid,#spots-grid{margin-top:20px}
 .filter-label{font-size:0.7em;font-weight:700;color:#999;letter-spacing:0.06em;margin-bottom:5px;text-transform:uppercase}
 .filter-btn{background:#f0f0f0;border:2px solid transparent;border-radius:20px;padding:6px 13px;font-size:0.82em;font-weight:600;cursor:pointer;color:#555;transition:all 0.2s}
 .filter-btn:hover{background:#dde8e2;color:var(--green)}
@@ -217,7 +218,7 @@ section.active{display:block;padding-top:8px}
 .bd-lbl{font-size:0.78em;color:var(--sub);margin-bottom:4px}
 .bd-val{font-weight:700;font-size:1em}
 .bd-note{font-size:0.76em;color:var(--sub);margin-top:4px;line-height:1.5}
-.bd-cmp{background:#f5f7f5;border-radius:8px;padding:10px 12px;margin-top:10px}
+.bd-cmp{padding:10px 0;margin-top:10px}
 
 /* 旅の実用情報カード */
 .prac-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
@@ -309,8 +310,8 @@ section.active{display:block;padding-top:8px}
 .ci-spots:hover{opacity:0.7}
 
 /* 都市セクションヘッダー */
-.city-section-header{grid-column:1/-1;padding:14px 0;border-top:2px solid #d0d0d0;margin-top:6px}
-.csh-title{font-size:1em;font-weight:900;color:var(--green);margin-bottom:3px}
+.city-section-header{grid-column:1/-1;padding:20px 0 10px;margin-top:6px;border-top:2px solid var(--green)}
+.csh-title{font-size:1.15em;font-weight:900;color:#222;margin-bottom:5px}
 .csh-desc{font-size:0.8em;color:#666;margin-bottom:10px;line-height:1.5}
 .csh-img{display:block;width:calc(100% + 28px);margin:-12px -14px 12px;height:140px;object-fit:cover;border-radius:8px 8px 0 0}
 .csh-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}

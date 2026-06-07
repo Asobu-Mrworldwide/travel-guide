@@ -28,11 +28,11 @@
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{display:none}
-.spot-img-wrap{margin-top:auto;height:150px;margin-left:-18px;margin-right:-18px;margin-bottom:-18px;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat}
+.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat}
 .spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
 .spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
-.spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px;margin-bottom:-20px}
-#spots-grid .item-card.has-spot-img{padding-bottom:18px}
+.spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
+#spots-grid .item-card.has-spot-img{padding-bottom:0 !important}
 #spots-grid .item-card.has-spot-img .desc{flex:1}
 
 /* クイックスペックカード（基本情報タブ） */
@@ -40,7 +40,7 @@
 
 /* セクション間隔（全タブ共通） */
 #basic h2,#spots h2,#food h2,#course h2,#season h2,
-#budget h2,#practical h2,#manner h2,#phrases h2,#transport h2{margin-top:36px}
+#budget h2,#practical h2,#manner h2,#phrases h2,#transport h2{margin-top:0}
 #basic .qs-row{margin-top:28px}
 </style>
 </head>
@@ -75,7 +75,7 @@
 <section id="basic" class="active">
 
   <div style="margin-bottom:14px;line-height:1.8">
-    <h2 style="margin:0 0 10px;font-size:1em">タイってどんな国？</h2>
+    <h2 style="margin:0 0 10px">タイってどんな国？</h2>
     <p style="font-size:0.88em;color:var(--text)">東南アジアの中心に位置するタイは、「微笑みの国」として知られる<strong>仏教国</strong>。黄金の寺院群、熱帯ジャングル、白砂のリゾートビーチ、活気あふれる屋台グルメが一度に楽しめる、年間3,000万人以上が訪れる人気観光地です。</p>
     <div style="margin-top:32px;margin-bottom:32px;text-align:center">
       <div style="background:linear-gradient(to bottom,#a51931 16.67%,#fff 16.67% 33.33%,#2d4480 33.33% 66.67%,#fff 66.67% 83.33%,#a51931 83.33%);border-radius:6px;height:100px;width:160px;display:inline-block;border:1px solid #eee;"></div>
@@ -212,8 +212,14 @@
           a.href = 'https://maps.google.com/?q=' + encodeURIComponent(name + ' タイ');
           a.target = '_blank';
           a.textContent = 'Googleマップ →';
-          a.className = 'map-btn';
-          card.appendChild(a);
+          a.className = 'spot-map-btn';
+          const wrap = card.querySelector('.spot-img-wrap');
+          if (wrap) {
+            wrap.appendChild(a);
+          } else {
+            a.className = 'map-btn';
+            card.appendChild(a);
+          }
         });
       });
 

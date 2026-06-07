@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>都市ヘッダー パターン背景 10案</title>
+<style>
+  :root { --green: #2a9d6e; --green-dark: #1a6b48; --green-pale: #edf7f2; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #eef0f3; padding: 24px; }
+  h1 { font-size: 1em; color: #555; margin-bottom: 6px; }
+  .subtitle { font-size: 0.78em; color: #aaa; margin-bottom: 22px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media(max-width:680px){ .grid { grid-template-columns: 1fr; } }
+
+  .case { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+  .case-label { font-size: 0.63em; font-weight: 700; color: #ccc; letter-spacing: 1px; padding: 14px 18px 8px; }
+
+  .dummy-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 18px 18px; }
+  .dummy-card { background: #f6f6f6; border: 1px solid #e8e8e8; border-radius: 8px; height: 52px; }
+
+  /* ── 共通テキストスタイル ── */
+  .en  { font-size: 0.62em; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+  .ttl { font-size: 1.1em; font-weight: 900; margin-bottom: 4px; line-height: 1.2; }
+  .dsc { font-size: 0.72em; line-height: 1.6; }
+
+  /* ════ P1: 細かいドット（緑） ════ */
+  .p1 {
+    padding: 18px 18px 16px;
+    background-color: var(--green-dark);
+    background-image: radial-gradient(circle, rgba(255,255,255,0.18) 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+  .p1 .en  { color: rgba(255,255,255,0.5); }
+  .p1 .ttl { color: #fff; }
+  .p1 .dsc { color: rgba(255,255,255,0.72); }
+
+  /* ════ P2: 斜めストライプ（緑淡） ════ */
+  .p2 {
+    padding: 18px 18px 16px;
+    background-color: var(--green-pale);
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 6px,
+      rgba(42,157,110,0.12) 6px,
+      rgba(42,157,110,0.12) 7px
+    );
+  }
+  .p2 .en  { color: var(--green); }
+  .p2 .ttl { color: #1a1a1a; }
+  .p2 .dsc { color: #555; }
+
+  /* ════ P3: グリッド（ダーク） ════ */
+  .p3 {
+    padding: 18px 18px 16px;
+    background-color: #1a2520;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .p3 .en  { color: rgba(42,157,110,0.7); }
+  .p3 .ttl { color: #fff; }
+  .p3 .dsc { color: rgba(255,255,255,0.6); }
+
+  /* ════ P4: 横ストライプ（白地） ════ */
+  .p4 {
+    padding: 18px 18px 16px;
+    background-color: #fff;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 9px,
+      rgba(42,157,110,0.08) 9px,
+      rgba(42,157,110,0.08) 10px
+    );
+    border-bottom: 2px solid var(--green);
+  }
+  .p4 .en  { color: var(--green); }
+  .p4 .ttl { color: #1a1a1a; }
+  .p4 .dsc { color: #666; }
+
+  /* ════ P5: 大きいドット（淡） ════ */
+  .p5 {
+    padding: 18px 18px 16px;
+    background-color: #f7faf8;
+    background-image: radial-gradient(circle, rgba(42,157,110,0.15) 2px, transparent 2px);
+    background-size: 16px 16px;
+    border-top: 3px solid var(--green);
+  }
+  .p5 .en  { color: var(--green); font-weight: 700; }
+  .p5 .ttl { color: #1a1a1a; }
+  .p5 .dsc { color: #666; }
+
+  /* ════ P6: クロスハッチ（ダーク緑） ════ */
+  .p6 {
+    padding: 18px 18px 16px;
+    background-color: var(--green-dark);
+    background-image:
+      repeating-linear-gradient(45deg,  rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 0, transparent 50%),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 0, transparent 50%);
+    background-size: 12px 12px;
+  }
+  .p6 .en  { color: rgba(255,255,255,0.45); }
+  .p6 .ttl { color: #fff; }
+  .p6 .dsc { color: rgba(255,255,255,0.68); }
+
+  /* ════ P7: 波線（白地） ════ */
+  .p7 {
+    padding: 18px 18px 16px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='10'%3E%3Cpath d='M0 5 Q5 0 10 5 Q15 10 20 5' fill='none' stroke='%232a9d6e' stroke-width='0.6' stroke-opacity='0.2'/%3E%3C/svg%3E");
+    background-size: 20px 10px;
+    border-left: 4px solid var(--green);
+    padding-left: 16px;
+  }
+  .p7 .en  { color: var(--green); }
+  .p7 .ttl { color: #1a1a1a; }
+  .p7 .dsc { color: #666; }
+
+  /* ════ P8: 右下グラデ＋ドット ════ */
+  .p8 {
+    padding: 18px 18px 16px;
+    background-color: #0f3d27;
+    background-image:
+      radial-gradient(circle at 90% 110%, rgba(42,157,110,0.6) 0%, transparent 55%),
+      radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 100% 100%, 12px 12px;
+  }
+  .p8 .en  { color: rgba(255,255,255,0.4); }
+  .p8 .ttl { color: #fff; }
+  .p8 .dsc { color: rgba(255,255,255,0.65); }
+
+  /* ════ P9: 番号＋斜めストライプ（A系） ════ */
+  .p9-wrap {
+    padding: 14px 18px 14px;
+    background-color: #f8f8f8;
+    background-image: repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 5px,
+      rgba(0,0,0,0.03) 5px,
+      rgba(0,0,0,0.03) 6px
+    );
+    border-bottom: 1px solid #e0e0e0;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .p9-num { font-size: 2.2em; font-weight: 900; color: #ddd; line-height: 1; letter-spacing: -2px; flex-shrink: 0; }
+  .p9 .en  { color: #bbb; }
+  .p9 .ttl { color: #1a1a1a; }
+  .p9 .dsc { color: #888; }
+
+  /* ════ P10: 番号＋ドット（A系・ダーク） ════ */
+  .p10-wrap {
+    padding: 14px 18px 14px;
+    background-color: #1e2a24;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 10px 10px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .p10-num { font-size: 2.2em; font-weight: 900; color: rgba(42,157,110,0.3); line-height: 1; letter-spacing: -2px; flex-shrink: 0; }
+  .p10 .en  { color: rgba(42,157,110,0.6); }
+  .p10 .ttl { color: #fff; }
+  .p10 .dsc { color: rgba(255,255,255,0.55); }
+</style>
+</head>
+<body>
+<h1>都市ヘッダー — パターン背景 10案</h1>
+<p class="subtitle">CSS背景パターン（ドット・ストライプ・グリッド・波線など）</p>
+<div class="grid">
+
+  <!-- P1 -->
+  <div class="case">
+    <div class="case-label">P1 ▸ 細かいドット（緑ダーク）</div>
+    <div class="p1">
+      <div class="en">Kuala Lumpur</div>
+      <div class="ttl">クアラルンプール</div>
+      <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P2 -->
+  <div class="case">
+    <div class="case-label">P2 ▸ 斜めストライプ（白地・淡緑）</div>
+    <div class="p2">
+      <div class="en">Kuala Lumpur</div>
+      <div class="ttl">クアラルンプール</div>
+      <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P3 -->
+  <div class="case">
+    <div class="case-label">P3 ▸ グリッド（ダーク）</div>
+    <div class="p3">
+      <div class="en">Kuala Lumpur</div>
+      <div class="ttl">クアラルンプール</div>
+      <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P4 -->
+  <div class="case">
+    <div class="case-label">P4 ▸ 横ストライプ＋緑下線（白地）</div>
+    <div class="p4">
+      <div class="en">Kuala Lumpur</div>
+      <div class="ttl">クアラルンプール</div>
+      <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P5 -->
+  <div class="case">
+    <div class="case-label">P5 ▸ 大きめドット＋緑上線（白地）</div>
+    <div class="p5">
+      <div class="en">Kuala Lumpur</div>
+      <div class="ttl">クアラルンプール</div>
+      <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P6 -->
+  <div class="case">
+    <div class="case-label">P6 ▸ クロスハッチ（緑ダーク）</div>
+    <div class="p6">
+      <div class="en">Kuala Lumpur</div>
+      <div class="ttl">クアラルンプール</div>
+      <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P7 -->
+  <div class="case">
+    <div class="case-label">P7 ▸ 波線パターン＋左ライン（白地）</div>
+    <div class="p7">
+      <div class="en">Kuala Lumpur</div>
+      <div class="ttl">クアラルンプール</div>
+      <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P8 -->
+  <div class="case">
+    <div class="case-label">P8 ▸ ドット＋右下グラデ（ダーク）</div>
+    <div class="p8">
+      <div class="en">Kuala Lumpur</div>
+      <div class="ttl">クアラルンプール</div>
+      <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P9 -->
+  <div class="case">
+    <div class="case-label">P9 ▸ 番号＋斜めストライプ（A系・淡）</div>
+    <div class="p9-wrap">
+      <div class="p9-num">01</div>
+      <div class="p9">
+        <div class="en">Kuala Lumpur</div>
+        <div class="ttl">クアラルンプール</div>
+        <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      </div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+  <!-- P10 -->
+  <div class="case">
+    <div class="case-label">P10 ▸ 番号＋ドット（A系・ダーク）</div>
+    <div class="p10-wrap">
+      <div class="p10-num">01</div>
+      <div class="p10">
+        <div class="en">Kuala Lumpur</div>
+        <div class="ttl">クアラルンプール</div>
+        <div class="dsc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      </div>
+    </div>
+    <div class="dummy-cards"><div class="dummy-card"></div><div class="dummy-card"></div></div>
+  </div>
+
+</div>
+</body>
+</html>
