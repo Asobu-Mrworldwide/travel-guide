@@ -37,7 +37,7 @@ body{
 .container{max-width:980px;margin:0 auto;padding:20px 16px;overflow-x:hidden}
 
 /* カード */
-.card{background:var(--card);border-radius:14px;padding:18px;border:1px solid #e4eaf5;box-shadow:none}
+.card{background:var(--card);border-radius:14px;padding:18px;border:1px solid #c8d0e0;box-shadow:none}
 .card .lbl{font-size:0.78em;color:var(--sub);margin-bottom:4px;letter-spacing:0.03em}
 .card .val{font-size:1em;font-weight:700;line-height:1.4}
 .card .note{font-size:0.8em;color:var(--sub);margin-top:3px;font-weight:400;line-height:1.6}
@@ -115,7 +115,7 @@ section.active{display:block;padding-top:8px}
 
 /* 観光スポット・グルメカード（全国共通） */
 .item-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-.item-card{background:#fff;border-radius:14px;padding:18px;border:1px solid #e4eaf5;box-shadow:none;display:flex;flex-direction:column;position:relative}
+.item-card{background:#fff;border-radius:14px;padding:18px;border:1px solid #c8d0e0;box-shadow:none;display:flex;flex-direction:column;position:relative}
 .item-card.spot{border-left:none}
 .item-card .ico{font-size:1.8em;margin-bottom:4px}
 .item-card .num{font-size:0.8em;font-weight:700;color:var(--red);margin-bottom:2px}
@@ -164,7 +164,7 @@ section.active{display:block;padding-top:8px}
 .see-more{display:inline-block;font-size:0.78em;color:var(--green);font-weight:700;margin-bottom:16px;cursor:pointer;background:none;border:none;padding:0;text-decoration:underline}
 
 /* フレーズテーブル（全国共通） */
-.phrase-tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e4eaf5;box-shadow:none}
+.phrase-tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #c8d0e0;box-shadow:none}
 .phrase-tbl th{background:var(--green);color:#fff;padding:10px 12px;font-size:0.8em;text-align:left}
 .phrase-tbl td{padding:9px 12px;border-bottom:1px solid #f0f0f0;vertical-align:middle}
 .phrase-tbl tr:last-child td{border-bottom:none}
@@ -200,7 +200,7 @@ section.active{display:block;padding-top:8px}
 
 /* マナー */
 .manner-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.manner-card{background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #e4eaf5;box-shadow:none}
+.manner-card{background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #c8d0e0;box-shadow:none}
 .manner-card .m-ico{font-size:1.4em;margin-bottom:6px}
 .manner-card .m-title{font-size:0.9em;font-weight:700;margin-bottom:4px}
 .manner-card .m-desc{font-size:0.82em;color:var(--sub);line-height:1.75}
@@ -221,7 +221,7 @@ section.active{display:block;padding-top:8px}
 
 /* 旅の実用情報カード */
 .prac-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-.prac-card{background:#fff;border-radius:14px;padding:18px 12px;border:1px solid #e4eaf5;box-shadow:none;text-align:center}
+.prac-card{background:#fff;border-radius:14px;padding:18px 12px;border:1px solid #c8d0e0;box-shadow:none;text-align:center}
 .prac-card .p-ico{font-size:2em;margin-bottom:6px}
 .prac-card .p-title{font-size:0.82em;color:var(--sub);margin-bottom:4px}
 .prac-card .p-val{font-size:0.95em;font-weight:700;color:var(--text)}
@@ -279,7 +279,7 @@ section.active{display:block;padding-top:8px}
 .qs-link{display:block;margin-top:6px;margin-left:auto;font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;padding:0;cursor:pointer;white-space:nowrap;width:fit-content;text-decoration:underline}
 .qs-link:hover{opacity:0.7}
 .qs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
-.qs-card{background:var(--card);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;border:1px solid #e4eaf5;box-shadow:none}
+.qs-card{background:var(--card);border-radius:12px;padding:12px 14px;display:flex;align-items:center;gap:10px;border:1px solid #c8d0e0;box-shadow:none}
 .qs-ico{font-size:1.4em;flex-shrink:0}
 .qs-card > div:last-child{flex:1;min-width:0}
 .qs-lbl{font-size:0.7em;color:var(--sub)}
@@ -287,7 +287,7 @@ section.active{display:block;padding-top:8px}
 
 /* TOP3 */
 .top3-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
-.top3-card{background:var(--card);border-radius:12px;padding:14px;border:1px solid #e4eaf5;border-top:3px solid var(--green);box-shadow:none}
+.top3-card{background:var(--card);border-radius:12px;padding:14px;border:1px solid #c8d0e0;border-top:3px solid var(--green);box-shadow:none}
 .top3-card.food-card{border-top-color:var(--red)}
 .t3-num{font-size:0.7em;font-weight:700;color:var(--sub);margin-bottom:3px}
 .t3-ico{font-size:1.8em;margin-bottom:4px}
@@ -309,7 +309,7 @@ section.active{display:block;padding-top:8px}
 .ci-spots:hover{opacity:0.7}
 
 /* 都市セクションヘッダー */
-.city-section-header{grid-column:1/-1;background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #e4eaf5;border-top:4px solid var(--green);margin-top:6px;box-shadow:none}
+.city-section-header{grid-column:1/-1;background:#fff;border-radius:14px;padding:14px 16px;border:1px solid #c8d0e0;border-top:4px solid var(--green);margin-top:6px;box-shadow:none}
 .csh-title{font-size:1em;font-weight:900;color:var(--green);margin-bottom:3px}
 .csh-desc{font-size:0.8em;color:#666;margin-bottom:10px;line-height:1.5}
 .csh-img{display:block;width:calc(100% + 28px);margin:-12px -14px 12px;height:140px;object-fit:cover;border-radius:8px 8px 0 0}
