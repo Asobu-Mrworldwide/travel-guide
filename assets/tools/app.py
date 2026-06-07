@@ -233,14 +233,19 @@ with col_update:
         else:
             st.warning("\n".join(_log))
 
-# カテゴリ選択（全タブ共通）
+# カテゴリ選択（全タブ共通）— 起動時に前回値を復元
+_cat_options = ["🍜 グルメ", "🏔️ ヒーロー画像", "🗺️ 観光スポット"]
+_last_cat    = last_state.get("category", _cat_options[0])
+if "gen_category_global" not in st.session_state:
+    st.session_state["gen_category_global"] = _last_cat if _last_cat in _cat_options else _cat_options[0]
 gen_category = st.radio(
     "カテゴリ",
-    ["🍜 グルメ", "🏔️ ヒーロー画像", "🗺️ 観光スポット"],
+    _cat_options,
     horizontal=True,
     label_visibility="collapsed",
     key="gen_category_global",
 )
+save_last_state({"category": gen_category})
 
 # gen_results 管理（初回ロード復元 / カテゴリ切り替えリセット）
 if "gen_results" not in st.session_state:
@@ -909,11 +914,14 @@ with tab2:
                 f"{'✅' if _spot_has_img(e) else '❌'} {e['city_name']} / {e['spot'].get('name','')}"
                 for e in _sorted_spots
             ]
-            sel_spot_label = st.selectbox("スポットを選択", _spot_labels, key="spot_sel")
+            _last_spot    = last_state.get("spot") if last_state.get("country") == country_id else None
+            _default_spot = next((i for i, lbl in enumerate(_spot_labels) if _last_spot and _last_spot in lbl), 0)
+            sel_spot_label = st.selectbox("スポットを選択", _spot_labels, index=_default_spot, key="spot_sel")
             sel_spot_entry = _sorted_spots[_spot_labels.index(sel_spot_label)]
             sel_spot       = sel_spot_entry["spot"]
             spot_name      = sel_spot.get("name", "")
             spot_city_name = sel_spot_entry["city_name"]
+            save_last_state({"country": country_id, "spot": spot_name, "tab": 1})
             _safe_name = "".join(c if c.isalnum() or c in "-_" else "_" for c in spot_name)
             spot_prompt_key = f"spot_prompt_{country_id}_{sel_spot_entry['city_id']}_{_safe_name}"
             json_prompt = sel_spot.get("prompt_en", "")
