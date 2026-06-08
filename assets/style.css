@@ -102,9 +102,16 @@ section.active{display:block;padding-top:0}
 .month-lbl{font-size:0.72em;color:var(--sub);margin-bottom:3px;font-weight:600}
 .month-dot{width:100%;height:62px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.9em;font-weight:700;flex-direction:column;gap:2px;text-align:center}
 .md-t{font-size:0.95em;font-weight:700;line-height:1;text-align:center;width:100%}
-.t-hot{background:linear-gradient(160deg,#ff5000,#ff9000);color:#5a1400}
-.t-warm{background:linear-gradient(160deg,#ff8400,#ffb200);color:#5a2800}
-.t-mild{background:linear-gradient(160deg,#ffb800,#ffe060);color:#4a3800}
+.t-freeze{background:#f5ede0;color:#8a7050}
+.t-cold{background:#f5e4cc;color:#7a5830}
+.t-cool{background:#f5d8a0;color:#6a4010}
+.t-mild{background:#f5c870;color:#5a3000}
+.t-warm{background:#f5b440;color:#4a2800}
+.t-hot1{background:#f5a020;color:#3a2000}
+.t-hot2{background:#f07830;color:#3a1400}
+.t-hot3{background:#e05020;color:#fff}
+.t-extreme{background:#c83010;color:#fff}
+.t-extreme{background:linear-gradient(160deg,#c83030,#d85050);color:#fff}
 .city-season{margin-bottom:14px}
 .city-name{font-size:0.85em;font-weight:700;color:var(--green);margin-bottom:4px}
 .season-mini{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin:8px 0 6px}

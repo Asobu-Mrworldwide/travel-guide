@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>温度グラデーション比較</title>
+<style>
+body { font-family: sans-serif; padding: 30px; background: #f5f5f5; }
+h2 { margin: 30px 0 10px; font-size: 1em; color: #555; }
+.grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 4px; margin-bottom: 8px; }
+.cell { height: 70px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 0.75em; font-weight: 700; gap: 4px; }
+.lbl { font-size: 0.65em; color: #999; text-align: center; }
+
+/* === 現在の配色 === */
+.cur-freeze { background: linear-gradient(160deg,#6ca8d8,#90c0e8); color:#1a3050 }
+.cur-cold   { background: linear-gradient(160deg,#98c8e8,#b8d8f0); color:#1a3050 }
+.cur-cool   { background: linear-gradient(160deg,#f5e8a0,#f8efb8); color:#3a3000 }
+.cur-mild   { background: linear-gradient(160deg,#f5d870,#f8e488); color:#3a2c00 }
+.cur-warm   { background: linear-gradient(160deg,#f5c040,#f8d058); color:#3a2800 }
+.cur-hot1   { background: linear-gradient(160deg,#f5a030,#f8b848); color:#3a2000 }
+.cur-hot2   { background: linear-gradient(160deg,#f07848,#f49060); color:#3a1800 }
+.cur-hot3   { background: linear-gradient(160deg,#e05038,#e87058); color:#fff }
+.cur-extreme{ background: linear-gradient(160deg,#c83030,#d85050); color:#fff }
+
+/* === 新・なめらかグラデーション === */
+.new-freeze { background: #7db8e0; color:#1a3050 }
+.new-cold   { background: #a8d0ec; color:#1a3050 }
+.new-cool   { background: #f5e898; color:#3a3000 }
+.new-mild   { background: #f5d460; color:#3a2c00 }
+.new-warm   { background: #f5bc30; color:#3a2800 }
+.new-hot1   { background: #f5a020; color:#3a2000 }
+.new-hot2   { background: #ef7840; color:#3a1800 }
+.new-hot3   { background: #e04830; color:#fff }
+.new-extreme{ background: #c82020; color:#fff }
+</style>
+</head>
+<body>
+
+<h2>現在の配色 — ウズベキスタン（2°〜33°）</h2>
+<div class="grid">
+  <div><div class="cell cur-cold">❄️<span>2°C</span></div><div class="lbl">1月</div></div>
+  <div><div class="cell cur-cold">❄️<span>4°C</span></div><div class="lbl">2月</div></div>
+  <div><div class="cell cur-cool">⛅<span>12°C</span></div><div class="lbl">3月</div></div>
+  <div><div class="cell cur-mild">🌸<span>19°C</span></div><div class="lbl">4月</div></div>
+  <div><div class="cell cur-warm">☀️<span>25°C</span></div><div class="lbl">5月</div></div>
+  <div><div class="cell cur-hot2">☀️<span>30°C</span></div><div class="lbl">6月</div></div>
+  <div><div class="cell cur-hot2">☀️<span>33°C</span></div><div class="lbl">7月</div></div>
+  <div><div class="cell cur-hot2">☀️<span>31°C</span></div><div class="lbl">8月</div></div>
+  <div><div class="cell cur-warm">⛅<span>25°C</span></div><div class="lbl">9月</div></div>
+  <div><div class="cell cur-mild">🌥️<span>16°C</span></div><div class="lbl">10月</div></div>
+  <div><div class="cell cur-cold">❄️<span>8°C</span></div><div class="lbl">11月</div></div>
+  <div><div class="cell cur-cold">❄️<span>3°C</span></div><div class="lbl">12月</div></div>
+</div>
+
+<h2>新・なめらかグラデーション — ウズベキスタン（2°〜33°）</h2>
+<div class="grid">
+  <div><div class="cell new-cold">❄️<span>2°C</span></div><div class="lbl">1月</div></div>
+  <div><div class="cell new-cold">❄️<span>4°C</span></div><div class="lbl">2月</div></div>
+  <div><div class="cell new-cool">⛅<span>12°C</span></div><div class="lbl">3月</div></div>
+  <div><div class="cell new-mild">🌸<span>19°C</span></div><div class="lbl">4月</div></div>
+  <div><div class="cell new-warm">☀️<span>25°C</span></div><div class="lbl">5月</div></div>
+  <div><div class="cell new-hot2">☀️<span>30°C</span></div><div class="lbl">6月</div></div>
+  <div><div class="cell new-hot2">☀️<span>33°C</span></div><div class="lbl">7月</div></div>
+  <div><div class="cell new-hot2">☀️<span>31°C</span></div><div class="lbl">8月</div></div>
+  <div><div class="cell new-warm">⛅<span>25°C</span></div><div class="lbl">9月</div></div>
+  <div><div class="cell new-mild">🌥️<span>16°C</span></div><div class="lbl">10月</div></div>
+  <div><div class="cell new-cold">❄️<span>8°C</span></div><div class="lbl">11月</div></div>
+  <div><div class="cell new-cold">❄️<span>3°C</span></div><div class="lbl">12月</div></div>
+</div>
+
+<h2>新・なめらかグラデーション — マレーシア（27°〜29°）</h2>
+<div class="grid">
+  <div><div class="cell new-hot1">☔<span>27°C</span></div><div class="lbl">1月</div></div>
+  <div><div class="cell new-hot1">⛅<span>28°C</span></div><div class="lbl">2月</div></div>
+  <div><div class="cell new-hot1">☀️<span>28°C</span></div><div class="lbl">3月</div></div>
+  <div><div class="cell new-hot1">☀️<span>29°C</span></div><div class="lbl">4月</div></div>
+  <div><div class="cell new-hot1">☀️<span>29°C</span></div><div class="lbl">5月</div></div>
+  <div><div class="cell new-hot1">☀️<span>29°C</span></div><div class="lbl">6月</div></div>
+  <div><div class="cell new-hot1">☀️<span>28°C</span></div><div class="lbl">7月</div></div>
+  <div><div class="cell new-hot1">☀️<span>28°C</span></div><div class="lbl">8月</div></div>
+  <div><div class="cell new-hot1">☀️<span>28°C</span></div><div class="lbl">9月</div></div>
+  <div><div class="cell new-hot1">☔<span>28°C</span></div><div class="lbl">10月</div></div>
+  <div><div class="cell new-hot1">☔<span>27°C</span></div><div class="lbl">11月</div></div>
+  <div><div class="cell new-hot1">☔<span>27°C</span></div><div class="lbl">12月</div></div>
+</div>
+
+<h2>全9クラスのカラースケール</h2>
+<div class="grid" style="grid-template-columns:repeat(9,1fr)">
+  <div><div class="cell new-freeze" style="background:#5890c8;color:#fff">≤0°</div><div class="lbl">freeze</div></div>
+  <div><div class="cell new-cold">1-9°</div><div class="lbl">cold</div></div>
+  <div><div class="cell new-cool">10-14°</div><div class="lbl">cool</div></div>
+  <div><div class="cell new-mild">15-19°</div><div class="lbl">mild</div></div>
+  <div><div class="cell new-warm">20-24°</div><div class="lbl">warm</div></div>
+  <div><div class="cell new-hot1">25-29°</div><div class="lbl">hot1</div></div>
+  <div><div class="cell new-hot2">30-34°</div><div class="lbl">hot2</div></div>
+  <div><div class="cell new-hot3">35-39°</div><div class="lbl">hot3</div></div>
+  <div><div class="cell new-extreme">40°+</div><div class="lbl">extreme</div></div>
+</div>
+
+</body>
+</html>
