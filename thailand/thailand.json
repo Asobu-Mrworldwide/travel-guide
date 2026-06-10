@@ -106,8 +106,34 @@
       "description": "14〜18世紀に栄えたタイ王国の古都・ユネスコ世界遺産"
     },
     {
+      "id": "krabi",
+      "name": "クラビ",
+      "lat": "8.0863",
+      "lng": "98.9063",
+      "zoom": "11",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "南部",
+      "badge_class": "green",
+      "description": "石灰岩の断崖と透明な海が広がるアンダマン海のリゾート"
+    },
+    {
+      "id": "kohchang",
+      "name": "コ・チャン",
+      "lat": "12.0833",
+      "lng": "102.3167",
+      "zoom": "11",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "東部",
+      "badge_class": "green",
+      "description": "バンコクから約4時間、タイ湾東部の自然豊かな離島"
+    },
+    {
       "id": "samui",
-      "name": "コサムイ",
+      "name": "サムイ島",
       "lat": "9.5120",
       "lng": "100.0136",
       "zoom": "11",
@@ -116,7 +142,7 @@
       "marker_label": "●",
       "badge": "南部",
       "badge_class": "green",
-      "description": "タイ湾に浮かぶ亜熱帯の楽園、コサムイ島"
+      "description": "タイ湾に浮かぶ亜熱帯の楽園、サムイ島"
     }
   ],
   "season_mini": {
@@ -1168,6 +1194,19 @@
       "order_name_en": "Khanom Krok",
       "prompt_en": "Khanom Krok, Thai coconut rice pudding in a round cast iron mold",
       "plate_color": "cast iron pan"
+    },
+    {
+      "name": "ミーホッケン",
+      "badge": "プーケット名物",
+      "type": "noodle",
+      "city": "phuket",
+      "desc": "プーケットの中国系移民（福建人）が伝えた太麺の炒め料理。豚肉・イカ・もやしを濃いめのタレで炒め、生卵を絡めて食べる。プーケットオールドタウンの屋台が本場。",
+      "image": "",
+      "wiki_url": "",
+      "order_ico": "🍜",
+      "order_name_en": "Mee Hokkien",
+      "prompt_en": "Mee Hokkien Phuket style stir fried thick yellow noodles with squid pork and bean sprouts in dark soy sauce topped with raw egg",
+      "plate_color": "white"
     }
   ],
   "spots_section_title": "都市別観光スポット",
@@ -1204,7 +1243,17 @@
     },
     {
       "id": "samui",
-      "label": "コサムイ",
+      "label": "サムイ島",
+      "active": false
+    },
+    {
+      "id": "krabi",
+      "label": "クラビ",
+      "active": false
+    },
+    {
+      "id": "kohchang",
+      "label": "コ・チャン",
       "active": false
     }
   ],
@@ -1212,7 +1261,7 @@
     {
       "city_id": "bangkok",
       "city_name": "バンコク",
-      "city_desc": "黄金の寺院群と最先端のショッピングが共存する大都市",
+      "city_desc": "タイの首都。黄金の寺院群と最先端ショッピングモールが共存する東南アジア最大級の都市",
       "city_info": [
         {
           "label": "アクセス",
@@ -1309,17 +1358,31 @@
           "name": "ルーフトップバー",
           "desc": "バンコクにはルーフトップバーが数多くあり、夜景が絶景。スカイバー（レバノン）やオクターブ（バンコクマリオット）が有名。ドレスコードがある場合も多いので要確認。",
           "badge": "夜景"
+        },
+        {
+          "must": false,
+          "icon": "🌙",
+          "num": "BK 09",
+          "name": "ナイトマーケット",
+          "desc": "バンコクにはジョッドフェアズ（ロッファイマーケット）をはじめ個性豊かなナイトマーケットが点在。アート雑貨・古着・屋台グルメが集まり、地元の若者にも人気。夜9時頃から最も賑わう。",
+          "badge": "ナイト"
         }
       ]
     },
     {
       "city_id": "chiangmai",
       "city_name": "チェンマイ",
-      "city_desc": "古都の趣と豊かな自然、エレファントサンクチュアリで有名",
+      "city_desc": "古都の趣と豊かな自然が共存する北部タイの中心都市。エレファントサンクチュアリが有名",
       "city_info": [
         {
           "label": "アクセス",
           "value": "バンコクから国内線 約1時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー・Grab 約15分",
           "link_section": "",
           "link_btn_index": ""
         },
@@ -1396,11 +1459,17 @@
     {
       "city_id": "phuket",
       "city_name": "プーケット",
-      "city_desc": "アンダマン海に面した世界屈指のリゾートアイランド",
+      "city_desc": "アンダマン海に面した世界屈指のリゾートアイランド。透明な海とビーチが美しい",
       "city_info": [
         {
           "label": "アクセス",
           "value": "バンコクから国内線 約1.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "バス・タクシー 約45分〜1時間",
           "link_section": "",
           "link_btn_index": ""
         },
@@ -1412,7 +1481,7 @@
         },
         {
           "label": "名物グルメ",
-          "value": "シーフード・南部タイカレー",
+          "value": "シーフード・ミーホッケン",
           "link_section": "food",
           "link_btn_index": "2"
         },
@@ -1477,11 +1546,11 @@
     {
       "city_id": "pattaya",
       "city_name": "パタヤ",
-      "city_desc": "バンコクから約2時間、手軽に行けるビーチリゾート",
+      "city_desc": "バンコクから約2時間で行けるビーチリゾート。ナイトライフとマリンスポーツが充実",
       "city_info": [
         {
-          "label": "バンコクから",
-          "value": "バス 約2〜3時間",
+          "label": "アクセス",
+          "value": "バンコクからバス 約2〜3時間",
           "link_section": "",
           "link_btn_index": ""
         },
@@ -1542,11 +1611,11 @@
     {
       "city_id": "ayutthaya",
       "city_name": "アユタヤ",
-      "city_desc": "14〜18世紀に栄えたタイ王国の古都・ユネスコ世界遺産",
+      "city_desc": "14〜18世紀に栄えたタイ王国の古都。仏頭が木の根に包まれた遺跡がシンボル",
       "city_info": [
         {
-          "label": "バンコクから",
-          "value": "電車・バス 約1.5〜2時間",
+          "label": "アクセス",
+          "value": "バンコクから電車・バス 約1.5〜2時間",
           "link_section": "",
           "link_btn_index": ""
         },
@@ -1605,13 +1674,94 @@
       ]
     },
     {
-      "city_id": "samui",
-      "city_name": "コサムイ",
-      "city_desc": "タイ湾に浮かぶ亜熱帯の楽園、コサムイ島",
+      "city_id": "krabi",
+      "city_name": "クラビ",
+      "city_desc": "石灰岩の断崖と透明な海が広がるアンダマン海のリゾート。ライレイビーチなど秘境スポットが点在",
       "city_info": [
         {
           "label": "アクセス",
           "value": "バンコクから国内線 約1.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー 約30分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "11〜4月（乾季）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物",
+          "value": "ロッククライミング・アイランドツアー",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内交通",
+          "value": "ロングテールボート・ソンテウ",
+          "link_section": "",
+          "link_btn_index": ""
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏖️",
+          "num": "KB 01",
+          "name": "ライレイビーチ",
+          "desc": "三方を断崖に囲まれた陸路では行けない秘境ビーチ。ロングテールボートでのみアクセス可能。透明度の高い海と石灰岩の絶壁が作る景色はタイ屈指の絶景。",
+          "badge": "秘境ビーチ",
+          "prompt_en": "Flat vector illustration of Railay Beach Krabi Thailand, dramatic limestone cliffs rising from turquoise sea, pristine white sand beach, longtail boats moored in calm bay, lush green jungle on cliffs, clear blue sky, wide landscape"
+        },
+        {
+          "must": true,
+          "icon": "🏝️",
+          "num": "KB 02",
+          "name": "エメラルドケーブ",
+          "desc": "コ・モック島にある洞窟を泳いで抜けた先に広がる隠し浜。フォーアイランドツアーで立ち寄れる。光が差し込む洞窟内の幻想的な雰囲気が有名。",
+          "badge": "隠し浜",
+          "prompt_en": "Flat vector illustration of Emerald Cave Koh Mook Thailand, dark narrow cave opening leading to hidden beach with bright turquoise water, limestone walls glowing with light, small secluded sandy beach inside, clear sky visible above, wide landscape"
+        },
+        {
+          "must": false,
+          "icon": "🌊",
+          "num": "KB 03",
+          "name": "アオナンビーチ",
+          "desc": "クラビのメインビーチ。ホテル・レストラン・ツアー会社が集まる観光拠点。ロングテールボートでライレイや周辺の島へのアクセスも便利。",
+          "badge": "拠点ビーチ",
+          "prompt_en": "Flat vector illustration of Ao Nang beach Krabi Thailand, busy beach with longtail boats lined up in turquoise water, limestone karst islands in background, beach shops and restaurants along shore, clear blue sky, wide landscape"
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "KB 04",
+          "name": "タイガーケーブ寺院",
+          "desc": "1,237段の急な階段を登った山頂に建つ寺院。頂上からクラビの海と島々を一望できる絶景スポット。早朝や夕方がおすすめ。",
+          "badge": "絶景",
+          "prompt_en": "Flat vector illustration of Tiger Cave Temple Krabi Thailand, steep stone stairway climbing lush green jungle hillside, golden Buddha statue at rocky summit, panoramic view of Krabi coastline and islands below, clear blue sky, wide landscape"
+        }
+      ]
+    },
+    {
+      "city_id": "samui",
+      "city_name": "サムイ島",
+      "city_desc": "タイ湾に浮かぶ亜熱帯のビーチリゾート。近隣パンガン島のフルムーンパーティーでも有名",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "バンコクから国内線 約1.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー・ソンテウ 約20分",
           "link_section": "",
           "link_btn_index": ""
         },
@@ -1640,7 +1790,7 @@
           "icon": "🏖️",
           "num": "SM 01",
           "name": "チャウエンビーチ",
-          "desc": "コサムイ最大・最も人気のビーチ。白砂と透き通る海が6km続く。ホテル・レストラン・ナイトライフが集中する島のメインエリア。夜はビーチ沿いのバーが賑わう。",
+          "desc": "サムイ島最大・最も人気のビーチ。白砂と透き通る海が6km続く。ホテル・レストラン・ナイトライフが集中する島のメインエリア。夜はビーチ沿いのバーが賑わう。",
           "badge": "ビーチ"
         },
         {
@@ -1648,7 +1798,7 @@
           "icon": "🌙",
           "num": "SM 02",
           "name": "フルムーンパーティー",
-          "desc": "コサムイ近隣のパンガン島で毎月満月の夜に開催される世界最大級のビーチパーティー。世界中から3万人以上が集まる。コサムイからフェリーで約30分。",
+          "desc": "サムイ島近隣のパンガン島で毎月満月の夜に開催される世界最大級のビーチパーティー。世界中から3万人以上が集まる。サムイ島からフェリーで約30分。",
           "badge": "月1回開催"
         },
         {
@@ -1656,7 +1806,7 @@
           "icon": "🐠",
           "num": "SM 03",
           "name": "アンソン国立公園（ダイビング）",
-          "desc": "コサムイ沖の国立公園。透明度の高い海でダイビング・シュノーケリングが楽しめる。ウミガメの目撃情報も多い。ボートツアーで日帰りアクセス可能。",
+          "desc": "サムイ島沖の国立公園。透明度の高い海でダイビング・シュノーケリングが楽しめる。ウミガメの目撃情報も多い。ボートツアーで日帰りアクセス可能。",
           "badge": "ダイビング"
         },
         {
@@ -1664,8 +1814,68 @@
           "icon": "🗿",
           "num": "SM 04",
           "name": "ビッグブッダ寺院",
-          "desc": "海中道路で繋がった小島に建つ高さ15mの黄金の仏像。コサムイ北部の海を見渡せる絶景スポット。入場無料。",
+          "desc": "海中道路で繋がった小島に建つ高さ15mの黄金の仏像。サムイ島北部の海を見渡せる絶景スポット。入場無料。",
           "badge": "入場無料"
+        }
+      ]
+    },
+    {
+      "city_id": "kohchang",
+      "city_name": "コ・チャン",
+      "city_desc": "バンコクから約4時間、タイ湾東部に浮かぶ自然豊かな島。のんびりした雰囲気が魅力",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "バンコク（エカマイBT）からバス＋フェリーで約4時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "フェリー↔宿",
+          "value": "ソンテウ 約20〜40分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "11〜4月（乾季）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "市内交通",
+          "value": "ソンテウ・レンタルバイク",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏖️",
+          "num": "KC 01",
+          "name": "ホワイトサンドビーチ",
+          "desc": "コ・チャン最大・最も人気のビーチ。白砂のビーチにホテルやレストランが並ぶ島のメインエリア。夕日スポットとしても人気。",
+          "badge": "メインビーチ",
+          "prompt_en": "Flat vector illustration of White Sand Beach Koh Chang Thailand, long curved white sandy beach with calm turquoise water, palm trees lining the shore, small beach bungalows, colorful longtail boats, clear blue sky with fluffy clouds, wide landscape"
+        },
+        {
+          "must": false,
+          "icon": "🐠",
+          "num": "KC 02",
+          "name": "カイベー島",
+          "desc": "コ・チャン沖に浮かぶ小島。シュノーケリングスポットとして有名でサンゴ礁と熱帯魚が豊富。ボートツアーで日帰り訪問できる。",
+          "badge": "シュノーケリング",
+          "prompt_en": "Flat vector illustration of Koh Khai island near Koh Chang Thailand, tiny tropical island with white sand surrounded by clear turquoise water, colorful coral reef visible below surface, snorkelers in the water, clear blue sky, wide landscape"
+        },
+        {
+          "must": false,
+          "icon": "🚤",
+          "num": "KC 03",
+          "name": "バンバオ水上集落",
+          "desc": "コ・チャン北西部の水上集落。木製の桟橋の上にカフェ・レストラン・土産店が並ぶ。ローカルな雰囲気でシーフードも美味しい。",
+          "badge": "水上集落",
+          "prompt_en": "Flat vector illustration of Bang Bao fishing village Koh Chang Thailand, wooden pier extending over calm sea with colorful stilt houses, shops and restaurants on the jetty, fishing boats moored below, clear blue sky, wide landscape"
         }
       ]
     }
@@ -1709,14 +1919,14 @@
     {
       "icon": "⛵",
       "name": "フェリー・水上バス",
-      "desc": "バンコクはチャオプラヤー川の水上バスが観光に便利。プーケット・コサムイ等の離島へはフェリーで移動。",
+      "desc": "バンコクはチャオプラヤー川の水上バスが観光に便利。プーケット・サムイ島等の離島へはフェリーで移動。",
       "affiliate": "",
       "is_last": false
     },
     {
       "icon": "✈️",
       "name": "国内線",
-      "desc": "バンコク→チェンマイ・プーケット・コサムイへはタイ・エアアジア・ノックエアなどLCCで格安移動可能。バンコク〜チェンマイ間は約1時間、早めの予約で数百THB〜も。",
+      "desc": "バンコク→チェンマイ・プーケット・サムイ島へはタイ・エアアジア・ノックエアなどLCCで格安移動可能。バンコク〜チェンマイ間は約1時間、早めの予約で数百THB〜も。",
       "affiliate": "",
       "is_last": true
     }

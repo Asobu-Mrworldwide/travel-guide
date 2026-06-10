@@ -341,6 +341,11 @@ section.active{display:block;padding-top:0}
 .rmr-desc{font-size:0.73em;color:var(--sub);line-height:1.6}
 
 /* レスポンシブ共通 */
+@media(max-width:720px) and (min-width:521px){
+  .city-grid-wrap{grid-template-columns:repeat(2,1fr)}
+  .city-item:nth-child(3n){border-right:1px solid #b8b8b8}
+  .city-item:nth-child(2n){border-right:none}
+}
 @media(max-width:520px){
   body{font-size:17px}
   .grid2,.grid3,.manner-grid,.item-grid{grid-template-columns:1fr}
