@@ -42,6 +42,7 @@
 #basic h2~h2,#spots h2~h2,#food h2~h2,#course h2~h2,#season h2~h2,
 #budget h2~h2,#practical h2~h2,#manner h2~h2,#phrases h2~h2,#transport h2~h2{margin-top:36px}
 #basic .qs-row{margin-top:28px;margin-bottom:36px}
+@media(min-width:640px){.qs-top-grid{grid-template-columns:1fr 1fr !important}}
 </style>
 </head>
 <body>
@@ -83,12 +84,15 @@
     </div>
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
-    <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
-      <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
-        <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
-        <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ペトロナスツインタワー</div>
-        <div style="font-size:0.8em;color:var(--sub);flex:1">クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。</div>
-        <button class="qs-link" style="margin-top:8px;align-self:flex-end" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
+    <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
+      <div style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
+        <div style="padding:12px 14px;display:flex;flex-direction:column">
+          <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
+          <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ペトロナスツインタワー</div>
+          <div style="font-size:0.8em;color:var(--sub);flex:1">クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。</div>
+          <button class="qs-link" style="margin-top:8px;align-self:flex-end" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
+        </div>
+        <div style="width:100%;aspect-ratio:16/7;background:url('素材/観光スポット/KLCC公園.webp') center/cover no-repeat"></div>
       </div>
       <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:row;gap:8px;align-items:flex-start;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
         <div style="flex:1;display:flex;flex-direction:column">
@@ -1245,7 +1249,7 @@
     <div class="city-section-header" data-city="kl">
       
       <div class="csh-title">クアラルンプール</div>
-      <div class="csh-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div>
+      <div class="csh-desc">ペトロナスツインタワーを擁するマレーシアの首都。近代的な高層ビルと歴史的なチャイナタウンが隣り合い、グルメ・ショッピング・観光のすべてが揃う。</div>
       <div class="csh-grid">
         
         <div class="csh-item">
@@ -1384,7 +1388,7 @@
     <div class="city-section-header" data-city="penang">
       
       <div class="csh-title">ペナン</div>
-      <div class="csh-desc">多文化が交差するグルメと芸術の島</div>
+      <div class="csh-desc">多文化が交差するグルメと芸術の島。ユネスコ世界遺産のジョージタウンには英国統治時代の街並みが残り、中国・インド・マレーが融合したローカルフードが有名。</div>
       <div class="csh-grid">
         
         <div class="csh-item">
@@ -1478,7 +1482,7 @@
     <div class="city-section-header" data-city="malacca">
       
       <div class="csh-title">マラッカ</div>
-      <div class="csh-desc">ポルトガル・オランダ統治の歴史が残る古都</div>
+      <div class="csh-desc">ポルトガル・オランダ・イギリスと統治が変わった歴史都市。世界遺産の旧市街には赤い植民地建築が残り、週末のジョンカーストリートのナイトマーケットが賑わう。</div>
       <div class="csh-grid">
         
         <div class="csh-item">
@@ -1572,7 +1576,7 @@
     <div class="city-section-header" data-city="jb">
       
       <div class="csh-title">ジョホールバル</div>
-      <div class="csh-desc">シンガポールと橋でつながる国境の街。純粋な観光スポットは少ないが、買い物・グルメ・レゴランドを目的に立ち寄る旅行者が多い。</div>
+      <div class="csh-desc">シンガポールと橋でつながる国境の街。レゴランド以外にこれといった観光スポットはない。</div>
       <div class="csh-grid">
         
         <div class="csh-item">
@@ -1612,7 +1616,7 @@
     <div class="city-section-header" data-city="kk">
       
       <div class="csh-title">コタキナバル</div>
-      <div class="csh-desc">海・山・ジャングルが揃うサバ州の州都</div>
+      <div class="csh-desc">海・山・ジャングルが揃うサバ州の州都。キナバル山やシパダン島など、自然体験の拠点として人気が高い。</div>
       <div class="csh-grid">
         
         <div class="csh-item">
@@ -1760,8 +1764,8 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/バコ国立公園.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kuching">
-      
+    <div class="item-card spot has-spot-img must" data-city="kuching">
+      <div class="must-badge">⭐</div>
       <div class="num">クチン 03</div>
       <div class="name">セメンゴ野生動物センター</div>
       <div class="desc">半野生のオランウータンが暮らすリハビリ保護区。朝・夕方の餌付け時間にスタッフが置いた餌を食べに来る様子を見学できる。</div>
