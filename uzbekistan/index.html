@@ -206,6 +206,8 @@
 
       document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.item-card.spot').forEach(card => {
+          // map_urlが既にある場合はJSリンクを追加しない
+          if (card.querySelector('.spot-map-btn, .map-btn')) return;
           const name = card.querySelector('.name')?.textContent;
           if (!name) return;
           const a = document.createElement('a');

@@ -196,6 +196,8 @@
 
       document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.item-card.spot').forEach(card => {
+          // map_urlが既にある場合はJSリンクを追加しない
+          if (card.querySelector('.spot-map-btn, .map-btn')) return;
           const name = card.querySelector('.name')?.textContent;
           if (!name) return;
           const a = document.createElement('a');
@@ -636,7 +638,7 @@
       <div class="name">{{spot.name}}</div>
       <div class="desc">{{spot.desc}}</div>
       <span class="badge">{{spot.badge}}</span>
-      {% if spot.image %}<div class="spot-img-wrap" style="background-image:url('{{spot.image}}')">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% endif %}</div>{% else %}<div class="spot-ico-large">{{spot.icon}}</div>{% endif %}
+      {% if spot.image %}<div class="spot-img-wrap" style="background-image:url('{{spot.image}}')">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% endif %}</div>{% else %}<div class="spot-ico-large">{{spot.icon}}</div>{% if spot.map_url %}<div style="text-align:right;margin-top:4px"><a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a></div>{% endif %}{% endif %}
     </div>
     {% endfor %}
     {% endfor %}

@@ -206,6 +206,8 @@
 
       document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.item-card.spot').forEach(card => {
+          // map_urlが既にある場合はJSリンクを追加しない
+          if (card.querySelector('.spot-map-btn, .map-btn')) return;
           const name = card.querySelector('.name')?.textContent;
           if (!name) return;
           const a = document.createElement('a');
@@ -1518,7 +1520,7 @@
       <div class="name">オランダ広場（スタダイス）</div>
       <div class="desc">17世紀にオランダが建設した赤い建物が並ぶ広場。キリスト教会・時計塔・噴水が美しいマラッカの象徴。</div>
       <span class="badge">フォトスポット</span>
-      <div class="spot-ico-large">🇳🇱</div>
+      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/オランダ広場（スタダイス）.webp')"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca">
@@ -1536,7 +1538,7 @@
       <div class="name">ババニョニャ遺産博物館</div>
       <div class="desc">中国系移民とマレー人の混血文化「プラナカン」の生活様式を展示。精巧な陶器・家具・衣装が見られる。</div>
       <span class="badge">文化体験</span>
-      <div class="spot-ico-large">🏮</div>
+      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ババニョニャ遺産博物館.webp')"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca">
@@ -1545,7 +1547,7 @@
       <div class="name">ジョンカーストリート</div>
       <div class="desc">アンティーク・土産物・屋台が並ぶ旧市街の目抜き通り。週末ナイトマーケットは地元グルメが充実。</div>
       <span class="badge">ナイトマーケット</span>
-      <div class="spot-ico-large">🛍️</div>
+      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ジョンカーストリート.webp')"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca">
@@ -1679,7 +1681,7 @@
       <div class="name">シパダン島</div>
       <div class="desc">世界トップクラスのダイビングスポット。ウミガメの群れ・バラクーダの竜巻が見られる海の楽園。入島許可証が必要。</div>
       <span class="badge">ダイビング聖地</span>
-      <div class="spot-ico-large">🐠</div>
+      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/シパダン島.webp')"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kk">
@@ -1688,7 +1690,7 @@
       <div class="name">フィリピン市場</div>
       <div class="desc">フィリピン人商人が集まる水上市場。新鮮な魚介類・真珠・土産物が格安で手に入る活気ある市場。</div>
       <span class="badge">シーフード</span>
-      <div class="spot-ico-large">🛒</div>
+      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/フィリピン市場.webp')"><a href="https://maps.app.goo.gl/YZnNuef92TRS5GW49" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kk">
@@ -1697,7 +1699,7 @@
       <div class="name">ガヤ・ストリート（日曜市）</div>
       <div class="desc">毎週日曜朝に開かれる地元民憩いの朝市。地元フード・野菜・民芸品・植物など多彩な商品が並ぶ。</div>
       <span class="badge">日曜限定</span>
-      <div class="spot-ico-large">🌅</div>
+      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ガヤ・ストリート（日曜市）.webp')"></div>
     </div>
     
     
