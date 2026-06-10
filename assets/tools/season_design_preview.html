@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ベストシーズン デザイン案</title>
+<style>
+body{font-family:'Noto Sans JP',sans-serif;background:#f5f5f5;padding:30px;color:#333}
+h2{font-size:0.9em;color:#888;margin:30px 0 10px;font-weight:700;letter-spacing:0.05em}
+
+/* === 案A：グラフ＋カード（天気アプリ風） === */
+.weather-wrap{background:#fff;border-radius:16px;padding:20px 16px 12px;border:1px solid #e0e0e0;overflow:hidden}
+.city-label{font-size:0.8em;font-weight:700;color:#1d9074;margin-bottom:12px}
+
+.chart-area{position:relative;height:60px;margin:0 0 4px}
+.chart-area svg{width:100%;height:60px}
+
+.month-row{display:grid;grid-template-columns:repeat(12,1fr);gap:2px}
+.m-cell{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px 8px}
+.m-name{font-size:0.62em;color:#aaa;font-weight:600}
+.m-icon{font-size:1.1em;line-height:1}
+.m-temp{font-size:0.72em;font-weight:700;color:#444}
+
+/* === 案B：バー＋アイコン === */
+.bar-wrap{background:#fff;border-radius:16px;padding:20px 16px;border:1px solid #e0e0e0}
+.bar-row{display:grid;grid-template-columns:repeat(12,1fr);gap:4px;align-items:end;height:80px;margin-bottom:4px}
+.bar-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.bar{width:100%;border-radius:4px 4px 0 0}
+.bar-meta-row{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
+.bm-cell{display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0}
+.bm-icon{font-size:1em}
+.bm-name{font-size:0.6em;color:#aaa;font-weight:600}
+.bm-temp{font-size:0.68em;font-weight:700;color:#555}
+
+/* === 案C：シンプル横スクロール風 === */
+.scroll-wrap{background:#fff;border-radius:16px;padding:16px;border:1px solid #e0e0e0}
+.s-row{display:grid;grid-template-columns:repeat(12,1fr);gap:0}
+.s-cell{display:flex;flex-direction:column;align-items:center;padding:8px 4px;border-right:1px solid #f0f0f0;gap:4px}
+.s-cell:last-child{border-right:none}
+.s-cell.best{background:#f0faf8;border-radius:8px}
+.s-mo{font-size:0.62em;color:#aaa;font-weight:700}
+.s-icon{font-size:1.2em}
+.s-temp{font-size:0.72em;font-weight:700;color:#333}
+.s-bar{width:4px;height:24px;border-radius:2px;margin-top:2px}
+</style>
+</head>
+<body>
+
+<!-- ウズベキスタンのデータ -->
+<script>
+const uzb = [
+  {mo:'1月',icon:'❄️',temp:'2°',type:'freeze'},
+  {mo:'2月',icon:'❄️',temp:'4°',type:'cold'},
+  {mo:'3月',icon:'⛅',temp:'12°',type:'cool'},
+  {mo:'4月',icon:'⛅',temp:'19°',type:'mild'},
+  {mo:'5月',icon:'☀️',temp:'25°',type:'hot1'},
+  {mo:'6月',icon:'☀️',temp:'30°',type:'hot2'},
+  {mo:'7月',icon:'☀️',temp:'33°',type:'hot2'},
+  {mo:'8月',icon:'☀️',temp:'31°',type:'hot2'},
+  {mo:'9月',icon:'☀️',temp:'25°',type:'hot1'},
+  {mo:'10月',icon:'⛅',temp:'16°',type:'mild'},
+  {mo:'11月',icon:'🌧️',temp:'8°',type:'cool'},
+  {mo:'12月',icon:'❄️',temp:'3°',type:'freeze'},
+];
+const temps = uzb.map(m=>parseInt(m.temp));
+const bgMap = {freeze:'#f5ede0',cold:'#f5e4cc',cool:'#f5d8a0',mild:'#f5c870',warm:'#f5b440',hot1:'#f5a020',hot2:'#f07830',hot3:'#e05020',extreme:'#c83010'};
+</script>
+
+<h2>案A ── グラフ線＋カード（天気アプリ風）</h2>
+<div class="weather-wrap" id="caseA">
+  <div class="city-label">タシュケント</div>
+  <div class="chart-area">
+    <svg id="svgA" viewBox="0 0 600 60" preserveAspectRatio="none"></svg>
+  </div>
+  <div class="month-row" id="monthRowA"></div>
+</div>
+
+<h2>案B ── 温度バー＋アイコン</h2>
+<div class="bar-wrap">
+  <div class="city-label">タシュケント</div>
+  <div class="bar-row" id="barRow"></div>
+  <div class="bar-meta-row" id="barMeta"></div>
+</div>
+
+<h2>案C ── シンプル縦区切り</h2>
+<div class="scroll-wrap">
+  <div class="city-label">タシュケント</div>
+  <div class="s-row" id="caseC"></div>
+</div>
+
+<script>
+// 案A
+const svgA = document.getElementById('svgA');
+const rowA = document.getElementById('monthRowA');
+const minT = Math.min(...temps), maxT = Math.max(...temps);
+const pts = temps.map((t,i)=>{
+  const x = (i/(temps.length-1))*596+2;
+  const y = 56 - ((t-minT)/(maxT-minT))*48;
+  return `${x},${y}`;
+});
+// fill area
+const fillPts = `2,58 ${pts.join(' ')} 598,58`;
+const fill = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+fill.setAttribute('points',fillPts);
+fill.setAttribute('fill','#fff8e8');
+svgA.appendChild(fill);
+// line
+const line = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+line.setAttribute('points',pts.join(' '));
+line.setAttribute('fill','none');
+line.setAttribute('stroke','#f5a020');
+line.setAttribute('stroke-width','2');
+line.setAttribute('stroke-linejoin','round');
+svgA.appendChild(line);
+// dots
+pts.forEach((pt,i)=>{
+  const [x,y]=pt.split(',');
+  const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r','3');
+  c.setAttribute('fill',bgMap[uzb[i].type]);c.setAttribute('stroke','#f5a020');c.setAttribute('stroke-width','1.5');
+  svgA.appendChild(c);
+});
+uzb.forEach(m=>{
+  rowA.innerHTML+=`<div class="m-cell"><div class="m-name">${m.mo}</div><div class="m-icon">${m.icon}</div><div class="m-temp">${m.temp}</div></div>`;
+});
+
+// 案B
+const barRow = document.getElementById('barRow');
+const barMeta = document.getElementById('barMeta');
+uzb.forEach(m=>{
+  const h = Math.max(8, ((parseInt(m.temp)-minT)/(maxT-minT))*72+8);
+  barRow.innerHTML+=`<div class="bar-col"><div class="bar" style="height:${h}px;background:${bgMap[m.type]}"></div></div>`;
+  barMeta.innerHTML+=`<div class="bm-cell"><div class="bm-icon">${m.icon}</div><div class="bm-name">${m.mo}</div><div class="bm-temp">${m.temp}</div></div>`;
+});
+
+// 案C
+const caseC = document.getElementById('caseC');
+uzb.forEach(m=>{
+  caseC.innerHTML+=`<div class="s-cell"><div class="s-mo">${m.mo}</div><div class="s-icon">${m.icon}</div><div class="s-temp">${m.temp}</div><div class="s-bar" style="background:${bgMap[m.type]}"></div></div>`;
+});
+</script>
+
+</body>
+</html>
