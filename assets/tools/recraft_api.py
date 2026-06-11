@@ -13,6 +13,10 @@ STYLE_IDS = {
     "vector_art":  "641438a8-5f63-4710-b7e9-52bd3eab4c46",  # フラットベクターイラスト ~40cr/枚
     "style_new":   "87bd8c4b-3fde-41cf-a6e1-a8fad8b3ef89",  # 新スタイル (recraft20bベース)
     "style_spot":  "b2b0bc9d-430e-4bbe-a021-598140916fff",  # 観光スポット用スタイル
+    "style_spot2": "8b00a308-fe96-46dc-83d9-0c0751cce0e2",  # 観光スポット用スタイル v2
+    "style_spot3": "0aff9d28-5e11-41c0-bd52-61ccd8449963",  # 観光スポット用スタイル v3
+    "style_spot4": "3765cf6e-0cf9-49ed-8b44-9200c2f68289",  # 観光スポット用スタイル v4
+    "style_spot5": "0fa21982-70a8-4857-b62f-093dac9c7771",  # 観光スポット用スタイル v5
     # watercolor20b は style_id なし（プロンプト強化で代替）
 }
 
@@ -25,6 +29,10 @@ BASE_MODELS = {
     "vector_art":   "recraft20b",   # フラットベクター: recraft20b ベース
     "style_new":    "recraft20b",   # 新スタイル: recraft20b ベース
     "style_spot":   "recraftv3",    # 観光スポット用スタイル: recraftv3 ベース
+    "style_spot2":  "recraftv3",    # 観光スポット用スタイル v2: recraftv3 ベース
+    "style_spot3":  "recraftv3",    # 観光スポット用スタイル v3: recraftv3 ベース
+    "style_spot4":  "recraftv3",    # 観光スポット用スタイル v4: recraftv3 ベース
+    "style_spot5":  "recraftv3",    # 観光スポット用スタイル v5: recraftv3 ベース
 }
 
 # モデルキーごとにプロンプト先頭に自動付与するプレフィックス

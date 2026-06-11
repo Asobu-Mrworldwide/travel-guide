@@ -836,11 +836,20 @@ with tab2:
                     "recraftv3    40cr ≈ ¥6.4/枚  （水彩）",
                     "vector_art   40cr ≈ ¥6.4/枚  （フラットベクターイラスト）",
                     "style_spot   22cr ≈ ¥3.5/枚  （フラットベクター）",
+                    "style_spot3  40cr ≈ ¥6.4/枚  （フラットベクター v3）",
+                    "style_spot4  40cr ≈ ¥6.4/枚  （フラットベクター v4）",
+                    "style_spot5  40cr ≈ ¥6.4/枚  （フラットベクター v5）",
                 ],
                 horizontal=False,
                 key="hero_model",
             )
-            if "style_spot" in hero_model_val:
+            if "style_spot5" in hero_model_val:
+                hero_model_key = "style_spot5"
+            elif "style_spot4" in hero_model_val:
+                hero_model_key = "style_spot4"
+            elif "style_spot3" in hero_model_val:
+                hero_model_key = "style_spot3"
+            elif "style_spot" in hero_model_val:
                 hero_model_key = "style_spot"
             elif "recraft20b" in hero_model_val:
                 hero_model_key = "recraft20b"
@@ -1031,6 +1040,9 @@ with tab2:
                         "recraftv3        40cr ≈ ¥6.4/枚  （水彩）",
                         "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
                         "style_spot       22cr ≈ ¥3.5/枚  （フラットベクター）",
+                        "style_spot3      40cr ≈ ¥6.4/枚  （フラットベクター v3）",
+                        "style_spot4      40cr ≈ ¥6.4/枚  （フラットベクター v4）",
+                        "style_spot5      40cr ≈ ¥6.4/枚  （フラットベクター v5）",
                     ],
                     horizontal=False,
                     index=3,
@@ -1038,6 +1050,12 @@ with tab2:
                 )
                 if "watercolor20b" in spot_model_val:
                     spot_model_key = "watercolor20b"
+                elif "style_spot5" in spot_model_val:
+                    spot_model_key = "style_spot5"
+                elif "style_spot4" in spot_model_val:
+                    spot_model_key = "style_spot4"
+                elif "style_spot3" in spot_model_val:
+                    spot_model_key = "style_spot3"
                 elif "recraftv3" in spot_model_val:
                     spot_model_key = "recraftv3"
                 elif "style_spot" in spot_model_val:
