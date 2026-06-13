@@ -974,6 +974,7 @@
     {
       "num": "No.01",
       "name": "パッタイ",
+      "must": true,
       "badge": "国民食",
       "type": "noodle",
       "city": "national",
@@ -988,6 +989,7 @@
     {
       "num": "No.02",
       "name": "トムヤムクン",
+      "must": true,
       "badge": "世界三大スープ",
       "type": "side",
       "city": "national",
@@ -1016,6 +1018,7 @@
     {
       "num": "No.04",
       "name": "マンゴースティッキーライス",
+      "must": true,
       "badge": "絶品スイーツ",
       "type": "sweet",
       "city": "national",
@@ -1044,6 +1047,7 @@
     {
       "num": "No.06",
       "name": "カオマンガイ",
+      "must": true,
       "badge": "朝食定番",
       "type": "rice",
       "city": "national",
@@ -1058,6 +1062,7 @@
     {
       "num": "No.07",
       "name": "ガパオライス",
+      "must": true,
       "badge": "ランチの王様",
       "type": "rice",
       "city": "national",
@@ -1100,6 +1105,7 @@
     {
       "num": "No.10",
       "name": "カオソーイ",
+      "must": true,
       "badge": "チェンマイ名物",
       "type": "noodle",
       "city": "chiangmai",
@@ -1128,6 +1134,7 @@
     {
       "num": "No.12",
       "name": "プーパッポンカリー",
+      "must": true,
       "badge": "バンコク名物",
       "type": "side",
       "city": "bangkok",
@@ -1208,6 +1215,66 @@
       "order_name_en": "Mee Hokkien",
       "prompt_en": "Mee Hokkien Phuket style stir fried thick yellow noodles with squid pork and bean sprouts in dark soy sauce topped with raw egg",
       "plate_color": "white"
+    },
+    {
+      "num": "No.18",
+      "name": "パッシーイウ",
+      "badge": "屋台定番",
+      "type": "noodle",
+      "city": "national",
+      "desc": "幅広の米粉麺を卵・ブロッコリー・肉（豚・鶏・牛）と甘辛いオイスターソースで炒めた麺料理。パッタイと並ぶ屋台の定番。マイルドな味で食べやすい。",
+      "order_ico": "🍜",
+      "order_name_en": "Pad See Ew",
+      "prompt_en": "Pad See Ew, Thai stir fried wide flat rice noodles with egg, Chinese broccoli and pork in dark soy sauce",
+      "plate_color": "white ceramic plate"
+    },
+    {
+      "num": "No.19",
+      "name": "クイッティアオ",
+      "badge": "タイのラーメン",
+      "type": "noodle",
+      "city": "national",
+      "desc": "米粉の麺を豚骨や鶏ガラのスープで食べるタイ版ラーメン。細麺・幅広麺・ビーフンなど麺の種類を選べる。屋台や食堂で朝から食べられる日常食。",
+      "order_ico": "🍜",
+      "order_name_en": "Kuay Teow",
+      "prompt_en": "Kuay Teow Thai noodle soup with rice noodles, pork slices, bean sprouts and herbs in clear broth, served in bowl",
+      "plate_color": "white ceramic bowl"
+    },
+    {
+      "num": "No.20",
+      "name": "ガイパッメットマムアン",
+      "badge": "炒め物",
+      "type": "rice",
+      "city": "national",
+      "desc": "鶏肉とカシューナッツをオイスターソースで炒めた料理。ナッツの香ばしさと甘辛いソースが絶妙。外国人旅行者にも人気が高く、街中の食堂で広く提供される。",
+      "order_ico": "🍗",
+      "order_name_en": "Gai Pad Met Mamuang",
+      "prompt_en": "Gai Pad Met Mamuang, Thai stir fried chicken with cashew nuts, dried chilies and vegetables in savory sauce",
+      "plate_color": "white ceramic plate"
+    },
+    {
+      "num": "No.21",
+      "name": "シーフードBBQ",
+      "badge": "海岸グルメ",
+      "type": "side",
+      "city": "national",
+      "desc": "プーケット・パタヤ・サムイなど海岸エリアで楽しめる浜辺のBBQ。エビ・ホタテ・イカ・魚介類を炭火で焼き、タイ風チリソースで食べる。夜市でも人気。",
+      "order_ico": "🦐",
+      "order_name_en": "Seafood BBQ",
+      "prompt_en": "Thai seafood BBQ, grilled prawns, squid and shellfish on charcoal grill with spicy Thai dipping sauce",
+      "plate_color": "dark slate grill plate"
+    },
+    {
+      "num": "No.22",
+      "name": "ココナッツアイス",
+      "badge": "屋台スイーツ",
+      "type": "sweet",
+      "city": "national",
+      "desc": "ココナッツミルクで作ったアイスクリームをヤシの実の殻に盛り付け、ピーナッツ・もち米・コーンをトッピング。屋台の定番スイーツで暑い日にぴったり。",
+      "order_ico": "🥥",
+      "order_name_en": "Coconut Ice Cream",
+      "prompt_en": "Thai coconut ice cream served in a coconut shell, topped with peanuts, sticky rice and sweet corn",
+      "plate_color": "coconut shell"
     }
   ],
   "spots_section_title": "都市別観光スポット",
@@ -1381,7 +1448,7 @@
         {
           "must": false,
           "icon": "🌃",
-          "num": "BK 08",
+          "num": "BK 09",
           "name": "ルーフトップバー",
           "desc": "バンコクにはルーフトップバーが数多くあり、夜景が絶景。スカイバー（レバノン）やオクターブ（バンコクマリオット）が有名。ドレスコードがある場合も多いので要確認。",
           "badge": "夜景",
@@ -1389,14 +1456,41 @@
           "image": "素材/観光スポット/ルーフトップバー.webp"
         },
         {
-          "must": false,
+          "must": true,
           "icon": "🌙",
-          "num": "BK 09",
+          "num": "BK 10",
           "name": "ナイトマーケット",
           "desc": "バンコクにはジョッドフェアズ（ロッファイマーケット）をはじめ個性豊かなナイトマーケットが点在。アート雑貨・古着・屋台グルメが集まり、地元の若者にも人気。夜9時頃から最も賑わう。",
           "badge": "ナイト",
           "prompt_en": "Flat vector illustration of Bangkok night market Thailand, colorful outdoor market stalls at night with string lights overhead, food vendors, vintage clothing, art goods, crowds of young shoppers, festive atmosphere, wide landscape",
           "image": "素材/観光スポット/ナイトマーケット.webp"
+        },
+        {
+          "must": false,
+          "icon": "⛵",
+          "num": "BK 11",
+          "name": "水上マーケット",
+          "desc": "チャオプラヤー川沿いの水路で開かれる伝統的な市場。ダムヌン・サドゥアク（バンコク郊外・日帰り）とアンパワー（週末夜市）が有名。木造船での買い物が非日常感たっぷり。",
+          "badge": "体験",
+          "prompt_en": "Flat vector illustration of Bangkok floating market Thailand, narrow canal lined with wooden boats filled with colorful tropical fruits and local food, vendors in traditional Thai hats, wooden stilt houses along waterway, lush green tropical vegetation, wide landscape"
+        },
+        {
+          "must": false,
+          "icon": "🏙️",
+          "num": "BK 12",
+          "name": "マハナコン スカイウォーク",
+          "desc": "高さ314mのマハナコンタワー最上階にあるガラス張り展望台。床がガラスで眼下にバンコクの夜景が広がる体験が人気。夕暮れ〜夜景の時間帯がおすすめ。",
+          "badge": "夜景",
+          "prompt_en": "Flat vector illustration of Mahanakhon SkyWalk Bangkok Thailand, glass floor observation deck on top of pixelated skyscraper, visitors looking down at glittering Bangkok city lights far below, night skyline panorama, wide landscape"
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "BK 13",
+          "name": "ワット・パクナム",
+          "desc": "バンコク西部に位置する寺院。建物内部に高さ約80mの巨大な緑色の仏塔がそびえ、内部は幻想的な宇宙観をイメージした装飾が施されている。SNSで話題の穴場スポット。",
+          "badge": "穴場",
+          "prompt_en": "Flat vector illustration of Wat Pak Nam Bangkok Thailand, interior of temple with towering ethereal green glass pagoda rising inside the hall, intricate concentric circular ceiling decorations in gold and teal, dreamy spiritual atmosphere, wide landscape"
         }
       ]
     },
@@ -1500,6 +1594,33 @@
           "prompt_en": "Flat vector illustration of traditional Thai massage therapy, person receiving massage from therapist in clean Thai spa interior, candles and tropical flowers, soft lighting, peaceful relaxing atmosphere, wide landscape",
           "no_map": true,
           "image": "素材/観光スポット/タイ古式マッサージ.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏡",
+          "num": "CM 07",
+          "name": "メーカンポン村",
+          "desc": "チェンマイ郊外の山間にある伝統的な山村。棚田・コーヒー農園・温泉が点在し、手付かずの自然と素朴な暮らしが体験できる。チェンマイから車で約1時間。",
+          "badge": "山村・自然",
+          "prompt_en": "Flat vector illustration of Mae Kampong village Chiang Mai Thailand, traditional wooden hillside village with terraced tea and coffee gardens, misty mountain valleys, lush green jungle, rustic wooden houses on stilts, wide landscape"
+        },
+        {
+          "must": false,
+          "icon": "🥾",
+          "num": "CM 08",
+          "name": "モンクトレイル",
+          "desc": "チェンマイ旧市街の南側に広がるトレッキングルート。僧侶が山中を歩いた古道を辿りながら、熱帯林・寺院・展望スポットを楽しめる。ガイド付きツアーが安心。",
+          "badge": "トレッキング",
+          "prompt_en": "Flat vector illustration of monk trail trekking Chiang Mai Thailand, hikers walking through lush tropical jungle path, ancient stone steps, small temple ruins visible through trees, misty mountain atmosphere, wide landscape"
+        },
+        {
+          "must": false,
+          "icon": "🏯",
+          "num": "CM 09",
+          "name": "チェンライ（ホワイトテンプル）",
+          "desc": "チェンマイから北へ約3時間。ワット・ロンクン（通称ホワイトテンプル）は純白のモザイクで覆われた芸術的な寺院で世界中から観光客が訪れる。チェンライ日帰りツアーが便利。",
+          "badge": "日帰り観光",
+          "prompt_en": "Flat vector illustration of Wat Rong Khun White Temple Chiang Rai Thailand, dazzling all-white ornate temple with silver mirror mosaic details, bridge leading to entrance with outstretched hands sculpture, clear blue sky, wide landscape"
         }
       ]
     },
@@ -1827,6 +1948,15 @@
           "prompt_en": "Flat vector illustration of Wat Tham Sua Tiger Cave Temple Krabi Thailand, steep stone stairway climbing lush green jungle hillside, golden Buddha statue at rocky summit, panoramic view of Krabi coastline and islands below, clear blue sky, wide landscape",
           "map_url": "https://maps.app.goo.gl/oc48ZCV1xMZoAz2Z7",
           "image": "素材/観光スポット/ワット・タムスア.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏝️",
+          "num": "KB 05",
+          "name": "アイランドホッピング",
+          "desc": "クラビ沖の島々をボートで巡るツアー。ピピ島・バンブー島・チキン島など透明度抜群の海と白砂ビーチを1日で満喫できる。シュノーケリング付きが定番。",
+          "badge": "島ツアー",
+          "prompt_en": "Flat vector illustration of island hopping tour Krabi Thailand, longtail boat sailing between dramatic limestone karst islands, crystal clear turquoise water, white sandy beaches, snorkelers in the sea, bright blue sky, wide landscape"
         }
       ]
     },

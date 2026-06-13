@@ -587,7 +587,7 @@
 
   <div class="item-grid" id="food-grid">
     {% for item in food_items %}
-    <div class="item-card has-img" data-ftype="{{item.type}}" data-fcity="{{item.city}}">
+    <div class="item-card has-img {% if item.must %}must{% endif %}" data-ftype="{{item.type}}" data-fcity="{{item.city}}">
       <div class="num">{{item.num}}</div>
       <div class="name-row"><div class="name">{{item.name}}</div><span class="badge">{{item.badge}}</span></div>
       <div class="desc">{{item.desc}}</div>
