@@ -86,8 +86,8 @@
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
     <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
-      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
-        <div style="padding:12px 14px {% if overview.top_spot_image %}8px{% else %}12px{% endif %}">
+      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08);display:flex;flex-direction:column">
+        <div style="padding:12px 14px {% if overview.top_spot_image %}8px{% else %}12px{% endif %};flex:1">
           <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">{{overview.top_spot_name}}</div>
           <div style="font-size:0.8em;color:var(--sub)">{{overview.top_spot_desc}}</div>
