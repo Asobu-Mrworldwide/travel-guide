@@ -28,7 +28,7 @@
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{display:none}
-.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat}
+.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0 0 14px 14px}
 .spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
 .spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
 .spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
@@ -86,12 +86,12 @@
 
     <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
       <div style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
-        <div style="padding:12px 14px;display:flex;flex-direction:column">
+        <div style="padding:12px 14px {% if overview.top_spot_image %}8px{% else %}12px{% endif %}">
           <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">{{overview.top_spot_name}}</div>
-          <div style="font-size:0.8em;color:var(--sub);flex:1">{{overview.top_spot_desc}}</div>
+          <div style="font-size:0.8em;color:var(--sub)">{{overview.top_spot_desc}}</div>
         </div>
-        {% if overview.top_spot_image %}<div style="position:relative;margin-top:8px"><img src="{{overview.top_spot_image}}" alt="{{overview.top_spot_name}}" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block"><button onclick="show('spots',document.querySelectorAll('nav button')[1])" style="position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;border:none;cursor:pointer;backdrop-filter:blur(2px);white-space:nowrap">観光スポットを見る →</button></div>{% endif %}
+        {% if overview.top_spot_image %}<div style="position:relative;font-size:0"><img src="{{overview.top_spot_image}}" alt="{{overview.top_spot_name}}" style="width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:16/9"><button onclick="show('spots',document.querySelectorAll('nav button')[1])" class="spot-map-btn" style="position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;border:none;cursor:pointer;backdrop-filter:blur(2px);white-space:nowrap">観光スポットを見る →</button></div>{% endif %}
       </div>
       <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
           <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">人気No.1グルメ</div>
@@ -631,12 +631,11 @@
       </div>
     </div>
     {% for spot in section.spots %}
-    <div class="item-card spot has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}">
+    <div class="item-card {% if not spot.no_map %}spot {% endif %}has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}">
       {% if spot.must %}<div class="must-badge">⭐</div>{% endif %}
       <div class="num">{{spot.num}}</div>
-      <div class="name">{{spot.name}}</div>
+      <div class="name-row"><div class="name">{{spot.name}}</div><span class="badge">{{spot.badge}}</span></div>
       <div class="desc">{{spot.desc}}</div>
-      <span class="badge">{{spot.badge}}</span>
       {% if spot.image %}<div class="spot-img-wrap" style="background-image:url('{{spot.image}}')">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% elif spot.no_map %}<span class="spot-map-btn" style="display:none"></span>{% endif %}{% if spot.wiki_url %}<a href="{{spot.wiki_url}}" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a>{% endif %}</div>{% else %}<div class="spot-ico-large">{{spot.icon}}</div>{% if spot.map_url %}<div style="text-align:right;margin-top:4px"><a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a></div>{% elif spot.no_map %}<span class="spot-map-btn" style="display:none"></span>{% endif %}{% if spot.wiki_url %}<div style="text-align:right;margin-top:4px"><a href="{{spot.wiki_url}}" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a></div>{% endif %}{% endif %}
     </div>
     {% endfor %}
@@ -769,6 +768,12 @@ function show(id, btn) {
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  const container = document.querySelector('.container');
+  if (id === 'spots' || id === 'food') {
+    container.style.maxWidth = '1000px';
+  } else {
+    container.style.maxWidth = '';
+  }
   window.scrollTo({top:0, behavior:'smooth'});
   btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
   history.replaceState(null, '', '#' + id);
