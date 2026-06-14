@@ -78,7 +78,7 @@
 
   <div style="margin-bottom:14px;line-height:1.8">
     <h2>タイってどんな国？</h2>
-    <p style="font-size:0.88em;color:var(--text)">東南アジアの中心に位置するタイは、「微笑みの国」として知られる<strong>仏教国</strong>。黄金の寺院群、熱帯ジャングル、白砂のリゾートビーチ、活気あふれる屋台グルメが一度に楽しめる、年間3,000万人以上が訪れる人気観光地です。</p>
+    <p style="font-size:0.88em;color:var(--text)">東南アジアの中心に位置するタイは、「微笑みの国」として知られる<strong>仏教国</strong>。黄金の寺院群、熱帯ジャングル、白砂のビーチ、屋台グルメ——旅の要素が全部ある。<span style='display:block;margin-top:0.5em'>世界中を旅した旅人が「結局タイに戻ってくる」とよく言う。料理は旨い、物価は安い、人は穏やか、エンタメも豊富。そりゃそうだ、と思う。</span></p>
     <div style="margin-top:32px;margin-bottom:32px;text-align:center">
       <div style="background:linear-gradient(to bottom,#a51931 16.67%,#fff 16.67% 33.33%,#2d4480 33.33% 66.67%,#fff 66.67% 83.33%,#a51931 83.33%);height:100px;width:160px;display:inline-block;border:1px solid #eee;"></div>
       <p style="font-size:0.75em;color:var(--sub);margin-top:6px">Thong Trairong（トン・トライロン）― タイ語で「三色旗」</p>
@@ -117,12 +117,6 @@
       <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
         <span>← やさしい</span><span>むずかしい →</span>
       </div>
-      <div style="margin-top:8px;font-size:0.84em;color:var(--sub);line-height:1.7">観光地では英語がほぼ通じ、ビザも不要。物価は日本の約1/3〜1/4と格安。屋台グルメや交通の使い方を少し覚えるだけで旅がぐっと快適になる。初めての東南アジアにも◎。</div>
-    </div>
-
-    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
-      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
-      <p style="font-size:0.84em;color:var(--text)">年間約100万人の日本人が訪れるアジア屈指の人気旅行先。<strong>ビザ不要・物価安い・食事が美味しい・リゾートも充実</strong>の四拍子が揃い、バックパッカーからリゾート旅行者まで幅広く愛されている。</p>
     </div>
 
     <!-- クイックスペック -->
@@ -135,11 +129,16 @@
       <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK（観光地）</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">バーツ(THB)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1THB ≈ 4.3円</div></div></div>
     </div>
+
+    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
+      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
+      <p style="font-size:0.84em;color:var(--text)">年間約100万人の日本人が訪れるアジア屈指の人気旅行先。<strong>ビザ不要・物価安い・食事が美味しい・リゾートも充実</strong>の四拍子が揃い、バックパッカーからリゾート旅行者まで幅広く愛されている。</p>
+    </div>
   </div>
 
   <!-- 主要都市 -->
   <h2>主要都市</h2>
-  <div class="card full" style="padding:0;overflow:hidden">
+  <div class="card full" style="padding:0;overflow:hidden;border-radius:0">
     <div style="position:relative">
       <div id="thailand-map" style="width:100%;height:300px"></div>
       <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
@@ -147,7 +146,7 @@
         <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2)">← タイ全体に戻る</button>
       </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;border-radius:0 0 12px 12px;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
+    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
       <span>この人形をストリートビューを見たい場所にドラッグして配置してください</span>
       <span style="flex-shrink:0;color:#888;font-weight:700;font-size:1.2em">↑</span>
     </div>
@@ -1274,7 +1273,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="bangkok">
+    <div class="item-card spot has-spot-img must" data-city="bangkok">
       <div class="must-badge">⭐</div>
       <div class="num">BK 01</div>
       <div class="name-row"><div class="name">ワット・プラケオ（エメラルド寺院）</div><span class="badge">王宮</span></div>
@@ -1282,7 +1281,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・プラケオ（エメラルド寺院）.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="bangkok">
+    <div class="item-card spot has-spot-img must" data-city="bangkok">
       <div class="must-badge">⭐</div>
       <div class="num">BK 02</div>
       <div class="name-row"><div class="name">王宮（グランドパレス）</div><span class="badge">世界的観光地</span></div>
@@ -1290,7 +1289,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/王宮（グランドパレス）.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="bangkok">
+    <div class="item-card spot has-spot-img must" data-city="bangkok">
       <div class="must-badge">⭐</div>
       <div class="num">BK 03</div>
       <div class="name-row"><div class="name">ワット・ポー（涅槃仏寺院）</div><span class="badge">寺院</span></div>
@@ -1298,7 +1297,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・ポー（涅槃仏寺院）.webp')"><a href="https://maps.app.goo.gl/KJazEAT9BrASkd379" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="bangkok">
+    <div class="item-card spot has-spot-img must" data-city="bangkok">
       <div class="must-badge">⭐</div>
       <div class="num">BK 04</div>
       <div class="name-row"><div class="name">ワット・アルン（暁の寺）</div><span class="badge">夜景</span></div>
@@ -1306,7 +1305,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・アルン（暁の寺）.webp')"><a href="https://maps.app.goo.gl/ysakwXsuKj3xnuMBA" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bangkok">
+    <div class="item-card spot has-spot-img " data-city="bangkok">
       
       <div class="num">BK 05</div>
       <div class="name-row"><div class="name">カオサン通り</div><span class="badge">ナイトライフ</span></div>
@@ -1314,7 +1313,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/カオサン通り.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bangkok">
+    <div class="item-card spot has-spot-img " data-city="bangkok">
       
       <div class="num">BK 06</div>
       <div class="name-row"><div class="name">チャトゥチャック週末市場</div><span class="badge">週末限定</span></div>
@@ -1322,7 +1321,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/チャトゥチャック週末市場.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bangkok">
+    <div class="item-card spot has-spot-img " data-city="bangkok">
       
       <div class="num">BK 07</div>
       <div class="name-row"><div class="name">アイコンサイアム</div><span class="badge">ショッピング</span></div>
@@ -1330,7 +1329,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アイコンサイアム.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bangkok">
+    <div class="item-card spot has-spot-img " data-city="bangkok">
       
       <div class="num">BK 08</div>
       <div class="name-row"><div class="name">ワット・トライミット</div><span class="badge">チャイナタウン</span></div>
@@ -1338,7 +1337,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・トライミット.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bangkok">
+    <div class="item-card spot has-spot-img " data-city="bangkok">
       
       <div class="num">BK 09</div>
       <div class="name-row"><div class="name">ルーフトップバー</div><span class="badge">夜景</span></div>
@@ -1346,7 +1345,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ルーフトップバー.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="bangkok">
+    <div class="item-card spot has-spot-img must" data-city="bangkok">
       <div class="must-badge">⭐</div>
       <div class="num">BK 10</div>
       <div class="name-row"><div class="name">ナイトマーケット</div><span class="badge">ナイト</span></div>
@@ -1354,7 +1353,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ナイトマーケット.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bangkok">
+    <div class="item-card spot has-spot-img " data-city="bangkok">
       
       <div class="num">BK 11</div>
       <div class="name-row"><div class="name">水上マーケット</div><span class="badge">体験</span></div>
@@ -1362,7 +1361,7 @@
       <div class="spot-ico-large">⛵</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bangkok">
+    <div class="item-card spot has-spot-img " data-city="bangkok">
       
       <div class="num">BK 12</div>
       <div class="name-row"><div class="name">マハナコン スカイウォーク</div><span class="badge">夜景</span></div>
@@ -1370,7 +1369,7 @@
       <div class="spot-ico-large">🏙️</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bangkok">
+    <div class="item-card spot has-spot-img " data-city="bangkok">
       
       <div class="num">BK 13</div>
       <div class="name-row"><div class="name">ワット・パクナム</div><span class="badge">穴場</span></div>
@@ -1418,7 +1417,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="chiangmai">
+    <div class="item-card spot has-spot-img must" data-city="chiangmai">
       <div class="must-badge">⭐</div>
       <div class="num">CM 01</div>
       <div class="name-row"><div class="name">ワット・ドイステープ</div><span class="badge">絶景</span></div>
@@ -1426,7 +1425,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・ドイステープ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="chiangmai">
+    <div class="item-card spot has-spot-img must" data-city="chiangmai">
       <div class="must-badge">⭐</div>
       <div class="num">CM 02</div>
       <div class="name-row"><div class="name">エレファントサンクチュアリ</div><span class="badge">体験</span></div>
@@ -1434,7 +1433,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/エレファントサンクチュアリ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="chiangmai">
+    <div class="item-card spot has-spot-img " data-city="chiangmai">
       
       <div class="num">CM 03</div>
       <div class="name-row"><div class="name">旧市街・お堀</div><span class="badge">歴史地区</span></div>
@@ -1442,7 +1441,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/旧市街・お堀.webp')"><a href="https://maps.app.goo.gl/Noyo3dXz632txTm27" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="chiangmai">
+    <div class="item-card spot has-spot-img " data-city="chiangmai">
       
       <div class="num">CM 04</div>
       <div class="name-row"><div class="name">サンデー＆サタデーナイトバザール</div><span class="badge">週末限定</span></div>
@@ -1450,7 +1449,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/サンデー＆サタデーナイトバザール.webp')"><a href="https://maps.app.goo.gl/QempEhGntD9nJrt38" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="chiangmai">
+    <div class="item-card no-map has-spot-img " data-city="chiangmai">
       
       <div class="num">CM 05</div>
       <div class="name-row"><div class="name">チェンマイ花祭り（2月）</div><span class="badge">季節イベント</span></div>
@@ -1458,7 +1457,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/チェンマイ花祭り（2月）.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="chiangmai">
+    <div class="item-card no-map has-spot-img " data-city="chiangmai">
       
       <div class="num">CM 06</div>
       <div class="name-row"><div class="name">タイ古式マッサージ</div><span class="badge">体験</span></div>
@@ -1466,7 +1465,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/タイ古式マッサージ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="chiangmai">
+    <div class="item-card spot has-spot-img " data-city="chiangmai">
       
       <div class="num">CM 07</div>
       <div class="name-row"><div class="name">メーカンポン村</div><span class="badge">山村・自然</span></div>
@@ -1474,7 +1473,7 @@
       <div class="spot-ico-large">🏡</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="chiangmai">
+    <div class="item-card spot has-spot-img " data-city="chiangmai">
       
       <div class="num">CM 08</div>
       <div class="name-row"><div class="name">モンクトレイル</div><span class="badge">トレッキング</span></div>
@@ -1482,7 +1481,7 @@
       <div class="spot-ico-large">🥾</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="chiangmai">
+    <div class="item-card spot has-spot-img " data-city="chiangmai">
       
       <div class="num">CM 09</div>
       <div class="name-row"><div class="name">チェンライ（ホワイトテンプル）</div><span class="badge">日帰り観光</span></div>
@@ -1530,7 +1529,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="phuket">
+    <div class="item-card spot has-spot-img must" data-city="phuket">
       <div class="must-badge">⭐</div>
       <div class="num">PH 01</div>
       <div class="name-row"><div class="name">パトンビーチ</div><span class="badge">ビーチ</span></div>
@@ -1538,7 +1537,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/パトンビーチ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="phuket">
+    <div class="item-card spot has-spot-img must" data-city="phuket">
       <div class="must-badge">⭐</div>
       <div class="num">PH 02</div>
       <div class="name-row"><div class="name">ファンガー湾（ジェームズボンド島）</div><span class="badge">絶景クルーズ</span></div>
@@ -1546,7 +1545,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ファンガー湾（ジェームズボンド島）.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="phuket">
+    <div class="item-card spot has-spot-img " data-city="phuket">
       
       <div class="num">PH 03</div>
       <div class="name-row"><div class="name">ビッグブッダ</div><span class="badge">入場無料</span></div>
@@ -1554,7 +1553,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ビッグブッダ.webp')"><a href="https://maps.app.goo.gl/1mFDZrn2zx3wPzud8" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="phuket">
+    <div class="item-card spot has-spot-img " data-city="phuket">
       
       <div class="num">PH 04</div>
       <div class="name-row"><div class="name">プーケットオールドタウン</div><span class="badge">フォトスポット</span></div>
@@ -1562,7 +1561,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/プーケットオールドタウン.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="phuket">
+    <div class="item-card spot has-spot-img " data-city="phuket">
       
       <div class="num">PH 05</div>
       <div class="name-row"><div class="name">シミラン諸島</div><span class="badge">ダイビング</span></div>
@@ -1570,7 +1569,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/シミラン諸島.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="phuket">
+    <div class="item-card spot has-spot-img " data-city="phuket">
       
       <div class="num">PH 06</div>
       <div class="name-row"><div class="name">カロンビーチ・カタビーチ</div><span class="badge">ビーチ</span></div>
@@ -1612,7 +1611,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="pattaya">
+    <div class="item-card spot has-spot-img must" data-city="pattaya">
       <div class="must-badge">⭐</div>
       <div class="num">PA 01</div>
       <div class="name-row"><div class="name">コーラン島（サンゴ礁の島）</div><span class="badge">シュノーケリング</span></div>
@@ -1620,7 +1619,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/コーラン島（サンゴ礁の島）.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="pattaya">
+    <div class="item-card spot has-spot-img " data-city="pattaya">
       
       <div class="num">PA 02</div>
       <div class="name-row"><div class="name">ノンノク・ガーデン（農場・象ショー）</div><span class="badge">ファミリー</span></div>
@@ -1628,7 +1627,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ノンノク・ガーデン（農場・象ショー）.webp')"><a href="https://maps.app.goo.gl/ekPzZ2tw8APdHE4QA" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="pattaya">
+    <div class="item-card spot has-spot-img " data-city="pattaya">
       
       <div class="num">PA 03</div>
       <div class="name-row"><div class="name">サンクチュアリ・オブ・トゥルース</div><span class="badge">唯一無二</span></div>
@@ -1636,7 +1635,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/サンクチュアリ・オブ・トゥルース.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="pattaya">
+    <div class="item-card spot has-spot-img " data-city="pattaya">
       
       <div class="num">PA 04</div>
       <div class="name-row"><div class="name">ティファニーショー</div><span class="badge">エンターテイメント</span></div>
@@ -1678,7 +1677,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="ayutthaya">
+    <div class="item-card spot has-spot-img " data-city="ayutthaya">
       
       <div class="num">AY 01</div>
       <div class="name-row"><div class="name">アユタヤ歴史公園</div><span class="badge">世界遺産</span></div>
@@ -1686,7 +1685,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アユタヤ歴史公園.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="ayutthaya">
+    <div class="item-card spot has-spot-img must" data-city="ayutthaya">
       <div class="must-badge">⭐</div>
       <div class="num">AY 02</div>
       <div class="name-row"><div class="name">ワット・マハタート</div><span class="badge">フォトスポット</span></div>
@@ -1694,7 +1693,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・マハタート.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="ayutthaya">
+    <div class="item-card spot has-spot-img " data-city="ayutthaya">
       
       <div class="num">AY 03</div>
       <div class="name-row"><div class="name">アユタヤ象乗り体験</div><span class="badge">体験</span></div>
@@ -1702,7 +1701,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アユタヤ象乗り体験.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="ayutthaya">
+    <div class="item-card spot has-spot-img " data-city="ayutthaya">
       
       <div class="num">AY 04</div>
       <div class="name-row"><div class="name">チャオプラヤー川クルーズ</div><span class="badge">クルーズ</span></div>
@@ -1750,7 +1749,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="krabi">
+    <div class="item-card spot has-spot-img must" data-city="krabi">
       <div class="must-badge">⭐</div>
       <div class="num">KB 01</div>
       <div class="name-row"><div class="name">ライレイビーチ</div><span class="badge">秘境ビーチ</span></div>
@@ -1758,7 +1757,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ライレイビーチ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="krabi">
+    <div class="item-card spot has-spot-img " data-city="krabi">
       
       <div class="num">KB 02</div>
       <div class="name-row"><div class="name">エメラルドケーブ</div><span class="badge">隠し浜</span></div>
@@ -1766,7 +1765,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/エメラルドケーブ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="krabi">
+    <div class="item-card spot has-spot-img " data-city="krabi">
       
       <div class="num">KB 03</div>
       <div class="name-row"><div class="name">アオナンビーチ</div><span class="badge">拠点ビーチ</span></div>
@@ -1774,7 +1773,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アオナンビーチ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="krabi">
+    <div class="item-card spot has-spot-img " data-city="krabi">
       
       <div class="num">KB 04</div>
       <div class="name-row"><div class="name">ワット・タムスア</div><span class="badge">絶景</span></div>
@@ -1782,7 +1781,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・タムスア.webp')"><a href="https://maps.app.goo.gl/oc48ZCV1xMZoAz2Z7" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="krabi">
+    <div class="item-card spot has-spot-img " data-city="krabi">
       
       <div class="num">KB 05</div>
       <div class="name-row"><div class="name">アイランドホッピング</div><span class="badge">島ツアー</span></div>
@@ -1830,7 +1829,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="samui">
+    <div class="item-card spot has-spot-img must" data-city="samui">
       <div class="must-badge">⭐</div>
       <div class="num">SM 01</div>
       <div class="name-row"><div class="name">チャウエンビーチ</div><span class="badge">ビーチ</span></div>
@@ -1838,7 +1837,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/チャウエンビーチ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="samui">
+    <div class="item-card spot has-spot-img " data-city="samui">
       
       <div class="num">SM 02</div>
       <div class="name-row"><div class="name">フルムーンパーティー</div><span class="badge">月1回開催</span></div>
@@ -1846,7 +1845,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/フルムーンパーティー.webp')"><a href="https://en.wikipedia.org/wiki/Full_Moon_Party" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="samui">
+    <div class="item-card spot has-spot-img " data-city="samui">
       
       <div class="num">SM 03</div>
       <div class="name-row"><div class="name">アンソン国立公園（ダイビング）</div><span class="badge">ダイビング</span></div>
@@ -1854,7 +1853,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アンソン国立公園（ダイビング）.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="samui">
+    <div class="item-card spot has-spot-img " data-city="samui">
       
       <div class="num">SM 04</div>
       <div class="name-row"><div class="name">ビッグブッダ寺院</div><span class="badge">入場無料</span></div>
@@ -1896,7 +1895,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="kohchang">
+    <div class="item-card spot has-spot-img must" data-city="kohchang">
       <div class="must-badge">⭐</div>
       <div class="num">KC 01</div>
       <div class="name-row"><div class="name">ホワイトサンドビーチ</div><span class="badge">メインビーチ</span></div>
@@ -1904,7 +1903,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ホワイトサンドビーチ.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="kohchang">
+    <div class="item-card spot has-spot-img " data-city="kohchang">
       
       <div class="num">KC 02</div>
       <div class="name-row"><div class="name">カイベー島</div><span class="badge">シュノーケリング</span></div>
@@ -1912,7 +1911,7 @@
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/カイベー島.webp')"></div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="kohchang">
+    <div class="item-card spot has-spot-img " data-city="kohchang">
       
       <div class="num">KC 03</div>
       <div class="name-row"><div class="name">バンバオ水上集落</div><span class="badge">水上集落</span></div>

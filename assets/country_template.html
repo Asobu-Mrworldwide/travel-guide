@@ -117,12 +117,6 @@
       <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
         <span>← やさしい</span><span>むずかしい →</span>
       </div>
-      <div style="margin-top:8px;font-size:0.84em;color:var(--sub);line-height:1.7">{{overview.difficulty_desc}}</div>
-    </div>
-
-    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
-      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
-      <p style="font-size:0.84em;color:var(--text)">{{overview.japan_popularity_html}}</p>
     </div>
 
     <!-- クイックスペック -->
@@ -135,11 +129,16 @@
       <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">{{overview.language}}</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">{{overview.currency_name}}</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">{{overview.currency_rate}}</div></div></div>
     </div>
+
+    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
+      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
+      <p style="font-size:0.84em;color:var(--text)">{{overview.japan_popularity_html}}</p>
+    </div>
   </div>
 
   <!-- 主要都市 -->
   <h2>主要都市</h2>
-  <div class="card full" style="padding:0;overflow:hidden">
+  <div class="card full" style="padding:0;overflow:hidden;border-radius:0">
     <div style="position:relative">
       <div id="{{map.element_id}}" style="width:100%;height:300px"></div>
       <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
@@ -147,7 +146,7 @@
         <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2)">← {{name}}全体に戻る</button>
       </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;border-radius:0 0 12px 12px;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
+    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
       <span>この人形をストリートビューを見たい場所にドラッグして配置してください</span>
       <span style="flex-shrink:0;color:#888;font-weight:700;font-size:1.2em">↑</span>
     </div>
@@ -632,7 +631,7 @@
       </div>
     </div>
     {% for spot in section.spots %}
-    <div class="item-card {% if not spot.no_map %}spot {% endif %}has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}">
+    <div class="item-card {% if spot.no_map %}no-map {% else %}spot {% endif %}has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}">
       {% if spot.must %}<div class="must-badge">⭐</div>{% endif %}
       <div class="num">{{spot.num}}</div>
       <div class="name-row"><div class="name">{{spot.name}}</div><span class="badge">{{spot.badge}}</span></div>

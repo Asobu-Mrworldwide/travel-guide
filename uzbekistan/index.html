@@ -86,8 +86,8 @@
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
     <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
-      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
-        <div style="padding:12px 14px 12px">
+      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08);display:flex;flex-direction:column">
+        <div style="padding:12px 14px 12px;flex:1">
           <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">レギスタン広場</div>
           <div style="font-size:0.8em;color:var(--sub)">サマルカンドの中心にある広場。青タイルで彩られた3つのメドレセが向き合う光景は、シルクロード建築の最高傑作とも呼ばれる。</div>
@@ -117,12 +117,6 @@
       <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
         <span>← やさしい</span><span>むずかしい →</span>
       </div>
-      <div style="margin-top:8px;font-size:0.84em;color:var(--sub);line-height:1.7">日本語・英語はほとんど通じず、ロシア語かウズベク語が必要な場面が多い。物価は安く治安は比較的良好だが、乗継便で10時間以上かかる点と都市間移動の手配に慣れが必要。初めての海外一人旅には少しハードルが高い。</div>
-    </div>
-
-    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
-      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
-      <p style="font-size:0.84em;color:var(--text)">年間1〜2万人程度の日本人が訪れるまだ知名度が低めの旅先。それだけに観光地化されすぎておらず、バザールや路地を歩いていると地元の日常に自然と混ざり込める。シルクロード古都を目指す歴史好きや、写真映えする建築を求める旅行者に人気が高まっている。</p>
     </div>
 
     <!-- クイックスペック -->
@@ -135,11 +129,16 @@
       <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">ロシア語で少し可</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">スム（UZS）</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1万UZS ≈ 116円</div></div></div>
     </div>
+
+    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
+      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
+      <p style="font-size:0.84em;color:var(--text)">年間1〜2万人程度の日本人が訪れるまだ知名度が低めの旅先。それだけに観光地化されすぎておらず、バザールや路地を歩いていると地元の日常に自然と混ざり込める。シルクロード古都を目指す歴史好きや、写真映えする建築を求める旅行者に人気が高まっている。</p>
+    </div>
   </div>
 
   <!-- 主要都市 -->
   <h2>主要都市</h2>
-  <div class="card full" style="padding:0;overflow:hidden">
+  <div class="card full" style="padding:0;overflow:hidden;border-radius:0">
     <div style="position:relative">
       <div id="uzbekistan-map" style="width:100%;height:300px"></div>
       <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
@@ -147,7 +146,7 @@
         <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2)">← ウズベキスタン全体に戻る</button>
       </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;border-radius:0 0 12px 12px;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
+    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
       <span>この人形をストリートビューを見たい場所にドラッグして配置してください</span>
       <span style="flex-shrink:0;color:#888;font-weight:700;font-size:1.2em">↑</span>
     </div>
@@ -1176,7 +1175,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="tashkent">
+    <div class="item-card spot has-spot-img must" data-city="tashkent">
       <div class="must-badge">⭐</div>
       <div class="num">TAS 01</div>
       <div class="name-row"><div class="name">チョルスー・バザール</div><span class="badge">フォトスポット</span></div>
@@ -1184,7 +1183,7 @@
       <div class="spot-ico-large">🏪</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="tashkent">
+    <div class="item-card spot has-spot-img " data-city="tashkent">
       
       <div class="num">TAS 02</div>
       <div class="name-row"><div class="name">ハズラティ・イモーム広場</div><span class="badge">聖地</span></div>
@@ -1192,7 +1191,7 @@
       <div class="spot-ico-large">🕌</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="tashkent">
+    <div class="item-card spot has-spot-img " data-city="tashkent">
       
       <div class="num">TAS 03</div>
       <div class="name-row"><div class="name">タシュケント地下鉄</div><span class="badge">旧ソ連遺産</span></div>
@@ -1200,7 +1199,7 @@
       <div class="spot-ico-large">🚇</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="tashkent">
+    <div class="item-card spot has-spot-img " data-city="tashkent">
       
       <div class="num">TAS 04</div>
       <div class="name-row"><div class="name">独立広場（ムスタキリク広場）</div><span class="badge">入場無料</span></div>
@@ -1208,7 +1207,7 @@
       <div class="spot-ico-large">🌳</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="tashkent">
+    <div class="item-card spot has-spot-img " data-city="tashkent">
       
       <div class="num">TAS 05</div>
       <div class="name-row"><div class="name">国立工芸博物館</div><span class="badge">工芸品</span></div>
@@ -1256,7 +1255,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="samarkand">
+    <div class="item-card spot has-spot-img must" data-city="samarkand">
       <div class="must-badge">⭐</div>
       <div class="num">SAM 01</div>
       <div class="name-row"><div class="name">レギスタン広場</div><span class="badge">世界遺産</span></div>
@@ -1264,7 +1263,7 @@
       <div class="spot-ico-large">🕌</div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="samarkand">
+    <div class="item-card spot has-spot-img must" data-city="samarkand">
       <div class="must-badge">⭐</div>
       <div class="num">SAM 02</div>
       <div class="name-row"><div class="name">シャフリサブズィンダ廟群</div><span class="badge">世界遺産</span></div>
@@ -1272,7 +1271,7 @@
       <div class="spot-ico-large">⚰️</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="samarkand">
+    <div class="item-card spot has-spot-img " data-city="samarkand">
       
       <div class="num">SAM 03</div>
       <div class="name-row"><div class="name">グリ・アミール廟</div><span class="badge">ティムール廟</span></div>
@@ -1280,7 +1279,7 @@
       <div class="spot-ico-large">🏛️</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="samarkand">
+    <div class="item-card spot has-spot-img " data-city="samarkand">
       
       <div class="num">SAM 04</div>
       <div class="name-row"><div class="name">ウルグ・ベク天文台</div><span class="badge">遺跡・博物館</span></div>
@@ -1288,7 +1287,7 @@
       <div class="spot-ico-large">🔭</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="samarkand">
+    <div class="item-card spot has-spot-img " data-city="samarkand">
       
       <div class="num">SAM 05</div>
       <div class="name-row"><div class="name">ビビ・ハニム・モスク</div><span class="badge">修復済遺跡</span></div>
@@ -1336,7 +1335,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="bukhara">
+    <div class="item-card spot has-spot-img must" data-city="bukhara">
       <div class="must-badge">⭐</div>
       <div class="num">BUK 01</div>
       <div class="name-row"><div class="name">カラン・ミナレット</div><span class="badge">12世紀建造</span></div>
@@ -1344,7 +1343,7 @@
       <div class="spot-ico-large">🏗️</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bukhara">
+    <div class="item-card spot has-spot-img " data-city="bukhara">
       
       <div class="num">BUK 02</div>
       <div class="name-row"><div class="name">アルク城塞</div><span class="badge">古代要塞</span></div>
@@ -1352,7 +1351,7 @@
       <div class="spot-ico-large">🏯</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bukhara">
+    <div class="item-card spot has-spot-img " data-city="bukhara">
       
       <div class="num">BUK 03</div>
       <div class="name-row"><div class="name">イスマイル・サーマーニー廟</div><span class="badge">10世紀建造</span></div>
@@ -1360,7 +1359,7 @@
       <div class="spot-ico-large">⛩️</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bukhara">
+    <div class="item-card spot has-spot-img " data-city="bukhara">
       
       <div class="num">BUK 04</div>
       <div class="name-row"><div class="name">ラビ・ハウズ</div><span class="badge">夕暮れ絶景</span></div>
@@ -1368,7 +1367,7 @@
       <div class="spot-ico-large">🌊</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="bukhara">
+    <div class="item-card spot has-spot-img " data-city="bukhara">
       
       <div class="num">BUK 05</div>
       <div class="name-row"><div class="name">バハウッディン廟</div><span class="badge">巡礼地</span></div>
@@ -1416,7 +1415,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="khiva">
+    <div class="item-card spot has-spot-img must" data-city="khiva">
       <div class="must-badge">⭐</div>
       <div class="num">KHI 01</div>
       <div class="name-row"><div class="name">イチャン・カラ（旧市街）</div><span class="badge">世界遺産</span></div>
@@ -1424,7 +1423,7 @@
       <div class="spot-ico-large">🏰</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="khiva">
+    <div class="item-card spot has-spot-img " data-city="khiva">
       
       <div class="num">KHI 02</div>
       <div class="name-row"><div class="name">カルタ・ミノル</div><span class="badge">未完の塔</span></div>
@@ -1432,7 +1431,7 @@
       <div class="spot-ico-large">🏗️</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="khiva">
+    <div class="item-card spot has-spot-img " data-city="khiva">
       
       <div class="num">KHI 03</div>
       <div class="name-row"><div class="name">イスラム・ホジャ・ミナレット</div><span class="badge">絶景スポット</span></div>
@@ -1440,7 +1439,7 @@
       <div class="spot-ico-large">🔭</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="khiva">
+    <div class="item-card spot has-spot-img " data-city="khiva">
       
       <div class="num">KHI 04</div>
       <div class="name-row"><div class="name">クフナ・アルク宮殿</div><span class="badge">王宮遺跡</span></div>
@@ -1488,7 +1487,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="fergana">
+    <div class="item-card spot has-spot-img " data-city="fergana">
       
       <div class="num">FER 01</div>
       <div class="name-row"><div class="name">リシタン（陶芸の街）</div><span class="badge">工芸体験</span></div>
@@ -1496,7 +1495,7 @@
       <div class="spot-ico-large">🏺</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="fergana">
+    <div class="item-card spot has-spot-img " data-city="fergana">
       
       <div class="num">FER 02</div>
       <div class="name-row"><div class="name">マルギラン絹工場</div><span class="badge">絹の道</span></div>
@@ -1504,7 +1503,7 @@
       <div class="spot-ico-large">🧵</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="fergana">
+    <div class="item-card spot has-spot-img " data-city="fergana">
       
       <div class="num">FER 03</div>
       <div class="name-row"><div class="name">フェルガナ歴史博物館</div><span class="badge">博物館</span></div>
@@ -1546,7 +1545,7 @@
       </div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="nukus">
+    <div class="item-card spot has-spot-img must" data-city="nukus">
       <div class="must-badge">⭐</div>
       <div class="num">NUK 01</div>
       <div class="name-row"><div class="name">サヴィツキー美術館</div><span class="badge">必訪</span></div>
@@ -1554,7 +1553,7 @@
       <div class="spot-ico-large">🖼️</div>
     </div>
     
-    <div class="item-card has-spot-img must" data-city="nukus">
+    <div class="item-card spot has-spot-img must" data-city="nukus">
       <div class="must-badge">⭐</div>
       <div class="num">NUK 02</div>
       <div class="name-row"><div class="name">アラル海（船の墓場）</div><span class="badge">世界的絶景</span></div>
@@ -1562,7 +1561,7 @@
       <div class="spot-ico-large">🚢</div>
     </div>
     
-    <div class="item-card has-spot-img " data-city="nukus">
+    <div class="item-card spot has-spot-img " data-city="nukus">
       
       <div class="num">NUK 03</div>
       <div class="name-row"><div class="name">ミールザラップ・バザール</div><span class="badge">ローカル</span></div>

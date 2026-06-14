@@ -86,8 +86,8 @@
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
     <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
-      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
-        <div style="padding:12px 14px 12px">
+      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08);display:flex;flex-direction:column">
+        <div style="padding:12px 14px 12px;flex:1">
           <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">テーブルマウンテン</div>
           <div style="font-size:0.8em;color:var(--sub)">ケープタウンを見下ろす標高1,086mの平頂山。ロープウェイで頂上へ行けば南大西洋を一望できる世界自然遺産。</div>
@@ -117,12 +117,6 @@
       <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
         <span>← やさしい</span><span>むずかしい →</span>
       </div>
-      <div style="margin-top:8px;font-size:0.84em;color:var(--sub);line-height:1.7">英語が公用語のひとつで意思疎通は比較的容易。日本人はビザ不要（30日）。一方、日本から直行便はなく乗り継ぎが必要（約17〜18時間）。ヨハネスブルクなど大都市では治安に注意が必要。サファリや自然観光は現地ツアーの利用が安心。</div>
-    </div>
-
-    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
-      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
-      <p style="font-size:0.84em;color:var(--text)">年間約3,000〜4,000人の日本人が訪れる旅行先。まだ認知度は高くないが、<strong>ケープタウンの絶景・ビッグファイブサファリ・多彩なグルメ</strong>の魅力に気づく旅好きの間で注目が高まっている。ドーハ・ドバイ・香港経由の乗り継ぎが一般的。</p>
     </div>
 
     <!-- クイックスペック -->
@@ -135,11 +129,16 @@
       <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">ランド(ZAR)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1ZAR ≈ 7.5円</div></div></div>
     </div>
+
+    <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
+      <div style="font-size:0.78em;font-weight:700;color:#996600;margin-bottom:4px">🇯🇵 日本人に人気？</div>
+      <p style="font-size:0.84em;color:var(--text)">年間約3,000〜4,000人の日本人が訪れる旅行先。まだ認知度は高くないが、<strong>ケープタウンの絶景・ビッグファイブサファリ・多彩なグルメ</strong>の魅力に気づく旅好きの間で注目が高まっている。ドーハ・ドバイ・香港経由の乗り継ぎが一般的。</p>
+    </div>
   </div>
 
   <!-- 主要都市 -->
   <h2>主要都市</h2>
-  <div class="card full" style="padding:0;overflow:hidden">
+  <div class="card full" style="padding:0;overflow:hidden;border-radius:0">
     <div style="position:relative">
       <div id="south_africa-map" style="width:100%;height:300px"></div>
       <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
@@ -147,7 +146,7 @@
         <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2)">← 南アフリカ共和国全体に戻る</button>
       </div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;border-radius:0 0 12px 12px;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
+    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
       <span>この人形をストリートビューを見たい場所にドラッグして配置してください</span>
       <span style="flex-shrink:0;color:#888;font-weight:700;font-size:1.2em">↑</span>
     </div>
