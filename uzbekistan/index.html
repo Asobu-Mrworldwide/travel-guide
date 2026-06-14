@@ -79,7 +79,7 @@
     <h2>ウズベキスタンってどんな国？</h2>
     <p style="font-size:0.88em;color:var(--text)">中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた<strong>古都が点在する国</strong>。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知らぬ旅人を家に招くウズベク人のホスピタリティが、この国の旅を忘れがたいものにしてくれる。</p>
     <div style="margin-top:32px;margin-bottom:32px;text-align:center">
-      <div style="background:linear-gradient(to bottom,#1EB7D4 0%,#1EB7D4 30%,#CC0000 30%,#CC0000 33%,#FFFFFF 33%,#FFFFFF 64%,#CC0000 64%,#CC0000 67%,#009A44 67%,#009A44 100%);border-radius:6px;height:100px;width:200px;display:inline-block;position:relative;overflow:hidden;border:1px solid #eee;"><div style="position:absolute;top:6px;left:8px;color:white;font-size:13px;">🌙</div><div style="position:absolute;top:9px;left:30px;color:white;font-size:7px;letter-spacing:3px;">★★★★★★★★★★★★</div></div>
+      <div style="background:linear-gradient(to bottom,#1EB7D4 0%,#1EB7D4 30%,#CC0000 30%,#CC0000 33%,#FFFFFF 33%,#FFFFFF 64%,#CC0000 64%,#CC0000 67%,#009A44 67%,#009A44 100%);height:100px;width:200px;display:inline-block;position:relative;overflow:hidden;border:1px solid #eee;"><div style="position:absolute;top:6px;left:8px;color:white;font-size:13px;">🌙</div><div style="position:absolute;top:9px;left:30px;color:white;font-size:7px;letter-spacing:3px;">★★★★★★★★★★★★</div></div>
       <p style="font-size:0.75em;color:var(--sub);margin-top:6px">ウズベキスタン国旗 ― 青はシル川・アム川の水と空、白は平和と純粋、緑は豊かな自然を表す。三日月と12の星がイスラムの象徴。</p>
     </div>
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
@@ -90,7 +90,6 @@
           <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">レギスタン広場</div>
           <div style="font-size:0.8em;color:var(--sub);flex:1">サマルカンドの中心にある広場。青タイルで彩られた3つのメドレセが向き合う光景は、シルクロード建築の最高傑作とも呼ばれる。</div>
-          <button class="qs-link" style="margin-top:8px;align-self:flex-end" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
         </div>
         
       </div>
@@ -98,7 +97,7 @@
           <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">人気No.1グルメ</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">プロフ</div>
           <div style="font-size:0.8em;color:var(--sub)">羊肉・人参・玉ねぎを大鍋で炒めて米を加えた炊き込みご飯。「プロフなしに祝宴なし」と言われるほどウズベキスタンの食文化に根づいた一品。</div>
-          <img src="素材/グルメ/プロフ.webp" alt="プロフ" style="width:120px;height:120px;object-fit:contain;margin:10px auto 0">
+          <img src="素材/グルメ/プロフ.webp" alt="プロフ" style="width:100%;max-height:220px;object-fit:contain;display:block;margin-top:10px">
           <button class="qs-link" style="margin-top:8px;align-self:flex-end;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ一覧を見る →</button>
       </div>
     </div>
@@ -255,7 +254,7 @@
   <h2>ベストシーズン</h2>
   <div>
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">夏は40℃近くになる乾燥した大陸性気候。4〜6月と9〜10月が旅行のベストシーズン。冬は氷点下になる地域も。</p>
-    <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">タシュケント</div>
+    <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">タシュケント</div>
     <div class="season-mini">
       <div class="sm-col"><div class="sm-lbl">1月</div><div class="sm-dot t-cold">❄️<span class="sm-t">2°</span></div></div>
       <div class="sm-col"><div class="sm-lbl">2月</div><div class="sm-dot t-cold">❄️<span class="sm-t">4°</span></div></div>
@@ -996,7 +995,7 @@
 
   <div class="item-grid" id="food-grid">
     
-    <div class="item-card has-img" data-ftype="rice" data-fcity="national">
+    <div class="item-card has-img " data-ftype="rice" data-fcity="national">
       <div class="num">No.01</div>
       <div class="name-row"><div class="name">プロフ</div><span class="badge">国民食</span></div>
       <div class="desc">「プロフなしに祝宴なし」と言われるほどウズベキスタンで愛される米料理。羊肉・人参・玉ねぎを大鍋で炒め、米を加えて蒸し炊きにする。シルクロードの旅人を支えてきた味で、料理人によって素材や炊き方が微妙に異なる。</div>
@@ -1005,7 +1004,7 @@
       <button class="order-btn" onclick="openFoodModal('🍚','Plov','プロフ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="meat" data-fcity="national">
+    <div class="item-card has-img " data-ftype="meat" data-fcity="national">
       <div class="num">No.02</div>
       <div class="name-row"><div class="name">シャシリク</div><span class="badge">炭火焼き</span></div>
       <div class="desc">炭火で豪快に焼いた串焼き肉。バザールや路上でもうもうと煙が上がる光景はウズベキスタン旅行の定番風景。羊・牛・鶏・内臓と種類も多く、塩胡椒とスパイスのシンプルな味付けが肉本来の旨みを引き出す。</div>
@@ -1014,7 +1013,7 @@
       <button class="order-btn" onclick="openFoodModal('🍢','Shashlik','シャシリク','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="bread" data-fcity="national">
+    <div class="item-card has-img " data-ftype="bread" data-fcity="national">
       <div class="num">No.03</div>
       <div class="name-row"><div class="name">サムサ</div><span class="badge">焼きたて必食</span></div>
       <div class="desc">タンドール窯で焼いたウズベキスタン版肉まん。三角形に折られた生地の中にスパイシーな羊肉と玉ねぎがぎっしり詰まっている。バザールの窯の前で焼きたてを買ってその場で食べるのが現地流。</div>
@@ -1023,7 +1022,7 @@
       <button class="order-btn" onclick="openFoodModal('🥟','Samsa','サムサ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="noodle" data-fcity="fergana">
+    <div class="item-card has-img " data-ftype="noodle" data-fcity="fergana">
       <div class="num">No.04</div>
       <div class="name-row"><div class="name">ラグマン</div><span class="badge">フェルガナ名物</span></div>
       <div class="desc">フェルガナ渓谷発祥の手打ち麺料理。小麦粉を手で引き伸ばした太めの麺に、羊肉・パプリカ・トマト・人参などの野菜を炒め合わせたソースをかける。汁あり・汁なし両方ある。</div>
@@ -1032,7 +1031,7 @@
       <button class="order-btn" onclick="openFoodModal('🍜','Lagman','ラグマン','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="dumpling" data-fcity="national">
+    <div class="item-card has-img " data-ftype="dumpling" data-fcity="national">
       <div class="num">No.05</div>
       <div class="name-row"><div class="name">マンティ</div><span class="badge">点心</span></div>
       <div class="desc">蒸し器で蒸し上げた大型の包み料理。薄い皮の中に羊肉と玉ねぎのみじん切りが包まれており、一個がかなりのボリューム。ヨーグルトソースや赤唐辛子オイルをつけて食べる。</div>
@@ -1041,7 +1040,7 @@
       <button class="order-btn" onclick="openFoodModal('🥟','Manti','マンティ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="meat" data-fcity="national">
+    <div class="item-card has-img " data-ftype="meat" data-fcity="national">
       <div class="num">No.06</div>
       <div class="name-row"><div class="name">シュルパ</div><span class="badge">定番スープ</span></div>
       <div class="desc">羊肉をじっくり煮込んだ塩気のあるスープ。骨付き肉ごとと野菜が丸ごと入った見た目のインパクトも大きい。バザールの食堂の定番で、朝から食べている地元の人も多い。</div>
@@ -1050,7 +1049,7 @@
       <button class="order-btn" onclick="openFoodModal('🍲','Shurpa','シュルパ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="bread" data-fcity="national">
+    <div class="item-card has-img " data-ftype="bread" data-fcity="national">
       <div class="num">No.07</div>
       <div class="name-row"><div class="name">ナン</div><span class="badge">主食</span></div>
       <div class="desc">タンドール窯の側面に貼り付けて焼くウズベキスタンの丸いパン。中央にスタンプで模様が押されているのが特徴で、焼きたては外がカリッ・中がもちっとしている。食卓に必ず登場する主食。</div>
@@ -1059,7 +1058,7 @@
       <button class="order-btn" onclick="openFoodModal('🫓','Non (Naan)','ナン','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="dumpling" data-fcity="tashkent">
+    <div class="item-card has-img " data-ftype="dumpling" data-fcity="tashkent">
       <div class="num">No.08</div>
       <div class="name-row"><div class="name">チュチバラ</div><span class="badge">タシュケント名物</span></div>
       <div class="desc">マンティより一回り小さい水餃子風の包み料理。スープに浮かべて出てくることが多く、上にヨーグルトと乾燥ミントをのせるのがウズベキスタン式。繊細な皮と肉の風味が合わさって優しい味。</div>
@@ -1068,7 +1067,7 @@
       <button class="order-btn" onclick="openFoodModal('🥟','Chuchvara','チュチバラ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="noodle" data-fcity="tashkent">
+    <div class="item-card has-img " data-ftype="noodle" data-fcity="tashkent">
       <div class="num">No.09</div>
       <div class="name-row"><div class="name">ノリン</div><span class="badge">郷土料理</span></div>
       <div class="desc">手打ち麺に馬肉または羊肉の薄切りと細かく刻んだ玉ねぎをのせた料理。冷たくして食べることが多く、さっぱりとした味わい。お祝いの席にも出てくる伝統的な一皿。</div>
@@ -1077,7 +1076,7 @@
       <button class="order-btn" onclick="openFoodModal('🍝','Norin','ノリン','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="sweet" data-fcity="national">
+    <div class="item-card has-img " data-ftype="sweet" data-fcity="national">
       <div class="num">No.10</div>
       <div class="name-row"><div class="name">ハルバ</div><span class="badge">お土産に◎</span></div>
       <div class="desc">胡麻・砂糖・油脂を混ぜ合わせて固めた伝統菓子。口の中でほろりとくずれる食感と濃厚な胡麻の香りが特徴で、ピスタチオやアーモンドが入ったものもある。バザールで量り売りで買えるお土産の定番。</div>
@@ -1086,7 +1085,7 @@
       <button class="order-btn" onclick="openFoodModal('🍬','Halva','ハルバ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="sweet" data-fcity="samarkand">
+    <div class="item-card has-img " data-ftype="sweet" data-fcity="samarkand">
       <div class="num">No.11</div>
       <div class="name-row"><div class="name">ニシャッロ</div><span class="badge">サマルカンド名物</span></div>
       <div class="desc">卵白・砂糖・甘草の根を泡立てて作った雪のような白い菓子。軽くてふわっとしており、甘さも控えめ。春になるとバザールに並びはじめ、チャイとセットで食べるのが定番。</div>
@@ -1095,7 +1094,7 @@
       <button class="order-btn" onclick="openFoodModal('🍮','Nishallo','ニシャッロ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="drink" data-fcity="national">
+    <div class="item-card has-img " data-ftype="drink" data-fcity="national">
       <div class="num">No.12</div>
       <div class="name-row"><div class="name">チョイ（緑茶）</div><span class="badge">食後の定番</span></div>
       <div class="desc">ウズベキスタンでは食後や来客時に必ずといっていいほど出てくる緑茶。「ピアラ」と呼ばれる取っ手のない小さな陶器に注がれ、砂糖なしで飲むのが本来のスタイル。ハーブを混ぜたものも人気。</div>

@@ -234,7 +234,7 @@
   <h2>ベストシーズン</h2>
   <div>
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">{{season_mini.description}}</p>
-    <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">{{season_mini.city_name}}</div>
+    <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">{{season_mini.city_name}}</div>
     <div class="season-mini">
       <div class="sm-col"><div class="sm-lbl">1月</div><div class="sm-dot {{season_mini.months.0.type}}">{{season_mini.months.0.icon}}<span class="sm-t">{{season_mini.months.0.temp}}</span></div></div>
       <div class="sm-col"><div class="sm-lbl">2月</div><div class="sm-dot {{season_mini.months.1.type}}">{{season_mini.months.1.icon}}<span class="sm-t">{{season_mini.months.1.temp}}</span></div></div>
@@ -591,7 +591,7 @@
       <div class="name-row"><div class="name">{{item.name}}</div><span class="badge">{{item.badge}}</span></div>
       <div class="desc">{{item.desc}}</div>
       <img src="{{item.image}}" alt="{{item.name}}" class="food-img">
-      <a href="{{item.wiki_url}}" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a>
+      {% if item.wiki_url %}<a href="{{item.wiki_url}}" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a>{% endif %}
       <button class="order-btn" onclick="openFoodModal('{{item.order_ico}}','{{item.order_name_en}}','{{item.name}}','{{item.image}}')">店員に聞く</button>
     </div>
     {% endfor %}

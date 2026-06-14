@@ -79,7 +79,7 @@
     <h2>南アフリカ共和国ってどんな国？</h2>
     <p style="font-size:0.88em;color:var(--text)">アフリカ大陸最南端に位置する南アフリカは、<strong>「レインボーネーション」</strong>と呼ばれる多民族・多文化国家。ケープタウンのテーブルマウンテン、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、<strong>圧倒的なスケールの自然と歴史的観光地</strong>が共存する唯一無二の国です。</p>
     <div style="margin-top:32px;margin-bottom:32px;text-align:center">
-      <div style="position:relative;border-radius:6px;height:100px;width:200px;display:inline-block;overflow:hidden;border:1px solid #eee;background:linear-gradient(to bottom,#DE3831 0% 33%,#FFFFFF 33% 36%,#007A4D 36% 64%,#FFFFFF 64% 67%,#002395 67% 100%)"><div style="position:absolute;top:0;left:0;width:0;height:0;border-style:solid;border-width:50px 0 50px 62px;border-color:transparent transparent transparent #000"></div><div style="position:absolute;top:3px;left:0;width:0;height:0;border-style:solid;border-width:47px 0 47px 57px;border-color:transparent transparent transparent #FFB612"></div><div style="position:absolute;top:6px;left:0;width:0;height:0;border-style:solid;border-width:44px 0 44px 52px;border-color:transparent transparent transparent #007A4D"></div></div>
+      <div style="position:relative;height:100px;width:200px;display:inline-block;overflow:hidden;border:1px solid #eee;background:linear-gradient(to bottom,#DE3831 0% 33%,#FFFFFF 33% 36%,#007A4D 36% 64%,#FFFFFF 64% 67%,#002395 67% 100%)"><div style="position:absolute;top:0;left:0;width:0;height:0;border-style:solid;border-width:50px 0 50px 62px;border-color:transparent transparent transparent #000"></div><div style="position:absolute;top:3px;left:0;width:0;height:0;border-style:solid;border-width:47px 0 47px 57px;border-color:transparent transparent transparent #FFB612"></div><div style="position:absolute;top:6px;left:0;width:0;height:0;border-style:solid;border-width:44px 0 44px 52px;border-color:transparent transparent transparent #007A4D"></div></div>
       <p style="font-size:0.75em;color:var(--sub);margin-top:6px">南アフリカの国旗。6色の「レインボーフラッグ」は民主化と多民族の共生を象徴する。</p>
     </div>
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
@@ -90,7 +90,6 @@
           <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">テーブルマウンテン</div>
           <div style="font-size:0.8em;color:var(--sub);flex:1">ケープタウンを見下ろす標高1,086mの平頂山。ロープウェイで頂上へ行けば南大西洋を一望できる世界自然遺産。</div>
-          <button class="qs-link" style="margin-top:8px;align-self:flex-end" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
         </div>
         
       </div>
@@ -98,7 +97,7 @@
           <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">人気No.1グルメ</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ブライ</div>
           <div style="font-size:0.8em;color:var(--sub)">南アフリカ版BBQ。毎週末に家族・友人と炭火を囲む国民的な食文化で、肉の種類や焼き方にこだわりが深い。</div>
-          <img src="" alt="ブライ" style="width:120px;height:120px;object-fit:contain;margin:10px auto 0">
+          <img src="" alt="ブライ" style="width:100%;max-height:220px;object-fit:contain;display:block;margin-top:10px">
           <button class="qs-link" style="margin-top:8px;align-self:flex-end;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ一覧を見る →</button>
       </div>
     </div>
@@ -251,7 +250,7 @@
   <h2>ベストシーズン</h2>
   <div>
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">南半球のため季節は日本と逆。ケープタウンは夏（12〜2月）が乾燥・快晴、冬（6〜8月）が雨季。</p>
-    <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:5px">ケープタウン</div>
+    <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">ケープタウン</div>
     <div class="season-mini">
       <div class="sm-col"><div class="sm-lbl">1月</div><div class="sm-dot t-hot1">☀️<span class="sm-t">26°</span></div></div>
       <div class="sm-col"><div class="sm-lbl">2月</div><div class="sm-dot t-hot1">☀️<span class="sm-t">26°</span></div></div>
@@ -984,7 +983,7 @@
 
   <div class="item-grid" id="food-grid">
     
-    <div class="item-card has-img" data-ftype="main" data-fcity="national">
+    <div class="item-card has-img " data-ftype="main" data-fcity="national">
       <div class="num">No.1</div>
       <div class="name-row"><div class="name">ブライ</div><span class="badge">国民食</span></div>
       <div class="desc">南アフリカ版BBQ。毎週末に家族・友人と炭火を囲む国民的な食文化。羊・牛・鶏などを豪快に焼き上げる。</div>
@@ -993,7 +992,7 @@
       <button class="order-btn" onclick="openFoodModal('🍖','Braai','ブライ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="main" data-fcity="national">
+    <div class="item-card has-img " data-ftype="main" data-fcity="national">
       <div class="num">No.2</div>
       <div class="name-row"><div class="name">ボーワース</div><span class="badge">BBQの定番</span></div>
       <div class="desc">コリアンダーとナツメグで香りをつけた牛・豚のコイル状ソーセージ。ブライに欠かせない一品。</div>
@@ -1002,7 +1001,7 @@
       <button class="order-btn" onclick="openFoodModal('🌭','Boerewors','ボーワース','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="snack" data-fcity="national">
+    <div class="item-card has-img " data-ftype="snack" data-fcity="national">
       <div class="num">No.3</div>
       <div class="name-row"><div class="name">ビルトン</div><span class="badge">定番スナック</span></div>
       <div class="desc">ビネガーとコリアンダーで味付けし乾燥熟成させた牛肉。ジャーキーより柔らかくスパイシーで、スーパーでも手軽に買える。</div>
@@ -1011,7 +1010,7 @@
       <button class="order-btn" onclick="openFoodModal('🥩','Biltong','ビルトン','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="main" data-fcity="durban">
+    <div class="item-card has-img " data-ftype="main" data-fcity="durban">
       <div class="num">No.4</div>
       <div class="name-row"><div class="name">バニーチョウ</div><span class="badge">ダーバン名物</span></div>
       <div class="desc">ダーバン発祥のインド系料理。食パンをくり抜いてカレーを詰めた豪快なB級グルメ。手で食べるのがダーバン流。</div>
@@ -1020,7 +1019,7 @@
       <button class="order-btn" onclick="openFoodModal('🍞','Bunny Chow','バニーチョウ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="main" data-fcity="cape_town">
+    <div class="item-card has-img " data-ftype="main" data-fcity="cape_town">
       <div class="num">No.5</div>
       <div class="name-row"><div class="name">ボボティ</div><span class="badge">ケープマレー料理</span></div>
       <div class="desc">スパイスとドライフルーツを混ぜたひき肉の上にエッグカスタードをかけてオーブン焼きにした料理。南アフリカの国民料理のひとつ。</div>
@@ -1029,7 +1028,7 @@
       <button class="order-btn" onclick="openFoodModal('🥘','Bobotie','ボボティ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="main" data-fcity="national">
+    <div class="item-card has-img " data-ftype="main" data-fcity="national">
       <div class="num">No.6</div>
       <div class="name-row"><div class="name">ポトジェコス</div><span class="badge">郷土料理</span></div>
       <div class="desc">三本脚の鋳鉄鍋「ポトジェ」で肉・野菜をじっくり炭火で煮込んだシチュー。アウトドアやキャンプ文化に欠かせない料理。</div>
@@ -1038,7 +1037,7 @@
       <button class="order-btn" onclick="openFoodModal('🍲','Potjiekos','ポトジェコス','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="side" data-fcity="national">
+    <div class="item-card has-img " data-ftype="side" data-fcity="national">
       <div class="num">No.7</div>
       <div class="name-row"><div class="name">ミーリーパップ</div><span class="badge">主食</span></div>
       <div class="desc">トウモロコシ粉で作った白い粥状の主食。南アフリカ全土の家庭料理に欠かせないスタープル。肉料理や野菜スープと合わせる。</div>
@@ -1047,7 +1046,7 @@
       <button class="order-btn" onclick="openFoodModal('🥣','Mieliepap','ミーリーパップ','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="main" data-fcity="cape_town">
+    <div class="item-card has-img " data-ftype="main" data-fcity="cape_town">
       <div class="num">No.8</div>
       <div class="name-row"><div class="name">ケープマレーカレー</div><span class="badge">ケープタウン名物</span></div>
       <div class="desc">マレー系移民が伝えた甘みとスパイスが絶妙なカレー。シナモン・カルダモン・ドライアプリコットを加えた独特の風味が特徴。</div>
@@ -1056,7 +1055,7 @@
       <button class="order-btn" onclick="openFoodModal('🍛','Cape Malay Curry','ケープマレーカレー','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="dessert" data-fcity="national">
+    <div class="item-card has-img " data-ftype="dessert" data-fcity="national">
       <div class="num">No.9</div>
       <div class="name-row"><div class="name">マルバプディング</div><span class="badge">定番デザート</span></div>
       <div class="desc">アプリコットジャムを使ったしっとり甘いスポンジプディング。温かいバタークリームソースをかけて食べる南アフリカの定番デザート。</div>
@@ -1065,7 +1064,7 @@
       <button class="order-btn" onclick="openFoodModal('🍮','Malva Pudding','マルバプディング','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="drink" data-fcity="national">
+    <div class="item-card has-img " data-ftype="drink" data-fcity="national">
       <div class="num">No.10</div>
       <div class="name-row"><div class="name">ロイボスティー</div><span class="badge">国産ハーブティー</span></div>
       <div class="desc">南アフリカ原産の赤いハーブティー。カフェインゼロで抗酸化作用が高く、世界的に人気が高まっている。</div>
@@ -1074,7 +1073,7 @@
       <button class="order-btn" onclick="openFoodModal('☕','Rooibos Tea','ロイボスティー','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="main" data-fcity="national">
+    <div class="item-card has-img " data-ftype="main" data-fcity="national">
       <div class="num">No.11</div>
       <div class="name-row"><div class="name">ペリペリチキン</div><span class="badge">スパイシーグリル</span></div>
       <div class="desc">アフリカン・バードズアイペッパー（ペリペリ）で味付けしたグリルチキン。ポルトガル植民地文化の影響を受けた一品。</div>
@@ -1083,7 +1082,7 @@
       <button class="order-btn" onclick="openFoodModal('🍗','Peri-Peri Chicken','ペリペリチキン','')">店員に聞く</button>
     </div>
     
-    <div class="item-card has-img" data-ftype="snack" data-fcity="durban">
+    <div class="item-card has-img " data-ftype="snack" data-fcity="durban">
       <div class="num">No.12</div>
       <div class="name-row"><div class="name">サモサ</div><span class="badge">インド系スナック</span></div>
       <div class="desc">インド系南アフリカ人が広めた三角形の揚げ餃子。スパイシーな肉・野菜の具材入りで、チャツネと一緒に食べる。</div>
