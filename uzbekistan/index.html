@@ -28,7 +28,7 @@
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{display:none}
-.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat}
+.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0 0 14px 14px}
 .spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
 .spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
 .spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
@@ -43,6 +43,7 @@
 #budget h2~h2,#practical h2~h2,#manner h2~h2,#phrases h2~h2,#transport h2~h2{margin-top:36px}
 #basic .qs-row{margin-top:28px;margin-bottom:36px}
 @media(min-width:640px){.qs-top-grid{grid-template-columns:1fr 1fr !important}}
+.cl-region{font-weight:700}
 </style>
 </head>
 <body>
@@ -85,15 +86,15 @@
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
     <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
-      <div style="background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
-        <div style="padding:12px 14px;display:flex;flex-direction:column">
+      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
+        <div style="padding:12px 14px 12px">
           <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">レギスタン広場</div>
-          <div style="font-size:0.8em;color:var(--sub);flex:1">サマルカンドの中心にある広場。青タイルで彩られた3つのメドレセが向き合う光景は、シルクロード建築の最高傑作とも呼ばれる。</div>
+          <div style="font-size:0.8em;color:var(--sub)">サマルカンドの中心にある広場。青タイルで彩られた3つのメドレセが向き合う光景は、シルクロード建築の最高傑作とも呼ばれる。</div>
         </div>
         
       </div>
-      <div style="background:#fff;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
+      <div style="background:#fff;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
           <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">人気No.1グルメ</div>
           <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">プロフ</div>
           <div style="font-size:0.8em;color:var(--sub)">羊肉・人参・玉ねぎを大鍋で炒めて米を加えた炊き込みご飯。「プロフなしに祝宴なし」と言われるほどウズベキスタンの食文化に根づいた一品。</div>
@@ -1175,48 +1176,43 @@
       </div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="tashkent">
+    <div class="item-card has-spot-img must" data-city="tashkent">
       <div class="must-badge">⭐</div>
       <div class="num">TAS 01</div>
-      <div class="name">チョルスー・バザール</div>
+      <div class="name-row"><div class="name">チョルスー・バザール</div><span class="badge">フォトスポット</span></div>
       <div class="desc">中央アジア最大級のドーム型バザール。香辛料・乾燥フルーツ・手工芸品が並び、地元民の日常が垣間見える。朝の賑わいは特に圧巻。迷い込むだけで楽しい。</div>
-      <span class="badge">フォトスポット</span>
       <div class="spot-ico-large">🏪</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tashkent">
+    <div class="item-card has-spot-img " data-city="tashkent">
       
       <div class="num">TAS 02</div>
-      <div class="name">ハズラティ・イモーム広場</div>
+      <div class="name-row"><div class="name">ハズラティ・イモーム広場</div><span class="badge">聖地</span></div>
       <div class="desc">ウズベキスタン最大のイスラム複合施設。カラオル・モスク・ムイ・ムボラク図書館（世界最古のコーラン写本を所蔵）などが集まる聖地。</div>
-      <span class="badge">聖地</span>
       <div class="spot-ico-large">🕌</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tashkent">
+    <div class="item-card has-spot-img " data-city="tashkent">
       
       <div class="num">TAS 03</div>
-      <div class="name">タシュケント地下鉄</div>
+      <div class="name-row"><div class="name">タシュケント地下鉄</div><span class="badge">旧ソ連遺産</span></div>
       <div class="desc">1977年開通の旧ソ連式地下鉄。各駅が異なる建築様式で装飾された「世界一美しい地下鉄」との呼び声も。乗車は数十UZSと格安。移動手段にもなる観光スポット。</div>
-      <span class="badge">旧ソ連遺産</span>
       <div class="spot-ico-large">🚇</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tashkent">
+    <div class="item-card has-spot-img " data-city="tashkent">
       
       <div class="num">TAS 04</div>
-      <div class="name">独立広場（ムスタキリク広場）</div>
+      <div class="name-row"><div class="name">独立広場（ムスタキリク広場）</div><span class="badge">入場無料</span></div>
       <div class="desc">1991年の独立を記念した大広場。整備された庭園と永遠の炎が印象的。夕方になると地元市民が涼を求めて集まる。</div>
-      <span class="badge">入場無料</span>
       <div class="spot-ico-large">🌳</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tashkent">
+    <div class="item-card has-spot-img " data-city="tashkent">
       
       <div class="num">TAS 05</div>
-      <div class="name">国立工芸博物館</div>
+      <div class="name-row"><div class="name">国立工芸博物館</div><span class="badge">工芸品</span></div>
       <div class="desc">19世紀の富豪邸宅を利用した博物館。建物の壁面を覆う精巧なイスラム装飾と、伝統工芸品の展示が見もの。入場料も安め。</div>
-      <span class="badge">工芸品</span>
       <div class="spot-ico-large">🏛️</div>
     </div>
     
@@ -1260,48 +1256,43 @@
       </div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="samarkand">
+    <div class="item-card has-spot-img must" data-city="samarkand">
       <div class="must-badge">⭐</div>
       <div class="num">SAM 01</div>
-      <div class="name">レギスタン広場</div>
+      <div class="name-row"><div class="name">レギスタン広場</div><span class="badge">世界遺産</span></div>
       <div class="desc">3つの壮麗なメドレセ（神学校）が向き合うサマルカンドの象徴。青タイルのモザイクと巨大なアーチが組み合わさった景観は写真では伝わりにくい。圧倒的な存在感がある。</div>
-      <span class="badge">世界遺産</span>
       <div class="spot-ico-large">🕌</div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="samarkand">
+    <div class="item-card has-spot-img must" data-city="samarkand">
       <div class="must-badge">⭐</div>
       <div class="num">SAM 02</div>
-      <div class="name">シャフリサブズィンダ廟群</div>
+      <div class="name-row"><div class="name">シャフリサブズィンダ廟群</div><span class="badge">世界遺産</span></div>
       <div class="desc">ティムール朝の王族・聖人が眠る霊廟群が小路沿いに続く。青・緑・金のタイル装飾が細部まで施されており、その密度に圧倒される。夕暮れ時がとくに美しい。</div>
-      <span class="badge">世界遺産</span>
       <div class="spot-ico-large">⚰️</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samarkand">
+    <div class="item-card has-spot-img " data-city="samarkand">
       
       <div class="num">SAM 03</div>
-      <div class="name">グリ・アミール廟</div>
+      <div class="name-row"><div class="name">グリ・アミール廟</div><span class="badge">ティムール廟</span></div>
       <div class="desc">ティムール（タメルレーン）の墓廟。玉ねぎ型の青いドームと精巧な黄金の装飾が美しい。サマルカンドを統治したティムールが眠る聖地。</div>
-      <span class="badge">ティムール廟</span>
       <div class="spot-ico-large">🏛️</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samarkand">
+    <div class="item-card has-spot-img " data-city="samarkand">
       
       <div class="num">SAM 04</div>
-      <div class="name">ウルグ・ベク天文台</div>
+      <div class="name-row"><div class="name">ウルグ・ベク天文台</div><span class="badge">遺跡・博物館</span></div>
       <div class="desc">15世紀の天文学者・ウルグ・ベクが建設した天文台の遺跡。当時の精度で恒星の位置を計算していた技術の高さに驚く。博物館も併設。</div>
-      <span class="badge">遺跡・博物館</span>
       <div class="spot-ico-large">🔭</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samarkand">
+    <div class="item-card has-spot-img " data-city="samarkand">
       
       <div class="num">SAM 05</div>
-      <div class="name">ビビ・ハニム・モスク</div>
+      <div class="name-row"><div class="name">ビビ・ハニム・モスク</div><span class="badge">修復済遺跡</span></div>
       <div class="desc">ティムールが愛妻のために建設した巨大モスク。かつては中央アジア最大のモスクだったが地震で崩壊し、現在は修復済み。正門の巨大なアーチが見もの。</div>
-      <span class="badge">修復済遺跡</span>
       <div class="spot-ico-large">🕌</div>
     </div>
     
@@ -1345,48 +1336,43 @@
       </div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="bukhara">
+    <div class="item-card has-spot-img must" data-city="bukhara">
       <div class="must-badge">⭐</div>
       <div class="num">BUK 01</div>
-      <div class="name">カラン・ミナレット</div>
+      <div class="name-row"><div class="name">カラン・ミナレット</div><span class="badge">12世紀建造</span></div>
       <div class="desc">1127年建設の高さ47mのミナレット。チンギス・ハンでさえも頭を下げたと伝わる。隣接するカラン・モスクとミル・アラブ・メドレセとセットで眺めたい。ブハラの定番風景。</div>
-      <span class="badge">12世紀建造</span>
       <div class="spot-ico-large">🏗️</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara">
+    <div class="item-card has-spot-img " data-city="bukhara">
       
       <div class="num">BUK 02</div>
-      <div class="name">アルク城塞</div>
+      <div class="name-row"><div class="name">アルク城塞</div><span class="badge">古代要塞</span></div>
       <div class="desc">2,000年以上の歴史を持つブハラ・ハン国の宮殿兼要塞。内部はハン国の歴史が展示される博物館になっており、王宮の暮らしが垣間見える。</div>
-      <span class="badge">古代要塞</span>
       <div class="spot-ico-large">🏯</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara">
+    <div class="item-card has-spot-img " data-city="bukhara">
       
       <div class="num">BUK 03</div>
-      <div class="name">イスマイル・サーマーニー廟</div>
+      <div class="name-row"><div class="name">イスマイル・サーマーニー廟</div><span class="badge">10世紀建造</span></div>
       <div class="desc">10世紀建造の中央アジア最古のイスラム建築の一つ。煉瓦の積み方で生まれる光の陰影が美しく、時間帯によって表情が変わる。静かな公園の中に佇む。</div>
-      <span class="badge">10世紀建造</span>
       <div class="spot-ico-large">⛩️</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara">
+    <div class="item-card has-spot-img " data-city="bukhara">
       
       <div class="num">BUK 04</div>
-      <div class="name">ラビ・ハウズ</div>
+      <div class="name-row"><div class="name">ラビ・ハウズ</div><span class="badge">夕暮れ絶景</span></div>
       <div class="desc">旧市街の中心にある人工池を囲む広場。夕暮れ時になると地元の人が涼を求めて集まり、カフェやレストランも活気を帯びる。ブハラ滞在の拠点にもなる場所。</div>
-      <span class="badge">夕暮れ絶景</span>
       <div class="spot-ico-large">🌊</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara">
+    <div class="item-card has-spot-img " data-city="bukhara">
       
       <div class="num">BUK 05</div>
-      <div class="name">バハウッディン廟</div>
+      <div class="name-row"><div class="name">バハウッディン廟</div><span class="badge">巡礼地</span></div>
       <div class="desc">スーフィズムの高名な聖人の廟。世界各地からイスラム教巡礼者が訪れる聖地で、祈りを捧げる人々の姿も見られる。旧市街から少し離れた場所にある。</div>
-      <span class="badge">巡礼地</span>
       <div class="spot-ico-large">🌸</div>
     </div>
     
@@ -1430,39 +1416,35 @@
       </div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="khiva">
+    <div class="item-card has-spot-img must" data-city="khiva">
       <div class="must-badge">⭐</div>
       <div class="num">KHI 01</div>
-      <div class="name">イチャン・カラ（旧市街）</div>
+      <div class="name-row"><div class="name">イチャン・カラ（旧市街）</div><span class="badge">世界遺産</span></div>
       <div class="desc">城壁に囲まれた旧市街全体がユネスコ世界遺産。迷路のような路地に霊廟・ミナレット・モスクが密集し、中世の時が止まったような空間が広がる。日没後は観光客が減り静寂が戻る。</div>
-      <span class="badge">世界遺産</span>
       <div class="spot-ico-large">🏰</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="khiva">
+    <div class="item-card has-spot-img " data-city="khiva">
       
       <div class="num">KHI 02</div>
-      <div class="name">カルタ・ミノル</div>
+      <div class="name-row"><div class="name">カルタ・ミノル</div><span class="badge">未完の塔</span></div>
       <div class="desc">1852年に着工されたが建主の死により未完成のまま残ったミナレット。太くて低い独特の形と鮮やかな青タイルがフォトスポットとして人気。</div>
-      <span class="badge">未完の塔</span>
       <div class="spot-ico-large">🏗️</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="khiva">
+    <div class="item-card has-spot-img " data-city="khiva">
       
       <div class="num">KHI 03</div>
-      <div class="name">イスラム・ホジャ・ミナレット</div>
+      <div class="name-row"><div class="name">イスラム・ホジャ・ミナレット</div><span class="badge">絶景スポット</span></div>
       <div class="desc">ヒヴァで最も高い（57m）ミナレット。頂上まで登ることができ、旧市街の全景と周囲に広がる砂漠が一望できる絶景スポット。</div>
-      <span class="badge">絶景スポット</span>
       <div class="spot-ico-large">🔭</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="khiva">
+    <div class="item-card has-spot-img " data-city="khiva">
       
       <div class="num">KHI 04</div>
-      <div class="name">クフナ・アルク宮殿</div>
+      <div class="name-row"><div class="name">クフナ・アルク宮殿</div><span class="badge">王宮遺跡</span></div>
       <div class="desc">ヒヴァ・ハン国の歴代ハンが暮らした宮殿。ハーレム・玉座の間・モスクなどが残り、ハン国の華やかな暮らしが垣間見える。</div>
-      <span class="badge">王宮遺跡</span>
       <div class="spot-ico-large">🏛️</div>
     </div>
     
@@ -1506,30 +1488,27 @@
       </div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="fergana">
+    <div class="item-card has-spot-img " data-city="fergana">
       
       <div class="num">FER 01</div>
-      <div class="name">リシタン（陶芸の街）</div>
+      <div class="name-row"><div class="name">リシタン（陶芸の街）</div><span class="badge">工芸体験</span></div>
       <div class="desc">車で約1時間のリシタンはウズベキスタン最高の陶芸産地。職人のアトリエを訪問し、青と白の伝統文様「イシコル」の陶器が生まれる工程を見学できる。購入もその場で。</div>
-      <span class="badge">工芸体験</span>
       <div class="spot-ico-large">🏺</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="fergana">
+    <div class="item-card has-spot-img " data-city="fergana">
       
       <div class="num">FER 02</div>
-      <div class="name">マルギラン絹工場</div>
+      <div class="name-row"><div class="name">マルギラン絹工場</div><span class="badge">絹の道</span></div>
       <div class="desc">シルクロードを支えてきた絹の産地・マルギランで工場見学が楽しめる。繭から絹糸を手で紡ぐ工程を間近で見られる。「アドラス」と呼ばれる伝統絹織物のお土産が充実。</div>
-      <span class="badge">絹の道</span>
       <div class="spot-ico-large">🧵</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="fergana">
+    <div class="item-card has-spot-img " data-city="fergana">
       
       <div class="num">FER 03</div>
-      <div class="name">フェルガナ歴史博物館</div>
+      <div class="name-row"><div class="name">フェルガナ歴史博物館</div><span class="badge">博物館</span></div>
       <div class="desc">フェルガナ渓谷の歴史と考古学遺物を展示。農業と交易で栄えたこの地の背景を理解できる。入場料は安い。</div>
-      <span class="badge">博物館</span>
       <div class="spot-ico-large">🏛️</div>
     </div>
     
@@ -1567,30 +1546,27 @@
       </div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="nukus">
+    <div class="item-card has-spot-img must" data-city="nukus">
       <div class="must-badge">⭐</div>
       <div class="num">NUK 01</div>
-      <div class="name">サヴィツキー美術館</div>
+      <div class="name-row"><div class="name">サヴィツキー美術館</div><span class="badge">必訪</span></div>
       <div class="desc">「砂漠のルーブル」と呼ばれる世界屈指の前衛芸術コレクション。スターリン時代に弾圧された画家の作品を館長サヴィツキーが保護した物語は映画にもなった。外観は地味でも中身は圧巻。</div>
-      <span class="badge">必訪</span>
       <div class="spot-ico-large">🖼️</div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="nukus">
+    <div class="item-card has-spot-img must" data-city="nukus">
       <div class="must-badge">⭐</div>
       <div class="num">NUK 02</div>
-      <div class="name">アラル海（船の墓場）</div>
+      <div class="name-row"><div class="name">アラル海（船の墓場）</div><span class="badge">世界的絶景</span></div>
       <div class="desc">かつて世界第4位の湖だったアラル海が農業用水の過剰取水で干上がった跡地。錆びついた漁船が砂漠に転がる光景は環境破壊の象徴として世界的に知られる。ムイナクから車で30〜40分。</div>
-      <span class="badge">世界的絶景</span>
       <div class="spot-ico-large">🚢</div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="nukus">
+    <div class="item-card has-spot-img " data-city="nukus">
       
       <div class="num">NUK 03</div>
-      <div class="name">ミールザラップ・バザール</div>
+      <div class="name-row"><div class="name">ミールザラップ・バザール</div><span class="badge">ローカル</span></div>
       <div class="desc">地元民の生活が息づくヌクスのローカル市場。観光地化されていない素朴な雰囲気で、カラカルパク地方の文化を身近に感じられる。</div>
-      <span class="badge">ローカル</span>
       <div class="spot-ico-large">🛒</div>
     </div>
     
@@ -1942,6 +1918,12 @@ function show(id, btn) {
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  const container = document.querySelector('.container');
+  if (id === 'spots' || id === 'food') {
+    container.style.maxWidth = '1000px';
+  } else {
+    container.style.maxWidth = '';
+  }
   window.scrollTo({top:0, behavior:'smooth'});
   btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
   history.replaceState(null, '', '#' + id);
