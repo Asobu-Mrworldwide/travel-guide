@@ -103,22 +103,6 @@
       </div>
     </div>
 
-    <!-- 旅行難易度 -->
-    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
-    <div style="margin-top:0">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-        <span style="font-size:1.3em">📌</span>
-        <span style="font-size:0.82em;color:var(--sub);font-weight:600">旅行難易度</span>
-        <span style="margin-left:auto;background:#e8f5ee;color:var(--green);font-size:0.8em;font-weight:700;padding:3px 10px;border-radius:20px">やさしい</span>
-      </div>
-      <div style="background:#e8e8e8;border-radius:20px;height:12px;overflow:hidden">
-        <div style="width:30%;height:100%;background:linear-gradient(90deg,#00a86b,#66cc99);border-radius:20px;transition:width 1s"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
-        <span>← やさしい</span><span>むずかしい →</span>
-      </div>
-    </div>
-
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
     <div class="qs-row" style="margin-top:0">
@@ -128,6 +112,7 @@
       <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">8〜18万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">英語OK（観光地）</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">バーツ(THB)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1THB ≈ 4.3円</div></div></div>
+      <div class="qs-card" style="grid-column:span 2"><div class="qs-ico">📌</div><div style="flex:1"><div class="qs-lbl">旅行難易度</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;background:#e8e8e8;border-radius:20px;height:10px;overflow:hidden"><div style="width:30%;height:100%;background:linear-gradient(90deg,#00a86b,#66cc99);border-radius:20px"></div></div><span style="background:#e8f5ee;color:var(--green);font-size:0.75em;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap">やさしい</span></div><div style="display:flex;justify-content:space-between;font-size:0.68em;color:#bbb;margin-top:2px"><span>← やさしい</span><span>むずかしい →</span></div></div></div>
     </div>
 
     <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
@@ -334,7 +319,7 @@
 
   <h2>ベストシーズン</h2>
   <div>
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">タイは大きく3つのシーズンに分かれます。<strong>涼季（11〜2月）</strong>が最も過ごしやすいベストシーズン。地域によって乾季・雨季の時期が異なります。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高く</span>、黄金色は比較的涼しい月です。</p>
+    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">タイは大きく3つのシーズンに分かれます。<strong>涼季（11〜2月）</strong>が最も過ごしやすいベストシーズン。地域によって乾季・雨季の時期が異なります。<span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高く</span>、黄金色は比較的涼しい月です。<span style='display:block;margin-top:0.5em'><strong>暑季（3〜5月）</strong>は気温が35〜40℃に達し、アスファルトから熱気が立ち上る。日中の観光はきつく、朝イチで寺院を回って昼はカフェで休む、というスタイルが現実的。4月のソンクラーン（水かけ祭り）は街中が水浸しになる体験型イベントで、これ目当てに来る旅行者も多い。</span><span style='display:block;margin-top:0.5em'><strong>雨季（6〜10月）</strong>はスコールが多いが、1日中降り続けるわけではない。緑が濃くなり景色はむしろ綺麗で、航空券もホテルも安い穴場シーズン。濡れてもいい格好で屋台を食べ歩くのも悪くない。</span></p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>

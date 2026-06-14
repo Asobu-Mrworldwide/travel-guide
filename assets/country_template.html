@@ -103,22 +103,6 @@
       </div>
     </div>
 
-    <!-- 旅行難易度 -->
-    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
-    <div style="margin-top:0">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-        <span style="font-size:1.3em">📌</span>
-        <span style="font-size:0.82em;color:var(--sub);font-weight:600">旅行難易度</span>
-        <span style="margin-left:auto;background:{{overview.difficulty_label_bg}};color:{{overview.difficulty_label_color}};font-size:0.8em;font-weight:700;padding:3px 10px;border-radius:20px">{{overview.difficulty_label}}</span>
-      </div>
-      <div style="background:#e8e8e8;border-radius:20px;height:12px;overflow:hidden">
-        <div style="width:{{overview.difficulty_pct}}%;height:100%;background:{{overview.difficulty_bar}};border-radius:20px;transition:width 1s"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;font-size:0.72em;color:#bbb;margin-top:4px">
-        <span>← やさしい</span><span>むずかしい →</span>
-      </div>
-    </div>
-
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
     <div class="qs-row" style="margin-top:0">
@@ -128,6 +112,7 @@
       <div class="qs-card"><div class="qs-ico">💰</div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">{{overview.budget_range}}</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico">🗣️</div><div><div class="qs-lbl">言語</div><div class="qs-val">{{overview.language}}</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">{{overview.currency_name}}</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">{{overview.currency_rate}}</div></div></div>
+      <div class="qs-card" style="grid-column:span 2"><div class="qs-ico">📌</div><div style="flex:1"><div class="qs-lbl">旅行難易度</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;background:#e8e8e8;border-radius:20px;height:10px;overflow:hidden"><div style="width:{{overview.difficulty_pct}}%;height:100%;background:{{overview.difficulty_bar}};border-radius:20px"></div></div><span style="background:{{overview.difficulty_label_bg}};color:{{overview.difficulty_label_color}};font-size:0.75em;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap">{{overview.difficulty_label}}</span></div><div style="display:flex;justify-content:space-between;font-size:0.68em;color:#bbb;margin-top:2px"><span>← やさしい</span><span>むずかしい →</span></div></div></div>
     </div>
 
     <div style="margin-top:12px;background:#fffbf0;border-radius:10px;padding:10px 12px;border-left:3px solid var(--yellow)">
