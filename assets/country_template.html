@@ -285,6 +285,7 @@
       </div>
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">{{city.best_note}}</p><button onclick="showFilteredSpots('{{city.city_id}}')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
     </div>
+    {% if city.note %}<div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">{{city.note}}</div>{% endif %}
     {% endfor %}
 
     <div style="margin-top:14px;background:#fffbf0;border-left:3px solid var(--yellow);border-radius:6px;padding:10px 12px;font-size:0.75em;color:#665500;line-height:1.7">{{season.tip_html}}</div>
