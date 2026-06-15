@@ -644,13 +644,11 @@
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:14px">{{courses.intro}}</p>
 
   <div class="course-type">
-    <span class="course-type-lbl green">安定タイプ</span>
     <div class="course-type-title">{{courses.stable_title}}</div>
   </div>
 
   {% for plan in courses.stable_plans %}
   <div style="margin-bottom:10px">
-    <div class="course-plan-lbl">{{plan.label}}</div>
     <div class="course-plan-title">{{plan.title}}</div>
     <div class="course-timeline">
       {% for day in plan.days %}
@@ -660,7 +658,7 @@
       </div>
       {% else %}
       <div class="tl-day">
-        <div class="tl-badge {{day.badge_class}}"{% if day.badge_style %} style="{{day.badge_style}}"{% endif %}>{{day.label}}</div>
+        <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
         <div class="tl-content">{{day.content_html}}</div>
       </div>
       {% endif %}
@@ -671,7 +669,6 @@
   {% endfor %}
 
   <div class="course-type" style="margin-top:22px">
-    <span class="course-type-lbl red">冒険タイプ</span>
     <div class="course-type-title">{{courses.adventure_title}}</div>
   </div>
 
@@ -691,7 +688,7 @@
       </div>
       {% else %}
       <div class="tl-day">
-        <div class="tl-badge {{day.badge_class}}"{% if day.badge_style %} style="{{day.badge_style}}"{% endif %}>{{day.label}}</div>
+        <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
         <div class="tl-content">{{day.content_html}}</div>
       </div>
       {% endif %}

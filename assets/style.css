@@ -50,7 +50,8 @@ body{
 .grid2 > *,.grid3 > *,.qs-row > *,.top3-grid > *,.item-grid > *{min-width:0}
 
 /* 見出し */
-h2{font-size:1.375em;font-weight:900;color:#1a1a1a;border-left:4px solid var(--green);padding-left:11px;margin:10px 0 14px;letter-spacing:0.02em}
+h2{font-size:1.375em;font-weight:900;color:#1a1a1a;margin:10px 0 14px;letter-spacing:0.02em;border-bottom:solid 3px #cce4ff;position:relative}
+h2::after{position:absolute;content:" ";display:block;border-bottom:solid 3px #5472cd;bottom:-3px;width:20%}
 h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 
 /* ボタン共通 */
@@ -243,31 +244,34 @@ section.active{display:block;padding-top:0}
 .cta-btn:hover{transform:scale(1.04)}
 
 /* モデルコース */
-.course-type{display:flex;align-items:center;gap:8px;margin:18px 0 8px}
-.course-type-lbl{font-size:0.65em;font-weight:700;padding:3px 10px;border-radius:20px;color:#fff}
+.course-type{position:relative;display:inline-flex;align-items:center;gap:10px;margin:24px 0 16px;padding:0.25em 1em;line-height:1.4;font-size:0.95em;font-weight:900}
+.course-type::before,.course-type::after{content:'';position:absolute;top:0;width:8px;height:100%;display:inline-block}
+.course-type::before{left:0;border-left:solid 1px #1a1a1a;border-top:solid 1px #1a1a1a;border-bottom:solid 1px #1a1a1a}
+.course-type::after{right:0;border-top:solid 1px #1a1a1a;border-right:solid 1px #1a1a1a;border-bottom:solid 1px #1a1a1a}
+.course-type-lbl{font-size:0.65em;font-weight:700;padding:2px 8px;border-radius:20px;color:#fff}
 .course-type-lbl.red{background:#cc0001}
 .course-type-lbl.green{background:var(--green)}
-.course-type-title{font-size:0.95em;font-weight:900}
+.course-type-title{font-weight:900}
 .course-plan-lbl{display:inline-block;font-size:0.65em;font-weight:700;padding:3px 10px;border-radius:20px;border:1.5px solid var(--green);color:var(--green);background:#e8f5ee;margin-bottom:10px}
-.course-plan-title{font-size:0.88em;font-weight:900;margin-bottom:14px}
+.course-plan-title{font-size:1em;font-weight:700;margin-bottom:16px;padding-bottom:6px;border-bottom:solid 3px #1a1a1a;display:flex;align-items:baseline;gap:10px}
 .course-note{background:#fff8f0;border-radius:8px;padding:10px 12px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
 .course-note-ico{font-size:1.3em;flex-shrink:0}
 .course-note-lbl{font-size:0.7em;font-weight:700;color:#cc5500;margin-bottom:4px}
 .course-note-txt{font-size:0.75em;color:var(--sub);line-height:1.7}
-.course-timeline{display:flex;flex-direction:column}
-.tl-day{display:flex;gap:12px;align-items:flex-start;padding-bottom:12px;position:relative}
-.tl-day:not(:last-child)::after{content:'';position:absolute;left:19px;top:26px;bottom:0;width:2px;background:#e8e8e8}
+.course-timeline{display:flex;flex-direction:column;gap:14px}
+.tl-day{display:flex;flex-direction:column;gap:4px}
 .tl-day:last-child{padding-bottom:0}
-.tl-badge{width:40px;min-height:22px;border-radius:11px;color:#fff;font-size:0.6em;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;position:relative;z-index:1;padding:2px 0}
-.tl-badge.green{background:var(--green)}
-.tl-badge.red{background:#cc0001}
-.tl-badge.gray{background:#bbb}
-.tl-content{flex:1;font-size:0.78em;color:var(--sub);line-height:1.65;padding-top:3px}
+.tl-badge{display:inline-block;font-size:0.75em;font-weight:700;margin-bottom:2px}
+.tl-badge.green{color:var(--green)}
+.tl-badge.red{color:#cc0001}
+.tl-badge.gray{color:#888}
+.tl-content{font-size:0.78em;color:var(--sub);line-height:1.65;padding-left:2px}
 .course-footer{margin-top:12px;padding-top:10px;border-top:1px solid #b8b8b8;font-size:0.7em;color:var(--sub);line-height:1.8}
 .course-tip{margin-top:8px;font-size:0.72em;color:var(--green);font-weight:600}
-.tl-transit{display:flex;gap:12px;align-items:center;padding:2px 0;position:relative}
-.tl-transit::before{content:'';position:absolute;left:19px;top:0;bottom:0;width:2px;background:#e8e8e8;z-index:0}
-.tl-transit-lbl{width:40px;font-size:0.62em;color:#999;text-align:center;flex-shrink:0;position:relative;z-index:1;background:#fff;border-radius:6px;padding:3px 0;line-height:1.4}
+.tl-transit{display:flex;align-items:center;gap:6px;padding:2px 0;color:#aaa;font-size:0.7em}
+.tl-transit::before{content:'';flex:1;height:1px;background:#e0e0e0}
+.tl-transit::after{content:'';flex:1;height:1px;background:#e0e0e0}
+.tl-transit-lbl{white-space:nowrap;padding:0 4px}
 .course-city-list{display:flex;flex-direction:column;gap:8px;margin-top:14px}
 .course-city{display:flex;gap:10px;padding:10px;background:#f5f7f5;border-radius:8px;align-items:flex-start}
 .course-city-ico{text-align:center;min-width:40px;flex-shrink:0}
@@ -318,7 +322,7 @@ section.active{display:block;padding-top:0}
 .ci-spots:hover{opacity:0.7}
 
 /* 都市セクションヘッダー */
-.city-section-header{grid-column:1/-1;padding:20px 0 10px;margin-top:6px;border-top:2px solid var(--green)}
+.city-section-header{grid-column:1/-1;padding:20px 0 10px;margin-top:6px}
 .csh-title{font-size:1.15em;font-weight:900;color:#222;margin-bottom:5px}
 .csh-desc{font-size:0.8em;color:#666;margin-bottom:10px;line-height:1.5}
 .csh-img{display:block;width:calc(100% + 28px);margin:-12px -14px 12px;height:140px;object-fit:cover;border-radius:8px 8px 0 0}
