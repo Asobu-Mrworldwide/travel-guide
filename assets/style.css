@@ -66,9 +66,9 @@ footer a{color:#aaa;text-decoration:none;margin:0 10px}
 .country-links{background:#f6f4ef;border-top:1px solid #e4ecee;border-bottom:none;padding:32px 20px}
 .country-links-inner{max-width:1200px;margin:0 auto}
 .cl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 32px}
-.cl-col ul{list-style:none;margin:4px 0 0;padding:0.4em 0.8em 0.4em 1.8em;position:relative;background:#fafafa;border:solid 1px whitesmoke;box-shadow:0px 0px 3px silver}
-.cl-col li{font-size:0.78em;padding:3px 0;line-height:1.5;list-style-type:none;position:relative}
-.cl-col li::before{content:'▶';position:absolute;left:-1.2em;color:gray;font-size:0.75em;top:0.35em}
+.cl-col ul{list-style:none;margin:4px 0 0;padding:0.4em 0}
+.cl-col li{font-size:0.78em;padding:3px 0;line-height:1.5;list-style-type:none;display:flex;align-items:center;gap:4px}
+.cl-col li::before{content:'›';color:gray;font-size:1.1em;flex-shrink:0;line-height:1}
 .cl-region{font-size:0.82em;font-weight:700;color:#222;letter-spacing:0.06em;margin:0 0 8px}
 .cl-col a{color:#555;text-decoration:none}
 .cl-col a:hover{color:var(--primary,#6495ed);text-decoration:underline}
@@ -326,10 +326,10 @@ section.active{display:block;padding-top:0}
 .ci-spots:hover{opacity:0.7}
 
 /* 都市セクションヘッダー */
-.city-section-header{grid-column:1/-1;padding:20px 0 10px;margin-top:6px}
+.city-section-header{grid-column:1/-1;padding:0.5em 1em;margin:1em 0 0.25em;background:#f4f4f4;border-left:solid 6px #5bb7ae;box-shadow:0px 2px 3px rgba(0,0,0,0.33)}
 .csh-title{font-size:1.15em;font-weight:900;color:#222;margin-bottom:5px}
 .csh-desc{font-size:0.8em;color:#666;margin-bottom:10px;line-height:1.5}
-.csh-img{display:block;width:calc(100% + 28px);margin:-12px -14px 12px;height:140px;object-fit:cover;border-radius:8px 8px 0 0}
+.csh-img{display:block;width:calc(100% + 2em);margin:-0.5em -1em 12px;height:140px;object-fit:cover;border-radius:0}
 .csh-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
 .csh-item{display:flex;gap:6px;align-items:baseline;padding:4px 0;border-bottom:1px solid #b8b8b8}
 .csh-item .csh-lbl{font-size:0.65em;color:#aaa;flex-shrink:0;width:8.5em}
