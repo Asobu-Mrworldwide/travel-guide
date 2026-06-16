@@ -31,8 +31,8 @@
   const colsHtml = Object.entries(regions).map(([region, countries]) => {
     const items = countries.map(c =>
       c.available && c.path
-        ? `<li><a href="${base}${c.path}">・${c.name}</a></li>`
-        : `<li class="cl-unavailable">・${c.name}</li>`
+        ? `<li><a href="${base}${c.path}">${c.name}</a></li>`
+        : `<li class="cl-unavailable">${c.name}</li>`
     ).join("");
     return `<div class="cl-col"><p class="cl-region">${region}</p><ul>${items}</ul></div>`;
   }).join("");
