@@ -288,7 +288,7 @@
     {% if city.note %}<div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">{{city.note}}</div>{% endif %}
     {% endfor %}
 
-    <div style="margin-top:14px;background:#fffbf0;border-left:3px solid var(--yellow);border-radius:6px;padding:10px 12px;font-size:0.75em;color:#665500;line-height:1.7">{{season.tip_html}}</div>
+    <div class="season-tip-box"><span class="season-tip-title">{{season.tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{season.tip_body}}</p></div>
   </div>
   <div class="tab-cta">
     <div class="tab-cta-title">旅の予算を把握しよう！💰</div>
@@ -328,7 +328,7 @@
         {% endfor %}
       </tbody>
     </table>
-    <div style="margin-top:10px;background:#fffbf0;border-left:3px solid var(--yellow);border-radius:6px;padding:10px 12px;font-size:0.75em;color:#665500;line-height:1.7">💡 <strong>節約ポイント</strong><br>{{budget.savings_tips_html}}</div>
+    <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
   </div>
 
   <div style="margin-top:20px;background:linear-gradient(135deg,#f0f7f3,#e6f2ec);border-radius:14px;padding:18px 20px;text-align:center">
@@ -410,7 +410,7 @@
       </div>
       {% endfor %}
     </div>
-    <div style="background:#fff8e6;border-left:3px solid #f5a623;border-radius:6px;padding:10px 12px;font-size:0.78em;color:#7a5200;line-height:1.7;margin-bottom:8px">💡 <strong>選び方のコツ</strong><br>{{practical.hotel_tip}}</div>
+    <div class="season-tip-box"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
     <span data-affiliate="hotels"></span>
   </div>
 
@@ -451,7 +451,7 @@
   <div>
     <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
     <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
-    <div style="background:#fff8e6;border-left:3px solid #f5a623;border-radius:6px;padding:8px 12px;font-size:0.75em;color:#7a5200;line-height:1.7;margin-bottom:14px">{{practical.cash_small_tip_html}}</div>
+    <div class="season-tip-box" style="margin-bottom:14px"><span class="season-tip-title">{{practical.cash_tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.cash_tip_body}}</p></div>
     <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px">
       <button onclick="changeDays(-1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">−</button>
       <div style="text-align:center;min-width:60px">
