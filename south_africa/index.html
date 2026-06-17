@@ -592,9 +592,10 @@
   <h2>ホテルの選び方</h2>
   <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">ケープタウンは観光の拠点となるエリアが集中しており、目的に合わせて滞在エリアを選ぼう。</div>
+    
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">V&Aウォーターフロント周辺</div>
           
@@ -603,10 +604,9 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">テーブルマウンテンを望む港湾エリア。ショッピングモール・レストラン・観光アクティビティが集中。安全性も高い。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 10,000〜20,000円／泊　高級 25,000円〜</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/V%26A+Waterfront,+Cape+Town" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">シーポイント</div>
           
@@ -615,10 +615,9 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">大西洋沿いのローカルエリア。プロムナードの散歩が気持ちよく、カフェや地元レストランも充実。ウォーターフロントまで徒歩圏内。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 7,000〜15,000円／泊</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Sea+Point,+Cape+Town" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">シティボウル（市街中心部）</div>
           
@@ -627,7 +626,6 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">ケープタウン市街の中心。各種交通機関へのアクセスが良く観光の起点に最適。ロングストリートのバー・レストランも近い。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 4,000〜8,000円　中級 8,000〜15,000円</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Cape+Town+City+Centre" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
     </div>
@@ -636,6 +634,7 @@
   </div>
 
   <h2>持ち物チェック</h2>
+  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">🇿🇦 南アフリカ特有の持ち物</div>
@@ -1464,6 +1463,7 @@ function show(id, btn) {
   window.scrollTo({top:0, behavior:'smooth'});
   btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
   history.replaceState(null, '', '#' + id);
+  if (id === 'practical' && window._initHotelMap) { window._initHotelMap(); }
 }
 
 (function() {

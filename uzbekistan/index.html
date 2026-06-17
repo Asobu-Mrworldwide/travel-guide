@@ -616,9 +616,10 @@
   <h2>ホテルの選び方</h2>
   <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">古都の旧市街に宿泊すると、観光スポットへ歩いてアクセスでき移動の負担が少ない。タシュケントは空港へのアクセスも考慮してエリアを選ぼう。</div>
+    
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">サマルカンド旧市街（レギスタン周辺）</div>
           
@@ -627,10 +628,9 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">レギスタン広場まで徒歩圏のブティックホテルが集中。昔のキャラバンサライ（隊商宿）を改装したホテルもある。夕暮れのレギスタンが窓から見えるホテルも。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 4,000〜8,000円／泊</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Registan,+Samarkand,+Uzbekistan" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">タシュケント旧市街（チョルスー周辺）</div>
           
@@ -639,10 +639,9 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">バザールや旧市街モスクに近いエリア。空港からはタクシーで20〜30分。ビジネスホテルも多く予算に応じて選べる幅がある。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 2,000〜4,000円・中級 5,000〜10,000円</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Chorsu+Bazaar,+Tashkent,+Uzbekistan" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">ブハラ旧市街（ラビ・ハウズ周辺）</div>
           
@@ -651,7 +650,6 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">ラビ・ハウズの池を囲むカフェ・レストランが夜遅くまで賑わう。旧市街内のゲストハウスは独特の雰囲気でコスパも良い。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 2,000〜4,000円／泊</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Lyab-i+Hauz,+Bukhara,+Uzbekistan" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
     </div>
@@ -660,6 +658,7 @@
   </div>
 
   <h2>持ち物チェック</h2>
+  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">🇺🇿 ウズベキスタン特有の持ち物</div>
@@ -1907,6 +1906,7 @@ function show(id, btn) {
   window.scrollTo({top:0, behavior:'smooth'});
   btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
   history.replaceState(null, '', '#' + id);
+  if (id === 'practical' && window._initHotelMap) { window._initHotelMap(); }
 }
 
 (function() {

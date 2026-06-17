@@ -610,9 +610,10 @@
   <h2>ホテルの選び方</h2>
   <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">バンコクはエリアによって観光・交通・グルメの利便性が変わる。BTS沿線が移動に便利。</div>
+    
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">スクンビット（BTS沿線）</div>
           
@@ -621,10 +622,9 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">BTS直結ホテルが多く移動が楽。高級ホテル〜ゲストハウスまで幅広い。ショッピングモールやレストランが充実。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 4,000〜10,000円／泊　高級 15,000円〜</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Sukhumvit,+Bangkok" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">カオサン通り周辺</div>
           
@@ -633,10 +633,9 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">世界中のバックパッカーが集まる活気ある通り。ゲストハウスが格安。ワット・プラケオ・王宮へも徒歩圏内。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 500〜2,000円／泊</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Khao+San+Road,+Bangkok" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">シーロム・サトーン</div>
           
@@ -645,7 +644,6 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">バンコクのビジネス街。BTS沿線で移動便利。高級ホテルやルーフトップバーが集中。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 6,000〜12,000円　高級 20,000円〜</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Silom,+Bangkok" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
       </div>
       
     </div>
@@ -654,6 +652,7 @@
   </div>
 
   <h2>持ち物チェック</h2>
+  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">🇹🇭 タイ特有の持ち物</div>
@@ -2176,6 +2175,7 @@ function show(id, btn) {
   window.scrollTo({top:0, behavior:'smooth'});
   btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
   history.replaceState(null, '', '#' + id);
+  if (id === 'practical' && window._initHotelMap) { window._initHotelMap(); }
 }
 
 (function() {

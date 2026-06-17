@@ -617,7 +617,10 @@
   <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">宿を選ぶとき、値段だけ見ていませんか？ 安さだけで選ぶと治安の悪いエリアに当たりやすいので注意が必要です。特に夜着の日程ではリスクが上がります。初日くらいは安心して休めるよう、エリアの特徴を事前に把握しておきましょう。</div>
     
-    <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden;margin:0 0 16px"></div>
+    <div style="position:relative;margin:0 0 16px">
+      <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden"></div>
+      <a id="hotel-map-btn" href="#" target="_blank" rel="noopener" style="display:none;position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px)">Googleマップで開く →</a>
+    </div>
     <script>
       var _hotelMap = null;
       var _hotelAreas = [{ id:'klcc', name:'KLCC周辺', lat:3.1579, lng:101.7123 },{ id:'bukit', name:'ブキッビンタン', lat:3.1467, lng:101.7128 },{ id:'chinatown', name:'チャイナタウン（プタリン街）', lat:3.1452, lng:101.6975 },];
@@ -627,7 +630,7 @@
         if (_hotelMap) return;
         if (!window.google || !window.google.maps) return;
         _hotelMap = new google.maps.Map(document.getElementById('hotel-map'), {
-          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID'
+          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID', disableDefaultUI: true
         });
         _hotelAreas.forEach(function(a) {
           var pin = document.createElement('div');
@@ -641,16 +644,18 @@
           new google.maps.marker.AdvancedMarkerElement({ position:{lat:a.lat,lng:a.lng}, map:_hotelMap, title:a.name, content:wrap });
         });
       };
-      window.zoomToHotelArea = function(lat, lng) {
+      window.zoomToHotelArea = function(lat, lng, mapsUrl) {
         if (!_hotelMap) return;
         _hotelMap.panTo({lat:lat, lng:lng});
         _hotelMap.setZoom(16);
+        var btn = document.getElementById('hotel-map-btn');
+        if (btn) { btn.href = mapsUrl; btn.style.display = 'block'; }
       };
     </script>
     
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1579,101.7123)">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1579,101.7123,'https://www.google.com/maps/place/KLCC,+Kuala+Lumpur')">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">KLCC周辺</div>
           
@@ -659,10 +664,9 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">ペトロナスツインタワー目の前。ショッピングモール直結ホテルが多く買い物・食事に便利。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 6,000〜12,000円／泊　高級 15,000円〜</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/KLCC,+Kuala+Lumpur" target="_blank" rel="noopener" class="map-btn" onclick="event.stopPropagation()">Googleマップで見る →</a></div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1467,101.7128)">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1467,101.7128,'https://www.google.com/maps/place/Bukit+Bintang,+Kuala+Lumpur')">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">ブキッビンタン</div>
           
@@ -671,10 +675,9 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">最大の繁華街。飲食店・ナイトライフ・買い物に便利。LRTでどこへでも移動しやすい。幅広い価格帯のホテルが揃う。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 2,000〜4,000円　中級 5,000〜10,000円</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/place/Bukit+Bintang,+Kuala+Lumpur" target="_blank" rel="noopener" class="map-btn" onclick="event.stopPropagation()">Googleマップで見る →</a></div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1452,101.6975)">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1452,101.6975,'https://www.google.com/maps/search/Chinatown+Kuala+Lumpur')">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">チャイナタウン（プタリン街）</div>
           
@@ -683,7 +686,6 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">リーズナブルなゲストハウスが多い。屋台グルメが充実。バックパッカーや節約旅行者に人気。</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 1,500〜3,000円／泊</div>
-        <div style="text-align:right;margin-top:6px"><a href="https://www.google.com/maps/search/Chinatown+Kuala+Lumpur" target="_blank" rel="noopener" class="map-btn" onclick="event.stopPropagation()">Googleマップで見る →</a></div>
       </div>
       
     </div>
@@ -692,6 +694,7 @@
   </div>
 
   <h2>持ち物チェック</h2>
+  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">🇲🇾 マレーシア特有の持ち物</div>

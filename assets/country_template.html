@@ -391,7 +391,10 @@
   <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">{{practical.hotel_intro}}</div>
     {% if practical.hotel_map_center %}
-    <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden;margin:0 0 16px"></div>
+    <div style="position:relative;margin:0 0 16px">
+      <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden"></div>
+      <a id="hotel-map-btn" href="#" target="_blank" rel="noopener" style="display:none;position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px)">Googleマップで開く →</a>
+    </div>
     <script>
       var _hotelMap = null;
       var _hotelAreas = [{% for area in practical.hotel_areas %}{ id:'{{area.id}}', name:'{{area.name}}', lat:{{area.lat}}, lng:{{area.lng}} },{% endfor %}];
@@ -401,7 +404,7 @@
         if (_hotelMap) return;
         if (!window.google || !window.google.maps) return;
         _hotelMap = new google.maps.Map(document.getElementById('hotel-map'), {
-          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID'
+          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID', disableDefaultUI: true
         });
         _hotelAreas.forEach(function(a) {
           var pin = document.createElement('div');
@@ -415,16 +418,18 @@
           new google.maps.marker.AdvancedMarkerElement({ position:{lat:a.lat,lng:a.lng}, map:_hotelMap, title:a.name, content:wrap });
         });
       };
-      window.zoomToHotelArea = function(lat, lng) {
+      window.zoomToHotelArea = function(lat, lng, mapsUrl) {
         if (!_hotelMap) return;
         _hotelMap.panTo({lat:lat, lng:lng});
         _hotelMap.setZoom(16);
+        var btn = document.getElementById('hotel-map-btn');
+        if (btn) { btn.href = mapsUrl; btn.style.display = 'block'; }
       };
     </script>
     {% endif %}
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
       {% for area in practical.hotel_areas %}
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" {% if area.lat %}onclick="zoomToHotelArea({{area.lat}},{{area.lng}})"{% endif %}>
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" {% if area.lat %}onclick="zoomToHotelArea({{area.lat}},{{area.lng}},'{{area.maps_url}}')"{% endif %}>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">{{area.name}}</div>
           {% if area.tag_color %}
@@ -435,7 +440,6 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">{{area.desc}}</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">{{area.price}}</div>
-        <div style="text-align:right;margin-top:6px"><a href="{{area.maps_url}}" target="_blank" rel="noopener" class="map-btn" onclick="event.stopPropagation()">Googleマップで見る →</a></div>
       </div>
       {% endfor %}
     </div>
@@ -444,6 +448,7 @@
   </div>
 
   <h2>持ち物チェック</h2>
+  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">{{practical.country_items_label}}</div>
