@@ -390,9 +390,41 @@
   <h2>ホテルの選び方</h2>
   <div>
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">{{practical.hotel_intro}}</div>
+    {% if practical.hotel_map_center %}
+    <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden;margin:0 0 16px"></div>
+    <script>
+      var _hotelMap = null;
+      var _hotelAreas = [{% for area in practical.hotel_areas %}{ id:'{{area.id}}', name:'{{area.name}}', lat:{{area.lat}}, lng:{{area.lng}} },{% endfor %}];
+      var _hotelCenter = { lat:{{practical.hotel_map_center.lat}}, lng:{{practical.hotel_map_center.lng}} };
+      var _hotelZoom = {{practical.hotel_map_center.zoom}};
+      window._initHotelMap = function() {
+        if (_hotelMap) return;
+        if (!window.google || !window.google.maps) return;
+        _hotelMap = new google.maps.Map(document.getElementById('hotel-map'), {
+          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID'
+        });
+        _hotelAreas.forEach(function(a) {
+          var pin = document.createElement('div');
+          pin.style.cssText = 'width:12px;height:12px;background:#1d9074;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4)';
+          var lbl = document.createElement('div');
+          lbl.textContent = a.name;
+          lbl.style.cssText = 'position:absolute;top:14px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:700;color:#1d9074;background:#fff;padding:1px 5px;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,0.2)';
+          var wrap = document.createElement('div');
+          wrap.style.position = 'relative';
+          wrap.appendChild(pin); wrap.appendChild(lbl);
+          new google.maps.marker.AdvancedMarkerElement({ position:{lat:a.lat,lng:a.lng}, map:_hotelMap, title:a.name, content:wrap });
+        });
+      };
+      window.zoomToHotelArea = function(lat, lng) {
+        if (!_hotelMap) return;
+        _hotelMap.panTo({lat:lat, lng:lng});
+        _hotelMap.setZoom(16);
+      };
+    </script>
+    {% endif %}
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
       {% for area in practical.hotel_areas %}
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" {% if area.lat %}onclick="zoomToHotelArea({{area.lat}},{{area.lng}})"{% endif %}>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
           <div style="font-weight:700;font-size:0.84em">{{area.name}}</div>
           {% if area.tag_color %}
@@ -403,7 +435,7 @@
         </div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.6">{{area.desc}}</div>
         <div style="font-size:0.72em;color:var(--sub);margin-top:5px">{{area.price}}</div>
-        <div style="text-align:right;margin-top:6px"><a href="{{area.maps_url}}" target="_blank" rel="noopener" class="map-btn">Googleマップで見る →</a></div>
+        <div style="text-align:right;margin-top:6px"><a href="{{area.maps_url}}" target="_blank" rel="noopener" class="map-btn" onclick="event.stopPropagation()">Googleマップで見る →</a></div>
       </div>
       {% endfor %}
     </div>
@@ -757,6 +789,7 @@ function show(id, btn) {
   window.scrollTo({top:0, behavior:'smooth'});
   btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
   history.replaceState(null, '', '#' + id);
+  if (id === 'practical' && window._initHotelMap) { window._initHotelMap(); }
 }
 
 (function() {
