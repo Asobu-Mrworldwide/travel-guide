@@ -240,6 +240,7 @@
   <!-- ベストシーズン（簡易） -->
   <h2>ベストシーズン</h2>
   <div class="s-card">
+    <div style="background:#fff;padding:28px 24px">
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">{{season_mini.description}}</p>
     <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">{{season_mini.city_name}}</div>
     <div class="season-mini">
@@ -260,12 +261,17 @@
       <span>☀️ 乾季　⛅ 曇り　☔ 雨季</span>
     </div>
     <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[4])">地域別ベストシーズンを詳しく見る →</button>
+    </div>
   </div>
 
   <!-- 基本データ -->
   <h2>基本データ</h2>
   <div class="s-card">
-    <div style="background:#fff;border-radius:8px;padding:4px 0">
+    <div style="background:#fff;padding:4px 0">
+    <div style="text-align:center;padding:20px 16px;border-bottom:1px solid #e0e0e0">
+      {{overview.flag_html}}
+      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">{{overview.flag_caption}}</p>
+    </div>
     <div class="bd-grid">
       {% for item in basic_data %}
       <div class="bd-item">
@@ -274,10 +280,6 @@
       </div>
       {% endfor %}
     </div>
-    </div>
-    <div style="margin-top:24px;text-align:center">
-      {{overview.flag_html}}
-      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">{{overview.flag_caption}}</p>
     </div>
   </div>
   {{custom_bottom_basic}}
