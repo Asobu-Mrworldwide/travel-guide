@@ -17,8 +17,21 @@
 <script src="../assets/affiliates.js" defer></script>
 <style>
 /* HEADER */
-.hero-img{width:100%;display:block}
-.hero{position:relative;max-width:740px;margin:16px auto 0}
+.hero{display:flex;align-items:stretch;max-width:740px;margin:16px 0 0 250px}
+.hero-card{width:35%;background:var(--green);color:#fff;padding:20px 18px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.hero-img{width:65%;display:block;object-fit:cover;flex-shrink:0}
+@media(max-width:1020px){.hero{margin:0 auto;max-width:100%}}
+@media(max-width:700px){
+  .hero{flex-direction:column;width:100%;max-width:100%}
+  .hero-card{width:100%;padding:14px 16px;flex-direction:row;flex-wrap:wrap;gap:6px;align-items:center}
+  .hero-badge{font-size:0.65em}
+  .hero-title{font-size:1em;width:100%}
+  .hero-sub{font-size:0.68em;width:100%}
+  .hero-img{width:100%;height:auto;flex-shrink:unset}
+}
+.hero-badge{font-size:0.68em;font-weight:700;background:rgba(0,0,0,0.25);padding:3px 9px;border-radius:4px;display:inline-block;width:fit-content;letter-spacing:0.04em}
+.hero-title{font-size:1.25em;font-weight:900;line-height:1.4;color:#fff}
+.hero-sub{font-size:0.72em;color:rgba(255,255,255,0.7)}
 .hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
 
 /* フードカード画像 */
@@ -69,6 +82,11 @@
 
 
 <div class="hero">
+  <div class="hero-card">
+    <span class="hero-badge">旅行・観光の基本情報</span>
+    <div class="hero-title">マレーシアの旅行ガイド</div>
+    <div class="hero-sub">World Mappy</div>
+  </div>
   <img src="素材/ヒーロー.webp" alt="マレーシアの街並み" class="hero-img">
   
 </div>
@@ -83,10 +101,6 @@
   <h2>マレーシアってどんな国？</h2>
   <div class="s-card">
     <p style="font-size:0.88em;color:var(--text)">東南アジアの中心に位置するマレーシアは、マレー系・中国系・インド系が共存する<strong>多民族・多文化国家</strong>。熱帯雨林の大自然、世界遺産の古都、近代的な都市が一度に楽しめる。<span style='display:block;margin-top:0.5em'>「多民族国家」って言葉、ピンとこないですよね？ 私は現地でインド系のおじさんが屋台で肉まんを売ってるのを見て、なんか急に腑に落ちました。</span><span style='display:block;margin-top:0.5em'>英語が広く通じビザも不要。物価は日本の約半分で、初めての東南アジアにもおすすめです。</span></p>
-    <div style="margin-top:32px;margin-bottom:32px;text-align:center">
-      <div style="background:linear-gradient(to bottom,#cc0001 7.14%,#fff 7.14% 14.28%,#cc0001 14.28% 21.42%,#fff 21.42% 28.56%,#cc0001 28.56% 35.7%,#fff 35.7% 42.84%,#cc0001 42.84% 50%,#fff 50% 57.14%,#cc0001 57.14% 64.28%,#fff 64.28% 71.42%,#cc0001 71.42% 78.56%,#fff 78.56% 85.7%,#cc0001 85.7% 92.84%,#fff 92.84%);height:100px;width:200px;display:inline-block;position:relative;overflow:hidden;border:1px solid #eee;"><div style="position:absolute;top:0;left:0;width:40%;height:57.14%;background:#003087"></div><div style="position:absolute;top:6px;left:7px;font-size:18px">🌙</div><div style="position:absolute;top:10px;left:28px;font-size:22px">⭐</div></div>
-      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">Jalur Gemilang（ジャルル・グミラン）― マレー語で「栄光の縞」</p>
-    </div>
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
     <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
@@ -264,6 +278,7 @@
   <!-- 基本データ -->
   <h2>基本データ</h2>
   <div class="s-card">
+    <div style="background:#fff;border-radius:8px;padding:4px 0">
     <div class="bd-grid">
       
       <div class="bd-item">
@@ -302,6 +317,11 @@
         <div class="bd-note">中国系23%・インド系7%</div>
       </div>
       
+    </div>
+    </div>
+    <div style="margin-top:24px;text-align:center">
+      <div style="background:linear-gradient(to bottom,#cc0001 7.14%,#fff 7.14% 14.28%,#cc0001 14.28% 21.42%,#fff 21.42% 28.56%,#cc0001 28.56% 35.7%,#fff 35.7% 42.84%,#cc0001 42.84% 50%,#fff 50% 57.14%,#cc0001 57.14% 64.28%,#fff 64.28% 71.42%,#cc0001 71.42% 78.56%,#fff 78.56% 85.7%,#cc0001 85.7% 92.84%,#fff 92.84%);height:100px;width:200px;display:inline-block;position:relative;overflow:hidden;border:1px solid #eee;"><div style="position:absolute;top:0;left:0;width:40%;height:57.14%;background:#003087"></div><div style="position:absolute;top:6px;left:7px;font-size:18px">🌙</div><div style="position:absolute;top:10px;left:28px;font-size:22px">⭐</div></div>
+      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">Jalur Gemilang（ジャルル・グミラン）― マレー語で「栄光の縞」</p>
     </div>
   </div>
   

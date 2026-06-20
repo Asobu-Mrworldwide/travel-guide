@@ -17,8 +17,21 @@
 <script src="../assets/affiliates.js" defer></script>
 <style>
 /* HEADER */
-.hero-img{width:100%;display:block}
-.hero{position:relative;max-width:740px;margin:16px auto 0}
+.hero{display:flex;align-items:stretch;max-width:740px;margin:16px 0 0 250px}
+.hero-card{width:35%;background:var(--green);color:#fff;padding:20px 18px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.hero-img{width:65%;display:block;object-fit:cover;flex-shrink:0}
+@media(max-width:1020px){.hero{margin:0 auto;max-width:100%}}
+@media(max-width:700px){
+  .hero{flex-direction:column;width:100%;max-width:100%}
+  .hero-card{width:100%;padding:14px 16px;flex-direction:row;flex-wrap:wrap;gap:6px;align-items:center}
+  .hero-badge{font-size:0.65em}
+  .hero-title{font-size:1em;width:100%}
+  .hero-sub{font-size:0.68em;width:100%}
+  .hero-img{width:100%;height:auto;flex-shrink:unset}
+}
+.hero-badge{font-size:0.68em;font-weight:700;background:rgba(0,0,0,0.25);padding:3px 9px;border-radius:4px;display:inline-block;width:fit-content;letter-spacing:0.04em}
+.hero-title{font-size:1.25em;font-weight:900;line-height:1.4;color:#fff}
+.hero-sub{font-size:0.72em;color:rgba(255,255,255,0.7)}
 .hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
 
 /* フードカード画像 */
@@ -69,6 +82,11 @@
 
 {{custom_before_hero}}
 <div class="hero">
+  <div class="hero-card">
+    <span class="hero-badge">旅行・観光の基本情報</span>
+    <div class="hero-title">{{name}}の旅行ガイド</div>
+    <div class="hero-sub">World Mappy</div>
+  </div>
   <img src="{{hero_image}}" alt="{{hero_alt}}" class="hero-img">
   {{custom_inside_hero}}
 </div>
@@ -83,10 +101,6 @@
   <h2>{{overview.country_question}}</h2>
   <div class="s-card">
     <p style="font-size:0.88em;color:var(--text)">{{overview.description_html}}</p>
-    <div style="margin-top:32px;margin-bottom:32px;text-align:center">
-      {{overview.flag_html}}
-      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">{{overview.flag_caption}}</p>
-    </div>
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
 
     <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
@@ -244,6 +258,7 @@
   <!-- 基本データ -->
   <h2>基本データ</h2>
   <div class="s-card">
+    <div style="background:#fff;border-radius:8px;padding:4px 0">
     <div class="bd-grid">
       {% for item in basic_data %}
       <div class="bd-item">
@@ -252,6 +267,11 @@
         {% if item.note %}<div class="bd-note">{{item.note}}</div>{% endif %}
       </div>
       {% endfor %}
+    </div>
+    </div>
+    <div style="margin-top:24px;text-align:center">
+      {{overview.flag_html}}
+      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">{{overview.flag_caption}}</p>
     </div>
   </div>
   {{custom_bottom_basic}}
