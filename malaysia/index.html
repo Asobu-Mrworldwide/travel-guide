@@ -111,6 +111,7 @@
 <!-- 基本情報 -->
 <section id="basic" class="active">
 
+  <h2>マレーシアってどんなところ？</h2>
   <div class="s-card">
 
     
@@ -165,11 +166,10 @@
     </div>
 
     <div class="season-tip-box" style="margin-top:24px"><span class="season-tip-title">🇯🇵 日本人に人気？</span><p style="font-size:0.82em;line-height:1.7;color:#444">年間約40万人の日本人が訪れる人気旅行先。<strong>ビザ不要・英語が通じやすい・物価が安い</strong>の三拍子が揃い、初めての海外旅行先としても定番。日本食レストランも豊富で食事の心配も少ない。</p></div>
-  </div>
 
-  <!-- 主要都市 -->
-  <h2>主要都市</h2>
-  <div class="s-card" style="padding:0;overflow:hidden">
+    <!-- 主要都市 -->
+    <div class="qs-section-title" style="margin-top:20px">主要都市</div>
+    <div style="overflow:hidden">
     <div style="position:relative">
       <div id="malaysia-map" style="width:100%;height:300px"></div>
       <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
@@ -279,11 +279,10 @@
       <div class="city-item" onclick="zoomToCity('kuching')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">クチン</div><div class="ci-badge green">ボルネオ</div></div><div class="ci-desc">「猫の街」として知られるサラワク州の州都</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kuching')">観光地を見る →</button></div></div>
       
     </div>
-  </div>
+    </div><!-- end overflow:hidden 主要都市 -->
 
-  <!-- ベストシーズン（簡易） -->
-  <h2>ベストシーズン</h2>
-  <div class="s-card">
+    <!-- ベストシーズン（簡易） -->
+    <div class="qs-section-title" style="margin-top:20px">ベストシーズン</div>
     <div style="background:#fff;padding:28px 24px">
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">年間を通して25〜32℃の常夏。地域によって雨季・乾季が異なります。</p>
     <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">クアラルンプール</div>
@@ -306,8 +305,9 @@
     </div>
     <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[4])">地域別ベストシーズンを詳しく見る →</button>
     </div>
-  </div>
+  </div><!-- end s-card どんなところ？ -->
 
+  <div style="margin-top:32px"></div>
   <!-- 基本データ -->
   <h2>基本データ</h2>
   <div class="s-card">
