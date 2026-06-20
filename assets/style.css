@@ -93,7 +93,7 @@ footer a{color:#aaa;text-decoration:none;margin:0 10px}
 .lbl{font-size:0.72em;color:var(--sub);font-weight:700;margin-bottom:2px}
 
 /* タブナビ（全国共通） */
-nav{background:#f6f4ef;border-bottom:2px solid #e4ecee;display:flex;justify-content:center;overflow-x:auto;gap:0;position:sticky;top:0;z-index:99;box-shadow:0 1px 4px rgba(100,149,237,0.08);touch-action:pan-x;-webkit-overflow-scrolling:touch}
+nav{background-color:rgba(255,255,255,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,136,229,0.15);box-shadow:0 4px 20px rgba(26,37,48,0.04);display:flex;justify-content:center;overflow-x:auto;gap:0;position:sticky;top:0;z-index:100;touch-action:pan-x;-webkit-overflow-scrolling:touch}
 nav::-webkit-scrollbar{height:3px}
 nav button{flex-shrink:0;background:none;border:none;border-bottom:6px solid transparent;padding:13px 16px;font-size:0.8em;color:#555;cursor:pointer;margin-bottom:-2px;white-space:nowrap;transition:color 0.2s,border-color 0.2s;font-weight:700;letter-spacing:0.02em;position:relative}
 nav button:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:16px;background:#d8e2ee}
