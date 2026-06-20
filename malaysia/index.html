@@ -17,8 +17,8 @@
 <script src="../assets/affiliates.js" defer></script>
 <style>
 /* HEADER */
-.hero-img{width:100%;height:200px;object-fit:cover;object-position:center 50%;display:block}
-.hero{position:relative}
+.hero-img{width:100%;display:block}
+.hero{position:relative;max-width:740px;margin:16px auto 0}
 .hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
 
 /* フードカード画像 */
@@ -48,13 +48,10 @@
 </head>
 <body>
 
-
-<div class="hero">
-  <img src="素材/ヒーロー.webp" alt="マレーシアの街並み" class="hero-img">
-  <a href="../index.html" class="hero-back">← 国一覧へ戻る</a>
-  
-</div>
-
+<header class="site-header">
+  <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none">🌍 <span>World</span> Mappy</a></div>
+  <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
+</header>
 
 <nav>
   <button class="active" onclick="show('basic',this)">基本情報</button>
@@ -69,6 +66,13 @@
   <button onclick="show('transport',this)">交通</button>
   <button onclick="window.open('../common/checklist.html?from=malaysia','_blank')">持ち物リスト</button>
 </nav>
+
+
+<div class="hero">
+  <img src="素材/ヒーロー.webp" alt="マレーシアの街並み" class="hero-img">
+  
+</div>
+
 
 <div class="container">
 <div id="slides-wrap">
