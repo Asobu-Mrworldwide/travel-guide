@@ -76,8 +76,8 @@
 <!-- 基本情報 -->
 <section id="basic" class="active">
 {{custom_top_basic}}
-  <div style="margin-bottom:14px;line-height:1.8">
-    <h2>{{overview.country_question}}</h2>
+  <h2>{{overview.country_question}}</h2>
+  <div class="s-card">
     <p style="font-size:0.88em;color:var(--text)">{{overview.description_html}}</p>
     <div style="margin-top:32px;margin-bottom:32px;text-align:center">
       {{overview.flag_html}}
@@ -119,8 +119,8 @@
   </div>
 
   <!-- 主要都市 -->
-  <h2 style="margin-top:32px">主要都市</h2>
-  <div class="card full" style="padding:0;overflow:hidden;border-radius:0">
+  <h2>主要都市</h2>
+  <div class="s-card" style="padding:0;overflow:hidden">
     <div style="position:relative">
       <div id="{{map.element_id}}" style="width:100%;height:300px"></div>
       <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
@@ -214,7 +214,7 @@
 
   <!-- ベストシーズン（簡易） -->
   <h2>ベストシーズン</h2>
-  <div>
+  <div class="s-card">
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">{{season_mini.description}}</p>
     <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">{{season_mini.city_name}}</div>
     <div class="season-mini">
@@ -239,7 +239,7 @@
 
   <!-- 基本データ -->
   <h2>基本データ</h2>
-  <div>
+  <div class="s-card">
     <div class="bd-grid">
       {% for item in basic_data %}
       <div class="bd-item">
@@ -257,7 +257,7 @@
 <section id="season">
 {{custom_top_season}}
   <h2>ベストシーズン</h2>
-  <div>
+  <div class="s-card">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
@@ -299,6 +299,7 @@
 <section id="budget">
 {{custom_top_budget}}
   <h2>旅行費用の目安</h2>
+  <div class="s-card">
   <div class="grid2" style="margin-bottom:14px">
     <div class="card" style="background:linear-gradient(135deg,#f0f7f3,#e0f0e8);border:1px solid #a8d5b5;text-align:center">
       <div style="font-size:0.75em;color:var(--sub)">{{budget.plan1_label}}</div>
@@ -311,9 +312,10 @@
       <div style="font-size:0.72em;color:var(--sub)">{{budget.plan2_note}}</div>
     </div>
   </div>
+  </div>
 
   <h2>費用の内訳</h2>
-  <div>
+  <div class="s-card">
     <table class="budget-table">
       <tbody>
         {% for item in budget.items %}
@@ -328,7 +330,7 @@
     <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
   </div>
 
-  <div style="margin-top:20px;background:linear-gradient(135deg,#f0f7f3,#e6f2ec);border-radius:14px;padding:18px 20px;text-align:center">
+  <div class="s-card" style="text-align:center">
     <div style="font-size:1em;font-weight:900;color:var(--green);margin-bottom:6px">さあ、旅の準備をはじめよう！ 🧳</div>
     <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
     <button onclick="show('practical',document.querySelectorAll('nav button')[6])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
@@ -340,14 +342,14 @@
 <section id="practical">
 
   <h2>旅の実用情報</h2>
-  <div class="prac-grid">
+  <div class="s-card prac-grid">
     {% for card in practical.prac_cards %}
     <div class="prac-card"><div class="p-ico">{{card.icon}}</div><div class="p-title">{{card.title}}</div><div class="p-val">{{card.value}}</div></div>
     {% endfor %}
   </div>
 
   <h2>準備は早めに</h2>
-  <div>
+  <div class="s-card">
     <div style="padding-top:8px">
       {% for step in practical.prep_steps %}
       <div class="rm-item">
@@ -369,7 +371,7 @@
   </div>
 
   <h2>航空券の予約</h2>
-  <div>
+  <div class="s-card">
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">{{practical.flight_intro}}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
       {% for airline in practical.airlines %}
@@ -388,7 +390,7 @@
   </div>
 
   <h2>ホテルの選び方</h2>
-  <div>
+  <div class="s-card">
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">{{practical.hotel_intro}}</div>
     {% if practical.hotel_map_center %}
     <div style="position:relative;margin:0 0 16px">
@@ -448,6 +450,7 @@
   </div>
 
   <h2>持ち物・アプリ準備</h2>
+  <div class="s-card">
   <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
@@ -480,9 +483,10 @@
     </div>
     {% endfor %}
   </div>
+  </div>
 
   <h2 id="money">両替・支払い</h2>
-  <div>
+  <div class="s-card">
     <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
     <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
     <div class="season-tip-box" style="margin-bottom:14px"><span class="season-tip-title">{{practical.cash_tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.cash_tip_body}}</p></div>
@@ -517,10 +521,10 @@
   </div>
 
   <h2 id="sim">SIM・Wi-Fi</h2>
-  <div data-affiliate-card="sim_compare"></div>
+  <div class="s-card" data-affiliate-card="sim_compare"></div>
 
   <h2>現地ツアー・アクティビティ</h2>
-  <div data-affiliate-card="klook"></div>
+  <div class="s-card" data-affiliate-card="klook"></div>
 
   <div class="tab-cta">
     <div class="tab-cta-title">{{practical.cta_title}}</div>
@@ -533,10 +537,12 @@
 <!-- マナー -->
 <section id="manner">
   <h2>文化・マナー</h2>
+  <div class="s-card">
   <div class="manner-grid">
     {% for card in manner_cards %}
     <div class="manner-card {{card.type}}"><div class="m-ico">{{card.icon}}</div><div class="m-title">{{card.title}}</div><div class="m-desc">{{card.desc}}</div></div>
     {% endfor %}
+  </div>
   </div>
   <div class="tab-cta">
     <div class="tab-cta-title">{{manner_cta_title}}</div>
@@ -548,7 +554,7 @@
 <!-- 交通 -->
 <section id="transport">
   <h2>現地交通ガイド</h2>
-  <div>
+  <div class="s-card">
     {% for item in transport_items %}
     <div class="trans-item" {% if item.is_last %}{% else %}style="border-bottom:1px solid #b8b8b8"{% endif %}>
       <div class="t-ico">{{item.icon}}</div>
@@ -565,6 +571,7 @@
 <!-- フレーズ -->
 <section id="phrases">
   <h2>{{phrases.language_name}} 旅行フレーズ集</h2>
+  <div class="s-card">
   <table class="phrase-tbl">
     <tr><th>日本語</th><th>{{phrases.language_name}} / 読み方</th><th style="width:38px"></th></tr>
     {% for cat in phrases.categories %}
@@ -580,12 +587,14 @@
     <p>旅行前にフレーズをマスターしよう！<br>印刷できる単語カードを販売中。</p>
     <button class="cta-btn">単語カードを見る →</button>
   </div>
+  </div>
 </section>
 
 <!-- グルメ -->
 <section id="food">
 {{custom_top_food}}
   <h2>{{food_section_title}}</h2>
+  <div class="s-card">
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="food-filter-type">
@@ -616,6 +625,7 @@
     </div>
     {% endfor %}
   </div>
+  </div>
   <div class="tab-cta">
     <div class="tab-cta-title">食べたいものが決まったら旅程を組もう！🗺️</div>
     <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>管理人の実際の旅ルートもそのまま公開しています。</p>
@@ -628,6 +638,7 @@
 <section id="spots">
 {{custom_top_spots}}
   <h2>{{spots_section_title}}</h2>
+  <div class="s-card">
   <div class="filter-row" id="spots-filter-row">
     {% for fc in spots_filter_cities %}
     <button class="filter-btn {% if fc.active %}active{% endif %}" data-filter="{{fc.id}}" onclick="filterSpots('{{fc.id}}',this)">{{fc.label}}</button>
@@ -661,6 +672,7 @@
     {% endfor %}
     {% endfor %}
   </div>
+  </div>
 
   <div class="tab-cta">
     <div class="tab-cta-title">観光地が決まったら名物グルメもチェック！🍜</div>
@@ -674,7 +686,7 @@
 <section id="course">
 {{custom_top_course}}
   <h2>モデルコース</h2>
-
+  <div class="s-card">
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:14px">{{courses.intro}}</p>
 
   <div class="course-type">
@@ -735,6 +747,7 @@
     <div class="tab-cta-title">{{courses.cta_title}}</div>
     <p class="tab-cta-desc">{{courses.cta_desc}}</p>
     <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
+  </div>
   </div>
   {{custom_bottom_course}}
 </section>
