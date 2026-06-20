@@ -17,7 +17,7 @@
 <script src="../assets/affiliates.js" defer></script>
 <style>
 /* イラスト下の説明文 */
-.desc-intro{max-width:740px;margin:20px 0 0 250px;padding:0 24px;font-size:0.9em;line-height:1.8;color:var(--text)}
+.desc-intro{max-width:740px;margin:20px 0 0 250px;padding:0 24px;font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:0}
 @media(max-width:1020px){.desc-intro{margin:16px auto 0;max-width:100%;padding:0 16px}}
 /* HEADER */
 .hero{display:flex;align-items:stretch;max-width:740px;margin:16px 0 0 250px}
@@ -52,14 +52,22 @@
 #spots-grid .item-card.has-spot-img .desc{flex:1}
 
 /* クイックスペックカード（基本情報タブ） */
-#basic .qs-card{border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)}
+#basic .qs-card{border:1px solid #e0e0e0;box-shadow:none}
 
 /* セクション間隔（全タブ共通） */
 #basic h2~h2,#spots h2~h2,#food h2~h2,#course h2~h2,#season h2~h2,
 #budget h2~h2,#practical h2~h2,#manner h2~h2,#phrases h2~h2,#transport h2~h2{margin-top:36px}
 #basic .qs-row{margin-top:28px;margin-bottom:36px}
-@media(min-width:640px){.qs-top-grid{grid-template-columns:1fr 1fr !important}}
+.qs-section-title{font-size:18px;font-weight:700;color:var(--text);margin:6px 0 6px;letter-spacing:0.04em}
 .cl-region{font-weight:700}
+.sp-points-wrap{background:#fff;border:1px solid #e0e0e0}
+.sp-point{display:flex;align-items:flex-start;gap:16px;padding:16px;border-bottom:1px solid #e0e0e0}
+.sp-point:last-child{border-bottom:none}
+.sp-point-body{flex:1;min-width:0}
+.sp-point-title{font-size:0.95em;font-weight:700;margin-bottom:8px;line-height:1.5}
+.sp-point-text{font-size:0.82em;color:#444;line-height:1.8}
+.sp-point-img{width:120px;height:90px;object-fit:cover;flex-shrink:0;display:block}
+@media(max-width:700px){.sp-point{flex-direction:column}.sp-point-img{width:100%;height:auto;aspect-ratio:16/9}}
 </style>
 </head>
 <body>
@@ -104,25 +112,45 @@
 <section id="basic" class="active">
 
   <div class="s-card">
-    <hr style="border:none;border-top:1px solid #b8b8b8;margin:0 0 16px">
 
-    <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
-      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08);display:flex;flex-direction:column">
-        <div style="padding:12px 14px 8px;flex:1">
-          <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
-          <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ペトロナスツインタワー</div>
-          <div style="font-size:0.8em;color:var(--sub)">クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。</div>
-        </div>
-        <div style="position:relative;font-size:0"><img src="素材/観光スポット/KLCC公園.webp" alt="ペトロナスツインタワー" style="width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:16/9"><button onclick="show('spots',document.querySelectorAll('nav button')[1])" class="spot-map-btn" style="position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;border:none;cursor:pointer;backdrop-filter:blur(2px);white-space:nowrap">観光スポットを見る →</button></div>
+    
+    <div class="qs-section-title" style="margin-top:6px">観光のポイント</div>
+    <div class="sp-points-wrap">
+    
+    <div class="sp-point">
+      <div class="sp-point-body">
+        <div class="sp-point-title">近代と聖域が、電車一本でつながっている</div>
+        <div class="sp-point-text">クアラルンプール中心部から電車で30分、突如として高さ100mを超える断崖が現れる。272段の虹色の階段を登り切ると、巨大な洞窟の中にヒンドゥーの神殿が鎮座している。都市の喧騒とはまるで別の空気が流れるこの場所は、近代都市KLと同じ国にあるとは思えない非日常感を持つ。</div>
       </div>
-      <div style="background:#fff;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
-          <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">人気No.1グルメ</div>
-          <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">ナシレマ</div>
-          <div style="font-size:0.8em;color:var(--sub)">ココナッツミルクで炊いたご飯にサンバルソース・ゆで卵・アンチョビ・ピーナッツを添えた国民食。朝食の定番。</div>
-          <img src="素材/グルメ/ナシレマ.webp" alt="ナシレマ" style="width:100%;max-height:220px;object-fit:contain;display:block;margin-top:10px">
-          <button class="qs-link" style="margin-top:8px;align-self:flex-end;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ一覧を見る →</button>
-      </div>
+      <img src="素材/観光スポット/バトゥ洞窟.webp" alt="近代と聖域が、電車一本でつながっている" class="sp-point-img">
     </div>
+    
+    <div class="sp-point">
+      <div class="sp-point-body">
+        <div class="sp-point-title">多民族の食文化を、屋台で体感する</div>
+        <div class="sp-point-text">マレー系・中華系・インド系の料理が同じ屋台街に並ぶ光景は、マレーシアならではのものだ。朝のコピティアムでロティチャナイをちぎりながらチャイを飲み、昼はナシレマ、夜は中華系の海鮮炒めと、一日で三つの文化の味を巡れる国は世界でもそう多くない。</div>
+      </div>
+      <img src="素材/グルメ/ナシレマ.webp" alt="多民族の食文化を、屋台で体感する" class="sp-point-img">
+    </div>
+    
+    <div class="sp-point">
+      <div class="sp-point-body">
+        <div class="sp-point-title">イスラムの荘厳さに、静かに向き合う</div>
+        <div class="sp-point-text">青い星形の屋根を持つ国立モスクは、1万8千人を収容できるマレーシア最大のイスラム寺院だ。礼拝の時間に響き渡るアザーンの声は、旅行者の日常感覚をすっと遠ざける。ローブを借りれば非ムスリムも無料で見学でき、信仰の空間が持つ静けさをそのまま体感できる。</div>
+      </div>
+      <img src="素材/観光スポット/マスジッドネガラ（国立モスク）.webp" alt="イスラムの荘厳さに、静かに向き合う" class="sp-point-img">
+    </div>
+    
+    <div class="sp-point">
+      <div class="sp-point-body">
+        <div class="sp-point-title">夜景を制する者が、KLを制す</div>
+        <div class="sp-point-text">86階の展望台から見下ろすクアラルンプールの夜景は、この国の急速な経済成長を目で確かめるような体験だ。41階と42階をつなぐスカイブリッジに立つと、高さ452mの空中に体が浮いている感覚になる。夕暮れから夜へ移り変わる時間帯に訪れると、街が光に包まれていく瞬間を目撃できる。</div>
+      </div>
+      <img src="素材/観光スポット/ペトロナスツインタワー.webp" alt="夜景を制する者が、KLを制す" class="sp-point-img">
+    </div>
+    
+    </div>
+    
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
@@ -286,38 +314,32 @@
       
       <div class="bd-item">
         <div class="bd-lbl">首都</div>
-        <div class="bd-val">クアラルンプール</div>
-        <div class="bd-note">行政首都：プトラジャヤ</div>
+        <div style="flex:1"><div class="bd-val">クアラルンプール</div><div class="bd-note">行政首都：プトラジャヤ</div></div>
       </div>
       
       <div class="bd-item">
         <div class="bd-lbl">独立年</div>
-        <div class="bd-val">1957年8月31日</div>
-        <div class="bd-note">1963年9月16日：マレーシア成立</div>
+        <div style="flex:1"><div class="bd-val">1957年8月31日</div><div class="bd-note">1963年9月16日：マレーシア成立</div></div>
       </div>
       
       <div class="bd-item">
         <div class="bd-lbl">人口</div>
-        <div class="bd-val">約3,350万人</div>
-        <div class="bd-note">（日本の約1/4）</div>
+        <div style="flex:1"><div class="bd-val">約3,350万人</div><div class="bd-note">（日本の約1/4）</div></div>
       </div>
       
       <div class="bd-item">
         <div class="bd-lbl">面積</div>
-        <div class="bd-val">約33万 km²</div>
-        <div class="bd-note">（日本とほぼ同じ）</div>
+        <div style="flex:1"><div class="bd-val">約33万 km²</div><div class="bd-note">（日本とほぼ同じ）</div></div>
       </div>
       
       <div class="bd-item">
         <div class="bd-lbl">宗教</div>
-        <div class="bd-val">イスラム教（国教）64%</div>
-        <div class="bd-note">仏教19%・キリスト教9%・ヒンドゥー6%</div>
+        <div style="flex:1"><div class="bd-val">イスラム教（国教）64%</div><div class="bd-note">仏教19%・キリスト教9%・ヒンドゥー6%</div></div>
       </div>
       
       <div class="bd-item">
         <div class="bd-lbl">民族</div>
-        <div class="bd-val">マレー系 約70%</div>
-        <div class="bd-note">中国系23%・インド系7%</div>
+        <div style="flex:1"><div class="bd-val">マレー系 約70%</div><div class="bd-note">中国系23%・インド系7%</div></div>
       </div>
       
     </div>
