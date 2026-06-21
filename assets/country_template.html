@@ -291,6 +291,7 @@
 {{custom_top_season}}
   <h2>ベストシーズン</h2>
   <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
@@ -313,12 +314,14 @@
         <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot {{city.months.10.type}}">{{city.months.10.icon}}<span class="md-t">{{city.months.10.temp}}</span></div></div>
         <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot {{city.months.11.type}}">{{city.months.11.icon}}<span class="md-t">{{city.months.11.temp}}</span></div></div>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">{{city.best_note}}</p><button onclick="showFilteredSpots('{{city.city_id}}')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
+      <div style="margin-top:6px"><p style="font-size:0.75em;color:var(--sub)">{{city.best_note}}</p></div>
     </div>
     {% if city.note %}<div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">{{city.note}}</div>{% endif %}
+    <div style="text-align:right;margin-top:6px;margin-bottom:-6px"><button onclick="showFilteredSpots('{{city.city_id}}')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     {% endfor %}
 
     <div class="season-tip-box"><span class="season-tip-title">{{season.tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{season.tip_body}}</p></div>
+    </div>
   </div>
   <div class="tab-cta">
     <div class="tab-cta-title">旅の予算を把握しよう！💰</div>
@@ -349,6 +352,7 @@
 
   <h2>費用の内訳</h2>
   <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
     <table class="budget-table">
       <tbody>
         {% for item in budget.items %}
@@ -361,6 +365,7 @@
       </tbody>
     </table>
     <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
+    </div>
   </div>
 
   <div class="s-card" style="text-align:center">
@@ -672,6 +677,7 @@
 {{custom_top_spots}}
   <h2>{{spots_section_title}}</h2>
   <div class="s-card">
+  <div class="filter-label">エリア</div>
   <div class="filter-row" id="spots-filter-row">
     {% for fc in spots_filter_cities %}
     <button class="filter-btn {% if fc.active %}active{% endif %}" data-filter="{{fc.id}}" onclick="filterSpots('{{fc.id}}',this)">{{fc.label}}</button>
