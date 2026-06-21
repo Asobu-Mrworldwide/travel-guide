@@ -44,7 +44,7 @@
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{display:none}
-.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0 0 14px 14px}
+.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0}
 .spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
 .spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
 .spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
@@ -103,14 +103,13 @@
 </div>
 
 
-<div class="desc-intro">東南アジアの中心に位置するマレーシアは、マレー系・中国系・インド系が共存する<strong>多民族・多文化国家</strong>。熱帯雨林の大自然、世界遺産の古都、近代的な都市が一度に楽しめる。<span style='display:block;margin-top:0.5em'>「多民族国家」って言葉、ピンとこないですよね？ 私は現地でインド系のおじさんが屋台で肉まんを売ってるのを見て、なんか急に腑に落ちました。</span><span style='display:block;margin-top:0.5em'>英語が広く通じビザも不要。物価は日本の約半分で、初めての東南アジアにもおすすめです。</span></div>
-
 <div class="container">
 <div id="slides-wrap">
 
 <!-- 基本情報 -->
 <section id="basic" class="active">
 
+  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:16px;padding:0 4px">東南アジアの中心に位置するマレーシアは、マレー系・中国系・インド系が共存する<strong>多民族・多文化国家</strong>。熱帯雨林の大自然、世界遺産の古都、近代的な都市が一度に楽しめる。<span style='display:block;margin-top:0.5em'>「多民族国家」って言葉、ピンとこないですよね？ 私は現地でインド系のおじさんが屋台で肉まんを売ってるのを見て、なんか急に腑に落ちました。</span><span style='display:block;margin-top:0.5em'>英語が広く通じビザも不要。物価は日本の約半分で、初めての東南アジアにもおすすめです。</span></div>
   <h2>マレーシアってどんなところ？</h2>
   <div class="s-card">
 
@@ -150,6 +149,7 @@
       <img src="素材/観光スポット/ペトロナスツインタワー.webp" alt="夜景を制する者が、KLを制す" class="sp-point-img">
     </div>
     
+    <div style="padding:10px 16px;text-align:right"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button></div>
     </div>
     
 
@@ -266,7 +266,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
     <div class="city-grid-wrap">
       
-      <div class="city-item" onclick="zoomToCity('kl')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">クアラルンプール</div><div class="ci-badge ">首都</div></div><div class="ci-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kl')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('kl')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">クアラルンプール</div><div class="ci-badge green">首都</div></div><div class="ci-desc">ペトロナスツインタワーを擁する経済・文化の中心地</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kl')">観光地を見る →</button></div></div>
       
       <div class="city-item" onclick="zoomToCity('penang')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">ペナン</div><div class="ci-badge green">世界遺産</div></div><div class="ci-desc">多文化が交差するグルメと芸術の島</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('penang')">観光地を見る →</button></div></div>
       
@@ -283,7 +283,7 @@
 
     <!-- ベストシーズン（簡易） -->
     <div class="qs-section-title" style="margin-top:20px">ベストシーズン</div>
-    <div style="background:#fff;padding:28px 24px">
+    <div style="background:#fff;padding:28px 24px 16px">
     <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">年間を通して25〜32℃の常夏。地域によって雨季・乾季が異なります。</p>
     <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">クアラルンプール</div>
     <div class="season-mini">
@@ -305,6 +305,7 @@
     </div>
     <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[4])">地域別ベストシーズンを詳しく見る →</button>
     </div>
+
   </div><!-- end s-card どんなところ？ -->
 
   <div style="margin-top:32px"></div>
