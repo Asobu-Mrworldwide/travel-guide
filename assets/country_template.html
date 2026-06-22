@@ -645,8 +645,6 @@
 <section id="food">
 {{custom_top_food}}
   <h2>{{food_section_title}}</h2>
-  <div class="s-card">
-  <div style="background:#fff;padding:20px 24px">
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="food-filter-type">
@@ -664,7 +662,7 @@
       {% endfor %}
     </div>
   </div>
-
+  <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     {% for item in food_items %}
     <div class="item-card has-img {% if item.must %}must{% endif %}" data-ftype="{{item.type}}" data-fcity="{{item.city}}">
@@ -676,7 +674,6 @@
       <button class="order-btn" onclick="openFoodModal('{{item.order_ico}}','{{item.order_name_en}}','{{item.name}}','{{item.image}}')">店員に聞く</button>
     </div>
     {% endfor %}
-  </div>
   </div>
   </div>
   <div class="tab-cta">
