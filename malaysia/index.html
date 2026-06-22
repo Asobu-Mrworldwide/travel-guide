@@ -149,7 +149,7 @@
       <img src="素材/観光スポット/ペトロナスツインタワー.webp" alt="夜景を制する者が、KLを制す" class="sp-point-img">
     </div>
     
-    <div style="padding:10px 16px;text-align:right"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button></div>
+    <div style="padding:10px 16px;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button><button class="see-more" style="margin:0" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button></div>
     </div>
     
 
@@ -715,44 +715,44 @@
       };
     </script>
     
-    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+    </div>
+    <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1579,101.7123,'https://www.google.com/maps/place/KLCC,+Kuala+Lumpur')">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <div style="font-weight:700;font-size:0.84em">KLCC周辺</div>
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1579,101.7123,'https://www.google.com/maps/place/KLCC,+Kuala+Lumpur')">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">KLCC周辺</div>
           
-          <div style="font-size:0.68em;color:var(--green);background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">観光・ビジネス向け</div>
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">観光・ビジネス向け</div>
           
         </div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">ペトロナスツインタワー目の前。ショッピングモール直結ホテルが多く買い物・食事に便利。</div>
-        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 6,000〜12,000円／泊　高級 15,000円〜</div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">ペトロナスツインタワー目の前。ショッピングモール直結ホテルが多く買い物・食事に便利。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">中級 6,000〜12,000円／泊　高級 15,000円〜</div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1467,101.7128,'https://www.google.com/maps/place/Bukit+Bintang,+Kuala+Lumpur')">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <div style="font-weight:700;font-size:0.84em">ブキッビンタン</div>
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1467,101.7128,'https://www.google.com/maps/place/Bukit+Bintang,+Kuala+Lumpur')">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">ブキッビンタン</div>
           
-          <div style="font-size:0.68em;color:var(--green);background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">繁華街・初めてのKLに◎</div>
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">繁華街・初めてのKLに◎</div>
           
         </div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">最大の繁華街。飲食店・ナイトライフ・買い物に便利。LRTでどこへでも移動しやすい。幅広い価格帯のホテルが揃う。</div>
-        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 2,000〜4,000円　中級 5,000〜10,000円</div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">最大の繁華街。飲食店・ナイトライフ・買い物に便利。LRTでどこへでも移動しやすい。幅広い価格帯のホテルが揃う。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 2,000〜4,000円　中級 5,000〜10,000円</div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" onclick="zoomToHotelArea(3.1452,101.6975,'https://www.google.com/maps/search/Chinatown+Kuala+Lumpur')">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <div style="font-weight:700;font-size:0.84em">チャイナタウン（プタリン街）</div>
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1452,101.6975,'https://www.google.com/maps/search/Chinatown+Kuala+Lumpur')">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">チャイナタウン（プタリン街）</div>
           
-          <div style="font-size:0.68em;color:var(--yellow);background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">格安・下町派</div>
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">格安・下町派</div>
           
         </div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">リーズナブルなゲストハウスが多い。屋台グルメが充実。バックパッカーや節約旅行者に人気。</div>
-        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 1,500〜3,000円／泊</div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">リーズナブルなゲストハウスが多い。屋台グルメが充実。バックパッカーや節約旅行者に人気。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 1,500〜3,000円／泊</div>
       </div>
       
     </div>
-    <div class="season-tip-box"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。</p></div>
-    </div>
+    <div class="season-tip-box" style="margin-top:32px"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。</p></div>
     <span data-affiliate="hotels"></span>
   </div>
 

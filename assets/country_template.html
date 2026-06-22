@@ -125,7 +125,7 @@
       {% if pt.image %}<img src="{{pt.image}}" alt="{{pt.title}}" class="sp-point-img">{% endif %}
     </div>
     {% endfor %}
-    <div style="padding:10px 16px;text-align:right"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button></div>
+    <div style="padding:10px 16px;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button><button class="see-more" style="margin:0" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button></div>
     </div>
     {% endif %}
 
@@ -468,24 +468,24 @@
       };
     </script>
     {% endif %}
-    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+    </div>
+    <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
       {% for area in practical.hotel_areas %}
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" {% if area.lat %}onclick="zoomToHotelArea({{area.lat}},{{area.lng}},'{{area.maps_url}}')"{% endif %}>
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <div style="font-weight:700;font-size:0.84em">{{area.name}}</div>
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" {% if area.lat %}onclick="zoomToHotelArea({{area.lat}},{{area.lng}},'{{area.maps_url}}')"{% endif %}>
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">{{area.name}}</div>
           {% if area.tag_color %}
-          <div style="font-size:0.68em;color:var(--{{area.tag_color}});background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">{{area.tag}}</div>
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">{{area.tag}}</div>
           {% else %}
           <div style="font-size:0.68em;background:#f0f0f0;border-radius:20px;padding:2px 8px;font-weight:600">{{area.tag}}</div>
           {% endif %}
         </div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">{{area.desc}}</div>
-        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">{{area.price}}</div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">{{area.desc}}</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">{{area.price}}</div>
       </div>
       {% endfor %}
     </div>
-    <div class="season-tip-box"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
-    </div>
+    <div class="season-tip-box" style="margin-top:32px"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
     <span data-affiliate="hotels"></span>
   </div>
 
