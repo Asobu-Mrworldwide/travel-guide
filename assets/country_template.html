@@ -742,10 +742,10 @@
   {% if courses.stable_intro %}
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.stable_intro}}</p>
   {% endif %}
-  <div class="s-card" style="padding-top:0">
+  <div class="s-card" style="padding-top:6px">
 
   {% for plan in courses.stable_plans %}
-  <div class="qs-section-title" style="margin:16px 0 8px">{{plan.title}}</div>
+  <div class="qs-section-title" style="margin:6px 0 8px">{{plan.title}}</div>
   <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       {% for day in plan.days %}
