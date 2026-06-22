@@ -735,19 +735,18 @@
 <section id="course">
 {{custom_top_course}}
   <h2>モデルコース</h2>
-  <div class="s-card">
-  <div style="background:#fff;padding:20px 24px">
-  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:0">{{courses.intro}}</p>
-  </div>
-
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">{{courses.intro}}</p>
   <div class="course-type">
     <div class="course-type-title">{{courses.stable_title}}</div>
   </div>
+  {% if courses.stable_intro %}
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.stable_intro}}</p>
+  {% endif %}
+  <div class="s-card" style="padding-top:0">
 
-  <div style="background:#fff;padding:20px 24px">
   {% for plan in courses.stable_plans %}
-  <div style="margin-bottom:10px">
-    <div class="course-plan-title">{{plan.title}}</div>
+  <div class="qs-section-title" style="margin:16px 0 8px">{{plan.title}}</div>
+  <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       {% for day in plan.days %}
       {% if day.transit %}
@@ -770,15 +769,9 @@
   <div class="course-type" style="margin-top:22px">
     <div class="course-type-title">{{courses.adventure_title}}</div>
   </div>
-
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.adventure_note_html}}</p>
+  <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
-    <div class="course-note">
-      <span class="course-note-ico">✍️</span>
-      <div>
-        <div class="course-note-lbl">管理人より</div>
-        <p class="course-note-txt">{{courses.adventure_note_html}}</p>
-      </div>
-    </div>
     <div class="course-timeline">
       {% for day in courses.adventure_plan.days %}
       {% if day.transit %}
