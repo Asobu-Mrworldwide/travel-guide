@@ -221,12 +221,12 @@ section.active{display:block}
 
 /* マナー */
 .manner-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.manner-card{background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #c8d0e0;box-shadow:none}
+.manner-card{background:#fff;border-radius:0;padding:16px 18px;border:1px solid #c8d0e0;box-shadow:none}
 .manner-card .m-ico{font-size:1.4em;margin-bottom:6px}
 .manner-card .m-title{font-size:0.9em;font-weight:700;margin-bottom:4px}
 .manner-card .m-desc{font-size:0.82em;color:var(--sub);line-height:1.75}
-.do{border-left:4px solid var(--green);background:#f4fbf8}
-.dont{border-left:4px solid var(--red);background:#fff6f6}
+.do{background:#f4fbf8}
+.dont{background:#fff6f6}
 .do .m-title::before{content:'✅ '}
 .dont .m-title::before{content:'❌ '}
 

@@ -336,6 +336,7 @@
 {{custom_top_budget}}
   <h2>旅行費用の目安</h2>
   <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
   <div class="grid2" style="margin-bottom:14px">
     <div class="card" style="background:linear-gradient(135deg,#f0f7f3,#e0f0e8);border:1px solid #a8d5b5;text-align:center">
       <div style="font-size:0.75em;color:var(--sub)">{{budget.plan1_label}}</div>
@@ -347,6 +348,7 @@
       <div style="font-size:1.4em;font-weight:900;color:var(--red);margin:4px 0">{{budget.plan2_range}}</div>
       <div style="font-size:0.72em;color:var(--sub)">{{budget.plan2_note}}</div>
     </div>
+  </div>
   </div>
   </div>
 
@@ -388,6 +390,7 @@
 
   <h2>準備は早めに</h2>
   <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
     <div style="padding-top:8px">
       {% for step in practical.prep_steps %}
       <div class="rm-item">
@@ -406,11 +409,13 @@
       {% endfor %}
     </div>
     {% if practical.special_note_title %}<div style="margin-top:14px;background:#fff8f0;border-left:3px solid #ff9900;border-radius:6px;padding:10px 12px;font-size:0.75em;color:#7a4400;line-height:1.7">💡 <strong>{{practical.special_note_title}}</strong><br>{{practical.special_note_html}}<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:4px"><span>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#ff9900;font-weight:700">{{practical.special_note_url_label}}</a></span><span style="color:#bbb;white-space:nowrap;margin-left:auto">（2026年5月時点）</span></span></div>{% endif %}
+    </div>
   </div>
 
   <h2>航空券の予約</h2>
   <div class="s-card">
-    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">{{practical.flight_intro}}</div>
+    <div style="background:#fff;padding:20px 24px">
+    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:12px">{{practical.flight_intro}}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
       {% for airline in practical.airlines %}
       <div style="background:#f9fafb;border-radius:10px;padding:12px">
@@ -425,12 +430,14 @@
       <div style="color:var(--sub)">{{practical.flight_tip_html}}</div>
     </div>
     <span data-affiliate="flights"></span>
+    </div>
   </div>
 
   <h2>ホテルの選び方</h2>
   <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
     <div style="font-size:0.82em;color:var(--sub);line-height:1.7">{{practical.hotel_intro}}</div>
+    </div>
     {% if practical.hotel_map_center %}
     <div style="position:relative;margin:0 0 16px">
       <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden"></div>
@@ -468,7 +475,6 @@
       };
     </script>
     {% endif %}
-    </div>
     <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
       {% for area in practical.hotel_areas %}
       <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" {% if area.lat %}onclick="zoomToHotelArea({{area.lat}},{{area.lng}},'{{area.maps_url}}')"{% endif %}>
@@ -491,7 +497,8 @@
 
   <h2>持ち物・アプリ準備</h2>
   <div class="s-card">
-  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
+  <div style="background:#fff;padding:20px 24px">
+  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">{{practical.country_items_label}}</div>
@@ -524,9 +531,11 @@
     {% endfor %}
   </div>
   </div>
+  </div>
 
   <h2 id="money">両替・支払い</h2>
   <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
     <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
     <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
     <div class="season-tip-box" style="margin-bottom:14px"><span class="season-tip-title">{{practical.cash_tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.cash_tip_body}}</p></div>
@@ -558,6 +567,7 @@
     <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">{{practical.cash_note}}</div>
     <hr style="border:none;border-top:1px solid #f0f0f0;margin:16px 0">
     <div data-affiliate-card-inner="wise"></div>
+    </div>
   </div>
 
   <h2 id="sim">SIM・Wi-Fi</h2>
@@ -578,10 +588,12 @@
 <section id="manner">
   <h2>文化・マナー</h2>
   <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
   <div class="manner-grid">
     {% for card in manner_cards %}
     <div class="manner-card {{card.type}}"><div class="m-ico">{{card.icon}}</div><div class="m-title">{{card.title}}</div><div class="m-desc">{{card.desc}}</div></div>
     {% endfor %}
+  </div>
   </div>
   </div>
   <div class="tab-cta">
@@ -595,6 +607,7 @@
 <section id="transport">
   <h2>現地交通ガイド</h2>
   <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
     {% for item in transport_items %}
     <div class="trans-item" {% if item.is_last %}{% else %}style="border-bottom:1px solid #b8b8b8"{% endif %}>
       <div class="t-ico">{{item.icon}}</div>
@@ -606,12 +619,14 @@
     </div>
     {% endfor %}
   </div>
+  </div>
 </section>
 
 <!-- フレーズ -->
 <section id="phrases">
   <h2>{{phrases.language_name}} 旅行フレーズ集</h2>
   <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
   <table class="phrase-tbl">
     <tr><th>日本語</th><th>{{phrases.language_name}} / 読み方</th><th style="width:38px"></th></tr>
     {% for cat in phrases.categories %}
@@ -622,10 +637,6 @@
     {% endfor %}
   </table>
 
-  <div class="cta" style="margin-top:20px">
-    <h3>{{phrases.card_title}}</h3>
-    <p>旅行前にフレーズをマスターしよう！<br>印刷できる単語カードを販売中。</p>
-    <button class="cta-btn">単語カードを見る →</button>
   </div>
   </div>
 </section>
@@ -635,6 +646,7 @@
 {{custom_top_food}}
   <h2>{{food_section_title}}</h2>
   <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="food-filter-type">
@@ -666,6 +678,7 @@
     {% endfor %}
   </div>
   </div>
+  </div>
   <div class="tab-cta">
     <div class="tab-cta-title">食べたいものが決まったら旅程を組もう！🗺️</div>
     <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>管理人の実際の旅ルートもそのまま公開しています。</p>
@@ -679,6 +692,7 @@
 {{custom_top_spots}}
   <h2>{{spots_section_title}}</h2>
   <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
   <div class="filter-label">エリア</div>
   <div class="filter-row" id="spots-filter-row">
     {% for fc in spots_filter_cities %}
@@ -714,6 +728,7 @@
     {% endfor %}
   </div>
   </div>
+  </div>
 
   <div class="tab-cta">
     <div class="tab-cta-title">観光地が決まったら名物グルメもチェック！🍜</div>
@@ -728,6 +743,7 @@
 {{custom_top_course}}
   <h2>モデルコース</h2>
   <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:14px">{{courses.intro}}</p>
 
   <div class="course-type">
@@ -784,11 +800,12 @@
     <div class="course-tip">{{courses.adventure_plan.tip}}</div>
   </div>
 
+  </div>
+  </div>
   <div class="tab-cta">
     <div class="tab-cta-title">{{courses.cta_title}}</div>
     <p class="tab-cta-desc">{{courses.cta_desc}}</p>
     <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
-  </div>
   </div>
   {{custom_bottom_course}}
 </section>
