@@ -82,10 +82,8 @@
   <button onclick="show('spots',this)">観光スポット</button>
   <button onclick="show('food',this)">グルメ</button>
   <button onclick="show('course',this)">モデルコース</button>
-  <button onclick="show('season',this)">ベストシーズン</button>
   <button onclick="show('budget',this)">予算・費用</button>
   <button onclick="show('practical',this)">旅の準備</button>
-  <button onclick="show('manner',this)">マナー</button>
   <button onclick="show('phrases',this)">フレーズ</button>
   <button onclick="show('transport',this)">交通</button>
   <button onclick="window.open('../common/checklist.html?from={{id}}','_blank')">持ち物リスト</button>
@@ -237,60 +235,8 @@
     </div>
     </div><!-- end overflow:hidden 主要都市 -->
 
-    <!-- ベストシーズン（簡易） -->
+    <!-- ベストシーズン -->
     <div class="qs-section-title" style="margin-top:20px">ベストシーズン</div>
-    <div style="background:#fff;padding:28px 24px 16px">
-    <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">{{season_mini.description}}</p>
-    <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">{{season_mini.city_name}}</div>
-    <div class="season-mini">
-      <div class="sm-col"><div class="sm-lbl">1月</div><div class="sm-dot {{season_mini.months.0.type}}">{{season_mini.months.0.icon}}<span class="sm-t">{{season_mini.months.0.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">2月</div><div class="sm-dot {{season_mini.months.1.type}}">{{season_mini.months.1.icon}}<span class="sm-t">{{season_mini.months.1.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">3月</div><div class="sm-dot {{season_mini.months.2.type}}">{{season_mini.months.2.icon}}<span class="sm-t">{{season_mini.months.2.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">4月</div><div class="sm-dot {{season_mini.months.3.type}}">{{season_mini.months.3.icon}}<span class="sm-t">{{season_mini.months.3.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">5月</div><div class="sm-dot {{season_mini.months.4.type}}">{{season_mini.months.4.icon}}<span class="sm-t">{{season_mini.months.4.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">6月</div><div class="sm-dot {{season_mini.months.5.type}}">{{season_mini.months.5.icon}}<span class="sm-t">{{season_mini.months.5.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">7月</div><div class="sm-dot {{season_mini.months.6.type}}">{{season_mini.months.6.icon}}<span class="sm-t">{{season_mini.months.6.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">8月</div><div class="sm-dot {{season_mini.months.7.type}}">{{season_mini.months.7.icon}}<span class="sm-t">{{season_mini.months.7.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">9月</div><div class="sm-dot {{season_mini.months.8.type}}">{{season_mini.months.8.icon}}<span class="sm-t">{{season_mini.months.8.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">10月</div><div class="sm-dot {{season_mini.months.9.type}}">{{season_mini.months.9.icon}}<span class="sm-t">{{season_mini.months.9.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">11月</div><div class="sm-dot {{season_mini.months.10.type}}">{{season_mini.months.10.icon}}<span class="sm-t">{{season_mini.months.10.temp}}</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">12月</div><div class="sm-dot {{season_mini.months.11.type}}">{{season_mini.months.11.icon}}<span class="sm-t">{{season_mini.months.11.temp}}</span></div></div>
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:0.72em;color:var(--sub);margin-top:8px;align-items:center">
-      <span>☀️ 乾季　⛅ 曇り　☔ 雨季</span>
-    </div>
-    <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[4])">地域別ベストシーズンを詳しく見る →</button>
-    </div>
-
-  </div><!-- end s-card どんなところ？ -->
-
-  <div style="margin-top:32px"></div>
-  <!-- 基本データ -->
-  <h2>基本データ</h2>
-  <div class="s-card">
-    <div style="background:#fff;padding:4px 0">
-    <div style="text-align:center;padding:20px 16px;border-bottom:1px solid #e0e0e0">
-      {{overview.flag_html}}
-      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">{{overview.flag_caption}}</p>
-    </div>
-    <div class="bd-grid">
-      {% for item in basic_data %}
-      <div class="bd-item">
-        <div class="bd-lbl">{{item.label}}</div>
-        <div style="flex:1"><div class="bd-val">{{item.value}}</div>{% if item.note %}<div class="bd-note">{{item.note}}</div>{% endif %}</div>
-      </div>
-      {% endfor %}
-    </div>
-    </div>
-  </div>
-  {{custom_bottom_basic}}
-</section>
-
-<!-- ベストシーズン -->
-<section id="season">
-{{custom_top_season}}
-  <h2>ベストシーズン</h2>
-  <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
@@ -317,19 +263,36 @@
       <div style="margin-top:6px"><p style="font-size:0.75em;color:var(--sub)">{{city.best_note}}</p></div>
     </div>
     {% if city.note %}<div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">{{city.note}}</div>{% endif %}
-    <div style="text-align:right;margin-top:4px;margin-bottom:-18px"><button onclick="showFilteredSpots('{{city.city_id}}')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('{{city.city_id}}')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     {% endfor %}
 
     <div class="season-tip-box" style="margin-top:48px"><span class="season-tip-title">{{season.tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{season.tip_body}}</p></div>
     </div>
+
+  </div><!-- end s-card どんなところ？ -->
+
+  <div style="margin-top:32px"></div>
+  <!-- 基本データ -->
+  <h2>基本データ</h2>
+  <div class="s-card">
+    <div style="background:#fff;padding:4px 0">
+    <div style="text-align:center;padding:20px 16px;border-bottom:1px solid #e0e0e0">
+      {{overview.flag_html}}
+      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">{{overview.flag_caption}}</p>
+    </div>
+    <div class="bd-grid">
+      {% for item in basic_data %}
+      <div class="bd-item">
+        <div class="bd-lbl">{{item.label}}</div>
+        <div style="flex:1"><div class="bd-val">{{item.value}}</div>{% if item.note %}<div class="bd-note">{{item.note}}</div>{% endif %}</div>
+      </div>
+      {% endfor %}
+    </div>
+    </div>
   </div>
-  <div class="tab-cta">
-    <div class="tab-cta-title">旅の予算を把握しよう！💰</div>
-    <p class="tab-cta-desc">航空券・ホテル・食費・交通費の目安を一覧でチェック。<br>節約ポイントやお金の持ち方も紹介しています。</p>
-    <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button>
-  </div>
-  {{custom_bottom_season}}
+  {{custom_bottom_basic}}
 </section>
+
 
 <!-- 予算・費用 -->
 <section id="budget">
@@ -367,6 +330,43 @@
       </tbody>
     </table>
     <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
+    </div>
+  </div>
+
+  <h2 id="money">両替・支払い</h2>
+  <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
+    <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
+    <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
+    <div class="season-tip-box" style="margin-bottom:14px"><span class="season-tip-title">{{practical.cash_tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.cash_tip_body}}</p></div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px">
+      <button onclick="changeDays(-1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">−</button>
+      <div style="text-align:center;min-width:60px">
+        <span id="cash-days" style="font-size:2.2em;font-weight:700;color:var(--green)">5</span>
+        <span style="font-size:0.82em;color:var(--sub)"> 日間</span>
+      </div>
+      <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
+        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">節約</div>
+        <div id="eco-cur" style="font-size:0.9em;font-weight:700">-</div>
+        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
+      </div>
+      <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #b8ddc8">
+        <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
+        <div id="std-cur" style="font-size:0.9em;font-weight:700;color:var(--green)">-</div>
+        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
+      </div>
+      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
+        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">ゆとり</div>
+        <div id="lux-cur" style="font-size:0.9em;font-weight:700">-</div>
+        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
+      </div>
+    </div>
+    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">{{practical.cash_note}}</div>
+    <hr style="border:none;border-top:1px solid #f0f0f0;margin:16px 0">
+    <div data-affiliate-card-inner="wise"></div>
     </div>
   </div>
 
@@ -533,43 +533,6 @@
   </div>
   </div>
 
-  <h2 id="money">両替・支払い</h2>
-  <div class="s-card">
-    <div style="background:#fff;padding:20px 24px">
-    <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
-    <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
-    <div class="season-tip-box" style="margin-bottom:14px"><span class="season-tip-title">{{practical.cash_tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.cash_tip_body}}</p></div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px">
-      <button onclick="changeDays(-1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">−</button>
-      <div style="text-align:center;min-width:60px">
-        <span id="cash-days" style="font-size:2.2em;font-weight:700;color:var(--green)">5</span>
-        <span style="font-size:0.82em;color:var(--sub)"> 日間</span>
-      </div>
-      <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
-      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
-        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">節約</div>
-        <div id="eco-cur" style="font-size:0.9em;font-weight:700">-</div>
-        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
-      </div>
-      <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #b8ddc8">
-        <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
-        <div id="std-cur" style="font-size:0.9em;font-weight:700;color:var(--green)">-</div>
-        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
-      </div>
-      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
-        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">ゆとり</div>
-        <div id="lux-cur" style="font-size:0.9em;font-weight:700">-</div>
-        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
-      </div>
-    </div>
-    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">{{practical.cash_note}}</div>
-    <hr style="border:none;border-top:1px solid #f0f0f0;margin:16px 0">
-    <div data-affiliate-card-inner="wise"></div>
-    </div>
-  </div>
-
   <h2 id="sim">SIM・Wi-Fi</h2>
   <div class="s-card" data-affiliate-card="sim_compare"></div>
 
@@ -579,29 +542,11 @@
   <div class="tab-cta">
     <div class="tab-cta-title">{{practical.cta_title}}</div>
     <p class="tab-cta-desc">{{practical.cta_desc}}</p>
-    <button class="tab-cta-btn" onclick="show('manner',document.querySelectorAll('nav button')[7])">マナーを見る →</button>
+    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[7])">フレーズ集を見る →</button>
   </div>
 
 </section>
 
-<!-- マナー -->
-<section id="manner">
-  <h2>文化・マナー</h2>
-  <div class="s-card">
-  <div style="background:#fff;padding:20px 24px">
-  <div class="manner-grid">
-    {% for card in manner_cards %}
-    <div class="manner-card {{card.type}}"><div class="m-ico">{{card.icon}}</div><div class="m-title">{{card.title}}</div><div class="m-desc">{{card.desc}}</div></div>
-    {% endfor %}
-  </div>
-  </div>
-  </div>
-  <div class="tab-cta">
-    <div class="tab-cta-title">{{manner_cta_title}}</div>
-    <p class="tab-cta-desc">{{manner_cta_desc}}</p>
-    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button>
-  </div>
-</section>
 
 <!-- 交通 -->
 <section id="transport">
@@ -793,7 +738,7 @@
   <div class="tab-cta">
     <div class="tab-cta-title">{{courses.cta_title}}</div>
     <p class="tab-cta-desc">{{courses.cta_desc}}</p>
-    <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
+    <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[4])">予算・費用を見る →</button>
   </div>
   {{custom_bottom_course}}
 </section>
