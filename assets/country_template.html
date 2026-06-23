@@ -85,7 +85,7 @@
   <button onclick="show('budget',this)">予算・費用</button>
   <button onclick="show('practical',this)">旅の準備</button>
   <button onclick="show('phrases',this)">フレーズ</button>
-  <button onclick="show('transport',this)">交通</button>
+
   <button onclick="window.open('../common/checklist.html?from={{id}}','_blank')">持ち物リスト</button>
 </nav>
 
@@ -298,24 +298,36 @@
 <section id="budget">
 {{custom_top_budget}}
   <h2>旅行費用の目安</h2>
-  <div class="s-card">
-  <div style="background:#fff;padding:20px 24px">
-  <div class="grid2" style="margin-bottom:14px">
-    <div class="card" style="background:linear-gradient(135deg,#f0f7f3,#e0f0e8);border:1px solid #a8d5b5;text-align:center">
-      <div style="font-size:0.75em;color:var(--sub)">{{budget.plan1_label}}</div>
-      <div style="font-size:1.4em;font-weight:900;color:var(--green);margin:4px 0">{{budget.plan1_range}}</div>
-      <div style="font-size:0.72em;color:var(--sub)">{{budget.plan1_note}}</div>
-    </div>
-    <div class="card" style="background:linear-gradient(135deg,#f7f3f0,#f0e8e0);border:1px solid #d5b5a8;text-align:center">
-      <div style="font-size:0.75em;color:var(--sub)">{{budget.plan2_label}}</div>
-      <div style="font-size:1.4em;font-weight:900;color:var(--red);margin:4px 0">{{budget.plan2_range}}</div>
-      <div style="font-size:0.72em;color:var(--sub)">{{budget.plan2_note}}</div>
-    </div>
-  </div>
-  </div>
+  {% if budget.intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{budget.intro}}</p>{% endif %}
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:0.82em;min-width:320px">
+    <thead>
+      <tr>
+        <th style="padding:8px 10px;text-align:left;background:#f5f5f5;border-bottom:2px solid #ddd;width:30%"></th>
+        <th style="padding:8px 10px;text-align:center;background:#e8f0fb;border-bottom:2px solid #aac0e8;color:#2a5ca8">節約</th>
+        <th style="padding:8px 10px;text-align:center;background:#e8f5ee;border-bottom:2px solid #a8d5b5;color:var(--green)">標準</th>
+        <th style="padding:8px 10px;text-align:center;background:#fdf6e3;border-bottom:2px solid #e0c97a;color:#8a6a00">こだわり派</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in budget.plan_rows %}
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:9px 10px;font-weight:700;color:var(--sub);font-size:0.92em">{{row.label}}</td>
+        <td style="padding:9px 10px;text-align:center;color:#2a5ca8">{{row.eco}}</td>
+        <td style="padding:9px 10px;text-align:center;color:var(--green)">{{row.std}}</td>
+        <td style="padding:9px 10px;text-align:center;color:#8a6a00">{{row.lux}}</td>
+      </tr>
+      {% endfor %}
+      <tr style="background:#f9f9f9;font-weight:700">
+        <td style="padding:10px 10px;font-weight:700">合計目安</td>
+        <td style="padding:10px 10px;text-align:center;color:#2a5ca8;font-size:1.05em">{{budget.total_eco}}</td>
+        <td style="padding:10px 10px;text-align:center;color:var(--green);font-size:1.05em">{{budget.total_std}}</td>
+        <td style="padding:10px 10px;text-align:center;color:#8a6a00;font-size:1.05em">{{budget.total_lux}}</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 
-  <h2>費用の内訳</h2>
   <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
     <table class="budget-table">
@@ -329,9 +341,9 @@
         {% endfor %}
       </tbody>
     </table>
-    <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
     </div>
   </div>
+  <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
 
   <h2 id="money">両替・支払い</h2>
   <div class="s-card">
@@ -536,20 +548,6 @@
   <h2 id="sim">SIM・Wi-Fi</h2>
   <div class="s-card" data-affiliate-card="sim_compare"></div>
 
-  <h2>現地ツアー・アクティビティ</h2>
-  <div class="s-card" data-affiliate-card="klook"></div>
-
-  <div class="tab-cta">
-    <div class="tab-cta-title">{{practical.cta_title}}</div>
-    <p class="tab-cta-desc">{{practical.cta_desc}}</p>
-    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[7])">フレーズ集を見る →</button>
-  </div>
-
-</section>
-
-
-<!-- 交通 -->
-<section id="transport">
   <h2>現地交通ガイド</h2>
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
@@ -565,7 +563,19 @@
     {% endfor %}
   </div>
   </div>
+
+  <h2>現地ツアー・アクティビティ</h2>
+  <div class="s-card" data-affiliate-card="klook"></div>
+
+  <div class="tab-cta">
+    <div class="tab-cta-title">{{practical.cta_title}}</div>
+    <p class="tab-cta-desc">{{practical.cta_desc}}</p>
+    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[7])">フレーズ集を見る →</button>
+  </div>
+
 </section>
+
+
 
 <!-- フレーズ -->
 <section id="phrases">

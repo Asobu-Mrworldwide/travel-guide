@@ -85,7 +85,7 @@
   <button onclick="show('budget',this)">予算・費用</button>
   <button onclick="show('practical',this)">旅の準備</button>
   <button onclick="show('phrases',this)">フレーズ</button>
-  <button onclick="show('transport',this)">交通</button>
+
   <button onclick="window.open('../common/checklist.html?from=malaysia','_blank')">持ち物リスト</button>
 </nav>
 
@@ -409,24 +409,57 @@
 <section id="budget">
 
   <h2>旅行費用の目安</h2>
-  <div class="s-card">
-  <div style="background:#fff;padding:20px 24px">
-  <div class="grid2" style="margin-bottom:14px">
-    <div class="card" style="background:linear-gradient(135deg,#f0f7f3,#e0f0e8);border:1px solid #a8d5b5;text-align:center">
-      <div style="font-size:0.75em;color:var(--sub)">3泊5日（1人）</div>
-      <div style="font-size:1.4em;font-weight:900;color:var(--green);margin:4px 0">7〜15万円</div>
-      <div style="font-size:0.72em;color:var(--sub)">LCC利用・中級ホテル</div>
-    </div>
-    <div class="card" style="background:linear-gradient(135deg,#f7f3f0,#f0e8e0);border:1px solid #d5b5a8;text-align:center">
-      <div style="font-size:0.75em;color:var(--sub)">4泊6日（1人）</div>
-      <div style="font-size:1.4em;font-weight:900;color:var(--red);margin:4px 0">8〜17万円</div>
-      <div style="font-size:0.72em;color:var(--sub)">標準的な旅行スタイル</div>
-    </div>
-  </div>
-  </div>
+  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">マレーシアは物価が安く、屋台めしで節約しながらでも、高級ホテルやルーフトップバーでリッチに過ごしても、どちらのスタイルも十分に楽しめる懐の深い国です。予算に合わせた旅がしやすいのも人気の理由のひとつ。</p>
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:0.82em;min-width:320px">
+    <thead>
+      <tr>
+        <th style="padding:8px 10px;text-align:left;background:#f5f5f5;border-bottom:2px solid #ddd;width:30%"></th>
+        <th style="padding:8px 10px;text-align:center;background:#e8f0fb;border-bottom:2px solid #aac0e8;color:#2a5ca8">節約</th>
+        <th style="padding:8px 10px;text-align:center;background:#e8f5ee;border-bottom:2px solid #a8d5b5;color:var(--green)">標準</th>
+        <th style="padding:8px 10px;text-align:center;background:#fdf6e3;border-bottom:2px solid #e0c97a;color:#8a6a00">こだわり派</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:9px 10px;font-weight:700;color:var(--sub);font-size:0.92em">航空券（往復）</td>
+        <td style="padding:9px 10px;text-align:center;color:#2a5ca8">LCC 5〜7万円</td>
+        <td style="padding:9px 10px;text-align:center;color:var(--green)">8〜12万円</td>
+        <td style="padding:9px 10px;text-align:center;color:#8a6a00">FSC 12〜20万円</td>
+      </tr>
+      
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:9px 10px;font-weight:700;color:var(--sub);font-size:0.92em">ホテル（1泊）</td>
+        <td style="padding:9px 10px;text-align:center;color:#2a5ca8">3,000〜5,000円</td>
+        <td style="padding:9px 10px;text-align:center;color:var(--green)">6,000〜10,000円</td>
+        <td style="padding:9px 10px;text-align:center;color:#8a6a00">15,000〜30,000円</td>
+      </tr>
+      
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:9px 10px;font-weight:700;color:var(--sub);font-size:0.92em">食費（1日）</td>
+        <td style="padding:9px 10px;text-align:center;color:#2a5ca8">500〜1,000円</td>
+        <td style="padding:9px 10px;text-align:center;color:var(--green)">1,500〜2,500円</td>
+        <td style="padding:9px 10px;text-align:center;color:#8a6a00">3,000〜5,000円</td>
+      </tr>
+      
+      <tr style="border-bottom:1px solid #eee">
+        <td style="padding:9px 10px;font-weight:700;color:var(--sub);font-size:0.92em">交通（1日）</td>
+        <td style="padding:9px 10px;text-align:center;color:#2a5ca8">電車・バス 300円</td>
+        <td style="padding:9px 10px;text-align:center;color:var(--green)">Grab併用 800円</td>
+        <td style="padding:9px 10px;text-align:center;color:#8a6a00">Grab中心 1,500円</td>
+      </tr>
+      
+      <tr style="background:#f9f9f9;font-weight:700">
+        <td style="padding:10px 10px;font-weight:700">合計目安</td>
+        <td style="padding:10px 10px;text-align:center;color:#2a5ca8;font-size:1.05em">7〜10万円</td>
+        <td style="padding:10px 10px;text-align:center;color:var(--green);font-size:1.05em">12〜18万円</td>
+        <td style="padding:10px 10px;text-align:center;color:#8a6a00;font-size:1.05em">25万円〜</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 
-  <h2>費用の内訳</h2>
   <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
     <table class="budget-table">
@@ -470,9 +503,9 @@
         
       </tbody>
     </table>
-    <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">・チップ不要（特別なサービス時のみ任意）<br>・屋台・フードコートで本格グルメが格安<br>・Grabアプリはタクシーより安く安心</p></div>
     </div>
   </div>
+  <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">・チップ不要（特別なサービス時のみ任意）<br>・屋台・フードコートで本格グルメが格安<br>・Grabアプリはタクシーより安く安心</p></div>
 
   <h2 id="money">両替・支払い</h2>
   <div class="s-card">
@@ -853,20 +886,6 @@
   <h2 id="sim">SIM・Wi-Fi</h2>
   <div class="s-card" data-affiliate-card="sim_compare"></div>
 
-  <h2>現地ツアー・アクティビティ</h2>
-  <div class="s-card" data-affiliate-card="klook"></div>
-
-  <div class="tab-cta">
-    <div class="tab-cta-title">出発前にマナーも確認しよう！🙏</div>
-    <p class="tab-cta-desc">イスラム教の国ならではのマナーを知っておくと現地での行動がスムーズ。<br>モスク見学・食事・服装など旅行者が知っておくべきポイントをまとめました。</p>
-    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[7])">フレーズ集を見る →</button>
-  </div>
-
-</section>
-
-
-<!-- 交通 -->
-<section id="transport">
   <h2>現地交通ガイド</h2>
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
@@ -927,7 +946,19 @@
     
   </div>
   </div>
+
+  <h2>現地ツアー・アクティビティ</h2>
+  <div class="s-card" data-affiliate-card="klook"></div>
+
+  <div class="tab-cta">
+    <div class="tab-cta-title">出発前にマナーも確認しよう！🙏</div>
+    <p class="tab-cta-desc">イスラム教の国ならではのマナーを知っておくと現地での行動がスムーズ。<br>モスク見学・食事・服装など旅行者が知っておくべきポイントをまとめました。</p>
+    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[7])">フレーズ集を見る →</button>
+  </div>
+
 </section>
+
+
 
 <!-- フレーズ -->
 <section id="phrases">
