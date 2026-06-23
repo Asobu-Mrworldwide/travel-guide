@@ -446,9 +446,9 @@
   </div>
 
   <h2>ホテルの選び方</h2>
+  {% if practical.hotel_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{practical.hotel_intro}}</p>{% endif %}
   <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
-    <div style="font-size:0.82em;color:var(--sub);line-height:1.7">{{practical.hotel_intro}}</div>
     </div>
     {% if practical.hotel_map_center %}
     <div style="position:relative;margin:0 0 16px">
