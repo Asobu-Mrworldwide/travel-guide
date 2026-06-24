@@ -16,9 +16,25 @@
 <script src="../assets/affiliates-data.js" defer></script>
 <script src="../assets/affiliates.js" defer></script>
 <style>
+/* イラスト下の説明文 */
+.desc-intro{max-width:740px;margin:20px 0 0 250px;padding:0 24px;font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:0}
+@media(max-width:1020px){.desc-intro{margin:16px auto 0;max-width:100%;padding:0 16px}}
 /* HEADER */
-.hero-img{width:100%;height:200px;object-fit:cover;object-position:center 50%;display:block}
-.hero{position:relative}
+.hero{display:flex;align-items:stretch;max-width:740px;margin:16px 0 0 250px}
+.hero-card{width:35%;background:var(--green);color:#fff;padding:20px 18px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.hero-img{width:65%;display:block;object-fit:cover;flex-shrink:0}
+@media(max-width:1020px){.hero{margin:0 auto;max-width:100%}}
+@media(max-width:700px){
+  .hero{flex-direction:column;width:100%;max-width:100%}
+  .hero-card{width:100%;padding:14px 16px;flex-direction:row;flex-wrap:wrap;gap:6px;align-items:center}
+  .hero-badge{font-size:0.65em}
+  .hero-title{font-size:1em;width:100%}
+  .hero-sub{font-size:0.68em;width:100%}
+  .hero-img{width:100%;height:auto;flex-shrink:unset}
+}
+.hero-badge{font-size:0.68em;font-weight:700;background:rgba(0,0,0,0.25);padding:3px 9px;border-radius:4px;display:inline-block;width:fit-content;letter-spacing:0.04em}
+.hero-title{font-size:1.25em;font-weight:900;line-height:1.4;color:#fff}
+.hero-sub{font-size:0.72em;color:rgba(255,255,255,0.7)}
 .hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
 
 /* フードカード画像 */
@@ -28,7 +44,7 @@
 
 /* 観光スポットカード画像・絵文字 */
 .spot-img{display:none}
-.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0 0 14px 14px}
+.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0}
 .spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
 .spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
 .spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
@@ -36,39 +52,54 @@
 #spots-grid .item-card.has-spot-img .desc{flex:1}
 
 /* クイックスペックカード（基本情報タブ） */
-#basic .qs-card{border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)}
+#basic .qs-card{border:1px solid #e0e0e0;box-shadow:none}
 
 /* セクション間隔（全タブ共通） */
 #basic h2~h2,#spots h2~h2,#food h2~h2,#course h2~h2,#season h2~h2,
 #budget h2~h2,#practical h2~h2,#manner h2~h2,#phrases h2~h2,#transport h2~h2{margin-top:36px}
 #basic .qs-row{margin-top:28px;margin-bottom:36px}
-@media(min-width:640px){.qs-top-grid{grid-template-columns:1fr 1fr !important}}
+.qs-section-title{font-size:18px;font-weight:700;color:var(--text);margin:6px 0 6px;letter-spacing:0.04em}
 .cl-region{font-weight:700}
+.sp-points-wrap{background:#fff;border:1px solid #e0e0e0}
+.sp-point{display:flex;align-items:flex-start;gap:16px;padding:16px;border-bottom:1px solid #e0e0e0}
+.sp-point:last-child{border-bottom:none}
+.sp-point-body{flex:1;min-width:0}
+.sp-point-title{font-size:0.95em;font-weight:700;margin-bottom:8px;line-height:1.5}
+.sp-point-text{font-size:0.82em;color:#444;line-height:1.8}
+.sp-point-img{width:120px;height:90px;object-fit:cover;flex-shrink:0;display:block}
+@media(max-width:700px){.sp-point{flex-direction:column}.sp-point-img{width:100%;height:auto;aspect-ratio:16/9}}
 </style>
 </head>
 <body>
 
-
-<div class="hero">
-  <img src="素材/ヒーロー.webp" alt="サマルカンド・レギスタン広場" class="hero-img">
-  <a href="../index.html" class="hero-back">← 国一覧へ戻る</a>
-  
-</div>
-
+<header class="site-header">
+  <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none">🌍 <span>World</span> Mappy</a></div>
+  <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
+</header>
 
 <nav>
   <button class="active" onclick="show('basic',this)">基本情報</button>
   <button onclick="show('spots',this)">観光スポット</button>
   <button onclick="show('food',this)">グルメ</button>
   <button onclick="show('course',this)">モデルコース</button>
-  <button onclick="show('season',this)">ベストシーズン</button>
   <button onclick="show('budget',this)">予算・費用</button>
   <button onclick="show('practical',this)">旅の準備</button>
-  <button onclick="show('manner',this)">マナー</button>
   <button onclick="show('phrases',this)">フレーズ</button>
-  <button onclick="show('transport',this)">交通</button>
+
   <button onclick="window.open('../common/checklist.html?from=uzbekistan','_blank')">持ち物リスト</button>
 </nav>
+
+
+<div class="hero">
+  <div class="hero-card">
+    <span class="hero-badge">旅行・観光の基本情報</span>
+    <div class="hero-title">ウズベキスタンの旅行ガイド</div>
+    <div class="hero-sub">World Mappy</div>
+  </div>
+  <img src="素材/ヒーロー.webp" alt="サマルカンド・レギスタン広場" class="hero-img">
+  
+</div>
+
 
 <div class="container">
 <div id="slides-wrap">
@@ -76,32 +107,11 @@
 <!-- 基本情報 -->
 <section id="basic" class="active">
 
-  <div style="margin-bottom:14px;line-height:1.8">
-    <h2>ウズベキスタンってどんな国？</h2>
-    <p style="font-size:0.88em;color:var(--text)">中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた<strong>古都が点在する国</strong>。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知らぬ旅人を家に招くウズベク人のホスピタリティが、この国の旅を忘れがたいものにしてくれる。</p>
-    <div style="margin-top:32px;margin-bottom:32px;text-align:center">
-      <div style="background:linear-gradient(to bottom,#1EB7D4 0%,#1EB7D4 30%,#CC0000 30%,#CC0000 33%,#FFFFFF 33%,#FFFFFF 64%,#CC0000 64%,#CC0000 67%,#009A44 67%,#009A44 100%);height:100px;width:200px;display:inline-block;position:relative;overflow:hidden;border:1px solid #eee;"><div style="position:absolute;top:6px;left:8px;color:white;font-size:13px;">🌙</div><div style="position:absolute;top:9px;left:30px;color:white;font-size:7px;letter-spacing:3px;">★★★★★★★★★★★★</div></div>
-      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">ウズベキスタン国旗 ― 青はシル川・アム川の水と空、白は平和と純粋、緑は豊かな自然を表す。三日月と12の星がイスラムの象徴。</p>
-    </div>
-    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
+  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:16px;padding:0 4px">中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた<strong>古都が点在する国</strong>。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知らぬ旅人を家に招くウズベク人のホスピタリティが、この国の旅を忘れがたいものにしてくれる。</div>
+  <h2>ウズベキスタンってどんなところ？</h2>
+  <div class="s-card">
 
-    <div class="qs-top-grid" style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:12px">
-      <div style="background:#fff;overflow:hidden;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08);display:flex;flex-direction:column">
-        <div style="padding:12px 14px 12px;flex:1">
-          <div style="font-size:0.78em;font-weight:700;color:var(--green);margin-bottom:6px">人気No.1観光地</div>
-          <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">レギスタン広場</div>
-          <div style="font-size:0.8em;color:var(--sub)">サマルカンドの中心にある広場。青タイルで彩られた3つのメドレセが向き合う光景は、シルクロード建築の最高傑作とも呼ばれる。</div>
-        </div>
-        
-      </div>
-      <div style="background:#fff;padding:12px 14px;display:flex;flex-direction:column;border:1px solid #e0e0e0;box-shadow:0 3px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.08)">
-          <div style="font-size:0.78em;font-weight:700;color:var(--red);margin-bottom:6px">人気No.1グルメ</div>
-          <div style="font-size:0.88em;font-weight:700;margin-bottom:2px">プロフ</div>
-          <div style="font-size:0.8em;color:var(--sub)">羊肉・人参・玉ねぎを大鍋で炒めて米を加えた炊き込みご飯。「プロフなしに祝宴なし」と言われるほどウズベキスタンの食文化に根づいた一品。</div>
-          <img src="素材/グルメ/プロフ.webp" alt="プロフ" style="width:100%;max-height:220px;object-fit:contain;display:block;margin-top:10px">
-          <button class="qs-link" style="margin-top:8px;align-self:flex-end;color:var(--red)" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメ一覧を見る →</button>
-      </div>
-    </div>
+    
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
@@ -112,15 +122,17 @@
       <div class="qs-card"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm0 2h20" /><path d="M2 12h7c0 1 .6 3 3 3s3-2 3-3h7" /></g></svg></div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">8〜18万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><path fill="none" stroke="currentColor" stroke-linecap="square" stroke-width="2" d="M13 14h4m0 0h4m-4 0v-1.5m3 1.5a7 7 0 0 1-7 7m1.674-4A7 7 0 0 0 21 21M9 7.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2.5m6 0V10m0-2.5H3M3 10V7.5m10-3h5a2 2 0 0 1 2 2V8M5 14v5a2 2 0 0 0 2 2h1.5" /></svg></div><div><div class="qs-lbl">言語</div><div class="qs-val">ロシア語で少し可</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
       <div class="qs-card"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path d="M0 0h32v32H0z" fill="none" /><path fill="currentColor" d="m9.58 2.584l-.4 5.07c-.02.25.18.47.43.47l5.09-.03c.39-.01.59-.46.33-.74l-1.19-1.28a.282.282 0 0 1 .02-.42c.7-.55 1.61-.88 2.57-.84c1.8.07 3.27 1.46 3.64 3.14c.02.09.1.16.2.16h2.43c.13 0 .23-.12.21-.24c-.44-3.16-3.08-5.75-6.38-5.87c-1.75-.06-3.38.55-4.61 1.61c-.12.1-.29.09-.4-.02l-1.18-1.27a.439.439 0 0 0-.76.26M22.332 29.54l.4-5.07a.44.44 0 0 0-.43-.47l-5.09.03c-.39.01-.59.46-.33.74l1.19 1.28c.12.12.11.32-.02.42c-.7.55-1.61.88-2.57.84c-1.8-.07-3.27-1.46-3.64-3.14a.204.204 0 0 0-.2-.16h-2.43c-.12 0-.23.11-.21.24c.44 3.16 3.08 5.75 6.38 5.87c1.75.06 3.38-.55 4.61-1.61c.12-.1.29-.09.4.02l1.18 1.27c.26.28.73.12.76-.26M6 8a1 1 0 0 0-1 1v1.06c-1.208.18-2.01.745-2.482 1.496C2 12.383 2 13.262 2 13.524v.007c0 .265.002 1.13.546 1.936c.25.37.584.688 1.012.932c.589.336 1.355.532 2.322.532c1.095 0 1.473.41 1.644.699c.222.376.236.81.236.951q0-.006-.003.01c-.013.064-.073.36-.298.648c-.218.278-.645.622-1.579.622c-.862 0-1.298-.375-1.553-.732a2.3 2.3 0 0 1-.344-.752v-.001l-.011-.051a1 1 0 0 0-1.956.412L3 18.56l-.984.177v.003l.001.006l.003.013a2 2 0 0 0 .033.147a4.3 4.3 0 0 0 .647 1.386A3.66 3.66 0 0 0 5 21.776V23a1 1 0 1 0 2 0v-1.263c.927-.217 1.59-.7 2.033-1.265c.558-.712.727-1.503.727-1.892c0-.219-.006-1.11-.514-1.969c-.56-.945-1.62-1.681-3.366-1.681c-1.17 0-1.539-.379-1.676-.582c-.186-.276-.204-.611-.204-.818c0-.217.015-.596.212-.91c.144-.23.506-.62 1.648-.62c1.05 0 1.454.432 1.652.77a1.9 1.9 0 0 1 .248.793a1 1 0 0 0 2-.057l-1 .024l1-.025v-.009l-.001-.015a2 2 0 0 0-.012-.163a3.9 3.9 0 0 0-.508-1.558c-.416-.71-1.126-1.364-2.239-1.632V9a1 1 0 0 0-1-1m17.962 2.887a1 1 0 1 0-1.774.923L24.889 17H23a1 1 0 1 0 0 2h2v1h-2a1 1 0 1 0 0 2h2v1a1 1 0 1 0 2 0v-1h2a1 1 0 1 0 0-2h-2v-1h2a1 1 0 1 0 0-2h-1.89l2.702-5.19a1 1 0 0 0-1.774-.923L26 14.802z" /></svg></div><div><div class="qs-lbl">通貨</div><div class="qs-val">スム（UZS）</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1万UZS ≈ 116円</div></div></div>
-      <div class="qs-card" style="grid-column:span 2"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><g fill="currentColor"><path d="M12 3a10 10 0 0 0-7.071 17.071l.707.707l2.421-2.421l-1.414-1.414l-.963.962A8 8 0 0 1 4.063 14H6v-2H4.063A8 8 0 0 1 5.68 8.095l.613.612l.5.5l1.414-1.414L7.095 6.68A8 8 0 0 1 11 5.063V6.5h2V5.063a8 8 0 0 1 3.905 1.617l-1.112 1.113l1.414 1.414l1.113-1.112A8 8 0 0 1 19.937 12H18v2h1.937a8 8 0 0 1-1.618 3.906l-.962-.963l-1.414 1.414l2.421 2.421l.707-.707A10.001 10.001 0 0 0 12 3" /><path d="M12.707 12.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414-1.414z" /></g></svg></div><div style="flex:1"><div class="qs-lbl">旅行難易度</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;background:#e8e8e8;border-radius:20px;height:10px;overflow:hidden"><div style="width:58%;height:100%;background:linear-gradient(90deg,#f59e0b,#b45309);border-radius:20px"></div></div><span style="background:#fff3cd;color:#b45309;font-size:0.75em;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap">やや難しい</span></div><div style="display:flex;justify-content:space-between;font-size:0.68em;color:#bbb;margin-top:2px"><span>← やさしい</span><span>むずかしい →</span></div></div></div>
+      <div class="qs-card" style="grid-column:span 2"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><g fill="currentColor"><path d="M12 3a10 10 0 0 0-7.071 17.071l.707.707l2.421-2.421l-1.414-1.414l-.963.962A8 8 0 0 1 4.063 14H6v-2H4.063A8 8 0 0 1 5.68 8.095l.613.612l.5.5l1.414-1.414L7.095 6.68A8 8 0 0 1 11 5.063V6.5h2V5.063a8 8 0 0 1 3.905 1.617l-1.112 1.113l1.414 1.414l1.113-1.112A8 8 0 0 1 19.937 12H18v2h1.937a8 8 0 0 1-1.618 3.906l-.962-.963l-1.414 1.414l2.421 2.421l.707-.707A10.001 10.001 0 0 0 12 3" /><path d="M12.707 12.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414-1.414z" /></g></svg></div><div style="flex:1"><div class="qs-lbl">旅行難易度</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;background:#e8e8e8;border-radius:20px;height:10px;overflow:hidden"><div style="width:58%;height:100%;background:linear-gradient(90deg,#f59e0b,#b45309);border-radius:20px"></div></div><span style="background:#fff0f0;color:#c94a29;font-size:0.75em;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap">やや難しい</span></div><div style="display:flex;justify-content:space-between;font-size:0.68em;color:#bbb;margin-top:2px"><span>← やさしい</span><span>むずかしい →</span></div></div></div>
     </div>
 
-    <div class="season-tip-box" style="margin-top:24px"><span class="season-tip-title">🇯🇵 日本人に人気？</span><p style="font-size:0.82em;line-height:1.7;color:#444">年間1〜2万人程度の日本人が訪れるまだ知名度が低めの旅先。それだけに観光地化されすぎておらず、バザールや路地を歩いていると地元の日常に自然と混ざり込める。シルクロード古都を目指す歴史好きや、写真映えする建築を求める旅行者に人気が高まっている。</p></div>
-  </div>
+  </div><!-- end s-card どんなところ？上 -->
 
-  <!-- 主要都市 -->
-  <h2 style="margin-top:32px">主要都市</h2>
-  <div class="card full" style="padding:0;overflow:hidden;border-radius:0">
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">🇯🇵 日本人に人気？</span><p style="font-size:0.82em;line-height:1.7;color:#444">年間1〜2万人程度の日本人が訪れるまだ知名度が低めの旅先。それだけに観光地化されすぎておらず、バザールや路地を歩いていると地元の日常に自然と混ざり込める。シルクロード古都を目指す歴史好きや、写真映えする建築を求める旅行者に人気が高まっている。</p></div>
+
+  <div class="s-card" style="margin-top:32px">
+    <!-- 主要都市 -->
+    <div class="qs-section-title" style="margin-top:0">主要都市</div>
+    <div style="overflow:hidden">
     <div style="position:relative">
       <div id="uzbekistan-map" style="width:100%;height:300px"></div>
       <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
@@ -230,84 +242,11 @@
       <div class="city-item" onclick="zoomToCity('nukus')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">ヌクス</div><div class="ci-badge green">アラル海</div></div><div class="ci-desc">前衛芸術を集めるサヴィツキー美術館とアラル海の玄関口</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('nukus')">観光地を見る →</button></div></div>
       
     </div>
-  </div>
+    </div><!-- end overflow:hidden 主要都市 -->
 
-  <!-- ベストシーズン（簡易） -->
-  <h2>ベストシーズン</h2>
-  <div>
-    <p style="font-size:0.8em;color:var(--sub);margin-bottom:8px">夏は40℃近くになる乾燥した大陸性気候。4〜6月と9〜10月が旅行のベストシーズン。冬は氷点下になる地域も。</p>
-    <div style="font-size:0.78em;font-weight:700;color:#284258;margin-bottom:5px">タシュケント</div>
-    <div class="season-mini">
-      <div class="sm-col"><div class="sm-lbl">1月</div><div class="sm-dot t-cold">❄️<span class="sm-t">2°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">2月</div><div class="sm-dot t-cold">❄️<span class="sm-t">4°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">3月</div><div class="sm-dot t-cool">⛅<span class="sm-t">12°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">4月</div><div class="sm-dot t-mild">⛅<span class="sm-t">19°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">5月</div><div class="sm-dot t-hot1">☀️<span class="sm-t">25°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">6月</div><div class="sm-dot t-hot2">☀️<span class="sm-t">30°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">7月</div><div class="sm-dot t-hot2">☀️<span class="sm-t">33°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">8月</div><div class="sm-dot t-hot2">☀️<span class="sm-t">31°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">9月</div><div class="sm-dot t-hot1">☀️<span class="sm-t">25°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">10月</div><div class="sm-dot t-mild">⛅<span class="sm-t">16°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">11月</div><div class="sm-dot t-cold">🌧️<span class="sm-t">8°</span></div></div>
-      <div class="sm-col"><div class="sm-lbl">12月</div><div class="sm-dot t-cold">❄️<span class="sm-t">3°</span></div></div>
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:0.72em;color:var(--sub);margin-top:8px;align-items:center">
-      <span>☀️ 乾季　⛅ 曇り　☔ 雨季</span>
-    </div>
-    <button class="see-more" style="margin-top:10px;margin-bottom:0;display:block;margin-left:auto" onclick="show('season',document.querySelectorAll('nav button')[4])">地域別ベストシーズンを詳しく見る →</button>
-  </div>
-
-  <!-- 基本データ -->
-  <h2>基本データ</h2>
-  <div>
-    <div class="bd-grid">
-      
-      <div class="bd-item">
-        <div class="bd-lbl">首都</div>
-        <div class="bd-val">タシュケント</div>
-        <div class="bd-note">独立後1991年よりウズベキスタン共和国として発足</div>
-      </div>
-      
-      <div class="bd-item">
-        <div class="bd-lbl">独立年</div>
-        <div class="bd-val">1991年9月1日</div>
-        <div class="bd-note">旧ソビエト連邦から独立</div>
-      </div>
-      
-      <div class="bd-item">
-        <div class="bd-lbl">人口</div>
-        <div class="bd-val">約3,600万人</div>
-        <div class="bd-note">（日本の約3割）</div>
-      </div>
-      
-      <div class="bd-item">
-        <div class="bd-lbl">面積</div>
-        <div class="bd-val">約44.9万 km²</div>
-        <div class="bd-note">日本（37.8万km²）より広い内陸国</div>
-      </div>
-      
-      <div class="bd-item">
-        <div class="bd-lbl">宗教</div>
-        <div class="bd-val">イスラム教（スンニ派）約90%</div>
-        <div class="bd-note">ロシア正教・ユダヤ教など</div>
-      </div>
-      
-      <div class="bd-item">
-        <div class="bd-lbl">民族</div>
-        <div class="bd-val">ウズベク人 約83%</div>
-        <div class="bd-note">ロシア人5%・タジク人4%・カザフ人3%ほか</div>
-      </div>
-      
-    </div>
-  </div>
-  
-</section>
-
-<!-- ベストシーズン -->
-<section id="season">
-
-  <h2>ベストシーズン</h2>
-  <div>
+    <!-- ベストシーズン -->
+    <div class="qs-section-title" style="margin-top:20px">ベストシーズン</div>
+    <div style="background:#fff;padding:20px 24px">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">大陸性気候のウズベキスタンは季節の変化が激しく、夏と冬で気候がまるで違う。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高く</span>、黄金色は比較的過ごしやすい月です。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
@@ -330,9 +269,10 @@
         <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-cold">🌧️<span class="md-t">8°C</span></div></div>
         <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-cold">❄️<span class="md-t">3°C</span></div></div>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：4〜6月・9〜10月 ／ 冬は氷点下になることも</p><button onclick="showFilteredSpots('tashkent')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
+      <div style="margin-top:6px"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：4〜6月・9〜10月 ／ 冬は氷点下になることも</p></div>
     </div>
     
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('tashkent')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
       <div class="city-name">サマルカンド・ブハラ（南中部）</div>
@@ -350,9 +290,10 @@
         <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-cold">🌧️<span class="md-t">7°C</span></div></div>
         <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-cold">❄️<span class="md-t">2°C</span></div></div>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：4月〜6月・9〜10月 ／ 冬は降雪もあり遺跡が閉鎖されることも</p><button onclick="showFilteredSpots('samarkand')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
+      <div style="margin-top:6px"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：4月〜6月・9〜10月 ／ 冬は降雪もあり遺跡が閉鎖されることも</p></div>
     </div>
     
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('samarkand')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
       <div class="city-name">ヒヴァ・ヌクス（西部・砂漠地帯）</div>
@@ -370,40 +311,95 @@
         <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-cold">🌥️<span class="md-t">6°C</span></div></div>
         <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-freeze">❄️<span class="md-t">0°C</span></div></div>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px;flex-wrap:wrap"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：4〜5月・9〜10月 ／ 夏は40℃近くになる乾燥した砂漠気候</p><button onclick="showFilteredSpots('khiva')" style="font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;flex-shrink:0;margin-left:auto">観光スポットを見る →</button></div>
+      <div style="margin-top:6px"><p style="font-size:0.75em;color:var(--sub)">✅ ベスト：4〜5月・9〜10月 ／ 夏は40℃近くになる乾燥した砂漠気候</p></div>
     </div>
     
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('khiva')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
 
-    <div class="season-tip-box"><span class="season-tip-title"></span><p style="font-size:0.8em;line-height:1.7;color:#444"></p></div>
-  </div>
-  <div class="tab-cta">
-    <div class="tab-cta-title">旅の予算を把握しよう！💰</div>
-    <p class="tab-cta-desc">航空券・ホテル・食費・交通費の目安を一覧でチェック。<br>節約ポイントやお金の持ち方も紹介しています。</p>
-    <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button>
+    </div>
+
+  </div><!-- end s-card どんなところ？ -->
+
+  <div class="season-tip-box" style="margin-top:16px"><span class="season-tip-title"></span><p style="font-size:0.8em;line-height:1.7;color:#444"></p></div>
+
+  <div style="margin-top:32px"></div>
+  <!-- 基本データ -->
+  <h2>基本データ</h2>
+  <div class="s-card">
+    <div style="background:#fff;padding:4px 0">
+    <div style="text-align:center;padding:20px 16px;border-bottom:1px solid #e0e0e0">
+      <div style="background:linear-gradient(to bottom,#1EB7D4 0%,#1EB7D4 30%,#CC0000 30%,#CC0000 33%,#FFFFFF 33%,#FFFFFF 64%,#CC0000 64%,#CC0000 67%,#009A44 67%,#009A44 100%);height:100px;width:200px;display:inline-block;position:relative;overflow:hidden;border:1px solid #eee;"><div style="position:absolute;top:6px;left:8px;color:white;font-size:13px;">🌙</div><div style="position:absolute;top:9px;left:30px;color:white;font-size:7px;letter-spacing:3px;">★★★★★★★★★★★★</div></div>
+      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">ウズベキスタン国旗 ― 青はシル川・アム川の水と空、白は平和と純粋、緑は豊かな自然を表す。三日月と12の星がイスラムの象徴。</p>
+    </div>
+    <div class="bd-grid">
+      
+      <div class="bd-item">
+        <div class="bd-lbl">首都</div>
+        <div style="flex:1"><div class="bd-val">タシュケント</div><div class="bd-note">独立後1991年よりウズベキスタン共和国として発足</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">独立年</div>
+        <div style="flex:1"><div class="bd-val">1991年9月1日</div><div class="bd-note">旧ソビエト連邦から独立</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">人口</div>
+        <div style="flex:1"><div class="bd-val">約3,600万人</div><div class="bd-note">（日本の約3割）</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">面積</div>
+        <div style="flex:1"><div class="bd-val">約44.9万 km²</div><div class="bd-note">日本（37.8万km²）より広い内陸国</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">宗教</div>
+        <div style="flex:1"><div class="bd-val">イスラム教（スンニ派）約90%</div><div class="bd-note">ロシア正教・ユダヤ教など</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">民族</div>
+        <div style="flex:1"><div class="bd-val">ウズベク人 約83%</div><div class="bd-note">ロシア人5%・タジク人4%・カザフ人3%ほか</div></div>
+      </div>
+      
+    </div>
+    </div>
   </div>
   
 </section>
+
 
 <!-- 予算・費用 -->
 <section id="budget">
 
   <h2>旅行費用の目安</h2>
-  <div class="grid2" style="margin-bottom:14px">
-    <div class="card" style="background:linear-gradient(135deg,#f0f7f3,#e0f0e8);border:1px solid #a8d5b5;text-align:center">
-      <div style="font-size:0.75em;color:var(--sub)">5泊7日（1人）</div>
-      <div style="font-size:1.4em;font-weight:900;color:var(--green);margin:4px 0">8〜14万円</div>
-      <div style="font-size:0.72em;color:var(--sub)">乗継便利用・中級ホテル</div>
-    </div>
-    <div class="card" style="background:linear-gradient(135deg,#f7f3f0,#f0e8e0);border:1px solid #d5b5a8;text-align:center">
-      <div style="font-size:0.75em;color:var(--sub)">7泊9日（1人）</div>
-      <div style="font-size:1.4em;font-weight:900;color:var(--red);margin:4px 0">12〜20万円</div>
-      <div style="font-size:0.72em;color:var(--sub)">サマルカンド・ブハラ・ヒヴァ周遊</div>
-    </div>
+  
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;font-size:0.82em;min-width:320px">
+    <thead>
+      <tr>
+        <th style="padding:8px 10px;text-align:left;background:#f5f5f5;border-bottom:2px solid #ddd;width:30%"></th>
+        <th style="padding:8px 10px;text-align:center;background:#e8f0fb;border-bottom:2px solid #aac0e8;color:#2a5ca8">節約</th>
+        <th style="padding:8px 10px;text-align:center;background:#e8f5ee;border-bottom:2px solid #a8d5b5;color:var(--green)">標準</th>
+        <th style="padding:8px 10px;text-align:center;background:#fdf6e3;border-bottom:2px solid #e0c97a;color:#8a6a00">こだわり派</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr style="background:#f9f9f9;font-weight:700">
+        <td style="padding:10px 10px;font-weight:700">合計目安</td>
+        <td style="padding:10px 10px;text-align:center;color:#2a5ca8;font-size:1.05em"></td>
+        <td style="padding:10px 10px;text-align:center;color:var(--green);font-size:1.05em"></td>
+        <td style="padding:10px 10px;text-align:center;color:#8a6a00;font-size:1.05em"></td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 
-  <h2>費用の内訳</h2>
-  <div>
+  <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
     <table class="budget-table">
       <tbody>
         
@@ -445,10 +441,48 @@
         
       </tbody>
     </table>
-    <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">・チップは基本不要（ガイドへは1万〜2万UZS程度が相場）<br>・バザールの大衆食堂でのランチは1食300〜500円と格安<br>・アフロシヨブ号（高速鉄道）は快適かつ都市間移動の最安手段</p></div>
+    </div>
   </div>
+  <div class="season-tip-box"><span class="season-tip-title">💡 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">・チップは基本不要（ガイドへは1万〜2万UZS程度が相場）<br>・バザールの大衆食堂でのランチは1食300〜500円と格安<br>・アフロシヨブ号（高速鉄道）は快適かつ都市間移動の最安手段</p></div>
 
-  <div style="margin-top:20px;background:linear-gradient(135deg,#f0f7f3,#e6f2ec);border-radius:14px;padding:18px 20px;text-align:center">
+  <h2 id="money">両替・支払い</h2>
+  
+  <div class="s-card">
+  <div class="qs-section-title" style="margin-top:0;margin-bottom:12px">現地現金の目安</div>
+    <div style="background:#fff;padding:20px 24px">
+
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px">
+      <button onclick="changeDays(-1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">−</button>
+      <div style="text-align:center;min-width:60px">
+        <span id="cash-days" style="font-size:2.2em;font-weight:700;color:var(--green)">5</span>
+        <span style="font-size:0.82em;color:var(--sub)"> 日間</span>
+      </div>
+      <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
+      <div style="text-align:center;background:#e8f0fb;border-radius:10px;padding:10px 6px;border:1px solid #aac0e8">
+        <div style="font-size:0.62em;color:#2a5ca8;font-weight:600;margin-bottom:5px">節約</div>
+        <div id="eco-cur" style="font-size:0.9em;font-weight:700;color:#2a5ca8">-</div>
+        <div id="eco-jpy" style="font-size:0.78em;color:#2a5ca8;margin-top:3px">-</div>
+      </div>
+      <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #a8d5b5">
+        <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
+        <div id="std-cur" style="font-size:0.9em;font-weight:700;color:var(--green)">-</div>
+        <div id="std-jpy" style="font-size:0.78em;color:var(--green);margin-top:3px">-</div>
+      </div>
+      <div style="text-align:center;background:#fdf6e3;border-radius:10px;padding:10px 6px;border:1px solid #e0c97a">
+        <div style="font-size:0.62em;color:#8a6a00;font-weight:600;margin-bottom:5px">こだわり派</div>
+        <div id="lux-cur" style="font-size:0.9em;font-weight:700;color:#8a6a00">-</div>
+        <div id="lux-jpy" style="font-size:0.78em;color:#8a6a00;margin-top:3px">-</div>
+      </div>
+    </div>
+    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">バザール・屋台・ローカル食堂は現金のみ。1万UZS ≈ 116円で計算 ／ 節約 15万・標準 40万・ゆとり 80万 UZS／日</div>
+    </div>
+  </div>
+  <div class="season-tip-box"><span class="season-tip-title"></span><p style="font-size:0.8em;line-height:1.7;color:#444"></p></div>
+  <div class="s-card"><div style="background:#fff;padding:20px 24px"><div data-affiliate-card-inner="wise"></div></div></div>
+
+  <div class="s-card" style="text-align:center">
     <div style="font-size:1em;font-weight:900;color:var(--green);margin-bottom:6px">さあ、旅の準備をはじめよう！ 🧳</div>
     <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
     <button onclick="show('practical',document.querySelectorAll('nav button')[6])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
@@ -460,7 +494,7 @@
 <section id="practical">
 
   <h2>旅の実用情報</h2>
-  <div class="prac-grid">
+  <div class="s-card prac-grid">
     
     <div class="prac-card"><div class="p-ico">📄</div><div class="p-title">ビザ</div><div class="p-val">不要（電子ビザ30日）</div></div>
     
@@ -485,7 +519,8 @@
   </div>
 
   <h2>準備は早めに</h2>
-  <div>
+  <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
     <div style="padding-top:8px">
       
       <div class="rm-item">
@@ -574,11 +609,13 @@
       
     </div>
     <div style="margin-top:14px;background:#fff8f0;border-left:3px solid #ff9900;border-radius:6px;padding:10px 12px;font-size:0.75em;color:#7a4400;line-height:1.7">💡 <strong>電子ビザ（eビザ）について</strong><br>日本国籍者はオンラインで電子ビザを申請できる。有効期間30日。申請には証明写真・パスポート情報・宿泊先が必要。<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:4px"><span>URL: <a href="https://e-visa.gov.uz/" target="_blank" style="color:#ff9900;font-weight:700">e-visa.gov.uz</a></span><span style="color:#bbb;white-space:nowrap;margin-left:auto">（2026年5月時点）</span></span></div>
+    </div>
   </div>
 
   <h2>航空券の予約</h2>
-  <div>
-    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">日本からタシュケントへはウズベキスタン航空の直行便（週3〜4便）が利用できる。乗継便ならソウル・広州・イスタンブール経由など選択肢が広がる。</div>
+  <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
+    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:12px">日本からタシュケントへはウズベキスタン航空の直行便（週3〜4便）が利用できる。乗継便ならソウル・広州・イスタンブール経由など選択肢が広がる。</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
       
       <div style="background:#f9fafb;border-radius:10px;padding:12px">
@@ -611,54 +648,57 @@
       <div style="color:var(--sub)">・GW・お盆・年末年始は2〜3ヶ月前から価格が上がりやすい<br>・直行便は便数が限られるため、希望の日程は早めに押さえること<br>・乗継便は比較して安い場合が多く、乗継国でのトランジット観光も楽しみの一つ</div>
     </div>
     <span data-affiliate="flights"></span>
+    </div>
   </div>
 
   <h2>ホテルの選び方</h2>
-  <div>
-    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 12px">古都の旧市街に宿泊すると、観光スポットへ歩いてアクセスでき移動の負担が少ない。タシュケントは空港へのアクセスも考慮してエリアを選ぼう。</div>
+  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">古都の旧市街に宿泊すると、観光スポットへ歩いてアクセスでき移動の負担が少ない。タシュケントは空港へのアクセスも考慮してエリアを選ぼう。</p>
+  <div class="s-card">
     
-    <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+    <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <div style="font-weight:700;font-size:0.84em">サマルカンド旧市街（レギスタン周辺）</div>
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" >
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">サマルカンド旧市街（レギスタン周辺）</div>
           
-          <div style="font-size:0.68em;color:var(--green);background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">観光に最適</div>
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">観光に最適</div>
           
         </div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">レギスタン広場まで徒歩圏のブティックホテルが集中。昔のキャラバンサライ（隊商宿）を改装したホテルもある。夕暮れのレギスタンが窓から見えるホテルも。</div>
-        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">中級 4,000〜8,000円／泊</div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">レギスタン広場まで徒歩圏のブティックホテルが集中。昔のキャラバンサライ（隊商宿）を改装したホテルもある。夕暮れのレギスタンが窓から見えるホテルも。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">中級 4,000〜8,000円／泊</div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <div style="font-weight:700;font-size:0.84em">タシュケント旧市街（チョルスー周辺）</div>
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" >
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">タシュケント旧市街（チョルスー周辺）</div>
           
-          <div style="font-size:0.68em;color:var(--green);background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">ローカルな雰囲気</div>
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">ローカルな雰囲気</div>
           
         </div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">バザールや旧市街モスクに近いエリア。空港からはタクシーで20〜30分。ビジネスホテルも多く予算に応じて選べる幅がある。</div>
-        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 2,000〜4,000円・中級 5,000〜10,000円</div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">バザールや旧市街モスクに近いエリア。空港からはタクシーで20〜30分。ビジネスホテルも多く予算に応じて選べる幅がある。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 2,000〜4,000円・中級 5,000〜10,000円</div>
       </div>
       
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;cursor:pointer" >
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          <div style="font-weight:700;font-size:0.84em">ブハラ旧市街（ラビ・ハウズ周辺）</div>
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" >
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">ブハラ旧市街（ラビ・ハウズ周辺）</div>
           
-          <div style="font-size:0.68em;color:var(--green);background:#e8f5ee;border-radius:20px;padding:2px 8px;font-weight:600">世界遺産の中心</div>
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">世界遺産の中心</div>
           
         </div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.6">ラビ・ハウズの池を囲むカフェ・レストランが夜遅くまで賑わう。旧市街内のゲストハウスは独特の雰囲気でコスパも良い。</div>
-        <div style="font-size:0.72em;color:var(--sub);margin-top:5px">格安 2,000〜4,000円／泊</div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">ラビ・ハウズの池を囲むカフェ・レストランが夜遅くまで賑わう。旧市街内のゲストハウスは独特の雰囲気でコスパも良い。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 2,000〜4,000円／泊</div>
       </div>
       
     </div>
-    <div class="season-tip-box"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">ヒヴァのイチャン・カラ（旧市街）内には城壁内に泊まれるユニークなホテルがある。旧市街を夕暮れや早朝の静かな時間帯に歩けるのは宿泊者だけの特権。</p></div>
+    <div class="season-tip-box" style="margin-top:32px"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">ヒヴァのイチャン・カラ（旧市街）内には城壁内に泊まれるユニークなホテルがある。旧市街を夕暮れや早朝の静かな時間帯に歩けるのは宿泊者だけの特権。</p></div>
     <span data-affiliate="hotels"></span>
   </div>
 
   <h2>持ち物・アプリ準備</h2>
-  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding:14px 0 16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
+  <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
+  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">🇺🇿 ウズベキスタン特有の持ち物</div>
@@ -730,89 +770,15 @@
     </div>
     
   </div>
-
-  <h2 id="money">両替・支払い</h2>
-  <div>
-    <div style="font-size:0.82em;font-weight:700;margin-bottom:8px">💴 現地現金の目安</div>
-    <div style="font-size:0.75em;color:var(--sub);line-height:1.7;margin-bottom:10px">空港の両替所は手数料が高め。市内の両替専門店やWiseカードの利用がおすすめ。</div>
-    <div class="season-tip-box" style="margin-bottom:14px"><span class="season-tip-title"></span><p style="font-size:0.8em;line-height:1.7;color:#444"></p></div>
-    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px">
-      <button onclick="changeDays(-1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">−</button>
-      <div style="text-align:center;min-width:60px">
-        <span id="cash-days" style="font-size:2.2em;font-weight:700;color:var(--green)">5</span>
-        <span style="font-size:0.82em;color:var(--sub)"> 日間</span>
-      </div>
-      <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
-      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
-        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">節約</div>
-        <div id="eco-cur" style="font-size:0.9em;font-weight:700">-</div>
-        <div id="eco-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
-      </div>
-      <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #b8ddc8">
-        <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
-        <div id="std-cur" style="font-size:0.9em;font-weight:700;color:var(--green)">-</div>
-        <div id="std-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
-      </div>
-      <div style="text-align:center;background:#f9f9f9;border-radius:10px;padding:10px 6px">
-        <div style="font-size:0.62em;color:var(--sub);margin-bottom:5px">ゆとり</div>
-        <div id="lux-cur" style="font-size:0.9em;font-weight:700">-</div>
-        <div id="lux-jpy" style="font-size:0.78em;color:var(--sub);margin-top:3px">-</div>
-      </div>
-    </div>
-    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">バザール・屋台・ローカル食堂は現金のみ。1万UZS ≈ 116円で計算 ／ 節約 15万・標準 40万・ゆとり 80万 UZS／日</div>
-    <hr style="border:none;border-top:1px solid #f0f0f0;margin:16px 0">
-    <div data-affiliate-card-inner="wise"></div>
+  </div>
   </div>
 
   <h2 id="sim">SIM・Wi-Fi</h2>
-  <div data-affiliate-card="sim_compare"></div>
+  <div class="s-card" data-affiliate-card="sim_compare"></div>
 
-  <h2>現地ツアー・アクティビティ</h2>
-  <div data-affiliate-card="klook"></div>
-
-  <div class="tab-cta">
-    <div class="tab-cta-title">出発前にマナーも確認しよう！🙏</div>
-    <p class="tab-cta-desc">イスラム文化と旧ソ連の歴史が交差する国ならではのマナー。<br>モスク見学・食事・服装など旅行者が知っておくべきポイントをまとめました。</p>
-    <button class="tab-cta-btn" onclick="show('manner',document.querySelectorAll('nav button')[7])">マナーを見る →</button>
-  </div>
-
-</section>
-
-<!-- マナー -->
-<section id="manner">
-  <h2>文化・マナー</h2>
-  <div class="manner-grid">
-    
-    <div class="manner-card do"><div class="m-ico">🤝</div><div class="m-title">右手での受け渡し</div><div class="m-desc">物の受け渡しや握手は右手で行う。左手は不浄とされており、両手を使うのがより丁寧。</div></div>
-    
-    <div class="manner-card do"><div class="m-ico">👋</div><div class="m-title">「アッサローム」で挨拶</div><div class="m-desc">「Assalomu alaykum（アッサローム アライクム）」はウズベク語の挨拶。声をかけると相手がとても喜んでくれる。旅の鉄板フレーズ。</div></div>
-    
-    <div class="manner-card dont"><div class="m-ico">🕌</div><div class="m-title">モスクでは服装に注意</div><div class="m-desc">肌の露出を控え、女性はスカーフで頭を覆う。入口で服を貸してくれる場所も多いが、あらかじめ羽織ものを持参すると安心。</div></div>
-    
-    <div class="manner-card do"><div class="m-ico">🍽️</div><div class="m-title">食事への招待は喜んで</div><div class="m-desc">「ゲストは神様」という文化が根づいており、家庭への招待を断るのは失礼にあたる場合がある。招かれたら遠慮せずに応じよう。</div></div>
-    
-    <div class="manner-card dont"><div class="m-ico">📸</div><div class="m-title">軍・政府施設の撮影禁止</div><div class="m-desc">軍・警察・政府施設の撮影は厳しく禁止されている。また人物を撮影する際は必ず許可を取ること。</div></div>
-    
-    <div class="manner-card dont"><div class="m-ico">🥂</div><div class="m-title">公共の場でのアルコール</div><div class="m-desc">飲酒自体は禁止されていないが、ラマダン期間中やモスク付近など公の場での飲酒は控えたい。</div></div>
-    
-    <div class="manner-card do"><div class="m-ico">💬</div><div class="m-title">ロシア語が通じる場面も</div><div class="m-desc">英語はほとんど通じないが、ロシア語なら意外と通じる。数字・料金・方向など基本単語を覚えておくと助かる場面が多い。</div></div>
-    
-    <div class="manner-card dont"><div class="m-ico">🦶</div><div class="m-title">足の裏を向けない</div><div class="m-desc">座るときに足の裏を相手に向けるのは失礼とされる。絨毯の上に座る場面も多いため足の向きに気をつけよう。</div></div>
-    
-  </div>
-  <div class="tab-cta">
-    <div class="tab-cta-title">現地のウズベク語で話しかけてみよう！💬</div>
-    <p class="tab-cta-desc">ウズベク語・ロシア語の簡単なフレーズ集。<br>「ラフマット（ありがとう）」一言で、相手の表情がぐっと和らぎます。</p>
-    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button>
-  </div>
-</section>
-
-<!-- 交通 -->
-<section id="transport">
   <h2>現地交通ガイド</h2>
-  <div>
+  <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
     
     <div class="trans-item" style="border-bottom:1px solid #b8b8b8">
       <div class="t-ico">🚆</div>
@@ -860,11 +826,25 @@
     </div>
     
   </div>
+  </div>
+
+  <h2>現地ツアー・アクティビティ</h2>
+  <div class="s-card" data-affiliate-card="klook"></div>
+
+  <div class="tab-cta">
+    <div class="tab-cta-title">出発前にマナーも確認しよう！🙏</div>
+    <p class="tab-cta-desc">イスラム文化と旧ソ連の歴史が交差する国ならではのマナー。<br>モスク見学・食事・服装など旅行者が知っておくべきポイントをまとめました。</p>
+    <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[7])">フレーズ集を見る →</button>
+  </div>
+
 </section>
+
+
 
 <!-- フレーズ -->
 <section id="phrases">
   <h2>ウズベク語 旅行フレーズ集</h2>
+  <div class="s-card">
   <table class="phrase-tbl">
     <tr><th>日本語</th><th>ウズベク語 / 読み方</th><th style="width:38px"></th></tr>
     
@@ -923,11 +903,6 @@
     
     
   </table>
-
-  <div class="cta" style="margin-top:20px">
-    <h3>🃏 ウズベク語 単語カード</h3>
-    <p>旅行前にフレーズをマスターしよう！<br>印刷できる単語カードを販売中。</p>
-    <button class="cta-btn">単語カードを見る →</button>
   </div>
 </section>
 
@@ -976,7 +951,7 @@
       
     </div>
   </div>
-
+  <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
     <div class="item-card has-img " data-ftype="rice" data-fcity="national">
@@ -1088,6 +1063,7 @@
     </div>
     
   </div>
+  </div>
   <div class="tab-cta">
     <div class="tab-cta-title">食べたいものが決まったら旅程を組もう！🗺️</div>
     <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>管理人の実際の旅ルートもそのまま公開しています。</p>
@@ -1100,6 +1076,7 @@
 <section id="spots">
 
   <h2>都市別観光スポット</h2>
+  <div class="filter-label">エリア</div>
   <div class="filter-row" id="spots-filter-row">
     
     <button class="filter-btn active" data-filter="all" onclick="filterSpots('all',this)">全て</button>
@@ -1117,9 +1094,9 @@
     <button class="filter-btn " data-filter="nukus" onclick="filterSpots('nukus',this)">ヌクス</button>
     
   </div>
-
-  <div class="item-grid" id="spots-grid">
+  <div id="spots-grid">
     
+    <div class="s-card spot-section-card" data-city="tashkent" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="tashkent">
       
       <div class="csh-title">タシュケント</div>
@@ -1158,6 +1135,7 @@
         
       </div>
     </div>
+    <div class="item-grid">
     
     <div class="item-card spot has-spot-img must" data-city="tashkent">
       <div class="must-badge">⭐</div>
@@ -1199,7 +1177,10 @@
       <div class="spot-ico-large">🏛️</div>
     </div>
     
+    </div>
+    </div>
     
+    <div class="s-card spot-section-card" data-city="samarkand" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="samarkand">
       
       <div class="csh-title">サマルカンド</div>
@@ -1238,6 +1219,7 @@
         
       </div>
     </div>
+    <div class="item-grid">
     
     <div class="item-card spot has-spot-img must" data-city="samarkand">
       <div class="must-badge">⭐</div>
@@ -1279,7 +1261,10 @@
       <div class="spot-ico-large">🕌</div>
     </div>
     
+    </div>
+    </div>
     
+    <div class="s-card spot-section-card" data-city="bukhara" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="bukhara">
       
       <div class="csh-title">ブハラ</div>
@@ -1318,6 +1303,7 @@
         
       </div>
     </div>
+    <div class="item-grid">
     
     <div class="item-card spot has-spot-img must" data-city="bukhara">
       <div class="must-badge">⭐</div>
@@ -1359,7 +1345,10 @@
       <div class="spot-ico-large">🌸</div>
     </div>
     
+    </div>
+    </div>
     
+    <div class="s-card spot-section-card" data-city="khiva" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="khiva">
       
       <div class="csh-title">ヒヴァ</div>
@@ -1398,6 +1387,7 @@
         
       </div>
     </div>
+    <div class="item-grid">
     
     <div class="item-card spot has-spot-img must" data-city="khiva">
       <div class="must-badge">⭐</div>
@@ -1431,7 +1421,10 @@
       <div class="spot-ico-large">🏛️</div>
     </div>
     
+    </div>
+    </div>
     
+    <div class="s-card spot-section-card" data-city="fergana" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="fergana">
       
       <div class="csh-title">フェルガナ</div>
@@ -1470,6 +1463,7 @@
         
       </div>
     </div>
+    <div class="item-grid">
     
     <div class="item-card spot has-spot-img " data-city="fergana">
       
@@ -1495,7 +1489,10 @@
       <div class="spot-ico-large">🏛️</div>
     </div>
     
+    </div>
+    </div>
     
+    <div class="s-card spot-section-card" data-city="nukus" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="nukus">
       
       <div class="csh-title">ヌクス</div>
@@ -1528,6 +1525,7 @@
         
       </div>
     </div>
+    <div class="item-grid">
     
     <div class="item-card spot has-spot-img must" data-city="nukus">
       <div class="must-badge">⭐</div>
@@ -1553,9 +1551,10 @@
       <div class="spot-ico-large">🛒</div>
     </div>
     
+    </div>
+    </div>
     
   </div>
-
   <div class="tab-cta">
     <div class="tab-cta-title">観光地が決まったら名物グルメもチェック！🍜</div>
     <p class="tab-cta-desc">各都市の名物料理から定番スイーツ・ドリンクまで。<br>食べてみたいものをここで探して旅の計画に加えよう。</p>
@@ -1568,16 +1567,16 @@
 <section id="course">
 
   <h2>モデルコース</h2>
-
-  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:14px">旅のスタイルに合わせた2タイプのモデルコースを紹介。サマルカンドとブハラを軸に据えた<strong>古都連泊プラン</strong>から、全都市を繋ぐ<strong>シルクロード縦断</strong>まで。どちらもアレンジ自由です。</p>
-
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">旅のスタイルに合わせた2タイプのモデルコースを紹介。サマルカンドとブハラを軸に据えた<strong>古都連泊プラン</strong>から、全都市を繋ぐ<strong>シルクロード縦断</strong>まで。どちらもアレンジ自由です。</p>
   <div class="course-type">
     <div class="course-type-title">古都をじっくり巡るプラン</div>
   </div>
+  
+  <div class="s-card" style="padding-top:6px">
 
   
-  <div style="margin-bottom:10px">
-    <div class="course-plan-title">サマルカンド ＋ ブハラ　5泊6日</div>
+  <div class="qs-section-title" style="margin:6px 0 8px">サマルカンド ＋ ブハラ　5泊6日</div>
+  <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       
       
@@ -1589,7 +1588,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚆<br>約2時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約2時間</span></div>
       </div>
       
       
@@ -1609,7 +1608,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚆<br>約2.5時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約2.5時間</span></div>
       </div>
       
       
@@ -1629,7 +1628,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚆<br>約4時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約4時間</span></div>
       </div>
       
       
@@ -1644,8 +1643,8 @@
     <div class="course-tip">✅ タシュケント1泊・サマルカンド2泊・ブハラ2泊　荷物の移動は2回</div>
   </div>
   
-  <div style="margin-bottom:10px">
-    <div class="course-plan-title">シルクロード完全制覇　7泊8日</div>
+  <div class="qs-section-title" style="margin:6px 0 8px">シルクロード完全制覇　7泊8日</div>
+  <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       
       
@@ -1664,7 +1663,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚆<br>約2時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約2時間</span></div>
       </div>
       
       
@@ -1677,7 +1676,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚆<br>約2.5時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約2.5時間</span></div>
       </div>
       
       
@@ -1697,7 +1696,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚕<br>約5〜6時間（共有タクシー）</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約5〜6時間（共有タクシー）</span></div>
       </div>
       
       
@@ -1710,7 +1709,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">✈️<br>約1時間（ウルゲンチ発）</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約1時間（ウルゲンチ発）</span></div>
       </div>
       
       
@@ -1725,19 +1724,14 @@
     <div class="course-tip">✅ タシュケント2泊・サマルカンド1泊・ブハラ2泊・ヒヴァ1泊　飛行機でタシュケントに戻る</div>
   </div>
   
+  </div>
 
   <div class="course-type" style="margin-top:22px">
     <div class="course-type-title">フェルガナ〜アラル海縦断ルート</div>
   </div>
-
-  <div>
-    <div class="course-note">
-      <span class="course-note-ico">✍️</span>
-      <div>
-        <div class="course-note-lbl">管理人より</div>
-        <p class="course-note-txt">「シルクロードを端から端まで歩いてみたい」そんな気持ちで組んだのがこのルートです。フェルガナの工房でリシタン陶器職人のおじさんと片言ロシア語で話し、サマルカンドでは人で混み合う昼間を避けて早朝5時にレギスタン広場を訪れました。最後にたどり着いたアラル海の船の墓場では、錆びついた漁船が砂漠に並ぶ光景の前で言葉が出なかった。シルクロードの栄光と時代の変化、それでもここに暮らす人たちの逞しさ。そういうものを全部ひっくるめて感じられる旅ができる国だと思います。</p>
-      </div>
-    </div>
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">「シルクロードを端から端まで歩いてみたい」そんな気持ちで組んだのがこのルートです。フェルガナの工房でリシタン陶器職人のおじさんと片言ロシア語で話し、サマルカンドでは人で混み合う昼間を避けて早朝5時にレギスタン広場を訪れました。最後にたどり着いたアラル海の船の墓場では、錆びついた漁船が砂漠に並ぶ光景の前で言葉が出なかった。シルクロードの栄光と時代の変化、それでもここに暮らす人たちの逞しさ。そういうものを全部ひっくるめて感じられる旅ができる国だと思います。</p>
+  <div class="s-card">
+  <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       
       
@@ -1749,7 +1743,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">✈️<br>約1時間 or 🚗 約4時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約1時間 or 🚗 約4時間</span></div>
       </div>
       
       
@@ -1762,7 +1756,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚗<br>約3〜4時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約3〜4時間</span></div>
       </div>
       
       
@@ -1775,7 +1769,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚆<br>約2.5時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約2.5時間</span></div>
       </div>
       
       
@@ -1795,7 +1789,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚕<br>約5〜6時間（共有タクシー）</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約5〜6時間（共有タクシー）</span></div>
       </div>
       
       
@@ -1808,7 +1802,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">🚕<br>約2〜3時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約2〜3時間</span></div>
       </div>
       
       
@@ -1828,7 +1822,7 @@
       
       
       <div class="tl-transit">
-        <div class="tl-transit-lbl">✈️<br>約1.5時間</div>
+        <div class="tl-transit-lbl"><span style="display:block;line-height:1"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#E5E4DF" d="M489.137 438.203H22.863c-8.773 0-15.885-7.112-15.885-15.885V171.522c0-23.364 18.94-42.304 42.304-42.304h355.592c55.31 0 100.147 44.838 100.147 100.147v192.952c.001 8.774-7.111 15.886-15.884 15.886"/><path fill="#6EB51C" d="M492.439 440.136H19.561c-6.949 0-12.583-5.634-12.583-12.583v-70.756h498.043v70.756c.001 6.949-5.633 12.583-12.582 12.583"/><path fill="#4D8226" d="M6.978 328.714h498.043v27.871H6.978zm55.667 111.394c0-35.752 28.983-64.736 64.736-64.736s64.736 28.983 64.736 64.736m266.684 0c0-35.752-28.983-64.736-64.736-64.736s-64.736 28.983-64.736 64.736"/><path fill="#2B3B47" d="M178.041 440.108c0 27.979-22.681 50.66-50.66 50.66s-50.66-22.681-50.66-50.66s22.681-50.66 50.66-50.66s50.66 22.682 50.66 50.66m216.024-50.66c-27.979 0-50.66 22.681-50.66 50.66s22.681 50.66 50.66 50.66s50.66-22.681 50.66-50.66s-22.681-50.66-50.66-50.66"/><path fill="#597B91" d="M158.934 440.108c0 17.427-14.127 31.554-31.554 31.554s-31.554-14.127-31.554-31.554s14.127-31.554 31.554-31.554s31.554 14.128 31.554 31.554m235.131-31.553c-17.427 0-31.554 14.127-31.554 31.554s14.127 31.554 31.554 31.554s31.554-14.127 31.554-31.554s-14.127-31.554-31.554-31.554"/><path fill="#FF473E" d="M492.51 341.702h12.512V283.71H492.51c-7.4 0-13.399 5.999-13.399 13.399v31.193c0 7.401 5.999 13.4 13.399 13.4"/><path fill="#FFD469" d="M24.16 368.813H6.978v45.271H24.16c7.4 0 13.399-5.999 13.399-13.399v-18.473c0-7.4-5.999-13.399-13.399-13.399"/><path fill="#00B1FF" d="M94.781 298.291H15.978V172.897H94.78c13.552 0 24.538 10.986 24.538 24.538v76.318c.001 13.552-10.985 24.538-24.537 24.538m116.598-54.897v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.266 0v-61.965a7.2 7.2 0 0 0-7.2-7.2H245a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m81.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2m90.267 0v-61.965a7.2 7.2 0 0 0-7.2-7.2h-49.445a7.2 7.2 0 0 0-7.2 7.2v61.965a7.2 7.2 0 0 0 7.2 7.2h49.445a7.2 7.2 0 0 0 7.2-7.2"/></svg></span><span style="display:block;font-size:0.85em">約1.5時間</span></div>
       </div>
       
       
@@ -1843,10 +1837,11 @@
     <div class="course-tip">✅ フェルガナ渓谷からアラル海まで。シルクロードを端から端まで走り抜ける8泊9日。</div>
   </div>
 
+  </div>
   <div class="tab-cta">
     <div class="tab-cta-title">いつ行くかで旅は変わる！🌤️</div>
     <p class="tab-cta-desc">春の花・秋の果物・砂漠の夕景。季節ごとに異なる表情があります。<br>日程が決まっていない人はベストシーズンから逆算するのがおすすめ。</p>
-    <button class="tab-cta-btn" onclick="show('season',document.querySelectorAll('nav button')[4])">ベストシーズンを見る →</button>
+    <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[4])">予算・費用を見る →</button>
   </div>
   
 </section>
@@ -1938,8 +1933,8 @@ function show(id, btn) {
 function filterSpots(city, btn) {
   document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('#spots-grid .item-card, #spots-grid .city-section-header').forEach(el => {
-    el.style.display = (city === 'all' || el.dataset.city === city) ? '' : 'none';
+  document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
+    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
   });
 }
 
