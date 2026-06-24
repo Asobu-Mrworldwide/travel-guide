@@ -437,10 +437,30 @@
   "budget": {
     "intro": "マレーシアは物価が安く、屋台めしで節約しながらでも、高級ホテルやルーフトップバーでリッチに過ごしても、どちらのスタイルも十分に楽しめる懐の深い国です。予算に合わせた旅がしやすいのも人気の理由のひとつ。",
     "plan_rows": [
-      {"label": "航空券（往復）", "eco": "LCC 5〜7万円", "std": "8〜12万円", "lux": "FSC 12〜20万円"},
-      {"label": "ホテル（1泊）", "eco": "3,000〜5,000円", "std": "6,000〜10,000円", "lux": "15,000〜30,000円"},
-      {"label": "食費（1日）", "eco": "500〜1,000円", "std": "1,500〜2,500円", "lux": "3,000〜5,000円"},
-      {"label": "交通（1日）", "eco": "電車・バス 300円", "std": "Grab併用 800円", "lux": "Grab中心 1,500円"}
+      {
+        "label": "航空券（往復）",
+        "eco": "LCC 5〜7万円",
+        "std": "8〜12万円",
+        "lux": "FSC 12〜20万円"
+      },
+      {
+        "label": "ホテル（1泊）",
+        "eco": "3,000〜5,000円",
+        "std": "6,000〜10,000円",
+        "lux": "15,000〜30,000円"
+      },
+      {
+        "label": "食費（1日）",
+        "eco": "500〜1,000円",
+        "std": "1,500〜2,500円",
+        "lux": "3,000〜5,000円"
+      },
+      {
+        "label": "交通（1日）",
+        "eco": "電車・バス 300円",
+        "std": "Grab併用 800円",
+        "lux": "Grab中心 1,500円"
+      }
     ],
     "total_eco": "7〜10万円",
     "total_std": "12〜18万円",
@@ -623,7 +643,11 @@
     ],
     "flight_tip_html": "・GW・年末年始・お盆は2〜3ヶ月前から価格が上がりやすい<br>・閑散期（6〜7月）は直前でも安値が出ることがある<br>・複数サイトを比較して最安値を見つけよう",
     "hotel_intro": "宿を選ぶとき、値段だけ見ていませんか？ 安さだけで選ぶと治安の悪いエリアに当たりやすいので注意が必要です。特に夜着の日程ではリスクが上がります。初日くらいは安心して休めるよう、エリアの特徴を事前に把握しておきましょう。",
-    "hotel_map_center": { "lat": 3.1478, "lng": 101.7015, "zoom": 14 },
+    "hotel_map_center": {
+      "lat": 3.1478,
+      "lng": 101.7015,
+      "zoom": 14
+    },
     "hotel_areas": [
       {
         "id": "klcc",
@@ -633,7 +657,8 @@
         "desc": "ペトロナスツインタワー目の前。ショッピングモール直結ホテルが多く買い物・食事に便利。",
         "price": "中級 6,000〜12,000円／泊　高級 15,000円〜",
         "maps_url": "https://www.google.com/maps/place/KLCC,+Kuala+Lumpur",
-        "lat": 3.1579, "lng": 101.7123
+        "lat": 3.1579,
+        "lng": 101.7123
       },
       {
         "id": "bukit",
@@ -643,7 +668,8 @@
         "desc": "最大の繁華街。飲食店・ナイトライフ・買い物に便利。LRTでどこへでも移動しやすい。幅広い価格帯のホテルが揃う。",
         "price": "格安 2,000〜4,000円　中級 5,000〜10,000円",
         "maps_url": "https://www.google.com/maps/place/Bukit+Bintang,+Kuala+Lumpur",
-        "lat": 3.1467, "lng": 101.7128
+        "lat": 3.1467,
+        "lng": 101.7128
       },
       {
         "id": "chinatown",
@@ -653,7 +679,8 @@
         "desc": "リーズナブルなゲストハウスが多い。屋台グルメが充実。バックパッカーや節約旅行者に人気。",
         "price": "格安 1,500〜3,000円／泊",
         "maps_url": "https://www.google.com/maps/search/Chinatown+Kuala+Lumpur",
-        "lat": 3.1452, "lng": 101.6975
+        "lat": 3.1452,
+        "lng": 101.6975
       }
     ],
     "hotel_tip": "初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。",
@@ -2090,7 +2117,6 @@
           },
           {
             "transit": true,
-            "icon": "🚌",
             "duration": "約2h"
           },
           {
@@ -2102,7 +2128,6 @@
           },
           {
             "transit": true,
-            "icon": "🚌",
             "duration": "約2h"
           },
           {
@@ -2142,8 +2167,8 @@
           },
           {
             "transit": true,
-            "icon": "✈️",
-            "duration": "約1h"
+            "duration": "約1h",
+            "plane": true
           },
           {
             "transit": false,
@@ -2188,8 +2213,8 @@
         },
         {
           "transit": true,
-          "icon": "⛵30分",
-          "duration": "＋🚌"
+          "ferry": true,
+          "duration": "約30分＋バス"
         },
         {
           "transit": false,
@@ -2200,8 +2225,8 @@
         },
         {
           "transit": true,
-          "icon": "🚕",
-          "duration": "約3〜4h"
+          "duration": "約3〜4h",
+          "taxi": true
         },
         {
           "transit": false,
@@ -2212,8 +2237,8 @@
         },
         {
           "transit": true,
-          "icon": "🚕",
-          "duration": "約3〜4h"
+          "duration": "約3〜4h",
+          "taxi": true
         },
         {
           "transit": false,
@@ -2224,7 +2249,6 @@
         },
         {
           "transit": true,
-          "icon": "🚌",
           "duration": "約2h"
         },
         {
@@ -2236,7 +2260,6 @@
         },
         {
           "transit": true,
-          "icon": "🚌",
           "duration": "約4h"
         },
         {
@@ -2248,8 +2271,8 @@
         },
         {
           "transit": true,
-          "icon": "🚶",
-          "duration": "徒歩"
+          "duration": "徒歩",
+          "walk": true
         },
         {
           "transit": false,
