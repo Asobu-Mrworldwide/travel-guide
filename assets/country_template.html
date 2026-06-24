@@ -143,7 +143,7 @@
 
   <div class="season-tip-box" style="margin-top:16px"><span class="season-tip-title">🇯🇵 日本人に人気？</span><p style="font-size:0.82em;line-height:1.7;color:#444">{{overview.japan_popularity_html}}</p></div>
 
-  <div class="s-card" style="margin-top:16px">
+  <div class="s-card" style="margin-top:32px">
     <!-- 主要都市 -->
     <div class="qs-section-title" style="margin-top:0">主要都市</div>
     <div style="overflow:hidden">
@@ -650,7 +650,7 @@
   </div>
   <div id="spots-grid">
     {% for section in spot_sections %}
-    <div class="s-card" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="{{section.city_id}}" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="{{section.city_id}}">
       {% if section.city_image %}<img src="{{section.city_image}}" alt="{{section.city_name}}" class="csh-img">{% endif %}
       <div class="csh-title">{{section.city_name}}</div>
@@ -841,8 +841,8 @@ function show(id, btn) {
 function filterSpots(city, btn) {
   document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('#spots-grid .item-card, #spots-grid .city-section-header').forEach(el => {
-    el.style.display = (city === 'all' || el.dataset.city === city) ? '' : 'none';
+  document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
+    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
   });
 }
 
