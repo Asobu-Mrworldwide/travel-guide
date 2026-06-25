@@ -391,42 +391,6 @@
     <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
     <button onclick="show('practical',document.querySelectorAll('nav button')[6])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
   </div>
-  {{custom_bottom_budget}}
-</section>
-
-<!-- 旅の準備 -->
-<section id="practical">
-
-  <h2>旅の実用情報</h2>
-  <div class="s-card prac-grid">
-    {% for card in practical.prac_cards %}
-    <div class="prac-card"><div class="p-ico">{{card.icon}}</div><div class="p-title">{{card.title}}</div><div class="p-val">{{card.value}}</div></div>
-    {% endfor %}
-  </div>
-
-  <h2>準備は早めに</h2>
-  <div class="s-card">
-    <div style="background:#fff;padding:20px 24px">
-    <div style="padding-top:8px">
-      {% for step in practical.prep_steps %}
-      <div class="rm-item">
-        <div class="rm-left">
-          <div class="rm-dot" style="border:3px solid {{step.border_color}}"></div>
-          {% if step.bar_color %}<div class="rm-bar" style="background:{{step.bar_color}}"></div>{% endif %}
-        </div>
-        <div class="rm-right">
-          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
-            <div class="rmr-title" style="margin:0">{{step.title}}</div>
-            <span style="font-size:0.65em;color:{{step.timing_color}};font-weight:600;white-space:nowrap">{{step.timing}}</span>
-          </div>
-          <div class="rmr-desc">{{step.desc_html}}</div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% if practical.special_note_title %}<div style="margin-top:14px;background:#fff8f0;border-left:3px solid #ff9900;border-radius:6px;padding:10px 12px;font-size:0.75em;color:#7a4400;line-height:1.7">💡 <strong>{{practical.special_note_title}}</strong><br>{{practical.special_note_html}}<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:4px"><span>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#ff9900;font-weight:700">{{practical.special_note_url_label}}</a></span><span style="color:#bbb;white-space:nowrap;margin-left:auto">（2026年5月時点）</span></span></div>{% endif %}
-    </div>
-  </div>
 
   <h2>航空券の予約</h2>
   <div class="s-card">
@@ -448,6 +412,7 @@
     <span data-affiliate="flights"></span>
     </div>
   </div>
+
 
   <h2>ホテルの選び方</h2>
   {% if practical.hotel_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{practical.hotel_intro}}</p>{% endif %}
@@ -505,14 +470,57 @@
       </div>
       {% endfor %}
     </div>
-    <div class="season-tip-box" style="margin-top:32px"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
     <span data-affiliate="hotels"></span>
   </div>
 
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
+
+  <h2 id="sim">SIM・Wi-Fi</h2>
+  <div class="s-card" data-affiliate-card="sim_compare"></div>
+
+    {{custom_bottom_budget}}
+</section>
+
+<!-- 旅の準備 -->
+<section id="practical">
+
+  <h2>旅の実用情報</h2>
+  <div class="s-card prac-grid">
+    {% for card in practical.prac_cards %}
+    <div class="prac-card"><div class="p-ico">{{card.icon}}</div><div class="p-title">{{card.title}}</div><div class="p-val">{{card.value}}</div></div>
+    {% endfor %}
+  </div>
+
+  <h2>準備は早めに</h2>
+  <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
+    <div style="padding-top:8px">
+      {% for step in practical.prep_steps %}
+      <div class="rm-item">
+        <div class="rm-left">
+          <div class="rm-dot" style="border:3px solid {{step.border_color}}"></div>
+          {% if step.bar_color %}<div class="rm-bar" style="background:{{step.bar_color}}"></div>{% endif %}
+        </div>
+        <div class="rm-right">
+          <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:3px">
+            <div class="rmr-title" style="margin:0">{{step.title}}</div>
+            <span style="font-size:0.65em;color:{{step.timing_color}};font-weight:600;white-space:nowrap">{{step.timing}}</span>
+          </div>
+          <div class="rmr-desc">{{step.desc_html}}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if practical.special_note_title %}<div style="margin-top:14px;background:#fff8f0;border-left:3px solid #ff9900;border-radius:6px;padding:10px 12px;font-size:0.75em;color:#7a4400;line-height:1.7">💡 <strong>{{practical.special_note_title}}</strong><br>{{practical.special_note_html}}<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:4px"><span>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#ff9900;font-weight:700">{{practical.special_note_url_label}}</a></span><span style="color:#bbb;white-space:nowrap;margin-left:auto">（2026年5月時点）</span></span></div>{% endif %}
+    </div>
+  </div>
+
+
+
   <h2>持ち物・アプリ準備</h2>
+  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</p>
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
-  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">{{practical.country_items_label}}</div>
@@ -546,9 +554,6 @@
   </div>
   </div>
   </div>
-
-  <h2 id="sim">SIM・Wi-Fi</h2>
-  <div class="s-card" data-affiliate-card="sim_compare"></div>
 
   <h2>現地交通ガイド</h2>
   <div class="s-card">

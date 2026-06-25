@@ -553,7 +553,132 @@
     <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
     <button onclick="show('practical',document.querySelectorAll('nav button')[6])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
   </div>
-  
+
+  <h2>航空券の予約</h2>
+  <div class="s-card">
+    <div style="background:#fff;padding:20px 24px">
+    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:12px">日本〜クアラルンプール間は複数の航空会社が就航。LCCを活用すれば閑散期は4〜8万円台で往復できる。</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+      
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">エアアジア</div>
+        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">東南アジア最大のLCC。成田・羽田・関西・名古屋発。直行便あり。</div>
+        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 4〜9万円</div>
+      </div>
+      
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">バティックエア</div>
+        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">コスパ良く座席が広め。成田・大阪発。直行便あり。</div>
+        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 5〜10万円</div>
+      </div>
+      
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">マレーシア航空</div>
+        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">フラッグキャリア。サービスが良くマイルも貯まる。</div>
+        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 7〜15万円</div>
+      </div>
+      
+      <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">JAL・ANA</div>
+        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">快適性・マイル◎。コードシェアで乗り継ぎ便も選べる。</div>
+        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 10〜18万円</div>
+      </div>
+      
+    </div>
+    <div style="background:#f0f7f3;border-radius:10px;padding:12px 14px;font-size:0.78em;line-height:1.7;margin-bottom:8px">
+      <div style="font-weight:700;margin-bottom:4px">📅 予約タイミングの目安</div>
+      <div style="color:var(--sub)">・GW・年末年始・お盆は2〜3ヶ月前から価格が上がりやすい<br>・閑散期（6〜7月）は直前でも安値が出ることがある<br>・複数サイトを比較して最安値を見つけよう</div>
+    </div>
+    <span data-affiliate="flights"></span>
+    </div>
+  </div>
+
+
+  <h2>ホテルの選び方</h2>
+  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">宿を選ぶとき、値段だけ見ていませんか？ 安さだけで選ぶと治安の悪いエリアに当たりやすいので注意が必要です。特に夜着の日程ではリスクが上がります。初日くらいは安心して休めるよう、エリアの特徴を事前に把握しておきましょう。</p>
+  <div class="s-card">
+    
+    <div style="position:relative;margin:0 0 16px">
+      <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden"></div>
+      <a id="hotel-map-btn" href="#" target="_blank" rel="noopener" style="display:none;position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px)">Googleマップで開く →</a>
+    </div>
+    <script>
+      var _hotelMap = null;
+      var _hotelAreas = [{ id:'klcc', name:'KLCC周辺', lat:3.1579, lng:101.7123 },{ id:'bukit', name:'ブキッビンタン', lat:3.1467, lng:101.7128 },{ id:'chinatown', name:'チャイナタウン（プタリン街）', lat:3.1452, lng:101.6975 },];
+      var _hotelCenter = { lat:3.1478, lng:101.7015 };
+      var _hotelZoom = 14;
+      window._initHotelMap = function() {
+        if (_hotelMap) return;
+        if (!window.google || !window.google.maps) return;
+        _hotelMap = new google.maps.Map(document.getElementById('hotel-map'), {
+          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID', disableDefaultUI: true
+        });
+        _hotelAreas.forEach(function(a) {
+          var pin = document.createElement('div');
+          pin.style.cssText = 'width:12px;height:12px;background:#1d9074;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4)';
+          var lbl = document.createElement('div');
+          lbl.textContent = a.name;
+          lbl.style.cssText = 'position:absolute;top:14px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:700;color:#1d9074;background:#fff;padding:1px 5px;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,0.2)';
+          var wrap = document.createElement('div');
+          wrap.style.position = 'relative';
+          wrap.appendChild(pin); wrap.appendChild(lbl);
+          new google.maps.marker.AdvancedMarkerElement({ position:{lat:a.lat,lng:a.lng}, map:_hotelMap, title:a.name, content:wrap });
+        });
+      };
+      window.zoomToHotelArea = function(lat, lng, mapsUrl) {
+        if (!_hotelMap) return;
+        _hotelMap.panTo({lat:lat, lng:lng});
+        _hotelMap.setZoom(16);
+        var btn = document.getElementById('hotel-map-btn');
+        if (btn) { btn.href = mapsUrl; btn.style.display = 'block'; }
+      };
+    </script>
+    
+    <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
+      
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1579,101.7123,'https://www.google.com/maps/place/KLCC,+Kuala+Lumpur')">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">KLCC周辺</div>
+          
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">観光・ビジネス向け</div>
+          
+        </div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">ペトロナスツインタワー目の前。ショッピングモール直結ホテルが多く買い物・食事に便利。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">中級 6,000〜12,000円／泊　高級 15,000円〜</div>
+      </div>
+      
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1467,101.7128,'https://www.google.com/maps/place/Bukit+Bintang,+Kuala+Lumpur')">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">ブキッビンタン</div>
+          
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">繁華街・初めてのKLに◎</div>
+          
+        </div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">最大の繁華街。飲食店・ナイトライフ・買い物に便利。LRTでどこへでも移動しやすい。幅広い価格帯のホテルが揃う。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 2,000〜4,000円　中級 5,000〜10,000円</div>
+      </div>
+      
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1452,101.6975,'https://www.google.com/maps/search/Chinatown+Kuala+Lumpur')">
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          <div style="font-weight:700;font-size:0.88em">チャイナタウン（プタリン街）</div>
+          
+          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">格安・下町派</div>
+          
+        </div>
+        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">リーズナブルなゲストハウスが多い。屋台グルメが充実。バックパッカーや節約旅行者に人気。</div>
+        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 1,500〜3,000円／泊</div>
+      </div>
+      
+    </div>
+    <span data-affiliate="hotels"></span>
+  </div>
+
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。</p></div>
+
+  <h2 id="sim">SIM・Wi-Fi</h2>
+  <div class="s-card" data-affiliate-card="sim_compare"></div>
+
+    
 </section>
 
 <!-- 旅の準備 -->
@@ -678,129 +803,12 @@
     </div>
   </div>
 
-  <h2>航空券の予約</h2>
-  <div class="s-card">
-    <div style="background:#fff;padding:20px 24px">
-    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:12px">日本〜クアラルンプール間は複数の航空会社が就航。LCCを活用すれば閑散期は4〜8万円台で往復できる。</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
-      
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
-        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">エアアジア</div>
-        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">東南アジア最大のLCC。成田・羽田・関西・名古屋発。直行便あり。</div>
-        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 4〜9万円</div>
-      </div>
-      
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
-        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">バティックエア</div>
-        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">コスパ良く座席が広め。成田・大阪発。直行便あり。</div>
-        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 5〜10万円</div>
-      </div>
-      
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
-        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">マレーシア航空</div>
-        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">フラッグキャリア。サービスが良くマイルも貯まる。</div>
-        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 7〜15万円</div>
-      </div>
-      
-      <div style="background:#f9fafb;border-radius:10px;padding:12px">
-        <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">JAL・ANA</div>
-        <div style="font-size:0.72em;color:var(--sub);line-height:1.6">快適性・マイル◎。コードシェアで乗り継ぎ便も選べる。</div>
-        <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">往復 10〜18万円</div>
-      </div>
-      
-    </div>
-    <div style="background:#f0f7f3;border-radius:10px;padding:12px 14px;font-size:0.78em;line-height:1.7;margin-bottom:8px">
-      <div style="font-weight:700;margin-bottom:4px">📅 予約タイミングの目安</div>
-      <div style="color:var(--sub)">・GW・年末年始・お盆は2〜3ヶ月前から価格が上がりやすい<br>・閑散期（6〜7月）は直前でも安値が出ることがある<br>・複数サイトを比較して最安値を見つけよう</div>
-    </div>
-    <span data-affiliate="flights"></span>
-    </div>
-  </div>
 
-  <h2>ホテルの選び方</h2>
-  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">宿を選ぶとき、値段だけ見ていませんか？ 安さだけで選ぶと治安の悪いエリアに当たりやすいので注意が必要です。特に夜着の日程ではリスクが上がります。初日くらいは安心して休めるよう、エリアの特徴を事前に把握しておきましょう。</p>
-  <div class="s-card">
-    
-    <div style="position:relative;margin:0 0 16px">
-      <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden"></div>
-      <a id="hotel-map-btn" href="#" target="_blank" rel="noopener" style="display:none;position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px)">Googleマップで開く →</a>
-    </div>
-    <script>
-      var _hotelMap = null;
-      var _hotelAreas = [{ id:'klcc', name:'KLCC周辺', lat:3.1579, lng:101.7123 },{ id:'bukit', name:'ブキッビンタン', lat:3.1467, lng:101.7128 },{ id:'chinatown', name:'チャイナタウン（プタリン街）', lat:3.1452, lng:101.6975 },];
-      var _hotelCenter = { lat:3.1478, lng:101.7015 };
-      var _hotelZoom = 14;
-      window._initHotelMap = function() {
-        if (_hotelMap) return;
-        if (!window.google || !window.google.maps) return;
-        _hotelMap = new google.maps.Map(document.getElementById('hotel-map'), {
-          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID', disableDefaultUI: true
-        });
-        _hotelAreas.forEach(function(a) {
-          var pin = document.createElement('div');
-          pin.style.cssText = 'width:12px;height:12px;background:#1d9074;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4)';
-          var lbl = document.createElement('div');
-          lbl.textContent = a.name;
-          lbl.style.cssText = 'position:absolute;top:14px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:700;color:#1d9074;background:#fff;padding:1px 5px;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,0.2)';
-          var wrap = document.createElement('div');
-          wrap.style.position = 'relative';
-          wrap.appendChild(pin); wrap.appendChild(lbl);
-          new google.maps.marker.AdvancedMarkerElement({ position:{lat:a.lat,lng:a.lng}, map:_hotelMap, title:a.name, content:wrap });
-        });
-      };
-      window.zoomToHotelArea = function(lat, lng, mapsUrl) {
-        if (!_hotelMap) return;
-        _hotelMap.panTo({lat:lat, lng:lng});
-        _hotelMap.setZoom(16);
-        var btn = document.getElementById('hotel-map-btn');
-        if (btn) { btn.href = mapsUrl; btn.style.display = 'block'; }
-      };
-    </script>
-    
-    <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
-      
-      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1579,101.7123,'https://www.google.com/maps/place/KLCC,+Kuala+Lumpur')">
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
-          <div style="font-weight:700;font-size:0.88em">KLCC周辺</div>
-          
-          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">観光・ビジネス向け</div>
-          
-        </div>
-        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">ペトロナスツインタワー目の前。ショッピングモール直結ホテルが多く買い物・食事に便利。</div>
-        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">中級 6,000〜12,000円／泊　高級 15,000円〜</div>
-      </div>
-      
-      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1467,101.7128,'https://www.google.com/maps/place/Bukit+Bintang,+Kuala+Lumpur')">
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
-          <div style="font-weight:700;font-size:0.88em">ブキッビンタン</div>
-          
-          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">繁華街・初めてのKLに◎</div>
-          
-        </div>
-        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">最大の繁華街。飲食店・ナイトライフ・買い物に便利。LRTでどこへでも移動しやすい。幅広い価格帯のホテルが揃う。</div>
-        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 2,000〜4,000円　中級 5,000〜10,000円</div>
-      </div>
-      
-      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(3.1452,101.6975,'https://www.google.com/maps/search/Chinatown+Kuala+Lumpur')">
-        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
-          <div style="font-weight:700;font-size:0.88em">チャイナタウン（プタリン街）</div>
-          
-          <div style="font-size:0.68em;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 8px;font-weight:600">格安・下町派</div>
-          
-        </div>
-        <div style="font-size:0.78em;color:var(--sub);line-height:1.7">リーズナブルなゲストハウスが多い。屋台グルメが充実。バックパッカーや節約旅行者に人気。</div>
-        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 1,500〜3,000円／泊</div>
-      </div>
-      
-    </div>
-    <div class="season-tip-box" style="margin-top:32px"><span class="season-tip-title">💡 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。</p></div>
-    <span data-affiliate="hotels"></span>
-  </div>
 
   <h2>持ち物・アプリ準備</h2>
+  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</p>
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
-  <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:16px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</div>
   <div class="grid2">
     <div class="card" style="padding:16px">
       <div class="lbl" style="margin-bottom:10px">🇲🇾 マレーシア特有の持ち物</div>
@@ -884,9 +892,6 @@
   </div>
   </div>
   </div>
-
-  <h2 id="sim">SIM・Wi-Fi</h2>
-  <div class="s-card" data-affiliate-card="sim_compare"></div>
 
   <h2>現地交通ガイド</h2>
   <div class="s-card">
