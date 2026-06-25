@@ -13,9 +13,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{page_title}}</title>
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="../assets/affiliates-data.js" defer></script>
 <script src="../assets/affiliates.js" defer></script>
 <style>
+/* special noteブロック */
+blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
+blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
+blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
+blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
+blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal}
+
 /* イラスト下の説明文 */
 .desc-intro{max-width:740px;margin:20px 0 0 250px;padding:0 24px;font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:0}
 @media(max-width:1020px){.desc-intro{margin:16px auto 0;max-width:100%;padding:0 16px}}
@@ -393,25 +401,23 @@
   </div>
 
   <h2>航空券の予約</h2>
+  {% if practical.flight_lead %}<p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:8px 0 16px">{{practical.flight_lead}}</p>{% endif %}
   <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
-    <div style="font-size:0.82em;color:var(--sub);line-height:1.7;padding-bottom:12px">{{practical.flight_intro}}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
       {% for airline in practical.airlines %}
       <div style="background:#f9fafb;border-radius:10px;padding:12px">
+        {% if airline.logo %}<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><img src="{{airline.logo}}" alt="{{airline.name}}" style="height:40px;width:auto;max-width:45%;object-fit:contain">{% if airline.logo2 %}<img src="{{airline.logo2}}" alt="" style="height:40px;width:auto;max-width:45%;object-fit:contain">{% endif %}</div>{% endif %}
         <div style="font-weight:700;font-size:0.84em;margin-bottom:4px">{{airline.name}}</div>
         <div style="font-size:0.72em;color:var(--sub);line-height:1.6">{{airline.desc}}</div>
         <div style="font-size:0.72em;color:var(--green);font-weight:700;margin-top:6px">{{airline.price}}</div>
       </div>
       {% endfor %}
     </div>
-    <div style="background:#f0f7f3;border-radius:10px;padding:12px 14px;font-size:0.78em;line-height:1.7;margin-bottom:8px">
-      <div style="font-weight:700;margin-bottom:4px">📅 予約タイミングの目安</div>
-      <div style="color:var(--sub)">{{practical.flight_tip_html}}</div>
-    </div>
     <span data-affiliate="flights"></span>
     </div>
   </div>
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">📅 予約タイミングの目安</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.flight_tip_html}}</p></div>
 
 
   <h2>ホテルの選び方</h2>
@@ -484,8 +490,7 @@
 <!-- 旅の準備 -->
 <section id="practical">
 
-  <h2>旅の実用情報</h2>
-  <div class="s-card prac-grid">
+  <div class="prac-grid">
     {% for card in practical.prac_cards %}
     <div class="prac-card"><div class="p-ico">{{card.icon}}</div><div class="p-title">{{card.title}}</div><div class="p-val">{{card.value}}</div></div>
     {% endfor %}
@@ -511,9 +516,9 @@
       </div>
       {% endfor %}
     </div>
-    {% if practical.special_note_title %}<div style="margin-top:14px;background:#fff8f0;border-left:3px solid #ff9900;border-radius:6px;padding:10px 12px;font-size:0.75em;color:#7a4400;line-height:1.7">💡 <strong>{{practical.special_note_title}}</strong><br>{{practical.special_note_html}}<br><span style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-top:4px"><span>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#ff9900;font-weight:700">{{practical.special_note_url_label}}</a></span><span style="color:#bbb;white-space:nowrap;margin-left:auto">（2026年5月時点）</span></span></div>{% endif %}
     </div>
   </div>
+  {% if practical.special_note_title %}<blockquote class="special-note" style="margin-top:16px"><p><strong>{{practical.special_note_title}}</strong><br>{{practical.special_note_html}}</p><cite>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#6cacb5;font-weight:700">{{practical.special_note_url_label}}</a>　（2026年5月時点）</cite></blockquote>{% endif %}
 
 
 
@@ -721,7 +726,7 @@
             <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
             <div class="tl-content">{{day.content_html}}</div>
           </div>
-          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:4px">{% endif %}
+          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">{% endif %}
         </div>
       </div>
       {% endif %}
@@ -751,7 +756,7 @@
             <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
             <div class="tl-content">{{day.content_html}}</div>
           </div>
-          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:4px">{% endif %}
+          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">{% endif %}
         </div>
       </div>
       {% endif %}
