@@ -204,7 +204,8 @@ section.active{display:block}
 .budget-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 0;border-bottom:1px solid #b8b8b8}
 .budget-link{display:block;width:100%;text-align:right;font-size:0.88em;font-weight:700;color:var(--green);text-decoration:none;white-space:nowrap}
 .budget-row:last-child{border-bottom:none}
-.budget-ico{font-size:1.4em;width:36px;text-align:center;flex-shrink:0}
+.budget-ico{font-size:1.4em;width:36px;text-align:center;flex-shrink:0;line-height:1}
+.budget-ico svg{width:1em;height:1em;vertical-align:middle}
 .budget-info{flex:1}
 .budget-info .b-title{font-size:0.9em;font-weight:700;line-height:1.4}
 .budget-info .b-sub{font-size:0.8em;color:var(--sub);margin-top:2px;line-height:1.65}
@@ -212,7 +213,8 @@ section.active{display:block}
 .budget-table{width:100%;border-collapse:collapse;font-size:0.92em}
 .budget-table td{padding:14px 8px;border-bottom:1px solid #b8b8b8;vertical-align:middle}
 .budget-table tr:last-child td{border-bottom:none}
-.budget-table .ico-col{font-size:1.15em;width:32px;text-align:center;padding-left:0}
+.budget-table .ico-col{font-size:1.15em;width:32px;text-align:center;padding-left:0;line-height:1}
+.budget-table .ico-col svg{width:1em;height:1em;vertical-align:middle}
 .budget-table .price-col{text-align:right;padding-right:0;vertical-align:middle;white-space:nowrap;min-width:130px;position:relative;padding-bottom:32px}
 .budget-table .price-col .aff-wrap{position:absolute;bottom:14px;right:0;white-space:normal;width:auto}
 .budget-table td:nth-child(2){vertical-align:top}
