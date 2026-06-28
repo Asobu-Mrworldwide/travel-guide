@@ -572,7 +572,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         if (_hotelMap) return;
         if (!window.google || !window.google.maps) return;
         _hotelMap = new google.maps.Map(document.getElementById('hotel-map'), {
-          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID', disableDefaultUI: true
+          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID', disableDefaultUI: true, gestureHandling: 'greedy'
         });
         _hotelAreas.forEach(function(a) {
           var pin = document.createElement('div');
