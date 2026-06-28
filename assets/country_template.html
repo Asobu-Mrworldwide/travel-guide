@@ -398,6 +398,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
   </div>
   <div class="season-tip-box"><span class="season-tip-title">{{practical.cash_tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.cash_tip_body}}</p></div>
+  {% if practical.wise_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:24px 0 0">{{practical.wise_intro}}</p>{% endif %}
   <div class="s-card" data-affiliate-card="wise"></div>
 
   <h2>航空券の予約</h2>
@@ -482,6 +483,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:tip}} 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
 
   <h2 id="sim">SIM・Wi-Fi</h2>
+  {% if practical.sim_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 4px">{{practical.sim_intro}}</p>{% endif %}
   <div class="s-card" data-affiliate-card="sim_compare"></div>
 
     {{custom_bottom_budget}}
