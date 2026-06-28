@@ -23,7 +23,7 @@ const AFFILIATES_CSS = `
   width:240px;
   background:#fff;
   border:1px solid #dde2e8;
-  border-radius:12px;
+  border-radius:6px;
   padding:14px;
   box-shadow:0 6px 20px rgba(0,0,0,0.13);
   z-index:1000;
@@ -54,7 +54,7 @@ const AFFILIATES_CSS = `
 /* ── 説明カード ── */
 .aff-card{
   background:#fff;
-  border-radius:8px;
+  border-radius:6px;
   border:1px solid #ccc;
   box-shadow:none;
   overflow:hidden;

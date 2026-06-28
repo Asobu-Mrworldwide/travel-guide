@@ -38,7 +38,7 @@ body{
 @media(max-width:1020px){.container{margin:0 auto;max-width:100%;padding:16px}}
 
 /* カード */
-.card{background:var(--card);border-radius:14px;padding:18px;border:1px solid #c8d0e0;box-shadow:none}
+.card{background:var(--card);border-radius:6px;padding:18px;border:1px solid #c8d0e0;box-shadow:none}
 .card .lbl{font-size:0.78em;color:var(--sub);margin-bottom:4px;letter-spacing:0.03em}
 .card .val{font-size:1em;font-weight:700;line-height:1.4}
 .card .note{font-size:0.8em;color:var(--sub);margin-top:3px;font-weight:400;line-height:1.6}
@@ -135,7 +135,7 @@ section.active{display:block}
 
 /* 観光スポット・グルメカード（全国共通） */
 .item-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-.item-card{background:#fff;border-radius:0;padding:18px;border:1px solid #c8d0e0;box-shadow:none;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.item-card{background:#fff;border-radius:6px;padding:18px;border:1px solid #c8d0e0;box-shadow:none;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .item-card.spot{border-left:1px solid #c8d0e0;overflow:hidden}
 .item-card .ico{font-size:1.8em;margin-bottom:4px}
 .item-card .num{font-size:0.8em;font-weight:700;color:var(--red);margin-bottom:2px}
@@ -145,13 +145,13 @@ section.active{display:block}
 .item-card .desc{font-size:0.83em;color:var(--sub);line-height:1.75;flex:1}
 .item-card .badge{display:inline-block;background:#e8f5ee;color:var(--green);padding:2px 10px;border-radius:20px;font-size:0.68em;font-weight:700;align-self:flex-start;white-space:nowrap}
 .item-card.spot .badge{display:none}
-.item-card.must{position:relative;border:2px solid #f5c400;border-radius:0;box-shadow:none}
+.item-card.must{position:relative;border:2px solid #f5c400;border-radius:6px;box-shadow:none}
 .must-badge{position:absolute;top:6px;right:8px;font-size:1.4em;line-height:1}
 .map-btn{display:block;text-align:right;font-size:0.7em;color:#aaa;text-decoration:none;margin-top:6px;font-weight:600}
 .map-btn:hover{color:#555;text-decoration:underline}
 .wiki-link{display:block;text-align:right;font-size:0.7em;color:#aaa;text-decoration:none;margin-top:auto;padding-top:8px;font-weight:600}
 .wiki-link:hover{color:#555;text-decoration:underline}
-.tab-cta{background:#f0f7f3;border-radius:14px;padding:22px 18px;text-align:center;margin-top:22px;border:1px solid #d4ece0}
+.tab-cta{background:#f0f7f3;border-radius:6px;padding:22px 18px;text-align:center;margin-top:22px;border:1px solid #d4ece0}
 .tab-cta-title{font-size:1em;font-weight:900;display:inline;background:linear-gradient(transparent 55%,#b8e8d0 55%);padding:0 3px;line-height:1.8}
 .tab-cta-desc{font-size:0.82em;color:var(--sub);line-height:1.85;margin:12px 0 18px}
 .tab-cta-btn{display:inline-block;background:var(--green);color:#fff;font-size:0.88em;font-weight:700;border:none;border-radius:24px;padding:11px 30px;cursor:pointer;letter-spacing:0.03em;text-decoration:none}
@@ -174,12 +174,12 @@ section.active{display:block}
 #food-grid .item-card .wiki-link{position:absolute;bottom:10px;right:10px;margin-top:0;padding-top:0}
 .food-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.62);z-index:9999;align-items:center;justify-content:center}
 .food-modal-overlay.open{display:flex}
-.food-modal-card{background:#fff;border-radius:22px;padding:36px 28px 26px;max-width:310px;width:88%;text-align:center;position:relative;box-shadow:0 10px 48px rgba(0,0,0,0.28)}
+.food-modal-card{background:#fff;border-radius:6px;padding:36px 28px 26px;max-width:310px;width:88%;text-align:center;position:relative;box-shadow:0 10px 48px rgba(0,0,0,0.28)}
 .food-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.3em;cursor:pointer;color:#ccc;line-height:1;padding:0}
 .food-modal-ico{font-size:2.8em;margin-bottom:10px}
 .food-modal-en{font-size:2em;font-weight:900;color:#111;margin-bottom:4px;line-height:1.2}
 .food-modal-ja{font-size:0.85em;color:#bbb;margin-bottom:22px}
-.food-modal-phrase{background:#f0f7f3;border-radius:14px;padding:16px 18px;margin-bottom:16px}
+.food-modal-phrase{background:#f0f7f3;border-radius:6px;padding:16px 18px;margin-bottom:16px}
 .food-modal-phrase-main{font-size:1.75em;font-weight:900;color:var(--green);margin-bottom:3px}
 .food-modal-phrase-sub{font-size:0.76em;color:#888}
 .food-modal-hint{font-size:0.68em;color:#ccc;letter-spacing:0.02em}
@@ -244,14 +244,14 @@ section.active{display:block}
 
 /* 旅の実用情報カード */
 .prac-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
-.prac-card{background:#fff;border-radius:8px;padding:18px 12px;border:1px solid #ccc;text-align:center}
+.prac-card{background:#fff;border-radius:6px;padding:18px 12px;border:1px solid #ccc;text-align:center}
 .prac-card .p-ico{font-size:2em;margin-bottom:6px;line-height:1}
 .prac-card .p-ico svg{width:1em;height:1em;vertical-align:middle}
 .prac-card .p-title{font-size:0.82em;color:var(--sub);margin-bottom:4px}
 .prac-card .p-val{font-size:0.95em;font-weight:700;color:var(--text)}
 
 /* CTA */
-.cta{background:linear-gradient(135deg,var(--green),var(--green-dark));  /* #6495ed→#4a7be0 */border-radius:18px;padding:28px 22px;color:#fff;text-align:center;margin-top:28px}
+.cta{background:linear-gradient(135deg,var(--green),var(--green-dark));  /* #6495ed→#4a7be0 */border-radius:6px;padding:28px 22px;color:#fff;text-align:center;margin-top:28px}
 .cta h3{font-size:1.1em;margin-bottom:8px;color:#fff}
 .cta p{font-size:0.82em;opacity:0.9;margin-bottom:14px;line-height:1.6}
 .cta-btn{background:#fff;color:var(--green);border:none;padding:11px 28px;border-radius:30px;font-weight:700;font-size:0.9em;cursor:pointer;transition:transform 0.2s}
@@ -271,7 +271,7 @@ section.active{display:block}
 .season-tip-box{position:relative;margin:2em 0 0.5em;padding:0.5em 1em;border:solid 3px #62c1ce;background:#fff}
 .season-tip-title{position:absolute;display:inline-block;top:-27px;left:-3px;padding:0 9px;height:25px;line-height:25px;font-size:0.85em;background:#62c1ce;color:#fff;font-weight:700;border-radius:5px 5px 0 0}
 .season-tip-box p{margin:0;padding:0}
-.course-note{background:#fff8f0;border-radius:8px;padding:10px 12px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
+.course-note{background:#fff8f0;border-radius:6px;padding:10px 12px;margin-bottom:16px;display:flex;gap:10px;align-items:flex-start}
 .course-note-ico{font-size:1.3em;flex-shrink:0}
 .course-note-lbl{font-size:0.7em;font-weight:700;color:#cc5500;margin-bottom:4px}
 .course-note-txt{font-size:0.75em;color:var(--sub);line-height:1.7}
@@ -289,7 +289,7 @@ section.active{display:block}
 .tl-transit::after{content:none}
 .tl-transit-lbl{white-space:nowrap;padding-top:2px;color:#888;font-size:1em;display:flex;flex-direction:column;align-items:center;gap:2px}
 .course-city-list{display:flex;flex-direction:column;gap:8px;margin-top:14px}
-.course-city{display:flex;gap:10px;padding:10px;background:#f5f7f5;border-radius:8px;align-items:flex-start}
+.course-city{display:flex;gap:10px;padding:10px;background:#f5f7f5;border-radius:6px;align-items:flex-start}
 .course-city-ico{text-align:center;min-width:40px;flex-shrink:0}
 .course-city-ico span{font-size:0.58em;font-weight:700;display:block;margin-top:2px}
 .course-city-name{font-size:0.8em;font-weight:700;margin-bottom:3px}
@@ -308,7 +308,7 @@ section.active{display:block}
 .qs-link{display:block;margin-top:6px;margin-left:auto;font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;padding:0;cursor:pointer;white-space:nowrap;width:fit-content;text-decoration:underline}
 .qs-link:hover{opacity:0.7}
 .qs-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
-.qs-card{background:var(--card);padding:12px 14px;display:flex;align-items:center;gap:10px;border:1px solid #c8d0e0;box-shadow:none}
+.qs-card{background:var(--card);padding:12px 14px;display:flex;align-items:center;gap:10px;border:1px solid #c8d0e0;box-shadow:none;border-radius:6px}
 .qs-ico{font-size:1.4em;flex-shrink:0;color:#c94a29}
 .qs-card > div:last-child{flex:1;min-width:0}
 .qs-lbl{font-size:0.7em;color:var(--sub)}
@@ -316,7 +316,7 @@ section.active{display:block}
 
 /* TOP3 */
 .top3-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
-.top3-card{background:var(--card);border-radius:12px;padding:14px;border:1px solid #c8d0e0;border-top:3px solid var(--green);box-shadow:none}
+.top3-card{background:var(--card);border-radius:6px;padding:14px;border:1px solid #c8d0e0;border-top:3px solid var(--green);box-shadow:none}
 .top3-card.food-card{border-top-color:var(--red)}
 .t3-num{font-size:0.7em;font-weight:700;color:var(--sub);margin-bottom:3px}
 .t3-ico{font-size:1.8em;margin-bottom:4px}
