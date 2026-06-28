@@ -645,12 +645,22 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         });
       };
       window.zoomToHotelArea = function(lat, lng, mapsUrl) {
+        if (!_hotelMap) { window._initHotelMap(); }
         if (!_hotelMap) return;
         _hotelMap.panTo({lat:lat, lng:lng});
         _hotelMap.setZoom(16);
         var btn = document.getElementById('hotel-map-btn');
         if (btn) { btn.href = mapsUrl; btn.style.display = 'block'; }
       };
+      // スクロールで表示範囲に入ったら自動初期化
+      (function(){
+        var el = document.getElementById('hotel-map');
+        if (!el || !window.IntersectionObserver) return;
+        var obs = new IntersectionObserver(function(entries){
+          if (entries[0].isIntersecting) { window._initHotelMap(); obs.disconnect(); }
+        }, { threshold: 0.1 });
+        obs.observe(el);
+      })();
     </script>
     
     <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
