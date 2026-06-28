@@ -22,7 +22,7 @@ blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:borde
 blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
 blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
 blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
-blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal}
+blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal;word-break:break-all}
 
 /* イラスト下の説明文 */
 .desc-intro{max-width:740px;margin:20px 0 0 250px;padding:0 24px;font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:0}
@@ -608,6 +608,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     {% endfor %}
   </table>
   </div>
+  <div class="tab-cta">
+    <div class="tab-cta-title">出発前に持ち物もチェックしよう！</div>
+    <p class="tab-cta-desc">SIM・変換プラグ・保険まで、忘れがちな持ち物を一覧にまとめました。</p>
+    <button class="tab-cta-btn" onclick="show('practical',document.querySelectorAll('nav button')[5])">持ち物リストを見る →</button>
+  </div>
 </section>
 
 <!-- グルメ -->
@@ -726,12 +731,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       </div>
       {% else %}
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
             <div class="tl-content">{{day.content_html}}</div>
           </div>
-          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">{% endif %}
+          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">{% endif %}
         </div>
       </div>
       {% endif %}
@@ -756,12 +761,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       </div>
       {% else %}
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
             <div class="tl-content">{{day.content_html}}</div>
           </div>
-          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">{% endif %}
+          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">{% endif %}
         </div>
       </div>
       {% endif %}

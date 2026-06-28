@@ -22,7 +22,7 @@ blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:borde
 blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
 blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
 blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
-blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal}
+blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal;word-break:break-all}
 
 /* イラスト下の説明文 */
 .desc-intro{max-width:740px;margin:20px 0 0 250px;padding:0 24px;font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:0}
@@ -1029,7 +1029,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <table class="phrase-tbl">
     <tr><th>日本語</th><th>マレー語 / 読み方</th><th style="width:38px"></th></tr>
     
-    <tr class="cat-hdr"><td colspan="3">👋 あいさつ</td></tr>
+    <tr class="cat-hdr"><td colspan="3">あいさつ</td></tr>
     
     <tr><td class="jp">こんにちは</td><td class="ms">Selamat siang<span class="roma">スラマッ シアン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('selamat-siang.mp3',this)">▶</button></td></tr>
     
@@ -1042,7 +1042,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <tr><td class="jp">綺麗ですね！</td><td class="ms">Cantik sekali!<span class="roma">チャンティッ スカリ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('cantik-sekali.mp3',this)">▶</button></td></tr>
     
     
-    <tr class="cat-hdr"><td colspan="3">🙏 基本表現</td></tr>
+    <tr class="cat-hdr"><td colspan="3">基本表現</td></tr>
     
     <tr><td class="jp">ありがとう</td><td class="ms">Terima kasih<span class="roma">トゥリマ カシ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('terima-kasih.mp3',this)">▶</button></td></tr>
     
@@ -1057,7 +1057,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <tr><td class="jp">名前は何ですか？</td><td class="ms">Siapa nama awak?<span class="roma">シアパ ナマ アワッ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('siapa-nama.mp3',this)">▶</button></td></tr>
     
     
-    <tr class="cat-hdr"><td colspan="3">🍽️ レストラン・ショッピング</td></tr>
+    <tr class="cat-hdr"><td colspan="3">レストラン・ショッピング</td></tr>
     
     <tr><td class="jp">おいしい！</td><td class="ms">Sedap!<span class="roma">スダッ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('sedap.mp3',this)">▶</button></td></tr>
     
@@ -1076,7 +1076,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <tr><td class="jp">高い、安くしてください</td><td class="ms">Mahal, boleh murah sikit?<span class="roma">マハル、ボレ ムラ シキッ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('mahal-murah.mp3',this)">▶</button></td></tr>
     
     
-    <tr class="cat-hdr"><td colspan="3">🔢 数字</td></tr>
+    <tr class="cat-hdr"><td colspan="3">数字</td></tr>
     
     <tr><td class="jp">0</td><td class="ms">Kosong<span class="roma">コソン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('kosong.mp3',this)">▶</button></td></tr>
     
@@ -1086,6 +1086,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     
   </table>
+  </div>
+  <div class="tab-cta">
+    <div class="tab-cta-title">出発前に持ち物もチェックしよう！</div>
+    <p class="tab-cta-desc">SIM・変換プラグ・保険まで、忘れがちな持ち物を一覧にまとめました。</p>
+    <button class="tab-cta-btn" onclick="show('practical',document.querySelectorAll('nav button')[5])">持ち物リストを見る →</button>
   </div>
 </section>
 
@@ -2029,7 +2034,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 1</div>
             <div class="tl-content"><strong>クアラルンプール到着</strong><br>KLIAエクスプレスで約28分、KLセントラルへ。ホテルに荷物を預けたらそのまま夜のジャランアローへ。屋台がずらりと並ぶ活気ある通りで、チキンウィングや炒麺をつまみながらKLの夜を満喫。</div>
@@ -2041,24 +2046,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 2</div>
             <div class="tl-content"><strong>バトゥケーブス → チャイナタウン</strong><br>早起きしてバトゥケーブスへ。272段のカラフルな階段を上ると巨大なヒンドゥー聖地が広がる。午後はチャイナタウンのペタリン通りでお土産探し、セントラルマーケットで工芸品をチェック。</div>
           </div>
-          <img src="素材/観光スポット/バトゥ洞窟.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/バトゥ洞窟.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 3</div>
             <div class="tl-content"><strong>ペトロナスツインタワー → ブキッビンタン</strong><br>KLのシンボル、ペトロナスツインタワーへ（要早めの予約）。KLCC公園の噴水ショーを見てから、ブキッビンタンへ移動。ショッピングモールをはしごして夜景でKLを締めくくる。</div>
           </div>
-          <img src="素材/観光スポット/ペトロナスツインタワー.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/ペトロナスツインタワー.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
@@ -2071,12 +2076,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 4</div>
             <div class="tl-content"><strong>マラッカ日帰り</strong><br>世界遺産の古都へ日帰り旅。赤いオランダ広場・キリスト教会を見てから、ジョンカーストリートを散策。ポルトガル・中国・マレーが融合したニョニャ料理でランチ。カラフルなトライショーに乗るのもおすすめ。夕方KLへ戻る。</div>
           </div>
-          <img src="素材/観光スポット/オランダ広場（スタダイス）.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/オランダ広場（スタダイス）.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
@@ -2089,7 +2094,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 5</div>
             <div class="tl-content"><strong>帰国</strong><br>午前中は最後のKL散策やお土産購入。KLIAへ移動して帰国便へ。</div>
@@ -2109,36 +2114,36 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 1</div>
             <div class="tl-content"><strong>クアラルンプール到着</strong><br>チェックイン後、夜のチャイナタウンへ。提灯が灯るペタリン通りの夜市は雰囲気満点。屋台でナシレマや揚げ豆腐をつまみながら、マレーシアの多文化な空気を最初の夜から体感できる。</div>
           </div>
-          <img src="素材/観光スポット/ペタリン通り（チャイナタウン）.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/ペタリン通り（チャイナタウン）.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 2</div>
             <div class="tl-content"><strong>バトゥケーブス → ペトロナスツインタワー</strong><br>朝イチでバトゥケーブスへ。午後はKLCCへ移動してペトロナスツインタワーへ（要早めの予約）。夜はスカイブリッジから見るKLの夜景が圧巻。</div>
           </div>
-          <img src="素材/観光スポット/バトゥ洞窟.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/バトゥ洞窟.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 3</div>
             <div class="tl-content"><strong>KLモスク観光 → ペナンへ移動</strong><br>午前中はブルーモスクとピンクモスクへ。マレーシアが誇る2大モスクを同じ日に訪れる贅沢なルート。夕方、国内線でペナンへ飛ぶ。</div>
           </div>
-          <img src="素材/観光スポット/ブルーモスク.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/ブルーモスク.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
@@ -2151,31 +2156,31 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 4</div>
             <div class="tl-content"><strong>ジョージタウン旧市街</strong><br>世界遺産の旧市街を丸一日かけて歩く。壁画アートを探しながら路地を散策し、屋台街でペナングルメを食べ歩き。アッサムラクサ・チャークイティオ・エッグタルトは絶対に外せない。</div>
           </div>
-          <img src="素材/観光スポット/ジョージタウン旧市街.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/ジョージタウン旧市街.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 5</div>
             <div class="tl-content"><strong>ペナンヒル → ビーチでリゾート</strong><br>ケーブルカーでペナンヒルへ。頂上からはジョージタウンと海が一望できる絶景。午後はバトゥフェリンギビーチへ移動して、夕暮れまでゆったり過ごす。</div>
           </div>
-          <img src="素材/観光スポット/ペナンヒル.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/ペナンヒル.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 6</div>
             <div class="tl-content"><strong>ペナン最終日 → 帰国便へ</strong><br>午前中は行けなかったスポットを再訪したりお土産を購入。ペナン空港または夕方の便でKL経由で帰国の途へ。</div>
@@ -2187,7 +2192,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 7</div>
             <div class="tl-content"><strong>帰国</strong></div>
@@ -2213,12 +2218,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 1</div>
             <div class="tl-content"><strong>ペナン島</strong><br>直行便で約7時間。ジョージタウン旧市街を散策・ペナン名物のアッサムラクサで夕食。午後2〜3時には観光を切り上げ、フェリーで対岸のバターワースへ渡り、そこからバスでスンガイペタニへ移動。</div>
           </div>
-          <img src="素材/観光スポット/ジョージタウン旧市街.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/ジョージタウン旧市街.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
@@ -2231,7 +2236,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 2</div>
             <div class="tl-content"><strong>スンガイペタニ</strong>（ケダー州）<br>観光地ではないが、ローカルな生活が息づく町。屋台で肉まんを買ったら売っていたのはインド系のおじさん。マレー・中華・インドが入り混じるマレーシアらしさをここで実感した。地元の人にベトン方面へのバス乗り場を教えてもらったが、待てど暮らせどバスが来ず、スコールまで降り始めたので諦めてタクシーに乗車した。</div>
@@ -2249,7 +2254,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 3</div>
             <div class="tl-content"><strong>ベトン</strong>（タイ・ヤラー県）<br>雲海を目当てにレンタルバイクで山を上るも、Googleマップが機能せず道に迷い辿り着いたのがドリアン農園。農園のおっちゃんに案内してもらい、雲海の上に広がるドリアン畑という絶景を体験。</div>
@@ -2267,7 +2272,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 4</div>
             <div class="tl-content"><strong>イポー</strong>（ペラ州）<br>マレーシアに再入国。コロニアル建築が残る旧市街を散策し、洞窟寺院も訪れた。イポー名物の白咖啡（ホワイトコーヒー）は必食。</div>
@@ -2285,12 +2290,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 5</div>
             <div class="tl-content"><strong>クアラルンプール</strong><br>ブルーモスクとピンクモスクへ。ペトロナスツインタワーは直前に予約しようとしたら空きがなく断念。行く予定のある方は早めの予約を強くおすすめします。</div>
           </div>
-          <img src="素材/観光スポット/ブルーモスク.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0;margin-top:24px">
+          <img src="素材/観光スポット/ブルーモスク.webp" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">
         </div>
       </div>
       
@@ -2303,7 +2308,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge ">Day 6</div>
             <div class="tl-content"><strong>ジョホールバル</strong><br>本当はそのままシンガポールまで突っ切りたかったが時間的に断念し1泊。夜はシーフードを食べたが、これが正解だった。翌朝コーズウェイを渡り陸路でシンガポールへ入国。</div>
@@ -2321,7 +2326,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       
       <div class="tl-day">
-        <div style="display:flex;gap:14px;align-items:flex-start">
+        <div style="display:flex;gap:14px;align-items:center">
           <div style="flex:1;min-width:0">
             <div class="tl-badge gray">Day 7</div>
             <div class="tl-content"><strong>シンガポール → 帰国</strong><br>チャンギ空港から帰国便へ。</div>
