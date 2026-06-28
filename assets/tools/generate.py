@@ -33,6 +33,31 @@ def _get(path, ctx):
     return '' if val is None else val
 
 
+def _load_icon(key, ctx):
+    """
+    アイコンをキー名で解決する。優先順位:
+    1. 素材/絵文字/<key>.svg が存在すればSVGを返す
+    2. assets/icons.json にキーがあれば絵文字を返す
+    3. どちらもなければキー名をそのまま返す
+    """
+    root_dir   = ctx.get('__root_dir__', '')
+    assets_dir = os.path.join(root_dir, 'assets')
+
+    svg_path = os.path.join(root_dir, '素材', '絵文字', f'{key}.svg')
+    if os.path.exists(svg_path):
+        with open(svg_path, encoding='utf-8') as f:
+            return f.read().strip()
+
+    icons_path = os.path.join(assets_dir, 'icons.json')
+    if os.path.exists(icons_path):
+        with open(icons_path, encoding='utf-8') as f:
+            icons = json.load(f)
+        if key in icons:
+            return icons[key]
+
+    return key
+
+
 def _render(text, ctx):
     """テンプレートテキストをコンテキストでレンダリング"""
     result = []
@@ -44,7 +69,14 @@ def _render(text, ctx):
             if j == -1:
                 result.append(text[i]); i += 1; continue
             expr = text[i+2:j].strip()
-            result.append(str(_get(expr, ctx)))
+            if expr.startswith('icon:'):
+                icon_key = expr[5:].strip()
+                resolved = str(_get(icon_key, ctx))
+                if resolved:
+                    icon_key = resolved
+                result.append(_load_icon(icon_key, ctx))
+            else:
+                result.append(str(_get(expr, ctx)))
             i = j + 2
 
         elif text[i:i+2] == '{%':
@@ -300,6 +332,7 @@ def generate(country_id):
         print(f'  💾 JSON更新: {os.path.basename(json_path)}')
     # ────────────────────────────────────────────────────────────
 
+    data['__root_dir__'] = os.path.normpath(root_dir)
     html = _render(tpl, data)
 
     country_dir = os.path.join(root_dir, country_id)
