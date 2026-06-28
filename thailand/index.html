@@ -559,9 +559,45 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">バンコクはエリアによって観光・交通・グルメの利便性が変わる。BTS沿線が移動に便利。</p>
   <div class="s-card">
     
+    <div style="position:relative;margin:0 0 16px">
+      <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden"></div>
+      <a id="hotel-map-btn" href="#" target="_blank" rel="noopener" style="display:none;position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px)">Googleマップで開く →</a>
+    </div>
+    <script>
+      var _hotelMap = null;
+      var _hotelAreas = [{ id:'sukhumvit', name:'スクンビット（BTS沿線）', lat:13.7307, lng:100.5696 },{ id:'khaosan', name:'カオサン通り周辺', lat:13.7583, lng:100.4977 },{ id:'silom', name:'シーロム・サトーン', lat:13.7234, lng:100.5295 },];
+      var _hotelCenter = { lat:13.7367, lng:100.5601 };
+      var _hotelZoom = 13;
+      window._initHotelMap = function() {
+        if (_hotelMap) return;
+        if (!window.google || !window.google.maps) return;
+        _hotelMap = new google.maps.Map(document.getElementById('hotel-map'), {
+          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID', disableDefaultUI: true
+        });
+        _hotelAreas.forEach(function(a) {
+          var pin = document.createElement('div');
+          pin.style.cssText = 'width:12px;height:12px;background:#1d9074;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4)';
+          var lbl = document.createElement('div');
+          lbl.textContent = a.name;
+          lbl.style.cssText = 'position:absolute;top:14px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:700;color:#1d9074;background:#fff;padding:1px 5px;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,0.2)';
+          var wrap = document.createElement('div');
+          wrap.style.position = 'relative';
+          wrap.appendChild(pin); wrap.appendChild(lbl);
+          new google.maps.marker.AdvancedMarkerElement({ position:{lat:a.lat,lng:a.lng}, map:_hotelMap, title:a.name, content:wrap });
+        });
+      };
+      window.zoomToHotelArea = function(lat, lng, mapsUrl) {
+        if (!_hotelMap) return;
+        _hotelMap.panTo({lat:lat, lng:lng});
+        _hotelMap.setZoom(16);
+        var btn = document.getElementById('hotel-map-btn');
+        if (btn) { btn.href = mapsUrl; btn.style.display = 'block'; }
+      };
+    </script>
+    
     <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
       
-      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" >
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(13.7307,100.5696,'https://www.google.com/maps/place/Sukhumvit,+Bangkok')">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
           <div style="font-weight:700;font-size:0.88em">スクンビット（BTS沿線）</div>
           
@@ -572,7 +608,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.75em;color:var(--sub);margin-top:6px">中級 4,000〜10,000円／泊　高級 15,000円〜</div>
       </div>
       
-      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" >
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(13.7583,100.4977,'https://www.google.com/maps/place/Khao+San+Road,+Bangkok')">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
           <div style="font-weight:700;font-size:0.88em">カオサン通り周辺</div>
           
@@ -583,7 +619,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.75em;color:var(--sub);margin-top:6px">格安 500〜2,000円／泊</div>
       </div>
       
-      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" >
+      <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(13.7234,100.5295,'https://www.google.com/maps/place/Silom,+Bangkok')">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
           <div style="font-weight:700;font-size:0.88em">シーロム・サトーン</div>
           

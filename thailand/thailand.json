@@ -640,30 +640,40 @@
         "hotel_intro": "バンコクはエリアによって観光・交通・グルメの利便性が変わる。BTS沿線が移動に便利。",
         "hotel_areas": [
             {
+                "id": "sukhumvit",
                 "name": "スクンビット（BTS沿線）",
                 "tag": "観光・ビジネス向け",
                 "tag_color": "green",
                 "desc": "BTS直結ホテルが多く移動が楽。高級ホテル〜ゲストハウスまで幅広い。ショッピングモールやレストランが充実。",
                 "price": "中級 4,000〜10,000円／泊　高級 15,000円〜",
-                "maps_url": "https://www.google.com/maps/place/Sukhumvit,+Bangkok"
+                "maps_url": "https://www.google.com/maps/place/Sukhumvit,+Bangkok",
+                "lat": 13.7307,
+                "lng": 100.5696
             },
             {
+                "id": "khaosan",
                 "name": "カオサン通り周辺",
                 "tag": "バックパッカー向け",
                 "tag_color": "yellow",
                 "desc": "世界中のバックパッカーが集まる活気ある通り。ゲストハウスが格安。ワット・プラケオ・王宮へも徒歩圏内。",
                 "price": "格安 500〜2,000円／泊",
-                "maps_url": "https://www.google.com/maps/place/Khao+San+Road,+Bangkok"
+                "maps_url": "https://www.google.com/maps/place/Khao+San+Road,+Bangkok",
+                "lat": 13.7583,
+                "lng": 100.4977
             },
             {
+                "id": "silom",
                 "name": "シーロム・サトーン",
                 "tag": "ビジネス・高級",
                 "tag_color": "green",
                 "desc": "バンコクのビジネス街。BTS沿線で移動便利。高級ホテルやルーフトップバーが集中。",
                 "price": "中級 6,000〜12,000円　高級 20,000円〜",
-                "maps_url": "https://www.google.com/maps/place/Silom,+Bangkok"
+                "maps_url": "https://www.google.com/maps/place/Silom,+Bangkok",
+                "lat": 13.7234,
+                "lng": 100.5295
             }
         ],
+        "hotel_map_center": { "lat": 13.7367, "lng": 100.5601, "zoom": 13 },
         "hotel_tip": "初めてのバンコクはBTS沿線（スクンビット・シーロム）が移動に便利。チェンマイは旧市街（オールドシティ）周辺に泊まると徒歩観光がしやすい。プーケットはパトンビーチ周辺が活気があり便利。",
         "apps": [
             {
