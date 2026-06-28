@@ -83,13 +83,15 @@
   </div>
 
   <!-- 進捗 -->
-  <div style="padding:16px 0 16px">
+  <div id="progress-wrap" style="padding:16px 0 16px">
     <div class="progress-label" id="progress-label">0 / 0 チェック済み</div>
     <div style="display:flex;align-items:center;gap:12px;margin-top:6px">
       <div class="progress-bar" style="flex:1;margin:0"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
       <button class="btn outline" onclick="resetAll()" style="flex-shrink:0;padding:4px 14px;font-size:0.8em">リセット</button>
     </div>
   </div>
+  <!-- 固定時のプレースホルダー -->
+  <div id="progress-placeholder" style="display:none;height:60px"></div>
 
   <!-- 必須書類 -->
   <div class="s-card category" id="cat-docs">
@@ -288,6 +290,63 @@ function resetAll(){
 
 load();
 updateProgress();
+
+// 進捗バーのスクロール固定
+(function(){
+  const wrap = document.getElementById('progress-wrap');
+  const placeholder = document.getElementById('progress-placeholder');
+  const sentinel = document.getElementById('cat-docs');
+  let isFixed = false;
+
+  function applyFixed(){
+    if(isFixed) return;
+    isFixed = true;
+    const rect = wrap.getBoundingClientRect();
+    placeholder.style.height = wrap.offsetHeight + 'px';
+    placeholder.style.display = 'block';
+    wrap.style.position = 'fixed';
+    wrap.style.top = '0';
+    wrap.style.left = rect.left + 'px';
+    wrap.style.width = rect.width + 'px';
+    wrap.style.background = 'var(--bg)';
+    wrap.style.zIndex = '200';
+    wrap.style.borderBottom = '1px solid #d4dfd8';
+    wrap.style.padding = '10px 0 8px';
+    wrap.style.margin = '0';
+  }
+
+  function removeFixed(){
+    if(!isFixed) return;
+    isFixed = false;
+    placeholder.style.display = 'none';
+    wrap.style.position = '';
+    wrap.style.top = '';
+    wrap.style.left = '';
+    wrap.style.width = '';
+    wrap.style.background = '';
+    wrap.style.zIndex = '';
+    wrap.style.borderBottom = '';
+    wrap.style.padding = '16px 0 16px';
+    wrap.style.margin = '';
+  }
+
+  function onScroll(){
+    const sentinelTop = sentinel.getBoundingClientRect().top;
+    if(sentinelTop <= 0){
+      applyFixed();
+    } else {
+      removeFixed();
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, {passive: true});
+  window.addEventListener('resize', function(){
+    if(isFixed){
+      removeFixed();
+      onScroll();
+    }
+  });
+})();
 </script>
 </body>
 </html>
