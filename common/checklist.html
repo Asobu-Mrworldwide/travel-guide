@@ -42,6 +42,8 @@
 .qs-section-title{font-size:18px;font-weight:700;color:var(--text);letter-spacing:0.04em}
 .s-card.category{padding-top:6px;padding-bottom:12px}
 .s-card{margin-top:0}
+@keyframes slideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+#progress-wrap.is-fixed{animation:slideDown 0.25s ease}
 </style>
 </head>
 <body>
@@ -315,6 +317,7 @@ updateProgress();
     wrap.style.padding = '12px 20px';
     wrap.style.margin = '0';
     wrap.style.borderRadius = '0';
+    wrap.classList.add('is-fixed');
   }
 
   function removeFixed(){
@@ -331,6 +334,7 @@ updateProgress();
     wrap.style.padding = '12px 20px';
     wrap.style.margin = '';
     wrap.style.borderRadius = '';
+    wrap.classList.remove('is-fixed');
   }
 
   function onScroll(){
