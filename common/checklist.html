@@ -83,13 +83,11 @@
   </div>
 
   <!-- 進捗 -->
-  <div style="padding:16px 0 4px">
+  <div style="padding:16px 0 16px">
     <div class="progress-label" id="progress-label">0 / 0 チェック済み</div>
-    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
-  </div>
-  <div style="padding:8px 0 16px">
-    <div class="checklist-actions">
-<button class="btn outline" onclick="resetAll()">リセット</button>
+    <div style="display:flex;align-items:center;gap:12px;margin-top:6px">
+      <div class="progress-bar" style="flex:1;margin:0"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+      <button class="btn outline" onclick="resetAll()" style="flex-shrink:0;padding:4px 14px;font-size:0.8em">リセット</button>
     </div>
   </div>
 
