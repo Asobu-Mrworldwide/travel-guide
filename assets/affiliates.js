@@ -149,12 +149,15 @@ function initAffiliates() {
     const card = document.createElement('div');
     card.className = 'aff-card';
     card.innerHTML = `
-      <div class="aff-card-header">
-        <span class="aff-card-icon">${c.icon}</span>
-        <div>
-          <div class="aff-card-name">${c.name}</div>
-          <div class="aff-card-tagline">${c.tagline}</div>
+      <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="aff-card-icon">${c.icon}</span>
+          <div>
+            <div class="aff-card-name">${c.name}</div>
+            <div class="aff-card-tagline">${c.tagline}</div>
+          </div>
         </div>
+        ${c.logo ? `<div style="flex-shrink:0;line-height:1">${c.logo}</div>` : ''}
       </div>
       <div class="aff-card-body">
         <ul class="aff-card-points">
@@ -181,12 +184,15 @@ function initAffiliates() {
     const inner = document.createElement('div');
     inner.className = 'aff-card-inner';
     inner.innerHTML = `
-      <div class="aff-card-header" style="padding:0 0 10px;border-bottom:none">
-        <span class="aff-card-icon">${c.icon}</span>
-        <div>
-          <div class="aff-card-name">${c.name}</div>
-          <div class="aff-card-tagline">${c.tagline}</div>
+      <div class="aff-card-header" style="padding:0 0 10px;border-bottom:none;display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="aff-card-icon">${c.icon}</span>
+          <div>
+            <div class="aff-card-name">${c.name}</div>
+            <div class="aff-card-tagline">${c.tagline}</div>
+          </div>
         </div>
+        ${c.logo ? `<div style="flex-shrink:0;line-height:1">${c.logo}</div>` : ''}
       </div>
       <ul class="aff-card-points">
         ${c.points.map(p => `<li>${p}</li>`).join('')}
