@@ -13,6 +13,7 @@
     "flag_caption": "",
     "top_spot_name": "",
     "top_spot_desc": "",
+    "top_spot_image": "",
     "top_food_name": "",
     "top_food_desc": "",
     "top_food_image": "",
@@ -39,74 +40,250 @@
     "map_id": "",
     "country_label": ""
   },
-  "cities": [],
+  "cities": [
+    {
+      "id": "",
+      "name": "",
+      "lat": "",
+      "lng": "",
+      "zoom": "12",
+      "color": "#006847",
+      "marker_size": "14",
+      "marker_label": "★",
+      "badge": "",
+      "badge_class": "green",
+      "description": ""
+    }
+  ],
   "season_mini": {
     "description": "",
     "city_name": "",
     "months": [
+      { "icon": "☀️", "temp": "25°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "25°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "26°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "27°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "28°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "28°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "28°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "28°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "27°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "26°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "25°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "25°", "type": "t-warm" }
+    ]
+  },
+  "basic_data": [
+    { "label": "首都", "value": "", "note": "", "compare_html": "" },
+    { "label": "独立年", "value": "", "note": "", "compare_html": "" },
+    { "label": "人口", "value": "", "note": "", "compare_html": "" },
+    { "label": "面積", "value": "", "note": "", "compare_html": "" },
+    { "label": "宗教", "value": "", "note": "", "compare_html": "" },
+    { "label": "民族", "value": "", "note": "", "compare_html": "" }
+  ],
+  "season": {
+    "description_html": "",
+    "tip_title": "",
+    "tip_body": "",
+    "cities": [
       {
-        "icon": "☔",
-        "temp": "27°",
-        "type": "t-mild"
-      },
-      {
-        "icon": "⛅",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☀️",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☀️",
-        "temp": "29°",
-        "type": "t-hot"
-      },
-      {
-        "icon": "☀️",
-        "temp": "29°",
-        "type": "t-hot"
-      },
-      {
-        "icon": "☀️",
-        "temp": "29°",
-        "type": "t-hot"
-      },
-      {
-        "icon": "☀️",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☀️",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☀️",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☔",
-        "temp": "28°",
-        "type": "t-warm"
-      },
-      {
-        "icon": "☔",
-        "temp": "27°",
-        "type": "t-mild"
-      },
-      {
-        "icon": "☔",
-        "temp": "27°",
-        "type": "t-mild"
+        "name": "",
+        "city_id": "",
+        "best_note": "",
+        "note": "",
+        "months": [
+          { "icon": "☀️", "temp": "25°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "25°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "26°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "26°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "25°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "25°C", "type": "t-warm" }
+        ]
       }
     ]
   },
+  "budget": {
+    "intro": "",
+    "plan_rows": [
+      { "label": "航空券（往復）", "eco": "", "std": "", "lux": "" },
+      { "label": "ホテル（1泊）", "eco": "", "std": "", "lux": "" },
+      { "label": "食費（1日）", "eco": "", "std": "", "lux": "" },
+      { "label": "交通（1日）", "eco": "", "std": "", "lux": "" }
+    ],
+    "total_eco": "",
+    "total_std": "",
+    "total_lux": "",
+    "items": [
+      { "icon": "plane-paper", "name": "航空券（往復）", "detail_html": "", "price": "", "affiliate": "flights" },
+      { "icon": "bed", "name": "ホテル（1泊）", "detail_html": "", "price": "", "affiliate": "hotels" },
+      { "icon": "ramen", "name": "食費（1日）", "detail_html": "", "price": "", "affiliate": "wise" },
+      { "icon": "🚕", "name": "交通費（1日）", "detail_html": "", "price": "", "affiliate": "grab" },
+      { "icon": "📍", "name": "観光・アクティビティ", "detail_html": "", "price": "", "affiliate": "klook" },
+      { "icon": "🌐", "name": "SIM・Wi-Fi", "detail_html": "", "price": "", "affiliate": "sim" }
+    ],
+    "savings_tips_html": ""
+  },
+  "practical": {
+    "prac_cards": [
+      { "icon": "visa", "title": "ビザ", "value": "" },
+      { "icon": "💱", "title": "通貨", "value": "" },
+      { "icon": "🔌", "title": "コンセント", "value": "" },
+      { "icon": "⚡", "title": "電圧", "value": "" },
+      { "icon": "wifi", "title": "Wi-Fi", "value": "" },
+      { "icon": "clock", "title": "時差", "value": "" },
+      { "icon": "palm", "title": "気温", "value": "" },
+      { "icon": "🙏", "title": "チップ", "value": "" },
+      { "icon": "💧", "title": "水道水", "value": "" },
+      { "icon": "💳", "title": "カード払い", "value": "" }
+    ],
+    "prep_steps": [
+      {
+        "title": "パスポート取得・更新",
+        "timing": "1〜2ヶ月前",
+        "timing_color": "#006847",
+        "border_color": "#006847",
+        "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+        "desc_html": ""
+      },
+      {
+        "title": "海外対応クレジットカードの申込",
+        "timing": "1ヶ月前",
+        "timing_color": "#006847",
+        "border_color": "#1a8a5a",
+        "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+        "desc_html": ""
+      },
+      {
+        "title": "航空券・ホテルの予約",
+        "timing": "早いほど安い",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "#b09000",
+        "desc_html": ""
+      },
+      {
+        "title": "海外旅行保険の加入",
+        "timing": "出発前日まで",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+        "desc_html": ""
+      },
+      {
+        "title": "SIM・ポケットWi-Fiの予約",
+        "timing": "1〜2週間前",
+        "timing_color": "#cc5500",
+        "border_color": "#cc5500",
+        "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+        "desc_html": ""
+      }
+    ],
+    "tour_intro": "",
+    "special_note_title": "",
+    "special_note_html": "",
+    "special_note_url": "",
+    "special_note_url_label": "",
+    "flight_lead": "",
+    "flight_intro": "",
+    "airlines": [
+      { "logo": "", "name": "", "desc": "", "price": "" }
+    ],
+    "flight_tip_html": "",
+    "hotel_intro": "",
+    "hotel_map_center": { "lat": 0, "lng": 0, "zoom": 13 },
+    "hotel_areas": [
+      {
+        "id": "",
+        "name": "",
+        "tag": "",
+        "tag_color": "green",
+        "desc": "",
+        "price": "",
+        "maps_url": "",
+        "lat": 0,
+        "lng": 0
+      }
+    ],
+    "hotel_tip": "",
+    "sim_intro": "",
+    "apps": [
+      { "icon": "🗺️", "name": "Google マップ", "type_label": "地図・ナビ（オフライン対応）", "desc": "", "affiliate": "", "is_last": false },
+      { "icon": "google-translate", "name": "Google 翻訳", "type_label": "翻訳・カメラ翻訳", "desc": "", "affiliate": "", "is_last": true }
+    ],
+    "country_items_label": "",
+    "country_items": [],
+    "currency_code": "",
+    "exchange_rate": "",
+    "eco_daily": "",
+    "std_daily": "",
+    "lux_daily": "",
+    "cash_note": "",
+    "money_intro": "",
+    "cash_tip_title": "",
+    "cash_tip_body": "",
+    "wise_intro": "",
+    "cta_title": "",
+    "cta_desc": ""
+  },
+  "manner_cards": [
+    { "type": "do", "icon": "", "title": "", "desc": "" },
+    { "type": "dont", "icon": "", "title": "", "desc": "" }
+  ],
+  "manner_cta_title": "",
+  "manner_cta_desc": "",
+  "phrases": {
+    "language_name": "",
+    "card_title": "",
+    "categories": [
+      {
+        "label": "あいさつ",
+        "items": [
+          { "jp": "", "foreign": "", "reading": "", "audio": "" }
+        ]
+      },
+      {
+        "label": "基本表現",
+        "items": [
+          { "jp": "", "foreign": "", "reading": "", "audio": "" }
+        ]
+      }
+    ]
+  },
+  "food_section_title": "",
+  "food_filter_types": [
+    { "id": "all", "label": "すべて", "active": true }
+  ],
+  "food_filter_cities": [
+    { "id": "", "label": "" }
+  ],
+  "food_modal_phrase_main": "",
+  "food_modal_phrase_sub": "",
   "food_items": [],
+  "spots_section_title": "",
+  "spots_filter_cities": [
+    { "id": "", "label": "" }
+  ],
   "spot_sections": [],
+  "transport_items": [],
+  "courses": {
+    "intro": "",
+    "stable_title": "",
+    "stable_intro": "",
+    "stable_plans": [],
+    "adventure_title": "",
+    "adventure_note_html": "",
+    "adventure_plan": {
+      "days": [],
+      "tip": ""
+    },
+    "cta_title": "",
+    "cta_desc": ""
+  },
   "spot_points": []
 }
