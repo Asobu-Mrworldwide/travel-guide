@@ -39,6 +39,8 @@
 .info-box{border-radius:6px;padding:10px 12px;margin-bottom:8px}
 .info-box-title{font-size:0.75em;font-weight:700;margin-bottom:4px}
 .info-box ul{font-size:0.73em;color:var(--sub);line-height:1.8;padding-left:16px}
+.qs-section-title{font-size:18px;font-weight:700;color:var(--text);letter-spacing:0.04em}
+.s-card{margin-top:0}
 </style>
 </head>
 <body>
@@ -56,19 +58,9 @@
   <h2 style="margin-top:8px">持ち物チェックリスト</h2>
   <p style="font-size:0.82em;color:var(--sub);margin-bottom:16px">タップでチェック。チェック状態は自動保存されます。</p>
 
-  <!-- 進捗 -->
-  <div class="s-card" style="margin-top:0;margin-bottom:8px;padding:16px 20px">
-    <div class="progress-label" id="progress-label">0 / 0 チェック済み</div>
-    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
-    <div class="checklist-actions">
-      <button class="btn" onclick="checkAll()">すべてチェック</button>
-      <button class="btn outline" onclick="resetAll()">リセット</button>
-    </div>
-  </div>
-
   <!-- 機内持ち込みルール -->
   <div class="s-card">
-    <h2>✈️ 機内持ち込みルール</h2>
+    <div class="qs-section-title" style="margin:0 0 8px">機内持ち込みルール</div>
     <div class="items-inner" style="padding:12px 16px">
       <div class="rule-grid">
         <div class="rule-cell"><div class="rule-cell-lbl">サイズ（目安）</div><div class="rule-cell-val">55×40×25 cm</div><div class="rule-cell-note">3辺合計115cm以内が目安</div></div>
@@ -90,9 +82,21 @@
     </div>
   </div>
 
+  <!-- 進捗 -->
+  <div style="padding:16px 0 4px">
+    <div class="progress-label" id="progress-label">0 / 0 チェック済み</div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div style="padding:8px 0 16px">
+    <div class="checklist-actions">
+      <button class="btn" onclick="checkAll()">すべてチェック</button>
+      <button class="btn outline" onclick="resetAll()">リセット</button>
+    </div>
+  </div>
+
   <!-- 必須書類 -->
   <div class="s-card category" id="cat-docs">
-    <h2>📄 必須書類 <span class="cat-count" id="count-docs"></span></h2>
+    <div class="qs-section-title" style="margin:0 0 8px">必須書類 <span class="cat-count" id="count-docs"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">パスポート</div><div class="item-note">入国時点で残存有効期間6ヶ月以上・査証スタンプ用の空白ページ2ページ以上が必要。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">航空券の予約番号（印刷 or スクショ）</div><div class="item-note">予約確認メールを残しておくかスクショを撮っておくとスムーズ。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -109,7 +113,7 @@
 
   <!-- 電子機器・充電 -->
   <div class="s-card category" id="cat-elec">
-    <h2>🔌 電子機器・充電 <span class="cat-count" id="count-elec"></span></h2>
+    <div class="qs-section-title" style="margin:0 0 8px">電子機器・充電 <span class="cat-count" id="count-elec"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">スマートフォン・充電ケーブル</div><div class="item-note">地図・翻訳・配車アプリなどに必須。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">変換アダプター</div><div class="item-note">全世界対応タイプを1つ持っておくと、どの国でも使えて便利。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -123,7 +127,7 @@
 
   <!-- 衛生・健康 -->
   <div class="s-card category" id="cat-health">
-    <h2>💊 衛生・健康 <span class="cat-count" id="count-health"></span></h2>
+    <div class="qs-section-title" style="margin:0 0 8px">衛生・健康 <span class="cat-count" id="count-health"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">常備薬（頭痛・胃腸薬など）</div><div class="item-note">海外の薬は成分や量が異なることも。使い慣れた薬を持参。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">日焼け止め</div><div class="item-note">強い紫外線対策に。SPF50+を推奨。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -138,7 +142,7 @@
 
   <!-- 衣類・身の回り -->
   <div class="s-card category" id="cat-clothes">
-    <h2>👕 衣類・身の回り <span class="cat-count" id="count-clothes"></span></h2>
+    <div class="qs-section-title" style="margin:0 0 8px">衣類・身の回り <span class="cat-count" id="count-clothes"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ボディバッグ</div><div class="item-note">街歩きに便利。前掛けにするとスリ対策にもなる。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">財布</div><div class="item-note">必要最低限のカードと現金だけ入れておくと安心。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -156,7 +160,7 @@
 
   <!-- 洗面・お風呂 -->
   <div class="s-card category" id="cat-toiletry">
-    <h2>🛁 洗面・お風呂・洗濯 <span class="cat-count" id="count-toiletry"></span></h2>
+    <div class="qs-section-title" style="margin:0 0 8px">洗面・お風呂・洗濯 <span class="cat-count" id="count-toiletry"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">歯ブラシ・歯磨き粉</div><div class="item-note">ホテルによっては用意されていない場合がある。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">シャンプー・コンディショナー</div><div class="item-note">多くのホテルに備え付けあり。品質が気になる場合は持参を。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -171,7 +175,7 @@
 
   <!-- 機内・移動用 -->
   <div class="s-card category" id="cat-flight">
-    <h2>✈️ 機内・移動用 <span class="cat-count" id="count-flight"></span></h2>
+    <div class="qs-section-title" style="margin:0 0 8px">機内・移動用 <span class="cat-count" id="count-flight"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ネックピロー</div><div class="item-note">長時間フライトの睡眠に。</div></div><span class="item-tag tag-opt">任意</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">アイマスク・耳栓</div><div class="item-note">夜行便・長距離移動での睡眠の質を上げる。ホットアイマスクがあるとより快適。</div></div><span class="item-tag tag-opt">任意</span></div>
@@ -182,7 +186,7 @@
 
   <!-- あると便利なアプリ -->
   <div class="s-card category" id="cat-useful">
-    <h2>📱 あると便利なアプリ <span class="cat-count" id="count-useful"></span></h2>
+    <div class="qs-section-title" style="margin:0 0 8px">あると便利なアプリ <span class="cat-count" id="count-useful"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">配車アプリ（Grab・Uber など）</div><div class="item-note">出発前にDLしておこう。流しのタクシーより安全・安心で料金も事前確定。</div></div><span class="item-tag tag-opt">任意</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">クラウドバックアップの設定（Google フォト・iCloud）</div><div class="item-note">スマホ紛失時に写真が消えるのが最大のダメージ。出発前に自動バックアップをONに。</div></div><span class="item-tag tag-opt">任意</span></div>
@@ -196,7 +200,7 @@
 
   <!-- その他 -->
   <div class="s-card category" id="cat-goods">
-    <h2>🔖 その他 <span class="cat-count" id="count-goods"></span></h2>
+    <div class="qs-section-title" style="margin:0 0 8px">その他 <span class="cat-count" id="count-goods"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">エコバッグ・折りたたみトート</div><div class="item-note">お土産を買いすぎた際のセカンドバッグとしても活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">南京錠・鍵</div><div class="item-note">ゲストハウスや荷物の盗難対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
