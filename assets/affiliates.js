@@ -54,8 +54,9 @@ const AFFILIATES_CSS = `
 /* ── 説明カード ── */
 .aff-card{
   background:#fff;
-  border-radius:14px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  border-radius:8px;
+  border:1px solid #ccc;
+  box-shadow:none;
   overflow:hidden;
   margin-top:12px;
 }
@@ -160,6 +161,7 @@ function initAffiliates() {
         ${c.logo ? `<div style="flex-shrink:0;line-height:1">${c.logo}</div>` : ''}
       </div>
       <div class="aff-card-body">
+        ${c.desc ? `<p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:0 0 12px">${c.desc}</p>` : ''}
         <ul class="aff-card-points">
           ${c.points.map(p => `<li>${p}</li>`).join('')}
         </ul>
