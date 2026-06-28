@@ -87,10 +87,20 @@
   <!-- 進捗 -->
   <hr style="border:none;border-top:1px solid #b0c4b8;margin:0 20px">
   <div id="progress-wrap" class="s-card" style="padding:12px 20px">
-    <div class="progress-label" id="progress-label">0 / 0 チェック済み</div>
-    <div style="display:flex;align-items:center;gap:12px;margin-top:6px">
-      <div class="progress-bar" style="flex:1;margin:0"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
-      <button class="btn outline" onclick="resetAll()" style="flex-shrink:0;padding:4px 14px;font-size:0.8em">リセット</button>
+    <div style="display:flex;align-items:center;gap:12px">
+      <div style="flex:1;display:flex;flex-direction:column;gap:6px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="item-tag tag-must" style="flex-shrink:0">必須</span>
+          <div class="progress-bar" style="flex:1;margin:0"><div class="progress-fill" id="progress-fill-must" style="width:0%"></div></div>
+          <span class="progress-label" id="progress-label-must" style="flex-shrink:0;min-width:40px;text-align:right">0 / 0</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="item-tag tag-opt" style="flex-shrink:0">任意</span>
+          <div class="progress-bar" style="flex:1;margin:0"><div class="progress-fill" id="progress-fill-opt" style="width:0%;background:#888"></div></div>
+          <span class="progress-label" id="progress-label-opt" style="flex-shrink:0;min-width:40px;text-align:right">0 / 0</span>
+        </div>
+      </div>
+      <button class="btn outline" onclick="resetAll()" style="flex-shrink:0;padding:4px 14px;font-size:0.8em;align-self:center">リセット</button>
     </div>
   </div>
   <!-- 固定時のプレースホルダー -->
@@ -251,11 +261,15 @@ function load(){
 }
 
 function updateProgress(){
-  const items = getItems();
-  const total = items.length;
-  const done = [...items].filter(el => el.querySelector('input').checked).length;
-  document.getElementById('progress-label').textContent = `${done} / ${total} チェック済み`;
-  document.getElementById('progress-fill').style.width = (total ? done/total*100 : 0) + '%';
+  const items = [...getItems()];
+  const mustItems = items.filter(el => el.querySelector('.tag-must'));
+  const optItems  = items.filter(el => el.querySelector('.tag-opt'));
+  const mustDone  = mustItems.filter(el => el.querySelector('input').checked).length;
+  const optDone   = optItems.filter(el => el.querySelector('input').checked).length;
+  document.getElementById('progress-label-must').textContent = `${mustDone} / ${mustItems.length}`;
+  document.getElementById('progress-fill-must').style.width  = (mustItems.length ? mustDone/mustItems.length*100 : 0) + '%';
+  document.getElementById('progress-label-opt').textContent  = `${optDone} / ${optItems.length}`;
+  document.getElementById('progress-fill-opt').style.width   = (optItems.length ? optDone/optItems.length*100 : 0) + '%';
   document.querySelectorAll('.category').forEach(cat => {
     const catItems = cat.querySelectorAll('.item');
     const catDone = [...catItems].filter(el => el.querySelector('input').checked).length;
