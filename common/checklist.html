@@ -83,7 +83,8 @@
   </div>
 
   <!-- 進捗 -->
-  <div id="progress-wrap" style="padding:16px 0 16px">
+  <hr style="border:none;border-top:1px solid #b0c4b8;margin:0 20px">
+  <div id="progress-wrap" class="s-card" style="padding:12px 20px">
     <div class="progress-label" id="progress-label">0 / 0 チェック済み</div>
     <div style="display:flex;align-items:center;gap:12px;margin-top:6px">
       <div class="progress-bar" style="flex:1;margin:0"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
@@ -308,11 +309,12 @@ updateProgress();
     wrap.style.top = '0';
     wrap.style.left = rect.left + 'px';
     wrap.style.width = rect.width + 'px';
-    wrap.style.background = 'var(--bg)';
+    wrap.style.background = '#E5EDE9';
     wrap.style.zIndex = '200';
     wrap.style.borderBottom = '1px solid #d4dfd8';
-    wrap.style.padding = '10px 0 8px';
+    wrap.style.padding = '12px 20px';
     wrap.style.margin = '0';
+    wrap.style.borderRadius = '0';
   }
 
   function removeFixed(){
@@ -326,8 +328,9 @@ updateProgress();
     wrap.style.background = '';
     wrap.style.zIndex = '';
     wrap.style.borderBottom = '';
-    wrap.style.padding = '16px 0 16px';
+    wrap.style.padding = '12px 20px';
     wrap.style.margin = '';
+    wrap.style.borderRadius = '';
   }
 
   function onScroll(){
