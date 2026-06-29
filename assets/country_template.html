@@ -747,7 +747,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
         <div style="display:flex;gap:14px;align-items:flex-start">
           <div class="tl-content" style="flex:1;min-width:0">{{day.content_html}}</div>
-          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">{% endif %}
+          {% if day.image %}<img src="{{day.image}}" alt="" class="tl-day-img">{% endif %}
         </div>
       </div>
       {% endif %}
@@ -762,7 +762,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="course-type-title">{{courses.adventure_title}}</div>
   </div>
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.adventure_note_html}}</p>
-  <div class="s-card">
+  <div class="s-card" style="padding-top:6px">
+  {% if courses.adventure_plan.title %}<div class="qs-section-title" style="margin:6px 0 8px">{{courses.adventure_plan.title}}</div>{% endif %}
   <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       {% for day in courses.adventure_plan.days %}
@@ -775,7 +776,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
         <div style="display:flex;gap:14px;align-items:flex-start">
           <div class="tl-content" style="flex:1;min-width:0">{{day.content_html}}</div>
-          {% if day.image %}<img src="{{day.image}}" alt="" style="width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0">{% endif %}
+          {% if day.image %}<img src="{{day.image}}" alt="" class="tl-day-img">{% endif %}
         </div>
       </div>
       {% endif %}
@@ -878,18 +879,33 @@ function show(id, btn) {
 })();
 
 function showSpot(numId) {
-  const spotsBtn = document.querySelectorAll('nav button')[1];
-  show('spots', spotsBtn);
   const card = document.querySelector('[data-spot-num="' + numId + '"]');
   if (!card) return;
-  const allBtn = document.querySelector('#spots-filter-row .filter-btn[data-filter="all"]');
-  if (allBtn) filterSpots('all', allBtn);
-  setTimeout(() => {
-    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    card.style.outline = '3px solid var(--green)';
-    card.style.borderRadius = '10px';
-    setTimeout(() => { card.style.outline = ''; }, 2000);
-  }, 300);
+  const name = card.querySelector('.name')?.textContent || '';
+  const num  = card.querySelector('.num')?.textContent || '';
+  const desc = card.querySelector('.desc')?.textContent || '';
+  const imgWrap = card.querySelector('.spot-img-wrap');
+  const imgUrl = imgWrap ? imgWrap.style.backgroundImage.replace(/url\(["']?|["']?\)/g,'') : '';
+  const mapBtn = card.querySelector('.spot-map-btn');
+  const mapUrl = mapBtn ? mapBtn.href : '';
+
+  document.getElementById('sp-pop-num').textContent = num;
+  document.getElementById('sp-pop-name').textContent = name;
+  document.getElementById('sp-pop-desc').textContent = desc;
+  const popImg = document.getElementById('sp-pop-img');
+  if (imgUrl) { popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  const popMap = document.getElementById('sp-pop-map');
+  if (mapUrl && mapUrl !== 'javascript:void(0)') { popMap.href = mapUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+
+  const popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeSpotPopup() {
+  document.getElementById('sp-popup').style.display = 'none';
+  document.body.style.overflow = '';
 }
 
 function filterSpots(city, btn) {
@@ -1006,5 +1022,20 @@ function closeFoodModal() {
   document.body.style.overflow = '';
 }
 </script>
+<!-- 観光スポットポップアップ -->
+<div id="sp-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:2000;align-items:center;justify-content:center;padding:16px" onclick="if(event.target===this)closeSpotPopup()">
+  <div style="background:#fff;border-radius:6px;max-width:380px;width:100%;overflow:hidden;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.25)">
+    <button onclick="closeSpotPopup()" style="position:absolute;top:8px;right:10px;background:rgba(0,0,0,0.35);border:none;border-radius:50%;width:28px;height:28px;font-size:1em;cursor:pointer;color:#fff;z-index:1;line-height:1;display:flex;align-items:center;justify-content:center">✕</button>
+    <div id="sp-pop-img" style="width:100%;aspect-ratio:16/9;background-size:cover;background-position:center"></div>
+    <div style="padding:16px 18px 18px">
+      <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
+      <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
+      <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
+      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+        <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
