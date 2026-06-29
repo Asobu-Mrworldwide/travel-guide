@@ -71,8 +71,8 @@ def _render(text, ctx):
             expr = text[i+2:j].strip()
             if expr.startswith('icon:'):
                 icon_key = expr[5:].strip()
-                resolved = str(_get(icon_key, ctx))
-                if resolved:
+                resolved = _get(icon_key, ctx)
+                if resolved and isinstance(resolved, str):
                     icon_key = resolved
                 result.append(_load_icon(icon_key, ctx))
             else:
