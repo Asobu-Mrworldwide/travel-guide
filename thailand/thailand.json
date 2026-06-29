@@ -2185,7 +2185,7 @@
             {
                 "label": "プランA",
                 "title": "バンコク・アユタヤ 4泊5日",
-                "tip": "✅ バンコク連泊ベース・移動ゼロ　スーツケースを動かす必要なし",
+                "tip": "バンコク連泊・移動ゼロ・スーツケースを動かす必要なし",
                 "days": [
                     {
                         "transit": false,
@@ -2231,7 +2231,7 @@
             {
                 "label": "プランB",
                 "title": "バンコク ＋ チェンマイ　5泊6日",
-                "tip": "✅ バンコク2連泊・チェンマイ3連泊　荷物の移動は1回だけ",
+                "tip": "荷物の移動は1回だけ",
                 "days": [
                     {
                         "transit": false,
@@ -2290,7 +2290,7 @@
         ],
         "adventure_plan": {
             "title": "バンコク・チェンマイ・プーケット 6泊7日",
-            "tip": "✅ バンコク都市・チェンマイ自然・プーケットビーチ。タイの三つの顔を一度に体感できる6泊7日。",
+            "tip": "体力勝負",
             "days": [
                 {
                     "transit": false,
@@ -2305,20 +2305,19 @@
                     "badge_style": "background:#52a443",
                     "badge_class": "",
                     "label": "Day 2",
-                    "content_html": "<strong>バンコク観光</strong><br><a href=\"javascript:void(0)\" onclick=\"showSpot('BK 03')\" class=\"spot-link\">ワット・ポー</a>・<a href=\"javascript:void(0)\" onclick=\"showSpot('BK 04')\" class=\"spot-link\">ワット・アルン</a>を巡った後、BTSでスクンビットへ。夜はチャオプラヤー川のクルーズディナーでバンコクの夜景を船上から楽しむのが格別。",
+                    "content_html": "<strong>バンコク観光 → 夜行バスで北へ</strong><br><a href=\"javascript:void(0)\" onclick=\"showSpot('BK 03')\" class=\"spot-link\">ワット・ポー</a>・<a href=\"javascript:void(0)\" onclick=\"showSpot('BK 04')\" class=\"spot-link\">ワット・アルン</a>を巡った後、BTSでスクンビットへ。夕食を済ませてモーチット北バスターミナルへ。夜行バスに乗り込み、そのまま北を目指す。",
                     "image": "素材/観光スポット/チャオプラヤー川クルーズ.webp"
                 },
                 {
                     "transit": true,
-                    "plane": true,
-                    "duration": "約1h"
+                    "duration": "夜行バス 約10h"
                 },
                 {
                     "transit": false,
                     "badge_style": "background:#8a9a20",
                     "badge_class": "",
                     "label": "Day 3",
-                    "content_html": "<strong>チェンマイ移動・到着</strong><br>午前の便でチェンマイへ。午後は<a href=\"javascript:void(0)\" onclick=\"showSpot('CM 03')\" class=\"spot-link\">旧市街・お堀エリア</a>を自転車で散策。夕方は<a href=\"javascript:void(0)\" onclick=\"showSpot('CM 04')\" class=\"spot-link\">サタデーナイトバザール</a>で雑貨を物色しながら、カオソーイとラープで北部タイ料理を堪能。",
+                    "content_html": "<strong>チェンマイ到着</strong><br>朝にチェンマイ着。ゲストハウスに荷物を預けてシャワーを浴びたら、<a href=\"javascript:void(0)\" onclick=\"showSpot('CM 03')\" class=\"spot-link\">旧市街・お堀エリア</a>を自転車で散策。夕方は<a href=\"javascript:void(0)\" onclick=\"showSpot('CM 04')\" class=\"spot-link\">サタデーナイトバザール</a>で雑貨を物色しながら、カオソーイとラープで北部タイ料理を堪能。",
                     "image": "素材/観光スポット/旧市街・お堀.webp"
                 },
                 {

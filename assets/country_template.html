@@ -664,7 +664,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   </div>
   <div class="tab-cta">
-    <div class="tab-cta-title">食べたいものが決まったら旅程を組もう！{{icon:map}}</div>
+    <div class="tab-cta-title">食べたいものが決まったら旅程を組もう！</div>
     <p class="tab-cta-desc">安定タイプ・冒険タイプ2種類のモデルコースを用意。<br>管理人の実際の旅ルートもそのまま公開しています。</p>
     <button class="tab-cta-btn" onclick="show('course',document.querySelectorAll('nav button')[3])">モデルコースを見る →</button>
   </div>
@@ -753,7 +753,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       {% endif %}
       {% endfor %}
     </div>
-    <div class="course-tip">{{plan.tip}}</div>
+    <div class="course-tip">{{icon:check-green}}<span>{{plan.tip}}</span></div>
   </div>
   {% endfor %}
   </div>
@@ -782,7 +782,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       {% endif %}
       {% endfor %}
     </div>
-    <div class="course-tip">{{courses.adventure_plan.tip}}</div>
+    <div class="course-tip">{{icon:check-green}}<span>{{courses.adventure_plan.tip}}</span></div>
   </div>
 
   </div>
