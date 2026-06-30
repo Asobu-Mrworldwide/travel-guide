@@ -104,6 +104,19 @@
             "badge": "サファリ",
             "badge_class": "green",
             "description": "ビッグファイブが生息する世界最大級の国立公園"
+        },
+        {
+            "id": "oudtshoorn",
+            "name": "オウツホルン",
+            "lat": "-33.5897",
+            "lng": "22.2018",
+            "zoom": "12",
+            "color": "#8B6914",
+            "marker_size": "11",
+            "marker_label": "●",
+            "badge": "ダチョウの街",
+            "badge_class": "green",
+            "description": "世界最大のダチョウ農場が集まる小さな街。カンゴ洞窟も近くケープタウンからの日帰りも可能"
         }
     ],
     "season_mini": {
@@ -1092,6 +1105,11 @@
             "id": "kruger",
             "label": "クルーガー",
             "active": false
+        },
+        {
+            "id": "oudtshoorn",
+            "label": "オウツホルン",
+            "active": false
         }
     ],
     "spot_sections": [
@@ -1341,6 +1359,59 @@
                     "desc": "夕暮れから夜にかけて行うドライブ。ハイエナ・ライオン・ナイトエイプなど夜行性動物をスポットライトで探す。昼間とは異なる野生の顔が見られる。",
                     "badge": "オプション",
                     "prompt_en": "Night game drive Kruger National Park, spotlight searching animals in darkness, African bush at night, safari",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "oudtshoorn",
+            "city_name": "オウツホルン",
+            "city_image": "",
+            "city_prompt": "Oudtshoorn ostrich farm South Africa, large ostriches in semi-arid Klein Karoo landscape, blue sky, travel photography",
+            "city_desc": "南アフリカ南部・クライン・カルーの乾燥地帯に位置するダチョウ農場の聖地。世界の商業用ダチョウの大半がここで生産されており、ダチョウに乗る・卵料理を食べる体験が人気。近郊のカンゴ洞窟も見どころ",
+            "city_info": [
+                {
+                    "label": "アクセス",
+                    "value": "ケープタウンから車で約4時間（N12経由）"
+                },
+                {
+                    "label": "おすすめ時期",
+                    "value": "9月〜4月（温暖・晴れが多い）"
+                },
+                {
+                    "label": "宿泊",
+                    "value": "市内のゲストハウス・ファームロッジ"
+                }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🦤",
+                    "num": "OUD 01",
+                    "name": "ダチョウ農場（ファームツアー）",
+                    "desc": "クライン・カルー地方に点在する大型ダチョウ農場。ハイデ・ファームやセフェルスフォンテイン農場が人気で、ダチョウの生態説明・卵の展示・ダチョウ乗り体験などができる。",
+                    "badge": "体験",
+                    "prompt_en": "Ostrich farm Oudtshoorn South Africa, tourists feeding large ostriches, Klein Karoo dry landscape, farm tour",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🕳️",
+                    "num": "OUD 02",
+                    "name": "カンゴ洞窟",
+                    "desc": "オウツホルンから約30kmに位置する南アフリカ最大の鍾乳洞。高さ15mを超える巨大なホールと壮大な石筍・鍾乳石が続く自然の宝庫。アドベンチャーコースでは狭い岩の隙間を通り抜けるスリルも。",
+                    "badge": "自然",
+                    "prompt_en": "Cango Caves South Africa, dramatic stalactites and stalagmites in large limestone cave chamber, illuminated underground",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🐊",
+                    "num": "OUD 03",
+                    "name": "カンゴ・ワイルドライフランチ",
+                    "desc": "ダチョウだけでなくチーター・ワニ・カバなどの野生動物を間近で見られる複合施設。チーターとの触れ合い体験が特に人気で、家族連れにもおすすめ。",
+                    "badge": "動物",
+                    "prompt_en": "Cango Wildlife Ranch Oudtshoorn, cheetah encounter, tourists with big cats, South Africa wildlife ranch",
                     "image": ""
                 }
             ]

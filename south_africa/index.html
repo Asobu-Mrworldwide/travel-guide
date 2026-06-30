@@ -207,6 +207,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         
         kruger: { name:'クルーガー国立公園', lat:-24.0, lng:31.5, zoom:7, color:'#8B6914', label:'●' },
         
+        oudtshoorn: { name:'オウツホルン', lat:-33.5897, lng:22.2018, zoom:12, color:'#8B6914', label:'●' },
+        
       };
 
       function initMap() {
@@ -286,6 +288,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="city-item" onclick="zoomToCity('pretoria')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">プレトリア</div><div class="ci-badge green">行政首都</div></div><div class="ci-desc">ジャカランダの花で知られる行政の中心地</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('pretoria')">観光地を見る →</button></div></div>
       
       <div class="city-item" onclick="zoomToCity('kruger')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">クルーガー国立公園</div><div class="ci-badge green">サファリ</div></div><div class="ci-desc">ビッグファイブが生息する世界最大級の国立公園</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('kruger')">観光地を見る →</button></div></div>
+      
+      <div class="city-item" onclick="zoomToCity('oudtshoorn')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">オウツホルン</div><div class="ci-badge green">ダチョウの街</div></div><div class="ci-desc">世界最大のダチョウ農場が集まる小さな街。カンゴ洞窟も近くケープタウンからの日帰りも可能</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('oudtshoorn')">観光地を見る →</button></div></div>
       
     </div>
     </div><!-- end overflow:hidden 主要都市 -->
@@ -1242,6 +1246,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <button class="filter-btn " data-filter="kruger" onclick="filterSpots('kruger',this)">クルーガー</button>
     
+    <button class="filter-btn " data-filter="oudtshoorn" onclick="filterSpots('oudtshoorn',this)">オウツホルン</button>
+    
   </div>
   <div id="spots-grid">
     
@@ -1487,6 +1493,62 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KNP 03</div>
       <div class="name-row"><div class="name">サンセット・ナイトドライブ</div><span class="badge">オプション</span></div>
       <div class="desc">夕暮れから夜にかけて行うドライブ。ハイエナ・ライオン・ナイトエイプなど夜行性動物をスポットライトで探す。昼間とは異なる野生の顔が見られる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"></div>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div class="s-card spot-section-card" data-city="oudtshoorn" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="city-section-header" data-city="oudtshoorn">
+      
+      <div class="csh-title">オウツホルン</div>
+      <div class="csh-desc">南アフリカ南部・クライン・カルーの乾燥地帯に位置するダチョウ農場の聖地。世界の商業用ダチョウの大半がここで生産されており、ダチョウに乗る・卵料理を食べる体験が人気。近郊のカンゴ洞窟も見どころ</div>
+      <div class="csh-grid">
+        
+        <div class="csh-item">
+          <div class="csh-lbl">アクセス</div>
+          <div class="csh-val">ケープタウンから車で約4時間（N12経由）</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">おすすめ時期</div>
+          <div class="csh-val">9月〜4月（温暖・晴れが多い）</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">宿泊</div>
+          <div class="csh-val">市内のゲストハウス・ファームロッジ</div>
+          
+        </div>
+        
+      </div>
+    </div>
+    <div class="item-grid">
+    
+    <div class="item-card spot has-spot-img must" data-city="oudtshoorn" data-spot-num="OUD 01">
+      <div class="must-badge">⭐</div>
+      <div class="num">OUD 01</div>
+      <div class="name-row"><div class="name">ダチョウ農場（ファームツアー）</div><span class="badge">体験</span></div>
+      <div class="desc">クライン・カルー地方に点在する大型ダチョウ農場。ハイデ・ファームやセフェルスフォンテイン農場が人気で、ダチョウの生態説明・卵の展示・ダチョウ乗り体験などができる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="oudtshoorn" data-spot-num="OUD 02">
+      <div class="must-badge">⭐</div>
+      <div class="num">OUD 02</div>
+      <div class="name-row"><div class="name">カンゴ洞窟</div><span class="badge">自然</span></div>
+      <div class="desc">オウツホルンから約30kmに位置する南アフリカ最大の鍾乳洞。高さ15mを超える巨大なホールと壮大な石筍・鍾乳石が続く自然の宝庫。アドベンチャーコースでは狭い岩の隙間を通り抜けるスリルも。</div>
+      <div class="spot-img-wrap spot-img-placeholder"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="oudtshoorn" data-spot-num="OUD 03">
+      
+      <div class="num">OUD 03</div>
+      <div class="name-row"><div class="name">カンゴ・ワイルドライフランチ</div><span class="badge">動物</span></div>
+      <div class="desc">ダチョウだけでなくチーター・ワニ・カバなどの野生動物を間近で見られる複合施設。チーターとの触れ合い体験が特に人気で、家族連れにもおすすめ。</div>
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
