@@ -212,12 +212,14 @@
     ],
     "season": {
         "description_html": "南アフリカは南半球に位置するため<strong>季節は日本と逆転</strong>。ただし地域によって気候が大きく異なります。ケープタウンは地中海性気候（夏は乾燥・冬は雨）、ヨハネスブルク・クルーガーは高原性気候（夏は雨季・冬は乾燥）です。<br><span style=\"font-weight:700;color:#555\">色が濃いオレンジほど気温が高く</span>、サファリは乾季（5〜9月）が動物を見やすいベストシーズンです。",
-        "tip_html": "💡 <strong>航空券が安い時期</strong><br>日本の連休（GW・お盆・年末年始）は航空券が高騰。3〜4月や9〜10月の連休前後は比較的リーズナブル。カタール/エミレーツ航空は早期予約ほど安い傾向。",
+        "tip_title": "航空券が安い時期",
+        "tip_body": "日本の連休（GW・お盆・年末年始）は航空券が高騰。3〜4月や9〜10月の連休前後は比較的リーズナブル。カタール/エミレーツ航空は早期予約ほど安い傾向。",
         "cities": [
             {
                 "name": "ケープタウン",
                 "city_id": "cape_town",
                 "best_note": "✅ ベスト：11月〜3月（南半球の夏・乾季）／ 6〜8月は雨季で強風。ただし観光自体は年中可能。",
+                "note": "ケープタウンは地中海性気候のため夏（12〜2月）は乾燥・快晴が続きビーチや観光に最適。冬（6〜8月）は雨が多く強風の日も多いが、気温自体は10〜15°C程度で凍えるほどではない。テーブルマウンテンは晴れた日の午前中に登るのがおすすめ。",
                 "months": [
                     {
                         "icon": "☀️",
@@ -285,6 +287,7 @@
                 "name": "ヨハネスブルク / クルーガー国立公園",
                 "city_id": "johannesburg",
                 "best_note": "✅ ベスト（サファリ）：5月〜9月（乾季）／動物が水辺に集まり視界も開けて見やすい。10〜4月は雨季で草が茂り動物が見づらい。",
+                "note": "ヨハネスブルク・クルーガーは高原性気候で、乾季（5〜9月）は草が枯れて視界が開き、動物が少ない水場に集まるためサファリのベストシーズン。朝晩は冷え込み（5〜10°C）、早朝のゲームドライブには防寒着が必須。雨季（10〜4月）は新緑が美しく鳥類観察には適しているが、動物は分散しやすい。",
                 "months": [
                     {
                         "icon": "☔",
@@ -351,12 +354,16 @@
         ]
     },
     "budget": {
-        "plan1_label": "5泊7日（1人）",
-        "plan1_range": "25〜35万円",
-        "plan1_note": "乗り継ぎ便・中級ホテル・ケープタウン集中",
-        "plan2_label": "7泊9日（1人）",
-        "plan2_range": "35〜55万円",
-        "plan2_note": "ケープタウン＋サファリ・標準的な旅行スタイル",
+        "intro": "南アフリカは東南アジアと比べて渡航費用が高めですが、現地の物価は日本より安く、ランドが円に対して安い時期はさらにお得に旅行できます。航空券は乗り継ぎ1回が必須で早期予約が鉄則。カタール・エミレーツ航空は快適性も高くおすすめです。",
+        "plan_rows": [
+            { "label": "航空券（往復）", "eco": "15〜20万円", "std": "20〜28万円", "lux": "30万円〜" },
+            { "label": "ホテル（1泊）", "eco": "4,000〜7,000円", "std": "8,000〜18,000円", "lux": "25,000円〜" },
+            { "label": "食費（1日）", "eco": "1,500〜3,000円", "std": "3,000〜6,000円", "lux": "8,000円〜" },
+            { "label": "交通（1日）", "eco": "500〜1,500円", "std": "1,500〜3,000円", "lux": "5,000円〜" }
+        ],
+        "total_eco": "25〜35万円",
+        "total_std": "35〜50万円",
+        "total_lux": "60万円〜",
         "items": [
             {
                 "icon": "✈️",
@@ -510,6 +517,7 @@
         "special_note_html": "ヨハネスブルクやケープタウン市街地では、スマートフォンの「ひったくり」や「強盗」が報告されています。夜間の一人歩き・人通りの少ない路地は避け、移動はUber/Boltを活用してください。",
         "special_note_url": "https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_189.html",
         "special_note_url_label": "外務省 南アフリカ危険・スポット情報",
+        "flight_lead": "日本〜南アフリカ間に直行便はなく、ドーハ・ドバイ・アジスアベバなどを経由する乗り継ぎ便が必要です。合計所要時間は約17〜20時間と長距離になりますが、カタール航空・エミレーツ航空は機内サービスが充実しており、乗り継ぎ時間にドーハやドバイを観光する旅行者も多くいます。",
         "flight_intro": "日本〜南アフリカ間に直行便はなく、ドーハ・ドバイ・アジスアベバなどを経由する乗り継ぎ便を利用。合計所要時間は約17〜20時間。",
         "airlines": [
             {
@@ -534,31 +542,40 @@
             }
         ],
         "flight_tip_html": "・GW・年末年始・お盆は3〜6ヶ月前から価格が上がりやすい<br>・3〜4月・9〜10月の閑散期は比較的安値が出やすい<br>・複数サイト（Skyscanner・Google Flights等）で比較を",
-        "hotel_intro": "ケープタウンは観光の拠点となるエリアが集中しており、目的に合わせて滞在エリアを選ぼう。",
+        "hotel_map_center": { "lat": -33.9, "lng": 18.42, "zoom": 13 },
         "hotel_areas": [
             {
+                "id": "waterfront",
                 "name": "V&Aウォーターフロント周辺",
                 "tag": "観光・ショッピング向け",
                 "tag_color": "green",
                 "desc": "テーブルマウンテンを望む港湾エリア。ショッピングモール・レストラン・観光アクティビティが集中。安全性も高い。",
                 "price": "中級 10,000〜20,000円／泊　高級 25,000円〜",
-                "maps_url": "https://www.google.com/maps/place/V%26A+Waterfront,+Cape+Town"
+                "maps_url": "https://www.google.com/maps/place/V%26A+Waterfront,+Cape+Town",
+                "lat": -33.9023,
+                "lng": 18.4197
             },
             {
+                "id": "sea_point",
                 "name": "シーポイント",
                 "tag": "地元人気・コスパ良",
                 "tag_color": "green",
                 "desc": "大西洋沿いのローカルエリア。プロムナードの散歩が気持ちよく、カフェや地元レストランも充実。ウォーターフロントまで徒歩圏内。",
                 "price": "中級 7,000〜15,000円／泊",
-                "maps_url": "https://www.google.com/maps/place/Sea+Point,+Cape+Town"
+                "maps_url": "https://www.google.com/maps/place/Sea+Point,+Cape+Town",
+                "lat": -33.9108,
+                "lng": 18.3954
             },
             {
+                "id": "city_bowl",
                 "name": "シティボウル（市街中心部）",
                 "tag": "交通便利",
                 "tag_color": "",
                 "desc": "ケープタウン市街の中心。各種交通機関へのアクセスが良く観光の起点に最適。ロングストリートのバー・レストランも近い。",
                 "price": "格安 4,000〜8,000円　中級 8,000〜15,000円",
-                "maps_url": "https://www.google.com/maps/place/Cape+Town+City+Centre"
+                "maps_url": "https://www.google.com/maps/place/Cape+Town+City+Centre",
+                "lat": -33.9249,
+                "lng": 18.4241
             }
         ],
         "hotel_tip": "初めてのケープタウンはV&Aウォーターフロント〜シーポイント周辺が観光・安全・食事の三拍子揃っておすすめ。サファリはクルーガー内のSANParksキャンプか公園外のロッジを早めに予約しよう。",
@@ -620,7 +637,9 @@
         "std_daily": "1000",
         "lux_daily": "2500",
         "cash_note": "レストラン・ホテル・大型スーパーはカード払い可。現金は屋台・ローカル市場・チップ用に必要。<br>1 ZAR ≈ 7.5円で計算 ／ 節約 500・標準 1,000・ゆとり 2,500 ZAR／日",
-        "cash_small_tip_html": "💡 <strong>小額紙幣を用意しておこう</strong><br>チップやローカルマーケットでは10・20・50ZARの小額紙幣が必要。サファリガイドへのチップは1日100〜200ZAR（約750〜1,500円）が目安。",
+        "money_intro": "南アフリカの大型レストラン・ホテル・スーパーではクレジットカードが広く使えます。現金は屋台・ローカルマーケット・チップ用に必要です。空港より市内の両替所のほうがレートが良く、Wiseカードを使ったATM引き出しもおすすめです。",
+        "cash_tip_title": "小額紙幣を用意しておこう",
+        "cash_tip_body": "チップやローカルマーケットでは10・20・50ZARの小額紙幣が必要。サファリガイドへのチップは1日100〜200ZAR（約750〜1,500円）が目安。",
         "cta_title": "出発前にマナーも確認しよう！🙏",
         "cta_desc": "チップの目安・野生動物への注意・治安情報など、南アフリカ旅行者が知っておくべきポイントをまとめました。"
     },
@@ -1098,7 +1117,78 @@
                     "value": "V&Aウォーターフロント / シーポイント周辺"
                 }
             ],
-            "spots": []
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "⛰️",
+                    "num": "CPT 01",
+                    "name": "テーブルマウンテン",
+                    "desc": "標高1,086mの平頂山。ロープウェイで頂上へ上がれば、ケープタウン市街と大西洋を一望できる世界自然遺産。風が強い日は運休するため、晴れた午前中が狙い目。",
+                    "badge": "世界自然遺産",
+                    "prompt_en": "Table Mountain Cape Town flat-topped summit panoramic view, cable car, Atlantic Ocean and city below, golden hour light",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🏝️",
+                    "num": "CPT 02",
+                    "name": "ロベン島",
+                    "desc": "ネルソン・マンデラ元大統領が27年間収容されたユネスコ世界遺産の島。フェリーで30分。元受刑者がガイドを務める実体験の説明は圧倒的な迫力。",
+                    "badge": "世界遺産",
+                    "prompt_en": "Robben Island South Africa, historic prison cell, Nelson Mandela's cell, blue ocean surrounding the island",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🐧",
+                    "num": "CPT 03",
+                    "name": "ボルダーズビーチ（ケープペンギン）",
+                    "desc": "ケープタウン南部、サイモンズタウン近郊の小さなビーチにケープペンギンのコロニーが生息。岩場を自由に歩き回るペンギンを至近距離で観察できる。",
+                    "badge": "野生動物",
+                    "prompt_en": "Boulders Beach Cape Town, African penguins on granite rocks near ocean, blue sky, wildlife photography",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🌊",
+                    "num": "CPT 04",
+                    "name": "喜望峰",
+                    "desc": "かつて「嵐の岬」と呼ばれたアフリカ大陸最南西端の岬。断崖絶壁と荒波が織りなす絶景は圧巻。ケープポイント展望台からの眺めも必見。",
+                    "badge": "絶景",
+                    "prompt_en": "Cape of Good Hope dramatic cliffs, Atlantic and Indian Ocean meeting point, rugged coastline, South Africa",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🏘️",
+                    "num": "CPT 05",
+                    "name": "ボカープ地区",
+                    "desc": "カラフルな色彩の家々が並ぶケープタウンのマレー系住民地区。コバルトブルー・鮮やかなピンク・黄色の外壁が映えスポットとして人気が高い。",
+                    "badge": "映えスポット",
+                    "prompt_en": "Bo-Kaap Cape Town colorful houses, cobblestone street, bright pastel blue and pink facades, Signal Hill",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🍷",
+                    "num": "CPT 06",
+                    "name": "ステレンボッシュ（ワインランド）",
+                    "desc": "ケープタウンから約45分のワイン産地。オーク並木の美しい街並みと100以上のワイナリーが集まり、テイスティングや農場ランチが楽しめる。",
+                    "badge": "ワイン",
+                    "prompt_en": "Stellenbosch wine farm South Africa, oak-lined avenue, vineyard landscape, Cape Dutch architecture winery",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "⚓",
+                    "num": "CPT 07",
+                    "name": "V&Aウォーターフロント",
+                    "desc": "ケープタウン港を改装した大型ショッピング＆観光エリア。レストラン・マーケット・水族館が揃い、テーブルマウンテンを背景にした夜景も美しい。",
+                    "badge": "ショッピング",
+                    "prompt_en": "V&A Waterfront Cape Town harbor at night, Table Mountain backdrop, lights reflecting on water, restaurants",
+                    "image": ""
+                }
+            ]
         },
         {
             "city_id": "johannesburg",
@@ -1122,7 +1212,38 @@
                     "value": "サントン / メルローズアーチ周辺（治安◎）"
                 }
             ],
-            "spots": []
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🏛️",
+                    "num": "JHB 01",
+                    "name": "アパルトヘイト博物館",
+                    "desc": "人種隔離政策（アパルトヘイト）の歴史を映像・写真・展示物で体感できる博物館。入口から白人・非白人に分けられ、当時の現実を追体験できる。南アフリカ旅行で最も重要な見どころのひとつ。",
+                    "badge": "歴史",
+                    "prompt_en": "Apartheid Museum Johannesburg entrance, black and white archival photos exhibition, powerful historical displays",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🏘️",
+                    "num": "JHB 02",
+                    "name": "ソウェト（ヴィラカジ通り）",
+                    "desc": "マンデラとデズモンド・ツツがともに住んだ唯一の通り。マンデラ・ハウスは現在博物館として公開。ソウェト出身のガイドによるツアーが現地の空気を最もよく伝えてくれる。",
+                    "badge": "歴史",
+                    "prompt_en": "Soweto Vilakazi Street Johannesburg, Nelson Mandela's house museum, colorful township street with locals",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🌆",
+                    "num": "JHB 03",
+                    "name": "カールトンセンター展望台",
+                    "desc": "アフリカ大陸最高層ビル（223m）の最上階展望台「Top of Africa」。ヨハネスブルクの広大な市街地を360°見渡せる。入場料も安くコスパ良し。",
+                    "badge": "展望台",
+                    "prompt_en": "Top of Africa observation deck Johannesburg skyline panoramic view, Carlton Centre skyscraper, South Africa cityscape",
+                    "image": ""
+                }
+            ]
         },
         {
             "city_id": "durban",
@@ -1146,7 +1267,28 @@
                     "value": "ゴールデンマイル（ビーチフロント）周辺"
                 }
             ],
-            "spots": []
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🏖️",
+                    "num": "DBN 01",
+                    "name": "ゴールデンマイル",
+                    "desc": "ダーバン中心部に伸びる約6kmのビーチ沿いのプロムナード。サーフィン・ビーチバレー・マーケットが並び、年中温暖なインド洋を楽しめる。",
+                    "badge": "ビーチ",
+                    "prompt_en": "Durban Golden Mile beachfront promenade, Indian Ocean waves, palm trees, surfers, golden sand beach South Africa",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🕌",
+                    "num": "DBN 02",
+                    "name": "ヴィクトリアストリート・マーケット",
+                    "desc": "ダーバン最大のインド系マーケット。スパイス・布・工芸品が溢れ、バニーチョウなどのストリートフードも楽しめる。インド系文化の香りが強い独特のエリア。",
+                    "badge": "マーケット",
+                    "prompt_en": "Victoria Street Market Durban, Indian spice stalls, colorful fabric, street food vendors, South Africa",
+                    "image": ""
+                }
+            ]
         },
         {
             "city_id": "kruger",
@@ -1170,12 +1312,44 @@
                     "value": "公園内SANParksキャンプ / 公園外プライベートロッジ"
                 }
             ],
-            "spots": []
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🦁",
+                    "num": "KNP 01",
+                    "name": "サンライズ・ゲームドライブ",
+                    "desc": "夜明け前に出発し、ライオン・ヒョウなどの捕食動物が活動する時間帯を狙うドライブ。公認ガイドのオープン車で回るため、視界が広く野生の息吹を間近で感じられる。",
+                    "badge": "ベスト体験",
+                    "prompt_en": "Sunrise game drive Kruger National Park, open safari jeep with tourists, lions near acacia tree, golden savanna light",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🐘",
+                    "num": "KNP 02",
+                    "name": "ビッグファイブ探索",
+                    "desc": "ライオン・ヒョウ・ゾウ・サイ・バッファローの「ビッグファイブ」すべてが生息するクルーガー国立公園。乾季（5〜9月）は水辺に動物が集まり遭遇率が高い。",
+                    "badge": "野生動物",
+                    "prompt_en": "Big Five wildlife collage Kruger National Park, elephant, lion, leopard, rhino, buffalo on African savanna",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🌅",
+                    "num": "KNP 03",
+                    "name": "サンセット・ナイトドライブ",
+                    "desc": "夕暮れから夜にかけて行うドライブ。ハイエナ・ライオン・ナイトエイプなど夜行性動物をスポットライトで探す。昼間とは異なる野生の顔が見られる。",
+                    "badge": "オプション",
+                    "prompt_en": "Night game drive Kruger National Park, spotlight searching animals in darkness, African bush at night, safari",
+                    "image": ""
+                }
+            ]
         }
     ],
     "courses": {
         "intro": "南アフリカはケープタウンを起点に、国内線でヨハネスブルクやクルーガーへアクセスできる。初めての旅はケープタウン集中か、ケープタウン＋サファリの組み合わせがおすすめ。直行便がなく移動に時間がかかる分、現地での滞在日数を十分に確保しよう。",
         "stable_title": "ケープタウン完全攻略コース",
+        "stable_intro": "ケープタウンに絞って滞在することで移動ストレスなくじっくり観光できるプランです。テーブルマウンテン・ロベン島・ケープポイント・ワインランドと見どころが凝縮しており、5泊あれば主要スポットをほぼカバーできます。",
         "stable_plans": [
             {
                 "label": "7日間プラン",
@@ -1369,6 +1543,20 @@
             "desc": "クルーガー国立公園内は公認ガイド同乗のオープン型ゲームドライブ車が基本。早朝と夕方が動物に出会えるベストタイム。レンタカーでの自走も可能（自己責任）。",
             "affiliate": "klook",
             "is_last": true
+        }
+    ],
+    "spot_points": [
+        {
+            "title": "テーブルマウンテンは「天気次第」の運命共同体",
+            "body": "ケープタウンに来た旅行者がまず目指すのがテーブルマウンテン。しかし頂上は雲に覆われる「テーブルクロス」現象が頻繁に起き、ロープウェイも強風で運休することがある。だからこそ晴れた朝に登れたときの感動は格別で、眼下に広がる大西洋とケープタウンの街並みは「来てよかった」と心から思える景色だ。"
+        },
+        {
+            "title": "ロベン島は「生きた歴史」に出会える場所",
+            "body": "マンデラ元大統領が27年間を過ごしたロベン島は、フェリーで30分の沖合にある。驚くのは、ガイドが元受刑者であること。自らが閉じ込められた独房の前で語る言葉は、どんな教科書よりもリアルにアパルトヘイトの歴史を伝えてくれる。"
+        },
+        {
+            "title": "ビッグファイブはゲームドライブで探す",
+            "body": "ライオン・ヒョウ・ゾウ・サイ・バッファローの「ビッグファイブ」が生息するクルーガー国立公園。早朝のサンライズドライブでは、捕食動物が活動する時間帯に広大なサバンナを走り抜ける。ガイドが動物の足跡や糞を読み解きながら野生動物を探す体験は、まさに別次元のアドベンチャー。"
         }
     ],
     "food_modal_phrase_main": "I would like to order this, please.",
