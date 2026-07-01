@@ -2,6 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
 <script>
@@ -244,7 +246,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
     <div class="city-grid-wrap">
       {% for city in cities %}
-      <div class="city-item" onclick="zoomToCity('{{city.id}}')"><div style="display:flex;align-items:center;gap:6px;margin-bottom:3px"><div class="ci-name" style="margin-bottom:0">{{city.name}}</div><div class="ci-badge {{city.badge_class}}">{{city.badge}}</div></div><div class="ci-desc">{{city.description}}</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('{{city.id}}')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('{{city.id}}')"><div class="ci-name">{{city.name}}</div><div class="ci-badge {{city.badge_class}}" style="margin-bottom:5px">{{city.badge}}</div><div class="ci-desc">{{city.description}}</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('{{city.id}}')">観光地を見る →</button></div></div>
       {% endfor %}
     </div>
     </div><!-- end overflow:hidden 主要都市 -->
