@@ -861,7 +861,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         
         <li>腹巻き・整腸剤（屋台グルメの食べ過ぎ対策）</li>
         
-        <li>スカーフ・長ズボン（寺院見学時の服装用）</li>
+        <li>スカーフ・長ズボン（寺院見学時の服装用・現地調達もおすすめ）</li>
         
       </ul>
     </div>
@@ -1022,7 +1022,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 <!-- フレーズ -->
 <section id="phrases">
-  <h2>タイ語 旅行フレーズ集</h2>
+  <h2>旅行フレーズ集</h2>
+  
+  
+  <div class="phrase-deck" data-deck-id="th" >
   <div class="s-card">
   <table class="phrase-tbl">
     <tr><th>日本語</th><th>タイ語 / 読み方</th><th style="width:38px"></th></tr>
@@ -1085,6 +1088,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
   </table>
   </div>
+  </div>
+  
   <div class="tab-cta">
     <div class="tab-cta-title">出発前に持ち物もチェックしよう！</div>
     <p class="tab-cta-desc">SIM・変換プラグ・保険まで、忘れがちな持ち物を一覧にまとめました。</p>
@@ -2362,6 +2367,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div><!-- /container -->
 
 <script>
+function filterPhraseDeck(deckId, btn) {
+  document.querySelectorAll('#phrase-deck-tabs .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.phrase-deck').forEach(d => {
+    d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
+  });
+}
 let _phraseAudio = null;
 let _phraseBtn = null;
 function playPhrase(file, btn) {

@@ -611,11 +611,20 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 <!-- フレーズ -->
 <section id="phrases">
-  <h2>{{phrases.language_name}} 旅行フレーズ集</h2>
+  <h2>旅行フレーズ集</h2>
+  {% if phrases.multi %}
+  <div class="filter-row" id="phrase-deck-tabs" style="margin-bottom:12px">
+    {% for deck in phrases.decks %}
+    <button class="filter-btn {% if deck.active %}active{% endif %}" data-deck="{{deck.id}}" onclick="filterPhraseDeck('{{deck.id}}',this)">{{deck.language_name}}</button>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% for deck in phrases.decks %}
+  <div class="phrase-deck" data-deck-id="{{deck.id}}" {% if not deck.active %}style="display:none"{% endif %}>
   <div class="s-card">
   <table class="phrase-tbl">
-    <tr><th>日本語</th><th>{{phrases.language_name}} / 読み方</th><th style="width:38px"></th></tr>
-    {% for cat in phrases.categories %}
+    <tr><th>日本語</th><th>{{deck.language_name}} / 読み方</th><th style="width:38px"></th></tr>
+    {% for cat in deck.categories %}
     <tr class="cat-hdr"><td colspan="3">{{cat.label}}</td></tr>
     {% for item in cat.items %}
     <tr><td class="jp">{{item.jp}}</td><td class="ms">{{item.foreign}}<span class="roma">{{item.reading}}</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('{{item.audio}}',this)">▶</button></td></tr>
@@ -623,6 +632,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     {% endfor %}
   </table>
   </div>
+  </div>
+  {% endfor %}
   <div class="tab-cta">
     <div class="tab-cta-title">出発前に持ち物もチェックしよう！</div>
     <p class="tab-cta-desc">SIM・変換プラグ・保険まで、忘れがちな持ち物を一覧にまとめました。</p>
@@ -800,6 +811,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div><!-- /container -->
 
 <script>
+function filterPhraseDeck(deckId, btn) {
+  document.querySelectorAll('#phrase-deck-tabs .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.phrase-deck').forEach(d => {
+    d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
+  });
+}
 let _phraseAudio = null;
 let _phraseBtn = null;
 function playPhrase(file, btn) {

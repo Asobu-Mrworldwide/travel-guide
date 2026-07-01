@@ -1012,7 +1012,18 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 <!-- フレーズ -->
 <section id="phrases">
-  <h2>英語 旅行フレーズ集</h2>
+  <h2>旅行フレーズ集</h2>
+  
+  <div class="filter-row" id="phrase-deck-tabs" style="margin-bottom:12px">
+    
+    <button class="filter-btn active" data-deck="en" onclick="filterPhraseDeck('en',this)">英語</button>
+    
+    <button class="filter-btn " data-deck="zu" onclick="filterPhraseDeck('zu',this)">ズールー語</button>
+    
+  </div>
+  
+  
+  <div class="phrase-deck" data-deck-id="en" >
   <div class="s-card">
   <table class="phrase-tbl">
     <tr><th>日本語</th><th>英語 / 読み方</th><th style="width:38px"></th></tr>
@@ -1029,6 +1040,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <tr><td class="jp">はじめまして</td><td class="ms">Nice to meet you!<span class="roma">ナイス トゥ ミート ユー！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('nice-to-meet.mp3',this)">▶</button></td></tr>
     
+    <tr><td class="jp">綺麗ですね！</td><td class="ms">This is beautiful!<span class="roma">ディス イズ ビューティフル！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
     
     <tr class="cat-hdr"><td colspan="3">🙏 基本表現</td></tr>
     
@@ -1043,6 +1056,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <tr><td class="jp">わかりません</td><td class="ms">I don't understand<span class="roma">アイ ドント アンダースタンド</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('dont-understand.mp3',this)">▶</button></td></tr>
     
     <tr><td class="jp">もう一度言ってください</td><td class="ms">Could you say that again?<span class="roma">クッジュ セイ ダット アゲン？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('say-again.mp3',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">名前は〜です</td><td class="ms">My name is ~.<span class="roma">マイ ネーム イズ〜</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">日本人です</td><td class="ms">I'm from Japan.<span class="roma">アイム フロム ジャパン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
     
     
     <tr class="cat-hdr"><td colspan="3">🍽️ レストラン・ショッピング</td></tr>
@@ -1061,6 +1078,15 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <tr><td class="jp">おいしい！</td><td class="ms">This is delicious!<span class="roma">ディス イズ デリシャス！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('delicious.mp3',this)">▶</button></td></tr>
     
+    <tr><td class="jp">高い、安くしてください</td><td class="ms">That's expensive. Can you lower the price?<span class="roma">ザッツ イクスペンシブ。キャン ユー ロワー ザ プライス？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    
+    <tr class="cat-hdr"><td colspan="3">🔢 数字</td></tr>
+    
+    <tr><td class="jp">0〜5</td><td class="ms">Zero・One・Two・Three・Four・Five<span class="roma">ゼロ・ワン・トゥー・スリー・フォー・ファイブ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">6〜10</td><td class="ms">Six・Seven・Eight・Nine・Ten<span class="roma">シックス・セブン・エイト・ナイン・テン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
     
     <tr class="cat-hdr"><td colspan="3">🦒 サファリ・観光</td></tr>
     
@@ -1075,6 +1101,86 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
   </table>
   </div>
+  </div>
+  
+  <div class="phrase-deck" data-deck-id="zu" >
+  <div class="s-card">
+  <table class="phrase-tbl">
+    <tr><th>日本語</th><th>ズールー語 / 読み方</th><th style="width:38px"></th></tr>
+    
+    <tr class="cat-hdr"><td colspan="3">👋 あいさつ</td></tr>
+    
+    <tr><td class="jp">こんにちは</td><td class="ms">Sawubona!<span class="roma">サウボナ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">お元気ですか？</td><td class="ms">Unjani?<span class="roma">ウンジャニ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">元気です、ありがとう</td><td class="ms">Ngiyaphila, ngiyabonga.<span class="roma">ンギヤピラ、ンギヤボンガ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">さようなら</td><td class="ms">Sala kahle!<span class="roma">サラ カーレ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">はじめまして</td><td class="ms">Ngiyajabula ukukwazi.<span class="roma">ンギヤジャブラ ウクゥワジ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">綺麗ですね！</td><td class="ms">Kuhle kakhulu!<span class="roma">クーレ カークル！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    
+    <tr class="cat-hdr"><td colspan="3">🙏 基本表現</td></tr>
+    
+    <tr><td class="jp">ありがとう</td><td class="ms">Ngiyabonga<span class="roma">ンギヤボンガ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">すみません</td><td class="ms">Ngiyaxolisa<span class="roma">ンギヤショリサ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">ごめんなさい</td><td class="ms">Ngicela ungixolele.<span class="roma">ンギチェラ ウンギショレレ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">はい / いいえ</td><td class="ms">Yebo / Cha<span class="roma">イェボ / チャ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">わかりません</td><td class="ms">Angizwa.<span class="roma">アンギズワ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">もう一度言ってください</td><td class="ms">Ngicela uphinde.<span class="roma">ンギチェラ ウピンデ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">名前は〜です</td><td class="ms">Igama lami ngu~.<span class="roma">イガマ ラミ ング〜</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">日本人です</td><td class="ms">Ngivela eJapan.<span class="roma">ンギヴェラ エジャパン</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    
+    <tr class="cat-hdr"><td colspan="3">🍽️ レストラン・ショッピング</td></tr>
+    
+    <tr><td class="jp">これをください</td><td class="ms">Ngicela lokhu.<span class="roma">ンギチェラ ロク</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">お会計をお願いします</td><td class="ms">Ngicela ibhili.<span class="roma">ンギチェラ イビリ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">いくらですか？</td><td class="ms">Kubiza malini?<span class="roma">クビザ マリニ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">トイレはどこですか？</td><td class="ms">Likuphi ithoyilethi?<span class="roma">リクピ イトヨレティ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">辛くしないでください</td><td class="ms">Ngicela ungabeki opeppile.<span class="roma">ンギチェラ ウンガベキ オペッピレ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">おいしい！</td><td class="ms">Kumnandi!<span class="roma">クムナンディ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">高い、安くしてください</td><td class="ms">Kubiza kakhulu, ngicela ushiphaze.<span class="roma">クビザ カークル、ンギチェラ ウシパゼ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    
+    <tr class="cat-hdr"><td colspan="3">🔢 数字</td></tr>
+    
+    <tr><td class="jp">0〜5</td><td class="ms">Iqanda・Kunye・Kubili・Kuthathu・Kune・Kuhlanu<span class="roma">イクアンダ・クニェ・クビリ・クタトゥ・クネ・クーラヌ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">6〜10</td><td class="ms">Isithupha・Isikhombisa・Isishiyagalombili・Isishiyagalolunye・Ishumi<span class="roma">イシトゥパ・イシコンビサ・イシシヤガロンビリ・イシシヤガロルニェ・イシュミ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    
+    <tr class="cat-hdr"><td colspan="3">🦒 サファリ・観光</td></tr>
+    
+    <tr><td class="jp">チケットを1枚ください</td><td class="ms">Ngicela ithikithi elilodwa.<span class="roma">ンギチェラ イティキティ エリロドワ</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">写真を撮ってもいいですか？</td><td class="ms">Ngingathatha isithombe?<span class="roma">ンギンガタタ イシトンベ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">安全ですか？</td><td class="ms">Kuphephile?<span class="roma">クペピレ？</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    <tr><td class="jp">助けてください！</td><td class="ms">Ngisize!<span class="roma">ンギシゼ！</span></td><td class="audio-td"><button class="play-btn" onclick="playPhrase('',this)">▶</button></td></tr>
+    
+    
+  </table>
+  </div>
+  </div>
+  
   <div class="tab-cta">
     <div class="tab-cta-title">出発前に持ち物もチェックしよう！</div>
     <p class="tab-cta-desc">SIM・変換プラグ・保険まで、忘れがちな持ち物を一覧にまとめました。</p>
@@ -1926,6 +2032,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div><!-- /container -->
 
 <script>
+function filterPhraseDeck(deckId, btn) {
+  document.querySelectorAll('#phrase-deck-tabs .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.phrase-deck').forEach(d => {
+    d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
+  });
+}
 let _phraseAudio = null;
 let _phraseBtn = null;
 function playPhrase(file, btn) {
