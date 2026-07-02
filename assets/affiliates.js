@@ -4,52 +4,14 @@
  * データは affiliates-data.js で管理。
  * このファイルは基本的に編集不要。
  *
- * 【案A 現在】テキストリンクはPCホバーでツールチップ表示
- * 【案B 将来】affiliates-data.js の url を内部紹介ページに変えるだけで移行完了
+ * テキストリンクはホバーツールチップなしのシンプルな直接リンク。
+ * 【将来】affiliates-data.js の url を内部紹介ページに変えるだけで移行完了
  */
 
 /* =====================================================
    CSS
    ===================================================== */
 const AFFILIATES_CSS = `
-
-/* ── テキストリンク ツールチップ ── */
-.aff-wrap{position:relative;display:block;width:100%}
-.aff-wrap.inline{display:inline;width:auto}
-.aff-tooltip{
-  position:absolute;
-  bottom:calc(100% + 10px);
-  right:0;left:auto;
-  width:240px;
-  background:#fff;
-  border:1px solid #dde2e8;
-  border-radius:6px;
-  padding:14px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.13);
-  z-index:1000;
-  opacity:0;pointer-events:none;
-  transition:opacity 0.15s ease;
-  text-align:left;white-space:normal;line-height:1.5;
-}
-.aff-tooltip::after{
-  content:'';position:absolute;
-  top:100%;right:20px;left:auto;
-  border:7px solid transparent;
-  border-top-color:#fff;
-  filter:drop-shadow(0 2px 0 #dde2e8);
-}
-.aff-tooltip.visible{opacity:1;pointer-events:auto}
-.aff-tooltip-name{font-size:0.78em;font-weight:900;color:#1a3a5c;margin-bottom:5px}
-.aff-tooltip-desc{font-size:0.73em;color:#555;line-height:1.65;margin-bottom:10px}
-.aff-tooltip-btn{
-  display:block;text-align:center;
-  background:#006847;color:#fff;
-  font-size:0.73em;font-weight:700;
-  padding:6px 12px;border-radius:20px;
-  text-decoration:none;transition:background 0.15s;
-}
-.aff-tooltip-btn:hover{background:#004d33}
-@media(hover:none){.aff-tooltip{display:none}}
 
 /* ── 説明カード ── */
 .aff-card{
@@ -163,34 +125,13 @@ function initAffiliates() {
     if (!aff) { console.warn('affiliates.js: unknown key →', key); return; }
 
     const linkClass = el.dataset.affiliateClass || 'budget-link';
-    const isInline  = !!el.dataset.affiliateClass;
 
     const a = document.createElement('a');
     a.href = aff.url; a.target = '_blank'; a.rel = 'noopener';
     a.className = linkClass;
-    a.textContent = aff.label;
+    a.textContent = el.dataset.affiliateLabel || aff.label;
 
-    const tooltip = document.createElement('div');
-    tooltip.className = 'aff-tooltip';
-    tooltip.innerHTML = `
-      <div class="aff-tooltip-name">${aff.name}</div>
-      <div class="aff-tooltip-desc">${aff.desc || ''}</div>
-      <a href="${aff.url}" target="_blank" rel="noopener" class="aff-tooltip-btn">${aff.btn || '詳しく見る →'}</a>`;
-
-    const wrap = document.createElement('div');
-    wrap.className = 'aff-wrap' + (isInline ? ' inline' : '');
-    wrap.appendChild(a);
-    wrap.appendChild(tooltip);
-
-    let hideTimer;
-    const show = () => { clearTimeout(hideTimer); tooltip.classList.add('visible'); };
-    const hide = () => { hideTimer = setTimeout(() => tooltip.classList.remove('visible'), 120); };
-    wrap.addEventListener('mouseenter', show);
-    wrap.addEventListener('mouseleave', hide);
-    tooltip.addEventListener('mouseenter', show);
-    tooltip.addEventListener('mouseleave', hide);
-
-    el.replaceWith(wrap);
+    el.replaceWith(a);
   });
 
   // ── 説明カード ──

@@ -383,24 +383,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       </div>
       <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px">
-      <div style="text-align:center;background:#e8f0fb;border-radius:10px;padding:10px 6px;border:1px solid #aac0e8">
-        <div style="font-size:0.62em;color:#2a5ca8;font-weight:600;margin-bottom:5px">節約</div>
-        <div id="eco-cur" style="font-size:0.9em;font-weight:700;color:#2a5ca8">-</div>
-        <div id="eco-jpy" style="font-size:0.78em;color:#2a5ca8;margin-top:3px">-</div>
-      </div>
-      <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:10px 6px;border:1px solid #a8d5b5">
-        <div style="font-size:0.62em;color:var(--green);font-weight:600;margin-bottom:5px">標準</div>
-        <div id="std-cur" style="font-size:0.9em;font-weight:700;color:var(--green)">-</div>
-        <div id="std-jpy" style="font-size:0.78em;color:var(--green);margin-top:3px">-</div>
-      </div>
-      <div style="text-align:center;background:#fdf6e3;border-radius:10px;padding:10px 6px;border:1px solid #e0c97a">
-        <div style="font-size:0.62em;color:#8a6a00;font-weight:600;margin-bottom:5px">こだわり派</div>
-        <div id="lux-cur" style="font-size:0.9em;font-weight:700;color:#8a6a00">-</div>
-        <div id="lux-jpy" style="font-size:0.78em;color:#8a6a00;margin-top:3px">-</div>
-      </div>
+    <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:16px 12px;border:1px solid #a8d5b5;margin-bottom:12px">
+      <div style="font-size:0.68em;color:var(--green);font-weight:600;margin-bottom:6px">現金の目安</div>
+      <div id="cash-range-cur" style="font-size:1.2em;font-weight:700;color:var(--green)">-</div>
+      <div id="cash-range-jpy" style="font-size:0.8em;color:var(--green);margin-top:4px">-</div>
     </div>
     <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">{{practical.cash_note}}</div>
+    <div style="font-size:0.75em;color:var(--sub);line-height:1.8;text-align:center;margin-top:8px">足りなくなっても、<span data-affiliate="wise" data-affiliate-class="inline-affiliate-link" data-affiliate-label="Wiseカード"></span>なら現地ATMで気軽に引き出せて安心です。</div>
     </div>
   </div>
   <div class="season-tip-box"><span class="season-tip-title">{{icon:banknote}} {{practical.cash_tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.cash_tip_body}}</p></div>
@@ -498,10 +487,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:tip}} 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
 
-  <h2 id="sim">SIM・Wi-Fi</h2>
-  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 4px">海外用SIMを探すと選択肢が多すぎて何を選べばいいか迷いますよね。現地でSIMを買う方法もありますが、限られた滞在時間を削ってショップを探すのはもったいない。やっぱり出発前に準備しておくのが正解です。渡航先・日数・データ容量に合わせて、下記のeSIMサービスから選んでみてください。</p>
-  <div data-affiliate-box="sim"></div>
-
     {{custom_bottom_budget}}
   <div class="s-card" style="text-align:center;margin-top:24px;border-radius:6px">
     <div style="font-size:1em;font-weight:900;color:var(--green);margin-bottom:6px">さあ、旅の準備をはじめよう！</div>
@@ -584,6 +569,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
 
   <div class="s-card" data-affiliate-card="klook" style="margin-top:16px"></div>
+
+  <h2 id="sim">SIM・Wi-Fi</h2>
+  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 4px">海外用SIMを探すと選択肢が多すぎて何を選べばいいか迷いますよね。現地でSIMを買う方法もありますが、限られた滞在時間を削ってショップを探すのはもったいない。やっぱり出発前に準備しておくのが正解です。渡航先・日数・データ容量に合わせて、下記のeSIMサービスから選んでみてください。</p>
+  <div data-affiliate-box="sim"></div>
 
   <h2>現地交通ガイド</h2>
   <div class="s-card">
@@ -841,19 +830,14 @@ function playPhrase(file, btn) {
 let cashDays = 5;
 const CURRENCY = '{{practical.currency_code}}';
 const RATE = {{practical.exchange_rate}};
-const ECO_DAILY = {{practical.eco_daily}};
-const STD_DAILY = {{practical.std_daily}};
-const LUX_DAILY = {{practical.lux_daily}};
+const CASH_LOW = {{practical.cash_daily_low}};
+const CASH_HIGH = {{practical.cash_daily_high}};
 function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
-  const eco = cashDays * ECO_DAILY, std = cashDays * STD_DAILY, lux = cashDays * LUX_DAILY;
+  const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;
   document.getElementById('cash-days').textContent = cashDays;
-  document.getElementById('eco-cur').textContent = eco.toLocaleString() + ' ' + CURRENCY;
-  document.getElementById('eco-jpy').textContent = '約' + Math.round(eco * RATE / 1000) + ',000円';
-  document.getElementById('std-cur').textContent = std.toLocaleString() + ' ' + CURRENCY;
-  document.getElementById('std-jpy').textContent = '約' + Math.round(std * RATE / 1000) + ',000円';
-  document.getElementById('lux-cur').textContent = lux.toLocaleString() + ' ' + CURRENCY;
-  document.getElementById('lux-jpy').textContent = '約' + Math.round(lux * RATE / 1000) + ',000円';
+  document.getElementById('cash-range-cur').textContent = low.toLocaleString() + '〜' + high.toLocaleString() + ' ' + CURRENCY;
+  document.getElementById('cash-range-jpy').textContent = '約' + Math.round(low * RATE / 1000) + ',000〜' + Math.round(high * RATE / 1000) + ',000円';
 }
 changeDays(0);
 

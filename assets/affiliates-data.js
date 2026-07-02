@@ -77,6 +77,38 @@ const AFFILIATES = {
     url:   'https://www.klook.com/ja/'
   },
 
+  uber: {
+    name:  'Uber',
+    label: 'Uberをダウンロード →',
+    desc:  '配車アプリ。乗車前に料金が確定するためぼったくりゼロ。出発前にインストールしておこう。',
+    btn:   '公式サイトを見る →',
+    url:   'https://www.uber.com/us/en/download/'
+  },
+
+  google_maps: {
+    name:  'Googleマップ',
+    label: 'Googleマップを開く →',
+    desc:  '出発前に訪問エリアをオフラインDLしておくと、電波が入らない場所でも安心。',
+    btn:   '公式サイトを見る →',
+    url:   'https://maps.google.com/'
+  },
+
+  google_translate: {
+    name:  'Google翻訳',
+    label: 'Google翻訳を開く →',
+    desc:  '現地語の看板やメニューもカメラ翻訳で読み取れる。言語パックを事前にDLしておけばオフラインでも使える。',
+    btn:   '公式サイトを見る →',
+    url:   'https://translate.google.com/'
+  },
+
+  whatsapp: {
+    name:  'WhatsApp',
+    label: 'WhatsAppをダウンロード →',
+    desc:  '現地でのメッセージ・通話に広く使われるアプリ。ホテルやツアー会社との連絡にも使うことが多い。',
+    btn:   '公式サイトを見る →',
+    url:   'https://www.whatsapp.com/download'
+  },
+
 
 };
 
