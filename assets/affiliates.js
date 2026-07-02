@@ -144,14 +144,18 @@ function initAffiliates() {
     card.className = 'aff-card';
     card.innerHTML = `
       <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
+        ${c.logo ? `
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="line-height:1">${c.logo}</div>
+          <div class="aff-card-tagline">${c.tagline}</div>
+        </div>` : `
         <div style="display:flex;align-items:center;gap:10px">
           <span class="aff-card-icon">${c.icon}</span>
           <div>
             <div class="aff-card-name">${c.name}</div>
             <div class="aff-card-tagline">${c.tagline}</div>
           </div>
-        </div>
-        ${c.logo ? `<div style="flex-shrink:0;line-height:1">${c.logo}</div>` : ''}
+        </div>`}
       </div>
       <div class="aff-card-body">
         ${c.desc ? `<p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:0 0 12px">${c.desc}</p>` : ''}
@@ -180,14 +184,18 @@ function initAffiliates() {
     inner.className = 'aff-card-inner';
     inner.innerHTML = `
       <div class="aff-card-header" style="padding:0 0 10px;border-bottom:none;display:flex;align-items:center;justify-content:space-between">
+        ${c.logo ? `
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="line-height:1">${c.logo}</div>
+          <div class="aff-card-tagline">${c.tagline}</div>
+        </div>` : `
         <div style="display:flex;align-items:center;gap:10px">
           <span class="aff-card-icon">${c.icon}</span>
           <div>
             <div class="aff-card-name">${c.name}</div>
             <div class="aff-card-tagline">${c.tagline}</div>
           </div>
-        </div>
-        ${c.logo ? `<div style="flex-shrink:0;line-height:1">${c.logo}</div>` : ''}
+        </div>`}
       </div>
       <ul class="aff-card-points">
         ${c.points.map(p => `<li>${p}</li>`).join('')}
