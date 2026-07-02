@@ -77,6 +77,14 @@ const AFFILIATES = {
     url:   'https://www.klook.com/ja/'
   },
 
+  getyourguide: {
+    name:  'GetYourGuide',
+    label: 'GetYourGuideでツアーを探す →',
+    desc:  '欧州・アフリカ方面に強い世界最大級のツアー予約サイト。日本語表示・日本円決済に対応。',
+    btn:   'GetYourGuideを見る →',
+    url:   'https://www.getyourguide.jp/'
+  },
+
   uber: {
     name:  'Uber',
     label: 'Uberをダウンロード →',
@@ -176,8 +184,27 @@ const BOOKING_BOXES = {
 /* =====================================================
    説明カード定義
    新しいサービスをここに追加 → HTML に1行書くだけで表示される
+   ツアー予約カードは国JSONの practical.tour_platform で切替
+   （アジア圏=klook / アフリカ・中央アジア圏=getyourguide）
    ===================================================== */
 const AFFILIATE_CARDS = {
+
+  getyourguide: {
+    icon:    '🌍',
+    name:    'GetYourGuide',
+    tagline: '世界最大級のツアー・アクティビティ予約サイト',
+    desc:    'ヨーロッパ・アフリカ・中央アジア方面のツアーに強い予約サイト。現地発の日帰りツアーやガイド付き観光を日本語で予約できる。',
+    points: [
+      '欧州・アフリカ・中央アジアのツアーが豊富',
+      '日本語表示・日本円決済に対応',
+      '多くのプランが24時間前まで無料キャンセル可',
+      '口コミ評価でツアー会社を比較して選べる',
+    ],
+    note:  '※ 人気ツアーはハイシーズン前に売り切れることも',
+    btn:   'GetYourGuideでツアーを探す →',
+    url:   'https://www.getyourguide.jp/',
+    color: '#ff5533',
+  },
 
   wise: {
     icon:    '<svg xmlns="http://www.w3.org/2000/svg" width="1.1em" height="1.1em" viewBox="0 0 51 50" style="vertical-align:-0.15em;border-radius:6px;background:#9fe870"><path d="M13.8,15.4L0,31.5h24.7l2.8-7.6H16.9l6.5-7.5l0-0.2L19.2,9h18.9L23.4,49.3h10L51.1,0.7H5.4L13.8,15.4z" fill="#163300"/></svg>',
