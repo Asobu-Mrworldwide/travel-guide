@@ -187,9 +187,9 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div style="overflow:hidden">
     <div style="position:relative">
       <div id="taiwan-map" style="width:100%;height:300px"></div>
-      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;z-index:10">
-        <a id="map-open-btn" href="#" target="_blank" style="display:none;background:var(--green);color:#fff;font-size:0.82em;font-weight:700;padding:8px 16px;border-radius:24px;text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,0.3);white-space:nowrap;align-items:center;gap:6px"></a>
-        <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2)">← 台湾全体に戻る</button>
+      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:row;align-items:center;gap:8px;z-index:10">
+        <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2);white-space:nowrap">← 台湾全体に戻る</button>
+        <a id="map-open-btn" href="#" target="_blank" style="display:none;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px);white-space:nowrap;align-items:center"></a>
       </div>
     </div>
     <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
@@ -242,7 +242,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         document.getElementById('taiwan-map').scrollIntoView({ behavior:'smooth', block:'center' });
         const btn = document.getElementById('map-open-btn');
         btn.href = `https://www.google.com/maps/search/?api=1&query=${city.lat},${city.lng}`;
-        btn.textContent = `📍 ${city.name}をGoogleマップで開く →`;
+        btn.textContent = `${city.name}をGoogleマップで開く →`;
         btn.style.display = 'flex';
         document.getElementById('map-reset-btn').style.display = 'inline-block';
       }
@@ -2063,7 +2063,7 @@ function showFilteredSpots(city) {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     isMultiTouch = e.touches.length > 1;
-    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#taiwan-map'));
+    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#taiwan-map') || e.target.closest('#hotel-map'));
   }, { passive: true });
 
   document.addEventListener('touchmove', e => {
