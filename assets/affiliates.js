@@ -137,6 +137,9 @@ const AFFILIATES_CSS = `
 .btn-expedia{background-color:#1f4985;border-bottom:3px solid #122f59}
 .btn-skyscanner{background-color:#0770e3;border-bottom:3px solid #054f9e}
 .btn-googleflights{background-color:#4285f4;border-bottom:3px solid #2f5fb8}
+.btn-trifa{background-color:#3d5afe;border-bottom:3px solid #2a3ecc}
+.btn-airalo{background-color:#6c4ff6;border-bottom:3px solid #4c34c2}
+.btn-holafly{background-color:#ff5a36;border-bottom:3px solid #cc3e1f}
 @media(min-width:576px){
   .booking-buttons{flex-direction:row}
   .btn-booking{flex:1}

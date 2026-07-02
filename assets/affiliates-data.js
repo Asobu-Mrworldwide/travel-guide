@@ -106,6 +106,15 @@ const BOOKING_BOXES = {
     ]
   },
 
+  sim: {
+    title: '海外用eSIM・SIMサービスをチェックする',
+    buttons: [
+      { className: 'btn-trifa',   label: 'trifaで見る →',   url: 'https://trifa.jp/' },
+      { className: 'btn-airalo',  label: 'Airaloで見る →',  url: 'https://www.airalo.com/' },
+      { className: 'btn-holafly', label: 'Holaflyで見る →', url: 'https://esim.holafly.com/ja/' },
+    ]
+  },
+
 };
 
 /* =====================================================
