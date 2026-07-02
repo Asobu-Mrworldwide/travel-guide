@@ -93,6 +93,55 @@ const AFFILIATES_CSS = `
   text-decoration:none;transition:opacity 0.15s;
 }
 .aff-card-btn:hover{opacity:0.85}
+
+/* ── 予約ボタンボックス ── */
+.booking-box{
+  margin:20px 0;
+  padding:16px;
+  background-color:#f8f9fa;
+  border-radius:8px;
+  border:1px solid #e9ecef;
+}
+.booking-title{
+  margin-top:0;
+  margin-bottom:12px;
+  font-size:14px;
+  font-weight:bold;
+  color:#495057;
+  text-align:center;
+}
+.booking-buttons{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.btn-booking{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:44px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  color:#ffffff;
+  transition:opacity 0.2s ease, transform 0.1s ease;
+  width:100%;
+}
+.btn-booking:hover, .btn-booking:active{
+  opacity:0.85;
+  transform:translateY(-1px);
+}
+.btn-agoda{background-color:#202636;border-bottom:3px solid #111520}
+.btn-bookingcom{background-color:#003580;border-bottom:3px solid #002254}
+.btn-expedia{background-color:#1f4985;border-bottom:3px solid #122f59}
+.btn-skyscanner{background-color:#0770e3;border-bottom:3px solid #054f9e}
+.btn-googleflights{background-color:#4285f4;border-bottom:3px solid #2f5fb8}
+@media(min-width:576px){
+  .booking-buttons{flex-direction:row}
+  .btn-booking{flex:1}
+  .booking-title{text-align:left}
+}
 `;
 
 /* =====================================================
@@ -206,6 +255,23 @@ function initAffiliates() {
       </a>`;
 
     el.replaceWith(inner);
+  });
+
+  // ── 予約ボタンボックス ──
+  document.querySelectorAll('[data-affiliate-box]').forEach(el => {
+    const key = el.dataset.affiliateBox;
+    const box = BOOKING_BOXES[key];
+    if (!box) { console.warn('affiliates.js: unknown booking box key →', key); return; }
+
+    const wrap = document.createElement('div');
+    wrap.className = 'booking-box';
+    wrap.innerHTML = `
+      <p class="booking-title">${box.title}</p>
+      <div class="booking-buttons">
+        ${box.buttons.map(b => `<a href="${b.url}" target="_blank" rel="noopener" class="btn-booking ${b.className}">${b.label}</a>`).join('')}
+      </div>`;
+
+    el.replaceWith(wrap);
   });
 }
 

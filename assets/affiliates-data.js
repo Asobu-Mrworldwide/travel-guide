@@ -81,6 +81,34 @@ const AFFILIATES = {
 };
 
 /* =====================================================
+   予約ボタンボックス定義
+   複数の予約サイトへ横並びボタンで直接リンクする形式。
+   HTML: <div data-affiliate-box="hotels"></div>
+   url はまだアフィリエイトリンク未発行のため公式トップページを仮設定中。
+   発行され次第ここのurlだけ差し替えれば全国ページに反映される。
+   ===================================================== */
+const BOOKING_BOXES = {
+
+  hotels: {
+    title: 'ホテル予約サイトを比較する',
+    buttons: [
+      { className: 'btn-agoda',      label: 'Agodaで見る →',      url: 'https://www.agoda.com/' },
+      { className: 'btn-bookingcom', label: 'Booking.comで見る →', url: 'https://www.booking.com/' },
+      { className: 'btn-expedia',    label: 'Expediaで見る →',     url: 'https://www.expedia.com/' },
+    ]
+  },
+
+  flights: {
+    title: '航空券を比較サイトでチェックする',
+    buttons: [
+      { className: 'btn-skyscanner',   label: 'Skyscannerで見る →',    url: 'https://www.skyscanner.jp/' },
+      { className: 'btn-googleflights', label: 'Google Flightsで見る →', url: 'https://www.google.com/travel/flights' },
+    ]
+  },
+
+};
+
+/* =====================================================
    説明カード定義
    新しいサービスをここに追加 → HTML に1行書くだけで表示される
    ===================================================== */
