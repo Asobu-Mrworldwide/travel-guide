@@ -731,7 +731,7 @@
                 "name": "Google マップ",
                 "type_label": "地図・ナビ（オフライン対応）",
                 "desc": "出発前にバンコク・訪問エリアをオフラインDLしておこう。BTSやMRTの乗り換えナビにも対応。",
-                "affiliate": "",
+                "affiliate": "google_maps",
                 "is_last": false
             },
             {
@@ -739,7 +739,7 @@
                 "name": "Google 翻訳",
                 "type_label": "翻訳・カメラ翻訳",
                 "desc": "タイ語メニューや看板をカメラで写すだけで翻訳できる。タイ語パックを事前にDLしておけばオフラインでも使える。",
-                "affiliate": "",
+                "affiliate": "google_translate",
                 "is_last": false
             },
             {
@@ -763,9 +763,12 @@
         "money_intro": "タイでは屋台やローカル交通は現金払いが基本ですが、ホテルやショッピングモールではクレジットカードも広く使えます。現地通貨バーツへの両替は空港より市内の両替所（スーパーリッチなど）のほうがレートが良い場合が多く、少額を空港で崩してから市内で両替するのがおすすめです。",
         "currency_code": "THB",
         "exchange_rate": "4.9",
-        "cash_daily_low": "500",
-        "cash_daily_high": "3000",
-        "cash_note": "レストラン・ホテルはカード払い可。現金は主に屋台・ローカルマーケット・チップ・トゥクトゥクでの支払い用。<br>1 THB ≈ 4.9円で計算",
+        "cash_dependency": "中",
+        "cash_dependency_color": "#b09000",
+        "cash_dependency_note": "屋台・市場・トゥクトゥクは現金、ホテル・モールはカードOK",
+        "cash_daily_low": "300",
+        "cash_daily_high": "1500",
+        "cash_note": "1 THB ≈ 4.9円で計算",
         "cash_tip_title": "💡 小額紙幣を用意しておこう",
         "cash_tip_body": "屋台・トゥクトゥク・ローカルマーケットではお釣りが出ないことが多い。20THB・50THB・100THBの小額紙幣を多めに準備しておくとスムーズ。",
         "cta_title": "出発前にマナーも確認しよう！🙏",

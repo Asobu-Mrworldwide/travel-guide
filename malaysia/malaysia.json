@@ -711,7 +711,7 @@
                 "name": "Google マップ",
                 "type_label": "地図・ナビ（オフライン対応）",
                 "desc": "出発前にクアラルンプール・訪問エリアをオフラインDLしておこう。Wi-Fiなしでも地図・ナビが使えて安心。",
-                "affiliate": "",
+                "affiliate": "google_maps",
                 "is_last": false
             },
             {
@@ -719,7 +719,7 @@
                 "name": "Google 翻訳",
                 "type_label": "翻訳・カメラ翻訳",
                 "desc": "メニューや看板をカメラで写すだけで翻訳できる。マレー語パックを事前にDLしておけばオフラインでもテキスト翻訳が使える。",
-                "affiliate": "",
+                "affiliate": "google_translate",
                 "is_last": false
             },
             {
@@ -727,7 +727,7 @@
                 "name": "WhatsApp",
                 "type_label": "メッセージ・現地連絡",
                 "desc": "マレーシアでのメッセージアプリはWhatsAppが主流。ホテル・ツアー会社の予約確認もWhatsApp経由が多い。出発前にインストールしておこう。",
-                "affiliate": "",
+                "affiliate": "whatsapp",
                 "is_last": true
             }
         ],
@@ -742,9 +742,12 @@
         ],
         "currency_code": "MYR",
         "exchange_rate": "40",
-        "cash_daily_low": "50",
-        "cash_daily_high": "200",
-        "cash_note": "レストラン・Grab・ホテルはカード払い可。現金は主に屋台・ローカル市場・お土産屋での支払い用。<br>1 MYR ≈ 40円で計算",
+        "cash_dependency": "低",
+        "cash_dependency_color": "#006847",
+        "cash_dependency_note": "QR決済大国。市場や屋台でもキャッシュレスが主流",
+        "cash_daily_low": "30",
+        "cash_daily_high": "100",
+        "cash_note": "1 MYR ≈ 40円で計算",
         "money_intro": "マレーシアはクアラルンプール中心部のショッピングモールやレストランではクレジットカードが使えるが、チャイナタウンの屋台・ローカル市場・小さな食堂では現金のみが多い。GrabなどのアプリはカードやTouchNGoで支払えるため便利。両替は空港より市内の両替所が断然レートが良く、必要最低限だけ空港で換えて残りは市内で換えるのがおすすめ。",
         "cash_tip_title": "💡 小額紙幣を用意しておこう",
         "cash_tip_body": "屋台やローカル市場ではお釣りが出ないことが多い。両替時は大きな紙幣だけでなく、1RM・5RM・10RMの小額紙幣を多めに用意しておくとスムーズ。",

@@ -689,7 +689,7 @@
                 "name": "Yandex Maps",
                 "type_label": "地図・ナビ",
                 "desc": "ウズベキスタンではGoogle MapsよりYandex Mapsの方が細かい道まで対応していることが多い。オフラインマップDLも可能。",
-                "affiliate": "",
+                "affiliate": "yandex_maps",
                 "is_last": false
             },
             {
@@ -697,7 +697,7 @@
                 "name": "Telegram",
                 "type_label": "メッセージ・現地連絡",
                 "desc": "ウズベキスタンで最もよく使われるSNS兼メッセージアプリ。ホテルやツアー会社との連絡はTelegram経由が多い。",
-                "affiliate": "",
+                "affiliate": "telegram",
                 "is_last": false
             },
             {
@@ -705,7 +705,7 @@
                 "name": "Yandex Taxi / InDriver",
                 "type_label": "配車アプリ",
                 "desc": "タシュケントではYandex Taxiが普及。InDriverは条件を交渉してドライバーとマッチングするアプリで地方でも使える。",
-                "affiliate": "",
+                "affiliate": "yandex_go",
                 "is_last": false
             },
             {
@@ -713,7 +713,7 @@
                 "name": "Google 翻訳",
                 "type_label": "翻訳（ウズベク語・ロシア語）",
                 "desc": "ウズベク語・ロシア語のパックを事前にDLしておくとオフラインでも使える。キリル文字のメニューや看板の読み取りに必須。",
-                "affiliate": "",
+                "affiliate": "google_translate",
                 "is_last": true
             }
         ],
@@ -728,9 +728,12 @@
         ],
         "currency_code": "UZS",
         "exchange_rate": "0.013",
+        "cash_dependency": "高",
+        "cash_dependency_color": "#cc0001",
+        "cash_dependency_note": "バザール・食堂・タクシーまでほぼ現金の社会",
         "cash_daily_low": "150000",
-        "cash_daily_high": "800000",
-        "cash_note": "バザール・屋台・ローカル食堂は現金のみ。1万UZS ≈ 130円で計算",
+        "cash_daily_high": "500000",
+        "cash_note": "1万UZS ≈ 130円で計算<br>絨毯・陶器などお土産をまとめ買いする日は別途多めに用意を",
         "money_intro": "都市部のホテル・高級レストラン・大型スーパーではカードが使える店も増えているが、バザールや屋台、地方の食堂・タクシーはまだ現金が基本。空港より市内の両替所の方がレートが良く、USDを持参して現地でスムに両替するのが一般的。",
         "cash_tip_title": "現地通貨の単位に慣れよう",
         "cash_tip_body": "ウズベキスタンのスム（UZS）は単位が大きく、1万円相当で約77万UZSになる。両替後は計算に慣れるまで時間がかかるため、最初はスマホの電卓を活用しよう。",

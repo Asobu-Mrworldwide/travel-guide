@@ -551,12 +551,18 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       </div>
       <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
     </div>
+    
+    <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <span style="font-size:0.72em;font-weight:700;color:#fff;background:#cc0001;padding:3px 12px;border-radius:20px;white-space:nowrap">現金依存度：高</span>
+      <span style="font-size:0.75em;color:var(--sub)">バザール・食堂・タクシーまでほぼ現金の社会</span>
+    </div>
+    
     <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:16px 12px;border:1px solid #a8d5b5;margin-bottom:12px">
       <div style="font-size:0.68em;color:var(--green);font-weight:600;margin-bottom:6px">現金の目安</div>
       <div id="cash-range-cur" style="font-size:1.2em;font-weight:700;color:var(--green)">-</div>
       <div id="cash-range-jpy" style="font-size:0.8em;color:var(--green);margin-top:4px">-</div>
     </div>
-    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">バザール・屋台・ローカル食堂は現金のみ。1万UZS ≈ 130円で計算</div>
+    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">1万UZS ≈ 130円で計算<br>絨毯・陶器などお土産をまとめ買いする日は別途多めに用意を</div>
     <div style="font-size:0.75em;color:var(--sub);line-height:1.8;text-align:center;margin-top:8px">足りなくなっても、<span data-affiliate="wise" data-affiliate-class="inline-affiliate-link" data-affiliate-label="Wiseカード"></span>なら現地ATMで気軽に引き出せて安心です。</div>
     </div>
   </div>
@@ -866,7 +872,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">Yandex Maps</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">地図・ナビ</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">ウズベキスタンではGoogle MapsよりYandex Mapsの方が細かい道まで対応していることが多い。オフラインマップDLも可能。</div>
-        
+        <span data-affiliate="yandex_maps"></span>
       </div>
     </div>
     
@@ -876,7 +882,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">Telegram</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">メッセージ・現地連絡</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">ウズベキスタンで最もよく使われるSNS兼メッセージアプリ。ホテルやツアー会社との連絡はTelegram経由が多い。</div>
-        
+        <span data-affiliate="telegram"></span>
       </div>
     </div>
     
@@ -886,7 +892,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">Yandex Taxi / InDriver</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">配車アプリ</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">タシュケントではYandex Taxiが普及。InDriverは条件を交渉してドライバーとマッチングするアプリで地方でも使える。</div>
-        
+        <span data-affiliate="yandex_go"></span>
       </div>
     </div>
     
@@ -914,7 +920,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">Google 翻訳</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">翻訳（ウズベク語・ロシア語）</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">ウズベク語・ロシア語のパックを事前にDLしておくとオフラインでも使える。キリル文字のメニューや看板の読み取りに必須。</div>
-        
+        <span data-affiliate="google_translate"></span>
       </div>
     </div>
     
@@ -2225,7 +2231,7 @@ let cashDays = 5;
 const CURRENCY = 'UZS';
 const RATE = 0.013;
 const CASH_LOW = 150000;
-const CASH_HIGH = 800000;
+const CASH_HIGH = 500000;
 function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;

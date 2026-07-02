@@ -559,12 +559,18 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       </div>
       <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
     </div>
+    
+    <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <span style="font-size:0.72em;font-weight:700;color:#fff;background:#006847;padding:3px 12px;border-radius:20px;white-space:nowrap">現金依存度：低</span>
+      <span style="font-size:0.75em;color:var(--sub)">QR決済大国。市場や屋台でもキャッシュレスが主流</span>
+    </div>
+    
     <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:16px 12px;border:1px solid #a8d5b5;margin-bottom:12px">
       <div style="font-size:0.68em;color:var(--green);font-weight:600;margin-bottom:6px">現金の目安</div>
       <div id="cash-range-cur" style="font-size:1.2em;font-weight:700;color:var(--green)">-</div>
       <div id="cash-range-jpy" style="font-size:0.8em;color:var(--green);margin-top:4px">-</div>
     </div>
-    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">レストラン・Grab・ホテルはカード払い可。現金は主に屋台・ローカル市場・お土産屋での支払い用。<br>1 MYR ≈ 40円で計算</div>
+    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">1 MYR ≈ 40円で計算</div>
     <div style="font-size:0.75em;color:var(--sub);line-height:1.8;text-align:center;margin-top:8px">足りなくなっても、<span data-affiliate="wise" data-affiliate-class="inline-affiliate-link" data-affiliate-label="Wiseカード"></span>なら現地ATMで気軽に引き出せて安心です。</div>
     </div>
   </div>
@@ -898,7 +904,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">Google マップ</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">地図・ナビ（オフライン対応）</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">出発前にクアラルンプール・訪問エリアをオフラインDLしておこう。Wi-Fiなしでも地図・ナビが使えて安心。</div>
-        
+        <span data-affiliate="google_maps"></span>
       </div>
     </div>
     
@@ -926,7 +932,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">Google 翻訳</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">翻訳・カメラ翻訳</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">メニューや看板をカメラで写すだけで翻訳できる。マレー語パックを事前にDLしておけばオフラインでもテキスト翻訳が使える。</div>
-        
+        <span data-affiliate="google_translate"></span>
       </div>
     </div>
     
@@ -946,7 +952,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">WhatsApp</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">メッセージ・現地連絡</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">マレーシアでのメッセージアプリはWhatsAppが主流。ホテル・ツアー会社の予約確認もWhatsApp経由が多い。出発前にインストールしておこう。</div>
-        
+        <span data-affiliate="whatsapp"></span>
       </div>
     </div>
     
@@ -2389,8 +2395,8 @@ function playPhrase(file, btn) {
 let cashDays = 5;
 const CURRENCY = 'MYR';
 const RATE = 40;
-const CASH_LOW = 50;
-const CASH_HIGH = 200;
+const CASH_LOW = 30;
+const CASH_HIGH = 100;
 function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;

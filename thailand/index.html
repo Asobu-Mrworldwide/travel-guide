@@ -567,12 +567,18 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       </div>
       <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
     </div>
+    
+    <div style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <span style="font-size:0.72em;font-weight:700;color:#fff;background:#b09000;padding:3px 12px;border-radius:20px;white-space:nowrap">現金依存度：中</span>
+      <span style="font-size:0.75em;color:var(--sub)">屋台・市場・トゥクトゥクは現金、ホテル・モールはカードOK</span>
+    </div>
+    
     <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:16px 12px;border:1px solid #a8d5b5;margin-bottom:12px">
       <div style="font-size:0.68em;color:var(--green);font-weight:600;margin-bottom:6px">現金の目安</div>
       <div id="cash-range-cur" style="font-size:1.2em;font-weight:700;color:var(--green)">-</div>
       <div id="cash-range-jpy" style="font-size:0.8em;color:var(--green);margin-top:4px">-</div>
     </div>
-    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">レストラン・ホテルはカード払い可。現金は主に屋台・ローカルマーケット・チップ・トゥクトゥクでの支払い用。<br>1 THB ≈ 4.9円で計算</div>
+    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;text-align:center">1 THB ≈ 4.9円で計算</div>
     <div style="font-size:0.75em;color:var(--sub);line-height:1.8;text-align:center;margin-top:8px">足りなくなっても、<span data-affiliate="wise" data-affiliate-class="inline-affiliate-link" data-affiliate-label="Wiseカード"></span>なら現地ATMで気軽に引き出せて安心です。</div>
     </div>
   </div>
@@ -892,7 +898,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">Google マップ</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">地図・ナビ（オフライン対応）</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">出発前にバンコク・訪問エリアをオフラインDLしておこう。BTSやMRTの乗り換えナビにも対応。</div>
-        
+        <span data-affiliate="google_maps"></span>
       </div>
     </div>
     
@@ -920,7 +926,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div style="font-size:0.84em;font-weight:700">Google 翻訳</div>
         <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">翻訳・カメラ翻訳</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">タイ語メニューや看板をカメラで写すだけで翻訳できる。タイ語パックを事前にDLしておけばオフラインでも使える。</div>
-        
+        <span data-affiliate="google_translate"></span>
       </div>
     </div>
     
@@ -2399,8 +2405,8 @@ function playPhrase(file, btn) {
 let cashDays = 5;
 const CURRENCY = 'THB';
 const RATE = 4.9;
-const CASH_LOW = 500;
-const CASH_HIGH = 3000;
+const CASH_LOW = 300;
+const CASH_HIGH = 1500;
 function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;

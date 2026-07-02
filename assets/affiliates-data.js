@@ -82,7 +82,31 @@ const AFFILIATES = {
     label: 'Uberをダウンロード →',
     desc:  '配車アプリ。乗車前に料金が確定するためぼったくりゼロ。出発前にインストールしておこう。',
     btn:   '公式サイトを見る →',
-    url:   'https://www.uber.com/us/en/download/'
+    url:   'https://www.uber.com/jp/ja/download/'
+  },
+
+  yandex_go: {
+    name:  'Yandex Go',
+    label: 'Yandex Goをダウンロード →',
+    desc:  'ロシア・中央アジア圏で普及している配車アプリ。乗車前に料金が確定する。',
+    btn:   '公式サイトを見る →',
+    url:   'https://go.yandex/'
+  },
+
+  yandex_maps: {
+    name:  'Yandex Maps',
+    label: 'Yandex Mapsを開く →',
+    desc:  '中央アジア圏ではGoogleマップより詳細な地図アプリ。オフラインマップにも対応。',
+    btn:   '公式サイトを見る →',
+    url:   'https://yandex.com/maps/'
+  },
+
+  telegram: {
+    name:  'Telegram',
+    label: 'Telegramをダウンロード →',
+    desc:  'ウズベキスタンなどで主流のメッセージアプリ。ホテル・ツアー会社との連絡に使われることが多い。',
+    btn:   '公式サイトを見る →',
+    url:   'https://telegram.org/'
   },
 
   google_maps: {
