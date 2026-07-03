@@ -1,0 +1,1351 @@
+{
+    "id": "singapore",
+    "name": "シンガポール",
+    "name_en": "Singapore",
+    "page_title": "シンガポール旅行ガイド",
+    "hero_image": "素材/ヒーロー.webp",
+    "hero_alt": "マリーナベイ・サンズとガーデンズ・バイ・ザ・ベイの夜景",
+    "hero_prompt": "Marina Bay Sands and Supertree Grove of Gardens by the Bay glowing at night, Singapore skyline across the bay, vibrant purple and green lights, travel illustration style",
+    "overview": {
+        "country_question": "シンガポールってどんな国？",
+        "description_html": "東京23区ほどの小さな島に、未来都市のような高層ビル群と中華・マレー・インドの多文化が詰め込まれた都市国家。<strong>世界トップクラスの治安と清潔さ、英語が通じる安心感、そしてホーカー（屋台街）の絶品グルメ</strong>で、初めての海外にも家族旅行にも死角がありません。物価の高さだけが玉に瑕ですが、食と交通は意外と安く抑えられます。",
+        "flag_html": "<div style=\"position:relative;height:100px;width:150px;display:inline-block;overflow:hidden;border:1px solid #eee\"><div style=\"position:absolute;top:0;left:0;width:100%;height:50%;background:#EF3340\"></div><div style=\"position:absolute;bottom:0;left:0;width:100%;height:50%;background:#fff\"></div><div style=\"position:absolute;top:8px;left:14px;color:#fff;font-size:26px;line-height:1\">☾</div><div style=\"position:absolute;top:6px;left:44px;color:#fff;font-size:9px;letter-spacing:2px\">★ ★ ★<br>&nbsp;★ ★</div></div>",
+        "flag_caption": "赤は友愛と平等、白は純潔と美徳。三日月は成長する若い国、5つの星は民主・平和・進歩・正義・平等を表す。",
+        "top_spot_name": "ガーデンズ・バイ・ザ・ベイ",
+        "top_spot_desc": "巨大な人工樹スーパーツリーが立ち並ぶ近未来植物園。夜の光と音のショー「ガーデンラプソディ」は無料で見られる。",
+        "top_food_name": "チキンライス",
+        "top_food_desc": "茹で鶏の旨味をまとったご飯にチリソースとジンジャーソース。ホーカーなら1皿600円前後で味わえる国民食。",
+        "top_food_image": "",
+        "difficulty_label": "やさしい",
+        "difficulty_label_bg": "#e8f5ee",
+        "difficulty_label_color": "var(--green)",
+        "difficulty_pct": "15",
+        "difficulty_desc": "英語が公用語で、治安は世界トップクラス、MRTは日本の地下鉄感覚で乗れる。街はコンパクトで見どころが集約されており、初めての海外一人旅・子連れ旅行の定番。唯一の注意点はホテル代の高さと、罰金制度のあるルール（MRT飲食禁止など）を知っておくこと。",
+        "difficulty_bar": "linear-gradient(90deg,#00a86b,#66cc99)",
+        "japan_popularity_html": "年間約60万人の日本人が訪れる東南アジア屈指の人気都市。<strong>直行便約7〜8時間・英語圏・世界最高水準の治安</strong>で、初海外・家族旅行・一人旅のどれにも選ばれる。乗り継ぎ拠点のチャンギ空港が世界一と名高く、ストップオーバーで立ち寄る旅行者も多い。",
+        "flight_hours": "約7〜8時間",
+        "timezone": "日本 −1時間",
+        "visa": "不要（30日）",
+        "budget_range": "10〜25万円",
+        "language": "英語OK",
+        "currency_name": "シンガポールドル(SGD)",
+        "currency_rate": "1SGD ≈ 124円"
+    },
+    "map": {
+        "element_id": "singapore-map",
+        "center_lat": "1.3221",
+        "center_lng": "103.8398",
+        "zoom": "11",
+        "map_id": "ebb608e55ed157f8630c407e",
+        "country_label": "シンガポール"
+    },
+    "cities": [
+        {
+            "id": "marina_bay",
+            "name": "マリーナベイ",
+            "lat": "1.2838",
+            "lng": "103.8591",
+            "zoom": "14",
+            "color": "#EF3340",
+            "marker_size": "14",
+            "marker_label": "★",
+            "badge": "夜景の中心",
+            "badge_class": "",
+            "description": "マリーナベイ・サンズとガーデンズが囲む観光のハイライト"
+        },
+        {
+            "id": "chinatown",
+            "name": "チャイナタウン",
+            "lat": "1.2831",
+            "lng": "103.8443",
+            "zoom": "15",
+            "color": "#1a3a5c",
+            "marker_size": "11",
+            "marker_label": "●",
+            "badge": "中華文化",
+            "badge_class": "green",
+            "description": "寺院とホーカーが密集するグルメと下町の中心"
+        },
+        {
+            "id": "little_india",
+            "name": "リトルインディア・アラブスト",
+            "lat": "1.3040",
+            "lng": "103.8535",
+            "zoom": "14",
+            "color": "#1a3a5c",
+            "marker_size": "11",
+            "marker_label": "●",
+            "badge": "多文化",
+            "badge_class": "green",
+            "description": "極彩色の寺院と黄金のモスク。多民族国家を体感できるエリア"
+        },
+        {
+            "id": "sentosa",
+            "name": "セントーサ島",
+            "lat": "1.2494",
+            "lng": "103.8303",
+            "zoom": "13",
+            "color": "#1a3a5c",
+            "marker_size": "11",
+            "marker_label": "●",
+            "badge": "リゾート",
+            "badge_class": "green",
+            "description": "ユニバーサル・スタジオとビーチが揃う遊びの島"
+        },
+        {
+            "id": "orchard",
+            "name": "オーチャード・郊外",
+            "lat": "1.3048",
+            "lng": "103.8318",
+            "zoom": "13",
+            "color": "#1a3a5c",
+            "marker_size": "11",
+            "marker_label": "●",
+            "badge": "買い物・動物園",
+            "badge_class": "green",
+            "description": "ショッピング街と、郊外の動物園・ナイトサファリ"
+        }
+    ],
+    "season_mini": {
+        "description": "常夏で年間を通じて27〜31°C。11〜1月は北東モンスーンの雨季でスコールが増える。どの季節でも観光は可能。",
+        "city_name": "シンガポール",
+        "months": [
+            { "icon": "☔", "temp": "27°", "type": "t-hot1" },
+            { "icon": "⛅", "temp": "28°", "type": "t-hot1" },
+            { "icon": "⛅", "temp": "28°", "type": "t-hot1" },
+            { "icon": "☔", "temp": "29°", "type": "t-hot1" },
+            { "icon": "⛅", "temp": "29°", "type": "t-hot1" },
+            { "icon": "⛅", "temp": "29°", "type": "t-hot1" },
+            { "icon": "⛅", "temp": "28°", "type": "t-hot1" },
+            { "icon": "⛅", "temp": "28°", "type": "t-hot1" },
+            { "icon": "☔", "temp": "28°", "type": "t-hot1" },
+            { "icon": "☔", "temp": "28°", "type": "t-hot1" },
+            { "icon": "☔", "temp": "27°", "type": "t-hot1" },
+            { "icon": "☔", "temp": "27°", "type": "t-hot1" }
+        ]
+    },
+    "basic_data": [
+        {
+            "label": "首都",
+            "value": "シンガポール",
+            "note": "国全体がひとつの都市の都市国家",
+            "compare_html": ""
+        },
+        {
+            "label": "独立年",
+            "value": "1965年8月9日",
+            "note": "マレーシアから分離独立。以来一代で先進国へ",
+            "compare_html": ""
+        },
+        {
+            "label": "人口",
+            "value": "約592万人",
+            "note": "うち約3割が外国人居住者",
+            "compare_html": ""
+        },
+        {
+            "label": "面積",
+            "value": "約735 km²",
+            "note": "東京23区（約628km²）より少し大きい程度",
+            "compare_html": ""
+        },
+        {
+            "label": "宗教",
+            "value": "仏教・キリスト教・イスラム教など",
+            "note": "多宗教が共存。寺院・モスク・教会が隣り合う",
+            "compare_html": ""
+        },
+        {
+            "label": "民族",
+            "value": "中華系74%・マレー系14%・インド系9%",
+            "note": "多民族国家。料理も文化もこの構成が源泉",
+            "compare_html": ""
+        },
+        {
+            "label": "言語",
+            "value": "英語・中国語・マレー語・タミル語",
+            "note": "共通語は英語。独特の「シングリッシュ」も名物",
+            "compare_html": ""
+        }
+    ],
+    "season": {
+        "description_html": "赤道直下の常夏で、<strong>年間を通じて日中は30°C前後</strong>。四季はなく、11〜1月の北東モンスーン期にスコールが増えます。とはいえ雨は短時間でやむことが多く、<strong>一年中いつ行っても観光が成立する</strong>のがシンガポールの強み。屋内施設が充実しているので、雨でも予定が崩れにくい旅先です。",
+        "tip_title": "航空券が安い時期",
+        "tip_body": "通年就航が安定している路線なので価格は比較的フラット。日本のGW・お盆・年末年始は高騰する。注意すべきは9月中旬〜10月上旬のF1シンガポールGP開催週で、航空券よりもホテルが数倍に跳ね上がる。日程を選べるならF1週は外そう。",
+        "cities": [
+            {
+                "name": "シンガポール",
+                "city_id": "marina_bay",
+                "best_note": "✅ ベスト：2〜4月（雨がやや少ない）／ 11〜1月は雨季だが観光自体は年中可能。",
+                "note": "気温は一年中ほぼ一定なので「いつ行くか」より「スコールにどう備えるか」が大事。午後にまとまった雨が降りやすいので、午前に屋外（ガーデンズ・動物園）、午後に屋内（博物館・ショッピング）と組むと崩れにくい。折りたたみ傘と、冷房対策の羽織ものは必携。",
+                "months": [
+                    { "icon": "☔", "temp": "27°C", "type": "t-hot1" },
+                    { "icon": "⛅", "temp": "28°C", "type": "t-hot1" },
+                    { "icon": "⛅", "temp": "28°C", "type": "t-hot1" },
+                    { "icon": "☔", "temp": "29°C", "type": "t-hot1" },
+                    { "icon": "⛅", "temp": "29°C", "type": "t-hot1" },
+                    { "icon": "⛅", "temp": "29°C", "type": "t-hot1" },
+                    { "icon": "⛅", "temp": "28°C", "type": "t-hot1" },
+                    { "icon": "⛅", "temp": "28°C", "type": "t-hot1" },
+                    { "icon": "☔", "temp": "28°C", "type": "t-hot1" },
+                    { "icon": "☔", "temp": "28°C", "type": "t-hot1" },
+                    { "icon": "☔", "temp": "27°C", "type": "t-hot1" },
+                    { "icon": "☔", "temp": "27°C", "type": "t-hot1" }
+                ]
+            }
+        ]
+    },
+    "budget": {
+        "intro": "シンガポールは東南アジアで唯一「日本より物価が高い」と感じる国。特にホテルとお酒が高く、ビール1杯1,500円超えも珍しくありません。ただし救いはホーカー（屋台街）とMRTで、食事1皿600円前後・地下鉄1回150円前後と、使い方次第で出費は大きくコントロールできます。",
+        "plan_rows": [
+            { "label": "航空券（往復）", "eco": "LCC 4〜7万円", "std": "7〜11万円", "lux": "FSC 10〜16万円" },
+            { "label": "ホテル（1泊）", "eco": "8,000〜15,000円", "std": "18,000〜30,000円", "lux": "45,000円〜" },
+            { "label": "食費（1日）", "eco": "2,000〜3,500円", "std": "4,000〜7,000円", "lux": "12,000円〜" },
+            { "label": "交通（1日）", "eco": "MRT・バス 500円", "std": "MRT＋Grab 1,500円", "lux": "Grab中心 3,500円" }
+        ],
+        "total_eco": "10〜15万円",
+        "total_std": "16〜25万円",
+        "total_lux": "35万円〜",
+        "items": [
+            {
+                "icon": "✈️",
+                "name": "航空券（往復）",
+                "detail_html": "ZIPAIR・スクートなどLCCなら往復4万円台も<br>シンガポール航空・JAL・ANAの直行便は毎日多数",
+                "price": "4〜16万円",
+                "affiliate": ""
+            },
+            {
+                "icon": "🛏️",
+                "name": "ホテル（1泊）",
+                "detail_html": "ホステル：4,000〜8,000円・中級：18,000〜30,000円<br>マリーナベイ・サンズは1泊6万円〜。F1週は全域が数倍に高騰",
+                "price": "〜6万円/泊",
+                "affiliate": ""
+            },
+            {
+                "icon": "🍜",
+                "name": "食費（1日）",
+                "detail_html": "ホーカーなら1食500〜900円で大満足<br>レストランはサービス料10%＋GST9%が加算される",
+                "price": "2,000〜7,000円/日",
+                "affiliate": "wise"
+            },
+            {
+                "icon": "🚇",
+                "name": "交通費（1日）",
+                "detail_html": "MRT・バスは1回100〜250円と格安<br>タッチ決済クレカでそのまま乗れる（SimplyGo）",
+                "price": "500〜3,500円/日",
+                "affiliate": ""
+            },
+            {
+                "icon": "📍",
+                "name": "観光・アクティビティ",
+                "detail_html": "ガーデンズの温室2館 約3,800円・ナイトサファリ 約6,500円<br>夜のショー（スペクトラ・ガーデンラプソディ）は無料",
+                "price": "0〜10,000円/日",
+                "affiliate": "klook"
+            },
+            {
+                "icon": "🌐",
+                "name": "SIM・Wi-Fi",
+                "detail_html": "チャンギ空港でツーリストSIMを購入可能<br>eSIMなら出発前に設定完了。数日プランが数百円〜",
+                "price": "500〜2,000円",
+                "affiliate": ""
+            }
+        ],
+        "savings_tips_html": "・食事はホーカー中心にすれば1日2,000円台で十分おいしい<br>・夜景ショーは無料（スペクトラ／ガーデンラプソディ）を軸に<br>・お酒は酒税が高い。飲むならハッピーアワーを狙う"
+    },
+    "practical": {
+        "prac_cards": [
+            {
+                "icon": "visa",
+                "title": "ビザ",
+                "value": "不要（30日）"
+            },
+            {
+                "icon": "💱",
+                "title": "通貨",
+                "value": "シンガポールドル（SGD）"
+            },
+            {
+                "icon": "🔌",
+                "title": "コンセント",
+                "value": "BFタイプ（3ピン角）"
+            },
+            {
+                "icon": "⚡",
+                "title": "電圧",
+                "value": "230V（変換注意）"
+            },
+            {
+                "icon": "wifi",
+                "title": "Wi-Fi",
+                "value": "全域で快適"
+            },
+            {
+                "icon": "clock",
+                "title": "時差",
+                "value": "日本−1時間"
+            },
+            {
+                "icon": "🌡️",
+                "title": "気温",
+                "value": "常夏 27〜31°C"
+            },
+            {
+                "icon": "🙏",
+                "title": "チップ",
+                "value": "不要（サ料10%込）"
+            },
+            {
+                "icon": "💧",
+                "title": "水道水",
+                "value": "飲用OK（珍しく安全）"
+            },
+            {
+                "icon": "🔒",
+                "title": "治安",
+                "value": "世界トップクラス"
+            }
+        ],
+        "prep_steps": [
+            {
+                "title": "パスポート取得・更新",
+                "timing": "1〜2ヶ月前",
+                "timing_color": "#006847",
+                "border_color": "#006847",
+                "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+                "desc_html": "残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。シンガポール出国用（復路）の航空券所持も入国条件なので、片道発券には注意。"
+            },
+            {
+                "title": "タッチ決済対応クレジットカードの準備",
+                "timing": "1ヶ月前",
+                "timing_color": "#006847",
+                "border_color": "#1a8a5a",
+                "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+                "desc_html": "シンガポールは世界屈指のキャッシュレス社会。<strong>タッチ決済対応のVisa/MastercardならMRT・バスにもそのまま乗れる</strong>（SimplyGo）。Wiseカードもタッチ決済・ATM引き出しに対応していて便利。"
+            },
+            {
+                "title": "航空券・ホテルの予約",
+                "timing": "2〜4ヶ月前",
+                "timing_color": "#b09000",
+                "border_color": "#b09000",
+                "bar_color": "#b09000",
+                "desc_html": "ホテル代が高い国なので、宿の早期確保が予算を左右する。<strong>9月中旬〜10月上旬のF1開催週はホテルが数倍に高騰</strong>するため、日程を選べるなら外すのが賢明。"
+            },
+            {
+                "title": "SG Arrival Card（電子入国カード）の登録",
+                "timing": "到着3日前から",
+                "timing_color": "#b09000",
+                "border_color": "#b09000",
+                "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+                "desc_html": "全入国者に<strong>オンライン登録が必須</strong>。到着日を含む3日前からICA公式サイトまたはMyICAアプリで無料登録できる。承認メールが届いたら保存しておこう。"
+            },
+            {
+                "title": "海外旅行保険の加入",
+                "timing": "出発前日まで",
+                "timing_color": "#cc5500",
+                "border_color": "#cc5500",
+                "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+                "desc_html": "医療費が非常に高い国なので保険は必須級。クレカ付帯で済ませる場合は補償額と利用条件（利用付帯か自動付帯か）を必ず確認。"
+            },
+            {
+                "title": "SIM・eSIMの準備",
+                "timing": "1週間前",
+                "timing_color": "#cc0001",
+                "border_color": "#cc0001",
+                "bar_color": "",
+                "desc_html": "eSIMなら出発前に設定まで完了できて到着後すぐ使える。物理SIM派はチャンギ空港の到着ロビーでツーリストSIMを購入可能。"
+            }
+        ],
+        "special_note_title": "SG Arrival Card（電子入国カード）は全員必須",
+        "special_note_html": "シンガポール入国には、到着日を含む3日前からオンラインで登録する「SG Arrival Card」の提出が必須です。ICA公式サイトまたはMyICAアプリから無料で登録できます（代行サイトの有料登録に注意）。健康申告も同時に行うため、家族全員分を忘れずに。",
+        "special_note_url": "https://eservices.ica.gov.sg/sgarrivalcard/",
+        "special_note_url_label": "ICA公式 SG Arrival Card",
+        "flight_lead": "日本〜シンガポールは羽田・成田・関西・中部・福岡からチャンギ空港への直行便が毎日多数、所要約7〜8時間。深夜発の便を選べば機内泊で朝到着し、初日をフルに使えます。LCC（ZIPAIR・スクート）なら往復4万円台も狙えて、世界一と名高いチャンギ空港への到着自体が観光の始まりです。",
+        "flight_intro": "日本各地からチャンギ空港へ直行便が毎日多数。所要約7〜8時間、LCCなら往復4万円台も。",
+        "airlines": [
+            {
+                "name": "シンガポール航空",
+                "desc": "世界最高評価の常連フラッグキャリア。機内サービスの質は別格。",
+                "price": "往復 10〜16万円"
+            },
+            {
+                "name": "JAL / ANA",
+                "desc": "羽田・成田発の直行便。マイル特典やアップグレードも狙いやすい。",
+                "price": "往復 9〜15万円"
+            },
+            {
+                "name": "ZIPAIR",
+                "desc": "成田発のLCC。フルフラット席のあるLCCとして長距離でも快適。",
+                "price": "往復 4〜8万円"
+            },
+            {
+                "name": "スクート",
+                "desc": "シンガポール航空系のLCC。成田・関西などから就航しセールが豊富。",
+                "price": "往復 4〜8万円"
+            }
+        ],
+        "flight_tip_html": "・GW・お盆・年末年始は高騰。それ以外は価格が比較的フラット<br>・深夜発→早朝着の便なら初日から丸1日観光できる<br>・9月中旬〜10月上旬のF1週はホテルとセットで高騰するので注意",
+        "hotel_map_center": { "lat": 1.2900, "lng": 103.8500, "zoom": 13 },
+        "hotel_areas": [
+            {
+                "id": "marina_bay_hotel",
+                "name": "マリーナベイ周辺",
+                "tag": "夜景・記念日向け",
+                "tag_color": "",
+                "desc": "マリーナベイ・サンズをはじめ高級ホテルが集まる湾岸エリア。名物のインフィニティプールはMBS宿泊者限定。夜景重視・特別な旅行ならここ。",
+                "price": "高級 45,000円〜　MBS 60,000円〜",
+                "maps_url": "https://www.google.com/maps/place/Marina+Bay,+Singapore",
+                "lat": 1.2838,
+                "lng": 103.8591
+            },
+            {
+                "id": "chinatown_hotel",
+                "name": "チャイナタウン",
+                "tag": "観光便利・コスパ良",
+                "tag_color": "green",
+                "desc": "MRT2路線が使え、ホーカーも徒歩圏で便利。ブティックホテルからホステルまで選択肢が広く、予算を抑えたい旅の本命エリア。",
+                "price": "ホステル 4,000〜8,000円　中級 15,000〜25,000円",
+                "maps_url": "https://www.google.com/maps/place/Chinatown,+Singapore",
+                "lat": 1.2831,
+                "lng": 103.8443
+            },
+            {
+                "id": "bugis_hotel",
+                "name": "ブギス・アラブストリート",
+                "tag": "雰囲気・街歩き向け",
+                "tag_color": "green",
+                "desc": "サルタン・モスクやハジ・レーンに歩いて行ける文化エリア。おしゃれなカフェとローカル感のバランスが良く、リピーターに人気。",
+                "price": "中級 15,000〜28,000円",
+                "maps_url": "https://www.google.com/maps/place/Bugis,+Singapore",
+                "lat": 1.3006,
+                "lng": 103.8555
+            },
+            {
+                "id": "orchard_hotel",
+                "name": "オーチャード",
+                "tag": "買い物重視",
+                "tag_color": "green",
+                "desc": "シンガポール随一のショッピング街。デパート直結ホテルも多く、買い物メインの旅や家族旅行に使いやすい。",
+                "price": "中級 20,000〜35,000円　高級 40,000円〜",
+                "maps_url": "https://www.google.com/maps/place/Orchard+Road,+Singapore",
+                "lat": 1.3048,
+                "lng": 103.8318
+            }
+        ],
+        "hotel_tip": "シンガポールのホテルは東南アジアで一番高い。予算を抑えるならチャイナタウンやブギスの中級ホテル・ホステルが現実的で、浮いた分をマリーナベイ・サンズ1泊（インフィニティプール目当て）に集中投下する「1泊だけ贅沢」作戦も人気。F1開催週（9月中旬〜10月上旬頃）は全域で数倍に高騰するので日程確認を忘れずに。",
+        "apps": [
+            {
+                "icon": "🚕",
+                "name": "Grab（グラブ）",
+                "type_label": "配車アプリ",
+                "desc": "東南アジアの定番配車アプリはシンガポールでも健在。料金事前確定で安心、深夜のホテル帰りにも心強い。フードデリバリーにも使える。",
+                "affiliate": "grab",
+                "is_last": false
+            },
+            {
+                "icon": "🗺️",
+                "name": "Google マップ",
+                "type_label": "地図・ナビ（乗換案内対応）",
+                "desc": "MRT・バスの乗換案内が優秀で、バスのリアルタイム位置も表示される。街がコンパクトなので、これ1本で移動に迷うことはほぼない。",
+                "affiliate": "google_maps",
+                "is_last": false
+            },
+            {
+                "icon": "google-translate",
+                "name": "Google 翻訳",
+                "type_label": "翻訳・カメラ翻訳",
+                "desc": "英語が通じるので出番は少なめだが、ホーカーの中国語メニューや独特のシングリッシュに出会ったときの保険として入れておくと安心。",
+                "affiliate": "google_translate",
+                "is_last": false
+            },
+            {
+                "icon": "klook",
+                "name": "Klook（クルック）",
+                "type_label": "現地ツアー・チケット事前予約",
+                "desc": "ユニバーサル・スタジオやガーデンズの温室、ナイトサファリなどの入場券は事前購入が断然スムーズ。当日券より安いことも多い。",
+                "affiliate": "",
+                "is_last": true
+            }
+        ],
+        "tour_platform": "klook",
+        "country_items_label": "🇸🇬 シンガポール特有の持ち物",
+        "country_items": [
+            "変換プラグ（BFタイプ・3ピン角）",
+            "薄手の羽織もの（屋内の冷房が極端に強い）",
+            "折りたたみ傘（スコール対策）",
+            "日焼け止め（赤道直下の日差し）",
+            "ウェットティッシュ（ホーカーでの食事に）",
+            "タッチ決済対応クレカ（MRT乗車・支払いの主役）"
+        ],
+        "currency_code": "SGD",
+        "exchange_rate": "124",
+        "cash_dependency": "低",
+        "cash_dependency_color": "#006847",
+        "cash_dependency_note": "世界屈指のキャッシュレス社会。ホーカーも大半がQR・カード対応",
+        "cash_daily_low": "20",
+        "cash_daily_high": "50",
+        "cash_note": "1 SGD ≈ 124円で計算",
+        "money_intro": "シンガポールはほぼすべての支払いがカード・タッチ決済で完結します。タッチ決済対応のクレカならMRT・バスにもそのまま乗れる（SimplyGo）ので、交通カードすら買う必要がありません。現金は一部の古いホーカー屋台用に少額あれば十分。両替が必要ならチャイナタウンやオーチャードの両替商がレート良好です。",
+        "cash_tip_title": "タッチ決済クレカが交通カード代わりになる",
+        "cash_tip_body": "Visa・Mastercardのタッチ決済対応カードなら、専用の交通カードを買わなくてもMRT・バスに直接タッチで乗車できる（SimplyGo）。運賃は後日まとめて請求される仕組み。家族で使う場合は1人1枚ずつカードが必要な点だけ注意。",
+        "cta_title": "出発前にマナーも確認しよう！🙏",
+        "cta_desc": "「罰金の国」と呼ばれるシンガポールには独特のルールがあります。知らずに違反しないよう、出発前にチェックを。"
+    },
+    "manner_cards": [
+        {
+            "type": "dont",
+            "icon": "🚇",
+            "title": "MRT車内での飲食はNG",
+            "desc": "駅構内・車内での飲食は罰金対象（最高500SGD）。水を飲むのも改札の外で。強烈な匂いのドリアンは持ち込み自体が禁止されている。"
+        },
+        {
+            "type": "dont",
+            "icon": "🚮",
+            "title": "ポイ捨ては高額罰金",
+            "desc": "ゴミのポイ捨ては初犯でも最高2,000SGD（約25万円）の罰金。「罰金の国」の代名詞的ルールで、街の清潔さはこの徹底ぶりに支えられている。"
+        },
+        {
+            "type": "dont",
+            "icon": "🍬",
+            "title": "ガムは持ち込み禁止",
+            "desc": "チューインガムは販売だけでなく持ち込みも原則禁止。日本から無意識にポケットに入れて行かないよう注意しよう。"
+        },
+        {
+            "type": "dont",
+            "icon": "🚬",
+            "title": "電子タバコは持ち込み自体が違法",
+            "desc": "電子タバコ・加熱式タバコは所持・持ち込みとも禁止で高額罰金の対象。紙タバコも喫煙は指定場所のみ。"
+        },
+        {
+            "type": "dont",
+            "icon": "🍺",
+            "title": "夜間の公共の場での飲酒は禁止",
+            "desc": "22時30分〜翌朝7時は公園や路上など公共の場での飲酒が禁止。バーやレストランの店内はOK。買い置きの缶ビールをホテル外で飲まないように。"
+        },
+        {
+            "type": "do",
+            "icon": "💰",
+            "title": "チップは不要",
+            "desc": "レストランはサービス料10%とGST9%が自動加算されるため、チップの習慣はない。ホーカーやタクシーでも不要。"
+        },
+        {
+            "type": "do",
+            "icon": "🍽️",
+            "title": "ホーカーでは食器を返却する",
+            "desc": "食後の食器・トレイは返却棚へ戻すのが義務（放置は罰金対象）。ちなみにティッシュを置いて席取りする「チョープ」はシンガポール流の公認文化。"
+        },
+        {
+            "type": "do",
+            "icon": "🚶",
+            "title": "横断は必ず横断歩道で",
+            "desc": "横断歩道以外での道路横断（ジェイウォーク）も取り締まり対象。信号を守っていれば車は確実に停まってくれる国なので、焦らず横断歩道へ。"
+        }
+    ],
+    "manner_cta_title": "英語でひとこと伝えてみよう！💬",
+    "manner_cta_desc": "シンガポールの共通語は英語。注文も道聞きも基本フレーズで十分通じます。語尾に「ラー」が付くシングリッシュの温かさも楽しみのひとつ。",
+    "phrases": {
+        "multi": false,
+        "decks": [
+        {
+        "id": "en",
+        "active": true,
+        "language_name": "英語",
+        "card_title": "🃏 英語 旅行フレーズカード",
+        "categories": [
+            {
+                "label": "👋 あいさつ",
+                "items": [
+                    { "jp": "こんにちは", "foreign": "Hello!", "reading": "ハロー！", "audio": "" },
+                    { "jp": "元気ですか？", "foreign": "How are you?", "reading": "ハウ アー ユー？", "audio": "" },
+                    { "jp": "元気です", "foreign": "I'm fine, thank you!", "reading": "アイム ファイン、サンキュー！", "audio": "" },
+                    { "jp": "さようなら", "foreign": "Goodbye!", "reading": "グッバイ！", "audio": "" },
+                    { "jp": "はじめまして", "foreign": "Nice to meet you!", "reading": "ナイス トゥ ミート ユー！", "audio": "" },
+                    { "jp": "綺麗ですね！", "foreign": "This is beautiful!", "reading": "ディス イズ ビューティフル！", "audio": "" }
+                ]
+            },
+            {
+                "label": "🙏 基本表現",
+                "items": [
+                    { "jp": "ありがとう", "foreign": "Thank you", "reading": "サンキュー", "audio": "" },
+                    { "jp": "すみません", "foreign": "Excuse me", "reading": "エクスキューズ ミー", "audio": "" },
+                    { "jp": "ごめんなさい", "foreign": "I'm sorry", "reading": "アイム ソーリー", "audio": "" },
+                    { "jp": "はい / いいえ", "foreign": "Yes / No", "reading": "イエス / ノー", "audio": "" },
+                    { "jp": "わかりません", "foreign": "I don't understand", "reading": "アイ ドント アンダースタンド", "audio": "" },
+                    { "jp": "もう一度言ってください", "foreign": "Could you say that again?", "reading": "クッジュ セイ ダット アゲン？", "audio": "" },
+                    { "jp": "名前は〜です", "foreign": "My name is ~.", "reading": "マイ ネーム イズ〜", "audio": "" },
+                    { "jp": "日本人です", "foreign": "I'm from Japan.", "reading": "アイム フロム ジャパン", "audio": "" }
+                ]
+            },
+            {
+                "label": "🍽️ レストラン・ショッピング",
+                "items": [
+                    { "jp": "おすすめは何ですか？", "foreign": "What do you recommend?", "reading": "ワット ドゥ ユー レコメンド？", "audio": "" },
+                    { "jp": "これをください", "foreign": "I'll have this, please.", "reading": "アイル ハブ ディス プリーズ", "audio": "" },
+                    { "jp": "おいしい！", "foreign": "This is delicious!", "reading": "ディス イズ デリシャス！", "audio": "" },
+                    { "jp": "辛くしないでください", "foreign": "Not too spicy, please.", "reading": "ノット トゥー スパイシー プリーズ", "audio": "" },
+                    { "jp": "お会計をお願いします", "foreign": "Can I have the bill?", "reading": "キャン アイ ハブ ザ ビル？", "audio": "" },
+                    { "jp": "いくらですか？", "foreign": "How much is this?", "reading": "ハウ マッチ イズ ディス？", "audio": "" },
+                    { "jp": "高い、安くしてください", "foreign": "That's expensive. Can you lower the price?", "reading": "ザッツ イクスペンシブ。キャン ユー ロワー ザ プライス？", "audio": "" },
+                    { "jp": "トイレはどこですか？", "foreign": "Where is the toilet?", "reading": "ウェア イズ ザ トイレット？", "audio": "" }
+                ]
+            },
+            {
+                "label": "🔢 数字",
+                "items": [
+                    { "jp": "0〜5", "foreign": "Zero・One・Two・Three・Four・Five", "reading": "ゼロ・ワン・トゥー・スリー・フォー・ファイブ", "audio": "" },
+                    { "jp": "6〜10", "foreign": "Six・Seven・Eight・Nine・Ten", "reading": "シックス・セブン・エイト・ナイン・テン", "audio": "" }
+                ]
+            },
+            {
+                "label": "🆘 観光・トラブル",
+                "items": [
+                    { "jp": "写真を撮ってもいいですか？", "foreign": "May I take a photo?", "reading": "メイ アイ テイク ア フォウトウ？", "audio": "" },
+                    { "jp": "安全ですか？", "foreign": "Is it safe?", "reading": "イズ イット セーフ？", "audio": "" },
+                    { "jp": "助けてください！", "foreign": "Help!", "reading": "ヘルプ！", "audio": "" }
+                ]
+            }
+        ]
+        }
+        ]
+    },
+    "food_section_title": "シンガポールグルメ",
+    "food_filter_types": [
+        {
+            "id": "all",
+            "label": "すべて",
+            "active": true
+        },
+        {
+            "id": "main",
+            "label": "メイン料理",
+            "active": false
+        },
+        {
+            "id": "snack",
+            "label": "軽食・朝食",
+            "active": false
+        },
+        {
+            "id": "dessert",
+            "label": "スイーツ",
+            "active": false
+        },
+        {
+            "id": "drink",
+            "label": "ドリンク",
+            "active": false
+        }
+    ],
+    "food_filter_cities": [
+        {
+            "id": "marina_bay",
+            "label": "マリーナベイ"
+        },
+        {
+            "id": "chinatown",
+            "label": "チャイナタウン"
+        }
+    ],
+    "food_items": [
+        {
+            "num": "No.1",
+            "name": "チキンライス（海南鶏飯）",
+            "badge": "国民食",
+            "type": "main",
+            "city": "chinatown",
+            "desc": "鶏の茹で汁で炊いたご飯にしっとり茹で鶏を乗せ、チリ・ジンジャー・ダークソイの3種ソースで食べる国民食。ホーカーなら1皿600円前後。マックスウェルFCの天天海南鶏飯が有名店。",
+            "image": "",
+            "prompt_en": "Hainanese chicken rice with poached chicken slices, fragrant rice, chili sauce and ginger paste, cucumber garnish, hawker style, food photography",
+            "plate_color": "white ceramic plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Hainanese_chicken_rice",
+            "order_ico": "🍗",
+            "order_name_en": "Chicken Rice"
+        },
+        {
+            "num": "No.2",
+            "name": "チリクラブ",
+            "badge": "名物シーフード",
+            "type": "main",
+            "city": "marina_bay",
+            "desc": "大ぶりの蟹を甘辛いチリソースで豪快に炒めたシンガポール名物。ソースを揚げパン（マントウ）に付けて食べるのがお約束。時価で1杯1万円前後と高いが、旅のハイライトになる一皿。",
+            "image": "",
+            "prompt_en": "Singapore chilli crab whole crab in thick sweet spicy tomato chili sauce, fried mantou buns beside, seafood restaurant, food photography",
+            "plate_color": "large white platter",
+            "wiki_url": "https://en.wikipedia.org/wiki/Chilli_crab",
+            "order_ico": "🦀",
+            "order_name_en": "Chilli Crab"
+        },
+        {
+            "num": "No.3",
+            "name": "ラクサ",
+            "badge": "ココナッツ麺",
+            "type": "main",
+            "city": "national",
+            "desc": "ココナッツミルクとスパイスの効いた濃厚スープ麺。プラナカン（中華×マレー）文化が生んだ味で、エビの旨味とほのかな辛さがクセになる。カトン地区のラクサが本場として有名。",
+            "image": "",
+            "prompt_en": "Laksa spicy coconut curry noodle soup with prawns, fishcake, cockles and laksa leaf, rich orange broth, food photography",
+            "plate_color": "white ceramic bowl",
+            "wiki_url": "https://en.wikipedia.org/wiki/Laksa",
+            "order_ico": "🍜",
+            "order_name_en": "Laksa"
+        },
+        {
+            "num": "No.4",
+            "name": "バクテー（肉骨茶）",
+            "badge": "胡椒スープ",
+            "type": "main",
+            "city": "national",
+            "desc": "骨付き豚肉を胡椒とニンニクでじっくり煮込んだスープ。シンガポール式は胡椒が効いた澄んだスープが主流で、朝食や〆にも人気。ご飯と油條（揚げパン）を浸して食べる。",
+            "image": "",
+            "prompt_en": "Bak kut teh peppery pork rib soup in claypot, clear broth with garlic, side of rice and youtiao, Singapore style, food photography",
+            "plate_color": "claypot bowl",
+            "wiki_url": "https://en.wikipedia.org/wiki/Bak_kut_teh",
+            "order_ico": "🍲",
+            "order_name_en": "Bak Kut Teh"
+        },
+        {
+            "num": "No.5",
+            "name": "ホッケンミー",
+            "badge": "ホーカー定番",
+            "type": "main",
+            "city": "national",
+            "desc": "エビの出汁を吸わせた太麺と米麺のミックスを、エビ・イカと一緒に炒めた焼きそば。ライムを搾りサンバルチリを混ぜて食べる。ホーカーの実力が出る定番メニュー。",
+            "image": "",
+            "prompt_en": "Hokkien mee stir-fried prawn noodles with squid, lime and sambal chili on the side, smoky wok flavor, hawker food photography",
+            "plate_color": "white ceramic plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Hokkien_mee",
+            "order_ico": "🍤",
+            "order_name_en": "Hokkien Mee"
+        },
+        {
+            "num": "No.6",
+            "name": "サテー",
+            "badge": "炭火串焼き",
+            "type": "snack",
+            "city": "national",
+            "desc": "甘めのピーナッツソースで食べる炭火の串焼き。鶏・牛・羊から選べ、10本単位で頼むのが基本。夜だけ屋台が並ぶラオパサのサテー通りは観光客に大人気。",
+            "image": "",
+            "prompt_en": "Satay grilled meat skewers over charcoal with peanut sauce, cucumber and rice cakes, night hawker street, food photography",
+            "plate_color": "banana leaf plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Satay",
+            "order_ico": "🍢",
+            "order_name_en": "Satay"
+        },
+        {
+            "num": "No.7",
+            "name": "ロティプラタ",
+            "badge": "インド系朝食",
+            "type": "snack",
+            "city": "national",
+            "desc": "サクサクもちもちの薄焼きパンをカレーに浸して食べるインド系グルメ。チーズや卵入りなどバリエーション豊富で、朝食にも夜食にも合う。1枚150円前後と財布に優しい。",
+            "image": "",
+            "prompt_en": "Roti prata flaky crispy flatbread with fish curry dipping sauce, Indian hawker stall, golden layers, food photography",
+            "plate_color": "metal plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Roti_prata",
+            "order_ico": "🫓",
+            "order_name_en": "Roti Prata"
+        },
+        {
+            "num": "No.8",
+            "name": "キャロットケーキ（菜頭粿）",
+            "badge": "名前に騙されるな",
+            "type": "main",
+            "city": "national",
+            "desc": "ケーキでも人参でもなく、大根餅を卵と一緒に炒めたホーカー料理。白（プレーン）と黒（甘い醤油味）の2種類がある。名前のギャップも含めてシンガポールらしい一皿。",
+            "image": "",
+            "prompt_en": "Chai tow kway fried carrot cake radish cake with egg, dark soy version, spring onion garnish, hawker stall, food photography",
+            "plate_color": "white ceramic plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Chai_tow_kway",
+            "order_ico": "🍳",
+            "order_name_en": "Carrot Cake (Chai Tow Kway)"
+        },
+        {
+            "num": "No.9",
+            "name": "カヤトースト",
+            "badge": "定番朝食",
+            "type": "snack",
+            "city": "national",
+            "desc": "ココナッツジャム（カヤ）とバターを挟んだカリカリトーストに、半熟卵と練乳コーヒー（コピ）を合わせるシンガポールの朝食セット。半熟卵に醤油を垂らしてトーストを浸すのが現地流。",
+            "image": "",
+            "prompt_en": "Kaya toast set with soft boiled eggs and kopi coffee, crispy thin toast with kaya jam and butter slab, kopitiam breakfast, food photography",
+            "plate_color": "small white plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Kaya_toast",
+            "order_ico": "🍞",
+            "order_name_en": "Kaya Toast"
+        },
+        {
+            "num": "No.10",
+            "name": "アイスカチャン",
+            "badge": "極彩色かき氷",
+            "type": "dessert",
+            "city": "national",
+            "desc": "小豆・ゼリー・コーンの上にかき氷を山盛りにし、カラフルなシロップをかけた南国かき氷。見た目のインパクトは絶大で、常夏の食べ歩きの合間のクールダウンに最適。",
+            "image": "",
+            "prompt_en": "Ice kachang colorful shaved ice dessert with rainbow syrup, red beans, jelly and sweet corn, hawker dessert, food photography",
+            "plate_color": "glass bowl",
+            "wiki_url": "https://en.wikipedia.org/wiki/Ais_kacang",
+            "order_ico": "🍧",
+            "order_name_en": "Ice Kachang"
+        },
+        {
+            "num": "No.11",
+            "name": "プラナカン菓子（クエ）",
+            "badge": "映えスイーツ",
+            "type": "dessert",
+            "city": "national",
+            "desc": "ココナッツと米粉で作るカラフルな伝統菓子。パンダンリーフの緑や鮮やかなピンクの層が美しく、もちもち食感で日本人の口にも合う。お土産にもおすすめ。",
+            "image": "",
+            "prompt_en": "Colorful Peranakan kueh assortment, layered rainbow rice cakes with pandan and coconut, traditional Nyonya sweets on plate, food photography",
+            "plate_color": "peranakan patterned plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Kuih",
+            "order_ico": "🍡",
+            "order_name_en": "Kueh"
+        },
+        {
+            "num": "No.12",
+            "name": "シンガポールスリング",
+            "badge": "元祖カクテル",
+            "type": "drink",
+            "city": "national",
+            "desc": "ラッフルズホテルのバーで生まれたジンベースの真っ赤なカクテル。発祥のロングバーで飲むと1杯4,000円超えだが、殻付きピーナッツ食べ放題（殻は床に捨てるのが伝統）込みの特別な体験。",
+            "image": "",
+            "prompt_en": "Singapore Sling cocktail bright pink red in tall glass with pineapple slice and cherry, classic hotel bar setting, food photography",
+            "plate_color": "tall cocktail glass",
+            "wiki_url": "https://en.wikipedia.org/wiki/Singapore_Sling",
+            "order_ico": "🍹",
+            "order_name_en": "Singapore Sling"
+        }
+    ],
+    "spots_section_title": "シンガポール 観光スポット",
+    "spots_filter_cities": [
+        {
+            "id": "all",
+            "label": "すべて",
+            "active": true
+        },
+        {
+            "id": "marina_bay",
+            "label": "マリーナベイ",
+            "active": false
+        },
+        {
+            "id": "chinatown",
+            "label": "チャイナタウン",
+            "active": false
+        },
+        {
+            "id": "little_india",
+            "label": "リトルインディア・アラブスト",
+            "active": false
+        },
+        {
+            "id": "sentosa",
+            "label": "セントーサ島",
+            "active": false
+        },
+        {
+            "id": "orchard",
+            "label": "オーチャード・郊外",
+            "active": false
+        }
+    ],
+    "spot_sections": [
+        {
+            "city_id": "marina_bay",
+            "city_name": "マリーナベイ",
+            "city_image": "",
+            "city_prompt": "Marina Bay Singapore panorama with Marina Bay Sands, ArtScience Museum and Supertrees at dusk, city lights reflecting on water",
+            "city_desc": "マリーナベイ・サンズ、ガーデンズ・バイ・ザ・ベイ、マーライオンが湾を囲む観光のハイライト。夜は無料のショーが2つも楽しめる",
+            "city_info": [
+                {
+                    "label": "アクセス",
+                    "value": "MRTベイフロント駅・ラッフルズプレイス駅"
+                },
+                {
+                    "label": "おすすめ時間帯",
+                    "value": "夕方〜夜（ショーの時間に合わせて）"
+                },
+                {
+                    "label": "夜のショー",
+                    "value": "スペクトラ／ガーデンラプソディ（無料）"
+                }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🌳",
+                    "num": "MRN 01",
+                    "name": "ガーデンズ・バイ・ザ・ベイ",
+                    "desc": "高さ最大50mの人工樹スーパーツリーが林立する近未来植物園。夜の光と音のショー「ガーデンラプソディ」は無料。有料の温室2館（クラウドフォレスト・フラワードーム）も圧巻。",
+                    "badge": "近未来植物園",
+                    "prompt_en": "Supertree Grove Gardens by the Bay Singapore glowing purple and green at night, OCBC skyway bridge between trees, futuristic garden",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🦁",
+                    "num": "MRN 02",
+                    "name": "マーライオン公園",
+                    "desc": "シンガポールの象徴、上半身ライオン・下半身魚のマーライオン像。対岸のマリーナベイ・サンズと一緒に収める構図が定番。朝は逆光になりにくく、夜はライトアップが美しい。",
+                    "badge": "シンボル",
+                    "prompt_en": "Merlion statue Singapore spouting water with Marina Bay Sands in background across the bay, clear blue sky, iconic view",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🏙️",
+                    "num": "MRN 03",
+                    "name": "マリーナベイ・サンズ スカイパーク",
+                    "desc": "3棟のタワーの上に船が乗った奇抜な建築の屋上展望デッキ。地上約200mからマリーナベイとガーデンズを見下ろせる。名物インフィニティプールは宿泊者専用なので注意。",
+                    "badge": "展望デッキ",
+                    "prompt_en": "Marina Bay Sands SkyPark observation deck view over Singapore skyline and Gardens by the Bay from 57th floor, sunset",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "✨",
+                    "num": "MRN 04",
+                    "name": "スペクトラ（噴水ショー）",
+                    "desc": "マリーナベイ・サンズ前のイベントプラザで毎晩開催される光と水のショー。噴水・レーザー・音楽が湾を舞台に繰り広げられ、これが無料とは信じがたいクオリティ。",
+                    "badge": "無料ショー",
+                    "prompt_en": "Spectra light and water show at Marina Bay Sands event plaza, colorful fountains and laser beams over the bay at night",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🎡",
+                    "num": "MRN 05",
+                    "name": "シンガポールフライヤー",
+                    "desc": "高さ165m、アジア最大級の観覧車。1周約30分でマリーナベイと海峡を一望できる。カプセル内での食事プランなど変わり種の楽しみ方も。",
+                    "badge": "大観覧車",
+                    "prompt_en": "Singapore Flyer giant observation wheel by Marina Bay at dusk, city skyline backdrop, illuminated capsules",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🏛️",
+                    "num": "MRN 06",
+                    "name": "ナショナル・ギャラリー・シンガポール",
+                    "desc": "旧最高裁判所と市庁舎をリノベした東南アジア最大級の美術館。建物自体が見どころで、屋上からはマリーナベイの絶景も。暑さとスコールを避ける昼の避難先としても優秀。",
+                    "badge": "美術館",
+                    "prompt_en": "National Gallery Singapore neoclassical former Supreme Court building interior with modern glass atrium, art museum",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "chinatown",
+            "city_name": "チャイナタウン",
+            "city_image": "",
+            "city_prompt": "Chinatown Singapore shophouses with red lanterns and Buddha Tooth Relic Temple, street market stalls, vibrant colors",
+            "city_desc": "極彩色の寺院とホーカーが密集する下町。シンガポールグルメの聖地で、チキンライスの名店もこのエリアに集まる",
+            "city_info": [
+                {
+                    "label": "アクセス",
+                    "value": "MRTチャイナタウン駅・マックスウェル駅"
+                },
+                {
+                    "label": "おすすめ時間帯",
+                    "value": "午前〜昼（ホーカーの売り切れ前）"
+                },
+                {
+                    "label": "名物グルメ",
+                    "value": "チキンライス・バクテー",
+                    "link_section": "food",
+                    "link_btn_index": 2
+                }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🛕",
+                    "num": "CHN 01",
+                    "name": "佛牙寺龍華院",
+                    "desc": "仏陀の歯が祀られているとされる唐代様式の大寺院。無料で内部見学でき、金色に輝く仏歯舎利塔と屋上庭園は必見。チャイナタウン散策の起点にちょうどいい。",
+                    "badge": "無料で圧巻",
+                    "prompt_en": "Buddha Tooth Relic Temple Singapore red and gold Tang dynasty style architecture in Chinatown, ornate interior golden stupa",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🍜",
+                    "num": "CHN 02",
+                    "name": "マックスウェル・フードセンター",
+                    "desc": "チキンライスの超有名店・天天海南鶏飯を擁するホーカーの代表格。100軒超の屋台から選び放題で、1食500〜900円。ホーカーデビューはここからが鉄板。",
+                    "badge": "ホーカーの聖地",
+                    "prompt_en": "Maxwell Food Centre Singapore bustling hawker centre interior with food stalls and locals dining, chicken rice stall queue",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🕌",
+                    "num": "CHN 03",
+                    "name": "スリ・マリアマン寺院",
+                    "desc": "シンガポール最古のヒンドゥー教寺院がチャイナタウンのど真ん中にあるのが多民族国家らしいところ。神々の彫像が積み上がった極彩色の塔門（ゴープラム）は圧巻。",
+                    "badge": "最古の寺院",
+                    "prompt_en": "Sri Mariamman Temple Singapore colorful gopuram tower covered in Hindu deity sculptures, oldest Hindu temple in Chinatown",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "little_india",
+            "city_name": "リトルインディア・アラブストリート",
+            "city_image": "",
+            "city_prompt": "Little India Singapore colorful shophouses and Sultan Mosque golden dome at Kampong Glam, vibrant multicultural streets",
+            "city_desc": "スパイスの香り漂うインド人街と、黄金のモスクがそびえるアラブ人街。徒歩圏に文化が丸ごと切り替わる、多民族国家の醍醐味エリア",
+            "city_info": [
+                {
+                    "label": "アクセス",
+                    "value": "MRTリトルインディア駅・ブギス駅"
+                },
+                {
+                    "label": "おすすめ時間帯",
+                    "value": "午後〜夕方（2エリアはしご）"
+                },
+                {
+                    "label": "回り方",
+                    "value": "リトルインディア→アラブストの徒歩はしごが定番"
+                }
+            ],
+            "spots": [
+                {
+                    "must": false,
+                    "icon": "🛕",
+                    "num": "LIT 01",
+                    "name": "スリ・ヴィラマカリアマン寺院",
+                    "desc": "リトルインディアの中心に建つカーリー女神の寺院。極彩色の塔門と、線香とジャスミンの香りに包まれた濃密な空気は、ここが東南アジアであることを忘れさせる。",
+                    "badge": "インド世界",
+                    "prompt_en": "Sri Veeramakaliamman Temple Little India Singapore ornate colorful gopuram, flower garland stalls on Serangoon Road",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🕌",
+                    "num": "LIT 02",
+                    "name": "サルタン・モスク",
+                    "desc": "黄金のドームが輝くシンガポール最大級のモスク。礼拝時間外は内部見学も可能（服装規定あり・貸出あり）。モスク前のバッソーラ・ストリートから望む構図が美しい。",
+                    "badge": "黄金ドーム",
+                    "prompt_en": "Sultan Mosque Singapore golden dome and white minarets viewed from Bussorah Street palm-lined walkway, Kampong Glam",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🎨",
+                    "num": "LIT 03",
+                    "name": "ハジ・レーン",
+                    "desc": "壁一面のストリートアートと個性派ショップが並ぶ細い路地。アラブストリートのすぐ隣で、カフェ休憩と写真撮影に最適。夕方からはバーストリートに変わる。",
+                    "badge": "映えスポット",
+                    "prompt_en": "Haji Lane Singapore narrow alley with colorful street art murals, boutique shops and cafes, hip atmosphere",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "sentosa",
+            "city_name": "セントーサ島",
+            "city_image": "",
+            "city_prompt": "Sentosa Island Singapore with Universal Studios globe, cable car over harbor, Siloso beach palm trees, resort island",
+            "city_desc": "ユニバーサル・スタジオ、ビーチ、アクティビティが詰まった遊びの島。本島からモノレール・ケーブルカー・徒歩でアクセスできる",
+            "city_info": [
+                {
+                    "label": "アクセス",
+                    "value": "MRTハーバーフロント駅からセントーサ・エクスプレス"
+                },
+                {
+                    "label": "おすすめ滞在",
+                    "value": "丸1日（USSに行くなら朝から）"
+                },
+                {
+                    "label": "チケット",
+                    "value": "USS・リュージュは事前予約が安くて確実"
+                }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🎢",
+                    "num": "SEN 01",
+                    "name": "ユニバーサル・スタジオ・シンガポール",
+                    "desc": "東南アジア唯一のユニバーサル・スタジオ。日本より空いていることが多く、人気アトラクションも比較的短い待ち時間で楽しめる。チケットは事前購入がスムーズ。",
+                    "badge": "テーマパーク",
+                    "prompt_en": "Universal Studios Singapore entrance with rotating globe fountain, Hollywood boulevard palm trees, blue sky",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🛷",
+                    "num": "SEN 02",
+                    "name": "スカイライン・リュージュ",
+                    "desc": "専用カートで坂道を滑り降りるアクティビティ。スピード調整は自分次第で、子どもから大人まで想像以上に盛り上がる。リフトからの海の眺めもセットで楽しい。",
+                    "badge": "絶叫系ライト",
+                    "prompt_en": "Skyline Luge Sentosa people riding gravity carts down winding track through greenery, chairlift above, fun activity",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🏖️",
+                    "num": "SEN 03",
+                    "name": "シロソ・ビーチ",
+                    "desc": "ヤシの木が並ぶセントーサ随一のビーチ。ビーチバーでのんびりするのが定番の過ごし方で、都市観光の合間のリゾート気分にちょうどいい。夕暮れ時が特に気持ちいい。",
+                    "badge": "ビーチ",
+                    "prompt_en": "Siloso Beach Sentosa Singapore palm trees and white sand, beach bars, people relaxing, sunset golden light",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "orchard",
+            "city_name": "オーチャード・郊外",
+            "city_image": "",
+            "city_prompt": "Orchard Road Singapore shopping street with modern malls, and Jewel Changi indoor waterfall, city attractions",
+            "city_desc": "買い物天国オーチャードロードと、郊外の世界的動物園、そして空港なのに観光地のジュエル・チャンギ。市街の外にも見どころが豊富",
+            "city_info": [
+                {
+                    "label": "アクセス",
+                    "value": "MRTオーチャード駅／動物園へはバス・Grab"
+                },
+                {
+                    "label": "おすすめ時間帯",
+                    "value": "動物園は午前・ナイトサファリは19時〜"
+                },
+                {
+                    "label": "ジュエル",
+                    "value": "帰国日にチャンギ空港とセットで"
+                }
+            ],
+            "spots": [
+                {
+                    "must": false,
+                    "icon": "🛍️",
+                    "num": "ORC 01",
+                    "name": "オーチャードロード",
+                    "desc": "約2.2kmにわたって巨大モールが連なるシンガポール随一のショッピング街。高島屋や伊勢丹もあり日本人にも歩きやすい。冷房の効いたモール間を渡り歩けば暑さ知らず。",
+                    "badge": "買い物天国",
+                    "prompt_en": "Orchard Road Singapore shopping boulevard with modern glass malls ION Orchard, tree-lined street, shoppers",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🦧",
+                    "num": "ORC 02",
+                    "name": "シンガポール動物園",
+                    "desc": "檻や柵を極力使わない「オープンズー」の世界的先駆者。オランウータンと一緒に朝食を食べられるプログラムが名物。緑の中を歩くだけでも気持ちいい設計。",
+                    "badge": "世界的動物園",
+                    "prompt_en": "Singapore Zoo open concept enclosure with orangutans on ropes in lush rainforest setting, no visible cages",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🌙",
+                    "num": "ORC 03",
+                    "name": "ナイトサファリ",
+                    "desc": "世界初の夜行性動物園。トラムに乗って夜の森を巡り、闇の中で活動する動物たちを間近に観察できる。日本語トラムの時間帯もあり。夜だけ開園なので観光後半の夜に組み込みやすい。",
+                    "badge": "世界初の夜動物園",
+                    "prompt_en": "Night Safari Singapore tram riding through dimly lit jungle with deer and nocturnal animals visible, mysterious night atmosphere",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "💧",
+                    "num": "ORC 04",
+                    "name": "ジュエル・チャンギ・エアポート",
+                    "desc": "チャンギ空港直結の巨大複合施設。中央の屋内滝「レイン・ボルテックス」（高さ40m・世界最大級）は空港とは思えない絶景。帰国日は3時間前に空港入りしてここを楽しむのが正解。",
+                    "badge": "空港の絶景",
+                    "prompt_en": "Jewel Changi Airport Rain Vortex giant indoor waterfall surrounded by terraced forest, glass dome ceiling, train passing through",
+                    "image": ""
+                }
+            ]
+        }
+    ],
+    "courses": {
+        "intro": "コンパクトな都市国家シンガポールは、<strong>3泊4日で主要どころを一通り回れる</strong>のが魅力。初めてなら王道を押さえるプランA、セントーサでしっかり遊ぶならプランBを。胃袋に自信があるなら、ホーカーを食べ歩く番外編もどうぞ。",
+        "stable_title": "定番の2大プラン",
+        "stable_intro": "シンガポール観光のコツは「暑さとショーの時間から逆算する」こと。日中の炎天下に歩き回るのは消耗が激しいので、朝と夕方以降に屋外、昼は屋内という組み立てが基本です。夜の無料ショー2本（ガーデンラプソディ・スペクトラ）を軸に夜の予定を組みましょう。",
+        "stable_plans": [
+            {
+                "label": "プランA",
+                "title": "王道シンガポール　3泊4日",
+                "days": [
+                    {
+                        "transit": false,
+                        "label": "Day 1",
+                        "badge_class": "green",
+                        "content_html": "<strong>午前便で夕方着 → マーライオンと夜景</strong><br>チャンギ空港からMRTで市内へ（約30分）。ホテルに荷物を置いたら<a onclick=\"showSpot('MRN 02')\" class=\"spot-link\">マーライオン公園</a>へ。対岸に光るマリーナベイ・サンズを眺めながら、湾沿いを散歩して初日から夜景を満喫。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 2",
+                        "badge_class": "green",
+                        "content_html": "<strong>マリーナベイを1日満喫</strong><br>朝は<a onclick=\"showSpot('MRN 01')\" class=\"spot-link\">ガーデンズ・バイ・ザ・ベイ</a>の温室2館へ（涼しい時間に屋外のスーパーツリーも）。午後は<a onclick=\"showSpot('MRN 03')\" class=\"spot-link\">スカイパーク展望デッキ</a>とモール散策。夜は19時台の<a onclick=\"showSpot('MRN 01')\" class=\"spot-link\">ガーデンラプソディ</a>→20時台の<a onclick=\"showSpot('MRN 04')\" class=\"spot-link\">スペクトラ</a>と、無料ショー2本をハシゴ。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 3",
+                        "badge_class": "red",
+                        "content_html": "<strong>3つの文化街 → 夜はナイトサファリ</strong><br>午前は<a onclick=\"showSpot('CHN 01')\" class=\"spot-link\">佛牙寺</a>と<a onclick=\"showSpot('CHN 02')\" class=\"spot-link\">マックスウェルFC</a>でチキンライス。午後は<a onclick=\"showSpot('LIT 01')\" class=\"spot-link\">リトルインディア</a>から<a onclick=\"showSpot('LIT 02')\" class=\"spot-link\">サルタン・モスク</a>・<a onclick=\"showSpot('LIT 03')\" class=\"spot-link\">ハジ・レーン</a>へ文化はしご。夜は<a onclick=\"showSpot('ORC 02')\" class=\"spot-link\">ナイトサファリ</a>で締め。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 4",
+                        "badge_class": "",
+                        "content_html": "<strong>ジュエルの滝 → 帰国</strong><br>早めに空港へ向かい、<a onclick=\"showSpot('ORC 04')\" class=\"spot-link\">ジュエル・チャンギ</a>の屋内滝を見ながらお土産調達。空港自体が観光地なので、最終日の余白がそのまま楽しみになる。"
+                    }
+                ],
+                "tip": "夜の無料ショーは時間が命。ガーデンラプソディ（19時台〜）→スペクトラ（20時台〜）の順なら徒歩移動で両方見られる。開催時間は当日に公式サイトで確認を。"
+            },
+            {
+                "label": "プランB",
+                "title": "セントーサも遊ぶ欲張り　4泊5日",
+                "days": [
+                    {
+                        "transit": false,
+                        "label": "Day 1",
+                        "badge_class": "green",
+                        "content_html": "<strong>到着 → マーライオン夜景</strong><br>プランAと同じく、初日は<a onclick=\"showSpot('MRN 02')\" class=\"spot-link\">マーライオン公園</a>と湾岸散歩で肩慣らし。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 2",
+                        "badge_class": "green",
+                        "content_html": "<strong>マリーナベイ集中日</strong><br><a onclick=\"showSpot('MRN 01')\" class=\"spot-link\">ガーデンズ・バイ・ザ・ベイ</a>→<a onclick=\"showSpot('MRN 06')\" class=\"spot-link\">ナショナル・ギャラリー</a>→夜は無料ショー2本（ガーデンラプソディ＆<a onclick=\"showSpot('MRN 04')\" class=\"spot-link\">スペクトラ</a>）。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 3",
+                        "badge_class": "red",
+                        "content_html": "<strong>セントーサ島で丸1日</strong><br>朝イチで<a onclick=\"showSpot('SEN 01')\" class=\"spot-link\">ユニバーサル・スタジオ</a>へ。午後は<a onclick=\"showSpot('SEN 02')\" class=\"spot-link\">スカイライン・リュージュ</a>と<a onclick=\"showSpot('SEN 03')\" class=\"spot-link\">シロソ・ビーチ</a>でリゾート気分。夕日を見てから本島へ戻る。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 4",
+                        "badge_class": "red",
+                        "content_html": "<strong>文化街めぐり → ナイトサファリ</strong><br><a onclick=\"showSpot('CHN 01')\" class=\"spot-link\">チャイナタウン</a>→<a onclick=\"showSpot('LIT 02')\" class=\"spot-link\">アラブストリート</a>→<a onclick=\"showSpot('ORC 01')\" class=\"spot-link\">オーチャード</a>で買い物→夜は<a onclick=\"showSpot('ORC 02')\" class=\"spot-link\">ナイトサファリ</a>。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 5",
+                        "badge_class": "",
+                        "content_html": "<strong>ジュエル → 帰国</strong><br><a onclick=\"showSpot('ORC 04')\" class=\"spot-link\">ジュエル・チャンギ</a>で滝とお土産を楽しんでから帰国便へ。"
+                    }
+                ],
+                "tip": "USSとナイトサファリのチケットは事前予約が確実で、当日券より安いことも多い。セントーサ内の移動は無料のバス・ビーチトラムが使える。"
+            }
+        ],
+        "adventure_title": "胃袋の限界に挑みたい人向け",
+        "adventure_note_html": "シンガポールの本当の主役はホーカー（屋台街）だと言う人も多いほど、この国の食文化は奥深いもの。観光そっちのけで、朝から晩までホーカーをはしごする「食べ歩き全振り」のモデルを紹介します。1皿が小さめなので、意外と回れます。",
+        "adventure_plan": {
+            "title": "ホーカー食べ歩き行脚　3泊4日",
+            "days": [
+                {
+                    "transit": false,
+                    "label": "Day 1",
+                    "badge_class": "green",
+                    "content_html": "<strong>到着 → ラオパサのサテー通り</strong><br>夕方着でも間に合うのがこのプランの良いところ。夜だけ車道が屋台街に変わるラオパサの<strong>サテー通り</strong>で、炭火の煙に包まれながらサテー10本とタイガービールで開幕。"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 2",
+                    "badge_class": "red",
+                    "content_html": "<strong>チャイナタウン → カトンでラクサ</strong><br>朝はヤクンで<strong>カヤトースト</strong>、昼は<a onclick=\"showSpot('CHN 02')\" class=\"spot-link\">マックスウェルFC</a>で<strong>チキンライス</strong>と<strong>ホッケンミー</strong>。午後はプラナカンの街カトンへ移動して本場の<strong>ラクサ</strong>。夜は川沿いでチリクラブに挑戦。"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 3",
+                    "badge_class": "red",
+                    "content_html": "<strong>朝バクテー → リトルインディア → 夜市</strong><br>朝は澄んだ胡椒スープの<strong>バクテー</strong>でスタート。昼は<a onclick=\"showSpot('LIT 01')\" class=\"spot-link\">リトルインディア</a>でフィッシュヘッドカレーと<strong>ロティプラタ</strong>。夕方は<strong>アイスカチャン</strong>でクールダウンして、夜はチャイナタウンの屋台街を締めに。"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 4",
+                    "badge_class": "",
+                    "content_html": "<strong>最後の朝食セット → 帰国</strong><br>ローカルコーヒー店（コピティアム）で<strong>カヤトースト＋半熟卵＋コピ</strong>の正統派朝食セットを最後にもう一度。<a onclick=\"showSpot('ORC 04')\" class=\"spot-link\">ジュエル</a>でお土産のカヤジャムを買って帰国。"
+                }
+            ],
+            "tip": "ホーカーでは1皿を小サイズで頼み、2人ならシェアすれば1日6〜8品はいける。ティッシュで席取りする「チョープ」文化と、食後の食器返却（義務）だけ覚えておけば快適に戦える。"
+        },
+        "cta_title": "ベストシーズンもチェックしよう！🌤️",
+        "cta_desc": "常夏のシンガポールは一年中旅行できますが、雨季とF1開催週だけは知っておいて損なし。"
+    },
+    "transport_items": [
+        {
+            "icon": "✈️",
+            "name": "国際線（直行便）",
+            "desc": "羽田・成田・関西・中部・福岡からチャンギ空港へ直行便が毎日多数。所要約7〜8時間。チャンギは「世界一の空港」常連で、到着から観光が始まる。",
+            "affiliate": "",
+            "is_last": false
+        },
+        {
+            "icon": "🚇",
+            "name": "MRT（地下鉄）",
+            "desc": "市内観光の主役。1回100〜250円と格安で、タッチ決済対応クレカならそのまま乗れる（SimplyGo）。車内飲食禁止・ドリアン持込禁止のルールだけ注意。",
+            "affiliate": "",
+            "is_last": false
+        },
+        {
+            "icon": "🚌",
+            "name": "バス",
+            "desc": "路線網が濃く、2階建てバスの2階最前列は即席観光バスになる。乗車もクレカのタッチでOK。Googleマップでリアルタイム位置を確認できる。",
+            "affiliate": "",
+            "is_last": false
+        },
+        {
+            "icon": "🚕",
+            "name": "タクシー / Grab",
+            "desc": "メーター制で安心なタクシーと配車アプリGrabが併存。深夜や荷物が多い日はGrabが気楽。ナイトサファリなど郊外からの帰りにも重宝する。",
+            "affiliate": "",
+            "is_last": false
+        },
+        {
+            "icon": "🚝",
+            "name": "セントーサ・エクスプレス / ケーブルカー",
+            "desc": "セントーサ島へはビボシティ3階からモノレールが手軽。ケーブルカーは料金が高めだが、港とセントーサを見下ろす空中散歩が楽しめる。",
+            "affiliate": "",
+            "is_last": false
+        },
+        {
+            "icon": "⛴️",
+            "name": "リバークルーズ",
+            "desc": "クラーク・キーからマリーナベイへ川を下る遊覧船。夜に乗ればマーライオンとマリーナベイ・サンズの夜景を水上から眺められる。",
+            "affiliate": "klook",
+            "is_last": true
+        }
+    ],
+    "spot_points": [
+        {
+            "title": "夜の無料ショーは2本ハシゴが正解",
+            "body": "ガーデンズ・バイ・ザ・ベイの「ガーデンラプソディ」とマリーナベイ・サンズ前の「スペクトラ」は、どちらも無料とは思えないクオリティ。開始時間が1時間ほどずれているので、19時台にガーデンラプソディ→徒歩移動→20時台にスペクトラ、と1晩で両方見るのが定番の動き方だ。"
+        },
+        {
+            "title": "ホーカーは「チョープ」と食器返却を覚えるだけ",
+            "body": "ホーカーでの席取りは、ティッシュや傘を机に置いておく「チョープ」がシンガポール流の公認ルール。先に席を確保してから買いに行こう。そして食後の食器・トレイは返却棚へ戻すのが義務（放置は罰金対象）。この2つさえ覚えれば、あとは気になる屋台に並ぶだけ。"
+        },
+        {
+            "title": "帰国日はチャンギに早めに行くほど得",
+            "body": "ジュエルの屋内滝、無料の映画館、バタフライガーデン——チャンギ空港は「早く着きすぎた」が存在しない空港。帰国日は出発3〜4時間前に空港入りして、ジュエルでお土産と滝を楽しむのが正しい過ごし方だ。"
+        }
+    ],
+    "food_modal_phrase_main": "Can I have this, please?",
+    "food_modal_phrase_sub": "Having here.（店内で）／ Takeaway, please.（持ち帰りで）",
+    "index_card": {
+        "flag": "🇸🇬",
+        "catch": "清潔・安全・最先端。小さな島国の大きな魅力",
+        "region": "東南アジア",
+        "best_months": [
+            1,
+            2,
+            3
+        ],
+        "best_label": "2〜4月（通年OK）",
+        "tags": [
+            "グルメ",
+            "都市",
+            "夜景",
+            "家族旅行"
+        ],
+        "gradient": "linear-gradient(135deg,#cc0001 0%,#ff6b6b 100%)",
+        "budget": [
+            "budget2",
+            "budget3"
+        ]
+    }
+}
