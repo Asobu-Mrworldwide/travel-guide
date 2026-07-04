@@ -1823,7 +1823,7 @@
                     "icon": "⛩️",
                     "num": "BUK 03",
                     "name": "イスマイル・サーマーニー廟",
-                    "desc": "10世紀建造の中央アジア最古のイスラム建築の一つ。煉瓦の積み方で生まれる光の陰影が美しく、時間帯によって表情が変わる。静かな公園の中に佇む（たたずむ）。",
+                    "desc": "10世紀建造の中央アジア最古のイスラム建築の一つ。煉瓦の積み方で生まれる光の陰影が美しく、時間帯によって表情が変わる。静かな公園の中に佇む。",
                     "badge": "10世紀建造"
                 },
                 {
@@ -1872,7 +1872,7 @@
                     "icon": "📸",
                     "num": "BUK 09",
                     "name": "チョル・ミノル",
-                    "desc": "ターコイズブルーの小塔を4本頂く、他に類を見ない形のメドレセ門。絵葉書や観光ポスターの常連で、ブハラで最もフォトジェニックな建築のひとつ。住宅街の中にひっそり佇む（たたずむ）。",
+                    "desc": "ターコイズブルーの小塔を4本頂く、他に類を見ない形のメドレセ門。絵葉書や観光ポスターの常連で、ブハラで最もフォトジェニックな建築のひとつ。住宅街の中にひっそり佇む。",
                     "badge": "映えスポット"
                 }
             ]
@@ -2370,33 +2370,27 @@
                     "badge_style": "background:#1e7e34",
                     "badge_class": "",
                     "label": "Day 1",
-                    "content_html": "<strong>タシュケント → フェルガナ</strong><br>到着後すぐ国内線か車でフェルガナへ移動。緑豊かな渓谷の景色が広がる。"
-                },
-                {
-                    "transit": true,
-                    "icon": "✈️",
-                    "plane": true,
-                    "duration": "約1時間 or 🚗 約4時間"
+                    "content_html": "<strong>タシュケント経由 → フェルガナ</strong><br>飛行機でタシュケントを経由し、そのままフェルガナへ移動。緑豊かな渓谷の景色が広がる。"
                 },
                 {
                     "transit": false,
                     "badge_style": "background:#2ea44f",
                     "badge_class": "",
                     "label": "Day 2",
-                    "content_html": "<strong>フェルガナ渓谷</strong><br>午前はリシタンの陶芸工房を訪問。職人が何百年も変わらない技法で青い器を作る様子を見学できる。午後はマルギランの絹工場へ。繭（まゆ）から手で糸を引く女性たちの作業を見学しよう。"
+                    "content_html": "<strong>フェルガナ渓谷</strong><br>午前はリシタンの陶芸工房を訪問。職人が何百年も変わらない技法で青い器を作る様子を見学できる。午後はマルギランの絹工場へ。繭（まゆ）から手で糸を引く女性たちの作業を見学しよう。夕方の列車でタシュケントへ戻る（タシュケント泊）。"
                 },
                 {
                     "transit": true,
-                    "icon": "🚗",
-                    "taxi": true,
-                    "duration": "約3〜4時間"
+                    "icon": "🚆",
+                    "train": true,
+                    "duration": "約5〜6時間"
                 },
                 {
                     "transit": false,
                     "badge_style": "background:#52a443",
                     "badge_class": "",
                     "label": "Day 3",
-                    "content_html": "<strong>サマルカンド</strong><br>早朝のレギスタン広場は人がほとんどおらず、広場を独り占めできる貴重な時間。シャフリサブズィンダも朝一に行くと光が美しい。"
+                    "content_html": "<strong>サマルカンド</strong><br>朝イチの高速鉄道アフロシヨブ号でタシュケントからサマルカンドへ移動（約2時間半）。到着後、午後はサマルカンド観光。レギスタン広場は日没後のライトアップも見どころ。"
                 },
                 {
                     "transit": true,
@@ -2409,47 +2403,67 @@
                     "badge_style": "background:#8a9a20",
                     "badge_class": "",
                     "label": "Day 4",
-                    "content_html": "<strong>ブハラ</strong><br>カラン・ミナレット周辺を歩き、夕暮れのラビ・ハウズでゆっくり過ごす。ブハラは歩いて回れる規模なので、地図なしで路地を散策するのもおすすめ。"
+                    "content_html": "<strong>ブハラ</strong><br>朝の列車でサマルカンドからブハラへ移動。到着後、午後はカラン・ミナレット・ラビ・ハウズなどブハラ観光。夕暮れのラビ・ハウズでゆっくり過ごすのもおすすめ。"
                 },
                 {
                     "transit": false,
                     "badge_style": "background:#9aaa10",
                     "badge_class": "",
                     "label": "Day 5",
-                    "content_html": "<strong>ブハラ 2日目</strong><br>旧市街の奥にあるイスマイル・サーマーニー廟は静かで落ち着いている。午後はバザールでハルバを買いながら地元の人と片言ロシア語で話してみよう。"
+                    "content_html": "<strong>ブハラ→ヒヴァ（昼移動）</strong><br>午前はイスマイル・サーマーニー廟やバザールなど、ブハラ観光の続き。昼は列車または貸切タクシーでヒヴァへ移動。"
                 },
                 {
                     "transit": true,
-                    "icon": "🚕",
-                    "taxi": true,
-                    "duration": "約5〜6時間（共有タクシー）"
+                    "icon": "🚆",
+                    "train": true,
+                    "duration": "約3時間 or 🚕 貸切タクシーで約5〜6時間"
+                },
+                {
+                    "transit": false,
+                    "badge_style": "background:#9aaa10",
+                    "badge_class": "",
+                    "label": "Day 5",
+                    "content_html": "<strong>ヒヴァ到着</strong><br>チェックイン後は城壁に囲まれたイチャン・カラを散策。夜も旧市街を歩くのがおすすめ。観光客が引けた夜のヒヴァは静かで幻想的。"
                 },
                 {
                     "transit": false,
                     "badge_style": "background:#c88000",
                     "badge_class": "",
                     "label": "Day 6",
-                    "content_html": "<strong>ヒヴァ</strong><br>砂漠を越えてたどり着くイチャン・カラは、城壁に囲まれた独特の景観が広がる城塞都市。城壁内に泊まって夜も旧市街を歩くのがおすすめ。観光客が引けた夜のヒヴァは静かで幻想的。"
+                    "content_html": "<strong>ヒヴァ観光</strong><br>丸1日かけてイチャン・カラ内の各ミナレットや宮殿を巡る。夕方から夜にかけて、幻想的にライトアップされたイチャン・カラを堪能。"
                 },
                 {
                     "transit": true,
                     "icon": "🚕",
                     "taxi": true,
-                    "duration": "約2〜3時間"
+                    "duration": "約3時間"
                 },
                 {
                     "transit": false,
                     "badge_style": "background:#c84020",
                     "badge_class": "",
                     "label": "Day 7",
-                    "content_html": "<strong>ヌクス</strong><br>まずサヴィツキー美術館へ。砂漠の辺境という立地にもかかわらず、充実した前衛芸術コレクションを鑑賞できる。夜はムイナクへの移動を準備。"
+                    "content_html": "<strong>ヌクス</strong><br>サヴィツキー美術館へ。砂漠の辺境という立地にもかかわらず、充実した前衛芸術コレクションを鑑賞できる。"
+                },
+                {
+                    "transit": true,
+                    "icon": "🚕",
+                    "taxi": true,
+                    "duration": "約3時間"
+                },
+                {
+                    "transit": false,
+                    "badge_style": "background:#c84020",
+                    "badge_class": "",
+                    "label": "Day 7",
+                    "content_html": "<strong>ムイナク</strong><br>アラル海跡地への玄関口となる町。到着後はムイナクで宿泊。"
                 },
                 {
                     "transit": false,
                     "badge_style": "background:#cc0001",
                     "badge_class": "",
                     "label": "Day 8",
-                    "content_html": "<strong>アラル海（船の墓場）</strong><br>ムイナクから車で30〜40分、砂漠の中に錆びた漁船が転がるアラル海跡地へ。かつて湖だった場所に、独特の光景が広がる。午後はヌクスに戻り飛行機でタシュケントへ。"
+                    "content_html": "<strong>アラル海（船の墓場）</strong><br>朝はアラル海跡地へ。砂漠の中に錆びた漁船が並ぶ独特の光景が広がる。昼は車でヌクスへ戻り、夜は国内線飛行機でタシュケントへ。"
                 },
                 {
                     "transit": true,
@@ -2462,7 +2476,7 @@
                     "badge_style": "",
                     "badge_class": "gray",
                     "label": "Day 9",
-                    "content_html": "<strong>タシュケント → 帰国</strong><br>最後にチョルスー・バザールでお土産を購入して帰国の途へ。"
+                    "content_html": "<strong>タシュケント → 帰国</strong><br>午前はチョルスー・バザールでお土産を購入。午後は空港へ向かい、帰国の途へ。"
                 }
             ]
         },
