@@ -382,14 +382,17 @@ def generate(country_id):
             ('practical', 'practical.html', '旅の準備'),
             ('phrases',   'phrases.html',   'フレーズ'),
         ]
-        base_title   = data.get('page_title', '')
-        name         = data.get('name', '')
-        spot_data_js = build_spot_data_js(data)
-        for slug, outfile, label in pages:
+        base_title    = data.get('page_title', '')
+        name          = data.get('name', '')
+        spot_data_js  = build_spot_data_js(data)
+        page_order_js = json.dumps([p[1] for p in pages])
+        for idx, (slug, outfile, label) in enumerate(pages):
             ctx = dict(data)
             ctx['multipage']       = True
             ctx['singlepage']      = False
             ctx['spot_data_js']    = spot_data_js
+            ctx['page_order_js']   = page_order_js
+            ctx['page_index']      = idx
             ctx['show']            = {s: (s == slug) for s in SECTIONS}
             ctx['nav_active']      = {s: ('active' if s == slug else '') for s in SECTIONS}
             ctx['sec_active']      = {s: ('active' if s == slug else '') for s in SECTIONS}
