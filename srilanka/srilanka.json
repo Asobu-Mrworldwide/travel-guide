@@ -1,0 +1,1399 @@
+{
+    "id": "srilanka",
+    "name": "スリランカ民主社会主義共和国",
+    "name_en": "Sri Lanka",
+    "page_title": "スリランカ旅行ガイド",
+    "hero_image": "素材/ヒーロー.webp",
+    "hero_alt": "シギリヤロックとセイロンティー畑の風景",
+    "hero_prompt": "Sigiriya Rock Fortress rising above lush green jungle at golden hour, with distant tea plantation hills, warm evening light, travel illustration style",
+    "overview": {
+        "country_question": "スリランカってどんなところ？",
+        "description_html": "インド洋に浮かぶ「インドの涙」。<strong>古代遺跡・紅茶畑・野生のゾウ・南国のビーチ</strong>が、九州よりやや小さい島土に凝縮されています。直行便で約9〜10時間、時差はわずか3時間半。仏教遺跡を巡ったかと思えば数時間の移動でビーチに寝転がれる、コンパクトなのに中身が濃い旅先です。",
+        "flag_html": "<div style=\"position:relative;height:100px;width:150px;display:inline-block;overflow:hidden;border:1px solid #eee;background:#FFB700\"><div style=\"position:absolute;top:0;left:0;width:30px;height:100px;display:flex;flex-direction:column\"><div style=\"flex:1;background:#FF7A00\"></div><div style=\"flex:1;background:#00534E\"></div></div><div style=\"position:absolute;top:0;left:35px;width:115px;height:100px;background:#8D2433\"></div></div>",
+        "flag_caption": "獅子旗。中央のライオンはシンハラ民族を象徴し、周囲の菩提樹の葉が仏教国であることを示す。",
+        "top_spot_name": "シギリヤロック",
+        "top_spot_desc": "ジャングルにそびえる高さ200mの一枚岩の要塞跡。世界遺産に登録された古代都市の遺構が頂上に広がる。",
+        "top_food_name": "ライス＆カリー",
+        "top_food_desc": "白米に数種類のカレーとサンボル（薬味）を少しずつ盛り合わせるスリランカの定食。家庭ごと・店ごとに味が違う奥深さ。",
+        "top_food_image": "",
+        "difficulty_label": "やや易しい",
+        "difficulty_label_bg": "#e8f5ee",
+        "difficulty_label_color": "var(--green)",
+        "difficulty_pct": "38",
+        "difficulty_bar": "linear-gradient(90deg,#00a86b,#ffcc80)",
+        "difficulty_desc": "英語が比較的通じ、日本人はビザ（ETA）取得のみで渡航可能。直行便は成田発の週4便のみで所要約9〜10時間とやや長め。都市間の移動は鉄道・車で数時間かかることが多く、詰め込みすぎない日程が旅のコツ。",
+        "japan_popularity_html": "まだ知名度は高くないが、紅茶・遺跡・野生動物・ビーチを一度に楽しめる旅先として近年じわじわ人気上昇中。2026年5月からは日本を含む40カ国向けにETA（電子渡航認証）の観光目的の手数料が無料化され、渡航のハードルはさらに下がった。",
+        "flight_hours": "約9〜10時間",
+        "timezone": "日本 −3時間30分",
+        "visa": "ETA取得要（観光30日・手数料無料）",
+        "budget_range": "15〜28万円",
+        "language": "シンハラ語・タミル語（英語も通じる）",
+        "currency_name": "スリランカルピー(LKR)",
+        "currency_rate": "1LKR ≈ 0.5円"
+    },
+    "map": {
+        "element_id": "srilanka-map",
+        "center_lat": "7.6",
+        "center_lng": "80.7",
+        "zoom": "8",
+        "map_id": "ebb608e55ed157f8630c407e",
+        "country_label": "スリランカ"
+    },
+    "cities": [
+        {
+            "id": "colombo",
+            "name": "コロンボ",
+            "lat": "6.9271",
+            "lng": "79.8612",
+            "zoom": "12",
+            "color": "#8D2433",
+            "marker_size": "14",
+            "marker_label": "★",
+            "badge": "最大都市",
+            "badge_class": "",
+            "description": "スリランカ最大の商都。植民地建築とモダンな高層ビルが同居する玄関口"
+        },
+        {
+            "id": "kandy",
+            "name": "キャンディ",
+            "lat": "7.2906",
+            "lng": "80.6337",
+            "zoom": "13",
+            "color": "#00534E",
+            "marker_size": "11",
+            "marker_label": "●",
+            "badge": "仏教聖地",
+            "badge_class": "green",
+            "description": "仏歯寺を擁する古都。紅茶畑が広がる高原地帯への玄関口"
+        },
+        {
+            "id": "ella",
+            "name": "エラ",
+            "lat": "6.8667",
+            "lng": "81.0466",
+            "zoom": "13",
+            "color": "#00534E",
+            "marker_size": "10",
+            "marker_label": "●",
+            "badge": "絶景鉄道",
+            "badge_class": "green",
+            "description": "紅茶畑を縫う絶景鉄道と九本橋で知られる高原の小さな町"
+        },
+        {
+            "id": "sigiriya",
+            "name": "シギリヤ・ダンブッラ",
+            "lat": "7.9570",
+            "lng": "80.7603",
+            "zoom": "11",
+            "color": "#00534E",
+            "marker_size": "11",
+            "marker_label": "●",
+            "badge": "世界遺産",
+            "badge_class": "green",
+            "description": "古代遺跡が集中する文化三角地帯の中心。野生ゾウの宝庫でもある"
+        },
+        {
+            "id": "galle",
+            "name": "ゴール",
+            "lat": "6.0535",
+            "lng": "80.2210",
+            "zoom": "13",
+            "color": "#FF7A00",
+            "marker_size": "11",
+            "marker_label": "●",
+            "badge": "世界遺産・ビーチ",
+            "badge_class": "green",
+            "description": "オランダ統治時代の要塞都市。周辺には南国ビーチが連なる"
+        }
+    ],
+    "season_mini": {
+        "description": "地域によってモンスーンの時期が逆転する複雑な気候。西・南海岸とコロンボは12〜3月、東海岸は5〜9月がベストシーズン。",
+        "city_name": "コロンボ",
+        "months": [
+            { "icon": "☀️", "temp": "27°", "type": "t-warm" },
+            { "icon": "☀️", "temp": "28°", "type": "t-hot1" },
+            { "icon": "☀️", "temp": "29°", "type": "t-hot1" },
+            { "icon": "☔", "temp": "29°", "type": "t-hot1" },
+            { "icon": "☔", "temp": "28°", "type": "t-hot1" },
+            { "icon": "☔", "temp": "27°", "type": "t-warm" },
+            { "icon": "☔", "temp": "27°", "type": "t-warm" },
+            { "icon": "☔", "temp": "27°", "type": "t-warm" },
+            { "icon": "☔", "temp": "27°", "type": "t-warm" },
+            { "icon": "☔", "temp": "27°", "type": "t-warm" },
+            { "icon": "☔", "temp": "27°", "type": "t-warm" },
+            { "icon": "☀️", "temp": "27°", "type": "t-warm" }
+        ]
+    },
+    "basic_data": [
+        {
+            "label": "首都",
+            "value": "スリ・ジャヤワルダナプラ・コッテ（行政）",
+            "note": "実質的な経済・外交の中心はコロンボ",
+            "compare_html": ""
+        },
+        {
+            "label": "独立年",
+            "value": "1948年2月4日",
+            "note": "英国から独立。1972年に共和制へ移行し国名変更",
+            "compare_html": ""
+        },
+        {
+            "label": "人口",
+            "value": "約2,200万人",
+            "note": "日本の約6分の1",
+            "compare_html": ""
+        },
+        {
+            "label": "面積",
+            "value": "約6.6万 km²",
+            "note": "北海道よりやや小さい",
+            "compare_html": ""
+        },
+        {
+            "label": "宗教",
+            "value": "仏教 約70%",
+            "note": "ヒンドゥー教・イスラム教・キリスト教も共存",
+            "compare_html": ""
+        },
+        {
+            "label": "民族",
+            "value": "シンハラ人 約75%",
+            "note": "タミル人・ムーア人など多民族国家",
+            "compare_html": ""
+        },
+        {
+            "label": "言語",
+            "value": "シンハラ語・タミル語（公用語）",
+            "note": "観光地・都市部では英語が広く通じる",
+            "compare_html": ""
+        }
+    ],
+    "season": {
+        "description_html": "スリランカは島の<strong>どちら側にいるかで季節が逆転する</strong>珍しい国。西・南海岸（コロンボ・ゴール・ミリッサ方面）は<strong>12〜3月が乾季でベストシーズン</strong>、東海岸（トリンコマリー方面）は<strong>5〜9月がベストシーズン</strong>。中央高地のキャンディ・エラは標高が高く年間を通じて過ごしやすいが、雨も多め。<br><span style=\"font-weight:700;color:#555\">色が濃いオレンジほど気温が高い</span>ことを示しています。",
+        "tip_title": "航空券が安い時期",
+        "tip_body": "成田直行便はスリランカ航空の週4便のみで年間を通じて価格変動が少なめ。GW・お盆・年末年始は高騰するので、旧正月明けの2月や6月・9月の閑散期が狙い目。乗り継ぎ便を使えば選択肢と価格の幅が広がる。",
+        "cities": [
+            {
+                "name": "コロンボ・南西海岸",
+                "city_id": "colombo",
+                "best_note": "✅ ベスト：12月〜3月（乾季・海も穏やか）／ 5〜9月は雨季でビーチコンディションが悪化。",
+                "note": "コロンボやゴール・ミリッサなど南西海岸は12〜3月が乾季で快晴が続き、海も穏やかで泳ぎやすい。5〜9月は南西モンスーンの影響で雨と高波が増え、多くのビーチリゾートがオフシーズン体制に入る。年間を通じて蒸し暑いため、こまめな水分補給が欠かせない。",
+                "months": [
+                    { "icon": "☀️", "temp": "27°C", "type": "t-warm" },
+                    { "icon": "☀️", "temp": "28°C", "type": "t-hot1" },
+                    { "icon": "☀️", "temp": "29°C", "type": "t-hot1" },
+                    { "icon": "☔", "temp": "29°C", "type": "t-hot1" },
+                    { "icon": "☔", "temp": "28°C", "type": "t-hot1" },
+                    { "icon": "☔", "temp": "27°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "27°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "27°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "27°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "27°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "27°C", "type": "t-warm" },
+                    { "icon": "☀️", "temp": "27°C", "type": "t-warm" }
+                ]
+            },
+            {
+                "name": "キャンディ・エラ（高原）",
+                "city_id": "kandy",
+                "best_note": "✅ ベスト：1〜4月・7〜9月（比較的乾燥）／ 通年で朝晩は涼しく紅茶畑の緑が美しい。",
+                "note": "標高500〜1,500mの高原地帯にあるキャンディ・エラは、コロンボより気温が5〜10°C低く過ごしやすい。降雨は年間を通じてあるが、紅茶畑の緑が最も美しいのは雨上がりの晴れ間。朝晩は肌寒くなるので薄手の羽織りものが必須。",
+                "months": [
+                    { "icon": "⛅", "temp": "20°C", "type": "t-mild" },
+                    { "icon": "⛅", "temp": "21°C", "type": "t-mild" },
+                    { "icon": "⛅", "temp": "22°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "22°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "22°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "21°C", "type": "t-warm" },
+                    { "icon": "⛅", "temp": "21°C", "type": "t-warm" },
+                    { "icon": "⛅", "temp": "21°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "21°C", "type": "t-warm" },
+                    { "icon": "☔", "temp": "20°C", "type": "t-mild" },
+                    { "icon": "☔", "temp": "20°C", "type": "t-mild" },
+                    { "icon": "⛅", "temp": "20°C", "type": "t-mild" }
+                ]
+            }
+        ]
+    },
+    "budget": {
+        "intro": "スリランカは物価が安く、食費・国内交通は東南アジア並み。一方で成田便は選択肢が少なく航空券がやや高め、宿泊は自然派の高級リゾートが充実していてピンキリの差が大きいのが特徴です。",
+        "plan_rows": [
+            { "label": "航空券（往復）", "eco": "乗継 8〜13万円", "std": "直行 13〜18万円", "lux": "ビジネス 30万円〜" },
+            { "label": "ホテル（1泊）", "eco": "2,000〜4,000円", "std": "5,000〜12,000円", "lux": "20,000円〜" },
+            { "label": "食費（1日）", "eco": "800〜1,500円", "std": "2,000〜3,500円", "lux": "5,000円〜" },
+            { "label": "交通（1日）", "eco": "鉄道・バス 300円", "std": "車チャーター 2,000円", "lux": "専属ドライバー 5,000円" }
+        ],
+        "total_eco": "15〜20万円",
+        "total_std": "20〜28万円",
+        "total_lux": "35万円〜",
+        "items": [
+            {
+                "icon": "✈️",
+                "name": "航空券（往復）",
+                "detail_html": "スリランカ航空の成田直行便は週4便のみ<br>シンガポール航空・キャセイなど乗継便も選択肢豊富",
+                "price": "8〜18万円",
+                "affiliate": ""
+            },
+            {
+                "icon": "🛏️",
+                "name": "ホテル（1泊）",
+                "detail_html": "ゲストハウス：2,000〜4,000円・中級：5,000〜12,000円<br>紅茶畑や海辺の高級ブティックホテルは体験として一泊の価値あり",
+                "price": "〜3万円/泊",
+                "affiliate": ""
+            },
+            {
+                "icon": "🍛",
+                "name": "食費（1日）",
+                "detail_html": "食堂のライス&カリーは1食300〜600円<br>観光地のレストランは1,000〜2,500円。ホッパーなど屋台グルメも格安",
+                "price": "800〜3,500円/日",
+                "affiliate": "wise"
+            },
+            {
+                "icon": "🚗",
+                "name": "交通費（1日）",
+                "detail_html": "都市間は鉄道・長距離バスが格安<br>時間を節約したいなら車1台チャーター（ドライバー付き）が定番",
+                "price": "300〜5,000円/日",
+                "affiliate": ""
+            },
+            {
+                "icon": "📍",
+                "name": "観光・アクティビティ",
+                "detail_html": "シギリヤロック入場料 約4,000円・仏歯寺 約1,500円<br>サファリツアー（半日）約4,000〜7,000円",
+                "price": "1,500〜7,000円/日",
+                "affiliate": "getyourguide"
+            },
+            {
+                "icon": "🌐",
+                "name": "SIM・Wi-Fi",
+                "detail_html": "コロンボ空港でDialog・Mobitelなどのプリペイドsimカードが購入可<br>eSIMなら出発前に設定完了できてスムーズ",
+                "price": "500〜1,500円",
+                "affiliate": ""
+            }
+        ],
+        "savings_tips_html": "・チップは10%前後が目安（高級店はサービス料込みのことも）<br>・鉄道の絶景区間は2等・3等車でも十分楽しめる（1等は事前予約推奨）<br>・車チャーターは複数人でシェアすると割安に"
+    },
+    "practical": {
+        "prac_cards": [
+            {
+                "icon": "visa",
+                "title": "ビザ",
+                "value": "ETA要（30日・無料）"
+            },
+            {
+                "icon": "💱",
+                "title": "通貨",
+                "value": "スリランカルピー（LKR）"
+            },
+            {
+                "icon": "🔌",
+                "title": "コンセント",
+                "value": "BF/Dタイプ（3ピン丸）"
+            },
+            {
+                "icon": "⚡",
+                "title": "電圧",
+                "value": "230V（変換注意）"
+            },
+            {
+                "icon": "wifi",
+                "title": "Wi-Fi",
+                "value": "都市部は快適・山間部は不安定"
+            },
+            {
+                "icon": "clock",
+                "title": "時差",
+                "value": "日本−3時間30分"
+            },
+            {
+                "icon": "🌡️",
+                "title": "気温",
+                "value": "20〜30°C（高原は涼しい）"
+            },
+            {
+                "icon": "🙏",
+                "title": "チップ",
+                "value": "10%前後が目安"
+            },
+            {
+                "icon": "💧",
+                "title": "水道水",
+                "value": "飲用不可（ペットボトル推奨）"
+            },
+            {
+                "icon": "🔒",
+                "title": "治安",
+                "value": "比較的良好（スリ・ぼったくり注意）"
+            }
+        ],
+        "prep_steps": [
+            {
+                "title": "パスポート取得・更新",
+                "timing": "1〜2ヶ月前",
+                "timing_color": "#006847",
+                "border_color": "#006847",
+                "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+                "desc_html": "入国時点で<strong>6ヶ月以上</strong>の残存有効期間が必要。査証スタンプ用の空白ページも確認しておこう。"
+            },
+            {
+                "title": "ETA（電子渡航認証）の申請",
+                "timing": "2〜3週間前",
+                "timing_color": "#1a8a5a",
+                "border_color": "#1a8a5a",
+                "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+                "desc_html": "公式サイトで事前オンライン申請が必須。<strong>観光目的30日以内は手数料無料</strong>（2026年5月〜対象国拡大）だが、申請自体は必ず必要。無申請での搭乗は拒否されるので要注意。"
+            },
+            {
+                "title": "航空券・ホテルの予約",
+                "timing": "2〜3ヶ月前",
+                "timing_color": "#b09000",
+                "border_color": "#b09000",
+                "bar_color": "#b09000",
+                "desc_html": "成田直行便は週4便のみで席数が限られる。日程が決まったら早めに確保を。国内の移動ルートに合わせてホテルを点在させると効率的。"
+            },
+            {
+                "title": "海外旅行保険の加入",
+                "timing": "出発前日まで",
+                "timing_color": "#b09000",
+                "border_color": "#b09000",
+                "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+                "desc_html": "クレカ付帯保険で代用できる場合もあるが、野生動物サファリなどのアクティビティ補償範囲は要確認。"
+            },
+            {
+                "title": "SIM・eSIMの準備",
+                "timing": "1週間前",
+                "timing_color": "#cc5500",
+                "border_color": "#cc5500",
+                "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+                "desc_html": "eSIMなら到着後すぐ使えて便利。山間部（エラ・ヌワラエリヤ方面）は電波が不安定なエリアもあるので過信は禁物。"
+            }
+        ],
+        "special_note_title": "ETAは「無料」でも申請は必須",
+        "special_note_html": "2026年5月からスリランカ政府はETA（電子渡航認証）の手数料を日本を含む40カ国の観光客向けに無料化しました。ただし無料になったのは手数料のみで、オンラインでの事前申請そのものは引き続き必須です。「無料だから何もしなくていい」と誤解して未申請のまま空港に行くと搭乗拒否になるケースが報告されているので、出発の2〜3週間前には済ませておきましょう。",
+        "special_note_url": "https://www.eta.gov.lk/slvisa/visainfo/apply.jsp?locale=ja_JP",
+        "special_note_url_label": "スリランカ政府 ETA公式申請サイト",
+        "flight_lead": "日本〜スリランカ間はスリランカ航空の成田直行便が週4便運航しており、所要約9〜10時間。JALとコードシェアしているためJALマイルも貯まります。便数が限られるため、シンガポール航空・キャセイパシフィック・エミレーツなどの乗り継ぎ便を使うと日程の自由度と価格の選択肢が広がります。",
+        "flight_intro": "成田からスリランカ航空の直行便が週4便。所要約9〜10時間。乗り継ぎ便も豊富。",
+        "airlines": [
+            {
+                "name": "スリランカ航空",
+                "desc": "成田〜コロンボ直行便（週4便）。JALとコードシェアしマイルも貯まる。",
+                "price": "往復 13〜20万円"
+            },
+            {
+                "name": "シンガポール航空",
+                "desc": "シンガポール経由。機内サービスの快適さで定評あり。",
+                "price": "往復 12〜22万円"
+            },
+            {
+                "name": "キャセイパシフィック航空",
+                "desc": "香港経由。日本各地から乗り継ぎやすく便数も豊富。",
+                "price": "往復 10〜18万円"
+            },
+            {
+                "name": "エミレーツ航空",
+                "desc": "ドバイ経由。快適な機内サービスで長時間移動も苦にならない。",
+                "price": "往復 14〜24万円"
+            }
+        ],
+        "flight_tip_html": "・GW・お盆・年末年始は3〜6ヶ月前から高騰しやすい<br>・2月（旧正月明け）・6月・9月は比較的落ち着いた価格帯<br>・スリランカ航空は便数が少ないため早期予約が特に重要",
+        "hotel_map_center": { "lat": 6.93, "lng": 79.86, "zoom": 13 },
+        "hotel_areas": [
+            {
+                "id": "fort",
+                "name": "フォート地区",
+                "tag": "観光・ビジネス向け",
+                "tag_color": "green",
+                "desc": "植民地建築が残るコロンボの中心部。高級ホテルが集まり、鉄道駅も近く国内移動の起点として便利。",
+                "price": "中級 8,000〜15,000円／泊　高級 20,000円〜",
+                "maps_url": "https://www.google.com/maps/place/Colombo+Fort",
+                "lat": 6.9344,
+                "lng": 79.8428
+            },
+            {
+                "id": "galle_face",
+                "name": "ゴールフェイス周辺",
+                "tag": "海沿い・散歩に最適",
+                "tag_color": "green",
+                "desc": "コロンボ随一の海沿いの遊歩道グリーンベルトに面したエリア。夕暮れの散歩や屋台グルメが楽しめ、観光の起点にも便利。",
+                "price": "中級 7,000〜14,000円／泊",
+                "maps_url": "https://www.google.com/maps/place/Galle+Face+Green",
+                "lat": 6.9228,
+                "lng": 79.8437
+            },
+            {
+                "id": "kandy_lake",
+                "name": "キャンディ湖周辺",
+                "tag": "仏歯寺至近",
+                "tag_color": "",
+                "desc": "仏歯寺や湖畔の遊歩道に徒歩でアクセスできる旅行者向けエリア。ゲストハウスから高級ホテルまで幅広い選択肢がある。",
+                "price": "格安 3,000〜6,000円　中級 7,000〜14,000円",
+                "maps_url": "https://www.google.com/maps/place/Kandy+Lake",
+                "lat": 7.2925,
+                "lng": 80.6413
+            }
+        ],
+        "hotel_tip": "初めてならコロンボはフォート地区かゴールフェイス周辺、キャンディは湖畔エリアが便利。国内を移動しながら周遊するスタイルが基本なので、荷物は最小限にまとめると身軽に動ける。",
+        "apps": [
+            {
+                "icon": "🚕",
+                "name": "PickMe",
+                "type_label": "配車・トゥクトゥクアプリ",
+                "desc": "スリランカ版Uberとも言える定番配車アプリ。トゥクトゥクもタクシーもメーター料金で呼べるので、乗車前の値段交渉から解放される。",
+                "affiliate": "pickme",
+                "is_last": false
+            },
+            {
+                "icon": "🗺️",
+                "name": "Google マップ",
+                "type_label": "地図・ナビ（オフライン対応）",
+                "desc": "出発前にコロンボ・訪問エリアをオフラインDLしておこう。山間部や国立公園周辺は電波が不安定なエリアも多い。",
+                "affiliate": "google_maps",
+                "is_last": false
+            },
+            {
+                "icon": "google-translate",
+                "name": "Google 翻訳",
+                "type_label": "翻訳・カメラ翻訳",
+                "desc": "都市部・観光地では英語が通じるが、シンハラ語の看板やメニューはカメラ翻訳が役立つ。",
+                "affiliate": "google_translate",
+                "is_last": false
+            },
+            {
+                "icon": "whatsapp",
+                "name": "WhatsApp",
+                "type_label": "メッセージ・現地連絡",
+                "desc": "スリランカでのメッセージアプリはWhatsAppが主流。ドライバーやゲストハウスとの連絡もWhatsApp経由が多い。",
+                "affiliate": "whatsapp",
+                "is_last": true
+            }
+        ],
+        "tour_platform": "getyourguide",
+        "country_items_label": "🇱🇰 スリランカ特有の持ち物",
+        "country_items": [
+            "変換アダプター（BF/Dタイプ・3ピン丸）",
+            "日焼け止め（紫外線が非常に強い）",
+            "軽い羽織もの（キャンディ・エラなど高原は朝晩涼しい）",
+            "虫除けスプレー（デング熱を媒介する蚊対策）",
+            "サンダルまたは脱ぎやすい靴（寺院は入場時に脱靴が必須）",
+            "肌の露出を抑えた服（寺院見学時のマナー対策）"
+        ],
+        "currency_code": "LKR",
+        "exchange_rate": "0.5",
+        "cash_dependency": "中",
+        "cash_dependency_color": "#b09000",
+        "cash_dependency_note": "食堂・トゥクトゥク・寺院の寄進は現金、ホテル・観光施設はカードOK",
+        "cash_daily_low": "1000",
+        "cash_daily_high": "4000",
+        "cash_note": "1 LKR ≈ 0.5円で計算",
+        "money_intro": "スリランカでは高級ホテルやレストランはクレジットカードが使えますが、食堂・トゥクトゥク・寺院の寄進などは現金が基本です。空港よりコロンボ市内の両替所のほうがレートが良いことが多く、Wiseカードを使ったATM引き出しも便利です。",
+        "cash_tip_title": "小額紙幣を用意しておこう",
+        "cash_tip_body": "トゥクトゥクや寺院の寄進では50・100・500LKRの小額紙幣が重宝する。高額紙幣は屋台や小さな店でお釣りがない場合があるので、両替時に小分けにしてもらうと安心。",
+        "cta_title": "出発前にマナーも確認しよう！🙏",
+        "cta_desc": "寺院での服装ルールや仏像の扱いなど、仏教国ならではの注意点をまとめました。"
+    },
+    "manner_cards": [
+        {
+            "type": "dont",
+            "icon": "🙏",
+            "title": "仏像に背を向けて写真を撮らない",
+            "desc": "仏像を背にした記念撮影は不敬とされる。仏像と一緒に写る場合は横並びか、仏像に体を向けるのが基本マナー。"
+        },
+        {
+            "type": "do",
+            "icon": "👕",
+            "title": "寺院では肌の露出を抑える",
+            "desc": "肩・膝が隠れる服装が基本。サロンの貸し出しがある寺院も多いが、持参しておくとスムーズ。"
+        },
+        {
+            "type": "do",
+            "icon": "🥿",
+            "title": "寺院・住宅では靴を脱ぐ",
+            "desc": "仏教寺院やヒンドゥー教寺院は入口で脱靴が必須。靴下も脱ぐよう求められる場所もある。"
+        },
+        {
+            "type": "dont",
+            "icon": "👆",
+            "title": "頭を触らない",
+            "desc": "子供を含め、他人の頭を触るのはマナー違反。頭は神聖な部位とされている。"
+        },
+        {
+            "type": "do",
+            "icon": "🤝",
+            "title": "手渡しは右手で",
+            "desc": "左手は不浄とされる文化があり、食事や物の受け渡しは右手（または両手）で行うのが望ましい。"
+        },
+        {
+            "type": "do",
+            "icon": "💰",
+            "title": "チップは小額でも渡す習慣",
+            "desc": "ドライバー・ガイド・ポーターへのチップは一般的。高額でなくても感謝の気持ちを示す文化が根付いている。"
+        },
+        {
+            "type": "dont",
+            "icon": "🐘",
+            "title": "野生動物への接触は禁止",
+            "desc": "国立公園のサファリ中は車内にとどまり、ゾウなど野生動物に近づいたり餌を与えたりしない。"
+        },
+        {
+            "type": "do",
+            "icon": "🚆",
+            "title": "絶景鉄道は早めに席取りを",
+            "desc": "キャンディ〜エラ間の展望列車は人気で、良い席は早朝から並ぶか事前予約が必要。ドア付近からの眺めも人気だが安全第一で。"
+        }
+    ],
+    "manner_cta_title": "シンハラ語でひとこと伝えてみよう！💬",
+    "manner_cta_desc": "都市部・観光地では英語が通じますが、「アーユボーワン（こんにちは）」のひとことで表情が和みます。基本フレーズを覚えておきましょう。",
+    "phrases": {
+        "multi": false,
+        "decks": [
+        {
+        "id": "si",
+        "active": true,
+        "language_name": "シンハラ語",
+        "card_title": "🃏 シンハラ語 旅行フレーズカード",
+        "categories": [
+            {
+                "label": "👋 あいさつ",
+                "items": [
+                    { "jp": "こんにちは", "foreign": "Ayubowan", "reading": "アーユボーワン", "audio": "" },
+                    { "jp": "元気ですか？", "foreign": "Kohomada?", "reading": "コーホーマダ？", "audio": "" },
+                    { "jp": "元気です", "foreign": "Hondin innawa", "reading": "ホンディン イナワ", "audio": "" },
+                    { "jp": "さようなら", "foreign": "Aayubowan", "reading": "アーユボーワン", "audio": "" },
+                    { "jp": "はじめまして", "foreign": "Hamuwennata santhosai", "reading": "ハムウェンナタ サントーサイ", "audio": "" },
+                    { "jp": "綺麗ですね！", "foreign": "Lassanai!", "reading": "ラッサナイ！", "audio": "" }
+                ]
+            },
+            {
+                "label": "🙏 基本表現",
+                "items": [
+                    { "jp": "ありがとう", "foreign": "Sthuthiyi", "reading": "ストゥティイ", "audio": "" },
+                    { "jp": "すみません", "foreign": "Samaawenna", "reading": "サマーウェンナ", "audio": "" },
+                    { "jp": "ごめんなさい", "foreign": "Kana gaatui", "reading": "カナ ガートゥイ", "audio": "" },
+                    { "jp": "はい / いいえ", "foreign": "Ow / Naha", "reading": "オウ / ナハ", "audio": "" },
+                    { "jp": "わかりません", "foreign": "Mata therenne naha", "reading": "マタ テレンネ ナハ", "audio": "" },
+                    { "jp": "もう一度言ってください", "foreign": "Aapasu kiyanna", "reading": "アーパス キヤンナ", "audio": "" },
+                    { "jp": "名前は〜です", "foreign": "Mage nama ~", "reading": "マゲ ナマ 〜", "audio": "" },
+                    { "jp": "日本人です", "foreign": "Mama Japan", "reading": "ママ ジャパン", "audio": "" }
+                ]
+            },
+            {
+                "label": "🍽️ レストラン・ショッピング",
+                "items": [
+                    { "jp": "おすすめは何ですか？", "foreign": "Mokakda hondama?", "reading": "モーカクダ ホンダマ？", "audio": "" },
+                    { "jp": "これをください", "foreign": "Meka denna", "reading": "メーカ デンナ", "audio": "" },
+                    { "jp": "おいしい！", "foreign": "Rasai!", "reading": "ラサイ！", "audio": "" },
+                    { "jp": "辛くしないでください", "foreign": "Sudu karanna epaa", "reading": "スドゥ カランナ エパー", "audio": "" },
+                    { "jp": "お会計をお願いします", "foreign": "Bill eka", "reading": "ビル エカ", "audio": "" },
+                    { "jp": "いくらですか？", "foreign": "Keeyada?", "reading": "キーヤダ？", "audio": "" },
+                    { "jp": "高い、安くしてください", "foreign": "Ganan wadi, adu karanna", "reading": "ガナン ワディ、アドゥ カランナ", "audio": "" },
+                    { "jp": "トイレはどこですか？", "foreign": "Vasikiliya koheda?", "reading": "ワシキリヤ コヘダ？", "audio": "" }
+                ]
+            },
+            {
+                "label": "🔢 数字",
+                "items": [
+                    { "jp": "0〜5", "foreign": "Binduwa・Eka・Deka・Thuna・Hathara・Paha", "reading": "ビンドゥワ・エカ・デカ・トゥナ・ハタラ・パハ", "audio": "" },
+                    { "jp": "6〜10", "foreign": "Haya・Hatha・Ata・Namaya・Dahaya", "reading": "ハヤ・ハタ・アタ・ナマヤ・ダハヤ", "audio": "" }
+                ]
+            },
+            {
+                "label": "🆘 観光・トラブル",
+                "items": [
+                    { "jp": "写真を撮ってもいいですか？", "foreign": "Photo ekak gannada?", "reading": "フォト エカク ガンナダ？", "audio": "" },
+                    { "jp": "安全ですか？", "foreign": "Aarakshithada?", "reading": "アーラクシタダ？", "audio": "" },
+                    { "jp": "助けてください！", "foreign": "Udau karanna!", "reading": "ウダウ カランナ！", "audio": "" }
+                ]
+            }
+        ]
+        }
+        ]
+    },
+    "food_section_title": "スリランカグルメ",
+    "food_filter_types": [
+        { "id": "all", "label": "すべて", "active": true },
+        { "id": "main", "label": "メイン料理", "active": false },
+        { "id": "snack", "label": "軽食・スナック", "active": false },
+        { "id": "dessert", "label": "スイーツ", "active": false },
+        { "id": "drink", "label": "飲み物", "active": false }
+    ],
+    "food_filter_cities": [
+        { "id": "colombo", "label": "コロンボ" },
+        { "id": "kandy", "label": "キャンディ" }
+    ],
+    "food_items": [
+        {
+            "num": "No.1",
+            "name": "ライス＆カリー",
+            "badge": "国民食",
+            "type": "main",
+            "city": "national",
+            "desc": "白米に数種類のカレーとサンボル（ココナッツの薬味）を少しずつ盛り合わせるスリランカの定食。家庭・食堂ごとに味付けが異なる奥深さがあり、何度食べても飽きない。",
+            "image": "",
+            "prompt_en": "Sri Lankan rice and curry, white rice with multiple small curry dishes and coconut sambol arranged around plate, banana leaf, food photography",
+            "plate_color": "banana leaf plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Sri_Lankan_cuisine",
+            "order_ico": "🍛",
+            "order_name_en": "Rice and Curry"
+        },
+        {
+            "num": "No.2",
+            "name": "コットゥロティ",
+            "badge": "屋台の定番",
+            "type": "main",
+            "city": "national",
+            "desc": "刻んだロティ（薄焼きパン）を野菜・卵・肉と一緒に鉄板で細かく刻みながら炒める豪快な一品。調理中の「カンカン」という金属音がスリランカの夜の風物詩。",
+            "image": "",
+            "prompt_en": "Kottu roti Sri Lankan street food, chopped flatbread stir-fried with vegetables and egg on hot griddle, steam rising, food photography",
+            "plate_color": "metal plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Kottu",
+            "order_ico": "🥘",
+            "order_name_en": "Kottu Roti"
+        },
+        {
+            "num": "No.3",
+            "name": "ホッパー（アーッパ）",
+            "badge": "朝食の定番",
+            "type": "main",
+            "city": "national",
+            "desc": "米粉とココナッツミルクの生地を専用鍋で焼き上げる、お椀型のクレープ。縁はパリッと中はもちっとした食感で、中央に卵を落とした「エッグホッパー」が特に人気。",
+            "image": "",
+            "prompt_en": "Sri Lankan hoppers appa, bowl-shaped crepe with crispy edges and soft center, egg hopper with fried egg in the middle, food photography",
+            "plate_color": "white ceramic plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Appam",
+            "order_ico": "🥞",
+            "order_name_en": "Hoppers"
+        },
+        {
+            "num": "No.4",
+            "name": "ストリングホッパー",
+            "badge": "朝食の定番",
+            "type": "main",
+            "city": "national",
+            "desc": "米粉を細い麺状に押し出して蒸し上げた白い円盤状の主食。カレーと絡めて食べるのが定番で、優しい味わいでいくらでも食べられる。",
+            "image": "",
+            "prompt_en": "String hoppers idiyappam, delicate steamed rice noodle nests stacked on plate, served with curry, Sri Lankan breakfast, food photography",
+            "plate_color": "white ceramic plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Idiyappam",
+            "order_ico": "🍜",
+            "order_name_en": "String Hoppers"
+        },
+        {
+            "num": "No.5",
+            "name": "魚のアンブルティヤル",
+            "badge": "南部名物",
+            "type": "main",
+            "city": "national",
+            "desc": "「ゴラカ」という酸味の強い果実とスパイスでカツオを黒く煮しめた南部の郷土料理。酸味と塩気が凝縮された濃厚な味わいで、ご飯によく合う。",
+            "image": "",
+            "prompt_en": "Ambul thiyal Sri Lankan sour fish curry, dark tamarind-marinated tuna curry dry style in clay pot, food photography",
+            "plate_color": "clay pot",
+            "wiki_url": "https://en.wikipedia.org/wiki/Ambulthiyal",
+            "order_ico": "🐟",
+            "order_name_en": "Fish Ambul Thiyal"
+        },
+        {
+            "num": "No.6",
+            "name": "デビルドチキン",
+            "badge": "スパイシー",
+            "type": "main",
+            "city": "national",
+            "desc": "唐辛子とスパイスをたっぷり効かせて炒めた激辛系チキン料理。植民地時代に西洋料理と融合して生まれたとされ、ビールのお供に最適。",
+            "image": "",
+            "prompt_en": "Devilled chicken Sri Lankan spicy stir-fried chicken with bell peppers and chili, glossy red sauce, food photography",
+            "plate_color": "dark ceramic plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Deviled_(food)",
+            "order_ico": "🌶️",
+            "order_name_en": "Devilled Chicken"
+        },
+        {
+            "num": "No.7",
+            "name": "ランプライス",
+            "badge": "オランダ系料理",
+            "type": "main",
+            "city": "colombo",
+            "desc": "複数のカレーとご飯をバナナの葉で包んで蒸し上げた、オランダ系移民バーガー人が伝えた料理。包みを開けた瞬間に香りが広がる、コロンボの名物グルメ。",
+            "image": "",
+            "prompt_en": "Lamprais Sri Lankan Dutch Burgher rice packet, banana leaf wrapped rice with curries steamed inside, opened showing contents, food photography",
+            "plate_color": "banana leaf wrap",
+            "wiki_url": "https://en.wikipedia.org/wiki/Lamprais",
+            "order_ico": "🎁",
+            "order_name_en": "Lamprais"
+        },
+        {
+            "num": "No.8",
+            "name": "サモサ",
+            "badge": "軽食の定番",
+            "type": "snack",
+            "city": "national",
+            "desc": "スパイシーな野菜や肉を三角形の皮で包んで揚げた軽食。ティータイムのお供として広く親しまれ、屋台やベーカリーで手軽に買える。",
+            "image": "",
+            "prompt_en": "Sri Lankan samosa, golden fried triangular pastry with spiced vegetable filling, served on plate with chutney, food photography",
+            "plate_color": "white ceramic plate",
+            "wiki_url": "https://en.wikipedia.org/wiki/Samosa",
+            "order_ico": "🥟",
+            "order_name_en": "Samosa"
+        },
+        {
+            "num": "No.9",
+            "name": "キング・ココナッツウォーター",
+            "badge": "南国の水分補給",
+            "type": "drink",
+            "city": "national",
+            "desc": "オレンジ色の殻を持つ「キングココナッツ」の天然果汁。道端で切りたてを飲めるのがスリランカ流。ほのかな甘さで暑い日の水分補給に最適。",
+            "image": "",
+            "prompt_en": "King coconut water Sri Lanka, orange-husked coconut with straw inserted, street vendor stand, refreshing tropical drink, food photography",
+            "plate_color": "coconut shell",
+            "wiki_url": "https://en.wikipedia.org/wiki/Coconut_water",
+            "order_ico": "🥥",
+            "order_name_en": "King Coconut Water"
+        },
+        {
+            "num": "No.10",
+            "name": "セイロンティー",
+            "badge": "世界的紅茶ブランド",
+            "type": "drink",
+            "city": "kandy",
+            "desc": "高原の紅茶畑で育つ世界的ブランド「セイロンティー」。ヌワラエリヤ・キャンディなど産地ごとに風味が異なり、ティーファクトリーでの試飲も楽しみのひとつ。",
+            "image": "",
+            "prompt_en": "Ceylon tea Sri Lanka, hot amber tea poured into cup with tea plantation hills visible through window, tea factory setting, food photography",
+            "plate_color": "white teacup",
+            "wiki_url": "https://en.wikipedia.org/wiki/Ceylon_tea",
+            "order_ico": "🍵",
+            "order_name_en": "Ceylon Tea"
+        },
+        {
+            "num": "No.11",
+            "name": "ワタラッパン",
+            "badge": "伝統デザート",
+            "type": "dessert",
+            "city": "national",
+            "desc": "ジャガリー（ヤシ砂糖）とココナッツミルク、卵で作る蒸しプリン。カルダモンの香りとカラメルのような濃厚な甘さが特徴の、お祝いの席の定番デザート。",
+            "image": "",
+            "prompt_en": "Watalappan Sri Lankan steamed coconut custard pudding, dark caramel color, cashew garnish on top, dessert bowl, food photography",
+            "plate_color": "small ceramic bowl",
+            "wiki_url": "https://en.wikipedia.org/wiki/Watalappan",
+            "order_ico": "🍮",
+            "order_name_en": "Watalappan"
+        },
+        {
+            "num": "No.12",
+            "name": "クルクル",
+            "badge": "お土産に◎",
+            "type": "dessert",
+            "city": "national",
+            "desc": "米粉生地を渦巻き状に成形して揚げた、ポルトガル系移民由来の伝統菓子。サクサクとした軽い食感で、クリスマスなどのお祝いにも登場する。",
+            "image": "",
+            "prompt_en": "Kokis Sri Lankan crispy rosette-shaped fried rice flour cookies, golden brown intricate pattern, arranged on plate, food photography",
+            "plate_color": "wooden tray",
+            "wiki_url": "https://en.wikipedia.org/wiki/Kokis",
+            "order_ico": "🌀",
+            "order_name_en": "Kokis"
+        }
+    ],
+    "spots_section_title": "スリランカ 観光スポット",
+    "spots_filter_cities": [
+        { "id": "all", "label": "すべて", "active": true },
+        { "id": "colombo", "label": "コロンボ", "active": false },
+        { "id": "kandy", "label": "キャンディ", "active": false },
+        { "id": "ella", "label": "エラ", "active": false },
+        { "id": "sigiriya", "label": "シギリヤ・ダンブッラ", "active": false },
+        { "id": "galle", "label": "ゴール", "active": false }
+    ],
+    "spot_sections": [
+        {
+            "city_id": "colombo",
+            "city_name": "コロンボ",
+            "city_image": "",
+            "city_prompt": "Colombo Sri Lanka cityscape with colonial architecture and modern skyline, Galle Face Green promenade at sunset, travel photography",
+            "city_desc": "スリランカ最大の商都。植民地時代の建築とモダンな高層ビルが同居し、旅の玄関口として1〜2日過ごすのに最適",
+            "city_info": [
+                { "label": "アクセス", "value": "日本から直行便または乗継便で約9〜13時間" },
+                { "label": "おすすめ時期", "value": "12〜3月（乾季）", "link_section": "season", "link_btn_index": 4 },
+                { "label": "宿泊エリア", "value": "フォート地区 / ゴールフェイス周辺" }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🌊",
+                    "num": "CMB 01",
+                    "name": "ゴールフェイス・グリーン",
+                    "desc": "インド洋に面した海沿いの広場。夕暮れ時は凧揚げや屋台グルメを楽しむ地元家族で賑わい、コロンボらしい夕景を眺められる定番スポット。",
+                    "badge": "夕景",
+                    "prompt_en": "Galle Face Green Colombo, waterfront park with kite flyers and street food vendors, Indian Ocean sunset, Sri Lanka",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🏛️",
+                    "num": "CMB 02",
+                    "name": "コロンボ国立博物館",
+                    "desc": "白亜の植民地建築が美しい国立博物館。古代シンハラ王朝の王冠や仏教美術など、スリランカの歴史をまとめて学べる。",
+                    "badge": "歴史",
+                    "prompt_en": "Colombo National Museum Sri Lanka, white colonial-era building with grand columns, well-maintained garden, historic architecture",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🕌",
+                    "num": "CMB 03",
+                    "name": "ガンガラーマ寺院",
+                    "desc": "仏教・ヒンドゥー・中国様式が混ざり合う独特な寺院。境内には象の像や仏像コレクションが所狭しと並び、雑多なエネルギーに満ちている。",
+                    "badge": "個性派寺院",
+                    "prompt_en": "Gangaramaya Temple Colombo, eclectic Buddhist temple with elephant statues and colorful stupas, ornate architectural details",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🛍️",
+                    "num": "CMB 04",
+                    "name": "ペター地区",
+                    "desc": "香辛料・布・雑貨が路上にあふれるコロンボ最大の市場エリア。迷路のような路地を歩くだけで旅情が高まる、ローカル度満点のスポット。",
+                    "badge": "下町市場",
+                    "prompt_en": "Pettah Market Colombo, bustling street market with spice stalls and colorful fabrics, crowded narrow lanes, local life",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "kandy",
+            "city_name": "キャンディ",
+            "city_image": "",
+            "city_prompt": "Kandy Sri Lanka lake and Temple of the Tooth relic, misty green hills surrounding the city, travel photography",
+            "city_desc": "シンハラ王朝最後の都で、世界遺産・仏歯寺を擁する仏教の聖地。周辺には紅茶畑が広がる高原地帯が続く",
+            "city_info": [
+                { "label": "アクセス", "value": "コロンボから鉄道・車で約2.5〜3時間" },
+                { "label": "おすすめ時期", "value": "1〜4月・7〜9月", "link_section": "season", "link_btn_index": 4 },
+                { "label": "名物", "value": "仏歯寺・紅茶畑・キャンディアンダンス" }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🦷",
+                    "num": "KDY 01",
+                    "name": "仏歯寺（スリー・ダラダー・マーリガーワ）",
+                    "desc": "仏陀の歯を祀るスリランカ仏教の総本山。世界遺産にも登録され、夕方の礼拝の時間には太鼓の音とともに厳かな儀式が行われる。",
+                    "badge": "世界遺産",
+                    "prompt_en": "Temple of the Sacred Tooth Relic Kandy, golden ornate roof, devotees offering flowers, Sri Lanka Buddhist temple",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🌊",
+                    "num": "KDY 02",
+                    "name": "キャンディ湖",
+                    "desc": "仏歯寺のすぐ隣に広がる人工湖。湖畔の遊歩道は地元の人々の憩いの場で、夕暮れ時の散歩が特に気持ちいい。",
+                    "badge": "散策",
+                    "prompt_en": "Kandy Lake Sri Lanka, calm reflective water surrounded by walking path and green hills, Temple of the Tooth in background",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "💃",
+                    "num": "KDY 03",
+                    "name": "キャンディアンダンス",
+                    "desc": "太鼓の連打と火の芸を交えた伝統舞踊ショー。毎晩開催される会場も多く、仏教文化と土着信仰が融合した独特のパフォーマンスが見られる。",
+                    "badge": "伝統芸能",
+                    "prompt_en": "Kandyan dance performance Sri Lanka, dancers in elaborate traditional costumes with drums, fire performance, evening show",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🍃",
+                    "num": "KDY 04",
+                    "name": "紅茶畑＆ティーファクトリー見学",
+                    "desc": "キャンディ〜ヌワラエリヤ方面に広がる紅茶畑。工場見学では茶葉の加工工程を見学でき、できたてのセイロンティーを試飲できる。",
+                    "badge": "セイロンティー",
+                    "prompt_en": "Tea plantation hills near Kandy Sri Lanka, rows of tea bushes on rolling green hills, tea pickers, misty morning light",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "ella",
+            "city_name": "エラ",
+            "city_image": "",
+            "city_prompt": "Nine Arch Bridge Ella Sri Lanka, train crossing stone bridge surrounded by tea plantations and jungle, travel photography",
+            "city_desc": "紅茶畑を縫うように走る絶景鉄道と、レンガ造りの九本橋で知られる高原の小さな町。トレッキングと絶景写真の聖地",
+            "city_info": [
+                { "label": "アクセス", "value": "キャンディから鉄道で約6〜7時間（絶景区間）" },
+                { "label": "おすすめ時期", "value": "1〜4月・7〜9月", "link_section": "season", "link_btn_index": 4 },
+                { "label": "名物", "value": "九本橋・リトルアダムスピーク" }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🌉",
+                    "num": "ELL 01",
+                    "name": "九本橋（ナインアーチブリッジ）",
+                    "desc": "セメントを一切使わず煉瓦だけで組み上げられた英国統治時代の鉄道橋。紅茶畑の緑の中を列車が渡っていく光景は、スリランカを象徴する一枚。",
+                    "badge": "絶景",
+                    "prompt_en": "Nine Arch Bridge Ella, red brick railway bridge in lush green tea plantation jungle, train crossing, iconic Sri Lanka view",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "⛰️",
+                    "num": "ELL 02",
+                    "name": "リトルアダムスピーク",
+                    "desc": "往復2時間ほどの手軽なハイキングで、山頂から紅茶畑とエラの谷を360°一望できる。日の出時刻に登れば雲海に出会えることも。",
+                    "badge": "絶景ハイキング",
+                    "prompt_en": "Little Adam's Peak Ella Sri Lanka, hikers on trail overlooking tea plantation valley, panoramic green hills view",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🚆",
+                    "num": "ELL 03",
+                    "name": "キャンディ〜エラ絶景鉄道",
+                    "desc": "紅茶畑・滝・雲霧林を縫って走る、世界の絶景鉄道ランキング常連の路線。窓を全開にして走る旧型客車が最高の演出をしてくれる。",
+                    "badge": "世界の絶景鉄道",
+                    "prompt_en": "Scenic train ride through tea plantations Sri Lanka, old train carriage with open windows, misty mountain landscape passing by",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "sigiriya",
+            "city_name": "シギリヤ・ダンブッラ",
+            "city_image": "",
+            "city_prompt": "Sigiriya Rock Fortress Sri Lanka rising above jungle canopy, ancient ruins on flat summit, dramatic clouds, travel photography",
+            "city_desc": "5世紀の王が築いた「空中の宮殿」を中心に、古代遺跡が集中する文化三角地帯。ミンネリヤ国立公園での野生ゾウ観察も人気",
+            "city_info": [
+                { "label": "アクセス", "value": "コロンボから車で約4〜4.5時間" },
+                { "label": "おすすめ時期", "value": "1〜4月・7〜9月（乾季・視界良好）", "link_section": "season", "link_btn_index": 4 },
+                { "label": "宿泊", "value": "シギリヤ・ダンブッラ周辺のロッジ・ホテル" }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🗿",
+                    "num": "SIG 01",
+                    "name": "シギリヤロック",
+                    "desc": "高さ約200mの一枚岩にそびえる5世紀の王宮遺跡。ライオンの前脚の間を通って山頂へ登れば、ジャングルに広がる古代都市の遺構を一望できる世界遺産。",
+                    "badge": "世界遺産",
+                    "prompt_en": "Sigiriya Rock Fortress Sri Lanka, massive rock rising from jungle with ancient ruins on top, lion's paw entrance, dramatic scale",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🕉️",
+                    "num": "SIG 02",
+                    "name": "ダンブッラ石窟寺院",
+                    "desc": "岩をくり抜いた5つの洞窟に150体以上の仏像が並ぶ世界遺産の石窟寺院。天井や壁一面を覆う壁画の密度は圧巻の一言。",
+                    "badge": "世界遺産",
+                    "prompt_en": "Dambulla Cave Temple Sri Lanka, golden Buddha statues inside rock cave, painted ceiling murals, ancient Buddhist sanctuary",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🐘",
+                    "num": "SIG 03",
+                    "name": "ミンネリヤ国立公園（象のサファリ）",
+                    "desc": "乾季（7〜9月頃）には貯水池に数百頭の野生ゾウが集結する「エレファントギャザリング」で有名な国立公園。ジープサファリで間近に観察できる。",
+                    "badge": "野生動物",
+                    "prompt_en": "Minneriya National Park Sri Lanka, herd of wild elephants gathering near reservoir, safari jeep, golden savanna light",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🏛️",
+                    "num": "SIG 04",
+                    "name": "ポロンナルワ遺跡",
+                    "desc": "12世紀の古都遺跡。巨大な涅槃仏や坐像が並ぶガル・ヴィハーラや宮殿跡が広大な敷地に点在し、自転車で回るのが定番の楽しみ方。",
+                    "badge": "世界遺産",
+                    "prompt_en": "Polonnaruwa ancient city ruins Sri Lanka, giant reclining Buddha statue Gal Vihara, stone carved sculptures, historic site",
+                    "image": ""
+                }
+            ]
+        },
+        {
+            "city_id": "galle",
+            "city_name": "ゴール",
+            "city_image": "",
+            "city_prompt": "Galle Fort Sri Lanka Dutch colonial architecture, lighthouse on ramparts overlooking ocean, sunset, travel photography",
+            "city_desc": "オランダ統治時代の要塞都市がまるごと世界遺産。城壁内はレトロなカフェや雑貨店が並び、周辺には南国のビーチが連なる南部観光の拠点",
+            "city_info": [
+                { "label": "アクセス", "value": "コロンボから鉄道・車で約2〜2.5時間" },
+                { "label": "おすすめ時期", "value": "12〜3月（乾季・海も穏やか）", "link_section": "season", "link_btn_index": 4 },
+                { "label": "近隣ビーチ", "value": "ミリッサ（車で約30分）" }
+            ],
+            "spots": [
+                {
+                    "must": true,
+                    "icon": "🏰",
+                    "num": "GAL 01",
+                    "name": "ゴール要塞",
+                    "desc": "17世紀にオランダが築いた城壁都市。城壁の上を歩けば海と旧市街の街並みを一望でき、夕暮れ時の散歩が特に気持ちいい世界遺産。",
+                    "badge": "世界遺産",
+                    "prompt_en": "Galle Fort Sri Lanka, Dutch colonial ramparts with lighthouse overlooking ocean, golden hour, historic architecture",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🏛️",
+                    "num": "GAL 02",
+                    "name": "ゴール国立海洋博物館",
+                    "desc": "要塞内にある旧オランダ商館を利用した博物館。スリランカの海洋文化と交易の歴史をコンパクトに学べる、雨の日の立ち寄りにも便利。",
+                    "badge": "博物館",
+                    "prompt_en": "Galle Maritime Museum Sri Lanka, colonial Dutch building interior with maritime artifacts display",
+                    "image": ""
+                },
+                {
+                    "must": true,
+                    "icon": "🏖️",
+                    "num": "GAL 03",
+                    "name": "ミリッサビーチ",
+                    "desc": "ゴールから車で約30分の南国ビーチ。ヤシの木陰でのんびり過ごすほか、早朝出航のホエールウォッチングツアーではブルーホエールに出会えることも。",
+                    "badge": "ビーチ",
+                    "prompt_en": "Mirissa Beach Sri Lanka, palm trees over golden sand beach, turquoise water, fishing boats, tropical paradise",
+                    "image": ""
+                }
+            ]
+        }
+    ],
+    "courses": {
+        "intro": "スリランカは<strong>直行便が週4便のみ</strong>と便数が限られる分、現地では鉄道・車でコンパクトに周遊できるのが強み。初めてなら遺跡と高原を巡る<strong>文化＋紅茶プランA</strong>、少し余裕があれば南部ビーチまで足を延ばす<strong>周遊プランB</strong>がおすすめです。",
+        "stable_title": "定番の2大プラン",
+        "stable_intro": "スリランカ旅行の基本は「コロンボ→文化三角地帯→高原→（南部）」と時計回り・反時計回りに国内を移動していくスタイル。車をチャーターすれば効率よく回れますが、鉄道の絶景区間だけは電車移動を必ず組み込みたいところです。",
+        "stable_plans": [
+            {
+                "label": "プランA",
+                "title": "遺跡＋紅茶ハイライト　6泊7日",
+                "days": [
+                    {
+                        "transit": false,
+                        "label": "Day 1",
+                        "badge_class": "green",
+                        "content_html": "<strong>コロンボ到着</strong><br>夜到着ならホテルで休養。日中到着なら<a onclick=\"showSpot('CMB 01')\" class=\"spot-link\">ゴールフェイス・グリーン</a>で海風にあたって長旅の疲れをリセット。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "コロンボ→シギリヤ（車 約4時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 2",
+                        "badge_class": "red",
+                        "content_html": "<strong>シギリヤロック登頂</strong><br>暑くなる前の早朝に<a onclick=\"showSpot('SIG 01')\" class=\"spot-link\">シギリヤロック</a>へ。ライオンの前脚を抜けて山頂に立てば、ジャングルに広がる古代都市の全景が待っている。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 3",
+                        "badge_class": "red",
+                        "content_html": "<strong>ダンブッラ石窟寺院 → 象のサファリ</strong><br>午前は<a onclick=\"showSpot('SIG 02')\" class=\"spot-link\">ダンブッラ石窟寺院</a>で壁画に圧倒され、午後は<a onclick=\"showSpot('SIG 03')\" class=\"spot-link\">ミンネリヤ国立公園</a>のジープサファリで野生ゾウの群れに出会う。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "シギリヤ→キャンディ（車 約3時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 4",
+                        "badge_class": "green",
+                        "content_html": "<strong>仏歯寺 → キャンディ湖 → 伝統舞踊</strong><br><a onclick=\"showSpot('KDY 01')\" class=\"spot-link\">仏歯寺</a>で夕方の礼拝に参列し、<a onclick=\"showSpot('KDY 02')\" class=\"spot-link\">キャンディ湖</a>を散策。夜は<a onclick=\"showSpot('KDY 03')\" class=\"spot-link\">キャンディアンダンス</a>で伝統芸能を鑑賞。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "キャンディ→エラ（絶景鉄道 約6〜7時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 5",
+                        "badge_class": "red",
+                        "content_html": "<strong>紅茶畑を走る絶景列車 → エラ到着</strong><br>キャンディからエラへの<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>に乗車。紅茶畑・滝・雲霧林が延々と流れる車窓は、この旅一番のハイライトになるはず。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 6",
+                        "badge_class": "green",
+                        "content_html": "<strong>九本橋 → リトルアダムスピーク</strong><br>早朝<a onclick=\"showSpot('ELL 01')\" class=\"spot-link\">九本橋</a>で列車が渡る瞬間を狙い、午後は<a onclick=\"showSpot('ELL 02')\" class=\"spot-link\">リトルアダムスピーク</a>へハイキング。谷を一望する絶景で旅のクライマックスを迎える。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "エラ→コロンボ空港（車 約6時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 7",
+                        "badge_class": "",
+                        "content_html": "<strong>帰国</strong><br>早朝出発でコロンボ空港へ。直行便または乗り継ぎ便で日本へ。"
+                    }
+                ],
+                "tip": "キャンディ〜エラの絶景鉄道は2等車の窓側席が人気。オンライン予約サイトでの事前確保が確実で、当日券勝負は避けたい。"
+            },
+            {
+                "label": "プランB",
+                "title": "遺跡＋高原＋南部ビーチ　9泊10日",
+                "days": [
+                    {
+                        "transit": false,
+                        "label": "Day 1",
+                        "badge_class": "green",
+                        "content_html": "<strong>コロンボ到着</strong><br>フォート地区にチェックインし、時差ボケ解消がてら<a onclick=\"showSpot('CMB 04')\" class=\"spot-link\">ペター地区</a>の市場を散策。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "コロンボ→シギリヤ（車 約4時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 2",
+                        "badge_class": "red",
+                        "content_html": "<strong>シギリヤロック → ダンブッラ石窟寺院</strong><br><a onclick=\"showSpot('SIG 01')\" class=\"spot-link\">シギリヤロック</a>に登頂後、<a onclick=\"showSpot('SIG 02')\" class=\"spot-link\">ダンブッラ石窟寺院</a>で壁画を堪能。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 3",
+                        "badge_class": "red",
+                        "content_html": "<strong>ポロンナルワ遺跡 → 象のサファリ</strong><br>自転車で<a onclick=\"showSpot('SIG 04')\" class=\"spot-link\">ポロンナルワ遺跡</a>を巡り、夕方は<a onclick=\"showSpot('SIG 03')\" class=\"spot-link\">ミンネリヤ国立公園</a>でサファリ。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "シギリヤ→キャンディ（車 約3時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 4",
+                        "badge_class": "green",
+                        "content_html": "<strong>キャンディ観光</strong><br><a onclick=\"showSpot('KDY 01')\" class=\"spot-link\">仏歯寺</a>と<a onclick=\"showSpot('KDY 02')\" class=\"spot-link\">キャンディ湖</a>を巡り、<a onclick=\"showSpot('KDY 04')\" class=\"spot-link\">ティーファクトリー</a>でセイロンティーを試飲。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "キャンディ→エラ（絶景鉄道 約6〜7時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 5",
+                        "badge_class": "red",
+                        "content_html": "<strong>絶景鉄道でエラへ</strong><br>紅茶畑を縫う<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>で移動。車窓の景色だけで満腹になるほどの贅沢な1日。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 6",
+                        "badge_class": "green",
+                        "content_html": "<strong>九本橋 → リトルアダムスピーク</strong><br><a onclick=\"showSpot('ELL 01')\" class=\"spot-link\">九本橋</a>と<a onclick=\"showSpot('ELL 02')\" class=\"spot-link\">リトルアダムスピーク</a>で高原の絶景を満喫。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "エラ→ゴール（車 約5〜6時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 7",
+                        "badge_class": "",
+                        "content_html": "<strong>ゴール要塞さんぽ</strong><br><a onclick=\"showSpot('GAL 01')\" class=\"spot-link\">ゴール要塞</a>の城壁沿いを散策し、レトロなカフェで一休み。夕暮れの光が石畳に映える時間帯が特におすすめ。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 8",
+                        "badge_class": "",
+                        "content_html": "<strong>ミリッサでビーチ＆ホエールウォッチング</strong><br>早朝は<a onclick=\"showSpot('GAL 03')\" class=\"spot-link\">ミリッサビーチ</a>からホエールウォッチングツアーへ。午後はビーチでのんびり過ごす、旅の中の一番のご褒美日。"
+                    },
+                    {
+                        "transit": true,
+                        "duration": "ゴール→コロンボ空港（車・鉄道 約2.5時間）"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 9",
+                        "badge_class": "green",
+                        "content_html": "<strong>コロンボで最終日</strong><br><a onclick=\"showSpot('CMB 02')\" class=\"spot-link\">コロンボ国立博物館</a>や<a onclick=\"showSpot('CMB 03')\" class=\"spot-link\">ガンガラーマ寺院</a>を巡り、お土産にセイロンティーを調達。"
+                    },
+                    {
+                        "transit": false,
+                        "label": "Day 10",
+                        "badge_class": "",
+                        "content_html": "<strong>帰国</strong><br>コロンボ空港から直行便または乗り継ぎ便で日本へ。"
+                    }
+                ],
+                "tip": "ホエールウォッチングは11〜4月がベストシーズン。海況によって出航中止になることもあるので、日程に余裕を持たせておくと安心。"
+            }
+        ],
+        "adventure_title": "紅茶列車で行く「時計回り一周」",
+        "adventure_note_html": "スリランカ好きの間で人気なのが、コロンボから時計回りに島を一周する周遊ルート。文化三角地帯・高原・南部ビーチを一筆書きで回れる、鉄道と車を組み合わせた欲張りな道のりです。",
+        "adventure_plan": {
+            "title": "文化三角地帯＋高原＋南部海岸　11泊12日",
+            "days": [
+                {
+                    "transit": false,
+                    "label": "Day 1",
+                    "badge_class": "green",
+                    "content_html": "<strong>コロンボ到着</strong><br>スリランカ航空の直行便で到着。初日はゴールフェイス周辺のホテルで長旅の疲れを癒す。"
+                },
+                {
+                    "transit": true,
+                    "duration": "コロンボ→アヌラーダプラ（車 約4時間）"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 2",
+                    "badge_class": "red",
+                    "content_html": "<strong>アヌラーダプラ遺跡</strong><br>スリランカ最古の古都を訪ね、巨大な白亜のストゥーパ群と菩提樹の聖地を巡る。文化三角地帯の旅はここから始まる。"
+                },
+                {
+                    "transit": true,
+                    "duration": "アヌラーダプラ→シギリヤ（車 約2時間）"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 3",
+                    "badge_class": "red",
+                    "content_html": "<strong>シギリヤロック → ダンブッラ石窟寺院</strong><br><a onclick=\"showSpot('SIG 01')\" class=\"spot-link\">シギリヤロック</a>に登頂し、午後は<a onclick=\"showSpot('SIG 02')\" class=\"spot-link\">ダンブッラ石窟寺院</a>へ。"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 4",
+                    "badge_class": "red",
+                    "content_html": "<strong>ポロンナルワ遺跡 → 象のサファリ</strong><br><a onclick=\"showSpot('SIG 04')\" class=\"spot-link\">ポロンナルワ遺跡</a>を自転車で巡り、夕方は<a onclick=\"showSpot('SIG 03')\" class=\"spot-link\">ミンネリヤ国立公園</a>でジープサファリ。"
+                },
+                {
+                    "transit": true,
+                    "duration": "シギリヤ→キャンディ（車 約3時間）"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 5",
+                    "badge_class": "green",
+                    "content_html": "<strong>キャンディ観光</strong><br><a onclick=\"showSpot('KDY 01')\" class=\"spot-link\">仏歯寺</a>・<a onclick=\"showSpot('KDY 02')\" class=\"spot-link\">キャンディ湖</a>を巡り、夜は<a onclick=\"showSpot('KDY 03')\" class=\"spot-link\">キャンディアンダンス</a>を鑑賞。"
+                },
+                {
+                    "transit": true,
+                    "duration": "キャンディ→ヌワラエリヤ（車 約3時間）"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 6",
+                    "badge_class": "green",
+                    "content_html": "<strong>ヌワラエリヤの紅茶畑</strong><br>「小さな英国」と呼ばれる高原の街で、<a onclick=\"showSpot('KDY 04')\" class=\"spot-link\">ティーファクトリー</a>見学とセイロンティーの試飲。避暑地らしい涼しい空気を満喫する。"
+                },
+                {
+                    "transit": true,
+                    "duration": "ヌワラエリヤ→エラ（絶景鉄道 約2〜3時間）"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 7",
+                    "badge_class": "red",
+                    "content_html": "<strong>絶景鉄道でエラへ</strong><br>ヌワラエリヤからエラへの区間は紅茶畑のハイライト区間。<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>の車窓を目に焼き付ける。"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 8",
+                    "badge_class": "red",
+                    "content_html": "<strong>九本橋 → リトルアダムスピーク</strong><br><a onclick=\"showSpot('ELL 01')\" class=\"spot-link\">九本橋</a>で列車を撮影し、<a onclick=\"showSpot('ELL 02')\" class=\"spot-link\">リトルアダムスピーク</a>へハイキング。"
+                },
+                {
+                    "transit": true,
+                    "duration": "エラ→ゴール（車 約5〜6時間）"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 9",
+                    "badge_class": "",
+                    "content_html": "<strong>ゴール要塞さんぽ</strong><br><a onclick=\"showSpot('GAL 01')\" class=\"spot-link\">ゴール要塞</a>の城壁を歩き、<a onclick=\"showSpot('GAL 02')\" class=\"spot-link\">海洋博物館</a>にも立ち寄る。高原の涼しさから一転、南国の空気に包まれる。"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 10",
+                    "badge_class": "",
+                    "content_html": "<strong>ミリッサでビーチ＆ホエールウォッチング</strong><br><a onclick=\"showSpot('GAL 03')\" class=\"spot-link\">ミリッサビーチ</a>から出航するホエールウォッチングツアーに参加し、午後はビーチでのんびり。"
+                },
+                {
+                    "transit": true,
+                    "duration": "ゴール→コロンボ（鉄道 約2.5時間）"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 11",
+                    "badge_class": "green",
+                    "content_html": "<strong>コロンボで締めくくり</strong><br><a onclick=\"showSpot('CMB 01')\" class=\"spot-link\">ゴールフェイス・グリーン</a>で最後の夕景を眺め、お土産にセイロンティーとクルクルを調達。"
+                },
+                {
+                    "transit": false,
+                    "label": "Day 12",
+                    "badge_class": "",
+                    "content_html": "<strong>帰国</strong><br>コロンボ空港から日本へ。文化・高原・海と、島の表情をひと通り味わい尽くした12日間。"
+                }
+            ],
+            "tip": "文化三角地帯（シギリヤ周辺）は日中40°C近くになることもある。遺跡巡りは早朝か夕方に組み込み、日中の炎天下の行動は避けるのが賢明。"
+        },
+        "cta_title": "ベストシーズンもチェックしよう！🌤️",
+        "cta_desc": "コロンボ・南部ビーチと高原・東海岸では最適な訪問時期が異なります。旅程に合わせてシーズンを選びましょう。"
+    },
+    "transport_items": [
+        {
+            "icon": "✈️",
+            "name": "国際線（直行便・乗継便）",
+            "desc": "成田からスリランカ航空の直行便が週4便（約9〜10時間）。シンガポール・香港・ドバイ経由の乗継便も豊富で日程の自由度が高い。",
+            "affiliate": "",
+            "is_last": false
+        },
+        {
+            "icon": "🚆",
+            "name": "鉄道",
+            "desc": "コロンボ〜キャンディ〜エラの区間は紅茶畑を縫う世界的な絶景路線。2等・3等車でも十分楽しめるが、人気区間は事前予約がおすすめ。",
+            "affiliate": "",
+            "is_last": false
+        },
+        {
+            "icon": "🚗",
+            "name": "車チャーター（ドライバー付き）",
+            "desc": "都市間の移動時間を節約でき、荷物も気にせず周遊できる定番の移動手段。複数人でシェアすれば公共交通とさほど変わらない出費で済む。",
+            "affiliate": "",
+            "is_last": false
+        },
+        {
+            "icon": "🛺",
+            "name": "トゥクトゥク",
+            "desc": "市内の短距離移動に便利な三輪タクシー。乗車前にメーターの使用を確認するか、PickMeアプリで呼ぶとぼったくりの心配が少ない。",
+            "affiliate": "pickme",
+            "is_last": false
+        },
+        {
+            "icon": "🚌",
+            "name": "長距離バス",
+            "desc": "運賃は最も安いが混雑と速度に難あり。急行バス（エアコン付き）なら快適性が上がる。時間に余裕がある旅行者向け。",
+            "affiliate": "",
+            "is_last": true
+        }
+    ],
+    "spot_points": [
+        {
+            "title": "紅茶列車は「窓を開けて」乗るのが正解",
+            "body": "キャンディ〜エラ間の鉄道は世界の絶景路線として知られるが、真価を発揮するのは窓を開け放って風を感じながら乗る旧型客車。紅茶畑・滝・雲霧林が途切れることなく続く車窓は、写真より記憶に焼き付く体験だ。"
+        },
+        {
+            "title": "シギリヤロックは「早朝登頂」が鉄則",
+            "body": "一枚岩の頂上まで続く階段は日陰がほとんどなく、日中は強烈な日差しにさらされる。開門直後の早朝に登れば涼しく人も少なく、山頂からの朝もやに包まれたジャングルの景色は格別だ。"
+        },
+        {
+            "title": "野生ゾウは「待つ」ことも楽しみのうち",
+            "body": "ミンネリヤ国立公園の象の群れは天候や季節で集まる場所が変わる。ガイドが草原を読みながらジープを走らせ、遠くに影を見つけた瞬間の高揚感こそサファリの醍醐味。焦らずゆったり構えるのがコツ。"
+        }
+    ],
+    "food_modal_phrase_main": "Meka denna（メーカ デンナ／これをください）",
+    "food_modal_phrase_sub": "Rasai!（ラサイ！／おいしい！）",
+    "index_card": {
+        "flag": "🇱🇰",
+        "catch": "遺跡・紅茶・野生のゾウ。凝縮されたインド洋の島",
+        "region": "南アジア",
+        "best_months": [
+            11,
+            0,
+            1,
+            2
+        ],
+        "best_label": "12〜3月",
+        "tags": [
+            "世界遺産",
+            "紅茶",
+            "自然",
+            "グルメ"
+        ],
+        "gradient": "linear-gradient(135deg,#8D2433 0%,#FFB700 50%,#00534E 100%)",
+        "budget": [
+            "budget2",
+            "budget3"
+        ]
+    }
+}

@@ -117,6 +117,14 @@ const AFFILIATES = {
     url:   'https://telegram.org/'
   },
 
+  pickme: {
+    name:  'PickMe',
+    label: 'PickMeをダウンロード →',
+    desc:  'スリランカの定番配車アプリ。トゥクトゥクもタクシーもメーター料金で呼べる。',
+    btn:   '公式サイトを見る →',
+    url:   'https://pickme.lk/'
+  },
+
   google_maps: {
     name:  'Googleマップ',
     label: 'Googleマップを開く →',
