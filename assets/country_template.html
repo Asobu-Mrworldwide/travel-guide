@@ -90,17 +90,31 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
 </header>
 
+{% if multipage %}
 <nav>
-  <button class="active" onclick="show('basic',this)">基本情報</button>
-  <button onclick="show('spots',this)">観光スポット</button>
-  <button onclick="show('food',this)">グルメ</button>
-  <button onclick="show('course',this)">モデルコース</button>
-  <button onclick="show('budget',this)">予算・費用</button>
-  <button onclick="show('practical',this)">旅の準備</button>
-  <button onclick="show('phrases',this)">フレーズ</button>
+  <a href="index.html" class="{{nav_active.basic}}">基本情報</a>
+  <a href="spots.html" class="{{nav_active.spots}}">観光スポット</a>
+  <a href="food.html" class="{{nav_active.food}}">グルメ</a>
+  <a href="course.html" class="{{nav_active.course}}">モデルコース</a>
+  <a href="budget.html" class="{{nav_active.budget}}">予算・費用</a>
+  <a href="practical.html" class="{{nav_active.practical}}">旅の準備</a>
+  <a href="phrases.html" class="{{nav_active.phrases}}">フレーズ</a>
+  <button onclick="window.open('../common/checklist.html?from={{id}}','_blank')">持ち物リスト</button>
+</nav>
+{% endif %}
+{% if singlepage %}
+<nav>
+  <button class="{{nav_active.basic}}" onclick="show('basic',this)">基本情報</button>
+  <button class="{{nav_active.spots}}" onclick="show('spots',this)">観光スポット</button>
+  <button class="{{nav_active.food}}" onclick="show('food',this)">グルメ</button>
+  <button class="{{nav_active.course}}" onclick="show('course',this)">モデルコース</button>
+  <button class="{{nav_active.budget}}" onclick="show('budget',this)">予算・費用</button>
+  <button class="{{nav_active.practical}}" onclick="show('practical',this)">旅の準備</button>
+  <button class="{{nav_active.phrases}}" onclick="show('phrases',this)">フレーズ</button>
 
   <button onclick="window.open('../common/checklist.html?from={{id}}','_blank')">持ち物リスト</button>
 </nav>
+{% endif %}
 
 {{custom_before_hero}}
 <div class="hero">
@@ -114,11 +128,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div>
 {{custom_after_hero}}
 
-<div class="container">
+<div class="container" style="{{container_style}}">
 <div id="slides-wrap">
 
 <!-- 基本情報 -->
-<section id="basic" class="active">
+{% if show.basic %}<section id="basic" class="{{sec_active.basic}}">
 {{custom_top_basic}}
   <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:16px;padding:0 4px">{{overview.description_html}}</div>
   <h2>{{name}}ってどんなところ？</h2>
@@ -254,7 +268,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div><!-- end overflow:hidden 主要都市 -->
 
     <!-- ベストシーズン -->
-    <div class="qs-section-title" style="margin-top:20px">ベストシーズン</div>
+    <div id="season" class="qs-section-title" style="margin-top:20px">ベストシーズン</div>
     <div style="background:#fff;padding:20px 24px">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
@@ -315,11 +329,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <button class="tab-cta-btn" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
   </div>
   {{custom_bottom_basic}}
-</section>
+</section>{% endif %}
 
 
 <!-- 予算・費用 -->
-<section id="budget">
+{% if show.budget %}<section id="budget" class="{{sec_active.budget}}">
 {{custom_top_budget}}
   <h2>旅行費用の目安</h2>
   {% if budget.intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{budget.intro}}</p>{% endif %}
@@ -499,10 +513,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div style="font-size:0.78em;color:var(--sub);line-height:1.7;margin-bottom:14px">航空券・ホテル・SIM・持ち物まで全部まとめてチェック。<br><strong style="color:var(--text)">30カ国以上を旅した管理人</strong>が実体験をもとに作った<strong>完全版持ち物リスト</strong>もあります。</div>
     <button onclick="show('practical',document.querySelectorAll('nav button')[5])" style="background:var(--green);color:#fff;font-size:0.84em;font-weight:700;border:none;border-radius:24px;padding:11px 28px;cursor:pointer;letter-spacing:0.02em">旅の準備を見る →</button>
   </div>
-</section>
+</section>{% endif %}
 
 <!-- 旅の準備 -->
-<section id="practical">
+{% if show.practical %}<section id="practical" class="{{sec_active.practical}}">
 
   <div class="prac-grid">
     {% for card in practical.prac_cards %}
@@ -580,7 +594,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 4px">海外用SIMを探すと選択肢が多すぎて何を選べばいいか迷いますよね。現地でSIMを買う方法もありますが、限られた滞在時間を削ってショップを探すのはもったいない。やっぱり出発前に準備しておくのが正解です。渡航先・日数・データ容量に合わせて、下記のeSIMサービスから選んでみてください。</p>
   <div data-affiliate-box="sim"></div>
 
-  <h2>現地交通ガイド</h2>
+  <h2 id="transport">現地交通ガイド</h2>
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
     {% for item in transport_items %}
@@ -602,12 +616,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <button class="tab-cta-btn" onclick="show('phrases',document.querySelectorAll('nav button')[6])">フレーズ集を見る →</button>
   </div>
 
-</section>
+</section>{% endif %}
 
 
 
 <!-- フレーズ -->
-<section id="phrases">
+{% if show.phrases %}<section id="phrases" class="{{sec_active.phrases}}">
   <h2>旅行フレーズ集</h2>
   {% if phrases.multi %}
   <div class="filter-row" id="phrase-deck-tabs" style="margin-bottom:12px">
@@ -636,10 +650,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <p class="tab-cta-desc">SIM・変換プラグ・保険まで、忘れがちな持ち物を一覧にまとめました。</p>
     <button class="tab-cta-btn" onclick="show('practical',document.querySelectorAll('nav button')[5])">持ち物リストを見る →</button>
   </div>
-</section>
+</section>{% endif %}
 
 <!-- グルメ -->
-<section id="food">
+{% if show.food %}<section id="food" class="{{sec_active.food}}">
 {{custom_top_food}}
   <h2>{{food_section_title}}</h2>
   <div class="filter-group">
@@ -679,10 +693,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <button class="tab-cta-btn" onclick="show('course',document.querySelectorAll('nav button')[3])">モデルコースを見る →</button>
   </div>
   {{custom_bottom_food}}
-</section>
+</section>{% endif %}
 
 <!-- 観光地 -->
-<section id="spots">
+{% if show.spots %}<section id="spots" class="{{sec_active.spots}}">
 {{custom_top_spots}}
   <h2>{{spots_section_title}}</h2>
   <div class="filter-label">エリア</div>
@@ -728,10 +742,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <button class="tab-cta-btn" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button>
   </div>
   {{custom_bottom_spots}}
-</section>
+</section>{% endif %}
 
 <!-- モデルコース -->
-<section id="course">
+{% if show.course %}<section id="course" class="{{sec_active.course}}">
 {{custom_top_course}}
   <h2>モデルコース</h2>
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">{{courses.intro}}</p>
@@ -802,7 +816,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <button class="tab-cta-btn" onclick="show('budget',document.querySelectorAll('nav button')[4])">予算・費用を見る →</button>
   </div>
   {{custom_bottom_course}}
-</section>
+</section>{% endif %}
 
 </div><!-- /slides-wrap -->
 </div><!-- /container -->
@@ -845,8 +859,9 @@ function changeDays(d) {
   document.getElementById('cash-range-cur').textContent = low.toLocaleString() + '〜' + high.toLocaleString() + ' ' + CURRENCY;
   document.getElementById('cash-range-jpy').textContent = '約' + Math.round(low * RATE / 1000) + ',000〜' + Math.round(high * RATE / 1000) + ',000円';
 }
-changeDays(0);
+if (document.getElementById('cash-days')) { changeDays(0); }
 
+{% if singlepage %}
 function show(id, btn) {
   document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
@@ -889,7 +904,22 @@ function show(id, btn) {
     }
   }
 })();
+{% endif %}
+{% if multipage %}
+/* 分割ページモード: show() は同一タブでの別ページ遷移 */
+var PAGE_URL = {
+  basic:'index.html', spots:'spots.html', food:'food.html', course:'course.html',
+  budget:'budget.html', practical:'practical.html', phrases:'phrases.html',
+  season:'index.html#season', transport:'practical.html#transport',
+  money:'budget.html#money', sim:'practical.html#sim'
+};
+function show(id, btn) {
+  var u = PAGE_URL[id];
+  if (u) { location.href = u; }
+}
+{% endif %}
 
+{% if singlepage %}
 function showSpot(numId) {
   const card = document.querySelector('[data-spot-num="' + numId + '"]');
   if (!card) return;
@@ -915,6 +945,39 @@ function showSpot(numId) {
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
+{% endif %}
+{% if multipage %}
+/* 分割ページモード: 埋め込みSPOT_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
+var SPOT_DATA = {{spot_data_js}};
+function showSpot(numId) {
+  var o = (window.SPOT_DATA && SPOT_DATA[numId]) ? SPOT_DATA[numId] : null;
+  if (!o) {
+    var card = document.querySelector('[data-spot-num="' + numId + '"]');
+    if (!card) { location.href = 'spots.html?spot=' + encodeURIComponent(numId); return; }
+    var imgWrap = card.querySelector('.spot-img-wrap');
+    var mapBtn = card.querySelector('.spot-map-btn');
+    o = {
+      num:  (card.querySelector('.num') || {}).textContent || '',
+      name: (card.querySelector('.name') || {}).textContent || '',
+      desc: (card.querySelector('.desc') || {}).textContent || '',
+      img:  imgWrap ? imgWrap.style.backgroundImage.replace(/url\(["']?|["']?\)/g,'') : '',
+      mapUrl: mapBtn ? mapBtn.href : ''
+    };
+  }
+  document.getElementById('sp-pop-num').textContent  = o.num  || '';
+  document.getElementById('sp-pop-name').textContent = o.name || '';
+  document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  var popImg = document.getElementById('sp-pop-img');
+  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  var popMap = document.getElementById('sp-pop-map');
+  if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+  var popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+{% endif %}
 function closeSpotPopup() {
   document.getElementById('sp-popup').style.display = 'none';
   document.body.style.overflow = '';
@@ -942,6 +1005,7 @@ function filterFood(dim, value, btn) {
   });
 }
 
+{% if singlepage %}
 function showFilteredSpots(city) {
   const spotsBtn = document.querySelectorAll('nav button')[1];
   show('spots', spotsBtn);
@@ -950,7 +1014,14 @@ function showFilteredSpots(city) {
     if (btn) filterSpots(city, btn);
   }, 50);
 }
+{% endif %}
+{% if multipage %}
+function showFilteredSpots(city) {
+  location.href = 'spots.html?city=' + encodeURIComponent(city);
+}
+{% endif %}
 
+{% if singlepage %}
 (function() {
   let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
   const THRESHOLD = 50;
@@ -986,6 +1057,23 @@ function showFilteredSpots(city) {
     if (nextIdx !== currentIdx) btns[nextIdx].click();
   }, { passive: true });
 })();
+{% endif %}
+{% if multipage %}
+/* 分割ページモード: spots.html 到達時に ?spot= / ?city= を反映 */
+(function() {
+  if (!document.getElementById('spots-grid')) return;
+  const params = new URLSearchParams(location.search);
+  const spot = params.get('spot');
+  const city = params.get('city');
+  if (city) {
+    const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
+    if (btn) filterSpots(city, btn);
+  }
+  if (spot) {
+    setTimeout(() => showSpot(spot), 100);
+  }
+})();
+{% endif %}
 </script>
 
 <script src="../assets/country-links.js"></script>

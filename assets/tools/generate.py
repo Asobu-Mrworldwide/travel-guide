@@ -8,7 +8,7 @@
          assets/country_template.html
 出力:     <country_id>/index.html
 """
-import json, re, os, sys
+import json, re, os, sys, urllib.parse
 
 
 # ──────────────────────────────────────────
@@ -181,6 +181,35 @@ def _find_if(text, start):
 
 
 # ──────────────────────────────────────────
+# スポットデータ（分割ページ用：どのページでもポップアップを開けるよう埋め込む）
+# ──────────────────────────────────────────
+
+def build_spot_data_js(data):
+    """spot_sections から num→{name,desc,img,mapUrl} の JS オブジェクトリテラルを作る"""
+    country_label = data.get('map', {}).get('country_label', '')
+    obj = {}
+    for sec in data.get('spot_sections', []):
+        city = sec.get('city_name', '')
+        for sp in sec.get('spots', []):
+            num = sp.get('num', '')
+            if not num:
+                continue
+            name = sp.get('name', '')
+            desc = sp.get('desc', '')
+            img  = sp.get('image', '') or ''
+            if sp.get('map_url'):
+                map_url = sp['map_url']
+            elif sp.get('no_map'):
+                map_url = ''
+            else:
+                q = ' '.join(x for x in [name, city, country_label] if x)
+                map_url = 'https://maps.google.com/?q=' + urllib.parse.quote(q, safe='')
+            obj[num] = {'num': num, 'name': name, 'desc': desc, 'img': img, 'mapUrl': map_url}
+    # <script> 内に安全に埋め込めるよう '<' をエスケープ
+    return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
+
+
+# ──────────────────────────────────────────
 # 国一覧 (index.html) 自動更新
 # ──────────────────────────────────────────
 
@@ -333,7 +362,6 @@ def generate(country_id):
     # ────────────────────────────────────────────────────────────
 
     data['__root_dir__'] = os.path.normpath(root_dir)
-    html = _render(tpl, data)
 
     country_dir = os.path.join(root_dir, country_id)
     os.makedirs(os.path.join(country_dir, '素材', 'グルメ'),       exist_ok=True)
@@ -341,9 +369,50 @@ def generate(country_id):
     os.makedirs(os.path.join(country_dir, '素材', '都市'),         exist_ok=True)
     os.makedirs(os.path.join(country_dir, 'audio'),                exist_ok=True)
 
-    with open(out_path, 'w', encoding='utf-8') as f:
-        f.write(html)
-    print(f'✅ 生成完了: {out_path}')
+    SECTIONS = ['basic', 'spots', 'food', 'course', 'budget', 'practical', 'phrases']
+
+    if data.get('multipage'):
+        # ── 分割ページモード（タブごとに個別HTML） ──
+        pages = [
+            ('basic',     'index.html',     '基本情報'),
+            ('spots',     'spots.html',     '観光スポット'),
+            ('food',      'food.html',      'グルメ'),
+            ('course',    'course.html',    'モデルコース'),
+            ('budget',    'budget.html',    '予算・費用'),
+            ('practical', 'practical.html', '旅の準備'),
+            ('phrases',   'phrases.html',   'フレーズ'),
+        ]
+        base_title   = data.get('page_title', '')
+        name         = data.get('name', '')
+        spot_data_js = build_spot_data_js(data)
+        for slug, outfile, label in pages:
+            ctx = dict(data)
+            ctx['multipage']       = True
+            ctx['singlepage']      = False
+            ctx['spot_data_js']    = spot_data_js
+            ctx['show']            = {s: (s == slug) for s in SECTIONS}
+            ctx['nav_active']      = {s: ('active' if s == slug else '') for s in SECTIONS}
+            ctx['sec_active']      = {s: ('active' if s == slug else '') for s in SECTIONS}
+            ctx['container_style'] = 'max-width:1000px' if slug in ('spots', 'food') else ''
+            ctx['page_title']      = base_title if slug == 'basic' else f'{name}の{label}｜{base_title}'
+            html = _render(tpl, ctx)
+            with open(os.path.join(country_dir, outfile), 'w', encoding='utf-8') as f:
+                f.write(html)
+            print(f'  📄 {outfile}')
+        print(f'✅ 生成完了（分割{len(pages)}ページ）: {country_dir}')
+    else:
+        # ── 従来モード（1枚のindex.htmlに全タブ） ──
+        ctx = dict(data)
+        ctx['multipage']       = False
+        ctx['singlepage']      = True
+        ctx['show']            = {s: True for s in SECTIONS}
+        ctx['nav_active']      = {s: ('active' if s == 'basic' else '') for s in SECTIONS}
+        ctx['sec_active']      = {s: ('active' if s == 'basic' else '') for s in SECTIONS}
+        ctx['container_style'] = ''
+        html = _render(tpl, ctx)
+        with open(out_path, 'w', encoding='utf-8') as f:
+            f.write(html)
+        print(f'✅ 生成完了: {out_path}')
 
     update_index(country_id, data, root_dir)
 
