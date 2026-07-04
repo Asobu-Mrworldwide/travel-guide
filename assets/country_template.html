@@ -189,17 +189,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           gestureHandling: 'greedy'
         });
         Object.values(CITY_DATA).forEach(city => {
-          const isCapital = city.label==='★';
-          const w = isCapital ? 28 : 20, h = isCapital ? 36 : 26;
-          const pin = document.createElement('div');
-          pin.style.cssText = 'filter:drop-shadow(0 1px 3px rgba(0,0,0,0.45));line-height:0';
-          pin.innerHTML = `<svg width="${w}" height="${h}" viewBox="0 0 26 34"><path d="M13 0C5.8 0 0 5.8 0 13c0 9.75 13 21 13 21s13-11.25 13-21C26 5.8 20.2 0 13 0z" fill="${city.color}" stroke="#fff" stroke-width="2"/><circle cx="13" cy="12" r="5" fill="#fff"/></svg>`;
+          const dot = document.createElement('div');
+          dot.style.cssText = `width:${city.label==='★'?'14px':'11px'};height:${city.label==='★'?'14px':'11px'};background:${city.color};border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4);`;
           const label = document.createElement('div');
           label.textContent = city.name;
-          label.style.cssText = `margin-top:2px;background:#fff;color:#cc0001;font-size:11px;font-weight:bold;padding:2px 6px;border-radius:10px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,0.3);font-family:sans-serif;`;
+          label.style.cssText = `margin-top:4px;background:#fff;color:#cc0001;font-size:11px;font-weight:bold;padding:2px 6px;border-radius:10px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,0.3);font-family:sans-serif;`;
           const container = document.createElement('div');
           container.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer';
-          container.appendChild(pin); container.appendChild(label);
+          container.appendChild(dot); container.appendChild(label);
           new google.maps.marker.AdvancedMarkerElement({ position:{lat:city.lat,lng:city.lng}, map:window._map, title:city.name, content:container });
         });
       }
