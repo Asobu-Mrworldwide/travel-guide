@@ -128,6 +128,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div>
 {{custom_after_hero}}
 
+{% if needs_gmaps %}
+<script>window.initMap = window.initMap || function(){};</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
+{% endif %}
 <div class="container" style="{{container_style}}">
 <div id="slides-wrap">
 
@@ -259,7 +263,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         document.getElementById('map-reset-btn').style.display = 'none';
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
     <div class="city-grid-wrap">
       {% for city in cities %}
       <div class="city-item" onclick="zoomToCity('{{city.id}}')"><div class="ci-name">{{city.name}}</div><div class="ci-badge {{city.badge_class}}" style="margin-bottom:5px">{{city.badge}}</div><div class="ci-desc">{{city.description}}</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('{{city.id}}')">観光地を見る →</button></div></div>

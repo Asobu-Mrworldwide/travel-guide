@@ -116,6 +116,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div>
 
 
+
+<script>window.initMap = window.initMap || function(){};</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
+
 <div class="container" style="">
 <div id="slides-wrap">
 
@@ -280,7 +284,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         document.getElementById('map-reset-btn').style.display = 'none';
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
     <div class="city-grid-wrap">
       
       <div class="city-item" onclick="zoomToCity('marina_bay')"><div class="ci-name">マリーナベイ</div><div class="ci-badge " style="margin-bottom:5px">夜景の中心</div><div class="ci-desc">マリーナベイ・サンズとガーデンズが囲む観光のハイライト</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('marina_bay')">観光地を見る →</button></div></div>

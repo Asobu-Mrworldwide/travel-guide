@@ -116,6 +116,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div>
 
 
+
+<script>window.initMap = window.initMap || function(){};</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
+
 <div class="container" style="">
 <div id="slides-wrap">
 
@@ -282,7 +286,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         document.getElementById('map-reset-btn').style.display = 'none';
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
     <div class="city-grid-wrap">
       
       <div class="city-item" onclick="zoomToCity('cape_town')"><div class="ci-name">ケープタウン</div><div class="ci-badge " style="margin-bottom:5px">立法首都</div><div class="ci-desc">テーブルマウンテンを仰ぐ南アフリカ最大の観光都市</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('cape_town')">観光地を見る →</button></div></div>

@@ -116,6 +116,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div>
 
 
+
+<script>window.initMap = window.initMap || function(){};</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
+
 <div class="container" style="">
 <div id="slides-wrap">
 
@@ -286,7 +290,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         document.getElementById('map-reset-btn').style.display = 'none';
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
     <div class="city-grid-wrap">
       
       <div class="city-item" onclick="zoomToCity('tashkent')"><div class="ci-name">タシュケント</div><div class="ci-badge " style="margin-bottom:5px">首都</div><div class="ci-desc">国の玄関口。近代的な街並みとバザール・モスクが共存する中央アジア最大の都市</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('tashkent')">観光地を見る →</button></div></div>

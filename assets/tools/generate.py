@@ -396,6 +396,7 @@ def generate(country_id):
             ctx['show']            = {s: (s == slug) for s in SECTIONS}
             ctx['nav_active']      = {s: ('active' if s == slug else '') for s in SECTIONS}
             ctx['sec_active']      = {s: ('active' if s == slug else '') for s in SECTIONS}
+            ctx['needs_gmaps']     = slug in ('basic', 'budget')
             ctx['container_style'] = 'max-width:1000px' if slug in ('spots', 'food') else ''
             ctx['page_title']      = base_title if slug == 'basic' else f'{name}の{label}｜{base_title}'
             html = _render(tpl, ctx)
@@ -411,6 +412,7 @@ def generate(country_id):
         ctx['show']            = {s: True for s in SECTIONS}
         ctx['nav_active']      = {s: ('active' if s == 'basic' else '') for s in SECTIONS}
         ctx['sec_active']      = {s: ('active' if s == 'basic' else '') for s in SECTIONS}
+        ctx['needs_gmaps']     = True
         ctx['container_style'] = ''
         html = _render(tpl, ctx)
         with open(out_path, 'w', encoding='utf-8') as f:
