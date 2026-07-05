@@ -117,6 +117,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.item-card.spot').forEach(card => {
+      // map_urlが既にある場合はJSリンクを追加しない
+      if (card.querySelector('.spot-map-btn, .map-btn')) return;
+      const name = card.querySelector('.name')?.textContent;
+      if (!name) return;
+      const cityId = card.dataset.city;
+      const cityName = (typeof CITY_DATA !== 'undefined' && CITY_DATA[cityId]) ? CITY_DATA[cityId].name : '';
+      const a = document.createElement('a');
+      a.href = 'https://maps.google.com/?q=' + encodeURIComponent([name, cityName, '南アフリカ共和国'].filter(Boolean).join(' '));
+      a.target = '_blank';
+      a.textContent = 'Googleマップ →';
+      a.className = 'spot-map-btn';
+      const wrap = card.querySelector('.spot-img-wrap');
+      if (wrap) {
+        wrap.appendChild(a);
+      } else {
+        a.className = 'map-btn';
+        card.appendChild(a);
+      }
+    });
+  });
+</script>
+
 <div class="container" style="max-width:1000px">
 <div id="slides-wrap">
 
