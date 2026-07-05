@@ -693,8 +693,8 @@ var PAGE_INDEX = 1;
     <button class="food-modal-close" onclick="closeFoodModal()">✕</button>
     <img id="food-modal-img" src="" alt="" style="width:100%;border-radius:8px;margin-bottom:10px;display:none">
     <div id="food-modal-ico" class="food-modal-ico"></div>
-    <div id="food-modal-en" class="food-modal-en"></div>
-    <div id="food-modal-ja" class="food-modal-ja"></div>
+    <div id="food-modal-name" class="food-modal-name"></div>
+    <div id="food-modal-pinyin" class="food-modal-pinyin"></div>
     <div class="food-modal-phrase">
       <div class="food-modal-phrase-main">Meka denna（メーカ デンナ／これをください）</div>
       <div class="food-modal-phrase-sub">Rasai!（ラサイ！／おいしい！）</div>
@@ -704,7 +704,7 @@ var PAGE_INDEX = 1;
 </div>
 
 <script>
-function openFoodModal(ico, nameEn, nameJa, imgSrc) {
+function openFoodModal(ico, nameRuby, pinyin, imgSrc) {
   const imgEl = document.getElementById('food-modal-img');
   const icoEl = document.getElementById('food-modal-ico');
   if (imgSrc) {
@@ -716,8 +716,10 @@ function openFoodModal(ico, nameEn, nameJa, imgSrc) {
     icoEl.style.display = '';
   }
   icoEl.textContent = ico;
-  document.getElementById('food-modal-en').textContent = nameEn;
-  document.getElementById('food-modal-ja').textContent = nameJa;
+  document.getElementById('food-modal-name').innerHTML = nameRuby;
+  const pinyinEl = document.getElementById('food-modal-pinyin');
+  pinyinEl.textContent = pinyin;
+  pinyinEl.style.display = pinyin ? '' : 'none';
   document.getElementById('food-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
