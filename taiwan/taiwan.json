@@ -12,7 +12,7 @@
         "description_html": "直行便で約3〜4時間、時差はたった1時間。機内食を食べて一眠りしたら、もう夜市の匂いの中にいます。<strong>小籠包や牛肉麺などの絶品グルメ、提灯が灯る九份、歴史ある寺廟、そして日本語すら通じることのある親日的な空気</strong>。初めての海外旅行にも、週末のリピート旅にも応えてくれる懐の深い旅先です。",
         "flag_html": "<div style=\"position:relative;height:100px;width:150px;display:inline-block;overflow:hidden;border:1px solid #eee;background:#FE0000\"><div style=\"position:absolute;top:0;left:0;width:75px;height:50px;background:#000095\"></div><div style=\"position:absolute;top:25px;left:37px;transform:translate(-50%,-50%);color:#fff;font-size:30px;line-height:1\">☀</div></div>",
         "flag_caption": "青天白日満地紅旗。青は青天、白い太陽は進取の精神、赤は大地を表す。",
-        "top_spot_name": "九份老街",
+        "top_spot_name": "九份（きゅうふん）老街",
         "top_spot_desc": "山の斜面に張り付くように連なる提灯の街。夕暮れに赤提灯が灯る石段の風景は、台湾旅行のハイライト。",
         "top_food_name": "小籠包",
         "top_food_desc": "薄皮の中から熱々のスープがあふれる台湾グルメの代名詞。名店から街の食堂まで、どこで食べてもハズレが少ない。",
@@ -56,7 +56,7 @@
         },
         {
             "id": "jiufen",
-            "name": "九份",
+            "name": "九份（きゅうふん）",
             "lat": "25.1090",
             "lng": "121.8443",
             "zoom": "15",
@@ -951,7 +951,7 @@
                     "must": false,
                     "icon": "🏮",
                     "num": "TPE 07",
-                    "name": "迪化街",
+                    "name": "迪化街（てきかがい）",
                     "desc": "乾物・茶葉・カラスミの老舗が並ぶレトロな問屋街。歴史建築をリノベしたカフェや雑貨店も増えており、お土産探しの締めくくりに最適。",
                     "badge": "問屋街さんぽ",
                     "prompt_en": "Dihua Street Taipei historic shopping street with baroque architecture, traditional dried goods shops, red lanterns",
@@ -961,17 +961,67 @@
                     "must": false,
                     "icon": "🌙",
                     "num": "TPE 08",
-                    "name": "饒河街観光夜市",
+                    "name": "饒河街（じょうががい）観光夜市",
                     "desc": "一本道で回りやすいコンパクトな夜市。入口の福州世祖胡椒餅は行列必至の名物。士林より歩きやすく、夜市デビューにもおすすめ。",
                     "badge": "夜市",
                     "prompt_en": "Raohe Street Night Market Taipei entrance gate with ornate temple archway, food stalls lined along single street, night lights",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🛍️",
+                    "num": "TPE 09",
+                    "name": "西門町",
+                    "desc": "「台湾の原宿」と呼ばれる若者文化の発信地。プチプラファッション・コスメ・グッズショップが密集し、街歩きだけでも十分に楽しめるエリア。",
+                    "badge": "若者カルチャー",
+                    "prompt_en": "Ximending Taipei youth fashion district with colorful shop signs and crowded pedestrian street, vibrant urban energy",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🥟",
+                    "num": "TPE 10",
+                    "name": "永康街",
+                    "desc": "小籠包の名店・鼎泰豊（ディンタイフォン）本店をはじめ、マンゴーかき氷の名店やお洒落な雑貨店が集まる人気グルメ街。",
+                    "badge": "グルメ街",
+                    "prompt_en": "Yongkang Street Taipei charming alley with restaurant storefronts and mango shaved ice shops, relaxed daytime atmosphere",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🚡",
+                    "num": "TPE 11",
+                    "name": "猫空（マオコン）",
+                    "desc": "台北101と並ぶ絶景スポット。ロープウェイに乗り、茶畑が広がる山あいで大自然に包まれながら台湾茶を楽しめる。",
+                    "badge": "絶景・台湾茶",
+                    "prompt_en": "Maokong Gondola Taipei cable car over tea plantation hills, panoramic mountain view, peaceful teahouse scenery",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🌇",
+                    "num": "TPE 12",
+                    "name": "淡水（ダンシュイ）",
+                    "desc": "台北からMRTで直行できる港町。「東方のベニス」とも呼ばれ、川沿いに沈む美しい夕日が有名。老街の食べ歩きも楽しみのひとつ。",
+                    "badge": "夕日の港町",
+                    "prompt_en": "Tamsui Taipei riverside promenade at golden sunset, fishing boats silhouette, old street lanterns, romantic evening scenery",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🪨",
+                    "num": "TPE 13",
+                    "name": "野柳地質公園",
+                    "desc": "十分・九份とセットで巡る定番の郊外スポット。長年の浸食が生んだキノコ型の奇岩「クイーンズヘッド」をはじめ、独特の奇岩群が広がる。",
+                    "badge": "奇岩群",
+                    "prompt_en": "Yehliu Geopark Taiwan mushroom-shaped rock formations including Queen's Head, coastal erosion landscape, travel photography",
                     "image": ""
                 }
             ]
         },
         {
             "city_id": "jiufen",
-            "city_name": "九份・十分",
+            "city_name": "九份（きゅうふん）・十分（じゅうふん）",
             "city_image": "",
             "city_prompt": "Jiufen old street red lanterns on hillside teahouses at dusk, ocean view in distance, nostalgic atmosphere, travel photography",
             "city_desc": "山あいに提灯が灯る九份と、線路の上から天燈（ランタン）を上げる十分。台北から日帰りで行けるノスタルジックエリアの代表格",
@@ -994,7 +1044,7 @@
                     "must": true,
                     "icon": "🏮",
                     "num": "JIU 01",
-                    "name": "九份老街",
+                    "name": "九份（きゅうふん）老街",
                     "desc": "かつて金鉱で栄えた山あいの街。細い路地に土産物屋と茶藝館（ちゃげいかん）がひしめき、夕暮れに赤提灯が灯ると一気に幻想的な世界に変わる。名物は芋圓（タロイモ団子）。",
                     "badge": "台湾旅行の代名詞",
                     "prompt_en": "Jiufen old street narrow alley with red lanterns, teahouses and snack shops, nostalgic evening atmosphere, Taiwan",
@@ -1014,7 +1064,7 @@
                     "must": true,
                     "icon": "🎐",
                     "num": "JIU 03",
-                    "name": "十分（天燈上げ）",
+                    "name": "十分（じゅうふん）（天燈上げ）",
                     "desc": "線路の両脇に商店が並ぶ町で、願い事を書いた天燈（スカイランタン）を線路上から空へ放つ名物体験ができる。列車が通る瞬間の街の一体感も面白い。",
                     "badge": "ランタン体験",
                     "prompt_en": "Shifen old street sky lantern release on railway tracks, colorful lantern rising with wishes written, Taiwan, joyful travelers",
@@ -1052,7 +1102,7 @@
                     "icon": "🍨",
                     "num": "TXG 01",
                     "name": "宮原眼科",
-                    "desc": "日本統治時代の眼科医院をリノベした製菓ブランドの旗艦店。図書館のような内装で、行列必至のアイスクリームと美しいパッケージのお土産が名物。",
+                    "desc": "日本統治時代の眼科医院をリノベした製菓ブランドの旗艦店。図書館のような内装で、行列必至のアイスクリームと美しいパッケージのお土産が名物。パイナップルケーキは古い本やレコードを模したレトロなパッケージが非常にお洒落で、お土産にも喜ばれる。",
                     "badge": "リノベ名所",
                     "prompt_en": "Miyahara ice cream shop Taichung, renovated historic red brick building with library-style luxurious interior, ornate dessert display",
                     "image": ""
@@ -1075,6 +1125,36 @@
                     "desc": "元公務員宿舎の団地をリノベした雑貨・カフェの村。週末はクリエイターズマーケットも開かれ、台湾の若者カルチャーを感じられるエリア。",
                     "badge": "雑貨・カフェ",
                     "prompt_en": "Shenji New Village Taichung renovated dormitory buildings with creative shops and cafes, young visitors, artistic atmosphere",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🌈",
+                    "num": "TXG 04",
+                    "name": "彩虹眷村（さいこうけんそん）（レインボービレッジ）",
+                    "desc": "ひとりのおじいさんが村中の壁や地面にカラフルな絵を描き、世界的にも有名になったフォトジェニックスポット。",
+                    "badge": "フォトスポット",
+                    "prompt_en": "Rainbow Village Taichung colorful folk paintings covering old village walls and ground, whimsical playful art, tourists taking photos",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🌃",
+                    "num": "TXG 05",
+                    "name": "逢甲夜市",
+                    "desc": "台湾最大級の規模を誇る夜市。最先端のB級グルメのトレンドはここから生まれるとも言われ、グルメ好きなら外せない。",
+                    "badge": "台湾最大級の夜市",
+                    "prompt_en": "Fengjia Night Market Taichung massive crowd and food stalls, neon signs, one of Taiwan's largest night markets, vibrant energy",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🙏",
+                    "num": "TXG 06",
+                    "name": "宝覚寺",
+                    "desc": "1927年創建、金色に輝く7階建ての巨大な弥勒大仏が目印の寺院。境内には日本人が寄贈した梵鐘や、第二次世界大戦で亡くなった日本人・台湾人日本兵を祀る慰霊塔があり、日本ゆかりの深い場所として知られる。",
+                    "badge": "金色大仏",
+                    "prompt_en": "Baojue Temple Taichung giant golden Maitreya Buddha statue towering over temple courtyard, bell tower, peaceful atmosphere",
                     "image": ""
                 }
             ]
@@ -1106,7 +1186,7 @@
                     "must": true,
                     "icon": "🏯",
                     "num": "TNN 01",
-                    "name": "赤崁楼",
+                    "name": "赤崁楼（せきかんろう）",
                     "desc": "1653年にオランダ人が築いた台南のシンボル。庭園に建つ楼閣と歴史展示から、オランダ→鄭成功→清と支配者が移り変わった台湾史を体感できる。",
                     "badge": "台南のシンボル",
                     "prompt_en": "Chihkan Tower Tainan historic Chinese pavilion with red roof in garden, evening illumination, Taiwan historic site",
@@ -1116,7 +1196,7 @@
                     "must": false,
                     "icon": "🏰",
                     "num": "TNN 02",
-                    "name": "安平古堡",
+                    "name": "安平古堡（あんぺいこほ）",
                     "desc": "1624年オランダ人が築いたゼーランディア城の跡地。台湾最古の城跡で、展望塔からは安平の街と海が見渡せる。周辺の安平老街の食べ歩きとセットで。",
                     "badge": "台湾最古の城跡",
                     "prompt_en": "Anping Fort Tainan white watchtower and old Dutch fortress walls with banyan trees, blue sky, Taiwan heritage site",
@@ -1140,6 +1220,26 @@
                     "desc": "1932年開業、日本統治期のデパートを当時の姿で復活させたレトロ百貨店。屋上には神社の遺構も残る。台南らしいセンスのお土産が揃う。",
                     "badge": "レトロ百貨店",
                     "prompt_en": "Hayashi Department Store Tainan 1930s art deco building facade, retro interior with vintage elevator, warm lighting",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🌙",
+                    "num": "TNN 05",
+                    "name": "花園夜市",
+                    "desc": "台南最大規模を誇る夜市。台北の夜市とは違う、屋台が広場にひしめき合う独特の熱気を体験できる。",
+                    "badge": "台南最大の夜市",
+                    "prompt_en": "Huayuan Night Market Tainan open plaza packed with food stalls, festive night atmosphere, local crowd",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🏛️",
+                    "num": "TNN 06",
+                    "name": "奇美博物館",
+                    "desc": "ヨーロッパの宮殿のような外観をもつ広大な博物館。西洋美術・楽器などのコレクションは圧巻のスケール。",
+                    "badge": "西洋美術",
+                    "prompt_en": "Chimei Museum Tainan grand European palace-style building with fountain and classical statues, museum garden, travel photography",
                     "image": ""
                 }
             ]
@@ -1181,7 +1281,7 @@
                     "must": false,
                     "icon": "🐉",
                     "num": "KHH 02",
-                    "name": "蓮池潭（龍虎塔）",
+                    "name": "蓮池潭（れんちたん）（龍虎塔）",
                     "desc": "湖畔に龍と虎の巨大な塔が並ぶ高雄の代表的風景。龍の口から入って虎の口から出ると災いが福に変わるとされる。改修中は外観のみの場合もあるので事前確認を。",
                     "badge": "開運スポット",
                     "prompt_en": "Dragon and Tiger Pagodas Lotus Pond Kaohsiung colorful twin towers with dragon and tiger entrance statues by lake, blue sky",
@@ -1191,7 +1291,7 @@
                     "must": false,
                     "icon": "🎨",
                     "num": "KHH 03",
-                    "name": "駁二芸術特区",
+                    "name": "駁二（はくに）芸術特区",
                     "desc": "港の倉庫群をリノベした巨大アートエリア。壁画・オブジェ・雑貨店・カフェが点在し、海風に吹かれながらの散策が気持ちいい。LRTでのアクセスも便利。",
                     "badge": "アート地区",
                     "prompt_en": "Pier-2 Art Center Kaohsiung renovated warehouse district with colorful murals and art installations, harborside walkway",
@@ -1205,6 +1305,36 @@
                     "desc": "フェリーでわずか5分の細長い島。海鮮通りでの夕食、ビーチ、灯台と半日楽しめる。レンタサイクルで海沿いを走るのが気持ちいい。",
                     "badge": "港町さんぽ",
                     "prompt_en": "Qijin Island Kaohsiung ferry arriving at seaside town, seafood street and beach with lighthouse on hill, sunny coastal scenery",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🌃",
+                    "num": "KHH 05",
+                    "name": "六合夜市",
+                    "desc": "美麗島駅すぐの観光客向け夜市。アクセスの良さと定番グルメの手軽さが魅力で、初めての高雄旅行にもおすすめ。",
+                    "badge": "観光夜市",
+                    "prompt_en": "Liuhe Night Market Kaohsiung tourist-friendly food stalls near metro station, bright signage, easy access night market",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🍢",
+                    "num": "KHH 06",
+                    "name": "瑞豊夜市",
+                    "desc": "地元民で賑わうローカルグルメの宝庫。観光客向けの六合夜市とは違う、高雄っ子御用達の熱気が味わえる。",
+                    "badge": "地元グルメ",
+                    "prompt_en": "Ruifeng Night Market Kaohsiung local crowd enjoying street food stalls, authentic neighborhood night market atmosphere",
+                    "image": ""
+                },
+                {
+                    "must": false,
+                    "icon": "🌉",
+                    "num": "KHH 07",
+                    "name": "愛河（ラブリバー）",
+                    "desc": "夜のクルーズ船が人気のロマンチックな川。ライトアップされた高雄の夜景を水上から満喫できる。",
+                    "badge": "夜景クルーズ",
+                    "prompt_en": "Love River Kaohsiung night cruise boat on illuminated river, city lights reflecting on water, romantic evening scenery",
                     "image": ""
                 }
             ]
