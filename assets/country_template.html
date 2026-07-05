@@ -478,14 +478,29 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         var btn = document.getElementById('hotel-map-btn');
         if (btn) { btn.href = mapsUrl; btn.style.display = 'block'; }
       };
-      // スクロールで表示範囲に入ったら自動初期化
+      // スクロールで表示範囲に入ったら自動初期化（Google Maps読み込み待ちのためポーリングも併用）
       (function(){
         var el = document.getElementById('hotel-map');
-        if (!el || !window.IntersectionObserver) return;
-        var obs = new IntersectionObserver(function(entries){
-          if (entries[0].isIntersecting) { window._initHotelMap(); obs.disconnect(); }
-        }, { threshold: 0.1 });
-        obs.observe(el);
+        if (!el) return;
+        var inView = false;
+        function tryInit() {
+          if (_hotelMap || !inView) return;
+          if (!window.google || !window.google.maps) return;
+          window._initHotelMap();
+        }
+        if (window.IntersectionObserver) {
+          var obs = new IntersectionObserver(function(entries){
+            if (entries[0].isIntersecting) { inView = true; tryInit(); if (_hotelMap) obs.disconnect(); }
+          }, { threshold: 0.1 });
+          obs.observe(el);
+        } else {
+          inView = true;
+        }
+        var pollId = setInterval(function(){
+          tryInit();
+          if (_hotelMap) clearInterval(pollId);
+        }, 300);
+        setTimeout(function(){ clearInterval(pollId); }, 15000);
       })();
     </script>
     {% endif %}
