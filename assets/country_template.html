@@ -699,7 +699,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     {% for item in food_items %}
     <div class="item-card has-img {% if item.must %}must{% endif %}" data-ftype="{{item.type}}" data-fcity="{{item.city}}">
       <div class="num">{{item.num}}</div>
-      <div class="name-row"><div class="name">{{item.name}}</div><span class="badge">{{item.badge}}</span></div>
+      <div class="name-row"><div class="name">{% if item.name_ruby %}{{item.name_ruby}}{% else %}{{item.name}}{% endif %}</div><span class="badge">{{item.badge}}</span></div>
       <div class="desc">{{item.desc}}</div>
       <img src="{{item.image}}" alt="{{item.name}}" class="food-img">
       {% if item.wiki_url %}<a href="{{item.wiki_url}}" target="_blank" rel="noopener" class="wiki-link">Wikipedia →</a>{% endif %}
