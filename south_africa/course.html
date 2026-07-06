@@ -547,11 +547,22 @@ function closeSpotPopup() {
   document.body.style.overflow = '';
 }
 
-function filterSpots(city, btn) {
-  document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
-    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
@@ -620,7 +631,7 @@ var PAGE_INDEX = 3;
   const city = params.get('city');
   if (city) {
     const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
-    if (btn) filterSpots(city, btn);
+    if (btn) filterSpots('city', city, btn);
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);

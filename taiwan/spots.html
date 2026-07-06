@@ -168,21 +168,44 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <section id="spots" class="active">
 
   <h2>台湾 観光スポット</h2>
-  <div class="filter-label">エリア</div>
-  <div class="filter-row" id="spots-filter-row">
-    
-    <button class="filter-btn active" data-filter="all" onclick="filterSpots('all',this)">すべて</button>
-    
-    <button class="filter-btn " data-filter="taipei" onclick="filterSpots('taipei',this)">台北</button>
-    
-    <button class="filter-btn " data-filter="jiufen" onclick="filterSpots('jiufen',this)">九份・十分</button>
-    
-    <button class="filter-btn " data-filter="taichung" onclick="filterSpots('taichung',this)">台中</button>
-    
-    <button class="filter-btn " data-filter="tainan" onclick="filterSpots('tainan',this)">台南</button>
-    
-    <button class="filter-btn " data-filter="kaohsiung" onclick="filterSpots('kaohsiung',this)">高雄</button>
-    
+  <div class="filter-group">
+    <div class="filter-label">カテゴリー</div>
+    <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
+      
+      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+      
+      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">寺院・宗教施設</button>
+      
+      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然・絶景</button>
+      
+      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">市場・ショッピング</button>
+      
+      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+      
+      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+      
+      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">体験・アクティビティ</button>
+      
+    </div>
+  </div>
+  <div class="filter-group">
+    <div class="filter-label">エリア</div>
+    <div class="filter-row" id="spots-filter-row">
+      
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('city','all',this)">すべて</button>
+      
+      <button class="filter-btn " data-filter="taipei" onclick="filterSpots('city','taipei',this)">台北</button>
+      
+      <button class="filter-btn " data-filter="jiufen" onclick="filterSpots('city','jiufen',this)">九份・十分</button>
+      
+      <button class="filter-btn " data-filter="taichung" onclick="filterSpots('city','taichung',this)">台中</button>
+      
+      <button class="filter-btn " data-filter="tainan" onclick="filterSpots('city','tainan',this)">台南</button>
+      
+      <button class="filter-btn " data-filter="kaohsiung" onclick="filterSpots('city','kaohsiung',this)">高雄</button>
+      
+    </div>
   </div>
   <div id="spots-grid">
     
@@ -215,7 +238,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="taipei" data-spot-num="TPE 01">
+    <div class="item-card spot has-spot-img must" data-city="taipei" data-stype="townscape" data-spot-num="TPE 01">
       <div class="must-badge">⭐</div>
       <div class="num">TPE 01</div>
       <div class="name-row"><div class="name">台北101</div><span class="badge">ランドマーク</span></div>
@@ -223,7 +246,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="taipei" data-spot-num="TPE 02">
+    <div class="item-card spot has-spot-img must" data-city="taipei" data-stype="museum" data-spot-num="TPE 02">
       <div class="must-badge">⭐</div>
       <div class="num">TPE 02</div>
       <div class="name-row"><div class="name">国立故宮博物院</div><span class="badge">世界級の至宝</span></div>
@@ -231,7 +254,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 03">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="religious" data-spot-num="TPE 03">
       
       <div class="num">TPE 03</div>
       <div class="name-row"><div class="name">龍山寺</div><span class="badge">パワースポット</span></div>
@@ -239,7 +262,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 04">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="heritage" data-spot-num="TPE 04">
       
       <div class="num">TPE 04</div>
       <div class="name-row"><div class="name">中正紀念堂</div><span class="badge">衛兵交代式</span></div>
@@ -247,7 +270,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="taipei" data-spot-num="TPE 05">
+    <div class="item-card spot has-spot-img must" data-city="taipei" data-stype="market" data-spot-num="TPE 05">
       <div class="must-badge">⭐</div>
       <div class="num">TPE 05</div>
       <div class="name-row"><div class="name">士林夜市</div><span class="badge">台北最大の夜市</span></div>
@@ -255,7 +278,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 06">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="nature" data-spot-num="TPE 06">
       
       <div class="num">TPE 06</div>
       <div class="name-row"><div class="name">象山ハイキングコース</div><span class="badge">夜景</span></div>
@@ -263,7 +286,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 07">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="market" data-spot-num="TPE 07">
       
       <div class="num">TPE 07</div>
       <div class="name-row"><div class="name">迪化街（てきかがい）</div><span class="badge">問屋街さんぽ</span></div>
@@ -271,7 +294,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 08">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="market" data-spot-num="TPE 08">
       
       <div class="num">TPE 08</div>
       <div class="name-row"><div class="name">饒河街（じょうががい）観光夜市</div><span class="badge">夜市</span></div>
@@ -279,7 +302,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 09">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="market" data-spot-num="TPE 09">
       
       <div class="num">TPE 09</div>
       <div class="name-row"><div class="name">西門町</div><span class="badge">若者カルチャー</span></div>
@@ -287,7 +310,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 10">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="market" data-spot-num="TPE 10">
       
       <div class="num">TPE 10</div>
       <div class="name-row"><div class="name">永康街</div><span class="badge">グルメ街</span></div>
@@ -295,7 +318,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 11">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="nature" data-spot-num="TPE 11">
       
       <div class="num">TPE 11</div>
       <div class="name-row"><div class="name">猫空（マオコン）</div><span class="badge">絶景・台湾茶</span></div>
@@ -303,7 +326,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 12">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="townscape" data-spot-num="TPE 12">
       
       <div class="num">TPE 12</div>
       <div class="name-row"><div class="name">淡水（ダンシュイ）</div><span class="badge">夕日の港町</span></div>
@@ -311,7 +334,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taipei" data-spot-num="TPE 13">
+    <div class="item-card spot has-spot-img " data-city="taipei" data-stype="nature" data-spot-num="TPE 13">
       
       <div class="num">TPE 13</div>
       <div class="name-row"><div class="name">野柳地質公園</div><span class="badge">奇岩群</span></div>
@@ -351,7 +374,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="jiufen" data-spot-num="JIU 01">
+    <div class="item-card spot has-spot-img must" data-city="jiufen" data-stype="market" data-spot-num="JIU 01">
       <div class="must-badge">⭐</div>
       <div class="num">JIU 01</div>
       <div class="name-row"><div class="name">九份（きゅうふん）老街</div><span class="badge">台湾旅行の代名詞</span></div>
@@ -359,7 +382,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="jiufen" data-spot-num="JIU 02">
+    <div class="item-card spot has-spot-img must" data-city="jiufen" data-stype="townscape" data-spot-num="JIU 02">
       <div class="must-badge">⭐</div>
       <div class="num">JIU 02</div>
       <div class="name-row"><div class="name">豎崎路（けんざきろ・石段と茶藝館）</div><span class="badge">映えスポット</span></div>
@@ -367,7 +390,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="jiufen" data-spot-num="JIU 03">
+    <div class="item-card spot has-spot-img must" data-city="jiufen" data-stype="activity" data-spot-num="JIU 03">
       <div class="must-badge">⭐</div>
       <div class="num">JIU 03</div>
       <div class="name-row"><div class="name">十分（じゅうふん）（天燈上げ）</div><span class="badge">ランタン体験</span></div>
@@ -407,7 +430,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="taichung" data-spot-num="TXG 01">
+    <div class="item-card spot has-spot-img must" data-city="taichung" data-stype="market" data-spot-num="TXG 01">
       <div class="must-badge">⭐</div>
       <div class="num">TXG 01</div>
       <div class="name-row"><div class="name">宮原眼科</div><span class="badge">リノベ名所</span></div>
@@ -415,7 +438,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="taichung" data-spot-num="TXG 02">
+    <div class="item-card spot has-spot-img must" data-city="taichung" data-stype="nature" data-spot-num="TXG 02">
       <div class="must-badge">⭐</div>
       <div class="num">TXG 02</div>
       <div class="name-row"><div class="name">高美湿地</div><span class="badge">絶景夕日</span></div>
@@ -423,7 +446,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taichung" data-spot-num="TXG 03">
+    <div class="item-card spot has-spot-img " data-city="taichung" data-stype="townscape" data-spot-num="TXG 03">
       
       <div class="num">TXG 03</div>
       <div class="name-row"><div class="name">審計新村</div><span class="badge">雑貨・カフェ</span></div>
@@ -431,7 +454,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taichung" data-spot-num="TXG 04">
+    <div class="item-card spot has-spot-img " data-city="taichung" data-stype="townscape" data-spot-num="TXG 04">
       
       <div class="num">TXG 04</div>
       <div class="name-row"><div class="name">彩虹眷村（さいこうけんそん）（レインボービレッジ）</div><span class="badge">フォトスポット</span></div>
@@ -439,7 +462,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taichung" data-spot-num="TXG 05">
+    <div class="item-card spot has-spot-img " data-city="taichung" data-stype="market" data-spot-num="TXG 05">
       
       <div class="num">TXG 05</div>
       <div class="name-row"><div class="name">逢甲夜市</div><span class="badge">台湾最大級の夜市</span></div>
@@ -447,7 +470,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="taichung" data-spot-num="TXG 06">
+    <div class="item-card spot has-spot-img " data-city="taichung" data-stype="religious" data-spot-num="TXG 06">
       
       <div class="num">TXG 06</div>
       <div class="name-row"><div class="name">宝覚寺</div><span class="badge">金色大仏</span></div>
@@ -487,7 +510,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="tainan" data-spot-num="TNN 01">
+    <div class="item-card spot has-spot-img must" data-city="tainan" data-stype="heritage" data-spot-num="TNN 01">
       <div class="must-badge">⭐</div>
       <div class="num">TNN 01</div>
       <div class="name-row"><div class="name">赤崁楼（せきかんろう）</div><span class="badge">台南のシンボル</span></div>
@@ -495,7 +518,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tainan" data-spot-num="TNN 02">
+    <div class="item-card spot has-spot-img " data-city="tainan" data-stype="heritage" data-spot-num="TNN 02">
       
       <div class="num">TNN 02</div>
       <div class="name-row"><div class="name">安平古堡（あんぺいこほ）</div><span class="badge">台湾最古の城跡</span></div>
@@ -503,7 +526,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tainan" data-spot-num="TNN 03">
+    <div class="item-card spot has-spot-img " data-city="tainan" data-stype="townscape" data-spot-num="TNN 03">
       
       <div class="num">TNN 03</div>
       <div class="name-row"><div class="name">神農街</div><span class="badge">レトロ路地</span></div>
@@ -511,7 +534,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tainan" data-spot-num="TNN 04">
+    <div class="item-card spot has-spot-img " data-city="tainan" data-stype="market" data-spot-num="TNN 04">
       
       <div class="num">TNN 04</div>
       <div class="name-row"><div class="name">林百貨</div><span class="badge">レトロ百貨店</span></div>
@@ -519,7 +542,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tainan" data-spot-num="TNN 05">
+    <div class="item-card spot has-spot-img " data-city="tainan" data-stype="market" data-spot-num="TNN 05">
       
       <div class="num">TNN 05</div>
       <div class="name-row"><div class="name">花園夜市</div><span class="badge">台南最大の夜市</span></div>
@@ -527,7 +550,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tainan" data-spot-num="TNN 06">
+    <div class="item-card spot has-spot-img " data-city="tainan" data-stype="museum" data-spot-num="TNN 06">
       
       <div class="num">TNN 06</div>
       <div class="name-row"><div class="name">奇美博物館</div><span class="badge">西洋美術</span></div>
@@ -567,7 +590,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="kaohsiung" data-spot-num="KHH 01">
+    <div class="item-card spot has-spot-img must" data-city="kaohsiung" data-stype="townscape" data-spot-num="KHH 01">
       <div class="must-badge">⭐</div>
       <div class="num">KHH 01</div>
       <div class="name-row"><div class="name">美麗島駅（光之穹頂）</div><span class="badge">世界一美しい駅</span></div>
@@ -575,7 +598,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-spot-num="KHH 02">
+    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-stype="religious" data-spot-num="KHH 02">
       
       <div class="num">KHH 02</div>
       <div class="name-row"><div class="name">蓮池潭（れんちたん）（龍虎塔）</div><span class="badge">開運スポット</span></div>
@@ -583,7 +606,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-spot-num="KHH 03">
+    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-stype="townscape" data-spot-num="KHH 03">
       
       <div class="num">KHH 03</div>
       <div class="name-row"><div class="name">駁二（はくに）芸術特区</div><span class="badge">アート地区</span></div>
@@ -591,7 +614,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-spot-num="KHH 04">
+    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-stype="nature" data-spot-num="KHH 04">
       
       <div class="num">KHH 04</div>
       <div class="name-row"><div class="name">旗津半島</div><span class="badge">港町さんぽ</span></div>
@@ -599,7 +622,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-spot-num="KHH 05">
+    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-stype="market" data-spot-num="KHH 05">
       
       <div class="num">KHH 05</div>
       <div class="name-row"><div class="name">六合夜市</div><span class="badge">観光夜市</span></div>
@@ -607,7 +630,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-spot-num="KHH 06">
+    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-stype="market" data-spot-num="KHH 06">
       
       <div class="num">KHH 06</div>
       <div class="name-row"><div class="name">瑞豊夜市</div><span class="badge">地元グルメ</span></div>
@@ -615,7 +638,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-spot-num="KHH 07">
+    <div class="item-card spot has-spot-img " data-city="kaohsiung" data-stype="townscape" data-spot-num="KHH 07">
       
       <div class="num">KHH 07</div>
       <div class="name-row"><div class="name">愛河（ラブリバー）</div><span class="badge">夜景クルーズ</span></div>
@@ -734,11 +757,22 @@ function closeSpotPopup() {
   document.body.style.overflow = '';
 }
 
-function filterSpots(city, btn) {
-  document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
-    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
@@ -807,7 +841,7 @@ var PAGE_INDEX = 1;
   const city = params.get('city');
   if (city) {
     const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
-    if (btn) filterSpots(city, btn);
+    if (btn) filterSpots('city', city, btn);
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);

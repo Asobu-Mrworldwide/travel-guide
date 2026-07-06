@@ -328,11 +328,22 @@ function closeSpotPopup() {
   document.body.style.overflow = '';
 }
 
-function filterSpots(city, btn) {
-  document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
-    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
@@ -401,7 +412,7 @@ var PAGE_INDEX = 6;
   const city = params.get('city');
   if (city) {
     const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
-    if (btn) filterSpots(city, btn);
+    if (btn) filterSpots('city', city, btn);
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);
@@ -423,8 +434,8 @@ var PAGE_INDEX = 6;
     <button class="food-modal-close" onclick="closeFoodModal()">✕</button>
     <img id="food-modal-img" src="" alt="" style="width:100%;border-radius:8px;margin-bottom:10px;display:none">
     <div id="food-modal-ico" class="food-modal-ico"></div>
-    <div id="food-modal-en" class="food-modal-en"></div>
-    <div id="food-modal-ja" class="food-modal-ja"></div>
+    <div id="food-modal-name" class="food-modal-name"></div>
+    <div id="food-modal-pinyin" class="food-modal-pinyin"></div>
     <div class="food-modal-phrase">
       <div class="food-modal-phrase-main">Can I have this, please?</div>
       <div class="food-modal-phrase-sub">Having here.（店内で）／ Takeaway, please.（持ち帰りで）</div>
@@ -434,7 +445,7 @@ var PAGE_INDEX = 6;
 </div>
 
 <script>
-function openFoodModal(ico, nameEn, nameJa, imgSrc) {
+function openFoodModal(ico, nameRuby, pinyin, imgSrc) {
   const imgEl = document.getElementById('food-modal-img');
   const icoEl = document.getElementById('food-modal-ico');
   if (imgSrc) {
@@ -446,8 +457,10 @@ function openFoodModal(ico, nameEn, nameJa, imgSrc) {
     icoEl.style.display = '';
   }
   icoEl.textContent = ico;
-  document.getElementById('food-modal-en').textContent = nameEn;
-  document.getElementById('food-modal-ja').textContent = nameJa;
+  document.getElementById('food-modal-name').innerHTML = nameRuby;
+  const pinyinEl = document.getElementById('food-modal-pinyin');
+  pinyinEl.textContent = pinyin;
+  pinyinEl.style.display = pinyin ? '' : 'none';
   document.getElementById('food-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }

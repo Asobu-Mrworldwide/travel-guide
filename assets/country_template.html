@@ -720,11 +720,22 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {% if show.spots %}<section id="spots" class="{{sec_active.spots}}">
 {{custom_top_spots}}
   <h2>{{spots_section_title}}</h2>
-  <div class="filter-label">エリア</div>
-  <div class="filter-row" id="spots-filter-row">
-    {% for fc in spots_filter_cities %}
-    <button class="filter-btn {% if fc.active %}active{% endif %}" data-filter="{{fc.id}}" onclick="filterSpots('{{fc.id}}',this)">{{fc.label}}</button>
-    {% endfor %}
+  <div class="filter-group">
+    <div class="filter-label">カテゴリー</div>
+    <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
+      {% for st in spots_filter_types %}
+      <button class="filter-btn" data-filter="{{st.id}}" onclick="filterSpots('type','{{st.id}}',this)">{{st.label}}</button>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="filter-group">
+    <div class="filter-label">エリア</div>
+    <div class="filter-row" id="spots-filter-row">
+      {% for fc in spots_filter_cities %}
+      <button class="filter-btn {% if fc.active %}active{% endif %}" data-filter="{{fc.id}}" onclick="filterSpots('city','{{fc.id}}',this)">{{fc.label}}</button>
+      {% endfor %}
+    </div>
   </div>
   <div id="spots-grid">
     {% for section in spot_sections %}
@@ -745,7 +756,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     {% for spot in section.spots %}
-    <div class="item-card {% if spot.no_map %}no-map {% else %}spot {% endif %}has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}" data-spot-num="{{spot.num}}">
+    <div class="item-card {% if spot.no_map %}no-map {% else %}spot {% endif %}has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}" data-stype="{{spot.type}}" data-spot-num="{{spot.num}}">
       {% if spot.must %}<div class="must-badge">{{icon:star}}</div>{% endif %}
       <div class="num">{{spot.num}}</div>
       <div class="name-row"><div class="name">{{spot.name}}</div><span class="badge">{{spot.badge}}</span></div>
@@ -1004,11 +1015,22 @@ function closeSpotPopup() {
   document.body.style.overflow = '';
 }
 
-function filterSpots(city, btn) {
-  document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
-    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
@@ -1032,7 +1054,7 @@ function showFilteredSpots(city) {
   show('spots', spotsBtn);
   setTimeout(() => {
     const btn = document.querySelector(`#spots-filter-row .filter-btn[data-filter="${city}"]`);
-    if (btn) filterSpots(city, btn);
+    if (btn) filterSpots('city', city, btn);
   }, 50);
 }
 {% endif %}
@@ -1122,7 +1144,7 @@ var PAGE_INDEX = {{page_index}};
   const city = params.get('city');
   if (city) {
     const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
-    if (btn) filterSpots(city, btn);
+    if (btn) filterSpots('city', city, btn);
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);

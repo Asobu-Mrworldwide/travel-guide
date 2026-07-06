@@ -168,27 +168,50 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <section id="spots" class="active">
 
   <h2>都市別観光スポット</h2>
-  <div class="filter-label">エリア</div>
-  <div class="filter-row" id="spots-filter-row">
-    
-    <button class="filter-btn active" data-filter="all" onclick="filterSpots('all',this)">全て</button>
-    
-    <button class="filter-btn " data-filter="bangkok" onclick="filterSpots('bangkok',this)">バンコク</button>
-    
-    <button class="filter-btn " data-filter="chiangmai" onclick="filterSpots('chiangmai',this)">チェンマイ</button>
-    
-    <button class="filter-btn " data-filter="phuket" onclick="filterSpots('phuket',this)">プーケット</button>
-    
-    <button class="filter-btn " data-filter="pattaya" onclick="filterSpots('pattaya',this)">パタヤ</button>
-    
-    <button class="filter-btn " data-filter="ayutthaya" onclick="filterSpots('ayutthaya',this)">アユタヤ</button>
-    
-    <button class="filter-btn " data-filter="samui" onclick="filterSpots('samui',this)">サムイ島</button>
-    
-    <button class="filter-btn " data-filter="krabi" onclick="filterSpots('krabi',this)">クラビ</button>
-    
-    <button class="filter-btn " data-filter="kohchang" onclick="filterSpots('kohchang',this)">コ・チャン</button>
-    
+  <div class="filter-group">
+    <div class="filter-label">カテゴリー</div>
+    <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
+      
+      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+      
+      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">寺院・宗教施設</button>
+      
+      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然・絶景</button>
+      
+      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">市場・ショッピング</button>
+      
+      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+      
+      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+      
+      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">体験・アクティビティ</button>
+      
+    </div>
+  </div>
+  <div class="filter-group">
+    <div class="filter-label">エリア</div>
+    <div class="filter-row" id="spots-filter-row">
+      
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('city','all',this)">全て</button>
+      
+      <button class="filter-btn " data-filter="bangkok" onclick="filterSpots('city','bangkok',this)">バンコク</button>
+      
+      <button class="filter-btn " data-filter="chiangmai" onclick="filterSpots('city','chiangmai',this)">チェンマイ</button>
+      
+      <button class="filter-btn " data-filter="phuket" onclick="filterSpots('city','phuket',this)">プーケット</button>
+      
+      <button class="filter-btn " data-filter="pattaya" onclick="filterSpots('city','pattaya',this)">パタヤ</button>
+      
+      <button class="filter-btn " data-filter="ayutthaya" onclick="filterSpots('city','ayutthaya',this)">アユタヤ</button>
+      
+      <button class="filter-btn " data-filter="samui" onclick="filterSpots('city','samui',this)">サムイ島</button>
+      
+      <button class="filter-btn " data-filter="krabi" onclick="filterSpots('city','krabi',this)">クラビ</button>
+      
+      <button class="filter-btn " data-filter="kohchang" onclick="filterSpots('city','kohchang',this)">コ・チャン</button>
+      
+    </div>
   </div>
   <div id="spots-grid">
     
@@ -233,7 +256,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="bangkok" data-spot-num="BK 01">
+    <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="religious" data-spot-num="BK 01">
       <div class="must-badge">⭐</div>
       <div class="num">BK 01</div>
       <div class="name-row"><div class="name">ワット・プラケオ（エメラルド寺院）</div><span class="badge">王宮</span></div>
@@ -241,7 +264,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・プラケオ（エメラルド寺院）.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="bangkok" data-spot-num="BK 02">
+    <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="heritage" data-spot-num="BK 02">
       <div class="must-badge">⭐</div>
       <div class="num">BK 02</div>
       <div class="name-row"><div class="name">王宮（グランドパレス）</div><span class="badge">世界的観光地</span></div>
@@ -249,7 +272,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/王宮（グランドパレス）.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="bangkok" data-spot-num="BK 03">
+    <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="religious" data-spot-num="BK 03">
       <div class="must-badge">⭐</div>
       <div class="num">BK 03</div>
       <div class="name-row"><div class="name">ワット・ポー（涅槃仏寺院）</div><span class="badge">寺院</span></div>
@@ -257,7 +280,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・ポー（涅槃仏寺院）.webp')"><a href="https://maps.app.goo.gl/KJazEAT9BrASkd379" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="bangkok" data-spot-num="BK 04">
+    <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="religious" data-spot-num="BK 04">
       <div class="must-badge">⭐</div>
       <div class="num">BK 04</div>
       <div class="name-row"><div class="name">ワット・アルン（暁の寺）</div><span class="badge">夜景</span></div>
@@ -265,7 +288,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・アルン（暁の寺）.webp')"><a href="https://maps.app.goo.gl/ysakwXsuKj3xnuMBA" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bangkok" data-spot-num="BK 05">
+    <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="townscape" data-spot-num="BK 05">
       
       <div class="num">BK 05</div>
       <div class="name-row"><div class="name">カオサン通り</div><span class="badge">ナイトライフ</span></div>
@@ -273,7 +296,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/カオサン通り.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bangkok" data-spot-num="BK 06">
+    <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="market" data-spot-num="BK 06">
       
       <div class="num">BK 06</div>
       <div class="name-row"><div class="name">チャトゥチャック週末市場</div><span class="badge">週末限定</span></div>
@@ -281,7 +304,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/チャトゥチャック週末市場.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bangkok" data-spot-num="BK 07">
+    <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="market" data-spot-num="BK 07">
       
       <div class="num">BK 07</div>
       <div class="name-row"><div class="name">アイコンサイアム</div><span class="badge">ショッピング</span></div>
@@ -289,7 +312,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アイコンサイアム.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bangkok" data-spot-num="BK 08">
+    <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="religious" data-spot-num="BK 08">
       
       <div class="num">BK 08</div>
       <div class="name-row"><div class="name">ワット・トライミット</div><span class="badge">チャイナタウン</span></div>
@@ -297,7 +320,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・トライミット.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bangkok" data-spot-num="BK 09">
+    <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="townscape" data-spot-num="BK 09">
       
       <div class="num">BK 09</div>
       <div class="name-row"><div class="name">ルーフトップバー</div><span class="badge">夜景</span></div>
@@ -305,7 +328,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ルーフトップバー.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="bangkok" data-spot-num="BK 10">
+    <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="market" data-spot-num="BK 10">
       <div class="must-badge">⭐</div>
       <div class="num">BK 10</div>
       <div class="name-row"><div class="name">ナイトマーケット</div><span class="badge">ナイト</span></div>
@@ -313,7 +336,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ナイトマーケット.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bangkok" data-spot-num="BK 11">
+    <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="market" data-spot-num="BK 11">
       
       <div class="num">BK 11</div>
       <div class="name-row"><div class="name">水上マーケット</div><span class="badge">体験</span></div>
@@ -321,7 +344,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bangkok" data-spot-num="BK 12">
+    <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="townscape" data-spot-num="BK 12">
       
       <div class="num">BK 12</div>
       <div class="name-row"><div class="name">マハナコン スカイウォーク</div><span class="badge">夜景</span></div>
@@ -329,7 +352,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bangkok" data-spot-num="BK 13">
+    <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="religious" data-spot-num="BK 13">
       
       <div class="num">BK 13</div>
       <div class="name-row"><div class="name">ワット・パクナム</div><span class="badge">穴場</span></div>
@@ -381,7 +404,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="chiangmai" data-spot-num="CM 01">
+    <div class="item-card spot has-spot-img must" data-city="chiangmai" data-stype="religious" data-spot-num="CM 01">
       <div class="must-badge">⭐</div>
       <div class="num">CM 01</div>
       <div class="name-row"><div class="name">ワット・ドイステープ</div><span class="badge">絶景</span></div>
@@ -389,7 +412,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・ドイステープ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="chiangmai" data-spot-num="CM 02">
+    <div class="item-card spot has-spot-img must" data-city="chiangmai" data-stype="activity" data-spot-num="CM 02">
       <div class="must-badge">⭐</div>
       <div class="num">CM 02</div>
       <div class="name-row"><div class="name">エレファントサンクチュアリ</div><span class="badge">体験</span></div>
@@ -397,7 +420,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/エレファントサンクチュアリ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="chiangmai" data-spot-num="CM 03">
+    <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="heritage" data-spot-num="CM 03">
       
       <div class="num">CM 03</div>
       <div class="name-row"><div class="name">旧市街・お堀</div><span class="badge">歴史地区</span></div>
@@ -405,7 +428,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/旧市街・お堀.webp')"><a href="https://maps.app.goo.gl/Noyo3dXz632txTm27" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="chiangmai" data-spot-num="CM 04">
+    <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="market" data-spot-num="CM 04">
       
       <div class="num">CM 04</div>
       <div class="name-row"><div class="name">サンデー＆サタデーナイトバザール</div><span class="badge">週末限定</span></div>
@@ -413,7 +436,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/サンデー＆サタデーナイトバザール.webp')"><a href="https://maps.app.goo.gl/QempEhGntD9nJrt38" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card no-map has-spot-img " data-city="chiangmai" data-spot-num="CM 05">
+    <div class="item-card no-map has-spot-img " data-city="chiangmai" data-stype="activity" data-spot-num="CM 05">
       
       <div class="num">CM 05</div>
       <div class="name-row"><div class="name">チェンマイ花祭り（2月）</div><span class="badge">季節イベント</span></div>
@@ -421,7 +444,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/チェンマイ花祭り（2月）.webp')"></div>
     </div>
     
-    <div class="item-card no-map has-spot-img " data-city="chiangmai" data-spot-num="CM 06">
+    <div class="item-card no-map has-spot-img " data-city="chiangmai" data-stype="activity" data-spot-num="CM 06">
       
       <div class="num">CM 06</div>
       <div class="name-row"><div class="name">タイ古式マッサージ</div><span class="badge">体験</span></div>
@@ -429,7 +452,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/タイ古式マッサージ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="chiangmai" data-spot-num="CM 07">
+    <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="nature" data-spot-num="CM 07">
       
       <div class="num">CM 07</div>
       <div class="name-row"><div class="name">メーカンポン村</div><span class="badge">山村・自然</span></div>
@@ -437,7 +460,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="chiangmai" data-spot-num="CM 08">
+    <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="nature" data-spot-num="CM 08">
       
       <div class="num">CM 08</div>
       <div class="name-row"><div class="name">モンクトレイル</div><span class="badge">トレッキング</span></div>
@@ -445,7 +468,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="chiangmai" data-spot-num="CM 09">
+    <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="religious" data-spot-num="CM 09">
       
       <div class="num">CM 09</div>
       <div class="name-row"><div class="name">チェンライ（ホワイトテンプル）</div><span class="badge">日帰り観光</span></div>
@@ -497,7 +520,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="phuket" data-spot-num="PH 01">
+    <div class="item-card spot has-spot-img must" data-city="phuket" data-stype="nature" data-spot-num="PH 01">
       <div class="must-badge">⭐</div>
       <div class="num">PH 01</div>
       <div class="name-row"><div class="name">パトンビーチ</div><span class="badge">ビーチ</span></div>
@@ -505,7 +528,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/パトンビーチ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="phuket" data-spot-num="PH 02">
+    <div class="item-card spot has-spot-img must" data-city="phuket" data-stype="nature" data-spot-num="PH 02">
       <div class="must-badge">⭐</div>
       <div class="num">PH 02</div>
       <div class="name-row"><div class="name">ファンガー湾（ジェームズボンド島）</div><span class="badge">絶景クルーズ</span></div>
@@ -513,7 +536,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ファンガー湾（ジェームズボンド島）.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="phuket" data-spot-num="PH 03">
+    <div class="item-card spot has-spot-img " data-city="phuket" data-stype="religious" data-spot-num="PH 03">
       
       <div class="num">PH 03</div>
       <div class="name-row"><div class="name">ビッグブッダ</div><span class="badge">入場無料</span></div>
@@ -521,7 +544,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ビッグブッダ.webp')"><a href="https://maps.app.goo.gl/1mFDZrn2zx3wPzud8" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="phuket" data-spot-num="PH 04">
+    <div class="item-card spot has-spot-img " data-city="phuket" data-stype="heritage" data-spot-num="PH 04">
       
       <div class="num">PH 04</div>
       <div class="name-row"><div class="name">プーケットオールドタウン</div><span class="badge">フォトスポット</span></div>
@@ -529,7 +552,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/プーケットオールドタウン.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="phuket" data-spot-num="PH 05">
+    <div class="item-card spot has-spot-img " data-city="phuket" data-stype="nature" data-spot-num="PH 05">
       
       <div class="num">PH 05</div>
       <div class="name-row"><div class="name">シミラン諸島</div><span class="badge">ダイビング</span></div>
@@ -537,7 +560,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/シミラン諸島.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="phuket" data-spot-num="PH 06">
+    <div class="item-card spot has-spot-img " data-city="phuket" data-stype="nature" data-spot-num="PH 06">
       
       <div class="num">PH 06</div>
       <div class="name-row"><div class="name">カロンビーチ・カタビーチ</div><span class="badge">ビーチ</span></div>
@@ -583,7 +606,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="pattaya" data-spot-num="PA 01">
+    <div class="item-card spot has-spot-img must" data-city="pattaya" data-stype="nature" data-spot-num="PA 01">
       <div class="must-badge">⭐</div>
       <div class="num">PA 01</div>
       <div class="name-row"><div class="name">コーラン島（サンゴ礁の島）</div><span class="badge">シュノーケリング</span></div>
@@ -591,7 +614,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/コーラン島（サンゴ礁の島）.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="pattaya" data-spot-num="PA 02">
+    <div class="item-card spot has-spot-img " data-city="pattaya" data-stype="activity" data-spot-num="PA 02">
       
       <div class="num">PA 02</div>
       <div class="name-row"><div class="name">ノンノク・ガーデン（農場・象ショー）</div><span class="badge">ファミリー</span></div>
@@ -599,7 +622,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ノンノク・ガーデン（農場・象ショー）.webp')"><a href="https://maps.app.goo.gl/ekPzZ2tw8APdHE4QA" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="pattaya" data-spot-num="PA 03">
+    <div class="item-card spot has-spot-img " data-city="pattaya" data-stype="heritage" data-spot-num="PA 03">
       
       <div class="num">PA 03</div>
       <div class="name-row"><div class="name">サンクチュアリ・オブ・トゥルース</div><span class="badge">唯一無二</span></div>
@@ -607,7 +630,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/サンクチュアリ・オブ・トゥルース.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="pattaya" data-spot-num="PA 04">
+    <div class="item-card spot has-spot-img " data-city="pattaya" data-stype="activity" data-spot-num="PA 04">
       
       <div class="num">PA 04</div>
       <div class="name-row"><div class="name">ティファニーショー</div><span class="badge">エンターテイメント</span></div>
@@ -653,7 +676,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img " data-city="ayutthaya" data-spot-num="AY 01">
+    <div class="item-card spot has-spot-img " data-city="ayutthaya" data-stype="heritage" data-spot-num="AY 01">
       
       <div class="num">AY 01</div>
       <div class="name-row"><div class="name">アユタヤ歴史公園</div><span class="badge">世界遺産</span></div>
@@ -661,7 +684,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アユタヤ歴史公園.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="ayutthaya" data-spot-num="AY 02">
+    <div class="item-card spot has-spot-img must" data-city="ayutthaya" data-stype="heritage" data-spot-num="AY 02">
       <div class="must-badge">⭐</div>
       <div class="num">AY 02</div>
       <div class="name-row"><div class="name">ワット・マハタート</div><span class="badge">フォトスポット</span></div>
@@ -669,7 +692,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・マハタート.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="ayutthaya" data-spot-num="AY 03">
+    <div class="item-card spot has-spot-img " data-city="ayutthaya" data-stype="activity" data-spot-num="AY 03">
       
       <div class="num">AY 03</div>
       <div class="name-row"><div class="name">アユタヤ象乗り体験</div><span class="badge">体験</span></div>
@@ -677,7 +700,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アユタヤ象乗り体験.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="ayutthaya" data-spot-num="AY 04">
+    <div class="item-card spot has-spot-img " data-city="ayutthaya" data-stype="activity" data-spot-num="AY 04">
       
       <div class="num">AY 04</div>
       <div class="name-row"><div class="name">チャオプラヤー川クルーズ</div><span class="badge">クルーズ</span></div>
@@ -729,7 +752,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="krabi" data-spot-num="KB 01">
+    <div class="item-card spot has-spot-img must" data-city="krabi" data-stype="nature" data-spot-num="KB 01">
       <div class="must-badge">⭐</div>
       <div class="num">KB 01</div>
       <div class="name-row"><div class="name">ライレイビーチ</div><span class="badge">秘境ビーチ</span></div>
@@ -737,7 +760,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ライレイビーチ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="krabi" data-spot-num="KB 02">
+    <div class="item-card spot has-spot-img " data-city="krabi" data-stype="nature" data-spot-num="KB 02">
       
       <div class="num">KB 02</div>
       <div class="name-row"><div class="name">エメラルドケーブ</div><span class="badge">隠し浜</span></div>
@@ -745,7 +768,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/エメラルドケーブ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="krabi" data-spot-num="KB 03">
+    <div class="item-card spot has-spot-img " data-city="krabi" data-stype="nature" data-spot-num="KB 03">
       
       <div class="num">KB 03</div>
       <div class="name-row"><div class="name">アオナンビーチ</div><span class="badge">拠点ビーチ</span></div>
@@ -753,7 +776,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アオナンビーチ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="krabi" data-spot-num="KB 04">
+    <div class="item-card spot has-spot-img " data-city="krabi" data-stype="religious" data-spot-num="KB 04">
       
       <div class="num">KB 04</div>
       <div class="name-row"><div class="name">ワット・タムスア</div><span class="badge">絶景</span></div>
@@ -761,7 +784,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ワット・タムスア.webp')"><a href="https://maps.app.goo.gl/oc48ZCV1xMZoAz2Z7" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="krabi" data-spot-num="KB 05">
+    <div class="item-card spot has-spot-img " data-city="krabi" data-stype="activity" data-spot-num="KB 05">
       
       <div class="num">KB 05</div>
       <div class="name-row"><div class="name">アイランドホッピング</div><span class="badge">島ツアー</span></div>
@@ -813,7 +836,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="samui" data-spot-num="SM 01">
+    <div class="item-card spot has-spot-img must" data-city="samui" data-stype="nature" data-spot-num="SM 01">
       <div class="must-badge">⭐</div>
       <div class="num">SM 01</div>
       <div class="name-row"><div class="name">チャウエンビーチ</div><span class="badge">ビーチ</span></div>
@@ -821,7 +844,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/チャウエンビーチ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samui" data-spot-num="SM 02">
+    <div class="item-card spot has-spot-img " data-city="samui" data-stype="activity" data-spot-num="SM 02">
       
       <div class="num">SM 02</div>
       <div class="name-row"><div class="name">フルムーンパーティー</div><span class="badge">月1回開催</span></div>
@@ -829,7 +852,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/フルムーンパーティー.webp')"><a href="https://en.wikipedia.org/wiki/Full_Moon_Party" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samui" data-spot-num="SM 03">
+    <div class="item-card spot has-spot-img " data-city="samui" data-stype="nature" data-spot-num="SM 03">
       
       <div class="num">SM 03</div>
       <div class="name-row"><div class="name">アンソン国立公園（ダイビング）</div><span class="badge">ダイビング</span></div>
@@ -837,7 +860,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/アンソン国立公園（ダイビング）.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samui" data-spot-num="SM 04">
+    <div class="item-card spot has-spot-img " data-city="samui" data-stype="religious" data-spot-num="SM 04">
       
       <div class="num">SM 04</div>
       <div class="name-row"><div class="name">ビッグブッダ寺院</div><span class="badge">入場無料</span></div>
@@ -883,7 +906,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="kohchang" data-spot-num="KC 01">
+    <div class="item-card spot has-spot-img must" data-city="kohchang" data-stype="nature" data-spot-num="KC 01">
       <div class="must-badge">⭐</div>
       <div class="num">KC 01</div>
       <div class="name-row"><div class="name">ホワイトサンドビーチ</div><span class="badge">メインビーチ</span></div>
@@ -891,7 +914,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ホワイトサンドビーチ.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kohchang" data-spot-num="KC 02">
+    <div class="item-card spot has-spot-img " data-city="kohchang" data-stype="nature" data-spot-num="KC 02">
       
       <div class="num">KC 02</div>
       <div class="name-row"><div class="name">カイベー島</div><span class="badge">シュノーケリング</span></div>
@@ -899,7 +922,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/カイベー島.webp')"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kohchang" data-spot-num="KC 03">
+    <div class="item-card spot has-spot-img " data-city="kohchang" data-stype="townscape" data-spot-num="KC 03">
       
       <div class="num">KC 03</div>
       <div class="name-row"><div class="name">バンバオ水上集落</div><span class="badge">水上集落</span></div>
@@ -1018,11 +1041,22 @@ function closeSpotPopup() {
   document.body.style.overflow = '';
 }
 
-function filterSpots(city, btn) {
-  document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
-    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
@@ -1091,7 +1125,7 @@ var PAGE_INDEX = 1;
   const city = params.get('city');
   if (city) {
     const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
-    if (btn) filterSpots(city, btn);
+    if (btn) filterSpots('city', city, btn);
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);

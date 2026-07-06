@@ -168,27 +168,50 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <section id="spots" class="active">
 
   <h2>都市別観光スポット</h2>
-  <div class="filter-label">エリア</div>
-  <div class="filter-row" id="spots-filter-row">
-    
-    <button class="filter-btn active" data-filter="all" onclick="filterSpots('all',this)">全て</button>
-    
-    <button class="filter-btn " data-filter="tashkent" onclick="filterSpots('tashkent',this)">タシュケント</button>
-    
-    <button class="filter-btn " data-filter="samarkand" onclick="filterSpots('samarkand',this)">サマルカンド</button>
-    
-    <button class="filter-btn " data-filter="bukhara" onclick="filterSpots('bukhara',this)">ブハラ</button>
-    
-    <button class="filter-btn " data-filter="khiva" onclick="filterSpots('khiva',this)">ヒヴァ</button>
-    
-    <button class="filter-btn " data-filter="fergana" onclick="filterSpots('fergana',this)">フェルガナ</button>
-    
-    <button class="filter-btn " data-filter="nukus" onclick="filterSpots('nukus',this)">ヌクス</button>
-    
-    <button class="filter-btn " data-filter="shahrisabz" onclick="filterSpots('shahrisabz',this)">シャフリサブス</button>
-    
-    <button class="filter-btn " data-filter="termez" onclick="filterSpots('termez',this)">テルメズ</button>
-    
+  <div class="filter-group">
+    <div class="filter-label">カテゴリー</div>
+    <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
+      
+      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+      
+      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">寺院・宗教施設</button>
+      
+      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然・絶景</button>
+      
+      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">市場・ショッピング</button>
+      
+      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+      
+      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+      
+      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">体験・アクティビティ</button>
+      
+    </div>
+  </div>
+  <div class="filter-group">
+    <div class="filter-label">エリア</div>
+    <div class="filter-row" id="spots-filter-row">
+      
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('city','all',this)">全て</button>
+      
+      <button class="filter-btn " data-filter="tashkent" onclick="filterSpots('city','tashkent',this)">タシュケント</button>
+      
+      <button class="filter-btn " data-filter="samarkand" onclick="filterSpots('city','samarkand',this)">サマルカンド</button>
+      
+      <button class="filter-btn " data-filter="bukhara" onclick="filterSpots('city','bukhara',this)">ブハラ</button>
+      
+      <button class="filter-btn " data-filter="khiva" onclick="filterSpots('city','khiva',this)">ヒヴァ</button>
+      
+      <button class="filter-btn " data-filter="fergana" onclick="filterSpots('city','fergana',this)">フェルガナ</button>
+      
+      <button class="filter-btn " data-filter="nukus" onclick="filterSpots('city','nukus',this)">ヌクス</button>
+      
+      <button class="filter-btn " data-filter="shahrisabz" onclick="filterSpots('city','shahrisabz',this)">シャフリサブス</button>
+      
+      <button class="filter-btn " data-filter="termez" onclick="filterSpots('city','termez',this)">テルメズ</button>
+      
+    </div>
   </div>
   <div id="spots-grid">
     
@@ -233,7 +256,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="tashkent" data-spot-num="TAS 01">
+    <div class="item-card spot has-spot-img must" data-city="tashkent" data-stype="market" data-spot-num="TAS 01">
       <div class="must-badge">⭐</div>
       <div class="num">TAS 01</div>
       <div class="name-row"><div class="name">チョルスー・バザール</div><span class="badge">フォトスポット</span></div>
@@ -241,7 +264,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tashkent" data-spot-num="TAS 02">
+    <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="religious" data-spot-num="TAS 02">
       
       <div class="num">TAS 02</div>
       <div class="name-row"><div class="name">ハズラティ・イモーム広場</div><span class="badge">聖地</span></div>
@@ -249,7 +272,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tashkent" data-spot-num="TAS 03">
+    <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="townscape" data-spot-num="TAS 03">
       
       <div class="num">TAS 03</div>
       <div class="name-row"><div class="name">タシュケント地下鉄</div><span class="badge">旧ソ連遺産</span></div>
@@ -257,7 +280,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tashkent" data-spot-num="TAS 04">
+    <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="townscape" data-spot-num="TAS 04">
       
       <div class="num">TAS 04</div>
       <div class="name-row"><div class="name">独立広場（ムスタキリク広場）</div><span class="badge">入場無料</span></div>
@@ -265,7 +288,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="tashkent" data-spot-num="TAS 05">
+    <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="museum" data-spot-num="TAS 05">
       
       <div class="num">TAS 05</div>
       <div class="name-row"><div class="name">国立工芸博物館</div><span class="badge">工芸品</span></div>
@@ -317,7 +340,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="samarkand" data-spot-num="SAM 01">
+    <div class="item-card spot has-spot-img must" data-city="samarkand" data-stype="heritage" data-spot-num="SAM 01">
       <div class="must-badge">⭐</div>
       <div class="num">SAM 01</div>
       <div class="name-row"><div class="name">レギスタン広場</div><span class="badge">世界遺産</span></div>
@@ -325,7 +348,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="samarkand" data-spot-num="SAM 02">
+    <div class="item-card spot has-spot-img must" data-city="samarkand" data-stype="heritage" data-spot-num="SAM 02">
       <div class="must-badge">⭐</div>
       <div class="num">SAM 02</div>
       <div class="name-row"><div class="name">シャフリサブズィンダ廟群</div><span class="badge">世界遺産</span></div>
@@ -333,7 +356,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samarkand" data-spot-num="SAM 03">
+    <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="heritage" data-spot-num="SAM 03">
       
       <div class="num">SAM 03</div>
       <div class="name-row"><div class="name">グリ・アミール廟</div><span class="badge">ティムール廟</span></div>
@@ -341,7 +364,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samarkand" data-spot-num="SAM 04">
+    <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="heritage" data-spot-num="SAM 04">
       
       <div class="num">SAM 04</div>
       <div class="name-row"><div class="name">ウルグ・ベク天文台</div><span class="badge">遺跡・博物館</span></div>
@@ -349,7 +372,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samarkand" data-spot-num="SAM 05">
+    <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="religious" data-spot-num="SAM 05">
       
       <div class="num">SAM 05</div>
       <div class="name-row"><div class="name">ビビ・ハニム・モスク</div><span class="badge">修復済遺跡</span></div>
@@ -357,7 +380,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="samarkand" data-spot-num="SAM 06">
+    <div class="item-card spot has-spot-img must" data-city="samarkand" data-stype="market" data-spot-num="SAM 06">
       <div class="must-badge">⭐</div>
       <div class="num">SAM 06</div>
       <div class="name-row"><div class="name">シアブ・バザール</div><span class="badge">名物市場</span></div>
@@ -365,7 +388,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="samarkand" data-spot-num="SAM 07">
+    <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="religious" data-spot-num="SAM 07">
       
       <div class="num">SAM 07</div>
       <div class="name-row"><div class="name">ハズラティ・ヒズル・モスク</div><span class="badge">絶景モスク</span></div>
@@ -417,7 +440,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="bukhara" data-spot-num="BUK 01">
+    <div class="item-card spot has-spot-img must" data-city="bukhara" data-stype="heritage" data-spot-num="BUK 01">
       <div class="must-badge">⭐</div>
       <div class="num">BUK 01</div>
       <div class="name-row"><div class="name">カラン・ミナレット</div><span class="badge">12世紀建造</span></div>
@@ -425,7 +448,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara" data-spot-num="BUK 02">
+    <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="heritage" data-spot-num="BUK 02">
       
       <div class="num">BUK 02</div>
       <div class="name-row"><div class="name">アルク城塞</div><span class="badge">古代要塞</span></div>
@@ -433,7 +456,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara" data-spot-num="BUK 03">
+    <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="heritage" data-spot-num="BUK 03">
       
       <div class="num">BUK 03</div>
       <div class="name-row"><div class="name">イスマイル・サーマーニー廟</div><span class="badge">10世紀建造</span></div>
@@ -441,7 +464,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara" data-spot-num="BUK 04">
+    <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="townscape" data-spot-num="BUK 04">
       
       <div class="num">BUK 04</div>
       <div class="name-row"><div class="name">ラビ・ハウズ</div><span class="badge">夕暮れ絶景</span></div>
@@ -449,7 +472,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara" data-spot-num="BUK 05">
+    <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="religious" data-spot-num="BUK 05">
       
       <div class="num">BUK 05</div>
       <div class="name-row"><div class="name">バハウッディン廟</div><span class="badge">巡礼地</span></div>
@@ -457,7 +480,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara" data-spot-num="BUK 06">
+    <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="religious" data-spot-num="BUK 06">
       
       <div class="num">BUK 06</div>
       <div class="name-row"><div class="name">ミル・アラブ・メドレセ</div><span class="badge">現役神学校</span></div>
@@ -465,7 +488,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card no-map has-spot-img " data-city="bukhara" data-spot-num="BUK 07">
+    <div class="item-card no-map has-spot-img " data-city="bukhara" data-stype="market" data-spot-num="BUK 07">
       
       <div class="num">BUK 07</div>
       <div class="name-row"><div class="name">タキ（トレードドーム）</div><span class="badge">シルクロード</span></div>
@@ -473,7 +496,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara" data-spot-num="BUK 08">
+    <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="religious" data-spot-num="BUK 08">
       
       <div class="num">BUK 08</div>
       <div class="name-row"><div class="name">ボロハウズ・モスク</div><span class="badge">木柱の美</span></div>
@@ -481,7 +504,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="bukhara" data-spot-num="BUK 09">
+    <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="heritage" data-spot-num="BUK 09">
       
       <div class="num">BUK 09</div>
       <div class="name-row"><div class="name">チョル・ミノル</div><span class="badge">映えスポット</span></div>
@@ -533,7 +556,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="khiva" data-spot-num="KHI 01">
+    <div class="item-card spot has-spot-img must" data-city="khiva" data-stype="heritage" data-spot-num="KHI 01">
       <div class="must-badge">⭐</div>
       <div class="num">KHI 01</div>
       <div class="name-row"><div class="name">イチャン・カラ（旧市街）</div><span class="badge">世界遺産</span></div>
@@ -541,7 +564,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="khiva" data-spot-num="KHI 02">
+    <div class="item-card spot has-spot-img " data-city="khiva" data-stype="heritage" data-spot-num="KHI 02">
       
       <div class="num">KHI 02</div>
       <div class="name-row"><div class="name">カルタ・ミノル</div><span class="badge">未完の塔</span></div>
@@ -549,7 +572,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="khiva" data-spot-num="KHI 03">
+    <div class="item-card spot has-spot-img " data-city="khiva" data-stype="heritage" data-spot-num="KHI 03">
       
       <div class="num">KHI 03</div>
       <div class="name-row"><div class="name">イスラム・ホジャ・ミナレット</div><span class="badge">絶景スポット</span></div>
@@ -557,7 +580,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="khiva" data-spot-num="KHI 04">
+    <div class="item-card spot has-spot-img " data-city="khiva" data-stype="heritage" data-spot-num="KHI 04">
       
       <div class="num">KHI 04</div>
       <div class="name-row"><div class="name">クフナ・アルク宮殿</div><span class="badge">王宮遺跡</span></div>
@@ -565,7 +588,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="khiva" data-spot-num="KHI 05">
+    <div class="item-card spot has-spot-img " data-city="khiva" data-stype="religious" data-spot-num="KHI 05">
       
       <div class="num">KHI 05</div>
       <div class="name-row"><div class="name">ジュマ・モスク</div><span class="badge">木柱の森</span></div>
@@ -617,7 +640,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img " data-city="fergana" data-spot-num="FER 01">
+    <div class="item-card spot has-spot-img " data-city="fergana" data-stype="activity" data-spot-num="FER 01">
       
       <div class="num">FER 01</div>
       <div class="name-row"><div class="name">リシタン（陶芸の街）</div><span class="badge">工芸体験</span></div>
@@ -625,7 +648,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="fergana" data-spot-num="FER 02">
+    <div class="item-card spot has-spot-img " data-city="fergana" data-stype="activity" data-spot-num="FER 02">
       
       <div class="num">FER 02</div>
       <div class="name-row"><div class="name">マルギラン絹工場</div><span class="badge">絹の道</span></div>
@@ -633,7 +656,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="fergana" data-spot-num="FER 03">
+    <div class="item-card spot has-spot-img " data-city="fergana" data-stype="museum" data-spot-num="FER 03">
       
       <div class="num">FER 03</div>
       <div class="name-row"><div class="name">フェルガナ歴史博物館</div><span class="badge">博物館</span></div>
@@ -679,7 +702,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="nukus" data-spot-num="NUK 01">
+    <div class="item-card spot has-spot-img must" data-city="nukus" data-stype="museum" data-spot-num="NUK 01">
       <div class="must-badge">⭐</div>
       <div class="num">NUK 01</div>
       <div class="name-row"><div class="name">サヴィツキー美術館</div><span class="badge">必訪</span></div>
@@ -687,7 +710,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="nukus" data-spot-num="NUK 02">
+    <div class="item-card spot has-spot-img must" data-city="nukus" data-stype="nature" data-spot-num="NUK 02">
       <div class="must-badge">⭐</div>
       <div class="num">NUK 02</div>
       <div class="name-row"><div class="name">アラル海（船の墓場）</div><span class="badge">世界的絶景</span></div>
@@ -695,7 +718,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="nukus" data-spot-num="NUK 03">
+    <div class="item-card spot has-spot-img " data-city="nukus" data-stype="market" data-spot-num="NUK 03">
       
       <div class="num">NUK 03</div>
       <div class="name-row"><div class="name">ミールザラップ・バザール</div><span class="badge">ローカル</span></div>
@@ -735,7 +758,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="shahrisabz" data-spot-num="SHA 01">
+    <div class="item-card spot has-spot-img must" data-city="shahrisabz" data-stype="heritage" data-spot-num="SHA 01">
       <div class="must-badge">⭐</div>
       <div class="num">SHA 01</div>
       <div class="name-row"><div class="name">アク・サライ宮殿跡</div><span class="badge">世界遺産</span></div>
@@ -743,7 +766,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="shahrisabz" data-spot-num="SHA 02">
+    <div class="item-card spot has-spot-img " data-city="shahrisabz" data-stype="heritage" data-spot-num="SHA 02">
       
       <div class="num">SHA 02</div>
       <div class="name-row"><div class="name">ドルッティロヴァト建築群</div><span class="badge">世界遺産</span></div>
@@ -783,7 +806,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img " data-city="termez" data-spot-num="TER 01">
+    <div class="item-card spot has-spot-img " data-city="termez" data-stype="heritage" data-spot-num="TER 01">
       
       <div class="num">TER 01</div>
       <div class="name-row"><div class="name">ファヤズ・テパ</div><span class="badge">仏教遺跡</span></div>
@@ -791,7 +814,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="termez" data-spot-num="TER 02">
+    <div class="item-card spot has-spot-img " data-city="termez" data-stype="heritage" data-spot-num="TER 02">
       
       <div class="num">TER 02</div>
       <div class="name-row"><div class="name">カラ・テパ</div><span class="badge">要事前確認</span></div>
@@ -910,11 +933,22 @@ function closeSpotPopup() {
   document.body.style.overflow = '';
 }
 
-function filterSpots(city, btn) {
-  document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
-    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
@@ -983,7 +1017,7 @@ var PAGE_INDEX = 1;
   const city = params.get('city');
   if (city) {
     const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
-    if (btn) filterSpots(city, btn);
+    if (btn) filterSpots('city', city, btn);
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);

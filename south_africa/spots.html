@@ -168,21 +168,44 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <section id="spots" class="active">
 
   <h2>南アフリカ 観光スポット</h2>
-  <div class="filter-label">エリア</div>
-  <div class="filter-row" id="spots-filter-row">
-    
-    <button class="filter-btn active" data-filter="all" onclick="filterSpots('all',this)">すべて</button>
-    
-    <button class="filter-btn " data-filter="cape_town" onclick="filterSpots('cape_town',this)">ケープタウン</button>
-    
-    <button class="filter-btn " data-filter="johannesburg" onclick="filterSpots('johannesburg',this)">ヨハネスブルク</button>
-    
-    <button class="filter-btn " data-filter="durban" onclick="filterSpots('durban',this)">ダーバン</button>
-    
-    <button class="filter-btn " data-filter="kruger" onclick="filterSpots('kruger',this)">クルーガー</button>
-    
-    <button class="filter-btn " data-filter="oudtshoorn" onclick="filterSpots('oudtshoorn',this)">オウツホルン</button>
-    
+  <div class="filter-group">
+    <div class="filter-label">カテゴリー</div>
+    <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
+      
+      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+      
+      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">寺院・宗教施設</button>
+      
+      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然・絶景</button>
+      
+      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">市場・ショッピング</button>
+      
+      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+      
+      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+      
+      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">体験・アクティビティ</button>
+      
+    </div>
+  </div>
+  <div class="filter-group">
+    <div class="filter-label">エリア</div>
+    <div class="filter-row" id="spots-filter-row">
+      
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('city','all',this)">すべて</button>
+      
+      <button class="filter-btn " data-filter="cape_town" onclick="filterSpots('city','cape_town',this)">ケープタウン</button>
+      
+      <button class="filter-btn " data-filter="johannesburg" onclick="filterSpots('city','johannesburg',this)">ヨハネスブルク</button>
+      
+      <button class="filter-btn " data-filter="durban" onclick="filterSpots('city','durban',this)">ダーバン</button>
+      
+      <button class="filter-btn " data-filter="kruger" onclick="filterSpots('city','kruger',this)">クルーガー</button>
+      
+      <button class="filter-btn " data-filter="oudtshoorn" onclick="filterSpots('city','oudtshoorn',this)">オウツホルン</button>
+      
+    </div>
   </div>
   <div id="spots-grid">
     
@@ -215,7 +238,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="cape_town" data-spot-num="CPT 01">
+    <div class="item-card spot has-spot-img must" data-city="cape_town" data-stype="nature" data-spot-num="CPT 01">
       <div class="must-badge">⭐</div>
       <div class="num">CPT 01</div>
       <div class="name-row"><div class="name">テーブルマウンテン</div><span class="badge">世界自然遺産</span></div>
@@ -223,7 +246,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="cape_town" data-spot-num="CPT 02">
+    <div class="item-card spot has-spot-img must" data-city="cape_town" data-stype="heritage" data-spot-num="CPT 02">
       <div class="must-badge">⭐</div>
       <div class="num">CPT 02</div>
       <div class="name-row"><div class="name">ロベン島</div><span class="badge">世界遺産</span></div>
@@ -231,7 +254,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="cape_town" data-spot-num="CPT 03">
+    <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="nature" data-spot-num="CPT 03">
       
       <div class="num">CPT 03</div>
       <div class="name-row"><div class="name">ボルダーズビーチ（ケープペンギン）</div><span class="badge">野生動物</span></div>
@@ -239,7 +262,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="cape_town" data-spot-num="CPT 04">
+    <div class="item-card spot has-spot-img must" data-city="cape_town" data-stype="nature" data-spot-num="CPT 04">
       <div class="must-badge">⭐</div>
       <div class="num">CPT 04</div>
       <div class="name-row"><div class="name">喜望峰</div><span class="badge">絶景</span></div>
@@ -247,7 +270,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="cape_town" data-spot-num="CPT 05">
+    <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="townscape" data-spot-num="CPT 05">
       
       <div class="num">CPT 05</div>
       <div class="name-row"><div class="name">ボカープ地区</div><span class="badge">映えスポット</span></div>
@@ -255,7 +278,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="cape_town" data-spot-num="CPT 06">
+    <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="activity" data-spot-num="CPT 06">
       
       <div class="num">CPT 06</div>
       <div class="name-row"><div class="name">ステレンボッシュ（ワインランド）</div><span class="badge">ワイン</span></div>
@@ -263,7 +286,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="cape_town" data-spot-num="CPT 07">
+    <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="market" data-spot-num="CPT 07">
       
       <div class="num">CPT 07</div>
       <div class="name-row"><div class="name">V&Aウォーターフロント</div><span class="badge">ショッピング</span></div>
@@ -271,7 +294,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="cape_town" data-spot-num="CPT 08">
+    <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="nature" data-spot-num="CPT 08">
       
       <div class="num">CPT 08</div>
       <div class="name-row"><div class="name">カーステンボッシュ国立植物園</div><span class="badge">世界遺産</span></div>
@@ -279,7 +302,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="cape_town" data-spot-num="CPT 09">
+    <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="nature" data-spot-num="CPT 09">
       
       <div class="num">CPT 09</div>
       <div class="name-row"><div class="name">チャップマンズピーク・ドライブ</div><span class="badge">絶景ドライブ</span></div>
@@ -319,7 +342,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="johannesburg" data-spot-num="JHB 01">
+    <div class="item-card spot has-spot-img must" data-city="johannesburg" data-stype="museum" data-spot-num="JHB 01">
       <div class="must-badge">⭐</div>
       <div class="num">JHB 01</div>
       <div class="name-row"><div class="name">アパルトヘイト博物館</div><span class="badge">歴史</span></div>
@@ -327,7 +350,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="johannesburg" data-spot-num="JHB 02">
+    <div class="item-card spot has-spot-img must" data-city="johannesburg" data-stype="heritage" data-spot-num="JHB 02">
       <div class="must-badge">⭐</div>
       <div class="num">JHB 02</div>
       <div class="name-row"><div class="name">ソウェト（ヴィラカジ通り）</div><span class="badge">歴史</span></div>
@@ -335,7 +358,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="johannesburg" data-spot-num="JHB 03">
+    <div class="item-card spot has-spot-img " data-city="johannesburg" data-stype="townscape" data-spot-num="JHB 03">
       
       <div class="num">JHB 03</div>
       <div class="name-row"><div class="name">ポンテタワー</div><span class="badge">ツアー推奨</span></div>
@@ -343,7 +366,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="johannesburg" data-spot-num="JHB 04">
+    <div class="item-card spot has-spot-img " data-city="johannesburg" data-stype="heritage" data-spot-num="JHB 04">
       
       <div class="num">JHB 04</div>
       <div class="name-row"><div class="name">人類のゆりかご（スタークフォンテイン洞窟）</div><span class="badge">世界遺産</span></div>
@@ -383,7 +406,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="durban" data-spot-num="DBN 01">
+    <div class="item-card spot has-spot-img must" data-city="durban" data-stype="nature" data-spot-num="DBN 01">
       <div class="must-badge">⭐</div>
       <div class="num">DBN 01</div>
       <div class="name-row"><div class="name">ゴールデンマイル</div><span class="badge">ビーチ</span></div>
@@ -391,7 +414,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="durban" data-spot-num="DBN 02">
+    <div class="item-card spot has-spot-img " data-city="durban" data-stype="market" data-spot-num="DBN 02">
       
       <div class="num">DBN 02</div>
       <div class="name-row"><div class="name">ヴィクトリアストリート・マーケット</div><span class="badge">マーケット</span></div>
@@ -431,7 +454,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="kruger" data-spot-num="KNP 01">
+    <div class="item-card spot has-spot-img must" data-city="kruger" data-stype="activity" data-spot-num="KNP 01">
       <div class="must-badge">⭐</div>
       <div class="num">KNP 01</div>
       <div class="name-row"><div class="name">サンライズ・ゲームドライブ</div><span class="badge">ベスト体験</span></div>
@@ -439,7 +462,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="kruger" data-spot-num="KNP 02">
+    <div class="item-card spot has-spot-img must" data-city="kruger" data-stype="nature" data-spot-num="KNP 02">
       <div class="must-badge">⭐</div>
       <div class="num">KNP 02</div>
       <div class="name-row"><div class="name">ビッグファイブ探索</div><span class="badge">野生動物</span></div>
@@ -447,7 +470,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kruger" data-spot-num="KNP 03">
+    <div class="item-card spot has-spot-img " data-city="kruger" data-stype="activity" data-spot-num="KNP 03">
       
       <div class="num">KNP 03</div>
       <div class="name-row"><div class="name">サンセット・ナイトドライブ</div><span class="badge">オプション</span></div>
@@ -455,7 +478,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="kruger" data-spot-num="KNP 04">
+    <div class="item-card spot has-spot-img " data-city="kruger" data-stype="nature" data-spot-num="KNP 04">
       
       <div class="num">KNP 04</div>
       <div class="name-row"><div class="name">ブライデ・リバー・キャニオン（神の窓／ブルックス・ラック・ポットホールズ）</div><span class="badge">絶景</span></div>
@@ -495,7 +518,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="oudtshoorn" data-spot-num="OUD 01">
+    <div class="item-card spot has-spot-img must" data-city="oudtshoorn" data-stype="activity" data-spot-num="OUD 01">
       <div class="must-badge">⭐</div>
       <div class="num">OUD 01</div>
       <div class="name-row"><div class="name">ダチョウ農場（ファームツアー）</div><span class="badge">体験</span></div>
@@ -503,7 +526,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="oudtshoorn" data-spot-num="OUD 02">
+    <div class="item-card spot has-spot-img must" data-city="oudtshoorn" data-stype="nature" data-spot-num="OUD 02">
       <div class="must-badge">⭐</div>
       <div class="num">OUD 02</div>
       <div class="name-row"><div class="name">カンゴ洞窟</div><span class="badge">自然</span></div>
@@ -511,7 +534,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
     
-    <div class="item-card spot has-spot-img " data-city="oudtshoorn" data-spot-num="OUD 03">
+    <div class="item-card spot has-spot-img " data-city="oudtshoorn" data-stype="nature" data-spot-num="OUD 03">
       
       <div class="num">OUD 03</div>
       <div class="name-row"><div class="name">カンゴ・ワイルドライフランチ</div><span class="badge">動物</span></div>
@@ -630,11 +653,22 @@ function closeSpotPopup() {
   document.body.style.overflow = '';
 }
 
-function filterSpots(city, btn) {
-  document.querySelectorAll('#spots-filter-row .filter-btn').forEach(b => b.classList.remove('active'));
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
-    card.style.display = (city === 'all' || card.dataset.city === city) ? '' : 'none';
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
@@ -703,7 +737,7 @@ var PAGE_INDEX = 1;
   const city = params.get('city');
   if (city) {
     const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
-    if (btn) filterSpots(city, btn);
+    if (btn) filterSpots('city', city, btn);
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);
