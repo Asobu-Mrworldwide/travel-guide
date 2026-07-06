@@ -627,6 +627,7 @@ var PAGE_INDEX = 0;
     <img id="food-modal-img" src="" alt="" style="width:100%;border-radius:8px;margin-bottom:10px;display:none">
     <div id="food-modal-ico" class="food-modal-ico"></div>
     <div id="food-modal-name" class="food-modal-name"></div>
+    <div id="food-modal-name-en" class="food-modal-name-en"></div>
     <div id="food-modal-pinyin" class="food-modal-pinyin"></div>
     <div class="food-modal-phrase">
       <div class="food-modal-phrase-main">Meka denna（メーカ デンナ／これをください）</div>
@@ -637,7 +638,7 @@ var PAGE_INDEX = 0;
 </div>
 
 <script>
-function openFoodModal(ico, nameRuby, pinyin, imgSrc) {
+function openFoodModal(ico, nameRuby, pinyin, imgSrc, nameEn) {
   const imgEl = document.getElementById('food-modal-img');
   const icoEl = document.getElementById('food-modal-ico');
   if (imgSrc) {
@@ -649,6 +650,9 @@ function openFoodModal(ico, nameRuby, pinyin, imgSrc) {
     icoEl.style.display = '';
   }
   icoEl.textContent = ico;
+  const nameEnEl = document.getElementById('food-modal-name-en');
+  nameEnEl.textContent = nameEn;
+  nameEnEl.style.display = nameEn ? '' : 'none';
   document.getElementById('food-modal-name').innerHTML = nameRuby;
   const pinyinEl = document.getElementById('food-modal-pinyin');
   pinyinEl.textContent = pinyin;
