@@ -637,7 +637,7 @@ var PAGE_INDEX = 5;
 </div>
 
 <script>
-function openFoodModal(ico, nameRuby, pinyin, imgSrc, nameEn) {
+function openFoodModal(ico, primary, secondary, pinyin, imgSrc) {
   const imgEl = document.getElementById('food-modal-img');
   const icoEl = document.getElementById('food-modal-ico');
   if (imgSrc) {
@@ -649,10 +649,10 @@ function openFoodModal(ico, nameRuby, pinyin, imgSrc, nameEn) {
     icoEl.style.display = '';
   }
   icoEl.textContent = ico;
-  const nameEnEl = document.getElementById('food-modal-name-en');
-  nameEnEl.textContent = nameEn;
-  nameEnEl.style.display = nameEn ? '' : 'none';
-  document.getElementById('food-modal-name').innerHTML = nameRuby;
+  document.getElementById('food-modal-name').innerHTML = primary;
+  const secEl = document.getElementById('food-modal-name-en');
+  secEl.textContent = secondary;
+  secEl.style.display = secondary ? '' : 'none';
   const pinyinEl = document.getElementById('food-modal-pinyin');
   pinyinEl.textContent = pinyin;
   pinyinEl.style.display = pinyin ? '' : 'none';
