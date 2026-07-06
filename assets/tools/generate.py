@@ -243,7 +243,11 @@ def update_index(country_id, data, root_dir):
     name       = _esc(data.get('name', ''))
     name_en    = _esc(data.get('name_en', ''))
     flag       = _esc(card.get('flag', ''))
-    catch_     = _esc(card.get('catch', ''))
+    catch_raw  = card.get('catch', '')
+    if len(catch_raw) > 60:
+        print(f'  ⚠️  index_card.catch が60文字を超えています（{len(catch_raw)}文字）。60文字に切り詰めます')
+        catch_raw = catch_raw[:59] + '…'
+    catch_     = _esc(catch_raw)
     region     = _esc(card.get('region', ''))
     flight     = _esc(data.get('overview', {}).get('flight_hours', ''))
     best_label = _esc(card.get('best_label', ''))
