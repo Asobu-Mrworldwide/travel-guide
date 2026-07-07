@@ -199,11 +199,31 @@ with col_sel:
 data       = load_json(country_id)
 food_items = data.get("food_items", [])
 
+_cat_options_early = ["🍜 グルメ", "🏔️ ヒーロー画像", "🗺️ 観光スポット"]
+_current_cat = st.session_state.get(
+    "gen_category_global",
+    last_state.get("category", _cat_options_early[0]),
+)
+if _current_cat not in _cat_options_early:
+    _current_cat = _cat_options_early[0]
+
 with col_info:
-    total   = len(food_items)
-    has_img = sum(1 for item in food_items if image_exists(country_id, item))
-    st.metric("料理数", total)
-    st.caption(f"画像あり: {has_img} / {total}")
+    if _current_cat == "🍜 グルメ":
+        total   = len(food_items)
+        has_img = sum(1 for item in food_items if image_exists(country_id, item))
+        st.metric("料理数", total)
+        st.caption(f"画像あり: {has_img} / {total}")
+    elif _current_cat == "🏔️ ヒーロー画像":
+        _hero_img = data.get("hero_image", "")
+        has_img   = 1 if (_hero_img and (ROOT_DIR / country_id / _hero_img).exists()) else 0
+        st.metric("ヒーロー画像", 1)
+        st.caption(f"画像あり: {has_img} / 1")
+    else:
+        _all_spots = [sp for sec in data.get("spot_sections", []) for sp in sec.get("spots", [])]
+        total      = len(_all_spots)
+        has_img    = sum(1 for sp in _all_spots if image_exists(country_id, sp))
+        st.metric("スポット数", total)
+        st.caption(f"画像あり: {has_img} / {total}")
 
 with col_cr:
     credits = recraft_api.get_credits()
@@ -219,7 +239,6 @@ with col_update:
     _all_c = detect_countries()
     st.caption(f"全 {len(_all_c)} か国を再生成")
     if st.button(f"🌏 全国更新", key="top_update_all", type="primary"):
-        save_last_state({"tab": 3})
         _log = []
         _prog = st.progress(0, text="準備中...")
         for _i, _cid in enumerate(_all_c):
@@ -287,7 +306,7 @@ components.html(f"""
 # ──────────────────────────────────────────────────────────
 # タブ
 # ──────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 料理一覧", "✨ 画像生成", "🖼️ 画像管理", "🚀 サイト更新", "🌍 新規作成"])
+tab1, tab2, tab3, tab4 = st.tabs(["📋 一覧", "✨ 画像生成", "🖼️ 画像管理", "🌍 新規作成"])
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -413,6 +432,69 @@ with tab1:
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tab2:
     st.subheader("画像生成")
+
+    with st.expander(f"🚀 画像を一括生成（{country_id} / {gen_category} の未生成分のみ）", expanded=False):
+        st.caption("各アイテムの保存済みプロンプト・皿設定をそのまま使い、未生成の画像だけを自動生成・自動保存します（プレビュー選択なし）。生成後にJSONも更新されます。")
+        if st.button("🚀 一括生成を実行", key="bulk_gen_btn", type="primary"):
+            _bulk_data = load_json(country_id)
+
+            if gen_category == "🍜 グルメ":
+                _targets = [it for it in _bulk_data.get("food_items", [])
+                            if not image_exists(country_id, it) and it.get("prompt_en")]
+                _out_dir = food_dir(country_id)
+                _out_dir.mkdir(parents=True, exist_ok=True)
+                _rel_prefix = "素材/グルメ/"
+                _model, _w, _h, _use_style = "recraft20b", 1024, 1024, True
+            elif gen_category == "🏔️ ヒーロー画像":
+                _targets = [] if _bulk_data.get("hero_image") or not _bulk_data.get("hero_prompt") else [
+                    {"name": "ヒーロー", "prompt_en": _bulk_data.get("hero_prompt", ""), "plate_color": ""}
+                ]
+                _out_dir = ROOT_DIR / country_id / "素材"
+                _out_dir.mkdir(parents=True, exist_ok=True)
+                _rel_prefix = "素材/"
+                _model, _w, _h, _use_style = "recraftv3", 1820, 1024, False
+            else:  # 🗺️ 観光スポット
+                _targets = []
+                for _sec in _bulk_data.get("spot_sections", []):
+                    for _sp in _sec.get("spots", []):
+                        if not _sp.get("image") and _sp.get("prompt_en"):
+                            _targets.append(_sp)
+                _out_dir = ROOT_DIR / country_id / "素材" / "観光スポット"
+                _out_dir.mkdir(parents=True, exist_ok=True)
+                _rel_prefix = "素材/観光スポット/"
+                _model, _w, _h, _use_style = "style_spot", 1820, 1024, True
+
+            if not _targets:
+                st.info("未生成の画像はありません。")
+            else:
+                _prog = st.progress(0, text="準備中...")
+                _log  = []
+                for _i, _t in enumerate(_targets):
+                    _name = _t.get("name", f"item{_i}")
+                    _prog.progress(_i / len(_targets), text=f"{_name} ({_i+1}/{len(_targets)})")
+                    try:
+                        _img_bytes, _cr = recraft_api.generate_image(
+                            prompt=_t.get("prompt_en", ""),
+                            plate_color=_t.get("plate_color", ""),
+                            model=_model,
+                            use_style=_use_style,
+                            width=_w,
+                            height=_h,
+                        )
+                        _out_path = _out_dir / f"{_name}.webp"
+                        with open(_out_path, "wb") as _f:
+                            _f.write(_img_bytes)
+                        if gen_category == "🏔️ ヒーロー画像":
+                            _bulk_data["hero_image"] = f"{_rel_prefix}{_name}.webp"
+                        else:
+                            _t["image"] = f"{_rel_prefix}{_name}.webp"
+                        _log.append(f"✅ {_name}（残{_cr}cr）")
+                    except Exception as e:
+                        _log.append(f"❌ {_name}: {e}")
+                _prog.progress(1.0, text="完了！")
+                save_json(country_id, _bulk_data)
+                st.success("\n".join(_log))
+
     st.divider()
 
     # ────────────────── 🍜 グルメ ──────────────────
@@ -1236,14 +1318,7 @@ with tab3:
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# タブ4: サイト更新
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-with tab4:
-    st.info("サイト更新はページ上部の「🌏 全国更新」ボタンから実行できます。")
-
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# タブ5: 新規国を作成
+# タブ4: 新規国を作成
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 import copy as _copy
 
@@ -1415,7 +1490,7 @@ def _new_country_from_template(cid: str, name_ja: str, name_en: str) -> dict:
     return tmpl
 
 
-with tab5:
+with tab4:
     st.subheader("新しい国のページを作成")
 
     # ════════════════════════════════
