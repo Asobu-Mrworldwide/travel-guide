@@ -34,17 +34,22 @@
 - 文字数・トーンは他国の既存introと揃える程度でよく、完全な定型文にする必要はない。
 - 「どちらもアレンジ自由です」のような締めの一文は蛇足なので入れない。プラン紹介とadventure_planへの布石で終わってよい。
 
+## `index_card.catch`（国一覧カードのキャッチ文）
+
+`generate.py`は60文字を超えた場合にのみ切り詰める（`assets/tools/generate.py`の`update_index()`）。実際の目安は**44〜54文字**で書くこと。トーンは辞書的なキーワード列挙（例:「グルメ・世界遺産・バイクの喧騒」）ではなく、**管理人の一人称的な感想・体験談**（例:「管理人が学生の頃初めて一人旅した国だ。海外なのに安心感があるのは何故だろう。」）。未生成国のプレースホルダー（ベトナム・バリ等）は暫定の短いキーワード列挙のままなので、新規国を作る際はそちらを絶対に踏襲しないこと（韓国が最初これをやってしまい25文字の定型キャッチのまま残っていた）。`index.html`の`COUNTRIES`配列に手書きされているキャッチ文が実際にサイトに表示される値で、`<country>.json`の`index_card.catch`は初回`update_index()`実行時にコピーされるだけ（以後は連動しない）ため、後から直す場合は**両方**を書き換える必要がある。
+
 ## `overview.flag_html`（国旗グラフィック）の作り方
 
 `overview.flag_html`は基本データタブに表示される国旗グラフィック。**絵文字（🇰🇷など）は使わない** — Windows環境で正しく描画されない（国コードの2文字表示になる）ため、全端末で見た目が揃わない。
 
 **2026-07方針転換: 座標を自分で計算・推測するのは禁止。** 当初はWebSearchで公式仕様を調べてPythonで座標計算する方式を取っていたが、太極旗の角度を2回間違える等、検証を挟んでも実物とズレる問題が繰り返し発生した（ユーザー: 「生成すると実際の国旗と違う点が多くみうけられます」）。**必ず以下の手順で、実在する検証済みSVGデータをそのまま流用すること。**
 
-1. MITライセンスの[`lipis/flag-icons`](https://github.com/lipis/flag-icons)から、対象国のISO 3166-1 alpha-2コード（例: 韓国=kr, 台湾=tw, マレーシア=my, シンガポール=sg, ウズベキスタン=uz, 南アフリカ=za, スリランカ=lk, タイ=th）でSVGを取得する:
+1. パブリックドメインの[`hampusborgos/country-flags`](https://github.com/hampusborgos/country-flags)（Wikimedia Commons由来、**各国の公式縦横比をそのまま維持**）から、対象国のISO 3166-1 alpha-2コード（例: 韓国=kr, 台湾=tw, マレーシア=my, シンガポール=sg, ウズベキスタン=uz, 南アフリカ=za, スリランカ=lk, タイ=th）でSVGを取得する:
    ```
-   curl -s "https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/flags/4x3/{cc}.svg"
+   curl -s "https://raw.githubusercontent.com/hampusborgos/country-flags/main/svg/{cc}.svg"
    ```
-2. 取得したSVGの中身（座標・path）は**一切書き換えない**。ルートの`<svg ...>`タグに`width="150" height="112.5"`を追加するだけ。
+   （注: `lipis/flag-icons`は全国旗を強制的に4:3枠に収める仕様のため、公式比率と異なる国が多い。比率を優先するなら必ずこちらを使うこと。）
+2. 取得したSVGの`viewBox`から縦横比を計算し、高さを`100px`に固定して幅を比率通りに算出する（例: 3:2の国旗なら`width="150" height="100"`、2:1の国旗なら`width="200" height="100"`）。SVGの中身（座標・path）は**一切書き換えない**。
 3. `<div style="display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden">`で包んでそのまま`overview.flag_html`に入れる。
 4. 反映後は`mcp__visualize__show_widget`で実際に描画確認してから完了とする（ライブラリのデータなので通常は一発でOKになるはずだが、貼り付けミスがないかの確認は必ず行う）。
 

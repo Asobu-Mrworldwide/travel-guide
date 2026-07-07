@@ -70,7 +70,7 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
 @media(max-width:420px){.country-grid{grid-template-columns:1fr}}
 
 /* 国カード */
-.country-card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:none;transition:transform 0.18s,border-color 0.18s;cursor:pointer}
+.country-card{background:var(--card);border-radius:6px;overflow:hidden;border:1px solid var(--border);box-shadow:none;transition:transform 0.18s,border-color 0.18s;cursor:pointer}
 .country-card:hover{transform:translateY(-3px);border-color:var(--primary)}
 .country-card.unavailable{opacity:0.7;cursor:default}
 .country-card.unavailable:hover{transform:none;border-color:var(--border)}
@@ -339,7 +339,7 @@ const COUNTRIES = [
   },
   {
     name:'韓国', nameEn:'Korea', flag:'🇰🇷',
-    catch:'K-POP・絶品グルメ・歴史が凝縮。最近傍の異文化',
+    catch:'飛行機2時間・時差なしなのに、近すぎて逆に新鮮。宮殿もカフェも本気の異文化がそこにある。',
     region:'東アジア', flight:'約2〜2.5時間', budget:['budget1','budget2'],
     bestMonths:[3,4,8,9,10], bestLabel:'4〜5月・9〜11月',
     tags:['グルメ','都市','歴史'],
