@@ -1837,7 +1837,10 @@
             "label": "Day 3",
             "badge_class": "red",
             "content_html": "<strong>十分で天燈上げ → 夕暮れの九份</strong><br>午前中に<a onclick=\"showSpot('JIU 03')\" class=\"spot-link\">十分</a>で願い事を書いた天燈を空へ。午後は<a onclick=\"showSpot('JIU 01')\" class=\"spot-link\">九份老街</a>へ移動し、<a onclick=\"showSpot('JIU 02')\" class=\"spot-link\">豎崎路</a>（けんざきろ）の茶藝館でお茶をしながら提灯の点灯を待つ。この順番なら九份のベストタイムに間に合う。",
-            "transport_note": "🚆 台北→十分→九份（電車・バス 約1〜1.5時間）"
+            "transport_note": {
+              "duration": "台北→十分→九份（電車・バス 約1〜1.5時間）",
+              "local_train": true
+            }
           },
           {
             "transit": false,
@@ -1865,37 +1868,34 @@
             "content_html": "<strong>台北定番巡り</strong><br><a onclick=\"showSpot('TPE 02')\" class=\"spot-link\">故宮博物院</a> → <a onclick=\"showSpot('TPE 04')\" class=\"spot-link\">中正紀念堂</a>の衛兵交代式 → <a onclick=\"showSpot('TPE 01')\" class=\"spot-link\">台北101</a>と、台北のハイライトを1日で。夜は小籠包の名店で乾杯。"
           },
           {
-            "transit": true,
-            "duration": "台北→台中（台湾新幹線 約1時間）",
-            "train": true
-          },
-          {
             "transit": false,
             "label": "Day 3",
             "badge_class": "red",
-            "content_html": "<strong>台中：宮原眼科 → 高美湿地の夕日</strong><br><a onclick=\"showSpot('TXG 01')\" class=\"spot-link\">宮原眼科</a>でアイスとお土産を楽しみ、午後は<a onclick=\"showSpot('TXG 03')\" class=\"spot-link\">審計新村</a>を散策。夕方は<a onclick=\"showSpot('TXG 02')\" class=\"spot-link\">高美湿地</a>へ。水面に空が映る夕景は台湾屈指の絶景。"
-          },
-          {
-            "transit": true,
-            "duration": "台中→台南（台湾新幹線 約50分）",
-            "train": true
+            "content_html": "<strong>台中：宮原眼科 → 高美湿地の夕日</strong><br><a onclick=\"showSpot('TXG 01')\" class=\"spot-link\">宮原眼科</a>でアイスとお土産を楽しみ、午後は<a onclick=\"showSpot('TXG 03')\" class=\"spot-link\">審計新村</a>を散策。夕方は<a onclick=\"showSpot('TXG 02')\" class=\"spot-link\">高美湿地</a>へ。水面に空が映る夕景は台湾屈指の絶景。",
+            "pre_transit": {
+              "duration": "台北→台中（台湾新幹線 約1時間）",
+              "train": true
+            }
           },
           {
             "transit": false,
             "label": "Day 4",
             "badge_class": "red",
-            "content_html": "<strong>台南：古都さんぽと小吃（シャオチー）三昧</strong><br><a onclick=\"showSpot('TNN 01')\" class=\"spot-link\">赤崁楼</a> → <a onclick=\"showSpot('TNN 04')\" class=\"spot-link\">林百貨</a> → 夕方は<a onclick=\"showSpot('TNN 03')\" class=\"spot-link\">神農街</a>へ。移動の合間に担仔麺（タンツーメン）・牛肉湯（ぎゅうにくとう）・サバヒー粥と、小吃（シャオチー）の聖地の実力を食べて確かめる1日。"
-          },
-          {
-            "transit": true,
-            "duration": "台南→高雄（台湾新幹線 約15分）",
-            "train": true
+            "content_html": "<strong>台南：古都さんぽと小吃（シャオチー）三昧</strong><br><a onclick=\"showSpot('TNN 01')\" class=\"spot-link\">赤崁楼</a> → <a onclick=\"showSpot('TNN 04')\" class=\"spot-link\">林百貨</a> → 夕方は<a onclick=\"showSpot('TNN 03')\" class=\"spot-link\">神農街</a>へ。移動の合間に担仔麺（タンツーメン）・牛肉湯（ぎゅうにくとう）・サバヒー粥と、小吃（シャオチー）の聖地の実力を食べて確かめる1日。",
+            "pre_transit": {
+              "duration": "台中→台南（台湾新幹線 約50分）",
+              "train": true
+            }
           },
           {
             "transit": false,
             "label": "Day 5",
             "badge_class": "red",
-            "content_html": "<strong>高雄：美麗島駅 → 駁二 → 旗津</strong><br>まず<a onclick=\"showSpot('KHH 01')\" class=\"spot-link\">美麗島駅</a>の光のドームに感動し、<a onclick=\"showSpot('KHH 03')\" class=\"spot-link\">駁二芸術特区</a>を散策。フェリーで<a onclick=\"showSpot('KHH 04')\" class=\"spot-link\">旗津半島</a>へ渡って海鮮ディナーで締める。"
+            "content_html": "<strong>高雄：美麗島駅 → 駁二 → 旗津</strong><br>まず<a onclick=\"showSpot('KHH 01')\" class=\"spot-link\">美麗島駅</a>の光のドームに感動し、<a onclick=\"showSpot('KHH 03')\" class=\"spot-link\">駁二芸術特区</a>を散策。フェリーで<a onclick=\"showSpot('KHH 04')\" class=\"spot-link\">旗津半島</a>へ渡って海鮮ディナーで締める。",
+            "pre_transit": {
+              "duration": "台南→高雄（台湾新幹線 約15分）",
+              "train": true
+            }
           },
           {
             "transit": false,
@@ -1916,73 +1916,67 @@
           "transit": false,
           "label": "Day 1",
           "badge_class": "green",
-          "content_html": "<strong>台北到着</strong><br>環島の起点は台北。到着日は夜市で腹ごしらえをして、翌日からの一周に備える。"
-        },
-        {
-          "transit": true,
-          "duration": "台北→花蓮（台鉄特急 約2〜2.5時間）",
-          "local_train": true
+          "content_html": "<strong>台北到着</strong><br>環島の起点は台北。到着日は夜市で腹ごしらえをして、この日は台北で1泊。移動中の車窓も楽しみたいので、翌朝の明るい時間に出発して花蓮へ向かう。"
         },
         {
           "transit": false,
           "label": "Day 2",
           "badge_class": "red",
-          "content_html": "<strong>花蓮：東海岸の玄関口</strong><br>断崖と太平洋が続く東海岸へ。七星潭の海岸や東大門夜市で、西部とは違うのんびりした空気を味わう。※太魯閣渓谷は2024年の地震の影響で主要歩道の多くが閉鎖中。訪問を検討する場合は必ず公式サイトで最新の開放状況を確認しよう。"
-        },
-        {
-          "transit": true,
-          "duration": "花蓮→台東（台鉄 約1.5〜2時間）",
-          "local_train": true
+          "content_html": "<strong>花蓮：東海岸の玄関口</strong><br>断崖と太平洋が続く東海岸へ。七星潭の海岸や東大門夜市で、西部とは違うのんびりした空気を味わう。※太魯閣渓谷は2024年の地震の影響で主要歩道の多くが閉鎖中。訪問を検討する場合は必ず公式サイトで最新の開放状況を確認しよう。",
+          "pre_transit": {
+            "duration": "台北→花蓮（台鉄特急 約2〜2.5時間）",
+            "local_train": true
+          }
         },
         {
           "transit": false,
           "label": "Day 3",
           "badge_class": "red",
-          "content_html": "<strong>台東：田園と温泉</strong><br>台鉄の車窓に広がる緑豊かな田園風景が、環島の中でも指折りのハイライト区間。台東に着いたら知本温泉に宿を取り、露天風呂に浸かりながら旅の中日をゆっくり癒す。市街地のパイナップルケーキ店や、夕方の海岸沿いの散歩もあわせて楽しみたい。"
-        },
-        {
-          "transit": true,
-          "duration": "台東→高雄（台鉄・南廻線 約2〜2.5時間）",
-          "local_train": true
+          "content_html": "<strong>台東：田園と温泉</strong><br>台鉄の車窓に広がる緑豊かな田園風景が、環島の中でも指折りのハイライト区間。台東に着いたら知本温泉に宿を取り、露天風呂に浸かりながら旅の中日をゆっくり癒す。市街地のパイナップルケーキ店や、夕方の海岸沿いの散歩もあわせて楽しみたい。",
+          "pre_transit": {
+            "duration": "花蓮→台東（台鉄 約1.5〜2時間）",
+            "local_train": true
+          }
         },
         {
           "transit": false,
           "label": "Day 4",
           "badge_class": "red",
-          "content_html": "<strong>高雄：港町の夜</strong><br>南廻線で島の南端を回り込んで高雄へ。<a onclick=\"showSpot('KHH 01')\" class=\"spot-link\">美麗島駅</a>と<a onclick=\"showSpot('KHH 03')\" class=\"spot-link\">駁二芸術特区</a>を巡り、夜市で乾杯。"
-        },
-        {
-          "transit": true,
-          "duration": "高雄→台南（台鉄 約40分）",
-          "local_train": true
+          "content_html": "<strong>高雄：港町の夜</strong><br>南廻線で島の南端を回り込んで高雄へ。<a onclick=\"showSpot('KHH 01')\" class=\"spot-link\">美麗島駅</a>と<a onclick=\"showSpot('KHH 03')\" class=\"spot-link\">駁二芸術特区</a>を巡り、夜市で乾杯。",
+          "pre_transit": {
+            "duration": "台東→高雄（台鉄・南廻線 約2〜2.5時間）",
+            "local_train": true
+          }
         },
         {
           "transit": false,
           "label": "Day 5",
           "badge_class": "green",
-          "content_html": "<strong>台南：古都と小吃（シャオチー）</strong><br><a onclick=\"showSpot('TNN 01')\" class=\"spot-link\">赤崁楼</a>や<a onclick=\"showSpot('TNN 02')\" class=\"spot-link\">安平古堡</a>で台湾の歴史に触れ、食は牛肉湯（ぎゅうにくとう）から豆花まで小吃（シャオチー）づくしで。"
-        },
-        {
-          "transit": true,
-          "duration": "台南→台中（台湾新幹線 約50分）",
-          "train": true
+          "content_html": "<strong>台南：古都と小吃（シャオチー）</strong><br><a onclick=\"showSpot('TNN 01')\" class=\"spot-link\">赤崁楼</a>や<a onclick=\"showSpot('TNN 02')\" class=\"spot-link\">安平古堡</a>で台湾の歴史に触れ、食は牛肉湯（ぎゅうにくとう）から豆花まで小吃（シャオチー）づくしで。",
+          "pre_transit": {
+            "duration": "高雄→台南（台鉄 約40分）",
+            "local_train": true
+          }
         },
         {
           "transit": false,
           "label": "Day 6",
           "badge_class": "green",
-          "content_html": "<strong>台中：夕日で締める</strong><br><a onclick=\"showSpot('TXG 01')\" class=\"spot-link\">宮原眼科</a>と<a onclick=\"showSpot('TXG 03')\" class=\"spot-link\">審計新村</a>を巡り、ラストは<a onclick=\"showSpot('TXG 02')\" class=\"spot-link\">高美湿地</a>の夕日。一周してきた旅の締めくくりにふさわしい絶景。"
-        },
-        {
-          "transit": true,
-          "duration": "台中→台北→桃園空港（台湾新幹線 約1時間）",
-          "train": true
+          "content_html": "<strong>台中：夕日で締める</strong><br><a onclick=\"showSpot('TXG 01')\" class=\"spot-link\">宮原眼科</a>と<a onclick=\"showSpot('TXG 03')\" class=\"spot-link\">審計新村</a>を巡り、ラストは<a onclick=\"showSpot('TXG 02')\" class=\"spot-link\">高美湿地</a>の夕日。一周してきた旅の締めくくりにふさわしい絶景。",
+          "pre_transit": {
+            "duration": "台南→台中（台湾新幹線 約50分）",
+            "train": true
+          }
         },
         {
           "transit": false,
           "label": "Day 7",
           "badge_class": "",
-          "content_html": "<strong>帰国</strong><br>新幹線で桃園へ戻り、空港から帰国便へ。地図の上をぐるりと一周した達成感はひとしお。"
+          "content_html": "<strong>帰国</strong><br>空港から帰国便へ。地図の上をぐるりと一周した達成感はひとしお。",
+          "pre_transit": {
+            "duration": "台中→台北→桃園空港（台湾新幹線 約1時間）",
+            "train": true
+          }
         }
       ],
       "tip": "東部の台鉄特急（太魯閣号・普悠瑪号）は全席指定で週末は売り切れやすい。台鉄公式アプリで14日前から予約を。太魯閣渓谷の遊歩道は震災復旧が2031年以降まで続く見込みのエリアもあるため、花蓮観光は海岸線と市内中心で計画するのが現実的。"
