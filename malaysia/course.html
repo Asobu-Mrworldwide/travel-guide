@@ -585,7 +585,7 @@ var PAGE_ORDER = ["index.html", "spots.html", "food.html", "course.html", "budge
 var PAGE_INDEX = 3;
 (function() {
   let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
-  const THRESHOLD = 50;
+  const THRESHOLD = 90;
 
   document.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;

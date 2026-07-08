@@ -293,7 +293,7 @@ section.active{display:block}
 .tl-transit{display:flex;align-items:flex-start;gap:10px;padding:4px 0 4px 2px;color:#aaa;font-size:0.7em}
 .tl-transit::before{content:'│\A▼';white-space:pre;color:#d0d0d0;font-size:1.1em;line-height:1.4;flex-shrink:0}
 .tl-transit::after{content:none}
-.tl-transit-lbl{white-space:nowrap;padding-top:2px;color:#888;font-size:1em;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tl-transit-lbl{white-space:normal;max-width:150px;text-align:center;padding-top:2px;color:#888;font-size:1em;display:flex;flex-direction:column;align-items:center;gap:2px}
 .course-city-list{display:flex;flex-direction:column;gap:8px;margin-top:14px}
 .course-city{display:flex;gap:10px;padding:10px;background:#f5f7f5;border-radius:6px;align-items:flex-start}
 .course-city-ico{text-align:center;min-width:40px;flex-shrink:0}

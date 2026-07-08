@@ -1073,7 +1073,7 @@ var PAGE_ORDER = {{page_order_js}};
 var PAGE_INDEX = {{page_index}};
 (function() {
   let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
-  const THRESHOLD = 50;
+  const THRESHOLD = 90;
 
   document.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
@@ -1106,7 +1106,7 @@ var PAGE_INDEX = {{page_index}};
 {% if singlepage %}
 (function() {
   let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
-  const THRESHOLD = 50;
+  const THRESHOLD = 90;
 
   document.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;

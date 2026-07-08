@@ -365,6 +365,16 @@ def generate(country_id):
         print(f'  💾 JSON更新: {os.path.basename(json_path)}')
     # ────────────────────────────────────────────────────────────
 
+    # トランジット行の所要時間表示: 「区間（手段・時間）」の（の前で改行して2行にする
+    def _break_duration(days):
+        for day in days:
+            dur = day.get('duration')
+            if dur and '（' in dur and '<br>' not in dur:
+                day['duration'] = dur.replace('（', '<br>（', 1)
+    for _plan in data.get('courses', {}).get('stable_plans', []):
+        _break_duration(_plan.get('days', []))
+    _break_duration(data.get('courses', {}).get('adventure_plan', {}).get('days', []))
+
     data['__root_dir__'] = os.path.normpath(root_dir)
 
     country_dir = os.path.join(root_dir, country_id)
