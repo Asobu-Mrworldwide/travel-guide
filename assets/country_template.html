@@ -807,7 +807,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="tl-day">
         <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0">{{day.content_html}}</div>
+          <div class="tl-content" style="flex:1;min-width:0">{{day.content_html}}{% if day.transport_note %}<div class="tl-transport-note">{{day.transport_note}}</div>{% endif %}</div>
           {% if day.image %}<img src="{{day.image}}" alt="" class="tl-day-img">{% endif %}
         </div>
       </div>
@@ -836,7 +836,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="tl-day">
         <div class="tl-badge {{day.badge_class}}">{{day.label}}</div>
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0">{{day.content_html}}</div>
+          <div class="tl-content" style="flex:1;min-width:0">{{day.content_html}}{% if day.transport_note %}<div class="tl-transport-note">{{day.transport_note}}</div>{% endif %}</div>
           {% if day.image %}<img src="{{day.image}}" alt="" class="tl-day-img">{% endif %}
         </div>
       </div>
