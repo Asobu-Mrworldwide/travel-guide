@@ -293,7 +293,7 @@ section.active{display:block}
 .tl-transit{display:flex;align-items:flex-start;gap:10px;padding:4px 0 4px 2px;color:#aaa;font-size:0.7em}
 .tl-transit::before{content:'│\A▼';white-space:pre;color:#d0d0d0;font-size:1.1em;line-height:1.4;flex-shrink:0}
 .tl-transit::after{content:none}
-.tl-transit-lbl{white-space:normal;max-width:150px;text-align:center;padding-top:2px;color:#888;font-size:1em;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tl-transit-lbl{white-space:normal;width:150px;flex-shrink:0;text-align:center;padding-top:2px;color:#888;font-size:1em;display:flex;flex-direction:column;align-items:center;gap:2px}
 .course-city-list{display:flex;flex-direction:column;gap:8px;margin-top:14px}
 .course-city{display:flex;gap:10px;padding:10px;background:#f5f7f5;border-radius:6px;align-items:flex-start}
 .course-city-ico{text-align:center;min-width:40px;flex-shrink:0}
@@ -333,7 +333,7 @@ section.active{display:block}
 
 /* 都市グリッド */
 .city-grid-wrap{display:grid;grid-template-columns:repeat(3,1fr);background:#fff}
-.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:10px 12px;border-right:1px solid #b8b8b8;border-top:1px solid #b8b8b8;transition:background 0.15s;cursor:pointer}
+.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;padding:10px 12px;border-right:1px solid #b8b8b8;border-top:1px solid #b8b8b8;border-bottom:1px solid #b8b8b8;margin-bottom:-1px;transition:background 0.15s;cursor:pointer}
 .city-item:nth-child(3n){border-right:none}
 .city-item:hover{background:#f0f7f3}
 .ci-badge{display:inline-block;width:fit-content;font-size:0.68em;font-weight:700;color:#c94a29;background:#fff0f0;border-radius:20px;padding:2px 10px}
@@ -341,7 +341,7 @@ section.active{display:block}
 .ci-name{font-size:0.87em;font-weight:700;margin-bottom:3px}
 .ci-desc{font-size:0.75em;color:var(--sub);line-height:1.6;flex:1}
 .ci-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
-.ci-spots{font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;display:block}
+.ci-spots{font-size:0.7em;color:var(--green);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;white-space:nowrap;margin-left:auto;display:block}
 .ci-spots:hover{opacity:0.7}
 
 /* 都市セクションヘッダー */

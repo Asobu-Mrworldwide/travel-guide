@@ -357,6 +357,25 @@ def generate(country_id):
             json_updated = True
             print(f'  🖼️  都市画像を自動検出: {city_id_key}.webp')
 
+    # spot_points[].spot_ref / food_ref（参照先のnum）から画像を自動解決
+    # 手動でimageパスを書く代わりに spot_ref: "SAM 01" や food_ref: "No.2" と書いておけば、
+    # そのスポット/料理の画像が生成され次第、自動でspot_points側にも反映される
+    spots_by_num = {}
+    for section in data.get('spot_sections', []):
+        for spot in section.get('spots', []):
+            if spot.get('num'):
+                spots_by_num[spot['num']] = spot
+    food_by_num = {item['num']: item for item in data.get('food_items', []) if item.get('num')}
+
+    for pt in data.get('spot_points', []):
+        ref_spot = spots_by_num.get(pt.get('spot_ref')) if pt.get('spot_ref') else None
+        ref_food = food_by_num.get(pt.get('food_ref')) if pt.get('food_ref') else None
+        ref = ref_spot or ref_food
+        if ref and ref.get('image') and pt.get('image') != ref['image']:
+            pt['image'] = ref['image']
+            json_updated = True
+            print(f'  🖼️  観光ポイント画像を自動解決: {pt.get("spot_ref") or pt.get("food_ref")} → {pt.get("title", "")[:20]}')
+
     if json_updated:
         import shutil
         shutil.copy2(json_path, json_path + '.bak')
