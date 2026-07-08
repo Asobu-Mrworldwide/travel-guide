@@ -285,7 +285,7 @@ section.active{display:block}
 .tl-badge{display:inline-block;font-size:0.75em;font-weight:700;margin-bottom:2px;color:#1a1a1a}
 .tl-pre-transit{display:flex;align-items:flex-start;gap:10px;padding-left:2px;margin-bottom:6px;color:#888;font-size:0.72em}
 .tl-pre-transit::before{content:'│\A▼';white-space:pre;color:#d0d0d0;font-size:1.1em;line-height:1.4;flex-shrink:0}
-.tl-pre-transit-lbl{width:150px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+.tl-pre-transit-lbl{width:165px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px;word-break:keep-all;overflow-wrap:normal}
 .tl-pre-transit-ico{flex-shrink:0;line-height:0}
 .tl-pre-transit-ico svg{width:1.5rem;height:1.5rem}
 .tl-badge.green{color:var(--green)}
@@ -299,7 +299,7 @@ section.active{display:block}
 .tl-transit{display:flex;align-items:flex-start;gap:10px;padding:4px 0 4px 2px;color:#aaa;font-size:0.7em}
 .tl-transit::before{content:'│\A▼';white-space:pre;color:#d0d0d0;font-size:1.1em;line-height:1.4;flex-shrink:0}
 .tl-transit::after{content:none}
-.tl-transit-lbl{white-space:normal;width:150px;flex-shrink:0;text-align:center;padding-top:2px;color:#888;font-size:1em;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tl-transit-lbl{white-space:normal;width:165px;flex-shrink:0;text-align:center;padding-top:2px;color:#888;font-size:1em;display:flex;flex-direction:column;align-items:center;gap:2px;word-break:keep-all;overflow-wrap:normal}
 .course-city-list{display:flex;flex-direction:column;gap:8px;margin-top:14px}
 .course-city{display:flex;gap:10px;padding:10px;background:#f5f7f5;border-radius:6px;align-items:flex-start}
 .course-city-ico{text-align:center;min-width:40px;flex-shrink:0}

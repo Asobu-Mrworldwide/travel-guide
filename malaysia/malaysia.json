@@ -2340,16 +2340,15 @@
           "content_html": "<strong>ジョホールバル</strong><br>本当はそのままシンガポールまで突っ切りたかったが時間的に断念し1泊。夜はシーフードを食べたが、これが正解だった。翌朝コーズウェイを渡り陸路でシンガポールへ入国。"
         },
         {
-          "transit": true,
-          "duration": "ジョホールバル→シンガポール（徒歩で国境越え）",
-          "walk": true
-        },
-        {
           "transit": false,
           "badge_style": "",
           "badge_class": "gray",
           "label": "Day 7",
-          "content_html": "<strong>シンガポール → 帰国</strong><br>チャンギ空港から帰国便へ。"
+          "content_html": "<strong>シンガポール → 帰国</strong><br>チャンギ空港から帰国便へ。",
+          "pre_transit": {
+            "duration": "ジョホールバル→シンガポール（徒歩で国境越え）",
+            "walk": true
+          }
         }
       ]
     },

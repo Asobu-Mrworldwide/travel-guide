@@ -2366,16 +2366,15 @@
             "content_html": "<strong>タシュケント到着</strong><br>空港から市内へタクシーで移動。チェックイン後、夕方までの到着なら<a onclick=\"showSpot('TAS 01')\" class=\"spot-link\">チョルスー・バザール</a>周辺を散策して屋台でサムサとシャシリクを食べながらウズベキスタンの空気に慣れよう。ただし夜到着の場合、バザールは店じまいしてゴーストタウン状態のことが多いので注意。その場合は、夜遅くまで地元の若者で賑わうアミール・ティムール広場周辺やモダンなレストランが集まる市内中心部でシャシリクを楽しむのが安全で雰囲気も良くおすすめ。<a onclick=\"showSpot('TAS 03')\" class=\"spot-link\">地下鉄</a>にも乗ってみよう。"
           },
           {
-            "transit": true,
-            "duration": "タシュケント→サマルカンド（高速鉄道アフロシヨブ号 約2時間）",
-            "train": true
-          },
-          {
             "transit": false,
             "badge_style": "background:#52a443",
             "badge_class": "",
             "label": "Day 2",
-            "content_html": "<strong>サマルカンド 1日目</strong><br>高速鉄道で移動後、まず腹ごしらえにプロフを食べてから<a onclick=\"showSpot('SAM 01')\" class=\"spot-link\">レギスタン広場</a>へ。午後は<a onclick=\"showSpot('SAM 02')\" class=\"spot-link\">シャフリサブズィンダ廟群</a>をゆっくり歩く。日没後もライトアップされたレギスタンを眺めたい。"
+            "content_html": "<strong>サマルカンド 1日目</strong><br>高速鉄道で移動後、まず腹ごしらえにプロフを食べてから<a onclick=\"showSpot('SAM 01')\" class=\"spot-link\">レギスタン広場</a>へ。午後は<a onclick=\"showSpot('SAM 02')\" class=\"spot-link\">シャフリサブズィンダ廟群</a>をゆっくり歩く。日没後もライトアップされたレギスタンを眺めたい。",
+            "pre_transit": {
+              "duration": "タシュケント→サマルカンド（高速鉄道アフロシヨブ号 約2時間）",
+              "train": true
+            }
           },
           {
             "transit": false,
@@ -2385,16 +2384,15 @@
             "content_html": "<strong>サマルカンド 2日目</strong><br><a onclick=\"showSpot('SAM 03')\" class=\"spot-link\">グリ・アミール廟</a>→<a onclick=\"showSpot('SAM 05')\" class=\"spot-link\">ビビ・ハニム・モスク</a>→<a onclick=\"showSpot('SAM 04')\" class=\"spot-link\">ウルグ・ベク天文台</a>と回る。午後は旧市街のバザールでハルバやニシャッロを探す。翌日のブハラ行きは早朝の列車がおすすめ。"
           },
           {
-            "transit": true,
-            "duration": "サマルカンド→ブハラ（高速鉄道アフロシヨブ号 約1.5時間）",
-            "train": true
-          },
-          {
             "transit": false,
             "badge_style": "background:#c88000",
             "badge_class": "",
             "label": "Day 4",
-            "content_html": "<strong>ブハラ 1日目</strong><br>到着後は<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>周辺のホテルにチェックイン。<a onclick=\"showSpot('BUK 01')\" class=\"spot-link\">カラン・ミナレット</a>→<a onclick=\"showSpot('BUK 06')\" class=\"spot-link\">ミル・アラブ・メドレセ</a>→<a onclick=\"showSpot('BUK 02')\" class=\"spot-link\">アルク城塞</a>を見て回る。夕暮れの<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>に座ってチャイを一杯。"
+            "content_html": "<strong>ブハラ 1日目</strong><br>到着後は<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>周辺のホテルにチェックイン。<a onclick=\"showSpot('BUK 01')\" class=\"spot-link\">カラン・ミナレット</a>→<a onclick=\"showSpot('BUK 06')\" class=\"spot-link\">ミル・アラブ・メドレセ</a>→<a onclick=\"showSpot('BUK 02')\" class=\"spot-link\">アルク城塞</a>を見て回る。夕暮れの<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>に座ってチャイを一杯。",
+            "pre_transit": {
+              "duration": "サマルカンド→ブハラ（高速鉄道アフロシヨブ号 約1.5時間）",
+              "train": true
+            }
           },
           {
             "transit": false,
@@ -2404,16 +2402,15 @@
             "content_html": "<strong>ブハラ 2日目</strong><br><a onclick=\"showSpot('BUK 03')\" class=\"spot-link\">イスマイル・サーマーニー廟</a>は朝の光の中で見ると格別。旧市街の工芸品バザールでシルクや陶器のお土産を選び、夕方まで路地を気ままに歩く。"
           },
           {
-            "transit": true,
-            "duration": "ブハラ→タシュケント（高速鉄道アフロシヨブ号 約4時間）",
-            "train": true
-          },
-          {
             "transit": false,
             "badge_style": "",
             "badge_class": "gray",
             "label": "Day 6",
-            "content_html": "<strong>タシュケント → 帰国</strong><br>タシュケントに戻り、空港近くで最後の食事。<a onclick=\"showSpot('TAS 01')\" class=\"spot-link\">チョルスー・バザール</a>に立ち寄れる時間があればお土産の追加購入も。"
+            "content_html": "<strong>タシュケント → 帰国</strong><br>タシュケントに戻り、空港近くで最後の食事。<a onclick=\"showSpot('TAS 01')\" class=\"spot-link\">チョルスー・バザール</a>に立ち寄れる時間があればお土産の追加購入も。",
+            "pre_transit": {
+              "duration": "ブハラ→タシュケント（高速鉄道アフロシヨブ号 約4時間）",
+              "train": true
+            }
           }
         ]
       },
@@ -2437,28 +2434,26 @@
             "content_html": "<strong>タシュケント観光</strong><br><a onclick=\"showSpot('TAS 01')\" class=\"spot-link\">チョルスー・バザール</a>で朝食→<a onclick=\"showSpot('TAS 02')\" class=\"spot-link\">ハズラティ・イモーム広場</a>→<a onclick=\"showSpot('TAS 05')\" class=\"spot-link\">国立工芸博物館</a>。午後は<a onclick=\"showSpot('TAS 04')\" class=\"spot-link\">独立広場</a>を散策し、翌朝の高速鉄道チケットを確認。"
           },
           {
-            "transit": true,
-            "duration": "タシュケント→サマルカンド（高速鉄道アフロシヨブ号 約2時間）",
-            "train": true
-          },
-          {
             "transit": false,
             "badge_style": "background:#8a9a20",
             "badge_class": "",
             "label": "Day 3",
-            "content_html": "<strong>サマルカンド</strong><br>1日で<a onclick=\"showSpot('SAM 01')\" class=\"spot-link\">レギスタン広場</a>・<a onclick=\"showSpot('SAM 02')\" class=\"spot-link\">シャフリサブズィンダ廟群</a>・<a onclick=\"showSpot('SAM 03')\" class=\"spot-link\">グリ・アミール廟</a>を集中して回る。歩き疲れたらラグマンで栄養補給。翌朝早い便でブハラに向かうので移動の準備も忘れずに。"
-          },
-          {
-            "transit": true,
-            "duration": "サマルカンド→ブハラ（高速鉄道アフロシヨブ号 約1.5時間）",
-            "train": true
+            "content_html": "<strong>サマルカンド</strong><br>1日で<a onclick=\"showSpot('SAM 01')\" class=\"spot-link\">レギスタン広場</a>・<a onclick=\"showSpot('SAM 02')\" class=\"spot-link\">シャフリサブズィンダ廟群</a>・<a onclick=\"showSpot('SAM 03')\" class=\"spot-link\">グリ・アミール廟</a>を集中して回る。歩き疲れたらラグマンで栄養補給。翌朝早い便でブハラに向かうので移動の準備も忘れずに。",
+            "pre_transit": {
+              "duration": "タシュケント→サマルカンド（高速鉄道アフロシヨブ号 約2時間）",
+              "train": true
+            }
           },
           {
             "transit": false,
             "badge_style": "background:#9aaa10",
             "badge_class": "",
             "label": "Day 4",
-            "content_html": "<strong>ブハラ 1日目</strong><br><a onclick=\"showSpot('BUK 01')\" class=\"spot-link\">カラン・ミナレット</a>・<a onclick=\"showSpot('BUK 02')\" class=\"spot-link\">アルク城塞</a>・<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>を中心に旧市街を歩く。夜は池のほとりのレストランで夕食。ブハラの静かな夜の雰囲気を楽しんで。"
+            "content_html": "<strong>ブハラ 1日目</strong><br><a onclick=\"showSpot('BUK 01')\" class=\"spot-link\">カラン・ミナレット</a>・<a onclick=\"showSpot('BUK 02')\" class=\"spot-link\">アルク城塞</a>・<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>を中心に旧市街を歩く。夜は池のほとりのレストランで夕食。ブハラの静かな夜の雰囲気を楽しんで。",
+            "pre_transit": {
+              "duration": "サマルカンド→ブハラ（高速鉄道アフロシヨブ号 約1.5時間）",
+              "train": true
+            }
           },
           {
             "transit": false,
@@ -2487,16 +2482,15 @@
             "content_html": "<strong>ヒヴァ観光</strong><br>丸1日使ってヒヴァ（<a onclick=\"showSpot('KHI 01')\" class=\"spot-link\">イチャン・カラ</a>内）の各ミナレットや宮殿を制覇。夕方は翌朝のフライトに備えて空港のあるウルゲンチへ移動し、そちらでのんびり過ごす。"
           },
           {
-            "transit": true,
-            "duration": "ウルゲンチ→タシュケント（飛行機 約1時間）",
-            "plane": true
-          },
-          {
             "transit": false,
             "badge_style": "",
             "badge_class": "gray",
             "label": "Day 7",
-            "content_html": "<strong>タシュケント → 帰国</strong><br>飛行機でタシュケントへ戻り、そのまま帰国便へ。"
+            "content_html": "<strong>タシュケント → 帰国</strong><br>飛行機でタシュケントへ戻り、そのまま帰国便へ。",
+            "pre_transit": {
+              "duration": "ウルゲンチ→タシュケント（飛行機 約1時間）",
+              "plane": true
+            }
           }
         ]
       }
@@ -2532,16 +2526,15 @@
           "content_html": "<strong>サマルカンド</strong><br>朝イチの高速鉄道アフロシヨブ号でタシュケントからサマルカンドへ移動（約2時間半）。到着後、午後はサマルカンド観光。<a onclick=\"showSpot('SAM 01')\" class=\"spot-link\">レギスタン広場</a>は日没後のライトアップも見どころ。"
         },
         {
-          "transit": true,
-          "duration": "サマルカンド→ブハラ（高速鉄道アフロシヨブ号 約1.5時間）",
-          "train": true
-        },
-        {
           "transit": false,
           "badge_style": "background:#8a9a20",
           "badge_class": "",
           "label": "Day 4",
-          "content_html": "<strong>ブハラ</strong><br>朝の列車でサマルカンドからブハラへ移動。到着後、午後は<a onclick=\"showSpot('BUK 01')\" class=\"spot-link\">カラン・ミナレット</a>・<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>などブハラ観光。夕暮れの<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>でゆっくり過ごすのもおすすめ。"
+          "content_html": "<strong>ブハラ</strong><br>朝の列車でサマルカンドからブハラへ移動。到着後、午後は<a onclick=\"showSpot('BUK 01')\" class=\"spot-link\">カラン・ミナレット</a>・<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>などブハラ観光。夕暮れの<a onclick=\"showSpot('BUK 04')\" class=\"spot-link\">ラビ・ハウズ</a>でゆっくり過ごすのもおすすめ。",
+          "pre_transit": {
+            "duration": "サマルカンド→ブハラ（高速鉄道アフロシヨブ号 約1.5時間）",
+            "train": true
+          }
         },
         {
           "transit": false,
@@ -2570,16 +2563,15 @@
           "content_html": "<strong>ヒヴァ観光</strong><br>丸1日かけて<a onclick=\"showSpot('KHI 01')\" class=\"spot-link\">イチャン・カラ</a>を歩き尽くす。未完で太く短い<a onclick=\"showSpot('KHI 02')\" class=\"spot-link\">カルタ・ミノル</a>と、歴代ハンの<a onclick=\"showSpot('KHI 04')\" class=\"spot-link\">クフナ・アルク宮殿</a>を巡り、夕方はライトアップされた旧市街を堪能。"
         },
         {
-          "transit": true,
-          "duration": "ヒヴァ→ヌクス（乗合タクシー 約3時間）",
-          "taxi": true
-        },
-        {
           "transit": false,
           "badge_style": "background:#c84020",
           "badge_class": "",
           "label": "Day 7",
-          "content_html": "<strong>ヌクス</strong><br>ヒヴァから乗合タクシーでヌクスへ移動し、まず<a onclick=\"showSpot('NUK 01')\" class=\"spot-link\">サヴィツキー美術館</a>へ。砂漠の辺境という立地にもかかわらず、ソ連時代に弾圧された前衛芸術家たちの作品が密かに集められ守り抜かれた、世界的にも稀有なコレクションを鑑賞できる。午後は<a onclick=\"showSpot('NUK 03')\" class=\"spot-link\">ミールザラップ・バザール</a>を覗き、カラカルパクスタンならではの民芸品や食材を見て回る。"
+          "content_html": "<strong>ヌクス</strong><br>ヒヴァから乗合タクシーでヌクスへ移動し、まず<a onclick=\"showSpot('NUK 01')\" class=\"spot-link\">サヴィツキー美術館</a>へ。砂漠の辺境という立地にもかかわらず、ソ連時代に弾圧された前衛芸術家たちの作品が密かに集められ守り抜かれた、世界的にも稀有なコレクションを鑑賞できる。午後は<a onclick=\"showSpot('NUK 03')\" class=\"spot-link\">ミールザラップ・バザール</a>を覗き、カラカルパクスタンならではの民芸品や食材を見て回る。",
+          "pre_transit": {
+            "duration": "ヒヴァ→ヌクス（乗合タクシー 約3時間）",
+            "taxi": true
+          }
         },
         {
           "transit": true,

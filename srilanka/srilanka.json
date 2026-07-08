@@ -1525,15 +1525,14 @@
             "content_html": "<strong>仏歯寺 → キャンディ湖 → 伝統舞踊</strong><br><a onclick=\"showSpot('KDY 01')\" class=\"spot-link\">仏歯寺</a>で夕方の礼拝に参列し、<a onclick=\"showSpot('KDY 02')\" class=\"spot-link\">キャンディ湖</a>を散策。夜は<a onclick=\"showSpot('KDY 03')\" class=\"spot-link\">キャンディアンダンス</a>で伝統芸能を鑑賞。"
           },
           {
-            "transit": true,
-            "duration": "キャンディ→エラ（絶景鉄道 約6〜7時間）",
-            "local_train": true
-          },
-          {
             "transit": false,
             "label": "Day 5",
             "badge_class": "red",
-            "content_html": "<strong>紅茶畑を走る絶景列車 → エラ到着</strong><br>キャンディからエラへの<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>に乗車。紅茶畑・滝・雲霧林（うんむりん）が延々と流れる車窓は、この旅一番のハイライトになるはず。"
+            "content_html": "<strong>紅茶畑を走る絶景列車 → エラ到着</strong><br>キャンディからエラへの<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>に乗車。紅茶畑・滝・雲霧林（うんむりん）が延々と流れる車窓は、この旅一番のハイライトになるはず。",
+            "pre_transit": {
+              "duration": "キャンディ→エラ（絶景鉄道 約6〜7時間）",
+              "local_train": true
+            }
           },
           {
             "transit": false,
@@ -1542,14 +1541,14 @@
             "content_html": "<strong>九本橋 → リトルアダムスピーク</strong><br>早朝<a onclick=\"showSpot('ELL 01')\" class=\"spot-link\">九本橋</a>で列車が渡る瞬間を狙い、午後は<a onclick=\"showSpot('ELL 02')\" class=\"spot-link\">リトルアダムスピーク</a>へハイキング。谷を一望する絶景で旅のクライマックスを迎える。"
           },
           {
-            "transit": true,
-            "duration": "エラ→コロンボ空港（車 約6時間）"
-          },
-          {
             "transit": false,
             "label": "Day 7",
             "badge_class": "",
-            "content_html": "<strong>帰国</strong><br>早朝出発でコロンボ空港へ。直行便または乗り継ぎ便で日本へ。"
+            "content_html": "<strong>帰国</strong><br>早朝出発でコロンボ空港へ。直行便または乗り継ぎ便で日本へ。",
+            "pre_transit": {
+              "duration": "エラ→コロンボ空港（車 約6時間）",
+              "taxi": true
+            }
           }
         ],
         "tip": "キャンディ〜エラの絶景鉄道は2等車の窓側席が人気。オンライン予約サイトでの事前確保が確実で、当日券勝負は避けたい。"
@@ -1591,15 +1590,14 @@
             "content_html": "<strong>キャンディ観光</strong><br><a onclick=\"showSpot('KDY 01')\" class=\"spot-link\">仏歯寺</a>と<a onclick=\"showSpot('KDY 02')\" class=\"spot-link\">キャンディ湖</a>を巡り、<a onclick=\"showSpot('KDY 04')\" class=\"spot-link\">ティーファクトリー</a>でセイロンティーを試飲。"
           },
           {
-            "transit": true,
-            "duration": "キャンディ→エラ（絶景鉄道 約6〜7時間）",
-            "local_train": true
-          },
-          {
             "transit": false,
             "label": "Day 5",
             "badge_class": "red",
-            "content_html": "<strong>絶景鉄道でエラへ</strong><br>紅茶畑と滝、雲霧林を縫うように走る<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>でキャンディからエラへ移動。窓を開け放った車両にぶら下がって景色を眺める乗客の姿も、スリランカ鉄道旅の名物風景。車窓だけで満腹になるほど贅沢な1日になるはずだ。"
+            "content_html": "<strong>絶景鉄道でエラへ</strong><br>紅茶畑と滝、雲霧林を縫うように走る<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>でキャンディからエラへ移動。窓を開け放った車両にぶら下がって景色を眺める乗客の姿も、スリランカ鉄道旅の名物風景。車窓だけで満腹になるほど贅沢な1日になるはずだ。",
+            "pre_transit": {
+              "duration": "キャンディ→エラ（絶景鉄道 約6〜7時間）",
+              "local_train": true
+            }
           },
           {
             "transit": false,
@@ -1624,15 +1622,14 @@
             "content_html": "<strong>ミリッサでビーチ＆ホエールウォッチング</strong><br>早朝は<a onclick=\"showSpot('GAL 03')\" class=\"spot-link\">ミリッサビーチ</a>からホエールウォッチングツアーへ。午後はビーチでのんびり過ごす、旅の中の一番のご褒美日。"
           },
           {
-            "transit": true,
-            "duration": "ゴール→コロンボ空港（車・鉄道 約2.5時間）",
-            "local_train": true
-          },
-          {
             "transit": false,
             "label": "Day 9",
             "badge_class": "green",
-            "content_html": "<strong>コロンボで最終日</strong><br><a onclick=\"showSpot('CMB 02')\" class=\"spot-link\">コロンボ国立博物館</a>や<a onclick=\"showSpot('CMB 03')\" class=\"spot-link\">ガンガラーマ寺院</a>を巡り、お土産にセイロンティーを調達。"
+            "content_html": "<strong>コロンボで最終日</strong><br><a onclick=\"showSpot('CMB 02')\" class=\"spot-link\">コロンボ国立博物館</a>や<a onclick=\"showSpot('CMB 03')\" class=\"spot-link\">ガンガラーマ寺院</a>を巡り、お土産にセイロンティーを調達。",
+            "pre_transit": {
+              "duration": "ゴール→コロンボ空港（車・鉄道 約2.5時間）",
+              "taxi": true
+            }
           },
           {
             "transit": false,
@@ -1656,24 +1653,24 @@
           "content_html": "<strong>コロンボ到着</strong><br>スリランカ航空の直行便で到着。市内散策は翌日以降に回し、初日はゴールフェイス周辺のホテルでゆっくり過ごし、長旅の疲れを癒すことに専念する。翌朝からの文化三角地帯・高原・南海岸を巡る長丁場に備えて、体調を整えておきたい。"
         },
         {
-          "transit": true,
-          "duration": "コロンボ→アヌラーダプラ（車 約4時間）"
-        },
-        {
           "transit": false,
           "label": "Day 2",
           "badge_class": "red",
-          "content_html": "<strong>アヌラーダプラ遺跡</strong><br>スリランカ最古の古都を訪ね、巨大な白亜のストゥーパ群と、仏教徒の聖地として今も参拝が絶えない菩提樹（スリー・マハー・ボーディ）を巡る。世界遺産に登録された文化三角地帯の旅はここから始まる、静かで厳かな1日。"
-        },
-        {
-          "transit": true,
-          "duration": "アヌラーダプラ→シギリヤ（車 約2時間）"
+          "content_html": "<strong>アヌラーダプラ遺跡</strong><br>スリランカ最古の古都を訪ね、巨大な白亜のストゥーパ群と、仏教徒の聖地として今も参拝が絶えない菩提樹（スリー・マハー・ボーディ）を巡る。世界遺産に登録された文化三角地帯の旅はここから始まる、静かで厳かな1日。",
+          "pre_transit": {
+            "duration": "コロンボ→アヌラーダプラ（車 約4時間）",
+            "taxi": true
+          }
         },
         {
           "transit": false,
           "label": "Day 3",
           "badge_class": "red",
-          "content_html": "<strong>シギリヤロック → ダンブッラ石窟寺院</strong><br><a onclick=\"showSpot('SIG 01')\" class=\"spot-link\">シギリヤロック</a>に登頂し、午後は<a onclick=\"showSpot('SIG 02')\" class=\"spot-link\">ダンブッラ石窟寺院</a>へ。"
+          "content_html": "<strong>シギリヤロック → ダンブッラ石窟寺院</strong><br><a onclick=\"showSpot('SIG 01')\" class=\"spot-link\">シギリヤロック</a>に登頂し、午後は<a onclick=\"showSpot('SIG 02')\" class=\"spot-link\">ダンブッラ石窟寺院</a>へ。",
+          "pre_transit": {
+            "duration": "アヌラーダプラ→シギリヤ（車 約2時間）",
+            "taxi": true
+          }
         },
         {
           "transit": false,
@@ -1692,25 +1689,24 @@
           "content_html": "<strong>キャンディ観光</strong><br><a onclick=\"showSpot('KDY 01')\" class=\"spot-link\">仏歯寺</a>・<a onclick=\"showSpot('KDY 02')\" class=\"spot-link\">キャンディ湖</a>を巡り、夜は<a onclick=\"showSpot('KDY 03')\" class=\"spot-link\">キャンディアンダンス</a>を鑑賞。"
         },
         {
-          "transit": true,
-          "duration": "キャンディ→ヌワラエリヤ（車 約3時間）"
-        },
-        {
           "transit": false,
           "label": "Day 6",
           "badge_class": "green",
-          "content_html": "<strong>ヌワラエリヤの紅茶畑</strong><br>英国統治時代の面影が残り「小さな英国」とも呼ばれる高原の街ヌワラエリヤへ。見渡す限りの<a onclick=\"showSpot('KDY 04')\" class=\"spot-link\">ティーファクトリー</a>を見学し、摘みたての茶葉から作られたばかりのセイロンティーを試飲。標高1,800mならではの避暑地らしい涼しい空気を満喫する1日。"
-        },
-        {
-          "transit": true,
-          "duration": "ヌワラエリヤ→エラ（絶景鉄道 約2〜3時間）",
-          "local_train": true
+          "content_html": "<strong>ヌワラエリヤの紅茶畑</strong><br>英国統治時代の面影が残り「小さな英国」とも呼ばれる高原の街ヌワラエリヤへ。見渡す限りの<a onclick=\"showSpot('KDY 04')\" class=\"spot-link\">ティーファクトリー</a>を見学し、摘みたての茶葉から作られたばかりのセイロンティーを試飲。標高1,800mならではの避暑地らしい涼しい空気を満喫する1日。",
+          "pre_transit": {
+            "duration": "キャンディ→ヌワラエリヤ（車 約3時間）",
+            "taxi": true
+          }
         },
         {
           "transit": false,
           "label": "Day 7",
           "badge_class": "red",
-          "content_html": "<strong>絶景鉄道でエラへ</strong><br>ヌワラエリヤからエラへの区間は、スリランカ鉄道随一と言われる紅茶畑のハイライト区間。<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>の車窓を目に焼き付けながら、高原から徐々に緑深い丘陵地帯へと景色が移り変わっていく様子を楽しもう。"
+          "content_html": "<strong>絶景鉄道でエラへ</strong><br>ヌワラエリヤからエラへの区間は、スリランカ鉄道随一と言われる紅茶畑のハイライト区間。<a onclick=\"showSpot('ELL 03')\" class=\"spot-link\">絶景鉄道</a>の車窓を目に焼き付けながら、高原から徐々に緑深い丘陵地帯へと景色が移り変わっていく様子を楽しもう。",
+          "pre_transit": {
+            "duration": "ヌワラエリヤ→エラ（絶景鉄道 約2〜3時間）",
+            "local_train": true
+          }
         },
         {
           "transit": false,
@@ -1735,15 +1731,14 @@
           "content_html": "<strong>ミリッサでビーチ＆ホエールウォッチング</strong><br>早朝に<a onclick=\"showSpot('GAL 03')\" class=\"spot-link\">ミリッサビーチ</a>から出航するホエールウォッチングツアーに参加し、運が良ければ世界最大の動物ブルーホエールに遭遇できる。午後はビーチチェアに寝転んで、長い旅の疲れを癒す贅沢な時間を過ごす。"
         },
         {
-          "transit": true,
-          "duration": "ゴール→コロンボ（鉄道 約2.5時間）",
-          "local_train": true
-        },
-        {
           "transit": false,
           "label": "Day 11",
           "badge_class": "green",
-          "content_html": "<strong>コロンボで締めくくり</strong><br>コロンボへ戻り、市内の免税店やスーパーでセイロンティーやクルクル（スリランカ菓子）などのお土産を調達。夕方は<a onclick=\"showSpot('CMB 01')\" class=\"spot-link\">ゴールフェイス・グリーン</a>で最後の夕景を眺めながら、文化・高原・南海岸と巡ってきた12日間の旅を振り返る。"
+          "content_html": "<strong>コロンボで締めくくり</strong><br>コロンボへ戻り、市内の免税店やスーパーでセイロンティーやクルクル（スリランカ菓子）などのお土産を調達。夕方は<a onclick=\"showSpot('CMB 01')\" class=\"spot-link\">ゴールフェイス・グリーン</a>で最後の夕景を眺めながら、文化・高原・南海岸と巡ってきた12日間の旅を振り返る。",
+          "pre_transit": {
+            "duration": "ゴール→コロンボ（鉄道 約2.5時間）",
+            "local_train": true
+          }
         },
         {
           "transit": false,

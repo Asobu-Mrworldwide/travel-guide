@@ -801,7 +801,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       {% for day in plan.days %}
       {% if day.transit %}
       <div class="tl-transit">
-        <div class="tl-transit-lbl"><span style="display:block;line-height:1">{{day._icon_svg}}{{day.duration}}</span></div>
+        <div class="tl-transit-lbl"><span class="tl-pre-transit-ico">{{day._icon_svg}}</span><span>{{day.duration}}</span></div>
       </div>
       {% else %}
       <div class="tl-day">
@@ -831,7 +831,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       {% for day in courses.adventure_plan.days %}
       {% if day.transit %}
       <div class="tl-transit">
-        <div class="tl-transit-lbl"><span style="display:block;line-height:1">{{day._icon_svg}}{{day.duration}}</span></div>
+        <div class="tl-transit-lbl"><span class="tl-pre-transit-ico">{{day._icon_svg}}</span><span>{{day.duration}}</span></div>
       </div>
       {% else %}
       <div class="tl-day">

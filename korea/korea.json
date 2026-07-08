@@ -1645,15 +1645,14 @@
             "content_html": "<strong>ソウルの定番を一気に制覇</strong><br>韓服姿で<a onclick=\"showSpot('SEL 01')\" class=\"spot-link\">景福宮</a>を巡り、<a onclick=\"showSpot('SEL 02')\" class=\"spot-link\">北村韓屋村</a>で伝統家屋の街並みを撮影。夜は<a onclick=\"showSpot('SEL 04')\" class=\"spot-link\">弘大</a>のグルメ横丁で夕食をとり、ソウルらしい一日を締めくくる。"
           },
           {
-            "transit": true,
-            "duration": "ソウル→慶州（KTX 約2時間）",
-            "train": true
-          },
-          {
             "transit": false,
             "badge_class": "green",
             "label": "Day 3",
-            "content_html": "<strong>KTXで新羅の古都・慶州へ</strong><br>ソウル駅からKTXで新慶州駅へ（約2時間）。到着後はホテルに荷物を預け、<a onclick=\"showSpot('GYJ 02')\" class=\"spot-link\">大陵苑</a>で古墳群の独特な景観を眺め、<a onclick=\"showSpot('GYJ 03')\" class=\"spot-link\">瞻星台</a>のライトアップまで歩いて楽しむ夜さんぽへ。"
+            "content_html": "<strong>KTXで新羅の古都・慶州へ</strong><br>ホテルに荷物を預け、<a onclick=\"showSpot('GYJ 02')\" class=\"spot-link\">大陵苑</a>で古墳群の独特な景観を眺め、<a onclick=\"showSpot('GYJ 03')\" class=\"spot-link\">瞻星台</a>のライトアップまで歩いて楽しむ夜さんぽへ。",
+            "pre_transit": {
+              "duration": "ソウル→慶州（KTX 約2時間）",
+              "train": true
+            }
           },
           {
             "transit": false,
@@ -1662,15 +1661,14 @@
             "content_html": "<strong>新羅千年の仏教遺跡へ</strong><br>終日かけて<a onclick=\"showSpot('GYJ 01')\" class=\"spot-link\">仏国寺</a>を参拝。多宝塔・釈迦塔など国宝級の石造建築をじっくり見て回り、慶州が「屋根のない博物館」と呼ばれる所以を実感する一日。"
           },
           {
-            "transit": true,
-            "duration": "慶州→釜山（KTX 約1.5時間）",
-            "train": true
-          },
-          {
             "transit": false,
             "badge_class": "green",
             "label": "Day 5",
-            "content_html": "<strong>釜山へ移動 → 港町の絶景を満喫</strong><br>慶州からバス＋KTXで釜山へ（約1.5時間）。到着後は<a onclick=\"showSpot('BUS 02')\" class=\"spot-link\">甘川文化村</a>で「釜山のマチュピチュ」と呼ばれるカラフルな街並みを散策し、<a onclick=\"showSpot('BUS 03')\" class=\"spot-link\">チャガルチ市場</a>で新鮮な海鮮を選んで2階の食堂で調理してもらう贅沢な夕食を楽しむ。"
+            "content_html": "<strong>釜山へ移動 → 港町の絶景を満喫</strong><br>到着後は<a onclick=\"showSpot('BUS 02')\" class=\"spot-link\">甘川文化村</a>で「釜山のマチュピチュ」と呼ばれるカラフルな街並みを散策し、<a onclick=\"showSpot('BUS 03')\" class=\"spot-link\">チャガルチ市場</a>で新鮮な海鮮を選んで2階の食堂で調理してもらう贅沢な夕食を楽しむ。",
+            "pre_transit": {
+              "duration": "慶州→釜山（KTX 約1.5時間）",
+              "train": true
+            }
           },
           {
             "transit": false,
@@ -1705,15 +1703,14 @@
           "content_html": "<strong>離島と御来光クレーター</strong><br>フェリーで小さな離島<a onclick=\"showSpot('JEJ 03')\" class=\"spot-link\">牛島</a>へ渡り、エメラルドグリーンの海と白い砂浜を満喫。名物の黒糖ピーナッツアイスも忘れずに。夕方は<a onclick=\"showSpot('JEJ 01')\" class=\"spot-link\">城山日出峰</a>近くに宿を取り、翌朝の御来光に備えて早めに休む。"
         },
         {
-          "transit": true,
-          "duration": "済州→ソウル（飛行機 約1時間）",
-          "plane": true
-        },
-        {
           "transit": false,
           "badge_class": "red",
           "label": "Day 4",
-          "content_html": "<strong>御来光を見届けて帰国</strong><br>夜明け前に起き出し<a onclick=\"showSpot('JEJ 01')\" class=\"spot-link\">城山日出峰</a>の頂上へ。海からせり上がる噴火口の丘から昇る朝日は済州観光いちばんのハイライトだ。レンタカーを返却し、済州空港からソウル経由、または直行便で帰国の途につく。"
+          "content_html": "<strong>御来光を見届けて帰国</strong><br>夜明け前に起き出し<a onclick=\"showSpot('JEJ 01')\" class=\"spot-link\">城山日出峰</a>の頂上へ。海からせり上がる噴火口の丘から昇る朝日は済州観光いちばんのハイライトだ。レンタカーを返却し、済州空港からソウル経由、または直行便で帰国の途につく。",
+          "pre_transit": {
+            "duration": "済州→ソウル（飛行機 約1時間）",
+            "plane": true
+          }
         }
       ],
       "tip": "済州島はレンタカーがあると圧倒的に周りやすい。日本で国際運転免許証を取得しておくとスムーズに借りられる。"

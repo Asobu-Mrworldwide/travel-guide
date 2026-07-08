@@ -2440,17 +2440,16 @@
           "image": "素材/観光スポット/エレファントサンクチュアリ.webp"
         },
         {
-          "transit": true,
-          "plane": true,
-          "duration": "チェンマイ→プーケット（飛行機 約1.5時間）"
-        },
-        {
           "transit": false,
           "badge_style": "background:#c84020",
           "badge_class": "",
           "label": "Day 5",
           "content_html": "<strong>プーケット移動・到着</strong><br>午前の便でプーケットへ。チェンマイの涼しさから一転、南国の熱気に包まれる。ホテルへチェックインしたらそのまま<a href=\"javascript:void(0)\" onclick=\"showSpot('PH 01')\" class=\"spot-link\">パトンビーチ</a>へ。夕暮れのビーチで海を眺めながら飲む一杯が最高。",
-          "image": "素材/観光スポット/パトンビーチ.webp"
+          "image": "素材/観光スポット/パトンビーチ.webp",
+          "pre_transit": {
+            "duration": "チェンマイ→プーケット（飛行機 約1.5時間）",
+            "plane": true
+          }
         },
         {
           "transit": false,
