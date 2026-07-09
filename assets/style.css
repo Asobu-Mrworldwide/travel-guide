@@ -295,7 +295,8 @@ section.active{display:block}
 .tl-day-img{width:120px;height:88px;object-fit:cover;border-radius:6px;flex-shrink:0}
 @media(max-width:600px){.tl-day-img{display:none}}
 .course-footer{margin-top:12px;padding-top:10px;border-top:1px solid #b8b8b8;font-size:0.7em;color:var(--sub);line-height:1.8}
-.course-tip{margin-top:8px;font-size:0.72em;color:var(--green);font-weight:600;display:flex;align-items:center;gap:5px}
+.course-tip{margin-top:8px;font-size:0.72em;color:var(--green);font-weight:600;display:flex;align-items:flex-start;gap:5px}
+.course-tip svg{flex-shrink:0;margin-top:0.35em}
 .tl-transit{display:flex;align-items:flex-start;gap:10px;padding:4px 0 4px 2px;color:#aaa;font-size:0.7em}
 .tl-transit::before{content:'│\A▼';white-space:pre;color:#d0d0d0;font-size:1.1em;line-height:1.4;flex-shrink:0}
 .tl-transit::after{content:none}
