@@ -9,7 +9,7 @@
   "overview": {
     "country_question": "マレーシアってどんな国？",
     "description_html": "東南アジアの中心に位置するマレーシアは、マレー系・中国系・インド系が共存する<strong>多民族・多文化国家</strong>。熱帯雨林の大自然、世界遺産の古都、近代的な都市が一度に楽しめる。<span style='display:block;margin-top:0.5em'>「多民族国家」って言葉、ピンとこないですよね？ 私は現地でインド系のおじさんが屋台で肉まんを売ってるのを見て、なんか急に腑に落ちました。</span><span style='display:block;margin-top:0.5em'>英語が広く通じビザも不要。物価は日本の約半分で、初めての東南アジアにもおすすめです。</span>",
-    "flag_html": "<div style=\"display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden\"><svg width=\"200\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 13440 6720\"><g transform=\"scale(480)\"><path fill=\"#fff\" d=\"m0 0h28v14H0z\"/><path stroke=\"#c00\" d=\"m1 .5h27m0 2H1m0 2h27m0 2H1\"/><path fill=\"#006\" d=\"m0 0h14v8.5H0z\"/><path stroke=\"#c00\" d=\"m0 8.5h28m0 2H0m0 2h28\"/></g><path fill=\"#fc0\" d=\"m4200 720 107 732 414-613-222 706 639-373-506 540 738-59-690 267 690 267-738-59 506 540-639-373 222 706-414-613-107 732-107-732-414 613 222-706-639 373 506-540-738 59 690-267-690-267 738 59-506-540 639 373-222-706 414 613zm-600 30a1280 1280 0 1 0 0 2340 1440 1440 0 1 1 0-2340z\"/></svg></div>",
+    "flag_html": "<div style=\"display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden\"><svg width=\"200\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 13440 6720\"><g transform=\"scale(480)\"><path fill=\"#fff\" d=\"m0 0h28v14H0z\"/><path stroke=\"#c00\" d=\"m1 .5h27m0 2H1m0 2h27m0 2H1\"/><path fill=\"#006\" d=\"m0 0h14v8.5H0z\"/><path stroke=\"#c00\" d=\"m0 8.5h28m0 2H0m0 2h28\"/></g><path fill=\"#fc0\" d=\"m4200 720 107 732 414-613-222 706 639-373-506 540 738-59-690 267 690 267-738-59 506 540-639-373 222 706-414-613-107 732-107-732-414 613 222-706-639 373 506-540-738 59 690-267-690-267 738 59-506-540 639 373-222-706 414 613zm-600 30a1280 1280 0 1 0 0 2340 1440 1440 0 1 1 0-2340z\"/></svg></div>",
     "flag_caption": "Jalur Gemilang（ジャルル・グミラン）― マレー語で「栄光の縞」",
     "top_spot_name": "ペトロナスツインタワー",
     "top_spot_desc": "クアラルンプールのシンボル。高さ452mの双子タワーは夜景が絶景。",
@@ -850,25 +850,49 @@
                 "jp": "元気ですか？",
                 "foreign": "Apa khabar?",
                 "reading": "アパ カバル？",
+                "audio": ""
+              },
+              {
+                "jp": "元気です",
+                "foreign": "Khabar baik",
+                "reading": "カバル バイク",
+                "audio": ""
+              },
+              {
+                "jp": "元気ですか？",
+                "foreign": "Apa khabar?",
+                "reading": "アパ カバル？",
                 "audio": "apa-khabar.mp3"
               },
               {
-                "jp": "元気です。あなたは？",
-                "foreign": "Khabar baik. Awak?",
-                "reading": "カバル バイク。アワッ？",
-                "audio": "khabar-baik.mp3"
-              },
-              {
-                "jp": "バイバイ",
+                "jp": "さようなら",
                 "foreign": "Selamat tinggal",
                 "reading": "スラマッ ティンガル",
                 "audio": "selamat-tinggal.mp3"
               },
               {
-                "jp": "綺麗ですね！",
+                "jp": "（景色や物に）綺麗ですね！",
                 "foreign": "Cantik sekali!",
                 "reading": "チャンティッ スカリ！",
                 "audio": "cantik-sekali.mp3"
+              },
+              {
+                "jp": "美人ですね",
+                "foreign": "Awak cantik!",
+                "reading": "アワッ チャンティッ！",
+                "audio": ""
+              },
+              {
+                "jp": "愛してる",
+                "foreign": "Saya cinta awak!",
+                "reading": "サヤ チンタ アワッ！",
+                "audio": ""
+              },
+              {
+                "jp": "はじめまして",
+                "foreign": "Selamat berkenalan",
+                "reading": "スラマッ ブルクナラン",
+                "audio": ""
               }
             ]
           },
@@ -882,13 +906,19 @@
                 "audio": "terima-kasih.mp3"
               },
               {
+                "jp": "すみません",
+                "foreign": "Maafkan saya",
+                "reading": "マーフカン サヤ",
+                "audio": ""
+              },
+              {
                 "jp": "ごめんなさい",
                 "foreign": "Minta maaf",
                 "reading": "ミンタ マーフ",
                 "audio": "minta-maaf.mp3"
               },
               {
-                "jp": "大丈夫",
+                "jp": "大丈夫・気にしないで",
                 "foreign": "Tidak apa-apa",
                 "reading": "ティダッ アパアパ",
                 "audio": "tidak-apa-apa.mp3"
@@ -898,6 +928,18 @@
                 "foreign": "Ya / Tidak",
                 "reading": "ヤー / ティダッ",
                 "audio": "ya-tidak.mp3"
+              },
+              {
+                "jp": "わかりません",
+                "foreign": "Saya tak faham",
+                "reading": "サヤ タッ ファハム",
+                "audio": ""
+              },
+              {
+                "jp": "もう一度言ってください",
+                "foreign": "Boleh ulang sekali lagi?",
+                "reading": "ボレ ウラン スカリ ラギ？",
+                "audio": ""
               },
               {
                 "jp": "名前は〜です",
@@ -910,6 +952,12 @@
                 "foreign": "Siapa nama awak?",
                 "reading": "シアパ ナマ アワッ？",
                 "audio": "siapa-nama.mp3"
+              },
+              {
+                "jp": "日本人です",
+                "foreign": "Saya orang Jepun",
+                "reading": "サヤ オラン ジュプン",
+                "audio": ""
               }
             ]
           },
@@ -923,10 +971,16 @@
                 "audio": "sedap.mp3"
               },
               {
-                "jp": "おすすめは？",
+                "jp": "おすすめは何ですか？",
                 "foreign": "Apa yang disyorkan?",
                 "reading": "アパ ヤン ディショルカン？",
                 "audio": "apa-yang-disyorkan.mp3"
+              },
+              {
+                "jp": "〜はありますか？",
+                "foreign": "Ada ~ tak?",
+                "reading": "アダ ～ タッ？",
+                "audio": ""
               },
               {
                 "jp": "辛くしないでください",
@@ -935,7 +989,7 @@
                 "audio": "jangan-pedas.mp3"
               },
               {
-                "jp": "お会計お願いします",
+                "jp": "お会計をお願いします",
                 "foreign": "Boleh minta bil?",
                 "reading": "ボレ ミンタ ビル？",
                 "audio": "boleh-minta-bil.mp3"
@@ -947,13 +1001,13 @@
                 "audio": "berapa-harga.mp3"
               },
               {
-                "jp": "トイレどこですか？",
+                "jp": "トイレはどこですか？",
                 "foreign": "Di mana tandas?",
                 "reading": "ディ マナ タンダス？",
                 "audio": "di-mana-tandas.mp3"
               },
               {
-                "jp": "これください",
+                "jp": "これをください",
                 "foreign": "Saya nak ini",
                 "reading": "サヤ ナッ イニ",
                 "audio": "saya-nak-ini.mp3"
@@ -970,22 +1024,45 @@
             "label": "数字",
             "items": [
               {
-                "jp": "0",
-                "foreign": "Kosong",
-                "reading": "コソン",
-                "audio": "kosong.mp3"
-              },
-              {
-                "jp": "1〜5",
-                "foreign": "Satu・Dua・Tiga・Empat・Lima",
-                "reading": "サトゥ・ドゥア・ティガ・エンパッ・リマ",
-                "audio": "satu-lima.mp3"
+                "jp": "0〜5",
+                "foreign": "Kosong・Satu・Dua・Tiga・Empat・Lima",
+                "reading": "コソン・サトゥ・ドゥア・ティガ・エンパッ・リマ",
+                "audio": ""
               },
               {
                 "jp": "6〜10",
                 "foreign": "Enam・Tujuh・Lapan・Sembilan・Sepuluh",
                 "reading": "エナム・トゥジュ・ラパン・スンビラン・スプル",
                 "audio": "enam-sepuluh.mp3"
+              },
+              {
+                "jp": "6〜10",
+                "foreign": "Enam・Tujuh・Lapan・Sembilan・Sepuluh",
+                "reading": "エナム・トゥジュ・ラパン・スンビラン・スプル",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "観光・トラブル",
+            "items": [
+              {
+                "jp": "写真を撮ってもいいですか？",
+                "foreign": "Boleh saya ambil gambar?",
+                "reading": "ボレ サヤ アンビル ガンバール？",
+                "audio": ""
+              },
+              {
+                "jp": "安全ですか？",
+                "foreign": "Selamat ke?",
+                "reading": "スラマッ ケ？",
+                "audio": ""
+              },
+              {
+                "jp": "助けてください！",
+                "foreign": "Tolong!",
+                "reading": "トロン！",
+                "audio": ""
               }
             ]
           }

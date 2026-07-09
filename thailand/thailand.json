@@ -10,7 +10,7 @@
   "overview": {
     "country_question": "タイってどんな国？",
     "description_html": "東南アジアの中心に位置するタイは、「微笑みの国」として知られる<strong>仏教国</strong>。黄金の寺院群、熱帯ジャングル、白砂のビーチ、屋台グルメ——旅の要素が全部ある。<span style='display:block;margin-top:0.5em'>旅好きの知人がこう言っていた。「結局戻ってくるんはタイなんよ」と。料理は旨い、物価は安い、人は穏やか、夜のエンタメも充実、、、微笑んでいるのは旅行客のほうかも。</span>",
-    "flag_html": "<div style=\"display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden\"><svg width=\"150\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 9 6\"><path fill=\"#A51931\" d=\"M0 0h9v6H0z\"/><path fill=\"#F4F5F8\" d=\"M0 1h9v4H0z\"/><path fill=\"#2D2A4A\" d=\"M0 2h9v2H0z\"/></svg></div>",
+    "flag_html": "<div style=\"display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden\"><svg width=\"150\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 9 6\"><path fill=\"#A51931\" d=\"M0 0h9v6H0z\"/><path fill=\"#F4F5F8\" d=\"M0 1h9v4H0z\"/><path fill=\"#2D2A4A\" d=\"M0 2h9v2H0z\"/></svg></div>",
     "flag_caption": "Thong Trairong（トン・トライロン）― タイ語で「三色旗」",
     "top_spot_name": "ワット・プラケオ（エメラルド寺院）",
     "top_spot_desc": "バンコク王宮内に建つタイ最高の聖地。エメラルド色の翡翠で造られた仏像を安置し、境内の黄金の仏塔が圧巻。",
@@ -880,10 +880,28 @@
                 "audio": "lakon.mp3"
               },
               {
-                "jp": "綺麗ですね！",
+                "jp": "はじめまして",
+                "foreign": "ยินดีที่ได้รู้จัก",
+                "reading": "インディー ティー ダイ ルーチャック",
+                "audio": ""
+              },
+              {
+                "jp": "（景色や物に）綺麗ですね！",
                 "foreign": "สวยมาก!",
                 "reading": "スワイ マーク！",
                 "audio": "suay-mak.mp3"
+              },
+              {
+                "jp": "美人ですね",
+                "foreign": "คุณสวยมาก!",
+                "reading": "クン スワイ マーク！",
+                "audio": ""
+              },
+              {
+                "jp": "愛してる",
+                "foreign": "รักคุณนะ",
+                "reading": "ラック クン ナ",
+                "audio": ""
               }
             ]
           },
@@ -895,6 +913,12 @@
                 "foreign": "ขอบคุณ",
                 "reading": "コップクン（クラップ/カー）",
                 "audio": "khobkhun.mp3"
+              },
+              {
+                "jp": "すみません",
+                "foreign": "ขอโทษ",
+                "reading": "コートート",
+                "audio": ""
               },
               {
                 "jp": "ごめんなさい",
@@ -915,10 +939,28 @@
                 "audio": "chai-maichai.mp3"
               },
               {
+                "jp": "わかりません",
+                "foreign": "ไม่เข้าใจ",
+                "reading": "マイ カオジャイ",
+                "audio": ""
+              },
+              {
+                "jp": "もう一度言ってください",
+                "foreign": "พูดอีกครั้งได้ไหม?",
+                "reading": "プート イーク クラン ダイ マイ？",
+                "audio": ""
+              },
+              {
                 "jp": "名前は〜です",
                 "foreign": "ผม/ฉันชื่อ ～",
                 "reading": "ポム/チャン チュー ～",
                 "audio": "pom-chu.mp3"
+              },
+              {
+                "jp": "名前は何ですか？",
+                "foreign": "ชื่ออะไร?",
+                "reading": "チュー アライ？",
+                "audio": ""
               },
               {
                 "jp": "日本人です",
@@ -931,6 +973,12 @@
           {
             "label": "🍽️ レストラン・ショッピング",
             "items": [
+              {
+                "jp": "おすすめは何ですか？",
+                "foreign": "แนะนำอะไรดี?",
+                "reading": "ネナム アライ ディー？",
+                "audio": ""
+              },
               {
                 "jp": "おいしい！",
                 "foreign": "อร่อย!",
@@ -956,7 +1004,7 @@
                 "audio": "mee-mai.mp3"
               },
               {
-                "jp": "お会計お願いします",
+                "jp": "お会計をお願いします",
                 "foreign": "เก็บเงินด้วย",
                 "reading": "ゲップグン ドゥアイ",
                 "audio": "gebngern.mp3"
@@ -968,19 +1016,19 @@
                 "audio": "rakha-taorai.mp3"
               },
               {
-                "jp": "トイレどこですか？",
+                "jp": "トイレはどこですか？",
                 "foreign": "ห้องน้ำอยู่ไหน?",
                 "reading": "ホンナム ユー ナイ？",
                 "audio": "hongnam-yunai.mp3"
               },
               {
-                "jp": "これください",
+                "jp": "これをください",
                 "foreign": "ขออันนี้",
                 "reading": "コー アン ニー",
                 "audio": "kho-an-nee.mp3"
               },
               {
-                "jp": "高い・安くしてください",
+                "jp": "高い、安くしてください",
                 "foreign": "แพงไป ลดได้ไหม?",
                 "reading": "ペーン パイ、ロット ダイ マイ？",
                 "audio": "phaeng-lot.mp3"
@@ -1001,6 +1049,29 @@
                 "foreign": "หก・เจ็ด・แปด・เก้า・สิบ",
                 "reading": "ホック・ジェット・ペート・ガーオ・シップ",
                 "audio": "hok-sip.mp3"
+              }
+            ]
+          },
+          {
+            "label": "🆘 観光・トラブル",
+            "items": [
+              {
+                "jp": "写真を撮ってもいいですか？",
+                "foreign": "ถ่ายรูปได้ไหม?",
+                "reading": "ターイ ループ ダイ マイ？",
+                "audio": ""
+              },
+              {
+                "jp": "安全ですか？",
+                "foreign": "ปลอดภัยไหม?",
+                "reading": "プロートパイ マイ？",
+                "audio": ""
+              },
+              {
+                "jp": "助けてください！",
+                "foreign": "ช่วยด้วย!",
+                "reading": "チュアイ ドゥアイ！",
+                "audio": ""
               }
             ]
           }
