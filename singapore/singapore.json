@@ -110,6 +110,19 @@
       "badge": "買い物・動物園",
       "badge_class": "green",
       "description": "ショッピング街と、郊外の動物園・ナイトサファリ"
+    },
+    {
+      "id": "katong",
+      "name": "カトン",
+      "lat": "1.3048",
+      "lng": "103.9036",
+      "zoom": "15",
+      "color": "#1a3a5c",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "プラナカン文化",
+      "badge_class": "green",
+      "description": "カラフルなプラナカン様式のショップハウスが並ぶ、写真映えの下町エリア"
     }
   ],
   "season_mini": {
@@ -1110,6 +1123,76 @@
       "wiki_url": "https://en.wikipedia.org/wiki/Singapore_Sling",
       "order_ico": "🍹",
       "order_name_en": "Singapore Sling"
+    },
+    {
+      "num": "No.13",
+      "name": "フィッシュヘッド・カレー",
+      "badge": "インパクト抜群の名物",
+      "type": "main",
+      "city": "national",
+      "desc": "大きな魚の頭を丸ごとカレーで煮込んだ、シンガポール発祥の超有名名物料理。リトルインディアなどのインド料理店だけでなく、中華系レストランでも定番のインパクト抜群な大皿料理。",
+      "image": "",
+      "prompt_en": "Singapore fish head curry, whole fish head simmered in spicy curry sauce, large sharing platter, hawker style food photography",
+      "plate_color": "large curry bowl",
+      "wiki_url": "https://ja.wikipedia.org/wiki/フィッシュヘッドカレー",
+      "order_ico": "🐟",
+      "order_name_en": "Fish Head Curry"
+    },
+    {
+      "num": "No.14",
+      "name": "ペーパーチキン",
+      "badge": "紙包み焼きの中華グルメ",
+      "type": "main",
+      "city": "national",
+      "desc": "特製のタレに漬け込んだ鶏肉をパラフィン紙で包んで揚げた料理。旨味と肉汁が紙の中に閉じ込められており、日本人観光客にも熱狂的なファンが多い中華グルメ。",
+      "image": "",
+      "prompt_en": "Singapore paper wrapped chicken, marinated chicken fried in parchment paper parcels, Chinese restaurant dish, food photography",
+      "plate_color": "white plate",
+      "wiki_url": "",
+      "order_ico": "🍗",
+      "order_name_en": "Paper Chicken"
+    },
+    {
+      "num": "No.15",
+      "name": "カヤボール",
+      "badge": "一口サイズのB級スイーツ",
+      "type": "dessert",
+      "city": "national",
+      "desc": "カヤトーストに使われる「カヤジャム」を、一口サイズの人形焼のような生地の中に閉じ込めたB級スイーツ。ホーカーや駅のスタンドで手軽に買える、ローカルおやつ。",
+      "image": "",
+      "prompt_en": "Singapore kaya balls, bite-sized pastry filled with kaya coconut jam, street snack stall display",
+      "plate_color": "paper snack tray",
+      "wiki_url": "",
+      "order_ico": "🍡",
+      "order_name_en": "Kaya Balls"
+    },
+    {
+      "num": "No.16",
+      "name": "コピ／テ",
+      "badge": "シンガポール流コーヒー・紅茶",
+      "type": "drink",
+      "city": "national",
+      "desc": "カヤトーストと一緒に必ず紹介すべき、シンガポール流の伝統的なコーヒー（コピ）と紅茶（テ）。練乳やエバミルクを入れる独特の注文ルール（「コピ・C」「コピ・O」など）がある。",
+      "image": "",
+      "prompt_en": "Traditional Singapore kopi coffee in a cup and saucer, kopitiam hawker stall, condensed milk being poured",
+      "plate_color": "cup and saucer",
+      "wiki_url": "https://ja.wikipedia.org/wiki/コピ",
+      "order_ico": "☕",
+      "order_name_en": "Kopi / Teh"
+    },
+    {
+      "num": "No.17",
+      "name": "タイガービール",
+      "badge": "国民的ビール",
+      "type": "drink",
+      "city": "national",
+      "desc": "シンガポールスリング（カクテル）に並ぶ、シンガポール発祥の国民的ビール。東南アジアの気候に合うすっきりとした味わいで、チリクラブやサテーとの相性が抜群。",
+      "image": "",
+      "prompt_en": "Tiger Beer bottle and glass on a hawker centre table, condensation on glass, Singapore night scene",
+      "plate_color": "beer glass",
+      "wiki_url": "https://ja.wikipedia.org/wiki/タイガービール",
+      "order_ico": "🍺",
+      "order_name_en": "Tiger Beer"
     }
   ],
   "spots_section_title": "シンガポール 観光スポット",
@@ -1142,6 +1225,11 @@
     {
       "id": "orchard",
       "label": "オーチャード・郊外",
+      "active": false
+    },
+    {
+      "id": "katong",
+      "label": "カトン",
       "active": false
     }
   ],
@@ -1232,6 +1320,61 @@
           "prompt_en": "National Gallery Singapore neoclassical former Supreme Court building interior with modern glass atrium, art museum",
           "image": "素材/観光スポット/ナショナル・ギャラリー・シンガポール.webp",
           "type": "museum"
+        },
+        {
+          "must": false,
+          "icon": "🪷",
+          "num": "MRN 07",
+          "name": "アートサイエンス・ミュージアム",
+          "desc": "マリーナベイ・サンズの目の前に建つ、蓮の花の形をしたユニークな博物館。日本のteamLab（チームラボ）による常設のデジタルアート展が人気。",
+          "badge": "デジタルアート",
+          "prompt_en": "ArtScience Museum Singapore lotus flower shaped building by Marina Bay Sands, teamLab digital art exhibition glowing lights inside",
+          "image": "素材/観光スポット/アートサイエンス・ミュージアム.webp",
+          "type": "museum"
+        },
+        {
+          "must": false,
+          "icon": "🍸",
+          "num": "MRN 08",
+          "name": "ラッフルズ・ホテル",
+          "desc": "シンガポール最高峰の最高級名門ホテル。宿泊者以外も、名物カクテル「シンガポール・スリング」発祥のロング・バーや中庭の散策が楽しめる。",
+          "badge": "最高級ホテル",
+          "prompt_en": "Raffles Hotel Singapore colonial white facade, Long Bar interior with Singapore Sling cocktail, tropical courtyard garden",
+          "image": "素材/観光スポット/ラッフルズ・ホテル.webp",
+          "type": "townscape"
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "MRN 09",
+          "name": "チジムス",
+          "desc": "元修道院と学校をリノベーションした、ゴシック様式の美しい教会建築。現在は敷地内に洗練されたレストランやバーが集まるおしゃれスポットになっている。",
+          "badge": "ゴシック建築",
+          "prompt_en": "CHIJMES Singapore Gothic chapel architecture renovated into stylish restaurants and bars, illuminated at night",
+          "image": "素材/観光スポット/チジムス.webp",
+          "type": "townscape"
+        },
+        {
+          "must": false,
+          "icon": "🧬",
+          "num": "MRN 10",
+          "name": "ヘリックス・ブリッジ",
+          "desc": "マリーナベイ・サンズとシンガポール・フライヤーを繋ぐ、人間のDNA構造を模したデザインの歩道橋。夜のライトアップとベイエリアの夜景が抜群。",
+          "badge": "DNA型の歩道橋",
+          "prompt_en": "The Helix Bridge Singapore DNA double helix structure pedestrian bridge illuminated at night, Marina Bay skyline backdrop",
+          "image": "素材/観光スポット/ヘリックス・ブリッジ.webp",
+          "type": "townscape"
+        },
+        {
+          "must": false,
+          "icon": "🍢",
+          "num": "MRN 11",
+          "name": "ラウパサ・フェスティバル・パビリオン",
+          "desc": "金融街のど真ん中にある、19世紀の鋳鉄製の建築が美しい大型ホーカー。夜になると裏手の道路が封鎖され、サテ（東南アジア風焼き鳥）の屋台街に変わる。",
+          "badge": "19世紀建築のホーカー",
+          "prompt_en": "Lau Pa Sat Singapore Victorian cast-iron hawker centre in financial district, satay street stalls at night on closed-off road",
+          "image": "素材/観光スポット/ラウパサ・フェスティバル・パビリオン.webp",
+          "type": "market"
         }
       ]
     },
@@ -1290,6 +1433,17 @@
           "prompt_en": "Sri Mariamman Temple Singapore colorful gopuram tower covered in Hindu deity sculptures, oldest Hindu temple in Chinatown",
           "image": "素材/観光スポット/スリ・マリアマン寺院.webp",
           "type": "religious"
+        },
+        {
+          "must": false,
+          "icon": "🌃",
+          "num": "CHN 04",
+          "name": "クラーク・キー",
+          "desc": "シンガポール川沿いに広がる、夜遊び・ナイトライフの中心地。歴史的な倉庫街がカラフルな飲食店街に生まれ変わり、リバークルーズの拠点にもなっている。",
+          "badge": "ナイトライフ",
+          "prompt_en": "Clarke Quay Singapore riverside nightlife district, colorful restored warehouses with restaurants and bars, boats on river at night",
+          "image": "素材/観光スポット/クラーク・キー.webp",
+          "type": "activity"
         }
       ]
     },
@@ -1402,6 +1556,28 @@
           "prompt_en": "Siloso Beach Sentosa Singapore palm trees and white sand, beach bars, people relaxing, sunset golden light",
           "image": "素材/観光スポット/シロソ・ビーチ.webp",
           "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🌀",
+          "num": "SEN 04",
+          "name": "スカイヘリックス・セントーサ",
+          "desc": "セントーサ島にできた新名所。足がぶら下がった状態で地上79mまで回転しながら上昇する、オープンエアの展望アトラクション。",
+          "badge": "回転式展望タワー",
+          "prompt_en": "SkyHelix Sentosa open-air rotating observation tower, riders with dangling legs ascending 79 meters, panoramic island view",
+          "image": "素材/観光スポット/スカイヘリックス・セントーサ.webp",
+          "type": "activity"
+        },
+        {
+          "must": false,
+          "icon": "🚡",
+          "num": "SEN 05",
+          "name": "マウント・フェーバー",
+          "desc": "セントーサ島へ渡るケーブルカーの始発駅がある山頂。シンガポールの街並みや港を一望でき、「幸福の鐘」がある隠れたデートスポット。",
+          "badge": "隠れた絶景ポイント",
+          "prompt_en": "Mount Faber Peak Singapore cable car station, panoramic view over city skyline and harbor, sunset, hidden date spot",
+          "image": "素材/観光スポット/マウント・フェーバー.webp",
+          "type": "townscape"
         }
       ]
     },
@@ -1468,6 +1644,69 @@
           "badge": "空港の絶景",
           "prompt_en": "Jewel Changi Airport Rain Vortex giant indoor waterfall surrounded by terraced forest, glass dome ceiling, train passing through",
           "image": "素材/観光スポット/ジュエル・チャンギ・エアポート.webp",
+          "type": "townscape"
+        },
+        {
+          "must": true,
+          "icon": "🌺",
+          "num": "ORC 05",
+          "name": "シンガポール植物園",
+          "desc": "シンガポール唯一の世界文化遺産で、160年以上の歴史を誇る植物園。有料エリアの「ナショナル・オーキッド・ガーデン」は国賓も訪れる美しさ。",
+          "badge": "世界遺産",
+          "prompt_en": "Singapore Botanic Gardens UNESCO World Heritage site, lush tropical greenery, National Orchid Garden with colorful orchids in bloom",
+          "image": "素材/観光スポット/シンガポール植物園.webp",
+          "type": "heritage"
+        },
+        {
+          "must": false,
+          "icon": "🐼",
+          "num": "ORC 06",
+          "name": "リバーワンダーズ",
+          "desc": "動物園・ナイトサファリと同じ敷地内にある、世界有数の大河をテーマにした川の動物園。ジャイアントパンダの観賞や、園内を巡るボートライドが楽しめる。",
+          "badge": "パンダ・リバー動物園",
+          "prompt_en": "River Wonders Singapore river safari zoo, giant panda enclosure, boat ride through Amazon-themed river habitat",
+          "image": "素材/観光スポット/リバーワンダーズ.webp",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🍦",
+          "num": "ORC 07",
+          "name": "アイスクリーム博物館",
+          "desc": "女子旅やSNS映えを狙うユーザーに人気の、ピンク一色で統一された体験型ミュージアム。館内のアイスクリームは食べ放題。",
+          "badge": "SNS映え・食べ放題",
+          "prompt_en": "Museum of Ice Cream Singapore all-pink Instagram-worthy interactive exhibits, giant sprinkle pool, unlimited ice cream tasting",
+          "image": "素材/観光スポット/アイスクリーム博物館.webp",
+          "type": "museum"
+        }
+      ]
+    },
+    {
+      "city_id": "katong",
+      "city_name": "カトン",
+      "city_image": "",
+      "city_prompt": "Katong Singapore Peranakan pastel shophouses street, colorful heritage neighborhood",
+      "city_desc": "中華とマレーの文化が融合したプラナカン文化の色鮮やかな街並みが残る、写真映えの下町エリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "MRTパヤレバ駅・ダコタ駅から徒歩"
+        },
+        {
+          "label": "おすすめ時間帯",
+          "value": "午前中（順光で写真映え）"
+        }
+      ],
+      "spots": [
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "KAT 01",
+          "name": "カトン地区／クーン・セン・ロード",
+          "desc": "中華とマレーの文化が融合した「プラナカン文化」の色鮮やかなパステルカラーのショップハウスが並ぶ、写真映えの聖地。",
+          "badge": "パステルカラーの街並み",
+          "prompt_en": "Koon Seng Road Katong Singapore pastel colored Peranakan shophouses with intricate tile work, colorful heritage street",
+          "image": "素材/観光スポット/カトン地区／クーン・セン・ロード.webp",
           "type": "townscape"
         }
       ]
