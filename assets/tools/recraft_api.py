@@ -17,6 +17,7 @@ STYLE_IDS = {
     "style_spot3": "0aff9d28-5e11-41c0-bd52-61ccd8449963",  # 観光スポット用スタイル v3
     "style_spot4": "3765cf6e-0cf9-49ed-8b44-9200c2f68289",  # 観光スポット用スタイル v4
     "style_spot5": "0fa21982-70a8-4857-b62f-093dac9c7771",  # 観光スポット用スタイル v5
+    "style_food_0710": "568daa6a-9631-44e7-a615-ce547146ae52",  # グルメイラスト用スタイル (2026-07-10追加)
     # watercolor20b は style_id なし（プロンプト強化で代替）
 }
 
@@ -33,6 +34,7 @@ BASE_MODELS = {
     "style_spot3":  "recraftv3",    # 観光スポット用スタイル v3: recraftv3 ベース
     "style_spot4":  "recraftv3",    # 観光スポット用スタイル v4: recraftv3 ベース
     "style_spot5":  "recraftv3",    # 観光スポット用スタイル v5: recraftv3 ベース
+    "style_food_0710": "recraftv2",  # グルメイラスト用スタイル (2026-07-10追加): recraftv2 ベース
 }
 
 # モデルキーごとにプロンプト先頭に自動付与するプレフィックス

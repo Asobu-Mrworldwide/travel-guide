@@ -747,12 +747,15 @@ with tab2:
                     "recraft20b       22cr ≈ ¥3.5/枚  （水彩）",
                     "recraftv3        40cr ≈ ¥6.4/枚  （水彩）",
                     "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
+                    "style_food_0710  未計測cr  （グルメ用新スタイル・2026-07-10追加）",
                 ],
                 horizontal=False,
                 key=f"gen_model_{item_key}",
             )
             if "watercolor20b" in model_val:
                 model_key_r = "watercolor20b"
+            elif "style_food_0710" in model_val:
+                model_key_r = "style_food_0710"
             elif "recraftv3" in model_val:
                 model_key_r = "recraftv3"
             else:
