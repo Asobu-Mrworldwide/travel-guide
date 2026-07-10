@@ -349,7 +349,7 @@ const COUNTRIES = [
   },
   {
     name:'ベトナム', nameEn:'Vietnam', flag:'🇻🇳',
-    catch:'絶品グルメ・世界遺産・バイクの喧騒が魅力の細長い国',
+    catch:'赤い提灯が石畳の運河に揺れるホイアンの夕暮れ、バイクの喧騒とフォーの湯気が旧市街の路地に漂う',
     region:'東南アジア', flight:'約5〜6時間', budget:['budget1'],
     bestMonths:[11,0,1,2,3,4], bestLabel:'12〜5月',
     tags:['ビーチ','世界遺産','グルメ','自然','歴史'],
@@ -358,7 +358,7 @@ const COUNTRIES = [
   },
   {
     name:'バリ島（インドネシア）', nameEn:'Bali', flag:'🇮🇩',
-    catch:'神々の島。棚田・ヒンドゥー寺院・波が揃うリゾート',
+    catch:'朝もやに包まれた棚田の緑がうねる丘に、女性たちが毎朝手向けるチャナンサリの花が静かに揺れる',
     region:'東南アジア', flight:'約7〜8時間', budget:['budget1','budget2'],
     bestMonths:[3,4,5,6,7,8,9], bestLabel:'4〜10月',
     tags:['ビーチ','自然','リゾート','アウトドア'],
@@ -367,7 +367,7 @@ const COUNTRIES = [
   },
   {
     name:'イタリア', nameEn:'Italy', flag:'🇮🇹',
-    catch:'芸術・世界遺産・美食の宝庫。一生に一度は訪れたい国',
+    catch:'石畳に朝市の売り声が響き、教会の鐘の音とジェラートの甘さが幾世紀も時を重ねた広場に溶け合う',
     region:'ヨーロッパ', flight:'約13時間', budget:['budget2','budget3'],
     bestMonths:[3,4,5,8,9], bestLabel:'4〜6月・9〜10月',
     tags:['世界遺産','グルメ','都市','歴史'],
@@ -376,7 +376,7 @@ const COUNTRIES = [
   },
   {
     name:'フランス', nameEn:'France', flag:'🇫🇷',
-    catch:'エッフェル塔・ワイン・モード。旅のロマンはここにある',
+    catch:'セーヌ川沿いのカフェに焼きたてのパンの香りが漂い、石畳をヒールの音が鳴らしてパリの朝を通り過ぎる',
     region:'ヨーロッパ', flight:'約14時間', budget:['budget2','budget3'],
     bestMonths:[3,4,5,6,7,8], bestLabel:'4〜9月',
     tags:['世界遺産','グルメ','都市','歴史'],
@@ -385,7 +385,7 @@ const COUNTRIES = [
   },
   {
     name:'モルディブ', nameEn:'Maldives', flag:'🇲🇻',
-    catch:'世界一の透明度。水上コテージと珊瑚礁の楽園',
+    catch:'透き通るラグーンにぽつんと浮かぶ水上コテージの木陰で、ハンモックが穏やかな波音に揺れ続ける',
     region:'南アジア', flight:'約10時間', budget:['budget3'],
     bestMonths:[10,11,0,1,2,3], bestLabel:'11〜4月',
     tags:['ビーチ','リゾート'],
@@ -394,7 +394,7 @@ const COUNTRIES = [
   },
   {
     name:'オーストラリア', nameEn:'Australia', flag:'🇦🇺',
-    catch:'大自然・動物・都市が全部ある。南半球の大陸',
+    catch:'赤土の大地にユーカリの匂いが立ちのぼり、コアラの寝息とカンガルーの足音が広大な大陸に響き渡る',
     region:'オセアニア', flight:'約9〜10時間', budget:['budget2','budget3'],
     bestMonths:[8,9,10,11,0,1], bestLabel:'9〜2月（南半球夏）',
     tags:['自然','ビーチ','都市','アウトドア'],
@@ -403,11 +403,74 @@ const COUNTRIES = [
   },
   {
     name:'ハワイ（アメリカ）', nameEn:'Hawaii', flag:'🇺🇸',
-    catch:'常夏のビーチ・ロコモコ・火山。日本人に最も愛されるリゾート',
+    catch:'黒い火山灰の岩肌にプルメリアの花の香りが漂い、ウクレレの音色が寄せては返す波音に溶けていく',
     region:'北アメリカ', flight:'約7〜8時間', budget:['budget2','budget3'],
     bestMonths:[3,4,5,6,7,8,9,10], bestLabel:'4〜11月',
     tags:['ビーチ','リゾート','自然','アウトドア'],
     gradient:'linear-gradient(135deg,#003580 0%,#e8490f 100%)',
+    url:'#', available:false
+  },
+  {
+    name:'フィリピン', nameEn:'Philippines', flag:'🇵🇭',
+    catch:'エメラルド色の海に浮かぶバンカーボートの影、白い砂浜にヤシの葉音が南国の風とともに重なる',
+    region:'東南アジア', flight:'約4〜5時間', budget:['budget1','budget2'],
+    bestMonths:[11,0,1,2,3,4], bestLabel:'12〜5月',
+    tags:['ビーチ','リゾート','自然','アウトドア'],
+    gradient:'linear-gradient(135deg,#0038a8 0%,#ce1126 100%)',
+    url:'#', available:false
+  },
+  {
+    name:'カンボジア', nameEn:'Cambodia', flag:'🇰🇭',
+    catch:'朝もやに包まれたアンコールワットの石塔に、鳥のさえずりと僧侶たちの祈りの鐘の音が密林に満ちる',
+    region:'東南アジア', flight:'約7〜8時間（乗継）', budget:['budget1'],
+    bestMonths:[10,11,0,1,2], bestLabel:'11〜3月',
+    tags:['世界遺産','歴史','自然'],
+    gradient:'linear-gradient(135deg,#032ea1 0%,#e00025 100%)',
+    url:'#', available:false
+  },
+  {
+    name:'ラオス', nameEn:'Laos', flag:'🇱🇦',
+    catch:'托鉢僧の静かな列と川面にたつ朝もやが、メコン河畔にたたずむ古都ルアンパバーンの朝をそっと包み込む',
+    region:'東南アジア', flight:'約8〜9時間（乗継）', budget:['budget1'],
+    bestMonths:[10,11,0,1], bestLabel:'11〜2月',
+    tags:['世界遺産','自然','歴史'],
+    gradient:'linear-gradient(135deg,#ce1126 0%,#002868 100%)',
+    url:'#', available:false
+  },
+  {
+    name:'ミャンマー', nameEn:'Myanmar', flag:'🇲🇲',
+    catch:'黄金の仏塔が夕焼けに染まるバガンの広大な平原に、気球の影と数千の寺院の鐘の音が重なり合う',
+    region:'東南アジア', flight:'約8〜9時間（乗継）', budget:['budget1'],
+    bestMonths:[10,11,0,1], bestLabel:'11〜2月',
+    tags:['世界遺産','歴史','自然'],
+    gradient:'linear-gradient(135deg,#fecb00 0%,#ea2839 100%)',
+    url:'#', available:false
+  },
+  {
+    name:'スペイン', nameEn:'Spain', flag:'🇪🇸',
+    catch:'灼熱の太陽の下、真っ赤な衣装のフラメンコの足音とギターの旋律がタパスバルの喧騒とともに沸き立つ',
+    region:'ヨーロッパ', flight:'約14〜15時間（乗継）', budget:['budget2','budget3'],
+    bestMonths:[3,4,5,8,9], bestLabel:'4〜6月・9〜10月',
+    tags:['世界遺産','グルメ','都市','歴史'],
+    gradient:'linear-gradient(135deg,#aa151b 0%,#f1bf00 100%)',
+    url:'#', available:false
+  },
+  {
+    name:'スイス', nameEn:'Switzerland', flag:'🇨🇭',
+    catch:'雪をかぶったアルプスの稜線に、氷河特急の汽笛と牛の首につけた鈴の音が静かな谷間にこだまする',
+    region:'ヨーロッパ', flight:'約13〜14時間', budget:['budget3'],
+    bestMonths:[5,6,7,8], bestLabel:'6〜9月',
+    tags:['自然','アウトドア','都市'],
+    gradient:'linear-gradient(135deg,#d52b1e 0%,#ffffff 100%)',
+    url:'#', available:false
+  },
+  {
+    name:'チェコ', nameEn:'Czech Republic', flag:'🇨🇿',
+    catch:'赤茶けた屋根が連なるプラハの旧市街に、教会の鐘の音とビールジョッキの乾杯の音が夕闇に弾ける',
+    region:'ヨーロッパ', flight:'約13〜14時間（乗継）', budget:['budget1','budget2'],
+    bestMonths:[3,4,5,8,9], bestLabel:'4〜6月・9〜10月',
+    tags:['世界遺産','都市','歴史','グルメ'],
+    gradient:'linear-gradient(135deg,#11457e 0%,#d7141a 100%)',
     url:'#', available:false
   },
 ];
