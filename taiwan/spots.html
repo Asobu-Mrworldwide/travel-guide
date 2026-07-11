@@ -745,7 +745,39 @@ function showSpot(numId) {
   if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
   var popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+  var popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+/* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
+var FOOD_DATA = {"No.1": {"num": "No.1", "name": "小籠包", "desc": "薄皮の中から熱々のスープがあふれる台湾名物。レンゲに乗せて皮を破り、スープを味わってから生姜と黒酢で。名店から街の食堂までレベルが高い。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/小籠包"}, "No.2": {"num": "No.2", "name": "牛肉麺", "desc": "柔らかく煮込んだ牛肉の塊がゴロッと乗った麺料理。醤油ベースの紅焼と、あっさり塩味の清燉の2系統がある。専門店がコンテストを競うほどの国民食。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/牛肉麺"}, "No.3": {"num": "No.3", "name": "魯肉飯", "desc": "甘辛く煮込んだ豚バラそぼろをご飯にかけた台湾のソウルフード。1杯150円前後と安く、小サイズなので夜市はしごの合間にもちょうどいい。", "img": "", "wikiUrl": "https://en.wikipedia.org/wiki/Minced_pork_rice"}, "No.4": {"num": "No.4", "name": "胡椒餅", "desc": "黒胡椒を効かせた肉餡入りの焼きパン。窯の内側に貼り付けて焼くため外はカリカリ、中は肉汁たっぷり。饒河街夜市の入口の店は行列必至の名物。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/胡椒餅"}, "No.5": {"num": "No.5", "name": "葱抓餅", "desc": "ネギ入りの生地を鉄板でサクサクに焼き上げた台湾式ネギパンケーキ。卵・チーズ・バジルなどのトッピングを追加するのが定番の食べ方。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/葱油餅"}, "No.6": {"num": "No.6", "name": "臭豆腐", "desc": "発酵させた豆腐を揚げた、夜市に漂うあの匂いの正体。強烈な匂いに反して味は意外にもマイルドで、キャベツの甘酢漬けと一緒に食べるとクセになる人も多い。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/臭豆腐"}, "No.7": {"num": "No.7", "name": "鹽酥雞（台湾唐揚げ）", "desc": "一口大の鶏肉をカリッと揚げてバジルと一緒に袋に放り込んでくれる台湾式唐揚げ。五香粉の香りが独特で、ビールとの相性は反則級。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/イエンスージー"}, "No.8": {"num": "No.8", "name": "蚵仔煎（牡蠣オムレツ）", "desc": "小粒の牡蠣と卵、さつまいも粉の生地をもちっと焼き上げ、甘辛いソースをかけた夜市の看板メニュー。独特のもちもち食感が記憶に残る一皿。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/蚵仔煎"}, "No.9": {"num": "No.9", "name": "マンゴーかき氷", "desc": "完熟マンゴーを山盛りにした台湾かき氷の王様。ミルク味の氷を薄く削った「雪花冰」タイプはふわふわ食感で、日本のかき氷とは別物のおいしさ。", "img": "", "wikiUrl": "https://en.wikipedia.org/wiki/Baobing"}, "No.10": {"num": "No.10", "name": "豆花", "desc": "なめらかな豆腐プリンにシロップとトッピング（ピーナッツ・タピオカ・芋圓など）を合わせる伝統スイーツ。夏は氷入り、冬は温かい生姜シロップで。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/豆花"}, "No.11": {"num": "No.11", "name": "珍珠奶茶（タピオカミルクティー）", "desc": "世界を席巻したタピオカミルクティーの発祥は台中の茶藝館（ちゃげいかん）「春水堂」とされる。本場は甘さ・氷の量を細かく指定でき、もちもちのタピオカは別格。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/タピオカティー"}, "No.12": {"num": "No.12", "name": "鳳梨酥（パイナップルケーキ）", "desc": "バター香る生地でパイナップル餡を包んだ台湾土産の定番。ブランドごとに餡の酸味や生地の食感が違うので、食べ比べて好みの店を見つけるのも楽しい。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/鳳梨酥"}, "No.13": {"num": "No.13", "name": "鹹豆漿", "desc": "ゆるく固まった温かいおぼろ豆腐のような豆乳スープ。お酢の酸味とラー油、揚げパン（油条）との相性が抜群で、朝にしか出会えない台湾らしい味。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/豆乳"}, "No.14": {"num": "No.14", "name": "蛋餅", "desc": "モチモチした薄いクレープ生地で卵やチーズ、台湾ハムを巻いた定番の卵焼き。甘辛いタレで食べる台湾式外食朝ごはんの代表格。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/蛋餅"}, "No.15": {"num": "No.15", "name": "大腸包小腸", "desc": "もち米のソーセージ（大腸）に切れ目を入れ、ジューシーな台湾ソーセージ（小腸）を挟んだ「台湾式ホットドッグ」。夜市の行列名物のひとつ。", "img": "", "wikiUrl": ""}, "No.16": {"num": "No.16", "name": "麺線", "desc": "カツオ出汁の効いたとろみスープに、ソーメンのような細麺とモツ・牡蠣が入った台湾ならではの麺料理。夜市や屋台で気軽に一杯楽しめる。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/蚵仔麺線"}, "No.17": {"num": "No.17", "name": "地瓜球", "desc": "さつまいものペーストを揚げた、外はカリカリ・中は空洞でモチモチのボール状スナック。夜市の歩き食べに欠かせない定番おやつ。", "img": "", "wikiUrl": ""}, "No.18": {"num": "No.18", "name": "芋圓", "desc": "タロ芋やさつまいもから作ったモチモチのお団子で、九份の名物としても知られる。かき氷や豆花のトッピングにすると最高の組み合わせ。", "img": "", "wikiUrl": ""}, "No.19": {"num": "No.19", "name": "木瓜牛奶（パパイヤミルク）", "desc": "濃厚でフレッシュなパパイヤと牛乳をミックスしたジュース。タピオカミルクティーと並ぶ台湾スタンドドリンクの人気者で、マンゴーシーズン以外でも楽しめる。", "img": "", "wikiUrl": ""}};
+function showFood(numId) {
+  var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
+  if (!o) {
+    var card = document.querySelector('[data-food-num="' + numId + '"]');
+    if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
+    var imgEl = card.querySelector('.food-img');
+    var wikiBtn = card.querySelector('.wiki-link');
+    o = {
+      num:  (card.querySelector('.num') || {}).textContent || '',
+      name: (card.querySelector('.name') || {}).textContent || '',
+      desc: (card.querySelector('.desc') || {}).textContent || '',
+      img:  imgEl ? imgEl.src : '',
+      wikiUrl: wikiBtn ? wikiBtn.href : ''
+    };
+  }
+  document.getElementById('sp-pop-num').textContent  = o.num  || '';
+  document.getElementById('sp-pop-name').textContent = o.name || '';
+  document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  var popImg = document.getElementById('sp-pop-img');
+  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  var popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Wikipediaで見る →';
+  if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
@@ -845,6 +877,15 @@ var PAGE_INDEX = 1;
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);
+  }
+})();
+/* 分割ページモード: food.html 到達時に ?food= を反映 */
+(function() {
+  if (!document.getElementById('food-grid')) return;
+  const params = new URLSearchParams(location.search);
+  const food = params.get('food');
+  if (food) {
+    setTimeout(() => showFood(food), 100);
   }
 })();
 

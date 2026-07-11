@@ -601,7 +601,39 @@ function showSpot(numId) {
   if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
   var popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+  var popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+/* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
+var FOOD_DATA = {"No.1": {"num": "No.1", "name": "ラープ", "desc": "刻んだ肉にハーブ・炒り米粉・ライムを和えたラオスの国民食。もち米と一緒に手で食べるのが現地流で、豚・鶏・魚などバリエーションも豊富。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/ラープ"}, "No.2": {"num": "No.2", "name": "カオニャオ（もち米）", "desc": "竹編みの容器「ティップカオ」に入れて供されるラオスの主食。手で丸めて他の料理につけて食べるのが基本スタイルで、どの食卓にも欠かせない。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/カオニャオ"}, "No.3": {"num": "No.3", "name": "タムマークフン（青パパイヤサラダ）", "desc": "千切りにした青パパイヤを臼で叩いて作る酸味と辛みの効いたサラダ。タイのソムタムに似ているが、発酵魚醤「パデーク」を使うラオス流の濃厚な風味が特徴。", "img": "", "wikiUrl": "https://en.wikipedia.org/wiki/Tam_mak_hoong"}, "No.4": {"num": "No.4", "name": "サイウア（ラオス風ソーセージ）", "desc": "レモングラス・こぶみかんの葉・唐辛子をたっぷり刻み込んだ香り高い豚肉ソーセージ。炭火で焼き上げる香ばしい匂いがルアンパバーンの朝市に漂う。", "img": "", "wikiUrl": "https://en.wikipedia.org/wiki/Sai_oua"}, "No.5": {"num": "No.5", "name": "モックパー（魚のバナナの葉包み蒸し）", "desc": "白身魚にハーブとスパイスを混ぜてバナナの葉で包み、蒸し上げた優しい味わいの一品。開いた瞬間に立ち上る香りがごちそう感を演出する。", "img": "", "wikiUrl": "https://en.wikipedia.org/wiki/Mok_pa"}, "No.6": {"num": "No.6", "name": "カオピヤックセン（米麺スープ）", "desc": "もちもちの米麺を鶏だしスープで食べる、ラオスの朝食の定番。フライドガーリックと揚げパンを添えて食べるのが地元流で、優しい味に朝から癒される。", "img": "", "wikiUrl": "https://en.wikipedia.org/wiki/Khao_piak_sen"}, "No.7": {"num": "No.7", "name": "オーラム（ルアンパバーン風シチュー）", "desc": "水牛肉や野菜、苦味の効いた木の枝「サクアン」をじっくり煮込んだルアンパバーン発祥のシチュー。複雑で奥深い味わいがユネスコの無形文化遺産候補にもなった郷土料理。", "img": "", "wikiUrl": "https://en.wikipedia.org/wiki/Or_lam"}, "No.8": {"num": "No.8", "name": "ピンカイ（炭火焼き鳥）", "desc": "香草だれに漬け込んだ鶏肉を丸ごと炭火でじっくり焼き上げる屋台の定番。パリッとした皮とジューシーな肉汁がビアラオとの相性抜群。", "img": "", "wikiUrl": ""}, "No.9": {"num": "No.9", "name": "カオチー（フランスパンサンド）", "desc": "フランス統治時代の名残であるバゲットに、パテやハーブ、野菜を挟んだラオス風サンドイッチ。ルアンパバーンの朝市で焼きたてが並ぶ、朝食にぴったりの一品。", "img": "", "wikiUrl": "https://en.wikipedia.org/wiki/Khao_ji"}, "No.10": {"num": "No.10", "name": "ビアラオ", "desc": "ラオス発祥の国民的ビール。すっきりとした喉越しで、屋台では瓶1本100〜150円ほどと格安。ラープやピンカイとの相性は言うまでもない。", "img": "", "wikiUrl": "https://ja.wikipedia.org/wiki/ビアラオ"}, "No.11": {"num": "No.11", "name": "ラオコーヒー", "desc": "南部ボラベン高原で栽培される良質なアラビカ豆を使ったコーヒー。練乳を加えた濃厚な甘さが特徴で、屋台や食堂の朝の風物詩。", "img": "", "wikiUrl": ""}, "No.12": {"num": "No.12", "name": "カオラム（竹筒もち米）", "desc": "もち米とココナッツミルク、黒豆を竹筒に詰めて炭火でじっくり焼き上げる伝統菓子。竹の香りが移った素朴な甘さが道端の屋台でも人気。", "img": "", "wikiUrl": ""}};
+function showFood(numId) {
+  var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
+  if (!o) {
+    var card = document.querySelector('[data-food-num="' + numId + '"]');
+    if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
+    var imgEl = card.querySelector('.food-img');
+    var wikiBtn = card.querySelector('.wiki-link');
+    o = {
+      num:  (card.querySelector('.num') || {}).textContent || '',
+      name: (card.querySelector('.name') || {}).textContent || '',
+      desc: (card.querySelector('.desc') || {}).textContent || '',
+      img:  imgEl ? imgEl.src : '',
+      wikiUrl: wikiBtn ? wikiBtn.href : ''
+    };
+  }
+  document.getElementById('sp-pop-num').textContent  = o.num  || '';
+  document.getElementById('sp-pop-name').textContent = o.name || '';
+  document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  var popImg = document.getElementById('sp-pop-img');
+  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  var popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Wikipediaで見る →';
+  if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
@@ -701,6 +733,15 @@ var PAGE_INDEX = 3;
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);
+  }
+})();
+/* 分割ページモード: food.html 到達時に ?food= を反映 */
+(function() {
+  if (!document.getElementById('food-grid')) return;
+  const params = new URLSearchParams(location.search);
+  const food = params.get('food');
+  if (food) {
+    setTimeout(() => showFood(food), 100);
   }
 })();
 

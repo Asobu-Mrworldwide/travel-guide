@@ -698,7 +698,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     {% for item in food_items %}
-    <div class="item-card has-img {% if item.must %}must{% endif %}" data-ftype="{{item.type}}" data-fcity="{{item.city}}">
+    <div class="item-card has-img {% if item.must %}must{% endif %}" data-ftype="{{item.type}}" data-fcity="{{item.city}}" data-food-num="{{item.num}}">
       <div class="num">{{item.num}}</div>
       <div class="name-row"><div class="name">{% if item.name_ruby %}{{item.name_ruby}}{% else %}{{item.name}}{% endif %}</div><span class="badge">{{item.badge}}</span></div>
       <div class="desc">{{item.desc}}</div>
@@ -977,7 +977,34 @@ function showSpot(numId) {
   if (imgUrl) { popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
   const popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Googleマップで開く →';
   if (mapUrl && mapUrl !== 'javascript:void(0)') { popMap.href = mapUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+
+  const popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function showFood(numId) {
+  const card = document.querySelector('[data-food-num="' + numId + '"]');
+  if (!card) return;
+  const name = card.querySelector('.name')?.textContent || '';
+  const num  = card.querySelector('.num')?.textContent || '';
+  const desc = card.querySelector('.desc')?.textContent || '';
+  const imgEl = card.querySelector('.food-img');
+  const imgUrl = imgEl ? imgEl.src : '';
+  const wikiBtn = card.querySelector('.wiki-link');
+  const wikiUrl = wikiBtn ? wikiBtn.href : '';
+
+  document.getElementById('sp-pop-num').textContent = num;
+  document.getElementById('sp-pop-name').textContent = name;
+  document.getElementById('sp-pop-desc').textContent = desc;
+  const popImg = document.getElementById('sp-pop-img');
+  if (imgUrl) { popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  const popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Wikipediaで見る →';
+  if (wikiUrl) { popMap.href = wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
 
   const popup = document.getElementById('sp-popup');
@@ -1010,7 +1037,39 @@ function showSpot(numId) {
   if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
   var popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+  var popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+/* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
+var FOOD_DATA = {{food_data_js}};
+function showFood(numId) {
+  var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
+  if (!o) {
+    var card = document.querySelector('[data-food-num="' + numId + '"]');
+    if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
+    var imgEl = card.querySelector('.food-img');
+    var wikiBtn = card.querySelector('.wiki-link');
+    o = {
+      num:  (card.querySelector('.num') || {}).textContent || '',
+      name: (card.querySelector('.name') || {}).textContent || '',
+      desc: (card.querySelector('.desc') || {}).textContent || '',
+      img:  imgEl ? imgEl.src : '',
+      wikiUrl: wikiBtn ? wikiBtn.href : ''
+    };
+  }
+  document.getElementById('sp-pop-num').textContent  = o.num  || '';
+  document.getElementById('sp-pop-name').textContent = o.name || '';
+  document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  var popImg = document.getElementById('sp-pop-img');
+  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  var popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Wikipediaで見る →';
+  if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
@@ -1155,6 +1214,15 @@ var PAGE_INDEX = {{page_index}};
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);
+  }
+})();
+/* 分割ページモード: food.html 到達時に ?food= を反映 */
+(function() {
+  if (!document.getElementById('food-grid')) return;
+  const params = new URLSearchParams(location.search);
+  const food = params.get('food');
+  if (food) {
+    setTimeout(() => showFood(food), 100);
   }
 })();
 {% endif %}

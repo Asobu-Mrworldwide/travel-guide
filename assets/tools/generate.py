@@ -231,6 +231,23 @@ def build_spot_data_js(data):
     return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
 
 
+def build_food_data_js(data):
+    """food_items から num→{name,desc,img,wikiUrl} の JS オブジェクトリテラルを作る"""
+    obj = {}
+    for item in data.get('food_items', []):
+        num = item.get('num', '')
+        if not num:
+            continue
+        obj[num] = {
+            'num': num,
+            'name': item.get('name', ''),
+            'desc': item.get('desc', ''),
+            'img': item.get('image', '') or '',
+            'wikiUrl': item.get('wiki_url', '') or '',
+        }
+    return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
+
+
 # ──────────────────────────────────────────
 # 国一覧 (index.html) 自動更新
 # ──────────────────────────────────────────
@@ -455,12 +472,14 @@ def generate(country_id):
         base_title    = data.get('page_title', '')
         name          = data.get('name', '')
         spot_data_js  = build_spot_data_js(data)
+        food_data_js  = build_food_data_js(data)
         page_order_js = json.dumps([p[1] for p in pages])
         for idx, (slug, outfile, label) in enumerate(pages):
             ctx = dict(data)
             ctx['multipage']       = True
             ctx['singlepage']      = False
             ctx['spot_data_js']    = spot_data_js
+            ctx['food_data_js']    = food_data_js
             ctx['page_order_js']   = page_order_js
             ctx['page_index']      = idx
             ctx['show']            = {s: (s == slug) for s in SECTIONS}
