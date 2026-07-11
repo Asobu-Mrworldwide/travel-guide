@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZNX5SY0GSK');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ラオス旅行ガイド</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="../assets/affiliates-data.js" defer></script>
+<script src="../assets/affiliates.js" defer></script>
+<style>
+a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
+a.spot-link:hover{opacity:0.75}
+/* special noteブロック */
+blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
+blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
+blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
+blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
+blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal;word-break:break-all}
+
+/* イラスト下の説明文 */
+.desc-intro{max-width:740px;margin:20px 0 0 250px;padding:0 24px;font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:0}
+@media(max-width:1020px){.desc-intro{margin:16px auto 0;max-width:100%;padding:0 16px}}
+/* HEADER */
+.hero{display:flex;align-items:stretch;max-width:740px;margin:16px 0 0 250px}
+.hero-card{width:35%;background:var(--green);color:#fff;padding:20px 18px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.hero-img{width:65%;display:block;object-fit:cover;flex-shrink:0}
+@media(max-width:1020px){.hero{margin:0 auto;max-width:100%}}
+@media(max-width:700px){
+  .hero{flex-direction:column;width:100%;max-width:100%}
+  .hero-card{width:100%;padding:14px 16px;flex-direction:row;flex-wrap:wrap;gap:6px;align-items:center}
+  .hero-badge{font-size:0.65em}
+  .hero-title{font-size:1em;width:100%}
+  .hero-sub{font-size:0.68em;width:100%}
+  .hero-img{width:100%;height:auto;flex-shrink:unset}
+}
+.hero-badge{font-size:0.68em;font-weight:700;background:rgba(0,0,0,0.25);padding:3px 9px;border-radius:4px;display:inline-block;width:fit-content;letter-spacing:0.04em}
+.hero-title{font-size:1.25em;font-weight:900;line-height:1.4;color:#fff}
+.hero-sub{font-size:0.72em;color:rgba(255,255,255,0.7)}
+.hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
+
+/* フードカード画像 */
+.food-img{width:100%;height:auto;max-height:220px;object-fit:contain;display:block;margin-top:6px}
+#food-grid .item-card.has-img{padding-bottom:36px !important}
+#food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
+
+/* 観光スポットカード画像・絵文字 */
+.spot-img{display:none}
+.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0}
+.spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
+.spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
+.spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
+.spot-img-placeholder{background:#f0f0f0;background-image:repeating-linear-gradient(45deg,#e8e8e8 0,#e8e8e8 1px,transparent 0,transparent 50%);background-size:8px 8px}
+#spots-grid .item-card.has-spot-img{padding-bottom:0 !important}
+#spots-grid .item-card.has-spot-img .desc{flex:1}
+
+/* クイックスペックカード（基本情報タブ） */
+#basic .qs-card{border:1px solid #e0e0e0;box-shadow:none}
+
+/* セクション間隔（全タブ共通） */
+#basic h2~h2,#spots h2~h2,#food h2~h2,#course h2~h2,#season h2~h2,
+#budget h2~h2,#practical h2~h2,#manner h2~h2,#phrases h2~h2,#transport h2~h2{margin-top:36px}
+#basic .qs-row{margin-top:28px;margin-bottom:0}
+.qs-section-title{font-size:18px;font-weight:700;color:var(--text);margin:6px 0 6px;letter-spacing:0.04em}
+.cl-region{font-weight:700}
+.sp-points-wrap{background:#fff;border:1px solid #e0e0e0}
+.sp-point{display:flex;align-items:center;gap:16px;padding:16px;border-bottom:1px solid #e0e0e0}
+.sp-point:last-child{border-bottom:none}
+.sp-point-body{flex:1;min-width:0}
+.sp-point-title{font-size:0.95em;font-weight:700;margin-bottom:8px;line-height:1.5}
+.sp-point-text{font-size:0.82em;color:#444;line-height:1.8}
+.sp-point-img{width:120px;height:90px;object-fit:cover;flex-shrink:0;display:block}
+@media(max-width:700px){.sp-point{flex-direction:column}.sp-point-img{width:100%;height:auto;aspect-ratio:16/9}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a></div>
+  <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
+</header>
+
+
+<nav>
+  <a href="index.html" class="active">基本情報</a>
+  <a href="spots.html" class="">観光スポット</a>
+  <a href="food.html" class="">グルメ</a>
+  <a href="course.html" class="">モデルコース</a>
+  <a href="budget.html" class="">予算・費用</a>
+  <a href="practical.html" class="">旅の準備</a>
+  <a href="phrases.html" class="">フレーズ</a>
+  <button onclick="window.open('../common/checklist.html?from=laos','_blank')">持ち物リスト</button>
+</nav>
+
+
+
+
+<div class="hero">
+  <div class="hero-card">
+    <span class="hero-badge">旅行・観光の基本情報</span>
+    <div class="hero-title">ラオス人民民主共和国の旅行ガイド</div>
+    <div class="hero-sub">World Mappy</div>
+  </div>
+  <img src="素材/ヒーロー.webp" alt="ルアンパバーンの托鉢とメコン川の風景" class="hero-img">
+  
+</div>
+
+
+
+<script>window.initMap = window.initMap || function(){};</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnUQ265LHi61AUoh1atFaQAzVs44Djc6E&callback=initMap&language=ja&libraries=marker&v=beta" async defer></script>
+
+
+<div class="container" style="">
+<div id="slides-wrap">
+
+<!-- 基本情報 -->
+<section id="basic" class="active">
+
+  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:16px;padding:0 4px">東南アジアで唯一の内陸国。ゆったりと流れる<strong>メコン川・托鉢僧の列・金色の仏塔</strong>が今も日常に溶け込む「微笑みの国」です。フランス統治時代の面影が残るルアンパバーンの旧市街は街ごと世界遺産、山岳地帯にはカルスト地形の絶景も広がります。バンコクやハノイ経由で約9〜13時間、時差はわずか2時間。「東南アジア最後の秘境」と呼ばれる、時間がゆっくり流れる国です。</div>
+  <h2>ラオス人民民主共和国ってどんなところ？</h2>
+  <div class="s-card">
+
+    
+    <div class="qs-section-title" style="margin-top:-12px">観光のポイント</div>
+    <div class="sp-points-wrap">
+    
+    <div class="sp-point">
+      <div class="sp-point-body">
+        <div class="sp-point-title">托鉢は「見学」ではなく「見守る」もの</div>
+        <div class="sp-point-text">ルアンパバーンの托鉢は観光アトラクションではなく、今も続く厳粛な宗教行事。フラッシュ撮影や僧侶の目の前での撮影、進路を塞ぐ行為は避け、少し離れた場所から静かに見守るのが敬意ある関わり方だ。</div>
+      </div>
+      <img src="素材/観光スポット/托鉢（タンバート）.webp" alt="托鉢は「見学」ではなく「見守る」もの" class="sp-point-img">
+    </div>
+    
+    <div class="sp-point">
+      <div class="sp-point-body">
+        <div class="sp-point-title">クアンシーの滝は「午前中」が狙い目</div>
+        <div class="sp-point-text">人気スポットのため午後は観光客で混み合う。開園直後の午前中に訪れれば、澄んだエメラルドグリーンの水面をゆったり独り占めできる可能性が高い。</div>
+      </div>
+      <img src="素材/観光スポット/クアンシーの滝.webp" alt="クアンシーの滝は「午前中」が狙い目" class="sp-point-img">
+    </div>
+    
+    <div class="sp-point">
+      <div class="sp-point-body">
+        <div class="sp-point-title">石壺の正体は今も解明されていない</div>
+        <div class="sp-point-text">プレーン・オブ・ジャーズの石壺群は2,000年以上前のものとされるが、埋葬用なのか酒の醸造用なのか、目的も作った民族もいまだ謎に包まれている。ガイド同伴での見学が推奨される、不発弾処理済みの遊歩道のみを歩くこと。</div>
+      </div>
+      <img src="素材/観光スポット/プレーン・オブ・ジャーズ サイト1.webp" alt="石壺の正体は今も解明されていない" class="sp-point-img">
+    </div>
+    
+    <div style="padding:10px 16px;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button><button class="see-more" style="margin:0" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button></div>
+    </div>
+    
+
+    <!-- クイックスペック -->
+    <hr style="border:none;border-top:1px solid #b8b8b8;margin:16px 0">
+    <div class="qs-row" style="margin-top:0">
+      <div class="qs-card"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 128 128">
+	<path d="M0 0h128v128H0z" fill="none" />
+	<path fill="#0f6da0" d="m84.7 42.3l-40.3-5.5c-1.4-.2-2.9-.1-4.3.2c-2.2.5-2.6 3.5-.6 4.6l19.9 10.1z" />
+	<circle cx="73.4" cy="64.8" r="3.5" fill="#78a3ad" />
+	<circle cx="110.6" cy="42" r="3.5" fill="#78a3ad" />
+	<path fill="#0f6da0" d="M113.4 24.4s.2 4.1-7 6.2c-1.1.4.2 4.3 1.2 4.3c1.2 0 14.8-4.7 14.6-9.4c-3-1.3-8.8-1.1-8.8-1.1" />
+	<path fill="#757f3f" d="M128 117.2c0 1.5-1.2 2.7-2.7 2.7H2.6c-1.5 0-2.7-1.2-2.7-2.7s1.2-2.7 2.7-2.7h122.7c1.5 0 2.7 1.2 2.7 2.7" />
+	<path fill="#48c0e5" d="M12.9 64c-.8-.7-.6-2.1.4-2.6c13-6.1 84-39.1 91.1-42.5c7.8-3.7 13.6.7 15.6 2.4s4.3.5 5.7 2.6c1.4 2 1 7.6-14.7 14.8c-16.9 7.8-51.8 23.8-58.9 26.8c-6.8 2.9-27.8 8.2-39.2-1.5" />
+	<path fill="#0f6da0" d="M87 49.4c.3-.3.4-.8.2-1.2c-.7-1.3-2.8-4-7.7-4c-5.1 0-18.2 7.8-24 11.1c-.9.5-.9 1.7 0 2.3c1.3.7 1.7 2.4 1 3.7L44.1 82.9c-.7 1.3.3 2.9 1.8 2.9h1.3c2.8 0 5.5-1.2 7.4-3.2zM24.6 62.6c-2.3 1.2-5.1 2.6-6.5 3.4c-.3.2-.6.5-.8.9l-1.8 6.7c-.4 1.8 1.9 2.9 3.1 1.5l8.4-11c.9-1.3-.4-2.6-2.4-1.5m4.1-7.7c-.3-1.4-6.5-.9-11.5-3.1c-6.6-2.9-10.3-4.9-13.5-6.4c-1.7-.8-3.3.8-2.1 2.5l11 15.7c.3.4.9.5 1.3.3c0 0 9.9-5.2 14.8-9m92.2-33.1s-1.9 2.7-6.5 5.1c-1.1.6-2.5.1-3-1c-.4-1-.1-2.1.8-2.7c.7-.5 1.6-1.1 2.2-1.5c1.4-1.2 2.6-2.6 2.6-2.6s1.6 1 3.9 2.7" />
+</svg></div><div><div class="qs-lbl">直行便</div><div class="qs-val">約9〜13時間（乗継）</div></div></div>
+      <div class="qs-card"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 128 128"><path d="M0 0h128v128H0z" fill="none"/><path fill="#2f2f2f" d="M102.47 54.71h18.58v18.57h-18.58z"/><defs><path id="SVGCfTJ3dWr" d="M35.1.39h56.94v127.23H35.1z"/></defs><use fill="#855c52" href="#SVGCfTJ3dWr"/><circle cx="63.58" cy="64" r="48.18" fill="#fff"/><path fill="#2f2f2f" d="M63.58 114.62c-27.92 0-50.62-22.71-50.62-50.62s22.71-50.62 50.62-50.62S114.2 36.09 114.2 64s-22.71 50.62-50.62 50.62m0-96.36c-25.22 0-45.74 20.52-45.74 45.74s20.52 45.74 45.74 45.74S109.32 89.22 109.32 64c-.01-25.22-20.52-45.74-45.74-45.74"/><g fill="#2f2f2f"><circle cx="63.58" cy="64" r="7.75"/><path d="M60.55 61.473L97.644 40.24l3.696 6.457l-37.094 21.234z"/><path d="m38.19 53.58l3.72-6.44l24.71 14.31l-3.72 6.44z"/></g><path fill="#fff" d="M66.5 64a2.92 2.92 0 1 1-5.84 0c0-1.6 1.31-2.91 2.92-2.91S66.5 62.4 66.5 64"/><path fill="#2f2f2f" d="M106.05 64a2.92 2.92 0 1 1-5.84 0c0-1.6 1.3-2.91 2.92-2.91c1.61 0 2.92 1.31 2.92 2.91M84.82 27.21c1.39.81 1.87 2.59 1.07 3.99a2.92 2.92 0 0 1-3.99 1.06c-1.4-.8-1.88-2.6-1.07-3.99c.8-1.38 2.59-1.86 3.99-1.06m-42.49 0c1.4-.8 3.19-.33 3.99 1.06c.8 1.4.33 3.19-1.06 3.99c-1.4.81-3.19.34-3.99-1.07a2.91 2.91 0 0 1 1.06-3.98"/><circle cx="63.58" cy="24.44" r="2.92" fill="#2f2f2f"/><path fill="#2f2f2f" d="M26.79 42.76a2.921 2.921 0 0 1 5.06 2.92c-.8 1.4-2.59 1.88-3.99 1.07a2.924 2.924 0 0 1-1.07-3.99M21.1 64a2.9 2.9 0 0 1 2.91-2.91c1.62 0 2.92 1.3 2.92 2.91s-1.3 2.93-2.92 2.91A2.9 2.9 0 0 1 21.1 64m5.69 21.24c-.8-1.4-.32-3.18 1.07-3.99c1.4-.81 3.18-.33 3.99 1.07c.8 1.4.32 3.18-1.07 3.98c-1.4.81-3.19.33-3.99-1.06m15.54 15.55a2.916 2.916 0 1 1 2.92-5.05c1.4.8 1.87 2.6 1.07 3.99s-2.6 1.87-3.99 1.06m21.25 5.69c-1.62 0-2.92-1.31-2.92-2.92a2.91 2.91 0 0 1 2.92-2.92c1.61 0 2.92 1.31 2.91 2.92a2.915 2.915 0 0 1-2.91 2.92m21.23-5.69c-1.4.8-3.18.33-3.99-1.06c-.8-1.4-.32-3.18 1.07-3.99s3.19-.33 3.99 1.07c.81 1.38.33 3.17-1.07 3.98m15.56-15.55c-.82 1.39-2.6 1.87-3.99 1.07a2.91 2.91 0 0 1-1.08-3.98c.81-1.4 2.6-1.88 4-1.07c1.39.8 1.87 2.59 1.07 3.98"/></svg></div><div><div class="qs-lbl">時差</div><div class="qs-val">日本−2時間</div></div></div>
+      <div class="qs-card"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#F9E7C0" d="M437.567 512H88.004a8.18 8.18 0 0 1-8.182-8.182V8.182A8.18 8.18 0 0 1 88.004 0H288.79l156.96 156.96v346.858a8.183 8.183 0 0 1-8.183 8.182"/><path fill="#EAC083" d="m288.79 0l156.96 156.96H322.152c-18.426 0-33.363-14.937-33.363-33.363V0z"/><path fill="#597B91" d="M235.078 92.401H126.453c-6.147 0-11.13-4.983-11.13-11.13s4.983-11.13 11.13-11.13h108.625c6.147 0 11.13 4.983 11.13 11.13s-4.983 11.13-11.13 11.13m11.13 61.723c0-6.147-4.983-11.13-11.13-11.13H126.453c-6.147 0-11.13 4.983-11.13 11.13s4.983 11.13 11.13 11.13h108.625c6.147 0 11.13-4.983 11.13-11.13m0 72.854c0-6.147-4.983-11.13-11.13-11.13H126.453c-6.147 0-11.13 4.983-11.13 11.13s4.983 11.13 11.13 11.13h108.625c6.147-.001 11.13-4.983 11.13-11.13m94.038 72.853c0-6.146-4.983-11.13-11.13-11.13H126.453c-6.147 0-11.13 4.983-11.13 11.13s4.983 11.13 11.13 11.13h202.663c6.147 0 11.13-4.983 11.13-11.13m37.493-72.853c0-6.147-4.983-11.13-11.13-11.13h-74.985c-6.146 0-11.13 4.983-11.13 11.13s4.983 11.13 11.13 11.13h74.985c6.147-.001 11.13-4.983 11.13-11.13M299.92 372.685c0-6.146-4.983-11.13-11.13-11.13H126.453c-6.147 0-11.13 4.983-11.13 11.13s4.983 11.13 11.13 11.13H288.79c6.147-.001 11.13-4.984 11.13-11.13m66.21 72.853c0-6.146-4.983-11.13-11.13-11.13H126.453c-6.147 0-11.13 4.983-11.13 11.13s4.983 11.13 11.13 11.13H355c6.146 0 11.13-4.983 11.13-11.13"/></svg></div><div><div class="qs-lbl">ビザ</div><div class="qs-val">30日間ビザ免除（観光目的）</div><button class="qs-link" onclick="show('practical',document.querySelectorAll('nav button')[5])">旅の準備を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 128 128"><path d="M0 0h128v128H0z" fill="none" /><path fill="#FFCA28" d="M93.46 39.45c6.71-1.49 15.45-8.15 16.78-11.43c.78-1.92-3.11-4.92-4.15-6.13c-2.38-2.76-1.42-4.12-.5-7.41c1.05-3.74-1.44-7.87-4.97-9.49s-7.75-1.11-11.3.47s-6.58 4.12-9.55 6.62c-2.17-1.37-5.63-7.42-11.23-3.49c-3.87 2.71-4.22 8.61-3.72 13.32c1.17 10.87 3.85 16.51 8.9 18.03c6.38 1.92 13.44.91 19.74-.49" /><path fill="#E2A610" d="M104.36 8.18c-.85 14.65-15.14 24.37-21.92 28.65l4.4 3.78s2.79.06 6.61-1.16c6.55-2.08 16.12-7.96 16.78-11.43c.97-5.05-4.21-3.95-5.38-7.94c-.61-2.11 2.97-6.1-.49-11.9m-24.58 3.91s-2.55-2.61-4.44-3.8c-.94 1.77-1.61 3.69-1.94 5.67c-.59 3.48 0 8.42 1.39 12.1c.22.57 1.04.48 1.13-.12c1.2-7.91 3.86-13.85 3.86-13.85" /><path fill="#FFCA28" d="M61.96 38.16S30.77 41.53 16.7 68.61s-2.11 43.5 10.55 49.48s44.56 8.09 65.31 3.17s25.94-15.12 24.97-24.97c-1.41-14.38-14.77-23.22-14.77-23.22s.53-17.76-13.25-29.29c-12.23-10.24-27.55-5.62-27.55-5.62" /><path fill="#6B4B46" d="M74.76 83.73c-6.69-8.44-14.59-9.57-17.12-12.6c-1.38-1.65-2.19-3.32-1.88-5.39c.33-2.2 2.88-3.72 4.86-4.09c2.31-.44 7.82-.21 12.45 4.2c1.1 1.04.7 2.66.67 4.11c-.08 3.11 4.37 6.13 7.97 3.53c3.61-2.61.84-8.42-1.49-11.24c-1.76-2.13-8.14-6.82-16.07-7.56c-2.23-.21-11.2-1.54-16.38 8.31c-1.49 2.83-2.04 9.67 5.76 15.45c1.63 1.21 10.09 5.51 12.44 8.3c4.07 4.83 1.28 9.08-1.9 9.64c-8.67 1.52-13.58-3.17-14.49-5.74c-.65-1.83.03-3.81-.81-5.53c-.86-1.77-2.62-2.47-4.48-1.88c-6.1 1.94-4.16 8.61-1.46 12.28c2.89 3.93 6.44 6.3 10.43 7.6c14.89 4.85 22.05-2.81 23.3-8.42c.92-4.11.82-7.67-1.8-10.97" /><path fill="none" stroke="#6B4B46" stroke-miterlimit="10" stroke-width="5" d="M71.16 48.99c-12.67 27.06-14.85 61.23-14.85 61.23" /><path fill="#6D4C41" d="M81.67 31.96c8.44 2.75 10.31 10.38 9.7 12.46c-.73 2.44-10.08-7.06-23.98-6.49c-4.86.2-3.45-2.78-1.2-4.5c2.97-2.27 7.96-3.91 15.48-1.47" /><path fill="#6B4B46" d="M81.67 31.96c8.44 2.75 10.31 10.38 9.7 12.46c-.73 2.44-10.08-7.06-23.98-6.49c-4.86.2-3.45-2.78-1.2-4.5c2.97-2.27 7.96-3.91 15.48-1.47" /><path fill="#E2A610" d="M96.49 58.86c1.06-.73 4.62.53 5.62 7.5c.49 3.41.64 6.71.64 6.71s-4.2-3.77-5.59-6.42c-1.75-3.35-2.43-6.59-.67-7.79" /></svg></div><div><div class="qs-lbl">旅行費用目安</div><div class="qs-val">13〜22万円</div><button class="qs-link" onclick="show('budget',document.querySelectorAll('nav button')[5])">予算・費用を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36"><path d="M0 0h36v36H0z" fill="none" /><path fill="#fa743e" d="M35.838 23.159a.997.997 0 0 1-.998 1.003l-5 .013a1 1 0 0 1-1-.997a1 1 0 0 1 .995-1.004l5-.013a1 1 0 0 1 1.003.998m-1.587-5.489a1 1 0 0 1-.475 1.333l-4.517 2.145a1 1 0 0 1-.856-1.809l4.516-2.144a1 1 0 0 1 1.332.475m.027 10.987a1 1 0 0 0-.48-1.33l-4.527-2.122a1 1 0 1 0-.848 1.81l4.526 2.123a1 1 0 0 0 1.329-.481" /><path fill="#269" d="M27.979 14.875c-1.42-.419-2.693-1.547-3.136-2.25c-.76-1.208.157-1.521-.153-4.889C24.405 4.653 20.16 1.337 15 1c-2.346-.153-4.786.326-7.286 1.693c-6.42 3.511-8.964 10.932-4.006 18.099c4.47 6.46.276 9.379.276 9.379s.166 1.36 2.914 3.188c2.749 1.827 6.121.588 6.121.588s1.112-3.954 4.748-3.59c2.606.384 6.266-.129 7.191-1.024c.865-.837-.151-1.886.539-4.224c-2.365-.232-3.665-1.359-3.79-2.948c2.625.255 3.708-.578 4.458-1.495c-.021-.54-.075-1.686-.127-2.454c2.322-.672 3.212-2.962 1.941-3.337" /></svg></div><div><div class="qs-lbl">言語</div><div class="qs-val">ラオス語（観光地では英語も通じる）</div><button class="qs-link" onclick="show('phrases',document.querySelectorAll('nav button')[8])">フレーズ集を見る →</button></div></div>
+      <div class="qs-card"><div class="qs-ico">💱</div><div><div class="qs-lbl">通貨</div><div class="qs-val">ラオス・キープ(LAK)</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">1万LAK ≈ 71円</div></div></div>
+      <div class="qs-card"><div class="qs-ico" style="color:#f2b90c">⚠️</div><div><div class="qs-lbl">渡航危険情報</div><div class="qs-val" style="color:#f2b90c">レベル1：十分注意</div><div style="font-size:0.72em;color:var(--sub);margin-top:2px">サイソンブン県・シェンクワン国境沿いは一部レベル2</div><a href="https://www.anzen.mofa.go.jp/info/pcinfectionspothazardinfo_020.html" target="_blank" rel="noopener" class="qs-link">外務省で確認 →</a></div></div>
+      <div class="qs-card" style="grid-column:span 2"><div class="qs-ico" style="color:#1a3a5c"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><g fill="currentColor"><path d="M12 3a10 10 0 0 0-7.071 17.071l.707.707l2.421-2.421l-1.414-1.414l-.963.962A8 8 0 0 1 4.063 14H6v-2H4.063A8 8 0 0 1 5.68 8.095l.613.612l.5.5l1.414-1.414L7.095 6.68A8 8 0 0 1 11 5.063V6.5h2V5.063a8 8 0 0 1 3.905 1.617l-1.112 1.113l1.414 1.414l1.113-1.112A8 8 0 0 1 19.937 12H18v2h1.937a8 8 0 0 1-1.618 3.906l-.962-.963l-1.414 1.414l2.421 2.421l.707-.707A10.001 10.001 0 0 0 12 3" /><path d="M12.707 12.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414-1.414z" /></g></svg></div><div style="flex:1"><div class="qs-lbl">旅行難易度</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;background:#e8e8e8;border-radius:20px;height:10px;overflow:hidden"><div style="width:55%;height:100%;background:linear-gradient(90deg,#00a86b,#ffcc80,#e8490f);border-radius:20px"></div></div><span style="background:#fff4e0;color:#b09000;font-size:0.75em;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap">普通</span></div><div style="display:flex;justify-content:space-between;font-size:0.68em;color:#bbb;margin-top:2px"><span>← やさしい</span><span>むずかしい →</span></div></div></div>
+    </div>
+
+  </div><!-- end s-card どんなところ？上 -->
+
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">🇯🇵 日本人に人気？</span><p style="font-size:0.82em;line-height:1.7;color:#444">「東南アジア最後の秘境」として旅好きの間でじわじわ人気上昇中。特にルアンパバーンは世界遺産の街並みと托鉢の光景が写真映えすると近年注目を集めているが、2023年の日本人訪問者数は約2.5万人とまだ知る人ぞ知る旅先です。</p></div>
+
+  <div class="s-card" style="margin-top:32px;padding-top:16px">
+    <!-- 主要都市 -->
+    <div class="qs-section-title" style="margin-top:0">主要都市</div>
+    <div style="overflow:hidden">
+    <div style="position:relative">
+      <div id="laos-map" style="width:100%;height:300px"></div>
+      <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:row;align-items:center;gap:8px;z-index:10">
+        <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2);white-space:nowrap">← ラオス人民民主共和国全体に戻る</button>
+        <a id="map-open-btn" href="#" target="_blank" style="display:none;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px);white-space:nowrap;align-items:center"></a>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:flex-end;background:#f8faf8;padding:6px 14px;border-top:1px solid #eee;font-size:0.78em;color:var(--sub);gap:8px">
+      <span>この人形をストリートビューを見たい場所にドラッグして配置してください</span>
+      <span style="flex-shrink:0;color:#888;font-weight:700;font-size:1.2em">↑</span>
+    </div>
+    <script>
+      const CITY_DATA = {
+        
+        vientiane: { name:'ビエンチャン', lat:17.9757, lng:102.6331, zoom:13, color:'#CE1126', label:'★' },
+        
+        luang_prabang: { name:'ルアンパバーン', lat:19.8845, lng:102.1348, zoom:14, color:'#002868', label:'●' },
+        
+        vang_vieng: { name:'バンビエン', lat:18.9235, lng:102.4433, zoom:13, color:'#002868', label:'●' },
+        
+        phonsavan: { name:'シェンクワン（プレーン・オブ・ジャーズ）', lat:19.4433, lng:103.1966, zoom:12, color:'#002868', label:'●' },
+        
+        si_phan_don: { name:'シーパンドン（4000の島）', lat:13.9833, lng:105.9333, zoom:12, color:'#FF7A00', label:'●' },
+        
+      };
+
+      function initMap() {
+        window._map = new google.maps.Map(document.getElementById('laos-map'), {
+          center: { lat: 18.5, lng: 103.5 }, zoom: 6,
+          mapTypeId: 'roadmap', language: 'ja',
+          mapId: 'ebb608e55ed157f8630c407e',
+          disableDefaultUI: true,
+          streetViewControl: true,
+          fullscreenControl: true,
+          gestureHandling: 'greedy'
+        });
+        Object.values(CITY_DATA).forEach(city => {
+          const dot = document.createElement('div');
+          dot.style.cssText = `width:${city.label==='★'?'14px':'11px'};height:${city.label==='★'?'14px':'11px'};background:${city.color};border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4);`;
+          const label = document.createElement('div');
+          label.textContent = city.name;
+          label.style.cssText = `margin-top:4px;background:#fff;color:#cc0001;font-size:11px;font-weight:bold;padding:2px 6px;border-radius:10px;white-space:nowrap;box-shadow:0 1px 4px rgba(0,0,0,0.3);font-family:sans-serif;`;
+          const container = document.createElement('div');
+          container.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer';
+          container.appendChild(dot); container.appendChild(label);
+          new google.maps.marker.AdvancedMarkerElement({ position:{lat:city.lat,lng:city.lng}, map:window._map, title:city.name, content:container });
+        });
+      }
+
+      function zoomToCity(key) {
+        const city = CITY_DATA[key];
+        if (!city || !window._map) return;
+        window._map.panTo({ lat: city.lat, lng: city.lng });
+        window._map.setZoom(city.zoom);
+        document.getElementById('laos-map').scrollIntoView({ behavior:'smooth', block:'center' });
+        const btn = document.getElementById('map-open-btn');
+        btn.href = `https://www.google.com/maps/search/?api=1&query=${city.lat},${city.lng}`;
+        btn.textContent = `${city.name}をGoogleマップで開く →`;
+        btn.style.display = 'flex';
+        document.getElementById('map-reset-btn').style.display = 'inline-block';
+      }
+
+      function resetMap() {
+        if (!window._map) return;
+        window._map.panTo({ lat: 18.5, lng: 103.5 });
+        window._map.setZoom(6);
+        document.getElementById('map-open-btn').style.display = 'none';
+        document.getElementById('map-reset-btn').style.display = 'none';
+      }
+    </script>
+    <div class="city-grid-wrap">
+      
+      <div class="city-item" onclick="zoomToCity('vientiane')"><div class="ci-name">ビエンチャン</div><div class="ci-badge " style="margin-bottom:5px">首都</div><div class="ci-desc">メコン川沿いにたたずむのどかな首都。金色の仏塔とフランス統治時代の建築が同居する</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('vientiane')">観光地を見る →</button></div></div>
+      
+      <div class="city-item" onclick="zoomToCity('luang_prabang')"><div class="ci-name">ルアンパバーン</div><div class="ci-badge green" style="margin-bottom:5px">世界遺産の古都</div><div class="ci-desc">街ごと世界遺産に登録された古都。早朝の托鉢と黄金の寺院で知られる</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('luang_prabang')">観光地を見る →</button></div></div>
+      
+      <div class="city-item" onclick="zoomToCity('vang_vieng')"><div class="ci-name">バンビエン</div><div class="ci-badge green" style="margin-bottom:5px">アウトドアの聖地</div><div class="ci-desc">カルスト地形の山々とナムソン川に囲まれた、アクティビティ天国</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('vang_vieng')">観光地を見る →</button></div></div>
+      
+      <div class="city-item" onclick="zoomToCity('phonsavan')"><div class="ci-name">シェンクワン（プレーン・オブ・ジャーズ）</div><div class="ci-badge green" style="margin-bottom:5px">石壺の平原</div><div class="ci-desc">無数の石壺が眠る謎多き世界遺産。標高1,200mの高原で朝晩は冷え込む</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('phonsavan')">観光地を見る →</button></div></div>
+      
+      <div class="city-item" onclick="zoomToCity('si_phan_don')"><div class="ci-name">シーパンドン（4000の島）</div><div class="ci-badge green" style="margin-bottom:5px">メコンの楽園</div><div class="ci-desc">ラオス最南端、メコン川に浮かぶ島々がのんびりとした時間を演出する</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('si_phan_don')">観光地を見る →</button></div></div>
+      
+    </div>
+    </div><!-- end overflow:hidden 主要都市 -->
+
+    <!-- ベストシーズン -->
+    <div id="season" class="qs-section-title" style="margin-top:20px">ベストシーズン</div>
+    <div style="background:#fff;padding:20px 24px">
+    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">ラオスは大きく分けて<strong>乾季（11〜2月）・暑季（3〜4月）・雨季（5〜10月）</strong>の3シーズン。低地のビエンチャンやシーパンドンは年間を通じて蒸し暑く、標高1,200mのシェンクワン高原は<strong>朝晩かなり冷え込む</strong>ため服装に差が出ます。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
+    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
+      <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
+    </div>
+
+    
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
+      <div class="city-name">ビエンチャン</div>
+      <div class="season-grid">
+        <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-warm">☀️<span class="md-t">26°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-hot1">☀️<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot2">☀️<span class="md-t">32°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot3">☀️<span class="md-t">34°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-hot2">☔<span class="md-t">33°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-hot2">☔<span class="md-t">32°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-hot1">☔<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-hot1">☀️<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-warm">☀️<span class="md-t">25°C</span></div></div>
+      </div>
+      <div style="margin-top:6px;display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+	<path d="M0 0h512v512H0z" fill="none" />
+	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
+	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
+	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
+</svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・過ごしやすい）／ 5〜10月は雨季でスコールが増える。</p></div>
+    </div>
+    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">首都ビエンチャンは年間を通じて蒸し暑いが、11〜2月の乾季は湿度が下がり観光しやすい。3〜4月は雨季直前で気温が最も上がり、日中は35°C近くになることも。5〜10月の雨季はスコール的な短時間の激しい雨が中心で、一日中降り続くことは少ない。</div>
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('vientiane')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
+    
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
+      <div class="city-name">ルアンパバーン</div>
+      <div class="season-grid">
+        <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-mild">☀️<span class="md-t">24°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-warm">☀️<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot1">☀️<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot2">☀️<span class="md-t">32°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-hot1">☔<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-hot1">☔<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-hot1">☔<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-hot1">☔<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-hot1">☔<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-warm">☀️<span class="md-t">26°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☀️<span class="md-t">23°C</span></div></div>
+      </div>
+      <div style="margin-top:6px;display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+	<path d="M0 0h512v512H0z" fill="none" />
+	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
+	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
+	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
+</svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・朝は霧に包まれる）／ 5〜10月は雨季でメコンが増水。</p></div>
+    </div>
+    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高300m前後の盆地にあるルアンパバーンは、ビエンチャンよりやや涼しく朝晩は霧がかかることも多い。11〜2月の乾季は托鉢や寺院巡りに最適な快晴が続く。雨季にはメコン川の水位が大きく上がり、川沿いの景色が一変するのも見どころのひとつ。</div>
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('luang_prabang')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
+    
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
+      <div class="city-name">バンビエン</div>
+      <div class="season-grid">
+        <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-warm">☀️<span class="md-t">25°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-hot1">☀️<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot2">☀️<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot2">☀️<span class="md-t">33°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-hot2">☔<span class="md-t">32°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-hot1">☔<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-hot1">☔<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-hot1">☔<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-hot1">☔<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-warm">☀️<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-mild">☀️<span class="md-t">24°C</span></div></div>
+      </div>
+      <div style="margin-top:6px;display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+	<path d="M0 0h512v512H0z" fill="none" />
+	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
+	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
+	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
+</svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜3月（乾季・川の水量が安定）／ 7〜9月は増水でチュービング中止のことも。</p></div>
+    </div>
+    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">ナムソン川でのチュービングやカヤックが人気のバンビエンは、乾季の11〜3月が水量も安定しアクティビティを楽しみやすい。雨季の増水期は川が濁り流れも急になるため、一部アクティビティが中止になることもある。カルスト地形の山々は雨上がりの雲霧に包まれた姿も美しい。</div>
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('vang_vieng')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
+    
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
+      <div class="city-name">シェンクワン（プレーン・オブ・ジャーズ）</div>
+      <div class="season-grid">
+        <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-cold">☀️<span class="md-t">18°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-mild">☀️<span class="md-t">21°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-mild">☀️<span class="md-t">24°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-warm">☀️<span class="md-t">26°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-warm">☔<span class="md-t">25°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-mild">☔<span class="md-t">24°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-mild">☔<span class="md-t">23°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-mild">☔<span class="md-t">23°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-mild">☔<span class="md-t">23°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-mild">☔<span class="md-t">22°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-mild">☀️<span class="md-t">20°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-cold">☀️<span class="md-t">17°C</span></div></div>
+      </div>
+      <div style="margin-top:6px;display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+	<path d="M0 0h512v512H0z" fill="none" />
+	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
+	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
+	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
+</svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・朝晩は防寒具が必須）／ 5〜10月は雨季で霧も出やすい。</p></div>
+    </div>
+    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高1,200mの高原にあるシェンクワンは、ラオスの中でも際立って涼しい気候。12〜1月の早朝は10°C近くまで冷え込むこともあり、薄手のジャケットが必須になる。乾季は空気が澄んで石壺群の撮影にも向くが、雨季は霧が出やすく視界が悪くなる日もある。</div>
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('phonsavan')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
+    
+    <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #b8b8b8;margin-bottom:14px">
+      <div class="city-name">シーパンドン（4000の島）</div>
+      <div class="season-grid">
+        <div class="month-col"><div class="month-lbl">1月</div><div class="month-dot t-warm">☀️<span class="md-t">27°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">2月</div><div class="month-dot t-hot1">☀️<span class="md-t">29°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">3月</div><div class="month-dot t-hot2">☀️<span class="md-t">32°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">4月</div><div class="month-dot t-hot2">☀️<span class="md-t">33°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">5月</div><div class="month-dot t-hot2">☔<span class="md-t">32°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">6月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">7月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">8月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">9月</div><div class="month-dot t-hot2">☔<span class="md-t">31°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">10月</div><div class="month-dot t-hot1">☔<span class="md-t">30°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">11月</div><div class="month-dot t-hot1">☀️<span class="md-t">28°C</span></div></div>
+        <div class="month-col"><div class="month-lbl">12月</div><div class="month-dot t-warm">☀️<span class="md-t">26°C</span></div></div>
+      </div>
+      <div style="margin-top:6px;display:flex;align-items:center;gap:5px"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+	<path d="M0 0h512v512H0z" fill="none" />
+	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
+	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
+	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
+</svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・川イルカも観察しやすい）／ 5〜10月は雨季で増水する。</p></div>
+    </div>
+    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">ラオス最南端のメコン河畔にあるシーパンドンは、国内でも特に蒸し暑いエリア。乾季の11〜2月は川の水位が下がって中州の島々が歩きやすくなり、イラワジカワイルカも観察しやすい。雨季は増水で一部の滝や中州へのアクセスが制限されることがある。</div>
+    <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('si_phan_don')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
+    
+
+    </div>
+
+  </div><!-- end s-card どんなところ？ -->
+
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 128 128"><path d="M0 0h128v128H0z" fill="none"/><path fill="#006CA8" d="M37.08 80.79S9.61 74.92 9.14 75.01s-5.97 5.59-5.78 6.44C3.55 82.31 27.61 95 27.61 95l6.91-7.29zm-3.79 19.42s13.35 23.11 13.92 23.11s6.72-4.74 6.72-5.21s-5.68-28.03-5.68-28.03l-9.76 1.14z"/><path fill="#9A9A9A" d="M22.79 25.78s-1.92 2.17-2.33 2.94s-.48 2.09.4 2.56s1.95.15 2.48-.44s3.14-3.8 3.14-3.8s-3.46-1.44-3.69-1.26m14.02 7.85s-1.55 1.84-2.18 2.68c-.61.81-.6 2.08.25 2.68c1.22.86 2.43-.1 3.09-.81c.61-.66 2.33-2.68 2.33-2.68zm13.27 7.14s-2.03 2.03-2.63 2.84c-.67.89-.82 2.19.1 2.89c1.01.76 2.13.41 3.04-.41c.91-.81 2.94-3.04 2.94-3.04zm35.03 34.28s-2.38 1.65-2.97 2.29c-.58.64-.97 1.92-.22 2.59c.74.67 1.86.61 2.52.17s3.96-2.93 3.96-2.93s-3.02-2.23-3.29-2.12m8.02 12.56s-1.97 1.38-2.79 2.03c-.8.63-1.11 1.86-.44 2.66c.95 1.14 2.38.53 3.19.01c.76-.48 2.94-2 2.94-2zm7.34 12.84s-2.45 1.48-3.24 2.12c-.86.71-1.32 1.93-.59 2.83c.8.98 1.97.9 3.05.34s3.58-2.24 3.58-2.24zm-43.2-76.72s-.35-2.33 1.54-4.96s8.16-8.77 9.13-8.82s3.29 1.18 5.62 3.47c2.22 2.17 3.25 4.96 3.29 5.62s-4.34 5-5.48 6.05s-4.21 4.47-4.21 4.47z"/><path fill="#C8C8C8" d="M60.13 24.08s7.68-9.39 9.74-7.98c2.08 1.42-6.23 9.48-6.23 9.48z"/><path fill="#848484" d="M58.37 23.48s4.35-4.41 4.83-5.11s.04-1.75-.35-2.33c-.39-.57-.99-.79-.99-.79s-3.07 2.75-4.12 5.16c-.82 1.87-.68 2.82-.68 2.82zm7.49 2.27s1.65-1.71 2.48-2.39c.75-.61 1.86-.55 2.52-.16c.85.5 1.05 1.36 1.05 1.36l-3.06 3.25z"/><path fill="#9A9A9A" d="M101.96 59.45s2.51-2.92 3.97-4.38c1.51-1.51 3.97-3.56 4.47-3.52c.5.05 2.71 1.39 4.79 3.52c2.37 2.42 3.84 5.43 3.88 5.71c.05.27-4.38 4.7-6.35 6.39c-1.41 1.21-10.18 4.79-10.18 4.34c.02-.46-.58-12.06-.58-12.06"/><path fill="#C8C8C8" d="M103.41 65.1s7.26-7.96 8.92-6.47s-8.31 10.45-8.31 10.45z"/><path fill="#848484" d="m102.87 63.1l2.65-2.92c.94-1.03.88-2.41.6-3.01c-.36-.77-1.29-.95-1.29-.95l-3.45 3.67zm2.51 6.61s4.16-3.75 4.87-4.34s1.86-1.01 2.77-.38c.68.47.98 1.04.98 1.04s-3.2 3.48-5.13 4.71c-1.21.77-4.07 1.21-4.07 1.21z"/><path fill="#006CA8" d="M11.65 8.92c-.98.08-7.19 7.42-7.41 7.96s0 1.42 1.53 2.18c1.52.76 44.47 23.44 45.13 23.98c.65.55 9.16 10.03 9.16 10.03s21.04-14.5 20.93-14.93c-.11-.44-.76-9.48-.76-9.48S13.07 8.81 11.65 8.92m61.38 56.91s12.86 11.66 13.95 13.08s23.33 41.97 23.66 42.62s1.74 1.2 2.51.44s6.54-5.78 6.65-6.98s-21.37-70.42-21.37-70.42l-16.57 6z"/><path fill="#014EAC" d="M66.81 43.26s-10.14-9.81-10.9-10.36c-.76-.54-48.29-20.16-48.29-20.16l-1.95 2.15s48.18 20.35 48.95 20.89s10.2 10.2 10.2 10.2zM82.4 60.45s11.17 13.72 11.84 14.61s20.26 45.65 20.26 45.65l1.95-1.82S96.88 73.22 96.53 72.6S83.17 55.9 83.17 55.9z"/><path fill="#9A9A9A" d="M24.22 98.4s-4.18 5.98-4.18 6.45c0 .48 2.8 3.54 3.12 3.54s6.4-4.34 6.4-4.34l-.85-4.34z"/><path fill="#C8C8C8" d="M24.22 98.4s8.28-13.93 17.15-26.38c9.11-12.79 16.5-20.16 27.86-32.52C83.48 24 92.97 15.22 101.75 9.31c7.28-4.9 17.68-8.22 21.39-4.91c4.07 3.64-.42 15.12-4.99 21.66c-10.37 14.84-19.27 21.9-29.48 31.81c-10.07 9.77-18.58 18.25-29.12 26.16c-7.1 5.33-30 20.04-30 20.04z"/><path fill="#3B5361" d="m103.92 11.05l2.77 2.92s4.64-4.47 8.11-1.14c3.56 3.41-1.35 8.25-1.35 8.25l2.99 3.34s8.11-9.18 1.49-15.15c-5.76-5.2-14.01 1.78-14.01 1.78"/><path fill="#9A9A9A" d="M47.84 74c-1.29 1.24-16.53 19.28-17.38 20.35c-1.09 1.38-1.59 3.04-.36 4.06c1.23 1.01 2.56.01 3.77-.8c1.52-1.01 19.18-16.59 20.35-17.67c1.88-1.74 2.2-4.88.22-6.66c-2.18-1.96-4.64-1.16-6.6.72"/><path fill="#DFDFDF" d="M47.29 69.91c-.87-.75-1.95-.25-3.09.98c-.98 1.07-1.43 2.73-.45 3.4s2.28-.31 3.09-1.3c.81-.98 1.43-2.23.45-3.08m2.82-5.82c-.9 1.03-2.21 2.73-.98 3.94c1.21 1.19 3.04-.32 3.84-1.22c.79-.9 9.84-11.52 21.29-22.96c11.18-11.18 18.7-18.25 19.86-19.49c.98-1.05.89-2.72.03-3.25c-1.02-.63-2.15-.23-3.55 1.17S79.7 32.37 70.74 41.43S51.23 62.8 50.11 64.09"/><path fill="#3B5361" d="M105.47 41.61s-.55-3.72-2.86-2.26c-2.48 1.57-.63 5.83-.63 5.83s.93-.87 1.92-1.91c.82-.85 1.3-1.35 1.57-1.66m-8.87 8.75s-.39-4.77-3.01-2.81c-2.09 1.57-.67 6.26-.67 6.26s1.2-1.09 1.98-1.83c.79-.75 1.7-1.62 1.7-1.62m-8.46 8.02s-.3-3.96-2.65-2.65s-.78 5.99-.78 5.99s1.04-.94 1.74-1.64s1.69-1.7 1.69-1.7m-9.58 9.26s-.18-3.94-2.49-2.89c-2.4 1.09-.96 6.14-.96 6.14s1.17-1.09 1.82-1.7c.66-.6 1.63-1.55 1.63-1.55"/></svg> 航空券が安い時期</span><p style="font-size:0.8em;line-height:1.7;color:#444">直行便がないため航空券は経由地によって価格差が大きい。バンコク・ハノイ経由が比較的安定して安く、GW・お盆・年末年始を避けた2月・6月・9月の閑散期が狙い目。</p></div>
+
+  <div style="margin-top:32px"></div>
+  <!-- 基本データ -->
+  <h2>基本データ</h2>
+  <div class="s-card">
+    <div style="background:#fff;padding:4px 0">
+    <div style="text-align:center;padding:20px 16px;border-bottom:1px solid #e0e0e0">
+      <div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 4"><path fill="#ce1126" d="M0 0h6v4H0z"/><path fill="#002868" d="M0 1h6v2H0z"/><circle fill="#fff" cx="3" cy="2" r=".8"/></svg></div>
+      <p style="font-size:0.75em;color:var(--sub);margin-top:6px">赤・青・赤の三色旗。赤は独立のために流された血、青はメコン川と国の豊かさ、中央の白い円は満月と国民の団結を象徴する。</p>
+    </div>
+    <div class="bd-grid">
+      
+      <div class="bd-item">
+        <div class="bd-lbl">首都</div>
+        <div style="flex:1"><div class="bd-val">ビエンチャン</div><div class="bd-note">メコン川沿いの人口約100万人の街</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">独立年</div>
+        <div style="flex:1"><div class="bd-val">1953年10月22日</div><div class="bd-note">フランスから完全独立。1975年に現体制成立</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">人口</div>
+        <div style="flex:1"><div class="bd-val">約770万人</div><div class="bd-note">日本の約17分の1</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">面積</div>
+        <div style="flex:1"><div class="bd-val">約23.7万km²</div><div class="bd-note">本州とほぼ同じ広さの内陸国</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">宗教</div>
+        <div style="flex:1"><div class="bd-val">仏教（上座部）約65%</div><div class="bd-note">精霊信仰（アニミズム）も色濃く残る</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">民族</div>
+        <div style="flex:1"><div class="bd-val">ラオ族 約53%</div><div class="bd-note">他49の少数民族が暮らす多民族国家</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">言語</div>
+        <div style="flex:1"><div class="bd-val">ラオス語</div><div class="bd-note">観光地・都市部では英語もある程度通じる</div></div>
+      </div>
+      
+      <div class="bd-item">
+        <div class="bd-lbl">通貨</div>
+        <div style="flex:1"><div class="bd-val">ラオス・キープ（LAK）</div><div class="bd-note">1万LAK ≈ 71円</div></div>
+      </div>
+      
+    </div>
+    </div>
+  </div>
+  <div class="tab-cta">
+    <div class="tab-cta-title">観光スポットをチェックしよう！</div>
+    <p class="tab-cta-desc">人気の観光地から穴場まで、実際に行って良かった場所を厳選してまとめました。</p>
+    <button class="tab-cta-btn" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button>
+  </div>
+  
+</section>
+
+
+<!-- 予算・費用 -->
+
+
+<!-- 旅の準備 -->
+
+
+
+
+<!-- フレーズ -->
+
+
+<!-- グルメ -->
+
+
+<!-- 観光地 -->
+
+
+<!-- モデルコース -->
+
+
+</div><!-- /slides-wrap -->
+</div><!-- /container -->
+
+<script>
+function filterPhraseDeck(deckId, btn) {
+  document.querySelectorAll('#phrase-deck-tabs .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.phrase-deck').forEach(d => {
+    d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
+  });
+}
+let _phraseAudio = null;
+let _phraseBtn = null;
+function playPhrase(file, btn) {
+  if (_phraseAudio) {
+    _phraseAudio.pause();
+    _phraseAudio = null;
+    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
+  }
+  const audio = new Audio('audio/phrases/' + file);
+  audio.play().catch(() => {});
+  _phraseAudio = audio;
+  _phraseBtn = btn;
+  btn.textContent = '■';
+  btn.classList.add('playing');
+  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
+}
+
+/* 現金目安カード */
+let cashDays = 5;
+const CURRENCY = 'LAK';
+const RATE = 0.0071;
+const CASH_LOW = 150000;
+const CASH_HIGH = 400000;
+function changeDays(d) {
+  cashDays = Math.max(1, Math.min(30, cashDays + d));
+  const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;
+  document.getElementById('cash-days').textContent = cashDays;
+  document.getElementById('cash-range-cur').textContent = low.toLocaleString() + '〜' + high.toLocaleString() + ' ' + CURRENCY;
+  document.getElementById('cash-range-jpy').textContent = '約' + Math.round(low * RATE / 1000) + ',000〜' + Math.round(high * RATE / 1000) + ',000円';
+}
+if (document.getElementById('cash-days')) { changeDays(0); }
+
+
+
+/* 分割ページモード: show() は同一タブでの別ページ遷移 */
+var PAGE_URL = {
+  basic:'index.html', spots:'spots.html', food:'food.html', course:'course.html',
+  budget:'budget.html', practical:'practical.html', phrases:'phrases.html',
+  season:'index.html#season', transport:'practical.html#transport',
+  money:'budget.html#money', sim:'practical.html#sim'
+};
+function show(id, btn) {
+  var u = PAGE_URL[id];
+  if (u) { location.href = u; }
+}
+
+
+
+
+/* 分割ページモード: 埋め込みSPOT_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
+var SPOT_DATA = {"VTE 01": {"num": "VTE 01", "name": "タート・ルアン", "desc": "黄金に輝く仏塔がそびえるラオスの国家的象徴。16世紀創建と伝わり、紙幣や国章のデザインにも使われている、ラオス仏教の中心地。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%82%BF%E3%83%BC%E3%83%88%E3%83%BB%E3%83%AB%E3%82%A2%E3%83%B3%20%E3%83%93%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "VTE 02": {"num": "VTE 02", "name": "ワット・シーサケット", "desc": "ビエンチャンで最古とされる寺院。回廊には2,000体近い仏像が並び、19世紀のシャム軍侵攻を生き延びた貴重な建築として知られる。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%AF%E3%83%83%E3%83%88%E3%83%BB%E3%82%B7%E3%83%BC%E3%82%B5%E3%82%B1%E3%83%83%E3%83%88%20%E3%83%93%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "VTE 03": {"num": "VTE 03", "name": "パトゥーサイ", "desc": "パリの凱旋門を彷彿とさせる戦没者慰霊碑。展望台からはビエンチャン市街を一望でき、コンクリートの一部はアメリカから提供された空港建設資材が転用されたという逸話も残る。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%91%E3%83%88%E3%82%A5%E3%83%BC%E3%82%B5%E3%82%A4%20%E3%83%93%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "VTE 04": {"num": "VTE 04", "name": "メコン川ナイトマーケット", "desc": "メコン川沿いの遊歩道に毎晩並ぶ屋台市場。衣類・雑貨から屋台グルメまで揃い、川向こうのタイの明かりを眺めながらの散策が心地よい。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%A1%E3%82%B3%E3%83%B3%E5%B7%9D%E3%83%8A%E3%82%A4%E3%83%88%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%20%E3%83%93%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "VTE 05": {"num": "VTE 05", "name": "COPE視覚センター", "desc": "内戦・不発弾（UXO）被害者を支援するNGOが運営する資料館。ラオスが「世界で最も爆撃を受けた国」と呼ばれる歴史と、義肢製作の現場を知る貴重な学びの場。", "img": "", "mapUrl": "https://maps.google.com/?q=COPE%E8%A6%96%E8%A6%9A%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E3%83%93%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "LPQ 01": {"num": "LPQ 01", "name": "プーシーの丘", "desc": "旧市街中心にそびえる小高い丘。328段の階段を上ると、メコン川とカーン川に挟まれた古都と山並みを一望できる、夕暮れ時の定番ビュースポット。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%97%E3%83%BC%E3%82%B7%E3%83%BC%E3%81%AE%E4%B8%98%20%E3%83%AB%E3%82%A2%E3%83%B3%E3%83%91%E3%83%90%E3%83%BC%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "LPQ 02": {"num": "LPQ 02", "name": "クアンシーの滝", "desc": "エメラルドグリーンの水をたたえた石灰岩の段瀑。天然のプールで泳ぐこともでき、麓にはツキノワグマの保護施設も併設されている、ラオス随一の絶景スポット。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%82%AF%E3%82%A2%E3%83%B3%E3%82%B7%E3%83%BC%E3%81%AE%E6%BB%9D%20%E3%83%AB%E3%82%A2%E3%83%B3%E3%83%91%E3%83%90%E3%83%BC%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "LPQ 03": {"num": "LPQ 03", "name": "ワット・シェントーン", "desc": "「生命の木」のガラスモザイクで彩られた、ラオスで最も美しいとされる王室寺院。優美な曲線を描く屋根はルアンパバーン様式建築の最高傑作と称される。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%AF%E3%83%83%E3%83%88%E3%83%BB%E3%82%B7%E3%82%A7%E3%83%B3%E3%83%88%E3%83%BC%E3%83%B3%20%E3%83%AB%E3%82%A2%E3%83%B3%E3%83%91%E3%83%90%E3%83%BC%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "LPQ 04": {"num": "LPQ 04", "name": "托鉢（タンバート）", "desc": "夜明け前、オレンジ色の袈裟を纏った僧侶の列が旧市街の通りを静かに歩き、住民や旅行者からもち米の布施を受け取る神聖な光景。信仰行事として敬意を持って見守りたい。", "img": "", "mapUrl": "https://maps.google.com/?q=%E6%89%98%E9%89%A2%EF%BC%88%E3%82%BF%E3%83%B3%E3%83%90%E3%83%BC%E3%83%88%EF%BC%89%20%E3%83%AB%E3%82%A2%E3%83%B3%E3%83%91%E3%83%90%E3%83%BC%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "LPQ 05": {"num": "LPQ 05", "name": "ルアンパバーン・ナイトマーケット", "desc": "旧市街のメインストリートを毎晩埋め尽くす手工芸品市場。少数民族の刺繍布や竹細工、提灯が並ぶランタンの灯りに照らされた通りは、街歩きだけでも楽しい。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%AB%E3%82%A2%E3%83%B3%E3%83%91%E3%83%90%E3%83%BC%E3%83%B3%E3%83%BB%E3%83%8A%E3%82%A4%E3%83%88%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%83%E3%83%88%20%E3%83%AB%E3%82%A2%E3%83%B3%E3%83%91%E3%83%90%E3%83%BC%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "VVG 01": {"num": "VVG 01", "name": "ブルーラグーン", "desc": "石灰岩の岩肌から湧き出る、鮮やかなブルーの水をたたえた天然プール。ロープブランコで飛び込む旅行者の歓声が絶えない、バンビエンの定番アクティビティスポット。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%B0%E3%83%BC%E3%83%B3%20%E3%83%90%E3%83%B3%E3%83%93%E3%82%A8%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "VVG 02": {"num": "VVG 02", "name": "タムチャン洞窟", "desc": "町を見下ろす断崖に口を開ける鍾乳洞。急な階段を上った先の洞窟内部からは、ナムソン川とカルスト山脈を望む絶景が広がる。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%82%BF%E3%83%A0%E3%83%81%E3%83%A3%E3%83%B3%E6%B4%9E%E7%AA%9F%20%E3%83%90%E3%83%B3%E3%83%93%E3%82%A8%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "VVG 03": {"num": "VVG 03", "name": "ナムソン川チュービング", "desc": "浮き輪に乗ってナムソン川をのんびり下る、バンビエン名物のアクティビティ。川沿いのバーで一休みしながら、カルスト山脈を眺める開放感は格別。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%8A%E3%83%A0%E3%82%BD%E3%83%B3%E5%B7%9D%E3%83%81%E3%83%A5%E3%83%BC%E3%83%93%E3%83%B3%E3%82%B0%20%E3%83%90%E3%83%B3%E3%83%93%E3%82%A8%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "VVG 04": {"num": "VVG 04", "name": "パーグアン展望台", "desc": "早朝のハイキングで登る岩山の展望台。雲海に浮かぶカルスト山脈と朝日を望む絶景は、体力を使う価値のあるご褒美になる。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%91%E3%83%BC%E3%82%B0%E3%82%A2%E3%83%B3%E5%B1%95%E6%9C%9B%E5%8F%B0%20%E3%83%90%E3%83%B3%E3%83%93%E3%82%A8%E3%83%B3%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "XKH 01": {"num": "XKH 01", "name": "プレーン・オブ・ジャーズ サイト1", "desc": "2,000年以上前に作られたとされる巨大な石壺が草原に点在する、謎多き世界遺産（2019年登録）。誰が何の目的で作ったのか、今なお解明されていない古代の遺構。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%97%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%BA%20%E3%82%B5%E3%82%A4%E3%83%881%20%E3%82%B7%E3%82%A7%E3%83%B3%E3%82%AF%E3%83%AF%E3%83%B3%EF%BC%88%E3%83%97%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%BA%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "XKH 02": {"num": "XKH 02", "name": "MAG不発弾処理センター", "desc": "ベトナム戦争時代に投下された不発弾（UXO）の除去活動を行うNGOの展示施設。ラオスが今も抱える戦争の爪痕と、その克服への取り組みを学べる。", "img": "", "mapUrl": "https://maps.google.com/?q=MAG%E4%B8%8D%E7%99%BA%E5%BC%BE%E5%87%A6%E7%90%86%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E3%82%B7%E3%82%A7%E3%83%B3%E3%82%AF%E3%83%AF%E3%83%B3%EF%BC%88%E3%83%97%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%BA%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "XKH 03": {"num": "XKH 03", "name": "モン族の織物村", "desc": "山岳少数民族モン族の伝統的な機織りや藍染めの技術に触れられる集落。色鮮やかな刺繍布は旅の記念にもぴったり。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%A2%E3%83%B3%E6%97%8F%E3%81%AE%E7%B9%94%E7%89%A9%E6%9D%91%20%E3%82%B7%E3%82%A7%E3%83%B3%E3%82%AF%E3%83%AF%E3%83%B3%EF%BC%88%E3%83%97%E3%83%AC%E3%83%BC%E3%83%B3%E3%83%BB%E3%82%AA%E3%83%96%E3%83%BB%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%BA%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "SPD 01": {"num": "SPD 01", "name": "ドーンコーン島", "desc": "シーパンドンで最も大きな島。フランス統治時代の建物や田園風景が残り、自転車で島を一周しながらのんびりとした村の暮らしに触れられる。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%89%E3%83%BC%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%B3%E5%B3%B6%20%E3%82%B7%E3%83%BC%E3%83%91%E3%83%B3%E3%83%89%E3%83%B3%EF%BC%884000%E3%81%AE%E5%B3%B6%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "SPD 02": {"num": "SPD 02", "name": "リーピーの滝", "desc": "メコン川の水を全て飲み込むかのような轟音を立てる大瀑布。東南アジア最大級の水量を誇り、雨季には特に迫力を増す。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%AA%E3%83%BC%E3%83%94%E3%83%BC%E3%81%AE%E6%BB%9D%20%E3%82%B7%E3%83%BC%E3%83%91%E3%83%B3%E3%83%89%E3%83%B3%EF%BC%884000%E3%81%AE%E5%B3%B6%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "SPD 03": {"num": "SPD 03", "name": "イラワジカワイルカ・ウォッチング", "desc": "ラオス・カンボジア国境付近のメコン川に生息する絶滅危惧種、イラワジカワイルカに出会えるボートツアー。ずんぐりとした丸い頭が特徴の希少な淡水イルカ。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%82%A4%E3%83%A9%E3%83%AF%E3%82%B8%E3%82%AB%E3%83%AF%E3%82%A4%E3%83%AB%E3%82%AB%E3%83%BB%E3%82%A6%E3%82%A9%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%20%E3%82%B7%E3%83%BC%E3%83%91%E3%83%B3%E3%83%89%E3%83%B3%EF%BC%884000%E3%81%AE%E5%B3%B6%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9"}, "SPD 04": {"num": "SPD 04", "name": "ドーンデット島の夕日", "desc": "ハンモックに揺られながらメコン川に沈む夕日を眺める、シーパンドン滞在のハイライト。何もしない贅沢を味わう、旅の終盤にふさわしい時間。", "img": "", "mapUrl": "https://maps.google.com/?q=%E3%83%89%E3%83%BC%E3%83%B3%E3%83%87%E3%83%83%E3%83%88%E5%B3%B6%E3%81%AE%E5%A4%95%E6%97%A5%20%E3%82%B7%E3%83%BC%E3%83%91%E3%83%B3%E3%83%89%E3%83%B3%EF%BC%884000%E3%81%AE%E5%B3%B6%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9"}};
+function showSpot(numId) {
+  var o = (window.SPOT_DATA && SPOT_DATA[numId]) ? SPOT_DATA[numId] : null;
+  if (!o) {
+    var card = document.querySelector('[data-spot-num="' + numId + '"]');
+    if (!card) { location.href = 'spots.html?spot=' + encodeURIComponent(numId); return; }
+    var imgWrap = card.querySelector('.spot-img-wrap');
+    var mapBtn = card.querySelector('.spot-map-btn');
+    o = {
+      num:  (card.querySelector('.num') || {}).textContent || '',
+      name: (card.querySelector('.name') || {}).textContent || '',
+      desc: (card.querySelector('.desc') || {}).textContent || '',
+      img:  imgWrap ? imgWrap.style.backgroundImage.replace(/url\(["']?|["']?\)/g,'') : '',
+      mapUrl: mapBtn ? mapBtn.href : ''
+    };
+  }
+  document.getElementById('sp-pop-num').textContent  = o.num  || '';
+  document.getElementById('sp-pop-name').textContent = o.name || '';
+  document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  var popImg = document.getElementById('sp-pop-img');
+  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  var popMap = document.getElementById('sp-pop-map');
+  if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+  var popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSpotPopup() {
+  document.getElementById('sp-popup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
+  document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
+  });
+}
+
+function filterFood(dim, value, btn) {
+  const rowId = dim === 'type' ? '#food-filter-type' : '#food-filter-city';
+  const isActive = btn.classList.contains('active');
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
+  if (!isActive) btn.classList.add('active');
+  const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
+  document.querySelectorAll('#food-grid .item-card').forEach(el => {
+    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
+    el.style.display = (typeOk && cityOk) ? '' : 'none';
+  });
+}
+
+
+
+function showFilteredSpots(city) {
+  location.href = 'spots.html?city=' + encodeURIComponent(city);
+}
+
+/* 分割ページモード: 横スワイプで前後のページへ遷移 */
+var PAGE_ORDER = ["index.html", "spots.html", "food.html", "course.html", "budget.html", "practical.html", "phrases.html"];
+var PAGE_INDEX = 0;
+(function() {
+  let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
+  const THRESHOLD = 90;
+
+  document.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isMultiTouch = e.touches.length > 1;
+    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#laos-map') || e.target.closest('#hotel-map'));
+  }, { passive: true });
+
+  document.addEventListener('touchmove', e => {
+    if (e.touches.length > 1) isMultiTouch = true;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    if (startedOnExcluded || isMultiTouch) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) < THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
+
+    let nextIdx;
+    if (dx < 0) {
+      nextIdx = Math.min(PAGE_INDEX + 1, PAGE_ORDER.length - 1);
+    } else {
+      nextIdx = Math.max(PAGE_INDEX - 1, 0);
+    }
+    if (nextIdx !== PAGE_INDEX) location.href = PAGE_ORDER[nextIdx];
+  }, { passive: true });
+})();
+
+
+
+
+/* 分割ページモード: spots.html 到達時に ?spot= / ?city= を反映 */
+(function() {
+  if (!document.getElementById('spots-grid')) return;
+  const params = new URLSearchParams(location.search);
+  const spot = params.get('spot');
+  const city = params.get('city');
+  if (city) {
+    const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
+    if (btn) filterSpots('city', city, btn);
+  }
+  if (spot) {
+    setTimeout(() => showSpot(spot), 100);
+  }
+})();
+
+</script>
+
+<script src="../assets/country-links.js"></script>
+<footer style="text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-top:1px solid #e4ecee;margin-top:0">
+  <a href="../common/privacy.html" style="color:#aaa;text-decoration:none;margin:0 10px">プライバシーポリシー</a>
+  <span>｜</span>
+  <span style="margin:0 10px">© 2026 ZenWorldGuide</span>
+</footer>
+
+<!-- 指差しモーダル -->
+<div id="food-modal" class="food-modal-overlay" onclick="closeFoodModal()">
+  <div class="food-modal-card" onclick="event.stopPropagation()">
+    <button class="food-modal-close" onclick="closeFoodModal()">✕</button>
+    <img id="food-modal-img" src="" alt="" style="width:100%;border-radius:8px;margin-bottom:10px;display:none">
+    <div id="food-modal-ico" class="food-modal-ico"></div>
+    <div id="food-modal-name" class="food-modal-name"></div>
+    <div id="food-modal-name-en" class="food-modal-name-en"></div>
+    <div id="food-modal-pinyin" class="food-modal-pinyin"></div>
+    <div class="food-modal-phrase">
+      <div class="food-modal-phrase-main">Ao anee（アオ アニー／これをください）</div>
+      <div class="food-modal-phrase-sub">Saeb lai!（セープ ライ！／おいしい！）</div>
+    </div>
+    <div class="food-modal-hint">この画面を店員さんに見せてください</div>
+  </div>
+</div>
+
+<script>
+function openFoodModal(ico, primary, secondary, pinyin, imgSrc) {
+  const imgEl = document.getElementById('food-modal-img');
+  const icoEl = document.getElementById('food-modal-ico');
+  if (imgSrc) {
+    imgEl.src = imgSrc;
+    imgEl.style.display = 'block';
+    icoEl.style.display = 'none';
+  } else {
+    imgEl.style.display = 'none';
+    icoEl.style.display = '';
+  }
+  icoEl.textContent = ico;
+  document.getElementById('food-modal-name').innerHTML = primary;
+  const secEl = document.getElementById('food-modal-name-en');
+  secEl.textContent = secondary;
+  secEl.style.display = secondary ? '' : 'none';
+  const pinyinEl = document.getElementById('food-modal-pinyin');
+  pinyinEl.textContent = pinyin;
+  pinyinEl.style.display = pinyin ? '' : 'none';
+  document.getElementById('food-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeFoodModal() {
+  document.getElementById('food-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+<!-- 観光スポットポップアップ -->
+<div id="sp-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:2000;align-items:center;justify-content:center;padding:16px" onclick="if(event.target===this)closeSpotPopup()">
+  <div style="background:#fff;border-radius:6px;max-width:380px;width:100%;overflow:hidden;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.25)">
+    <button onclick="closeSpotPopup()" style="position:absolute;top:8px;right:10px;background:rgba(0,0,0,0.35);border:none;border-radius:50%;width:28px;height:28px;font-size:1em;cursor:pointer;color:#fff;z-index:1;line-height:1;display:flex;align-items:center;justify-content:center">✕</button>
+    <div id="sp-pop-img" style="width:100%;aspect-ratio:16/9;background-size:cover;background-position:center"></div>
+    <div style="padding:16px 18px 18px">
+      <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
+      <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
+      <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
+      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+        <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
