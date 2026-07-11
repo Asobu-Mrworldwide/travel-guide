@@ -418,7 +418,7 @@
       {
         "icon": "wifi",
         "title": "Wi-Fi",
-        "value": "全域で快適"
+        "value": "SIM・eSIMなら快適（公共Wi-Fiは店舗次第）"
       },
       {
         "icon": "clock",
@@ -511,12 +511,15 @@
       {
         "name": "JAL / ANA",
         "desc": "羽田・成田発の直行便。マイル特典やアップグレードも狙いやすい。",
-        "price": "往復 9〜15万円"
+        "price": "往復 9〜15万円",
+        "logo": "../素材/航空会社/JAL.svg",
+        "logo2": "../素材/航空会社/ANA.svg"
       },
       {
         "name": "ZIPAIR",
         "desc": "成田発のLCC。フルフラット席のあるLCCとして長距離でも快適。",
-        "price": "往復 4〜8万円"
+        "price": "往復 4〜8万円",
+        "logo": "../素材/航空会社/Zip air.svg"
       },
       {
         "name": "スクート",
@@ -626,8 +629,8 @@
     "cash_dependency": "低",
     "cash_dependency_color": "#006847",
     "cash_dependency_note": "世界屈指のキャッシュレス社会。ホーカーも大半がQR・カード対応",
-    "cash_daily_low": "20",
-    "cash_daily_high": "50",
+    "cash_daily_low": "0",
+    "cash_daily_high": "10",
     "cash_note": "1 SGD ≈ 124円で計算",
     "money_intro": "シンガポールはほぼすべての支払いがカード・タッチ決済で完結します。タッチ決済対応のクレカならMRT・バスにもそのまま乗れる（SimplyGo）ので、交通カードすら買う必要がありません。現金は一部の古いホーカー屋台用に少額あれば十分。両替が必要ならチャイナタウンやオーチャードの両替商がレート良好です。",
     "cash_tip_title": "タッチ決済クレカが交通カード代わりになる",
@@ -842,6 +845,12 @@
                 "audio": ""
               },
               {
+                "jp": "辛い",
+                "foreign": "Spicy",
+                "reading": "スパイシー",
+                "audio": ""
+              },
+              {
                 "jp": "辛くしないでください",
                 "foreign": "Not too spicy, please.",
                 "reading": "ノット トゥー スパイシー プリーズ",
@@ -966,7 +975,7 @@
       "image": "素材/グルメ/チキンライス（海南鶏飯）.webp",
       "prompt_en": "Hainanese chicken rice with poached chicken slices, fragrant rice, chili sauce and ginger paste, cucumber garnish, hawker style, food photography",
       "plate_color": "",
-      "wiki_url": "https://ja.wikipedia.org/wiki/海南鶏飯",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%82%AD%E3%83%B3%E3%83%A9%E3%82%A4%E3%82%B9%EF%BC%88%E6%B5%B7%E5%8D%97%E9%B6%8F%E9%A3%AF%EF%BC%89%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍗",
       "order_name_en": "Chicken Rice",
       "must": true
@@ -981,7 +990,7 @@
       "image": "",
       "prompt_en": "Singapore chilli crab whole crab in thick sweet spicy tomato chili sauce, fried mantou buns beside, seafood restaurant, food photography",
       "plate_color": "large white platter",
-      "wiki_url": "https://ja.wikipedia.org/wiki/チリクラブ",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%AA%E3%82%AF%E3%83%A9%E3%83%96%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🦀",
       "order_name_en": "Chilli Crab",
       "must": true
@@ -996,7 +1005,7 @@
       "image": "",
       "prompt_en": "Laksa spicy coconut curry noodle soup with prawns, fishcake, cockles and laksa leaf, rich orange broth, food photography",
       "plate_color": "white ceramic bowl",
-      "wiki_url": "https://ja.wikipedia.org/wiki/ラクサ",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A9%E3%82%AF%E3%82%B5%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍜",
       "order_name_en": "Laksa",
       "must": true
@@ -1011,7 +1020,7 @@
       "image": "",
       "prompt_en": "Bak kut teh peppery pork rib soup in claypot, clear broth with garlic, side of rice and youtiao, Singapore style, food photography",
       "plate_color": "claypot bowl",
-      "wiki_url": "https://ja.wikipedia.org/wiki/肉骨茶",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%AF%E3%83%86%E3%83%BC%EF%BC%88%E8%82%89%E9%AA%A8%E8%8C%B6%EF%BC%89%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍲",
       "order_name_en": "Bak Kut Teh"
     },
@@ -1025,7 +1034,7 @@
       "image": "",
       "prompt_en": "Hokkien mee stir-fried prawn noodles with squid, lime and sambal chili on the side, smoky wok flavor, hawker food photography",
       "plate_color": "white ceramic plate",
-      "wiki_url": "https://ja.wikipedia.org/wiki/ホッケン・ミー",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9B%E3%83%83%E3%82%B1%E3%83%B3%E3%83%9F%E3%83%BC%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍤",
       "order_name_en": "Hokkien Mee"
     },
@@ -1039,7 +1048,7 @@
       "image": "",
       "prompt_en": "Satay grilled meat skewers over charcoal with peanut sauce, cucumber and rice cakes, night hawker street, food photography",
       "plate_color": "banana leaf plate",
-      "wiki_url": "https://ja.wikipedia.org/wiki/サテ",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B5%E3%83%86%E3%83%BC%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍢",
       "order_name_en": "Satay",
       "must": true
@@ -1054,7 +1063,7 @@
       "image": "",
       "prompt_en": "Roti prata flaky crispy flatbread with fish curry dipping sauce, Indian hawker stall, golden layers, food photography",
       "plate_color": "metal plate",
-      "wiki_url": "https://en.wikipedia.org/wiki/Roti_prata",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%AD%E3%83%86%E3%82%A3%E3%83%97%E3%83%A9%E3%82%BF%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🫓",
       "order_name_en": "Roti Prata"
     },
@@ -1068,7 +1077,7 @@
       "image": "",
       "prompt_en": "Chai tow kway fried carrot cake radish cake with egg, dark soy version, spring onion garnish, hawker stall, food photography",
       "plate_color": "white ceramic plate",
-      "wiki_url": "https://ja.wikipedia.org/wiki/菜頭粿",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AD%E3%83%A3%E3%83%AD%E3%83%83%E3%83%88%E3%82%B1%E3%83%BC%E3%82%AD%EF%BC%88%E8%8F%9C%E9%A0%AD%E7%B2%BF%EF%BC%89%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍳",
       "order_name_en": "Carrot Cake (Chai Tow Kway)"
     },
@@ -1082,7 +1091,7 @@
       "image": "",
       "prompt_en": "Kaya toast set with soft boiled eggs and kopi coffee, crispy thin toast with kaya jam and butter slab, kopitiam breakfast, food photography",
       "plate_color": "small white plate",
-      "wiki_url": "https://ja.wikipedia.org/wiki/カヤトースト",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%A4%E3%83%88%E3%83%BC%E3%82%B9%E3%83%88%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍞",
       "order_name_en": "Kaya Toast",
       "must": true
@@ -1097,7 +1106,7 @@
       "image": "",
       "prompt_en": "Ice kachang colorful shaved ice dessert with rainbow syrup, red beans, jelly and sweet corn, hawker dessert, food photography",
       "plate_color": "glass bowl",
-      "wiki_url": "https://ja.wikipedia.org/wiki/アイスカチャン",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%82%A4%E3%82%B9%E3%82%AB%E3%83%81%E3%83%A3%E3%83%B3%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍧",
       "order_name_en": "Ice Kachang"
     },
@@ -1111,7 +1120,7 @@
       "image": "",
       "prompt_en": "Colorful Peranakan kueh assortment, layered rainbow rice cakes with pandan and coconut, traditional Nyonya sweets on plate, food photography",
       "plate_color": "peranakan patterned plate",
-      "wiki_url": "https://ja.wikipedia.org/wiki/クエ_(菓子)",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%97%E3%83%A9%E3%83%8A%E3%82%AB%E3%83%B3%E8%8F%93%E5%AD%90%EF%BC%88%E3%82%AF%E3%82%A8%EF%BC%89%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍡",
       "order_name_en": "Kueh"
     },
@@ -1125,7 +1134,7 @@
       "image": "",
       "prompt_en": "Singapore Sling cocktail bright pink red in tall glass with pineapple slice and cherry, classic hotel bar setting, food photography",
       "plate_color": "tall cocktail glass",
-      "wiki_url": "https://en.wikipedia.org/wiki/Singapore_Sling",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%E3%82%B9%E3%83%AA%E3%83%B3%E3%82%B0%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍹",
       "order_name_en": "Singapore Sling"
     },
@@ -1139,7 +1148,7 @@
       "image": "",
       "prompt_en": "Singapore fish head curry, whole fish head simmered in spicy curry sauce, large sharing platter, hawker style food photography",
       "plate_color": "large curry bowl",
-      "wiki_url": "https://ja.wikipedia.org/wiki/フィッシュヘッドカレー",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%98%E3%83%83%E3%83%89%E3%83%BB%E3%82%AB%E3%83%AC%E3%83%BC%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🐟",
       "order_name_en": "Fish Head Curry"
     },
@@ -1153,7 +1162,7 @@
       "image": "",
       "prompt_en": "Singapore paper wrapped chicken, marinated chicken fried in parchment paper parcels, Chinese restaurant dish, food photography",
       "plate_color": "white plate",
-      "wiki_url": "",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9A%E3%83%BC%E3%83%91%E3%83%BC%E3%83%81%E3%82%AD%E3%83%B3%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍗",
       "order_name_en": "Paper Chicken"
     },
@@ -1167,7 +1176,7 @@
       "image": "",
       "prompt_en": "Singapore kaya balls, bite-sized pastry filled with kaya coconut jam, street snack stall display",
       "plate_color": "paper snack tray",
-      "wiki_url": "",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%A4%E3%83%9C%E3%83%BC%E3%83%AB%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍡",
       "order_name_en": "Kaya Balls"
     },
@@ -1181,7 +1190,7 @@
       "image": "",
       "prompt_en": "Traditional Singapore kopi coffee in a cup and saucer, kopitiam hawker stall, condensed milk being poured",
       "plate_color": "cup and saucer",
-      "wiki_url": "https://ja.wikipedia.org/wiki/コピ",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B3%E3%83%94%EF%BC%8F%E3%83%86%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "☕",
       "order_name_en": "Kopi / Teh"
     },
@@ -1195,7 +1204,7 @@
       "image": "",
       "prompt_en": "Tiger Beer bottle and glass on a hawker centre table, condensation on glass, Singapore night scene",
       "plate_color": "beer glass",
-      "wiki_url": "https://ja.wikipedia.org/wiki/タイガービール",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%BF%E3%82%A4%E3%82%AC%E3%83%BC%E3%83%93%E3%83%BC%E3%83%AB%20%E3%82%B7%E3%83%B3%E3%82%AC%E3%83%9D%E3%83%BC%E3%83%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍺",
       "order_name_en": "Tiger Beer"
     }
@@ -1830,7 +1839,7 @@
     {
       "icon": "✈️",
       "name": "国際線（直行便）",
-      "desc": "羽田・成田・関西・中部・福岡からチャンギ空港へ直行便が毎日多数。所要約7〜8時間。チャンギは「世界一の空港」常連で、到着から観光が始まる。",
+      "desc": "羽田・成田・関西・中部・福岡からチャンギ空港へ直行便が毎日多数。所要約7〜8時間。チャンギは「世界一の空港」と名高く、到着から観光が始まる。",
       "affiliate": "",
       "is_last": false
     },
