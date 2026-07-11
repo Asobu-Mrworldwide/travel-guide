@@ -55,10 +55,7 @@
 
 <div class="container">
 
-  <div style="margin:16px 0 4px">
-    <a id="back-link" href="../malaysia/index.html" style="display:inline-flex;align-items:center;gap:5px;color:var(--green);font-size:0.78em;text-decoration:none;font-weight:700">← マレーシア旅行ガイドへ戻る</a>
-  </div>
-  <h2 style="margin-top:8px">持ち物チェックリスト</h2>
+  <h2 style="margin-top:16px">持ち物チェックリスト</h2>
 
   <!-- 機内持ち込みルール -->
   <div class="s-card" style="padding-top:6px">
@@ -289,21 +286,6 @@ function resetAll(){
   localStorage.removeItem(STORAGE_KEY);
   updateProgress();
 }
-
-(function(){
-  const countryMap = {
-    malaysia:     { href: '../malaysia/index.html',     label: 'マレーシア旅行ガイド' },
-    thailand:     { href: '../thailand/index.html',     label: 'タイ旅行ガイド' },
-    uzbekistan:   { href: '../uzbekistan/index.html',   label: 'ウズベキスタン旅行ガイド' },
-    south_africa: { href: '../south_africa/index.html', label: '南アフリカ旅行ガイド' },
-  };
-  const match = location.href.match(/[?&]from=([^&]+)/);
-  const from = match ? decodeURIComponent(match[1]) : null;
-  if(from && countryMap[from]){
-    const el = document.getElementById('back-link');
-    if(el){ el.href = countryMap[from].href; el.textContent = '← ' + countryMap[from].label + 'へ戻る'; }
-  }
-})();
 
 load();
 updateProgress();

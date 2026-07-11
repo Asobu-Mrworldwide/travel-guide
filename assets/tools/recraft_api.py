@@ -43,6 +43,10 @@ PROMPT_PREFIXES = {
         "watercolor illustration, soft watercolor brush strokes, "
         "painterly texture, hand-painted style, delicate color washes,"
     ),
+    "style_food_0710": (
+        "plain solid white background, no colored background, no background scenery, "
+        "no background pattern, isolated food illustration on white,"
+    ),
 }
 
 

@@ -73,6 +73,19 @@
       "description": "仏歯寺を擁する古都。紅茶畑が広がる高原地帯への玄関口"
     },
     {
+      "id": "nuwara_eliya",
+      "name": "ヌワラエリヤ",
+      "lat": "6.9497",
+      "lng": "80.7891",
+      "zoom": "13",
+      "color": "#00534E",
+      "marker_size": "10",
+      "marker_label": "●",
+      "badge": "高原の避暑地",
+      "badge_class": "green",
+      "description": "標高1,868mの「小さな英国」。紅茶畑とコロニアル建築が残る、涼しい高原リゾート"
+    },
+    {
       "id": "ella",
       "name": "エラ",
       "lat": "6.8667",
@@ -366,6 +379,74 @@
             "icon": "⛅",
             "temp": "20°C",
             "type": "t-mild"
+          }
+        ]
+      },
+      {
+        "name": "ヌワラエリヤ（高原）",
+        "city_id": "nuwara_eliya",
+        "best_note": "ベスト：1〜3月・7〜9月（乾燥・冷え込み対策必須）／ 通年で朝晩は10°C近くまで下がる。",
+        "note": "標高1,868mのヌワラエリヤはスリランカ随一の避暑地。日中も20°C前後までしか上がらず、朝晩は10°C近くまで冷え込むため防寒具が必須。乾季の1〜3月・7〜9月は霧が晴れやすく紅茶畑の眺望も良好。雨季でも激しい豪雨は少なく、霧雨程度で済むことが多い。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☀️",
+            "temp": "17°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☔",
+            "temp": "18°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☔",
+            "temp": "18°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☔",
+            "temp": "17°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☔",
+            "temp": "17°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☀️",
+            "temp": "17°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☀️",
+            "temp": "17°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☔",
+            "temp": "16°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☔",
+            "temp": "16°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☔",
+            "temp": "16°C",
+            "type": "t-cold"
           }
         ]
       }
@@ -1189,6 +1270,11 @@
       "active": false
     },
     {
+      "id": "nuwara_eliya",
+      "label": "ヌワラエリヤ",
+      "active": false
+    },
+    {
       "id": "ella",
       "label": "エラ",
       "active": false
@@ -1329,17 +1415,75 @@
           "prompt_en": "Kandyan dance performance Sri Lanka, dancers in elaborate traditional costumes with drums, fire performance, evening show",
           "image": "素材/観光スポット/キャンディアンダンス.webp",
           "type": "activity"
+        }
+      ]
+    },
+    {
+      "city_id": "nuwara_eliya",
+      "city_name": "ヌワラエリヤ",
+      "city_image": "",
+      "city_prompt": "Nuwara Eliya Sri Lanka colonial hill station, tea plantation hills, misty cool climate, English-style architecture, travel photography",
+      "city_desc": "標高1,868mの高原リゾート。英国統治時代の面影が色濃く残り「小さな英国」と称される、スリランカ随一の紅茶産地",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "キャンディから車・鉄道で約3〜4時間"
         },
         {
-          "must": false,
+          "label": "おすすめ時期",
+          "value": "1〜4月・7〜9月（比較的乾燥）",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "グレゴリー湖周辺・市街地中心部"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
           "icon": "🍃",
-          "num": "KDY 04",
+          "num": "NUW 01",
           "name": "紅茶畑＆ティーファクトリー見学",
           "desc": "キャンディ〜ヌワラエリヤ方面に広がる紅茶畑。工場見学では茶葉の加工工程を見学でき、できたてのセイロンティーを試飲できる。",
           "badge": "セイロンティー",
           "prompt_en": "Tea plantation hills near Kandy Sri Lanka, rows of tea bushes on rolling green hills, tea pickers, misty morning light",
           "image": "素材/観光スポット/紅茶畑＆ティーファクトリー見学.webp",
           "type": "activity"
+        },
+        {
+          "must": true,
+          "icon": "🚣",
+          "num": "NUW 02",
+          "name": "グレゴリー湖",
+          "desc": "市街地に隣接する人工湖。湖畔の遊歩道散策やボート遊びが楽しめ、涼しい高原の空気の中でのんびり過ごせる、ヌワラエリヤ観光の中心地。",
+          "badge": "湖畔さんぽ",
+          "prompt_en": "Lake Gregory Nuwara Eliya Sri Lanka, boats on calm lake, promenade with pine trees, cool misty hill station atmosphere, travel photography",
+          "image": "素材/観光スポット/グレゴリー湖.webp",
+          "type": "nature"
+        },
+        {
+          "must": true,
+          "icon": "⛰️",
+          "num": "NUW 03",
+          "name": "ホートンプレインズ国立公園",
+          "desc": "断崖絶壁「ワールズ・エンド」で知られる高原の国立公園。早朝から歩けば霧が晴れる前の絶景に出会え、固有種の野生動物にも遭遇できる。",
+          "badge": "ワールズ・エンド",
+          "prompt_en": "Horton Plains National Park Sri Lanka, World's End cliff viewpoint over misty valley, high altitude grassland, early morning light, travel photography",
+          "image": "素材/観光スポット/ホートンプレインズ国立公園.webp",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🌷",
+          "num": "NUW 04",
+          "name": "ヴィクトリア公園",
+          "desc": "英国統治時代に造られた市街地の庭園。四季折々の花々と針葉樹が並び、渡り鳥の観察スポットとしても知られる、コロニアルな雰囲気漂う憩いの場。",
+          "badge": "コロニアル庭園",
+          "prompt_en": "Victoria Park Nuwara Eliya Sri Lanka, colonial-era garden with flower beds and pine trees, misty cool hill station, travel photography",
+          "image": "素材/観光スポット/ヴィクトリア公園.webp",
+          "type": "nature"
         }
       ]
     },
@@ -1633,7 +1777,7 @@
             "transit": false,
             "label": "Day 4",
             "badge_class": "green",
-            "content_html": "<strong>キャンディ観光</strong><br><a onclick=\"showSpot('KDY 01')\" class=\"spot-link\">仏歯寺</a>と<a onclick=\"showSpot('KDY 02')\" class=\"spot-link\">キャンディ湖</a>を巡り、<a onclick=\"showSpot('KDY 04')\" class=\"spot-link\">ティーファクトリー</a>で<a onclick=\"showFood('No.10')\" class=\"spot-link\">セイロンティー</a>を試飲。"
+            "content_html": "<strong>キャンディ観光</strong><br><a onclick=\"showSpot('KDY 01')\" class=\"spot-link\">仏歯寺</a>と<a onclick=\"showSpot('KDY 02')\" class=\"spot-link\">キャンディ湖</a>を巡り、<a onclick=\"showSpot('NUW 01')\" class=\"spot-link\">ティーファクトリー</a>で<a onclick=\"showFood('No.10')\" class=\"spot-link\">セイロンティー</a>を試飲。"
           },
           {
             "transit": false,
@@ -1738,7 +1882,7 @@
           "transit": false,
           "label": "Day 6",
           "badge_class": "green",
-          "content_html": "<strong>ヌワラエリヤの紅茶畑</strong><br>英国統治時代の面影が残り「小さな英国」とも呼ばれる高原の街ヌワラエリヤへ。見渡す限りの<a onclick=\"showSpot('KDY 04')\" class=\"spot-link\">ティーファクトリー</a>を見学し、摘みたての茶葉から作られたばかりの<a onclick=\"showFood('No.10')\" class=\"spot-link\">セイロンティー</a>を試飲。標高1,800mならではの避暑地らしい涼しい空気を満喫する1日。",
+          "content_html": "<strong>ヌワラエリヤの紅茶畑</strong><br>英国統治時代の面影が残り「小さな英国」とも呼ばれる高原の街ヌワラエリヤへ。見渡す限りの<a onclick=\"showSpot('NUW 01')\" class=\"spot-link\">ティーファクトリー</a>を見学し、摘みたての茶葉から作られたばかりの<a onclick=\"showFood('No.10')\" class=\"spot-link\">セイロンティー</a>を試飲。標高1,800mならではの避暑地らしい涼しい空気を満喫する1日。",
           "pre_transit": {
             "duration": "キャンディ→ヌワラエリヤ（車 約3時間）",
             "taxi": true
