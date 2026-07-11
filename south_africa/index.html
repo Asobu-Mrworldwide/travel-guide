@@ -21,6 +21,8 @@
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
+a.keyword-link{color:inherit;text-decoration:underline;cursor:pointer;font-weight:inherit}
+a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
 blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
 blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
@@ -127,7 +129,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <!-- 基本情報 -->
 <section id="basic" class="active">
 
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:16px;padding:0 4px">未舗装路？道端に野生動物？命の保証は？まだそんなイメージの人は今すぐチケットを取りましょう。ケープタウンのテーブルマウンテン、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、<strong>圧倒的なスケールの自然と忘れてはならない残酷な歴史</strong>が共存する国です。</div>
+  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:16px;padding:0 4px">未舗装路？道端に野生動物？命の保証は？まだそんなイメージの人は今すぐチケットを取りましょう。ケープタウンの<a onclick="showSpot('CPT 01')" class="keyword-link">テーブルマウンテン</a>、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、<strong>圧倒的なスケールの自然と忘れてはならない残酷な歴史</strong>が共存する国です。</div>
   <h2>南アフリカ共和国ってどんなところ？</h2>
   <div class="s-card">
 
@@ -138,7 +140,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="sp-point">
       <div class="sp-point-body">
         <div class="sp-point-title">テーブルマウンテンは「天気次第」の運命共同体</div>
-        <div class="sp-point-text">ケープタウンに来た旅行者がまず目指すのがテーブルマウンテン。しかし頂上は雲に覆われる「テーブルクロス」現象が頻繁に起き、ロープウェイも強風で運休することがある。だからこそ晴れた朝に登れたときの感動は格別で、眼下に広がる大西洋とケープタウンの街並みは「来てよかった」と心から思える景色だ。</div>
+        <div class="sp-point-text">ケープタウンに来た旅行者がまず目指すのが<a onclick="showSpot('CPT 01')" class="keyword-link">テーブルマウンテン</a>。しかし頂上は雲に覆われる「テーブルクロス」現象が頻繁に起き、ロープウェイも強風で運休することがある。だからこそ晴れた朝に登れたときの感動は格別で、眼下に広がる大西洋とケープタウンの街並みは「来てよかった」と心から思える景色だ。</div>
       </div>
       <img src="素材/観光スポット/テーブルマウンテン.webp" alt="テーブルマウンテンは「天気次第」の運命共同体" class="sp-point-img">
     </div>
@@ -146,7 +148,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="sp-point">
       <div class="sp-point-body">
         <div class="sp-point-title">ロベン島は「生きた歴史」に出会える場所</div>
-        <div class="sp-point-text">マンデラ元大統領が27年間を過ごしたロベン島は、フェリーで30分の沖合にある。驚くのは、ガイドが元受刑者であること。自らが閉じ込められた独房の前で語る言葉は、どんな教科書よりもリアルにアパルトヘイトの歴史を伝えてくれる。</div>
+        <div class="sp-point-text">マンデラ元大統領が27年間を過ごした<a onclick="showSpot('CPT 02')" class="keyword-link">ロベン島</a>は、フェリーで30分の沖合にある。驚くのは、ガイドが元受刑者であること。自らが閉じ込められた独房の前で語る言葉は、どんな教科書よりもリアルにアパルトヘイトの歴史を伝えてくれる。</div>
       </div>
       <img src="素材/観光スポット/ロベン島.webp" alt="ロベン島は「生きた歴史」に出会える場所" class="sp-point-img">
     </div>

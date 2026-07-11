@@ -21,6 +21,8 @@
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
+a.keyword-link{color:inherit;text-decoration:underline;cursor:pointer;font-weight:inherit}
+a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
 blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
 blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
@@ -231,7 +233,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge ">Day 1</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>バンコク到着</strong><br>到着後はホテルにチェックイン。夜の<a href="javascript:void(0)" onclick="showSpot('BK 05')" class="spot-link">カオサン通り</a>か<a href="javascript:void(0)" onclick="showSpot('BK 10')" class="spot-link">ナイトマーケット</a>で屋台グルメを食べ歩き。パッタイ・ガパオライス・マンゴースティッキーライスはこの夜に制覇しよう。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>バンコク到着</strong><br>到着後はホテルにチェックイン。夜の<a href="javascript:void(0)" onclick="showSpot('BK 05')" class="spot-link">カオサン通り</a>か<a href="javascript:void(0)" onclick="showSpot('BK 10')" class="spot-link">ナイトマーケット</a>で屋台グルメを食べ歩き。<a onclick="showFood('No.01')" class="spot-link">パッタイ</a>・<a onclick="showFood('No.07')" class="spot-link">ガパオライス</a>・<a onclick="showFood('No.04')" class="spot-link">マンゴースティッキーライス</a>はこの夜に制覇しよう。</div>
           <img src="素材/観光スポット/ナイトマーケット.webp" alt="" class="tl-day-img">
         </div>
       </div>
@@ -281,7 +283,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge ">Day 5</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>ワット・ドイステープ → チェンマイ自由行動</strong><br>山頂の<a href="javascript:void(0)" onclick="showSpot('CM 01')" class="spot-link">ワット・ドイステープ</a>で朝の参拝。街を一望する絶景を楽しんだ後、<a href="javascript:void(0)" onclick="showSpot('CM 03')" class="spot-link">旧市街</a>でカオソーイランチ。午後はカフェ巡り・雑貨ショッピングでチェンマイの最後を満喫。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>ワット・ドイステープ → チェンマイ自由行動</strong><br>山頂の<a href="javascript:void(0)" onclick="showSpot('CM 01')" class="spot-link">ワット・ドイステープ</a>で朝の参拝。街を一望する絶景を楽しんだ後、<a href="javascript:void(0)" onclick="showSpot('CM 03')" class="spot-link">旧市街</a>で<a onclick="showFood('No.10')" class="spot-link">カオソーイ</a>ランチ。午後はカフェ巡り・雑貨ショッピングでチェンマイの最後を満喫。</div>
           <img src="素材/観光スポット/ワット・ドイステープ.webp" alt="" class="tl-day-img">
         </div>
       </div>
@@ -351,7 +353,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge ">Day 3</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>チェンマイ到着</strong><br>朝にチェンマイ着。ゲストハウスに荷物を預けてシャワーを浴びたら、<a href="javascript:void(0)" onclick="showSpot('CM 03')" class="spot-link">旧市街・お堀エリア</a>を自転車で散策。夕方は<a href="javascript:void(0)" onclick="showSpot('CM 04')" class="spot-link">サタデーナイトバザール</a>で雑貨を物色しながら、カオソーイとラープで北部タイ料理を堪能。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>チェンマイ到着</strong><br>朝にチェンマイ着。ゲストハウスに荷物を預けてシャワーを浴びたら、<a href="javascript:void(0)" onclick="showSpot('CM 03')" class="spot-link">旧市街・お堀エリア</a>を自転車で散策。夕方は<a href="javascript:void(0)" onclick="showSpot('CM 04')" class="spot-link">サタデーナイトバザール</a>で雑貨を物色しながら、<a onclick="showFood('No.10')" class="spot-link">カオソーイ</a>と<a onclick="showFood('No.11')" class="spot-link">ラープ</a>で北部タイ料理を堪能。</div>
           <img src="素材/観光スポット/旧市街・お堀.webp" alt="" class="tl-day-img">
         </div>
       </div>

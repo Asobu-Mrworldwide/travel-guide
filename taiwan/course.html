@@ -21,6 +21,8 @@
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
+a.keyword-link{color:inherit;text-decoration:underline;cursor:pointer;font-weight:inherit}
+a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
 blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
 blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
@@ -165,7 +167,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge green">Day 1</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台北到着 → 龍山寺 → 夜市デビュー</strong><br>午前便なら昼過ぎに台北着。空港MRTで市内へ入りホテルに荷物を預けたら、<a onclick="showSpot('TPE 03')" class="spot-link">龍山寺</a>と周辺の下町を散策。夜は<a onclick="showSpot('TPE 05')" class="spot-link">士林夜市</a>で胡椒餅・鹽酥雞・牡蠣オムレツをはしご。初日から台湾の熱気に浸かろう。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>台北到着 → 龍山寺 → 夜市デビュー</strong><br>午前便なら昼過ぎに台北着。空港MRTで市内へ入りホテルに荷物を預けたら、<a onclick="showSpot('TPE 03')" class="spot-link">龍山寺</a>と周辺の下町を散策。夜は<a onclick="showSpot('TPE 05')" class="spot-link">士林夜市</a>で<a onclick="showFood('No.4')" class="spot-link">胡椒餅</a>・鹽酥雞・牡蠣オムレツをはしご。初日から台湾の熱気に浸かろう。</div>
           
         </div>
       </div>
@@ -222,7 +224,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge green">Day 1</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台北到着 → 西門町 → 夜市</strong><br>ホテルに荷物を置いたら「台湾の原宿」西門町を散策し、夜は<a onclick="showSpot('TPE 08')" class="spot-link">饒河街観光夜市</a>へ。一本道で回りやすく、入口の胡椒餅は必食。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>台北到着 → 西門町 → 夜市</strong><br>ホテルに荷物を置いたら「台湾の原宿」西門町を散策し、夜は<a onclick="showSpot('TPE 08')" class="spot-link">饒河街観光夜市</a>へ。一本道で回りやすく、入口の<a onclick="showFood('No.4')" class="spot-link">胡椒餅</a>は必食。</div>
           
         </div>
       </div>
@@ -233,7 +235,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge green">Day 2</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台北定番巡り</strong><br><a onclick="showSpot('TPE 02')" class="spot-link">故宮博物院</a> → <a onclick="showSpot('TPE 04')" class="spot-link">中正紀念堂</a>の衛兵交代式 → <a onclick="showSpot('TPE 01')" class="spot-link">台北101</a>と、台北のハイライトを1日で。夜は小籠包の名店で乾杯。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>台北定番巡り</strong><br><a onclick="showSpot('TPE 02')" class="spot-link">故宮博物院</a> → <a onclick="showSpot('TPE 04')" class="spot-link">中正紀念堂</a>の衛兵交代式 → <a onclick="showSpot('TPE 01')" class="spot-link">台北101</a>と、台北のハイライトを1日で。夜は<a onclick="showFood('No.1')" class="spot-link">小籠包</a>の名店で乾杯。</div>
           
         </div>
       </div>
@@ -352,7 +354,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge green">Day 5</div>
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 36 36"><path fill="#939598" d="M0 34h36v2H0z"/><path fill="#58595B" d="M8 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M7 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><path fill="#58595B" d="M16 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M15 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><circle fill="#58595B" cx="32" cy="32" r="3"/><circle fill="#292F33" cx="32" cy="32" r="2"/><circle fill="#58595B" cx="24" cy="32" r="3"/><circle fill="#292F33" cx="24" cy="32" r="2"/><path fill="#5C913B" d="M0 28h36v4H0z"/><path fill="#FFE8B6" d="M0 16h36v12H0z"/><path fill="#FFAC33" d="M0 26h36v2H0z"/><path fill="#77B255" d="M32.555 14H3.445C1.969 14 .693 14.81 0 16h36c-.693-1.19-1.969-2-3.445-2z"/><path d="M5 22c0 .553-.447 1-1 1H2c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1H8c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2z" fill="#55ACEE"/></svg></span><span>高雄→台南<br>（台鉄 約40分）</span></div></div>
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台南：古都と小吃（シャオチー）</strong><br><a onclick="showSpot('TNN 01')" class="spot-link">赤崁楼</a>や<a onclick="showSpot('TNN 02')" class="spot-link">安平古堡</a>で台湾の歴史に触れ、食は牛肉湯（ぎゅうにくとう）から豆花まで小吃（シャオチー）づくしで。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>台南：古都と小吃（シャオチー）</strong><br><a onclick="showSpot('TNN 01')" class="spot-link">赤崁楼</a>や<a onclick="showSpot('TNN 02')" class="spot-link">安平古堡</a>で台湾の歴史に触れ、食は牛肉湯（ぎゅうにくとう）から<a onclick="showFood('No.10')" class="spot-link">豆花</a>まで小吃（シャオチー）づくしで。</div>
           
         </div>
       </div>

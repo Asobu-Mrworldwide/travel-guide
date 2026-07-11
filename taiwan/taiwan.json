@@ -9,7 +9,7 @@
   "hero_prompt": "Jiufen old street red lanterns glowing at dusk on hillside teahouse, with Taipei 101 skyline in distant valley, an elderly local shopkeeper lighting a paper lantern in front of her teahouse stall, warm evening light, travel illustration style",
   "overview": {
     "country_question": "台湾ってどんなところ？",
-    "description_html": "直行便で約3〜4時間、時差はたった1時間。機内食を食べて一眠りしたら、もう夜市の匂いの中にいます。<strong>小籠包や牛肉麺などの絶品グルメ、提灯が灯る九份、歴史ある寺廟、そして日本語すら通じることのある親日的な空気</strong>。友人にはじめての一人旅をしたいと相談されたら、とりあえず台湾と答えてしまうほど安牌です。",
+    "description_html": "直行便で約3〜4時間、時差はたった1時間。機内食を食べて一眠りしたら、もう夜市の匂いの中にいます。<strong><a onclick=\"showFood('No.1')\" class=\"keyword-link\">小籠包</a>や<a onclick=\"showFood('No.2')\" class=\"keyword-link\">牛肉麺</a>などの絶品グルメ、提灯が灯る九份、歴史ある寺廟、そして日本語すら通じることのある親日的な空気</strong>。友人にはじめての一人旅をしたいと相談されたら、とりあえず台湾と答えてしまうほど安牌です。",
     "flag_html": "<div style=\"display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden\"><svg width=\"150\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 900 600\"><g fill-rule=\"evenodd\"><path d=\"M0 0h900v600H0z\" fill=\"#fe0000\"/><path d=\"M0 0h450v300H0z\" fill=\"#000095\"/></g><path d=\"M225 37.5l-56.25 209.928L322.428 93.75 112.5 150l209.928 56.25L168.75 52.572 225 262.5l56.25-209.928L127.572 206.25 337.5 150 127.572 93.75 281.25 247.428 225 37.5\" fill=\"#fff\" paint-order=\"markers fill stroke\"/><circle cy=\"150\" cx=\"225\" r=\"60\" fill=\"#fff\" stroke=\"#000095\" stroke-width=\"7.5\"/></svg></div>",
     "flag_caption": "青天白日満地紅旗。青は青天、白い太陽は進取の精神、赤は大地を表す。",
     "top_spot_name": "九份（きゅうふん）老街",
@@ -1864,7 +1864,7 @@
             "transit": false,
             "label": "Day 1",
             "badge_class": "green",
-            "content_html": "<strong>台北到着 → 龍山寺 → 夜市デビュー</strong><br>午前便なら昼過ぎに台北着。空港MRTで市内へ入りホテルに荷物を預けたら、<a onclick=\"showSpot('TPE 03')\" class=\"spot-link\">龍山寺</a>と周辺の下町を散策。夜は<a onclick=\"showSpot('TPE 05')\" class=\"spot-link\">士林夜市</a>で胡椒餅・鹽酥雞・牡蠣オムレツをはしご。初日から台湾の熱気に浸かろう。"
+            "content_html": "<strong>台北到着 → 龍山寺 → 夜市デビュー</strong><br>午前便なら昼過ぎに台北着。空港MRTで市内へ入りホテルに荷物を預けたら、<a onclick=\"showSpot('TPE 03')\" class=\"spot-link\">龍山寺</a>と周辺の下町を散策。夜は<a onclick=\"showSpot('TPE 05')\" class=\"spot-link\">士林夜市</a>で<a onclick=\"showFood('No.4')\" class=\"spot-link\">胡椒餅</a>・鹽酥雞・牡蠣オムレツをはしご。初日から台湾の熱気に浸かろう。"
           },
           {
             "transit": false,
@@ -1899,13 +1899,13 @@
             "transit": false,
             "label": "Day 1",
             "badge_class": "green",
-            "content_html": "<strong>台北到着 → 西門町 → 夜市</strong><br>ホテルに荷物を置いたら「台湾の原宿」西門町を散策し、夜は<a onclick=\"showSpot('TPE 08')\" class=\"spot-link\">饒河街観光夜市</a>へ。一本道で回りやすく、入口の胡椒餅は必食。"
+            "content_html": "<strong>台北到着 → 西門町 → 夜市</strong><br>ホテルに荷物を置いたら「台湾の原宿」西門町を散策し、夜は<a onclick=\"showSpot('TPE 08')\" class=\"spot-link\">饒河街観光夜市</a>へ。一本道で回りやすく、入口の<a onclick=\"showFood('No.4')\" class=\"spot-link\">胡椒餅</a>は必食。"
           },
           {
             "transit": false,
             "label": "Day 2",
             "badge_class": "green",
-            "content_html": "<strong>台北定番巡り</strong><br><a onclick=\"showSpot('TPE 02')\" class=\"spot-link\">故宮博物院</a> → <a onclick=\"showSpot('TPE 04')\" class=\"spot-link\">中正紀念堂</a>の衛兵交代式 → <a onclick=\"showSpot('TPE 01')\" class=\"spot-link\">台北101</a>と、台北のハイライトを1日で。夜は小籠包の名店で乾杯。"
+            "content_html": "<strong>台北定番巡り</strong><br><a onclick=\"showSpot('TPE 02')\" class=\"spot-link\">故宮博物院</a> → <a onclick=\"showSpot('TPE 04')\" class=\"spot-link\">中正紀念堂</a>の衛兵交代式 → <a onclick=\"showSpot('TPE 01')\" class=\"spot-link\">台北101</a>と、台北のハイライトを1日で。夜は<a onclick=\"showFood('No.1')\" class=\"spot-link\">小籠包</a>の名店で乾杯。"
           },
           {
             "transit": false,
@@ -1992,7 +1992,7 @@
           "transit": false,
           "label": "Day 5",
           "badge_class": "green",
-          "content_html": "<strong>台南：古都と小吃（シャオチー）</strong><br><a onclick=\"showSpot('TNN 01')\" class=\"spot-link\">赤崁楼</a>や<a onclick=\"showSpot('TNN 02')\" class=\"spot-link\">安平古堡</a>で台湾の歴史に触れ、食は牛肉湯（ぎゅうにくとう）から豆花まで小吃（シャオチー）づくしで。",
+          "content_html": "<strong>台南：古都と小吃（シャオチー）</strong><br><a onclick=\"showSpot('TNN 01')\" class=\"spot-link\">赤崁楼</a>や<a onclick=\"showSpot('TNN 02')\" class=\"spot-link\">安平古堡</a>で台湾の歴史に触れ、食は牛肉湯（ぎゅうにくとう）から<a onclick=\"showFood('No.10')\" class=\"spot-link\">豆花</a>まで小吃（シャオチー）づくしで。",
           "pre_transit": {
             "duration": "高雄→台南（台鉄 約40分）",
             "local_train": true
@@ -2083,7 +2083,7 @@
     },
     {
       "title": "台北101には「登らず撮る」選択肢も",
-      "body": "台北101の展望台も良いが、定番は象山から101入りの夜景を撮ること。MRT象山駅から往復1時間ほどの手軽なハイキングで、料金は無料。夕方に登って、日没から夜景に変わるマジックアワーを狙うのがおすすめ。",
+      "body": "<a onclick=\"showSpot('TPE 01')\" class=\"keyword-link\">台北101</a>の展望台も良いが、定番は象山から101入りの夜景を撮ること。MRT象山駅から往復1時間ほどの手軽なハイキングで、料金は無料。夕方に登って、日没から夜景に変わるマジックアワーを狙うのがおすすめ。",
       "image": "素材/観光スポット/象山ハイキングコース.webp",
       "spot_ref": "TPE 06"
     }

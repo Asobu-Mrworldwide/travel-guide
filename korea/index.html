@@ -21,6 +21,8 @@
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
+a.keyword-link{color:inherit;text-decoration:underline;cursor:pointer;font-weight:inherit}
+a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
 blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
 blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
@@ -127,7 +129,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <!-- 基本情報 -->
 <section id="basic" class="active">
 
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:16px;padding:0 4px">日本から一番近い海外、それが韓国。飛行機で2時間ちょっと、時差もゼロという気軽さながら、街を歩けば新しいカフェとコスメショップが次々オープンし、路地に入れば李氏朝鮮時代の宮殿や城壁が今も残る。K-POP・韓国ドラマで親しんだ景色をそのまま歩けるうえ、サムギョプサルからチーズトッポッキまで「今食べたいもの」が揃う食の国でもある。ソウルの都会的な熱量と、慶州や釜山のローカルな空気、両方を短い休みでも味わえるのが韓国旅行の強み。</div>
+  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:16px;padding:0 4px">日本から一番近い海外、それが韓国。飛行機で2時間ちょっと、時差もゼロという気軽さながら、街を歩けば新しいカフェとコスメショップが次々オープンし、路地に入れば李氏朝鮮時代の宮殿や城壁が今も残る。K-POP・韓国ドラマで親しんだ景色をそのまま歩けるうえ、<a onclick="showFood('No.1')" class="keyword-link">サムギョプサル</a>から<a onclick="showFood('No.5')" class="keyword-link">チーズトッポッキ</a>まで「今食べたいもの」が揃う食の国でもある。ソウルの都会的な熱量と、慶州や釜山のローカルな空気、両方を短い休みでも味わえるのが韓国旅行の強み。</div>
   <h2>韓国ってどんなところ？</h2>
   <div class="s-card">
 
@@ -138,7 +140,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="sp-point">
       <div class="sp-point-body">
         <div class="sp-point-title">韓服レンタルで宮殿の入場料がタダになる</div>
-        <div class="sp-point-text">景福宮・昌徳宮など主要な王宮は、韓服（ハンボク）を着て訪れると入場料が無料になる特典がある。明洞や景福宮周辺に韓服レンタル店が多数あり、着付け込みで2,000〜4,000円ほど。写真映えと節約が同時に叶う、ソウル観光の定番の小技。</div>
+        <div class="sp-point-text"><a onclick="showSpot('SEL 01')" class="keyword-link">景福宮</a>・昌徳宮など主要な王宮は、韓服（ハンボク）を着て訪れると入場料が無料になる特典がある。<a onclick="showSpot('SEL 03')" class="keyword-link">明洞</a>や景福宮周辺に韓服レンタル店が多数あり、着付け込みで2,000〜4,000円ほど。写真映えと節約が同時に叶う、ソウル観光の定番の小技。</div>
       </div>
       
     </div>
@@ -146,7 +148,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="sp-point">
       <div class="sp-point-body">
         <div class="sp-point-title">地下鉄は駅番号を覚えると迷わない</div>
-        <div class="sp-point-text">ソウルの地下鉄はハングル表記の下に必ず英数字の駅番号（例：明洞駅=4-22）が併記されている。ハングルが読めなくても、乗換案内アプリで調べた番号と駅の表示を照らし合わせるだけで迷わず移動できる。T-moneyカードを1枚持てば全路線・バスにタッチ乗車できるので、到着後すぐコンビニで購入しておきたい。</div>
+        <div class="sp-point-text">ソウルの地下鉄はハングル表記の下に必ず英数字の駅番号（例：<a onclick="showSpot('SEL 03')" class="keyword-link">明洞</a>駅=4-22）が併記されている。ハングルが読めなくても、乗換案内アプリで調べた番号と駅の表示を照らし合わせるだけで迷わず移動できる。T-moneyカードを1枚持てば全路線・バスにタッチ乗車できるので、到着後すぐコンビニで購入しておきたい。</div>
       </div>
       
     </div>
@@ -154,7 +156,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="sp-point">
       <div class="sp-point-body">
         <div class="sp-point-title">屋台グルメは辛さ・量を確認してから</div>
-        <div class="sp-point-text">明洞や広蔵市場の屋台グルメは日本人にも食べやすい味付けが多いが、辛さのレベルは店によって差が大きい。辛いものが苦手なら「안 맵게 해주세요（辛くしないでください）」の一言を覚えておくと安心。屋台は現金のみの店もまだ多いので、少額のウォン紙幣を用意しておこう。</div>
+        <div class="sp-point-text"><a onclick="showSpot('SEL 03')" class="keyword-link">明洞</a>や広蔵市場の屋台グルメは日本人にも食べやすい味付けが多いが、辛さのレベルは店によって差が大きい。辛いものが苦手なら「안 맵게 해주세요（辛くしないでください）」の一言を覚えておくと安心。屋台は現金のみの店もまだ多いので、少額のウォン紙幣を用意しておこう。</div>
       </div>
       
     </div>

@@ -21,6 +21,8 @@
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
+a.keyword-link{color:inherit;text-decoration:underline;cursor:pointer;font-weight:inherit}
+a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
 blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
 blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
@@ -165,7 +167,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge green">Day 1</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>ケープタウン到着</strong><br>夕方までにケープタウン(CPT)着。ホテルにチェックインしたら、初日は<a onclick="showSpot('CPT 07')" class="spot-link">V&Aウォーターフロント</a>へ。テーブルマウンテンを望む港でシーフードと南アフリカワインを味わえば、長旅の疲れも吹き飛ぶ。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>ケープタウン到着</strong><br>夕方までにケープタウン(CPT)着。ホテルにチェックインしたら、初日は<a onclick="showSpot('CPT 07')" class="spot-link">V&Aウォーターフロント</a>へ。テーブルマウンテンを望む港でシーフードと<a onclick="showFood('No.17')" class="spot-link">南アフリカワイン</a>を味わえば、長旅の疲れも吹き飛ぶ。</div>
           
         </div>
       </div>
@@ -176,7 +178,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge green">Day 2</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>テーブルマウンテン → ボカープ地区</strong><br>朝一番に<a onclick="showSpot('CPT 01')" class="spot-link">テーブルマウンテン</a>へ。山頂が雲に覆われる「テーブルクロス」が出やすい午後より、晴れやすい午前中が勝負。午後はカラフルな家並みの<a onclick="showSpot('CPT 05')" class="spot-link">ボカープ地区</a>を散策して、夜はブライ（南アフリカ式BBQ）で乾杯。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>テーブルマウンテン → ボカープ地区</strong><br>朝一番に<a onclick="showSpot('CPT 01')" class="spot-link">テーブルマウンテン</a>へ。山頂が雲に覆われる「テーブルクロス」が出やすい午後より、晴れやすい午前中が勝負。午後はカラフルな家並みの<a onclick="showSpot('CPT 05')" class="spot-link">ボカープ地区</a>を散策して、夜は<a onclick="showFood('No.1')" class="spot-link">ブライ</a>（南アフリカ式BBQ）で乾杯。</div>
           
         </div>
       </div>
@@ -358,7 +360,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         <div class="tl-badge red">Day 2</div>
         
         <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>ヨハネスブルグ市内観光</strong><br><a onclick="showSpot('JHB 01')" class="spot-link">アパルトヘイト博物館</a>でこの国の歴史を学び、午後は<a onclick="showSpot('JHB 03')" class="spot-link">ポンテタワー</a>のツアーへ。かつて「危険の代名詞」と呼ばれた円筒形タワーの内部を地元ガイドと歩く体験は強烈だった。合間に路上で売っていたブライを地元民とともに堪能。</div>
+          <div class="tl-content" style="flex:1;min-width:0"><strong>ヨハネスブルグ市内観光</strong><br><a onclick="showSpot('JHB 01')" class="spot-link">アパルトヘイト博物館</a>でこの国の歴史を学び、午後は<a onclick="showSpot('JHB 03')" class="spot-link">ポンテタワー</a>のツアーへ。かつて「危険の代名詞」と呼ばれた円筒形タワーの内部を地元ガイドと歩く体験は強烈だった。合間に路上で売っていた<a onclick="showFood('No.1')" class="spot-link">ブライ</a>を地元民とともに堪能。</div>
           
         </div>
       </div>

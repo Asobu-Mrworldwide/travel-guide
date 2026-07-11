@@ -21,6 +21,8 @@
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
+a.keyword-link{color:inherit;text-decoration:underline;cursor:pointer;font-weight:inherit}
+a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
 blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
 blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
@@ -146,7 +148,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="sp-point">
       <div class="sp-point-body">
         <div class="sp-point-title">多民族の食文化を、屋台で体感する</div>
-        <div class="sp-point-text">マレー系・中華系・インド系の料理が同じ屋台街に並ぶ光景は、マレーシアならではのものだ。朝のコピティアムでロティチャナイをちぎりながらチャイを飲み、昼はナシレマ、夜は中華系の海鮮炒めと、一日で三つの文化の味を巡れる国は世界でもそう多くない。</div>
+        <div class="sp-point-text">マレー系・中華系・インド系の料理が同じ屋台街に並ぶ光景は、マレーシアならではのものだ。朝のコピティアムで<a onclick="showFood('No.09')" class="keyword-link">ロティチャナイ</a>をちぎりながらチャイを飲み、昼は<a onclick="showFood('No.01')" class="keyword-link">ナシレマ</a>、夜は中華系の海鮮炒めと、一日で三つの文化の味を巡れる国は世界でもそう多くない。</div>
       </div>
       <img src="素材/グルメ/ナシレマ.webp" alt="多民族の食文化を、屋台で体感する" class="sp-point-img">
     </div>
