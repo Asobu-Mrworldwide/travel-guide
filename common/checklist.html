@@ -350,6 +350,19 @@ updateProgress();
     }
   });
 })();
+
+/* ヘッダー: 下スクロールで隠す・上スクロールで表示 */
+(function(){
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    if (y > lastY && y > 80) { header.classList.add('header-hidden'); }
+    else { header.classList.remove('header-hidden'); }
+    lastY = y;
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>

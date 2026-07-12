@@ -57,8 +57,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 #food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
 
 /* 観光スポットカード画像・絵文字 */
-.spot-img{display:none}
 .spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0}
+.spot-img-wrap img.spot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
 .spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
 .spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
@@ -87,10 +87,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </head>
 <body>
 
+<div id="site-top-bar">
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none">{{icon:earth}}<span>World</span> Mappy</a></div>
   <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
 </header>
+</div>
 
 {% if multipage %}
 <nav>
@@ -705,7 +707,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">{{item.num}}</div>
       <div class="name-row"><div class="name">{% if item.name_ruby %}{{item.name_ruby}}{% else %}{{item.name}}{% endif %}</div><span class="badge">{{item.badge}}</span></div>
       <div class="desc">{{item.desc}}</div>
-      <img src="{{item.image}}" alt="{{item.name}}" class="food-img">
+      <img src="{{item.image}}" alt="{{item.name}}" class="food-img" loading="lazy">
       {% if item.wiki_url %}<a href="{{item.wiki_url}}" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>{% endif %}
       {% if item.name_ruby %}
       <button class="order-btn" onclick="openFoodModal('{{item.order_ico}}','{{item.name_ruby}}','{{item.order_name_en}}','{{item.pinyin}}','{{item.image}}')">店員に聞く</button>
@@ -769,7 +771,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">{{spot.num}}</div>
       <div class="name-row"><div class="name">{{spot.name}}</div><span class="badge">{{spot.badge}}</span></div>
       <div class="desc">{{spot.desc}}</div>
-      {% if spot.image %}<div class="spot-img-wrap" style="background-image:url('{{spot.image}}')">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% elif spot.no_map %}<span class="spot-map-btn" style="display:none"></span>{% endif %}{% if spot.wiki_url %}<a href="{{spot.wiki_url}}" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a>{% endif %}{% if spot.affiliate_url %}<a href="{{spot.affiliate_url}}" target="_blank" rel="noopener" class="spot-map-btn">{{spot.affiliate_label}} →</a>{% endif %}</div>{% else %}<div class="spot-img-wrap spot-img-placeholder">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% elif spot.no_map %}<span class="spot-map-btn" style="display:none"></span>{% endif %}{% if spot.wiki_url %}<a href="{{spot.wiki_url}}" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a>{% endif %}{% if spot.affiliate_url %}<a href="{{spot.affiliate_url}}" target="_blank" rel="noopener" class="spot-map-btn">{{spot.affiliate_label}} →</a>{% endif %}</div>{% endif %}
+      {% if spot.image %}<div class="spot-img-wrap"><img class="spot-img" src="{{spot.image}}" alt="{{spot.name}}" loading="lazy">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% elif spot.no_map %}<span class="spot-map-btn" style="display:none"></span>{% endif %}{% if spot.wiki_url %}<a href="{{spot.wiki_url}}" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a>{% endif %}{% if spot.affiliate_url %}<a href="{{spot.affiliate_url}}" target="_blank" rel="noopener" class="spot-map-btn">{{spot.affiliate_label}} →</a>{% endif %}</div>{% else %}<div class="spot-img-wrap spot-img-placeholder">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% elif spot.no_map %}<span class="spot-map-btn" style="display:none"></span>{% endif %}{% if spot.wiki_url %}<a href="{{spot.wiki_url}}" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a>{% endif %}{% if spot.affiliate_url %}<a href="{{spot.affiliate_url}}" target="_blank" rel="noopener" class="spot-map-btn">{{spot.affiliate_label}} →</a>{% endif %}</div>{% endif %}
     </div>
     {% endfor %}
     </div>
@@ -969,8 +971,8 @@ function showSpot(numId) {
   const name = card.querySelector('.name')?.textContent || '';
   const num  = card.querySelector('.num')?.textContent || '';
   const desc = card.querySelector('.desc')?.textContent || '';
-  const imgWrap = card.querySelector('.spot-img-wrap');
-  const imgUrl = imgWrap ? imgWrap.style.backgroundImage.replace(/url\(["']?|["']?\)/g,'') : '';
+  const imgEl = card.querySelector('.spot-img-wrap img.spot-img');
+  const imgUrl = imgEl ? imgEl.src : '';
   const mapBtn = card.querySelector('.spot-map-btn');
   const mapUrl = mapBtn ? mapBtn.href : '';
 
@@ -1024,13 +1026,13 @@ function showSpot(numId) {
   if (!o) {
     var card = document.querySelector('[data-spot-num="' + numId + '"]');
     if (!card) { location.href = 'spots.html?spot=' + encodeURIComponent(numId); return; }
-    var imgWrap = card.querySelector('.spot-img-wrap');
+    var imgEl = card.querySelector('.spot-img-wrap img.spot-img');
     var mapBtn = card.querySelector('.spot-map-btn');
     o = {
       num:  (card.querySelector('.num') || {}).textContent || '',
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
-      img:  imgWrap ? imgWrap.style.backgroundImage.replace(/url\(["']?|["']?\)/g,'') : '',
+      img:  imgEl ? imgEl.src : '',
       mapUrl: mapBtn ? mapBtn.href : ''
     };
   }
@@ -1232,6 +1234,44 @@ var PAGE_INDEX = {{page_index}};
 {% endif %}
 </script>
 
+<script>
+/* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
+(function(){
+  const header = document.getElementById('site-top-bar');
+  const navEl = document.querySelector('nav');
+  if (!header) return;
+  header.style.transition = 'none';
+  if (navEl) navEl.style.transition = 'none';
+
+  let headerH = header.offsetHeight;
+  let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  function apply() {
+    header.style.transform = 'translateY(-' + hideOffset + 'px)';
+    if (navEl) navEl.style.top = (headerH - hideOffset) + 'px';
+    ticking = false;
+  }
+
+  window.addEventListener('resize', function(){
+    headerH = header.offsetHeight;
+    hideOffset = Math.min(hideOffset, headerH);
+    apply();
+  });
+
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const dy = y - lastY;
+    lastY = y;
+    hideOffset = Math.max(0, Math.min(headerH, hideOffset + dy));
+    if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
+    if (!ticking) { ticking = true; requestAnimationFrame(apply); }
+  }, { passive: true });
+
+  apply();
+})();
+</script>
 <script src="../assets/country-links.js"></script>
 <footer style="text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-top:1px solid #e4ecee;margin-top:0">
   <a href="../common/privacy.html" style="color:#aaa;text-decoration:none;margin:0 10px">プライバシーポリシー</a>

@@ -58,7 +58,9 @@ h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 .btn{background:var(--green);color:#fff;border:none;padding:8px 16px;border-radius:20px;font-size:0.78em;font-weight:700;cursor:pointer}
 .btn.outline{background:#fff;color:var(--green);border:1.5px solid var(--green)}
 
-/* サイトヘッダー */
+/* サイトヘッダー: スクロールでスライド表示/非表示（タブナビは常時表示、別要素） */
+#site-top-bar{position:sticky;top:0;z-index:1000;transition:transform 0.3s ease}
+#site-top-bar.header-hidden{transform:translateY(-100%)}
 .site-header{background:#15735b;padding:13px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,0.15)}
 .site-logo{font-size:1.3em;font-weight:900;color:#fff;letter-spacing:-0.5px;white-space:nowrap}
 .site-logo span{color:#ffc200}
@@ -94,7 +96,7 @@ footer a{color:#fff;text-decoration:none;margin:0 10px}
 .lbl{font-size:0.72em;color:var(--sub);font-weight:700;margin-bottom:2px}
 
 /* タブナビ（全国共通） */
-nav{background-color:rgba(246,244,239,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,136,229,0.15);box-shadow:0 4px 20px rgba(26,37,48,0.04);display:flex;justify-content:center;overflow-x:auto;gap:0;position:sticky;top:0;z-index:100;touch-action:pan-x;-webkit-overflow-scrolling:touch}
+nav{background-color:rgba(246,244,239,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,136,229,0.15);box-shadow:0 4px 20px rgba(26,37,48,0.04);display:flex;justify-content:center;overflow-x:auto;gap:0;touch-action:pan-x;-webkit-overflow-scrolling:touch;position:sticky;top:0;z-index:1001;transition:top 0.3s ease}
 nav::-webkit-scrollbar{height:3px}
 nav button,nav a{flex-shrink:0;background:none;border:none;border-bottom:6px solid transparent;padding:13px 16px;font-size:0.8em;color:#555;cursor:pointer;margin-bottom:-2px;white-space:nowrap;transition:color 0.2s,border-color 0.2s;font-weight:700;letter-spacing:0.02em;position:relative;text-decoration:none}
 nav button:not(:last-child)::after,nav a:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:16px;background:#d8e2ee}

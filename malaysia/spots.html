@@ -57,8 +57,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 #food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
 
 /* 観光スポットカード画像・絵文字 */
-.spot-img{display:none}
 .spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0}
+.spot-img-wrap img.spot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
 .spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
 .spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
@@ -87,10 +87,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </head>
 <body>
 
+<div id="site-top-bar">
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a></div>
   <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
 </header>
+</div>
 
 
 <nav>
@@ -259,7 +261,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 01</div>
       <div class="name-row"><div class="name">ペトロナスツインタワー</div><span class="badge">クアラルンプール</span></div>
       <div class="desc">高さ452mの双子タワー。スカイブリッジ（41〜42F）と展望台（86F）からの夜景は圧巻。入場は有料・要予約。Klookで事前に押さえておこう。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ペトロナスツインタワー.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ペトロナスツインタワー.webp" alt="ペトロナスツインタワー" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kl" data-stype="townscape" data-spot-num="KL 02">
@@ -267,7 +269,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 02</div>
       <div class="name-row"><div class="name">KLタワー</div><span class="badge">夜景</span></div>
       <div class="desc">高さ421mの通信塔。展望台から360度のパノラマビュー。夜景が特に美しく、ガラス床の展望デッキも人気。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/KLタワー.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/KLタワー.webp" alt="KLタワー" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="kl" data-stype="religious" data-spot-num="KL 03">
@@ -275,7 +277,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 03</div>
       <div class="name-row"><div class="name">バトゥ洞窟</div><span class="badge">KL近郊</span></div>
       <div class="desc">KL近郊の巨大ヒンドゥー聖地。272段の虹色の階段と42mのムルガン像。タイプーサム祭りは圧巻。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/バトゥ洞窟.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バトゥ洞窟.webp" alt="バトゥ洞窟" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kl" data-stype="nature" data-spot-num="KL 04">
@@ -283,7 +285,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 04</div>
       <div class="name-row"><div class="name">KLCC公園</div><span class="badge">入場無料</span></div>
       <div class="desc">ペトロナスツインタワーのふもとに広がる公園。夜のシンクロ噴水ショーは無料。エスプラネードからツインタワーを背景に噴水を眺めるのがベスト。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/KLCC公園.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/KLCC公園.webp" alt="KLCC公園" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kl" data-stype="market" data-spot-num="KL 05">
@@ -291,7 +293,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 05</div>
       <div class="name-row"><div class="name">ブキッビンタン</div><span class="badge">ショッピング</span></div>
       <div class="desc">KL最大の繁華街。大型ショッピングモール・ナイトマーケット・グルメが集結。観光の中心地。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ブキッビンタン.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブキッビンタン.webp" alt="ブキッビンタン" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kl" data-stype="religious" data-spot-num="KL 06">
@@ -299,7 +301,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 06</div>
       <div class="name-row"><div class="name">マスジッドネガラ（国立モスク）</div><span class="badge">入場無料</span></div>
       <div class="desc">1万8千人を収容できるマレーシア最大のモスク。イスラム建築の美しさが際立つ。無料で見学可能。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/マスジッドネガラ（国立モスク）.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マスジッドネガラ（国立モスク）.webp" alt="マスジッドネガラ（国立モスク）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kl" data-stype="religious" data-spot-num="KL 07">
@@ -307,7 +309,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 07</div>
       <div class="name-row"><div class="name">マスジッドジャメ</div><span class="badge">入場無料</span></div>
       <div class="desc">クラン川とゴンバック川の合流点に建つKL最古のモスク。ムガル様式の赤レンガとドームが美しく、都市の歴史を感じられるスポット。入場無料。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/マスジッドジャメ.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マスジッドジャメ.webp" alt="マスジッドジャメ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="kl" data-stype="religious" data-spot-num="KL 08">
@@ -315,7 +317,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 08</div>
       <div class="name-row"><div class="name">ピンクモスク（プトラモスク）</div><span class="badge">映えスポット</span></div>
       <div class="desc">プトラジャヤにある淡いピンク色の巨大モスク。湖に面したロケーションが美しく、朝夕の光に映えるドームは絶景。KLから車で約40分。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ピンクモスク（プトラモスク）.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピンクモスク（プトラモスク）.webp" alt="ピンクモスク（プトラモスク）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="kl" data-stype="religious" data-spot-num="KL 09">
@@ -323,7 +325,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 09</div>
       <div class="name-row"><div class="name">ブルーモスク</div><span class="badge">KL近郊</span></div>
       <div class="desc">正式名：スルタン・サラフディン・アブドゥル・アジズ・モスク。シャーアラムにある青銀のドームが美しいモスク。KLから車で約30分。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ブルーモスク.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブルーモスク.webp" alt="ブルーモスク" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kl" data-stype="market" data-spot-num="KL 10">
@@ -331,7 +333,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 10</div>
       <div class="name-row"><div class="name">ペタリン通り（チャイナタウン）</div><span class="badge">クアラルンプール</span></div>
       <div class="desc">KLチャイナタウンの中心を走る屋台街。食べ物・雑貨・土産物が所狭しと並び、地元民と観光客が混ざり合う活気あふれる場所。近くには鮮やかな外観の天后宮（廟（びょう））も。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ペタリン通り（チャイナタウン）.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ペタリン通り（チャイナタウン）.webp" alt="ペタリン通り（チャイナタウン）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kl" data-stype="market" data-spot-num="KL 11">
@@ -339,7 +341,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KL 11</div>
       <div class="name-row"><div class="name">セントラルマーケット</div><span class="badge">クアラルンプール</span></div>
       <div class="desc">1888年創建の旧市場を改装した屋内ショッピングスポット。マレー・中華・インドの工芸品やバティック、アート作品が揃い、雨の日の観光にも最適。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/セントラルマーケット.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/セントラルマーケット.webp" alt="セントラルマーケット" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kl" data-stype="religious" data-spot-num="KL 12">
@@ -399,7 +401,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">ペナン 01</div>
       <div class="name-row"><div class="name">ジョージタウン旧市街</div><span class="badge">世界遺産</span></div>
       <div class="desc">ユネスコ世界遺産。英国植民地時代の建築・中国系家屋・モスクが混在する多文化の街。壁画アートも必見。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ジョージタウン旧市街.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジョージタウン旧市街.webp" alt="ジョージタウン旧市街" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="penang" data-stype="nature" data-spot-num="ペナン 02">
@@ -407,7 +409,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">ペナン 02</div>
       <div class="name-row"><div class="name">ペナンヒル</div><span class="badge">絶景</span></div>
       <div class="desc">標高830mの丘陵。ケーブルカーで登頂でき、頂上からペナン大橋・海峡を見渡せる絶景スポット。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ペナンヒル.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ペナンヒル.webp" alt="ペナンヒル" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="penang" data-stype="heritage" data-spot-num="ペナン 03">
@@ -415,7 +417,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">ペナン 03</div>
       <div class="name-row"><div class="name">クー・コンシー（邸宅）</div><span class="badge">中国文化</span></div>
       <div class="desc">19世紀に建設された中国系一族の豪華な邸宅。精巧な彫刻・壁画・池で囲まれた建築美が圧巻。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/クー・コンシー（邸宅）.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クー・コンシー（邸宅）.webp" alt="クー・コンシー（邸宅）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="penang" data-stype="nature" data-spot-num="ペナン 04">
@@ -423,7 +425,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">ペナン 04</div>
       <div class="name-row"><div class="name">バトゥ・フェリンギビーチ</div><span class="badge">ビーチ</span></div>
       <div class="desc">ペナン北部の人気ビーチリゾート。ウォータースポーツ・シーフードレストラン・ナイトバザールが充実。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/バトゥ・フェリンギビーチ.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バトゥ・フェリンギビーチ.webp" alt="バトゥ・フェリンギビーチ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="penang" data-stype="nature" data-spot-num="ペナン 05">
@@ -431,7 +433,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">ペナン 05</div>
       <div class="name-row"><div class="name">ペナン国立公園</div><span class="badge">自然</span></div>
       <div class="desc">マレーシア最小の国立公園。熱帯雨林トレッキング・亀の産卵地・マングローブを堪能できる自然の宝庫。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ペナン国立公園.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ペナン国立公園.webp" alt="ペナン国立公園" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="penang" data-stype="townscape" data-spot-num="ペナン 06">
@@ -439,7 +441,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">ペナン 06</div>
       <div class="name-row"><div class="name">クラン・ジェッティ（桟橋集落）</div><span class="badge">フォトスポット</span></div>
       <div class="desc">海上に建つ中国系一族の水上集落。それぞれの一族が管理する桟橋が続く独特の景観。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/クラン・ジェッティ（桟橋集落）.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クラン・ジェッティ（桟橋集落）.webp" alt="クラン・ジェッティ（桟橋集落）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="penang" data-stype="townscape" data-spot-num="ペナン 07">
@@ -507,7 +509,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">マラッカ 01</div>
       <div class="name-row"><div class="name">オランダ広場（スタダイス）</div><span class="badge">フォトスポット</span></div>
       <div class="desc">17世紀にオランダが建設した赤い建物が並ぶ広場。キリスト教会・時計塔・噴水が美しいマラッカの象徴。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/オランダ広場（スタダイス）.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/オランダ広場（スタダイス）.webp" alt="オランダ広場（スタダイス）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca" data-stype="heritage" data-spot-num="マラッカ 02">
@@ -515,7 +517,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">マラッカ 02</div>
       <div class="name-row"><div class="name">セントポール教会</div><span class="badge">歴史遺産</span></div>
       <div class="desc">16世紀にポルトガルが建設した丘の上の廃墟教会。フランシスコ・ザビエルが一時埋葬された場所。夕景が美しい。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/セントポール教会.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/セントポール教会.webp" alt="セントポール教会" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca" data-stype="museum" data-spot-num="マラッカ 03">
@@ -523,7 +525,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">マラッカ 03</div>
       <div class="name-row"><div class="name">ババニョニャ遺産博物館</div><span class="badge">文化体験</span></div>
       <div class="desc">中国系移民とマレー人の混血文化「プラナカン」の生活様式を展示。精巧な陶器・家具・衣装が見られる。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ババニョニャ遺産博物館.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ババニョニャ遺産博物館.webp" alt="ババニョニャ遺産博物館" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca" data-stype="market" data-spot-num="マラッカ 04">
@@ -531,7 +533,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">マラッカ 04</div>
       <div class="name-row"><div class="name">ジョンカーストリート</div><span class="badge">ナイトマーケット</span></div>
       <div class="desc">アンティーク・土産物・屋台が並ぶ旧市街の目抜き通り。週末ナイトマーケットは地元グルメが充実。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ジョンカーストリート.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジョンカーストリート.webp" alt="ジョンカーストリート" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca" data-stype="activity" data-spot-num="マラッカ 05">
@@ -539,7 +541,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">マラッカ 05</div>
       <div class="name-row"><div class="name">マラッカ川クルーズ</div><span class="badge">夜景</span></div>
       <div class="desc">カラフルな壁画・コロニアル建築を川から眺めるクルーズ。夜のライトアップが特に幻想的で人気。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/マラッカ川クルーズ.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マラッカ川クルーズ.webp" alt="マラッカ川クルーズ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca" data-stype="townscape" data-spot-num="マラッカ 06">
@@ -547,7 +549,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">マラッカ 06</div>
       <div class="name-row"><div class="name">ポルトガル村</div><span class="badge">グルメ</span></div>
       <div class="desc">16世紀のポルトガル統治時代の子孫が暮らすコミュニティ。週末はポルトガル料理・ダンスが楽しめる。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ポルトガル村.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ポルトガル村.webp" alt="ポルトガル村" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="malacca" data-stype="religious" data-spot-num="マラッカ 07">
@@ -651,7 +653,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KK 01</div>
       <div class="name-row"><div class="name">キナバル山</div><span class="badge">世界遺産</span></div>
       <div class="desc">東南アジア最高峰（4,095m）のユネスコ世界遺産。2日間のトレッキングで登頂可能。ガイド必須・事前予約が必要。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/キナバル山.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/キナバル山.webp" alt="キナバル山" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kk" data-stype="nature" data-spot-num="KK 02">
@@ -659,7 +661,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KK 02</div>
       <div class="name-row"><div class="name">セピロクオランウータン保護区</div><span class="badge">野生動物</span></div>
       <div class="desc">野生復帰を目指すオランウータンのリハビリ施設。決まった時間に餌台へ降りてくるオランウータンを間近で見学できる世界的に有名な保護区。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/セピロクオランウータン保護区.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/セピロクオランウータン保護区.webp" alt="セピロクオランウータン保護区" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kk" data-stype="nature" data-spot-num="KK 03">
@@ -667,7 +669,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KK 03</div>
       <div class="name-row"><div class="name">マヌカン島</div><span class="badge">シュノーケリング</span></div>
       <div class="desc">市内からボートで20分のサンゴ礁の島。シュノーケリング・ダイビング・白砂ビーチが楽しめるリゾート。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/マヌカン島.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マヌカン島.webp" alt="マヌカン島" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kk" data-stype="nature" data-spot-num="KK 04">
@@ -675,7 +677,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KK 04</div>
       <div class="name-row"><div class="name">シパダン島</div><span class="badge">ダイビング聖地</span></div>
       <div class="desc">世界トップクラスのダイビングスポット。ウミガメの群れ・バラクーダの竜巻が見られる海の楽園。入島許可証が必要。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/シパダン島.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シパダン島.webp" alt="シパダン島" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kk" data-stype="market" data-spot-num="KK 05">
@@ -683,7 +685,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KK 05</div>
       <div class="name-row"><div class="name">フィリピン市場</div><span class="badge">シーフード</span></div>
       <div class="desc">フィリピン人商人が集まる水上市場。新鮮な魚介類・真珠・土産物が格安で手に入る活気ある市場。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/フィリピン市場.webp')"><a href="https://maps.app.goo.gl/YZnNuef92TRS5GW49" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フィリピン市場.webp" alt="フィリピン市場" loading="lazy"><a href="https://maps.app.goo.gl/YZnNuef92TRS5GW49" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kk" data-stype="market" data-spot-num="KK 06">
@@ -691,7 +693,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">KK 06</div>
       <div class="name-row"><div class="name">ガヤ・ストリート（日曜市）</div><span class="badge">日曜限定</span></div>
       <div class="desc">毎週日曜朝に開かれる地元民憩いの朝市。地元フード・野菜・民芸品・植物など多彩な商品が並ぶ。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/ガヤ・ストリート（日曜市）.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ガヤ・ストリート（日曜市）.webp" alt="ガヤ・ストリート（日曜市）" loading="lazy"></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="kk" data-stype="nature" data-spot-num="KK 07">
@@ -759,7 +761,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">クチン 01</div>
       <div class="name-row"><div class="name">サラワク博物館</div><span class="badge">入場無料</span></div>
       <div class="desc">東南アジア有数の博物館。ボルネオ先住民族の文化・自然史を詳しく展示。1891年創設の歴史ある博物館。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/サラワク博物館.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サラワク博物館.webp" alt="サラワク博物館" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kuching" data-stype="nature" data-spot-num="クチン 02">
@@ -767,7 +769,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">クチン 02</div>
       <div class="name-row"><div class="name">バコ国立公園</div><span class="badge">国立公園</span></div>
       <div class="desc">サラワク最古の国立公園。テングザル・ウツボカズラ・ビーチ・マングローブが揃う自然の宝庫。ボートでアクセス。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/バコ国立公園.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バコ国立公園.webp" alt="バコ国立公園" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="kuching" data-stype="nature" data-spot-num="クチン 03">
@@ -775,7 +777,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">クチン 03</div>
       <div class="name-row"><div class="name">セメンゴ野生動物センター</div><span class="badge">野生動物</span></div>
       <div class="desc">半野生のオランウータンが暮らすリハビリ保護区。朝・夕方の餌付け時間にスタッフが置いた餌を食べに来る様子を見学できる。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/セメンゴ野生動物センター.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/セメンゴ野生動物センター.webp" alt="セメンゴ野生動物センター" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kuching" data-stype="activity" data-spot-num="クチン 04">
@@ -783,7 +785,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">クチン 04</div>
       <div class="name-row"><div class="name">サラワク・カルチャービレッジ</div><span class="badge">文化体験</span></div>
       <div class="desc">ボルネオ先住民族7グループの伝統家屋・文化・踊りを体験できる民俗村。ダンス公演も見られる。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/サラワク・カルチャービレッジ.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サラワク・カルチャービレッジ.webp" alt="サラワク・カルチャービレッジ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kuching" data-stype="townscape" data-spot-num="クチン 05">
@@ -791,7 +793,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">クチン 05</div>
       <div class="name-row"><div class="name">クチン旧市街・ウォーターフロント</div><span class="badge">夜景</span></div>
       <div class="desc">クチン川沿いの遊歩道。コロニアル建築・中華寺院・モスクが立ち並ぶ歴史地区。夜はライトアップが美しい。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/クチン旧市街・ウォーターフロント.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クチン旧市街・ウォーターフロント.webp" alt="クチン旧市街・ウォーターフロント" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kuching" data-stype="museum" data-spot-num="クチン 06">
@@ -799,7 +801,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="num">クチン 06</div>
       <div class="name-row"><div class="name">クチン猫博物館</div><span class="badge">猫の街</span></div>
       <div class="desc">猫の街クチンならではの博物館。世界各地の猫にまつわるコレクション・彫刻・絵画を展示するユニークな施設。</div>
-      <div class="spot-img-wrap" style="background-image:url('素材/観光スポット/クチン猫博物館.webp')"></div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クチン猫博物館.webp" alt="クチン猫博物館" loading="lazy"></div>
     </div>
     
     </div>
@@ -885,13 +887,13 @@ function showSpot(numId) {
   if (!o) {
     var card = document.querySelector('[data-spot-num="' + numId + '"]');
     if (!card) { location.href = 'spots.html?spot=' + encodeURIComponent(numId); return; }
-    var imgWrap = card.querySelector('.spot-img-wrap');
+    var imgEl = card.querySelector('.spot-img-wrap img.spot-img');
     var mapBtn = card.querySelector('.spot-map-btn');
     o = {
       num:  (card.querySelector('.num') || {}).textContent || '',
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
-      img:  imgWrap ? imgWrap.style.backgroundImage.replace(/url\(["']?|["']?\)/g,'') : '',
+      img:  imgEl ? imgEl.src : '',
       mapUrl: mapBtn ? mapBtn.href : ''
     };
   }
@@ -1048,6 +1050,44 @@ var PAGE_INDEX = 1;
 
 </script>
 
+<script>
+/* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
+(function(){
+  const header = document.getElementById('site-top-bar');
+  const navEl = document.querySelector('nav');
+  if (!header) return;
+  header.style.transition = 'none';
+  if (navEl) navEl.style.transition = 'none';
+
+  let headerH = header.offsetHeight;
+  let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  function apply() {
+    header.style.transform = 'translateY(-' + hideOffset + 'px)';
+    if (navEl) navEl.style.top = (headerH - hideOffset) + 'px';
+    ticking = false;
+  }
+
+  window.addEventListener('resize', function(){
+    headerH = header.offsetHeight;
+    hideOffset = Math.min(hideOffset, headerH);
+    apply();
+  });
+
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const dy = y - lastY;
+    lastY = y;
+    hideOffset = Math.max(0, Math.min(headerH, hideOffset + dy));
+    if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
+    if (!ticking) { ticking = true; requestAnimationFrame(apply); }
+  }, { passive: true });
+
+  apply();
+})();
+</script>
 <script src="../assets/country-links.js"></script>
 <footer style="text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-top:1px solid #e4ecee;margin-top:0">
   <a href="../common/privacy.html" style="color:#aaa;text-decoration:none;margin:0 10px">プライバシーポリシー</a>
