@@ -1397,7 +1397,7 @@
       "badge": "主食",
       "type": "side",
       "city": "national",
-      "desc": "トウモロコシ粉で作った白い粥状の主食。現地では「パップ」と呼ばれることが多い。南アフリカ全土の家庭料理に欠かせないスタープル。肉料理や野菜スープと合わせる。",
+      "desc": "トウモロコシ粉で作った白い粥状の主食。現地では「パップ」と呼ばれることが多い。南アフリカ全土の家庭料理に欠かせないスタープル。手で軽く握って一口大に固め、肉料理や野菜スープと絡めて食べるのが現地流。",
       "image": "素材/グルメ/ミーリーパップ.webp",
       "prompt_en": "A single smooth dome-shaped mound of plain white maize porridge (mieliepap / stywepap), firm and stiff in texture, uniform matte off-white color, served alone in a plain white ceramic bowl. Nothing else in the bowl or frame — no corn kernels, no sauce, no meat, no vegetables, no garnish. Simple, minimalist, close-up realistic food illustration on a plain background.",
       "plate_color": "",
@@ -1636,7 +1636,7 @@
           "name": "ロベン島",
           "desc": "ネルソン・マンデラ元大統領が27年間収容されたユネスコ世界遺産の島。フェリーで30分。元受刑者がガイドを務める実体験の説明は圧倒的な迫力。",
           "badge": "世界遺産",
-          "prompt_en": "Robben Island South Africa, historic prison cell, Nelson Mandela's cell, blue ocean surrounding the island",
+          "prompt_en": "A small, bare prison cell on Robben Island, South Africa. Simple and austere: concrete floor, a thin mat on the floor instead of a bed, a small barred window, plain walls. Documentary illustration style.",
           "image": "素材/観光スポット/ロベン島.webp",
           "type": "heritage"
         },
@@ -1702,7 +1702,7 @@
           "name": "カーステンボッシュ国立植物園",
           "desc": "テーブルマウンテン東麓（とうろく）に広がる、ケープ植物区系保護地域としてユネスコ世界遺産にも登録された植物園。地上12mを歩く空中回廊「ブームスラング」からは緑の樹冠（じゅかん）とケープタウンの絶景が広がる。",
           "badge": "世界遺産",
-          "prompt_en": "Kirstenbosch National Botanical Garden Cape Town, Boomslang canopy walkway through forest treetops, Table Mountain backdrop",
+          "prompt_en": "Kirstenbosch National Botanical Garden Cape Town, close-up of vivid South African fynbos flowers in full bloom, large king protea (national flower) as the central focus with its distinctive crown-shaped pink and cream petals, surrounded by orange and red pincushion proteas and spiky silver leucadendron, Table Mountain softly visible in the blurred background, colorful botanical illustration",
           "image": "素材/観光スポット/カーステンボッシュ国立植物園.webp",
           "type": "nature"
         },
@@ -1762,7 +1762,8 @@
           "badge": "歴史",
           "prompt_en": "Soweto Vilakazi Street Johannesburg, Nelson Mandela's house museum, colorful township street with locals",
           "image": "素材/観光スポット/ソウェト（ヴィラカジ通り）.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Vilakazi+Street+Soweto"
         },
         {
           "must": false,
@@ -1867,7 +1868,10 @@
           "badge": "ベスト体験",
           "prompt_en": "Sunrise game drive Kruger National Park, open safari jeep with tourists, lions near acacia tree, golden savanna light",
           "image": "素材/観光スポット/サンライズ・ゲームドライブ.webp",
-          "type": "activity"
+          "type": "activity",
+          "no_map": true,
+          "affiliate_url": "https://www.getyourguide.jp/",
+          "affiliate_label": "GetYourGuideで探す"
         },
         {
           "must": true,
@@ -1878,7 +1882,10 @@
           "badge": "野生動物",
           "prompt_en": "Big Five wildlife collage Kruger National Park, elephant, lion, leopard, rhino, buffalo on African savanna",
           "image": "素材/観光スポット/ビッグファイブ探索.webp",
-          "type": "nature"
+          "type": "nature",
+          "no_map": true,
+          "affiliate_url": "https://www.getyourguide.jp/",
+          "affiliate_label": "GetYourGuideで探す"
         },
         {
           "must": false,
@@ -1887,9 +1894,12 @@
           "name": "サンセット・ナイトドライブ",
           "desc": "夕暮れから夜にかけて行うドライブ。ハイエナ・ライオン・ナイトエイプなど夜行性動物をスポットライトで探す。昼間とは異なる野生の顔が見られる。",
           "badge": "オプション",
-          "prompt_en": "Night game drive Kruger National Park, spotlight searching animals in darkness, African bush at night, safari",
+          "prompt_en": "Night game drive Kruger National Park, searching animals in darkness, African bush at night, safari",
           "image": "素材/観光スポット/サンセット・ナイトドライブ.webp",
-          "type": "activity"
+          "type": "activity",
+          "no_map": true,
+          "affiliate_url": "https://www.getyourguide.jp/",
+          "affiliate_label": "GetYourGuideで探す"
         },
         {
           "must": false,
