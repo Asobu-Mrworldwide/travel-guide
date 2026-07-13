@@ -1,0 +1,2368 @@
+{
+  "multipage": true,
+  "id": "vietnam",
+  "name": "ベトナム",
+  "name_en": "Vietnam",
+  "page_title": "ベトナム旅行ガイド",
+  "hero_image": "素材/ヒーロー.webp",
+  "hero_alt": "ベトナムの街並み",
+  "hero_prompt": "Hoi An ancient town at dusk, colorful silk lanterns glowing over a narrow canal lined with yellow French colonial buildings, reflections on the water, warm golden light, Vietnam",
+  "index_card": {
+    "flag": "🇻🇳",
+    "catch": "赤い提灯が石畳の運河に揺れるホイアンの夕暮れ、バイクの喧騒とフォーの湯気が旧市街の路地に漂う",
+    "region": "東南アジア",
+    "best_label": "12〜5月",
+    "gradient": "linear-gradient(135deg,#cc0001 0%,#ffcc00 100%)",
+    "budget": [
+      "budget1"
+    ],
+    "best_months": [
+      11,
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tags": [
+      "ビーチ",
+      "世界遺産",
+      "グルメ",
+      "自然",
+      "歴史"
+    ]
+  },
+  "overview": {
+    "country_question": "ベトナムってどんな国？",
+    "description_html": "南北に約1,650km、細長く伸びるインドシナ半島の国ベトナム。北部ハノイの古都情緒、中部ホイアンのランタンが灯る旧市街、南部ホーチミンの熱気とバイクの奔流——同じ国とは思えないほど表情豊かな旅ができる。<span style='display:block;margin-top:0.5em'>朝から晩まで途切れないバイクのクラクション、道端の低い椅子で<a onclick=\"showFood('No.01')\" class=\"spot-link\">フォー</a>をすする人々、路地に漂うベトナムコーヒーの香り——落ち着かないはずなのに、なぜか居心地がいい。それがこの国の不思議な魔力だ。</span>",
+    "flag_html": "<div style=\"display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden\"><svg width=\"150\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"-15 -10 30 20\"><path fill=\"#DA251d\" d=\"M-20-15h40v30h-40z\"/><g id=\"b\" transform=\"translate(0 -6)\"><path id=\"a\" fill=\"#FF0\" transform=\"rotate(18)\" d=\"M0 0v6h4\"/><use xlink:href=\"#a\" transform=\"scale(-1 1)\"/></g><g id=\"c\" transform=\"rotate(72)\"><use xlink:href=\"#b\"/><use xlink:href=\"#b\" transform=\"rotate(72)\"/></g><use xlink:href=\"#c\" transform=\"scale(-1 1)\"/></svg></div>",
+    "flag_caption": "Cờ đỏ sao vàng（コー・ドー・サオ・ヴァン）― ベトナム語で「金星紅旗」",
+    "top_spot_name": "ハロン湾",
+    "top_spot_desc": "南シナ海に約1,600の石灰岩の奇岩が林立する世界遺産の景勝地。クルーズ船で1〜2泊しながら鍾乳洞やカヤックを楽しむのが定番。",
+    "top_spot_image": "素材/観光スポット/ハロン湾クルーズ.webp",
+    "top_food_name": "フォー",
+    "top_food_desc": "牛骨や鶏ガラでじっくり出汁を取った、ベトナムを代表する米麺料理。パクチーやライムを添え、店ごとに異なる味わいが楽しめる国民食。",
+    "top_food_image": "素材/グルメ/フォー.webp",
+    "difficulty_label": "普通",
+    "difficulty_label_bg": "#fff4e0",
+    "difficulty_label_color": "#b09000",
+    "difficulty_pct": "45",
+    "difficulty_bar": "linear-gradient(90deg,#00a86b,#66cc99)",
+    "difficulty_desc": "ビザなしで45日間滞在でき物価も安いが、英語は観光地以外で通じにくい。バイクの奔流が絶えない道路を渡る勇気は必要だが、慣れれば旅はぐっと快適になる。",
+    "japan_popularity_html": "近年、直行便の増加とともに日本人旅行者が急増中のアジア屈指の人気旅行先。<strong>ビザ不要・物価安い・グルメが豊富・北から南まで表情が違う</strong>のが魅力で、リピーターも多い。",
+    "flight_hours": "約6〜6.5時間",
+    "timezone": "日本 −2時間",
+    "visa": "不要（45日）",
+    "budget_range": "7〜16万円",
+    "language": "地方は英語通じにくい",
+    "currency_name": "ドン(VND)",
+    "currency_rate": "1,000VND ≈ 6円",
+    "danger_level": 0,
+    "danger_label": "特に危険情報なし",
+    "danger_color": "#006847",
+    "danger_note": "ハノイ旧市街・ホーチミン繁華街はスリ・ひったくり注意",
+    "danger_url": "https://www.anzen.mofa.go.jp/riskmap/"
+  },
+  "map": {
+    "element_id": "vietnam-map",
+    "center_lat": "16.0",
+    "center_lng": "107.5",
+    "zoom": "5",
+    "map_id": "ebb608e55ed157f8630c407e",
+    "country_label": "ベトナム"
+  },
+  "cities": [
+    {
+      "id": "hanoi",
+      "name": "ハノイ",
+      "lat": "21.0285",
+      "lng": "105.8542",
+      "zoom": "12",
+      "color": "#cc0001",
+      "marker_size": "14",
+      "marker_label": "★",
+      "badge": "首都",
+      "badge_class": "",
+      "description": "千年の歴史を持つ古都。旧市街と湖が織りなすノスタルジックな街並み"
+    },
+    {
+      "id": "hcmc",
+      "name": "ホーチミン",
+      "lat": "10.8231",
+      "lng": "106.6297",
+      "zoom": "12",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "経済都市",
+      "badge_class": "green",
+      "description": "摩天楼とフレンチコロニアル建築が同居する南部最大の商都"
+    },
+    {
+      "id": "danang",
+      "name": "ダナン",
+      "lat": "16.0544",
+      "lng": "108.2022",
+      "zoom": "12",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "中部・ビーチ",
+      "badge_class": "green",
+      "description": "白砂のビーチと世界遺産ホイアン・フエへの玄関口"
+    },
+    {
+      "id": "haiphong",
+      "name": "ハイフォン",
+      "lat": "20.8449",
+      "lng": "106.6881",
+      "zoom": "12",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "港湾都市",
+      "badge_class": "green",
+      "description": "世界遺産ハロン湾・カットバ島への玄関口となる北部の港町"
+    },
+    {
+      "id": "cantho",
+      "name": "カントー",
+      "lat": "10.0452",
+      "lng": "105.7469",
+      "zoom": "12",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "メコンデルタ",
+      "badge_class": "green",
+      "description": "水上マーケットと運河が広がるメコンデルタの中心都市"
+    }
+  ],
+  "season_mini": {
+    "description": "ベトナムは南北に長く、北部と南部で気候が大きく異なります。北部（ハノイ）は四季があり、南部（ホーチミン）は乾季・雨季の2シーズン。",
+    "city_name": "ハノイ",
+    "months": [
+      {
+        "icon": "☀️",
+        "temp": "18°",
+        "type": "t-cool"
+      },
+      {
+        "icon": "☀️",
+        "temp": "19°",
+        "type": "t-cool"
+      },
+      {
+        "icon": "⛅",
+        "temp": "21°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "⛅",
+        "temp": "25°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☔",
+        "temp": "29°",
+        "type": "t-hot1"
+      },
+      {
+        "icon": "☔",
+        "temp": "31°",
+        "type": "t-hot2"
+      },
+      {
+        "icon": "☔",
+        "temp": "31°",
+        "type": "t-hot2"
+      },
+      {
+        "icon": "☔",
+        "temp": "30°",
+        "type": "t-hot1"
+      },
+      {
+        "icon": "☔",
+        "temp": "29°",
+        "type": "t-hot1"
+      },
+      {
+        "icon": "⛅",
+        "temp": "26°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "22°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "19°",
+        "type": "t-cool"
+      }
+    ]
+  },
+  "basic_data": [
+    {
+      "label": "首都",
+      "value": "ハノイ",
+      "note": "旧市街「36通り」が今も残る千年の古都",
+      "compare_html": ""
+    },
+    {
+      "label": "独立年",
+      "value": "1945年",
+      "note": "ホー・チ・ミンが対仏独立を宣言（9月2日は建国記念日）",
+      "compare_html": ""
+    },
+    {
+      "label": "人口",
+      "value": "約1億人",
+      "note": "東南アジアで2番目に人口が多い",
+      "compare_html": ""
+    },
+    {
+      "label": "面積",
+      "value": "約33万km²",
+      "note": "日本の約0.9倍、南北に約1,650kmと細長い",
+      "compare_html": ""
+    },
+    {
+      "label": "宗教",
+      "value": "無宗教・民間信仰が多数",
+      "note": "仏教（大乗）約16%、カトリック約7%",
+      "compare_html": ""
+    },
+    {
+      "label": "民族",
+      "value": "キン族（ベト族） 約85%",
+      "note": "他に53の少数民族（ホモン族・ターイ族など）",
+      "compare_html": ""
+    },
+    {
+      "label": "言語",
+      "value": "ベトナム語",
+      "note": "観光地では英語も通じるが地方は限定的",
+      "compare_html": ""
+    },
+    {
+      "label": "通貨",
+      "value": "ベトナムドン（VND）",
+      "note": "1,000VND ≈ 6円",
+      "compare_html": ""
+    }
+  ],
+  "season": {
+    "description_html": "ベトナムは南北に長く、地域によってベストシーズンが大きく異なります。<strong>北部は10〜12月・3〜4月</strong>、<strong>南部は12〜4月の乾季</strong>が過ごしやすい時期です。",
+    "tip_title": "航空券が安い時期",
+    "tip_body": "北部の雨季にあたる6〜8月・南部の雨季にあたる7〜9月は旅行者が少なく航空券が安くなりやすい。逆に12〜2月の北部ベストシーズンとテト（旧正月、1〜2月）前後は価格が上昇し、航空券もホテルも早期予約が必須。",
+    "cities": [
+      {
+        "name": "ハノイ（北部）",
+        "city_id": "hanoi",
+        "best_note": "ベスト：10〜12月・3〜4月（乾燥し過ごしやすい）／ 6〜8月は高温多湿でスコールも多い",
+        "note": "日本と同じく四季がある珍しいエリア。<strong>冬（12〜2月）</strong>は10〜18℃まで冷え込み、防寒着が必要になることも。<strong>夏（5〜9月）</strong>は30℃を超える高温多湿でスコールが多発する。<span style='display:block;margin-top:0.5em'>1〜2月頃の<strong>テト（旧正月）</strong>前後は交通機関が大混雑し、休業する店も多いので旅行日程には要注意。</span>",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "18°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "19°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "⛅",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "31°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "31°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "30°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "26°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "19°C",
+            "type": "t-cool"
+          }
+        ]
+      },
+      {
+        "name": "ホーチミン（南部）",
+        "city_id": "hcmc",
+        "best_note": "ベスト：12〜4月（乾季）／ 5〜11月は雨季でスコールが多いが1日中は降らない",
+        "note": "年間を通して気温が高く、乾季・雨季の2シーズンのみ。<strong>乾季（12〜4月）</strong>はほぼ毎日晴天で観光に最適。<strong>雨季（5〜11月）</strong>は午後にスコールが降ることが多いが、数十分でやむことがほとんどなので観光は十分可能。むしろホテルが安くなる狙い目シーズン。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "26°C",
+            "type": "t-hot1"
+          }
+        ]
+      },
+      {
+        "name": "ダナン（中部）",
+        "city_id": "danang",
+        "best_note": "ベスト：2〜5月（乾燥し海も穏やか）／ 9〜1月は台風シーズンで大雨・高波の恐れ",
+        "note": "中部は独特の気候パターンを持ち、<strong>2〜8月が乾季</strong>でビーチ日和が続く。<strong>9〜1月は雨季かつ台風シーズン</strong>にあたり、大雨や高波で海に入れないことも珍しくない。ホイアン旧市街は10〜11月頃に増水で浸水することもあるため、この時期の訪問は天気予報の確認を。",
+        "months": [
+          {
+            "icon": "⛅",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "26°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "21°C",
+            "type": "t-warm"
+          }
+        ]
+      },
+      {
+        "name": "ハイフォン・ハロン湾（北部沿岸）",
+        "city_id": "haiphong",
+        "best_note": "ベスト：10〜12月・3〜4月（クルーズも快適）／ 7〜9月は台風シーズンで欠航リスクあり",
+        "note": "気候はハノイとほぼ同様。<strong>10〜12月・3〜4月</strong>は湿度が低く視界も良好で、ハロン湾クルーズの絶景を楽しみやすい。<strong>7〜9月の台風シーズン</strong>はクルーズが欠航になることもあるため、日程に余裕を持たせておきたい。冬（12〜2月）は霧で視界が悪くなる日もある。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "17°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "18°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "⛅",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "18°C",
+            "type": "t-cool"
+          }
+        ]
+      },
+      {
+        "name": "カントー（メコンデルタ）",
+        "city_id": "cantho",
+        "best_note": "ベスト：12〜4月（乾季）／ 9〜11月は増水期「ムオックノイ」で川が最も豊かな表情に",
+        "note": "気候はホーチミンとほぼ同じ乾季・雨季の2シーズン。水上マーケットは早朝が最も活気があり、天候に関わらず一年中楽しめる。<strong>9〜11月の増水期（ムオックノイ）</strong>はメコン川の水位が上がり、水郷ならではの景色になる時期として地元では特別視されている。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "26°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "26°C",
+            "type": "t-hot1"
+          }
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "intro": "ベトナムは東南アジアの中でも屈指の物価の安さで知られる。ローカル食堂ならフォー1杯100〜200円、ビアホイ（生ビール）はグラス30円台という店もざら。一方でホーチミン・ハノイの観光客向けレストランやホテルは価格が上昇傾向にあり、南北移動は飛行機が基本になるぶん交通費もかさみやすい。",
+    "plan_rows": [
+      {
+        "label": "航空券（往復）",
+        "eco": "LCC 4〜7万円",
+        "std": "7〜12万円",
+        "lux": "FSC 13〜20万円"
+      },
+      {
+        "label": "ホテル（1泊）",
+        "eco": "1,000〜2,500円",
+        "std": "3,000〜7,000円",
+        "lux": "12,000〜25,000円"
+      },
+      {
+        "label": "食費（1日）",
+        "eco": "400〜800円",
+        "std": "1,200〜2,000円",
+        "lux": "3,000〜5,000円"
+      },
+      {
+        "label": "交通（1日）",
+        "eco": "Grabバイク 200円",
+        "std": "Grabカー 700円",
+        "lux": "専属ドライバー 3,000円"
+      }
+    ],
+    "total_eco": "5〜9万円",
+    "total_std": "9〜15万円",
+    "total_lux": "20万円〜",
+    "plan1_label": "3泊5日（1人）",
+    "plan1_range": "7〜14万円",
+    "plan1_note": "LCC利用・中級ホテル",
+    "plan2_label": "5泊7日・南北縦断（1人）",
+    "plan2_range": "12〜22万円",
+    "plan2_note": "国内線を挟む標準的な旅行スタイル",
+    "items": [
+      {
+        "icon": "✈️",
+        "name": "航空券（往復）",
+        "detail_html": "ベトジェットエアなどLCCが安い<br>ベトナム航空・JAL・ANAは快適性◎",
+        "price": "4〜20万円",
+        "affiliate": ""
+      },
+      {
+        "icon": "🛏️",
+        "name": "ホテル（1泊）",
+        "detail_html": "ゲストハウス：800〜2,000円・中級：3,000〜7,000円<br>高級ホテルでも日本よりかなり格安",
+        "price": "〜2万円/泊",
+        "affiliate": ""
+      },
+      {
+        "icon": "🍜",
+        "name": "食費（1日）",
+        "detail_html": "屋台・食堂なら1食100〜300円が当たり前<br>レストランでも500〜1,200円以内が多い<br>屋台では現金払いが基本。WiseカードはATM引き出しに便利。",
+        "price": "400〜2,000円/日",
+        "affiliate": "wise"
+      },
+      {
+        "icon": "🚕",
+        "name": "交通費（1日）",
+        "detail_html": "Grab（配車アプリ）が安くて安心<br>都市間移動は国内線が基本、片道4,000円〜",
+        "price": "200〜1,500円/日",
+        "affiliate": "grab"
+      },
+      {
+        "icon": "📍",
+        "name": "観光・アクティビティ",
+        "detail_html": "遺跡・寺院の入場料は数十〜数百円程度<br>ハロン湾クルーズ・メコン川ツアーは要事前予約",
+        "price": "500〜3,000円/日",
+        "affiliate": "klook"
+      },
+      {
+        "icon": "🌐",
+        "name": "SIM・Wi-Fi",
+        "detail_html": "空港でSIM購入可、eSIMも事前設定できる<br>ホテル・カフェのWi-Fiも概ね良好",
+        "price": "300〜1,000円",
+        "affiliate": ""
+      }
+    ],
+    "savings_tips_html": "・地元食堂（コムビンザン＝定食屋）活用で食費を大幅節約<br>・Grabアプリで配車すればぼったくりなしで安心<br>・南北移動は早期予約でLCC国内線が数千円で取れることも"
+  },
+  "practical": {
+    "prac_cards": [
+      {
+        "icon": "visa",
+        "title": "ビザ",
+        "value": "不要（45日間）"
+      },
+      {
+        "icon": "💱",
+        "title": "通貨",
+        "value": "ベトナムドン（VND）<br>1,000VND ≈ 6円"
+      },
+      {
+        "icon": "🔌",
+        "title": "コンセント",
+        "value": "A・Cタイプ（変換不要な場合も）"
+      },
+      {
+        "icon": "⚡",
+        "title": "電圧",
+        "value": "220V（変換注意）"
+      },
+      {
+        "icon": "wifi",
+        "title": "Wi-Fi",
+        "value": "ホテル・カフェ無料多、市街地は概ね良好"
+      },
+      {
+        "icon": "clock",
+        "title": "時差",
+        "value": "日本−2時間"
+      },
+      {
+        "icon": "palm",
+        "title": "気温",
+        "value": "南部25〜33℃・北部は冬10℃台も"
+      },
+      {
+        "icon": "🙏",
+        "title": "チップ",
+        "value": "任意（レストラン・マッサージで少額）"
+      },
+      {
+        "icon": "💧",
+        "title": "水道水",
+        "value": "飲用不可（ペットボトル推奨）"
+      },
+      {
+        "icon": "💳",
+        "title": "カード払い",
+        "value": "ホテル・モール◎・屋台は現金"
+      }
+    ],
+    "prep_steps": [
+      {
+        "title": "パスポート取得・更新",
+        "timing": "1〜2ヶ月前",
+        "timing_color": "#cc0001",
+        "border_color": "#cc0001",
+        "bar_color": "linear-gradient(to bottom,#cc0001,#e8c010)",
+        "desc_html": "残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。査証スタンプ用の空白ページも確認しておこう。"
+      },
+      {
+        "title": "海外対応クレジットカードの申込",
+        "timing": "1ヶ月前",
+        "timing_color": "#cc0001",
+        "border_color": "#e8c010",
+        "bar_color": "linear-gradient(to bottom,#e8c010,#b09000)",
+        "desc_html": "審査・発行に2〜3週間かかることがある。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。"
+      },
+      {
+        "title": "航空券・ホテルの予約",
+        "timing": "早いほど安い",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "#b09000",
+        "desc_html": "テト（旧正月）前後・GW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。国内線を挟む場合は南北移動もあわせて手配を。"
+      },
+      {
+        "title": "海外旅行保険の加入",
+        "timing": "出発前日まで",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+        "desc_html": "クレカ付帯保険で代用できる場合もある。バイクタクシー・レンタルバイク利用時のケガは補償対象か事前に確認しておくこと。"
+      },
+      {
+        "title": "SIM・ポケットWi-Fiの準備",
+        "timing": "1〜2週間前",
+        "timing_color": "#cc5500",
+        "border_color": "#cc5500",
+        "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+        "desc_html": "eSIMならアプリから前日でも購入・設定ができる。現地では空港到着ロビーでもSIMカード購入可能。"
+      }
+    ],
+    "special_note_title": null,
+    "special_note_html": null,
+    "special_note_url": null,
+    "special_note_url_label": null,
+    "flight_intro": "日本〜ハノイ・ホーチミン間は直行便が就航。LCCを活用すれば閑散期は往復4〜7万円台も狙える。",
+    "airlines": [
+      {
+        "name": "ベトジェットエア",
+        "desc": "ベトナム系LCC。ハノイ・ホーチミン・ダナン行きが選べる。",
+        "price": "往復 4〜9万円"
+      },
+      {
+        "logo": "../素材/航空会社/JAL.svg",
+        "logo2": "../素材/航空会社/ANA.svg",
+        "name": "JAL・ANA",
+        "desc": "快適性・マイル◎。直行便でハノイ・ホーチミンへ。",
+        "price": "往復 10〜20万円"
+      },
+      {
+        "name": "ベトナム航空",
+        "desc": "フラッグキャリア。成田・関西発の直行便でサービスも良好。",
+        "price": "往復 8〜16万円"
+      },
+      {
+        "logo": "../素材/航空会社/Zip air.svg",
+        "name": "ZIPAIR",
+        "desc": "成田発のLCC。ダナン線が就航しており中部への直行が可能。",
+        "price": "往復 5〜10万円"
+      }
+    ],
+    "flight_lead": "日本〜ベトナム間は直行便で約6〜6.5時間。成田・羽田・関西・中部から複数の航空会社が運航しており、LCCを活用すれば往復4〜7万円台での旅行も可能です。ハノイ・ホーチミンだけでなくダナンへの直行便も増えており、中部エリア中心の旅なら乗り継ぎなしでアクセスできます。",
+    "flight_tip_html": "・テト（旧正月）・GW・年末年始は2〜3ヶ月前から価格が上がりやすい<br>・北部の雨季（6〜8月）は直前でも安値が出ることがある<br>・複数サイトを比較して最安値を見つけよう",
+    "hotel_areas": [
+      {
+        "id": "hoankiem",
+        "name": "ホアンキエム湖周辺（ハノイ旧市街）",
+        "tag": "観光向け",
+        "tag_color": "green",
+        "desc": "旧市街36通りのど真ん中。徒歩で主要スポット・屋台街にアクセスでき、ハノイ観光の拠点として鉄板。",
+        "price": "中級 3,000〜7,000円／泊　高級 12,000円〜",
+        "maps_url": "https://www.google.com/maps/place/Hoan+Kiem+Lake,+Hanoi",
+        "lat": 21.0285,
+        "lng": 105.8524
+      },
+      {
+        "id": "district1",
+        "name": "1区（ドンコイ通り周辺・ホーチミン）",
+        "tag": "観光・ビジネス向け",
+        "tag_color": "green",
+        "desc": "統一会堂・ベンタイン市場に近い中心部。高級ホテルからバックパッカー街ブイビエンまで幅広い選択肢。",
+        "price": "中級 3,500〜8,000円／泊　高級 15,000円〜",
+        "maps_url": "https://www.google.com/maps/place/District+1,+Ho+Chi+Minh+City",
+        "lat": 10.7769,
+        "lng": 106.7009
+      },
+      {
+        "id": "myke",
+        "name": "ミーケービーチ沿い（ダナン）",
+        "tag": "リゾート向け",
+        "tag_color": "yellow",
+        "desc": "ビーチフロントのリゾートホテルが立ち並ぶエリア。ホイアン旧市街へも車で30分ほどでアクセス可能。",
+        "price": "中級 4,000〜9,000円／泊　高級 18,000円〜",
+        "maps_url": "https://www.google.com/maps/place/My+Khe+Beach,+Da+Nang",
+        "lat": 16.061,
+        "lng": 108.247
+      }
+    ],
+    "hotel_tip": "ハノイは旧市街（ホアンキエム湖周辺）、ホーチミンは1区（ドンコイ通り周辺）に泊まると徒歩観光がしやすい。ダナンはビーチリゾート、ホイアン旧市街に泊まるなら車移動を考慮しよう。",
+    "apps": [
+      {
+        "icon": "🚕",
+        "name": "Grab（グラブ）",
+        "type_label": "配車・フードデリバリー",
+        "desc": "東南アジア版Uber。バイクタクシー（Grab Bike）も呼べて乗車前に料金が確定するためぼったくりゼロ。ベトナム旅行では必須アプリ。",
+        "affiliate": "grab",
+        "is_last": false
+      },
+      {
+        "icon": "🗺️",
+        "name": "Google マップ",
+        "type_label": "地図・ナビ（オフライン対応）",
+        "desc": "出発前に訪問エリアをオフラインDLしておこう。ハノイ旧市街の入り組んだ路地でも迷わない。",
+        "affiliate": "google_maps",
+        "is_last": false
+      },
+      {
+        "icon": "google-translate",
+        "name": "Google 翻訳",
+        "type_label": "翻訳・カメラ翻訳",
+        "desc": "ベトナム語メニューや看板をカメラで写すだけで翻訳できる。ベトナム語パックを事前にDLしておけばオフラインでも使える。",
+        "affiliate": "google_translate",
+        "is_last": false
+      },
+      {
+        "icon": "klook",
+        "name": "Klook（クルック）",
+        "type_label": "現地ツアー・チケット事前予約",
+        "desc": "ハロン湾クルーズ・メコン川ツアーなど人気アクティビティを事前予約できる。国内線の比較にも便利。",
+        "affiliate": "",
+        "is_last": true
+      }
+    ],
+    "tour_platform": "klook",
+    "country_items_label": "🇻🇳 ベトナム特有の持ち物",
+    "country_items": [
+      "日焼け止め（強烈な熱帯の日差し対策）",
+      "マスク・バンダナ（バイクの排気ガス・砂埃対策）",
+      "薄手の羽織もの（冷房対策・北部の冬季防寒）",
+      "耳栓（バイクのクラクション音対策）",
+      "サンダル（食堂・寺院で靴を脱ぐ機会が多い）",
+      "ウェットティッシュ（屋台グルメのお供に）"
+    ],
+    "money_intro": "ベトナムでは屋台・ローカル食堂・バイクタクシーは現金払いが基本ですが、ホテルやショッピングモールではクレジットカードも広く使えます。現地通貨ドンへの両替は空港より市内の金行（貴金属店）のほうがレートが良い場合が多く、少額を空港で崩してから市内で両替するのがおすすめです。",
+    "currency_code": "VND",
+    "exchange_rate": "0.006",
+    "cash_dependency": "中",
+    "cash_dependency_color": "#b09000",
+    "cash_dependency_note": "屋台・市場・バイクタクシーは現金、ホテル・モールはカードOK",
+    "cash_daily_low": "200",
+    "cash_daily_high": "1000",
+    "cash_note": "1,000 VND ≈ 6円で計算",
+    "cash_tip_title": "💡 ゼロの桁数に注意しよう",
+    "cash_tip_body": "ベトナムドンは紙幣の桁数が非常に多く、10万VND札と50万VND札を見間違えやすい。色と数字を必ず確認する癖をつけよう。屋台ではお釣りが出ないことも多いので小額紙幣を用意しておくと安心。",
+    "cta_title": "出発前にマナーも確認しよう！🙏",
+    "cta_desc": "ベトナムならではのマナーを知っておくと現地での行動がスムーズ。<br>道路の渡り方・食事・寺院見学など旅行者が知っておくべきポイントをまとめました。"
+  },
+  "manner_cards": [
+    {
+      "type": "do",
+      "icon": "🚶",
+      "title": "バイクの奔流は「一定速度で堂々と」渡る",
+      "desc": "信号がない交差点でも、周りを見ながら歩調を変えずゆっくり渡ればバイクが避けてくれる。急に立ち止まったり走ったりするのが一番危険。"
+    },
+    {
+      "type": "dont",
+      "icon": "🥢",
+      "title": "箸をご飯に突き立てない",
+      "desc": "お供え物を連想させるためタブー。箸は箸置きに置くか、お椀の縁にかけておく。"
+    },
+    {
+      "type": "do",
+      "icon": "👟",
+      "title": "寺院・民家では靴を脱ぐ",
+      "desc": "寺院や地元の家庭に上がる際は靴を脱ぐのが基本マナー。肌の露出も控えめに。"
+    },
+    {
+      "type": "dont",
+      "icon": "👤",
+      "title": "頭を触らない",
+      "desc": "タイ・ラオスなど周辺国同様、頭は神聖な部分とされる。子供でも軽々しく撫でないほうがよい。"
+    },
+    {
+      "type": "do",
+      "icon": "💰",
+      "title": "市場では値切り交渉が基本",
+      "desc": "観光客向けの市場は言い値が高めに設定されていることが多い。笑顔で交渉するのがベトナム流。"
+    },
+    {
+      "type": "dont",
+      "icon": "💵",
+      "title": "チップは義務ではないが心付けとして",
+      "desc": "高級店やツアーガイドには少額のチップが喜ばれる。屋台やローカル食堂では不要。"
+    },
+    {
+      "type": "do",
+      "icon": "📸",
+      "title": "少数民族の人々を撮る際は一言確認を",
+      "desc": "北部の山岳地帯では少数民族の生活風景に出会う機会も多いが、撮影前に必ず許可を取ること。"
+    },
+    {
+      "type": "dont",
+      "icon": "🗣️",
+      "title": "戦争の話題はデリケートに",
+      "desc": "ベトナム戦争関連の史跡は多いが、政治的な話題は現地の人と踏み込みすぎないほうが無難。"
+    }
+  ],
+  "manner_cta_title": "現地の言葉で話しかけてみよう！💬",
+  "manner_cta_desc": "ベトナム語の簡単なフレーズ集。<br>挨拶ひとつで現地の人の反応がぐっと変わります。",
+  "phrases": {
+    "multi": false,
+    "decks": [
+      {
+        "id": "vi",
+        "active": true,
+        "language_name": "ベトナム語",
+        "card_title": "🃏 ベトナム語 単語カード",
+        "categories": [
+          {
+            "label": "👋 あいさつ",
+            "items": [
+              {
+                "jp": "こんにちは",
+                "foreign": "Xin chào",
+                "reading": "シン チャオ",
+                "audio": ""
+              },
+              {
+                "jp": "元気ですか？",
+                "foreign": "Bạn khỏe không?",
+                "reading": "バン コエ ホン？",
+                "audio": ""
+              },
+              {
+                "jp": "元気です",
+                "foreign": "Tôi khỏe",
+                "reading": "トイ コエ",
+                "audio": ""
+              },
+              {
+                "jp": "さようなら",
+                "foreign": "Tạm biệt",
+                "reading": "タム ビエット",
+                "audio": ""
+              },
+              {
+                "jp": "はじめまして",
+                "foreign": "Rất vui được gặp bạn",
+                "reading": "ザット ヴイ ドゥォック ガップ バン",
+                "audio": ""
+              },
+              {
+                "jp": "（景色や物に）綺麗ですね！",
+                "foreign": "Đẹp quá!",
+                "reading": "デップ クアー！",
+                "audio": ""
+              },
+              {
+                "jp": "美人ですね",
+                "foreign": "Bạn xinh quá!",
+                "reading": "バン シン クアー！",
+                "audio": ""
+              },
+              {
+                "jp": "愛してる",
+                "foreign": "Anh yêu em / Em yêu anh",
+                "reading": "アイン イェウ エム／エム イェウ アイン",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "🙏 基本表現",
+            "items": [
+              {
+                "jp": "ありがとう",
+                "foreign": "Cảm ơn",
+                "reading": "カム オン",
+                "audio": ""
+              },
+              {
+                "jp": "すみません",
+                "foreign": "Xin lỗi",
+                "reading": "シン ローイ",
+                "audio": ""
+              },
+              {
+                "jp": "ごめんなさい",
+                "foreign": "Xin lỗi",
+                "reading": "シン ローイ",
+                "audio": ""
+              },
+              {
+                "jp": "大丈夫・気にしないで",
+                "foreign": "Không sao",
+                "reading": "ホン サオ",
+                "audio": ""
+              },
+              {
+                "jp": "はい / いいえ",
+                "foreign": "Vâng / Không",
+                "reading": "ヴァン／ホン",
+                "audio": ""
+              },
+              {
+                "jp": "わかりません",
+                "foreign": "Tôi không hiểu",
+                "reading": "トイ ホン ヒエウ",
+                "audio": ""
+              },
+              {
+                "jp": "もう一度言ってください",
+                "foreign": "Xin nói lại",
+                "reading": "シン ノイ ライ",
+                "audio": ""
+              },
+              {
+                "jp": "名前は〜です",
+                "foreign": "Tôi tên là ~",
+                "reading": "トイ テン ラー〜",
+                "audio": ""
+              },
+              {
+                "jp": "名前は何ですか？",
+                "foreign": "Bạn tên là gì?",
+                "reading": "バン テン ラー ジー？",
+                "audio": ""
+              },
+              {
+                "jp": "日本人です",
+                "foreign": "Tôi là người Nhật",
+                "reading": "トイ ラー グオイ ニャット",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "🍽️ レストラン・ショッピング",
+            "items": [
+              {
+                "jp": "おすすめは何ですか？",
+                "foreign": "Món gì ngon?",
+                "reading": "モン ジー ンゴン？",
+                "audio": ""
+              },
+              {
+                "jp": "〜はありますか？",
+                "foreign": "Có ~ không?",
+                "reading": "コー〜ホン？",
+                "audio": ""
+              },
+              {
+                "jp": "これをください",
+                "foreign": "Cho tôi cái này",
+                "reading": "チョー トイ カイ ナイ",
+                "audio": ""
+              },
+              {
+                "jp": "おいしい！",
+                "foreign": "Ngon quá!",
+                "reading": "ンゴン クアー！",
+                "audio": ""
+              },
+              {
+                "jp": "辛い",
+                "foreign": "Cay",
+                "reading": "カイ",
+                "audio": ""
+              },
+              {
+                "jp": "辛くしないでください",
+                "foreign": "Đừng cho cay",
+                "reading": "ドゥン チョー カイ",
+                "audio": ""
+              },
+              {
+                "jp": "お会計をお願いします",
+                "foreign": "Tính tiền",
+                "reading": "ティン ティエン",
+                "audio": ""
+              },
+              {
+                "jp": "いくらですか？",
+                "foreign": "Bao nhiêu tiền?",
+                "reading": "バオ ニュウ ティエン？",
+                "audio": ""
+              },
+              {
+                "jp": "高い、安くしてください",
+                "foreign": "Đắt quá, giảm giá đi",
+                "reading": "ダット クアー、ザーム ザー ディ",
+                "audio": ""
+              },
+              {
+                "jp": "トイレはどこですか？",
+                "foreign": "Nhà vệ sinh ở đâu?",
+                "reading": "ニャー ヴェ シン オー ダウ？",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "🔢 数字",
+            "items": [
+              {
+                "jp": "0〜5",
+                "foreign": "Không, Một, Hai, Ba, Bốn, Năm",
+                "reading": "ホン・モッ・ハイ・バー・ボン・ナム",
+                "audio": ""
+              },
+              {
+                "jp": "6〜10",
+                "foreign": "Sáu, Bảy, Tám, Chín, Mười",
+                "reading": "サウ・バイ・タム・チン・ムオイ",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "🆘 観光・トラブル",
+            "items": [
+              {
+                "jp": "写真を撮ってもいいですか？",
+                "foreign": "Tôi chụp ảnh được không?",
+                "reading": "トイ チュップ アイン ドゥォック ホン？",
+                "audio": ""
+              },
+              {
+                "jp": "安全ですか？",
+                "foreign": "Có an toàn không?",
+                "reading": "コー アン トアン ホン？",
+                "audio": ""
+              },
+              {
+                "jp": "助けてください！",
+                "foreign": "Cứu tôi với!",
+                "reading": "クー トイ ヴォイ！",
+                "audio": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "food_section_title": "ベトナムグルメ図鑑",
+  "food_filter_types": [
+    {
+      "id": "all",
+      "label": "すべて",
+      "active": true
+    },
+    {
+      "id": "noodle",
+      "label": "麺料理",
+      "active": false
+    },
+    {
+      "id": "rice",
+      "label": "ご飯もの",
+      "active": false
+    },
+    {
+      "id": "snack",
+      "label": "軽食・屋台",
+      "active": false
+    },
+    {
+      "id": "main",
+      "label": "おかず",
+      "active": false
+    },
+    {
+      "id": "sweet",
+      "label": "スイーツ",
+      "active": false
+    },
+    {
+      "id": "drink",
+      "label": "飲み物",
+      "active": false
+    }
+  ],
+  "food_filter_cities": [
+    {
+      "id": "hanoi",
+      "label": "ハノイ"
+    },
+    {
+      "id": "hcmc",
+      "label": "ホーチミン"
+    },
+    {
+      "id": "danang",
+      "label": "ダナン・ホイアン"
+    },
+    {
+      "id": "haiphong",
+      "label": "ハイフォン"
+    },
+    {
+      "id": "cantho",
+      "label": "カントー"
+    }
+  ],
+  "food_modal_phrase_main": "Cho tôi cái này（チョー トイ カイ ナイ／これをください）",
+  "food_modal_phrase_sub": "Ngon quá!（ンゴン クアー！／おいしい！）",
+  "food_items": [
+    {
+      "num": "No.01",
+      "name": "フォー",
+      "must": true,
+      "badge": "国民食",
+      "type": "noodle",
+      "city": "national",
+      "desc": "牛骨や鶏ガラでじっくり出汁を取った米麺料理。パクチー・もやし・ライムを添え、店ごとに異なる味わいが楽しめる。牛肉（フォーボー）と鶏肉（フォーガー）が定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%95%E3%82%A9%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Pho",
+      "prompt_en": "Vietnamese Pho noodle soup in a bowl, thin rice noodles with sliced beef, fresh herbs, bean sprouts and lime, clear beef broth, food photography",
+      "plate_color": "white ceramic bowl"
+    },
+    {
+      "num": "No.02",
+      "name": "バインミー",
+      "must": true,
+      "badge": "フランスパン×ベトナム",
+      "type": "snack",
+      "city": "national",
+      "desc": "フランス統治時代の名残であるバゲットに、パテ・なます・パクチー・肉やハムを挟んだサンドイッチ。外はカリッと中はふわっとした食感が魅力の屋台の大定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%83%9F%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🥖",
+      "order_name_en": "Banh Mi",
+      "prompt_en": "Vietnamese Banh Mi sandwich, crispy baguette filled with pate, pickled carrots, cucumber, cilantro and grilled pork, street food photography",
+      "plate_color": "paper wrapper"
+    },
+    {
+      "num": "No.03",
+      "name": "ブンチャー",
+      "badge": "庶民の味",
+      "type": "noodle",
+      "city": "hanoi",
+      "desc": "炭火で炙った豚肉団子と甘酸っぱいヌクマムだれに、米麺と香草をつけて食べるハノイ名物。オバマ元大統領が食べたことでも話題になった。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%96%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍢",
+      "order_name_en": "Bun Cha",
+      "prompt_en": "Vietnamese Bun Cha, grilled pork patties in sweet fish sauce broth served with rice vermicelli noodles and fresh herbs on the side, Hanoi street food photography",
+      "plate_color": "white ceramic bowl"
+    },
+    {
+      "num": "No.04",
+      "name": "チャーカーラボン",
+      "badge": "ウコン風味の魚料理",
+      "type": "main",
+      "city": "hanoi",
+      "desc": "ウコンとディルで風味付けした魚を鉄鍋で焼きながら食べるハノイの郷土料理。専門店では目の前でジュージューと仕上げてくれる。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AB%E3%83%BC%E3%83%A9%E3%83%9C%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🐟",
+      "order_name_en": "Cha Ca La Vong",
+      "prompt_en": "Vietnamese Cha Ca La Vong, turmeric marinated fish sizzling in a hot pan with dill and green onions, served with rice noodles and peanuts, food photography",
+      "plate_color": "black sizzling pan"
+    },
+    {
+      "num": "No.05",
+      "name": "バインクオン",
+      "badge": "米粉クレープ",
+      "type": "snack",
+      "city": "hanoi",
+      "desc": "極薄の米粉生地を蒸して作るクレープに、豚ひき肉ときくらげを包んだ朝食の定番。揚げエシャロットを散らしヌクマムにつけて食べる。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%82%AF%E3%82%AA%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🥟",
+      "order_name_en": "Banh Cuon",
+      "prompt_en": "Vietnamese Banh Cuon, thin steamed rice rolls filled with minced pork and wood ear mushroom, topped with fried shallots, served with dipping sauce, food photography",
+      "plate_color": "white plate"
+    },
+    {
+      "num": "No.06",
+      "name": "エッグコーヒー",
+      "badge": "卵黄クリームの濃厚コーヒー",
+      "type": "drink",
+      "city": "hanoi",
+      "desc": "泡立てた卵黄と練乳をベトナムコーヒーの上にのせた、ハノイ発祥の濃厚な一杯。デザート感覚で楽しめる名物ドリンク。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A8%E3%83%83%E3%82%B0%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "☕",
+      "order_name_en": "Egg Coffee (Ca Phe Trung)",
+      "prompt_en": "Vietnamese egg coffee, dark coffee topped with thick whipped egg yolk cream in a small glass, Hanoi cafe photography",
+      "plate_color": "small glass cup"
+    },
+    {
+      "num": "No.07",
+      "name": "コムタム",
+      "badge": "砕き米のワンプレート",
+      "type": "rice",
+      "city": "hcmc",
+      "desc": "精米時に割れた「砕き米」に炭火焼き豚肉・目玉焼き・なますをのせたホーチミンの庶民食。安くてボリューム満点な一皿。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B3%E3%83%A0%E3%82%BF%E3%83%A0%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍚",
+      "order_name_en": "Com Tam",
+      "prompt_en": "Vietnamese Com Tam broken rice plate, grilled pork chop, fried egg and pickled vegetables over broken rice, Ho Chi Minh City street food photography",
+      "plate_color": "white plate"
+    },
+    {
+      "num": "No.08",
+      "name": "フーティウ",
+      "badge": "中華系の麺料理",
+      "type": "noodle",
+      "city": "hcmc",
+      "desc": "中華系移民が伝えたコシのある麺をエビ・豚肉・もやしと透き通ったスープで食べる南部の麺料理。汁あり・汁なしどちらも人気。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%95%E3%83%BC%E3%83%86%E3%82%A3%E3%82%A6%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Hu Tieu",
+      "prompt_en": "Vietnamese Hu Tieu noodle soup with shrimp, pork slices and bean sprouts in clear broth, Southern Vietnam food photography",
+      "plate_color": "white ceramic bowl"
+    },
+    {
+      "num": "No.09",
+      "name": "バインセオ",
+      "badge": "ベトナム風お好み焼き",
+      "type": "snack",
+      "city": "hcmc",
+      "desc": "ターメリックで黄色く色付けたパリパリの生地に、エビ・豚肉・もやしを包んだ南部名物。サニーレタスで巻いてヌクマムにつけて食べる。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%82%BB%E3%82%AA%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🥞",
+      "order_name_en": "Banh Xeo",
+      "prompt_en": "Vietnamese Banh Xeo, crispy yellow turmeric crepe filled with shrimp, pork and bean sprouts, folded in half, served with fresh lettuce, food photography",
+      "plate_color": "white plate"
+    },
+    {
+      "num": "No.10",
+      "name": "ゴイクオン",
+      "badge": "生春巻き",
+      "type": "snack",
+      "city": "national",
+      "desc": "米粉のライスペーパーでエビ・豚肉・米麺・香草を巻いた、さっぱりヘルシーな一品。ピーナッツソースにつけて食べるのが定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B4%E3%82%A4%E3%82%AF%E3%82%AA%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🌯",
+      "order_name_en": "Goi Cuon",
+      "prompt_en": "Vietnamese fresh spring rolls, rice paper wrapped around shrimp, pork, rice vermicelli and fresh herbs, sliced in half showing colorful filling, food photography",
+      "plate_color": "white plate"
+    },
+    {
+      "num": "No.11",
+      "name": "チャーゾー",
+      "badge": "揚げ春巻き",
+      "type": "snack",
+      "city": "national",
+      "desc": "豚ひき肉・春雨・きくらげを皮で包んでカリカリに揚げた春巻き。北部と南部で皮の厚さや味付けが微妙に異なる。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BE%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🥠",
+      "order_name_en": "Cha Gio",
+      "prompt_en": "Vietnamese fried spring rolls, crispy golden fried rolls stacked on a plate with dipping sauce and fresh herbs, food photography",
+      "plate_color": "white plate"
+    },
+    {
+      "num": "No.12",
+      "name": "ミークアン",
+      "badge": "中部名物麺",
+      "type": "noodle",
+      "city": "danang",
+      "desc": "黄色いターメリック麺に豚肉・エビ・落花生・パリパリの揚げ煎餅をのせた中部ダナン・ホイアン周辺の郷土麺。スープは少なめが本場流。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Mi Quang",
+      "prompt_en": "Vietnamese Mi Quang, turmeric yellow noodles with shrimp, pork, peanuts and crispy rice cracker, minimal broth, Central Vietnam food photography",
+      "plate_color": "white ceramic bowl"
+    },
+    {
+      "num": "No.13",
+      "name": "カオラウ",
+      "badge": "ホイアン限定麺",
+      "type": "noodle",
+      "city": "danang",
+      "desc": "ホイアンの特定の井戸水でしか作れないとされる、コシのある太麺に叉焼と揚げワンタン風のクルトンをのせた名物麺。ホイアン以外ではほぼ食べられない。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%82%AA%E3%83%A9%E3%82%A6%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Cao Lau",
+      "prompt_en": "Vietnamese Cao Lau, thick chewy noodles with sliced pork, fresh herbs and crispy rice crackers in minimal broth, Hoi An specialty food photography",
+      "plate_color": "white ceramic bowl"
+    },
+    {
+      "num": "No.14",
+      "name": "バインバオバインバット（ホワイトローズ）",
+      "badge": "ホイアンの白バラ餃子",
+      "type": "snack",
+      "city": "danang",
+      "desc": "米粉の皮でエビを包んで蒸した半透明の点心。花のように成形されることから「ホワイトローズ」と呼ばれるホイアンの名物点心。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%83%90%E3%82%AA%E3%83%90%E3%82%A4%E3%83%B3%E3%83%90%E3%83%83%E3%83%88%EF%BC%88%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%83%AD%E3%83%BC%E3%82%BA%EF%BC%89%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🌸",
+      "order_name_en": "White Rose Dumplings",
+      "prompt_en": "Vietnamese White Rose dumplings, translucent rice paper wrapped shrimp dumplings shaped like flowers, topped with fried shallots, Hoi An specialty food photography",
+      "plate_color": "white bamboo steamer"
+    },
+    {
+      "num": "No.15",
+      "name": "バインダークア",
+      "badge": "蟹肉入り赤麺",
+      "type": "noodle",
+      "city": "haiphong",
+      "desc": "蟹の甲羅から取った出汁と蟹肉を使った赤茶色の麺料理。ハイフォンの名物として地元で絶大な人気を誇る。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%83%80%E3%83%BC%E3%82%AF%E3%82%A2%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🦀",
+      "order_name_en": "Banh Da Cua",
+      "prompt_en": "Vietnamese Banh Da Cua, reddish-brown rice noodles in crab broth topped with crab meat, pork and herbs, Hai Phong specialty food photography",
+      "plate_color": "white ceramic bowl"
+    },
+    {
+      "num": "No.16",
+      "name": "ネムクア",
+      "badge": "蟹肉の揚げ春巻き",
+      "type": "snack",
+      "city": "haiphong",
+      "desc": "蟹肉と豚肉を大きめの皮で包んでカリッと揚げた、ハイフォン発祥の贅沢な揚げ春巻き。祝いの席にも登場する。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%8D%E3%83%A0%E3%82%AF%E3%82%A2%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🥠",
+      "order_name_en": "Nem Cua Be",
+      "prompt_en": "Vietnamese Nem Cua Be, large crispy fried spring rolls filled with crab meat and pork, sliced showing filling, Hai Phong specialty food photography",
+      "plate_color": "white plate"
+    },
+    {
+      "num": "No.17",
+      "name": "ラウマム",
+      "badge": "メコンデルタの発酵魚鍋",
+      "type": "main",
+      "city": "cantho",
+      "desc": "発酵させた魚醤（マム）をベースに、川魚・エビ・野菜をたっぷり煮込む鍋料理。独特の風味がクセになるメコンデルタの郷土料理。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A9%E3%82%A6%E3%83%9E%E3%83%A0%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍲",
+      "order_name_en": "Lau Mam",
+      "prompt_en": "Vietnamese Lau Mam, fermented fish hot pot with river fish, shrimp, pork and abundant fresh vegetables, Mekong Delta specialty food photography",
+      "plate_color": "hot pot"
+    },
+    {
+      "num": "No.18",
+      "name": "バインコット",
+      "badge": "一口サイズのミニお好み焼き",
+      "type": "snack",
+      "city": "cantho",
+      "desc": "小さな丸い鉄鍋で焼く一口サイズのお好み焼き。中にエビが一尾入り、香草とヌクマムにつけて食べる南部の軽食。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%83%E3%83%88%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🥘",
+      "order_name_en": "Banh Khot",
+      "prompt_en": "Vietnamese Banh Khot, small round crispy rice cakes with shrimp on top, served on a plate with fresh herbs, Southern Vietnam food photography",
+      "plate_color": "white plate"
+    },
+    {
+      "num": "No.19",
+      "name": "チェー",
+      "badge": "ベトナム風ぜんざい",
+      "type": "sweet",
+      "city": "national",
+      "desc": "豆・ゼリー・タピオカ・フルーツをココナッツミルクやシロップと混ぜて食べる、暑い国ならではの冷たいデザート。屋台で自分好みの具材を選べる店も多い。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%82%A7%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍧",
+      "order_name_en": "Che",
+      "prompt_en": "Vietnamese Che dessert, colorful mixed beans, jelly, tapioca pearls and fruit in coconut milk, served in a tall glass, food photography",
+      "plate_color": "tall glass"
+    },
+    {
+      "num": "No.20",
+      "name": "ビアホイ",
+      "badge": "激安の生ビール",
+      "type": "drink",
+      "city": "hanoi",
+      "desc": "毎日その日仕込みで作られる保存料なしの生ビール。低い椅子に座って1杯十数円〜という破格の値段で楽しめる、ハノイの夕方の風物詩。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%93%E3%82%A2%E3%83%9B%E3%82%A4%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍺",
+      "order_name_en": "Bia Hoi",
+      "prompt_en": "Vietnamese Bia Hoi draft beer, glass of pale golden beer on a small plastic table, street-side beer corner atmosphere, Hanoi photography",
+      "plate_color": "beer glass"
+    },
+    {
+      "num": "No.21",
+      "name": "カフェスアダー",
+      "badge": "ベトナム式アイスコーヒー",
+      "type": "drink",
+      "city": "national",
+      "desc": "深煎りの粉をフィルターでじっくり抽出し、練乳と氷で仕上げる濃厚な甘いアイスコーヒー。ベトナムの喫茶文化を象徴する一杯。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%95%E3%82%A7%E3%82%B9%E3%82%A2%E3%83%80%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🧊",
+      "order_name_en": "Ca Phe Sua Da",
+      "prompt_en": "Vietnamese iced coffee, dark coffee dripping through a metal phin filter into a glass with condensed milk and ice, food photography",
+      "plate_color": "tall glass"
+    },
+    {
+      "num": "No.22",
+      "name": "バインダーヴィエンチェオ／バインカン",
+      "badge": "メコンの蒸し焼き餅",
+      "type": "snack",
+      "city": "cantho",
+      "desc": "米粉の生地を小さな土鍋で焼き上げる、外はカリッと中はもちっとした食感の南部おやつ。屋台で焼きたてを頬張るのが醍醐味。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%83%80%E3%83%BC%E3%83%B4%E3%82%A3%E3%82%A8%E3%83%B3%E3%83%81%E3%82%A7%E3%82%AA%EF%BC%8F%E3%83%90%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🫓",
+      "order_name_en": "Banh Khan",
+      "prompt_en": "Vietnamese Banh Khan, small clay pot baked rice cakes, crispy outside and soft inside, street snack, Southern Vietnam food photography",
+      "plate_color": "clay pot"
+    }
+  ],
+  "spots_section_title": "ベトナム観光スポット図鑑",
+  "spots_filter_types": [
+    {
+      "id": "heritage",
+      "label": "世界遺産・史跡"
+    },
+    {
+      "id": "religious",
+      "label": "宗教施設"
+    },
+    {
+      "id": "nature",
+      "label": "自然"
+    },
+    {
+      "id": "market",
+      "label": "ショッピング"
+    },
+    {
+      "id": "museum",
+      "label": "博物館・美術館"
+    },
+    {
+      "id": "townscape",
+      "label": "街並み・建築"
+    },
+    {
+      "id": "activity",
+      "label": "アクティビティ"
+    }
+  ],
+  "spots_filter_cities": [
+    {
+      "id": "all",
+      "label": "全て",
+      "active": true
+    },
+    {
+      "id": "hanoi",
+      "label": "ハノイ",
+      "active": false
+    },
+    {
+      "id": "hcmc",
+      "label": "ホーチミン",
+      "active": false
+    },
+    {
+      "id": "danang",
+      "label": "ダナン・ホイアン",
+      "active": false
+    },
+    {
+      "id": "haiphong",
+      "label": "ハイフォン",
+      "active": false
+    },
+    {
+      "id": "cantho",
+      "label": "カントー",
+      "active": false
+    }
+  ],
+  "spot_sections": [
+    {
+      "city_id": "hanoi",
+      "city_name": "ハノイ",
+      "city_desc": "千年の歴史を持つベトナムの首都。旧市街36通りの雑踏と、湖畔の静けさが同居するノスタルジックな街",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "直行便 約6〜6.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー・空港バス 約45分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "10〜12月・3〜4月",
+          "link_section": "season",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "フォー・ブンチャー",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "Grab・バイクタクシー・徒歩",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🌉",
+          "num": "HAN 01",
+          "name": "ホアンキエム湖・旧市街",
+          "desc": "赤い橋がかかる伝説の湖を中心に、36の職人通りが広がる旧市街。バイクが行き交う雑踏と、朝の太極拳の静けさが同居する。",
+          "badge": "ハノイの顔",
+          "prompt_en": "Hoan Kiem Lake Hanoi with red Huc Bridge leading to a small temple island, surrounded by Old Quarter narrow streets, morning atmosphere, Vietnam",
+          "type": "townscape"
+        },
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "HAN 02",
+          "name": "ホーチミン廟",
+          "desc": "初代国家主席ホー・チ・ミンの遺体が安置された壮麗な霊廟。衛兵が守る厳粛な雰囲気の中、見学時は肌の露出を控えるなど服装規定がある。",
+          "badge": "国家の聖地",
+          "prompt_en": "Ho Chi Minh Mausoleum Hanoi, grand gray stone monument with honor guards, Ba Dinh Square, Vietnam, travel photography",
+          "type": "heritage"
+        },
+        {
+          "must": false,
+          "icon": "🎭",
+          "num": "HAN 03",
+          "name": "タンロン水上人形劇",
+          "desc": "池に浮かぶ舞台で人形使いが操る、ベトナム北部発祥の伝統芸能。生演奏の伝統楽器とともに農村の暮らしや民話が表現される。",
+          "badge": "伝統芸能",
+          "prompt_en": "Thang Long Water Puppet Theatre Hanoi, colorful wooden puppets performing on water stage, traditional Vietnamese musicians, warm stage lighting",
+          "type": "activity"
+        },
+        {
+          "must": false,
+          "icon": "⛩️",
+          "num": "HAN 04",
+          "name": "文廟（バンミウ）",
+          "desc": "11世紀創建のベトナム最古の大学。科挙合格者の名を刻んだ石碑が並び、受験合格祈願のスポットとしても人気。",
+          "badge": "最古の大学",
+          "prompt_en": "Temple of Literature Hanoi, ancient Confucian courtyard with red gates and stone stelae on turtle statues, tranquil garden, Vietnam",
+          "type": "heritage"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "HAN 05",
+          "name": "ドンスアン市場",
+          "desc": "旧市街最大の卸売市場。衣類・雑貨から乾物・食材まで所狭しと並び、地元の生活を垣間見られる活気ある場所。",
+          "badge": "ローカル市場",
+          "prompt_en": "Dong Xuan Market Hanoi, bustling indoor market with vendors selling textiles and goods, crowded aisles, Vietnam",
+          "type": "market"
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "HAN 06",
+          "name": "タイ湖（西湖）とチャンクオック寺",
+          "desc": "ハノイ最大の湖のほとりに建つベトナム最古の仏教寺院。夕暮れ時は地元の若者がジョギングやデートを楽しむ憩いの場になる。",
+          "badge": "湖畔の名刹",
+          "prompt_en": "Tran Quoc Pagoda on Tay Ho lake Hanoi, ancient red brick pagoda tower reflected in calm water at sunset, Vietnam",
+          "type": "religious"
+        }
+      ]
+    },
+    {
+      "city_id": "haiphong",
+      "city_name": "ハイフォン",
+      "city_desc": "世界遺産ハロン湾・カットバ島への玄関口となる北部の港町。フランス統治時代の建築が残る旧市街も魅力",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ハノイから車・電車 約2〜2.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "カットビ空港からタクシー 約20分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "10〜12月・3〜4月",
+          "link_section": "season",
+          "link_btn_index": "3"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "バインダークア・ネムクア",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "タクシー・クルーズ船",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🚢",
+          "num": "HPH 01",
+          "name": "ハロン湾クルーズ",
+          "desc": "南シナ海に約1,600の石灰岩の奇岩が林立する世界遺産。1〜2泊のクルーズ船で鍾乳洞・カヤック・海上での朝食を楽しむのが定番の過ごし方。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "Ha Long Bay Vietnam, dramatic limestone karst islands rising from emerald green water, traditional junk boat cruising, misty atmosphere",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🏝️",
+          "num": "HPH 02",
+          "name": "カットバ島",
+          "desc": "ハロン湾の玄関口に浮かぶベトナム最大の島。国立公園でのトレッキングや、ラン・ハ湾でのカヤックなどアクティブに楽しめる。",
+          "badge": "自然・アクティビティ",
+          "prompt_en": "Cat Ba Island Vietnam, lush green national park cliffs overlooking turquoise bay, kayaks on the water, Vietnam",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🎭",
+          "num": "HPH 03",
+          "name": "ハイフォン大劇場",
+          "desc": "フランス統治時代の1912年に建てられたコロニアル建築。パリのオペラ座を模した優美な外観は旧市街のランドマーク。",
+          "badge": "仏植民地建築",
+          "prompt_en": "Hai Phong Opera House, elegant French colonial building with cream facade and ornate details, tree-lined avenue, Vietnam",
+          "type": "heritage"
+        },
+        {
+          "must": false,
+          "icon": "🏖️",
+          "num": "HPH 04",
+          "name": "ドーソン・ビーチ",
+          "desc": "ハイフォン市街から車で約20分の海岸リゾート。松林に囲まれたビーチで地元の家族連れに人気の休日スポット。",
+          "badge": "ローカルビーチ",
+          "prompt_en": "Do Son Beach Hai Phong, pine tree lined coastline with local families, calm sea, Vietnam beach photography",
+          "type": "nature"
+        }
+      ]
+    },
+    {
+      "city_id": "danang",
+      "city_name": "ダナン・ホイアン",
+      "city_desc": "白砂のビーチが続く中部の中心都市ダナンと、ランタン輝く世界遺産の古都ホイアンをあわせて楽しめるエリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "直行便 約7〜8時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー 約10〜15分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "2〜5月",
+          "link_section": "season",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "ミークアン・カオラウ",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "Grab・レンタルバイク",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏮",
+          "num": "DAD 01",
+          "name": "ホイアン旧市街（ランタンの街）",
+          "desc": "17〜19世紀の交易港として栄えた街並みがそのまま残る世界遺産。夜になると軒先に色とりどりのランタンが灯り、幻想的な光景に包まれる。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "Hoi An ancient town at night, colorful silk lanterns glowing over yellow French colonial buildings along a canal, reflections on water, Vietnam",
+          "type": "heritage"
+        },
+        {
+          "must": true,
+          "icon": "🌉",
+          "num": "DAD 02",
+          "name": "バーナーヒルズ（黄金橋）",
+          "desc": "巨大な石の手が支える「黄金橋」が話題のテーマパーク。ロープウェイで雲の上まで登り、フランス風の庭園やアトラクションを楽しめる。",
+          "badge": "SNS映え・必見",
+          "prompt_en": "Golden Bridge Ba Na Hills Vietnam, giant stone hands holding up a golden pedestrian bridge above clouds, mountain view, dramatic scenery",
+          "type": "activity"
+        },
+        {
+          "must": false,
+          "icon": "🏖️",
+          "num": "DAD 03",
+          "name": "ミーケービーチ",
+          "desc": "フォーブス誌が選ぶ世界の美しいビーチにも選出された白砂のビーチ。ダナン市街から近く、リゾートホテルが立ち並ぶ。",
+          "badge": "ビーチリゾート",
+          "prompt_en": "My Khe Beach Da Nang, white sand beach with turquoise water and palm trees, resort hotels in background, Vietnam",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "DAD 04",
+          "name": "ミーソン聖域",
+          "desc": "4〜14世紀に栄えたチャンパ王国のヒンドゥー教遺跡群。密林に埋もれるように点在する赤レンガの塔は世界遺産に登録されている。",
+          "badge": "世界遺産",
+          "prompt_en": "My Son Sanctuary Vietnam, ancient red brick Hindu temple ruins of Champa kingdom surrounded by jungle, mystical atmosphere",
+          "type": "heritage"
+        },
+        {
+          "must": false,
+          "icon": "🏍️",
+          "num": "DAD 05",
+          "name": "ハイヴァン峠",
+          "desc": "ダナンとフエを隔てる「海の雲」を意味する峠道。曲がりくねった山道から見下ろす海と山の絶景は、バイクツーリングの人気ルート。",
+          "badge": "絶景ドライブ",
+          "prompt_en": "Hai Van Pass Vietnam, winding mountain road overlooking the coastline and ocean, dramatic clouds, scenic drive photography",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "DAD 06",
+          "name": "ダナン大聖堂（ピンクチャーチ）",
+          "desc": "淡いピンク色の外壁が愛らしいカトリック教会。フランス統治時代の1923年に建てられ、街のシンボルとして親しまれている。",
+          "badge": "フォトスポット",
+          "prompt_en": "Da Nang Cathedral, pink Gothic style church with tall spire, French colonial architecture, blue sky, Vietnam",
+          "type": "religious"
+        }
+      ]
+    },
+    {
+      "city_id": "hcmc",
+      "city_name": "ホーチミン",
+      "city_desc": "旧サイゴン。摩天楼とフレンチコロニアル建築が同居し、バイクの奔流が絶えない南部最大の経済都市",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "直行便 約6.5〜7時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー・Grab 約20〜30分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "12〜4月（乾季）",
+          "link_section": "season",
+          "link_btn_index": "1"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "コムタム・バインセオ",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "Grab・バイクタクシー",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "HCM 01",
+          "name": "統一会堂",
+          "desc": "ベトナム戦争終結を象徴する旧南ベトナム大統領官邸。1975年に北ベトナム軍の戦車が正門を突破した歴史的建造物で、当時の内部がそのまま保存されている。",
+          "badge": "戦争の歴史・必見",
+          "prompt_en": "Independence Palace Ho Chi Minh City, modernist 1960s government building facade with palm trees, historic tank on lawn, Vietnam",
+          "type": "heritage"
+        },
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "HCM 02",
+          "name": "中央郵便局・聖母マリア教会",
+          "desc": "フランス統治時代に建てられた赤レンガの大聖堂と、優美な郵便局が向かい合う旧市街のランドマーク。フォトスポットとしても人気。",
+          "badge": "仏植民地建築・必見",
+          "prompt_en": "Saigon Notre-Dame Cathedral and Central Post Office, red brick French colonial buildings, Ho Chi Minh City, blue sky",
+          "type": "townscape"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "HCM 03",
+          "name": "ベンタイン市場",
+          "desc": "ホーチミンを代表するランドマーク市場。雑貨・お土産・ローカルグルメの屋台が集まり、値切り交渉も旅の醍醐味。",
+          "badge": "ショッピング",
+          "prompt_en": "Ben Thanh Market Ho Chi Minh City, iconic clock tower entrance, bustling market stalls, Vietnam",
+          "type": "market"
+        },
+        {
+          "must": false,
+          "icon": "🕳️",
+          "num": "HCM 04",
+          "name": "クチトンネル",
+          "desc": "ベトナム戦争時にゲリラ戦の拠点となった全長250kmの地下トンネル網。実際にトンネル内を這って見学する体験ができる。",
+          "badge": "戦争遺跡",
+          "prompt_en": "Cu Chi Tunnels Vietnam, narrow underground jungle tunnel entrance camouflaged with leaves, dense forest, historical war site",
+          "type": "heritage"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "HCM 05",
+          "name": "戦争証跡博物館",
+          "desc": "ベトナム戦争の実相を伝える写真・資料・兵器を展示する博物館。枯葉剤の影響など、戦争の悲惨さを直視させる展示が多い。",
+          "badge": "歴史・学び",
+          "prompt_en": "War Remnants Museum Ho Chi Minh City, museum exterior with military aircraft and tanks displayed in courtyard, Vietnam",
+          "type": "museum"
+        },
+        {
+          "must": false,
+          "icon": "🌃",
+          "num": "HCM 06",
+          "name": "ブイビエン通り",
+          "desc": "バーやクラブが並ぶ、夜まで賑わうバックパッカー通り。屋台グルメと生ビールを片手に旅人同士の交流が生まれる夜の名所。",
+          "badge": "ナイトライフ",
+          "prompt_en": "Bui Vien Street Ho Chi Minh City at night, neon signs, bustling bars and street food stalls, lively backpacker street atmosphere",
+          "type": "activity"
+        }
+      ]
+    },
+    {
+      "city_id": "cantho",
+      "city_name": "カントー",
+      "city_desc": "無数の運河が張り巡らされたメコンデルタの中心都市。早朝の水上マーケットは川と共に生きる暮らしを体感できる",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ホーチミンから車 約3時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "カントー空港からタクシー 約15分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "12〜4月（乾季）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "ラウマム・バインコット",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "ボート・タクシー",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🛶",
+          "num": "CTO 01",
+          "name": "カイラン水上マーケット",
+          "desc": "メコンデルタ最大級の水上マーケット。早朝、野菜や果物を満載した小舟が運河にひしめき合う光景は必見。竿の先に商品を吊るす「バンボーサイン」が目印。",
+          "badge": "水上マーケット・必見",
+          "prompt_en": "Cai Rang Floating Market Can Tho Vietnam, wooden boats loaded with fruits and vegetables on a wide river, early morning mist, Mekong Delta",
+          "type": "market"
+        },
+        {
+          "must": false,
+          "icon": "🚤",
+          "num": "CTO 02",
+          "name": "メコン運河クルーズ",
+          "desc": "小舟に乗り換えて水路の奥へ分け入り、ヤシ砂糖工房や養蜂園を巡るツアー。両岸に広がるマングローブと運河沿いの暮らしを間近に見られる。",
+          "badge": "自然・アクティビティ",
+          "prompt_en": "Mekong Delta canal cruise, small wooden sampan boat navigating narrow waterway lined with palm trees, lush green scenery, Vietnam",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🌃",
+          "num": "CTO 03",
+          "name": "ニンキエウ埠頭",
+          "desc": "カントー川沿いに整備された遊歩道。夜はライトアップされ、屋台や夜市が立ち並ぶ地元の憩いの場になる。",
+          "badge": "夜市・散策",
+          "prompt_en": "Ninh Kieu Wharf Can Tho at night, riverside promenade with colorful lights, night market stalls, Mekong river view, Vietnam",
+          "type": "townscape"
+        },
+        {
+          "must": false,
+          "icon": "🌉",
+          "num": "CTO 04",
+          "name": "カントー橋",
+          "desc": "メコン川に架かる東南アジア最長クラスの斜張橋。ライトアップされた夜景は川沿いから一望できる。",
+          "badge": "近代建築",
+          "prompt_en": "Can Tho Bridge, long cable-stayed bridge spanning the Mekong River, illuminated at dusk, Vietnam",
+          "type": "townscape"
+        }
+      ]
+    }
+  ],
+  "transport_items": [
+    {
+      "icon": "✈️",
+      "name": "国内線（ハノイ⇄ダナン⇄ホーチミン）",
+      "desc": "南北移動は鉄道より飛行機が主流。ベトジェットエア・ベトナム航空が頻発しており、早割なら片道4,000円台から。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚆",
+      "name": "統一鉄道（ハノイ〜ホーチミン）",
+      "desc": "全長約1,700kmを30時間以上かけて縦断する寝台列車。移動そのものを楽しみたい旅行者に人気だが、時間がかかる点は要注意。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚕",
+      "name": "Grab（配車アプリ）",
+      "desc": "車・バイクタクシーどちらも呼べる東南アジア版Uber。乗車前に料金が確定し、ぼったくりの心配がない旅行者の必須アプリ。",
+      "affiliate": "grab",
+      "is_last": false
+    },
+    {
+      "icon": "🛵",
+      "name": "バイクタクシー（Xe Om）・レンタルバイク",
+      "desc": "路地の奥まで入れる機動力が魅力。運転に自信がなければGrab Bikeの利用が安心。国際免許があればレンタルバイクも可能。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚌",
+      "name": "オープンバス（都市間長距離バス）",
+      "desc": "ハノイ〜ホーチミンなど主要都市を結ぶ寝台バス。飛行機より安く、区間ごとに乗り降りできるチケットも人気。",
+      "affiliate": "",
+      "is_last": true
+    }
+  ],
+  "courses": {
+    "intro": "直行便6〜6.5時間・時差2時間のベトナムは「北から南まで、まるで違う顔を見せる」のが最大の強み。初めてならハノイとハロン湾に絞った<strong>週末プラン</strong>、2回目以降や連休が取れるなら中部ダナン・ホイアンまで足を延ばす<strong>南北縦断プラン</strong>がおすすめ。もっと欲張りたい人向けに、メコンデルタまで南北を制覇する全部乗せルートも紹介しています。",
+    "stable_title": "定番の2大プラン",
+    "stable_intro": "ベトナム旅行の基本は「ハノイ（北部）」と「ホーチミン（南部）」のどちらを起点にするか、そしてどこまで足を延ばすかで難易度が変わる。南北約1,650kmと長いため、国内移動は飛行機が基本になります。",
+    "stable_plans": [
+      {
+        "label": "プランA",
+        "title": "ハノイ＋ハロン湾　5泊6日",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "green",
+            "content_html": "<strong>ハノイ到着</strong><br>夜到着ならそのままホテルで休養。日中到着なら<a onclick=\"showSpot('HAN 01')\" class=\"spot-link\">ホアンキエム湖・旧市街</a>を散策し、バイクが行き交う雑踏とビアホイの活気を肌で感じよう。"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "red",
+            "content_html": "<strong>ホーチミン廟 → 文廟 → 水上人形劇</strong><br><a onclick=\"showSpot('HAN 02')\" class=\"spot-link\">ホーチミン廟</a>と<a onclick=\"showSpot('HAN 04')\" class=\"spot-link\">文廟</a>でベトナムの近代史と伝統に触れ、夜は<a onclick=\"showSpot('HAN 03')\" class=\"spot-link\">タンロン水上人形劇</a>で伝統芸能を鑑賞。"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "green",
+            "content_html": "<strong>ハロン湾クルーズ乗船</strong><br>石灰岩の奇岩が林立する世界遺産<a onclick=\"showSpot('HPH 01')\" class=\"spot-link\">ハロン湾</a>へ。クルーズ船に乗り込み、鍾乳洞見学やカヤック体験を楽しみながら船上で1泊する。",
+            "pre_transit": {
+              "duration": "ハノイ→ハロン湾（車 約2.5〜3時間）",
+              "taxi": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 4",
+            "badge_class": "red",
+            "content_html": "<strong>クルーズ2日目 → ハノイへ戻る</strong><br>朝日に染まる奇岩群を眺めながら朝食。午前中に下船し、ハノイ市内へ戻って<a onclick=\"showSpot('HAN 06')\" class=\"spot-link\">タイ湖・チャンクオック寺</a>で夕景を眺める。",
+            "pre_transit": {
+              "duration": "ハロン湾→ハノイ（車 約2.5〜3時間）",
+              "taxi": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 5",
+            "badge_class": "",
+            "content_html": "<strong>旧市街で最終日</strong><br><a onclick=\"showSpot('HAN 05')\" class=\"spot-link\">ドンスアン市場</a>でお土産探し。<a onclick=\"showFood('No.02')\" class=\"spot-link\">バインミー</a>を片手に路地を食べ歩いて締めくくる。"
+          },
+          {
+            "transit": false,
+            "label": "Day 6",
+            "badge_class": "",
+            "content_html": "<strong>帰国</strong><br>ハノイ・ノイバイ国際空港から直行便または乗り継ぎ便で日本へ。",
+            "pre_transit": {
+              "duration": "ハノイ市内→空港（車 約45分）",
+              "taxi": true
+            }
+          }
+        ],
+        "tip": "ハロン湾クルーズは1泊2日が主流だが、2泊3日ならカットバ島にも立ち寄れる。船の質は価格差が大きいので、口コミをよく確認してから予約しよう。"
+      },
+      {
+        "label": "プランB",
+        "title": "ハノイ＋ダナン・ホイアン＋ホーチミン　8泊9日",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "green",
+            "content_html": "<strong>ハノイ到着</strong><br><a onclick=\"showSpot('HAN 01')\" class=\"spot-link\">ホアンキエム湖・旧市街</a>を散策し、バイクの奔流とビアホイの活気を肌で感じよう。"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "red",
+            "content_html": "<strong>ホーチミン廟 → 文廟 → 水上人形劇</strong><br><a onclick=\"showSpot('HAN 02')\" class=\"spot-link\">ホーチミン廟</a>と<a onclick=\"showSpot('HAN 04')\" class=\"spot-link\">文廟</a>を巡り、夜は<a onclick=\"showSpot('HAN 03')\" class=\"spot-link\">タンロン水上人形劇</a>を鑑賞。"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "green",
+            "content_html": "<strong>ハロン湾クルーズ乗船</strong><br>世界遺産<a onclick=\"showSpot('HPH 01')\" class=\"spot-link\">ハロン湾</a>へ。クルーズ船で1泊し、鍾乳洞見学やカヤックを楽しむ。",
+            "pre_transit": {
+              "duration": "ハノイ→ハロン湾（車 約2.5〜3時間）",
+              "taxi": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 4",
+            "badge_class": "red",
+            "content_html": "<strong>クルーズ下船 → ダナンへ移動</strong><br>朝日に染まる奇岩群を眺めて下船後、ハノイ経由でダナンへ空路移動。到着後は<a onclick=\"showSpot('DAD 06')\" class=\"spot-link\">ダナン大聖堂</a>周辺を散策。",
+            "pre_transit": {
+              "duration": "ハロン湾→ハノイ空港（車 約2.5時間）→ダナン（飛行機 約1.5時間）",
+              "plane": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 5",
+            "badge_class": "green",
+            "content_html": "<strong>ホイアン旧市街（ランタンの街）</strong><br><a onclick=\"showSpot('DAD 01')\" class=\"spot-link\">ホイアン旧市街</a>で日中は黄色い町並みを、夜はランタンが灯る幻想的な運河沿いを散策。"
+          },
+          {
+            "transit": false,
+            "label": "Day 6",
+            "badge_class": "red",
+            "content_html": "<strong>バーナーヒルズ（黄金橋）</strong><br>ロープウェイで雲の上まで登り、巨大な石の手が支える<a onclick=\"showSpot('DAD 02')\" class=\"spot-link\">黄金橋</a>とフランス風庭園を満喫。"
+          },
+          {
+            "transit": false,
+            "label": "Day 7",
+            "badge_class": "green",
+            "content_html": "<strong>ホーチミン市内観光</strong><br><a onclick=\"showSpot('HCM 01')\" class=\"spot-link\">統一会堂</a>と<a onclick=\"showSpot('HCM 02')\" class=\"spot-link\">中央郵便局・聖母マリア教会</a>を巡り、<a onclick=\"showSpot('HCM 03')\" class=\"spot-link\">ベンタイン市場</a>でお土産探し。",
+            "pre_transit": {
+              "duration": "ダナン→ホーチミン（飛行機 約1.5時間）",
+              "plane": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 8",
+            "badge_class": "red",
+            "content_html": "<strong>クチトンネル日帰りツアー</strong><br>ベトナム戦争の地下要塞<a onclick=\"showSpot('HCM 04')\" class=\"spot-link\">クチトンネル</a>へ。夜は<a onclick=\"showSpot('HCM 06')\" class=\"spot-link\">ブイビエン通り</a>で最後の夜を楽しむ。"
+          },
+          {
+            "transit": false,
+            "label": "Day 9",
+            "badge_class": "",
+            "content_html": "<strong>帰国</strong><br>ホーチミン・タンソンニャット国際空港から直行便または乗り継ぎ便で日本へ。",
+            "pre_transit": {
+              "duration": "ホーチミン市内→空港（車 約30分）",
+              "taxi": true
+            }
+          }
+        ],
+        "tip": "ハノイ〜ダナン〜ホーチミンの国内線はベトジェットエアが安いが、預け荷物や座席指定が別料金なことが多い。総額をよく確認してから予約しよう。"
+      }
+    ],
+    "adventure_title": "メコンデルタまで南北を制覇する「全部乗せ」ルート",
+    "adventure_note_html": "北部ハノイ・ハロン湾から中部ダナン・ホイアン、南部ホーチミン、さらにメコンデルタのカントーまで、ベトナムの5都市をひとつなぎに巡る欲張りなルート。移動は多いが、その分ベトナムの多様な表情を一度に味わえます。",
+    "adventure_plan": {
+      "title": "ハノイ→ハロン湾→ダナン・ホイアン→ホーチミン→カントー　10泊11日",
+      "days": [
+        {
+          "transit": false,
+          "label": "Day 1",
+          "badge_class": "green",
+          "content_html": "<strong>ハノイ到着</strong><br><a onclick=\"showSpot('HAN 01')\" class=\"spot-link\">ホアンキエム湖・旧市街</a>を散策し、バイクの奔流とビアホイの活気を肌で感じよう。"
+        },
+        {
+          "transit": false,
+          "label": "Day 2",
+          "badge_class": "red",
+          "content_html": "<strong>ホーチミン廟 → 文廟 → 水上人形劇</strong><br><a onclick=\"showSpot('HAN 02')\" class=\"spot-link\">ホーチミン廟</a>と<a onclick=\"showSpot('HAN 04')\" class=\"spot-link\">文廟</a>を巡り、夜は<a onclick=\"showSpot('HAN 03')\" class=\"spot-link\">タンロン水上人形劇</a>を鑑賞。"
+        },
+        {
+          "transit": false,
+          "label": "Day 3",
+          "badge_class": "green",
+          "content_html": "<strong>ハロン湾クルーズ乗船</strong><br>世界遺産<a onclick=\"showSpot('HPH 01')\" class=\"spot-link\">ハロン湾</a>へ。クルーズ船で1泊し、鍾乳洞見学やカヤックを楽しむ。",
+          "pre_transit": {
+            "duration": "ハノイ→ハロン湾（車 約2.5〜3時間）",
+            "taxi": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 4",
+          "badge_class": "red",
+          "content_html": "<strong>カットバ島 → ハノイへ戻る</strong><br>下船後は<a onclick=\"showSpot('HPH 02')\" class=\"spot-link\">カットバ島</a>に立ち寄り、国立公園の自然を楽しんでからハノイへ。",
+          "pre_transit": {
+            "duration": "ハロン湾→カットバ島（船 約1時間）",
+            "ferry": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 5",
+          "badge_class": "green",
+          "content_html": "<strong>ダナンへ移動 → ホイアン旧市街</strong><br>到着後<a onclick=\"showSpot('DAD 01')\" class=\"spot-link\">ホイアン旧市街</a>へ。夜はランタンが灯る運河沿いを散策する。",
+          "pre_transit": {
+            "duration": "ハノイ→ダナン（飛行機 約1.5時間）",
+            "plane": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 6",
+          "badge_class": "red",
+          "content_html": "<strong>バーナーヒルズ（黄金橋）</strong><br>ロープウェイで雲の上まで登り、<a onclick=\"showSpot('DAD 02')\" class=\"spot-link\">黄金橋</a>とフランス風庭園を満喫。"
+        },
+        {
+          "transit": false,
+          "label": "Day 7",
+          "badge_class": "green",
+          "content_html": "<strong>ホーチミン市内観光</strong><br><a onclick=\"showSpot('HCM 01')\" class=\"spot-link\">統一会堂</a>と<a onclick=\"showSpot('HCM 02')\" class=\"spot-link\">中央郵便局・聖母マリア教会</a>を巡る。",
+          "pre_transit": {
+            "duration": "ダナン→ホーチミン（飛行機 約1.5時間）",
+            "plane": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 8",
+          "badge_class": "red",
+          "content_html": "<strong>クチトンネル日帰りツアー</strong><br>ベトナム戦争の地下要塞<a onclick=\"showSpot('HCM 04')\" class=\"spot-link\">クチトンネル</a>へ。"
+        },
+        {
+          "transit": false,
+          "label": "Day 9",
+          "badge_class": "green",
+          "content_html": "<strong>カイラン水上マーケット</strong><br>早朝に<a onclick=\"showSpot('CTO 01')\" class=\"spot-link\">カイラン水上マーケット</a>を見学し、<a onclick=\"showSpot('CTO 02')\" class=\"spot-link\">メコン運河クルーズ</a>で水郷の暮らしを体感する。",
+          "pre_transit": {
+            "duration": "ホーチミン→カントー（車 約3時間）",
+            "taxi": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 10",
+          "badge_class": "",
+          "content_html": "<strong>ホーチミンで最終日</strong><br><a onclick=\"showSpot('CTO 03')\" class=\"spot-link\">ニンキエウ埠頭</a>を散策後ホーチミンへ戻り、<a onclick=\"showSpot('HCM 06')\" class=\"spot-link\">ブイビエン通り</a>で最後の夜を楽しむ。",
+          "pre_transit": {
+            "duration": "カントー→ホーチミン（車 約3時間）",
+            "taxi": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 11",
+          "badge_class": "",
+          "content_html": "<strong>帰国</strong><br>ホーチミン・タンソンニャット国際空港から直行便または乗り継ぎ便で日本へ。北から南まで、5都市を制覇した11日間。",
+          "pre_transit": {
+            "duration": "ホーチミン市内→空港（車 約30分）",
+            "taxi": true
+          }
+        }
+      ],
+      "tip": "北部（ハノイ・ハロン湾）は10〜12月・3〜4月、南部（ホーチミン・カントー）は12〜4月がベストシーズンと時期が異なる。全行程を通して快適に回るなら、12月〜2月頃の訪問がおすすめ。"
+    },
+    "cta_title": "ベストシーズンもチェックしよう！🌤️",
+    "cta_desc": "北部・中部・南部で気候が大きく異なるベトナム。旅程に合わせてシーズンを選びましょう。"
+  },
+  "spot_points": [
+    {
+      "title": "ハロン湾は「1泊クルーズ」が本領発揮",
+      "body": "日帰りツアーもあるが、真価を発揮するのは船上で1泊するクルーズ。朝もやに包まれた奇岩群の景色、静かな夜のデッキで見る満天の星は、日帰りでは味わえない体験だ。",
+      "spot_ref": "HPH 01",
+      "image": "素材/観光スポット/ハロン湾クルーズ.webp"
+    },
+    {
+      "title": "道路の渡り方は「一定速度」が鉄則",
+      "body": "信号のない交差点でバイクの奔流を渡るのは最初こそ怖いが、周りを見ながら歩調を変えずゆっくり進めばバイクの方が避けてくれる。急に立ち止まるのが一番危険、というのは現地で体感して初めてわかる感覚だ。",
+      "spot_ref": "HAN 01",
+      "image": "素材/観光スポット/ホアンキエム湖・旧市街.webp"
+    },
+    {
+      "title": "水上マーケットは「早朝」が勝負",
+      "body": "<a onclick=\"showSpot('CTO 01')\" class=\"spot-link\">カイラン水上マーケット</a>の活気がピークを迎えるのは日の出から午前8時頃まで。ボートに乗って商人たちの掛け合いや、竿の先に商品を吊るす独特の看板文化を間近で見られるのはこの時間帯だけだ。",
+      "spot_ref": "CTO 01",
+      "image": "素材/観光スポット/カイラン水上マーケット.webp"
+    }
+  ]
+}
