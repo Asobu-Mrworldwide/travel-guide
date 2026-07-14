@@ -1,8 +1,16 @@
 """
 Recraft API ラッパー
 """
+import socket
 import time
+
 import requests
+import urllib3.util.connection as _urllib3_conn
+
+# このマシンはデフォルトでIPv6(NAT64)経由の接続を優先するが、その経路が不安定で
+# ConnectionResetError(10054)やタイムアウトが頻発する（実測で約6割が失敗）。
+# IPv4接続は安定しているため、プロセス全体でIPv4を強制する。
+_urllib3_conn.allowed_gai_family = lambda: socket.AF_INET
 
 API_KEY  = "Wo1jeJZqRrD88QF8tRLGuYCCM8oBzYEYA8wptkXgaKP4hKLEWuM37k80C72MJpd3"
 BASE_URL = "https://external.api.recraft.ai/v1"
