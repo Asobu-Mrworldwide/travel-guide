@@ -10,6 +10,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+import requests
 import streamlit as st
 from PIL import Image
 
@@ -226,7 +227,10 @@ with col_info:
         st.caption(f"画像あり: {has_img} / {total}")
 
 with col_cr:
-    credits = recraft_api.get_credits()
+    try:
+        credits = recraft_api.get_credits()
+    except Exception:
+        credits = -1
     if credits >= 0:
         yen = credits * 0.16
         st.metric("Recraftクレジット", f"{credits:,} cr")
@@ -813,7 +817,7 @@ with tab2:
                             st.session_state.get("gen_results", []) + [new_item]
                         )
                         st.rerun()
-                    except RuntimeError as e:
+                    except (RuntimeError, requests.exceptions.RequestException) as e:
                         st.error(str(e))
 
 
@@ -976,7 +980,7 @@ with tab2:
                         st.session_state.get("gen_results", []) + [new_item]
                     )
                     st.rerun()
-                except RuntimeError as e:
+                except (RuntimeError, requests.exceptions.RequestException) as e:
                     st.error(str(e))
 
 
@@ -1187,7 +1191,7 @@ with tab2:
                             st.session_state.get("gen_results", []) + [new_item]
                         )
                         st.rerun()
-                    except RuntimeError as e:
+                    except (RuntimeError, requests.exceptions.RequestException) as e:
                         st.error(str(e))
 
 

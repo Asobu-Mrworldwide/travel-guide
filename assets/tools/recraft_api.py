@@ -1,10 +1,31 @@
 """
 Recraft API ラッパー
 """
+import time
 import requests
 
 API_KEY  = "Wo1jeJZqRrD88QF8tRLGuYCCM8oBzYEYA8wptkXgaKP4hKLEWuM37k80C72MJpd3"
 BASE_URL = "https://external.api.recraft.ai/v1"
+
+# NAT64等の不安定な経路で ConnectionResetError(10054) が起きることがあるため、
+# ネットワーク層のエラーのみ待機を挟んでリトライする（API側のエラーはリトライしない）。
+# 待機時間は 2s→4s→8s→16s と指数的に伸ばし、単発の瞬断より長い障害にも粘る。
+_RETRY_COUNT = 5
+_RETRY_BASE_WAIT_SEC = 2
+_REQUEST_TIMEOUT = 60
+
+
+def _request_with_retry(method: str, url: str, **kwargs) -> requests.Response:
+    kwargs.setdefault("timeout", _REQUEST_TIMEOUT)
+    last_err = None
+    for attempt in range(1, _RETRY_COUNT + 1):
+        try:
+            return requests.request(method, url, **kwargs)
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout) as e:
+            last_err = e
+            if attempt < _RETRY_COUNT:
+                time.sleep(_RETRY_BASE_WAIT_SEC * (2 ** (attempt - 1)))
+    raise last_err
 
 STYLE_IDS = {
     "recraftv3":   "b516fe3c-488e-4156-8d6f-cf4001afabaf",  # ~40cr/枚
@@ -56,7 +77,7 @@ def _auth_headers() -> dict:
 
 def get_credits() -> int:
     """現在のクレジット残高を返す。失敗時は -1"""
-    resp = requests.get(f"{BASE_URL}/users/me", headers=_auth_headers())
+    resp = _request_with_retry("GET", f"{BASE_URL}/users/me", headers=_auth_headers())
     if resp.status_code == 200:
         return resp.json().get("credits", -1)
     return -1
@@ -89,7 +110,7 @@ def generate_image(prompt: str, plate_color: str, model: str = "recraft20b",
     }
     if use_style and model in STYLE_IDS:
         payload["style_id"] = STYLE_IDS[model]
-    resp = requests.post(f"{BASE_URL}/images/generations", headers=headers, json=payload)
+    resp = _request_with_retry("POST", f"{BASE_URL}/images/generations", headers=headers, json=payload)
     if resp.status_code != 200:
         raise RuntimeError(f"生成失敗 ({resp.status_code}): {resp.text}")
 
@@ -97,7 +118,7 @@ def generate_image(prompt: str, plate_color: str, model: str = "recraft20b",
     credits = data.get("credits", 0)
     url     = data["data"][0]["url"]
 
-    dl = requests.get(url)
+    dl = _request_with_retry("GET", url)
     if dl.status_code != 200:
         raise RuntimeError(f"ダウンロード失敗 ({dl.status_code})")
     return dl.content, credits
@@ -108,7 +129,8 @@ def remove_background(image_bytes: bytes) -> tuple[bytes, int]:
     背景除去した PNG バイナリと消費クレジット数を返す。
     失敗時は RuntimeError を raise。
     """
-    resp = requests.post(
+    resp = _request_with_retry(
+        "POST",
         f"{BASE_URL}/images/removeBackground",
         headers=_auth_headers(),
         files={"file": ("image.webp", image_bytes, "image/webp")},
@@ -120,7 +142,7 @@ def remove_background(image_bytes: bytes) -> tuple[bytes, int]:
     credits = data.get("credits", 0)
     url     = data["image"]["url"]
 
-    dl = requests.get(url)
+    dl = _request_with_retry("GET", url)
     if dl.status_code != 200:
         raise RuntimeError(f"ダウンロード失敗 ({dl.status_code})")
     return dl.content, credits
