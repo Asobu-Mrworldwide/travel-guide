@@ -242,19 +242,29 @@ with col_update:
     st.markdown("**サイト更新**")
     _all_c = detect_countries()
     st.caption(f"全 {len(_all_c)} か国を再生成")
-    if st.button(f"🌏 全国更新", key="top_update_all", type="primary"):
-        _log = []
-        _prog = st.progress(0, text="準備中...")
-        for _i, _cid in enumerate(_all_c):
-            _prog.progress(_i / len(_all_c), text=f"{_cid} ({_i+1}/{len(_all_c)})")
-            _rc, _out, _err = _run_generate(_cid)
-            _log.append(("✅" if _rc == 0 else "❌") + f" {_cid}")
-        _prog.progress(1.0, text="完了！")
-        _ok = sum(1 for l in _log if l.startswith("✅"))
-        if _ok == len(_log):
-            st.success(f"✅ 全 {_ok} か国 完了")
-        else:
-            st.warning("\n".join(_log))
+    _col_upd_one, _col_upd_all = st.columns(2)
+    with _col_upd_one:
+        if st.button(f"🔄 {country_id} のみ更新", key="top_update_one"):
+            with st.spinner(f"{country_id} を再生成中..."):
+                _rc, _out, _err = _run_generate(country_id)
+            if _rc == 0:
+                st.success(f"✅ {country_id} 完了")
+            else:
+                st.error(f"❌ {country_id} 失敗\n{_err}")
+    with _col_upd_all:
+        if st.button(f"🌏 全国更新", key="top_update_all", type="primary"):
+            _log = []
+            _prog = st.progress(0, text="準備中...")
+            for _i, _cid in enumerate(_all_c):
+                _prog.progress(_i / len(_all_c), text=f"{_cid} ({_i+1}/{len(_all_c)})")
+                _rc, _out, _err = _run_generate(_cid)
+                _log.append(("✅" if _rc == 0 else "❌") + f" {_cid}")
+            _prog.progress(1.0, text="完了！")
+            _ok = sum(1 for l in _log if l.startswith("✅"))
+            if _ok == len(_log):
+                st.success(f"✅ 全 {_ok} か国 完了")
+            else:
+                st.warning("\n".join(_log))
 
 # カテゴリ選択（全タブ共通）— 起動時に前回値を復元
 _cat_options = ["🍜 グルメ", "🏔️ ヒーロー画像", "🗺️ 観光スポット"]
