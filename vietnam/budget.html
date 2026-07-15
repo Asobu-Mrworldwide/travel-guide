@@ -325,6 +325,68 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">宿を選ぶとき、値段だけ見ていませんか？ 安さだけで選ぶと治安の悪いエリアに当たりやすいので注意が必要です。特に夜着の日程ではリスクが上がります。初日くらいは安心して休めるよう、エリアの特徴を事前に把握しておきましょう。</p>
   <div class="s-card">
     
+    <div style="position:relative;margin:0 0 16px">
+      <div id="hotel-map" style="width:100%;height:300px;border-radius:10px;overflow:hidden"></div>
+      <a id="hotel-map-btn" href="#" target="_blank" rel="noopener" style="display:none;position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px)">Googleマップで開く →</a>
+    </div>
+    <script>
+      var _hotelMap = null;
+      var _hotelAreas = [{ id:'hoankiem', name:'ホアンキエム湖周辺（ハノイ旧市街）', lat:21.0285, lng:105.8524 },{ id:'district1', name:'1区（ドンコイ通り周辺・ホーチミン）', lat:10.7769, lng:106.7009 },{ id:'myke', name:'ミーケービーチ沿い（ダナン）', lat:16.061, lng:108.247 },];
+      var _hotelCenter = { lat:15.9, lng:106.9 };
+      var _hotelZoom = 5;
+      window._initHotelMap = function() {
+        if (_hotelMap) return;
+        if (!window.google || !window.google.maps) return;
+        _hotelMap = new google.maps.Map(document.getElementById('hotel-map'), {
+          center: _hotelCenter, zoom: _hotelZoom, mapId: 'DEMO_MAP_ID', disableDefaultUI: true, gestureHandling: 'greedy'
+        });
+        _hotelAreas.forEach(function(a) {
+          var pin = document.createElement('div');
+          pin.style.cssText = 'width:12px;height:12px;background:#cc0001;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.4)';
+          var lbl = document.createElement('div');
+          lbl.textContent = a.name;
+          lbl.style.cssText = 'position:absolute;top:14px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:700;color:#cc0001;background:#fff;padding:1px 5px;border-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,0.2)';
+          var wrap = document.createElement('div');
+          wrap.style.position = 'relative';
+          wrap.appendChild(pin); wrap.appendChild(lbl);
+          new google.maps.marker.AdvancedMarkerElement({ position:{lat:a.lat,lng:a.lng}, map:_hotelMap, title:a.name, content:wrap });
+        });
+      };
+      window.zoomToHotelArea = function(lat, lng, mapsUrl) {
+        if (!_hotelMap) { window._initHotelMap(); }
+        if (!_hotelMap) return;
+        _hotelMap.panTo({lat:lat, lng:lng});
+        _hotelMap.setZoom(16);
+        document.getElementById('hotel-map').scrollIntoView({ behavior:'smooth', block:'center' });
+        var btn = document.getElementById('hotel-map-btn');
+        if (btn) { btn.href = mapsUrl; btn.style.display = 'block'; }
+      };
+      // スクロールで表示範囲に入ったら自動初期化（Google Maps読み込み待ちのためポーリングも併用）
+      (function(){
+        var el = document.getElementById('hotel-map');
+        if (!el) return;
+        var inView = false;
+        function tryInit() {
+          if (_hotelMap || !inView) return;
+          if (!window.google || !window.google.maps) return;
+          window._initHotelMap();
+        }
+        if (window.IntersectionObserver) {
+          var obs = new IntersectionObserver(function(entries){
+            if (entries[0].isIntersecting) { inView = true; tryInit(); if (_hotelMap) obs.disconnect(); }
+          }, { threshold: 0.1 });
+          obs.observe(el);
+        } else {
+          inView = true;
+        }
+        var pollId = setInterval(function(){
+          tryInit();
+          if (_hotelMap) clearInterval(pollId);
+        }, 300);
+        setTimeout(function(){ clearInterval(pollId); }, 15000);
+      })();
+    </script>
+    
     <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
       
       <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" onclick="zoomToHotelArea(21.0285,105.8524,'https://www.google.com/maps/place/Hoan+Kiem+Lake,+Hanoi')">

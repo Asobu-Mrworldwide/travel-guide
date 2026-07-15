@@ -466,7 +466,7 @@ with tab2:
                 _out_dir = ROOT_DIR / country_id / "素材"
                 _out_dir.mkdir(parents=True, exist_ok=True)
                 _rel_prefix = "素材/"
-                _model, _w, _h, _use_style = "recraftv3", 1820, 1024, False
+                _model, _w, _h, _use_style = "style_spot", 1820, 1024, True
             else:  # 🗺️ 観光スポット
                 _targets = []
                 for _sec in _bulk_data.get("spot_sections", []):
@@ -939,6 +939,7 @@ with tab2:
                     "style_spot4  40cr ≈ ¥6.4/枚  （フラットベクター v4）",
                     "style_spot5  40cr ≈ ¥6.4/枚  （フラットベクター v5）",
                 ],
+                index=3,
                 horizontal=False,
                 key="hero_model",
             )
