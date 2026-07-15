@@ -1238,7 +1238,7 @@
       "badge": "定番サラダ",
       "type": "main",
       "city": "national",
-      "desc": "千切りにした青パパイヤを臼で叩いて作る酸味と辛みの効いたサラダ。タイのソムタムに似ているが、発酵魚醤「パデーク」を使うラオス流の濃厚な風味が特徴。",
+      "desc": "千切りにした青パパイヤを臼で叩いて作る酸味と辛みの効いたサラダ。タイのソムタムに似ているが、発酵魚醤「パデーク」を使うラオス流の濃厚な風味が特徴で、辛さもソムタム以上。辛いのが苦手なら注文時に「ボ・ペット（辛くしないで）」と伝えるのがコツ。",
       "image": "",
       "prompt_en": "Tam mak hoong Laos green papaya salad pounded in mortar, chili and lime, served with sticky rice, food photography",
       "plate_color": "wooden plate",
@@ -1248,11 +1248,11 @@
     },
     {
       "num": "No.4",
-      "name": "サイウア（ラオス風ソーセージ）",
+      "name": "サイウーア（ラオス風ソーセージ）",
       "badge": "ルアンパバーン名物",
       "type": "main",
       "city": "luang_prabang",
-      "desc": "レモングラス・こぶみかんの葉・唐辛子をたっぷり刻み込んだ香り高い豚肉ソーセージ。炭火で焼き上げる香ばしい匂いがルアンパバーンの朝市に漂う。",
+      "desc": "レモングラス・こぶみかんの葉・唐辛子をたっぷり刻み込んだ香り高い豚肉ソーセージ。現地では「サイコーク」とも呼ばれ、炭火で焼き上げる香ばしい匂いがルアンパバーンの朝市に漂う。隣国タイのチェンマイ名物「サイウア」とほぼ同じ料理だが、ラオスらしさを味わうならこちらで。",
       "image": "",
       "prompt_en": "Sai oua Laos lemongrass pork sausage grilled over charcoal, herbs visible in cross-section, Luang Prabang market, food photography",
       "plate_color": "grill plate",
@@ -1266,7 +1266,7 @@
       "badge": "伝統料理",
       "type": "main",
       "city": "national",
-      "desc": "白身魚にハーブとスパイスを混ぜてバナナの葉で包み、蒸し上げた優しい味わいの一品。開いた瞬間に立ち上る香りがごちそう感を演出する。",
+      "desc": "白身魚にハーブとスパイスを混ぜてバナナの葉で包み、蒸し上げた優しい味わいの一品。現地名「パックシー」と呼ばれるディルがふんだんに使われ、高貴に香るディルとココナッツの風味が絶品。開いた瞬間に立ち上る香りがごちそう感を演出する。",
       "image": "",
       "prompt_en": "Mok pa Laos steamed fish in banana leaf parcel with herbs, opened showing contents, food photography",
       "plate_color": "banana leaf wrap",
@@ -1337,7 +1337,7 @@
       "badge": "国民的ビール",
       "type": "drink",
       "city": "national",
-      "desc": "ラオス発祥の国民的ビール。すっきりとした喉越しで、屋台では瓶1本100〜150円ほどと格安。ラープやピンカイとの相性は言うまでもない。",
+      "desc": "東南アジア最高峰とも評されるラオス発祥の国民的ビール。すっきりとした定番の「ラガー」に加え、「ダーク（黒ビール）」やラオス産ジャスミン米を使ったプレミアムな「ゴールド」もあり、屋台では瓶1本100〜150円ほどと格安。ラープやピンカイとの相性は言うまでもない。",
       "image": "",
       "prompt_en": "Beerlao bottle and glass on a street food stall table, condensation on glass, Laos night scene, food photography",
       "plate_color": "beer glass",
@@ -1400,6 +1400,11 @@
     {
       "id": "phonsavan",
       "label": "シェンクワン",
+      "active": false
+    },
+    {
+      "id": "pakse",
+      "label": "パクセー・南部",
       "active": false
     },
     {
@@ -1516,6 +1521,17 @@
           "prompt_en": "COPE Visitor Centre Vientiane Laos, prosthetic limbs exhibition, UXO history museum, contemplative atmosphere, travel photography",
           "image": "",
           "type": "museum"
+        },
+        {
+          "must": false,
+          "icon": "🗿",
+          "num": "VTE 06",
+          "name": "ブッダパーク（ワット・シエンクワン）",
+          "desc": "奇抜な巨大コンクリート像が広場一面に並ぶ、1958年に僧侶が創設した屋外彫刻公園。仏教とヒンドゥー教のモチーフが混然一体となった独特の世界観は、SNS映えとB級スポット好きの両方から人気。",
+          "badge": "個性派アート",
+          "prompt_en": "Buddha Park Xieng Khuan Vientiane Laos, bizarre giant concrete sculptures of Buddhist and Hindu deities scattered across a field, quirky surreal atmosphere, travel photography",
+          "image": "",
+          "type": "activity"
         }
       ]
     },
@@ -1727,6 +1743,42 @@
       ]
     },
     {
+      "city_id": "pakse",
+      "city_name": "パクセー・南部エリア",
+      "city_image": "",
+      "city_prompt": "Wat Phou ancient Khmer temple ruins Champasak Laos, stone stairways leading up a mountainside, jungle surroundings, travel photography",
+      "city_desc": "ラオス南部の拠点都市。ワット・プーへの入口であり、シーパンドンへ向かう旅行者も必ず経由する南部旅の玄関口",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ビエンチャンから飛行機で約1.5時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "11〜2月（乾季）",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "パクセー市内"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "CHX 01",
+          "name": "ワット・プー",
+          "desc": "カンボジアのアンコール・ワットより古い歴史を持つ、ヒンドゥー教由来のクメール遺跡。世界遺産に登録されており、山の斜面に沿って続く石段と、密林に埋もれるように佇む祠堂群が神秘的な雰囲気を醸し出す。",
+          "badge": "世界遺産",
+          "prompt_en": "Wat Phou ancient Khmer Hindu temple ruins Champasak Laos, stone stairways up a mountainside, jungle-covered sanctuary older than Angkor Wat, travel photography",
+          "image": "",
+          "type": "heritage"
+        }
+      ]
+    },
+    {
       "city_id": "si_phan_don",
       "city_name": "シーパンドン（4000の島）",
       "city_image": "",
@@ -1846,7 +1898,7 @@
             "transit": false,
             "label": "Day 1",
             "badge_class": "green",
-            "content_html": "<strong>ビエンチャン到着</strong><br>夜到着ならそのままホテルで休養。日中到着なら<a onclick=\"showSpot('VTE 01')\" class=\"spot-link\">タート・ルアン</a>を訪ね、金色の仏塔にラオス入りの実感を得よう。夕方は<a onclick=\"showSpot('VTE 04')\" class=\"spot-link\">メコン川ナイトマーケット</a>で屋台グルメをつまみながら長旅の疲れをほぐす。"
+            "content_html": "<strong>ビエンチャン到着</strong><br>夜到着ならそのままホテルで休養に専念。日中到着なら<a onclick=\"showSpot('VTE 01')\" class=\"spot-link\">タート・ルアン</a>を訪ね、夕陽に染まる金色の仏塔を眺めながらラオス入りの実感をゆっくり噛みしめよう。夕方は<a onclick=\"showSpot('VTE 04')\" class=\"spot-link\">メコン川ナイトマーケット</a>で屋台グルメをつまみ、対岸のタイを眺めながら長旅の疲れをほぐす。"
           },
           {
             "transit": true,
@@ -1857,19 +1909,19 @@
             "transit": false,
             "label": "Day 2",
             "badge_class": "red",
-            "content_html": "<strong>ルアンパバーン到着 → 旧市街散策</strong><br>到着後は<a onclick=\"showSpot('LPQ 03')\" class=\"spot-link\">ワット・シェントーン</a>など旧市街の寺院を巡り、夕方は<a onclick=\"showSpot('LPQ 01')\" class=\"spot-link\">プーシーの丘</a>に登って古都に沈む夕日を眺める。"
+            "content_html": "<strong>ルアンパバーン到着 → 旧市街散策</strong><br>到着後は<a onclick=\"showSpot('LPQ 03')\" class=\"spot-link\">ワット・シェントーン</a>をはじめとする旧市街の寺院群を歩いて巡り、金と朱色に彩られた繊細な装飾に見入る。夕方は<a onclick=\"showSpot('LPQ 01')\" class=\"spot-link\">プーシーの丘</a>に登り、メコン川とカーン川に挟まれた古都の街並みに夕日が沈む瞬間を旅行者みんなで見守る。"
           },
           {
             "transit": false,
             "label": "Day 3",
             "badge_class": "green",
-            "content_html": "<strong>托鉢見学 → クアンシーの滝</strong><br>夜明け前に起き<a onclick=\"showSpot('LPQ 04')\" class=\"spot-link\">托鉢</a>を静かに見守った後、午前中はホテルで一休み。午後は<a onclick=\"showSpot('LPQ 02')\" class=\"spot-link\">クアンシーの滝</a>でエメラルドグリーンの水に足を浸し、日頃の疲れを洗い流す。"
+            "content_html": "<strong>托鉢見学 → クアンシーの滝</strong><br>夜明け前に起きて<a onclick=\"showSpot('LPQ 04')\" class=\"spot-link\">托鉢</a>の列を静かに見守った後、午前中はホテルで二度寝するもよし、カフェで一休みするもよし。午後は<a onclick=\"showSpot('LPQ 02')\" class=\"spot-link\">クアンシーの滝</a>でエメラルドグリーンの天然プールに足を浸し、石灰岩の段々になった滝つぼを巡りながら日頃の疲れを洗い流す。"
           },
           {
             "transit": false,
             "label": "Day 4",
             "badge_class": "",
-            "content_html": "<strong>朝市散策 → お土産探し</strong><br>地元の朝市でサイウアやカオチーなど食べ歩きを楽しみ、夜は<a onclick=\"showSpot('LPQ 05')\" class=\"spot-link\">ナイトマーケット</a>で手工芸品のお土産探し。この日は旧市街で1泊する。"
+            "content_html": "<strong>朝市散策 → お土産探し</strong><br>地元の朝市で<a onclick=\"showFood('No.4')\" class=\"spot-link\">サイウーア</a>やカオチーなど食べ歩きを楽しみ、竹細工や織物の露店をひやかす。夜は<a onclick=\"showSpot('LPQ 05')\" class=\"spot-link\">ナイトマーケット</a>で手工芸品のお土産探し。この日は旧市街のホテルで最後の1泊、静かな路地の余韻に浸る。"
           },
           {
             "transit": true,
@@ -1880,7 +1932,7 @@
             "transit": false,
             "label": "Day 5",
             "badge_class": "",
-            "content_html": "<strong>帰国</strong><br>ビエンチャン空港から乗継便で日本へ。"
+            "content_html": "<strong>帰国</strong><br>ビエンチャン空港から乗継便で日本へ。古都の静けさが恋しくなる、あっという間の4泊5日。"
           }
         ],
         "tip": "托鉢はツアーではなく信仰行事。ガイドブック通りの写真撮影よりも、少し離れた場所から静かに見守るくらいの距離感がちょうどいい。"
