@@ -105,6 +105,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <a href="phrases.html" class="{{nav_active.phrases}}">フレーズ</a>
   <button onclick="window.open('../common/checklist.html?from={{id}}','_blank')">持ち物リスト</button>
 </nav>
+<script>
+  (function() {
+    var activeTab = document.querySelector('nav a.active');
+    if (activeTab) { activeTab.scrollIntoView({block: 'nearest', inline: 'center'}); }
+  })();
+</script>
 {% endif %}
 {% if singlepage %}
 <nav>

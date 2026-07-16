@@ -105,6 +105,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <a href="phrases.html" class="">フレーズ</a>
   <button onclick="window.open('../common/checklist.html?from=spain','_blank')">持ち物リスト</button>
 </nav>
+<script>
+  (function() {
+    var activeTab = document.querySelector('nav a.active');
+    if (activeTab) { activeTab.scrollIntoView({block: 'nearest', inline: 'center'}); }
+  })();
+</script>
 
 
 
