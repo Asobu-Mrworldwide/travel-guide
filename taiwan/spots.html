@@ -199,6 +199,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
   </div>
+  
   <div class="filter-group">
     <div class="filter-label">エリア</div>
     <div class="filter-row" id="spots-filter-row">
@@ -219,7 +220,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   <div id="spots-grid">
     
-    <div class="s-card spot-section-card" data-city="taipei" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="taipei" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="taipei">
       
       <div class="csh-title">台北</div>
@@ -355,7 +356,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="jiufen" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="jiufen" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="jiufen">
       
       <div class="csh-title">九份（きゅうふん）・十分（じゅうふん）</div>
@@ -411,7 +412,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="taichung" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="taichung" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="taichung">
       
       <div class="csh-title">台中</div>
@@ -491,7 +492,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="tainan" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="tainan" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="tainan">
       
       <div class="csh-title">台南</div>
@@ -571,7 +572,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="kaohsiung" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="kaohsiung" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="kaohsiung">
       
       <div class="csh-title">高雄</div>
@@ -801,21 +802,24 @@ function closeSpotPopup() {
 }
 
 function filterSpots(dim, value, btn) {
-  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');
   document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
+  const regionRow = document.querySelector('#spots-filter-region');
+  const activeRegion = regionRow ? (regionRow.querySelector('.filter-btn.active')?.dataset.filter || 'all') : 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
     const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
       const typeOk = activeType === 'all' || el.dataset.stype === activeType;
-      const show = cityOk && typeOk;
+      const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
     });
-    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
+    card.style.display = (cityOk && regionOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
