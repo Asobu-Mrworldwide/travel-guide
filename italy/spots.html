@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZNX5SY0GSK');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>イタリアの観光スポット｜イタリア旅行ガイド</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="../assets/affiliates-data.js" defer></script>
+<script src="../assets/affiliates.js" defer></script>
+<style>
+a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
+a.spot-link:hover{opacity:0.75}
+a.keyword-link{color:inherit;text-decoration:underline;cursor:pointer;font-weight:inherit}
+a.keyword-link:hover{opacity:0.75}
+/* special noteブロック */
+blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
+blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
+blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
+blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
+blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal;word-break:break-all}
+
+/* イラスト下の説明文 */
+.desc-intro{max-width:740px;margin:20px 0 0 250px;padding:0 24px;font-size:0.9em;line-height:1.8;color:var(--text);margin-bottom:0}
+@media(max-width:1020px){.desc-intro{margin:16px auto 0;max-width:100%;padding:0 16px}}
+/* HEADER */
+.hero{display:flex;align-items:stretch;max-width:740px;margin:16px 0 0 250px}
+.hero-card{width:35%;background:var(--green);color:#fff;padding:20px 18px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.hero-img{width:65%;display:block;object-fit:cover;flex-shrink:0}
+@media(max-width:1020px){.hero{margin:0 auto;max-width:100%}}
+@media(max-width:700px){
+  .hero{flex-direction:column;width:100%;max-width:100%}
+  .hero-card{width:100%;padding:14px 16px;flex-direction:row;flex-wrap:wrap;gap:6px;align-items:center}
+  .hero-badge{font-size:0.65em}
+  .hero-title{font-size:1em;width:100%}
+  .hero-sub{font-size:0.68em;width:100%}
+  .hero-img{width:100%;height:auto;flex-shrink:unset}
+}
+.hero-badge{font-size:0.68em;font-weight:700;background:rgba(0,0,0,0.25);padding:3px 9px;border-radius:4px;display:inline-block;width:fit-content;letter-spacing:0.04em}
+.hero-title{font-size:1.25em;font-weight:900;line-height:1.4;color:#fff}
+.hero-sub{font-size:0.72em;color:rgba(255,255,255,0.7)}
+.hero-back{position:absolute;top:10px;left:12px;display:inline-flex;align-items:center;gap:5px;background:rgba(0,0,0,0.35);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:5px 12px;border-radius:20px;font-size:0.8em;text-decoration:none;backdrop-filter:blur(4px)}
+
+/* フードカード画像 */
+.food-img{width:100%;height:auto;max-height:220px;object-fit:contain;display:block;margin-top:6px}
+#food-grid .item-card.has-img{padding-bottom:36px !important}
+#food-grid .item-card.has-img .desc{flex:none !important;background:#fff;position:relative;z-index:1;padding-bottom:2px}
+
+/* 観光スポットカード画像・絵文字 */
+.spot-img-wrap{margin-top:12px;aspect-ratio:16/9;margin-left:-18px;margin-right:-18px;margin-bottom:0;position:relative;overflow:hidden;background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:0}
+.spot-img-wrap img.spot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.spot-img-wrap .spot-map-btn{position:absolute;bottom:8px;right:10px;font-size:0.72em;color:#fff;background:rgba(0,0,0,0.45);padding:3px 9px;border-radius:12px;text-decoration:none;backdrop-filter:blur(2px);white-space:nowrap;z-index:2}
+.spot-img-wrap .spot-map-btn:hover{background:rgba(0,0,0,0.65)}
+.spot-ico-large{width:100%;height:120px;display:flex;align-items:center;justify-content:center;font-size:3.5em;background:#f8f8f8;border-radius:8px;margin-top:auto;padding-top:8px}
+.spot-img-placeholder{background:#f0f0f0;background-image:repeating-linear-gradient(45deg,#e8e8e8 0,#e8e8e8 1px,transparent 0,transparent 50%);background-size:8px 8px}
+#spots-grid .item-card.has-spot-img{padding-bottom:0 !important}
+#spots-grid .item-card.has-spot-img .desc{flex:1}
+
+/* クイックスペックカード（基本情報タブ） */
+#basic .qs-card{border:1px solid #e0e0e0;box-shadow:none}
+
+/* セクション間隔（全タブ共通） */
+#basic h2~h2,#spots h2~h2,#food h2~h2,#course h2~h2,#season h2~h2,
+#budget h2~h2,#practical h2~h2,#manner h2~h2,#phrases h2~h2,#transport h2~h2{margin-top:36px}
+#basic .qs-row{margin-top:28px;margin-bottom:0}
+.qs-section-title{font-size:18px;font-weight:700;color:var(--text);margin:6px 0 6px;letter-spacing:0.04em}
+.cl-region{font-weight:700}
+.sp-points-wrap{background:#fff;border:1px solid #e0e0e0}
+.sp-point{display:flex;align-items:center;gap:16px;padding:16px;border-bottom:1px solid #e0e0e0}
+.sp-point:last-child{border-bottom:none}
+.sp-point-body{flex:1;min-width:0}
+.sp-point-title{font-size:0.95em;font-weight:700;margin-bottom:8px;line-height:1.5}
+.sp-point-text{font-size:0.82em;color:#444;line-height:1.8}
+.sp-point-img{width:120px;height:90px;object-fit:cover;flex-shrink:0;display:block}
+@media(max-width:700px){.sp-point{flex-direction:column}.sp-point-img{width:100%;height:auto;aspect-ratio:16/9}}
+</style>
+</head>
+<body>
+
+<div id="site-top-bar">
+<header class="site-header">
+  <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a></div>
+  <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
+</header>
+</div>
+
+
+<nav>
+  <a href="index.html" class="">基本情報</a>
+  <a href="spots.html" class="active">観光スポット</a>
+  <a href="food.html" class="">グルメ</a>
+  <a href="course.html" class="">モデルコース</a>
+  <a href="budget.html" class="">予算・費用</a>
+  <a href="practical.html" class="">旅の準備</a>
+  <a href="phrases.html" class="">フレーズ</a>
+  <button onclick="window.open('../common/checklist.html?from=italy','_blank')">持ち物リスト</button>
+</nav>
+<script>
+  (function() {
+    var activeTab = document.querySelector('nav a.active');
+    if (activeTab) { activeTab.scrollIntoView({block: 'nearest', inline: 'center'}); }
+  })();
+</script>
+
+
+
+
+<div class="hero">
+  <div class="hero-card">
+    <span class="hero-badge">旅行・観光の基本情報</span>
+    <div class="hero-title">イタリアの旅行ガイド</div>
+    <div class="hero-sub">World Mappy</div>
+  </div>
+  <img src="素材/ヒーロー.webp" alt="イタリアの街並み" class="hero-img">
+  
+</div>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.item-card.spot').forEach(card => {
+      // map_urlが既にある場合はJSリンクを追加しない
+      if (card.querySelector('.spot-map-btn, .map-btn')) return;
+      const name = card.querySelector('.name')?.textContent;
+      if (!name) return;
+      const cityId = card.dataset.city;
+      const cityName = (typeof CITY_DATA !== 'undefined' && CITY_DATA[cityId]) ? CITY_DATA[cityId].name : '';
+      const a = document.createElement('a');
+      a.href = 'https://maps.google.com/?q=' + encodeURIComponent([name, cityName, 'Italy'].filter(Boolean).join(' '));
+      a.target = '_blank';
+      a.textContent = 'Googleマップ →';
+      a.className = 'spot-map-btn';
+      const wrap = card.querySelector('.spot-img-wrap');
+      if (wrap) {
+        wrap.appendChild(a);
+      } else {
+        a.className = 'map-btn';
+        card.appendChild(a);
+      }
+    });
+  });
+</script>
+
+<div class="container" style="max-width:1000px">
+<div id="slides-wrap">
+
+<!-- 基本情報 -->
+
+
+
+<!-- 予算・費用 -->
+
+
+<!-- 旅の準備 -->
+
+
+
+
+<!-- フレーズ -->
+
+
+<!-- グルメ -->
+
+
+<!-- 観光地 -->
+<section id="spots" class="active">
+<div style="margin-bottom:24px"><h2 style="margin-bottom:6px">イタリア全土ガイド</h2><p style="font-size:0.85em;line-height:1.8;color:var(--sub);margin:0 0 16px">イタリアは20の州それぞれに独自の歴史と文化を持ち、エリアごとに街並みやグルメの雰囲気がガラリと変わる。下記でローマ・フィレンツェ・ヴェネツィア・ミラノの王道4都市に加えて周りたい街を探してみよう（★は詳細スポット付きの王道4都市）。</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div style="background:#fff;border-radius:10px;padding:18px;border-left:4px solid #1e6fd9;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><div style="font-size:1.3em;margin-bottom:2px">🏔️</div><div style="font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px">北イタリア</div><div style="font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6">アルプスに近い経済の中心地。近未来的な洗練さと中世の街並みが共存する</div><ul style="margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)"><li>★<a onclick="showFilteredSpots('milan')" class="spot-link" style="cursor:pointer">ミラノ</a>（ロンバルディア州）— ファッションの発信地、ドゥオーモと最後の晩餐</li><li>★<a onclick="showFilteredSpots('venice')" class="spot-link" style="cursor:pointer">ヴェネツィア</a>（ヴェネト州）— 運河だけで構成される世界唯一の海上都市</li><li><strong>トリノ</strong>（ピエモンテ州）— 旧イタリア王国の首都、王宮群とチョコレートの街</li><li><strong>ボローニャ</strong>（エミリア＝ロマーニャ州）— 欧州最古の大学、グルメの都</li><li><strong>ヴェローナ</strong>（ヴェネト州）— ロミオとジュリエットの舞台、野外オペラ</li><li><strong>ジェノバ</strong>（リグーリア州）— コロンブスの故郷、ジェノベーゼ発祥の港町</li></ul></div><div style="background:#fff;border-radius:10px;padding:18px;border-left:4px solid #008C45;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><div style="font-size:1.3em;margin-bottom:2px">🎨</div><div style="font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px">中央イタリア</div><div style="font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6">古代ローマとルネサンスの歴史が最も色濃く残る、絵画のような田園風景のエリア</div><ul style="margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)"><li>★<a onclick="showFilteredSpots('rome')" class="spot-link" style="cursor:pointer">ローマ</a>（ラツィオ州）— 「永遠の都」、コロッセオとバチカン市国</li><li>★<a onclick="showFilteredSpots('florence')" class="spot-link" style="cursor:pointer">フィレンツェ</a>（トスカーナ州）— ルネサンス文化発祥の芸術都市</li><li><strong>ピサ</strong>（トスカーナ州）— 世界の七不思議、ピサの斜塔</li><li><strong>シエナ</strong>（トスカーナ州）— 中世ゴシックの古都、伝統競馬パリオ</li><li><strong>アッシジ</strong>（ウンブリア州）— 聖フランチェスコ生誕の巡礼地</li></ul></div><div style="background:#fff;border-radius:10px;padding:18px;border-left:4px solid #e8720c;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><div style="font-size:1.3em;margin-bottom:2px">☀️</div><div style="font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px">南イタリア</div><div style="font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6">美しい海岸線と温暖な気候、フレンドリーな人々が魅力のエネルギッシュなエリア</div><ul style="margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)"><li><strong>ナポリ</strong>（カンパニア州）— 本場ナポリピッツァの聖地、近郊にポンペイ遺跡</li><li><strong>アマルフィ・ポジターノ</strong>（カンパニア州）— 世界一美しい海岸線の高級リゾート</li><li><strong>バーリ</strong>（プーリア州）— アドリア海の港町、手作りパスタの旧市街</li><li><strong>アルベロベッロ</strong>（プーリア州）— とんがり屋根の家「トゥルッリ」が並ぶ村</li><li><strong>マテーラ</strong>（バジリカータ州）— 洞窟住居「サッシ」が重なる異世界の景観</li></ul></div><div style="background:#fff;border-radius:10px;padding:18px;border-left:4px solid #0e9aa7;box-shadow:0 1px 4px rgba(0,0,0,0.06)"><div style="font-size:1.3em;margin-bottom:2px">🌊</div><div style="font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px">離島</div><div style="font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6">本土とは異なる歴史を歩んできた、独自の文化が息づく地中海の島々</div><ul style="margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)"><li><strong>パレルモ</strong>（シチリア州）— 地中海の十字路、ノルマン・アラブ様式の建築</li><li><strong>タオルミーナ</strong>（シチリア州）— エトナ火山を望む高級リゾート、古代ギリシャ劇場</li><li><strong>カリアリ</strong>（サルデーニャ州）— 透明度抜群の海、古代遺跡ヌラーゲ</li></ul></div></div></div>
+  <h2>イタリア観光スポット図鑑</h2>
+  <div class="filter-group">
+    <div class="filter-label">カテゴリー</div>
+    <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
+      
+      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+      
+      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+      
+      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+      
+      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+      
+      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+      
+      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+      
+      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+      
+    </div>
+  </div>
+  <div class="filter-group">
+    <div class="filter-label">エリア</div>
+    <div class="filter-row" id="spots-filter-row">
+      
+      <button class="filter-btn " data-filter="rome" onclick="filterSpots('city','rome',this)">ローマ</button>
+      
+      <button class="filter-btn " data-filter="florence" onclick="filterSpots('city','florence',this)">フィレンツェ</button>
+      
+      <button class="filter-btn " data-filter="venice" onclick="filterSpots('city','venice',this)">ヴェネツィア</button>
+      
+      <button class="filter-btn " data-filter="milan" onclick="filterSpots('city','milan',this)">ミラノ</button>
+      
+    </div>
+  </div>
+  <div id="spots-grid">
+    
+    <div class="s-card spot-section-card" data-city="rome" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="city-section-header" data-city="rome">
+      
+      <div class="csh-title">ローマ</div>
+      <div class="csh-desc">古代ローマの遺跡が現役の街並みに溶け込む「永遠の都」。コロッセオからバチカンまで見どころが尽きない</div>
+      <div class="csh-grid">
+        
+        <div class="csh-item">
+          <div class="csh-lbl">アクセス</div>
+          <div class="csh-val">直行便なし、経由14〜17時間</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">空港↔市内</div>
+          <div class="csh-val">レオナルド・エクスプレス 約32分</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">ベストシーズン</div>
+          <div class="csh-val">4〜6月・9〜10月</div>
+          <button onclick="show('season',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">名物グルメ</div>
+          <div class="csh-val">カルボナーラ・カチョ・エ・ペペ</div>
+          <button onclick="show('food',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">市内交通</div>
+          <div class="csh-val">地下鉄・バス・徒歩</div>
+          <button onclick="show('transport',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="item-grid">
+    
+    <div class="item-card spot has-spot-img must" data-city="rome" data-stype="heritage" data-spot-num="ROM 01">
+      <div class="must-badge">⭐</div>
+      <div class="num">ROM 01</div>
+      <div class="name-row"><div class="name">コロッセオ</div><span class="badge">世界遺産・必見</span></div>
+      <div class="desc">紀元80年に完成した古代ローマの円形闘技場。約5万人を収容した観客席の遺構は、2000年前の建築技術の高さを今に伝える世界遺産。事前予約が必須級。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コロッセオ.webp" alt="コロッセオ" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="rome" data-stype="heritage" data-spot-num="ROM 02">
+      <div class="must-badge">⭐</div>
+      <div class="num">ROM 02</div>
+      <div class="name-row"><div class="name">フォロ・ロマーノ</div><span class="badge">世界遺産</span></div>
+      <div class="desc">古代ローマの政治・経済の中心地だった広場跡。神殿や凱旋門の柱が立ち並ぶ景観は、かつての帝国の繁栄を今に伝える。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フォロ・ロマーノ.webp" alt="フォロ・ロマーノ" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="rome" data-stype="museum" data-spot-num="ROM 03">
+      <div class="must-badge">⭐</div>
+      <div class="num">ROM 03</div>
+      <div class="name-row"><div class="name">バチカン美術館・システィーナ礼拝堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="desc">ミケランジェロの「天地創造」「最後の審判」が天井と壁を埋め尽くす、世界屈指の美術コレクション。長い回廊を経てたどり着く礼拝堂の圧倒的な迫力は必見。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バチカン美術館・システィーナ礼拝堂.webp" alt="バチカン美術館・システィーナ礼拝堂" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="rome" data-stype="religious" data-spot-num="ROM 04">
+      <div class="must-badge">⭐</div>
+      <div class="num">ROM 04</div>
+      <div class="name-row"><div class="name">サン・ピエトロ大聖堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="desc">カトリックの総本山、バチカン市国のシンボル。ミケランジェロ設計の巨大なドームに登れば、ローマの街並みを一望できる。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サン・ピエトロ大聖堂.webp" alt="サン・ピエトロ大聖堂" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="rome" data-stype="townscape" data-spot-num="ROM 05">
+      <div class="must-badge">⭐</div>
+      <div class="num">ROM 05</div>
+      <div class="name-row"><div class="name">トレヴィの泉</div><span class="badge">定番フォトスポット</span></div>
+      <div class="desc">後ろ向きにコインを投げると再びローマに戻れるという伝説で有名なバロック様式の噴水。夜のライトアップも美しく、常に観光客で賑わう。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トレヴィの泉.webp" alt="トレヴィの泉" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="rome" data-stype="heritage" data-spot-num="ROM 06">
+      
+      <div class="num">ROM 06</div>
+      <div class="name-row"><div class="name">パンテオン</div><span class="badge">世界遺産</span></div>
+      <div class="desc">2000年近く前に建てられた古代ローマの神殿で、現存する古代建築の中でも保存状態が抜群。天井の丸い開口部から差し込む光が神秘的な空間を作る。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パンテオン.webp" alt="パンテオン" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="rome" data-stype="townscape" data-spot-num="ROM 07">
+      
+      <div class="num">ROM 07</div>
+      <div class="name-row"><div class="name">スペイン広場</div><span class="badge">映画の舞台</span></div>
+      <div class="desc">映画『ローマの休日』の舞台としても知られる大階段。夕方には多くの若者や観光客が腰を下ろし、街の空気を楽しむ人気スポット。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スペイン広場.webp" alt="スペイン広場" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="rome" data-stype="townscape" data-spot-num="ROM 08">
+      
+      <div class="num">ROM 08</div>
+      <div class="name-row"><div class="name">ナヴォーナ広場</div><span class="badge">街歩きの定番</span></div>
+      <div class="desc">バロック彫刻家ベルニーニ作の「四大河の噴水」が中央にそびえる、ローマで最も美しいとされる広場。周囲にはカフェやストリートアーティストが集う。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナヴォーナ広場.webp" alt="ナヴォーナ広場" loading="lazy"></div>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div class="s-card spot-section-card" data-city="florence" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="city-section-header" data-city="florence">
+      
+      <div class="csh-title">フィレンツェ</div>
+      <div class="csh-desc">ルネサンス芸術発祥の地。赤い屋根が連なる旧市街と丘の上からの絶景で知られるトスカーナの中心都市</div>
+      <div class="csh-grid">
+        
+        <div class="csh-item">
+          <div class="csh-lbl">アクセス</div>
+          <div class="csh-val">ローマから高速鉄道 約1.5時間</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">駅↔中心部</div>
+          <div class="csh-val">サンタ・マリア・ノヴェッラ駅から徒歩圏内</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">ベストシーズン</div>
+          <div class="csh-val">4〜6月・9〜10月</div>
+          <button onclick="show('season',document.querySelectorAll('nav button')[1])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">名物グルメ</div>
+          <div class="csh-val">ビステッカ・アッラ・フィオレンティーナ</div>
+          <button onclick="show('food',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">市内交通</div>
+          <div class="csh-val">徒歩（旧市街はコンパクト）</div>
+          <button onclick="show('transport',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="item-grid">
+    
+    <div class="item-card spot has-spot-img must" data-city="florence" data-stype="religious" data-spot-num="FIR 01">
+      <div class="must-badge">⭐</div>
+      <div class="num">FIR 01</div>
+      <div class="name-row"><div class="name">フィレンツェ大聖堂（花の聖母寺）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="desc">赤い巨大クーポラが街のシンボルとなっている大聖堂。ブルネレスキが設計したドームは当時最先端の建築技術の結晶で、クーポラ上からの眺めは絶景。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フィレンツェ大聖堂（花の聖母寺）.webp" alt="フィレンツェ大聖堂（花の聖母寺）" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="florence" data-stype="museum" data-spot-num="FIR 02">
+      <div class="must-badge">⭐</div>
+      <div class="num">FIR 02</div>
+      <div class="name-row"><div class="name">ウフィツィ美術館</div><span class="badge">世界遺産・必見</span></div>
+      <div class="desc">ボッティチェリ「ヴィーナスの誕生」など、ルネサンス絵画の傑作が集まる世界屈指の美術館。メディチ家が集めたコレクションを堪能できる。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウフィツィ美術館.webp" alt="ウフィツィ美術館" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="florence" data-stype="townscape" data-spot-num="FIR 03">
+      <div class="must-badge">⭐</div>
+      <div class="num">FIR 03</div>
+      <div class="name-row"><div class="name">ヴェッキオ橋</div><span class="badge">定番フォトスポット</span></div>
+      <div class="desc">アルノ川に架かる最古の橋で、橋の上に宝飾店が立ち並ぶ独特の光景が広がる。夕暮れ時の川面に映る街並みは特に美しい。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヴェッキオ橋.webp" alt="ヴェッキオ橋" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="florence" data-stype="nature" data-spot-num="FIR 04">
+      
+      <div class="num">FIR 04</div>
+      <div class="name-row"><div class="name">ミケランジェロ広場</div><span class="badge">絶景スポット</span></div>
+      <div class="desc">旧市街を見下ろす丘の上の展望広場。赤い屋根が連なるフィレンツェの街並みと大聖堂のクーポラを一望できる、夕景の名所。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミケランジェロ広場.webp" alt="ミケランジェロ広場" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="florence" data-stype="museum" data-spot-num="FIR 05">
+      
+      <div class="num">FIR 05</div>
+      <div class="name-row"><div class="name">アカデミア美術館</div><span class="badge">世界的名作</span></div>
+      <div class="desc">ミケランジェロの傑作彫刻「ダビデ像」を間近で見られる美術館。5メートル近い巨像の圧倒的な存在感は必見。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アカデミア美術館.webp" alt="アカデミア美術館" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="florence" data-stype="heritage" data-spot-num="FIR 06">
+      
+      <div class="num">FIR 06</div>
+      <div class="name-row"><div class="name">ピッティ宮殿・ボーボリ庭園</div><span class="badge">メディチ家ゆかりの地</span></div>
+      <div class="desc">メディチ家の壮麗な宮殿と、幾何学的に整えられた広大な庭園。旧市街の喧騒を離れてゆったり散策できる緑豊かなスポット。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピッティ宮殿・ボーボリ庭園.webp" alt="ピッティ宮殿・ボーボリ庭園" loading="lazy"></div>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div class="s-card spot-section-card" data-city="venice" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="city-section-header" data-city="venice">
+      
+      <div class="csh-title">ヴェネツィア</div>
+      <div class="csh-desc">車道のない運河の街。ゴンドラが行き交う小径と広場が、まるで舞台セットのような非日常を作り出す</div>
+      <div class="csh-grid">
+        
+        <div class="csh-item">
+          <div class="csh-lbl">アクセス</div>
+          <div class="csh-val">フィレンツェから高速鉄道 約2時間</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">空港↔市内</div>
+          <div class="csh-val">水上バス（ヴァポレット） 約1時間</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">ベストシーズン</div>
+          <div class="csh-val">4〜6月・9〜10月</div>
+          <button onclick="show('season',document.querySelectorAll('nav button')[2])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">名物グルメ</div>
+          <div class="csh-val">アペロール・スプリッツ</div>
+          <button onclick="show('food',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">市内交通</div>
+          <div class="csh-val">徒歩・水上バス</div>
+          <button onclick="show('transport',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="item-grid">
+    
+    <div class="item-card spot has-spot-img must" data-city="venice" data-stype="religious" data-spot-num="VEN 01">
+      <div class="must-badge">⭐</div>
+      <div class="num">VEN 01</div>
+      <div class="name-row"><div class="name">サン・マルコ広場・大聖堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="desc">「世界一美しい広場」とナポレオンが称した街の中心。黄金のモザイクで彩られた大聖堂と、周囲を囲むカフェの音楽が独特の雰囲気を作る。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サン・マルコ広場・大聖堂.webp" alt="サン・マルコ広場・大聖堂" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="venice" data-stype="heritage" data-spot-num="VEN 02">
+      <div class="must-badge">⭐</div>
+      <div class="num">VEN 02</div>
+      <div class="name-row"><div class="name">ドゥカーレ宮殿</div><span class="badge">世界遺産</span></div>
+      <div class="desc">ヴェネツィア共和国の総督が住んだゴシック様式の宮殿。豪華絢爛な内部装飾と、隣接する「ため息橋」の伝説も見どころ。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ドゥカーレ宮殿.webp" alt="ドゥカーレ宮殿" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="venice" data-stype="townscape" data-spot-num="VEN 03">
+      <div class="must-badge">⭐</div>
+      <div class="num">VEN 03</div>
+      <div class="name-row"><div class="name">リアルト橋</div><span class="badge">定番フォトスポット</span></div>
+      <div class="desc">大運河に架かる最も有名な石橋。橋の上には土産物店が並び、運河を行き交うゴンドラや水上バスを眺めるビュースポットとしても人気。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/リアルト橋.webp" alt="リアルト橋" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="venice" data-stype="activity" data-spot-num="VEN 04">
+      
+      <div class="num">VEN 04</div>
+      <div class="name-row"><div class="name">ゴンドラ体験</div><span class="badge">ヴェネツィアの定番体験</span></div>
+      <div class="desc">船頭が漕ぐ伝統の木造船で、細い運河をゆったりと巡る体験。料金は時間制で決まっており、夕暮れ時は特にロマンチックな雰囲気。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ゴンドラ体験.webp" alt="ゴンドラ体験" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="venice" data-stype="townscape" data-spot-num="VEN 05">
+      
+      <div class="num">VEN 05</div>
+      <div class="name-row"><div class="name">ブラーノ島</div><span class="badge">カラフルな離島</span></div>
+      <div class="desc">極彩色の家々が運河沿いに並ぶ、絵本のような漁師町。本島から水上バスで約45分、レース編みの伝統工芸でも知られる。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブラーノ島.webp" alt="ブラーノ島" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="venice" data-stype="market" data-spot-num="VEN 06">
+      
+      <div class="num">VEN 06</div>
+      <div class="name-row"><div class="name">ムラーノ島</div><span class="badge">ガラス工芸の島</span></div>
+      <div class="desc">700年以上の歴史を持つヴェネツィアングラスの生産地。工房見学や職人の実演を見学でき、繊細なガラス製品のショッピングも楽しめる。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ムラーノ島.webp" alt="ムラーノ島" loading="lazy"></div>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div class="s-card spot-section-card" data-city="milan" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="city-section-header" data-city="milan">
+      
+      <div class="csh-title">ミラノ</div>
+      <div class="csh-desc">世界的ファッションブランドが集まる経済・モードの中心地。壮麗な大聖堂と「最後の晩餐」でも有名</div>
+      <div class="csh-grid">
+        
+        <div class="csh-item">
+          <div class="csh-lbl">アクセス</div>
+          <div class="csh-val">ANA羽田直行 約13時間</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">空港↔市内</div>
+          <div class="csh-val">マルペンサ・エクスプレス 約50分</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">ベストシーズン</div>
+          <div class="csh-val">4〜6月・9〜10月</div>
+          <button onclick="show('season',document.querySelectorAll('nav button')[3])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">名物グルメ</div>
+          <div class="csh-val">リゾット・アッラ・ミラネーゼ</div>
+          <button onclick="show('food',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">市内交通</div>
+          <div class="csh-val">地下鉄・トラム</div>
+          <button onclick="show('transport',document.querySelectorAll('nav button')[0])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="item-grid">
+    
+    <div class="item-card spot has-spot-img must" data-city="milan" data-stype="religious" data-spot-num="MIL 01">
+      <div class="must-badge">⭐</div>
+      <div class="num">MIL 01</div>
+      <div class="name-row"><div class="name">ミラノ大聖堂（ドゥオーモ）</div><span class="badge">世界的建築・必見</span></div>
+      <div class="desc">600年以上の歳月をかけて建てられたゴシック建築の傑作。無数の尖塔と彫刻に覆われた外観は圧巻で、屋上テラスからはミラノ市街とアルプス山脈を望める。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミラノ大聖堂（ドゥオーモ）.webp" alt="ミラノ大聖堂（ドゥオーモ）" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="milan" data-stype="townscape" data-spot-num="MIL 02">
+      <div class="must-badge">⭐</div>
+      <div class="num">MIL 02</div>
+      <div class="name-row"><div class="name">ヴィットーリオ・エマヌエーレ2世のガレリア</div><span class="badge">優雅なアーケード</span></div>
+      <div class="desc">ドゥオーモに隣接する19世紀のショッピングアーケード。ガラス張りの美しい天井とモザイクの床で「世界最古のショッピングモール」とも呼ばれる。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヴィットーリオ・エマヌエーレ2世のガレリア.webp" alt="ヴィットーリオ・エマヌエーレ2世のガレリア" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="milan" data-stype="museum" data-spot-num="MIL 03">
+      <div class="must-badge">⭐</div>
+      <div class="num">MIL 03</div>
+      <div class="name-row"><div class="name">最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="desc">レオナルド・ダ・ヴィンチが描いた世界的名画。教会の食堂の壁に直接描かれており、鑑賞は完全予約制・入替制で15分間のみという貴重な体験。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）.webp" alt="最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="milan" data-stype="heritage" data-spot-num="MIL 04">
+      
+      <div class="num">MIL 04</div>
+      <div class="name-row"><div class="name">スフォルツェスコ城</div><span class="badge">歴史的居城</span></div>
+      <div class="desc">15世紀にミラノ公国を治めたスフォルツァ家の居城。現在は美術館・博物館として公開されており、ミケランジェロ最後の彫刻作品も収蔵する。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スフォルツェスコ城.webp" alt="スフォルツェスコ城" loading="lazy"></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="milan" data-stype="activity" data-spot-num="MIL 05">
+      
+      <div class="num">MIL 05</div>
+      <div class="name-row"><div class="name">ナヴィリオ運河地区</div><span class="badge">夜のアペリティーボ</span></div>
+      <div class="desc">レオナルド・ダ・ヴィンチが設計に関わったとされる運河沿いのエリア。夕方から夜にかけてバールが賑わい、アペリティーボ文化を楽しめる。</div>
+      <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナヴィリオ運河地区.webp" alt="ナヴィリオ運河地区" loading="lazy"></div>
+    </div>
+    
+    </div>
+    </div>
+    
+  </div>
+  <div class="tab-cta">
+    <div class="tab-cta-title">観光地が決まったら名物グルメもチェック！</div>
+    <p class="tab-cta-desc">各都市の名物料理から定番スイーツ・ドリンクまで。<br>食べてみたいものをここで探して旅の計画に加えよう。</p>
+    <button class="tab-cta-btn" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button>
+  </div>
+  
+</section>
+
+<!-- モデルコース -->
+
+
+</div><!-- /slides-wrap -->
+</div><!-- /container -->
+
+<script>
+function filterPhraseDeck(deckId, btn) {
+  document.querySelectorAll('#phrase-deck-tabs .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.phrase-deck').forEach(d => {
+    d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
+  });
+}
+let _phraseAudio = null;
+let _phraseBtn = null;
+function playPhrase(file, btn) {
+  if (_phraseAudio) {
+    _phraseAudio.pause();
+    _phraseAudio = null;
+    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
+  }
+  const audio = new Audio('audio/phrases/' + file);
+  audio.play().catch(() => {});
+  _phraseAudio = audio;
+  _phraseBtn = btn;
+  btn.textContent = '■';
+  btn.classList.add('playing');
+  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
+}
+
+/* 現金目安カード */
+let cashDays = 5;
+const CURRENCY = 'EUR';
+const RATE = 170;
+const CASH_LOW = 10;
+const CASH_HIGH = 30;
+function changeDays(d) {
+  cashDays = Math.max(1, Math.min(30, cashDays + d));
+  const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;
+  document.getElementById('cash-days').textContent = cashDays;
+  document.getElementById('cash-range-cur').textContent = low.toLocaleString() + '〜' + high.toLocaleString() + ' ' + CURRENCY;
+  const lowJpy = Math.round(low * RATE / 1000) * 1000, highJpy = Math.round(high * RATE / 1000) * 1000;
+  document.getElementById('cash-range-jpy').textContent = '約' + lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString() + '円';
+}
+if (document.getElementById('cash-days')) { changeDays(0); }
+
+
+
+/* 分割ページモード: show() は同一タブでの別ページ遷移 */
+var PAGE_URL = {
+  basic:'index.html', spots:'spots.html', food:'food.html', course:'course.html',
+  budget:'budget.html', practical:'practical.html', phrases:'phrases.html',
+  season:'index.html#season', transport:'practical.html#transport',
+  money:'budget.html#money', sim:'practical.html#sim'
+};
+function show(id, btn) {
+  var u = PAGE_URL[id];
+  if (u) { location.href = u; }
+}
+
+
+
+
+/* 分割ページモード: 埋め込みSPOT_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
+var SPOT_DATA = {"ROM 01": {"num": "ROM 01", "name": "コロッセオ", "desc": "紀元80年に完成した古代ローマの円形闘技場。約5万人を収容した観客席の遺構は、2000年前の建築技術の高さを今に伝える世界遺産。事前予約が必須級。", "img": "素材/観光スポット/コロッセオ.webp", "mapUrl": "https://maps.google.com/?q=%E3%82%B3%E3%83%AD%E3%83%83%E3%82%BB%E3%82%AA%20%E3%83%AD%E3%83%BC%E3%83%9E%20Italy"}, "ROM 02": {"num": "ROM 02", "name": "フォロ・ロマーノ", "desc": "古代ローマの政治・経済の中心地だった広場跡。神殿や凱旋門の柱が立ち並ぶ景観は、かつての帝国の繁栄を今に伝える。", "img": "素材/観光スポット/フォロ・ロマーノ.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BB%E3%83%AD%E3%83%9E%E3%83%BC%E3%83%8E%20%E3%83%AD%E3%83%BC%E3%83%9E%20Italy"}, "ROM 03": {"num": "ROM 03", "name": "バチカン美術館・システィーナ礼拝堂", "desc": "ミケランジェロの「天地創造」「最後の審判」が天井と壁を埋め尽くす、世界屈指の美術コレクション。長い回廊を経てたどり着く礼拝堂の圧倒的な迫力は必見。", "img": "素材/観光スポット/バチカン美術館・システィーナ礼拝堂.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%90%E3%83%81%E3%82%AB%E3%83%B3%E7%BE%8E%E8%A1%93%E9%A4%A8%E3%83%BB%E3%82%B7%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%E3%83%8A%E7%A4%BC%E6%8B%9D%E5%A0%82%20%E3%83%AD%E3%83%BC%E3%83%9E%20Italy"}, "ROM 04": {"num": "ROM 04", "name": "サン・ピエトロ大聖堂", "desc": "カトリックの総本山、バチカン市国のシンボル。ミケランジェロ設計の巨大なドームに登れば、ローマの街並みを一望できる。", "img": "素材/観光スポット/サン・ピエトロ大聖堂.webp", "mapUrl": "https://maps.google.com/?q=%E3%82%B5%E3%83%B3%E3%83%BB%E3%83%94%E3%82%A8%E3%83%88%E3%83%AD%E5%A4%A7%E8%81%96%E5%A0%82%20%E3%83%AD%E3%83%BC%E3%83%9E%20Italy"}, "ROM 05": {"num": "ROM 05", "name": "トレヴィの泉", "desc": "後ろ向きにコインを投げると再びローマに戻れるという伝説で有名なバロック様式の噴水。夜のライトアップも美しく、常に観光客で賑わう。", "img": "素材/観光スポット/トレヴィの泉.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%88%E3%83%AC%E3%83%B4%E3%82%A3%E3%81%AE%E6%B3%89%20%E3%83%AD%E3%83%BC%E3%83%9E%20Italy"}, "ROM 06": {"num": "ROM 06", "name": "パンテオン", "desc": "2000年近く前に建てられた古代ローマの神殿で、現存する古代建築の中でも保存状態が抜群。天井の丸い開口部から差し込む光が神秘的な空間を作る。", "img": "素材/観光スポット/パンテオン.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%91%E3%83%B3%E3%83%86%E3%82%AA%E3%83%B3%20%E3%83%AD%E3%83%BC%E3%83%9E%20Italy"}, "ROM 07": {"num": "ROM 07", "name": "スペイン広場", "desc": "映画『ローマの休日』の舞台としても知られる大階段。夕方には多くの若者や観光客が腰を下ろし、街の空気を楽しむ人気スポット。", "img": "素材/観光スポット/スペイン広場.webp", "mapUrl": "https://maps.google.com/?q=%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3%E5%BA%83%E5%A0%B4%20%E3%83%AD%E3%83%BC%E3%83%9E%20Italy"}, "ROM 08": {"num": "ROM 08", "name": "ナヴォーナ広場", "desc": "バロック彫刻家ベルニーニ作の「四大河の噴水」が中央にそびえる、ローマで最も美しいとされる広場。周囲にはカフェやストリートアーティストが集う。", "img": "素材/観光スポット/ナヴォーナ広場.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%8A%E3%83%B4%E3%82%A9%E3%83%BC%E3%83%8A%E5%BA%83%E5%A0%B4%20%E3%83%AD%E3%83%BC%E3%83%9E%20Italy"}, "FIR 01": {"num": "FIR 01", "name": "フィレンツェ大聖堂（花の聖母寺）", "desc": "赤い巨大クーポラが街のシンボルとなっている大聖堂。ブルネレスキが設計したドームは当時最先端の建築技術の結晶で、クーポラ上からの眺めは絶景。", "img": "素材/観光スポット/フィレンツェ大聖堂（花の聖母寺）.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%95%E3%82%A3%E3%83%AC%E3%83%B3%E3%83%84%E3%82%A7%E5%A4%A7%E8%81%96%E5%A0%82%EF%BC%88%E8%8A%B1%E3%81%AE%E8%81%96%E6%AF%8D%E5%AF%BA%EF%BC%89%20%E3%83%95%E3%82%A3%E3%83%AC%E3%83%B3%E3%83%84%E3%82%A7%20Italy"}, "FIR 02": {"num": "FIR 02", "name": "ウフィツィ美術館", "desc": "ボッティチェリ「ヴィーナスの誕生」など、ルネサンス絵画の傑作が集まる世界屈指の美術館。メディチ家が集めたコレクションを堪能できる。", "img": "素材/観光スポット/ウフィツィ美術館.webp", "mapUrl": "https://maps.google.com/?q=%E3%82%A6%E3%83%95%E3%82%A3%E3%83%84%E3%82%A3%E7%BE%8E%E8%A1%93%E9%A4%A8%20%E3%83%95%E3%82%A3%E3%83%AC%E3%83%B3%E3%83%84%E3%82%A7%20Italy"}, "FIR 03": {"num": "FIR 03", "name": "ヴェッキオ橋", "desc": "アルノ川に架かる最古の橋で、橋の上に宝飾店が立ち並ぶ独特の光景が広がる。夕暮れ時の川面に映る街並みは特に美しい。", "img": "素材/観光スポット/ヴェッキオ橋.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%B4%E3%82%A7%E3%83%83%E3%82%AD%E3%82%AA%E6%A9%8B%20%E3%83%95%E3%82%A3%E3%83%AC%E3%83%B3%E3%83%84%E3%82%A7%20Italy"}, "FIR 04": {"num": "FIR 04", "name": "ミケランジェロ広場", "desc": "旧市街を見下ろす丘の上の展望広場。赤い屋根が連なるフィレンツェの街並みと大聖堂のクーポラを一望できる、夕景の名所。", "img": "素材/観光スポット/ミケランジェロ広場.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%9F%E3%82%B1%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%A7%E3%83%AD%E5%BA%83%E5%A0%B4%20%E3%83%95%E3%82%A3%E3%83%AC%E3%83%B3%E3%83%84%E3%82%A7%20Italy"}, "FIR 05": {"num": "FIR 05", "name": "アカデミア美術館", "desc": "ミケランジェロの傑作彫刻「ダビデ像」を間近で見られる美術館。5メートル近い巨像の圧倒的な存在感は必見。", "img": "素材/観光スポット/アカデミア美術館.webp", "mapUrl": "https://maps.google.com/?q=%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2%E7%BE%8E%E8%A1%93%E9%A4%A8%20%E3%83%95%E3%82%A3%E3%83%AC%E3%83%B3%E3%83%84%E3%82%A7%20Italy"}, "FIR 06": {"num": "FIR 06", "name": "ピッティ宮殿・ボーボリ庭園", "desc": "メディチ家の壮麗な宮殿と、幾何学的に整えられた広大な庭園。旧市街の喧騒を離れてゆったり散策できる緑豊かなスポット。", "img": "素材/観光スポット/ピッティ宮殿・ボーボリ庭園.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%94%E3%83%83%E3%83%86%E3%82%A3%E5%AE%AE%E6%AE%BF%E3%83%BB%E3%83%9C%E3%83%BC%E3%83%9C%E3%83%AA%E5%BA%AD%E5%9C%92%20%E3%83%95%E3%82%A3%E3%83%AC%E3%83%B3%E3%83%84%E3%82%A7%20Italy"}, "VEN 01": {"num": "VEN 01", "name": "サン・マルコ広場・大聖堂", "desc": "「世界一美しい広場」とナポレオンが称した街の中心。黄金のモザイクで彩られた大聖堂と、周囲を囲むカフェの音楽が独特の雰囲気を作る。", "img": "素材/観光スポット/サン・マルコ広場・大聖堂.webp", "mapUrl": "https://maps.google.com/?q=%E3%82%B5%E3%83%B3%E3%83%BB%E3%83%9E%E3%83%AB%E3%82%B3%E5%BA%83%E5%A0%B4%E3%83%BB%E5%A4%A7%E8%81%96%E5%A0%82%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%84%E3%82%A3%E3%82%A2%20Italy"}, "VEN 02": {"num": "VEN 02", "name": "ドゥカーレ宮殿", "desc": "ヴェネツィア共和国の総督が住んだゴシック様式の宮殿。豪華絢爛な内部装飾と、隣接する「ため息橋」の伝説も見どころ。", "img": "素材/観光スポット/ドゥカーレ宮殿.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%89%E3%82%A5%E3%82%AB%E3%83%BC%E3%83%AC%E5%AE%AE%E6%AE%BF%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%84%E3%82%A3%E3%82%A2%20Italy"}, "VEN 03": {"num": "VEN 03", "name": "リアルト橋", "desc": "大運河に架かる最も有名な石橋。橋の上には土産物店が並び、運河を行き交うゴンドラや水上バスを眺めるビュースポットとしても人気。", "img": "素材/観光スポット/リアルト橋.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%88%E6%A9%8B%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%84%E3%82%A3%E3%82%A2%20Italy"}, "VEN 04": {"num": "VEN 04", "name": "ゴンドラ体験", "desc": "船頭が漕ぐ伝統の木造船で、細い運河をゆったりと巡る体験。料金は時間制で決まっており、夕暮れ時は特にロマンチックな雰囲気。", "img": "素材/観光スポット/ゴンドラ体験.webp", "mapUrl": "https://maps.google.com/?q=%E3%82%B4%E3%83%B3%E3%83%89%E3%83%A9%E4%BD%93%E9%A8%93%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%84%E3%82%A3%E3%82%A2%20Italy"}, "VEN 05": {"num": "VEN 05", "name": "ブラーノ島", "desc": "極彩色の家々が運河沿いに並ぶ、絵本のような漁師町。本島から水上バスで約45分、レース編みの伝統工芸でも知られる。", "img": "素材/観光スポット/ブラーノ島.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%96%E3%83%A9%E3%83%BC%E3%83%8E%E5%B3%B6%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%84%E3%82%A3%E3%82%A2%20Italy"}, "VEN 06": {"num": "VEN 06", "name": "ムラーノ島", "desc": "700年以上の歴史を持つヴェネツィアングラスの生産地。工房見学や職人の実演を見学でき、繊細なガラス製品のショッピングも楽しめる。", "img": "素材/観光スポット/ムラーノ島.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%A0%E3%83%A9%E3%83%BC%E3%83%8E%E5%B3%B6%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%84%E3%82%A3%E3%82%A2%20Italy"}, "MIL 01": {"num": "MIL 01", "name": "ミラノ大聖堂（ドゥオーモ）", "desc": "600年以上の歳月をかけて建てられたゴシック建築の傑作。無数の尖塔と彫刻に覆われた外観は圧巻で、屋上テラスからはミラノ市街とアルプス山脈を望める。", "img": "素材/観光スポット/ミラノ大聖堂（ドゥオーモ）.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%9F%E3%83%A9%E3%83%8E%E5%A4%A7%E8%81%96%E5%A0%82%EF%BC%88%E3%83%89%E3%82%A5%E3%82%AA%E3%83%BC%E3%83%A2%EF%BC%89%20%E3%83%9F%E3%83%A9%E3%83%8E%20Italy"}, "MIL 02": {"num": "MIL 02", "name": "ヴィットーリオ・エマヌエーレ2世のガレリア", "desc": "ドゥオーモに隣接する19世紀のショッピングアーケード。ガラス張りの美しい天井とモザイクの床で「世界最古のショッピングモール」とも呼ばれる。", "img": "素材/観光スポット/ヴィットーリオ・エマヌエーレ2世のガレリア.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%B4%E3%82%A3%E3%83%83%E3%83%88%E3%83%BC%E3%83%AA%E3%82%AA%E3%83%BB%E3%82%A8%E3%83%9E%E3%83%8C%E3%82%A8%E3%83%BC%E3%83%AC2%E4%B8%96%E3%81%AE%E3%82%AC%E3%83%AC%E3%83%AA%E3%82%A2%20%E3%83%9F%E3%83%A9%E3%83%8E%20Italy"}, "MIL 03": {"num": "MIL 03", "name": "最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）", "desc": "レオナルド・ダ・ヴィンチが描いた世界的名画。教会の食堂の壁に直接描かれており、鑑賞は完全予約制・入替制で15分間のみという貴重な体験。", "img": "素材/観光スポット/最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）.webp", "mapUrl": "https://maps.google.com/?q=%E6%9C%80%E5%BE%8C%E3%81%AE%E6%99%A9%E9%A4%90%EF%BC%88%E3%82%B5%E3%83%B3%E3%82%BF%E3%83%BB%E3%83%9E%E3%83%AA%E3%82%A2%E3%83%BB%E3%83%87%E3%83%83%E3%83%AC%E3%83%BB%E3%82%B0%E3%83%A9%E3%83%84%E3%82%A3%E3%82%A8%E6%95%99%E4%BC%9A%EF%BC%89%20%E3%83%9F%E3%83%A9%E3%83%8E%20Italy"}, "MIL 04": {"num": "MIL 04", "name": "スフォルツェスコ城", "desc": "15世紀にミラノ公国を治めたスフォルツァ家の居城。現在は美術館・博物館として公開されており、ミケランジェロ最後の彫刻作品も収蔵する。", "img": "素材/観光スポット/スフォルツェスコ城.webp", "mapUrl": "https://maps.google.com/?q=%E3%82%B9%E3%83%95%E3%82%A9%E3%83%AB%E3%83%84%E3%82%A7%E3%82%B9%E3%82%B3%E5%9F%8E%20%E3%83%9F%E3%83%A9%E3%83%8E%20Italy"}, "MIL 05": {"num": "MIL 05", "name": "ナヴィリオ運河地区", "desc": "レオナルド・ダ・ヴィンチが設計に関わったとされる運河沿いのエリア。夕方から夜にかけてバールが賑わい、アペリティーボ文化を楽しめる。", "img": "素材/観光スポット/ナヴィリオ運河地区.webp", "mapUrl": "https://maps.google.com/?q=%E3%83%8A%E3%83%B4%E3%82%A3%E3%83%AA%E3%82%AA%E9%81%8B%E6%B2%B3%E5%9C%B0%E5%8C%BA%20%E3%83%9F%E3%83%A9%E3%83%8E%20Italy"}};
+function showSpot(numId) {
+  var o = (window.SPOT_DATA && SPOT_DATA[numId]) ? SPOT_DATA[numId] : null;
+  if (!o) {
+    var card = document.querySelector('[data-spot-num="' + numId + '"]');
+    if (!card) { location.href = 'spots.html?spot=' + encodeURIComponent(numId); return; }
+    var imgEl = card.querySelector('.spot-img-wrap img.spot-img');
+    var mapBtn = card.querySelector('.spot-map-btn');
+    o = {
+      num:  (card.querySelector('.num') || {}).textContent || '',
+      name: (card.querySelector('.name') || {}).textContent || '',
+      desc: (card.querySelector('.desc') || {}).textContent || '',
+      img:  imgEl ? imgEl.src : '',
+      mapUrl: mapBtn ? mapBtn.href : ''
+    };
+  }
+  document.getElementById('sp-pop-num').textContent  = o.num  || '';
+  document.getElementById('sp-pop-name').textContent = o.name || '';
+  document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  var popImg = document.getElementById('sp-pop-img');
+  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  var popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = 'Googleマップで開く →';
+  if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+  var popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+/* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
+var FOOD_DATA = {"No.01": {"num": "No.01", "name": "マルゲリータピザ", "desc": "ナポリ発祥、薄い生地をもちもちに焼き上げた本場のピザ。トマト・モッツァレラ・バジルの三色がイタリア国旗を表す一枚。", "img": "素材/グルメ/マルゲリータピザ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%B2%E3%83%AA%E3%83%BC%E3%82%BF%E3%83%94%E3%82%B6%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%20%E6%96%99%E7%90%86"}, "No.02": {"num": "No.02", "name": "カルボナーラ", "desc": "卵・グアンチャーレ（豚頬肉）・ペコリーノチーズだけで仕上げるローマの定番パスタ。生クリームを使わない濃厚なコクが本場の味。", "img": "素材/グルメ/カルボナーラ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%9C%E3%83%8A%E3%83%BC%E3%83%A9%20%E3%83%AD%E3%83%BC%E3%83%9E%20%E6%96%99%E7%90%86"}, "No.03": {"num": "No.03", "name": "カチョ・エ・ペペ", "desc": "ペコリーノチーズと黒胡椒だけで作るシンプル極まりないローマの郷土パスタ。少ない材料ながら乳化の技術が味を左右する奥深い一皿。", "img": "素材/グルメ/カチョ・エ・ペペ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%81%E3%83%A7%E3%83%BB%E3%82%A8%E3%83%BB%E3%83%9A%E3%83%9A%20%E3%83%91%E3%82%B9%E3%82%BF"}, "No.04": {"num": "No.04", "name": "ティラミス", "desc": "ヴェネト州発祥、コーヒーを染み込ませたビスケットとマスカルポーネクリームを層にしたイタリアを代表するデザート。本場の一皿は驚くほど軽い口当たり。", "img": "素材/グルメ/ティラミス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%86%E3%82%A3%E3%83%A9%E3%83%9F%E3%82%B9%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2"}, "No.05": {"num": "No.05", "name": "ジェラート", "desc": "空気含有量が少なく素材の風味を濃厚に感じられるイタリア式アイス。街角のジェラテリアで食べ比べるのも旅の楽しみのひとつ。", "img": "素材/グルメ/ジェラート.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B8%E3%82%A7%E3%83%A9%E3%83%BC%E3%83%88%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2"}, "No.06": {"num": "No.06", "name": "リゾット・アッラ・ミラネーゼ", "desc": "サフランで黄金色に炊き上げたミラノの郷土リゾット。骨髄出汁とバターのコクが溶け込んだ、見た目も華やかな一皿。", "img": "素材/グルメ/リゾット・アッラ・ミラネーゼ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AA%E3%82%BE%E3%83%83%E3%83%88%E3%83%BB%E3%82%A2%E3%83%83%E3%83%A9%E3%83%BB%E3%83%9F%E3%83%A9%E3%83%8D%E3%83%BC%E3%82%BC"}, "No.07": {"num": "No.07", "name": "コトレッタ・アラ・ミラネーゼ", "desc": "骨付き仔牛肉に衣をつけてバターで揚げ焼きにしたミラノ風カツレツ。日本のとんかつのルーツとも言われる一品。", "img": "素材/グルメ/コトレッタ・アラ・ミラネーゼ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%88%E3%83%AC%E3%83%83%E3%82%BF%E3%83%BB%E3%82%A2%E3%83%A9%E3%83%BB%E3%83%9F%E3%83%A9%E3%83%8D%E3%83%BC%E3%82%BC"}, "No.08": {"num": "No.08", "name": "ビステッカ・アッラ・フィオレンティーナ", "desc": "キアーナ牛のTボーンステーキを炭火でレアに焼き上げるトスカーナの豪快な名物料理。1kg超えのボリュームで数人でシェアするのが定番。", "img": "素材/グルメ/ビステッカ・アッラ・フィオレンティーナ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%93%E3%82%B9%E3%83%86%E3%83%83%E3%82%AB%E3%83%BB%E3%82%A2%E3%83%83%E3%83%A9%E3%83%BB%E3%83%95%E3%82%A3%E3%82%AA%E3%83%AC%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BC%E3%83%8A"}, "No.09": {"num": "No.09", "name": "トルテッリーニ", "desc": "肉やチーズを詰めた指輪型の小さなパスタ。ボローニャ発祥で、鶏の出汁スープに浮かべる「イン・ブロード」が本場の食べ方。", "img": "素材/グルメ/トルテッリーニ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%88%E3%83%AB%E3%83%86%E3%83%83%E3%83%AA%E3%83%BC%E3%83%8B%20%E3%83%9C%E3%83%AD%E3%83%BC%E3%83%8B%E3%83%A3"}, "No.10": {"num": "No.10", "name": "生ハムとメロン", "desc": "プロシュット・クルードの塩気とメロンの甘さが絶妙に合う、イタリアの食卓に欠かせない前菜。パルマ産の生ハムが特に有名。", "img": "素材/グルメ/生ハムとメロン.webp", "wikiUrl": "https://www.google.com/search?q=%E7%94%9F%E3%83%8F%E3%83%A0%E3%81%A8%E3%83%A1%E3%83%AD%E3%83%B3%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2"}, "No.11": {"num": "No.11", "name": "パルミジャーノ・レッジャーノ", "desc": "エミリア＝ロマーニャ州特産の長期熟成硬質チーズ。「チーズの王様」と称され、パスタに削りかけるだけで格段に風味が増す。", "img": "素材/グルメ/パルミジャーノ・レッジャーノ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%91%E3%83%AB%E3%83%9F%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8E%E3%83%BB%E3%83%AC%E3%83%83%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8E"}, "No.12": {"num": "No.12", "name": "エスプレッソ", "desc": "イタリア人の生活に欠かせない一杯。バールのカウンターで数百円、数十秒で飲み干すのが現地流の楽しみ方。", "img": "素材/グルメ/エスプレッソ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A8%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%82%BD%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2"}, "No.13": {"num": "No.13", "name": "アペロール・スプリッツ", "desc": "オレンジ色が鮮やかな食前酒。ヴェネツィア発祥で、夕暮れ時に運河沿いのバールで楽しむのが定番の過ごし方。", "img": "素材/グルメ/アペロール・スプリッツ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A2%E3%83%9A%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%BB%E3%82%B9%E3%83%97%E3%83%AA%E3%83%83%E3%83%84"}, "No.14": {"num": "No.14", "name": "フォカッチャ", "desc": "オリーブオイルをたっぷり染み込ませて焼く平たいパン。リグーリア州（チンクエテッレ周辺）が本場で、塩気ときめ細かい食感が特徴。", "img": "素材/グルメ/フォカッチャ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%82%A9%E3%82%AB%E3%83%83%E3%83%81%E3%83%A3%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2"}, "No.15": {"num": "No.15", "name": "アランチーニ", "desc": "ライスコロッケのようなシチリア名物の揚げ物。中にはラグーソースやチーズが詰まっており、食べ歩きにもぴったり。", "img": "素材/グルメ/アランチーニ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A2%E3%83%A9%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8B%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2"}, "No.16": {"num": "No.16", "name": "カンノーリ", "desc": "パリパリの筒状生地にリコッタチーズのクリームを詰めたシチリア発祥の伝統菓子。両端からピスタチオがのぞく見た目も可愛らしい。", "img": "素材/グルメ/カンノーリ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%B3%E3%83%8E%E3%83%BC%E3%83%AA%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2"}, "No.17": {"num": "No.17", "name": "オッソブーコ", "desc": "仔牛のすね肉を骨ごと白ワインでじっくり煮込んだミラノの郷土料理。骨の中の骨髄をすくって食べるのが通の楽しみ方。", "img": "素材/グルメ/オッソブーコ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AA%E3%83%83%E3%82%BD%E3%83%96%E3%83%BC%E3%82%B3%20%E3%83%9F%E3%83%A9%E3%83%8E"}, "No.18": {"num": "No.18", "name": "ブルスケッタ", "desc": "カリッと焼いたバゲットにトマトやオリーブオイルをのせたシンプルな前菜。バールの軽食としても親しまれている。", "img": "素材/グルメ/ブルスケッタ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%82%B9%E3%82%B1%E3%83%83%E3%82%BF%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2"}, "No.19": {"num": "No.19", "name": "リモンチェッロ", "desc": "アマルフィ海岸などレモンの名産地で作られる、爽やかな甘さのレモンリキュール。食後酒として冷やして小さなグラスで味わう。", "img": "素材/グルメ/リモンチェッロ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AA%E3%83%A2%E3%83%B3%E3%83%81%E3%82%A7%E3%83%83%E3%83%AD%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2"}, "No.20": {"num": "No.20", "name": "ラザニア", "desc": "板状パスタとミートソース・ベシャメルソースを何層にも重ねてオーブンで焼き上げる、日本でもおなじみのパスタ料理。エミリア＝ロマーニャ州が発祥地とされる。", "img": "素材/グルメ/ラザニア.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A9%E3%82%B6%E3%83%8B%E3%82%A2%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2"}};
+function showFood(numId) {
+  var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
+  if (!o) {
+    var card = document.querySelector('[data-food-num="' + numId + '"]');
+    if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
+    var imgEl = card.querySelector('.food-img');
+    var wikiBtn = card.querySelector('.wiki-link');
+    o = {
+      num:  (card.querySelector('.num') || {}).textContent || '',
+      name: (card.querySelector('.name') || {}).textContent || '',
+      desc: (card.querySelector('.desc') || {}).textContent || '',
+      img:  imgEl ? imgEl.src : '',
+      wikiUrl: wikiBtn ? wikiBtn.href : ''
+    };
+  }
+  document.getElementById('sp-pop-num').textContent  = o.num  || '';
+  document.getElementById('sp-pop-name').textContent = o.name || '';
+  document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  var popImg = document.getElementById('sp-pop-img');
+  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  else { popImg.style.display = 'none'; }
+  var popMap = document.getElementById('sp-pop-map');
+  popMap.textContent = '詳しく調べる →';
+  if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
+  else { popMap.style.display = 'none'; }
+  var popup = document.getElementById('sp-popup');
+  popup.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSpotPopup() {
+  document.getElementById('sp-popup').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+function filterSpots(dim, value, btn) {
+  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
+  document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
+    const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    let visibleCount = 0;
+    card.querySelectorAll('.item-grid .item-card').forEach(el => {
+      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const show = cityOk && typeOk;
+      el.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
+  });
+}
+
+function filterFood(dim, value, btn) {
+  const rowId = dim === 'type' ? '#food-filter-type' : '#food-filter-city';
+  const isActive = btn.classList.contains('active');
+  document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
+  if (!isActive) btn.classList.add('active');
+  const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
+  const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
+  document.querySelectorAll('#food-grid .item-card').forEach(el => {
+    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
+    el.style.display = (typeOk && cityOk) ? '' : 'none';
+  });
+}
+
+
+
+function showFilteredSpots(city) {
+  location.href = 'spots.html?city=' + encodeURIComponent(city);
+}
+
+/* 分割ページモード: 横スワイプで前後のページへ遷移 */
+var PAGE_ORDER = ["index.html", "spots.html", "food.html", "course.html", "budget.html", "practical.html", "phrases.html"];
+var PAGE_INDEX = 1;
+(function() {
+  let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
+  const THRESHOLD = 90;
+
+  document.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    isMultiTouch = e.touches.length > 1;
+    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#italy-map') || e.target.closest('#hotel-map'));
+  }, { passive: true });
+
+  document.addEventListener('touchmove', e => {
+    if (e.touches.length > 1) isMultiTouch = true;
+  }, { passive: true });
+
+  document.addEventListener('touchend', e => {
+    if (startedOnExcluded || isMultiTouch) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) < THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
+
+    let nextIdx;
+    if (dx < 0) {
+      nextIdx = Math.min(PAGE_INDEX + 1, PAGE_ORDER.length - 1);
+    } else {
+      nextIdx = Math.max(PAGE_INDEX - 1, 0);
+    }
+    if (nextIdx !== PAGE_INDEX) location.href = PAGE_ORDER[nextIdx];
+  }, { passive: true });
+})();
+
+
+
+
+/* 分割ページモード: spots.html 到達時に ?spot= / ?city= を反映 */
+(function() {
+  if (!document.getElementById('spots-grid')) return;
+  const params = new URLSearchParams(location.search);
+  const spot = params.get('spot');
+  const city = params.get('city');
+  if (city) {
+    const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
+    if (btn) filterSpots('city', city, btn);
+  }
+  if (spot) {
+    setTimeout(() => showSpot(spot), 100);
+  }
+})();
+/* 分割ページモード: food.html 到達時に ?food= を反映 */
+(function() {
+  if (!document.getElementById('food-grid')) return;
+  const params = new URLSearchParams(location.search);
+  const food = params.get('food');
+  if (food) {
+    setTimeout(() => showFood(food), 100);
+  }
+})();
+
+</script>
+
+<script>
+/* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
+(function(){
+  const header = document.getElementById('site-top-bar');
+  const navEl = document.querySelector('nav');
+  if (!header) return;
+  header.style.transition = 'none';
+  if (navEl) navEl.style.transition = 'none';
+
+  let headerH = header.offsetHeight;
+  let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  function apply() {
+    header.style.transform = 'translateY(-' + hideOffset + 'px)';
+    if (navEl) navEl.style.top = (headerH - hideOffset) + 'px';
+    ticking = false;
+  }
+
+  window.addEventListener('resize', function(){
+    headerH = header.offsetHeight;
+    hideOffset = Math.min(hideOffset, headerH);
+    apply();
+  });
+
+  window.addEventListener('scroll', function(){
+    const y = window.scrollY;
+    const dy = y - lastY;
+    lastY = y;
+    hideOffset = Math.max(0, Math.min(headerH, hideOffset + dy));
+    if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
+    if (!ticking) { ticking = true; requestAnimationFrame(apply); }
+  }, { passive: true });
+
+  apply();
+})();
+</script>
+<script src="../assets/country-links.js"></script>
+<footer style="text-align:center;padding:24px 16px;font-size:0.78em;color:#aaa;border-top:1px solid #e4ecee;margin-top:0">
+  <a href="../common/privacy.html" style="color:#aaa;text-decoration:none;margin:0 10px">プライバシーポリシー</a>
+  <span>｜</span>
+  <span style="margin:0 10px">© 2026 ZenWorldGuide</span>
+</footer>
+
+<!-- 指差しモーダル -->
+<div id="food-modal" class="food-modal-overlay" onclick="closeFoodModal()">
+  <div class="food-modal-card" onclick="event.stopPropagation()">
+    <button class="food-modal-close" onclick="closeFoodModal()">✕</button>
+    <img id="food-modal-img" src="" alt="" style="width:100%;border-radius:8px;margin-bottom:10px;display:none">
+    <div id="food-modal-ico" class="food-modal-ico"></div>
+    <div id="food-modal-name" class="food-modal-name"></div>
+    <div id="food-modal-name-en" class="food-modal-name-en"></div>
+    <div id="food-modal-pinyin" class="food-modal-pinyin"></div>
+    <div class="food-modal-phrase">
+      <div class="food-modal-phrase-main">これをください</div>
+      <div class="food-modal-phrase-sub">Vorrei questo（ヴォレイ・クエスト）</div>
+    </div>
+    <div class="food-modal-hint">この画面を店員さんに見せてください</div>
+  </div>
+</div>
+
+<script>
+function openFoodModal(ico, primary, secondary, pinyin, imgSrc) {
+  const imgEl = document.getElementById('food-modal-img');
+  const icoEl = document.getElementById('food-modal-ico');
+  if (imgSrc) {
+    imgEl.src = imgSrc;
+    imgEl.style.display = 'block';
+    icoEl.style.display = 'none';
+  } else {
+    imgEl.style.display = 'none';
+    icoEl.style.display = '';
+  }
+  icoEl.textContent = ico;
+  document.getElementById('food-modal-name').innerHTML = primary;
+  const secEl = document.getElementById('food-modal-name-en');
+  secEl.textContent = secondary;
+  secEl.style.display = secondary ? '' : 'none';
+  const pinyinEl = document.getElementById('food-modal-pinyin');
+  pinyinEl.textContent = pinyin;
+  pinyinEl.style.display = pinyin ? '' : 'none';
+  document.getElementById('food-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeFoodModal() {
+  document.getElementById('food-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+<!-- 観光スポットポップアップ -->
+<div id="sp-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:2000;align-items:center;justify-content:center;padding:16px" onclick="if(event.target===this)closeSpotPopup()">
+  <div style="background:#fff;border-radius:6px;max-width:380px;width:100%;overflow:hidden;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.25)">
+    <button onclick="closeSpotPopup()" style="position:absolute;top:8px;right:10px;background:rgba(0,0,0,0.35);border:none;border-radius:50%;width:28px;height:28px;font-size:1em;cursor:pointer;color:#fff;z-index:1;line-height:1;display:flex;align-items:center;justify-content:center">✕</button>
+    <div id="sp-pop-img" style="width:100%;aspect-ratio:16/9;background-size:cover;background-position:center"></div>
+    <div style="padding:16px 18px 18px">
+      <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
+      <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
+      <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
+      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+        <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

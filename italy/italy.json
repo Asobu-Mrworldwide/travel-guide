@@ -1,0 +1,2306 @@
+{
+  "multipage": true,
+  "id": "italy",
+  "name": "イタリア",
+  "name_en": "Italy",
+  "page_title": "イタリア旅行ガイド",
+  "hero_image": "素材/ヒーロー.webp",
+  "hero_alt": "イタリアの街並み",
+  "hero_prompt": "Colosseum Rome at golden sunset, warm evening light on ancient stone arches, travel illustration style",
+  "custom_top_spots": "<div style=\"margin-bottom:24px\"><h2 style=\"margin-bottom:6px\">イタリア全土ガイド</h2><p style=\"font-size:0.85em;line-height:1.8;color:var(--sub);margin:0 0 16px\">イタリアは20の州それぞれに独自の歴史と文化を持ち、エリアごとに街並みやグルメの雰囲気がガラリと変わる。下記でローマ・フィレンツェ・ヴェネツィア・ミラノの王道4都市に加えて周りたい街を探してみよう（★は詳細スポット付きの王道4都市）。</p><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px\"><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #1e6fd9;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🏔️</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">北イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">アルプスに近い経済の中心地。近未来的な洗練さと中世の街並みが共存する</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li>★<a onclick=\"showFilteredSpots('milan')\" class=\"spot-link\" style=\"cursor:pointer\">ミラノ</a>（ロンバルディア州）— ファッションの発信地、ドゥオーモと最後の晩餐</li><li>★<a onclick=\"showFilteredSpots('venice')\" class=\"spot-link\" style=\"cursor:pointer\">ヴェネツィア</a>（ヴェネト州）— 運河だけで構成される世界唯一の海上都市</li><li><strong>トリノ</strong>（ピエモンテ州）— 旧イタリア王国の首都、王宮群とチョコレートの街</li><li><strong>ボローニャ</strong>（エミリア＝ロマーニャ州）— 欧州最古の大学、グルメの都</li><li><strong>ヴェローナ</strong>（ヴェネト州）— ロミオとジュリエットの舞台、野外オペラ</li><li><strong>ジェノバ</strong>（リグーリア州）— コロンブスの故郷、ジェノベーゼ発祥の港町</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #008C45;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🎨</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">中央イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">古代ローマとルネサンスの歴史が最も色濃く残る、絵画のような田園風景のエリア</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li>★<a onclick=\"showFilteredSpots('rome')\" class=\"spot-link\" style=\"cursor:pointer\">ローマ</a>（ラツィオ州）— 「永遠の都」、コロッセオとバチカン市国</li><li>★<a onclick=\"showFilteredSpots('florence')\" class=\"spot-link\" style=\"cursor:pointer\">フィレンツェ</a>（トスカーナ州）— ルネサンス文化発祥の芸術都市</li><li><strong>ピサ</strong>（トスカーナ州）— 世界の七不思議、ピサの斜塔</li><li><strong>シエナ</strong>（トスカーナ州）— 中世ゴシックの古都、伝統競馬パリオ</li><li><strong>アッシジ</strong>（ウンブリア州）— 聖フランチェスコ生誕の巡礼地</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #e8720c;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">☀️</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">南イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">美しい海岸線と温暖な気候、フレンドリーな人々が魅力のエネルギッシュなエリア</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li><strong>ナポリ</strong>（カンパニア州）— 本場ナポリピッツァの聖地、近郊にポンペイ遺跡</li><li><strong>アマルフィ・ポジターノ</strong>（カンパニア州）— 世界一美しい海岸線の高級リゾート</li><li><strong>バーリ</strong>（プーリア州）— アドリア海の港町、手作りパスタの旧市街</li><li><strong>アルベロベッロ</strong>（プーリア州）— とんがり屋根の家「トゥルッリ」が並ぶ村</li><li><strong>マテーラ</strong>（バジリカータ州）— 洞窟住居「サッシ」が重なる異世界の景観</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #0e9aa7;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🌊</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">離島</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">本土とは異なる歴史を歩んできた、独自の文化が息づく地中海の島々</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li><strong>パレルモ</strong>（シチリア州）— 地中海の十字路、ノルマン・アラブ様式の建築</li><li><strong>タオルミーナ</strong>（シチリア州）— エトナ火山を望む高級リゾート、古代ギリシャ劇場</li><li><strong>カリアリ</strong>（サルデーニャ州）— 透明度抜群の海、古代遺跡ヌラーゲ</li></ul></div></div></div>",
+  "index_card": {
+    "flag": "🇮🇹",
+    "catch": "石畳に響くヴェスパの音とジェラート片手の観光客が、古代遺跡と教会の鐘の音に溶け込んでいく",
+    "region": "ヨーロッパ",
+    "best_label": "4〜6月・9〜10月",
+    "gradient": "linear-gradient(135deg,#008C45 0%,#CD212A 100%)",
+    "budget": [
+      "budget2",
+      "budget3"
+    ],
+    "best_months": [
+      4,
+      5,
+      6,
+      9,
+      10
+    ],
+    "tags": [
+      "世界遺産",
+      "グルメ",
+      "建築",
+      "歴史"
+    ]
+  },
+  "overview": {
+    "country_question": "イタリアってどんな国？",
+    "description_html": "古代ローマの遺跡が今も街に息づく首都ローマ、ルネサンス美術の粋を集めたフィレンツェ、運河と石橋が織りなす水の都ヴェネツィア、モードとデザインの発信地ミラノ——一つの国の中に、まったく違う時代と文化が積み重なるイタリア。<span style='display:block;margin-top:0.5em'>朝はバールでエスプレッソを立ち飲みし、昼はテラス席でパスタとワインを楽しみ、夜は広場でジェラート片手に散歩する。そんな「暮らすように旅する」時間の流れが、何度でも訪れたくなる魅力になっている。</span>",
+    "flag_html": "<div style=\"display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden\"><svg width=\"150\" height=\"100\" viewBox=\"0 0 3 2\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#008C45\" d=\"M0 0h1v2H0z\"/><path fill=\"#fff\" d=\"M1 0h1v2H1z\"/><path fill=\"#CD212A\" d=\"M2 0h1v2H2z\"/></svg></div>",
+    "flag_caption": "イタリア国旗（トリコローレ）",
+    "top_spot_name": "コロッセオ",
+    "top_spot_desc": "紀元80年に完成した古代ローマの円形闘技場。約5万人を収容した観客席の遺構は、2000年前の建築技術の高さを今に伝える世界遺産。",
+    "top_spot_image": "素材/観光スポット/コロッセオ.webp",
+    "top_food_name": "マルゲリータピザ",
+    "top_food_desc": "ナポリ発祥、薄い生地をもちもちに焼き上げた本場のピザ。トマト・モッツァレラ・バジルの三色がイタリア国旗を表す一枚。",
+    "top_food_image": "素材/グルメ/マルゲリータピザ.webp",
+    "difficulty_label": "初心者でも安心",
+    "difficulty_label_bg": "#e8f5ee",
+    "difficulty_label_color": "var(--green)",
+    "difficulty_pct": "30",
+    "difficulty_bar": "linear-gradient(90deg,#00a86b,#66cc99)",
+    "difficulty_desc": "鉄道網が発達し英語表記も多いため、初めての一人旅でも周りやすい。高速鉄道の予約とスリ対策さえ押さえれば快適に旅ができる。",
+    "japan_popularity_html": "世界遺産登録数世界一（60件）を誇る観光大国。日本からの旅行先としても常に人気上位で、リピーターも多い定番デスティネーション。",
+    "flight_hours": "直行便（ミラノ）で約13時間、経由便なら14〜17時間",
+    "timezone": "日本−8時間（サマータイム時は−7時間）",
+    "visa": "不要（シェンゲン協定・90日）",
+    "budget_range": "22〜38万円",
+    "language": "イタリア語",
+    "currency_name": "ユーロ(EUR)",
+    "currency_rate": "1EUR ≈ 170円",
+    "danger_level": 0,
+    "danger_label": "特に危険情報なし",
+    "danger_color": "#006847",
+    "danger_note": "国全体の治安は比較的良好だが、観光地やターミナル駅ではスリ・置き引きの被害が非常に多い。荷物は常に体の前で管理を。",
+    "danger_url": "https://www.anzen.mofa.go.jp/riskmap/"
+  },
+  "map": {
+    "element_id": "italy-map",
+    "center_lat": "43.5",
+    "center_lng": "12.5",
+    "zoom": "6",
+    "map_id": "",
+    "country_label": "Italy"
+  },
+  "cities": [
+    {
+      "id": "rome",
+      "name": "ローマ",
+      "lat": "41.9028",
+      "lng": "12.4964",
+      "zoom": "12",
+      "color": "#CD212A",
+      "marker_size": "14",
+      "marker_label": "★",
+      "badge": "首都",
+      "badge_class": "",
+      "description": "古代ローマの遺跡が現役の街並みに溶け込む「永遠の都」。コロッセオからバチカンまで見どころが尽きない"
+    },
+    {
+      "id": "florence",
+      "name": "フィレンツェ",
+      "lat": "43.7696",
+      "lng": "11.2558",
+      "zoom": "13",
+      "color": "#008C45",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "ルネサンスの都",
+      "badge_class": "green",
+      "description": "ルネサンス芸術発祥の地。赤い屋根が連なる旧市街と丘の上からの絶景で知られるトスカーナの中心都市"
+    },
+    {
+      "id": "venice",
+      "name": "ヴェネツィア",
+      "lat": "45.4408",
+      "lng": "12.3155",
+      "zoom": "13",
+      "color": "#008C45",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "水の都",
+      "badge_class": "green",
+      "description": "車道のない運河の街。ゴンドラが行き交う小径と広場が、まるで舞台セットのような非日常を作り出す"
+    },
+    {
+      "id": "milan",
+      "name": "ミラノ",
+      "lat": "45.4642",
+      "lng": "9.19",
+      "zoom": "12",
+      "color": "#008C45",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "ファッションの都",
+      "badge_class": "green",
+      "description": "世界的ファッションブランドが集まる経済・モードの中心地。壮麗な大聖堂と「最後の晩餐」でも有名"
+    },
+    {
+      "id": "torino",
+      "name": "トリノ",
+      "lat": "45.0703",
+      "lng": "7.6869",
+      "zoom": "13",
+      "color": "#1e6fd9",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "北イタリア",
+      "badge_class": "green",
+      "description": "かつてのイタリア王国の首都。サヴォイア家ゆかりの王宮群、自動車産業、高級チョコレートとワインの街",
+      "no_spot_detail": true
+    },
+    {
+      "id": "bologna",
+      "name": "ボローニャ",
+      "lat": "44.4949",
+      "lng": "11.3426",
+      "zoom": "13",
+      "color": "#1e6fd9",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "北イタリア",
+      "badge_class": "green",
+      "description": "ヨーロッパ最古の大学がある学問の街。「肥満の街」と呼ばれるほどグルメが充実し、ボロネーゼパスタや生ハムが本場",
+      "no_spot_detail": true
+    },
+    {
+      "id": "verona",
+      "name": "ヴェローナ",
+      "lat": "45.4384",
+      "lng": "10.9916",
+      "zoom": "13",
+      "color": "#1e6fd9",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "北イタリア",
+      "badge_class": "green",
+      "description": "『ロミオとジュリエット』の舞台。古代ローマの円形競技場（アレーナ）での野外オペラが有名",
+      "no_spot_detail": true
+    },
+    {
+      "id": "genova",
+      "name": "ジェノバ",
+      "lat": "44.4056",
+      "lng": "8.9463",
+      "zoom": "13",
+      "color": "#1e6fd9",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "北イタリア",
+      "badge_class": "green",
+      "description": "コロンブスの故郷でもある歴史ある港湾都市。迷路のような旧市街と、バジルのジェノベーゼソース発祥の地",
+      "no_spot_detail": true
+    },
+    {
+      "id": "pisa",
+      "name": "ピサ",
+      "lat": "43.7228",
+      "lng": "10.4017",
+      "zoom": "13",
+      "color": "#008C45",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "中央イタリア",
+      "badge_class": "green",
+      "description": "世界の七不思議「ピサの斜塔」で有名な街。フィレンツェからの日帰り観光地として絶大な人気",
+      "no_spot_detail": true
+    },
+    {
+      "id": "siena",
+      "name": "シエナ",
+      "lat": "43.3188",
+      "lng": "11.3308",
+      "zoom": "13",
+      "color": "#008C45",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "中央イタリア",
+      "badge_class": "green",
+      "description": "中世ゴシック様式の街並みがそのまま残る古都。扇形の「カンポ広場」で開催される伝統の競馬パリオが有名",
+      "no_spot_detail": true
+    },
+    {
+      "id": "assisi",
+      "name": "アッシジ",
+      "lat": "43.0707",
+      "lng": "12.6197",
+      "zoom": "13",
+      "color": "#008C45",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "中央イタリア",
+      "badge_class": "green",
+      "description": "聖フランチェスコの生誕地として知られるキリスト教の巡礼地。ピンク色の石造りの街並みが静謐で美しい丘の上の町",
+      "no_spot_detail": true
+    },
+    {
+      "id": "napoli",
+      "name": "ナポリ",
+      "lat": "40.8518",
+      "lng": "14.2681",
+      "zoom": "13",
+      "color": "#e8720c",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "南イタリア",
+      "badge_class": "green",
+      "description": "「ナポリを見てから死ね」と称される美しい港町。本場ナポリピッツァの聖地で、近郊にはポンペイ遺跡もある",
+      "no_spot_detail": true
+    },
+    {
+      "id": "amalfi",
+      "name": "アマルフィ・ポジターノ",
+      "lat": "40.6340",
+      "lng": "14.6027",
+      "zoom": "13",
+      "color": "#e8720c",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "南イタリア",
+      "badge_class": "green",
+      "description": "世界一美しいとも評される海岸線。断崖絶壁にパステルカラーの家々が並ぶ高級リゾート地",
+      "no_spot_detail": true
+    },
+    {
+      "id": "bari",
+      "name": "バーリ",
+      "lat": "41.1171",
+      "lng": "16.8719",
+      "zoom": "13",
+      "color": "#e8720c",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "南イタリア",
+      "badge_class": "green",
+      "description": "アドリア海に面した南イタリアの主要港湾都市。旧市街の路地では伝統パスタを手作りする様子が見られる",
+      "no_spot_detail": true
+    },
+    {
+      "id": "alberobello",
+      "name": "アルベロベッロ",
+      "lat": "40.7826",
+      "lng": "17.2394",
+      "zoom": "14",
+      "color": "#e8720c",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "南イタリア",
+      "badge_class": "green",
+      "description": "とんがり帽子のような白い石造りの家「トゥルッリ」が1000軒以上立ち並ぶ、おとぎ話のような村",
+      "no_spot_detail": true
+    },
+    {
+      "id": "matera",
+      "name": "マテーラ",
+      "lat": "40.6664",
+      "lng": "16.6043",
+      "zoom": "14",
+      "color": "#e8720c",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "南イタリア",
+      "badge_class": "green",
+      "description": "旧石器時代からの洞窟住居「サッシ」が何層にも重なる異次元の景観を持つ街。映画のロケ地としても人気",
+      "no_spot_detail": true
+    },
+    {
+      "id": "palermo",
+      "name": "パレルモ",
+      "lat": "38.1157",
+      "lng": "13.3615",
+      "zoom": "13",
+      "color": "#0e9aa7",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "離島",
+      "badge_class": "green",
+      "description": "地中海の十字路と呼ばれるシチリア島の州都。ノルマン・アラブ・ビザンツ様式が融合した独特の建築と絶品ストリートフード",
+      "no_spot_detail": true
+    },
+    {
+      "id": "taormina",
+      "name": "タオルミーナ",
+      "lat": "37.8525",
+      "lng": "15.2853",
+      "zoom": "14",
+      "color": "#0e9aa7",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "離島",
+      "badge_class": "green",
+      "description": "エトナ火山とイオニア海を一望できる、シチリア随一の高級リゾート地。古代ギリシャ劇場の跡地が今も残る",
+      "no_spot_detail": true
+    },
+    {
+      "id": "cagliari",
+      "name": "カリアリ",
+      "lat": "39.2238",
+      "lng": "9.1217",
+      "zoom": "13",
+      "color": "#0e9aa7",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "離島",
+      "badge_class": "green",
+      "description": "ヨーロッパ屈指の透明度を誇る海に囲まれたサルデーニャ島の中心都市。古代遺跡「ヌラーゲ」が島内に点在",
+      "no_spot_detail": true
+    }
+  ],
+  "season_mini": {
+    "description": "イタリアは地中海性気候で、ローマは夏の乾燥した暑さと冬の穏やかな涼しさが特徴。ベストシーズンは春（4〜6月）と秋（9〜10月）。",
+    "city_name": "ローマ",
+    "months": [
+      {
+        "icon": "☀️",
+        "temp": "12°",
+        "type": "t-cool"
+      },
+      {
+        "icon": "☀️",
+        "temp": "13°",
+        "type": "t-cool"
+      },
+      {
+        "icon": "☀️",
+        "temp": "16°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "⛅",
+        "temp": "19°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "24°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "29°",
+        "type": "t-hot1"
+      },
+      {
+        "icon": "☀️",
+        "temp": "32°",
+        "type": "t-hot2"
+      },
+      {
+        "icon": "☀️",
+        "temp": "32°",
+        "type": "t-hot2"
+      },
+      {
+        "icon": "⛅",
+        "temp": "28°",
+        "type": "t-hot1"
+      },
+      {
+        "icon": "⛅",
+        "temp": "22°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "16°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "13°",
+        "type": "t-cool"
+      }
+    ]
+  },
+  "basic_data": [
+    {
+      "label": "首都",
+      "value": "ローマ",
+      "note": "人口約280万人（都市圏）",
+      "compare_html": ""
+    },
+    {
+      "label": "独立年",
+      "value": "1861年（イタリア王国建国）",
+      "note": "1946年に共和制へ移行",
+      "compare_html": ""
+    },
+    {
+      "label": "人口",
+      "value": "約5,900万人",
+      "note": "日本の約半分弱",
+      "compare_html": ""
+    },
+    {
+      "label": "面積",
+      "value": "約30.2万km²",
+      "note": "日本の約8割の広さ",
+      "compare_html": ""
+    },
+    {
+      "label": "宗教",
+      "value": "キリスト教（カトリック）が中心",
+      "note": "バチカン市国は国内にある独立国家",
+      "compare_html": ""
+    },
+    {
+      "label": "民族",
+      "value": "イタリア人が大半",
+      "note": "地域ごとの文化・方言の差が大きい",
+      "compare_html": ""
+    },
+    {
+      "label": "言語",
+      "value": "イタリア語",
+      "note": "観光地では英語も比較的通じる",
+      "compare_html": ""
+    },
+    {
+      "label": "通貨",
+      "value": "ユーロ（EUR）",
+      "note": "1EUR ≈ 170円",
+      "compare_html": ""
+    }
+  ],
+  "season": {
+    "description_html": "南北に長いイタリアは地域によって気候差が大きい。ローマ・フィレンツェは内陸性で夏は乾燥して暑く、ヴェネツィアは湿度が高め、ミラノは大陸性気候で冬に霧が出やすい。全体的に4〜6月・9〜10月が観光のベストシーズン。",
+    "tip_title": "航空券が安い時期",
+    "tip_body": "7〜8月の夏休みシーズンと年末年始、イースター前後は価格が高騰しやすい。狙い目は5〜6月・9月中旬〜10月、または1〜2月の閑散期。早期予約とセール通知の登録がおすすめ。",
+    "cities": [
+      {
+        "name": "ローマ",
+        "city_id": "rome",
+        "best_note": "4〜6月・9〜10月が快適",
+        "note": "夏は日中35℃近くまで上がることもある乾燥した暑さ。冬は10℃前後で比較的過ごしやすい。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "12°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "19°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "32°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "32°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-cool"
+          }
+        ]
+      },
+      {
+        "name": "フィレンツェ",
+        "city_id": "florence",
+        "best_note": "4〜6月・9〜10月が快適",
+        "note": "内陸に位置し盆地特有の蒸し暑さがある。冬は朝晩の冷え込みが強いので防寒対策を。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "11°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "17°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "33°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "33°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "12°C",
+            "type": "t-cool"
+          }
+        ]
+      },
+      {
+        "name": "ヴェネツィア",
+        "city_id": "venice",
+        "best_note": "4〜6月・9〜10月が快適",
+        "note": "湿度が高く、秋冬は「アクア・アルタ（高潮）」で広場が冠水することがある。冬は霧も多い。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "8°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "10°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "14°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "18°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "19°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "9°C",
+            "type": "t-cool"
+          }
+        ]
+      },
+      {
+        "name": "ミラノ",
+        "city_id": "milan",
+        "best_note": "4〜6月・9〜10月が快適",
+        "note": "大陸性気候で夏は蒸し暑く、冬は0℃近くまで冷え込み霧も発生しやすい。四季の差がはっきりしている。",
+        "months": [
+          {
+            "icon": "🌫️",
+            "temp": "6°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "9°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "14°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "18°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "18°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "🌫️",
+            "temp": "11°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "🌫️",
+            "temp": "7°C",
+            "type": "t-cool"
+          }
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "intro": "イタリアは西欧の中では比較的物価が抑えめで、バールでの立ち飲みエスプレッソやピザなら数百円から楽しめる。一方でホテル代・観光地のレストランは観光需要で高騰しやすく、予約は早めが鉄則。",
+    "plan_rows": [
+      {
+        "label": "航空券（往復）",
+        "eco": "8〜12万円",
+        "std": "15〜20万円",
+        "lux": "25万円〜"
+      },
+      {
+        "label": "ホテル（1泊）",
+        "eco": "6,000〜9,000円",
+        "std": "1.5〜2.5万円",
+        "lux": "4万円〜"
+      },
+      {
+        "label": "食費（1日）",
+        "eco": "3,000〜4,000円",
+        "std": "6,000〜8,000円",
+        "lux": "1.5万円〜"
+      },
+      {
+        "label": "交通（1日）",
+        "eco": "1,000〜1,500円",
+        "std": "2,000〜3,000円",
+        "lux": "5,000円〜"
+      }
+    ],
+    "total_eco": "18〜25万円",
+    "total_std": "30〜42万円",
+    "total_lux": "50万円〜",
+    "items": [
+      {
+        "icon": "plane-paper",
+        "name": "航空券（往復）",
+        "detail_html": "ANAが羽田〜ミラノに直行便を運航<br>ITAエアウェイズ・カタール航空・ターキッシュエアラインズなど経由便も豊富",
+        "price": "8〜25万円",
+        "affiliate": ""
+      },
+      {
+        "icon": "bed",
+        "name": "ホテル（1泊）",
+        "detail_html": "ローマ・ヴェネツィアなど人気都市は特に高騰しやすい<br>中心部から少し離れると同じ星数でも大きく安くなる",
+        "price": "6,000円〜4万円",
+        "affiliate": ""
+      },
+      {
+        "icon": "ramen",
+        "name": "食費（1日）",
+        "detail_html": "バール立ち飲みなら朝食は数百円<br>観光地のテラス席レストランはコペルト（席料）込みで割高になりがち",
+        "price": "3,000〜1.5万円",
+        "affiliate": "wise"
+      },
+      {
+        "icon": "🚕",
+        "name": "交通費（1日）",
+        "detail_html": "市内はバス・トラム・地下鉄の1日券が便利<br>都市間移動はFrecciarossa等の高速鉄道が早期予約でお得",
+        "price": "1,000〜5,000円",
+        "affiliate": "grab"
+      },
+      {
+        "icon": "📍",
+        "name": "観光・アクティビティ",
+        "detail_html": "バチカン美術館・コロッセオなど人気スポットは公式サイトでの事前予約が必須級<br>ゴンドラ体験は相場が決まっている",
+        "price": "2,000〜1万円",
+        "affiliate": "klook"
+      },
+      {
+        "icon": "🌐",
+        "name": "SIM・Wi-Fi",
+        "detail_html": "EU圏共通のeSIMが便利で、シェンゲン圏内なら周遊も可能",
+        "price": "2,000〜4,000円",
+        "affiliate": ""
+      }
+    ],
+    "savings_tips_html": "・美術館は事前予約制のところが多く、当日券狙いは長蛇の列になりがち<br>・水道水はそのまま飲める街が多いのでマイボトル持参で飲料代を節約<br>・ランチはピザ・パニーノのテイクアウトで済ませると食費を大きく抑えられる"
+  },
+  "practical": {
+    "prac_cards": [
+      {
+        "icon": "visa",
+        "title": "ビザ",
+        "value": "不要（シェンゲン圏90日）"
+      },
+      {
+        "icon": "💱",
+        "title": "通貨",
+        "value": "ユーロ（EUR）<br>1EUR ≈ 170円"
+      },
+      {
+        "icon": "🔌",
+        "title": "コンセント",
+        "value": "Cタイプ・Lタイプ（変換プラグ必要）"
+      },
+      {
+        "icon": "⚡",
+        "title": "電圧",
+        "value": "230V（変換注意）"
+      },
+      {
+        "icon": "wifi",
+        "title": "Wi-Fi",
+        "value": "ホテル・カフェ無料多、都市部は良好"
+      },
+      {
+        "icon": "clock",
+        "title": "時差",
+        "value": "日本−8時間（夏時間−7時間）"
+      },
+      {
+        "icon": "palm",
+        "title": "気温",
+        "value": "夏30℃超・冬は5〜10℃前後"
+      },
+      {
+        "icon": "🙏",
+        "title": "チップ",
+        "value": "任意（レストランでお釣りの端数程度）"
+      },
+      {
+        "icon": "💧",
+        "title": "水道水",
+        "value": "飲用可（硬水で味に癖あり、街中の噴水も飲用可）"
+      },
+      {
+        "icon": "💳",
+        "title": "カード払い",
+        "value": "ほぼ全ての店で利用可、現金不要な場面も多い"
+      }
+    ],
+    "prep_steps": [
+      {
+        "title": "パスポート取得・更新",
+        "timing": "1〜2ヶ月前",
+        "timing_color": "#006847",
+        "border_color": "#006847",
+        "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+        "desc_html": "イタリア入国に必要な残存有効期間は<strong>出国予定日から3ヶ月以上</strong>。シェンゲン圏共通のルールなので、有効期限が近い場合は早めに更新を。"
+      },
+      {
+        "title": "海外対応クレジットカードの申込",
+        "timing": "1ヶ月前",
+        "timing_color": "#006847",
+        "border_color": "#1a8a5a",
+        "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+        "desc_html": "タッチ決済対応のカードがあると、地下鉄改札からレストランの会計までスムーズ。現地ATMでのキャッシングも予備として便利。"
+      },
+      {
+        "title": "航空券・ホテルの予約",
+        "timing": "早いほど安い",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "#b09000",
+        "desc_html": "人気都市のホテルは早期に埋まりやすい。バチカン美術館・コロッセオなど主要観光施設のチケットもこのタイミングで予約しておくと安心。"
+      },
+      {
+        "title": "海外旅行保険の加入",
+        "timing": "出発前日まで",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+        "desc_html": "スリ・置き引きの被害が多い国なので、盗難補償が手厚いプランを選んでおくと安心。クレジットカード付帯保険の内容も事前に確認を。"
+      },
+      {
+        "title": "SIM・ポケットWi-Fiの予約",
+        "timing": "1〜2週間前",
+        "timing_color": "#cc5500",
+        "border_color": "#cc5500",
+        "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+        "desc_html": "EU圏共通のeSIMを使えば、フランス・スペインなど周辺国への周遊があっても差し替え不要で便利。"
+      }
+    ],
+    "tour_intro": "個人旅行のハードルは高くないが、バチカン美術館やウフィツィ美術館は行列必至。ガイド付きツアーやファストトラックチケットを使うと大幅に時間を節約できる。",
+    "special_note_title": "美術館・観光施設は事前予約が必須級",
+    "special_note_html": "コロッセオ・バチカン美術館・ウフィツィ美術館など主要施設は、当日券だと数時間待ちになることも珍しくありません。公式サイトまたは正規代理店で日時指定の事前予約をしておくと、旅程が大幅にスムーズになります。",
+    "special_note_url": "https://www.coopculture.it/",
+    "special_note_url_label": "コロッセオ公式チケットサイト（CoopCulture）",
+    "flight_lead": "日本〜イタリアはANAが羽田〜ミラノに直行便を運航しており、所要約13時間。ローマ直行便は現在運休中のため、カタール航空・ターキッシュエアラインズなど中東・欧州経由便を使うのが一般的です。",
+    "flight_intro": "ミラノへはANA直行便、ローマへは経由便が中心。所要は直行約13時間、経由なら14〜17時間。",
+    "airlines": [
+      {
+        "logo": "../素材/航空会社/ANA.svg",
+        "name": "ANA",
+        "desc": "羽田〜ミラノに直行便を運航。乗り継ぎなしで行ける唯一の選択肢でマイルも貯まる。",
+        "price": "往復 15〜25万円"
+      },
+      {
+        "name": "ITAエアウェイズ",
+        "desc": "イタリアのフラッグキャリア。欧州主要都市経由でローマ・ミラノへアクセス可能。",
+        "price": "往復 14〜22万円"
+      },
+      {
+        "logo": "../素材/航空会社/Qatar Airways.svg",
+        "name": "カタール航空",
+        "desc": "ドーハ経由。機内サービスの快適さで定評があり、ローマ・ミラノ両方に就航。",
+        "price": "往復 15〜25万円"
+      },
+      {
+        "logo": "../素材/航空会社/Turkish Airlines.svg",
+        "name": "ターキッシュエアラインズ",
+        "desc": "イスタンブール経由。コストパフォーマンスに優れ人気の高いルート。",
+        "price": "往復 13〜22万円"
+      }
+    ],
+    "flight_tip_html": "・夏休み・年末年始・イースター前後は高騰しやすい<br>・ミラノ直行便は本数が限られるため、繁忙期は早期予約が必須<br>・復路が早朝便だと最終日がほぼ移動だけになるので時間帯に注意",
+    "hotel_map_center": {
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "zoom": 13
+    },
+    "hotel_areas": [
+      {
+        "id": "rome_termini",
+        "name": "ローマ・テルミニ駅周辺",
+        "tag": "交通の要・初心者向け",
+        "tag_color": "green",
+        "desc": "鉄道・地下鉄・空港バスが集まる交通のハブ。コロッセオや旧市街へもアクセスしやすく、価格帯の選択肢も豊富。",
+        "price": "格安 6,000〜9,000円　中級 1.2万〜2万円",
+        "maps_url": "https://www.google.com/maps/place/Roma+Termini",
+        "lat": 41.9009,
+        "lng": 12.5017
+      },
+      {
+        "id": "florence_duomo",
+        "name": "フィレンツェ・ドゥオーモ周辺",
+        "tag": "旧市街の中心",
+        "tag_color": "green",
+        "desc": "主要観光スポットが徒歩圏内に集まるコンパクトな旧市街。夜の街歩きも楽しみやすい立地。",
+        "price": "格安 7,000〜1万円　中級 1.5万〜2.5万円",
+        "maps_url": "https://www.google.com/maps/place/Piazza+del+Duomo,+Firenze",
+        "lat": 43.7731,
+        "lng": 11.256
+      },
+      {
+        "id": "venice_sanmarco",
+        "name": "ヴェネツィア・サンマルコ周辺",
+        "tag": "水の都の中心・眺望◎",
+        "tag_color": "green",
+        "desc": "運河沿いのホテルは眺めが格別。ただし物価・宿泊費ともに市内随一の高さなので、予算に応じてメストレ地区も検討を。",
+        "price": "格安 1万〜1.5万円　中級 2万〜3.5万円",
+        "maps_url": "https://www.google.com/maps/place/Piazza+San+Marco,+Venezia",
+        "lat": 45.4342,
+        "lng": 12.3388
+      },
+      {
+        "id": "milan_duomo",
+        "name": "ミラノ・ドゥオーモ周辺",
+        "tag": "交通の要・買い物にも便利",
+        "tag_color": "green",
+        "desc": "地下鉄の主要路線が交差し、大聖堂やガレリアにも徒歩圏内。ビジネス街としても発展しており設備の整ったホテルが多い。",
+        "price": "格安 8,000〜1.2万円　中級 1.8万〜3万円",
+        "maps_url": "https://www.google.com/maps/place/Piazza+del+Duomo,+Milano",
+        "lat": 45.4641,
+        "lng": 9.1919
+      }
+    ],
+    "hotel_tip": "都市間を高速鉄道で移動するプランなら、各都市の中央駅から徒歩圏内のホテルを選ぶとスーツケースの移動が最小限で済む。",
+    "sim_intro": "空港到着後すぐ使えるeSIMの事前購入が便利。シェンゲン圏内なら周辺国への旅程があっても差し替え不要で通信できる。",
+    "apps": [
+      {
+        "icon": "🗺️",
+        "name": "Google マップ",
+        "type_label": "地図・ナビ（オフライン対応）",
+        "desc": "旧市街の細い路地でも迷わず歩ける。オフライン地図を事前ダウンロードしておくと通信量の節約にも。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "🚄",
+        "name": "Trenitalia / Italo",
+        "type_label": "鉄道予約アプリ",
+        "desc": "都市間の高速鉄道チケットをその場で購入・変更できる。早期購入割引が使えるので出発前の予約がお得。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "google-translate",
+        "name": "Google 翻訳",
+        "type_label": "翻訳・カメラ翻訳",
+        "desc": "メニューや案内表示をカメラでかざすだけで翻訳できる。イタリア語は英語との併記も多いが持っておくと安心。",
+        "affiliate": "",
+        "is_last": true
+      }
+    ],
+    "tour_platform": "",
+    "country_items_label": "",
+    "country_items": [],
+    "currency_code": "EUR",
+    "exchange_rate": "170",
+    "cash_dependency": "低",
+    "cash_dependency_color": "#006847",
+    "cash_dependency_note": "ほぼ全ての店でカード利用可、現金は市場・小額決済程度",
+    "cash_daily_low": "10",
+    "cash_daily_high": "30",
+    "cash_note": "1 EUR ≈ 170円で計算",
+    "money_intro": "イタリアはカード社会で、小さなバールでも大抵カードが使える。現金は市場や一部の小さな店で使う程度で十分。現地通貨ユーロへの両替は日本国内やATMでのキャッシングのほうがレートが良い場合が多い。",
+    "cash_tip_title": "💡 カードのタッチ決済が主流",
+    "cash_tip_body": "地下鉄の改札からバールの会計まで、クレジットカードのタッチ決済（コンタクトレス）で完結することがほとんど。日本のカードも対応していれば現地SIMなしでも困らない。",
+    "wise_intro": "現地ATMでのキャッシングやWiseなどの多通貨対応カードを使うと、両替所より有利なレートでユーロを引き出せることが多い。",
+    "cta_title": "出発前にマナーも確認しよう！🙏",
+    "cta_desc": "イタリアならではの食事のマナーや教会での服装ルールを知っておくと、現地の人ともスムーズに交流できる。"
+  },
+  "manner_cards": [
+    {
+      "type": "do",
+      "icon": "☕",
+      "title": "カプチーノは朝だけ、食後はエスプレッソ",
+      "desc": "地元では食後にカプチーノを頼むのは珍しがられる。食後の一杯はエスプレッソが定番マナー。"
+    },
+    {
+      "type": "dont",
+      "icon": "👗",
+      "title": "教会では肩・膝を隠す服装で",
+      "desc": "バチカンをはじめ多くの教会は肌の露出が多い服装だと入場を断られることがある。薄手の羽織りを一枚持っておくと安心。"
+    },
+    {
+      "type": "do",
+      "icon": "💶",
+      "title": "レストランのコペルト（席料）は普通",
+      "desc": "パン代・テーブルチャージとして1人数百円のコペルトが加算されるのが一般的。ぼったくりではなく正規の商習慣。"
+    },
+    {
+      "type": "do",
+      "icon": "☕",
+      "title": "バールでは立ち飲みが安い",
+      "desc": "カウンターでの立ち飲みは着席より大幅に安い料金設定。エスプレッソを数百円でサッと楽しむのが現地流。"
+    },
+    {
+      "type": "dont",
+      "icon": "🎒",
+      "title": "満員のトラム・観光地でのスリに注意",
+      "desc": "リュックは前に抱える、貴重品は分散して持つなど基本の対策を。親切を装って近づいてくる相手にも警戒を。"
+    }
+  ],
+  "manner_cta_title": "旅の準備もチェックしよう！✈️",
+  "manner_cta_desc": "航空券・ホテル・SIM・持ち物まで、出発前に押さえておきたい情報をまとめてチェック。",
+  "phrases": {
+    "multi": false,
+    "decks": [
+      {
+        "id": "italian",
+        "active": true,
+        "language_name": "イタリア語",
+        "card_title": "旅で使えるイタリア語フレーズ",
+        "categories": [
+          {
+            "label": "👋 あいさつ",
+            "items": [
+              {
+                "jp": "こんにちは",
+                "foreign": "Ciao / Buongiorno",
+                "reading": "チャオ／ブォンジョルノ",
+                "audio": ""
+              },
+              {
+                "jp": "元気ですか？",
+                "foreign": "Come stai?",
+                "reading": "コメ・スタイ",
+                "audio": ""
+              },
+              {
+                "jp": "元気です",
+                "foreign": "Sto bene",
+                "reading": "スト・ベーネ",
+                "audio": ""
+              },
+              {
+                "jp": "さようなら",
+                "foreign": "Arrivederci",
+                "reading": "アリヴェデルチ",
+                "audio": ""
+              },
+              {
+                "jp": "はじめまして",
+                "foreign": "Piacere",
+                "reading": "ピアチェーレ",
+                "audio": ""
+              },
+              {
+                "jp": "（景色や物に）綺麗ですね！",
+                "foreign": "Che bello!",
+                "reading": "ケ・ベッロ",
+                "audio": ""
+              },
+              {
+                "jp": "美人ですね",
+                "foreign": "Sei bellissima",
+                "reading": "セイ・ベリッシマ",
+                "audio": ""
+              },
+              {
+                "jp": "愛してる",
+                "foreign": "Ti amo",
+                "reading": "ティ・アーモ",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "🙏 基本表現",
+            "items": [
+              {
+                "jp": "ありがとう",
+                "foreign": "Grazie",
+                "reading": "グラツィエ",
+                "audio": ""
+              },
+              {
+                "jp": "すみません",
+                "foreign": "Mi scusi",
+                "reading": "ミ・スクージ",
+                "audio": ""
+              },
+              {
+                "jp": "ごめんなさい",
+                "foreign": "Mi dispiace",
+                "reading": "ミ・ディスピアーチェ",
+                "audio": ""
+              },
+              {
+                "jp": "大丈夫・気にしないで",
+                "foreign": "Non ti preoccupare",
+                "reading": "ノン・ティ・プレオックパーレ",
+                "audio": ""
+              },
+              {
+                "jp": "はい / いいえ",
+                "foreign": "Sì / No",
+                "reading": "シー／ノ",
+                "audio": ""
+              },
+              {
+                "jp": "わかりません",
+                "foreign": "Non capisco",
+                "reading": "ノン・カピスコ",
+                "audio": ""
+              },
+              {
+                "jp": "もう一度言ってください",
+                "foreign": "Può ripetere?",
+                "reading": "プオ・リペーテレ",
+                "audio": ""
+              },
+              {
+                "jp": "名前は〜です",
+                "foreign": "Mi chiamo ~",
+                "reading": "ミ・キアーモ〜",
+                "audio": ""
+              },
+              {
+                "jp": "名前は何ですか？",
+                "foreign": "Come ti chiami?",
+                "reading": "コメ・ティ・キアーミ",
+                "audio": ""
+              },
+              {
+                "jp": "日本人です",
+                "foreign": "Sono giapponese",
+                "reading": "ソノ・ジャッポネーゼ",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "🍽️ レストラン・ショッピング",
+            "items": [
+              {
+                "jp": "おすすめは何ですか？",
+                "foreign": "Cosa mi consiglia?",
+                "reading": "コーザ・ミ・コンシリア",
+                "audio": ""
+              },
+              {
+                "jp": "〜はありますか？",
+                "foreign": "Avete ~?",
+                "reading": "アヴェーテ〜",
+                "audio": ""
+              },
+              {
+                "jp": "これをください",
+                "foreign": "Vorrei questo",
+                "reading": "ヴォレイ・クエスト",
+                "audio": ""
+              },
+              {
+                "jp": "おいしい！",
+                "foreign": "Buonissimo!",
+                "reading": "ブオニッシモ",
+                "audio": ""
+              },
+              {
+                "jp": "辛い",
+                "foreign": "Piccante",
+                "reading": "ピッカンテ",
+                "audio": ""
+              },
+              {
+                "jp": "辛くしないでください",
+                "foreign": "Non piccante, per favore",
+                "reading": "ノン・ピッカンテ・ペル・ファヴォーレ",
+                "audio": ""
+              },
+              {
+                "jp": "お会計をお願いします",
+                "foreign": "Il conto, per favore",
+                "reading": "イル・コント・ペル・ファヴォーレ",
+                "audio": ""
+              },
+              {
+                "jp": "いくらですか？",
+                "foreign": "Quanto costa?",
+                "reading": "クアント・コスタ",
+                "audio": ""
+              },
+              {
+                "jp": "高い、安くしてください",
+                "foreign": "È caro, può fare uno sconto?",
+                "reading": "エ・カーロ、プオ・ファーレ・ウノ・スコント",
+                "audio": ""
+              },
+              {
+                "jp": "トイレはどこですか？",
+                "foreign": "Dov'è il bagno?",
+                "reading": "ドヴェ・イル・バーニョ",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "🔢 数字",
+            "items": [
+              {
+                "jp": "0〜5",
+                "foreign": "zero, uno, due, tre, quattro, cinque",
+                "reading": "ゼロ、ウーノ、ドゥーエ、トレ、クアットロ、チンクエ",
+                "audio": ""
+              },
+              {
+                "jp": "6〜10",
+                "foreign": "sei, sette, otto, nove, dieci",
+                "reading": "セイ、セッテ、オット、ノーヴェ、ディエチ",
+                "audio": ""
+              }
+            ]
+          },
+          {
+            "label": "🆘 観光・トラブル",
+            "items": [
+              {
+                "jp": "写真を撮ってもいいですか？",
+                "foreign": "Posso fare una foto?",
+                "reading": "ポッソ・ファーレ・ウナ・フォト",
+                "audio": ""
+              },
+              {
+                "jp": "安全ですか？",
+                "foreign": "È sicuro?",
+                "reading": "エ・シクーロ",
+                "audio": ""
+              },
+              {
+                "jp": "助けてください！",
+                "foreign": "Aiuto!",
+                "reading": "アイウート",
+                "audio": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "food_section_title": "イタリアグルメ図鑑",
+  "food_filter_types": [
+    {
+      "id": "all",
+      "label": "すべて",
+      "active": true
+    }
+  ],
+  "food_filter_cities": [
+    {
+      "id": "national",
+      "label": "全国"
+    },
+    {
+      "id": "rome",
+      "label": "ローマ"
+    },
+    {
+      "id": "florence",
+      "label": "フィレンツェ"
+    },
+    {
+      "id": "venice",
+      "label": "ヴェネツィア"
+    },
+    {
+      "id": "milan",
+      "label": "ミラノ"
+    }
+  ],
+  "food_modal_phrase_main": "これをください",
+  "food_modal_phrase_sub": "Vorrei questo（ヴォレイ・クエスト）",
+  "food_items": [
+    {
+      "num": "No.01",
+      "name": "マルゲリータピザ",
+      "must": true,
+      "badge": "国民的料理",
+      "type": "main",
+      "city": "national",
+      "desc": "ナポリ発祥、薄い生地をもちもちに焼き上げた本場のピザ。トマト・モッツァレラ・バジルの三色がイタリア国旗を表す一枚。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%B2%E3%83%AA%E3%83%BC%E3%82%BF%E3%83%94%E3%82%B6%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%20%E6%96%99%E7%90%86",
+      "order_ico": "🍕",
+      "order_name_en": "Margherita Pizza",
+      "prompt_en": "Neapolitan Margherita pizza, thin crust with tomato mozzarella and basil, wood-fired oven char, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/マルゲリータピザ.webp"
+    },
+    {
+      "num": "No.02",
+      "name": "カルボナーラ",
+      "must": true,
+      "badge": "ローマ4大パスタ",
+      "type": "main",
+      "city": "rome",
+      "desc": "卵・グアンチャーレ（豚頬肉）・ペコリーノチーズだけで仕上げるローマの定番パスタ。生クリームを使わない濃厚なコクが本場の味。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%9C%E3%83%8A%E3%83%BC%E3%83%A9%20%E3%83%AD%E3%83%BC%E3%83%9E%20%E6%96%99%E7%90%86",
+      "order_ico": "🍝",
+      "order_name_en": "Carbonara",
+      "prompt_en": "Italian Carbonara pasta, creamy egg sauce with guanciale and pecorino cheese, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/カルボナーラ.webp"
+    },
+    {
+      "num": "No.03",
+      "name": "カチョ・エ・ペペ",
+      "badge": "ローマ4大パスタ",
+      "type": "main",
+      "city": "rome",
+      "desc": "ペコリーノチーズと黒胡椒だけで作るシンプル極まりないローマの郷土パスタ。少ない材料ながら乳化の技術が味を左右する奥深い一皿。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%81%E3%83%A7%E3%83%BB%E3%82%A8%E3%83%BB%E3%83%9A%E3%83%9A%20%E3%83%91%E3%82%B9%E3%82%BF",
+      "order_ico": "🧀",
+      "order_name_en": "Cacio e Pepe",
+      "prompt_en": "Italian Cacio e Pepe pasta, pecorino cheese and black pepper sauce, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/カチョ・エ・ペペ.webp"
+    },
+    {
+      "num": "No.04",
+      "name": "ティラミス",
+      "must": true,
+      "badge": "定番デザート",
+      "type": "dessert",
+      "city": "venice",
+      "desc": "ヴェネト州発祥、コーヒーを染み込ませたビスケットとマスカルポーネクリームを層にしたイタリアを代表するデザート。本場の一皿は驚くほど軽い口当たり。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%86%E3%82%A3%E3%83%A9%E3%83%9F%E3%82%B9%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🍰",
+      "order_name_en": "Tiramisu",
+      "prompt_en": "Italian Tiramisu, layered mascarpone and coffee-soaked ladyfingers dusted with cocoa, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/ティラミス.webp"
+    },
+    {
+      "num": "No.05",
+      "name": "ジェラート",
+      "must": true,
+      "badge": "食べ歩きの定番",
+      "type": "dessert",
+      "city": "national",
+      "desc": "空気含有量が少なく素材の風味を濃厚に感じられるイタリア式アイス。街角のジェラテリアで食べ比べるのも旅の楽しみのひとつ。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B8%E3%82%A7%E3%83%A9%E3%83%BC%E3%83%88%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🍨",
+      "order_name_en": "Gelato",
+      "prompt_en": "Italian gelato, colorful scoops in a cone, gelateria display case, food photography",
+      "plate_color": "cone",
+      "image": "素材/グルメ/ジェラート.webp"
+    },
+    {
+      "num": "No.06",
+      "name": "リゾット・アッラ・ミラネーゼ",
+      "badge": "ミラノ名物",
+      "type": "rice",
+      "city": "milan",
+      "desc": "サフランで黄金色に炊き上げたミラノの郷土リゾット。骨髄出汁とバターのコクが溶け込んだ、見た目も華やかな一皿。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%AA%E3%82%BE%E3%83%83%E3%83%88%E3%83%BB%E3%82%A2%E3%83%83%E3%83%A9%E3%83%BB%E3%83%9F%E3%83%A9%E3%83%8D%E3%83%BC%E3%82%BC",
+      "order_ico": "🍚",
+      "order_name_en": "Risotto alla Milanese",
+      "prompt_en": "Risotto alla Milanese, saffron golden risotto, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/リゾット・アッラ・ミラネーゼ.webp"
+    },
+    {
+      "num": "No.07",
+      "name": "コトレッタ・アラ・ミラネーゼ",
+      "badge": "ミラノ名物",
+      "type": "main",
+      "city": "milan",
+      "desc": "骨付き仔牛肉に衣をつけてバターで揚げ焼きにしたミラノ風カツレツ。日本のとんかつのルーツとも言われる一品。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B3%E3%83%88%E3%83%AC%E3%83%83%E3%82%BF%E3%83%BB%E3%82%A2%E3%83%A9%E3%83%BB%E3%83%9F%E3%83%A9%E3%83%8D%E3%83%BC%E3%82%BC",
+      "order_ico": "🍖",
+      "order_name_en": "Cotoletta alla Milanese",
+      "prompt_en": "Cotoletta alla Milanese, breaded veal cutlet fried in butter, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/コトレッタ・アラ・ミラネーゼ.webp"
+    },
+    {
+      "num": "No.08",
+      "name": "ビステッカ・アッラ・フィオレンティーナ",
+      "must": true,
+      "badge": "フィレンツェ名物",
+      "type": "main",
+      "city": "florence",
+      "desc": "キアーナ牛のTボーンステーキを炭火でレアに焼き上げるトスカーナの豪快な名物料理。1kg超えのボリュームで数人でシェアするのが定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%93%E3%82%B9%E3%83%86%E3%83%83%E3%82%AB%E3%83%BB%E3%82%A2%E3%83%83%E3%83%A9%E3%83%BB%E3%83%95%E3%82%A3%E3%82%AA%E3%83%AC%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BC%E3%83%8A",
+      "order_ico": "🥩",
+      "order_name_en": "Bistecca alla Fiorentina",
+      "prompt_en": "Bistecca alla Fiorentina, large T-bone steak grilled rare, Tuscan restaurant, food photography",
+      "plate_color": "wooden board",
+      "image": "素材/グルメ/ビステッカ・アッラ・フィオレンティーナ.webp"
+    },
+    {
+      "num": "No.09",
+      "name": "トルテッリーニ",
+      "badge": "ボローニャ名物",
+      "type": "main",
+      "city": "national",
+      "desc": "肉やチーズを詰めた指輪型の小さなパスタ。ボローニャ発祥で、鶏の出汁スープに浮かべる「イン・ブロード」が本場の食べ方。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%88%E3%83%AB%E3%83%86%E3%83%83%E3%83%AA%E3%83%BC%E3%83%8B%20%E3%83%9C%E3%83%AD%E3%83%BC%E3%83%8B%E3%83%A3",
+      "order_ico": "🥟",
+      "order_name_en": "Tortellini in Brodo",
+      "prompt_en": "Tortellini in brodo, ring-shaped stuffed pasta in clear chicken broth, food photography",
+      "plate_color": "white bowl",
+      "image": "素材/グルメ/トルテッリーニ.webp"
+    },
+    {
+      "num": "No.10",
+      "name": "生ハムとメロン",
+      "badge": "前菜の定番",
+      "type": "main",
+      "city": "national",
+      "desc": "プロシュット・クルードの塩気とメロンの甘さが絶妙に合う、イタリアの食卓に欠かせない前菜。パルマ産の生ハムが特に有名。",
+      "wiki_url": "https://www.google.com/search?q=%E7%94%9F%E3%83%8F%E3%83%A0%E3%81%A8%E3%83%A1%E3%83%AD%E3%83%B3%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🍈",
+      "order_name_en": "Prosciutto e Melone",
+      "prompt_en": "Prosciutto e melone, thinly sliced cured ham wrapped around cantaloupe melon, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/生ハムとメロン.webp"
+    },
+    {
+      "num": "No.11",
+      "name": "パルミジャーノ・レッジャーノ",
+      "badge": "チーズの王様",
+      "type": "main",
+      "city": "national",
+      "desc": "エミリア＝ロマーニャ州特産の長期熟成硬質チーズ。「チーズの王様」と称され、パスタに削りかけるだけで格段に風味が増す。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%91%E3%83%AB%E3%83%9F%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8E%E3%83%BB%E3%83%AC%E3%83%83%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8E",
+      "order_ico": "🧀",
+      "order_name_en": "Parmigiano Reggiano",
+      "prompt_en": "Parmigiano Reggiano wheel, aged hard cheese, cheese shop display, food photography",
+      "plate_color": "wooden board",
+      "image": "素材/グルメ/パルミジャーノ・レッジャーノ.webp"
+    },
+    {
+      "num": "No.12",
+      "name": "エスプレッソ",
+      "must": true,
+      "badge": "バール文化の象徴",
+      "type": "drink",
+      "city": "national",
+      "desc": "イタリア人の生活に欠かせない一杯。バールのカウンターで数百円、数十秒で飲み干すのが現地流の楽しみ方。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A8%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%82%BD%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "☕",
+      "order_name_en": "Espresso",
+      "prompt_en": "Italian espresso in a small cup, bar counter, food photography",
+      "plate_color": "small cup",
+      "image": "素材/グルメ/エスプレッソ.webp"
+    },
+    {
+      "num": "No.13",
+      "name": "アペロール・スプリッツ",
+      "badge": "ヴェネツィア発祥",
+      "type": "drink",
+      "city": "venice",
+      "desc": "オレンジ色が鮮やかな食前酒。ヴェネツィア発祥で、夕暮れ時に運河沿いのバールで楽しむのが定番の過ごし方。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%83%9A%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%BB%E3%82%B9%E3%83%97%E3%83%AA%E3%83%83%E3%83%84",
+      "order_ico": "🍹",
+      "order_name_en": "Aperol Spritz",
+      "prompt_en": "Aperol Spritz cocktail, bright orange drink with ice and orange slice, canal-side bar terrace, food photography",
+      "plate_color": "wine glass",
+      "image": "素材/グルメ/アペロール・スプリッツ.webp"
+    },
+    {
+      "num": "No.14",
+      "name": "フォカッチャ",
+      "badge": "リグーリア名物",
+      "type": "main",
+      "city": "national",
+      "desc": "オリーブオイルをたっぷり染み込ませて焼く平たいパン。リグーリア州（チンクエテッレ周辺）が本場で、塩気ときめ細かい食感が特徴。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%95%E3%82%A9%E3%82%AB%E3%83%83%E3%83%81%E3%83%A3%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🍞",
+      "order_name_en": "Focaccia",
+      "prompt_en": "Italian Focaccia bread, golden crust with olive oil and rosemary, food photography",
+      "plate_color": "wooden board",
+      "image": "素材/グルメ/フォカッチャ.webp"
+    },
+    {
+      "num": "No.15",
+      "name": "アランチーニ",
+      "badge": "シチリア名物",
+      "type": "main",
+      "city": "national",
+      "desc": "ライスコロッケのようなシチリア名物の揚げ物。中にはラグーソースやチーズが詰まっており、食べ歩きにもぴったり。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%83%A9%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8B%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2",
+      "order_ico": "🍙",
+      "order_name_en": "Arancini",
+      "prompt_en": "Sicilian Arancini, golden fried rice balls cut open showing ragu filling, food photography",
+      "plate_color": "wooden board",
+      "image": "素材/グルメ/アランチーニ.webp"
+    },
+    {
+      "num": "No.16",
+      "name": "カンノーリ",
+      "badge": "シチリア名物",
+      "type": "dessert",
+      "city": "national",
+      "desc": "パリパリの筒状生地にリコッタチーズのクリームを詰めたシチリア発祥の伝統菓子。両端からピスタチオがのぞく見た目も可愛らしい。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%B3%E3%83%8E%E3%83%BC%E3%83%AA%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2",
+      "order_ico": "🥐",
+      "order_name_en": "Cannoli",
+      "prompt_en": "Sicilian Cannoli, crispy pastry tubes filled with sweet ricotta cream, pistachio garnish, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/カンノーリ.webp"
+    },
+    {
+      "num": "No.17",
+      "name": "オッソブーコ",
+      "badge": "ミラノ名物",
+      "type": "main",
+      "city": "milan",
+      "desc": "仔牛のすね肉を骨ごと白ワインでじっくり煮込んだミラノの郷土料理。骨の中の骨髄をすくって食べるのが通の楽しみ方。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AA%E3%83%83%E3%82%BD%E3%83%96%E3%83%BC%E3%82%B3%20%E3%83%9F%E3%83%A9%E3%83%8E",
+      "order_ico": "🍖",
+      "order_name_en": "Ossobuco",
+      "prompt_en": "Italian Ossobuco, braised veal shank with bone marrow, rich sauce, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/オッソブーコ.webp"
+    },
+    {
+      "num": "No.18",
+      "name": "ブルスケッタ",
+      "badge": "前菜の定番",
+      "type": "main",
+      "city": "national",
+      "desc": "カリッと焼いたバゲットにトマトやオリーブオイルをのせたシンプルな前菜。バールの軽食としても親しまれている。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%82%B9%E3%82%B1%E3%83%83%E3%82%BF%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🍅",
+      "order_name_en": "Bruschetta",
+      "prompt_en": "Italian Bruschetta, toasted bread topped with diced tomato and basil, food photography",
+      "plate_color": "wooden board",
+      "image": "素材/グルメ/ブルスケッタ.webp"
+    },
+    {
+      "num": "No.19",
+      "name": "リモンチェッロ",
+      "badge": "南部名物リキュール",
+      "type": "drink",
+      "city": "national",
+      "desc": "アマルフィ海岸などレモンの名産地で作られる、爽やかな甘さのレモンリキュール。食後酒として冷やして小さなグラスで味わう。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%AA%E3%83%A2%E3%83%B3%E3%83%81%E3%82%A7%E3%83%83%E3%83%AD%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🍋",
+      "order_name_en": "Limoncello",
+      "prompt_en": "Limoncello liqueur in a small chilled glass, bright yellow color, Amalfi coast lemons in background, food photography",
+      "plate_color": "small glass",
+      "image": "素材/グルメ/リモンチェッロ.webp"
+    },
+    {
+      "num": "No.20",
+      "name": "ラザニア",
+      "badge": "定番家庭料理",
+      "type": "main",
+      "city": "national",
+      "desc": "板状パスタとミートソース・ベシャメルソースを何層にも重ねてオーブンで焼き上げる、日本でもおなじみのパスタ料理。エミリア＝ロマーニャ州が発祥地とされる。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A9%E3%82%B6%E3%83%8B%E3%82%A2%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🍝",
+      "order_name_en": "Lasagna",
+      "prompt_en": "Italian Lasagna, layered pasta with meat sauce and bechamel, baked golden top, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/ラザニア.webp"
+    }
+  ],
+  "spots_section_title": "イタリア観光スポット図鑑",
+  "spots_filter_types": [
+    {
+      "id": "heritage",
+      "label": "世界遺産・史跡"
+    },
+    {
+      "id": "religious",
+      "label": "宗教施設"
+    },
+    {
+      "id": "nature",
+      "label": "自然"
+    },
+    {
+      "id": "market",
+      "label": "ショッピング"
+    },
+    {
+      "id": "museum",
+      "label": "博物館・美術館"
+    },
+    {
+      "id": "townscape",
+      "label": "街並み・建築"
+    },
+    {
+      "id": "activity",
+      "label": "アクティビティ"
+    }
+  ],
+  "spots_filter_cities": [
+    {
+      "id": "rome",
+      "label": "ローマ"
+    },
+    {
+      "id": "florence",
+      "label": "フィレンツェ"
+    },
+    {
+      "id": "venice",
+      "label": "ヴェネツィア"
+    },
+    {
+      "id": "milan",
+      "label": "ミラノ"
+    }
+  ],
+  "spot_sections": [
+    {
+      "city_id": "rome",
+      "city_name": "ローマ",
+      "city_desc": "古代ローマの遺跡が現役の街並みに溶け込む「永遠の都」。コロッセオからバチカンまで見どころが尽きない",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "直行便なし、経由14〜17時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "レオナルド・エクスプレス 約32分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "カルボナーラ・カチョ・エ・ペペ",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "地下鉄・バス・徒歩",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "ROM 01",
+          "name": "コロッセオ",
+          "desc": "紀元80年に完成した古代ローマの円形闘技場。約5万人を収容した観客席の遺構は、2000年前の建築技術の高さを今に伝える世界遺産。事前予約が必須級。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "Colosseum Rome, ancient amphitheater ruins, golden hour light on stone arches, travel photography",
+          "type": "heritage",
+          "image": "素材/観光スポット/コロッセオ.webp"
+        },
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "ROM 02",
+          "name": "フォロ・ロマーノ",
+          "desc": "古代ローマの政治・経済の中心地だった広場跡。神殿や凱旋門の柱が立ち並ぶ景観は、かつての帝国の繁栄を今に伝える。",
+          "badge": "世界遺産",
+          "prompt_en": "Roman Forum, ancient ruins with standing columns and triumphal arch, travel photography",
+          "type": "heritage",
+          "image": "素材/観光スポット/フォロ・ロマーノ.webp"
+        },
+        {
+          "must": true,
+          "icon": "🖼️",
+          "num": "ROM 03",
+          "name": "バチカン美術館・システィーナ礼拝堂",
+          "desc": "ミケランジェロの「天地創造」「最後の審判」が天井と壁を埋め尽くす、世界屈指の美術コレクション。長い回廊を経てたどり着く礼拝堂の圧倒的な迫力は必見。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "Sistine Chapel Vatican Museums, Michelangelo ceiling fresco, grand corridor, travel photography",
+          "type": "museum",
+          "image": "素材/観光スポット/バチカン美術館・システィーナ礼拝堂.webp"
+        },
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "ROM 04",
+          "name": "サン・ピエトロ大聖堂",
+          "desc": "カトリックの総本山、バチカン市国のシンボル。ミケランジェロ設計の巨大なドームに登れば、ローマの街並みを一望できる。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "St. Peter's Basilica Vatican, grand dome and facade, St. Peter's Square, travel photography",
+          "type": "religious",
+          "image": "素材/観光スポット/サン・ピエトロ大聖堂.webp"
+        },
+        {
+          "must": true,
+          "icon": "⛲",
+          "num": "ROM 05",
+          "name": "トレヴィの泉",
+          "desc": "後ろ向きにコインを投げると再びローマに戻れるという伝説で有名なバロック様式の噴水。夜のライトアップも美しく、常に観光客で賑わう。",
+          "badge": "定番フォトスポット",
+          "prompt_en": "Trevi Fountain Rome, baroque fountain with turquoise water, evening light, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/トレヴィの泉.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "ROM 06",
+          "name": "パンテオン",
+          "desc": "2000年近く前に建てられた古代ローマの神殿で、現存する古代建築の中でも保存状態が抜群。天井の丸い開口部から差し込む光が神秘的な空間を作る。",
+          "badge": "世界遺産",
+          "prompt_en": "Pantheon Rome, ancient temple interior with oculus light beam, travel photography",
+          "type": "heritage",
+          "image": "素材/観光スポット/パンテオン.webp"
+        },
+        {
+          "must": false,
+          "icon": "🪜",
+          "num": "ROM 07",
+          "name": "スペイン広場",
+          "desc": "映画『ローマの休日』の舞台としても知られる大階段。夕方には多くの若者や観光客が腰を下ろし、街の空気を楽しむ人気スポット。",
+          "badge": "映画の舞台",
+          "prompt_en": "Spanish Steps Rome, grand staircase with tourists, evening atmosphere, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/スペイン広場.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "ROM 08",
+          "name": "ナヴォーナ広場",
+          "desc": "バロック彫刻家ベルニーニ作の「四大河の噴水」が中央にそびえる、ローマで最も美しいとされる広場。周囲にはカフェやストリートアーティストが集う。",
+          "badge": "街歩きの定番",
+          "prompt_en": "Piazza Navona Rome, baroque fountain sculpture, elegant square, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/ナヴォーナ広場.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "florence",
+      "city_name": "フィレンツェ",
+      "city_desc": "ルネサンス芸術発祥の地。赤い屋根が連なる旧市街と丘の上からの絶景で知られるトスカーナの中心都市",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ローマから高速鉄道 約1.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "駅↔中心部",
+          "value": "サンタ・マリア・ノヴェッラ駅から徒歩圏内",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "1"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "ビステッカ・アッラ・フィオレンティーナ",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "徒歩（旧市街はコンパクト）",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "FIR 01",
+          "name": "フィレンツェ大聖堂（花の聖母寺）",
+          "desc": "赤い巨大クーポラが街のシンボルとなっている大聖堂。ブルネレスキが設計したドームは当時最先端の建築技術の結晶で、クーポラ上からの眺めは絶景。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "Florence Cathedral Duomo, red brick dome and marble facade, travel photography",
+          "type": "religious",
+          "image": "素材/観光スポット/フィレンツェ大聖堂（花の聖母寺）.webp"
+        },
+        {
+          "must": true,
+          "icon": "🖼️",
+          "num": "FIR 02",
+          "name": "ウフィツィ美術館",
+          "desc": "ボッティチェリ「ヴィーナスの誕生」など、ルネサンス絵画の傑作が集まる世界屈指の美術館。メディチ家が集めたコレクションを堪能できる。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "Uffizi Gallery Florence, renaissance art museum interior, grand corridor, travel photography",
+          "type": "museum",
+          "image": "素材/観光スポット/ウフィツィ美術館.webp"
+        },
+        {
+          "must": true,
+          "icon": "🌉",
+          "num": "FIR 03",
+          "name": "ヴェッキオ橋",
+          "desc": "アルノ川に架かる最古の橋で、橋の上に宝飾店が立ち並ぶ独特の光景が広がる。夕暮れ時の川面に映る街並みは特に美しい。",
+          "badge": "定番フォトスポット",
+          "prompt_en": "Ponte Vecchio Florence, old stone bridge with shops, Arno river sunset, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/ヴェッキオ橋.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌅",
+          "num": "FIR 04",
+          "name": "ミケランジェロ広場",
+          "desc": "旧市街を見下ろす丘の上の展望広場。赤い屋根が連なるフィレンツェの街並みと大聖堂のクーポラを一望できる、夕景の名所。",
+          "badge": "絶景スポット",
+          "prompt_en": "Piazzale Michelangelo Florence, panoramic city view with terracotta rooftops, sunset, travel photography",
+          "type": "nature",
+          "image": "素材/観光スポット/ミケランジェロ広場.webp"
+        },
+        {
+          "must": false,
+          "icon": "🖼️",
+          "num": "FIR 05",
+          "name": "アカデミア美術館",
+          "desc": "ミケランジェロの傑作彫刻「ダビデ像」を間近で見られる美術館。5メートル近い巨像の圧倒的な存在感は必見。",
+          "badge": "世界的名作",
+          "prompt_en": "Accademia Gallery Florence, Michelangelo's David statue, travel photography",
+          "type": "museum",
+          "image": "素材/観光スポット/アカデミア美術館.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏰",
+          "num": "FIR 06",
+          "name": "ピッティ宮殿・ボーボリ庭園",
+          "desc": "メディチ家の壮麗な宮殿と、幾何学的に整えられた広大な庭園。旧市街の喧騒を離れてゆったり散策できる緑豊かなスポット。",
+          "badge": "メディチ家ゆかりの地",
+          "prompt_en": "Pitti Palace Boboli Gardens Florence, Renaissance palace and formal garden, travel photography",
+          "type": "heritage",
+          "image": "素材/観光スポット/ピッティ宮殿・ボーボリ庭園.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "venice",
+      "city_name": "ヴェネツィア",
+      "city_desc": "車道のない運河の街。ゴンドラが行き交う小径と広場が、まるで舞台セットのような非日常を作り出す",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "フィレンツェから高速鉄道 約2時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "水上バス（ヴァポレット） 約1時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "アペロール・スプリッツ",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "徒歩・水上バス",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "VEN 01",
+          "name": "サン・マルコ広場・大聖堂",
+          "desc": "「世界一美しい広場」とナポレオンが称した街の中心。黄金のモザイクで彩られた大聖堂と、周囲を囲むカフェの音楽が独特の雰囲気を作る。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "St. Mark's Square Venice, golden basilica facade, pigeons and cafes, travel photography",
+          "type": "religious",
+          "image": "素材/観光スポット/サン・マルコ広場・大聖堂.webp"
+        },
+        {
+          "must": true,
+          "icon": "🏰",
+          "num": "VEN 02",
+          "name": "ドゥカーレ宮殿",
+          "desc": "ヴェネツィア共和国の総督が住んだゴシック様式の宮殿。豪華絢爛な内部装飾と、隣接する「ため息橋」の伝説も見どころ。",
+          "badge": "世界遺産",
+          "prompt_en": "Doge's Palace Venice, Gothic architecture facade, Grand Canal view, travel photography",
+          "type": "heritage",
+          "image": "素材/観光スポット/ドゥカーレ宮殿.webp"
+        },
+        {
+          "must": true,
+          "icon": "🌉",
+          "num": "VEN 03",
+          "name": "リアルト橋",
+          "desc": "大運河に架かる最も有名な石橋。橋の上には土産物店が並び、運河を行き交うゴンドラや水上バスを眺めるビュースポットとしても人気。",
+          "badge": "定番フォトスポット",
+          "prompt_en": "Rialto Bridge Venice, stone bridge over Grand Canal, gondolas passing, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/リアルト橋.webp"
+        },
+        {
+          "must": false,
+          "icon": "🚣",
+          "num": "VEN 04",
+          "name": "ゴンドラ体験",
+          "desc": "船頭が漕ぐ伝統の木造船で、細い運河をゆったりと巡る体験。料金は時間制で決まっており、夕暮れ時は特にロマンチックな雰囲気。",
+          "badge": "ヴェネツィアの定番体験",
+          "prompt_en": "Gondola ride Venice, narrow canal between historic buildings, gondolier rowing, travel photography",
+          "type": "activity",
+          "image": "素材/観光スポット/ゴンドラ体験.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "VEN 05",
+          "name": "ブラーノ島",
+          "desc": "極彩色の家々が運河沿いに並ぶ、絵本のような漁師町。本島から水上バスで約45分、レース編みの伝統工芸でも知られる。",
+          "badge": "カラフルな離島",
+          "prompt_en": "Burano Island Venice, colorful houses along canal, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/ブラーノ島.webp"
+        },
+        {
+          "must": false,
+          "icon": "🔥",
+          "num": "VEN 06",
+          "name": "ムラーノ島",
+          "desc": "700年以上の歴史を持つヴェネツィアングラスの生産地。工房見学や職人の実演を見学でき、繊細なガラス製品のショッピングも楽しめる。",
+          "badge": "ガラス工芸の島",
+          "prompt_en": "Murano Island Venice, glassblowing workshop, colorful Venetian glass artworks, travel photography",
+          "type": "market",
+          "image": "素材/観光スポット/ムラーノ島.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "milan",
+      "city_name": "ミラノ",
+      "city_desc": "世界的ファッションブランドが集まる経済・モードの中心地。壮麗な大聖堂と「最後の晩餐」でも有名",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ANA羽田直行 約13時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "マルペンサ・エクスプレス 約50分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "3"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "リゾット・アッラ・ミラネーゼ",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "地下鉄・トラム",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "MIL 01",
+          "name": "ミラノ大聖堂（ドゥオーモ）",
+          "desc": "600年以上の歳月をかけて建てられたゴシック建築の傑作。無数の尖塔と彫刻に覆われた外観は圧巻で、屋上テラスからはミラノ市街とアルプス山脈を望める。",
+          "badge": "世界的建築・必見",
+          "prompt_en": "Milan Cathedral Duomo, Gothic spires and facade, rooftop terrace view, travel photography",
+          "type": "religious",
+          "image": "素材/観光スポット/ミラノ大聖堂（ドゥオーモ）.webp"
+        },
+        {
+          "must": true,
+          "icon": "🛍️",
+          "num": "MIL 02",
+          "name": "ヴィットーリオ・エマヌエーレ2世のガレリア",
+          "desc": "ドゥオーモに隣接する19世紀のショッピングアーケード。ガラス張りの美しい天井とモザイクの床で「世界最古のショッピングモール」とも呼ばれる。",
+          "badge": "優雅なアーケード",
+          "prompt_en": "Galleria Vittorio Emanuele II Milan, glass-domed arcade, elegant shops, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/ヴィットーリオ・エマヌエーレ2世のガレリア.webp"
+        },
+        {
+          "must": true,
+          "icon": "🖼️",
+          "num": "MIL 03",
+          "name": "最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）",
+          "desc": "レオナルド・ダ・ヴィンチが描いた世界的名画。教会の食堂の壁に直接描かれており、鑑賞は完全予約制・入替制で15分間のみという貴重な体験。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "The Last Supper mural Santa Maria delle Grazie Milan, Leonardo da Vinci fresco, travel photography",
+          "type": "museum",
+          "image": "素材/観光スポット/最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏰",
+          "num": "MIL 04",
+          "name": "スフォルツェスコ城",
+          "desc": "15世紀にミラノ公国を治めたスフォルツァ家の居城。現在は美術館・博物館として公開されており、ミケランジェロ最後の彫刻作品も収蔵する。",
+          "badge": "歴史的居城",
+          "prompt_en": "Sforza Castle Milan, Renaissance fortress with brick towers, travel photography",
+          "type": "heritage",
+          "image": "素材/観光スポット/スフォルツェスコ城.webp"
+        },
+        {
+          "must": false,
+          "icon": "🚤",
+          "num": "MIL 05",
+          "name": "ナヴィリオ運河地区",
+          "desc": "レオナルド・ダ・ヴィンチが設計に関わったとされる運河沿いのエリア。夕方から夜にかけてバールが賑わい、アペリティーボ文化を楽しめる。",
+          "badge": "夜のアペリティーボ",
+          "prompt_en": "Navigli canal district Milan, canal-side bars in the evening, lively atmosphere, travel photography",
+          "type": "activity",
+          "image": "素材/観光スポット/ナヴィリオ運河地区.webp"
+        }
+      ]
+    }
+  ],
+  "transport_items": [
+    {
+      "icon": "🚄",
+      "name": "Frecciarossa / Italo（高速鉄道）",
+      "desc": "ローマ〜フィレンツェ間は約1.5時間、ローマ〜ミラノ間は約3時間で結ぶ快適な高速鉄道。早期予約で価格が大きく下がる。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "✈️",
+      "name": "国内線",
+      "desc": "遠距離区間や離島（シチリア等）はLCCも就航。ITAエアウェイズ・ライアンエアーなどが主要路線をカバー。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚇",
+      "name": "地下鉄・バス・トラム",
+      "desc": "ローマ・ミラノは地下鉄網が発達しており、1日券や回数券が便利。フィレンツェ・ヴェネツィアの旧市街は徒歩が基本。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚤",
+      "name": "水上バス（ヴァポレット）",
+      "desc": "ヴェネツィアの主要な移動手段。運河沿いに走る公共の水上バスで、1回券より複数日パスがお得。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚌",
+      "name": "長距離バス",
+      "desc": "FlixBusなどが運行する安価な長距離バス。鉄道より時間はかかるが、都市間移動のコストを抑えたい人向け。",
+      "affiliate": "",
+      "is_last": true
+    }
+  ],
+  "courses": {
+    "intro": "直行便（ミラノ）で約13時間・経由便なら14〜17時間、時差8時間のイタリアは「一つの国で古代・ルネサンス・水の都と全く違う顔に出会える」のが最大の強み。初めてならローマ・フィレンツェに絞った<strong>王道満喫プラン</strong>、2回目以降やまとまった休みが取れるならヴェネツィア・ミラノまで足を延ばす<strong>4都市縦断プラン</strong>がおすすめ。もっと欲張りたい人向けに、チンクエテッレやアマルフィ海岸まで巡る一段上のルートも紹介しています。",
+    "stable_title": "定番の2大プラン",
+    "stable_intro": "イタリア旅行の基本は「ローマ」を起点にするスタイル。都市間はFrecciarossa（高速鉄道）を活用すれば、スーツケースを持っての移動も1〜3時間程度で快適です。",
+    "stable_plans": [
+      {
+        "label": "プランA",
+        "title": "ローマ・フィレンツェ王道満喫　4泊5日",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "green",
+            "content_html": "<strong>ローマ到着</strong><br>経由便を乗り継いで到着、機内での長旅の疲れをホテルで癒す。時差もあるため初日は無理せず、旧市街を軽く散策する程度にとどめ、明日からの本格観光に備えて早めに休む。"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "red",
+            "content_html": "<strong>コロッセオ → フォロ・ロマーノ → パンテオン</strong><br>予約時間に合わせて<a onclick=\"showSpot('ROM 01')\" class=\"spot-link\">コロッセオ</a>の内部見学、<a onclick=\"showSpot('ROM 02')\" class=\"spot-link\">フォロ・ロマーノ</a>の遺跡群を歩き、夕方は<a onclick=\"showSpot('ROM 06')\" class=\"spot-link\">パンテオン</a>で古代建築の神秘に触れる、古代ローマ漬けの1日。"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "red",
+            "content_html": "<strong>バチカン美術館 → サン・ピエトロ大聖堂 → トレヴィの泉</strong><br>朝一で<a onclick=\"showSpot('ROM 03')\" class=\"spot-link\">バチカン美術館</a>のシスティーナ礼拝堂へ、続けて<a onclick=\"showSpot('ROM 04')\" class=\"spot-link\">サン・ピエトロ大聖堂</a>のドームからローマを一望。夕方は<a onclick=\"showSpot('ROM 05')\" class=\"spot-link\">トレヴィの泉</a>にコインを投げ、再訪を誓う。"
+          },
+          {
+            "transit": true,
+            "label": "Day 4",
+            "badge_class": "green",
+            "duration": "ローマ→フィレンツェ（Frecciarossa 約1.5時間）",
+            "train": true,
+            "content_html": "<strong>フィレンツェへ移動 → ドゥオーモ → ウフィツィ美術館</strong><br>高速鉄道でトスカーナの中心地へ。到着後は<a onclick=\"showSpot('FIR 01')\" class=\"spot-link\">フィレンツェ大聖堂</a>の巨大クーポラを見上げ、<a onclick=\"showSpot('FIR 02')\" class=\"spot-link\">ウフィツィ美術館</a>でルネサンス絵画の傑作群に浸る。"
+          },
+          {
+            "transit": false,
+            "label": "Day 5",
+            "badge_class": "green",
+            "content_html": "<strong>ヴェッキオ橋 → ミケランジェロ広場 → 帰国</strong><br><a onclick=\"showSpot('FIR 03')\" class=\"spot-link\">ヴェッキオ橋</a>を渡り、<a onclick=\"showSpot('FIR 04')\" class=\"spot-link\">ミケランジェロ広場</a>から街を一望したら、ローマ経由で帰国の途へ。古代とルネサンス、2つの黄金時代を味わった密度の濃い旅になったはず。"
+          }
+        ]
+      },
+      {
+        "label": "プランB",
+        "title": "ローマ→フィレンツェ→ヴェネツィア→ミラノ　6泊7日",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "green",
+            "content_html": "<strong>ローマ到着</strong><br>経由便で到着後はホテルで休息。翌日からの本格観光に備え、旧市街を軽く散策する程度にとどめる。"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "red",
+            "content_html": "<strong>コロッセオ → フォロ・ロマーノ → スペイン広場</strong><br><a onclick=\"showSpot('ROM 01')\" class=\"spot-link\">コロッセオ</a>と<a onclick=\"showSpot('ROM 02')\" class=\"spot-link\">フォロ・ロマーノ</a>で古代ローマの遺跡群を歩き、夕方は<a onclick=\"showSpot('ROM 07')\" class=\"spot-link\">スペイン広場</a>で映画さながらの雰囲気を楽しむ。"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "red",
+            "content_html": "<strong>バチカン美術館 → サン・ピエトロ大聖堂</strong><br><a onclick=\"showSpot('ROM 03')\" class=\"spot-link\">バチカン美術館</a>のシスティーナ礼拝堂と<a onclick=\"showSpot('ROM 04')\" class=\"spot-link\">サン・ピエトロ大聖堂</a>を巡る、密度の濃いバチカン1日。"
+          },
+          {
+            "transit": true,
+            "label": "Day 4",
+            "badge_class": "green",
+            "duration": "ローマ→フィレンツェ（Frecciarossa 約1.5時間）",
+            "train": true,
+            "content_html": "<strong>フィレンツェへ移動 → ドゥオーモ → アカデミア美術館</strong><br><a onclick=\"showSpot('FIR 01')\" class=\"spot-link\">フィレンツェ大聖堂</a>のクーポラを見上げ、<a onclick=\"showSpot('FIR 05')\" class=\"spot-link\">アカデミア美術館</a>でミケランジェロの「ダビデ像」と対面する。"
+          },
+          {
+            "transit": true,
+            "label": "Day 5",
+            "badge_class": "blue",
+            "duration": "フィレンツェ→ヴェネツィア（Frecciarossa 約2時間）",
+            "train": true,
+            "content_html": "<strong>ヴェネツィアへ移動 → サン・マルコ広場 → ゴンドラ体験</strong><br>水の都へ移動し、<a onclick=\"showSpot('VEN 01')\" class=\"spot-link\">サン・マルコ広場</a>の黄金モザイクに見とれたら、夕暮れの<a onclick=\"showSpot('VEN 04')\" class=\"spot-link\">ゴンドラ</a>で運河をゆったり巡る、非日常な1日。"
+          },
+          {
+            "transit": true,
+            "label": "Day 6",
+            "badge_class": "green",
+            "duration": "ヴェネツィア→ミラノ（Frecciarossa 約2.5時間）",
+            "train": true,
+            "content_html": "<strong>ミラノへ移動 → ドゥオーモ → 最後の晩餐</strong><br><a onclick=\"showSpot('MIL 01')\" class=\"spot-link\">ミラノ大聖堂</a>の屋上テラスからアルプスを望み、事前予約した<a onclick=\"showSpot('MIL 03')\" class=\"spot-link\">最後の晩餐</a>を鑑賞する、旅のクライマックス。"
+          },
+          {
+            "transit": false,
+            "label": "Day 7",
+            "badge_class": "green",
+            "content_html": "<strong>帰国</strong><br>ミラノ発の直行便または経由便で日本へ。古代ローマ・ルネサンス・水の都・モードの都と、4つの全く違う顔を味わい尽くした密度の濃い旅になったはず。"
+          }
+        ]
+      }
+    ],
+    "adventure_title": "上級者向けルート",
+    "adventure_note_html": "定番の2プランでも物足りない！という人向けに、少し難易度の高いルートも紹介しています。",
+    "adventure_plan": {
+      "days": [
+        {
+          "transit": false,
+          "label": "Day 1",
+          "badge_class": "green",
+          "content_html": "<strong>ミラノ到着 → チンクエテッレへ</strong><br>ミラノ着後、鉄道でリグーリア海岸のチンクエテッレへ移動。カラフルな家々が断崖に張り付く5つの村を結ぶハイキングルートの起点となる村に宿泊する。"
+        },
+        {
+          "transit": false,
+          "label": "Day 2",
+          "badge_class": "red",
+          "content_html": "<strong>チンクエテッレ・ハイキング</strong><br>断崖沿いの遊歩道を歩き、モンテロッソからリオマッジョーレまで5つの村を巡る。眼下に広がるリグーリア海の絶景と、村ごとに味わうシーフードが疲れを癒してくれる。"
+        },
+        {
+          "transit": true,
+          "label": "Day 3",
+          "badge_class": "blue",
+          "duration": "チンクエテッレ→ナポリ（鉄道 約4〜5時間）",
+          "local_train": true,
+          "content_html": "<strong>ナポリへ移動</strong><br>南イタリアの玄関口ナポリへ。本場のマルゲリータピザを味わい、猥雑でエネルギッシュな旧市街の空気を体感する。"
+        },
+        {
+          "transit": true,
+          "label": "Day 4",
+          "badge_class": "green",
+          "duration": "ナポリ→アマルフィ（バス・フェリー 約2〜3時間）",
+          "content_html": "<strong>アマルフィ海岸へ</strong><br>断崖に張り付くように広がるパステルカラーの村々を、バスやフェリーで巡る。ポジターノの絶景とレモンの香りに包まれる、南イタリアらしい開放的な1日。"
+        },
+        {
+          "transit": false,
+          "label": "Day 5",
+          "badge_class": "green",
+          "content_html": "<strong>帰国</strong><br>ナポリ空港からミラノ・ローマ経由で日本へ。定番の北部・中部だけでは味わえない、南イタリアの太陽と海を満喫した旅になったはず。"
+        }
+      ],
+      "tip": "チンクエテッレは村によって宿泊費が大きく異なるため、リオマッジョーレなど比較的安価な村を拠点にするのがおすすめ。アマルフィ海岸のバスは本数が少なく道も混みやすいので、時間には余裕を持って。"
+    },
+    "cta_title": "旅程が決まったら予算をチェック！💰",
+    "cta_desc": "航空券・ホテル・食費など、イタリア旅行のリアルな費用感を予算タブでまとめて確認できます。",
+    "spot_data_js": ""
+  },
+  "spot_points": [
+    {
+      "title": "古代ローマの象徴、コロッセオ",
+      "body": "2000年前の建築技術を今に伝える円形闘技場。事前予約をしておけば当日の行列を避けられる。",
+      "spot_ref": "ROM 01",
+      "image": "素材/観光スポット/コロッセオ.webp"
+    },
+    {
+      "title": "ミラノ大聖堂の屋上テラス",
+      "body": "無数の尖塔が並ぶ屋根の上を歩ける貴重な体験。晴れた日はアルプス山脈まで見渡せる。",
+      "spot_ref": "MIL 01",
+      "image": "素材/観光スポット/ミラノ大聖堂（ドゥオーモ）.webp"
+    },
+    {
+      "title": "本場のマルゲリータピザ",
+      "body": "ナポリ発祥のもちもち生地とシンプルな具材の組み合わせは、イタリア各地で味の違いを食べ比べる楽しみもある。",
+      "food_ref": "No.01",
+      "image": "素材/グルメ/マルゲリータピザ.webp"
+    }
+  ]
+}

@@ -279,7 +279,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </script>
     <div class="city-grid-wrap">
       {% for city in cities %}
-      <div class="city-item" onclick="zoomToCity('{{city.id}}')"><div class="ci-name">{{city.name}}</div><div class="ci-badge {{city.badge_class}}" style="margin-bottom:5px">{{city.badge}}</div><div class="ci-desc">{{city.description}}</div><div class="ci-bottom"><button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('{{city.id}}')">観光地を見る →</button></div></div>
+      <div class="city-item" onclick="zoomToCity('{{city.id}}')"><div class="ci-name">{{city.name}}</div><div class="ci-badge {{city.badge_class}}" style="margin-bottom:5px">{{city.badge}}</div><div class="ci-desc">{{city.description}}</div><div class="ci-bottom">{% if city.no_spot_detail %}{% else %}<button class="ci-spots" onclick="event.stopPropagation();showFilteredSpots('{{city.id}}')">観光地を見る →</button>{% endif %}</div></div>
       {% endfor %}
     </div>
     </div><!-- end overflow:hidden 主要都市 -->
