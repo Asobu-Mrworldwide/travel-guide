@@ -10,6 +10,38 @@
 """
 import json, re, os, sys, urllib.parse
 
+# ──────────────────────────────────────────
+# イラスト画像の自動圧縮（表示速度対策）
+# ──────────────────────────────────────────
+IMAGE_MAX_DIMENSION = 1600   # px（長辺）
+IMAGE_QUALITY       = 82     # WebP品質
+IMAGE_SKIP_BYTES    = 600_000  # このサイズ以下は圧縮済みとみなしスキップ（多重劣化防止）
+
+def _optimize_image(path):
+    """素材の.webpが大きすぎる場合、リサイズ＋再圧縮してファイルサイズを縮める。
+    既に十分小さい（IMAGE_SKIP_BYTES以下）ファイルはスキップし、generate.pyを
+    繰り返し実行しても再エンコードで画質が劣化し続けないようにする。"""
+    try:
+        if os.path.getsize(path) <= IMAGE_SKIP_BYTES:
+            return
+        from PIL import Image
+        with Image.open(path) as im:
+            w, h = im.size
+            if max(w, h) > IMAGE_MAX_DIMENSION:
+                ratio = IMAGE_MAX_DIMENSION / max(w, h)
+                im = im.resize((max(1, int(w * ratio)), max(1, int(h * ratio))), Image.LANCZOS)
+            if im.mode in ('RGBA', 'LA') or (im.mode == 'P' and 'transparency' in im.info):
+                im = im.convert('RGBA')
+            else:
+                im = im.convert('RGB')
+            im.save(path, 'WEBP', quality=IMAGE_QUALITY, method=6)
+        after = os.path.getsize(path)
+        print(f'  🗜️  画像を圧縮: {os.path.basename(path)} → {after/1024:.0f}KB')
+    except ImportError:
+        print('  ⚠️  Pillowが未インストールのため画像圧縮をスキップしました（pip install Pillow）')
+    except Exception as e:
+        print(f'  ⚠️  画像圧縮に失敗: {path} ({e})')
+
 
 # ──────────────────────────────────────────
 # 移動アイコン（transit行 / pre_transit）
@@ -368,6 +400,8 @@ def generate(country_id):
         name     = item.get('name', '')
         img_path = os.path.join(food_dir, f'{name}.webp')
         rel_path = f'素材/グルメ/{name}.webp'
+        if os.path.exists(img_path):
+            _optimize_image(img_path)
         if os.path.exists(img_path) and item.get('image') != rel_path:
             item['image'] = rel_path
             json_updated  = True
@@ -379,6 +413,8 @@ def generate(country_id):
             name     = spot.get('name', '')
             img_path = os.path.join(spot_dir, f'{name}.webp')
             rel_path = f'素材/観光スポット/{name}.webp'
+            if os.path.exists(img_path):
+                _optimize_image(img_path)
             if os.path.exists(img_path) and spot.get('image') != rel_path:
                 spot['image'] = rel_path
                 json_updated  = True
@@ -391,6 +427,8 @@ def generate(country_id):
             continue
         img_path = os.path.join(city_img_dir, f'{city_id_key}.webp')
         rel_path = f'素材/都市/{city_id_key}.webp'
+        if os.path.exists(img_path):
+            _optimize_image(img_path)
         if os.path.exists(img_path) and section.get('city_image') != rel_path:
             section['city_image'] = rel_path
             json_updated = True
