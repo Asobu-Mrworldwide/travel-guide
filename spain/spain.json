@@ -719,12 +719,14 @@
       {
         "name": "カタール航空",
         "desc": "ドーハ経由。機内サービスの快適さで定評があり、マドリード・バルセロナ両方に就航。",
-        "price": "往復 15〜25万円"
+        "price": "往復 15〜25万円",
+        "logo": "../素材/航空会社/Qatar Airways.svg"
       },
       {
         "name": "エミレーツ航空",
         "desc": "ドバイ経由。乗り継ぎの利便性が高く、豊富な就航都市が魅力。",
-        "price": "往復 15〜26万円"
+        "price": "往復 15〜26万円",
+        "logo": "../素材/航空会社/Emirates.svg"
       },
       {
         "logo": "../素材/航空会社/JAL.svg",
@@ -736,7 +738,8 @@
       {
         "name": "ターキッシュエアラインズ",
         "desc": "イスタンブール経由。コストパフォーマンスに優れ人気の高いルート。",
-        "price": "往復 13〜22万円"
+        "price": "往復 13〜22万円",
+        "logo": "../素材/航空会社/Turkish Airlines.svg"
       }
     ],
     "flight_lead": "日本〜スペイン間は直行便がなく、中東やヨーロッパの主要都市を経由するのが基本です。乗り継ぎを含めると片道15時間以上かかることが多いため、経由地での短時間観光（ストップオーバー）を組み込む旅行者も多くいます。",
@@ -832,8 +835,8 @@
     "cash_dependency": "低",
     "cash_dependency_color": "#006847",
     "cash_dependency_note": "ほぼ全ての店でカード利用可、現金は市場・小額決済程度",
-    "cash_daily_low": "500",
-    "cash_daily_high": "2000",
+    "cash_daily_low": "10",
+    "cash_daily_high": "30",
     "cash_note": "1 EUR ≈ 170円で計算",
     "cash_tip_title": "💡 カードのタッチ決済が主流",
     "cash_tip_body": "地下鉄の改札からバルの会計まで、クレジットカードのタッチ決済（コンタクトレス）で完結することがほとんど。日本のカードも対応していれば現地SIMなしでも困らない。",
@@ -2227,8 +2230,7 @@
             "badge_class": "red",
             "content_html": "<strong>セビリアへ移動 → 大聖堂とスペイン広場</strong><br>バスでセビリアへ。<a onclick=\"showSpot('SVQ 01')\" class=\"spot-link\">セビリア大聖堂</a>のヒラルダの塔に登り、壮麗な<a onclick=\"showSpot('SVQ 02')\" class=\"spot-link\">スペイン広場</a>で写真を撮る、街の熱気に触れる1日。オレンジの街路樹が南国らしい彩りを添える。",
             "pre_transit": {
-              "duration": "グラナダ→セビリア（バス 約3時間）",
-              "taxi": true
+              "duration": "グラナダ→セビリア（バス 約3時間）"
             }
           },
           {
@@ -2306,8 +2308,7 @@
           "badge_class": "red",
           "content_html": "<strong>セビリアへ移動 → 大聖堂とスペイン広場</strong><br>バスでセビリアへ。<a onclick=\"showSpot('SVQ 01')\" class=\"spot-link\">セビリア大聖堂</a>のヒラルダの塔に登り、壮麗な<a onclick=\"showSpot('SVQ 02')\" class=\"spot-link\">スペイン広場</a>で写真を撮る、街の熱気に触れる1日。オレンジの街路樹が南国らしい彩りを添える。",
           "pre_transit": {
-            "duration": "グラナダ→セビリア（バス 約3時間）",
-            "taxi": true
+            "duration": "グラナダ→セビリア（バス 約3時間）"
           }
         },
         {
