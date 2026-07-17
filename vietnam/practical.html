@@ -644,8 +644,11 @@ var PAGE_INDEX = 5;
   const spot = params.get('spot');
   const city = params.get('city');
   if (city) {
-    const btn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + (window.CSS && CSS.escape ? CSS.escape(city) : city) + '"]');
-    if (btn) filterSpots('city', city, btn);
+    const esc = window.CSS && CSS.escape ? CSS.escape(city) : city;
+    const cityBtn = document.querySelector('#spots-filter-row .filter-btn[data-filter="' + esc + '"]');
+    const regionBtn = document.querySelector('#spots-filter-region .filter-btn[data-filter="' + esc + '"]');
+    if (cityBtn) filterSpots('city', city, cityBtn);
+    else if (regionBtn) filterSpots('region', city, regionBtn);
   }
   if (spot) {
     setTimeout(() => showSpot(spot), 100);
