@@ -7,7 +7,7 @@
   "hero_image": "素材/ヒーロー.webp",
   "hero_alt": "イタリアの街並み",
   "hero_prompt": "Colosseum Rome at golden sunset, warm evening light on ancient stone arches, travel illustration style",
-  "custom_top_spots": "<div style=\"margin-bottom:24px\"><h2 style=\"margin-bottom:6px\">イタリア全土ガイド</h2><p style=\"font-size:0.85em;line-height:1.8;color:var(--sub);margin:0 0 16px\">イタリアは20の州それぞれに独自の歴史と文化を持ち、エリアごとに街並みやグルメの雰囲気がガラリと変わる。下記でローマ・フィレンツェ・ヴェネツィア・ミラノの王道4都市に加えて周りたい街を探してみよう（★は詳細スポット付きの王道4都市）。</p><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px\"><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #1e6fd9;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🏔️</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">北イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">アルプスに近い経済の中心地。近未来的な洗練さと中世の街並みが共存する</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li>★<a onclick=\"showFilteredSpots('milan')\" class=\"spot-link\" style=\"cursor:pointer\">ミラノ</a>（ロンバルディア州）— ファッションの発信地、ドゥオーモと最後の晩餐</li><li>★<a onclick=\"showFilteredSpots('venice')\" class=\"spot-link\" style=\"cursor:pointer\">ヴェネツィア</a>（ヴェネト州）— 運河だけで構成される世界唯一の海上都市</li><li><strong>トリノ</strong>（ピエモンテ州）— 旧イタリア王国の首都、王宮群とチョコレートの街</li><li><strong>ボローニャ</strong>（エミリア＝ロマーニャ州）— 欧州最古の大学、グルメの都</li><li><strong>ヴェローナ</strong>（ヴェネト州）— ロミオとジュリエットの舞台、野外オペラ</li><li><strong>ジェノバ</strong>（リグーリア州）— コロンブスの故郷、ジェノベーゼ発祥の港町</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #008C45;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🎨</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">中央イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">古代ローマとルネサンスの歴史が最も色濃く残る、絵画のような田園風景のエリア</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li>★<a onclick=\"showFilteredSpots('rome')\" class=\"spot-link\" style=\"cursor:pointer\">ローマ</a>（ラツィオ州）— 「永遠の都」、コロッセオとバチカン市国</li><li>★<a onclick=\"showFilteredSpots('florence')\" class=\"spot-link\" style=\"cursor:pointer\">フィレンツェ</a>（トスカーナ州）— ルネサンス文化発祥の芸術都市</li><li><strong>ピサ</strong>（トスカーナ州）— 世界の七不思議、ピサの斜塔</li><li><strong>シエナ</strong>（トスカーナ州）— 中世ゴシックの古都、伝統競馬パリオ</li><li><strong>アッシジ</strong>（ウンブリア州）— 聖フランチェスコ生誕の巡礼地</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #e8720c;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">☀️</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">南イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">美しい海岸線と温暖な気候、フレンドリーな人々が魅力のエネルギッシュなエリア</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li><strong>ナポリ</strong>（カンパニア州）— 本場ナポリピッツァの聖地、近郊にポンペイ遺跡</li><li><strong>アマルフィ・ポジターノ</strong>（カンパニア州）— 世界一美しい海岸線の高級リゾート</li><li><strong>バーリ</strong>（プーリア州）— アドリア海の港町、手作りパスタの旧市街</li><li><strong>アルベロベッロ</strong>（プーリア州）— とんがり屋根の家「トゥルッリ」が並ぶ村</li><li><strong>マテーラ</strong>（バジリカータ州）— 洞窟住居「サッシ」が重なる異世界の景観</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #0e9aa7;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🌊</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">離島</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">本土とは異なる歴史を歩んできた、独自の文化が息づく地中海の島々</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li><strong>パレルモ</strong>（シチリア州）— 地中海の十字路、ノルマン・アラブ様式の建築</li><li><strong>タオルミーナ</strong>（シチリア州）— エトナ火山を望む高級リゾート、古代ギリシャ劇場</li><li><strong>カリアリ</strong>（サルデーニャ州）— 透明度抜群の海、古代遺跡ヌラーゲ</li></ul></div></div></div>",
+  "custom_top_spots": "<div style=\"margin-bottom:24px\"><h2 style=\"margin-bottom:6px\">イタリア全土ガイド</h2><p style=\"font-size:0.85em;line-height:1.8;color:var(--sub);margin:0 0 16px\">イタリアは20の州それぞれに独自の歴史と文化を持ち、エリアごとに街並みやグルメの雰囲気がガラリと変わる。下記でローマ・フィレンツェ・ヴェネツィア・ミラノの王道4都市に加えて周りたい街を探してみよう（★は詳細スポット付きの王道4都市）。</p><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px\"><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #1e6fd9;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🏔️</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">北イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">アルプスに近い経済の中心地。近未来的な洗練さと中世の街並みが共存する</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li>★<a onclick=\"showFilteredSpots('milan')\" class=\"spot-link\" style=\"cursor:pointer\">ミラノ</a>（ロンバルディア州）— ファッションの発信地、ドゥオーモと最後の晩餐</li><li>★<a onclick=\"showFilteredSpots('venice')\" class=\"spot-link\" style=\"cursor:pointer\">ヴェネツィア</a>（ヴェネト州）— 運河だけで構成される世界唯一の海上都市</li><li><strong>トリノ</strong>（ピエモンテ州）— 旧イタリア王国の首都、王宮群とチョコレートの街</li><li><strong>ボローニャ</strong>（エミリア＝ロマーニャ州）— 欧州最古の大学、グルメの都</li><li><strong>ヴェローナ</strong>（ヴェネト州）— ロミオとジュリエットの舞台、野外オペラ</li><li><strong>ジェノバ</strong>（リグーリア州）— コロンブスの故郷、ジェノベーゼ発祥の港町</li><li><a onclick=\"showFilteredSpots('milan')\" class=\"spot-link\" style=\"cursor:pointer\">コモ湖</a>（ロンバルディア州）— ミラノから日帰りで人気の高級湖水リゾート</li><li><a onclick=\"showFilteredSpots('venice')\" class=\"spot-link\" style=\"cursor:pointer\">ドロミテ</a>（ヴェネト州等）— 世界遺産の山岳地帯、ハイキングの聖地</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #008C45;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🎨</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">中央イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">古代ローマとルネサンスの歴史が最も色濃く残る、絵画のような田園風景のエリア</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li>★<a onclick=\"showFilteredSpots('rome')\" class=\"spot-link\" style=\"cursor:pointer\">ローマ</a>（ラツィオ州）— 「永遠の都」、コロッセオとバチカン市国</li><li>★<a onclick=\"showFilteredSpots('florence')\" class=\"spot-link\" style=\"cursor:pointer\">フィレンツェ</a>（トスカーナ州）— ルネサンス文化発祥の芸術都市</li><li><strong>ピサ</strong>（トスカーナ州）— 世界の七不思議、ピサの斜塔</li><li><strong>シエナ</strong>（トスカーナ州）— 中世ゴシックの古都、伝統競馬パリオ</li><li><strong>アッシジ</strong>（ウンブリア州）— 聖フランチェスコ生誕の巡礼地</li><li><a onclick=\"showFilteredSpots('florence')\" class=\"spot-link\" style=\"cursor:pointer\">オルチャ渓谷</a>（トスカーナ州）— フィレンツェから日帰りで行ける世界遺産の田園風景</li><li><a onclick=\"showFilteredSpots('sangimignano')\" class=\"spot-link\" style=\"cursor:pointer\">サン・ジミニャーノ</a>（トスカーナ州）— 中世の塔が林立する「美しい塔の街」</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #e8720c;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">☀️</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">南イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">美しい海岸線と温暖な気候、フレンドリーな人々が魅力のエネルギッシュなエリア</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li><strong>ナポリ</strong>（カンパニア州）— 本場ナポリピッツァの聖地、近郊にポンペイ遺跡</li><li><strong>アマルフィ・ポジターノ</strong>（カンパニア州）— 世界一美しい海岸線の高級リゾート</li><li><strong>バーリ</strong>（プーリア州）— アドリア海の港町、手作りパスタの旧市街</li><li><strong>アルベロベッロ</strong>（プーリア州）— とんがり屋根の家「トゥルッリ」が並ぶ村</li><li><strong>マテーラ</strong>（バジリカータ州）— 洞窟住居「サッシ」が重なる異世界の景観</li><li><a onclick=\"showFilteredSpots('capri')\" class=\"spot-link\" style=\"cursor:pointer\">カプリ島</a>（カンパニア州）— 青の洞窟で知られる憧れの高級リゾート島</li><li><a onclick=\"showFilteredSpots('sorrento')\" class=\"spot-link\" style=\"cursor:pointer\">ソレント</a>（カンパニア州）— アマルフィ海岸の玄関口、レモン香る港町</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #0e9aa7;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🌊</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">離島</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">本土とは異なる歴史を歩んできた、独自の文化が息づく地中海の島々</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li><strong>パレルモ</strong>（シチリア州）— 地中海の十字路、ノルマン・アラブ様式の建築</li><li><strong>タオルミーナ</strong>（シチリア州）— エトナ火山を望む高級リゾート、古代ギリシャ劇場</li><li><strong>カリアリ</strong>（サルデーニャ州）— 透明度抜群の海、古代遺跡ヌラーゲ</li><li><a onclick=\"showFilteredSpots('agrigento')\" class=\"spot-link\" style=\"cursor:pointer\">アグリジェント</a>（シチリア州）— ギリシャ神殿群が残る神殿の谷</li></ul></div></div></div>",
   "index_card": {
     "flag": "🇮🇹",
     "catch": "石畳に響くヴェスパの音とジェラート片手の観光客が、古代遺跡と教会の鐘の音に溶け込んでいく",
@@ -49,7 +49,7 @@
     "difficulty_pct": "30",
     "difficulty_bar": "linear-gradient(90deg,#00a86b,#66cc99)",
     "difficulty_desc": "鉄道網が発達し英語表記も多いため、初めての一人旅でも周りやすい。高速鉄道の予約とスリ対策さえ押さえれば快適に旅ができる。",
-    "japan_popularity_html": "世界遺産登録数世界一（60件）を誇る観光大国。日本からの旅行先としても常に人気上位で、リピーターも多い定番デスティネーション。",
+    "japan_popularity_html": "世界遺産登録数世界一（60件）を誇る観光大国。日本からの旅行先としても常に人気上位で、リピーターも多い定番の観光地。",
     "flight_hours": "直行便（ミラノ）で約13時間、経由便なら14〜17時間",
     "timezone": "日本−8時間（サマータイム時は−7時間）",
     "visa": "不要（シェンゲン協定・90日）",
@@ -68,8 +68,8 @@
     "center_lat": "43.5",
     "center_lng": "12.5",
     "zoom": "6",
-    "map_id": "",
-    "country_label": "Italy"
+    "map_id": "ebb608e55ed157f8630c407e",
+    "country_label": "イタリア"
   },
   "cities": [
     {
@@ -318,6 +318,58 @@
       "badge": "離島",
       "badge_class": "green",
       "description": "ヨーロッパ屈指の透明度を誇る海に囲まれたサルデーニャ島の中心都市。古代遺跡「ヌラーゲ」が島内に点在"
+    },
+    {
+      "id": "sangimignano",
+      "name": "サン・ジミニャーノ",
+      "lat": "43.4674",
+      "lng": "11.0431",
+      "zoom": "14",
+      "color": "#008C45",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "中央イタリア",
+      "badge_class": "green",
+      "description": "「美しい塔の街」として知られる世界遺産の都市。中世の塔が林立する独特のスカイライン"
+    },
+    {
+      "id": "capri",
+      "name": "カプリ島",
+      "lat": "40.5532",
+      "lng": "14.2429",
+      "zoom": "13",
+      "color": "#e8720c",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "南イタリア",
+      "badge_class": "green",
+      "description": "ナポリ湾に浮かぶ憧れの高級リゾート島。神秘的な青の洞窟と断崖の絶景で知られる"
+    },
+    {
+      "id": "sorrento",
+      "name": "ソレント",
+      "lat": "40.6263",
+      "lng": "14.3757",
+      "zoom": "13",
+      "color": "#e8720c",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "南イタリア",
+      "badge_class": "green",
+      "description": "アマルフィ海岸への玄関口。カンツォーネでも有名な、レモンの香り漂う崖の上の街"
+    },
+    {
+      "id": "agrigento",
+      "name": "アグリジェント",
+      "lat": "37.3111",
+      "lng": "13.5765",
+      "zoom": "13",
+      "color": "#0e9aa7",
+      "marker_size": "9",
+      "marker_label": "•",
+      "badge": "離島",
+      "badge_class": "green",
+      "description": "ギリシャ神殿の遺跡群が残る古代都市。夕暮れの神殿の谷は息をのむ美しさ"
     }
   ],
   "season_mini": {
@@ -1011,8 +1063,8 @@
     "cash_daily_high": "30",
     "cash_note": "1 EUR ≈ 170円で計算",
     "money_intro": "イタリアはカード社会で、小さなバールでも大抵カードが使える。現金は市場や一部の小さな店で使う程度で十分。現地通貨ユーロへの両替は日本国内やATMでのキャッシングのほうがレートが良い場合が多い。",
-    "cash_tip_title": "💡 カードのタッチ決済が主流",
-    "cash_tip_body": "地下鉄の改札からバールの会計まで、クレジットカードのタッチ決済（コンタクトレス）で完結することがほとんど。日本のカードも対応していれば現地SIMなしでも困らない。",
+    "cash_tip_title": "カードのタッチ決済が主流",
+    "cash_tip_body": "地下鉄の改札からバールの会計まで、クレジットカードのタッチ決済（コンタクトレス）で完結することがほとんど。現地通貨の現金を用意しなくても困らない。",
     "wise_intro": "現地ATMでのキャッシングやWiseなどの多通貨対応カードを使うと、両替所より有利なレートでユーロを引き出せることが多い。",
     "cta_title": "出発前にマナーも確認しよう！🙏",
     "cta_desc": "イタリアならではの食事のマナーや教会での服装ルールを知っておくと、現地の人ともスムーズに交流できる。"
@@ -1293,13 +1345,29 @@
       "id": "all",
       "label": "すべて",
       "active": true
+    },
+    {
+      "id": "rice",
+      "label": "ご飯もの",
+      "active": false
+    },
+    {
+      "id": "main",
+      "label": "おかず・麺",
+      "active": false
+    },
+    {
+      "id": "dessert",
+      "label": "スイーツ",
+      "active": false
+    },
+    {
+      "id": "drink",
+      "label": "ドリンク",
+      "active": false
     }
   ],
   "food_filter_cities": [
-    {
-      "id": "national",
-      "label": "全国"
-    },
     {
       "id": "rome",
       "label": "ローマ"
@@ -1605,6 +1673,146 @@
       "prompt_en": "Italian Lasagna, layered pasta with meat sauce and bechamel, baked golden top, food photography",
       "plate_color": "white plate",
       "image": "素材/グルメ/ラザニア.webp"
+    },
+    {
+      "num": "No.21",
+      "name": "サルティンボッカ・アッラ・ロマーナ",
+      "badge": "ローマ名物",
+      "type": "main",
+      "city": "rome",
+      "desc": "薄切りの仔牛肉に生ハムとセージを載せて焼き上げる、ローマの定番料理。「口の中に飛び込む」という名の通り、ひと口で旨みが広がる軽やかな一皿。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B5%E3%83%AB%E3%83%86%E3%82%A3%E3%83%B3%E3%83%9C%E3%83%83%E3%82%AB%20%E3%83%AD%E3%83%BC%E3%83%9E",
+      "order_ico": "🍖",
+      "order_name_en": "Saltimbocca alla Romana",
+      "prompt_en": "Saltimbocca alla Romana, veal with prosciutto and sage, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/サルティンボッカ・アッラ・ロマーナ.webp"
+    },
+    {
+      "num": "No.22",
+      "name": "ペスト・ジェノヴェーゼ",
+      "badge": "リグーリア名物",
+      "type": "main",
+      "city": "national",
+      "desc": "バジル・松の実・ニンニク・パルミジャーノをすり潰して作る緑色のソースを絡めたパスタ。ジェノバ発祥で、爽やかな香りが食欲をそそる。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9A%E3%82%B9%E3%83%88%E3%83%BB%E3%82%B8%E3%82%A7%E3%83%8E%E3%83%B4%E3%82%A7%E3%83%BC%E3%82%BC",
+      "order_ico": "🍝",
+      "order_name_en": "Pesto alla Genovese",
+      "prompt_en": "Pasta with Pesto alla Genovese, green basil sauce, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/ペスト・ジェノヴェーゼ.webp"
+    },
+    {
+      "num": "No.23",
+      "name": "リボッリータ",
+      "badge": "トスカーナ名物",
+      "type": "main",
+      "city": "florence",
+      "desc": "硬くなったパンと豆・野菜を煮込んだトスカーナの伝統スープ。「再び煮た」という名の通り、翌日温め直すとさらに美味しくなる素朴な家庭料理。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%AA%E3%83%9C%E3%83%83%E3%83%AA%E3%83%BC%E3%82%BF%20%E3%83%88%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%8A",
+      "order_ico": "🍲",
+      "order_name_en": "Ribollita",
+      "prompt_en": "Ribollita, Tuscan bread and vegetable soup, food photography",
+      "plate_color": "white bowl",
+      "image": "素材/グルメ/リボッリータ.webp"
+    },
+    {
+      "num": "No.24",
+      "name": "カプレーゼサラダ",
+      "badge": "定番前菜",
+      "type": "main",
+      "city": "national",
+      "desc": "トマト・モッツァレラ・バジルを重ねただけのシンプルなサラダ。カプリ島発祥とされ、赤・白・緑の彩りがイタリア国旗を思わせる定番前菜。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%97%E3%83%AC%E3%83%BC%E3%82%BC%E3%82%B5%E3%83%A9%E3%83%80",
+      "order_ico": "🍅",
+      "order_name_en": "Caprese Salad",
+      "prompt_en": "Caprese Salad, tomato mozzarella basil, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/カプレーゼサラダ.webp"
+    },
+    {
+      "num": "No.25",
+      "name": "スフォリアテッラ",
+      "badge": "ナポリ名物",
+      "type": "dessert",
+      "city": "national",
+      "desc": "貝殻のような層状の生地に、リコッタチーズやセモリナ粉のクリームを詰めたナポリの伝統菓子。パリパリの食感と優しい甘さが朝食にもぴったり。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B9%E3%83%95%E3%82%A9%E3%83%AA%E3%82%A2%E3%83%86%E3%83%83%E3%83%A9%20%E3%83%8A%E3%83%9D%E3%83%AA",
+      "order_ico": "🥐",
+      "order_name_en": "Sfogliatella",
+      "prompt_en": "Sfogliatella, shell-shaped layered pastry, Naples, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/スフォリアテッラ.webp"
+    },
+    {
+      "num": "No.26",
+      "name": "パネットーネ",
+      "badge": "ミラノ名物",
+      "type": "dessert",
+      "city": "milan",
+      "desc": "ドライフルーツを練り込んだミラノ発祥の発酵菓子パン。本来はクリスマスの定番だが、近年は一年を通してカフェやパン屋で見かけるようになった。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%91%E3%83%8D%E3%83%83%E3%83%88%E3%83%BC%E3%83%8D%20%E3%83%9F%E3%83%A9%E3%83%8E",
+      "order_ico": "🍞",
+      "order_name_en": "Panettone",
+      "prompt_en": "Panettone, Milanese sweet bread with dried fruit, food photography",
+      "plate_color": "wooden board",
+      "image": "素材/グルメ/パネットーネ.webp"
+    },
+    {
+      "num": "No.27",
+      "name": "ネグローニ",
+      "badge": "フィレンツェ発祥",
+      "type": "drink",
+      "city": "florence",
+      "desc": "ジン・スイートベルモット・カンパリを同量ずつ混ぜた、フィレンツェ発祥のカクテル。ほろ苦い味わいが食前酒として親しまれている。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%8D%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%8B%20%E3%82%AB%E3%82%AF%E3%83%86%E3%83%AB",
+      "order_ico": "🍸",
+      "order_name_en": "Negroni",
+      "prompt_en": "Negroni cocktail, red drink with orange peel garnish, food photography",
+      "plate_color": "cocktail glass",
+      "image": "素材/グルメ/ネグローニ.webp"
+    },
+    {
+      "num": "No.28",
+      "name": "プロセッコ",
+      "badge": "ヴェネト名物",
+      "type": "drink",
+      "city": "venice",
+      "desc": "ヴェネト州が産地のスパークリングワイン。シャンパンより手頃な価格ながら華やかな香りで、アペロール・スプリッツのベースにも使われる。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%97%E3%83%AD%E3%82%BB%E3%83%83%E3%82%B3%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%88",
+      "order_ico": "🥂",
+      "order_name_en": "Prosecco",
+      "prompt_en": "Prosecco sparkling wine, glass with bubbles, food photography",
+      "plate_color": "wine glass",
+      "image": "素材/グルメ/プロセッコ.webp"
+    },
+    {
+      "num": "No.29",
+      "name": "ポレンタ",
+      "badge": "北イタリア家庭料理",
+      "type": "rice",
+      "city": "national",
+      "desc": "トウモロコシの粉を煮込んだ、北イタリアの伝統的な主食。チーズやソーセージと一緒に食べるのが定番で、地域によって柔らかさや味付けが異なる。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9D%E3%83%AC%E3%83%B3%E3%82%BF%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🌽",
+      "order_name_en": "Polenta",
+      "prompt_en": "Polenta, creamy cornmeal dish with cheese, food photography",
+      "plate_color": "white plate",
+      "image": "素材/グルメ/ポレンタ.webp"
+    },
+    {
+      "num": "No.30",
+      "name": "アマレッティ",
+      "badge": "伝統焼き菓子",
+      "type": "dessert",
+      "city": "national",
+      "desc": "アーモンドの粉を使って焼き上げる、外はカリッと中はしっとりした伝統的な焼き菓子。エスプレッソのお供として定番の一品。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%83%9E%E3%83%AC%E3%83%83%E3%83%86%E3%82%A3%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
+      "order_ico": "🍪",
+      "order_name_en": "Amaretti",
+      "prompt_en": "Amaretti almond cookies, food photography",
+      "plate_color": "wooden board",
+      "image": "素材/グルメ/アマレッティ.webp"
     }
   ],
   "spots_section_title": "イタリア観光スポット図鑑",
@@ -1732,6 +1940,22 @@
     {
       "id": "cagliari",
       "label": "カリアリ"
+    },
+    {
+      "id": "sangimignano",
+      "label": "サン・ジミニャーノ"
+    },
+    {
+      "id": "capri",
+      "label": "カプリ島"
+    },
+    {
+      "id": "sorrento",
+      "label": "ソレント"
+    },
+    {
+      "id": "agrigento",
+      "label": "アグリジェント"
     }
   ],
   "spot_sections": [
@@ -1966,6 +2190,28 @@
           "prompt_en": "Pitti Palace Boboli Gardens Florence, Renaissance palace and formal garden, travel photography",
           "type": "heritage",
           "image": "素材/観光スポット/ピッティ宮殿・ボーボリ庭園.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌳",
+          "num": "FIR 07",
+          "name": "オルチャ渓谷の糸杉並木",
+          "desc": "フィレンツェから日帰りで行ける、トスカーナを象徴する田園風景オルチャ渓谷。なだらかな丘陵地に一本道が続き、両脇を糸杉が縁取る絵画のような景観は世界遺産にも登録されている。",
+          "badge": "世界遺産・絶景",
+          "prompt_en": "Val d'Orcia cypress tree lined road, rolling Tuscan hills, day trip from Florence, travel photography",
+          "type": "nature",
+          "image": "素材/観光スポット/オルチャ渓谷の糸杉並木.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "FIR 08",
+          "name": "ピエンツァ",
+          "desc": "ルネサンス期に理想都市として計画された、丘の上の小さな町。展望台からはオルチャ渓谷の絶景を一望でき、ペコリーノチーズの名産地としても知られる。",
+          "badge": "",
+          "prompt_en": "Pienza Tuscany, hilltop Renaissance town, valley view, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/ピエンツァ.webp"
         }
       ]
     },
@@ -2072,6 +2318,28 @@
           "prompt_en": "Murano Island Venice, glassblowing workshop, colorful Venetian glass artworks, travel photography",
           "type": "market",
           "image": "素材/観光スポット/ムラーノ島.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏔️",
+          "num": "VEN 07",
+          "name": "トレ・チーメ・ディ・ラヴァレード（ドロミテ）",
+          "desc": "ヴェネツィアから足を延ばしたい世界遺産の山岳地帯ドロミテ。3本の尖った岩峰が空に突き出す絶景トレ・チーメは、周回トレイルで巡る日帰り・1泊ハイキングの定番コース。",
+          "badge": "世界遺産・絶景",
+          "prompt_en": "Tre Cime di Lavaredo Dolomites, three jagged peaks, hiking trail, travel photography",
+          "type": "nature",
+          "image": "素材/観光スポット/トレ・チーメ・ディ・ラヴァレード（ドロミテ）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "VEN 08",
+          "name": "コルティナ・ダンペッツォ",
+          "desc": "「ドロミテの女王」と呼ばれる山岳リゾートタウン。冬季オリンピックの開催地としても知られ、夏はドロミテ観光の拠点になる。",
+          "badge": "",
+          "prompt_en": "Cortina d'Ampezzo, alpine resort town, Dolomites backdrop, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/コルティナ・ダンペッツォ.webp"
         }
       ]
     },
@@ -2167,6 +2435,28 @@
           "prompt_en": "Navigli canal district Milan, canal-side bars in the evening, lively atmosphere, travel photography",
           "type": "activity",
           "image": "素材/観光スポット/ナヴィリオ運河地区.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "MIL 06",
+          "name": "コモ湖（ヴィラ・デル・バルビアネッロ）",
+          "desc": "ミラノから日帰りで人気の高級湖水リゾート、コモ湖。映画のロケ地としても有名な湖畔の別荘ヴィラ・デル・バルビアネッロのテラスからの眺めは、コモ湖観光のハイライト。",
+          "badge": "日帰り絶景・必見",
+          "prompt_en": "Villa del Balbianello Lake Como, lakeside villa terrace view, day trip from Milan, travel photography",
+          "type": "nature",
+          "image": "素材/観光スポット/コモ湖（ヴィラ・デル・バルビアネッロ）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "MIL 07",
+          "name": "ベッラージオ",
+          "desc": "「コモ湖の真珠」と称される、三方を湖に囲まれた小さな村。石畳の路地とパステルカラーの家々が旅情を誘う、日帰り観光の定番。",
+          "badge": "コモ湖の真珠",
+          "prompt_en": "Bellagio Lake Como, lakeside village, day trip from Milan, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/ベッラージオ.webp"
         }
       ]
     },
@@ -3330,6 +3620,276 @@
           "image": "素材/観光スポット/ヌラーゲ遺跡（ス・ヌラージ）.webp"
         }
       ]
+    },
+    {
+      "city_id": "sangimignano",
+      "region": "central",
+      "city_name": "サン・ジミニャーノ",
+      "city_desc": "「美しい塔の街」として知られる世界遺産の都市。中世に建てられた塔が今も林立する、独特のスカイラインが魅力",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "フィレンツェから車・バス 約1〜1.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "駅↔中心部",
+          "value": "丘の上の町、バスでのアクセスが便利",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "1"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "サフラン料理・ヴェルナッチャワイン",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "徒歩（旧市街はコンパクト）",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🗼",
+          "num": "SGM 01",
+          "name": "塔の街並み（トッレ）",
+          "desc": "中世の富豪たちが競って建てた高塔が今も14基残り、独特のスカイラインを形成する。丘の上から眺める塔群のシルエットは必見。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "San Gimignano medieval towers skyline, Tuscany, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/塔の街並み（トッレ）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "SGM 02",
+          "name": "チステルナ広場",
+          "desc": "貝殻状の石畳が広がる旧市街の中心広場。周囲を中世の塔と邸宅が取り囲み、名物ジェラート店も軒を連ねる。",
+          "badge": "",
+          "prompt_en": "Piazza della Cisterna San Gimignano, medieval square, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/チステルナ広場.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "capri",
+      "region": "south",
+      "city_name": "カプリ島",
+      "city_desc": "ナポリ湾に浮かぶ憧れの高級リゾート島。神秘的な青の洞窟と、切り立った断崖の絶景で知られる",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ナポリ・ソレントからフェリー 約40分〜1時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "港↔市街",
+          "value": "ケーブルカー・バスで丘の上へ",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "5〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "カプレーゼサラダ発祥の地",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "ケーブルカー・バス・徒歩",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🌊",
+          "num": "CAP 01",
+          "name": "青の洞窟（グロッタ・アズーラ）",
+          "desc": "海面から差し込む太陽光が洞窟内の海水を鮮やかな青色に染める、世界的に有名な海食洞。小舟に乗り換えて狭い入口をくぐる体験も旅の思い出になる。",
+          "badge": "世界的絶景・必見",
+          "prompt_en": "Blue Grotto Capri, glowing blue sea cave, small boat entrance, travel photography",
+          "type": "nature",
+          "image": "素材/観光スポット/青の洞窟（グロッタ・アズーラ）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🗿",
+          "num": "CAP 02",
+          "name": "ファラリオーニ",
+          "desc": "海上にそびえる3つの奇岩。カプリ島を象徴する景観で、展望台やボートツアーから眺めることができる。",
+          "badge": "",
+          "prompt_en": "Faraglioni rocks Capri, iconic sea stacks, travel photography",
+          "type": "nature",
+          "image": "素材/観光スポット/ファラリオーニ.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌿",
+          "num": "CAP 03",
+          "name": "アウグストの庭園",
+          "desc": "断崖の上に広がる庭園から、ファラリオーニと入り組んだ海岸線を一望できる。カプリ随一の絶景スポット。",
+          "badge": "",
+          "prompt_en": "Gardens of Augustus Capri, clifftop garden viewpoint, travel photography",
+          "type": "nature",
+          "image": "素材/観光スポット/アウグストの庭園.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "sorrento",
+      "region": "south",
+      "city_name": "ソレント",
+      "city_desc": "アマルフィ海岸への玄関口として栄えた、カンツォーネでも有名な美しい港町。レモンの香り漂う崖の上の街",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ナポリから鉄道 約1時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "駅↔中心部",
+          "value": "ソレント駅から徒歩圏内",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "5〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "リモンチェッロ・ニョッキ・アッラ・ソレンティーナ",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "徒歩・バス",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "SOR 01",
+          "name": "ソレント旧市街とタッソ広場",
+          "desc": "崖の上に広がる旧市街の中心広場。石畳の路地には陶器店やレモン製品の店が並び、地中海らしい雰囲気に満ちている。",
+          "badge": "街歩きの定番",
+          "prompt_en": "Sorrento old town Piazza Tasso, Mediterranean atmosphere, travel photography",
+          "type": "townscape",
+          "image": "素材/観光スポット/ソレント旧市街とタッソ広場.webp"
+        },
+        {
+          "must": false,
+          "icon": "⚓",
+          "num": "SOR 02",
+          "name": "マリーナ・グランデ",
+          "desc": "カラフルな漁船が並ぶ港町の風景。新鮮なシーフードを味わえるレストランが軒を連ねる。",
+          "badge": "",
+          "prompt_en": "Marina Grande Sorrento, colorful fishing boats harbor, travel photography",
+          "type": "nature",
+          "image": "素材/観光スポット/マリーナ・グランデ.webp"
+        },
+        {
+          "must": false,
+          "icon": "🍋",
+          "num": "SOR 03",
+          "name": "レモン農園めぐり",
+          "desc": "ソレント名物リモンチェッロの原料となる巨大レモンの農園。畑を眺めながらの試飲体験ができる農園もある。",
+          "badge": "",
+          "prompt_en": "Sorrento lemon grove, giant lemons, limoncello tasting, travel photography",
+          "type": "activity",
+          "image": "素材/観光スポット/レモン農園めぐり.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "agrigento",
+      "region": "islands",
+      "city_name": "アグリジェント",
+      "city_desc": "パレルモから足を延ばしたい、ギリシャ神殿の遺跡群が残る古代都市。夕暮れの神殿群は息をのむ美しさ",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "パレルモから車・バス 約1.5〜2時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "駅↔遺跡",
+          "value": "アグリジェント駅からバス",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "シチリア料理・アーモンド菓子",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "徒歩・バス",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "AGR 01",
+          "name": "神殿の谷（ヴァッレ・デイ・テンプリ）",
+          "desc": "古代ギリシャ植民都市の壮大な神殿群が今も残る、世界最大級の考古学公園。特にコンコルディア神殿はほぼ完全な姿で残り、夕暮れ時のライトアップは必見。",
+          "badge": "世界遺産・必見",
+          "prompt_en": "Valley of the Temples Agrigento, ancient Greek ruins at sunset, travel photography",
+          "type": "heritage",
+          "image": "素材/観光スポット/神殿の谷（ヴァッレ・デイ・テンプリ）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "AGR 02",
+          "name": "コンコルディア神殿",
+          "desc": "紀元前5世紀に建てられた、ギリシャ本土以外で最も保存状態の良いドーリア式神殿のひとつ。",
+          "badge": "",
+          "prompt_en": "Temple of Concordia Agrigento, well-preserved Doric temple, travel photography",
+          "type": "heritage",
+          "image": "素材/観光スポット/コンコルディア神殿.webp"
+        }
+      ]
     }
   ],
   "transport_items": [
@@ -3514,19 +4074,19 @@
   "spot_points": [
     {
       "title": "古代ローマの象徴、コロッセオ",
-      "body": "2000年前の建築技術を今に伝える円形闘技場。事前予約をしておけば当日の行列を避けられる。",
+      "body": "紀元80年に完成し、約5万人を収容したという円形闘技場。剣闘士たちが命を懸けて戦った観客席やアリーナの遺構は、2000年の時を超えて今も圧倒的な存在感を放つ。公式サイトでの事前予約が実質必須で、予約さえしておけば当日数時間待つ行列を避けてスムーズに入場できる。",
       "spot_ref": "ROM 01",
       "image": "素材/観光スポット/コロッセオ.webp"
     },
     {
       "title": "ミラノ大聖堂の屋上テラス",
-      "body": "無数の尖塔が並ぶ屋根の上を歩ける貴重な体験。晴れた日はアルプス山脈まで見渡せる。",
+      "body": "600年以上かけて完成した、無数の尖塔と彫刻で埋め尽くされたゴシック建築の傑作。屋上テラスへは階段またはエレベーターで登ることができ、間近に迫る尖塔群の合間から晴れた日はミラノ市街の向こうにアルプス山脈まで見渡せる、ここでしか味わえない絶景が広がる。",
       "spot_ref": "MIL 01",
       "image": "素材/観光スポット/ミラノ大聖堂（ドゥオーモ）.webp"
     },
     {
       "title": "本場のマルゲリータピザ",
-      "body": "ナポリ発祥のもちもち生地とシンプルな具材の組み合わせは、イタリア各地で味の違いを食べ比べる楽しみもある。",
+      "body": "ナポリ発祥の薄い生地をもちもちに焼き上げた一枚は、トマト・モッツァレラ・バジルの三色がイタリア国旗を表すと言われる。同じマルゲリータでも店や地方によって生地の厚みや焼き加減が驚くほど違い、旅の道中で食べ比べてお気に入りの一軒を探すのも楽しみのひとつになる。",
       "food_ref": "No.01",
       "image": "素材/グルメ/マルゲリータピザ.webp"
     }

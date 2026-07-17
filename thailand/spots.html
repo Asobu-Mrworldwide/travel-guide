@@ -181,7 +181,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
       
       <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
       
@@ -199,11 +198,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
   </div>
+  
   <div class="filter-group">
     <div class="filter-label">エリア</div>
     <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn active" data-filter="all" onclick="filterSpots('city','all',this)">全て</button>
       
       <button class="filter-btn " data-filter="bangkok" onclick="filterSpots('city','bangkok',this)">バンコク</button>
       
@@ -225,7 +223,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   <div id="spots-grid">
     
-    <div class="s-card spot-section-card" data-city="bangkok" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="bangkok" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="bangkok">
       
       <div class="csh-title">バンコク</div>
@@ -373,7 +371,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="chiangmai" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="chiangmai" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="chiangmai">
       
       <div class="csh-title">チェンマイ</div>
@@ -489,7 +487,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="phuket" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="phuket" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="phuket">
       
       <div class="csh-title">プーケット</div>
@@ -581,7 +579,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="pattaya" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="pattaya" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="pattaya">
       
       <div class="csh-title">パタヤ</div>
@@ -651,7 +649,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="ayutthaya" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="ayutthaya" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="ayutthaya">
       
       <div class="csh-title">アユタヤ</div>
@@ -721,7 +719,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="krabi" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="krabi" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="krabi">
       
       <div class="csh-title">クラビ</div>
@@ -805,7 +803,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="samui" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="samui" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="samui">
       
       <div class="csh-title">サムイ島</div>
@@ -881,7 +879,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="kohchang" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="kohchang" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="kohchang">
       
       <div class="csh-title">コ・チャン</div>
@@ -1085,21 +1083,30 @@ function closeSpotPopup() {
 }
 
 function filterSpots(dim, value, btn) {
-  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');
+  const isToggleOff = value !== 'all' && btn.classList.contains('active');
   document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (isToggleOff) {
+    const allBtn = document.querySelector(rowId + ' .filter-btn[data-filter="all"]');
+    if (allBtn) allBtn.classList.add('active');
+  } else {
+    btn.classList.add('active');
+  }
   const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
+  const regionRow = document.querySelector('#spots-filter-region');
+  const activeRegion = regionRow ? (regionRow.querySelector('.filter-btn.active')?.dataset.filter || 'all') : 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
     const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
       const typeOk = activeType === 'all' || el.dataset.stype === activeType;
-      const show = cityOk && typeOk;
+      const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
     });
-    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
+    card.style.display = (cityOk && regionOk && visibleCount > 0) ? '' : 'none';
   });
 }
 

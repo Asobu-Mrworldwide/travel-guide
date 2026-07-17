@@ -181,7 +181,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
       
       <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
       
@@ -199,11 +198,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
   </div>
+  
   <div class="filter-group">
     <div class="filter-label">エリア</div>
     <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn active" data-filter="all" onclick="filterSpots('city','all',this)">全て</button>
       
       <button class="filter-btn " data-filter="kl" onclick="filterSpots('city','kl',this)">KL</button>
       
@@ -221,7 +219,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   <div id="spots-grid">
     
-    <div class="s-card spot-section-card" data-city="kl" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="kl" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="kl">
       
       <div class="csh-title">クアラルンプール</div>
@@ -361,7 +359,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="penang" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="penang" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="penang">
       
       <div class="csh-title">ペナン</div>
@@ -469,7 +467,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="malacca" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="malacca" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="malacca">
       
       <div class="csh-title">マラッカ</div>
@@ -569,7 +567,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="jb" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="jb" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="jb">
       
       <div class="csh-title">ジョホールバル</div>
@@ -613,7 +611,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="kk" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="kk" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="kk">
       
       <div class="csh-title">コタキナバル</div>
@@ -721,7 +719,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="kuching" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="kuching" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="kuching">
       
       <div class="csh-title">クチン</div>
@@ -955,21 +953,30 @@ function closeSpotPopup() {
 }
 
 function filterSpots(dim, value, btn) {
-  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');
+  const isToggleOff = value !== 'all' && btn.classList.contains('active');
   document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (isToggleOff) {
+    const allBtn = document.querySelector(rowId + ' .filter-btn[data-filter="all"]');
+    if (allBtn) allBtn.classList.add('active');
+  } else {
+    btn.classList.add('active');
+  }
   const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
+  const regionRow = document.querySelector('#spots-filter-region');
+  const activeRegion = regionRow ? (regionRow.querySelector('.filter-btn.active')?.dataset.filter || 'all') : 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
     const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
       const typeOk = activeType === 'all' || el.dataset.stype === activeType;
-      const show = cityOk && typeOk;
+      const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
     });
-    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
+    card.style.display = (cityOk && regionOk && visibleCount > 0) ? '' : 'none';
   });
 }
 

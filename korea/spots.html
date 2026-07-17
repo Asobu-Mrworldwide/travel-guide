@@ -181,7 +181,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
       
       <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
       
@@ -199,6 +198,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
   </div>
+  
   <div class="filter-group">
     <div class="filter-label">エリア</div>
     <div class="filter-row" id="spots-filter-row">
@@ -217,7 +217,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   <div id="spots-grid">
     
-    <div class="s-card spot-section-card" data-city="seoul" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="seoul" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="seoul">
       
       <div class="csh-title">ソウル</div>
@@ -313,7 +313,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="dmz" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="dmz" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="dmz">
       
       <div class="csh-title">DMZ（非武装地帯）</div>
@@ -353,7 +353,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="busan" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="busan" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="busan">
       
       <div class="csh-title">釜山</div>
@@ -417,7 +417,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="gyeongju" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="gyeongju" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="gyeongju">
       
       <div class="csh-title">慶州</div>
@@ -473,7 +473,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="jeju" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="jeju" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="jeju">
       
       <div class="csh-title">済州島</div>
@@ -671,21 +671,30 @@ function closeSpotPopup() {
 }
 
 function filterSpots(dim, value, btn) {
-  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');
+  const isToggleOff = value !== 'all' && btn.classList.contains('active');
   document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (isToggleOff) {
+    const allBtn = document.querySelector(rowId + ' .filter-btn[data-filter="all"]');
+    if (allBtn) allBtn.classList.add('active');
+  } else {
+    btn.classList.add('active');
+  }
   const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
+  const regionRow = document.querySelector('#spots-filter-region');
+  const activeRegion = regionRow ? (regionRow.querySelector('.filter-btn.active')?.dataset.filter || 'all') : 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
     const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
       const typeOk = activeType === 'all' || el.dataset.stype === activeType;
-      const show = cityOk && typeOk;
+      const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
     });
-    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
+    card.style.display = (cityOk && regionOk && visibleCount > 0) ? '' : 'none';
   });
 }
 

@@ -181,7 +181,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn active" data-filter="all" onclick="filterSpots('type','all',this)">すべて</button>
       
       <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
       
@@ -199,11 +198,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
   </div>
+  
   <div class="filter-group">
     <div class="filter-label">エリア</div>
     <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn active" data-filter="all" onclick="filterSpots('city','all',this)">全て</button>
       
       <button class="filter-btn " data-filter="tashkent" onclick="filterSpots('city','tashkent',this)">タシュケント</button>
       
@@ -225,7 +223,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   <div id="spots-grid">
     
-    <div class="s-card spot-section-card" data-city="tashkent" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="tashkent" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="tashkent">
       
       <div class="csh-title">タシュケント</div>
@@ -309,7 +307,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="samarkand" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="samarkand" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="samarkand">
       
       <div class="csh-title">サマルカンド</div>
@@ -409,7 +407,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="bukhara" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="bukhara" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="bukhara">
       
       <div class="csh-title">ブハラ</div>
@@ -525,7 +523,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="khiva" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="khiva" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="khiva">
       
       <div class="csh-title">ヒヴァ</div>
@@ -609,7 +607,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="fergana" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="fergana" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="fergana">
       
       <div class="csh-title">フェルガナ</div>
@@ -677,7 +675,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="nukus" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="nukus" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="nukus">
       
       <div class="csh-title">ヌクス</div>
@@ -739,7 +737,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="shahrisabz" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="shahrisabz" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="shahrisabz">
       
       <div class="csh-title">シャフリサブス</div>
@@ -787,7 +785,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     </div>
     
-    <div class="s-card spot-section-card" data-city="termez" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="s-card spot-section-card" data-city="termez" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
     <div class="city-section-header" data-city="termez">
       
       <div class="csh-title">テルメズ</div>
@@ -977,21 +975,30 @@ function closeSpotPopup() {
 }
 
 function filterSpots(dim, value, btn) {
-  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');
+  const isToggleOff = value !== 'all' && btn.classList.contains('active');
   document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (isToggleOff) {
+    const allBtn = document.querySelector(rowId + ' .filter-btn[data-filter="all"]');
+    if (allBtn) allBtn.classList.add('active');
+  } else {
+    btn.classList.add('active');
+  }
   const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
+  const regionRow = document.querySelector('#spots-filter-region');
+  const activeRegion = regionRow ? (regionRow.querySelector('.filter-btn.active')?.dataset.filter || 'all') : 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
     const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
       const typeOk = activeType === 'all' || el.dataset.stype === activeType;
-      const show = cityOk && typeOk;
+      const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
     });
-    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
+    card.style.display = (cityOk && regionOk && visibleCount > 0) ? '' : 'none';
   });
 }
 

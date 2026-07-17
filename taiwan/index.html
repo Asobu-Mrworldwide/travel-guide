@@ -565,8 +565,14 @@ function closeSpotPopup() {
 
 function filterSpots(dim, value, btn) {
   const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');
+  const isToggleOff = value !== 'all' && btn.classList.contains('active');
   document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (isToggleOff) {
+    const allBtn = document.querySelector(rowId + ' .filter-btn[data-filter="all"]');
+    if (allBtn) allBtn.classList.add('active');
+  } else {
+    btn.classList.add('active');
+  }
   const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
   const regionRow = document.querySelector('#spots-filter-region');

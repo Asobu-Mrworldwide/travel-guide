@@ -282,7 +282,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 		<path stroke="#191919" stroke-linecap="round" stroke-linejoin="round" d="m14.667 12.478l-.904-9.039a.477.477 0 0 1 .478-.526h6.569a.478.478 0 0 1 .472.55l-1.354 9.015" />
 		<path fill="#fff" stroke="#191919" stroke-linecap="round" stroke-linejoin="round" d="M17.3 9.13a1.196 1.196 0 1 0 0-2.39a1.196 1.196 0 0 0 0 2.39" />
 	</g>
-</svg> 💡 カードのタッチ決済が主流</span><p style="font-size:0.8em;line-height:1.7;color:#444">地下鉄の改札からバルの会計まで、クレジットカードのタッチ決済（コンタクトレス）で完結することがほとんど。日本のカードも対応していれば現地SIMなしでも困らない。</p></div>
+</svg> カードのタッチ決済が主流</span><p style="font-size:0.8em;line-height:1.7;color:#444">地下鉄の改札からバルの会計まで、クレジットカードのタッチ決済（コンタクトレス）で完結することがほとんど。現地通貨の現金を用意しなくても困らない。</p></div>
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:24px 0 0">海外でクレジットカードを使うたびに不正利用のリスクは高まります。筆者自身も海外渡航後に2回不正利用を経験したことをきっかけに、現在は海外ではWiseカードをメインに使うようにしています。チャージした分しか使えないため万が一の際も被害が限定的で、旅好きの友人たちの間でも最近かなり普及してきています。</p>
   <div class="s-card" data-affiliate-card="wise"></div>
 
@@ -295,14 +295,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div style="background:#f9fafb;border-radius:10px;padding:12px;display:flex;flex-direction:column">
         <div style="font-weight:700;font-size:0.9em;color:var(--text);margin-bottom:4px">カタール航空</div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.5;margin-bottom:8px">ドーハ経由。機内サービスの快適さで定評があり、マドリード・バルセロナ両方に就航。</div>
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px"><img src="../素材/航空会社/Qatar Airways.svg" alt="カタール航空" style="height:56px;width:auto;max-width:90%;object-fit:contain"></div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px"><img src="../素材/航空会社/Qatar Airways.svg" alt="カタール航空" style="height:44px;width:auto;max-width:90%;object-fit:contain"></div>
         <div style="font-size:0.85em;color:var(--green);font-weight:700;text-align:right;margin-top:auto">往復 15〜25万円</div>
       </div>
       
       <div style="background:#f9fafb;border-radius:10px;padding:12px;display:flex;flex-direction:column">
         <div style="font-weight:700;font-size:0.9em;color:var(--text);margin-bottom:4px">エミレーツ航空</div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.5;margin-bottom:8px">ドバイ経由。乗り継ぎの利便性が高く、豊富な就航都市が魅力。</div>
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px"><img src="../素材/航空会社/Emirates.svg" alt="エミレーツ航空" style="height:56px;width:auto;max-width:90%;object-fit:contain"></div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px"><img src="../素材/航空会社/Emirates.svg" alt="エミレーツ航空" style="height:44px;width:auto;max-width:90%;object-fit:contain"></div>
         <div style="font-size:0.85em;color:var(--green);font-weight:700;text-align:right;margin-top:auto">往復 15〜26万円</div>
       </div>
       
@@ -316,7 +316,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div style="background:#f9fafb;border-radius:10px;padding:12px;display:flex;flex-direction:column">
         <div style="font-weight:700;font-size:0.9em;color:var(--text);margin-bottom:4px">ターキッシュエアラインズ</div>
         <div style="font-size:0.75em;color:var(--sub);line-height:1.5;margin-bottom:8px">イスタンブール経由。コストパフォーマンスに優れ人気の高いルート。</div>
-        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px"><img src="../素材/航空会社/Turkish Airlines.svg" alt="ターキッシュエアラインズ" style="height:56px;width:auto;max-width:90%;object-fit:contain"></div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px"><img src="../素材/航空会社/Turkish Airlines.svg" alt="ターキッシュエアラインズ" style="height:44px;width:auto;max-width:90%;object-fit:contain"></div>
         <div style="font-size:0.85em;color:var(--green);font-weight:700;text-align:right;margin-top:auto">往復 13〜22万円</div>
       </div>
       
@@ -589,21 +589,30 @@ function closeSpotPopup() {
 }
 
 function filterSpots(dim, value, btn) {
-  const rowId = dim === 'type' ? '#spots-filter-type' : '#spots-filter-row';
+  const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');
+  const isToggleOff = value !== 'all' && btn.classList.contains('active');
   document.querySelectorAll(rowId + ' .filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (isToggleOff) {
+    const allBtn = document.querySelector(rowId + ' .filter-btn[data-filter="all"]');
+    if (allBtn) allBtn.classList.add('active');
+  } else {
+    btn.classList.add('active');
+  }
   const activeType = document.querySelector('#spots-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#spots-filter-row .filter-btn.active')?.dataset.filter || 'all';
+  const regionRow = document.querySelector('#spots-filter-region');
+  const activeRegion = regionRow ? (regionRow.querySelector('.filter-btn.active')?.dataset.filter || 'all') : 'all';
   document.querySelectorAll('#spots-grid .spot-section-card').forEach(card => {
     const cityOk = activeCity === 'all' || card.dataset.city === activeCity;
+    const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
       const typeOk = activeType === 'all' || el.dataset.stype === activeType;
-      const show = cityOk && typeOk;
+      const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
     });
-    card.style.display = (cityOk && visibleCount > 0) ? '' : 'none';
+    card.style.display = (cityOk && regionOk && visibleCount > 0) ? '' : 'none';
   });
 }
 
