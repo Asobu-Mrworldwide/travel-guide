@@ -150,6 +150,19 @@
       "badge": "南部",
       "badge_class": "green",
       "description": "タイ湾に浮かぶ亜熱帯の楽園、サムイ島"
+    },
+    {
+      "id": "sukhothai",
+      "name": "スコータイ",
+      "lat": "17.0186",
+      "lng": "99.7061",
+      "zoom": "13",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "世界遺産",
+      "badge_class": "green",
+      "description": "タイ最初の王朝が栄えた古都、静寂に包まれた遺跡公園"
     }
   ],
   "season_mini": {
@@ -476,6 +489,26 @@
             "type": "t-hot1"
           }
         ]
+      },
+      {
+        "name": "スコータイ",
+        "city_id": "sukhothai",
+        "best_note": "ベスト：11〜2月（涼季）／ 遺跡公園は日陰が少なく暑季は特に厳しい",
+        "note": "内陸部に位置し盆地特有の気候で、乾季は日中の日差しが強く遺跡公園には木陰がほとんどない。朝7時の開園直後か日没前の涼しい時間帯にレンガ造りの遺跡を回るのが快適。11月のロイクラトン（灯篭流し）の時期は「ロイクラトン発祥の地」として光と音のショーが開催され、国内外から観光客が集中し宿の予約が早めに埋まる。",
+        "months": [
+          {"icon": "☀️", "temp": "26°C", "type": "t-hot1"},
+          {"icon": "☀️", "temp": "29°C", "type": "t-hot1"},
+          {"icon": "☀️", "temp": "32°C", "type": "t-hot2"},
+          {"icon": "☀️", "temp": "33°C", "type": "t-hot2"},
+          {"icon": "⛅", "temp": "31°C", "type": "t-hot2"},
+          {"icon": "☔", "temp": "30°C", "type": "t-hot1"},
+          {"icon": "☔", "temp": "29°C", "type": "t-hot1"},
+          {"icon": "☔", "temp": "29°C", "type": "t-hot1"},
+          {"icon": "☔", "temp": "28°C", "type": "t-hot1"},
+          {"icon": "☔", "temp": "27°C", "type": "t-hot1"},
+          {"icon": "⛅", "temp": "25°C", "type": "t-hot1"},
+          {"icon": "☀️", "temp": "24°C", "type": "t-warm"}
+        ]
       }
     ]
   },
@@ -725,6 +758,17 @@
         "maps_url": "https://www.google.com/maps/place/Silom,+Bangkok",
         "lat": 13.7234,
         "lng": 100.5295
+      },
+      {
+        "id": "sukhothai_newtown",
+        "name": "スコータイ・ニュータウン",
+        "tag": "拠点・食事に便利",
+        "tag_color": "green",
+        "desc": "遺跡公園から東へ約12km、レストランや商店が集まる新市街エリア。歴史公園までは無料シャトルバスやソンテウで移動する旅行者が多い。",
+        "price": "格安〜中級 800〜4,000円／泊",
+        "maps_url": "https://www.google.com/maps/place/Sukhothai,+Thailand",
+        "lat": 17.0072,
+        "lng": 99.8265
       }
     ],
     "hotel_map_center": {
@@ -1443,6 +1487,72 @@
       "order_name_en": "Coconut Ice Cream",
       "prompt_en": "Thai coconut ice cream served in a coconut shell, topped with peanuts, sticky rice and sweet corn",
       "plate_color": "coconut shell"
+    },
+    {
+      "num": "No.23",
+      "name": "サテー",
+      "must": true,
+      "badge": "屋台の定番串",
+      "type": "side",
+      "city": "national",
+      "desc": "鶏や豚肉をターメリック・クミンなどのスパイスとココナッツミルクで漬け込み炭火で焼いた串焼き。甘辛いピーナッツソースと酢漬けきゅうり（アーチャート）を添えて食べるのが定番で、屋台からレストランまで幅広く親しまれる前菜。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B5%E3%83%86%E3%83%BC%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🍢",
+      "order_name_en": "Moo Satay",
+      "prompt_en": "Thai satay, grilled marinated pork skewers on bamboo sticks served with peanut sauce and cucumber relish, in the morning light",
+      "plate_color": "banana leaf"
+    },
+    {
+      "num": "No.24",
+      "name": "サイウア",
+      "badge": "チェンマイ名物",
+      "type": "side",
+      "city": "chiangmai",
+      "desc": "レモングラス・こぶみかんの葉・ガランガルなど香草をたっぷり練り込んだ北部タイ風の豚肉ソーセージ。炭火で焼くと香草の香りが立ち上り、チェンマイの市場や食堂の定番総菜として売られている。もち米や生野菜と一緒に食べるのが地元流。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B5%E3%82%A4%E3%82%A6%E3%82%A2%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🌭",
+      "order_name_en": "Sai Ua",
+      "prompt_en": "Sai Ua, Northern Thai herb sausage coiled and grilled, with lemongrass and kaffir lime leaves visible, on a banana leaf",
+      "plate_color": "banana leaf"
+    },
+    {
+      "num": "No.25",
+      "name": "ガイヤーン",
+      "badge": "イサーン料理",
+      "type": "side",
+      "city": "national",
+      "desc": "鶏肉をにんにく・パクチーの根・ナンプラーで漬け込み、炭火でじっくり焼いた東北部（イサーン地方）の焼き鳥。皮はパリッと香ばしく、ソムタム（青パパイヤサラダ）ともち米と組み合わせるのがイサーン食堂の黄金の三点セット。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%B3%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🍗",
+      "order_name_en": "Gai Yang",
+      "prompt_en": "Gai Yang, Isaan grilled chicken with charred crispy skin on a wire grill over charcoal, at dusk",
+      "plate_color": "banana leaf"
+    },
+    {
+      "num": "No.26",
+      "name": "クイッティアオ・ルア（ボートヌードル）",
+      "badge": "濃厚スープ麺",
+      "type": "noodle",
+      "city": "national",
+      "desc": "豚や牛の血を加えた濃厚な茶色いスープが特徴の麺料理。かつてアユタヤの運河で船上から売られていたのが起源とされ、今はバンコクのビクトリーモニュメント周辺の専門店街が有名。一杯が小ぶりで安いため何杯もはしごして味の違いを楽しむのが通の食べ方。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AF%E3%82%A4%E3%83%83%E3%83%86%E3%82%A3%E3%82%A2%E3%82%AA%E3%83%BB%E3%83%AB%E3%82%A2%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Kuay Teow Reua",
+      "prompt_en": "Thai boat noodles, small bowl of dark rich broth with rice noodles, beef slices and morning glory, several small bowls on a table",
+      "plate_color": "small white ceramic bowl"
+    },
+    {
+      "num": "No.27",
+      "name": "トートマンプラー",
+      "badge": "揚げ物前菜",
+      "type": "side",
+      "city": "national",
+      "desc": "白身魚のすり身にレッドカレーペースト・いんげん・こぶみかんの葉を混ぜて揚げた魚のすり身揚げ。外はカリッと中はもっちりとした食感で、甘酸っぱいスイートチリソースときゅうりのピクルスを添えて食べる屋台・食堂の定番前菜。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%88%E3%83%BC%E3%83%88%E3%83%9E%E3%83%B3%E3%83%97%E3%83%A9%E3%83%BC%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🐟",
+      "order_name_en": "Tod Mun Pla",
+      "prompt_en": "Tod Mun Pla, Thai fried fish cakes stacked on a plate with sweet chili sauce and cucumber relish on the side",
+      "plate_color": "white ceramic plate"
     }
   ],
   "spots_section_title": "都市別観光スポット",
@@ -1485,6 +1595,11 @@
     {
       "id": "kohchang",
       "label": "コ・チャン",
+      "active": false
+    },
+    {
+      "id": "sukhothai",
+      "label": "スコータイ",
       "active": false
     }
   ],
@@ -1681,6 +1796,17 @@
           "image": "素材/観光スポット/ワット・パクナム.webp",
           "type": "religious",
           "map_url": "https://maps.google.com/?q=Wat+Paknam+Bhasicharoen+Bangkok"
+        },
+        {
+          "must": false,
+          "icon": "🥊",
+          "num": "BK 14",
+          "name": "ムエタイ観戦（ラジャダムナン・スタジアム）",
+          "desc": "ムエタイ発祥の地で本場の試合を生観戦できる老舗スタジアム。太鼓と笛のワイクルー（試合前の儀式舞）から始まり、選手の肘・膝を使った打撃戦は迫力満点。観光客向けのチケットも用意されており、初めてでも楽しみやすい。",
+          "badge": "伝統格闘技",
+          "prompt_en": "Flat vector illustration of Muay Thai boxing stadium Bangkok Thailand, two fighters in the ring under bright spotlights, referee watching closely, crowd silhouettes cheering in the stands, dramatic stadium lighting at night, wide landscape",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Rajadamnern+Stadium+Bangkok"
         }
       ]
     },
@@ -1828,6 +1954,17 @@
           "type": "religious",
           "image": "素材/観光スポット/チェンライ（ホワイトテンプル）.webp",
           "map_url": "https://maps.google.com/?q=Wat+Rong+Khun+Chiang+Rai"
+        },
+        {
+          "must": false,
+          "icon": "🏮",
+          "num": "CM 10",
+          "name": "イーペン・ランタン祭り（11月）",
+          "desc": "毎年11月の満月の夜、無数の紙製ランタン（コムローイ）を一斉に夜空へ放つ幻想的な祭り。ロイクラトン（灯篭流し）と同時期に開催され、チェンマイ近郊の会場チケットは数ヶ月前から売り切れることも多い。北部タイならではの一大イベント。",
+          "badge": "季節イベント",
+          "prompt_en": "Flat vector illustration of Yi Peng Lantern Festival Chiang Mai Thailand, hundreds of glowing paper sky lanterns floating up into a dark night sky, silhouettes of a crowd releasing lanterns below, full moon in the background, warm golden lantern light, wide landscape",
+          "type": "activity",
+          "no_map": true
         }
       ]
     },
@@ -1939,6 +2076,17 @@
           "image": "素材/観光スポット/カロンビーチ・カタビーチ.webp",
           "type": "nature",
           "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "PH 07",
+          "name": "ワット・チャロン",
+          "desc": "プーケットで最も格式高く参拝者の多い寺院。19世紀の反乱を鎮めた高僧ルアンポー・チェムを祀り、地元の人々の信仰の拠り所となっている。金色の仏塔には仏舎利が納められ、内部の壁画も見応えがある。",
+          "badge": "総本山",
+          "prompt_en": "Flat vector illustration of Wat Chalong Phuket Thailand, ornate golden multi-tiered temple chedi with intricate decoration, main temple hall with red and gold roof in foreground, tropical trees, clear blue sky, wide landscape",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Chalong+Phuket"
         }
       ]
     },
@@ -2101,6 +2249,17 @@
           "image": "素材/観光スポット/チャオプラヤー川クルーズ.webp",
           "type": "activity",
           "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🏰",
+          "num": "AY 05",
+          "name": "バンパイン夏の離宮",
+          "desc": "チャクリー王朝の歴代王が避暑地として使った離宮。タイ・中国・ヨーロッパの建築様式が混在する庭園と建物が並び、水上に浮かぶタイ様式の東屋「アイサワン・ティッパヤアート」が特に美しい。アユタヤ歴史公園とセットで巡る日帰りツアーが定番。",
+          "badge": "離宮",
+          "prompt_en": "Flat vector illustration of Bang Pa-In Royal Palace Thailand, ornate Thai-style pavilion floating on a calm pond surrounded by manicured gardens, colorful European and Chinese style palace buildings in the background, clear blue sky, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Bang+Pa-In+Royal+Palace"
         }
       ]
     },
@@ -2288,6 +2447,17 @@
           "prompt_en": "Flat vector illustration of Big Buddha Temple Koh Samui Thailand, large bright gold-colored seated Buddha statue gleaming in sunlight on small island connected by causeway, vivid gold statue as focal point, turquoise sea surrounding, clear blue sky, wide landscape",
           "image": "素材/観光スポット/ビッグブッダ寺院.webp",
           "type": "religious"
+        },
+        {
+          "must": false,
+          "icon": "🏮",
+          "num": "SM 05",
+          "name": "フィッシャーマンズ・ビレッジ（ボープット）",
+          "desc": "中国系移民が築いた古い漁村を改装したおしゃれな通り。木造の古民家がカフェ・レストラン・雑貨店に生まれ変わり、毎週金曜の夜はウォーキングストリートとして屋台が並ぶ。チャウエンより落ち着いた雰囲気で夕方の散策に人気。",
+          "badge": "夜市・散策",
+          "prompt_en": "Flat vector illustration of Fisherman's Village Bophut Koh Samui Thailand at dusk, narrow street lined with restored wooden shophouses turned into cafes and shops, string lights overhead, small crowds of visitors walking, warm evening light, wide landscape",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Fisherman+Village+Bophut+Koh+Samui"
         }
       ]
     },
@@ -2357,6 +2527,94 @@
           "image": "素材/観光スポット/バンバオ水上集落.webp",
           "type": "townscape",
           "map_url": "https://maps.google.com/?q=Bang+Bao+Fishing+Village+Koh+Chang"
+        }
+      ]
+    },
+    {
+      "city_id": "sukhothai",
+      "city_name": "スコータイ",
+      "city_desc": "1238年に興ったタイ最初の王朝の都。ユネスコ世界遺産の歴史公園にレンガ造りの仏塔と仏像が静かに佇み、アユタヤより素朴で穏やかな遺跡巡りができる",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "バンコクから国内線 約1時間20分（バスは約8時間）",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "エアポートバス・タクシー 約30分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "11〜2月（涼季）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "市内交通",
+          "value": "レンタサイクル・ソンテウ・トゥクトゥク",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "SK 01",
+          "name": "スコータイ歴史公園",
+          "desc": "1238〜1438年に栄えたスコータイ王朝の王都跡。ユネスコ世界遺産に登録され、約70の遺跡が広大な公園内に点在する。アユタヤより人が少なく静かで、レンガ造りの仏塔と蓮池が織りなす風景はタイ建築の原点とも呼ばれる。",
+          "badge": "世界遺産",
+          "prompt_en": "Flat vector illustration of Sukhothai Historical Park Thailand, ancient brick stupas and Buddha statues scattered across wide grassy grounds, lotus ponds reflecting the ruins, palm trees, clear blue sky, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Sukhothai+Historical+Park"
+        },
+        {
+          "must": true,
+          "icon": "🙏",
+          "num": "SK 02",
+          "name": "ワット・マハタート（スコータイ）",
+          "desc": "歴史公園の中心に建つスコータイ最大の寺院跡。蓮のつぼみを模した独特の塔（プラーン）と、周囲を囲む200体近い仏像群が圧巻。夕暮れ時のシルエットが特に美しく撮影スポットとしても人気。",
+          "badge": "中心寺院",
+          "prompt_en": "Flat vector illustration of Wat Mahathat Sukhothai Thailand, lotus-bud shaped central stupa surrounded by rows of seated Buddha statues on brick platforms, golden hour lighting, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Wat+Mahathat+Sukhothai"
+        },
+        {
+          "must": true,
+          "icon": "🗿",
+          "num": "SK 03",
+          "name": "ワット・シーチュム",
+          "desc": "高さ15mの巨大な座仏「アチャナ仏」を、細い隙間の建物の中に安置した寺院。狭い開口部から金色の指先だけが覗く独特の構図が有名で、スコータイで最も写真映えするスポットのひとつ。",
+          "badge": "フォトスポット",
+          "prompt_en": "Flat vector illustration of Wat Si Chum Sukhothai Thailand, massive seated golden Buddha statue framed inside a narrow gap between tall brick walls, dramatic lighting, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Wat+Si+Chum+Sukhothai"
+        },
+        {
+          "must": false,
+          "icon": "⛩️",
+          "num": "SK 04",
+          "name": "ワット・シーサワイ",
+          "desc": "クメール様式の3基の仏塔（プラーン）が並ぶ寺院跡。もとはヒンドゥー教寺院として建てられ、後に仏教寺院へ改修された歴史を持つ。周囲を囲む堀と赤煉瓦の塔のコントラストが美しい。",
+          "badge": "クメール様式",
+          "prompt_en": "Flat vector illustration of Wat Sri Sawai Sukhothai Thailand, three tall Khmer-style corncob-shaped brick prangs standing in a row, surrounded by a moat, morning light, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Wat+Sri+Sawai+Sukhothai"
+        },
+        {
+          "must": false,
+          "icon": "🏮",
+          "num": "SK 05",
+          "name": "ロイクラトン・光と音のショー（11月）",
+          "desc": "スコータイは灯篭流し「ロイクラトン」発祥の地とされ、毎年11月の満月の夜に歴史公園内で大規模な光と音のショーが開催される。ライトアップされた遺跡を背景に打ち上げ花火や伝統舞踊が披露され、川に浮かべる灯篭の灯りが水面を埋め尽くす。",
+          "badge": "季節イベント",
+          "prompt_en": "Flat vector illustration of Loy Krathong festival at Sukhothai Historical Park Thailand at night, illuminated ancient brick stupas in the background, floating candle lanterns covering the surface of a pond, silhouettes of a crowd, fireworks in the night sky, wide landscape",
+          "type": "activity",
+          "no_map": true
         }
       ]
     }

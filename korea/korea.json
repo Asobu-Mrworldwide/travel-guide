@@ -121,6 +121,19 @@
       "badge": "リゾート島",
       "badge_class": "green",
       "description": "火山地形と海が広がる韓国随一の癒やしアイランド"
+    },
+    {
+      "id": "jeonju",
+      "name": "全州",
+      "lat": "35.8242",
+      "lng": "127.1480",
+      "zoom": "13",
+      "color": "#a0522d",
+      "marker_size": "13",
+      "marker_label": "●",
+      "badge": "美食の古都",
+      "badge_class": "",
+      "description": "韓国最大の韓屋村とビビンバ発祥の地。伝統家屋と屋台グルメが同居する、食通に人気の古都"
     }
   ],
   "season_mini": {
@@ -515,6 +528,74 @@
             "type": "t-mild"
           }
         ]
+      },
+      {
+        "name": "全州",
+        "city_id": "jeonju",
+        "best_note": "ベスト：4〜5月・10〜11月（韓屋村散策に心地よい気候）",
+        "note": "内陸の盆地に位置し、盆地特有の寒暖差が大きい気候が特徴。<strong>春（4〜5月）</strong>は韓屋村に新緑と桜が重なり観光客で賑わう。<strong>夏（7〜8月）</strong>は盆地特有の蒸し暑さがこもりやすく、瓦屋根の路地は日中の直射日光を避けたい。<strong>秋（10〜11月）</strong>は空気が澄み、瓦屋根と紅葉が重なる一年で最も美しい季節になる。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "1°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☀️",
+            "temp": "3°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "☀️",
+            "temp": "8°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "14°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "19°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "26°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "22°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "9°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "3°C",
+            "type": "t-cold"
+          }
+        ]
       }
     ]
   },
@@ -758,6 +839,17 @@
         "maps_url": "https://www.google.com/maps/search/江南+ソウル",
         "lat": 37.4979,
         "lng": 127.0276
+      },
+      {
+        "id": "jeonju-hanok",
+        "name": "全州韓屋村（ジョンジュ・ハノクマウル）",
+        "tag": "伝統体験",
+        "tag_color": "green",
+        "desc": "韓屋を改装したゲストハウスが集まるエリア。伝統家屋に泊まりながら韓服レンタルや町歩きを楽しめる、全州観光の拠点。",
+        "price": "5,000円〜",
+        "maps_url": "https://www.google.com/maps/search/全州韓屋村",
+        "lat": 35.8151,
+        "lng": 127.1535
       }
     ],
     "hotel_tip": "初めてなら明洞、夜まで遊びたいなら弘大、静かに滞在したいなら江南がおすすめ。ソウル以外に釜山・済州島にも泊まる場合は、都市ごとにエリアを分けて予約しよう。",
@@ -1121,6 +1213,14 @@
     {
       "id": "busan",
       "label": "釜山"
+    },
+    {
+      "id": "jeju",
+      "label": "済州島"
+    },
+    {
+      "id": "jeonju",
+      "label": "全州"
     }
   ],
   "food_modal_phrase_main": "이거 주세요",
@@ -1146,7 +1246,7 @@
       "name": "ビビンバ",
       "badge": "定食の代表格",
       "type": "main",
-      "city": "seoul",
+      "city": "jeonju",
       "desc": "ナムルと肉、コチュジャンを混ぜて食べる韓国料理の代表。石焼きの器で提供される全州（チョンジュ）式が特に有名。",
       "image": "素材/グルメ/ビビンバ.webp",
       "prompt_en": "Korean bibimbap in a hot stone bowl with colorful namul vegetables, egg yolk, gochujang sauce, food photography",
@@ -1325,6 +1425,63 @@
       "wiki_url": "https://www.google.com/search?q=%E3%82%BF%E3%83%83%E3%82%AB%E3%83%B3%E3%83%9E%E3%83%AA%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86",
       "order_ico": "🍗",
       "order_name_en": "Dak Hanmari"
+    },
+    {
+      "num": "No.15",
+      "name": "ソルロンタン",
+      "badge": "ソウルの滋味スープ",
+      "type": "soup",
+      "city": "seoul",
+      "desc": "牛骨と牛肉を白濁するまでじっくり煮込んだ、ソウルを代表する滋味深いスープ。塩気控えめで提供されるため、卓上の塩やネギで自分好みの味に調整するのが定番の食べ方。",
+      "prompt_en": "Korean seolleongtang milky white ox bone soup in a stone bowl with sliced beef and scallions, food photography",
+      "plate_color": "white stone bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%BD%E3%83%AB%E3%83%AD%E3%83%B3%E3%82%BF%E3%83%B3%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86",
+      "order_ico": "🥣",
+      "order_name_en": "Seolleongtang",
+      "image": "素材/グルメ/ソルロンタン.webp"
+    },
+    {
+      "num": "No.16",
+      "name": "済州島黒豚焼肉",
+      "badge": "済州グルメ",
+      "type": "main",
+      "city": "jeju",
+      "desc": "済州島固有の在来種「済州黒豚」を厚切りで焼く、島を代表するご馳走。脂身に甘みがあり、味噌だれや塩でシンプルに味わうのが地元流。専門店が集まる黒豚通りは観光客にも大人気。",
+      "prompt_en": "Korean Jeju black pork grilled thick-cut slices on a tabletop grill, side dishes, food photography",
+      "plate_color": "black grill plate",
+      "wiki_url": "https://www.google.com/search?q=%E6%B8%88%E5%B7%9E%E5%B3%B6%E9%BB%92%E8%B1%9A%E7%84%BC%E8%82%89%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86",
+      "order_ico": "🐷",
+      "order_name_en": "Jeju Heukdwaeji",
+      "must": true,
+      "image": "素材/グルメ/済州島黒豚焼肉.webp"
+    },
+    {
+      "num": "No.17",
+      "name": "カルチジョリム（太刀魚の煮付け）",
+      "badge": "済州の郷土料理",
+      "type": "main",
+      "city": "jeju",
+      "desc": "太刀魚を大根やコチュジャンベースのピリ辛だれでじっくり煮込んだ済州島の郷土料理。脂ののった太刀魚の身はほろほろと崩れるやわらかさで、ご飯が進む一皿として地元でも人気が高い。",
+      "prompt_en": "Korean galchi jorim braised cutlassfish stew with radish in spicy red sauce, black stone pot, food photography",
+      "plate_color": "black stone pot",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%81%E3%82%B8%E3%83%A7%E3%83%AA%E3%83%A0%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86",
+      "order_ico": "🐟",
+      "order_name_en": "Galchi Jorim",
+      "image": "素材/グルメ/カルチジョリム（太刀魚の煮付け）.webp"
+    },
+    {
+      "num": "No.18",
+      "name": "コンナムルクッパ",
+      "badge": "全州名物",
+      "type": "soup",
+      "city": "jeonju",
+      "desc": "豆もやしをたっぷり煮込んだ透き通るスープに、卵やご飯を落として食べる全州の朝ごはん・二日酔い覚まし飯。あっさりした味わいながら旨みが染み出し、韓屋村散策前の一杯にちょうどいい。",
+      "prompt_en": "Korean kongnamul gukbap bean sprout soup with rice and a raw egg, simmering in a black stone pot, food photography",
+      "plate_color": "black stone pot",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B3%E3%83%B3%E3%83%8A%E3%83%A0%E3%83%AB%E3%82%AF%E3%83%83%E3%83%91%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86",
+      "order_ico": "🌱",
+      "order_name_en": "Kongnamul Gukbap",
+      "image": "素材/グルメ/コンナムルクッパ.webp"
     }
   ],
   "spots_section_title": "韓国のみどころ",
@@ -1378,6 +1535,10 @@
     {
       "id": "jeju",
       "label": "済州島"
+    },
+    {
+      "id": "jeonju",
+      "label": "全州"
     }
   ],
   "spot_sections": [
@@ -1497,6 +1658,42 @@
           "image": "素材/観光スポット/広蔵市場（クァンジャンシジャン）.webp",
           "type": "market",
           "map_url": "https://maps.google.com/?q=Gwangjang+Market+Seoul"
+        },
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "SEL 09",
+          "name": "昌徳宮（チャンドックン）",
+          "desc": "ユネスコ世界遺産に登録された朝鮮王朝の離宮。裏手に広がる「秘苑」は事前予約制のガイドツアーでのみ入れる庭園で、四季折々の自然美と建築が調和した韓国庭園の最高傑作とされる。",
+          "badge": "世界遺産の離宮",
+          "prompt_en": "Changdeokgung Palace Seoul Secret Garden with traditional pavilion by a lotus pond, autumn foliage, historic Korean architecture",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Changdeokgung+Palace+Seoul",
+          "image": "素材/観光スポット/昌徳宮（チャンドックン）.webp"
+        },
+        {
+          "must": false,
+          "icon": "⛩️",
+          "num": "SEL 10",
+          "name": "曹渓寺（チョゲサ）",
+          "desc": "曹渓宗総本山として韓国仏教の中心を担う都心の寺院。境内の大きな菩提樹と天然記念物の白松が有名で、春には満開の桜と提灯が境内を彩る、ソウルのど真ん中にありながら静けさが漂う貴重なスポット。",
+          "badge": "都心の仏教総本山",
+          "prompt_en": "Jogyesa Temple Seoul main hall with colorful paper lanterns hanging in the courtyard, traditional Buddhist architecture, spring cherry blossoms",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Jogyesa+Temple+Seoul",
+          "image": "素材/観光スポット/曹渓寺（チョゲサ）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏺",
+          "num": "SEL 11",
+          "name": "国立中央博物館",
+          "desc": "韓国最大かつ世界でも有数の規模を誇る国立博物館。先史時代から近現代まで韓国の歴史を網羅する常設展示は無料で見学でき、国宝級の金冠や仏像コレクションも必見。",
+          "badge": "韓国最大の博物館",
+          "prompt_en": "National Museum of Korea Seoul grand modern building exterior with reflecting pool, museum visitors walking, daytime",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=National+Museum+of+Korea+Seoul",
+          "image": "素材/観光スポット/国立中央博物館.webp"
         }
       ]
     },
@@ -1603,6 +1800,30 @@
           "image": "素材/観光スポット/海東龍宮寺.webp",
           "type": "religious",
           "map_url": "https://maps.google.com/?q=Haedong+Yonggungsa+Temple+Busan"
+        },
+        {
+          "must": false,
+          "icon": "🌲",
+          "num": "BUS 05",
+          "name": "太宗台（テジョンデ）",
+          "desc": "断崖絶壁と松林が広がる釜山南端の景勝地。展望台からは対馬まで見えるほど視界が開けることもあり、園内を周遊する観光列車「タヌビ・トレイン」で移動できる。",
+          "badge": "断崖の景勝地",
+          "prompt_en": "Taejongdae Resort Park Busan dramatic coastal cliffs with pine trees and lighthouse, ocean view, clear sky",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Taejongdae+Resort+Park+Busan",
+          "image": "素材/観光スポット/太宗台（テジョンデ）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌉",
+          "num": "BUS 06",
+          "name": "広安里（クァンアルリ）ビーチ",
+          "desc": "光安大橋のライトアップを一望できる釜山屈指のナイトビュースポット。海沿いにはおしゃれなカフェやバーが並び、夏は花火大会やドローンショーの会場としても賑わう。",
+          "badge": "夜景ビーチ",
+          "prompt_en": "Gwangalli Beach Busan at night with illuminated Gwangan Bridge in the background, beachfront cafes, silhouettes of visitors walking",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Gwangalli+Beach+Busan",
+          "image": "素材/観光スポット/広安里（クァンアルリ）ビーチ.webp"
         }
       ]
     },
@@ -1662,6 +1883,18 @@
           "image": "素材/観光スポット/瞻星台.webp",
           "type": "heritage",
           "map_url": "https://maps.google.com/?q=Cheomseongdae+Observatory+Gyeongju"
+        },
+        {
+          "must": true,
+          "icon": "🗿",
+          "num": "GYJ 04",
+          "name": "石窟庵",
+          "desc": "仏国寺とあわせてユネスコ世界遺産に登録された、山中の人工石窟寺院。本尊の釈迦如来坐像は東アジア仏教彫刻の傑作とされ、ガラス越しに神秘的な姿を拝観できる。",
+          "badge": "世界遺産の石窟寺院",
+          "prompt_en": "Seokguram Grotto Gyeongju stone Buddha statue inside ancient grotto shrine, soft golden light, serene atmosphere",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Seokguram+Grotto+Gyeongju",
+          "image": "素材/観光スポット/石窟庵.webp"
         }
       ]
     },
@@ -1721,6 +1954,101 @@
           "image": "素材/観光スポット/牛島.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Udo+Island+Jeju"
+        },
+        {
+          "must": true,
+          "icon": "🕳️",
+          "num": "JEJ 04",
+          "name": "万丈窟（マンジャングル）",
+          "desc": "全長13kmを超える世界最大級の溶岩洞窟で、済州島の火山地形を代表するユネスコ世界自然遺産。一般公開区間だけでも1km以上あり、溶岩石柱など神秘的な地形が広がる。",
+          "badge": "世界自然遺産の溶岩洞窟",
+          "prompt_en": "Manjanggul Cave Jeju underground lava tube tunnel with dramatic rock formations, dim cave lighting, a few tourists for scale",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Manjanggul+Cave+Jeju",
+          "image": "素材/観光スポット/万丈窟（マンジャングル）.webp"
+        },
+        {
+          "must": false,
+          "icon": "💦",
+          "num": "JEJ 05",
+          "name": "天地淵（チョンジヨン）滝",
+          "desc": "「天から地に降りる淵」の名を持つ済州島屈指の名瀑。夜はライトアップされ、周辺の遊歩道は亜熱帯植物に囲まれた散策コースとしても人気が高い。",
+          "badge": "済州の名瀑",
+          "prompt_en": "Cheonjiyeon Waterfall Jeju cascading through lush subtropical forest, illuminated at dusk, small figures on walking path for scale",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Cheonjiyeon+Waterfall+Jeju",
+          "image": "素材/観光スポット/天地淵（チョンジヨン）滝.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "jeonju",
+      "city_name": "全州",
+      "city_image": "",
+      "city_prompt": "Jeonju Hanok Village Korea traditional tiled roof houses with mountain backdrop, warm afternoon light, travel photography",
+      "city_desc": "韓国最大の韓屋村とビビンバ発祥の地として知られる、食と伝統建築が息づく美食の古都",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ソウルからKTX＋バスで約2時間、または全州直行の高速バスで約2.5〜3時間"
+        },
+        {
+          "label": "おすすめ時間帯",
+          "value": "昼は韓屋村散策、夜は南部市場の夜市とライトアップされた慶基殿へ"
+        },
+        {
+          "label": "名物",
+          "value": "ビビンバ発祥の地として知られる韓国屈指の美食の街"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏘️",
+          "num": "JNJ 01",
+          "name": "全州韓屋村",
+          "desc": "700棟近い韓屋が瓦屋根を連ねる韓国最大の伝統家屋密集地。韓服レンタルで散策するのが定番で、路地に並ぶ茶房やハンジ（韓紙）工房めぐりも楽しい。",
+          "badge": "韓国最大の韓屋村",
+          "prompt_en": "Jeonju Hanok Village rows of traditional tiled-roof houses seen from above, visitors in hanbok walking narrow alleys, warm afternoon light",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Jeonju+Hanok+Village",
+          "image": "素材/観光スポット/全州韓屋村.webp"
+        },
+        {
+          "must": false,
+          "icon": "⛩️",
+          "num": "JNJ 02",
+          "name": "慶基殿",
+          "desc": "李氏朝鮮王朝の始祖・李成桂の御真（肖像画）を祀る霊廟。韓屋村の中心に位置し、境内の竹林と伝統建築が静かな時間を演出する、韓屋村観光の起点となるスポット。",
+          "badge": "朝鮮王朝始祖の霊廟",
+          "prompt_en": "Gyeonggijeon Shrine Jeonju traditional wooden shrine buildings with bamboo grove, quiet historic courtyard, morning light",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Gyeonggijeon+Shrine+Jeonju",
+          "image": "素材/観光スポット/慶基殿.webp"
+        },
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "JNJ 03",
+          "name": "殿洞聖堂",
+          "desc": "ロマネスク様式の赤レンガが美しい韓国近代建築の代表作。すぐそばの韓屋村とのコントラストが際立つ撮影スポットとして人気で、朝鮮末期のカトリック殉教の地に建てられた歴史も持つ。",
+          "badge": "赤レンガの大聖堂",
+          "prompt_en": "Jeondong Catholic Cathedral Jeonju Romanesque red brick church exterior, blue sky, hanok rooftops visible nearby",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Jeondong+Catholic+Church+Jeonju",
+          "image": "素材/観光スポット/殿洞聖堂.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏮",
+          "num": "JNJ 04",
+          "name": "南部市場",
+          "desc": "全州最大の伝統市場で、昼は地元グルメの屋台が並び、金〜日曜の夜はナイトマーケット「青春夜市場」が開催され学生街らしい活気に包まれる。全州名物コンナムルクッパの人気店も点在。",
+          "badge": "夜市で賑わう伝統市場",
+          "prompt_en": "Nambu Market Jeonju night market food stalls glowing with lantern light, crowds of people walking, lively atmosphere",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Nambu+Market+Jeonju",
+          "image": "素材/観光スポット/南部市場.webp"
         }
       ]
     }

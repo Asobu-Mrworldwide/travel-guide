@@ -123,6 +123,19 @@
       "badge": "ボルネオ",
       "badge_class": "green",
       "description": "「猫の街」として知られるサラワク州の州都"
+    },
+    {
+      "id": "langkawi",
+      "name": "ランカウイ",
+      "lat": "6.3500",
+      "lng": "99.8000",
+      "zoom": "11",
+      "color": "#006847",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "リゾート",
+      "badge_class": "green",
+      "description": "免税でビーチリゾートを満喫できるアンダマン海の島"
     }
   ],
   "season_mini": {
@@ -449,6 +462,74 @@
             "type": "t-hot1"
           }
         ]
+      },
+      {
+        "name": "ランカウイ島",
+        "city_id": "langkawi",
+        "best_note": "ベスト：11〜4月（乾季） ／ 9〜10月は雨が多くビーチリゾートには不向き",
+        "note": "乾季の11〜4月は晴天率が高くビーチ・海上アクティビティに最適。とはいえ年間を通して免税の島なので、多少の雨でもショッピングや室内アクティビティに切り替えれば楽しめる。マングローブツアーは満潮時の方が奥まで進めることが多い。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          }
+        ]
       }
     ]
   },
@@ -705,9 +786,20 @@
         "maps_url": "https://www.google.com/maps/search/Chinatown+Kuala+Lumpur",
         "lat": 3.1452,
         "lng": 101.6975
+      },
+      {
+        "id": "cenang",
+        "name": "パンタイ・チェナン（ランカウイ）",
+        "tag": "ビーチリゾート",
+        "tag_color": "green",
+        "desc": "ランカウイ最大のビーチエリア。海沿いにホテル・レストラン・免税店が集まり、SkyCab乗り場やサンセットビーチへのアクセスも良好。ランカウイに泊まるならまずここが候補になる。",
+        "price": "中級 4,000〜9,000円／泊　高級 12,000円〜",
+        "maps_url": "https://www.google.com/maps/place/Pantai+Cenang,+Langkawi",
+        "lat": 6.2833,
+        "lng": 99.7167
       }
     ],
-    "hotel_tip": "初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。",
+    "hotel_tip": "初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。ランカウイはパンタイ・チェナン周辺なら夕日ビーチ・免税店・レストランが徒歩圏内に揃う。",
     "sim_intro": "海外用SIMを探すと選択肢が多すぎて何を選べばいいか迷いますよね。現地でSIMを買う方法もありますが、限られた滞在時間を削ってショップを探すのはもったいない。やっぱり出発前に準備しておくのが正解です。渡航先・日数・データ容量で絞り込める比較ページを作ったので、よかったら参考にしてみてください。",
     "apps": [
       {
@@ -1481,6 +1573,32 @@
       "order_name_en": "Ais Kacang",
       "prompt_en": "Ais Kacang Malaysian shaved ice dessert piled high with red beans, jelly, corn and grass jelly, drizzled with rose syrup and condensed milk",
       "plate_color": "white bowl"
+    },
+    {
+      "num": "No.28",
+      "name": "ロティジョン",
+      "badge": "ジョホール名物",
+      "type": "side",
+      "city": "jb",
+      "desc": "フランスパンを割って卵液・玉ねぎ・ひき肉と焼き上げるサンドイッチ。1960年代にシンガポールの屋台で英国兵に出した料理が起源とされ、対岸のジョホールバルでも定番の屋台グルメとして根付いた。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%AD%E3%83%86%E3%82%A3%E3%82%B8%E3%83%A7%E3%83%B3%20%E3%83%9E%E3%83%AC%E3%83%BC%E3%82%B7%E3%82%A2%20%E6%96%99%E7%90%86",
+      "order_ico": "🥖",
+      "order_name_en": "Roti John",
+      "prompt_en": "Roti John Malaysian omelette sandwich, halved French baguette grilled with egg, minced meat and onions, cut open to show the filling",
+      "plate_color": "white"
+    },
+    {
+      "num": "No.29",
+      "name": "ヒナバ",
+      "badge": "サバ名物",
+      "type": "side",
+      "city": "kk",
+      "desc": "サバ州の先住民カダザン・ドゥスン族に伝わる魚のマリネ料理。ライムの酸味と生姜・唐辛子で新鮮な白身魚を〆た郷土の一品で、酸味の効いたバンバンガン（野生マンゴー）の種を加えることもある。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%92%E3%83%8A%E3%83%90%20%E3%83%9E%E3%83%AC%E3%83%BC%E3%82%B7%E3%82%A2%20%E6%96%99%E7%90%86",
+      "order_ico": "🐟",
+      "order_name_en": "Hinava",
+      "prompt_en": "Hinava Sabah raw fish salad marinated in lime juice with ginger, chili and shallots, served on a banana leaf",
+      "plate_color": "banana leaf"
     }
   ],
   "spots_section_title": "都市別観光スポット",
@@ -1513,6 +1631,11 @@
     {
       "id": "kuching",
       "label": "クチン",
+      "active": false
+    },
+    {
+      "id": "langkawi",
+      "label": "ランカウイ",
       "active": false
     }
   ],
@@ -1697,6 +1820,17 @@
           "type": "religious",
           "image": "素材/観光スポット/スリ・マハマリアマン寺院.webp",
           "map_url": "https://maps.google.com/?q=Sri+Mahamariamman+Temple+Kuala+Lumpur"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "KL 13",
+          "name": "ムルデカ広場（独立広場）",
+          "desc": "1957年8月31日、英国からの独立が宣言された歴史的な広場。周囲にはチューダー様式の旧連邦事務局やロイヤル・セランゴール・クラブなど植民地時代の建築が並び、東南アジア最高峰の一つとされる高さ約100mの旗竿がそびえる。",
+          "badge": "独立の地",
+          "prompt_en": "Flat vector illustration of Merdeka Square Kuala Lumpur, vast green field with a very tall flagpole flying the Malaysian flag, Tudor-style colonial buildings and the Royal Selangor Club along the edge, clear blue sky, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Merdeka+Square+Kuala+Lumpur"
         }
       ]
     },
@@ -1994,7 +2128,63 @@
           "link_btn_index": "9"
         }
       ],
-      "spots": []
+      "spots": [
+        {
+          "must": true,
+          "icon": "🧱",
+          "num": "JB 01",
+          "name": "レゴランド・マレーシア・リゾート",
+          "desc": "東南アジア初のレゴランド。レゴブロックで再現された東南アジアの名所「ミニランド」やウォーターパーク、シーライフ水族館まで揃う一大リゾート。子連れファミリーに絶大な人気を誇る。",
+          "badge": "テーマパーク",
+          "prompt_en": "Flat vector illustration of Legoland Malaysia Resort Johor Bahru, colorful theme park entrance with giant LEGO brick sculptures and castle, families walking through, palm trees, clear blue sky, wide landscape",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Legoland+Malaysia+Resort"
+        },
+        {
+          "must": false,
+          "icon": "🕌",
+          "num": "JB 02",
+          "name": "スルタン・アブ・バカール・モスク",
+          "desc": "1900年建立、ジョホール海峡を見下ろす高台に建つ州立モスク。ヴィクトリア様式とムーア様式が融合した優美な建築で、対岸のシンガポールまで見渡せる。",
+          "badge": "絶景モスク",
+          "prompt_en": "Flat vector illustration of Sultan Abu Bakar State Mosque Johor Bahru, white Victorian-Moorish style mosque with tall minarets on a hilltop overlooking the strait, Singapore skyline faintly visible across the water, golden hour light, wide landscape",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Sultan+Abu+Bakar+State+Mosque+Johor+Bahru"
+        },
+        {
+          "must": false,
+          "icon": "🎡",
+          "num": "JB 03",
+          "name": "ダンガベイ",
+          "desc": "ジョホール海峡沿いに広がる複合レジャーエリア。観覧車やナイトマーケット、シーフードレストランが並び、地元家族連れで賑わう夕涼みスポット。",
+          "badge": "ウォーターフロント",
+          "prompt_en": "Flat vector illustration of Danga Bay Johor Bahru, waterfront leisure park with a large ferris wheel lit up at dusk, seafood restaurants along the promenade, calm strait water, warm sunset sky, wide landscape",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Danga+Bay+Johor+Bahru"
+        },
+        {
+          "must": false,
+          "icon": "🎎",
+          "num": "JB 04",
+          "name": "プトゥリハーバー（ハローキティタウン他）",
+          "desc": "水路が巡る複合リゾートエリア。ハローキティタウンやトーマスタウンなどキャラクターテーマパークが集まり、小さな子ども連れの旅行者に人気。",
+          "badge": "テーマパーク",
+          "prompt_en": "Flat vector illustration of Puteri Harbour Johor Bahru, waterfront family theme park area with colorful character-themed buildings, canal boats, palm-lined promenade, clear blue sky, wide landscape",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Puteri+Harbour+Johor+Bahru"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "JB 05",
+          "name": "JBシティスクエア／チャイナタウン周辺",
+          "desc": "シンガポールからの買い物客で賑わうダウンタウン。ショッピングモールと屋台グルメが密集し、物価の安さを求めて日帰りで訪れるシンガポール人観光客も多い。",
+          "badge": "ショッピング",
+          "prompt_en": "Flat vector illustration of downtown Johor Bahru city square area, bustling shopping street with malls and hawker food stalls, mix of locals and Singaporean day-trippers, warm evening light, wide landscape",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=JB+City+Square+Johor+Bahru"
+        }
+      ]
     },
     {
       "city_id": "kk",
@@ -2172,8 +2362,8 @@
           "must": false,
           "icon": "🏛️",
           "num": "クチン 01",
-          "name": "サラワク博物館",
-          "desc": "東南アジア有数の博物館。ボルネオ先住民族の文化・自然史を詳しく展示。1891年創設の歴史ある博物館。",
+          "name": "ボルネオ文化博物館（新サラワク博物館）",
+          "desc": "1891年創設のサラワク博物館旧館が改修工事のため長期休館し、その収蔵品を引き継ぐ形で2022年にオープンした新館。東南アジア最大級の広さを誇り、ボルネオ先住民族の文化・自然史を圧倒的なスケールで展示する。",
           "badge": "入場無料",
           "prompt_en": "Exterior of Borneo Cultures Museum in Kuching, Malaysia,\nlarge symmetrical modernist building with 8 to 9 tall narrow pointed arch spires \narranged closely side by side across the full width of the facade,\neach spire is curved and petal-shaped, wide at the base and tapering to a sharp tip,\nthe entire facade covered in dense diamond-pattern golden beige panels,\ndark tinted glass filling the gaps between spires,\nwarm gold and dark brown color palette,\nwide staircase at the front,\nblue sky with clouds,\nflat illustration style, clean vector art",
           "image": "素材/観光スポット/サラワク博物館.webp",
@@ -2239,6 +2429,111 @@
           "image": "素材/観光スポット/クチン猫博物館.webp",
           "type": "museum",
           "map_url": "https://maps.google.com/?q=Kuching+Cat+Museum"
+        }
+      ]
+    },
+    {
+      "city_id": "langkawi",
+      "city_name": "ランカウイ",
+      "city_desc": "マレー半島北西端、アンダマン海に浮かぶ免税の島。ケーブルカーで登る絶景の山、真っ白なビーチ、マングローブクルーズまで揃うリゾートアイランド",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "KLから国内線 約1時間 / ペナンからフェリー約2.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー・Grab 約15〜20分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "11〜4月（乾季）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "シーフード・免税ショッピング",
+          "link_section": "food",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "市内交通",
+          "value": "レンタルバイク・Grab",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🚡",
+          "num": "ランカウイ 01",
+          "name": "ランカウイ・スカイキャブ＆スカイブリッジ",
+          "desc": "マッ・チンチャン山の山頂近くまで一気に上るケーブルカー。山頂駅から続く全長125mの湾曲した歩道橋スカイブリッジからは、島全体とアンダマン海を見渡す絶景が広がる。",
+          "badge": "絶景",
+          "prompt_en": "Langkawi Sky Bridge at golden hour, curved pedestrian suspension bridge suspended high above dense green rainforest mountains, dramatic view of Andaman Sea and scattered islands below, a few small figures walking on the bridge for scale, warm golden light, wide cinematic landscape",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Langkawi+Sky+Bridge"
+        },
+        {
+          "must": true,
+          "icon": "🦅",
+          "num": "ランカウイ 02",
+          "name": "イーグルスクエア（ダタラン・ラン）",
+          "desc": "クアの港沿いに建つ巨大な鷲の像がシンボルの広場。「ランカウイ」の語名の由来ともいわれる鷲にちなんだモニュメントで、島の玄関口として観光客の記念撮影スポットになっている。",
+          "badge": "フォトスポット",
+          "prompt_en": "Flat vector illustration of Eagle Square Langkawi, giant reddish-brown eagle statue with wings spread wide on a waterfront plaza, marina and calm sea in background, clear blue sky, wide landscape",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Eagle+Square+Langkawi"
+        },
+        {
+          "must": true,
+          "icon": "🏖️",
+          "num": "ランカウイ 03",
+          "name": "パンタイ・チェナン",
+          "desc": "ランカウイで最も賑わうビーチ。遠浅の白砂ビーチ沿いにホテル・バー・免税店が並び、夕日の名所としても知られる。パラセーリングやジェットスキーなどマリンアクティビティも豊富。",
+          "badge": "ビーチ",
+          "prompt_en": "Flat vector illustration of Pantai Cenang beach Langkawi at sunset, long white sandy beach with calm turquoise water, beach bars and palm trees along the shore, silhouettes of a few tourists walking near the water, warm orange sunset sky, wide landscape",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Pantai+Cenang+Langkawi"
+        },
+        {
+          "must": false,
+          "icon": "🚤",
+          "num": "ランカウイ 04",
+          "name": "キリム・カルスト・ジオフォレストパーク",
+          "desc": "石灰岩の奇岩がそそり立つマングローブ地帯をボートで巡るツアー。コウモリ洞窟やワシの餌付けポイントを通り、野生のオオトカゲや魚鷹（ミサゴ）を間近で観察できる。",
+          "badge": "マングローブツアー",
+          "prompt_en": "Flat vector illustration of Kilim Karst Geoforest Park Langkawi, small wooden boat cruising through mangrove river surrounded by dramatic limestone karst cliffs, dense green foliage, a few white-bellied sea eagles soaring above, clear blue sky, wide landscape",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Kilim+Karst+Geoforest+Park"
+        },
+        {
+          "must": false,
+          "icon": "💦",
+          "num": "ランカウイ 05",
+          "name": "テラガ・トゥジュ（七つ井戸の滝）",
+          "desc": "マッ・チンチャン山中腹にある7段の滝つぼが連なる名所。滝つぼを天然のウォータースライダーのように滑り降りて遊べ、地元では伝説の妖精が水浴びした場所として語り継がれている。",
+          "badge": "滝",
+          "prompt_en": "Flat vector illustration of Telaga Tujuh Seven Wells Waterfall Langkawi, series of natural rock pools cascading down a lush green jungle hillside, clear turquoise water, tropical rainforest surroundings, dappled sunlight, wide landscape",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Telaga+Tujuh+Waterfall+Langkawi"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "ランカウイ 06",
+          "name": "免税ショッピング",
+          "desc": "ランカウイ島全体が免税エリアに指定されており、チョコレート・酒・タバコ・化粧品などが市価より大幅に安く手に入る。空港やパンタイ・チェナン周辺の免税店を旅の最後にまとめて回るのが定番。",
+          "badge": "免税",
+          "no_map": true,
+          "prompt_en": "Flat vector illustration of a duty-free shopping street in Langkawi, colorful storefronts with chocolate, liquor and cosmetics displayed in windows, tourists browsing with shopping bags, tropical palm trees along the street, bright daylight, wide landscape",
+          "type": "market"
         }
       ]
     }

@@ -123,6 +123,19 @@
       "badge": "ダチョウの街",
       "badge_class": "green",
       "description": "昔ダチョウ産業で発展した小さな街。ダチョウ好きにはたまらない"
+    },
+    {
+      "id": "garden_route",
+      "name": "ガーデンルート",
+      "lat": "-34.0363",
+      "lng": "23.0471",
+      "zoom": "10",
+      "color": "#0072BC",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "絶景ドライブ",
+      "badge_class": "green",
+      "description": "森とラグーンが連なる世界屈指の海岸ドライブルート"
     }
   ],
   "season_mini": {
@@ -379,6 +392,74 @@
             "icon": "☔",
             "temp": "25°C",
             "type": "t-hot1"
+          }
+        ]
+      },
+      {
+        "name": "ガーデンルート（クニスナ・プレッテンバーグベイ等）",
+        "city_id": "garden_route",
+        "best_note": "ベスト：11月〜4月（気候が安定し観光しやすい）／年間を通じて雨の可能性があるため防水ジャケットが安心。6〜11月は沿岸でクジラ観察もできる。",
+        "note": "ガーデンルートはケープタウンのような明確な乾季がない海洋性気候で、年間を通じてまとまった雨が降る。夏（12〜2月）は最高25°C前後で過ごしやすく、冬（6〜8月）も17°C前後とそこまで冷え込まないが、森と海に挟まれた地形ゆえ天気は変わりやすい。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "25°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "25°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "18°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☔",
+            "temp": "17°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☔",
+            "temp": "18°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "19°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "24°C",
+            "type": "t-warm"
           }
         ]
       }
@@ -668,6 +749,17 @@
         "maps_url": "https://www.google.com/maps/place/Rosebank,+Johannesburg",
         "lat": -26.1462,
         "lng": 28.0436
+      },
+      {
+        "id": "knysna",
+        "name": "クニスナ（ガーデンルート）",
+        "tag": "自然・ラグーン",
+        "tag_color": "green",
+        "desc": "ラグーンを囲むガーデンルート随一の拠点タウン。カヤックやウォーターフロントのレストランが充実し、プレッテンバーグベイ・チチカマ国立公園への日帰りアクセスも良好。",
+        "price": "中級 8,000〜16,000円／泊　高級 20,000円〜",
+        "maps_url": "https://www.google.com/maps/place/Knysna,+South+Africa",
+        "lat": -34.0363,
+        "lng": 23.0471
       }
     ],
     "hotel_tip": "南アフリカは観光地として人気が高まっている一方、治安の面ではまだまだ警戒が必要な国。特にホテル選びで場所を間違えると大きなリスクになるので要注意。初めてのケープタウンはV&Aウォーターフロント〜シーポイント周辺が観光・安全・食事の三拍子揃っておすすめ。ヨハネスブルグは中心部（CBD）やヒルブロウ地区を避け、サントン・メルローズアーチ・ローズバンクのいずれかで高級ホテルを選ぶのが鉄則。サファリはクルーガー内のSANParksキャンプか公園外のロッジを早めに予約しよう。",
@@ -1563,6 +1655,45 @@
       "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%83%9E%E3%83%AB%E3%83%BC%E3%83%A9%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86",
       "order_ico": "🍸",
       "order_name_en": "Amarula"
+    },
+    {
+      "num": "No.19",
+      "name": "チャカラカ",
+      "badge": "定番の付け合わせ",
+      "type": "side",
+      "city": "national",
+      "desc": "玉ねぎ・にんじん・トマト・豆をピリ辛スパイスで煮込んだ、南アフリカ版のスパイシー野菜レリッシュ。ブライや<a onclick=\"showFood('No.7')\" class=\"spot-link\">ミーリーパップ</a>に添える定番の付け合わせで、家庭ごとに辛さや具材のレシピが異なる。",
+      "prompt_en": "Chakalaka, a small bowl of chunky spicy vegetable relish with visible diced carrots, tomatoes, onions and beans in a reddish-orange sauce, served alone as a side dish, no meat, no bread, no other dishes in frame, realistic food illustration",
+      "plate_color": "",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%82%AB%E3%83%A9%E3%82%AB%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86",
+      "order_ico": "🌶️",
+      "order_name_en": "Chakalaka"
+    },
+    {
+      "num": "No.20",
+      "name": "ウムングクショ（サンプ＆ビーンズ）",
+      "badge": "コサの伝統料理",
+      "type": "side",
+      "city": "national",
+      "desc": "砕いたトウモロコシ（サンプ）と豆をじっくり煮込んだコサ族の伝統料理。ネルソン・マンデラの大好物としても知られ、彼の91歳の誕生日にはこの料理が振る舞われた。素朴だが滋味深く、肉料理の付け合わせとしても定番。",
+      "prompt_en": "Umngqusho, a bowl of stewed samp (crushed corn kernels) and beans in a thick brown broth, rustic and simple, served alone in a plain bowl, no meat, no garnish, no other dishes, realistic food illustration",
+      "plate_color": "",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A6%E3%83%A0%E3%83%B3%E3%82%B0%E3%82%AF%E3%82%B7%E3%83%A7%EF%BC%88%E3%82%B5%E3%83%B3%E3%83%97%EF%BC%86%E3%83%93%E3%83%BC%E3%83%B3%E3%82%BA%EF%BC%89%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86",
+      "order_ico": "🫘",
+      "order_name_en": "Umngqusho"
+    },
+    {
+      "num": "No.21",
+      "name": "スヌーク（ケープの燻製魚）",
+      "badge": "ケープタウン名物",
+      "type": "main",
+      "city": "cape_town",
+      "desc": "南大西洋で獲れる細長い白身魚「スヌーク」を炭火で焼いたり燻製にしたりして食べる、ケープタウンの漁師町らしい郷土料理。アプリコットジャムを塗って焼く「スヌーク・ブライ」は初夏の風物詩で、サワードウパンと合わせるのが定番。",
+      "prompt_en": "Braaied snoek fish, a whole grilled snoek fish with charred golden-brown skin and glossy apricot jam glaze, served on a wooden board, no side dishes, no bread, no vegetables, realistic food illustration",
+      "plate_color": "",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B9%E3%83%8C%E3%83%BC%E3%82%AF%EF%BC%88%E3%82%B1%E3%83%BC%E3%83%97%E3%81%AE%E7%87%BB%E8%A3%BD%E9%AD%9A%EF%BC%89%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86",
+      "order_ico": "🐟",
+      "order_name_en": "Braaied Snoek"
     }
   ],
   "spots_section_title": "南アフリカ 観光スポット",
@@ -1590,6 +1721,11 @@
     {
       "id": "oudtshoorn",
       "label": "オウツホルン",
+      "active": false
+    },
+    {
+      "id": "garden_route",
+      "label": "ガーデンルート",
       "active": false
     }
   ],
@@ -1724,6 +1860,28 @@
           "image": "素材/観光スポット/チャップマンズピーク・ドライブ.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Chapman%27s+Peak+Drive"
+        },
+        {
+          "must": true,
+          "icon": "🏖️",
+          "num": "CPT 10",
+          "name": "キャンプス・ベイ",
+          "desc": "ツェルヴェ・アポストルズ（十二使徒峰）を背景にした、ケープタウンで最も絵になるビーチ。白砂と真っ青な大西洋のコントラストが美しく、ビーチ沿いのカフェ・レストランで夕日を眺めながら過ごすのが定番。水温は低めなので長時間の遊泳には不向き。",
+          "badge": "絶景ビーチ",
+          "prompt_en": "Camps Bay Beach Cape Town, white sand beach with Twelve Apostles mountain range backdrop, turquoise Atlantic Ocean, palm-lined promenade, golden hour",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Camps+Bay+Beach+Cape+Town"
+        },
+        {
+          "must": false,
+          "icon": "🐋",
+          "num": "CPT 11",
+          "name": "ハーマナス（ホエールウォッチング）",
+          "desc": "ケープタウンから車で約1.5時間の海沿いの町。6〜11月にはナガスクジラが湾内に接近し、陸地からクジラが見られる世界でも珍しいスポットとして有名。崖沿いの遊歩道をのんびり歩きながらの観察がおすすめ。",
+          "badge": "季節限定",
+          "prompt_en": "Hermanus whale watching South Africa, Southern Right whale breaching close to rocky coastline, cliff walkway, onlookers in the distance, dramatic ocean view",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Hermanus+South+Africa"
         }
       ]
     },
@@ -1797,6 +1955,17 @@
           "image": "素材/観光スポット/人類のゆりかご（スタークフォンテイン洞窟）.webp",
           "type": "heritage",
           "map_url": "https://maps.google.com/?q=Sterkfontein+Caves+South+Africa"
+        },
+        {
+          "must": false,
+          "icon": "⛓️",
+          "num": "JHB 05",
+          "name": "コンスティテューション・ヒル",
+          "desc": "「ヨハネスブルグのロベン島」と呼ばれた旧刑務所跡地。マンデラも収監された「オールド・フォート」や黒人男性専用の劣悪な監房「ナンバー・フォー」を見学でき、跡地には現在南アフリカ憲法裁判所が建つ。抑圧の記憶の上に民主主義を築いた象徴的な場所。",
+          "badge": "歴史",
+          "prompt_en": "Constitution Hill Johannesburg, Old Fort prison museum exterior, red brick colonial-era prison building, Constitutional Court nearby, historical site",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Constitution+Hill+Johannesburg"
         }
       ]
     },
@@ -1846,6 +2015,28 @@
           "image": "素材/観光スポット/ヴィクトリアストリート・マーケット.webp",
           "type": "market",
           "map_url": "https://maps.google.com/?q=Victoria+Street+Market+Durban"
+        },
+        {
+          "must": true,
+          "icon": "🐬",
+          "num": "DBN 03",
+          "name": "ウシャカ・マリンワールド",
+          "desc": "ゴールデンマイル南端に広がるアフリカ最大級の海洋テーマパーク。世界有数の規模を誇る水族館に加え、イルカ・アシカのショー、南半球最高峰のウォータースライダーを備えたウェットンワイルドも併設され、家族連れに大人気。",
+          "badge": "テーマパーク",
+          "prompt_en": "uShaka Marine World Durban, large aquarium tank with sharks and tropical fish, dolphin show stadium, waterpark slides in background",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=uShaka+Marine+World+Durban"
+        },
+        {
+          "must": false,
+          "icon": "🏟️",
+          "num": "DBN 04",
+          "name": "モーゼス・マビダ・スタジアム",
+          "desc": "2010年FIFAワールドカップのために建設されたダーバンのランドマーク的スタジアム。国旗を模したアーチの頂上展望台からは市街とインド洋を一望でき、アーチ間をワイヤーで滑空する世界最大級の「ビッグスイング」も体験できる。",
+          "badge": "絶景",
+          "prompt_en": "Moses Mabhida Stadium Durban, iconic soccer stadium with tall arch structure, cable car to viewing platform, city and ocean view",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Moses+Mabhida+Stadium+Durban"
         }
       ]
     },
@@ -1984,6 +2175,75 @@
           "image": "素材/観光スポット/カンゴ・ワイルドライフランチ.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Cango+Wildlife+Ranch"
+        }
+      ]
+    },
+    {
+      "city_id": "garden_route",
+      "city_name": "ガーデンルート",
+      "city_image": "",
+      "city_prompt": "Garden Route South Africa, Knysna lagoon surrounded by forested hills, turquoise water, coastal road, travel photography",
+      "city_desc": "森・ラグーン・海岸線が続く「世界一美しいドライブルート」のひとつ。クニスナのラグーンからプレッテンバーグベイのビーチ、チチカマの原生林まで、変化に富んだ自然を車で巡る旅が魅力",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ケープタウンから車で約5〜6時間 or ジョージ空港へ国内線約1時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "11月〜4月（気候が安定）",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "クニスナ / プレッテンバーグベイ周辺"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🌊",
+          "num": "GR 01",
+          "name": "クニスナ・ラグーン（ザ・ヘッズ）",
+          "desc": "森に囲まれた広大なラグーンと、そこへ大西洋の波が流れ込む断崖の切れ目「ザ・ヘッズ」が見どころ。フェザーベッド自然保護区行きのフェリークルーズやカヤックで、ラグーン内の野鳥や植生をのんびり観察できる。",
+          "badge": "絶景",
+          "prompt_en": "Knysna Lagoon and The Heads South Africa, dramatic sandstone cliffs at lagoon mouth meeting the ocean, forested hills, ferry boat on turquoise water",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Knysna+Heads+South+Africa"
+        },
+        {
+          "must": true,
+          "icon": "🌳",
+          "num": "GR 02",
+          "name": "チチカマ国立公園（ストームズリバーの吊り橋）",
+          "desc": "原生林とインド洋が隣接するガーデンルート最大の自然保護区。ストームズリバー河口にかかる吊り橋を渡れば、切り立った渓谷と荒波が合わさる景観を間近に体感できる。ハイキングコースも充実。",
+          "badge": "自然",
+          "prompt_en": "Tsitsikamma National Park suspension bridge over Storms River mouth, rocky gorge, ancient forest, Indian Ocean waves crashing below",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Tsitsikamma+National+Park+Storms+River+Mouth"
+        },
+        {
+          "must": false,
+          "icon": "🤸",
+          "num": "GR 03",
+          "name": "ブロウクランス橋バンジー",
+          "desc": "高さ216mを誇る世界最高峰の橋げたバンジージャンプ。チチカマの渓谷めがけて飛び込む数秒間はガーデンルート随一のアドレナリン体験として知られ、1997年の開業以来無事故記録を更新中。",
+          "badge": "絶叫アクティビティ",
+          "prompt_en": "Bloukrans Bridge Bungy South Africa, person mid-jump from world's highest bridge bungee, deep forested gorge below, dramatic aerial view",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Bloukrans+Bridge+Bungy"
+        },
+        {
+          "must": false,
+          "icon": "🏖️",
+          "num": "GR 04",
+          "name": "プレッテンバーグベイ",
+          "desc": "ガーデンルート屈指のリゾートビーチタウン。真っ白な砂浜が続くロビーベイ・ビーチをはじめ、サーフィンやドルフィンウォッチングなどのマリンアクティビティが充実し、地元の富裕層にも人気の避暑地。",
+          "badge": "ビーチ",
+          "prompt_en": "Plettenberg Bay South Africa, white sand beach, turquoise ocean, coastal cliffs, holiday resort town atmosphere",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Plettenberg+Bay+South+Africa"
         }
       ]
     }

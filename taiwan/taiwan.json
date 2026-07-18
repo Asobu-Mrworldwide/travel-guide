@@ -110,6 +110,19 @@
       "badge": "港町",
       "badge_class": "green",
       "description": "南部最大の港湾都市。美麗島駅のステンドグラスは必見"
+    },
+    {
+      "id": "hualien",
+      "name": "花蓮",
+      "lat": "23.9871",
+      "lng": "121.6015",
+      "zoom": "11",
+      "color": "#000095",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "渓谷美",
+      "badge_class": "green",
+      "description": "太魯閣峡谷の断崖と太平洋を望む東海岸の玄関口"
     }
   ],
   "season_mini": {
@@ -360,6 +373,74 @@
             "icon": "☀️",
             "temp": "21°C",
             "type": "t-warm"
+          }
+        ]
+      },
+      {
+        "name": "花蓮（東部）",
+        "city_id": "hualien",
+        "best_note": "ベスト：10〜4月（台風シーズンを避けられる）／ 6〜9月は台風の通り道にあたり注意が必要。",
+        "note": "花蓮を含む東海岸は夏から秋にかけて台風の直撃・接近を受けやすく、太魯閣峡谷は増水や落石で歩道が通行止めになることもある。冬は北東季節風で雨が多くなる日もあるが、気温自体は年間を通じて比較的過ごしやすい。訪問前に太魯閣国家公園の公式サイトで最新の開放状況を確認するのが安心。",
+        "months": [
+          {
+            "icon": "⛅",
+            "temp": "18°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "19°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "26°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "19°C",
+            "type": "t-mild"
           }
         ]
       }
@@ -629,6 +710,17 @@
         "maps_url": "https://www.google.com/maps/place/Xinyi+District,+Taipei",
         "lat": 25.033,
         "lng": 121.5654
+      },
+      {
+        "id": "hualien_city",
+        "name": "花蓮市街",
+        "tag": "東海岸観光の拠点",
+        "tag_color": "green",
+        "desc": "花蓮駅から徒歩圏の市街中心部。東大門夜市へも歩いて行ける便利さで、太魯閣峡谷方面へのバス・レンタカーの拠点にもしやすい。",
+        "price": "格安 3,000〜6,000円　中級 8,000〜14,000円",
+        "maps_url": "https://www.google.com/maps/place/Hualien+City",
+        "lat": 23.9871,
+        "lng": 121.6015
       }
     ],
     "hotel_tip": "初めてなら空港MRTが直結する台北駅周辺〜中山エリアが便利。九份や十分へ行く日も台北に連泊したまま日帰りできるので、ホテルを移動する必要はない。週末は台湾国内の旅行客でも混むので、金土泊は特に早めの予約を。",
@@ -1014,6 +1106,10 @@
     {
       "id": "taichung",
       "label": "台中"
+    },
+    {
+      "id": "tainan",
+      "label": "台南"
     }
   ],
   "food_items": [
@@ -1316,6 +1412,96 @@
       "wiki_url": "https://www.google.com/search?q=%E6%9C%A8%E7%93%9C%E7%89%9B%E5%A5%B6%EF%BC%88%E3%83%91%E3%83%91%E3%82%A4%E3%83%A4%E3%83%9F%E3%83%AB%E3%82%AF%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86",
       "order_ico": "🥭",
       "order_name_en": "Papaya Milk"
+    },
+    {
+      "num": "No.20",
+      "name": "擔仔麵",
+      "name_ruby": "<ruby>擔仔麵<rt>タンツーメン</rt></ruby>",
+      "pinyin": "Dànzǎi miàn",
+      "badge": "台南のソウルフード",
+      "type": "main",
+      "city": "tainan",
+      "desc": "台南発祥の細麺料理。エビ出汁のスープに甘辛い肉そぼろとエビ1尾をのせた一口サイズが基本で、漁の閑散期に漁師が天秤棒（担ぎ棒）で売り歩いたのが名前の由来。老舗「度小月」が発祥の店として知られる。",
+      "prompt_en": "Danzai noodles Tainan specialty, small bowl of thin noodles topped with minced pork sauce and one shrimp, rich savory broth, food photography",
+      "plate_color": "small white bowl",
+      "wiki_url": "https://www.google.com/search?q=%E6%93%94%E4%BB%94%E9%BA%B5%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Danzai Noodles",
+      "must": true
+    },
+    {
+      "num": "No.21",
+      "name": "牛肉湯",
+      "name_ruby": "<ruby>牛肉湯<rt>ニューロウタン</rt></ruby>",
+      "pinyin": "Niúròu tāng",
+      "badge": "早朝が勝負の台南名物",
+      "type": "main",
+      "city": "tainan",
+      "desc": "薄切りの新鮮な牛肉を熱々のスープに数十秒くぐらせて食べる台南名物。近郊の屠畜場から届く朝一番の肉を使うため、行列店は早朝から昼過ぎで売り切れることも多い、鮮度が命の一杯。",
+      "prompt_en": "Tainan beef soup, thinly sliced raw beef being blanched in hot clear broth in bowl, steam rising, morning light, food photography",
+      "plate_color": "white ceramic bowl",
+      "wiki_url": "https://www.google.com/search?q=%E7%89%9B%E8%82%89%E6%B9%AF%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86",
+      "order_ico": "🥩",
+      "order_name_en": "Beef Soup"
+    },
+    {
+      "num": "No.22",
+      "name": "棺材板",
+      "name_ruby": "<ruby>棺材板<rt>グァンツァイバン</rt></ruby>",
+      "pinyin": "Guāncáibǎn",
+      "badge": "台南発祥の珍グルメ",
+      "type": "snack",
+      "city": "tainan",
+      "desc": "厚切り食パンをくり抜いて揚げ、シチューのような濃厚なクリームソースと具材を詰めた台南発祥の名物。棺桶のような見た目からこの名がついたが、味は洋食グラタンに近くクセになる人が多い。",
+      "prompt_en": "Guan cai ban Tainan coffin bread, thick fried toast box filled with creamy chowder sauce and seafood, cut open on plate, food photography",
+      "plate_color": "white plate",
+      "wiki_url": "https://www.google.com/search?q=%E6%A3%BA%E6%9D%90%E6%9D%BF%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86",
+      "order_ico": "🍞",
+      "order_name_en": "Coffin Bread"
+    },
+    {
+      "num": "No.23",
+      "name": "大雞排",
+      "name_ruby": "<ruby>大雞排<rt>ダージーパイ</rt></ruby>",
+      "pinyin": "Dà jī pái",
+      "badge": "顔より大きい唐揚げ",
+      "type": "snack",
+      "city": "national",
+      "desc": "叩いて薄く伸ばした鶏胸肉を丸ごと1枚揚げた、顔よりも大きいサイズが名物の夜市定番。五香粉や胡椒塩をふりかけて、揚げたてを紙袋のまま頬張るのが正しい食べ方。",
+      "prompt_en": "Taiwanese giant fried chicken cutlet da ji pai, bigger than a face, golden crispy coating, held in paper bag, night market, food photography",
+      "plate_color": "paper bag",
+      "wiki_url": "https://www.google.com/search?q=%E5%A4%A7%E9%9B%9E%E6%8E%92%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86",
+      "order_ico": "🍗",
+      "order_name_en": "Giant Fried Chicken Cutlet",
+      "must": true
+    },
+    {
+      "num": "No.24",
+      "name": "刈包（台湾式ハンバーガー）",
+      "name_ruby": "<ruby>刈包<rt>グァバオ</rt></ruby>（台湾式ハンバーガー）",
+      "pinyin": "Guàbāo",
+      "badge": "台湾式ハンバーガー",
+      "type": "main",
+      "city": "national",
+      "desc": "ふかふかの蒸しパンに、とろとろに煮込んだ豚バラ肉・高菜漬け・砕いたピーナッツ粉をサンドした台湾式ハンバーガー。財布に似た形をしていることから縁起物ともされ、旧正月に食べる習慣もある。",
+      "prompt_en": "Taiwanese gua bao steamed bun sandwich with braised pork belly, pickled mustard greens and crushed peanuts, street food, food photography",
+      "plate_color": "paper wrapper",
+      "wiki_url": "https://www.google.com/search?q=%E5%88%88%E5%8C%85%EF%BC%88%E5%8F%B0%E6%B9%BE%E5%BC%8F%E3%83%8F%E3%83%B3%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86",
+      "order_ico": "🥪",
+      "order_name_en": "Taiwanese Braised Pork Bun"
+    },
+    {
+      "num": "No.25",
+      "name": "花蓮の麻糬（曾記麻糬など）",
+      "badge": "花蓮土産の定番",
+      "type": "dessert",
+      "city": "hualien",
+      "desc": "もちもちの求肥にピーナッツやタロ芋餡を包んだ花蓮名物のお土産スイーツ。「曾記麻糬」をはじめ市内に専門店が並び、試食しながらお気に入りの味を探すのも楽しい。",
+      "prompt_en": "Hualien mochi, Taiwanese rice cakes with peanut and taro filling arranged on tray, soft chewy texture, gift shop display, food photography",
+      "plate_color": "wooden tray",
+      "wiki_url": "https://www.google.com/search?q=%E8%8A%B1%E8%93%AE%E3%81%AE%E9%BA%BB%E7%B3%AC%EF%BC%88%E6%9B%BE%E8%A8%98%E9%BA%BB%E7%B3%AC%E3%81%AA%E3%81%A9%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86",
+      "order_ico": "🍡",
+      "order_name_en": "Hualien Mochi"
     }
   ],
   "spots_section_title": "台湾 観光スポット",
@@ -1343,6 +1529,11 @@
     {
       "id": "kaohsiung",
       "label": "高雄",
+      "active": false
+    },
+    {
+      "id": "hualien",
+      "label": "花蓮",
       "active": false
     }
   ],
@@ -1683,6 +1874,17 @@
           "image": "素材/観光スポット/宝覚寺.webp",
           "type": "religious",
           "map_url": "https://maps.google.com/?q=Baojue+Temple+Taichung"
+        },
+        {
+          "must": true,
+          "icon": "🚡",
+          "num": "TXG 07",
+          "name": "日月潭",
+          "desc": "台湾最大の淡水湖。北側が太陽、南側が月の形に似ていることからこの名がついた。ロープウェイからの一望、湖畔サイクリングロード、遊覧船での島巡りが人気で、台中高鉄駅からシャトルバスで約1〜1.5時間。日帰りも可能だが、1泊して朝霧に包まれる湖面をのんびり眺めるのもおすすめ。",
+          "badge": "台湾最大の湖",
+          "prompt_en": "Sun Moon Lake Taiwan calm emerald green water surrounded by misty mountains, traditional pagoda on hillside, small boat on water, morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Sun+Moon+Lake+Taiwan"
         }
       ]
     },
@@ -1889,6 +2091,86 @@
           "image": "素材/観光スポット/愛河（ラブリバー）.webp",
           "type": "townscape",
           "map_url": "https://maps.google.com/?q=Love+River+Kaohsiung"
+        }
+      ]
+    },
+    {
+      "city_id": "hualien",
+      "city_name": "花蓮",
+      "city_image": "",
+      "city_prompt": "Taroko Gorge Taiwan marble cliffs and turquoise river canyon, dramatic vertical rock walls, a tiny hiker figure visible on the trail, travel photography",
+      "city_desc": "太魯閣峡谷の断崖と太平洋の絶景が広がる東海岸の玄関口。台北から台鉄特急で日帰りも可能だが、1泊してゆったり自然を味わいたいエリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "台北から台鉄特急（太魯閣号・普悠瑪号）で約2〜2.5時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "10〜4月（台風シーズンを避ける）",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "回り方",
+          "value": "花蓮駅からレンタカー・タクシーで太魯閣方面へ"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏞️",
+          "num": "HUA 01",
+          "name": "太魯閣峡谷",
+          "desc": "大理石の岩盤を渓流が何百万年もかけて削り出した、台湾随一の渓谷美。断崖に張り付く歩道「燕子口」や、大理石の壁が幾重にも重なる「九曲洞」など見どころが点在し、車で立ち寄りながら巡るのが定番。2024年の地震以降、一部歩道は復旧工事中のため訪問前に開放状況の確認が必須。",
+          "badge": "台湾随一の渓谷美",
+          "prompt_en": "Taroko Gorge Taiwan marble cliffs towering over turquoise river canyon, dramatic vertical rock walls, a few tourists in the distance for scale, daytime",
+          "type": "nature",
+          "no_map": true
+        },
+        {
+          "must": true,
+          "icon": "🌊",
+          "num": "HUA 02",
+          "name": "清水断崖",
+          "desc": "太平洋に垂直に切り立つ高さ800mの大断崖が、蘇花公路沿いに約21kmにわたって続く東海岸随一の絶景。台鉄の車窓からも望め、コバルトブルーの海と断崖の色のコントラストが息をのむ美しさ。",
+          "badge": "断崖絶壁",
+          "prompt_en": "Qingshui Cliff Hualien Taiwan, sheer marble cliffs plunging directly into deep blue Pacific Ocean, coastal highway carved into rock, at golden hour",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Qingshui+Cliff+Hualien"
+        },
+        {
+          "must": false,
+          "icon": "🏖️",
+          "num": "HUA 03",
+          "name": "七星潭",
+          "desc": "三日月状に弧を描く石ころの海岸線で、名前とは裏腹に湖ではなく海。丸い石を波が転がす音を聞きながら、正面に中央山脈を望む散策が人気で、夕暮れ時は特に絵になる。",
+          "badge": "石ころビーチ",
+          "prompt_en": "Qixingtan Beach Hualien Taiwan, curved pebble beach coastline with mountain range in background, silhouettes of visitors walking, at sunset",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Qixingtan+Beach+Hualien"
+        },
+        {
+          "must": false,
+          "icon": "🌙",
+          "num": "HUA 04",
+          "name": "東大門夜市",
+          "desc": "花蓮最大の夜市で、原住民料理の屋台やライブステージが並ぶ地元色豊かな雰囲気が魅力。自強夜市・原住民一条街・福町夜市の3エリアが統合されており、東海岸ならではのB級グルメを味わえる。",
+          "badge": "花蓮最大の夜市",
+          "prompt_en": "Dongdamen Night Market Hualien Taiwan, crowds of people walking among food stalls with neon signs, indigenous food vendors, night atmosphere",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Dongdamen+Night+Market+Hualien"
+        },
+        {
+          "must": false,
+          "icon": "🌲",
+          "num": "HUA 05",
+          "name": "松園別館",
+          "desc": "日本統治時代の1942年に建てられた旧海軍指揮所で、太平洋戦争末期には特攻隊員が出撃前夜に天皇からの酒を賜る送別の宴を開いた場所としても知られる。今はカフェとギャラリーを備え、老松に囲まれ太平洋を見下ろす静かな時間が過ごせる。",
+          "badge": "特攻隊ゆかりの地",
+          "prompt_en": "Pine Garden Hualien Taiwan, Japanese-era colonial building surrounded by old pine trees overlooking the Pacific Ocean, in the morning light",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Pine+Garden+Hualien"
         }
       ]
     }
