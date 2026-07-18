@@ -136,6 +136,32 @@
       "badge": "メコンデルタ",
       "badge_class": "green",
       "description": "水上マーケットと運河が広がるメコンデルタの中心都市"
+    },
+    {
+      "id": "phuquoc",
+      "name": "フーコック島",
+      "lat": "10.2270",
+      "lng": "103.9679",
+      "zoom": "11",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "ベトナム最大のリゾート島",
+      "badge_class": "green",
+      "description": "透明度の高い海と巨大ロープウェイで知られる、ベトナム随一のビーチリゾート島"
+    },
+    {
+      "id": "sapa",
+      "name": "サパ",
+      "lat": "22.3364",
+      "lng": "103.8438",
+      "zoom": "12",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "山岳トレッキングの聖地",
+      "badge_class": "green",
+      "description": "棚田と少数民族の村が広がる、北部山岳地帯のトレッキング拠点"
     }
   ],
   "season_mini": {
@@ -598,6 +624,142 @@
             "type": "t-hot1"
           }
         ]
+      },
+      {
+        "name": "フーコック島",
+        "city_id": "phuquoc",
+        "best_note": "ベスト：11〜4月（乾季）／ 5〜10月は雨季でスコールが多い",
+        "note": "南部と同じ乾季・雨季の2シーズン。<strong>乾季</strong>は海の透明度が高くビーチ・ダイビング日和が続く一方、<strong>雨季</strong>は短時間のスコールが多く、ロープウェイからの眺めが曇りがちになる日もある。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "26°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "26°C",
+            "type": "t-hot1"
+          }
+        ]
+      },
+      {
+        "name": "サパ",
+        "city_id": "sapa",
+        "best_note": "ベスト：3〜5月・9〜11月（トレッキング日和）／ 12〜2月は冷え込み、6〜8月は霧と長雨",
+        "note": "標高1,500m超の山岳地帯にあり、平地とはまったく異なる気候。<strong>12〜2月</strong>は防寒着が必須で、稀に霜や雪が降ることも。<strong>3〜5月・9〜11月</strong>は棚田が美しく色づき、トレッキングに最適な過ごしやすい気候になる。",
+        "months": [
+          {
+            "icon": "☔",
+            "temp": "9°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☔",
+            "temp": "11°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "⛅",
+            "temp": "15°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "19°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "18°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☔",
+            "temp": "14°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☔",
+            "temp": "10°C",
+            "type": "t-cool"
+          }
+        ]
       }
     ]
   },
@@ -851,6 +1013,28 @@
         "maps_url": "https://www.google.com/maps/place/My+Khe+Beach,+Da+Nang",
         "lat": 16.061,
         "lng": 108.247
+      },
+      {
+        "id": "longbeach",
+        "name": "ロングビーチ周辺（フーコック島）",
+        "tag": "リゾート向け",
+        "tag_color": "yellow",
+        "desc": "島西岸に伸びる夕日の名所。リゾートホテルが集まり、ナイトマーケットのあるズオンドン中心部へもアクセスしやすい。",
+        "price": "中級 4,000〜9,000円／泊　高級 18,000円〜",
+        "maps_url": "https://www.google.com/maps/place/Long+Beach,+Phu+Quoc",
+        "lat": 10.2,
+        "lng": 103.955
+      },
+      {
+        "id": "sapatown",
+        "name": "サパタウン中心部",
+        "tag": "トレッキング拠点向け",
+        "tag_color": "green",
+        "desc": "教会前の広場を中心に、ゲストハウスやレストランが集まるコンパクトなエリア。棚田トレッキングツアーの出発地点として便利。",
+        "price": "中級 2,500〜6,000円／泊　高級 10,000円〜",
+        "maps_url": "https://www.google.com/maps/place/Sapa,+Lao+Cai,+Vietnam",
+        "lat": 22.3364,
+        "lng": 103.8438
       }
     ],
     "hotel_tip": "ハノイは旧市街（ホアンキエム湖周辺）、ホーチミンは1区（ドンコイ通り周辺）に泊まると徒歩観光がしやすい。ダナンはビーチリゾート、ホイアン旧市街に泊まるなら車移動を考慮しよう。",
@@ -1572,6 +1756,20 @@
       "prompt_en": "Vietnamese Banh Khan, small clay pot baked rice cakes, crispy outside and soft inside, street snack, Southern Vietnam food photography",
       "plate_color": "clay pot",
       "image": "素材/グルメ/バインカン.webp"
+    },
+    {
+      "num": "No.23",
+      "name": "ブンボーフエ",
+      "badge": "フエ発祥のピリ辛麺",
+      "type": "main",
+      "city": "danang",
+      "desc": "レモングラスとエビの発酵ペーストで香り高く仕立てた、牛肉と豚足入りのピリ辛麺料理。フォーと並び称される中部ベトナムの看板グルメで、かつての古都フエで宮廷料理として発展した奥深い一杯。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%96%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%95%E3%82%A8%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Bun Bo Hue",
+      "prompt_en": "Vietnamese Bun Bo Hue, spicy beef noodle soup with lemongrass broth, pork hock, red chili oil, Hue specialty, food photography",
+      "plate_color": "clay pot",
+      "image": "素材/グルメ/ブンボーフエ.webp"
     }
   ],
   "spots_section_title": "ベトナム観光スポット図鑑",
@@ -1629,6 +1827,16 @@
     {
       "id": "cantho",
       "label": "カントー",
+      "active": false
+    },
+    {
+      "id": "phuquoc",
+      "label": "フーコック島",
+      "active": false
+    },
+    {
+      "id": "sapa",
+      "label": "サパ",
       "active": false
     }
   ],
@@ -1753,6 +1961,17 @@
           "type": "nature",
           "image": "素材/観光スポット/チャンアンの景観複合体.webp",
           "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "HAN 08",
+          "name": "セント・ジョセフ大聖堂",
+          "desc": "1886年建立、パリのノートルダム大聖堂を模したネオゴシック様式の教会。旧市街の一角にそびえる黒ずんだ石造りの外観が印象的で、周辺のカフェから塔を眺めながらエッグコーヒーを楽しむのが定番の過ごし方。",
+          "badge": "旧市街のランドマーク",
+          "prompt_en": "St. Joseph's Cathedral Hanoi, neo-Gothic stone church facade, Old Quarter street cafes nearby, Vietnam, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=St.+Joseph%27s+Cathedral,+Hanoi"
         }
       ]
     },
@@ -2161,6 +2380,183 @@
           "type": "townscape",
           "image": "素材/観光スポット/カントー橋.webp",
           "map_url": "https://maps.google.com/?q=Can+Tho+Bridge"
+        }
+      ]
+    },
+    {
+      "city_id": "phuquoc",
+      "city_name": "フーコック島",
+      "city_desc": "タイランド湾に浮かぶベトナム最大の島。透明度の高いビーチと世界最長級のロープウェイで知られるリゾートアイランド",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ハノイ・ホーチミンから国内線 約1〜2時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー・Grab 約20〜30分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "11〜4月（乾季）",
+          "link_section": "season",
+          "link_btn_index": "5"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "新鮮なシーフード・ヌクマム",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "レンタルバイク・タクシー",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🚡",
+          "num": "PQ 01",
+          "name": "フーコック・ケーブルカー",
+          "desc": "本島とアンタイ諸島を結ぶ、世界最長級（約8km）の海上ロープウェイ。眼下に広がるタイランド湾の島々とグラデーションの海を一望でき、終点のアミューズメントパークまで一気に渡れる。",
+          "badge": "世界最長級・必見",
+          "prompt_en": "Phu Quoc Cable Car Vietnam, longest over-sea cable car, gondolas crossing turquoise sea with islands below, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Phu+Quoc+Cable+Car"
+        },
+        {
+          "must": true,
+          "icon": "🏖️",
+          "num": "PQ 02",
+          "name": "サオビーチ",
+          "desc": "粉砂糖のような白砂と遠浅のエメラルドグリーンの海が広がる、島南部の定番ビーチ。ビーチチェアに寝転んでのんびり過ごすもよし、シャロー・ウォーターを歩いて沖まで進むもよしの人気スポット。",
+          "badge": "島随一のビーチ",
+          "prompt_en": "Sao Beach Phu Quoc Vietnam, powder white sand beach with shallow turquoise water, palm trees, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Sao+Beach+Phu+Quoc"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "PQ 03",
+          "name": "ズオンドン・ナイトマーケット",
+          "desc": "新鮮な魚介の炭火焼きや屋台グルメが並ぶ、島最大のナイトマーケット。目の前で選んだシーフードをその場で調理してもらえる屋台も多く、夕方から賑わい始める。",
+          "badge": "夜市グルメ",
+          "prompt_en": "Duong Dong Night Market Phu Quoc, seafood stalls with grilled fish and shrimp, lively evening atmosphere, Vietnam",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Duong+Dong+Night+Market+Phu+Quoc"
+        },
+        {
+          "must": false,
+          "icon": "🐟",
+          "num": "PQ 04",
+          "name": "アンタイ諸島アイランドホッピング",
+          "desc": "ケーブルカーの発着点でもある小島群を、ボートで巡るシュノーケリングツアー。透明度の高い海で熱帯魚を観察したり、島のビーチでのんびり過ごしたりと自由度の高い日帰りアクティビティ。",
+          "badge": "定番アイランドホッピング",
+          "prompt_en": "An Thoi Islands Phu Quoc, island hopping boat tour, snorkeling in clear turquoise water, small tropical islets, Vietnam",
+          "type": "activity",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🏭",
+          "num": "PQ 05",
+          "name": "ヌクマム（魚醤）醸造所",
+          "desc": "カタクチイワシと塩を大樽で長期熟成させる、フーコック特産の高級魚醤の醸造所見学。ずらりと並ぶ木樽と独特の香りが漂う光景は、ベトナム食文化の奥深さを体感できる。",
+          "badge": "特産品の醸造所見学",
+          "prompt_en": "Fish sauce factory Phu Quoc Vietnam, large wooden barrels of fermenting nuoc mam, traditional production, travel photography",
+          "type": "activity",
+          "no_map": true
+        }
+      ]
+    },
+    {
+      "city_id": "sapa",
+      "city_name": "サパ",
+      "city_desc": "標高1,500m超の北部山岳地帯に広がる、棚田と少数民族の村が織りなすトレッキングの聖地",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ハノイから車・電車 約5〜6時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "ラオカイ駅からバス・タクシー 約1時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "3〜5月・9〜11月",
+          "link_section": "season",
+          "link_btn_index": "6"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "サーンコー（馬肉煮込み）・コムラム",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "徒歩・レンタルバイク",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🚡",
+          "num": "SPA 01",
+          "name": "ファンシーパン（インドシナ最高峰）",
+          "desc": "標高3,147m、インドシナ半島最高峰の山。世界最長級のロープウェイで山頂近くまで一気に登れ、頂上からは棚田と雲海が織りなす大パノラマを一望できる。",
+          "badge": "インドシナ最高峰・必見",
+          "prompt_en": "Fansipan Mountain Sapa Vietnam, cable car ascending through clouds, panoramic mountain view from summit, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Fansipan+Mountain+Sapa"
+        },
+        {
+          "must": true,
+          "icon": "🌾",
+          "num": "SPA 02",
+          "name": "ムオンホア渓谷の棚田",
+          "desc": "少数民族が幾世代にもわたって切り拓いてきた、山の斜面に幾重にも連なる棚田地帯。田植え前後（5〜6月）は水鏡、稲刈り前（9月）は黄金色と、季節ごとに異なる表情を見せる。",
+          "badge": "絶景の棚田",
+          "prompt_en": "Muong Hoa Valley rice terraces Sapa Vietnam, layered green terraced fields on mountainside, misty morning, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Muong+Hoa+Valley+Sapa"
+        },
+        {
+          "must": true,
+          "icon": "🥾",
+          "num": "SPA 03",
+          "name": "少数民族の村トレッキング（カットカット村）",
+          "desc": "モン族・ザオ族など少数民族の伝統集落を巡るトレッキングツアー。棚田の畦道を歩きながら藍染めの民族衣装や機織りの様子を見学でき、地元ガイドの案内で数時間〜1日かけて巡るのが定番。",
+          "badge": "定番トレッキング",
+          "prompt_en": "Cat Cat Village Sapa Vietnam, ethnic minority hillside village with traditional houses, terraced fields, trekkers on a mountain path, travel photography",
+          "type": "activity",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "SPA 04",
+          "name": "サパ教会（ドンズオン教会）",
+          "desc": "フランス統治時代に建てられた石造りの教会。町の中心部にそびえ、週末の夜は少数民族の若者たちが集う「ラブマーケット」の舞台としても知られる。",
+          "badge": "町のランドマーク",
+          "prompt_en": "Sapa Stone Church Vietnam, French colonial era stone church in town center, mountain backdrop, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Sapa+Stone+Church"
         }
       ]
     }

@@ -135,6 +135,19 @@
       "badge": "美食の街",
       "badge_class": "green",
       "description": "世界中の美食家が集まるバスク地方の港町。バル巡りと美しい海岸線が魅力"
+    },
+    {
+      "id": "valencia",
+      "name": "バレンシア",
+      "lat": "39.4699",
+      "lng": "-0.3763",
+      "zoom": "12",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "パエリア発祥の地",
+      "badge_class": "green",
+      "description": "未来的な建築群と旧市街が同居する、パエリア発祥のグルメ都市"
     }
   ],
   "season_mini": {
@@ -375,6 +388,74 @@
           {
             "icon": "⛅",
             "temp": "25°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "16°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-cool"
+          }
+        ]
+      },
+      {
+        "name": "バレンシア",
+        "city_id": "valencia",
+        "best_note": "ベスト：4〜6月・9〜10月／ 7〜8月は蒸し暑くビーチが混雑",
+        "note": "バルセロナよりやや温暖な地中海性気候。<strong>4〜6月・9〜10月</strong>は湿度も落ち着き街歩き・ビーチどちらも快適。真夏は35℃近くまで上がる日もあり、日中は屋外観光がきつくなる。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "12°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "18°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "25°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "⛅",
+            "temp": "26°C",
             "type": "t-hot1"
           },
           {
@@ -782,6 +863,17 @@
         "maps_url": "https://www.google.com/maps/place/Gros,+San+Sebastian",
         "lat": 43.3238,
         "lng": -1.9757
+      },
+      {
+        "id": "carmen",
+        "name": "エル・カルメン地区（バレンシア）",
+        "tag": "旧市街・グルメ向け",
+        "tag_color": "green",
+        "desc": "バレンシア大聖堂や中央市場に近い旧市街。バル・レストランが密集し、芸術科学都市へもバスで一本とアクセスが良い。",
+        "price": "中級 7,000〜13,000円／泊　高級 20,000円〜",
+        "maps_url": "https://www.google.com/maps/place/El+Carmen,+Valencia",
+        "lat": 39.4785,
+        "lng": -0.3778
       }
     ],
     "hotel_tip": "マドリードはソル〜グランビア周辺、バルセロナはゴシック地区〜エイシャンプラ地区が観光の拠点として便利。グラナダはアルハンブラ宮殿に近いアルバイシン地区、セビリアは旧市街のサンタクルス街がおすすめ。",
@@ -1184,6 +1276,10 @@
     {
       "id": "sansebastian",
       "label": "サン・セバスティアン"
+    },
+    {
+      "id": "valencia",
+      "label": "バレンシア"
     }
   ],
   "food_modal_phrase_main": "Esto, por favor（エスト、ポル ファボール／これをください）",
@@ -1334,10 +1430,10 @@
     {
       "num": "No.11",
       "name": "フィデウア",
-      "badge": "バルセロナ風パスタパエリア",
+      "badge": "バレンシア風パスタパエリア",
       "type": "rice",
-      "city": "barcelona",
-      "desc": "パエリアの米を細いパスタに置き換えた、カタルーニャ地方発祥の海鮮パスタ料理。アイオリソースを添えて食べる、バルセロナならではの一皿。",
+      "city": "valencia",
+      "desc": "パエリアの米を細いパスタに置き換えた海鮮パスタ料理。バレンシア州ガンディアの漁師が1930年頃に考案したとされ、アイオリソースを添えて食べるのが定番。",
       "wiki_url": "https://www.google.com/search?q=%E3%83%95%E3%82%A3%E3%83%87%E3%82%A6%E3%82%A2%20%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3%20%E6%96%99%E7%90%86",
       "order_ico": "🍝",
       "order_name_en": "Fideua",
@@ -1527,6 +1623,34 @@
       "prompt_en": "Txakoli Basque sparkling white wine being poured from height into a glass, dramatic pouring technique, bar setting, food photography",
       "plate_color": "wine glass",
       "image": "素材/グルメ/チャコリ.webp"
+    },
+    {
+      "num": "No.25",
+      "name": "オルチャータ",
+      "badge": "バレンシア名物の冷製ドリンク",
+      "type": "drink",
+      "city": "valencia",
+      "desc": "タイガーナッツ（チュファ）を水に浸してすりつぶし作る、ほのかに甘い乳白色の冷製ドリンク。バレンシア名物の揚げ菓子ファルトンを浸して食べるのが定番の楽しみ方で、暑い夏の定番の水分補給。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AA%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BF%20%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🥛",
+      "order_name_en": "Horchata",
+      "prompt_en": "Spanish Horchata, milky white tiger nut drink in a glass with fartons pastry on the side, food photography",
+      "plate_color": "glass",
+      "image": "素材/グルメ/オルチャータ.webp"
+    },
+    {
+      "num": "No.26",
+      "name": "アグア・デ・バレンシア",
+      "badge": "バレンシア発祥のカクテル",
+      "type": "drink",
+      "city": "valencia",
+      "desc": "オレンジジュースとカヴァ（スパークリングワイン）、ジンやウォッカをブレンドした、見た目も鮮やかなカクテル。1959年にバレンシアのバルで考案されたとされ、パエリアと合わせて楽しむ地元の定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%82%B0%E3%82%A2%E3%83%BB%E3%83%87%E3%83%BB%E3%83%90%E3%83%AC%E3%83%B3%E3%82%B7%E3%82%A2%20%E3%82%B9%E3%83%9A%E3%82%A4%E3%83%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🍹",
+      "order_name_en": "Agua de Valencia",
+      "prompt_en": "Agua de Valencia cocktail, orange juice and cava sparkling wine in a pitcher and glasses, vibrant orange color, food photography",
+      "plate_color": "glass",
+      "image": "素材/グルメ/アグア・デ・バレンシア.webp"
     }
   ],
   "spots_section_title": "スペイン観光スポット図鑑",
@@ -1585,6 +1709,11 @@
       "id": "sansebastian",
       "label": "サン・セバスティアン",
       "active": false
+    },
+    {
+      "id": "valencia",
+      "label": "バレンシア",
+      "active": false
     }
   ],
   "spot_sections": [
@@ -1613,7 +1742,7 @@
         },
         {
           "label": "名物グルメ",
-          "value": "フィデウア・クレマ・カタラナ",
+          "value": "クレマ・カタラナ・カヴァ",
           "link_section": "food",
           "link_btn_index": "0"
         },
@@ -1720,6 +1849,17 @@
           "type": "heritage",
           "image": "素材/観光スポット/カタルーニャ音楽堂.webp",
           "map_url": "https://maps.google.com/?q=Palau+de+la+Musica+Catalana+Barcelona"
+        },
+        {
+          "must": true,
+          "icon": "🖼️",
+          "num": "BCN 09",
+          "name": "ピカソ美術館",
+          "desc": "ピカソが青年期を過ごしたバルセロナに、旧友の尽力で開館した美術館。世界屈指のピカソ作品コレクションを誇り、特に初期の写実的なデッサンから青の時代への変遷を辿れる貴重な展示が見どころ。中世の邸宅を改装した建物自体も一見の価値がある。",
+          "badge": "必見の美術館",
+          "prompt_en": "Museu Picasso Barcelona, medieval palace courtyard converted into an art museum, gallery visitors admiring paintings, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Museu+Picasso+Barcelona"
         }
       ]
     },
@@ -1867,7 +2007,7 @@
           "label": "ベストシーズン",
           "value": "3〜5月・10〜11月",
           "link_section": "season",
-          "link_btn_index": "2"
+          "link_btn_index": "3"
         },
         {
           "label": "名物グルメ",
@@ -1954,7 +2094,7 @@
           "label": "ベストシーズン",
           "value": "3〜5月・10〜11月",
           "link_section": "season",
-          "link_btn_index": "2"
+          "link_btn_index": "3"
         },
         {
           "label": "名物グルメ",
@@ -2053,7 +2193,7 @@
           "label": "ベストシーズン",
           "value": "6〜9月",
           "link_section": "season",
-          "link_btn_index": "3"
+          "link_btn_index": "4"
         },
         {
           "label": "名物グルメ",
@@ -2116,6 +2256,111 @@
           "type": "townscape",
           "image": "素材/観光スポット/クルサール文化センター.webp",
           "map_url": "https://maps.google.com/?q=Kursaal+Congress+Centre+San+Sebastian"
+        }
+      ]
+    },
+    {
+      "city_id": "valencia",
+      "city_name": "バレンシア",
+      "city_desc": "パエリア・フィデウア発祥の地。未来的な建築群「芸術科学都市」と、旧市街の歴史地区が同居するグルメ都市",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "マドリード・バルセロナからAVEで約1.5〜3時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "地下鉄・空港バス 約25分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "パエリア・フィデウア",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "地下鉄・トラム・徒歩",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🔬",
+          "num": "VLC 01",
+          "name": "芸術科学都市",
+          "desc": "建築家サンティアゴ・カラトラバが手がけた、白い骨格のような未来的建築群。プラネタリウム・オペラハウス・世界最大級の海洋水族館オセアノグラフィックが並び、昼は近未来的な白亜の造形、夜はライトアップが水面に映る幻想的な光景を楽しめる。",
+          "badge": "未来的建築群・必見",
+          "prompt_en": "City of Arts and Sciences Valencia, futuristic white architecture reflected in water, Santiago Calatrava design, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=City+of+Arts+and+Sciences+Valencia"
+        },
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "VLC 02",
+          "name": "ラ・ロンハ・デ・ラ・セダ（絹の交易所）",
+          "desc": "15世紀に建てられた、ねじれた柱が林立するゴシック様式の絹取引所。かつて商人たちが取引の証人として利用した「契約の間」の荘厳な空間が今も残る、世界遺産の傑作建築。",
+          "badge": "世界遺産",
+          "prompt_en": "La Lonja de la Seda Valencia, Gothic silk exchange interior with spiral twisted columns, dramatic lighting, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=La+Lonja+de+la+Seda+Valencia"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "VLC 03",
+          "name": "中央市場",
+          "desc": "アール・ヌーヴォー様式のステンドグラスドームが美しい、ヨーロッパ最大級の屋内市場。新鮮な魚介・生ハム・オレンジが並び、市場内のバルでオルチャータや小皿料理をつまむのも定番の楽しみ方。",
+          "badge": "美食の市場",
+          "prompt_en": "Mercado Central Valencia, Art Nouveau glass dome ceiling, colorful fresh produce stalls, bustling atmosphere, travel photography",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Mercado+Central+Valencia"
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "VLC 04",
+          "name": "バレンシア大聖堂",
+          "desc": "ロマネスク・ゴシック・バロックなど複数様式が重なる大聖堂。最後の晩餐で使われた「聖杯」と伝わる遺物を安置する礼拝堂があり、鐘楼ミゲレテからは旧市街を一望できる。",
+          "badge": "聖杯伝説の大聖堂",
+          "prompt_en": "Valencia Cathedral exterior, Gothic bell tower Miguelete, historic square, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Valencia+Cathedral"
+        },
+        {
+          "must": false,
+          "icon": "🎨",
+          "num": "VLC 05",
+          "name": "エル・カルメン旧市街",
+          "desc": "壁一面に描かれたストリートアートと中世の路地が同居する旧市街地区。個性的なバルやビンテージショップが点在し、昼はのんびり散策、夜はバル巡りで賑わう街歩きの定番エリア。",
+          "badge": "アートと路地の街歩き",
+          "prompt_en": "El Carmen neighborhood Valencia, narrow medieval streets with colorful street art murals, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=El+Carmen+Valencia"
+        },
+        {
+          "must": false,
+          "icon": "🏖️",
+          "num": "VLC 06",
+          "name": "マルバローサ・ビーチ",
+          "desc": "市街地から徒歩・トラムでアクセスできる都市型ビーチ。地中海を眺めながら遊歩道沿いのパエリア専門店で本場の一皿を味わうのが、バレンシアらしい過ごし方。",
+          "badge": "都市型ビーチ",
+          "prompt_en": "Playa de la Malvarrosa Valencia, golden sand beach with promenade, Mediterranean sea, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Playa+de+la+Malvarrosa+Valencia"
         }
       ]
     }
