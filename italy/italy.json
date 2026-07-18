@@ -6,7 +6,7 @@
   "page_title": "イタリア旅行ガイド",
   "hero_image": "素材/ヒーロー.webp",
   "hero_alt": "イタリアの街並み",
-  "hero_prompt": "Colosseum Rome at golden sunset, warm evening light on ancient stone arches, travel illustration style",
+  "hero_prompt": "Colosseum Rome at golden sunset, warm evening light on ancient stone arches, lively crowd of tourist silhouettes gathered at the base for scale, travel illustration style",
   "custom_top_spots": "<div style=\"margin-bottom:24px\"><h2 style=\"margin-bottom:6px\">イタリア全土ガイド</h2><p style=\"font-size:0.85em;line-height:1.8;color:var(--sub);margin:0 0 16px\">イタリアは20の州それぞれに独自の歴史と文化を持ち、エリアごとに街並みやグルメの雰囲気がガラリと変わる。下記でローマ・フィレンツェ・ヴェネツィア・ミラノの王道4都市に加えて周りたい街を探してみよう（★は詳細スポット付きの王道4都市）。</p><div style=\"display:grid;grid-template-columns:1fr 1fr;gap:14px\"><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #1e6fd9;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🏔️</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">北イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">アルプスに近い経済の中心地。近未来的な洗練さと中世の街並みが共存する</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li>★<a onclick=\"showFilteredSpots('milan')\" class=\"spot-link\" style=\"cursor:pointer\">ミラノ</a>（ロンバルディア州）— ファッションの発信地、ドゥオーモと最後の晩餐</li><li>★<a onclick=\"showFilteredSpots('venice')\" class=\"spot-link\" style=\"cursor:pointer\">ヴェネツィア</a>（ヴェネト州）— 運河だけで構成される世界唯一の海上都市</li><li><strong>トリノ</strong>（ピエモンテ州）— 旧イタリア王国の首都、王宮群とチョコレートの街</li><li><strong>ボローニャ</strong>（エミリア＝ロマーニャ州）— 欧州最古の大学、グルメの都</li><li><strong>ヴェローナ</strong>（ヴェネト州）— ロミオとジュリエットの舞台、野外オペラ</li><li><strong>ジェノバ</strong>（リグーリア州）— コロンブスの故郷、ジェノベーゼ発祥の港町</li><li><a onclick=\"showFilteredSpots('milan')\" class=\"spot-link\" style=\"cursor:pointer\">コモ湖</a>（ロンバルディア州）— ミラノから日帰りで人気の高級湖水リゾート</li><li><a onclick=\"showFilteredSpots('venice')\" class=\"spot-link\" style=\"cursor:pointer\">ドロミテ</a>（ヴェネト州等）— 世界遺産の山岳地帯、ハイキングの聖地</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #008C45;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🎨</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">中央イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">古代ローマとルネサンスの歴史が最も色濃く残る、絵画のような田園風景のエリア</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li>★<a onclick=\"showFilteredSpots('rome')\" class=\"spot-link\" style=\"cursor:pointer\">ローマ</a>（ラツィオ州）— 「永遠の都」、コロッセオとバチカン市国</li><li>★<a onclick=\"showFilteredSpots('florence')\" class=\"spot-link\" style=\"cursor:pointer\">フィレンツェ</a>（トスカーナ州）— ルネサンス文化発祥の芸術都市</li><li><strong>ピサ</strong>（トスカーナ州）— 世界の七不思議、ピサの斜塔</li><li><strong>シエナ</strong>（トスカーナ州）— 中世ゴシックの古都、伝統競馬パリオ</li><li><strong>アッシジ</strong>（ウンブリア州）— 聖フランチェスコ生誕の巡礼地</li><li><a onclick=\"showFilteredSpots('florence')\" class=\"spot-link\" style=\"cursor:pointer\">オルチャ渓谷</a>（トスカーナ州）— フィレンツェから日帰りで行ける世界遺産の田園風景</li><li><a onclick=\"showFilteredSpots('sangimignano')\" class=\"spot-link\" style=\"cursor:pointer\">サン・ジミニャーノ</a>（トスカーナ州）— 中世の塔が林立する「美しい塔の街」</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #e8720c;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">☀️</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">南イタリア</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">美しい海岸線と温暖な気候、フレンドリーな人々が魅力のエネルギッシュなエリア</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li><strong>ナポリ</strong>（カンパニア州）— 本場ナポリピッツァの聖地、近郊にポンペイ遺跡</li><li><strong>アマルフィ・ポジターノ</strong>（カンパニア州）— 世界一美しい海岸線の高級リゾート</li><li><strong>バーリ</strong>（プーリア州）— アドリア海の港町、手作りパスタの旧市街</li><li><strong>アルベロベッロ</strong>（プーリア州）— とんがり屋根の家「トゥルッリ」が並ぶ村</li><li><strong>マテーラ</strong>（バジリカータ州）— 洞窟住居「サッシ」が重なる異世界の景観</li><li><a onclick=\"showFilteredSpots('capri')\" class=\"spot-link\" style=\"cursor:pointer\">カプリ島</a>（カンパニア州）— 青の洞窟で知られる憧れの高級リゾート島</li><li><a onclick=\"showFilteredSpots('sorrento')\" class=\"spot-link\" style=\"cursor:pointer\">ソレント</a>（カンパニア州）— アマルフィ海岸の玄関口、レモン香る港町</li></ul></div><div style=\"background:#fff;border-radius:10px;padding:18px;border-left:4px solid #0e9aa7;box-shadow:0 1px 4px rgba(0,0,0,0.06)\"><div style=\"font-size:1.3em;margin-bottom:2px\">🌊</div><div style=\"font-weight:900;font-size:0.95em;color:var(--text);margin-bottom:2px\">離島</div><div style=\"font-size:0.75em;color:var(--sub);margin-bottom:10px;line-height:1.6\">本土とは異なる歴史を歩んできた、独自の文化が息づく地中海の島々</div><ul style=\"margin:0;padding-left:16px;font-size:0.8em;line-height:2;color:var(--text)\"><li><strong>パレルモ</strong>（シチリア州）— 地中海の十字路、ノルマン・アラブ様式の建築</li><li><strong>タオルミーナ</strong>（シチリア州）— エトナ火山を望む高級リゾート、古代ギリシャ劇場</li><li><strong>カリアリ</strong>（サルデーニャ州）— 透明度抜群の海、古代遺跡ヌラーゲ</li><li><a onclick=\"showFilteredSpots('agrigento')\" class=\"spot-link\" style=\"cursor:pointer\">アグリジェント</a>（シチリア州）— ギリシャ神殿群が残る神殿の谷</li></ul></div></div></div>",
   "index_card": {
     "flag": "🇮🇹",
@@ -1342,11 +1342,6 @@
   "food_section_title": "イタリアグルメ図鑑",
   "food_filter_types": [
     {
-      "id": "all",
-      "label": "すべて",
-      "active": true
-    },
-    {
       "id": "rice",
       "label": "ご飯もの",
       "active": false
@@ -1383,6 +1378,14 @@
     {
       "id": "milan",
       "label": "ミラノ"
+    },
+    {
+      "id": "napoli",
+      "label": "ナポリ"
+    },
+    {
+      "id": "sicilia",
+      "label": "シチリア"
     }
   ],
   "food_modal_phrase_main": "これをください",
@@ -1394,7 +1397,7 @@
       "must": true,
       "badge": "国民的料理",
       "type": "main",
-      "city": "national",
+      "city": "napoli",
       "desc": "ナポリ発祥、薄い生地をもちもちに焼き上げた本場のピザ。トマト・モッツァレラ・バジルの三色がイタリア国旗を表す一枚。",
       "wiki_url": "https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%B2%E3%83%AA%E3%83%BC%E3%82%BF%E3%83%94%E3%82%B6%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%20%E6%96%99%E7%90%86",
       "order_ico": "🍕",
@@ -1595,7 +1598,7 @@
       "name": "アランチーニ",
       "badge": "シチリア名物",
       "type": "main",
-      "city": "national",
+      "city": "sicilia",
       "desc": "ライスコロッケのようなシチリア名物の揚げ物。中にはラグーソースやチーズが詰まっており、食べ歩きにもぴったり。",
       "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%83%A9%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8B%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2",
       "order_ico": "🍙",
@@ -1609,7 +1612,7 @@
       "name": "カンノーリ",
       "badge": "シチリア名物",
       "type": "dessert",
-      "city": "national",
+      "city": "sicilia",
       "desc": "パリパリの筒状生地にリコッタチーズのクリームを詰めたシチリア発祥の伝統菓子。両端からピスタチオがのぞく見た目も可愛らしい。",
       "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%B3%E3%83%8E%E3%83%BC%E3%83%AA%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2",
       "order_ico": "🥐",
@@ -1651,7 +1654,7 @@
       "name": "リモンチェッロ",
       "badge": "南部名物リキュール",
       "type": "drink",
-      "city": "national",
+      "city": "napoli",
       "desc": "アマルフィ海岸などレモンの名産地で作られる、爽やかな甘さのレモンリキュール。食後酒として冷やして小さなグラスで味わう。",
       "wiki_url": "https://www.google.com/search?q=%E3%83%AA%E3%83%A2%E3%83%B3%E3%83%81%E3%82%A7%E3%83%83%E3%83%AD%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2",
       "order_ico": "🍋",
@@ -1735,7 +1738,7 @@
       "name": "スフォリアテッラ",
       "badge": "ナポリ名物",
       "type": "dessert",
-      "city": "national",
+      "city": "napoli",
       "desc": "貝殻のような層状の生地に、リコッタチーズやセモリナ粉のクリームを詰めたナポリの伝統菓子。パリパリの食感と優しい甘さが朝食にもぴったり。",
       "wiki_url": "https://www.google.com/search?q=%E3%82%B9%E3%83%95%E3%82%A9%E3%83%AA%E3%82%A2%E3%83%86%E3%83%83%E3%83%A9%20%E3%83%8A%E3%83%9D%E3%83%AA",
       "order_ico": "🥐",
@@ -1905,7 +1908,7 @@
       "name": "アクアパッツァ",
       "badge": "南イタリア発祥の魚料理",
       "type": "main",
-      "city": "national",
+      "city": "napoli",
       "desc": "魚介類をトマトや白ワイン、オリーブと一緒に煮込む、南イタリア・ナポリ発祥の豪快な魚料理。旨みが溶け込んだスープはパンでしっかり拭って味わいたい。",
       "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%91%E3%83%83%E3%83%84%E3%82%A1",
       "order_ico": "🐟",
@@ -1947,7 +1950,7 @@
       "name": "グラニータ",
       "badge": "シチリア発祥の氷菓",
       "type": "dessert",
-      "city": "national",
+      "city": "sicilia",
       "desc": "レモンやピスタチオなどのフレーバーを凍らせた、かき氷に似たシチリア発祥のフローズンスイーツ。パレルモやタオルミーナなど発祥地の暑い夏に欠かせない定番。",
       "wiki_url": "https://www.google.com/search?q=%E3%82%B0%E3%83%A9%E3%83%8B%E3%83%83%E3%82%BF%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2",
       "order_ico": "🍧",
@@ -1961,7 +1964,7 @@
       "name": "カッサータ",
       "badge": "シチリア伝統菓子",
       "type": "dessert",
-      "city": "national",
+      "city": "sicilia",
       "desc": "リコッタチーズと砂糖漬けフルーツを使ったシチリアの伝統的なアイスケーキ。カラフルなマジパンで覆われた見た目も華やかで、お祝いの席にも登場する。",
       "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%83%E3%82%B5%E3%83%BC%E3%82%BF%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2",
       "order_ico": "🍰",
