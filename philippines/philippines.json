@@ -136,6 +136,19 @@
       "badge": "避暑地",
       "badge_class": "green",
       "description": "標高1,500mの高原に広がる「夏の首都」、涼しい避暑地"
+    },
+    {
+      "id": "siargao",
+      "name": "シアルガオ",
+      "lat": "9.8482",
+      "lng": "126.0458",
+      "zoom": "12",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "サーファーの聖地",
+      "badge_class": "green",
+      "description": "世界的サーフスポット「クラウド9」を擁する、自由な空気が漂う南国の島"
     }
   ],
   "season_mini": {
@@ -530,6 +543,74 @@
             "type": "t-cool"
           }
         ]
+      },
+      {
+        "name": "シアルガオ",
+        "city_id": "siargao",
+        "best_note": "ベスト：3〜7月（波が穏やかで初心者向け）／ 8〜11月は本格的なうねりが届くサーファーのハイシーズン",
+        "note": "太平洋側に面するため西部のリゾート地とは季節が逆で、<strong>8〜11月</strong>に南半球からの本格的なうねりが届きサーファーで賑わう。<strong>3〜7月</strong>は波が穏やかで初心者や島巡り中心の旅行者向き。11〜1月は北東モンスーンの影響で雨や強風の日も増える。",
+        "months": [
+          {
+            "icon": "⛅",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          }
+        ]
       }
     ]
   },
@@ -783,6 +864,17 @@
         "maps_url": "https://www.google.com/maps/place/El+Nido,+Palawan",
         "lat": 11.1801,
         "lng": 119.4116
+      },
+      {
+        "id": "generalluna",
+        "name": "ジェネラル・ルナ（シアルガオ）",
+        "tag": "サーファー向け",
+        "tag_color": "green",
+        "desc": "クラウド9に一番近い、島の観光・ナイトライフの中心エリア。サーフショップ・カフェ・ゲストハウスが密集し、初めての滞在ならここ一択。",
+        "price": "中級 2,500〜6,000円／泊　高級 12,000円〜",
+        "maps_url": "https://www.google.com/maps/place/General+Luna,+Siargao",
+        "lat": 9.7833,
+        "lng": 126.1667
       }
     ],
     "hotel_tip": "マニラは治安の良いマカティ・BGCエリアが安心。ボラカイはステーション1が高級寄り、ステーション2は賑やかで飲食店が多い。エルニドは町の中心（タウンプロパー）が便利だが、リゾート島に直接宿泊する選択肢もある。",
@@ -1570,6 +1662,90 @@
       "prompt_en": "Filipino Taho, warm silken tofu dessert with brown sugar syrup and tapioca pearls in a cup, street vendor style, food photography",
       "plate_color": "glass cup",
       "image": "素材/グルメ/タホ.webp"
+    },
+    {
+      "num": "No.28",
+      "name": "ティノーラ",
+      "badge": "生姜香る家庭のスープ",
+      "type": "main",
+      "city": "national",
+      "desc": "生姜と玉ねぎで鶏肉を煮込み、青パパイヤやチリの葉を加えた優しい味わいのスープ料理。アドボ・シニガンと並ぶ「おふくろの味」の代表格で、フィリピンのどの家庭でも作られる定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%86%E3%82%A3%E3%83%8E%E3%83%BC%E3%83%A9%20%E3%83%95%E3%82%A3%E3%83%AA%E3%83%94%E3%83%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🍲",
+      "order_name_en": "Tinola",
+      "prompt_en": "Filipino Tinola, ginger chicken soup with green papaya and chili leaves in a clear broth, food photography",
+      "plate_color": "clay pot",
+      "image": "素材/グルメ/ティノーラ.webp"
+    },
+    {
+      "num": "No.29",
+      "name": "ビコール・エクスプレス",
+      "badge": "ビコール地方の辛味煮込み",
+      "type": "main",
+      "city": "national",
+      "desc": "ココナッツミルクと唐辛子でじっくり煮込んだ豚肉料理。名前とは裏腹に列車とは無関係で、辛党の首都の客に届けるべく急行便で運ばれた逸話が由来とされる、ビコール地方を代表する看板料理。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%93%E3%82%B3%E3%83%BC%E3%83%AB%E3%83%BB%E3%82%A8%E3%82%AF%E3%82%B9%E3%83%97%E3%83%AC%E3%82%B9%20%E3%83%95%E3%82%A3%E3%83%AA%E3%83%94%E3%83%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🌶️",
+      "order_name_en": "Bicol Express",
+      "prompt_en": "Filipino Bicol Express, pork simmered in coconut milk and chili, creamy spicy stew, food photography",
+      "plate_color": "clay pot",
+      "image": "素材/グルメ/ビコール・エクスプレス.webp"
+    },
+    {
+      "num": "No.30",
+      "name": "バグネット",
+      "badge": "イロコス地方の極上カリカリ豚",
+      "type": "main",
+      "city": "national",
+      "desc": "下茹でしてから二度揚げし、皮まで極限までカリカリに仕上げたイロコス地方名物の豚肉料理。クリスピー・パタとは異なりバラ肉を使うのが特徴で、酢だれと一緒に食べるのが定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%B0%E3%83%8D%E3%83%83%E3%83%88%20%E3%83%95%E3%82%A3%E3%83%AA%E3%83%94%E3%83%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🥓",
+      "order_name_en": "Bagnet",
+      "prompt_en": "Filipino Bagnet, deep-fried crispy pork belly with crackling skin, served with vinegar dip, food photography",
+      "plate_color": "wooden board",
+      "image": "素材/グルメ/バグネット.webp"
+    },
+    {
+      "num": "No.31",
+      "name": "ブラロ",
+      "badge": "牛骨髄のクリアスープ",
+      "type": "main",
+      "city": "national",
+      "desc": "牛のすね肉と骨髄をコトコト煮込んだ透き通ったスープ料理。骨髄を吸い出しながら味わうのが醍醐味で、避暑地バギオなど高原地帯で体を温める一品として親しまれている。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%96%E3%83%A9%E3%83%AD%20%E3%83%95%E3%82%A3%E3%83%AA%E3%83%94%E3%83%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🍖",
+      "order_name_en": "Bulalo",
+      "prompt_en": "Filipino Bulalo, beef shank and bone marrow soup in clear broth with corn and vegetables, food photography",
+      "plate_color": "clay pot",
+      "image": "素材/グルメ/ブラロ.webp"
+    },
+    {
+      "num": "No.32",
+      "name": "エンサイマダ",
+      "badge": "バターとチーズの甘いパン",
+      "type": "sweet",
+      "city": "national",
+      "desc": "バターをたっぷり練り込んだ渦巻き型のパンに、砂糖とチーズをまぶした甘じょっぱいペストリー。スペイン統治時代に伝わった菓子パンがフィリピン流にアレンジされ、朝食やおやつの定番になった。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A8%E3%83%B3%E3%82%B5%E3%82%A4%E3%83%9E%E3%83%80%20%E3%83%95%E3%82%A3%E3%83%AA%E3%83%94%E3%83%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🥐",
+      "order_name_en": "Ensaymada",
+      "prompt_en": "Filipino Ensaymada, soft buttery spiral bread topped with sugar and grated cheese, food photography",
+      "plate_color": "paper wrapper",
+      "image": "素材/グルメ/エンサイマダ.webp"
+    },
+    {
+      "num": "No.33",
+      "name": "ビビンカ",
+      "badge": "炭火で焼く伝統の米菓子",
+      "type": "sweet",
+      "city": "national",
+      "desc": "米粉とココナッツミルクの生地をバナナの葉に流し込み、炭火で上下から焼き上げる伝統菓子。表面に塩卵やチーズをのせるのが定番で、クリスマスシーズンの朝市で焼きたてを頬張るのが風物詩。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%93%E3%83%93%E3%83%B3%E3%82%AB%20%E3%83%95%E3%82%A3%E3%83%AA%E3%83%94%E3%83%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🍮",
+      "order_name_en": "Bibingka",
+      "prompt_en": "Filipino Bibingka, rice cake baked on banana leaf with salted egg and cheese on top, charcoal-fired, food photography",
+      "plate_color": "banana leaf",
+      "image": "素材/グルメ/ビビンカ.webp"
     }
   ],
   "spots_section_title": "フィリピン観光スポット図鑑",
@@ -1627,6 +1803,11 @@
     {
       "id": "baguio",
       "label": "バギオ",
+      "active": false
+    },
+    {
+      "id": "siargao",
+      "label": "シアルガオ",
       "active": false
     }
   ],
@@ -1744,6 +1925,17 @@
           "prompt_en": "Manila Cathedral Intramuros Philippines, grand white baroque facade church exterior, blue sky, travel photography",
           "map_url": "https://maps.google.com/?q=Manila+Cathedral",
           "type": "religious"
+        },
+        {
+          "must": false,
+          "icon": "🖼️",
+          "num": "MNL 08",
+          "name": "国立博物館",
+          "desc": "リサール公園に隣接する、フィリピン最大級の博物館群。世界最古クラスの人類化石やスペイン統治時代の絵画、沈没船から引き揚げられた財宝など、フィリピンの歴史と芸術を一度に俯瞰できる。",
+          "badge": "フィリピン随一の博物館",
+          "prompt_en": "National Museum of the Philippines Manila, neoclassical building exterior with grand columns, museum visitors, travel photography",
+          "map_url": "https://maps.google.com/?q=National+Museum+of+the+Philippines+Manila",
+          "type": "museum"
         }
       ]
     },
@@ -2059,6 +2251,28 @@
           "prompt_en": "Honda Bay island hopping Palawan, small sandy islets with turquoise water, snorkelers, tropical day trip, travel photography",
           "type": "nature",
           "no_map": true
+        },
+        {
+          "must": true,
+          "icon": "💚",
+          "num": "PAL 05",
+          "name": "カヤンガン湖",
+          "desc": "「アジアで最も美しい湖」と称される、断崖に囲まれたエメラルドグリーンの湖。コロン島のツアーで必ず立ち寄る一番人気のスポットで、澄み切った水面に切り立つ石灰岩の絶壁が映り込む光景は息をのむ美しさ。",
+          "badge": "アジア屈指の美しさ・必見",
+          "prompt_en": "Kayangan Lake Coron Palawan Philippines, emerald green lake surrounded by dramatic limestone cliffs, crystal clear water, travel photography",
+          "map_url": "https://maps.google.com/?q=Kayangan+Lake+Coron",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🌊",
+          "num": "PAL 06",
+          "name": "ツイン・ラグーン",
+          "desc": "切り立った岩の裂け目でつながる2つのラグーン。塩水と淡水が層になって混ざり合う不思議な水温差を体感でき、断崖の隙間を泳いで抜ける非日常の体験ができる、コロン島巡りのハイライトの一つ。",
+          "badge": "塩水と淡水が交わるラグーン",
+          "prompt_en": "Twin Lagoon Coron Palawan Philippines, two lagoons connected by a narrow limestone crevice, turquoise water, kayaks, travel photography",
+          "map_url": "https://maps.google.com/?q=Twin+Lagoon+Coron",
+          "type": "nature"
         }
       ]
     },
@@ -2164,6 +2378,122 @@
           "prompt_en": "Banaue Rice Terraces Philippines, ancient stepped rice terraces carved into steep mountainside, mist over the valley, UNESCO World Heritage site, travel photography",
           "map_url": "https://maps.google.com/?q=Banaue+Rice+Terraces",
           "type": "heritage"
+        },
+        {
+          "must": false,
+          "icon": "🎨",
+          "num": "BAG 07",
+          "name": "ベンカブ美術館",
+          "desc": "国民的画家ベンカブが手がけた、山の斜面に建つ美術館。自身の作品に加えイフガオ族の民具コレクションも展示し、テラス席からの棚田風の眺めと合わせてバギオの文化系スポットの筆頭格。",
+          "badge": "バギオ随一の美術館",
+          "prompt_en": "BenCab Museum Baguio Philippines, hillside art museum building overlooking mountains, gallery terrace, travel photography",
+          "map_url": "https://maps.google.com/?q=BenCab+Museum+Baguio",
+          "type": "museum"
+        }
+      ]
+    },
+    {
+      "city_id": "siargao",
+      "city_name": "シアルガオ",
+      "city_desc": "世界的サーフスポット「クラウド9」を擁する、自由な空気が漂う太平洋側の島。ラグーンや島巡りも充実",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "マニラ・セブから国内線でサヤック空港へ 約1.5〜2時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "空港からジェネラル・ルナまでバン・トライシクル 約30〜40分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "3〜7月（穏やか）／8〜11月（サーフのハイシーズン）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "シーフード・ココナッツ料理",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "レンタルバイク・トライシクル",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏄",
+          "num": "SIA 01",
+          "name": "クラウド9",
+          "desc": "世界中のサーファーが集う、シアルガオを代表する伝説的なブレイクポイント。海上に伸びる木製の桟橋（ボードウォーク）からプロサーファーたちの妙技を間近に眺められ、初心者向けボートトリップの拠点にもなっている。",
+          "badge": "世界屈指のサーフスポット・必見",
+          "prompt_en": "Cloud 9 Siargao Philippines surf break, wooden boardwalk over turquoise waves, surfers riding a barrel wave, golden hour, travel photography",
+          "map_url": "https://maps.google.com/?q=Cloud+9+Siargao",
+          "type": "activity"
+        },
+        {
+          "must": true,
+          "icon": "💚",
+          "num": "SIA 02",
+          "name": "スグバ・ラグーン",
+          "desc": "断崖と緑に囲まれたエメラルドグリーンのラグーン。竹製のいかだでの散策に加え、ジップラインや崖からのクリフダイブも楽しめる、シアルガオ随一のアクティビティスポット。",
+          "badge": "断崖に囲まれたラグーン",
+          "prompt_en": "Sugba Lagoon Siargao Philippines, emerald green lagoon surrounded by lush green cliffs, bamboo raft floating on water, travel photography",
+          "map_url": "https://maps.google.com/?q=Sugba+Lagoon+Siargao",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🏊",
+          "num": "SIA 03",
+          "name": "マグププンコ・ロックプール",
+          "desc": "干潮時にだけ姿を現す天然の岩礁プール。透明度の高い海水がプールに溜まり、崖からの飛び込みスポットとしても人気。満潮・干潮の時間を事前に確認して訪れたい。",
+          "badge": "干潮時だけ現れる天然プール",
+          "prompt_en": "Magpupungko Rock Pools Siargao Philippines, natural tide pools among volcanic rock formations, clear turquoise water, travel photography",
+          "map_url": "https://maps.google.com/?q=Magpupungko+Rock+Pools+Siargao",
+          "type": "nature"
+        },
+        {
+          "must": true,
+          "icon": "🏝️",
+          "num": "SIA 04",
+          "name": "アイランドホッピング（ネイキッド島・ダク島・ギュヤム島）",
+          "desc": "3つの無人島（ネイキッド・ダク・ギュヤム）を1日で巡る定番のボートツアー。それぞれ砂浜の広さや雰囲気が異なり、シュノーケリングやビーチでのんびり過ごすのに最適。",
+          "badge": "3島を巡る定番アイランドホッピング",
+          "prompt_en": "Island hopping Siargao Philippines, Naked Island Daku Island Guyam Island, small white sand islets, turquoise water, outrigger boats, travel photography",
+          "type": "activity",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🛶",
+          "num": "SIA 05",
+          "name": "ソホトン・コーブ＆洞窟",
+          "desc": "ヒナタゥアン湾の入り組んだマングローブと洞窟が続く自然保護区。満潮時にしか入れない洞窟内の隠れラグーンなど、秘境感の強いボートツアーが楽しめる。",
+          "badge": "秘境の洞窟・ラグーン",
+          "prompt_en": "Sohoton Cove Siargao Philippines, mangrove-lined lagoon with hidden cave entrance, boat tour, turquoise water, travel photography",
+          "map_url": "https://maps.google.com/?q=Sohoton+Cove+Siargao",
+          "type": "nature"
+        },
+        {
+          "must": false,
+          "icon": "🌴",
+          "num": "SIA 06",
+          "name": "ツリー・トンネル",
+          "desc": "ジェネラル・ルナからクラウド9へ向かう道すがら、椰子の木が頭上でアーチを作る名物の並木道。バイクや自転車で走り抜けるのが定番で、シアルガオらしいのどかな一枚が撮れる。",
+          "badge": "定番のフォトスポット",
+          "prompt_en": "Tree Tunnel Siargao Philippines, coconut palm trees arching over a road, cyclist riding through, tropical atmosphere, travel photography",
+          "map_url": "https://maps.google.com/?q=Siargao+Tree+Tunnel",
+          "type": "nature"
         }
       ]
     }
