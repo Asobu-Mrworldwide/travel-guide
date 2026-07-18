@@ -123,6 +123,19 @@
       "badge": "世界遺産・ビーチ",
       "badge_class": "green",
       "description": "オランダ統治時代の要塞（ようさい）都市。周辺には南国ビーチが連なる"
+    },
+    {
+      "id": "yala",
+      "name": "ヤーラ・ティッサマハーラーマ",
+      "lat": "6.3735",
+      "lng": "81.5199",
+      "zoom": "11",
+      "color": "#8D2433",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "サファリ",
+      "badge_class": "",
+      "description": "野生ヒョウの密度世界一とも言われるヤーラ国立公園への玄関口。象・鳥類も豊富な南部の自然拠点"
     }
   ],
   "season_mini": {
@@ -448,6 +461,26 @@
             "temp": "16°C",
             "type": "t-cold"
           }
+        ]
+      },
+      {
+        "name": "ヤーラ・ティッサマハーラーマ（南部乾燥地帯）",
+        "city_id": "yala",
+        "best_note": "ベスト：2〜7月（乾季でヒョウの遭遇率が上昇）／ 10〜1月は雨季で水場が分散し動物が見つけにくい。",
+        "note": "スリランカ南東部は他地域と違い乾燥した低地気候で、年間を通じて30°C前後まで気温が上がる。2〜7月の乾季は水場が限られ野生動物が集まりやすくサファリの当たり時期。10〜1月は雨季で緑は増えるが動物の分散で発見率が下がりやすい。強い日差し対策と水分補給が必須。",
+        "months": [
+          { "icon": "☀️", "temp": "29°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "30°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "31°C", "type": "t-hot2" },
+          { "icon": "☀️", "temp": "31°C", "type": "t-hot2" },
+          { "icon": "☀️", "temp": "31°C", "type": "t-hot2" },
+          { "icon": "☀️", "temp": "30°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "30°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "30°C", "type": "t-hot1" },
+          { "icon": "☔", "temp": "29°C", "type": "t-hot1" },
+          { "icon": "☔", "temp": "28°C", "type": "t-hot1" },
+          { "icon": "☔", "temp": "28°C", "type": "t-hot1" },
+          { "icon": "☔", "temp": "28°C", "type": "t-hot1" }
         ]
       }
     ]
@@ -1329,6 +1362,11 @@
       "id": "galle",
       "label": "ゴール",
       "active": false
+    },
+    {
+      "id": "yala",
+      "label": "ヤーラ",
+      "active": false
     }
   ],
   "spot_sections": [
@@ -1463,6 +1501,17 @@
           "image": "素材/観光スポット/キャンディアンダンス.webp",
           "type": "activity",
           "no_map": true
+        },
+        {
+          "must": true,
+          "icon": "🌿",
+          "num": "KDY 04",
+          "name": "ペラデニヤ王立植物園",
+          "desc": "キャンディ王朝の王族専用庭園として作られた、スリランカ最大級の植物園。40mの王室ヤシ並木や300種以上の蘭を集めた温室など見どころが多く、マハウェリ川沿いの敷地を歩くだけで2〜3時間はかかる広さ。",
+          "badge": "王立庭園",
+          "prompt_en": "Royal Botanical Gardens Peradeniya Kandy Sri Lanka, avenue of tall royal palms, lush tropical garden, orchid house, Mahaweli river nearby, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Royal+Botanical+Gardens+Peradeniya"
         }
       ]
     },
@@ -1694,6 +1743,17 @@
           "image": "素材/観光スポット/アヌラーダプラ.webp",
           "type": "heritage",
           "map_url": "https://maps.google.com/?q=Anuradhapura+Sri+Lanka"
+        },
+        {
+          "must": false,
+          "icon": "🌄",
+          "num": "SIG 06",
+          "name": "ピドゥランガラロック",
+          "desc": "シギリヤロックの対岸にそびえる岩山。入場料はシギリヤの数分の一ながら、頂上からはシギリヤロックそのものをジャングル越しに一望できる大迫力の眺め。日の出時刻に登れば、朝日に染まるシギリヤの岩肌を独り占めできる。",
+          "badge": "穴場の絶景",
+          "prompt_en": "Pidurangala Rock Sri Lanka at sunrise, hikers on rocky summit with panoramic view of Sigiriya Rock Fortress across the jungle, golden morning light",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Pidurangala+Rock"
         }
       ]
     },

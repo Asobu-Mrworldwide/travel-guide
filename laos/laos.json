@@ -99,6 +99,19 @@
       "description": "無数の石壺が眠る謎多き世界遺産。標高1,200mの高原で朝晩は冷え込む"
     },
     {
+      "id": "pakse",
+      "name": "パクセー・チャンパーサック",
+      "lat": "15.1202",
+      "lng": "105.7988",
+      "zoom": "11",
+      "color": "#002868",
+      "marker_size": "10",
+      "marker_label": "●",
+      "badge": "南部の玄関口",
+      "badge_class": "green",
+      "description": "クメール遺跡ワット・プーとボラベン高原の滝・コーヒー農園への拠点となる南部の町"
+    },
+    {
       "id": "si_phan_don",
       "name": "シーパンドン（4000の島）",
       "lat": "13.9833",
@@ -572,6 +585,74 @@
             "type": "t-warm"
           }
         ]
+      },
+      {
+        "name": "パクセー・チャンパーサック（ボラベン高原）",
+        "city_id": "pakse",
+        "best_note": "ベスト：11〜2月（乾季・遺跡巡りに最適）／ 5〜10月は雨季で滝の水量が増える。",
+        "note": "メコン下流域に近いパクセー市街は国内でも指折りの蒸し暑さで、乾季の11〜2月が最も観光しやすい。標高1,000m前後のボラベン高原は市街地よりやや涼しく、朝晩は薄手の羽織りが役立つこともある。雨季は滝の水量が増して迫力を増す一方、山道の移動に時間がかかりやすい。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "32°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "33°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "32°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "31°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "31°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "31°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "31°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "30°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "26°C",
+            "type": "t-warm"
+          }
+        ]
       }
     ]
   },
@@ -818,6 +899,17 @@
         "maps_url": "https://www.google.com/maps/place/Vang+Vieng",
         "lat": 18.9226,
         "lng": 102.4453
+      },
+      {
+        "id": "pakse_downtown",
+        "name": "パクセー市内",
+        "tag": "南部観光の拠点",
+        "tag_color": "",
+        "desc": "セドン川沿いに広がる南部最大の町。ワット・プーやボラベン高原へのツアー拠点として便利で、レストランやカフェも一通り揃う。",
+        "price": "格安 1,500〜3,000円　中級 3,000〜7,000円",
+        "maps_url": "https://www.google.com/maps/place/Pakse+Laos",
+        "lat": 15.1202,
+        "lng": 105.7988
       }
     ],
     "hotel_tip": "初めてならルアンパバーン旧市街かビエンチャンのメコン川沿いが便利。国内を移動しながら周遊するスタイルが基本なので、荷物は最小限にまとめると身軽に動ける。",
@@ -1377,6 +1469,45 @@
       "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%82%AA%E3%83%A9%E3%83%A0%EF%BC%88%E7%AB%B9%E7%AD%92%E3%82%82%E3%81%A1%E7%B1%B3%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9%20%E6%96%99%E7%90%86",
       "order_ico": "🎋",
       "order_name_en": "Khao Lam"
+    },
+    {
+      "num": "No.13",
+      "name": "ナムカオ（揚げ米サラダ）",
+      "badge": "ビエンチャン名物",
+      "type": "snack",
+      "city": "vientiane",
+      "desc": "発酵させた酸味のある豚肉ソーセージ「ネーム」と、揚げてほぐした米を和えたビエンチャン名物のサラダ。パリパリの揚げ米の食感と酸味・辛味が絡み合い、ライスペーパーに包んで食べるのが定番のスタイル。",
+      "prompt_en": "Naem khao Laos crispy fried rice salad with fermented pork sausage, herbs and lime, Vientiane street food, food photography",
+      "plate_color": "wooden plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%8A%E3%83%A0%E3%82%AB%E3%82%AA%EF%BC%88%E6%8F%9A%E3%81%92%E7%B1%B3%E3%82%B5%E3%83%A9%E3%83%80%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9%20%E6%96%99%E7%90%86",
+      "order_ico": "🍚",
+      "order_name_en": "Naem Khao"
+    },
+    {
+      "num": "No.14",
+      "name": "カオソーイ（ルアンパバーン風麺）",
+      "badge": "ルアンパバーン名物",
+      "type": "main",
+      "city": "luang_prabang",
+      "desc": "きしめん状の米麺に、豚か鶏のひき肉とトマトベースの発酵大豆ソースを合わせた優しい味わいの麺料理。同名のタイ・チェンマイ名物（カレー風味のスープ麺）とは全く別物で、たっぷりのハーブを混ぜ込んで食べるルアンパバーンならではの一杯。",
+      "prompt_en": "Khao soi Luang Prabang style rice noodles with minced pork tomato sauce and fresh herbs, food photography",
+      "plate_color": "white ceramic bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%82%AA%E3%82%BD%E3%83%BC%E3%82%A4%EF%BC%88%E3%83%AB%E3%82%A2%E3%83%B3%E3%83%91%E3%83%90%E3%83%BC%E3%83%B3%E9%A2%A8%E9%BA%BA%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Khao Soi"
+    },
+    {
+      "num": "No.15",
+      "name": "カイペーン（川海苔スナック）",
+      "badge": "ルアンパバーン名物",
+      "type": "snack",
+      "city": "luang_prabang",
+      "desc": "メコン川で採れる淡水の川海苔をゴマやニンニクと一緒に薄く伸ばして天日干しにし、炭火であぶった素朴なスナック。パリパリとした食感とほのかな磯の香りが酒のつまみにもぴったりで、ルアンパバーンの朝市でしか出会えない珍味。",
+      "prompt_en": "Kaipen Laos dried river weed snack with sesame seeds, grilled crispy sheets, Luang Prabang market, food photography",
+      "plate_color": "bamboo tray",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%82%A4%E3%83%9A%E3%83%BC%E3%83%B3%EF%BC%88%E5%B7%9D%E6%B5%B7%E8%8B%94%E3%82%B9%E3%83%8A%E3%83%83%E3%82%AF%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9%20%E6%96%99%E7%90%86",
+      "order_ico": "🌿",
+      "order_name_en": "Kaipen"
     }
   ],
   "spots_section_title": "ラオス 観光スポット",
@@ -1537,6 +1668,17 @@
           "image": "素材/観光スポット/ブッダパーク（ワット・シエンクワン）.webp",
           "type": "activity",
           "map_url": "https://maps.google.com/?q=Buddha+Park+Vientiane+Laos"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "VTE 07",
+          "name": "ホー・プラケオ",
+          "desc": "かつてエメラルド仏を安置していた王室寺院跡で、現在は宗教美術品を展示する博物館。本尊は18世紀の戦乱でバンコクへ持ち去られたが、境内にはクメール様式の石彫やラオス仏教美術のコレクションが残り、道を挟んで向かいのワット・シーサケットとセットで巡るのが定番。",
+          "badge": "旧王室寺院の至宝",
+          "prompt_en": "Haw Phra Kaew Vientiane Laos, former royal temple now museum of Buddhist art, Khmer stone carvings, manicured garden, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Wat+Ho+Phra+Keo+Vientiane"
         }
       ]
     },
@@ -1622,6 +1764,28 @@
           "image": "素材/観光スポット/ルアンパバーン・ナイトマーケット.webp",
           "type": "market",
           "map_url": "https://maps.google.com/?q=Luang+Prabang+Night+Market"
+        },
+        {
+          "must": false,
+          "icon": "👑",
+          "num": "LPQ 06",
+          "name": "王宮博物館（ホーカム）",
+          "desc": "1904年に建てられた旧ラオス王室の宮殿を利用した博物館。最後の国王一家の私物や、ラオス仏教の最高位僧が用いた黄金の玉座など貴重な品々を展示し、フランス植民地建築とラオス様式が融合した外観も見どころ。",
+          "badge": "旧王宮",
+          "prompt_en": "Royal Palace Museum Luang Prabang Laos, former royal residence with French colonial and Lao architecture, golden throne exhibit, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Royal+Palace+Museum+Luang+Prabang"
+        },
+        {
+          "must": false,
+          "icon": "🕳️",
+          "num": "LPQ 07",
+          "name": "パークウー洞窟",
+          "desc": "メコン川とウー川が合流する断崖に口を開ける2つの洞窟。何百年にもわたり地元の人々が奉納してきた数千体もの仏像がひしめき合うように並び、ルアンパバーンからメコン川を遡るボートクルーズで訪れるのが定番。",
+          "badge": "仏像で埋め尽くされた洞窟",
+          "prompt_en": "Pak Ou Caves Laos, limestone cliff caves filled with thousands of Buddha statues, Mekong river confluence, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Pak+Ou+Caves+Laos"
         }
       ]
     },
@@ -1793,6 +1957,39 @@
           "image": "素材/観光スポット/ワット・プー.webp",
           "type": "heritage",
           "map_url": "https://maps.google.com/?q=Wat+Phou+Champasak"
+        },
+        {
+          "must": true,
+          "icon": "🌊",
+          "num": "CHX 02",
+          "name": "タートファーンの滝",
+          "desc": "ボラベン高原にある落差120mの二条の滝。ゼーカタム川とドンフアサオ川がジャングルの渓谷へ豪快に流れ落ちる様は迫力満点で、近隣のリゾートのテラスからコーヒー片手に眺めるのが定番の楽しみ方。上空を滑空するジップラインツアーも人気。",
+          "badge": "落差120mの双子滝",
+          "prompt_en": "Tad Fane Waterfall Bolaven Plateau Laos, twin waterfalls plunging into jungle gorge, viewpoint terrace, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Tad+Fane+Waterfall+Laos"
+        },
+        {
+          "must": false,
+          "icon": "💦",
+          "num": "CHX 03",
+          "name": "タートヤーンの滝",
+          "desc": "パクセーから車で約1時間、ボラベン高原にある高さ42mの滝。タートファーンと異なり滝つぼで泳ぐことができ、上流・中流・下流と複数の展望ポイントから違った表情を楽しめる、家族連れにも人気のスポット。",
+          "badge": "泳げる高原の滝",
+          "prompt_en": "Tad Yuang Waterfall Bolaven Plateau Laos, tall waterfall with swimmable pool, viewing platforms, lush jungle, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Tad+Yuang+Waterfall+Laos"
+        },
+        {
+          "must": false,
+          "icon": "☕",
+          "num": "CHX 04",
+          "name": "ボラベン高原コーヒー農園めぐり",
+          "desc": "ラオス産アラビカ豆の一大産地として知られるボラベン高原で、農園見学と試飲を楽しむツアー。滝巡りと組み合わせて1日かけて高原をドライブするのが定番で、標高1,000m前後の涼しい空気も魅力。",
+          "badge": "コーヒーの一大産地",
+          "prompt_en": "Bolaven Plateau coffee plantation tour Laos, arabica coffee trees on highland farm, tasting session, travel photography",
+          "type": "activity",
+          "no_map": true
         }
       ]
     },
