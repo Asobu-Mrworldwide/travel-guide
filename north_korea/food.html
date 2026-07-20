@@ -343,10 +343,10 @@ function playPhrase(file, btn) {
 
 /* 現金目安カード */
 let cashDays = 5;
-const CURRENCY = 'KPW（観光客は使用不可）';
-const RATE = 現地非流通のため実質レートなし。支払いはすべてEUR/CNY/USD建て;
-const CASH_LOW = 20EUR;
-const CASH_HIGH = 50EUR;
+const CURRENCY = 'EUR（現地通貨KPWは観光客使用不可）';
+const RATE = 173;
+const CASH_LOW = 20;
+const CASH_HIGH = 50;
 function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;

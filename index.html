@@ -228,6 +228,15 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
         <div class="filter-chips" id="monthChips"></div>
       </div>
       <div class="filter-row">
+        <span class="filter-label">飛行時間</span>
+        <div class="filter-chips">
+          <span class="chip" onclick="toggleFlight('f5')" id="f-f5">5時間以内</span>
+          <span class="chip" onclick="toggleFlight('f10')" id="f-f10">5〜10時間</span>
+          <span class="chip" onclick="toggleFlight('f15')" id="f-f15">10〜15時間</span>
+          <span class="chip" onclick="toggleFlight('f99')" id="f-f99">15時間以上</span>
+        </div>
+      </div>
+      <div class="filter-row">
         <span class="filter-label">予算感</span>
         <div class="filter-chips">
           <span class="chip" onclick="toggleBudget('budget1')" id="b-budget1">格安</span>
@@ -271,7 +280,7 @@ const COUNTRIES = [
   {
     name:'マレーシア', nameEn:'Malaysia', flag:'🇲🇾',
     catch:'右にマレー系、左にインド系、後ろを向けば中華系。異なる民族が共生する光景が新鮮。',
-    region:'東南アジア', flight:'約7時間', budget:['budget1','budget2'],
+    region:'東南アジア', flight:'約7時間', flightHours:7, budget:['budget1','budget2'],
     bestMonths:[2,3,4,5,6,7,8,9], bestLabel:'3〜10月',
     tags:['ビーチ','世界遺産','グルメ','自然','都市','歴史'],
     gradient:'linear-gradient(135deg,#006847 0%,#4a9a30 100%)',
@@ -281,7 +290,7 @@ const COUNTRIES = [
   {
     name:'タイ', nameEn:'Thailand', flag:'🇹🇭',
     catch:'朝は寺院で線香の煙、昼は屋台でガパオ、夜は街が別の顔を見せる。料理も景色も物価も、全部が旅人の味方。',
-    region:'東南アジア', flight:'約6〜7時間', budget:['budget1','budget2'],
+    region:'東南アジア', flight:'約6〜7時間', flightHours:7, budget:['budget1','budget2'],
     bestMonths:[10,11,0,1,2,3], bestLabel:'11〜4月',
     tags:['ビーチ','世界遺産','グルメ','都市','リゾート','歴史'],
     gradient:'linear-gradient(135deg,#a50000 0%,#e8c010 100%)',
@@ -291,7 +300,7 @@ const COUNTRIES = [
   {
     name:'ウズベキスタン', nameEn:'Uzbekistan', flag:'🇺🇿',
     catch:'シルクロードの古都が残る中央アジアの秘境。青タイルの霊廟と圧倒的なホスピタリティ',
-    region:'中央アジア', flight:'約10〜14時間（乗継）', budget:['budget1','budget2'],
+    region:'中央アジア', flight:'約10〜14時間（乗継）', flightHours:14, budget:['budget1','budget2'],
     bestMonths:[3,4,5,8,9], bestLabel:'4〜6月・9〜10月',
     tags:['世界遺産','歴史','グルメ','自然','都市'],
     gradient:'linear-gradient(135deg,#1EB7D4 0%,#009A44 100%)',
@@ -301,7 +310,7 @@ const COUNTRIES = [
   {
     name:'南アフリカ共和国', nameEn:'South Africa', flag:'🇿🇦',
     catch:'日本のほぼ反対。あれ？聞いてた話と違う、、自然と都市の融合が気持ちいい。ごはんも結構口に合うじゃないか。',
-    region:'アフリカ', flight:'約20〜24時間（乗継）', budget:['budget2','budget3'],
+    region:'アフリカ', flight:'約20〜24時間（乗継）', flightHours:24, budget:['budget2','budget3'],
     bestMonths:[8,9,10], bestLabel:'9〜11月',
     tags:['サファリ','絶景','世界遺産','グルメ'],
     gradient:'linear-gradient(135deg,#DE3831 0%,#FFB612 50%,#007A4D 100%)',
@@ -311,7 +320,7 @@ const COUNTRIES = [
   {
     name:'台湾', nameEn:'Taiwan', flag:'🇹🇼',
     catch:'管理人が学生の頃初めて一人旅した国だ。海外なのに安心感があるのは何故だろう。親日国でご飯が美味しいからに決まっている！',
-    region:'東アジア', flight:'約3〜4時間', budget:['budget1','budget2'],
+    region:'東アジア', flight:'約3〜4時間', flightHours:4, budget:['budget1','budget2'],
     bestMonths:[2,3,9,10], bestLabel:'10〜11月・3〜4月',
     tags:['グルメ','夜市','歴史','絶景'],
     gradient:'linear-gradient(135deg,#000095 0%,#FE0000 100%)',
@@ -321,7 +330,7 @@ const COUNTRIES = [
   {
     name:'シンガポール', nameEn:'Singapore', flag:'🇸🇬',
     catch:'マーライオンは噂よりはがっかりしなかった。トランジットでも観光できちゃうが腰を据えて巡ってみて欲しい。',
-    region:'東南アジア', flight:'約7〜8時間', budget:['budget2','budget3'],
+    region:'東南アジア', flight:'約7〜8時間', flightHours:8, budget:['budget2','budget3'],
     bestMonths:[1,2,3], bestLabel:'2〜4月（通年OK）',
     tags:['グルメ','都市','夜景','家族旅行'],
     gradient:'linear-gradient(135deg,#cc0001 0%,#ff6b6b 100%)',
@@ -331,7 +340,7 @@ const COUNTRIES = [
   {
     name:'スリランカ民主社会主義共和国', nameEn:'Sri Lanka', flag:'🇱🇰',
     catch:'セイロンティを飲む度に高原列車から見た広大な茶畑を思い出す。香りと記憶がリンクする不思議な国だ。',
-    region:'南アジア', flight:'約9〜10時間', budget:['budget2','budget3'],
+    region:'南アジア', flight:'約9〜10時間', flightHours:10, budget:['budget2','budget3'],
     bestMonths:[11,0,1,2], bestLabel:'12〜3月',
     tags:['世界遺産','紅茶','自然','グルメ'],
     gradient:'linear-gradient(135deg,#8D2433 0%,#FFB700 50%,#00534E 100%)',
@@ -341,7 +350,7 @@ const COUNTRIES = [
   {
     name:'韓国', nameEn:'Korea', flag:'🇰🇷',
     catch:'飛行機2時間・時差なしなのに、近すぎて逆に新鮮。宮殿もカフェも本気の異文化がそこにある。',
-    region:'東アジア', flight:'約2〜2.5時間', budget:['budget1','budget2'],
+    region:'東アジア', flight:'約2〜2.5時間', flightHours:2.5, budget:['budget1','budget2'],
     bestMonths:[3,4,8,9,10], bestLabel:'4〜5月・9〜11月',
     tags:['グルメ','都市','歴史'],
     gradient:'linear-gradient(135deg,#003080 0%,#cc0001 100%)',
@@ -351,7 +360,7 @@ const COUNTRIES = [
   {
     name:'ラオス人民民主共和国', nameEn:'Laos', flag:'🇱🇦',
     catch:'托鉢僧の静かな列と川面にたつ朝もやが、メコン河畔にたたずむ古都ルアンパバーンの朝をそっと包み込む',
-    region:'東南アジア', flight:'約9〜13時間（乗継）', budget:['budget1'],
+    region:'東南アジア', flight:'約9〜13時間（乗継）', flightHours:13, budget:['budget1'],
     bestMonths:[10,11,0,1], bestLabel:'11〜2月',
     tags:['世界遺産','自然','歴史'],
     gradient:'linear-gradient(135deg,#ce1126 0%,#002868 100%)',
@@ -361,7 +370,7 @@ const COUNTRIES = [
   {
     name:'ベトナム', nameEn:'Vietnam', flag:'🇻🇳',
     catch:'赤い提灯が石畳の運河に揺れるホイアンの夕暮れ、バイクの喧騒とフォーの湯気が旧市街の路地に漂う',
-    region:'東南アジア', flight:'約6〜6.5時間', budget:['budget1'],
+    region:'東南アジア', flight:'約6〜6.5時間', flightHours:6.5, budget:['budget1'],
     bestMonths:[11,0,1,2,3,4], bestLabel:'12〜5月',
     tags:['ビーチ','世界遺産','グルメ','自然','歴史'],
     gradient:'linear-gradient(135deg,#cc0001 0%,#ffcc00 100%)',
@@ -371,7 +380,7 @@ const COUNTRIES = [
   {
     name:'フィリピン', nameEn:'Philippines', flag:'🇵🇭',
     catch:'石灰岩の断崖が縁取るラグーンに、バンカーボートの影と潮騒が静かに重なる',
-    region:'東南アジア', flight:'約4.5〜5時間', budget:['budget1'],
+    region:'東南アジア', flight:'約4.5〜5時間', flightHours:5, budget:['budget1'],
     bestMonths:[11,0,1,2,3,4], bestLabel:'12〜5月',
     tags:['ビーチ','リゾート','グルメ','自然','ダイビング'],
     gradient:'linear-gradient(135deg,#0038a8 0%,#ce1126 100%)',
@@ -381,7 +390,7 @@ const COUNTRIES = [
   {
     name:'スペイン', nameEn:'Spain', flag:'🇪🇸',
     catch:'灼熱の太陽の下、真っ赤な衣装のフラメンコの足音とギターの旋律がタパスバルの喧騒とともに沸き立つ',
-    region:'ヨーロッパ', flight:'約14〜17時間（経由便）', budget:['budget2','budget3'],
+    region:'ヨーロッパ', flight:'約14〜17時間（経由便）', flightHours:17, budget:['budget2','budget3'],
     bestMonths:[3,4,5,8,9], bestLabel:'4〜6月・9〜10月',
     tags:['世界遺産','グルメ','建築','歴史'],
     gradient:'linear-gradient(135deg,#c60b1e 0%,#ffc400 100%)',
@@ -391,7 +400,7 @@ const COUNTRIES = [
   {
     name:'イタリア', nameEn:'Italy', flag:'🇮🇹',
     catch:'石畳に響くヴェスパの音とジェラート片手の観光客が、古代遺跡と教会の鐘の音に溶け込んでいく',
-    region:'ヨーロッパ', flight:'直行便（ミラノ）で約13時間、経由便なら14〜17時間', budget:['budget2','budget3'],
+    region:'ヨーロッパ', flight:'直行便（ミラノ）で約13時間、経由便なら14〜17時間', flightHours:13, budget:['budget2','budget3'],
     bestMonths:[4,5,6,9,10], bestLabel:'4〜6月・9〜10月',
     tags:['世界遺産','グルメ','建築','歴史'],
     gradient:'linear-gradient(135deg,#008C45 0%,#CD212A 100%)',
@@ -411,7 +420,7 @@ const COUNTRIES = [
   {
     name:'ドイツ', nameEn:'Germany', flag:'🇩🇪',
     catch:'石畳の旧市街とビールジョッキの乾杯が、古城の丘に静かにこだまする',
-    region:'西欧', flight:'直行便で約13〜14時間', budget:['budget2'],
+    region:'西欧', flight:'直行便で約13〜14時間', flightHours:14, budget:['budget2'],
     bestMonths:[4,5,8,9], bestLabel:'5〜6月・9〜10月',
     tags:['古城','ビール','クリスマスマーケット','歴史'],
     gradient:'linear-gradient(135deg,#1a1a1a 0%,#cc0001 50%,#ffce00 100%)',
@@ -421,7 +430,7 @@ const COUNTRIES = [
   {
     name:'ニュージーランド', nameEn:'New Zealand', flag:'🇳🇿',
     catch:'地熱の湯気とマオリの太鼓が、南半球の澄んだ大地に静かに響く',
-    region:'オセアニア', flight:'直行便で約11時間', budget:['budget3'],
+    region:'オセアニア', flight:'直行便で約11時間', flightHours:11, budget:['budget3'],
     bestMonths:[10,11,0,1,2], bestLabel:'11〜3月（南半球の夏）',
     tags:['大自然','アドベンチャー','マオリ文化','映画のロケ地'],
     gradient:'linear-gradient(135deg,#00247d 0%,#00a86b 100%)',
@@ -431,7 +440,7 @@ const COUNTRIES = [
   {
     name:'バリ島（インドネシア）', nameEn:'Bali', flag:'🇮🇩',
     catch:'朝もやに包まれた棚田の緑がうねる丘に、女性たちが毎朝手向けるチャナンサリの花が静かに揺れる',
-    region:'東南アジア', flight:'約7〜8時間', budget:['budget1','budget2'],
+    region:'東南アジア', flight:'約7〜8時間', flightHours:8, budget:['budget1','budget2'],
     bestMonths:[3,4,5,6,7,8,9], bestLabel:'4〜10月',
     tags:['ビーチ','自然','リゾート','アウトドア'],
     gradient:'linear-gradient(135deg,#c45000 0%,#ffaa40 100%)',
@@ -440,7 +449,7 @@ const COUNTRIES = [
   {
     name:'フランス', nameEn:'France', flag:'🇫🇷',
     catch:'セーヌ川沿いのカフェに焼きたてのパンの香りが漂い、石畳をヒールの音が鳴らしてパリの朝を通り過ぎる',
-    region:'ヨーロッパ', flight:'約14時間', budget:['budget2','budget3'],
+    region:'ヨーロッパ', flight:'約14時間', flightHours:14, budget:['budget2','budget3'],
     bestMonths:[3,4,5,6,7,8], bestLabel:'4〜9月',
     tags:['世界遺産','グルメ','都市','歴史'],
     gradient:'linear-gradient(135deg,#002395 0%,#ed2939 100%)',
@@ -449,7 +458,7 @@ const COUNTRIES = [
   {
     name:'モルディブ', nameEn:'Maldives', flag:'🇲🇻',
     catch:'透き通るラグーンにぽつんと浮かぶ水上コテージの木陰で、ハンモックが穏やかな波音に揺れ続ける',
-    region:'南アジア', flight:'約10時間', budget:['budget3'],
+    region:'南アジア', flight:'約10時間', flightHours:10, budget:['budget3'],
     bestMonths:[10,11,0,1,2,3], bestLabel:'11〜4月',
     tags:['ビーチ','リゾート'],
     gradient:'linear-gradient(135deg,#007760 0%,#00c4a0 100%)',
@@ -458,7 +467,7 @@ const COUNTRIES = [
   {
     name:'オーストラリア', nameEn:'Australia', flag:'🇦🇺',
     catch:'赤土の大地にユーカリの匂いが立ちのぼり、コアラの寝息とカンガルーの足音が広大な大陸に響き渡る',
-    region:'オセアニア', flight:'約9〜10時間', budget:['budget2','budget3'],
+    region:'オセアニア', flight:'約9〜10時間', flightHours:10, budget:['budget2','budget3'],
     bestMonths:[8,9,10,11,0,1], bestLabel:'9〜2月（南半球夏）',
     tags:['自然','ビーチ','都市','アウトドア'],
     gradient:'linear-gradient(135deg,#003580 0%,#cc0001 100%)',
@@ -467,7 +476,7 @@ const COUNTRIES = [
   {
     name:'ハワイ（アメリカ）', nameEn:'Hawaii', flag:'🇺🇸',
     catch:'黒い火山灰の岩肌にプルメリアの花の香りが漂い、ウクレレの音色が寄せては返す波音に溶けていく',
-    region:'北アメリカ', flight:'約7〜8時間', budget:['budget2','budget3'],
+    region:'北アメリカ', flight:'約7〜8時間', flightHours:8, budget:['budget2','budget3'],
     bestMonths:[3,4,5,6,7,8,9,10], bestLabel:'4〜11月',
     tags:['ビーチ','リゾート','自然','アウトドア'],
     gradient:'linear-gradient(135deg,#003580 0%,#e8490f 100%)',
@@ -476,7 +485,7 @@ const COUNTRIES = [
   {
     name:'カンボジア', nameEn:'Cambodia', flag:'🇰🇭',
     catch:'朝もやに包まれたアンコールワットの石塔に、鳥のさえずりと僧侶たちの祈りの鐘の音が密林に満ちる',
-    region:'東南アジア', flight:'約7〜8時間（乗継）', budget:['budget1'],
+    region:'東南アジア', flight:'約7〜8時間（乗継）', flightHours:8, budget:['budget1'],
     bestMonths:[10,11,0,1,2], bestLabel:'11〜3月',
     tags:['世界遺産','歴史','自然'],
     gradient:'linear-gradient(135deg,#032ea1 0%,#e00025 100%)',
@@ -485,7 +494,7 @@ const COUNTRIES = [
   {
     name:'ミャンマー', nameEn:'Myanmar', flag:'🇲🇲',
     catch:'黄金の仏塔が夕焼けに染まるバガンの広大な平原に、気球の影と数千の寺院の鐘の音が重なり合う',
-    region:'東南アジア', flight:'約8〜9時間（乗継）', budget:['budget1'],
+    region:'東南アジア', flight:'約8〜9時間（乗継）', flightHours:9, budget:['budget1'],
     bestMonths:[10,11,0,1], bestLabel:'11〜2月',
     tags:['世界遺産','歴史','自然'],
     gradient:'linear-gradient(135deg,#fecb00 0%,#ea2839 100%)',
@@ -494,7 +503,7 @@ const COUNTRIES = [
   {
     name:'スイス', nameEn:'Switzerland', flag:'🇨🇭',
     catch:'雪をかぶったアルプスの稜線に、氷河特急の汽笛と牛の首につけた鈴の音が静かな谷間にこだまする',
-    region:'ヨーロッパ', flight:'約13〜14時間', budget:['budget3'],
+    region:'ヨーロッパ', flight:'約13〜14時間', flightHours:14, budget:['budget3'],
     bestMonths:[5,6,7,8], bestLabel:'6〜9月',
     tags:['自然','アウトドア','都市'],
     gradient:'linear-gradient(135deg,#d52b1e 0%,#ffffff 100%)',
@@ -503,7 +512,7 @@ const COUNTRIES = [
   {
     name:'チェコ', nameEn:'Czech Republic', flag:'🇨🇿',
     catch:'赤茶けた屋根が連なるプラハの旧市街に、教会の鐘の音とビールジョッキの乾杯の音が夕闇に弾ける',
-    region:'ヨーロッパ', flight:'約13〜14時間（乗継）', budget:['budget1','budget2'],
+    region:'ヨーロッパ', flight:'約13〜14時間（乗継）', flightHours:14, budget:['budget1','budget2'],
     bestMonths:[3,4,5,8,9], bestLabel:'4〜6月・9〜10月',
     tags:['世界遺産','都市','歴史','グルメ'],
     gradient:'linear-gradient(135deg,#11457e 0%,#d7141a 100%)',
@@ -515,6 +524,14 @@ let selectedMonths = [];
 let selectedBudgets = [];
 let selectedTags = [];
 let selectedRegions = [];
+let selectedFlights = [];
+
+const FLIGHT_BUCKETS = {
+  f5:  h => h <= 5,
+  f10: h => h > 5 && h <= 10,
+  f15: h => h > 10 && h <= 15,
+  f99: h => h > 15,
+};
 
 const HOLIDAYS = [
   { label: '正月', months: [0] },
@@ -620,11 +637,21 @@ function toggleRegion(val) {
   updateFilterBadge();
 }
 
+function toggleFlight(val) {
+  const idx = selectedFlights.indexOf(val);
+  if (idx >= 0) selectedFlights.splice(idx, 1);
+  else selectedFlights.push(val);
+  document.getElementById('f-' + val).classList.toggle('active');
+  renderCards();
+  updateFilterBadge();
+}
+
 function resetAll() {
   selectedMonths = [];
   selectedBudgets = [];
   selectedTags = [];
   selectedRegions = [];
+  selectedFlights = [];
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   syncHolidayChips();
   renderCards();
@@ -675,6 +702,10 @@ function matchesFilters(c) {
   if (selectedBudgets.length > 0 && !selectedBudgets.some(b => c.budget.includes(b))) return false;
   if (selectedTags.length > 0 && !selectedTags.every(t => c.tags.includes(t))) return false;
   if (selectedRegions.length > 0 && !selectedRegions.includes(c.region)) return false;
+  if (selectedFlights.length > 0) {
+    if (typeof c.flightHours !== 'number') return false;
+    if (!selectedFlights.some(f => FLIGHT_BUCKETS[f](c.flightHours))) return false;
+  }
   return true;
 }
 

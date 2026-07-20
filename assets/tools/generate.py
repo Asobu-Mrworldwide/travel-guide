@@ -461,6 +461,25 @@ def generate(country_id):
         print(f'  💾 JSON更新: {os.path.basename(json_path)}')
     # ────────────────────────────────────────────────────────────
 
+    # カード系の説明が長い場合、最初の句点までを本文、それ以降を小さな補足テキストとして
+    # 下に配置する（JSONは書き換えず表示時のみ変換）
+    def _split_long_value(val, sub_class):
+        if '<' in val or '。' not in val:
+            return val
+        idx = val.find('。')
+        head, rest = val[:idx + 1], val[idx + 1:]
+        if len(rest) >= 4:
+            return f'{head}<span class="{sub_class}">{rest}</span>'
+        return val
+
+    for card in data.get('practical', {}).get('prac_cards', []):
+        card['value'] = _split_long_value(card.get('value', ''), 'p-val-sub')
+
+    overview = data.get('overview', {})
+    if overview.get('visa'):
+        overview['visa'] = _split_long_value(overview['visa'], 'qs-val-sub')
+    # ────────────────────────────────────────────────────────────
+
     # トランジット行の所要時間表示: 「区間（手段・時間）」の（の前で改行して2行にする
     # ＋ 移動アイコンSVGをPython側で解決（テンプレート内の重複if/elifチェーンを廃止）
     def _break_duration(days):

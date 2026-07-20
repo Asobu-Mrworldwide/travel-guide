@@ -255,6 +255,7 @@ section.active{display:block}
 .prac-card .p-ico svg{width:1em;height:1em;vertical-align:middle}
 .prac-card .p-title{font-size:0.82em;color:var(--sub);margin-bottom:4px}
 .prac-card .p-val{font-size:0.95em;font-weight:700;color:var(--text)}
+.prac-card .p-val-sub{display:block;font-size:0.78em;font-weight:400;color:var(--sub);margin-top:3px}
 
 /* CTA */
 .cta{background:linear-gradient(135deg,var(--green),var(--green-dark));  /* #6495ed→#4a7be0 */border-radius:6px;padding:28px 22px;color:#fff;text-align:center;margin-top:28px}
@@ -329,6 +330,7 @@ section.active{display:block}
 .qs-card > div:last-child{flex:1;min-width:0}
 .qs-lbl{font-size:0.7em;color:var(--sub)}
 .qs-val{font-size:0.88em;font-weight:700;line-height:1.2}
+.qs-val-sub{display:block;font-size:0.72em;font-weight:400;color:var(--sub);margin-top:2px;line-height:1.4}
 
 /* TOP3 */
 .top3-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
@@ -397,6 +399,7 @@ section.active{display:block}
   .prac-card .p-ico{font-size:1.5em;margin-bottom:3px}
   .prac-card .p-title{font-size:0.75em}
   .prac-card .p-val{font-size:0.82em}
+  .prac-card .p-val-sub{font-size:0.72em}
   .season-grid{grid-template-columns:repeat(6,1fr)}
   .season-mini{grid-template-columns:repeat(6,1fr)}
   .sm-dot{height:46px;font-size:0.85em}
