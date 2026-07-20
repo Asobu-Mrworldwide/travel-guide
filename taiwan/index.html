@@ -206,7 +206,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div style="position:relative">
       <div id="taiwan-map" style="width:100%;height:300px"></div>
       <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;flex-direction:row;align-items:center;gap:8px;z-index:10">
-        <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2);white-space:nowrap">← 台湾全体に戻る</button>
+        <button id="map-reset-btn" onclick="resetMap()" style="display:none;background:rgba(255,255,255,0.9);border:none;font-size:0.75em;color:#555;padding:4px 12px;border-radius:20px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.2);white-space:nowrap">← 全体に戻る</button>
         <a id="map-open-btn" href="#" target="_blank" style="display:none;background:rgba(0,0,0,0.6);color:#fff;font-size:0.72em;font-weight:700;padding:5px 12px;border-radius:20px;text-decoration:none;backdrop-filter:blur(3px);white-space:nowrap;align-items:center"></a>
       </div>
     </div>
@@ -269,6 +269,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
       function resetMap() {
         if (!window._map) return;
+        const sv = window._map.getStreetView();
+        if (sv) sv.setVisible(false);
         window._map.panTo({ lat: 23.7, lng: 121.0 });
         window._map.setZoom(7);
         document.getElementById('map-open-btn').style.display = 'none';
