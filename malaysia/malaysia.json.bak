@@ -123,6 +123,19 @@
       "badge": "ボルネオ",
       "badge_class": "green",
       "description": "「猫の街」として知られるサラワク州の州都"
+    },
+    {
+      "id": "langkawi",
+      "name": "ランカウイ",
+      "lat": "6.3500",
+      "lng": "99.8000",
+      "zoom": "11",
+      "color": "#006847",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "リゾート",
+      "badge_class": "green",
+      "description": "免税でビーチリゾートを満喫できるアンダマン海の島"
     }
   ],
   "season_mini": {
@@ -449,6 +462,74 @@
             "type": "t-hot1"
           }
         ]
+      },
+      {
+        "name": "ランカウイ島",
+        "city_id": "langkawi",
+        "best_note": "ベスト：11〜4月（乾季） ／ 9〜10月は雨が多くビーチリゾートには不向き",
+        "note": "乾季の11〜4月は晴天率が高くビーチ・海上アクティビティに最適。とはいえ年間を通して免税の島なので、多少の雨でもショッピングや室内アクティビティに切り替えれば楽しめる。マングローブツアーは満潮時の方が奥まで進めることが多い。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          }
+        ]
       }
     ]
   },
@@ -705,9 +786,20 @@
         "maps_url": "https://www.google.com/maps/search/Chinatown+Kuala+Lumpur",
         "lat": 3.1452,
         "lng": 101.6975
+      },
+      {
+        "id": "cenang",
+        "name": "パンタイ・チェナン（ランカウイ）",
+        "tag": "ビーチリゾート",
+        "tag_color": "green",
+        "desc": "ランカウイ最大のビーチエリア。海沿いにホテル・レストラン・免税店が集まり、SkyCab乗り場やサンセットビーチへのアクセスも良好。ランカウイに泊まるならまずここが候補になる。",
+        "price": "中級 4,000〜9,000円／泊　高級 12,000円〜",
+        "maps_url": "https://www.google.com/maps/place/Pantai+Cenang,+Langkawi",
+        "lat": 6.2833,
+        "lng": 99.7167
       }
     ],
-    "hotel_tip": "初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。",
+    "hotel_tip": "初めてのKLはブキッビンタン〜KLCC周辺が移動に便利。ペナン・マラッカはジョージタウン・オランダ広場周辺に泊まると徒歩観光しやすい。ランカウイはパンタイ・チェナン周辺なら夕日ビーチ・免税店・レストランが徒歩圏内に揃う。",
     "sim_intro": "海外用SIMを探すと選択肢が多すぎて何を選べばいいか迷いますよね。現地でSIMを買う方法もありますが、限られた滞在時間を削ってショップを探すのはもったいない。やっぱり出発前に準備しておくのが正解です。渡航先・日数・データ容量で絞り込める比較ページを作ったので、よかったら参考にしてみてください。",
     "apps": [
       {
@@ -770,7 +862,7 @@
     "cash_daily_high": "100",
     "cash_note": "1 MYR ≈ 40円で計算",
     "money_intro": "マレーシアはクアラルンプール中心部のショッピングモールやレストランではクレジットカードが使えるが、チャイナタウンの屋台・ローカル市場・小さな食堂では現金のみが多い。GrabなどのアプリはカードやTouchNGoで支払えるため便利。両替は空港より市内の両替所が断然レートが良く、必要最低限だけ空港で換えて残りは市内で換えるのがおすすめ。",
-    "cash_tip_title": "💡 小額紙幣を用意しておこう",
+    "cash_tip_title": "小額紙幣を用意しておこう",
     "cash_tip_body": "屋台やローカル市場ではお釣りが出ないことが多い。両替時は大きな紙幣だけでなく、1RM・5RM・10RMの小額紙幣を多めに用意しておくとスムーズ。",
     "wise_intro": "海外でクレジットカードを使うたびに不正利用のリスクは高まります。筆者自身も海外渡航後に2回不正利用を経験したことをきっかけに、現在は海外ではWiseカードをメインに使うようにしています。チャージした分しか使えないため万が一の際も被害が限定的で、旅好きの友人たちの間でも最近かなり普及してきています。",
     "cta_title": "出発前にマナーも確認しよう！🙏",
@@ -1481,15 +1573,36 @@
       "order_name_en": "Ais Kacang",
       "prompt_en": "Ais Kacang Malaysian shaved ice dessert piled high with red beans, jelly, corn and grass jelly, drizzled with rose syrup and condensed milk",
       "plate_color": "white bowl"
+    },
+    {
+      "num": "No.28",
+      "name": "ロティジョン",
+      "badge": "ジョホール名物",
+      "type": "side",
+      "city": "jb",
+      "desc": "フランスパンを割って卵液・玉ねぎ・ひき肉と焼き上げるサンドイッチ。1960年代にシンガポールの屋台で英国兵に出した料理が起源とされ、対岸のジョホールバルでも定番の屋台グルメとして根付いた。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%AD%E3%83%86%E3%82%A3%E3%82%B8%E3%83%A7%E3%83%B3%20%E3%83%9E%E3%83%AC%E3%83%BC%E3%82%B7%E3%82%A2%20%E6%96%99%E7%90%86",
+      "order_ico": "🥖",
+      "order_name_en": "Roti John",
+      "prompt_en": "Roti John Malaysian omelette sandwich, halved French baguette grilled with egg, minced meat and onions, cut open to show the filling",
+      "plate_color": "white"
+    },
+    {
+      "num": "No.29",
+      "name": "ヒナバ",
+      "badge": "サバ名物",
+      "type": "side",
+      "city": "kk",
+      "desc": "サバ州の先住民カダザン・ドゥスン族に伝わる魚のマリネ料理。ライムの酸味と生姜・唐辛子で新鮮な白身魚を〆た郷土の一品で、酸味の効いたバンバンガン（野生マンゴー）の種を加えることもある。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%92%E3%83%8A%E3%83%90%20%E3%83%9E%E3%83%AC%E3%83%BC%E3%82%B7%E3%82%A2%20%E6%96%99%E7%90%86",
+      "order_ico": "🐟",
+      "order_name_en": "Hinava",
+      "prompt_en": "Hinava Sabah raw fish salad marinated in lime juice with ginger, chili and shallots, served on a banana leaf",
+      "plate_color": "banana leaf"
     }
   ],
   "spots_section_title": "都市別観光スポット",
   "spots_filter_cities": [
-    {
-      "id": "all",
-      "label": "全て",
-      "active": true
-    },
     {
       "id": "kl",
       "label": "KL",
@@ -1518,6 +1631,11 @@
     {
       "id": "kuching",
       "label": "クチン",
+      "active": false
+    },
+    {
+      "id": "langkawi",
+      "label": "ランカウイ",
       "active": false
     }
   ],
@@ -1568,7 +1686,8 @@
           "badge": "クアラルンプール",
           "prompt_en": "A couple standing together in front of a large panoramic window at a high-rise observation deck, viewed from behind, warm silhouettes against a breathtaking Kuala Lumpur night cityscape, thousands of glittering city lights filling the darkness below, subtle window glass reflection, cozy dim interior lighting, romantic mood, wide landscape composition",
           "image": "素材/観光スポット/ペトロナスツインタワー.webp",
-          "type": "townscape"
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Petronas+Twin+Towers+Kuala+Lumpur"
         },
         {
           "must": false,
@@ -1579,7 +1698,8 @@
           "badge": "夜景",
           "prompt_en": "Flat vector illustration of KL Tower rising above tropical forest on Bukit Nanas hill, city skyline in background, surrounding green canopy, clear blue sky, wide landscape",
           "image": "素材/観光スポット/KLタワー.webp",
-          "type": "townscape"
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=KL+Tower+Kuala+Lumpur"
         },
         {
           "must": true,
@@ -1590,7 +1710,8 @@
           "badge": "KL近郊",
           "prompt_en": "Flat vector illustration of Batu Caves Malaysia, towering limestone cliffs with grand cave entrance, 272 colorful steps, giant golden Lord Murugan statue at base, tropical jungle on both sides, bright blue sky, wide landscape",
           "image": "素材/観光スポット/バトゥ洞窟.webp",
-          "type": "religious"
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Batu+Caves+Malaysia"
         },
         {
           "must": false,
@@ -1601,7 +1722,8 @@
           "badge": "入場無料",
           "prompt_en": "Flat vector illustration of KLCC Park Kuala Lumpur, synchronized fountain show with colorful water jets, Petronas Twin Towers illuminated at night in background, lush tropical greenery and walking paths, clear night sky, wide landscape",
           "image": "素材/観光スポット/KLCC公園.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=KLCC+Park+Kuala+Lumpur"
         },
         {
           "must": false,
@@ -1612,7 +1734,8 @@
           "badge": "ショッピング",
           "prompt_en": "Flat vector illustration of Bukit Bintang Kuala Lumpur, vibrant shopping boulevard with modern malls and colorful storefronts, wide street perspective, Blue sky with city lights, wide landscape",
           "image": "素材/観光スポット/ブキッビンタン.webp",
-          "type": "market"
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Bukit+Bintang+Kuala+Lumpur"
         },
         {
           "must": false,
@@ -1623,7 +1746,8 @@
           "badge": "入場無料",
           "prompt_en": "Flat vector illustration of Masjid Negara National Mosque Kuala Lumpur, blue star-shaped roof and tall minaret, reflecting pool in foreground, manicured gardens, clear blue morning sky, wide landscape",
           "image": "素材/観光スポット/マスジッドネガラ（国立モスク）.webp",
-          "type": "religious"
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Masjid+Negara+Kuala+Lumpur"
         },
         {
           "must": false,
@@ -1634,7 +1758,8 @@
           "badge": "入場無料",
           "prompt_en": "Flat vector illustration of Masjid Jamek Kuala Lumpur, red brick Mughal-style mosque with white domes and minarets, surrounded by lush palm trees, river confluence in foreground, modern city skyline in background, clear blue sky, wide landscape",
           "image": "素材/観光スポット/マスジッドジャメ.webp",
-          "type": "religious"
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Masjid+Jamek+Kuala+Lumpur"
         },
         {
           "must": true,
@@ -1645,7 +1770,8 @@
           "badge": "映えスポット",
           "prompt_en": "Flat vector illustration of Putra Mosque Putrajaya Malaysia, pink rose-colored dome and tall minarets reflected in Putrajaya Lake, manicured gardens in foreground, golden morning light, clear blue sky, wide cinematic landscape",
           "image": "素材/観光スポット/ピンクモスク（プトラモスク）.webp",
-          "type": "religious"
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Putra+Mosque+Putrajaya"
         },
         {
           "must": true,
@@ -1656,7 +1782,8 @@
           "badge": "KL近郊",
           "prompt_en": "Flat vector illustration of Sultan Salahuddin Abdul Aziz Mosque Shah Alam, massive silver and blue dome with four towering minarets, reflecting pool, manicured gardens, clear blue sky, wide cinematic landscape",
           "image": "素材/観光スポット/ブルーモスク.webp",
-          "type": "religious"
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Sultan+Salahuddin+Abdul+Aziz+Mosque+Shah+Alam"
         },
         {
           "name": "ペタリン通り（チャイナタウン）",
@@ -1667,7 +1794,8 @@
           "image": "素材/観光スポット/ペタリン通り（チャイナタウン）.webp",
           "desc": "KLチャイナタウンの中心を走る屋台街。食べ物・雑貨・土産物が所狭しと並び、地元民と観光客が混ざり合う活気あふれる場所。近くには鮮やかな外観の天后宮（廟（びょう））も。",
           "prompt_en": "Petaling Street Chinatown in Kuala Lumpur at night, colorful red lanterns hanging overhead, busy night market with food stalls and souvenir shops, warm glowing lights, crowds of people, vibrant atmosphere",
-          "type": "market"
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Petaling+Street+Kuala+Lumpur"
         },
         {
           "name": "セントラルマーケット",
@@ -1678,7 +1806,8 @@
           "image": "素材/観光スポット/セントラルマーケット.webp",
           "desc": "1888年創建の旧市場を改装した屋内ショッピングスポット。マレー・中華・インドの工芸品やバティック、アート作品が揃い、雨の日の観光にも最適。",
           "prompt_en": "Central Market Kuala Lumpur interior, colorful Malaysian handicrafts and batik textiles on display, art deco architecture, warm indoor lighting, shoppers browsing traditional crafts and souvenirs",
-          "type": "market"
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Central+Market+Kuala+Lumpur"
         },
         {
           "must": false,
@@ -1689,7 +1818,19 @@
           "desc": "クアラルンプール中心部に建つ最古のヒンドゥー寺院。極彩色の塔門（ゴープラム）に無数の神像が彫刻されており圧巻。タイプーサム祭りの出発地点としても有名。",
           "prompt_en": "Flat vector illustration of Sri Mahamariamman Temple Kuala Lumpur Malaysia, ornate colorful Hindu gopuram tower covered in hundreds of painted deity sculptures, vibrant reds yellows and greens, busy street in front, clear blue sky, wide landscape",
           "type": "religious",
-          "image": "素材/観光スポット/スリ・マハマリアマン寺院.webp"
+          "image": "素材/観光スポット/スリ・マハマリアマン寺院.webp",
+          "map_url": "https://maps.google.com/?q=Sri+Mahamariamman+Temple+Kuala+Lumpur"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "KL 13",
+          "name": "ムルデカ広場（独立広場）",
+          "desc": "1957年8月31日、英国からの独立が宣言された歴史的な広場。周囲にはチューダー様式の旧連邦事務局やロイヤル・セランゴール・クラブなど植民地時代の建築が並び、東南アジア最高峰の一つとされる高さ約100mの旗竿がそびえる。",
+          "badge": "独立の地",
+          "prompt_en": "Flat vector illustration of Merdeka Square Kuala Lumpur, vast green field with a very tall flagpole flying the Malaysian flag, Tudor-style colonial buildings and the Royal Selangor Club along the edge, clear blue sky, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Merdeka+Square+Kuala+Lumpur"
         }
       ]
     },
@@ -1739,7 +1880,8 @@
           "badge": "世界遺産",
           "prompt_en": "Flat vector illustration of George Town Penang UNESCO heritage street, colorful pastel colonial shophouses, traditional Chinese clan buildings, street art murals, warm morning light, clear blue sky, wide landscape",
           "image": "素材/観光スポット/ジョージタウン旧市街.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=George+Town+Penang"
         },
         {
           "must": false,
@@ -1750,7 +1892,8 @@
           "badge": "絶景",
           "prompt_en": "Flat vector illustration of Penang Hill, lush tropical forest on rolling hills, vintage funicular railway through green canopy, panoramic view of George Town and Penang Strait below, clear blue morning sky, wide landscape",
           "image": "素材/観光スポット/ペナンヒル.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Penang+Hill"
         },
         {
           "must": false,
@@ -1761,7 +1904,8 @@
           "badge": "中国文化",
           "prompt_en": "Flat vector illustration of Khoo Kongsi clan house Penang, ornate southern Chinese temple with elaborate red and gold carved roof, dragon sculptures and red lanterns, granite courtyard, clear blue sky, wide landscape",
           "image": "素材/観光スポット/クー・コンシー（邸宅）.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Khoo+Kongsi+Penang"
         },
         {
           "must": false,
@@ -1772,7 +1916,8 @@
           "badge": "ビーチ",
           "prompt_en": "Flat vector illustration of Batu Ferringhi beach Penang, long curved sandy beach with calm turquoise water, palm trees leaning over shore, colorful beach umbrellas, clear blue sky with fluffy clouds, wide landscape",
           "image": "素材/観光スポット/バトゥ・フェリンギビーチ.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Batu+Ferringhi+Beach+Penang"
         },
         {
           "must": false,
@@ -1783,7 +1928,8 @@
           "badge": "自然",
           "prompt_en": "Flat vector illustration of Penang National Park, dense tropical rainforest meeting a secluded sandy beach, mangrove trees along calm river estuary, lush green canopy, crystal clear blue sky, wide landscape",
           "image": "素材/観光スポット/ペナン国立公園.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Penang+National+Park"
         },
         {
           "must": false,
@@ -1794,7 +1940,8 @@
           "badge": "フォトスポット",
           "prompt_en": "Flat vector illustration of Clan Jetties Penang, wooden stilt houses over calm harbor water, narrow wooden walkways, traditional fishing boats moored below, reflections on water, clear blue morning sky, wide landscape",
           "image": "素材/観光スポット/クラン・ジェッティ（桟橋集落）.webp",
-          "type": "townscape"
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Clan+Jetties+Penang"
         },
         {
           "must": true,
@@ -1805,7 +1952,8 @@
           "desc": "ジョージタウンの路地に描かれたウォールアートが世界的に有名。アーネスト・ザカレビッチのワイヤーアート・壁画が点在し、マップを片手に歩いて回れる。ペナン観光の定番。",
           "prompt_en": "Flat vector illustration of Penang street art ",
           "type": "townscape",
-          "image": "素材/観光スポット/ストリートアート巡り.webp"
+          "image": "素材/観光スポット/ストリートアート巡り.webp",
+          "no_map": true
         },
         {
           "must": false,
@@ -1816,7 +1964,8 @@
           "desc": "ペナンヒル麓に建つ東南アジア最大級の仏教寺院。7層の仏塔と巨大な観音像が有名。ライトアップされる夜も幻想的で、丘の上から市街地を一望できる。",
           "prompt_en": "Flat vector illustration of Kek Lok Si Temple Penang Malaysia, towering seven-tier pagoda rising above ornate Chinese temple rooftops, giant Kuan Yin statue, lush green hillside, clear blue sky, wide landscape",
           "type": "religious",
-          "image": "素材/観光スポット/極楽寺（ケック・ロック・シー）.webp"
+          "image": "素材/観光スポット/極楽寺（ケック・ロック・シー）.webp",
+          "map_url": "https://maps.google.com/?q=Kek+Lok+Si+Temple+Penang"
         }
       ]
     },
@@ -1866,7 +2015,8 @@
           "badge": "フォトスポット",
           "prompt_en": "Flat vector illustration of Dutch Square Malacca, terracotta red Stadthuys building and Christ Church, cobblestone plaza with fountain, trishaw with flowers in foreground, clear blue sky, wide landscape",
           "image": "素材/観光スポット/オランダ広場（スタダイス）.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Dutch+Square+Malacca"
         },
         {
           "must": false,
@@ -1877,7 +2027,8 @@
           "badge": "歴史遺産",
           "prompt_en": "Interior view of St Paul's Church ruins in Malacca, crumbling roofless walls of dark reddish-brown weathered brick, surfaces heavily stained with black moss, lichen, and centuries of decay, chunks of plaster fallen away exposing raw brick beneath, ancient tombstone slabs leaning against deteriorating walls, overgrown with creeping vines, triangular gable with circular window, open sky visible through collapsed sections, eerie abandoned atmosphere, dark moody tones",
           "image": "素材/観光スポット/セントポール教会.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=St+Paul%27s+Church+Malacca"
         },
         {
           "must": false,
@@ -1888,7 +2039,8 @@
           "badge": "文化体験",
           "prompt_en": "Flat vector illustration of Baba Nyonya Heritage Museum Malacca, beautifully preserved Peranakan townhouse facade, ornate tiles and carved wooden shutters,",
           "image": "素材/観光スポット/ババニョニャ遺産博物館.webp",
-          "type": "museum"
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Baba+Nyonya+Heritage+Museum+Malacca"
         },
         {
           "must": false,
@@ -1899,7 +2051,8 @@
           "badge": "ナイトマーケット",
           "prompt_en": "Flat vector illustration of Jonker Street Malacca night market, busy crowd of people walking through narrow street, rows of red Chinese lanterns hanging overhead, colorful heritage shophouses lit up at night, vendor stalls on both sides, many tourists and locals, ",
           "image": "素材/観光スポット/ジョンカーストリート.webp",
-          "type": "market"
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Jonker+Street+Malacca"
         },
         {
           "must": false,
@@ -1910,7 +2063,8 @@
           "badge": "夜景",
           "prompt_en": "Flat vector illustration of Malacca River, colorful murals on riverside walls, vibrant heritage shophouses lining the calm river, wooden tour boats on water, clear blue sky with reflections, wide landscape",
           "image": "素材/観光スポット/マラッカ川クルーズ.webp",
-          "type": "activity"
+          "type": "activity",
+          "no_map": true
         },
         {
           "must": false,
@@ -1921,7 +2075,8 @@
           "badge": "グルメ",
           "prompt_en": "Flat vector illustration of Portuguese Settlement Malacca, pastel Portuguese-style houses along waterfront, fishing boats in calm sea, old chapel with cross, tropical palms, clear blue sky, wide landscape",
           "image": "素材/観光スポット/ポルトガル村.webp",
-          "type": "townscape"
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Portuguese+Settlement+Malacca"
         },
         {
           "must": false,
@@ -1932,7 +2087,8 @@
           "desc": "マラッカ海峡に浮かぶように建つ水上モスク。干潮時には海の上に浮かんでいるように見え、サンセット時の景観が特に美しい。マラッカ川河口近くに位置しアクセスも良好。",
           "prompt_en": "Flat vector illustration of Masjid Selat Melaka floating mosque Malacca Malaysia, white and blue domed mosque appearing to float on calm sea at sunset, golden reflections on water, clear orange and pink sky, wide landscape",
           "type": "religious",
-          "image": "素材/観光スポット/マラッカ海峡モスク.webp"
+          "image": "素材/観光スポット/マラッカ海峡モスク.webp",
+          "map_url": "https://maps.google.com/?q=Melaka+Straits+Mosque"
         }
       ]
     },
@@ -1972,7 +2128,63 @@
           "link_btn_index": "9"
         }
       ],
-      "spots": []
+      "spots": [
+        {
+          "must": true,
+          "icon": "🧱",
+          "num": "JB 01",
+          "name": "レゴランド・マレーシア・リゾート",
+          "desc": "東南アジア初のレゴランド。レゴブロックで再現された東南アジアの名所「ミニランド」やウォーターパーク、シーライフ水族館まで揃う一大リゾート。子連れファミリーに絶大な人気を誇る。",
+          "badge": "テーマパーク",
+          "prompt_en": "Flat vector illustration of Legoland Malaysia Resort Johor Bahru, colorful theme park entrance with giant LEGO brick sculptures and castle, families walking through, palm trees, clear blue sky, wide landscape",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Legoland+Malaysia+Resort"
+        },
+        {
+          "must": false,
+          "icon": "🕌",
+          "num": "JB 02",
+          "name": "スルタン・アブ・バカール・モスク",
+          "desc": "1900年建立、ジョホール海峡を見下ろす高台に建つ州立モスク。ヴィクトリア様式とムーア様式が融合した優美な建築で、対岸のシンガポールまで見渡せる。",
+          "badge": "絶景モスク",
+          "prompt_en": "Flat vector illustration of Sultan Abu Bakar State Mosque Johor Bahru, white Victorian-Moorish style mosque with tall minarets on a hilltop overlooking the strait, Singapore skyline faintly visible across the water, golden hour light, wide landscape",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Sultan+Abu+Bakar+State+Mosque+Johor+Bahru"
+        },
+        {
+          "must": false,
+          "icon": "🎡",
+          "num": "JB 03",
+          "name": "ダンガベイ",
+          "desc": "ジョホール海峡沿いに広がる複合レジャーエリア。観覧車やナイトマーケット、シーフードレストランが並び、地元家族連れで賑わう夕涼みスポット。",
+          "badge": "ウォーターフロント",
+          "prompt_en": "Flat vector illustration of Danga Bay Johor Bahru, waterfront leisure park with a large ferris wheel lit up at dusk, seafood restaurants along the promenade, calm strait water, warm sunset sky, wide landscape",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Danga+Bay+Johor+Bahru"
+        },
+        {
+          "must": false,
+          "icon": "🎎",
+          "num": "JB 04",
+          "name": "プトゥリハーバー（ハローキティタウン他）",
+          "desc": "水路が巡る複合リゾートエリア。ハローキティタウンやトーマスタウンなどキャラクターテーマパークが集まり、小さな子ども連れの旅行者に人気。",
+          "badge": "テーマパーク",
+          "prompt_en": "Flat vector illustration of Puteri Harbour Johor Bahru, waterfront family theme park area with colorful character-themed buildings, canal boats, palm-lined promenade, clear blue sky, wide landscape",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Puteri+Harbour+Johor+Bahru"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "JB 05",
+          "name": "JBシティスクエア／チャイナタウン周辺",
+          "desc": "シンガポールからの買い物客で賑わうダウンタウン。ショッピングモールと屋台グルメが密集し、物価の安さを求めて日帰りで訪れるシンガポール人観光客も多い。",
+          "badge": "ショッピング",
+          "prompt_en": "Flat vector illustration of downtown Johor Bahru city square area, bustling shopping street with malls and hawker food stalls, mix of locals and Singaporean day-trippers, warm evening light, wide landscape",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=JB+City+Square+Johor+Bahru"
+        }
+      ]
     },
     {
       "city_id": "kk",
@@ -2020,7 +2232,8 @@
           "badge": "世界遺産",
           "prompt_en": "Mount Kinabalu summit at golden hour, dramatic jagged granite peak rising sharply above a vast sea of clouds, warm amber and golden light casting long shadows across the rocky surface, textured bare rock face with ridges and cracks, a tiny hiker figure visible on the plateau below the main peak, clear blue sky above, Borneo, Malaysia",
           "image": "素材/観光スポット/キナバル山.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Mount+Kinabalu"
         },
         {
           "must": false,
@@ -2031,7 +2244,8 @@
           "badge": "野生動物",
           "prompt_en": "A large wild Bornean orangutan sitting on a wooden feeding platform in the rainforest canopy, reaching out toward fruit placed on the platform, surrounded by lush green jungle, dappled golden morning light filtering through the trees, Sepilok Orangutan Rehabilitation Centre Sabah Malaysia",
           "image": "素材/観光スポット/セピロクオランウータン保護区.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Sepilok+Orangutan+Rehabilitation+Centre"
         },
         {
           "must": false,
@@ -2042,7 +2256,8 @@
           "badge": "シュノーケリング",
           "prompt_en": "Flat vector illustration of Manukan Island Sabah, crystal clear turquoise water, white sandy beach fringed with swaying palms, colorful coral reef visible below surface, clear bright blue sky, wide cinematic landscape",
           "image": "素材/観光スポット/マヌカン島.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Manukan+Island+Sabah"
         },
         {
           "must": false,
@@ -2053,7 +2268,8 @@
           "badge": "ダイビング聖地",
           "prompt_en": "Flat vector illustration of Sipadan Island Sabah underwater scene, large group of sea turtles swimming together over colorful coral reef, crystal clear turquoise water with sunlight rays, tropical fish schooling around them, wide landscape",
           "image": "素材/観光スポット/シパダン島.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Sipadan+Island+Sabah"
         },
         {
           "must": false,
@@ -2076,7 +2292,8 @@
           "badge": "日曜限定",
           "prompt_en": "Flat vector illustration of Gaya Street Sunday Market Kota Kinabalu, lively street market with colorful vendor stalls, colonial shophouses on both sides, tropical parasols, warm morning light, clear blue sky, wide landscape",
           "image": "素材/観光スポット/ガヤ・ストリート（日曜市）.webp",
-          "type": "market"
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Gaya+Street+Kota+Kinabalu"
         },
         {
           "must": false,
@@ -2099,7 +2316,8 @@
           "no_map": true,
           "desc": "コタ・キナバル近郊の川でボートに乗りマングローブ林を探検。夜になると無数のホタルが木々に点滅し、まるでクリスマスツリーのような幻想的な光景が広がる。",
           "prompt_en": "Flat vector illustration of mangrove firefly tour Kota Kinabalu Malaysia, small wooden boat gliding through dark river between dense mangrove trees, thousands of glowing fireflies lighting up the branches at night, magical blue-green bioluminescent atmosphere, wide landscape",
-          "type": "activity"
+          "type": "activity",
+          "image": "素材/観光スポット/マングローブ＆ホタルツアー.webp"
         }
       ]
     },
@@ -2144,12 +2362,13 @@
           "must": false,
           "icon": "🏛️",
           "num": "クチン 01",
-          "name": "サラワク博物館",
-          "desc": "東南アジア有数の博物館。ボルネオ先住民族の文化・自然史を詳しく展示。1891年創設の歴史ある博物館。",
+          "name": "ボルネオ文化博物館（新サラワク博物館）",
+          "desc": "1891年創設のサラワク博物館旧館が改修工事のため長期休館し、その収蔵品を引き継ぐ形で2022年にオープンした新館。東南アジア最大級の広さを誇り、ボルネオ先住民族の文化・自然史を圧倒的なスケールで展示する。",
           "badge": "入場無料",
           "prompt_en": "Exterior of Borneo Cultures Museum in Kuching, Malaysia,\nlarge symmetrical modernist building with 8 to 9 tall narrow pointed arch spires \narranged closely side by side across the full width of the facade,\neach spire is curved and petal-shaped, wide at the base and tapering to a sharp tip,\nthe entire facade covered in dense diamond-pattern golden beige panels,\ndark tinted glass filling the gaps between spires,\nwarm gold and dark brown color palette,\nwide staircase at the front,\nblue sky with clouds,\nflat illustration style, clean vector art",
           "image": "素材/観光スポット/サラワク博物館.webp",
-          "type": "museum"
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Borneo+Cultures+Museum+Kuching"
         },
         {
           "must": false,
@@ -2160,7 +2379,8 @@
           "badge": "国立公園",
           "prompt_en": "Flat vector illustration of Bako National Park Sarawak, dramatic sea stacks and sandstone cliffs rising from South China Sea, dense tropical rainforest on headland, white sandy beach in foreground, clear blue sky, wide cinematic landscape",
           "image": "素材/観光スポット/バコ国立公園.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Bako+National+Park"
         },
         {
           "must": true,
@@ -2171,7 +2391,8 @@
           "badge": "野生動物",
           "prompt_en": "A large wild Bornean orangutan clinging to a tree branch in a lush tropical rainforest, thick green canopy overhead, dappled golden morning light filtering through the trees, long reddish-brown fur, expressive face looking toward the camera, dense jungle foliage, Sarawak Borneo Malaysia",
           "image": "素材/観光スポット/セメンゴ野生動物センター.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Semenggoh+Wildlife+Centre+Kuching"
         },
         {
           "must": false,
@@ -2182,7 +2403,8 @@
           "badge": "文化体験",
           "prompt_en": "A large traditional Borneo house on wooden stilts, weathered dark wooden planks covering the walls and roof, multiple small square windows, an intricately carved wooden totem pole standing beside the entrance, lush tropical rainforest and green hills in the background, blue sky with soft clouds, a woman in a blue dress standing in the foreground looking up at the structure, open grassy area, Sarawak Cultural Village Kuching Malaysia",
           "image": "素材/観光スポット/サラワク・カルチャービレッジ.webp",
-          "type": "activity"
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Sarawak+Cultural+Village"
         },
         {
           "must": false,
@@ -2193,7 +2415,8 @@
           "badge": "夜景",
           "prompt_en": "Kuching Waterfront at night, colorful heritage shophouses reflected in the calm Sarawak River, warm glowing lanterns and street lights along the promenade, Fort Margherita illuminated across the water, deep blue night sky, shimmering reflections on the river surface, romantic and tranquil atmosphere, Sarawak Borneo Malaysia",
           "image": "素材/観光スポット/クチン旧市街・ウォーターフロント.webp",
-          "type": "townscape"
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Kuching+Waterfront"
         },
         {
           "must": false,
@@ -2204,7 +2427,113 @@
           "badge": "猫の街",
           "prompt_en": "A cheerful yellow cat figurine statue wearing a red and white striped party hat, standing upright and waving, plain simple background",
           "image": "素材/観光スポット/クチン猫博物館.webp",
-          "type": "museum"
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Kuching+Cat+Museum"
+        }
+      ]
+    },
+    {
+      "city_id": "langkawi",
+      "city_name": "ランカウイ",
+      "city_desc": "マレー半島北西端、アンダマン海に浮かぶ免税の島。ケーブルカーで登る絶景の山、真っ白なビーチ、マングローブクルーズまで揃うリゾートアイランド",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "KLから国内線 約1時間 / ペナンからフェリー約2.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "タクシー・Grab 約15〜20分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "11〜4月（乾季）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "シーフード・免税ショッピング",
+          "link_section": "food",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "市内交通",
+          "value": "レンタルバイク・Grab",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🚡",
+          "num": "ランカウイ 01",
+          "name": "ランカウイ・スカイキャブ＆スカイブリッジ",
+          "desc": "マッ・チンチャン山の山頂近くまで一気に上るケーブルカー。山頂駅から続く全長125mの湾曲した歩道橋スカイブリッジからは、島全体とアンダマン海を見渡す絶景が広がる。",
+          "badge": "絶景",
+          "prompt_en": "Langkawi Sky Bridge at golden hour, curved pedestrian suspension bridge suspended high above dense green rainforest mountains, dramatic view of Andaman Sea and scattered islands below, a few small figures walking on the bridge for scale, warm golden light, wide cinematic landscape",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Langkawi+Sky+Bridge"
+        },
+        {
+          "must": true,
+          "icon": "🦅",
+          "num": "ランカウイ 02",
+          "name": "イーグルスクエア（ダタラン・ラン）",
+          "desc": "クアの港沿いに建つ巨大な鷲の像がシンボルの広場。「ランカウイ」の語名の由来ともいわれる鷲にちなんだモニュメントで、島の玄関口として観光客の記念撮影スポットになっている。",
+          "badge": "フォトスポット",
+          "prompt_en": "Flat vector illustration of Eagle Square Langkawi, giant reddish-brown eagle statue with wings spread wide on a waterfront plaza, marina and calm sea in background, clear blue sky, wide landscape",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Eagle+Square+Langkawi"
+        },
+        {
+          "must": true,
+          "icon": "🏖️",
+          "num": "ランカウイ 03",
+          "name": "パンタイ・チェナン",
+          "desc": "ランカウイで最も賑わうビーチ。遠浅の白砂ビーチ沿いにホテル・バー・免税店が並び、夕日の名所としても知られる。パラセーリングやジェットスキーなどマリンアクティビティも豊富。",
+          "badge": "ビーチ",
+          "prompt_en": "Flat vector illustration of Pantai Cenang beach Langkawi at sunset, long white sandy beach with calm turquoise water, beach bars and palm trees along the shore, silhouettes of a few tourists walking near the water, warm orange sunset sky, wide landscape",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Pantai+Cenang+Langkawi"
+        },
+        {
+          "must": false,
+          "icon": "🚤",
+          "num": "ランカウイ 04",
+          "name": "キリム・カルスト・ジオフォレストパーク",
+          "desc": "石灰岩の奇岩がそそり立つマングローブ地帯をボートで巡るツアー。コウモリ洞窟やワシの餌付けポイントを通り、野生のオオトカゲや魚鷹（ミサゴ）を間近で観察できる。",
+          "badge": "マングローブツアー",
+          "prompt_en": "Flat vector illustration of Kilim Karst Geoforest Park Langkawi, small wooden boat cruising through mangrove river surrounded by dramatic limestone karst cliffs, dense green foliage, a few white-bellied sea eagles soaring above, clear blue sky, wide landscape",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Kilim+Karst+Geoforest+Park"
+        },
+        {
+          "must": false,
+          "icon": "💦",
+          "num": "ランカウイ 05",
+          "name": "テラガ・トゥジュ（七つ井戸の滝）",
+          "desc": "マッ・チンチャン山中腹にある7段の滝つぼが連なる名所。滝つぼを天然のウォータースライダーのように滑り降りて遊べ、地元では伝説の妖精が水浴びした場所として語り継がれている。",
+          "badge": "滝",
+          "prompt_en": "Flat vector illustration of Telaga Tujuh Seven Wells Waterfall Langkawi, series of natural rock pools cascading down a lush green jungle hillside, clear turquoise water, tropical rainforest surroundings, dappled sunlight, wide landscape",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Telaga+Tujuh+Waterfall+Langkawi"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "ランカウイ 06",
+          "name": "免税ショッピング",
+          "desc": "ランカウイ島全体が免税エリアに指定されており、チョコレート・酒・タバコ・化粧品などが市価より大幅に安く手に入る。空港やパンタイ・チェナン周辺の免税店を旅の最後にまとめて回るのが定番。",
+          "badge": "免税",
+          "no_map": true,
+          "prompt_en": "Flat vector illustration of a duty-free shopping street in Langkawi, colorful storefronts with chocolate, liquor and cosmetics displayed in windows, tourists browsing with shopping bags, tropical palm trees along the street, bright daylight, wide landscape",
+          "type": "market"
         }
       ]
     }
