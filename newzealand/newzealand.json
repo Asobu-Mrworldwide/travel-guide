@@ -792,16 +792,31 @@
     },
     {
       "num": "No.12",
-      "name": "ファーグバーガー",
-      "badge": "クイーンズタウンの伝説の行列店",
+      "name": "グルメバーガー（NZビーフ・鹿肉バーガー）",
+      "badge": "クイーンズタウンの伝説の行列店が代表格",
       "type": "main",
       "city": "queenstown",
-      "desc": "24時間営業、深夜でも長蛇の列ができるクイーンズタウンの名物ハンバーガー店。ジューシーなパティとボリューム満点の具材が旅行者・地元客問わず熱狂的な支持を集める、街を訪れたら外せない一軒。",
+      "desc": "放牧で育ったNZビーフや、鹿肉パティを使った厚みのあるグルメバーガーはNZ食文化の名物ジャンル。中でもクイーンズタウンの「ファーグバーガー」は24時間営業・深夜でも長蛇の列ができる伝説の行列店で、この分野の代表格として知られる。",
       "wiki_url": "https://www.google.com/search?q=%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B0%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%20%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%82%BF%E3%82%A6%E3%83%B3",
       "order_ico": "🍔",
       "order_name_en": "Fergburger",
       "prompt_en": "Fergburger Queenstown, thick juicy gourmet burger with fresh toppings, iconic burger shop, food photography",
       "plate_color": "paper wrapper",
+      "image": ""
+    },
+    {
+      "num": "No.13",
+      "name": "ニュージーランドワイン（ソーヴィニヨン・ブラン／ピノ・ノワール）",
+      "must": true,
+      "badge": "世界的なワイン産地",
+      "type": "drink",
+      "city": "national",
+      "desc": "世界的評価の高いNZワインは旅の楽しみのひとつ。マールボロ地方のソーヴィニヨン・ブランは柑橘とハーブの爽やかな香りで世界的に有名、クイーンズタウン近郊セントラル・オタゴのピノ・ノワールは冷涼な気候が育む上質な赤として知られる。ワイナリー巡りも人気のアクティビティ。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%E3%83%AF%E3%82%A4%E3%83%B3%20%E3%82%BD%E3%83%BC%E3%83%B4%E3%82%A3%E3%83%8B%E3%83%A8%E3%83%B3%E3%83%96%E3%83%A9%E3%83%B3",
+      "order_ico": "🍷",
+      "order_name_en": "NZ Wine",
+      "prompt_en": "New Zealand wine, glass of Sauvignon Blanc and Pinot Noir on a vineyard table, rolling hills of grapevines, food photography",
+      "plate_color": "wine glass",
       "image": ""
     }
   ],
@@ -906,7 +921,7 @@
           "icon": "🏖️",
           "num": "AKL 07",
           "name": "カテドラル・コーブ（コロマンデル半島）",
-          "desc": "オークランドから日帰りできる、大聖堂のようなアーチ状の岩をくぐって辿り着く白砂のビーチ。世界のベストビーチにも選ばれる絶景で、近くのホットウォーター・ビーチでは砂浜を掘ると温泉が湧き出る。",
+          "desc": "オークランドから車で約2.5時間、コロマンデル半島にある日帰り圏の景勝地。大聖堂のようなアーチ状の岩をくぐって辿り着く白砂のビーチは世界のベストビーチにも選ばれる絶景で、近くのホットウォーター・ビーチでは砂浜を掘ると温泉が湧き出る。",
           "badge": "NZ屈指のフォトジェニックビーチ",
           "prompt_en": "Cathedral Cove Coromandel New Zealand, natural rock arch over a white sand beach, turquoise sea, travel photography",
           "type": "nature",
@@ -991,6 +1006,17 @@
           "prompt_en": "Lake Rotorua, calm volcanic lake with mountains in the background, travel photography",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Lake+Rotorua"
+        },
+        {
+          "must": true,
+          "icon": "✨",
+          "num": "ROT 07",
+          "name": "ワイトモ・グロウワーム洞窟",
+          "desc": "ロトルアからもオークランドからも日帰りできる、北島観光きっての目玉。ボートで進む真っ暗な洞窟の天井を、無数のツチボタルの幼虫が放つ青白い光が星空のように埋め尽くす、幻想的な光景が広がる。",
+          "badge": "土ボタルの幻想的な光・必見",
+          "prompt_en": "Waitomo Glowworm Caves New Zealand, boat gliding through dark limestone cave ceiling glowing with thousands of blue-green glowworms, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Waitomo+Glowworm+Caves"
         }
       ]
     },
@@ -1231,6 +1257,17 @@
           "prompt_en": "Aoraki Mount Cook New Zealand, snow-capped highest peak reflected in a glacial lake, travel photography",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Aoraki+Mount+Cook+National+Park"
+        },
+        {
+          "must": true,
+          "icon": "🌌",
+          "num": "ZQN 09",
+          "name": "テカポ湖・善き羊飼いの教会",
+          "desc": "ミルキーブルーに輝く氷河湖畔にたたずむ石造りの小さな教会。世界屈指の星空保護区に指定された「世界最高峰の星空」でも知られ、マウント・クックへ向かう定番ルート上にあるため、ほぼ全ての旅行者がセットで立ち寄る超定番スポット。",
+          "badge": "NZ屈指の絶景・星空・必見",
+          "prompt_en": "Church of the Good Shepherd Lake Tekapo New Zealand, small stone church beside milky turquoise glacial lake, starry night sky, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Church+of+the+Good+Shepherd+Lake+Tekapo"
         },
         {
           "must": false,

@@ -73,6 +73,19 @@
       "description": "街ごと世界遺産に登録された古都。早朝の托鉢と黄金の寺院で知られる"
     },
     {
+      "id": "nong_khiaw",
+      "name": "ノーンキアウ",
+      "lat": "20.5667",
+      "lng": "102.6167",
+      "zoom": "13",
+      "color": "#002868",
+      "marker_size": "10",
+      "marker_label": "●",
+      "badge": "北部の秘境",
+      "badge_class": "green",
+      "description": "切り立った石灰岩の奇岩に囲まれた、ナムウー川沿いの静かな秘境の町"
+    },
+    {
       "id": "vang_vieng",
       "name": "バンビエン",
       "lat": "18.9235",
@@ -521,8 +534,8 @@
       {
         "name": "シーパンドン（4000の島）",
         "city_id": "si_phan_don",
-        "best_note": "ベスト：11〜2月（乾季・川イルカも観察しやすい）／ 5〜10月は雨季で増水する。",
-        "note": "ラオス最南端のメコン河畔にあるシーパンドンは、国内でも特に蒸し暑いエリア。乾季の11〜2月は川の水位が下がって中州の島々が歩きやすくなり、イラワジカワイルカも観察しやすい。雨季は増水で一部の滝や中州へのアクセスが制限されることがある。",
+        "best_note": "ベスト：11〜2月（乾季・島歩きが快適）／ 5〜10月は雨季で増水する。",
+        "note": "ラオス最南端のメコン河畔にあるシーパンドンは、国内でも特に蒸し暑いエリア。乾季の11〜2月は川の水位が下がって中州の島々が歩きやすくなる。雨季は増水で一部の滝や中州へのアクセスが制限されることがある。",
         "months": [
           {
             "icon": "☀️",
@@ -651,6 +664,74 @@
             "icon": "☀️",
             "temp": "26°C",
             "type": "t-warm"
+          }
+        ]
+      },
+      {
+        "name": "ノーンキアウ",
+        "city_id": "nong_khiaw",
+        "best_note": "ベスト：11〜2月（乾季・雲海が出やすい）／ 5〜10月は雨季でナムウー川が増水する。",
+        "note": "ルアンパバーンより標高がやや高く、渓谷特有の気候で朝晩の冷え込みが強い。11〜2月の乾季は早朝に雲海が発生しやすく、パ・デーン展望台のハイキングに最適。雨季はナムウー川が増水し、ボートクルーズの運航スケジュールが変わることもある。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "22°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "25°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "30°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "26°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "24°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "21°C",
+            "type": "t-mild"
           }
         ]
       }
@@ -1414,17 +1495,17 @@
     },
     {
       "num": "No.9",
-      "name": "カオチー（フランスパンサンド）",
+      "name": "カオチー・パテ（フランスパンサンド）",
       "badge": "仏植民地の名残",
       "type": "snack",
       "city": "luang_prabang",
-      "desc": "フランス統治時代の名残であるバゲットに、パテやハーブ、野菜を挟んだラオス風サンドイッチ。ルアンパバーンの朝市で焼きたてが並ぶ、朝食にぴったりの一品。",
+      "desc": "フランス統治時代の名残であるバゲットに、パテやハーブ、野菜を挟んだラオス風サンドイッチ。正式には「カオチー・パテ」と呼び、「パテ」を付けずに単に「カオチー」と言うと、もち米に卵を塗って焼いた焼きおにぎりを指すこともあるので注意。ルアンパバーンの朝市で焼きたてが並ぶ、朝食にぴったりの一品。",
       "image": "素材/グルメ/カオチー（フランスパンサンド）.webp",
-      "prompt_en": "Khao jee Laos French baguette sandwich with pate and herbs, Luang Prabang market stall, food photography",
+      "prompt_en": "Khao jee pate Laos French baguette sandwich with pate and herbs, Luang Prabang market stall, food photography",
       "plate_color": "paper wrap",
       "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%82%AA%E3%83%81%E3%83%BC%EF%BC%88%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%91%E3%83%B3%E3%82%B5%E3%83%B3%E3%83%89%EF%BC%89%20%E3%83%A9%E3%82%AA%E3%82%B9%20%E6%96%99%E7%90%86",
       "order_ico": "🥖",
-      "order_name_en": "Khao Jee",
+      "order_name_en": "Khao Jee Patee",
       "must": true
     },
     {
@@ -1511,6 +1592,35 @@
       "order_ico": "🌿",
       "order_name_en": "Kaipen",
       "image": "素材/グルメ/カイペーン（川海苔スナック）.webp"
+    },
+    {
+      "num": "No.16",
+      "name": "シンダート（ラオス風焼肉鍋）",
+      "must": true,
+      "badge": "市民のソウルフード",
+      "type": "main",
+      "city": "national",
+      "desc": "中央がドーム状に盛り上がった特製の鍋で、頂上で肉を焼きながら周りの溝でスープと野菜を煮込む、ジンギスカン鍋のようなスタイルの鍋料理。メコン川沿いのビアガーデンでビアラオ片手に楽しむのが定番で、旅行者にも人気の鉄板グルメ。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B7%E3%83%B3%E3%83%80%E3%83%BC%E3%83%88%20%E3%83%A9%E3%82%AA%E3%82%B9%20%E6%96%99%E7%90%86",
+      "order_ico": "🍖",
+      "order_name_en": "Sindat",
+      "prompt_en": "Sindat Laos dome-shaped grill pot, meat grilling on top with broth and vegetables around the rim, food photography",
+      "plate_color": "dome grill pot",
+      "image": ""
+    },
+    {
+      "num": "No.17",
+      "name": "サークー（タピオカココナッツデザート）",
+      "badge": "市場の定番スイーツ",
+      "type": "dessert",
+      "city": "national",
+      "desc": "ココナッツミルクにタピオカやイモ類、バナナなどを加えて煮た、優しい甘さの伝統デザート。温かいものも冷たいものもあり、市場や食堂で小皿に盛られて売られる、ラオスの食卓に欠かせない定番のおやつ。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%BC%20%E3%82%BF%E3%83%94%E3%82%AA%E3%82%AB%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%20%E3%83%A9%E3%82%AA%E3%82%B9%20%E6%96%99%E7%90%86",
+      "order_ico": "🍮",
+      "order_name_en": "Saku",
+      "prompt_en": "Saku Laos coconut tapioca dessert, sweet coconut milk with tapioca pearls and taro in a bowl, food photography",
+      "plate_color": "small bowl",
+      "image": ""
     }
   ],
   "spots_section_title": "ラオス 観光スポット",
@@ -1543,6 +1653,11 @@
     {
       "id": "si_phan_don",
       "label": "シーパンドン",
+      "active": false
+    },
+    {
+      "id": "nong_khiaw",
+      "label": "ノーンキアウ",
       "active": false
     }
   ],
@@ -1792,6 +1907,64 @@
           "type": "religious",
           "map_url": "https://maps.google.com/?q=Pak+Ou+Caves+Laos",
           "image": "素材/観光スポット/パークウー洞窟.webp"
+        },
+        {
+          "must": false,
+          "icon": "🐻",
+          "num": "LPQ 08",
+          "name": "クアンシー・ベア・レスキューセンター",
+          "desc": "クアンシーの滝の入場ルート沿いにある、密猟や違法飼育から保護されたツキノワグマのための保護施設。木陰のハンモックで昼寝をしたり遊具でじゃれ合ったりするクマたちを間近で観察でき、滝とセットで訪れるのが定番。",
+          "badge": "滝とセットの保護施設",
+          "prompt_en": "Kuang Si Bear Rescue Centre Laos, Asiatic black bears in a forested sanctuary enclosure, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Kuang+Si+Bear+Rescue+Centre"
+        }
+      ]
+    },
+    {
+      "city_id": "nong_khiaw",
+      "city_name": "ノーンキアウ",
+      "city_image": "",
+      "city_prompt": "Nong Khiaw Laos limestone karst peaks over Nam Ou river, misty morning, travel photography",
+      "city_desc": "切り立った石灰岩の奇岩に囲まれた、ナムウー川沿いの静かな町。ルアンパバーンに次ぐ人気を集める北部の秘境として近年注目される",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ルアンパバーンから車・バスで約3時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "11〜2月（乾季・雲海が出やすい）",
+          "link_section": "season",
+          "link_btn_index": 6
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "ナムウー川沿いのゲストハウス街"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🌄",
+          "num": "NGK 01",
+          "name": "パ・デーン展望台",
+          "desc": "急な山道を1時間ほど登った先に広がる、奇岩と雲海の絶景で知られる展望台。早朝に登れば、ナムウー川の谷を埋め尽くす雲海の上に切り立った石灰岩の峰々が浮かぶ、ラオス屈指のハイキング絶景に出会える。",
+          "badge": "雲海と奇岩の絶景ハイク",
+          "prompt_en": "Pha Daeng Viewpoint Nong Khiaw Laos, sea of clouds over jagged limestone karst peaks at sunrise, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Pha+Daeng+Viewpoint+Nong+Khiaw"
+        },
+        {
+          "must": false,
+          "icon": "🛶",
+          "num": "NGK 02",
+          "name": "ナムウー川クルーズ",
+          "desc": "のどかな石灰岩の山々の間を縫うように進む、ナムウー川のロングテールボートクルーズ。少数民族の村ムアンゴイへ向かう定番ルートで、切り立つ岩壁とジャングルに包まれた川旅は北部ラオスならではの体験。",
+          "badge": "秘境の川旅",
+          "prompt_en": "Nam Ou River boat cruise Nong Khiaw Laos, longtail boat winding through limestone karst gorge, travel photography",
+          "type": "activity",
+          "no_map": true
         }
       ]
     },
@@ -1865,6 +2038,17 @@
           "image": "素材/観光スポット/パーグアン展望台.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Pha+Ngern+Viewpoint+Vang+Vieng"
+        },
+        {
+          "must": false,
+          "icon": "🏍️",
+          "num": "VVG 05",
+          "name": "ナムサーン展望台",
+          "desc": "岩山の山頂に据えられたバイクが目印の、SNSで世界的に話題となった新定番の展望台。カルスト山脈を見渡す絶景に加え、バイクにまたがって撮る奇抜な写真が若い旅行者に人気で、パーグアン展望台と並ぶハイキングスポットになっている。",
+          "badge": "バイクの奇抜フォトスポット",
+          "prompt_en": "Nam Xay Viewpoint Vang Vieng Laos, motorbike fixed on a rocky mountain summit, panoramic karst mountain view, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Nam+Xay+Viewpoint+Vang+Vieng"
         }
       ]
     },
@@ -1999,6 +2183,17 @@
           "type": "activity",
           "no_map": true,
           "image": "素材/観光スポット/ボラベン高原コーヒー農園めぐり.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏺",
+          "num": "CHX 05",
+          "name": "ワット・プー博物館",
+          "desc": "世界遺産ワット・プーの入場口付近にある小さな博物館。遺跡から出土したクメール美術の彫刻やリンテル（まぐさ石）、ヒンドゥー神話のレリーフなどが展示されており、遺跡本体を歩く前に立ち寄ると理解が深まる必見スポット。",
+          "badge": "遺跡巡り前の必見スポット",
+          "prompt_en": "Wat Phou Museum Champasak Laos, Khmer stone carvings and Hindu relief sculptures on display, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Wat+Phou+Museum+Champasak"
         }
       ]
     },
@@ -2048,18 +2243,6 @@
           "image": "素材/観光スポット/リーピーの滝.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Li+Phi+Falls+Laos"
-        },
-        {
-          "must": true,
-          "icon": "🐬",
-          "num": "SPD 03",
-          "name": "イラワジカワイルカ・ウォッチング",
-          "desc": "ラオス・カンボジア国境付近のメコン川に生息する絶滅危惧種、イラワジカワイルカに出会えるボートツアー。ずんぐりとした丸い頭が特徴の希少な淡水イルカ。",
-          "badge": "希少な淡水イルカ",
-          "prompt_en": "Irrawaddy dolphin watching boat tour Mekong River Laos Cambodia border, rare freshwater dolphin surfacing, travel photography",
-          "image": "素材/観光スポット/イラワジカワイルカ・ウォッチング.webp",
-          "type": "activity",
-          "no_map": true
         },
         {
           "must": false,
@@ -2303,7 +2486,7 @@
           "transit": false,
           "label": "Day 9",
           "badge_class": "red",
-          "content_html": "<strong>リーピーの滝 → イラワジカワイルカ</strong><br>メコン川の水を飲み込むように轟音を立てる<a onclick=\"showSpot('SPD 02')\" class=\"spot-link\">リーピーの滝</a>を訪ね、午後は<a onclick=\"showSpot('SPD 03')\" class=\"spot-link\">イラワジカワイルカ・ウォッチング</a>のボートツアーへ。運が良ければ丸い頭の希少な淡水イルカに出会える。"
+          "content_html": "<strong>リーピーの滝 → 島々をのんびり自転車で巡る</strong><br>メコン川の水を飲み込むように轟音を立てる<a onclick=\"showSpot('SPD 02')\" class=\"spot-link\">リーピーの滝</a>を訪ね、午後は自転車や小舟で島から島へ渡りながら、水上に浮かぶシーパンドンならではの暮らしをのんびり眺める。"
         },
         {
           "transit": false,

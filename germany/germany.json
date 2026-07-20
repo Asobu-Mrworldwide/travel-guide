@@ -109,6 +109,32 @@
       "description": "世界遺産の大聖堂がそびえる、ライン川沿いの古都"
     },
     {
+      "id": "frankfurt",
+      "name": "フランクフルト",
+      "lat": "50.1109",
+      "lng": "8.6821",
+      "zoom": "12",
+      "color": "#cc0001",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "空の玄関口",
+      "badge_class": "green",
+      "description": "高層ビル群と中世の街並みが同居する、ドイツ最大の空港を擁する金融都市"
+    },
+    {
+      "id": "stuttgart",
+      "name": "シュトゥットガルト",
+      "lat": "48.7758",
+      "lng": "9.1829",
+      "zoom": "12",
+      "color": "#cc0001",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "自動車の聖地",
+      "badge_class": "green",
+      "description": "ベンツとポルシェを生んだ、自動車産業の聖地"
+    },
+    {
       "id": "rothenburg",
       "name": "ロマンティック街道",
       "lat": "49.3779",
@@ -286,6 +312,46 @@
           { "icon": "☔", "temp": "12°C", "type": "t-warm" },
           { "icon": "☔", "temp": "7°C", "type": "t-cool" },
           { "icon": "❄️", "temp": "3°C", "type": "t-cool" }
+        ]
+      },
+      {
+        "name": "フランクフルト",
+        "city_id": "frankfurt",
+        "best_note": "ベスト：5〜6月・9〜10月／ 冬は曇天と底冷えが続く",
+        "note": "ライン川沿いに位置し、気候傾向はケルンとほぼ同じ<strong>西岸海洋性気候</strong>。<strong>初夏〜秋</strong>はリューデスハイムへのワイン街道日帰りが快適に楽しめる。冬は空港の乗り継ぎ滞在でも底冷えに注意。",
+        "months": [
+          { "icon": "❄️", "temp": "3°C", "type": "t-cool" },
+          { "icon": "❄️", "temp": "5°C", "type": "t-cool" },
+          { "icon": "⛅", "temp": "9°C", "type": "t-cool" },
+          { "icon": "☀️", "temp": "14°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "18°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "21°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "23°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "23°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "19°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "14°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "8°C", "type": "t-cool" },
+          { "icon": "❄️", "temp": "4°C", "type": "t-cool" }
+        ]
+      },
+      {
+        "name": "シュトゥットガルト",
+        "city_id": "stuttgart",
+        "best_note": "ベスト：5〜6月・9〜10月／ 冬は黒い森からの寒気で底冷えする",
+        "note": "盆地状の地形で、ドイツ国内でも<strong>夏は比較的暖かく</strong>過ごしやすい一方、<strong>冬は黒い森方面からの寒気</strong>で底冷えする日がある。ワイン畑に囲まれた丘陵地形のため、初夏の街歩きは特に気持ちがいい。",
+        "months": [
+          { "icon": "❄️", "temp": "3°C", "type": "t-cool" },
+          { "icon": "❄️", "temp": "5°C", "type": "t-cool" },
+          { "icon": "⛅", "temp": "10°C", "type": "t-cool" },
+          { "icon": "☀️", "temp": "15°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "19°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "22°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "24°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "24°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "19°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "14°C", "type": "t-warm" },
+          { "icon": "☔", "temp": "8°C", "type": "t-cool" },
+          { "icon": "❄️", "temp": "4°C", "type": "t-cool" }
         ]
       }
     ]
@@ -643,6 +709,7 @@
     { "id": "berlin", "label": "ベルリン" },
     { "id": "munich", "label": "ミュンヘン" },
     { "id": "cologne", "label": "ケルン" },
+    { "id": "stuttgart", "label": "シュトゥットガルト" },
     { "id": "hamburg", "label": "ハンブルク" },
     { "id": "rothenburg", "label": "ロマンティック街道" }
   ],
@@ -849,6 +916,77 @@
       "prompt_en": "German Lebkuchen gingerbread cookies, chocolate-coated and iced, festive Christmas market display, food photography",
       "plate_color": "paper tray",
       "image": ""
+    },
+    {
+      "num": "No.15",
+      "name": "シュヴァインスハクセ",
+      "must": true,
+      "badge": "ビアホールの王様",
+      "type": "main",
+      "city": "munich",
+      "desc": "皮をパリパリに焼き上げた、豚のすね肉をまるごと使った豪快なローストで、バイエルン肉料理の代表格。ホフブロイハウスなどのビアホールでは定番中の定番で、ビールと共に注文する客が絶えない一皿。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A1%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%8F%E3%82%AF%E3%82%BB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86",
+      "order_ico": "🍖",
+      "order_name_en": "Schweinshaxe",
+      "prompt_en": "German Schweinshaxe, roasted pork knuckle with crispy crackling skin on a plate, Bavarian beer hall setting, food photography",
+      "plate_color": "wooden platter",
+      "image": ""
+    },
+    {
+      "num": "No.16",
+      "name": "シュトーレン",
+      "badge": "本場ドレスデン発祥のクリスマス菓子",
+      "type": "dessert",
+      "city": "national",
+      "desc": "ドライフルーツやナッツを練り込み、粉砂糖をまぶした重厚なパウンドケーキ。「レープクーヘン」と並ぶドイツのクリスマス菓子の代表格で、本場ドレスデン産は世界的にも知られる。日持ちがよく薄切りにして少しずつ食べるのが伝統。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%88%E3%83%BC%E3%83%AC%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86",
+      "order_ico": "🍞",
+      "order_name_en": "Stollen",
+      "prompt_en": "German Stollen Christmas cake, dense fruit bread dusted with powdered sugar, sliced on a wooden board, food photography",
+      "plate_color": "wooden board",
+      "image": ""
+    },
+    {
+      "num": "No.17",
+      "name": "マウルタッシェン",
+      "badge": "南ドイツの巨大餃子",
+      "type": "main",
+      "city": "stuttgart",
+      "desc": "ひき肉やほうれん草を詰めた、餃子やラビオリを大きくしたような南ドイツ・シュヴァーベン地方の郷土料理。スープに入れたり、玉ねぎと炒めたりと食べ方は様々で、シュトゥットガルト周辺では家庭料理としても定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9E%E3%82%A6%E3%83%AB%E3%82%BF%E3%83%83%E3%82%B7%E3%82%A7%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86",
+      "order_ico": "🥟",
+      "order_name_en": "Maultaschen",
+      "prompt_en": "German Maultaschen, large stuffed pasta dumplings in broth, Swabian dish, food photography",
+      "plate_color": "white bowl",
+      "image": ""
+    },
+    {
+      "num": "No.18",
+      "name": "クネーデル（クロース）",
+      "badge": "肉料理の定番付け合わせ",
+      "type": "main",
+      "city": "national",
+      "desc": "ジャガイモやパンを丸めて茹で上げた、もちもち食感の団子。「ザワークラウト」と並ぶドイツ料理の定番付け合わせで、ザウアーブラーテンなど濃厚なソースの肉料理と一緒に味わうのが定番の楽しみ方。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AF%E3%83%8D%E3%83%BC%E3%83%87%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86",
+      "order_ico": "🥔",
+      "order_name_en": "Knödel",
+      "prompt_en": "German Knödel potato dumplings, round dumplings served beside roast meat with gravy, food photography",
+      "plate_color": "white plate",
+      "image": ""
+    },
+    {
+      "num": "No.19",
+      "name": "アップフェルシュトゥルーデル",
+      "badge": "定番の温かいアップルパイ",
+      "type": "dessert",
+      "city": "munich",
+      "desc": "薄く伸ばした生地でシナモン風味のりんごを巻き上げて焼いた、南ドイツで親しまれる温かいアップルパイ。「黒い森のケーキ」と並ぶ定番デザートで、温かいうちにバニラソースやアイスクリームを添えて食べるのが定番。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%95%E3%82%A7%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%88%E3%82%A5%E3%83%AB%E3%83%BC%E3%83%87%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86",
+      "order_ico": "🥧",
+      "order_name_en": "Apfelstrudel",
+      "prompt_en": "German Apfelstrudel apple strudel, warm sliced pastry with vanilla sauce, cinnamon apple filling visible, food photography",
+      "plate_color": "dessert plate",
+      "image": ""
     }
   ],
   "spots_section_title": "ドイツ観光スポット図鑑",
@@ -865,6 +1003,8 @@
     { "id": "berlin", "label": "ベルリン", "active": false },
     { "id": "munich", "label": "ミュンヘン", "active": false },
     { "id": "cologne", "label": "ケルン", "active": false },
+    { "id": "frankfurt", "label": "フランクフルト", "active": false },
+    { "id": "stuttgart", "label": "シュトゥットガルト", "active": false },
     { "id": "rothenburg", "label": "ロマンティック街道", "active": false },
     { "id": "hamburg", "label": "ハンブルク", "active": false }
   ],
@@ -957,6 +1097,17 @@
           "prompt_en": "Holocaust Memorial Berlin, rows of grey concrete stelae of varying heights, somber atmosphere, travel photography",
           "type": "heritage",
           "map_url": "https://maps.google.com/?q=Memorial+to+the+Murdered+Jews+of+Europe+Berlin"
+        },
+        {
+          "must": false,
+          "icon": "🏰",
+          "num": "BER 08",
+          "name": "サンスーシ宮殿（ポツダム）",
+          "desc": "ベルリンから日帰りできる、プロイセン王フリードリヒ大王が築いたロココ様式の離宮。「プロイセンのヴェルサイユ」とも呼ばれ、段々畑のぶどう園テラスと広大な庭園が一体となった景観は世界遺産に登録されている。",
+          "badge": "世界遺産・日帰り離宮",
+          "prompt_en": "Sanssouci Palace Potsdam, rococo palace on vineyard terraces, formal gardens, golden hour, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Sanssouci+Palace+Potsdam"
         }
       ]
     },
@@ -1059,6 +1210,17 @@
           "prompt_en": "Zugspitze Germany highest peak, cable car ascending snowy alpine mountain, panoramic view, travel photography",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Zugspitze+Germany"
+        },
+        {
+          "must": false,
+          "icon": "🏰",
+          "num": "MUC 09",
+          "name": "ミュンヘン・レジデンツ",
+          "desc": "バイエルン王家が600年以上にわたり暮らした、ドイツ最大級の宮殿建築群。130を超える部屋には宝物館や祖先の間など見どころが密集し、市街地の中心にありながら日帰り観光にちょうどよいボリューム感。",
+          "badge": "バイエルン王家の宮殿",
+          "prompt_en": "Munich Residenz palace interior, ornate ancestral gallery hall, golden decorations, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Munich+Residenz"
         }
       ]
     },
@@ -1128,6 +1290,89 @@
           "prompt_en": "Cologne old town Altstadt, colorful riverside buildings and traditional beer taverns, evening atmosphere, travel photography",
           "type": "townscape",
           "map_url": "https://maps.google.com/?q=Cologne+Altstadt"
+        }
+      ]
+    },
+    {
+      "city_id": "frankfurt",
+      "city_name": "フランクフルト",
+      "city_desc": "高層ビル群と中世の街並みが同居する、ドイツ最大の空港を擁する金融都市。ライン川沿いのワイン産地への玄関口でもある",
+      "city_info": [
+        { "label": "アクセス", "value": "直行便で約12〜13時間", "link_section": "", "link_btn_index": "" },
+        { "label": "空港↔市内", "value": "Sバーン 約12分", "link_section": "", "link_btn_index": "" },
+        { "label": "ベストシーズン", "value": "5〜6月・9〜10月", "link_section": "season", "link_btn_index": "4" },
+        { "label": "名物グルメ", "value": "アップフェルヴァイン（りんご酒）", "link_section": "food", "link_btn_index": "0" },
+        { "label": "市内交通", "value": "Uバーン・Sバーン・トラム", "link_section": "transport", "link_btn_index": "0" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏘️",
+          "num": "FRA 01",
+          "name": "レーマー広場",
+          "desc": "木組みの建物が三角屋根を連ねる、フランクフルト旧市街の中心地。中央の市庁舎「レーマー」は神聖ローマ帝国の戴冠式にも使われた由緒ある建物で、広場のクリスマスマーケットも名物。",
+          "badge": "旧市街の中心・必見",
+          "prompt_en": "Romerberg square Frankfurt, medieval half-timbered guild houses, gabled rooftops, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Romerberg+Frankfurt"
+        },
+        {
+          "must": false,
+          "icon": "📚",
+          "num": "FRA 02",
+          "name": "ゲーテハウス",
+          "desc": "文豪ヨハン・ヴォルフガング・フォン・ゲーテが生まれ育った邸宅。当時の家具や調度品がそのまま保存され、『若きウェルテルの悩み』などの名作が生まれた書斎も見学できる。",
+          "badge": "文豪ゲーテ生誕の家",
+          "prompt_en": "Goethe House Frankfurt, historic townhouse interior with period furniture and library, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Goethe+House+Frankfurt"
+        },
+        {
+          "must": false,
+          "icon": "🍷",
+          "num": "FRA 03",
+          "name": "つぐみ横丁（リューデスハイム）",
+          "desc": "フランクフルトから日帰りできる、世界遺産「ライン渓谷」の起点リューデスハイムの名物路地。石畳の細い通りにワイン酒場がひしめき、地元産のリースリングを飲み比べながら生演奏を楽しめる。",
+          "badge": "ライン川ワイン街道の名物路地",
+          "prompt_en": "Drosselgasse Rudesheim, narrow cobblestone alley lined with wine taverns, lively evening atmosphere, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Drosselgasse+Rudesheim"
+        }
+      ]
+    },
+    {
+      "city_id": "stuttgart",
+      "city_name": "シュトゥットガルト",
+      "city_desc": "ベンツとポルシェを生んだ、自動車産業の聖地。黒い森（シュヴァルツヴァルト）への玄関口でもある南西部の工業・文化都市",
+      "city_info": [
+        { "label": "アクセス", "value": "ミュンヘン・フランクフルトから鉄道で約2〜2.5時間", "link_section": "", "link_btn_index": "" },
+        { "label": "空港↔市内", "value": "Sバーン 約30分", "link_section": "", "link_btn_index": "" },
+        { "label": "ベストシーズン", "value": "5〜6月・9〜10月", "link_section": "season", "link_btn_index": "5" },
+        { "label": "名物グルメ", "value": "ケーゼシュペッツレ", "link_section": "food", "link_btn_index": "0" },
+        { "label": "市内交通", "value": "Uバーン・Sバーン・トラム", "link_section": "transport", "link_btn_index": "0" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🚗",
+          "num": "STR 01",
+          "name": "メルセデス・ベンツ博物館",
+          "desc": "自動車の発明者カール・ベンツから最新モデルまで、自動車史そのものを体感できる世界的人気の博物館。螺旋状のスロープを下りながら年代順に名車を巡る構成で、車好きでなくても楽しめる展示演出。",
+          "badge": "自動車史を体感できる世界的名所",
+          "prompt_en": "Mercedes-Benz Museum Stuttgart, futuristic spiral architecture, classic cars on display, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Mercedes-Benz+Museum+Stuttgart"
+        },
+        {
+          "must": false,
+          "icon": "🏎️",
+          "num": "STR 02",
+          "name": "ポルシェ博物館",
+          "desc": "創業以来の名車が一堂に会する、車好きの聖地とされる博物館。宙に浮くようなガラス張りの建築デザインも見どころで、レーシングカーから市販モデルまで幅広いラインナップを間近で見られる。",
+          "badge": "車好きの聖地",
+          "prompt_en": "Porsche Museum Stuttgart, sleek glass architecture, classic and racing Porsche cars on display, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Porsche+Museum+Stuttgart"
         }
       ]
     },
