@@ -476,6 +476,19 @@ def generate(country_id):
         if synced:
             card['value'] = synced
 
+    # basic_data「言語」のvalueもoverview.languageと同期する（noteは言語学的な豆知識専用）
+    if overview.get('language'):
+        for card in data.get('basic_data', []):
+            if card.get('label') == '言語':
+                card['value'] = overview['language']
+
+    # basic_data「通貨」のnote（レート）もoverview.currency_rateと同期する
+    # （valueは現地名の補足（新台幣等）を残せるよう手動のまま）
+    if overview.get('currency_rate'):
+        for card in data.get('basic_data', []):
+            if card.get('label') == '通貨':
+                card['note'] = overview['currency_rate']
+
     # カード系の説明が長い場合、最初の句点までを本文、それ以降を小さな補足テキストとして
     # 下に配置する（JSONは書き換えず表示時のみ変換）
     def _split_long_value(val, sub_class):

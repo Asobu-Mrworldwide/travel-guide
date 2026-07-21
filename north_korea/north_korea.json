@@ -51,7 +51,7 @@
     "timezone": "時差なし",
     "visa": "個人取得不可。団体ツアーのみ（受入停止中）",
     "budget_range": "現地ツアー代のみで10〜25万円（渡航先の中国までの国際航空券は別途）",
-    "language": "朝鮮語（文化語）。ガイドとは英語が通じることが多い",
+    "language": "朝鮮語（文化語）（英語はガイドと通じることが多い）",
     "currency_name": "北朝鮮ウォン(KPW)",
     "currency_rate": "観光客は使用不可。支払いはEUR/CNY/USD現金のみ",
     "danger_level": 3,
@@ -152,18 +152,66 @@
     "description": "北朝鮮は大陸性気候で、夏は蒸し暑く冬は氷点下まで冷え込みます。ツアーが最も多く催行されるのは気候の穏やかな春（4〜5月）と秋（9〜10月）。",
     "city_name": "平壌",
     "months": [
-      { "icon": "❄️", "temp": "-3°", "type": "t-cool" },
-      { "icon": "❄️", "temp": "0°", "type": "t-cool" },
-      { "icon": "☀️", "temp": "7°", "type": "t-cool" },
-      { "icon": "☀️", "temp": "14°", "type": "t-warm" },
-      { "icon": "☀️", "temp": "20°", "type": "t-warm" },
-      { "icon": "⛅", "temp": "24°", "type": "t-warm" },
-      { "icon": "☔", "temp": "27°", "type": "t-hot1" },
-      { "icon": "☔", "temp": "28°", "type": "t-hot1" },
-      { "icon": "☀️", "temp": "22°", "type": "t-warm" },
-      { "icon": "☀️", "temp": "15°", "type": "t-warm" },
-      { "icon": "☀️", "temp": "6°", "type": "t-cool" },
-      { "icon": "❄️", "temp": "-2°", "type": "t-cool" }
+      {
+        "icon": "❄️",
+        "temp": "-3°",
+        "type": "t-cool"
+      },
+      {
+        "icon": "❄️",
+        "temp": "0°",
+        "type": "t-cool"
+      },
+      {
+        "icon": "☀️",
+        "temp": "7°",
+        "type": "t-cool"
+      },
+      {
+        "icon": "☀️",
+        "temp": "14°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "20°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "⛅",
+        "temp": "24°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☔",
+        "temp": "27°",
+        "type": "t-hot1"
+      },
+      {
+        "icon": "☔",
+        "temp": "28°",
+        "type": "t-hot1"
+      },
+      {
+        "icon": "☀️",
+        "temp": "22°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "15°",
+        "type": "t-warm"
+      },
+      {
+        "icon": "☀️",
+        "temp": "6°",
+        "type": "t-cool"
+      },
+      {
+        "icon": "❄️",
+        "temp": "-2°",
+        "type": "t-cool"
+      }
     ]
   },
   "basic_data": [
@@ -211,7 +259,7 @@
     },
     {
       "label": "通貨",
-      "value": "北朝鮮ウォン（KPW）",
+      "value": "北朝鮮ウォン(KPW)",
       "note": "観光客は使用不可。支払いはEUR/CNY/USD現金のみ",
       "compare_html": ""
     }
@@ -227,18 +275,66 @@
         "best_note": "ベスト：4〜5月・9〜10月（気候が穏やかでツアーも多い）／ 冬は氷点下、夏は蒸し暑く雨も多い",
         "note": "大陸性気候で寒暖差が大きい。<strong>1月は平均氷点下</strong>まで冷え込み防寒具が必須、<strong>8月は27℃前後まで上がり</strong>湿度も高い。屋外での記念碑見学が多いツアー構成のため、春・秋の気候が快適な時期が最も動きやすい。",
         "months": [
-          { "icon": "❄️", "temp": "-3°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "0°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "7°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "14°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "20°C", "type": "t-warm" },
-          { "icon": "⛅", "temp": "24°C", "type": "t-warm" },
-          { "icon": "☔", "temp": "27°C", "type": "t-hot1" },
-          { "icon": "☔", "temp": "28°C", "type": "t-hot1" },
-          { "icon": "☀️", "temp": "22°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "15°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "6°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-2°C", "type": "t-cool" }
+          {
+            "icon": "❄️",
+            "temp": "-3°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "0°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "7°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "14°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "15°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "6°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-2°C",
+            "type": "t-cool"
+          }
         ]
       },
       {
@@ -247,18 +343,66 @@
         "best_note": "ベスト：4〜5月・9〜10月／ 気候は平壌とほぼ同じ",
         "note": "平壌から南へ約170km、気候傾向はほぼ同じ大陸性気候。板門店（軍事境界線）周辺の見学は屋外中心のため、防寒・防暑どちらの対策も気候に合わせて準備したい。",
         "months": [
-          { "icon": "❄️", "temp": "-2°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "1°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "8°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "15°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "21°C", "type": "t-warm" },
-          { "icon": "⛅", "temp": "24°C", "type": "t-warm" },
-          { "icon": "☔", "temp": "27°C", "type": "t-hot1" },
-          { "icon": "☔", "temp": "28°C", "type": "t-hot1" },
-          { "icon": "☀️", "temp": "23°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "16°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "7°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-1°C", "type": "t-cool" }
+          {
+            "icon": "❄️",
+            "temp": "-2°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "1°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "8°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "15°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "24°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "7°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-1°C",
+            "type": "t-cool"
+          }
         ]
       },
       {
@@ -267,18 +411,66 @@
         "best_note": "ベスト：4〜5月・9〜10月／ 冬は山間部のため平壌より冷え込みが厳しい",
         "note": "平壌より内陸・山間にあるため、<strong>冬は平壌より冷え込みが厳しく</strong>積雪も見られる。新緑の春や紅葉の秋は、普賢寺周辺の渓谷美が最も映える季節。",
         "months": [
-          { "icon": "❄️", "temp": "-5°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-2°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "5°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "13°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "19°C", "type": "t-warm" },
-          { "icon": "⛅", "temp": "23°C", "type": "t-warm" },
-          { "icon": "☔", "temp": "26°C", "type": "t-hot1" },
-          { "icon": "☔", "temp": "27°C", "type": "t-hot1" },
-          { "icon": "☀️", "temp": "21°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "14°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "4°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-4°C", "type": "t-cool" }
+          {
+            "icon": "❄️",
+            "temp": "-5°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-2°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "5°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "19°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "26°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "14°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "4°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-4°C",
+            "type": "t-cool"
+          }
         ]
       },
       {
@@ -287,18 +479,66 @@
         "best_note": "ベスト：5月・9〜10月（紅葉が特に有名）／ 冬は積雪で一部登山路が閉鎖",
         "note": "山岳エリアのため<strong>平壌より寒暖差が大きく</strong>、特に秋の紅葉シーズンは韓国側からのツアーでも人気を集めた黄金期の目玉だった。冬は積雪でハイキングルートが制限されることがある。",
         "months": [
-          { "icon": "❄️", "temp": "-4°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-1°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "6°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "13°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "18°C", "type": "t-warm" },
-          { "icon": "⛅", "temp": "22°C", "type": "t-warm" },
-          { "icon": "☔", "temp": "24°C", "type": "t-hot1" },
-          { "icon": "☔", "temp": "25°C", "type": "t-hot1" },
-          { "icon": "☀️", "temp": "20°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "14°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "5°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-3°C", "type": "t-cool" }
+          {
+            "icon": "❄️",
+            "temp": "-4°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-1°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "6°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "18°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "24°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "25°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "14°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "5°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-3°C",
+            "type": "t-cool"
+          }
         ]
       },
       {
@@ -307,18 +547,66 @@
         "best_note": "ベスト：7〜8月（海水浴シーズン）・5〜6月・9〜10月／ 冬は東海からの季節風で冷え込む",
         "note": "東海（日本海）に面した港町で、<strong>夏はビーチリゾートとして最も賑わう</strong>季節。海水浴を目的とするなら7〜8月が本命だが、冬は北西からの季節風が強く冷え込みが厳しい。",
         "months": [
-          { "icon": "❄️", "temp": "-1°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "1°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "6°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "12°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "17°C", "type": "t-warm" },
-          { "icon": "⛅", "temp": "20°C", "type": "t-warm" },
-          { "icon": "☔", "temp": "24°C", "type": "t-hot1" },
-          { "icon": "☔", "temp": "26°C", "type": "t-hot1" },
-          { "icon": "☀️", "temp": "22°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "16°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "8°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "1°C", "type": "t-cool" }
+          {
+            "icon": "❄️",
+            "temp": "-1°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "1°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "6°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "12°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "17°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "24°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "26°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "22°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "8°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "1°C",
+            "type": "t-cool"
+          }
         ]
       },
       {
@@ -327,18 +615,66 @@
         "best_note": "ベスト：6〜9月（この期間以外は積雪・悪天候で天池が見られないことも多い）",
         "note": "標高2,750mの山頂は<strong>6〜9月以外は積雪や濃霧に覆われることが多く</strong>、カルデラ湖・天池が見られるのは実質この短い夏の期間のみ。真夏でも山頂は肌寒く、防寒着が必須。",
         "months": [
-          { "icon": "❄️", "temp": "-18°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-15°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-8°C", "type": "t-cool" },
-          { "icon": "⛅", "temp": "0°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "6°C", "type": "t-cool" },
-          { "icon": "☀️", "temp": "11°C", "type": "t-warm" },
-          { "icon": "☔", "temp": "15°C", "type": "t-warm" },
-          { "icon": "☔", "temp": "15°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "10°C", "type": "t-warm" },
-          { "icon": "☀️", "temp": "3°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-6°C", "type": "t-cool" },
-          { "icon": "❄️", "temp": "-15°C", "type": "t-cool" }
+          {
+            "icon": "❄️",
+            "temp": "-18°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-15°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-8°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "⛅",
+            "temp": "0°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "6°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "☀️",
+            "temp": "11°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "15°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☔",
+            "temp": "15°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "10°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "3°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-6°C",
+            "type": "t-cool"
+          },
+          {
+            "icon": "❄️",
+            "temp": "-15°C",
+            "type": "t-cool"
+          }
         ]
       }
     ]
@@ -422,16 +758,56 @@
   },
   "practical": {
     "prac_cards": [
-      { "icon": "visa", "title": "ビザ", "value": "個人取得不可。団体ツアーのみ（受入停止中）" },
-      { "icon": "💱", "title": "通貨", "value": "北朝鮮ウォン(KPW) 観光客は使用不可、EUR/CNY/USD現金のみ" },
-      { "icon": "🔌", "title": "コンセント", "value": "Cタイプ・Aタイプ（220V中心、停電も珍しくない）" },
-      { "icon": "⚡", "title": "電圧", "value": "220V/60Hz（一部110Vの施設もあり要注意）" },
-      { "icon": "wifi", "title": "Wi-Fi", "value": "外国人向けSIM契約不可。ホテル有料回線のみ" },
-      { "icon": "clock", "title": "時差", "value": "日本と同じ（時差なし）" },
-      { "icon": "palm", "title": "気温", "value": "夏27〜28℃前後・冬-3℃前後（大陸性気候）" },
-      { "icon": "🙏", "title": "チップ", "value": "義務ではないがガイド・運転手へ1日15〜20USD程度が半ば慣例" },
-      { "icon": "💧", "title": "水道水", "value": "飲用不可。ミネラルウォーターの持参・購入必須" },
-      { "icon": "💳", "title": "カード払い", "value": "クレジットカード・ATMは一切使用不可。現金のみ" }
+      {
+        "icon": "visa",
+        "title": "ビザ",
+        "value": "個人取得不可。団体ツアーのみ（受入停止中）"
+      },
+      {
+        "icon": "💱",
+        "title": "通貨",
+        "value": "北朝鮮ウォン(KPW) 観光客は使用不可、EUR/CNY/USD現金のみ"
+      },
+      {
+        "icon": "🔌",
+        "title": "コンセント",
+        "value": "Cタイプ・Aタイプ（220V中心、停電も珍しくない）"
+      },
+      {
+        "icon": "⚡",
+        "title": "電圧",
+        "value": "220V/60Hz（一部110Vの施設もあり要注意）"
+      },
+      {
+        "icon": "wifi",
+        "title": "Wi-Fi",
+        "value": "外国人向けSIM契約不可。ホテル有料回線のみ"
+      },
+      {
+        "icon": "clock",
+        "title": "時差",
+        "value": "日本と同じ（時差なし）"
+      },
+      {
+        "icon": "palm",
+        "title": "気温",
+        "value": "夏27〜28℃前後・冬-3℃前後（大陸性気候）"
+      },
+      {
+        "icon": "🙏",
+        "title": "チップ",
+        "value": "義務ではないがガイド・運転手へ1日15〜20USD程度が半ば慣例"
+      },
+      {
+        "icon": "💧",
+        "title": "水道水",
+        "value": "飲用不可。ミネラルウォーターの持参・購入必須"
+      },
+      {
+        "icon": "💳",
+        "title": "カード払い",
+        "value": "クレジットカード・ATMは一切使用不可。現金のみ"
+      }
     ],
     "prep_steps": [
       {
@@ -503,7 +879,11 @@
       }
     ],
     "flight_tip_html": "航空券・列車は個人で自由に手配できるわけではなく、ツアー会社が指定する日程・便に合わせて予約する必要がある。",
-    "hotel_map_center": { "lat": 39.02, "lng": 125.76, "zoom": 13 },
+    "hotel_map_center": {
+      "lat": 39.02,
+      "lng": 125.76,
+      "zoom": 13
+    },
     "hotel_areas": [
       {
         "id": "yanggakdo",
@@ -624,48 +1004,158 @@
           {
             "label": "👋 あいさつ",
             "items": [
-              { "jp": "こんにちは", "foreign": "안녕하십니까", "reading": "アンニョンハシムニカ", "audio": "" },
-              { "jp": "元気ですか？", "foreign": "잘 지내십니까?", "reading": "チャル チネシムニカ？", "audio": "" },
-              { "jp": "元気です", "foreign": "잘 있습니다", "reading": "チャル イッスムニダ", "audio": "" },
-              { "jp": "さようなら", "foreign": "안녕히 계십시오", "reading": "アンニョンヒ ケシプシオ", "audio": "" },
-              { "jp": "はじめまして", "foreign": "처음 뵙겠습니다", "reading": "チョウム ペプケッスムニダ", "audio": "" },
-              { "jp": "（景色や物に）綺麗ですね！", "foreign": "참 아름답습니다!", "reading": "チャム アルムダプスムニダ！", "audio": "" }
+              {
+                "jp": "こんにちは",
+                "foreign": "안녕하십니까",
+                "reading": "アンニョンハシムニカ",
+                "audio": ""
+              },
+              {
+                "jp": "元気ですか？",
+                "foreign": "잘 지내십니까?",
+                "reading": "チャル チネシムニカ？",
+                "audio": ""
+              },
+              {
+                "jp": "元気です",
+                "foreign": "잘 있습니다",
+                "reading": "チャル イッスムニダ",
+                "audio": ""
+              },
+              {
+                "jp": "さようなら",
+                "foreign": "안녕히 계십시오",
+                "reading": "アンニョンヒ ケシプシオ",
+                "audio": ""
+              },
+              {
+                "jp": "はじめまして",
+                "foreign": "처음 뵙겠습니다",
+                "reading": "チョウム ペプケッスムニダ",
+                "audio": ""
+              },
+              {
+                "jp": "（景色や物に）綺麗ですね！",
+                "foreign": "참 아름답습니다!",
+                "reading": "チャム アルムダプスムニダ！",
+                "audio": ""
+              }
             ]
           },
           {
             "label": "🙏 基本表現",
             "items": [
-              { "jp": "ありがとう", "foreign": "고맙습니다", "reading": "コマプスムニダ", "audio": "" },
-              { "jp": "すみません", "foreign": "실례합니다", "reading": "シルレハムニダ", "audio": "" },
-              { "jp": "ごめんなさい", "foreign": "미안합니다", "reading": "ミアナムニダ", "audio": "" },
-              { "jp": "はい / いいえ", "foreign": "예 / 아닙니다", "reading": "イェ / アニムニダ", "audio": "" },
-              { "jp": "わかりません", "foreign": "모르겠습니다", "reading": "モルゲッスムニダ", "audio": "" },
-              { "jp": "名前は日本人です", "foreign": "저는 일본 사람입니다", "reading": "チョヌン イルボン サラミムニダ", "audio": "" }
+              {
+                "jp": "ありがとう",
+                "foreign": "고맙습니다",
+                "reading": "コマプスムニダ",
+                "audio": ""
+              },
+              {
+                "jp": "すみません",
+                "foreign": "실례합니다",
+                "reading": "シルレハムニダ",
+                "audio": ""
+              },
+              {
+                "jp": "ごめんなさい",
+                "foreign": "미안합니다",
+                "reading": "ミアナムニダ",
+                "audio": ""
+              },
+              {
+                "jp": "はい / いいえ",
+                "foreign": "예 / 아닙니다",
+                "reading": "イェ / アニムニダ",
+                "audio": ""
+              },
+              {
+                "jp": "わかりません",
+                "foreign": "모르겠습니다",
+                "reading": "モルゲッスムニダ",
+                "audio": ""
+              },
+              {
+                "jp": "名前は日本人です",
+                "foreign": "저는 일본 사람입니다",
+                "reading": "チョヌン イルボン サラミムニダ",
+                "audio": ""
+              }
             ]
           },
           {
             "label": "🍽️ レストラン",
             "items": [
-              { "jp": "おすすめは何ですか？", "foreign": "무엇을 추천하십니까?", "reading": "ムオスル チュチョンハシムニカ？", "audio": "" },
-              { "jp": "これをください", "foreign": "이것을 주십시오", "reading": "イゴスル チュシプシオ", "audio": "" },
-              { "jp": "おいしい！", "foreign": "맛있습니다!", "reading": "マシッスムニダ！", "audio": "" },
-              { "jp": "辛い", "foreign": "맵습니다", "reading": "メプスムニダ", "audio": "" },
-              { "jp": "お会計をお願いします", "foreign": "계산해 주십시오", "reading": "ケサネ チュシプシオ", "audio": "" },
-              { "jp": "トイレはどこですか？", "foreign": "화장실이 어디에 있습니까?", "reading": "ファジャンシリ オディエ イッスムニカ？", "audio": "" }
+              {
+                "jp": "おすすめは何ですか？",
+                "foreign": "무엇을 추천하십니까?",
+                "reading": "ムオスル チュチョンハシムニカ？",
+                "audio": ""
+              },
+              {
+                "jp": "これをください",
+                "foreign": "이것을 주십시오",
+                "reading": "イゴスル チュシプシオ",
+                "audio": ""
+              },
+              {
+                "jp": "おいしい！",
+                "foreign": "맛있습니다!",
+                "reading": "マシッスムニダ！",
+                "audio": ""
+              },
+              {
+                "jp": "辛い",
+                "foreign": "맵습니다",
+                "reading": "メプスムニダ",
+                "audio": ""
+              },
+              {
+                "jp": "お会計をお願いします",
+                "foreign": "계산해 주십시오",
+                "reading": "ケサネ チュシプシオ",
+                "audio": ""
+              },
+              {
+                "jp": "トイレはどこですか？",
+                "foreign": "화장실이 어디에 있습니까?",
+                "reading": "ファジャンシリ オディエ イッスムニカ？",
+                "audio": ""
+              }
             ]
           },
           {
             "label": "🔢 数字",
             "items": [
-              { "jp": "0〜5", "foreign": "영, 하나, 둘, 셋, 넷, 다섯", "reading": "ヨン、ハナ、トゥル、セッ、ネッ、タソッ", "audio": "" },
-              { "jp": "6〜10", "foreign": "여섯, 일곱, 여덟, 아홉, 열", "reading": "ヨソッ、イルゴプ、ヨドル、アホプ、ヨル", "audio": "" }
+              {
+                "jp": "0〜5",
+                "foreign": "영, 하나, 둘, 셋, 넷, 다섯",
+                "reading": "ヨン、ハナ、トゥル、セッ、ネッ、タソッ",
+                "audio": ""
+              },
+              {
+                "jp": "6〜10",
+                "foreign": "여섯, 일곱, 여덟, 아홉, 열",
+                "reading": "ヨソッ、イルゴプ、ヨドル、アホプ、ヨル",
+                "audio": ""
+              }
             ]
           },
           {
             "label": "🆘 観光・トラブル",
             "items": [
-              { "jp": "写真を撮ってもいいですか？", "foreign": "사진을 찍어도 되겠습니까?", "reading": "サジヌル チゴド テゲッスムニカ？", "audio": "" },
-              { "jp": "助けてください！", "foreign": "도와 주십시오!", "reading": "トワ チュシプシオ！", "audio": "" }
+              {
+                "jp": "写真を撮ってもいいですか？",
+                "foreign": "사진을 찍어도 되겠습니까?",
+                "reading": "サジヌル チゴド テゲッスムニカ？",
+                "audio": ""
+              },
+              {
+                "jp": "助けてください！",
+                "foreign": "도와 주십시오!",
+                "reading": "トワ チュシプシオ！",
+                "audio": ""
+              }
             ]
           }
         ]
@@ -674,13 +1164,28 @@
   },
   "food_section_title": "北朝鮮グルメ図鑑",
   "food_filter_types": [
-    { "id": "main", "label": "料理" },
-    { "id": "rice", "label": "麺・ご飯もの" },
-    { "id": "drink", "label": "ドリンク" }
+    {
+      "id": "main",
+      "label": "料理"
+    },
+    {
+      "id": "rice",
+      "label": "麺・ご飯もの"
+    },
+    {
+      "id": "drink",
+      "label": "ドリンク"
+    }
   ],
   "food_filter_cities": [
-    { "id": "pyongyang", "label": "平壌" },
-    { "id": "kaesong", "label": "開城" }
+    {
+      "id": "pyongyang",
+      "label": "平壌"
+    },
+    {
+      "id": "kaesong",
+      "label": "開城"
+    }
   ],
   "food_modal_phrase_main": "이것을 주십시오（イゴスル チュシプシオ／これをください）",
   "food_modal_phrase_sub": "맛있습니다!（マシッスムニダ！／おいしい！）",
@@ -698,7 +1203,7 @@
       "order_name_en": "Pyongyang Naengmyeon",
       "prompt_en": "Pyongyang Naengmyeon, cold buckwheat noodles in clear beef broth with pickled radish and boiled egg, brass bowl, food photography",
       "plate_color": "brass bowl",
-      "image": ""
+      "image": "素材/グルメ/平壌冷麺.webp"
     },
     {
       "num": "No.02",
@@ -712,7 +1217,7 @@
       "order_name_en": "Sinseollo",
       "prompt_en": "Sinseollo Korean royal hot pot, colorful arrangement of meat seafood and vegetables in a brass chafing dish, food photography",
       "plate_color": "brass hot pot",
-      "image": ""
+      "image": "素材/グルメ/シンソルロ.webp"
     },
     {
       "num": "No.03",
@@ -726,7 +1231,7 @@
       "order_name_en": "Taedonggang Beer",
       "prompt_en": "Taedonggang Beer, North Korean lager in a glass on a restaurant table, condensation on glass, food photography",
       "plate_color": "beer glass",
-      "image": ""
+      "image": "素材/グルメ/大同江ビール（1〜7号）.webp"
     },
     {
       "num": "No.04",
@@ -740,7 +1245,7 @@
       "order_name_en": "Eobokjaengban",
       "prompt_en": "Eobokjaengban Pyongyang banquet dish, thinly sliced beef brisket simmered with mushrooms and jujube in brass pot, food photography",
       "plate_color": "brass pot",
-      "image": ""
+      "image": "素材/グルメ/オボクジェンバン.webp"
     },
     {
       "num": "No.05",
@@ -754,7 +1259,7 @@
       "order_name_en": "Sundae",
       "prompt_en": "Korean Sundae blood sausage, sliced steamed sausage with glass noodles filling, served with salt dip, food photography",
       "plate_color": "white plate",
-      "image": ""
+      "image": "素材/グルメ/スンデ.webp"
     },
     {
       "num": "No.06",
@@ -768,7 +1273,7 @@
       "order_name_en": "Kaesong Tofu-bap",
       "prompt_en": "Kaesong tofu rice, fried tofu pockets stuffed with seasoned rice, Korean traditional dish, food photography",
       "plate_color": "white plate",
-      "image": ""
+      "image": "素材/グルメ/開城トゥブパプ（豆腐飯）.webp"
     },
     {
       "num": "No.07",
@@ -782,7 +1287,7 @@
       "order_name_en": "Dangogi-guk",
       "prompt_en": "Korean dog meat soup, dark savory stew in a clay bowl, traditional Korean restaurant setting, food photography",
       "plate_color": "clay bowl",
-      "image": ""
+      "image": "素材/グルメ/犬肉スープ（タンゴギクッ）.webp"
     },
     {
       "num": "No.08",
@@ -796,7 +1301,7 @@
       "order_name_en": "Kaesong Ginseng Liquor",
       "prompt_en": "Kaesong ginseng liquor, amber spirit in a traditional bottle and small cup, whole ginseng root beside it, food photography",
       "plate_color": "glass bottle",
-      "image": ""
+      "image": "素材/グルメ/開城人参酒.webp"
     },
     {
       "num": "No.09",
@@ -810,7 +1315,7 @@
       "order_name_en": "Kaesong Ginseng Chicken Soup",
       "prompt_en": "Kaesong ginseng chicken soup, whole chicken stuffed with glutinous rice and ginseng root in clear broth, clay pot, food photography",
       "plate_color": "clay pot",
-      "image": ""
+      "image": "素材/グルメ/開城人参鶏湯.webp"
     },
     {
       "num": "No.10",
@@ -824,7 +1329,7 @@
       "order_name_en": "Gasoline Clam BBQ (Pirogi)",
       "prompt_en": "North Korean gasoline clam BBQ, rows of clams on a concrete slab engulfed in dramatic flames, outdoor cooking demonstration, food photography",
       "plate_color": "concrete slab",
-      "image": ""
+      "image": "素材/グルメ/ハマグリのガソリン焼き（ピロギ）.webp"
     },
     {
       "num": "No.11",
@@ -838,25 +1343,67 @@
       "order_name_en": "Duck BBQ (Origogi)",
       "prompt_en": "Pyongyang duck BBQ Origogi, grilled duck meat wrapped with vegetables at a restaurant table, food photography",
       "plate_color": "grill plate",
-      "image": ""
+      "image": "素材/グルメ/オリコギ（アヒルの焼肉）.webp"
     }
   ],
   "spots_section_title": "北朝鮮観光スポット図鑑",
   "spots_filter_types": [
-    { "id": "heritage", "label": "世界遺産・史跡" },
-    { "id": "religious", "label": "記念施設" },
-    { "id": "museum", "label": "博物館" },
-    { "id": "townscape", "label": "街並み・建築" },
-    { "id": "nature", "label": "自然・景勝地" },
-    { "id": "activity", "label": "アクティビティ" }
+    {
+      "id": "heritage",
+      "label": "世界遺産・史跡"
+    },
+    {
+      "id": "religious",
+      "label": "記念施設"
+    },
+    {
+      "id": "museum",
+      "label": "博物館"
+    },
+    {
+      "id": "townscape",
+      "label": "街並み・建築"
+    },
+    {
+      "id": "nature",
+      "label": "自然・景勝地"
+    },
+    {
+      "id": "activity",
+      "label": "アクティビティ"
+    }
   ],
   "spots_filter_cities": [
-    { "id": "pyongyang", "label": "平壌", "active": false },
-    { "id": "kaesong", "label": "開城", "active": false },
-    { "id": "myohyangsan", "label": "妙香山", "active": false },
-    { "id": "kumgangsan", "label": "金剛山", "active": false },
-    { "id": "wonsan", "label": "元山・葛麻海岸", "active": false },
-    { "id": "paektusan", "label": "白頭山", "active": false }
+    {
+      "id": "pyongyang",
+      "label": "平壌",
+      "active": false
+    },
+    {
+      "id": "kaesong",
+      "label": "開城",
+      "active": false
+    },
+    {
+      "id": "myohyangsan",
+      "label": "妙香山",
+      "active": false
+    },
+    {
+      "id": "kumgangsan",
+      "label": "金剛山",
+      "active": false
+    },
+    {
+      "id": "wonsan",
+      "label": "元山・葛麻海岸",
+      "active": false
+    },
+    {
+      "id": "paektusan",
+      "label": "白頭山",
+      "active": false
+    }
   ],
   "spot_sections": [
     {
@@ -864,11 +1411,36 @@
       "city_name": "平壌",
       "city_desc": "巨大な記念碑と広場が整然と並ぶ首都。ツアーの大半の日程がこの街の見学に費やされる",
       "city_info": [
-        { "label": "アクセス", "value": "北京・瀋陽から国際便または国際列車", "link_section": "", "link_btn_index": "" },
-        { "label": "市内移動", "value": "ツアー専用バス（個人での移動手段なし）", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜5月・9〜10月", "link_section": "season", "link_btn_index": "0" },
-        { "label": "名物グルメ", "value": "平壌冷麺・大同江ビール", "link_section": "food", "link_btn_index": "0" },
-        { "label": "市内交通", "value": "ツアー専用バス・地下鉄（体験乗車のみ）", "link_section": "transport", "link_btn_index": "0" }
+        {
+          "label": "アクセス",
+          "value": "北京・瀋陽から国際便または国際列車",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内移動",
+          "value": "ツアー専用バス（個人での移動手段なし）",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜5月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "平壌冷麺・大同江ビール",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "ツアー専用バス・地下鉄（体験乗車のみ）",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
       ],
       "spots": [
         {
@@ -879,7 +1451,8 @@
           "desc": "金日成・金正日の巨大なブロンズ像が立つ、平壌観光で必ず訪れる場所。多くのツアーで献花と一礼が組み込まれ、写真は像全体が入るように撮影するのが慣例になっている。",
           "badge": "平壌観光の中心・必見",
           "prompt_en": "Mansu Hill Grand Monument Pyongyang, large bronze statues on a hilltop plaza, wide empty square, small distant figures for scale, travel illustration",
-          "type": "heritage"
+          "type": "heritage",
+          "image": "素材/観光スポット/万寿台大記念碑.webp"
         },
         {
           "must": true,
@@ -889,7 +1462,8 @@
           "desc": "大規模な軍事パレードやマスゲームの舞台として知られる、平壌中心部の巨大広場。正面には人民大学習堂がそびえ、広場に立つと街のスケール感を実感できる。",
           "badge": "パレードの舞台・必見",
           "prompt_en": "Kim Il Sung Square Pyongyang, vast empty plaza with grand study house building in the background, wide open space, travel illustration",
-          "type": "townscape"
+          "type": "townscape",
+          "image": "素材/観光スポット/金日成広場.webp"
         },
         {
           "must": true,
@@ -900,7 +1474,8 @@
           "badge": "平壌随一の展望スポット",
           "prompt_en": "Juche Tower Pyongyang, tall granite tower with red torch-shaped top beside the Taedong River, golden hour, travel illustration",
           "type": "townscape",
-          "map_url": "https://maps.google.com/?q=Juche+Tower+Pyongyang"
+          "map_url": "https://maps.google.com/?q=Juche+Tower+Pyongyang",
+          "image": "素材/観光スポット/主体思想塔（チュチェタワー）.webp"
         },
         {
           "must": false,
@@ -911,7 +1486,8 @@
           "badge": "パリより大きい凱旋門",
           "prompt_en": "Arch of Triumph Pyongyang, massive granite triumphal arch on a wide boulevard, blue sky, travel illustration",
           "type": "heritage",
-          "map_url": "https://maps.google.com/?q=Arch+of+Triumph+Pyongyang"
+          "map_url": "https://maps.google.com/?q=Arch+of+Triumph+Pyongyang",
+          "image": "素材/観光スポット/凱旋門.webp"
         },
         {
           "must": true,
@@ -922,7 +1498,8 @@
           "badge": "最重要の記念施設",
           "prompt_en": "Kumsusan Palace of the Sun Pyongyang exterior, grand white palace facade, empty ceremonial plaza, travel illustration",
           "type": "religious",
-          "no_map": true
+          "no_map": true,
+          "image": "素材/観光スポット/錦繍山太陽宮殿.webp"
         },
         {
           "must": false,
@@ -933,7 +1510,8 @@
           "badge": "駅が美術館のような地下鉄",
           "prompt_en": "Pyongyang Metro station interior, ornate chandeliers and socialist mosaic murals, deep underground platform, travel illustration",
           "type": "activity",
-          "no_map": true
+          "no_map": true,
+          "image": "素材/観光スポット/平壌地下鉄.webp"
         },
         {
           "must": false,
@@ -944,7 +1522,8 @@
           "badge": "指導者生誕の地",
           "prompt_en": "Mangyongdae Pyongyang, traditional thatched-roof Korean farmhouse on a green hillside, peaceful countryside atmosphere, travel illustration",
           "type": "heritage",
-          "map_url": "https://maps.google.com/?q=Mangyongdae+Pyongyang"
+          "map_url": "https://maps.google.com/?q=Mangyongdae+Pyongyang",
+          "image": "素材/観光スポット/万景台（金日成生家）.webp"
         },
         {
           "must": false,
@@ -955,7 +1534,8 @@
           "badge": "戦争博物館",
           "prompt_en": "Victorious Fatherland Liberation War Museum Pyongyang, monumental museum building exterior, military exhibits, travel illustration",
           "type": "museum",
-          "map_url": "https://maps.google.com/?q=Victorious+Fatherland+Liberation+War+Museum+Pyongyang"
+          "map_url": "https://maps.google.com/?q=Victorious+Fatherland+Liberation+War+Museum+Pyongyang",
+          "image": "素材/観光スポット/祖国解放戦争勝利記念館.webp"
         },
         {
           "must": true,
@@ -966,7 +1546,8 @@
           "badge": "国内最大の図書館・必見",
           "prompt_en": "Grand People's Study House Pyongyang, monumental building with traditional tiled roof overlooking Kim Il Sung Square, travel illustration",
           "type": "townscape",
-          "map_url": "https://maps.google.com/?q=Grand+People%27s+Study+House+Pyongyang"
+          "map_url": "https://maps.google.com/?q=Grand+People%27s+Study+House+Pyongyang",
+          "image": "素材/観光スポット/人民大学習堂.webp"
         },
         {
           "must": false,
@@ -977,7 +1558,8 @@
           "badge": "世界最大級のスタジアム",
           "prompt_en": "Rungrado 1st of May Stadium Pyongyang, massive stadium with ring of arches resembling a flower, aerial perspective, travel illustration",
           "type": "activity",
-          "map_url": "https://maps.google.com/?q=Rungrado+1st+of+May+Stadium+Pyongyang"
+          "map_url": "https://maps.google.com/?q=Rungrado+1st+of+May+Stadium+Pyongyang",
+          "image": "素材/観光スポット/綾羅島五一競技場.webp"
         }
       ]
     },
@@ -986,11 +1568,36 @@
       "city_name": "開城",
       "city_desc": "高麗王朝の古都であり、軍事境界線（板門店）に最も近い街。平壌からの日帰り、または1泊での定番の足の延ばし先",
       "city_info": [
-        { "label": "アクセス", "value": "平壌から専用バスで約2〜2.5時間", "link_section": "", "link_btn_index": "" },
-        { "label": "市内移動", "value": "ツアー専用バス（個人での移動手段なし）", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜5月・9〜10月", "link_section": "season", "link_btn_index": "1" },
-        { "label": "名物グルメ", "value": "シンソルロ・開城人参酒", "link_section": "food", "link_btn_index": "0" },
-        { "label": "市内交通", "value": "ツアー専用バス", "link_section": "transport", "link_btn_index": "0" }
+        {
+          "label": "アクセス",
+          "value": "平壌から専用バスで約2〜2.5時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内移動",
+          "value": "ツアー専用バス（個人での移動手段なし）",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜5月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "1"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "シンソルロ・開城人参酒",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "ツアー専用バス",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
       ],
       "spots": [
         {
@@ -1002,7 +1609,8 @@
           "badge": "南北分断の最前線・必見",
           "prompt_en": "Panmunjom DMZ Joint Security Area North Korea side, blue conference buildings on the military demarcation line, soldiers standing guard in the distance, travel illustration",
           "type": "heritage",
-          "no_map": true
+          "no_map": true,
+          "image": "素材/観光スポット/板門店（軍事境界線）.webp"
         },
         {
           "must": true,
@@ -1013,7 +1621,8 @@
           "badge": "世界遺産",
           "prompt_en": "Kaesong Koryo Museum, traditional Korean wooden academy buildings with tiled roofs, autumn foliage, travel illustration",
           "type": "museum",
-          "map_url": "https://maps.google.com/?q=Kaesong+Koryo+Museum"
+          "map_url": "https://maps.google.com/?q=Kaesong+Koryo+Museum",
+          "image": "素材/観光スポット/開城高麗博物館.webp"
         },
         {
           "must": false,
@@ -1024,7 +1633,8 @@
           "badge": "高麗王朝の史跡",
           "prompt_en": "Sonjuk Bridge Kaesong, ancient stone bridge with historic stone monument beside it, quiet historic atmosphere, travel illustration",
           "type": "heritage",
-          "map_url": "https://maps.google.com/?q=Sonjuk+Bridge+Kaesong"
+          "map_url": "https://maps.google.com/?q=Sonjuk+Bridge+Kaesong",
+          "image": "素材/観光スポット/善竹橋.webp"
         },
         {
           "must": false,
@@ -1035,7 +1645,8 @@
           "badge": "世界遺産・古都の街並み",
           "prompt_en": "Kaesong old town North Korea, traditional tile-roofed Korean houses along a quiet street, historic townscape, travel illustration",
           "type": "townscape",
-          "no_map": true
+          "no_map": true,
+          "image": "素材/観光スポット/開城旧市街.webp"
         },
         {
           "must": false,
@@ -1046,7 +1657,8 @@
           "badge": "開城を見下ろす山",
           "prompt_en": "Mount Songak Kaesong North Korea, hiking trail up a green mountain overlooking the old town, panoramic view, travel illustration",
           "type": "nature",
-          "map_url": "https://maps.google.com/?q=Mount+Songak+Kaesong"
+          "map_url": "https://maps.google.com/?q=Mount+Songak+Kaesong",
+          "image": "素材/観光スポット/松岳山.webp"
         },
         {
           "must": false,
@@ -1057,7 +1669,8 @@
           "badge": "高麗時代の古刹",
           "prompt_en": "Kwanumsa Temple Kaesong North Korea, ancient Buddhist temple with stone pagoda in a quiet mountain setting, travel illustration",
           "type": "religious",
-          "map_url": "https://maps.google.com/?q=Kwanumsa+Temple+Kaesong"
+          "map_url": "https://maps.google.com/?q=Kwanumsa+Temple+Kaesong",
+          "image": "素材/観光スポット/観音寺（クァヌムサ）.webp"
         }
       ]
     },
@@ -1066,11 +1679,36 @@
       "city_name": "妙香山",
       "city_desc": "平壌から北へ車で約2時間、日帰りツアーで必ず組み込まれる名山エリア。世界中からの贈答品を展示する巨大地下宮殿と、名刹・普賢寺が2大見どころ",
       "city_info": [
-        { "label": "アクセス", "value": "平壌から専用バスで約2時間", "link_section": "", "link_btn_index": "" },
-        { "label": "市内移動", "value": "ツアー専用バス（個人での移動手段なし）", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "4〜5月・9〜10月", "link_section": "season", "link_btn_index": "2" },
-        { "label": "名物グルメ", "value": "山菜料理", "link_section": "food", "link_btn_index": "0" },
-        { "label": "市内交通", "value": "ツアー専用バス", "link_section": "transport", "link_btn_index": "0" }
+        {
+          "label": "アクセス",
+          "value": "平壌から専用バスで約2時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内移動",
+          "value": "ツアー専用バス（個人での移動手段なし）",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "4〜5月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": "2"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "山菜料理",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "ツアー専用バス",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
       ],
       "spots": [
         {
@@ -1082,7 +1720,8 @@
           "badge": "巨大地下宮殿・必見",
           "prompt_en": "International Friendship Exhibition Myohyangsan North Korea, monumental building entrance built into mountainside, massive bronze doors, travel illustration",
           "type": "museum",
-          "map_url": "https://maps.google.com/?q=International+Friendship+Exhibition+Myohyangsan"
+          "map_url": "https://maps.google.com/?q=International+Friendship+Exhibition+Myohyangsan",
+          "image": "素材/観光スポット/国際親善展覧館.webp"
         },
         {
           "must": true,
@@ -1093,7 +1732,8 @@
           "badge": "妙香山の名刹",
           "prompt_en": "Pohyon Temple Myohyangsan North Korea, traditional Korean Buddhist temple in a forested mountain valley, autumn colors, travel illustration",
           "type": "religious",
-          "map_url": "https://maps.google.com/?q=Pohyon+Temple+Myohyangsan"
+          "map_url": "https://maps.google.com/?q=Pohyon+Temple+Myohyangsan",
+          "image": "素材/観光スポット/普賢寺（ポヒョンサ）.webp"
         }
       ]
     },
@@ -1102,11 +1742,36 @@
       "city_name": "金剛山",
       "city_desc": "朝鮮半島屈指の美しさと称される奇岩・名山。かつて韓国からの観光ツアーも受け入れていた、南北双方に知られる代表的な景勝地",
       "city_info": [
-        { "label": "アクセス", "value": "元山から専用バスで約2時間", "link_section": "", "link_btn_index": "" },
-        { "label": "市内移動", "value": "ツアー専用バス・登山道は徒歩", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "5月・9〜10月（紅葉）", "link_section": "season", "link_btn_index": "3" },
-        { "label": "名物グルメ", "value": "山菜料理", "link_section": "food", "link_btn_index": "0" },
-        { "label": "市内交通", "value": "ツアー専用バス", "link_section": "transport", "link_btn_index": "0" }
+        {
+          "label": "アクセス",
+          "value": "元山から専用バスで約2時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内移動",
+          "value": "ツアー専用バス・登山道は徒歩",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "5月・9〜10月（紅葉）",
+          "link_section": "season",
+          "link_btn_index": "3"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "山菜料理",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "ツアー専用バス",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
       ],
       "spots": [
         {
@@ -1118,7 +1783,8 @@
           "badge": "朝鮮半島屈指の景勝地・必見",
           "prompt_en": "Mount Kumgang Manmulsang North Korea, jagged granite peaks of countless shapes, autumn foliage, dramatic mountain scenery, travel illustration",
           "type": "nature",
-          "map_url": "https://maps.google.com/?q=Mount+Kumgang+North+Korea"
+          "map_url": "https://maps.google.com/?q=Mount+Kumgang+North+Korea",
+          "image": "素材/観光スポット/金剛山（万物相）.webp"
         },
         {
           "must": false,
@@ -1129,7 +1795,8 @@
           "badge": "金剛山最大の滝",
           "prompt_en": "Kuryong Falls Mount Kumgang North Korea, tall waterfall cascading down a granite cliff into a clear blue pool, travel illustration",
           "type": "nature",
-          "map_url": "https://maps.google.com/?q=Kuryong+Falls+North+Korea"
+          "map_url": "https://maps.google.com/?q=Kuryong+Falls+North+Korea",
+          "image": "素材/観光スポット/九龍淵瀑布（クリョンヨンポクポ）.webp"
         }
       ]
     },
@@ -1138,11 +1805,36 @@
       "city_name": "元山・葛麻海岸",
       "city_desc": "東海（日本海）に面した港湾都市。近年、国家的な巨大ビーチリゾート「葛麻海岸観光地区」の開発が進められている、現代の北朝鮮を象徴するエリア",
       "city_info": [
-        { "label": "アクセス", "value": "平壌から専用バスで約3〜4時間", "link_section": "", "link_btn_index": "" },
-        { "label": "市内移動", "value": "ツアー専用バス（個人での移動手段なし）", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "7〜8月（海水浴シーズン）", "link_section": "season", "link_btn_index": "4" },
-        { "label": "名物グルメ", "value": "海鮮料理", "link_section": "food", "link_btn_index": "0" },
-        { "label": "市内交通", "value": "ツアー専用バス", "link_section": "transport", "link_btn_index": "0" }
+        {
+          "label": "アクセス",
+          "value": "平壌から専用バスで約3〜4時間",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内移動",
+          "value": "ツアー専用バス（個人での移動手段なし）",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "7〜8月（海水浴シーズン）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "海鮮料理",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "ツアー専用バス",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
       ],
       "spots": [
         {
@@ -1154,7 +1846,8 @@
           "badge": "国家的リゾート開発の象徴・必見",
           "prompt_en": "Kalma Coastal Tourist Area Wonsan North Korea, wide sandy beach with resort hotels and water slides, travel illustration",
           "type": "activity",
-          "map_url": "https://maps.google.com/?q=Kalma+Coastal+Tourist+Area+Wonsan"
+          "map_url": "https://maps.google.com/?q=Kalma+Coastal+Tourist+Area+Wonsan",
+          "image": "素材/観光スポット/葛麻海岸観光地区.webp"
         },
         {
           "must": false,
@@ -1165,7 +1858,8 @@
           "badge": "地元に親しまれる松林の海岸",
           "prompt_en": "Songdowon Beach Wonsan North Korea, pine forest along a sandy beach, local families relaxing in the distance, travel illustration",
           "type": "activity",
-          "map_url": "https://maps.google.com/?q=Songdowon+Wonsan"
+          "map_url": "https://maps.google.com/?q=Songdowon+Wonsan",
+          "image": "素材/観光スポット/松涛園（ソンドウォン）.webp"
         }
       ]
     },
@@ -1174,11 +1868,36 @@
       "city_name": "白頭山",
       "city_desc": "中国との国境に位置する、朝鮮民族の「聖地」とされる活火山。山頂のカルデラ湖「天池」を目指す特別ツアーで訪れる、究極の景勝地",
       "city_info": [
-        { "label": "アクセス", "value": "平壌から国内線で三池淵空港へ約1.5時間、山頂まで専用車", "link_section": "", "link_btn_index": "" },
-        { "label": "市内移動", "value": "ツアー専用車・ロープウェイ", "link_section": "", "link_btn_index": "" },
-        { "label": "ベストシーズン", "value": "6〜9月（この期間以外は天池が見られないことも）", "link_section": "season", "link_btn_index": "5" },
-        { "label": "名物グルメ", "value": "松茸・高原の山菜料理", "link_section": "food", "link_btn_index": "0" },
-        { "label": "市内交通", "value": "ツアー専用車", "link_section": "transport", "link_btn_index": "0" }
+        {
+          "label": "アクセス",
+          "value": "平壌から国内線で三池淵空港へ約1.5時間、山頂まで専用車",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "市内移動",
+          "value": "ツアー専用車・ロープウェイ",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "6〜9月（この期間以外は天池が見られないことも）",
+          "link_section": "season",
+          "link_btn_index": "5"
+        },
+        {
+          "label": "名物グルメ",
+          "value": "松茸・高原の山菜料理",
+          "link_section": "food",
+          "link_btn_index": "0"
+        },
+        {
+          "label": "市内交通",
+          "value": "ツアー専用車",
+          "link_section": "transport",
+          "link_btn_index": "0"
+        }
       ],
       "spots": [
         {
@@ -1190,7 +1909,8 @@
           "badge": "朝鮮民族の聖地・究極の絶景",
           "prompt_en": "Lake Chon Heaven Lake Mount Paektu North Korea China border, vast caldera lake surrounded by volcanic peaks, clear summer sky, travel illustration",
           "type": "nature",
-          "map_url": "https://maps.google.com/?q=Lake+Chon+Mount+Paektu"
+          "map_url": "https://maps.google.com/?q=Lake+Chon+Mount+Paektu",
+          "image": "素材/観光スポット/天池（チョンジ）.webp"
         },
         {
           "must": false,
@@ -1201,7 +1921,8 @@
           "badge": "白頭山観光の拠点",
           "prompt_en": "Samjiyon North Korea, highland plateau with larch forest and lakes near Mount Paektu, travel illustration",
           "type": "townscape",
-          "map_url": "https://maps.google.com/?q=Samjiyon+North+Korea"
+          "map_url": "https://maps.google.com/?q=Samjiyon+North+Korea",
+          "image": "素材/観光スポット/三池淵（サムジヨン）.webp"
         }
       ]
     }
@@ -1351,19 +2072,19 @@
     {
       "title": "太陽宮殿は「服装規定」を事前に確認しておく",
       "body": "<a onclick=\"showSpot('PYO 05')\" class=\"keyword-link\">錦繍山太陽宮殿</a>は北朝鮮観光で最も厳格な見学ルールが課される施設。男性は襟付きシャツとスラックス、女性もラフな服装は不可で、半袖・ジーンズ・サンダルは入場を断られることがある。長い動く歩道を経て安置室へ向かう独特の体験は、他の施設にはない緊張感を伴う。",
-      "image": "",
+      "image": "素材/観光スポット/錦繍山太陽宮殿.webp",
       "spot_ref": "PYO 05"
     },
     {
       "title": "板門店は「北朝鮮側だけの視点」で見られる",
       "body": "<a onclick=\"showSpot('KAE 01')\" class=\"keyword-link\">板門店</a>は韓国側からのツアーでも訪れられる有名スポットだが、北朝鮮側から見学すると青い建物の向きも兵士の配置も逆になり、韓国側とは全く異なる緊張感を味わえる。写真撮影は係員の指示に従うことが絶対条件で、無許可での撮影は厳禁。",
-      "image": "",
+      "image": "素材/観光スポット/板門店（軍事境界線）.webp",
       "spot_ref": "KAE 01"
     },
     {
       "title": "平壌冷麺は「酢とからし」を自分で調整する",
       "body": "<a onclick=\"showFood('No.01')\" class=\"keyword-link\">平壌冷麺</a>は運ばれてきた時点では味が薄めに仕上げてあり、テーブルの酢とからしを自分で加えて好みの酸味・辛味に整えるのが正式な食べ方。2018年の南北首脳会談の晩餐に登場したことで一気に世界的な知名度を得た、北朝鮮観光で外せない一皿。",
-      "image": "",
+      "image": "素材/グルメ/平壌冷麺.webp",
       "food_ref": "No.01"
     }
   ]
