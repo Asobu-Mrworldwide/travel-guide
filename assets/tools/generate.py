@@ -461,6 +461,21 @@ def generate(country_id):
         print(f'  💾 JSON更新: {os.path.basename(json_path)}')
     # ────────────────────────────────────────────────────────────
 
+    # 基本情報タブ（overview.*）と旅の準備タブ（practical.prac_cards）で内容が重複する
+    # 「ビザ」「通貨」「時差」は、overview側を正としてprac_cards側を上書きする
+    # （JSONの二重入力・表記ゆれを防ぐ。表示時のみの変換でJSON自体は書き換えない）
+    overview = data.get('overview', {})
+    prac_cards = data.get('practical', {}).get('prac_cards', [])
+    _prac_sync = {
+        'ビザ': overview.get('visa', ''),
+        '時差': overview.get('timezone', ''),
+        '通貨': f"{overview.get('currency_name', '')}　{overview.get('currency_rate', '')}".strip('　'),
+    }
+    for card in prac_cards:
+        synced = _prac_sync.get(card.get('title'))
+        if synced:
+            card['value'] = synced
+
     # カード系の説明が長い場合、最初の句点までを本文、それ以降を小さな補足テキストとして
     # 下に配置する（JSONは書き換えず表示時のみ変換）
     def _split_long_value(val, sub_class):
@@ -472,10 +487,9 @@ def generate(country_id):
             return f'{head}<span class="{sub_class}">{rest}</span>'
         return val
 
-    for card in data.get('practical', {}).get('prac_cards', []):
+    for card in prac_cards:
         card['value'] = _split_long_value(card.get('value', ''), 'p-val-sub')
 
-    overview = data.get('overview', {})
     if overview.get('visa'):
         overview['visa'] = _split_long_value(overview['visa'], 'qs-val-sub')
     # ────────────────────────────────────────────────────────────
