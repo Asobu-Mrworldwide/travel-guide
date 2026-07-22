@@ -466,10 +466,12 @@ def generate(country_id):
     # （JSONの二重入力・表記ゆれを防ぐ。表示時のみの変換でJSON自体は書き換えない）
     overview = data.get('overview', {})
     prac_cards = data.get('practical', {}).get('prac_cards', [])
+    _currency_name = overview.get('currency_name', '')
+    _currency_rate = overview.get('currency_rate', '')
     _prac_sync = {
         'ビザ': overview.get('visa', ''),
         '時差': overview.get('timezone', ''),
-        '通貨': f"{overview.get('currency_name', '')}　{overview.get('currency_rate', '')}".strip('　'),
+        '通貨': f'{_currency_name}<span class="p-val-sub">{_currency_rate}</span>' if _currency_name and _currency_rate else (_currency_name or _currency_rate),
     }
     for card in prac_cards:
         synced = _prac_sync.get(card.get('title'))
@@ -495,7 +497,7 @@ def generate(country_id):
         if '<' in val or '。' not in val:
             return val
         idx = val.find('。')
-        head, rest = val[:idx + 1], val[idx + 1:]
+        head, rest = val[:idx], val[idx + 1:]
         if len(rest) >= 4:
             return f'{head}<span class="{sub_class}">{rest}</span>'
         return val

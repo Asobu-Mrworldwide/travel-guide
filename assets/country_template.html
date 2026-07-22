@@ -126,6 +126,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </nav>
 {% endif %}
 
+{% if show.basic %}
 {{custom_before_hero}}
 <div class="hero">
   <div class="hero-card">
@@ -137,6 +138,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   {{custom_inside_hero}}
 </div>
 {{custom_after_hero}}
+{% endif %}
 
 {% if needs_gmaps %}
 <script>window.initMap = window.initMap || function(){};</script>
@@ -553,13 +555,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <!-- 旅の準備 -->
 {% if show.practical %}<section id="practical" class="{{sec_active.practical}}">
 
+  <h2>準備は早めに</h2>
+
   <div class="prac-grid">
     {% for card in practical.prac_cards %}
     <div class="prac-card"><div class="p-ico">{{icon:card.icon}}</div><div class="p-title">{{card.title}}</div><div class="p-val">{{card.value}}</div></div>
     {% endfor %}
   </div>
 
-  <h2>準備は早めに</h2>
   <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
     <div style="padding-top:8px">
