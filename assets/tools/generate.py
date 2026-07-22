@@ -507,6 +507,8 @@ def generate(country_id):
 
     if overview.get('visa'):
         overview['visa'] = _split_long_value(overview['visa'], 'qs-val-sub')
+    if overview.get('timezone'):
+        overview['timezone'] = _split_long_value(overview['timezone'], 'qs-val-sub')
     # ────────────────────────────────────────────────────────────
 
     # トランジット行の所要時間表示: 「区間（手段・時間）」の（の前で改行して2行にする

@@ -1,16 +1,548 @@
-germany/germany.json: 日本 −8時間（サマータイム時は−7時間）
-italy/italy.json: 日本 −8時間（サマータイム時は−7時間）
-korea/korea.json: 時差なし
-laos/laos.json: 日本 −2時間
-malaysia/malaysia.json: 日本 −1時間
-newzealand/newzealand.json: 日本+3時間（サマータイム時+4時間）
-north_korea/north_korea.json: 時差なし
-philippines/philippines.json: 日本 −1時間
-singapore/singapore.json: 日本 −1時間
-south_africa/south_africa.json: 日本 −7時間
-spain/spain.json: 日本 −8時間（サマータイム時は−7時間）
-srilanka/srilanka.json: 日本 −3時間30分
-taiwan/taiwan.json: 日本 −1時間
-thailand/thailand.json: 日本 −2時間
-uzbekistan/uzbekistan.json: 日本 −4時間
-vietnam/vietnam.json: 日本 −2時間
+=== germany/germany.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#000000",
+    "border_color": "#000000",
+    "bar_color": "linear-gradient(to bottom,#000000,#333333)",
+    "desc_html": "シェンゲン圏出国予定日から3ヶ月以上の残存有効期間が必要。余裕を持って確認・更新しておこう。"
+  },
+  {
+    "title": "ETIAS（渡航認証）の申請",
+    "timing": "出発前まで",
+    "timing_color": "#cc0001",
+    "border_color": "#cc0001",
+    "bar_color": "linear-gradient(to bottom,#cc0001,#b09000)",
+    "desc_html": "シェンゲン協定加盟国への渡航には電子渡航認証ETIASの事前登録が必要（導入時期は随時更新）。公式サイト以外の代行サイトでの高額請求に注意。"
+  },
+  {
+    "title": "海外対応クレジットカードの申込",
+    "timing": "1ヶ月前",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "小規模店や屋台では現金しか使えない場面もあるため、多めの現金とカードを併用する前提で準備しておく。"
+  },
+  {
+    "title": "航空券・鉄道チケットの予約",
+    "timing": "早いほど安い",
+    "timing_color": "#ffce00",
+    "border_color": "#ffce00",
+    "bar_color": "linear-gradient(to bottom,#ffce00,#cc5500)",
+    "desc_html": "ドイツ鉄道（DB）の早期予約割引Sparpreisは数ヶ月前から発売されるため、都市間移動が決まったら早めに押さえたい。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "クレジットカード付帯保険の補償内容を確認し、不足があれば追加加入を検討しよう。"
+  }
+]
+=== laos/laos.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#006847",
+    "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+    "desc_html": "入国時点で<strong>6ヶ月以上</strong>の残存有効期間が必要。査証スタンプ用の空白ページも確認しておこう。"
+  },
+  {
+    "title": "ビザ免除期間の確認",
+    "timing": "出発前",
+    "timing_color": "#1a8a5a",
+    "border_color": "#1a8a5a",
+    "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+    "desc_html": "2025年6月から日本人の観光ビザ免除期間が15日→<strong>30日</strong>に延長された。30日を超える滞在にはビザ取得が必要なので、日程が長い場合は要確認。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "2〜3ヶ月前",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "直行便がなくバンコク・ハノイ経由が中心。乗継時間に余裕を持たせ、国内移動ルートに合わせてホテルを点在させると効率的。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "クレカ付帯保険で代用できる場合もあるが、チュービングなどのアクティビティ補償範囲は要確認。"
+  },
+  {
+    "title": "SIM・eSIMの準備",
+    "timing": "1週間前",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "eSIMなら到着後すぐ使えて便利。山間部（シェンクワン方面）は電波が不安定なエリアもあるので過信は禁物。"
+  }
+]
+=== newzealand/newzealand.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#00247d",
+    "border_color": "#00247d",
+    "bar_color": "linear-gradient(to bottom,#00247d,#1a6fd9)",
+    "desc_html": "出国予定日から3ヶ月以上の残存有効期間を確認しておく。"
+  },
+  {
+    "title": "NZeTAの申請",
+    "timing": "出発72時間前まで",
+    "timing_color": "#cc142b",
+    "border_color": "#cc142b",
+    "bar_color": "linear-gradient(to bottom,#cc142b,#b09000)",
+    "desc_html": "公式アプリ・サイトから電子渡航許可NZeTAを申請し、国際観光・保全税（IVL）も併せて支払う。出発直前だと承認が間に合わないこともあるため余裕を持って手続きしたい。"
+  },
+  {
+    "title": "海外対応クレジットカードの申込",
+    "timing": "1ヶ月前",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "現地はカード決済がほぼ全ての場面で使えるため、タッチ決済対応カードがあると特に便利。"
+  },
+  {
+    "title": "航空券・ホテル・レンタカーの予約",
+    "timing": "早いほど安い",
+    "timing_color": "#ffce00",
+    "border_color": "#ffce00",
+    "bar_color": "linear-gradient(to bottom,#ffce00,#cc5500)",
+    "desc_html": "南半球の夏（12〜2月）は現地の繁忙期でもあるため、宿泊・レンタカーとも早めの予約が安心。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "アドベンチャースポーツに参加する場合は、対象アクティビティが補償範囲に含まれるか必ず確認しておこう。"
+  }
+]
+=== philippines/philippines.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#0038a8",
+    "border_color": "#0038a8",
+    "bar_color": "linear-gradient(to bottom,#0038a8,#2d5aa8)",
+    "desc_html": "残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。帰国便の予約確認書の提示を求められることもある。"
+  },
+  {
+    "title": "海外対応クレジットカードの申込",
+    "timing": "1ヶ月前",
+    "timing_color": "#0038a8",
+    "border_color": "#2d5aa8",
+    "bar_color": "linear-gradient(to bottom,#2d5aa8,#b09000)",
+    "desc_html": "審査・発行に2〜3週間かかることがある。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "早いほど安い",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "クリスマス〜正月・ホーリーウィーク（4月頃）は現地の人も移動が集中し、早期に満席・高騰する。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "クレカ付帯保険で代用できる場合もある。ダイビングやアイランドホッピングでのケガ・水難事故は補償対象か事前に確認を。"
+  },
+  {
+    "title": "SIM・ポケットWi-Fiの準備",
+    "timing": "1〜2週間前",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "eSIMならアプリから前日でも購入・設定ができる。離島は電波が弱いエリアもあるため過信は禁物。"
+  }
+]
+=== singapore/singapore.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#006847",
+    "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+    "desc_html": "残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。シンガポール出国用（復路）の航空券所持も入国条件なので、片道発券には注意。"
+  },
+  {
+    "title": "タッチ決済対応クレジットカードの準備",
+    "timing": "1ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#1a8a5a",
+    "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+    "desc_html": "シンガポールは世界屈指のキャッシュレス社会。<strong>タッチ決済対応のVisa/MastercardならMRT・バスにもそのまま乗れる</strong>（SimplyGo）。Wiseカードもタッチ決済・ATM引き出しに対応していて便利。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "2〜4ヶ月前",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "ホテル代が高い国なので、宿の早期確保が予算を左右する。<strong>9月中旬〜10月上旬のF1開催週はホテルが数倍に高騰</strong>するため、日程を選べるなら外すのが賢明。"
+  },
+  {
+    "title": "SG Arrival Card（電子入国カード）の登録",
+    "timing": "到着3日前から",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "全入国者に<strong>オンライン登録が必須</strong>。到着日を含む3日前からICA公式サイトまたはMyICAアプリで無料登録できる。承認メールが届いたら保存しておこう。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "医療費が非常に高い国なので保険は必須級。クレカ付帯で済ませる場合は補償額と利用条件（利用付帯か自動付帯か）を必ず確認。"
+  },
+  {
+    "title": "SIM・eSIMの準備",
+    "timing": "1週間前",
+    "timing_color": "#cc0001",
+    "border_color": "#cc0001",
+    "bar_color": "",
+    "desc_html": "eSIMなら出発前に設定まで完了できて到着後すぐ使える。物理SIM派はチャンギ空港の到着ロビーでツーリストSIMを購入可能。"
+  }
+]
+=== south_africa/south_africa.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#006847",
+    "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+    "desc_html": "申請から受領まで数週間かかる場合あり。残存有効期間は<strong>南アフリカ出国時に30日以上</strong>必要（余裕を持って6ヶ月以上あると安心）。査証スタンプ用の未使用ページも<strong>2ページ以上</strong>用意しておこう。"
+  },
+  {
+    "title": "海外対応クレジットカードの申込",
+    "timing": "1ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#1a8a5a",
+    "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+    "desc_html": "審査・発行に2〜3週間かかることがある。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。南アフリカではカード払いが広く普及。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "3〜6ヶ月前",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "直行便がなく乗り継ぎルートが複数あるため、早めに比較検討を。カタール航空・エミレーツ航空・シンガポール航空が人気。サファリロッジは早期予約で希望の部屋が取りやすい。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "クレカ付帯保険で代用できる場合もあるが補償範囲を要確認。野生動物・アクティビティ関連の事故もカバーできるプランを選ぼう。"
+  },
+  {
+    "title": "SIM・ポケットWi-Fiの準備",
+    "timing": "1〜2週間前",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "現地空港でVodacom・MTNのSIMが購入可能。eSIMを出発前に準備しておくと到着後すぐ使えて安心。国立公園内は電波が届かないエリアも多い。"
+  },
+  {
+    "title": "外務省 安全情報の確認",
+    "timing": "出発前",
+    "timing_color": "#cc0001",
+    "border_color": "#cc0001",
+    "bar_color": "",
+    "desc_html": "ヨハネスブルクなど一部エリアの危険度を確認。外務省「たびレジ」への登録もおすすめ。緊急連絡先（在南アフリカ日本大使館）をスマホに保存しておこう。"
+  }
+]
+=== spain/spain.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#c60b1e",
+    "border_color": "#c60b1e",
+    "bar_color": "linear-gradient(to bottom,#c60b1e,#ffc400)",
+    "desc_html": "シェンゲン圏出国時点で<strong>3ヶ月以上</strong>の残存有効期間が必要。査証スタンプ用の空白ページも確認しておこう。"
+  },
+  {
+    "title": "海外対応クレジットカードの申込",
+    "timing": "1ヶ月前",
+    "timing_color": "#c60b1e",
+    "border_color": "#ffc400",
+    "bar_color": "linear-gradient(to bottom,#ffc400,#b09000)",
+    "desc_html": "スペインはカード社会でほぼどこでも使える。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "早いほど安い",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "夏休み・クリスマスシーズンは早期に満席・高騰する。AVE（高速鉄道）のチケットも早期予約で価格が大きく変わる。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "クレカ付帯保険で代用できる場合もある。スリ・置き引きの被害が多いエリアなので携行品補償の内容を確認しておきたい。"
+  },
+  {
+    "title": "SIM・ポケットWi-Fiの準備",
+    "timing": "1〜2週間前",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "eSIMならアプリから前日でも購入・設定ができる。EU圏内をまとめて周遊するならEU全域対応のプランが便利。"
+  }
+]
+=== srilanka/srilanka.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#006847",
+    "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+    "desc_html": "入国時点で<strong>6ヶ月以上</strong>の残存有効期間が必要。査証スタンプ用の空白ページも確認しておこう。"
+  },
+  {
+    "title": "ETA（電子渡航認証）の申請",
+    "timing": "2〜3週間前",
+    "timing_color": "#1a8a5a",
+    "border_color": "#1a8a5a",
+    "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+    "desc_html": "公式サイトで事前オンライン申請が必須。<strong>観光目的30日以内は手数料無料</strong>（2026年5月〜対象国拡大）だが、申請自体は必ず必要。無申請での搭乗は拒否されるので要注意。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "2〜3ヶ月前",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "成田直行便は週4便のみで席数が限られる。日程が決まったら早めに確保を。国内の移動ルートに合わせてホテルを点在させると効率的。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "クレカ付帯保険で代用できる場合もあるが、野生動物サファリなどのアクティビティ補償範囲は要確認。"
+  },
+  {
+    "title": "SIM・eSIMの準備",
+    "timing": "1週間前",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "eSIMなら到着後すぐ使えて便利。山間部（エラ・ヌワラエリヤ方面）は電波が不安定なエリアもあるので過信は禁物。"
+  }
+]
+=== taiwan/taiwan.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#006847",
+    "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+    "desc_html": "台湾入国に必要な残存有効期間は<strong>滞在予定日数以上</strong>と緩めだが、航空会社によっては6ヶ月以上を求められる場合もあるため余裕を持っておくと安心。"
+  },
+  {
+    "title": "海外対応クレジットカードの申込",
+    "timing": "1ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#1a8a5a",
+    "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+    "desc_html": "審査・発行に2〜3週間かかることがある。両替レートが良くATM引き出しにも対応している<a href=\"#\" data-affiliate=\"wise\" data-affiliate-label=\"Wiseカード\" data-affiliate-class=\"inline-affiliate-link\"></a>があると夜市用の現金調達もスムーズ。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "1〜3ヶ月前",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "LCCのセールを狙えば往復2万円台も。台北のホテルは週末・連休に値上がりしやすいので、日程が決まったら早めに確保を。"
+  },
+  {
+    "title": "オンライン入国カード（TWAC）の登録",
+    "timing": "到着7日前から",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "2025年10月から紙の入国カードは廃止され、<strong>オンライン登録が必須</strong>に。公式サイトで無料登録できる（到着日を含む7日前から）。登録し忘れると入国審査場で慌てることになるので要注意。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "クレカ付帯保険で代用できる場合も多いが、補償範囲と利用条件（利用付帯か自動付帯か）は事前に確認しておこう。"
+  },
+  {
+    "title": "SIM・eSIMの準備",
+    "timing": "1週間前",
+    "timing_color": "#cc0001",
+    "border_color": "#cc0001",
+    "bar_color": "",
+    "desc_html": "eSIMなら出発前に購入・設定まで完了できて到着後すぐ使える。物理SIM派は桃園空港の中華電信カウンターで購入可能（日本語メニューあり）。"
+  }
+]
+=== thailand/thailand.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#006847",
+    "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+    "desc_html": "申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。査証スタンプ用の空白ページも<strong>2ページ以上</strong>必要。"
+  },
+  {
+    "title": "海外対応クレジットカードの申込",
+    "timing": "1ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#1a8a5a",
+    "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+    "desc_html": "審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "早いほど安い",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。ホテルはこだわらなければ前日予約も可能。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "クレカ付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。"
+  },
+  {
+    "title": "SIM・ポケットWi-Fiの準備",
+    "timing": "1〜2週間前",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "eSIMならアプリから前日でも購入・設定ができる。現地ではスワンナプーム空港・コンビニ（セブンイレブン）でSIMカード購入も可能。"
+  }
+]
+=== uzbekistan/uzbekistan.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "2〜3ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#006847",
+    "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+    "desc_html": "申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "早いほど安い",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "ウズベキスタン航空の直行便は便数が少なく早期完売しやすい。2〜3ヶ月前が狙い目。ホテルは古都内のブティックホテルが人気のため早めに確保を。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "クレジットカード付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。"
+  },
+  {
+    "title": "SIM・eSIMの準備",
+    "timing": "1〜2週間前",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "eSIMなら出発前に購入・設定ができてスムーズ。現地SIMはタシュケント空港でも購入可能。Ucell・UMSが広域対応。"
+  },
+  {
+    "title": "現地通貨・両替の確認",
+    "timing": "出発1週間前",
+    "timing_color": "#cc0001",
+    "border_color": "#cc0001",
+    "bar_color": "",
+    "desc_html": "タシュケント空港や市内の両替所ではUSDまたはEURからの両替が最も有利。日本円でも両替できる場所はあるが、USD準備があると安心。"
+  }
+]
+=== malaysia/malaysia.json ===
+[
+  {
+    "title": "パスポート取得・更新",
+    "timing": "1〜2ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#006847",
+    "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+    "desc_html": "申請から受領まで数週間かかる場合あり。残存有効期間は入国時点で<strong>6ヶ月以上</strong>必要。査証スタンプ用の空白ページも<strong>2ページ以上</strong>必要。"
+  },
+  {
+    "title": "海外対応クレジットカードの申込",
+    "timing": "1ヶ月前",
+    "timing_color": "#006847",
+    "border_color": "#1a8a5a",
+    "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+    "desc_html": "審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。"
+  },
+  {
+    "title": "航空券・ホテルの予約",
+    "timing": "早いほど安い",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "#b09000",
+    "desc_html": "特にGW・年末年始は早期に満席・高騰する。2〜3ヶ月前が狙い目。ホテルはこだわらなければ前日予約も可能。"
+  },
+  {
+    "title": "海外旅行保険の加入",
+    "timing": "出発前日まで",
+    "timing_color": "#b09000",
+    "border_color": "#b09000",
+    "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+    "desc_html": "クレカ付帯保険で代用できる場合もある。補償範囲を事前に確認しておくこと。"
+  },
+  {
+    "title": "SIM・ポケットWi-Fiの予約",
+    "timing": "1〜2週間前",
+    "timing_color": "#cc5500",
+    "border_color": "#cc5500",
+    "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
+    "desc_html": "trifaのeSIMならアプリから前日でも購入・設定ができるので焦らなくてOK。現地SIMを購入するのであれば出発前に比較して選んでおくと当日がスムーズ。"
+  },
+  {
+    "title": "MDAC（デジタル入国カード）登録",
+    "timing": "入国3日前〜",
+    "timing_color": "#cc0001",
+    "border_color": "#cc0001",
+    "bar_color": "",
+    "desc_html": "マレーシア入国前にオンライン登録が必要。子供も対象。無料。"
+  }
+]
