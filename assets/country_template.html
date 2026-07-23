@@ -625,9 +625,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <span style="font-size:1.4em;flex-shrink:0;width:28px;text-align:center">{{icon:app.icon}}</span>
       <div style="flex:1">
         <div style="font-size:0.84em;font-weight:700">{{app.name}}</div>
-        <div style="font-size:0.75em;color:var(--green);font-weight:600;margin-top:1px">{{app.type_label}}</div>
         <div style="font-size:0.75em;color:var(--sub);margin-top:4px;line-height:1.6">{{app.desc}}</div>
-        {% if app.affiliate %}<span data-affiliate="{{app.affiliate}}"></span>{% endif %}
+        {% if app.affiliate %}<span data-affiliate="{{app.affiliate}}"></span>{% else %}{% if app.official_url %}<a href="{{app.official_url}}" target="_blank" rel="noopener" class="budget-link" style="margin-top:4px">公式サイトを見る →</a>{% endif %}{% endif %}
       </div>
     </div>
     {% endfor %}

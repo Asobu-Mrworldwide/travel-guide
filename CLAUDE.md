@@ -200,6 +200,14 @@
 
 該当する入国関連の特筆事項がない国は、無理に埋めず空欄のままでよい（2026-07時点でドイツ・イタリア・韓国・ラオス・マレーシア・シンガポール・南アフリカ・スペイン・スリランカ・台湾・ウズベキスタン・北朝鮮の12か国に記載、NZ・フィリピン・タイ・ベトナムの4か国は空欄）。
 
+## `practical.tour_platform`は文章ではなく`affiliates-data.js`の`AFFILIATE_CARDS`キーのみ
+
+`practical.tour_platform`は自由記述の説明文ではなく、`assets/affiliates-data.js`の`AFFILIATE_CARDS`オブジェクトに定義済みのキー名（`klook`・`getyourguide`等）を**そのまま**入れる。テンプレート側（`{% if practical.tour_platform %}<div class="s-card" data-affiliate-card="{{practical.tour_platform}}" ...></div>{% endif %}`）は`data-affiliate-card`属性の値をキーとして`affiliates.js`が検索し、一致すればカードのHTML（アイコン・見出し・説明・ボタン）を丸ごと生成する仕組みなので、キーと一致しない文字列（説明文そのもの等）を入れると空の緑色の`<div class="s-card">`だけが残り、中身が描画されない（2026-07にドイツ・ニュージーランド・北朝鮮でこの状態になっているのが発覚）。
+
+- 該当するツアー予約サービスがある国は`"klook"`または`"getyourguide"`のみを入れる（本文で「Klook・GetYourGuideで事前予約」のように2社を併記したい場合でも、キーは1つしか渡せないので主要な1社に絞る）。
+- 該当なし・空欄にしたい場合は`""`（空文字）にする——`{% if %}`がfalseになりカード自体が非表示になる（イタリアはこのパターン）。
+- 北朝鮮のように「そもそも一般的な旅行予約プラットフォームが使えない」特殊事情がある国は、その説明を`tour_platform`に書かず、`spot_sections`の該当スポット説明や`hotel_tip`など別の場所に書く（North Koreaは既に別箇所で同内容が説明されているため空文字でよい）。
+
 ## `practical.country_items` / `country_items_label`（持ち物・アプリ準備タブの左カード）は空欄にしない
 
 `practical.country_items_label`と`practical.country_items[]`は「持ち物・アプリ準備」セクション左側のカードに表示される、**その国特有の持ち物リスト**。右側の「一般的な持ち物」カード（`common/checklist.html`への固定リンク）と対になっており、左側が空だとカード自体が空白のまま表示されてしまう（2026-07にNZページで発覚）。新しい国を作る際は必ず埋めること。
