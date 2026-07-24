@@ -1025,10 +1025,34 @@
         "type_label": "メッセージ・現地連絡",
         "desc": "ゲストハウスやドライバーとの連絡はWhatsApp経由が多い。事前にダウンロードしておくと安心。",
         "affiliate": "whatsapp",
+        "is_last": false
+      },
+      {
+        "icon": "viator",
+        "name": "Viator（ビアター）",
+        "type_label": "現地ツアー・チケット事前予約",
+        "desc": "ルアンパバーンの托鉢体験ツアーやクアンシーの滝観光など、現地オプショナルツアーを事前予約できる。",
+        "affiliate": "viator",
+        "is_last": false
+      },
+      {
+        "icon": "klook",
+        "name": "Klook（クルック）",
+        "type_label": "現地ツアー・チケット事前予約",
+        "desc": "ルアンパバーン近郊のツアーや空港送迎などを事前予約できる。東南アジア圏の掲載数が豊富。",
+        "affiliate": "klook",
+        "is_last": false
+      },
+      {
+        "icon": "getyourguide",
+        "name": "GetYourGuide（ゲットユアガイド）",
+        "type_label": "現地ツアー・チケット事前予約",
+        "desc": "ヴィエンチャン市内観光やメコン川クルーズなど、ガイド付きツアーを日本語で事前予約できる。",
+        "affiliate": "getyourguide",
         "is_last": true
       }
     ],
-    "tour_platform": "getyourguide",
+    "tour_platforms": ["klook", "getyourguide"],
     "country_items_label": "<span style=\"display:inline-flex;align-items:center;gap:6px;vertical-align:middle\"><span style=\"display:inline-block;line-height:0;border:1px solid #ddd;border-radius:2px;overflow:hidden;flex-shrink:0\"><svg width=\"17\" height=\"11\" viewBox=\"0 0 6 4\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#ce1126\" d=\"M0 0h6v4H0z\"/><path fill=\"#002868\" d=\"M0 1h6v2H0z\"/><circle fill=\"#fff\" cx=\"3\" cy=\"2\" r=\".8\"/></svg></span>ラオス特有の持ち物</span>",
     "country_items": [
       "変換アダプター（A/Cタイプ）",

@@ -200,13 +200,36 @@
 
 該当する入国関連の特筆事項がない国は、無理に埋めず空欄のままでよい（2026-07時点でドイツ・イタリア・韓国・ラオス・マレーシア・シンガポール・南アフリカ・スペイン・スリランカ・台湾・ウズベキスタン・北朝鮮の12か国に記載、NZ・フィリピン・タイ・ベトナムの4か国は空欄）。
 
-## `practical.tour_platform`は文章ではなく`affiliates-data.js`の`AFFILIATE_CARDS`キーのみ
+## `practical.tour_platforms`は文章ではなく`affiliates-data.js`の`AFFILIATE_CARDS`キーの配列
 
-`practical.tour_platform`は自由記述の説明文ではなく、`assets/affiliates-data.js`の`AFFILIATE_CARDS`オブジェクトに定義済みのキー名（`klook`・`getyourguide`等）を**そのまま**入れる。テンプレート側（`{% if practical.tour_platform %}<div class="s-card" data-affiliate-card="{{practical.tour_platform}}" ...></div>{% endif %}`）は`data-affiliate-card`属性の値をキーとして`affiliates.js`が検索し、一致すればカードのHTML（アイコン・見出し・説明・ボタン）を丸ごと生成する仕組みなので、キーと一致しない文字列（説明文そのもの等）を入れると空の緑色の`<div class="s-card">`だけが残り、中身が描画されない（2026-07にドイツ・ニュージーランド・北朝鮮でこの状態になっているのが発覚）。
+`practical.tour_platforms`（配列、2026-07に`tour_platform`単数文字列から改名）は自由記述の説明文ではなく、`assets/affiliates-data.js`の`AFFILIATE_CARDS`オブジェクトに定義済みのキー名（`klook`・`getyourguide`・`viator`等）を**そのまま**配列で入れる。テンプレート側（`{% for platform in practical.tour_platforms %}<div class="s-card" data-affiliate-card="{{platform}}" ...></div>{% endfor %}`）は各要素を`data-affiliate-card`属性の値としてキー検索し、一致すればカードのHTML（アイコン・見出し・説明・ボタン）を丸ごと生成する仕組みなので、キーと一致しない文字列（説明文そのもの等）を入れると空の緑色の`<div class="s-card">`だけが残り、中身が描画されない（2026-07にドイツ・ニュージーランド・北朝鮮でこの状態になっているのが発覚）。
 
-- 該当するツアー予約サービスがある国は`"klook"`または`"getyourguide"`のみを入れる（本文で「Klook・GetYourGuideで事前予約」のように2社を併記したい場合でも、キーは1つしか渡せないので主要な1社に絞る）。
-- 該当なし・空欄にしたい場合は`""`（空文字）にする——`{% if %}`がfalseになりカード自体が非表示になる（イタリアはこのパターン）。
-- 北朝鮮のように「そもそも一般的な旅行予約プラットフォームが使えない」特殊事情がある国は、その説明を`tour_platform`に書かず、`spot_sections`の該当スポット説明や`hotel_tip`など別の場所に書く（North Koreaは既に別箇所で同内容が説明されているため空文字でよい）。
+- 該当するツアー予約サービスが1社なら`["klook"]`のように1要素の配列にする。**地域的に妥当なら2社併記してよい**（2026-07制定。以前は「主要な1社に絞る」としていたが、方針転換）。実績: NZ`["viator", "klook"]`、ラオス`["klook", "getyourguide"]`、スリランカ`["getyourguide", "klook"]`——どちらか1社の地域適性が曖昧な国で2枚目を追加している。地域適性が明確な国（台湾・タイ等→`klook`のみ、ドイツ・イタリア・スペイン等→`getyourguide`のみ）まで無理に2社化する必要はない。
+- 該当なし・空欄にしたい場合は`[]`（空配列）にする——`{% for %}`が何も出力せずカード自体が非表示になる（北朝鮮はこのパターン）。
+- 北朝鮮のように「そもそも一般的な旅行予約プラットフォームが使えない」特殊事情がある国は、その説明を`tour_platforms`に書かず、`spot_sections`の該当スポット説明や`hotel_tip`など別の場所に書く（North Koreaは既に別箇所で同内容が説明されているため空配列でよい）。
+
+### 3社の選び方の基準（2026-07制定・ユーザー提供の基準に準拠）
+
+規模ランキング: **1位 Viator**（Tripadvisor傘下、世界最大のツアー・アクティビティ専門サイト。圧倒的な商品数と世界中へのネットワーク）／**2位 GetYourGuide**（欧州発祥、世界最大級プラットフォーム。欧米市場で絶大なシェア）／**3位 Klook**（アジア発祥、最も急成長中。アジア圏での取扱高・知名度はトップクラス）。
+
+| サービス | 得意なエリア・客層 | 主な特徴 |
+|---|---|---|
+| **Viator** | 北米・ハワイ・グローバル | Tripadvisorと連動し口コミ・露出量が桁違い。欧米豪からの観光客が中心で英語ツアーが非常に充実。老舗ならではの信頼感 |
+| **GetYourGuide** | ヨーロッパ・アメリカ | ドイツ（ベルリン）発祥で欧州の美術館・歴史ツアーに最適。独自のプレミアムな体験ツアーを多く取り扱う。アプリのUXが高評価 |
+| **Klook** | アジア全域（東南アジア・東アジア） | 香港発祥で鉄道チケット・テーマパークなどの割引が強力。キャンペーン・ポイント還元が多くコスパが高い。日本語サポートが最も親切 |
+
+**選び方**: ハワイ・アメリカ・ヨーロッパへ行くなら、掲載数が多く王道ツアーが見つかる**Viator**か**GetYourGuide**がおすすめ。韓国・台湾・東南アジアへ行くなら、割引率が高く入場券なども買いやすい**Klook**を選ぶとお得。新しい国を作る・見直す際は、この基準表に沿って`tour_platforms`を決めること。地域的にどちらとも判断がつく場合はニュージーランドのように2社併記してよい。
+
+## `practical.apps[]`は`tour_platforms`の各サービスを必ずアプリ枠としても掲載する
+
+`practical.tour_platforms`（旅の準備タブの大きな説明カード）に載せたサービスは、`practical.apps[]`（「事前にDLすべきアプリ」セクション）にも対応するアプリ枠を必ず追加する。片方にしか登場しないと導線が片手落ちになる（2026-07にドイツ・イタリア・韓国・ラオス・NZ・スリランカの計6か国で、カードはあるのにアプリ枠が無い状態が発覚し、全て追加済み）。
+
+- `icon`は`"klook"`/`"getyourguide"`/`"viator"`のいずれか（`素材/絵文字/{key}.svg`を自動解決、`assets/tools/generate.py`の`_load_icon()`と同じ仕組み）。
+- `name`は`"Klook（クルック）"`/`"GetYourGuide（ゲットユアガイド）"`/`"Viator（ビアター）"`の型で統一。
+- `affiliate`は同じキー（`"klook"`等）を入れる——`{% if app.affiliate %}<span data-affiliate="{{app.affiliate}}"></span>{% endif %}`でテキストリンクが自動描画される。
+- `desc`はその国の代表的な観光地・ツアー内容に触れた1文にする（他アプリの`desc`と同じトーン）。
+- `tour_platforms`に2社以上ある場合は、`apps[]`側もその全社分を追加する（ラオス・スリランカは3社目のKlook/GetYourGuideを追加済み）。
+- 新しい国を作る際は、`tour_platforms`を決めた時点で`apps[]`への追加も同時に行うこと——後回しにすると今回のような抜け漏れが起きる。
 
 ## `practical.country_items` / `country_items_label`（持ち物・アプリ準備タブの左カード）は空欄にしない
 

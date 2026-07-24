@@ -67,6 +67,13 @@ h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 .site-tagline{font-size:0.75em;color:rgba(255,255,255,0.65);margin-left:auto;white-space:nowrap}
 @media(max-width:520px){.site-logo{font-size:1.05em}.site-tagline{font-size:0.68em}}
 
+/* 国別ページのヘッダー右端（国旗＋国名） */
+.site-country-badge{display:flex;align-items:center;gap:8px;margin-left:auto}
+.site-country-flag{display:inline-flex;line-height:0;border-radius:2px;overflow:hidden}
+.site-country-flag svg{height:18px !important;width:auto !important;display:block}
+.site-country-name{font-size:0.85em;font-weight:700;color:#fff;white-space:nowrap;letter-spacing:0.02em}
+@media(max-width:520px){.site-country-name{display:none}.site-country-flag svg{height:16px !important}}
+
 /* フッター */
 footer{text-align:center;padding:36px 16px;font-size:0.78em;color:#fff;border-top:1px solid rgba(255,255,255,0.15);margin-top:0;background:#6B5E62}
 footer a{color:#fff;text-decoration:none;margin:0 10px}
