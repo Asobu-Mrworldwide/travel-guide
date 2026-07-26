@@ -161,9 +161,13 @@ function initAffiliates() {
     card.innerHTML = `
       <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
         ${c.logo ? `
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="line-height:1">${c.logo}</div>
-          <div class="aff-card-tagline">${c.tagline}</div>
+        <div style="line-height:1">${c.logo}</div>` : c.name_large ? `
+        <div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <span class="aff-card-icon">${c.icon}</span>
+            <div class="aff-card-name" style="font-size:1.5em;line-height:1">${c.name}</div>
+          </div>
+          <div class="aff-card-tagline" style="margin-top:4px">${c.tagline}</div>
         </div>` : `
         <div style="display:flex;align-items:center;gap:10px">
           <span class="aff-card-icon">${c.icon}</span>
@@ -201,9 +205,13 @@ function initAffiliates() {
     inner.innerHTML = `
       <div class="aff-card-header" style="padding:0 0 10px;border-bottom:none;display:flex;align-items:center;justify-content:space-between">
         ${c.logo ? `
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="line-height:1">${c.logo}</div>
-          <div class="aff-card-tagline">${c.tagline}</div>
+        <div style="line-height:1">${c.logo}</div>` : c.name_large ? `
+        <div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <span class="aff-card-icon">${c.icon}</span>
+            <div class="aff-card-name" style="font-size:1.5em;line-height:1">${c.name}</div>
+          </div>
+          <div class="aff-card-tagline" style="margin-top:4px">${c.tagline}</div>
         </div>` : `
         <div style="display:flex;align-items:center;gap:10px">
           <span class="aff-card-icon">${c.icon}</span>
