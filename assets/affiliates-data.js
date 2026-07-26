@@ -197,8 +197,8 @@ const BOOKING_BOXES = {
   sim: {
     title: '海外用eSIM・SIMサービスをチェックする',
     buttons: [
-      { className: 'btn-trifa',   label: 'trifaで見る →',   url: 'https://trifa.jp/' },
-      { className: 'btn-airalo',  label: 'Airaloで見る →',  url: 'https://airalo.tpo.li/uKCCx4UI' },
+      { className: 'btn-trifa',   label: 'trifaで見る →',   url: 'https://trifa.jp/', desc: '日本語サポート付きで初心者でも安心。前日でもアプリから即購入・即設定できる' },
+      { className: 'btn-airalo',  label: 'Airaloで見る →',  url: 'https://airalo.tpo.li/uKCCx4UI', desc: '世界200以上の国と地域に対応。必要な分だけ買えて余らせない' },
     ]
   },
 
@@ -244,6 +244,38 @@ const AFFILIATE_CARDS = {
     btn:   '公式サイトを見る →',
     url:   'https://wise.com/jp/',
     color: '#1a9068',
+  },
+
+  trifa: {
+    icon:    '📶',
+    name:    'trifa',
+    tagline: '日本発、前日でも即設定できるeSIM',
+    points: [
+      '渡航先・日数・データ容量から最適なプランを選べる',
+      '日本語サポート付き（24時間対応）で初心者でも安心',
+      '前日でもアプリから即購入・即設定できる',
+      '物理SIMの入れ替え不要、紛失リスクもなし',
+    ],
+    note:  '',
+    btn:   'trifaを見る →',
+    url:   'https://trifa.jp/',
+    color: '#3d5afe',
+  },
+
+  airalo: {
+    icon:    '🌐',
+    name:    'Airalo',
+    tagline: '世界最大級のeSIMストア',
+    points: [
+      '世界200以上の国と地域に対応、世界中の旅人が愛用',
+      '必要な分だけ買えるから余らせない',
+      '複数国をまたぐ旅程でも国ごとに使い分けやすい',
+      'アプリで残量確認・追加チャージも簡単',
+    ],
+    note:  '',
+    btn:   'Airaloを見る →',
+    url:   'https://airalo.tpo.li/uKCCx4UI',
+    color: '#6c4ff6',
   },
 
   grab: {

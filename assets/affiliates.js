@@ -21,6 +21,8 @@ const AFFILIATES_CSS = `
   box-shadow:none;
   overflow:hidden;
   margin-top:12px;
+  display:flex;
+  flex-direction:column;
 }
 .aff-card-header{
   display:flex;align-items:center;gap:12px;
@@ -30,7 +32,7 @@ const AFFILIATES_CSS = `
 .aff-card-icon{font-size:1.6em;line-height:1}
 .aff-card-name{font-size:0.95em;font-weight:900;color:#111}
 .aff-card-tagline{font-size:0.75em;color:#666;margin-top:2px}
-.aff-card-body{padding:12px 16px 14px}
+.aff-card-body{padding:12px 16px 14px;display:flex;flex-direction:column;flex:1}
 .aff-card-points{
   list-style:none;margin:0 0 10px;padding:0;
   display:flex;flex-direction:column;gap:6px;
@@ -53,6 +55,7 @@ const AFFILIATES_CSS = `
   color:#fff;font-size:0.8em;font-weight:700;
   padding:9px 16px;border-radius:20px;
   text-decoration:none;transition:opacity 0.15s;
+  margin-top:auto;
 }
 .aff-card-btn:hover{opacity:0.85}
 
@@ -75,7 +78,20 @@ const AFFILIATES_CSS = `
 .booking-buttons{
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:14px;
+}
+.booking-btn-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  width:100%;
+}
+.booking-btn-desc{
+  margin:0;
+  font-size:12px;
+  line-height:1.5;
+  color:#6c757d;
+  text-align:center;
 }
 .btn-booking{
   display:flex;
@@ -104,7 +120,7 @@ const AFFILIATES_CSS = `
 .btn-holafly{background-color:#ff5a36;border-bottom:3px solid #cc3e1f}
 @media(min-width:576px){
   .booking-buttons{flex-direction:row}
-  .btn-booking{flex:1}
+  .booking-btn-group{flex:1}
   .booking-title{text-align:left}
 }
 `;
@@ -220,7 +236,11 @@ function initAffiliates() {
     wrap.innerHTML = `
       <p class="booking-title">${box.title}</p>
       <div class="booking-buttons">
-        ${box.buttons.map(b => `<a href="${b.url}" target="_blank" rel="noopener" class="btn-booking ${b.className}">${b.label}</a>`).join('')}
+        ${box.buttons.map(b => `
+        <div class="booking-btn-group">
+          ${b.desc ? `<p class="booking-btn-desc">${b.desc}</p>` : ''}
+          <a href="${b.url}" target="_blank" rel="noopener" class="btn-booking ${b.className}">${b.label}</a>
+        </div>`).join('')}
       </div>`;
 
     el.replaceWith(wrap);
