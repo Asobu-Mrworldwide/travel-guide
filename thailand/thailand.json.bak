@@ -23,13 +23,12 @@
     "difficulty_label_color": "var(--green)",
     "difficulty_pct": "30",
     "difficulty_bar": "linear-gradient(90deg,#00a86b,#66cc99)",
-    "difficulty_desc": "観光地では英語がほぼ通じ、ビザも不要。物価は日本の約1/3〜1/4と格安。屋台グルメや交通の使い方を少し覚えるだけで旅がぐっと快適になる。初めての東南アジアにも◎。",
     "japan_popularity_html": "年間約100万人の日本人が訪れるアジア屈指の人気旅行先。<strong>ビザ不要・物価安い・食事が美味しい・リゾートも充実</strong>の四拍子が揃い、バックパッカーからリゾート旅行者まで幅広く愛されている。",
-    "flight_hours": "約6〜7時間",
+    "flight_hours": "直行便で約6〜7時間（乗継便あり）",
     "timezone": "日本 −2時間",
     "visa": "不要（60日）",
     "budget_range": "8〜18万円",
-    "language": "英語OK（観光地）",
+    "language": "タイ語（英語は観光地で通じる）",
     "currency_name": "バーツ(THB)",
     "currency_rate": "1THB ≈ 4.9円",
     "danger_level": 0,
@@ -150,6 +149,19 @@
       "badge": "南部",
       "badge_class": "green",
       "description": "タイ湾に浮かぶ亜熱帯の楽園、サムイ島"
+    },
+    {
+      "id": "sukhothai",
+      "name": "スコータイ",
+      "lat": "17.0186",
+      "lng": "99.7061",
+      "zoom": "13",
+      "color": "#2d4480",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "世界遺産",
+      "badge_class": "green",
+      "description": "タイ最初の王朝が栄えた古都、静寂に包まれた遺跡公園"
     }
   ],
   "season_mini": {
@@ -257,13 +269,13 @@
     },
     {
       "label": "言語",
-      "value": "タイ語",
-      "note": "観光地・ホテルでは英語も通じやすい",
+      "value": "タイ語（英語は観光地で通じる）",
+      "note": "5つの声調を持つ言語で、同じ発音でも音程が違うと意味が変わる。文字は古クメール文字を起源とする独自のタイ文字",
       "compare_html": ""
     },
     {
       "label": "通貨",
-      "value": "タイバーツ（THB）",
+      "value": "タイバーツ(THB)",
       "note": "1THB ≈ 4.9円",
       "compare_html": ""
     }
@@ -476,6 +488,74 @@
             "type": "t-hot1"
           }
         ]
+      },
+      {
+        "name": "スコータイ",
+        "city_id": "sukhothai",
+        "best_note": "ベスト：11〜2月（涼季）／ 遺跡公園は日陰が少なく暑季は特に厳しい",
+        "note": "内陸部に位置し盆地特有の気候で、乾季は日中の日差しが強く遺跡公園には木陰がほとんどない。朝7時の開園直後か日没前の涼しい時間帯にレンガ造りの遺跡を回るのが快適。11月のロイクラトン（灯篭流し）の時期は「ロイクラトン発祥の地」として光と音のショーが開催され、国内外から観光客が集中し宿の予約が早めに埋まる。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "26°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "32°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "33°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "⛅",
+            "temp": "31°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☔",
+            "temp": "30°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "28°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☔",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "⛅",
+            "temp": "25°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "24°C",
+            "type": "t-warm"
+          }
+        ]
       }
     ]
   },
@@ -577,17 +657,12 @@
       {
         "icon": "🔌",
         "title": "コンセント",
-        "value": "Aタイプ（日本と同じ）"
-      },
-      {
-        "icon": "⚡",
-        "title": "電圧",
-        "value": "220V（変換注意）"
+        "value": "Aタイプは日本と同じ。220V（変換注意）"
       },
       {
         "icon": "wifi",
         "title": "Wi-Fi",
-        "value": "空港・カフェ・ホテル無料多"
+        "value": "都市部は快適。空港・カフェ・ホテルで無料利用可"
       },
       {
         "icon": "clock",
@@ -597,22 +672,27 @@
       {
         "icon": "palm",
         "title": "気温",
-        "value": "年中25〜35℃"
+        "value": "年中30°C前後。高温多湿、雨季はスコールが多い"
       },
       {
         "icon": "🙏",
         "title": "チップ",
-        "value": "任意（レストラン10〜20THB）"
+        "value": "任意。レストランで10〜20THB程度"
       },
       {
         "icon": "💧",
         "title": "水道水",
-        "value": "飲用不可（ペットボトル推奨）"
+        "value": "飲用不可。ペットボトル推奨"
       },
       {
         "icon": "💳",
         "title": "カード払い",
-        "value": "ホテル・モール◎・屋台は現金"
+        "value": "都市部は普及。屋台は現金"
+      },
+      {
+        "icon": "🔒",
+        "title": "治安",
+        "value": "良好。国境沿いは注意"
       }
     ],
     "prep_steps": [
@@ -627,7 +707,7 @@
       {
         "title": "海外対応クレジットカードの申込",
         "timing": "1ヶ月前",
-        "timing_color": "#006847",
+        "timing_color": "#1a8a5a",
         "border_color": "#1a8a5a",
         "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
         "desc_html": "審査・発行に2〜3週間かかることがある。海外手数料が低いカードを選ぼう。両替レートが良くATM引き出しにも対応している<strong>Wiseカード</strong>がおすすめ。"
@@ -655,12 +735,20 @@
         "border_color": "#cc5500",
         "bar_color": "linear-gradient(to bottom,#cc5500,#cc0001)",
         "desc_html": "eSIMならアプリから前日でも購入・設定ができる。現地ではスワンナプーム空港・コンビニ（セブンイレブン）でSIMカード購入も可能。"
+      },
+      {
+        "title": "TDAC（タイ・デジタル入国カード）の提出",
+        "timing": "到着72時間前から",
+        "timing_color": "#cc0001",
+        "border_color": "#cc0001",
+        "bar_color": "",
+        "desc_html": "タイ入国には、到着72時間前からオンラインで提出する「TDAC」が必須。従来の紙の入国カード（TM6）を置き換えた制度で、公式サイトから無料登録できる。"
       }
     ],
-    "special_note_title": null,
-    "special_note_html": null,
-    "special_note_url": null,
-    "special_note_url_label": null,
+    "special_note_title": "TDAC（タイ・デジタル入国カード）の事前提出が必須",
+    "special_note_html": "タイ入国には、到着72時間前からオンラインで提出する「TDAC（Thailand Digital Arrival Card）」が必須です。従来の紙の入国カード（TM6）を置き換えた制度で、公式サイトから無料で登録できます。空港での手続きがスムーズになるよう、出発前に済ませておきましょう。",
+    "special_note_url": "https://tdac.immigration.go.th/",
+    "special_note_url_label": "TDAC公式サイトで登録",
     "flight_intro": "日本〜バンコク（スワンナプーム/ドンムアン）間は多数の航空会社が就航。LCCを活用すれば閑散期は4〜8万円台で往復できる。",
     "airlines": [
       {
@@ -725,6 +813,17 @@
         "maps_url": "https://www.google.com/maps/place/Silom,+Bangkok",
         "lat": 13.7234,
         "lng": 100.5295
+      },
+      {
+        "id": "sukhothai_newtown",
+        "name": "スコータイ・ニュータウン",
+        "tag": "拠点・食事に便利",
+        "tag_color": "green",
+        "desc": "遺跡公園から東へ約12km、レストランや商店が集まる新市街エリア。歴史公園までは無料シャトルバスやソンテウで移動する旅行者が多い。",
+        "price": "格安〜中級 800〜4,000円／泊",
+        "maps_url": "https://www.google.com/maps/place/Sukhothai,+Thailand",
+        "lat": 17.0072,
+        "lng": 99.8265
       }
     ],
     "hotel_map_center": {
@@ -763,12 +862,14 @@
         "name": "Klook（クルック）",
         "type_label": "現地ツアー・チケット事前予約",
         "desc": "観光スポットのチケットやオプショナルツアーを事前に予約できる。エレファントサンクチュアリや離島クルーズなど人気ツアーは要予約。",
-        "affiliate": "",
+        "affiliate": "klook",
         "is_last": true
       }
     ],
-    "tour_platform": "klook",
-    "country_items_label": "🇹🇭 タイ特有の持ち物",
+    "tour_platforms": [
+      "klook"
+    ],
+    "country_items_label": "<span style=\"display:inline-flex;align-items:center;gap:6px;vertical-align:middle\"><span style=\"display:inline-block;line-height:0;border:1px solid #ddd;border-radius:2px;overflow:hidden;flex-shrink:0\"><svg width=\"17\" height=\"11\" viewBox=\"0 0 9 6\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#A51931\" d=\"M0 0h9v6H0z\"/><path fill=\"#F4F5F8\" d=\"M0 1h9v4H0z\"/><path fill=\"#2D2A4A\" d=\"M0 2h9v2H0z\"/></svg></span>タイ特有の持ち物</span>",
     "country_items": [
       "日焼け止め（強烈な熱帯の日差し対策）",
       "折りたたみ傘（スコール対策）",
@@ -786,7 +887,7 @@
     "cash_daily_low": "300",
     "cash_daily_high": "1500",
     "cash_note": "1 THB ≈ 4.9円で計算",
-    "cash_tip_title": "💡 小額紙幣を用意しておこう",
+    "cash_tip_title": "小額紙幣を用意しておこう",
     "cash_tip_body": "屋台・トゥクトゥク・ローカルマーケットではお釣りが出ないことが多い。20THB・50THB・100THBの小額紙幣を多めに準備しておくとスムーズ。",
     "cta_title": "出発前にマナーも確認しよう！🙏",
     "cta_desc": "仏教国ならではのマナーを知っておくと現地での行動がスムーズ。<br>寺院・王室・食事など旅行者が知っておくべきポイントをまとめました。"
@@ -1443,15 +1544,76 @@
       "order_name_en": "Coconut Ice Cream",
       "prompt_en": "Thai coconut ice cream served in a coconut shell, topped with peanuts, sticky rice and sweet corn",
       "plate_color": "coconut shell"
+    },
+    {
+      "num": "No.23",
+      "name": "サテー",
+      "must": true,
+      "badge": "屋台の定番串",
+      "type": "side",
+      "city": "national",
+      "desc": "鶏や豚肉をターメリック・クミンなどのスパイスとココナッツミルクで漬け込み炭火で焼いた串焼き。甘辛いピーナッツソースと酢漬けきゅうり（アーチャート）を添えて食べるのが定番で、屋台からレストランまで幅広く親しまれる前菜。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B5%E3%83%86%E3%83%BC%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🍢",
+      "order_name_en": "Moo Satay",
+      "prompt_en": "Thai satay, grilled marinated pork skewers on bamboo sticks served with peanut sauce and cucumber relish, in the morning light",
+      "plate_color": "banana leaf"
+    },
+    {
+      "num": "No.24",
+      "name": "サイウア",
+      "badge": "チェンマイ名物",
+      "type": "side",
+      "city": "chiangmai",
+      "desc": "レモングラス・こぶみかんの葉・ガランガルなど香草をたっぷり練り込んだ北部タイ風の豚肉ソーセージ。炭火で焼くと香草の香りが立ち上り、チェンマイの市場や食堂の定番総菜として売られている。もち米や生野菜と一緒に食べるのが地元流。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B5%E3%82%A4%E3%82%A6%E3%82%A2%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🌭",
+      "order_name_en": "Sai Ua",
+      "prompt_en": "Sai Ua, Northern Thai herb sausage coiled and grilled, with lemongrass and kaffir lime leaves visible, on a banana leaf",
+      "plate_color": "banana leaf"
+    },
+    {
+      "num": "No.25",
+      "name": "ガイヤーン",
+      "badge": "イサーン料理",
+      "type": "side",
+      "city": "national",
+      "desc": "鶏肉をにんにく・パクチーの根・ナンプラーで漬け込み、炭火でじっくり焼いた東北部（イサーン地方）の焼き鳥。皮はパリッと香ばしく、ソムタム（青パパイヤサラダ）ともち米と組み合わせるのがイサーン食堂の黄金の三点セット。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AC%E3%82%A4%E3%83%A4%E3%83%BC%E3%83%B3%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🍗",
+      "order_name_en": "Gai Yang",
+      "prompt_en": "Gai Yang, Isaan grilled chicken with charred crispy skin on a wire grill over charcoal, at dusk",
+      "plate_color": "banana leaf"
+    },
+    {
+      "num": "No.26",
+      "name": "クイッティアオ・ルア（ボートヌードル）",
+      "badge": "濃厚スープ麺",
+      "type": "noodle",
+      "city": "national",
+      "desc": "豚や牛の血を加えた濃厚な茶色いスープが特徴の麺料理。かつてアユタヤの運河で船上から売られていたのが起源とされ、今はバンコクのビクトリーモニュメント周辺の専門店街が有名。一杯が小ぶりで安いため何杯もはしごして味の違いを楽しむのが通の食べ方。",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AF%E3%82%A4%E3%83%83%E3%83%86%E3%82%A3%E3%82%A2%E3%82%AA%E3%83%BB%E3%83%AB%E3%82%A2%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Kuay Teow Reua",
+      "prompt_en": "Thai boat noodles, small bowl of dark rich broth with rice noodles, beef slices and morning glory, several small bowls on a table",
+      "plate_color": "small white ceramic bowl"
+    },
+    {
+      "num": "No.27",
+      "name": "トートマンプラー",
+      "badge": "揚げ物前菜",
+      "type": "side",
+      "city": "national",
+      "desc": "白身魚のすり身にレッドカレーペースト・いんげん・こぶみかんの葉を混ぜて揚げた魚のすり身揚げ。外はカリッと中はもっちりとした食感で、甘酸っぱいスイートチリソースときゅうりのピクルスを添えて食べる屋台・食堂の定番前菜。",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%88%E3%83%BC%E3%83%88%E3%83%9E%E3%83%B3%E3%83%97%E3%83%A9%E3%83%BC%20%E3%82%BF%E3%82%A4%20%E6%96%99%E7%90%86",
+      "order_ico": "🐟",
+      "order_name_en": "Tod Mun Pla",
+      "prompt_en": "Tod Mun Pla, Thai fried fish cakes stacked on a plate with sweet chili sauce and cucumber relish on the side",
+      "plate_color": "white ceramic plate"
     }
   ],
   "spots_section_title": "都市別観光スポット",
   "spots_filter_cities": [
-    {
-      "id": "all",
-      "label": "全て",
-      "active": true
-    },
     {
       "id": "bangkok",
       "label": "バンコク",
@@ -1490,6 +1652,11 @@
     {
       "id": "kohchang",
       "label": "コ・チャン",
+      "active": false
+    },
+    {
+      "id": "sukhothai",
+      "label": "スコータイ",
       "active": false
     }
   ],
@@ -1539,7 +1706,9 @@
           "desc": "バンコク王宮内に建つタイ最高の聖地。翡翠製の仏像・黄金の仏塔・精巧な壁画が圧巻。境内は広大で見どころが多い。入場料500THB。肌の露出は厳禁。",
           "badge": "王宮",
           "prompt_en": "Flat vector illustration of Wat Phra Kaew Bangkok Thailand, golden bell-shaped chedi with pointed spire, ornate golden mondop pavilion covered in colorful glass mosaic tiles, multi-tiered green and orange temple roofs with gilded edges, tall pointed gold spires, giant guardian Yaksha demon statues flanking a gate, bright blue sky, wide landscape",
-          "type": "religious"
+          "type": "religious",
+          "image": "素材/観光スポット/ワット・プラケオ（エメラルド寺院）.webp",
+          "map_url": "https://maps.google.com/?q=Wat+Phra+Kaew+Bangkok"
         },
         {
           "must": true,
@@ -1550,7 +1719,8 @@
           "badge": "世界的観光地",
           "prompt_en": "Flat vector illustration of Grand Palace Bangkok Thailand, grand white and gold royal palace complex with Thai and European architectural fusion, golden spires, manicured gardens, clear blue sky, wide landscape",
           "image": "素材/観光スポット/王宮（グランドパレス）.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Grand+Palace+Bangkok"
         },
         {
           "must": true,
@@ -1585,7 +1755,8 @@
           "badge": "ナイトライフ",
           "prompt_en": "Flat vector illustration of Khao San Road Bangkok Thailand at night, narrow street with multi-story buildings on both sides densely covered in glowing neon signs and colorful billboards in blue purple green and red, signs layered from ground to rooftop, dense crowd of tourists walking below, street food stalls with warm lights, electric nightlife atmosphere, dark sky, wide landscape",
           "image": "素材/観光スポット/カオサン通り.webp",
-          "type": "townscape"
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Khao+San+Road+Bangkok"
         },
         {
           "must": false,
@@ -1596,7 +1767,8 @@
           "badge": "週末限定",
           "prompt_en": "Flat vector illustration of Chatuchak Weekend Market Bangkok Thailand, aerial view of vast outdoor market with endless rows of corrugated metal roof stalls stretching across, ornate clock tower rising in the center, modern Bangkok skyscrapers in the background, small crowds of people walking between stalls, overcast sky, wide landscape",
           "image": "素材/観光スポット/チャトゥチャック週末市場.webp",
-          "type": "market"
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok"
         },
         {
           "must": false,
@@ -1607,7 +1779,8 @@
           "badge": "ショッピング",
           "prompt_en": "Flat vector illustration of ICONSIAM shopping mall Bangkok Thailand, luxury riverside mall with traditional Thai floating market stalls inside, Chao Phraya River waterfront, modern glass architecture, wide landscape",
           "image": "素材/観光スポット/アイコンサイアム.webp",
-          "type": "market"
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=ICONSIAM+Bangkok"
         },
         {
           "must": false,
@@ -1618,7 +1791,8 @@
           "badge": "チャイナタウン",
           "prompt_en": "Flat vector illustration of Wat Traimit Bangkok Thailand, interior of temple hall, massive gleaming solid gold seated Buddha statue on elevated altar at center, ornate gold-decorated ceiling with warm lighting, marble columns on both sides, colorful flower offerings in foreground, worshippers sitting on floor, enclosed indoor atmosphere, wide landscape",
           "image": "素材/観光スポット/ワット・トライミット.webp",
-          "type": "religious"
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Traimit+Bangkok"
         },
         {
           "must": false,
@@ -1629,7 +1803,8 @@
           "badge": "夜景",
           "prompt_en": "Flat vector illustration of Bangkok rooftop bar at night, outdoor bar on high-rise terrace overlooking glittering city skyline with skyscrapers, cocktail glasses, warm golden city lights below, starry sky, wide landscape",
           "image": "素材/観光スポット/ルーフトップバー.webp",
-          "type": "townscape"
+          "type": "townscape",
+          "no_map": true
         },
         {
           "must": true,
@@ -1640,7 +1815,8 @@
           "badge": "ナイト",
           "prompt_en": "Flat vector illustration of Bangkok night market Thailand, colorful outdoor market stalls at night with string lights overhead, food vendors, vintage clothing, art goods, crowds of young shoppers, festive atmosphere, wide landscape",
           "image": "素材/観光スポット/ナイトマーケット.webp",
-          "type": "market"
+          "type": "market",
+          "no_map": true
         },
         {
           "must": false,
@@ -1651,7 +1827,8 @@
           "badge": "体験",
           "prompt_en": "Flat vector illustration of Bangkok floating market Thailand, narrow canal lined with wooden boats filled with colorful tropical fruits and local food, vendors in traditional Thai hats, wooden stilt houses along waterway, wide landscape",
           "type": "market",
-          "image": "素材/観光スポット/水上マーケット.webp"
+          "image": "素材/観光スポット/水上マーケット.webp",
+          "no_map": true
         },
         {
           "must": false,
@@ -1662,7 +1839,8 @@
           "badge": "夜景",
           "prompt_en": "Flat vector illustration of Mahanakhon SkyWalk Bangkok Thailand, glass floor observation deck on top of pixelated skyscraper, visitors looking down at glittering Bangkok city lights far below, night skyline panorama, wide landscape",
           "type": "townscape",
-          "image": "素材/観光スポット/マハナコン スカイウォーク.webp"
+          "image": "素材/観光スポット/マハナコン スカイウォーク.webp",
+          "map_url": "https://maps.google.com/?q=King+Power+Mahanakhon+Bangkok"
         },
         {
           "must": false,
@@ -1673,7 +1851,19 @@
           "badge": "穴場",
           "prompt_en": "Flat vector illustration of Wat Pak Nam Bangkok Thailand, interior of temple with towering ethereal green glass pagoda rising inside the hall, intricate concentric circular ceiling decorations in gold and teal, dreamy spiritual atmosphere, wide landscape",
           "image": "素材/観光スポット/ワット・パクナム.webp",
-          "type": "religious"
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Paknam+Bhasicharoen+Bangkok"
+        },
+        {
+          "must": false,
+          "icon": "🥊",
+          "num": "BK 14",
+          "name": "ムエタイ観戦（ラジャダムナン・スタジアム）",
+          "desc": "ムエタイ発祥の地で本場の試合を生観戦できる老舗スタジアム。太鼓と笛のワイクルー（試合前の儀式舞）から始まり、選手の肘・膝を使った打撃戦は迫力満点。観光客向けのチケットも用意されており、初めてでも楽しみやすい。",
+          "badge": "伝統格闘技",
+          "prompt_en": "Flat vector illustration of Muay Thai boxing stadium Bangkok Thailand, two fighters in the ring under bright spotlights, referee watching closely, crowd silhouettes cheering in the stands, dramatic stadium lighting at night, wide landscape",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Rajadamnern+Stadium+Bangkok"
         }
       ]
     },
@@ -1723,7 +1913,8 @@
           "badge": "絶景",
           "prompt_en": "Flat vector illustration of Wat Doi Suthep Chiang Mai Thailand, golden pagoda temple on mountain hilltop surrounded by lush jungle, long stairway with naga serpent balustrade, Chiang Mai city view below, clear sky, wide landscape",
           "image": "素材/観光スポット/ワット・ドイステープ.webp",
-          "type": "religious"
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Phra+That+Doi+Suthep+Chiang+Mai"
         },
         {
           "must": true,
@@ -1734,7 +1925,8 @@
           "badge": "体験",
           "prompt_en": "Flat vector illustration of elephant sanctuary Chiang Mai Thailand, happy elephants bathing in river with tourists watching from bank, lush green jungle setting, clear blue sky, wide landscape",
           "image": "素材/観光スポット/エレファントサンクチュアリ.webp",
-          "type": "activity"
+          "type": "activity",
+          "no_map": true
         },
         {
           "must": false,
@@ -1805,7 +1997,8 @@
           "badge": "トレッキング",
           "prompt_en": "Flat vector illustration of monk trail trekking Chiang Mai Thailand, hikers walking through lush tropical jungle path, ancient stone steps, small temple ruins visible through trees, misty mountain atmosphere, wide landscape",
           "type": "nature",
-          "image": "素材/観光スポット/モンクトレイル.webp"
+          "image": "素材/観光スポット/モンクトレイル.webp",
+          "no_map": true
         },
         {
           "must": false,
@@ -1816,7 +2009,20 @@
           "badge": "日帰り観光",
           "prompt_en": "Flat vector illustration of Wat Rong Khun White Temple Chiang Rai Thailand, dazzling all-white ornate temple　 clear blue sky, wide landscape",
           "type": "religious",
-          "image": "素材/観光スポット/チェンライ（ホワイトテンプル）.webp"
+          "image": "素材/観光スポット/チェンライ（ホワイトテンプル）.webp",
+          "map_url": "https://maps.google.com/?q=Wat+Rong+Khun+Chiang+Rai"
+        },
+        {
+          "must": false,
+          "icon": "🏮",
+          "num": "CM 10",
+          "name": "イーペン・ランタン祭り（11月）",
+          "desc": "毎年11月の満月の夜、無数の紙製ランタン（コムローイ）を一斉に夜空へ放つ幻想的な祭り。ロイクラトン（灯篭流し）と同時期に開催され、チェンマイ近郊の会場チケットは数ヶ月前から売り切れることも多い。北部タイならではの一大イベント。",
+          "badge": "季節イベント",
+          "prompt_en": "Flat vector illustration of Yi Peng Lantern Festival Chiang Mai Thailand, hundreds of glowing paper sky lanterns floating up into a dark night sky, silhouettes of a crowd releasing lanterns below, full moon in the background, warm golden lantern light, wide landscape",
+          "type": "activity",
+          "no_map": true,
+          "image": "素材/観光スポット/イーペン・ランタン祭り（11月）.webp"
         }
       ]
     },
@@ -1866,7 +2072,8 @@
           "badge": "ビーチ",
           "prompt_en": "Flat vector illustration of Patong Beach Phuket Thailand, wide white sandy beach with turquoise water, people scattered relaxing on the sand,few random color umbrellas, someone swimming, lush green hills in background, clear blue sky, cool blue and green color palette, no orange no red, wide landscape",
           "image": "素材/観光スポット/パトンビーチ.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Patong+Beach+Phuket"
         },
         {
           "must": true,
@@ -1877,7 +2084,8 @@
           "badge": "絶景クルーズ",
           "prompt_en": "Flat vector illustration of Phang Nga Bay James Bond Island Thailand, iconic tall thin limestone rock rising from emerald green bay, traditional longtail boats, dramatic karst formations, clear sky, wide landscape",
           "image": "素材/観光スポット/ファンガー湾（ジェームズボンド島）.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=James+Bond+Island+Phang+Nga+Bay+Thailand"
         },
         {
           "must": false,
@@ -1900,7 +2108,8 @@
           "badge": "フォトスポット",
           "prompt_en": "Flat vector illustration of Phuket Old Town Thailand, colorful Sino-Portuguese shophouses along narrow street, vibrant pastel buildings with ornate facades, street art murals, tropical trees, clear sky, wide landscape",
           "image": "素材/観光スポット/プーケットオールドタウン.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Phuket+Old+Town"
         },
         {
           "must": false,
@@ -1911,7 +2120,8 @@
           "badge": "ダイビング",
           "prompt_en": "Flat vector illustration of Similan Islands Thailand, pristine tropical islands with crystal clear turquoise water, white sandy beaches, colorful coral reef visible below surface, speedboat anchored, clear blue sky, wide landscape",
           "image": "素材/観光スポット/シミラン諸島.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Similan+Islands+National+Park"
         },
         {
           "must": false,
@@ -1922,7 +2132,20 @@
           "badge": "ビーチ",
           "prompt_en": "Flat vector illustration of Karon Beach Phuket Thailand, long wide quiet white sandy beach with gentle turquoise waves, few beach umbrellas, surfers in the water, lush green hills, clear blue sky, wide landscape",
           "image": "素材/観光スポット/カロンビーチ・カタビーチ.webp",
-          "type": "nature"
+          "type": "nature",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "PH 07",
+          "name": "ワット・チャロン",
+          "desc": "プーケットで最も格式高く参拝者の多い寺院。19世紀の反乱を鎮めた高僧ルアンポー・チェムを祀り、地元の人々の信仰の拠り所となっている。金色の仏塔には仏舎利が納められ、内部の壁画も見応えがある。",
+          "badge": "総本山",
+          "prompt_en": "Flat vector illustration of Wat Chalong Phuket Thailand, ornate golden multi-tiered temple chedi with intricate decoration, main temple hall with red and gold roof in foreground, tropical trees, clear blue sky, wide landscape",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Chalong+Phuket",
+          "image": "素材/観光スポット/ワット・チャロン.webp"
         }
       ]
     },
@@ -1966,7 +2189,8 @@
           "badge": "シュノーケリング",
           "prompt_en": "Flat vector illustration of Koh Larn Coral Island Pattaya Thailand, tropical island with white sandy beach, clear turquoise water with colorful coral visible, parasailing and banana boat, speedboats, clear blue sky, wide landscape",
           "image": "素材/観光スポット/コーラン島（サンゴ礁の島）.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Koh+Larn+Pattaya"
         },
         {
           "must": false,
@@ -1989,7 +2213,8 @@
           "badge": "唯一無二",
           "prompt_en": "Flat vector illustration of Sanctuary of Truth Pattaya Thailand, massive all-wood carved temple on oceanfront, intricate wooden carvings covering every surface, tall pointed spires, sea in background, wide landscape",
           "image": "素材/観光スポット/サンクチュアリ・オブ・トゥルース.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Sanctuary+of+Truth+Pattaya"
         },
         {
           "must": false,
@@ -2000,7 +2225,8 @@
           "badge": "エンターテイメント",
           "prompt_en": "Flat vector illustration of cabaret show stage performance, glamorous performers in elaborate glittering costumes on stage, colorful spotlights and curtains, audience silhouettes in foreground, wide landscape",
           "image": "素材/観光スポット/ティファニーショー.webp",
-          "type": "activity"
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Tiffany+Show+Pattaya"
         }
       ]
     },
@@ -2044,7 +2270,8 @@
           "badge": "世界遺産",
           "prompt_en": "Flat vector illustration of Ayutthaya Historical Park Thailand, ancient brick temple ruins with tall prang towers and golden stupas, palm trees and open sky, wide grassy grounds, clear blue sky, wide landscape",
           "image": "素材/観光スポット/アユタヤ歴史公園.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Ayutthaya+Historical+Park"
         },
         {
           "must": true,
@@ -2055,7 +2282,8 @@
           "badge": "フォトスポット",
           "prompt_en": "Flat vector illustration of Wat Mahathat Ayutthaya Thailand, ancient stone Buddha head entwined in large tree roots of a fig tree, weathered brick temple ruins surrounding, dappled light through leaves, wide landscape",
           "image": "素材/観光スポット/ワット・マハタート.webp",
-          "type": "heritage"
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Wat+Mahathat+Ayutthaya"
         },
         {
           "must": false,
@@ -2066,7 +2294,8 @@
           "badge": "体験",
           "prompt_en": "Flat vector illustration of elephant riding tour Ayutthaya Thailand, decorated elephant with wooden howdah seat carrying tourists past ancient temple ruins, lush green trees, clear sky, wide landscape",
           "image": "素材/観光スポット/アユタヤ象乗り体験.webp",
-          "type": "activity"
+          "type": "activity",
+          "no_map": true
         },
         {
           "must": false,
@@ -2077,7 +2306,20 @@
           "badge": "クルーズ",
           "prompt_en": "Flat vector illustration of Chao Phraya River cruise Thailand, traditional wooden river cruise boat sailing past ancient temple spires and ruins, calm river, green trees along bank, golden afternoon sky, wide landscape",
           "image": "素材/観光スポット/チャオプラヤー川クルーズ.webp",
-          "type": "activity"
+          "type": "activity",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🏰",
+          "num": "AY 05",
+          "name": "バンパイン夏の離宮",
+          "desc": "チャクリー王朝の歴代王が避暑地として使った離宮。タイ・中国・ヨーロッパの建築様式が混在する庭園と建物が並び、水上に浮かぶタイ様式の東屋「アイサワン・ティッパヤアート」が特に美しい。アユタヤ歴史公園とセットで巡る日帰りツアーが定番。",
+          "badge": "離宮",
+          "prompt_en": "Flat vector illustration of Bang Pa-In Royal Palace Thailand, ornate Thai-style pavilion floating on a calm pond surrounded by manicured gardens, colorful European and Chinese style palace buildings in the background, clear blue sky, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Bang+Pa-In+Royal+Palace",
+          "image": "素材/観光スポット/バンパイン夏の離宮.webp"
         }
       ]
     },
@@ -2127,7 +2369,8 @@
           "badge": "秘境ビーチ",
           "prompt_en": "Flat vector illustration of Railay Beach Krabi Thailand, dramatic limestone cliffs rising from turquoise sea, pristine white sand beach, longtail boats moored in calm bay, lush green jungle on cliffs, clear blue sky, wide landscape",
           "image": "素材/観光スポット/ライレイビーチ.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Railay+Beach+Krabi"
         },
         {
           "must": false,
@@ -2138,7 +2381,8 @@
           "badge": "隠し浜",
           "prompt_en": "Flat vector illustration of Emerald Cave Koh Mook Thailand, dark narrow cave opening leading to hidden beach with bright turquoise water, limestone walls glowing with light, small secluded sandy beach inside, clear sky visible above, wide landscape",
           "image": "素材/観光スポット/エメラルドケーブ.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Emerald+Cave+Koh+Mook+Thailand"
         },
         {
           "must": false,
@@ -2149,7 +2393,8 @@
           "badge": "拠点ビーチ",
           "prompt_en": "Flat vector illustration of Ao Nang beach Krabi Thailand, busy beach with longtail boats lined up in turquoise water, limestone karst islands in background, beach shops and restaurants along shore, clear blue sky, wide landscape",
           "image": "素材/観光スポット/アオナンビーチ.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Ao+Nang+Beach+Krabi"
         },
         {
           "must": false,
@@ -2172,7 +2417,8 @@
           "badge": "島ツアー",
           "prompt_en": "Flat vector illustration of island hopping tour Krabi Thailand, longtail boat sailing between dramatic limestone karst islands, crystal clear turquoise water, white sandy beaches, snorkelers in the sea, bright blue sky, wide landscape",
           "type": "activity",
-          "image": "素材/観光スポット/アイランドホッピング.webp"
+          "image": "素材/観光スポット/アイランドホッピング.webp",
+          "no_map": true
         }
       ]
     },
@@ -2222,7 +2468,8 @@
           "badge": "ビーチ",
           "prompt_en": "Flat vector illustration of Chaweng Beach Koh Samui Thailand, long white sandy beach with calm turquoise sea, palm trees, colorful beach umbrellas and beach bars, clear blue sky, wide landscape",
           "image": "素材/観光スポット/チャウエンビーチ.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Chaweng+Beach+Koh+Samui"
         },
         {
           "must": false,
@@ -2234,7 +2481,8 @@
           "wiki_url": "https://en.wikipedia.org/wiki/Full_Moon_Party",
           "prompt_en": "Flat vector illustration of Full Moon Party Koh Phangan Thailand, beach party at night with fire performers spinning fire on white sand beach, large full moon over sea, crowds dancing, colorful neon lights, wide landscape",
           "image": "素材/観光スポット/フルムーンパーティー.webp",
-          "type": "activity"
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Haad+Rin+Beach+Koh+Phangan"
         },
         {
           "must": false,
@@ -2245,7 +2493,8 @@
           "badge": "ダイビング",
           "prompt_en": "Flat vector illustration of underwater scene at Ang Thong National Marine Park Thailand, fully submerged view with no sky or surface visible, scuba diver swimming among vibrant coral reef, colorful tropical fish, sea turtle, deep blue gradient water, wide landscape",
           "image": "素材/観光スポット/アンソン国立公園（ダイビング）.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Ang+Thong+National+Marine+Park"
         },
         {
           "must": false,
@@ -2258,6 +2507,18 @@
           "prompt_en": "Flat vector illustration of Big Buddha Temple Koh Samui Thailand, large bright gold-colored seated Buddha statue gleaming in sunlight on small island connected by causeway, vivid gold statue as focal point, turquoise sea surrounding, clear blue sky, wide landscape",
           "image": "素材/観光スポット/ビッグブッダ寺院.webp",
           "type": "religious"
+        },
+        {
+          "must": false,
+          "icon": "🏮",
+          "num": "SM 05",
+          "name": "フィッシャーマンズ・ビレッジ（ボープット）",
+          "desc": "中国系移民が築いた古い漁村を改装したおしゃれな通り。木造の古民家がカフェ・レストラン・雑貨店に生まれ変わり、毎週金曜の夜はウォーキングストリートとして屋台が並ぶ。チャウエンより落ち着いた雰囲気で夕方の散策に人気。",
+          "badge": "夜市・散策",
+          "prompt_en": "Flat vector illustration of Fisherman's Village Bophut Koh Samui Thailand at dusk, narrow street lined with restored wooden shophouses turned into cafes and shops, string lights overhead, small crowds of visitors walking, warm evening light, wide landscape",
+          "type": "townscape",
+          "map_url": "https://www.google.com/maps/place/Night+Market+Bophut+/+Fishermans+Village/@9.5596676,100.0253359,17z/data=!3m1!4b1!4m5!3m4!1s0x3054f08dcaa7965f:0x9e0db2da6afb9aba!8m2!3d9.5596623!4d100.0275246",
+          "image": "素材/観光スポット/フィッシャーマンズ・ビレッジ（ボープット）.webp"
         }
       ]
     },
@@ -2301,7 +2562,8 @@
           "badge": "メインビーチ",
           "prompt_en": "Flat vector illustration of White Sand Beach Koh Chang Thailand, long curved white sandy beach with calm turquoise water, palm trees lining the shore, small beach bungalows, colorful longtail boats, clear blue sky with fluffy clouds, wide landscape",
           "image": "素材/観光スポット/ホワイトサンドビーチ.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=White+Sand+Beach+Koh+Chang"
         },
         {
           "must": false,
@@ -2312,7 +2574,8 @@
           "badge": "シュノーケリング",
           "prompt_en": "Flat vector illustration ， view from a white sandy beach looking out to sea, three small green tropical islands sitting on the horizon in the calm turquoise ocean, bright blue sky with fluffy white clouds, wide landscape",
           "image": "素材/観光スポット/カイベー島.webp",
-          "type": "nature"
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Koh+Kai+Bae+Koh+Chang"
         },
         {
           "must": false,
@@ -2323,7 +2586,96 @@
           "badge": "水上集落",
           "prompt_en": "Flat vector illustration of Bang Bao fishing village Koh Chang Thailand, wooden pier extending over calm sea with colorful stilt houses, shops and restaurants on the jetty, fishing boats moored below, clear blue sky, wide landscape",
           "image": "素材/観光スポット/バンバオ水上集落.webp",
-          "type": "townscape"
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Bang+Bao+Fishing+Village+Koh+Chang"
+        }
+      ]
+    },
+    {
+      "city_id": "sukhothai",
+      "city_name": "スコータイ",
+      "city_desc": "1238年に興ったタイ最初の王朝の都。ユネスコ世界遺産の歴史公園にレンガ造りの仏塔と仏像が静かに佇み、アユタヤより素朴で穏やかな遺跡巡りができる",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "バンコクから国内線 約1時間20分（バスは約8時間）",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "空港↔市内",
+          "value": "エアポートバス・タクシー 約30分",
+          "link_section": "",
+          "link_btn_index": ""
+        },
+        {
+          "label": "ベストシーズン",
+          "value": "11〜2月（涼季）",
+          "link_section": "season",
+          "link_btn_index": "4"
+        },
+        {
+          "label": "市内交通",
+          "value": "レンタサイクル・ソンテウ・トゥクトゥク",
+          "link_section": "transport",
+          "link_btn_index": "9"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "SK 01",
+          "name": "スコータイ歴史公園",
+          "desc": "1238〜1438年に栄えたスコータイ王朝の王都跡。ユネスコ世界遺産に登録され、約70の遺跡が広大な公園内に点在する。アユタヤより人が少なく静かで、レンガ造りの仏塔と蓮池が織りなす風景はタイ建築の原点とも呼ばれる。",
+          "badge": "世界遺産",
+          "prompt_en": "Flat vector illustration of Sukhothai Historical Park Thailand, ancient brick stupas and Buddha statues scattered across wide grassy grounds, lotus ponds reflecting the ruins, palm trees, clear blue sky, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Sukhothai+Historical+Park"
+        },
+        {
+          "must": true,
+          "icon": "🙏",
+          "num": "SK 02",
+          "name": "ワット・マハタート（スコータイ）",
+          "desc": "歴史公園の中心に建つスコータイ最大の寺院跡。蓮のつぼみを模した独特の塔（プラーン）と、周囲を囲む200体近い仏像群が圧巻。夕暮れ時のシルエットが特に美しく撮影スポットとしても人気。",
+          "badge": "中心寺院",
+          "prompt_en": "Flat vector illustration of Wat Mahathat Sukhothai Thailand, lotus-bud shaped central stupa surrounded by rows of seated Buddha statues on brick platforms, golden hour lighting, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Wat+Mahathat+Sukhothai"
+        },
+        {
+          "must": true,
+          "icon": "🗿",
+          "num": "SK 03",
+          "name": "ワット・シーチュム",
+          "desc": "高さ15mの巨大な座仏「アチャナ仏」を、細い隙間の建物の中に安置した寺院。狭い開口部から金色の指先だけが覗く独特の構図が有名で、スコータイで最も写真映えするスポットのひとつ。",
+          "badge": "フォトスポット",
+          "prompt_en": "Flat vector illustration of Wat Si Chum Sukhothai Thailand, massive seated golden Buddha statue framed inside a narrow gap between tall brick walls, dramatic lighting, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Wat+Si+Chum+Sukhothai"
+        },
+        {
+          "must": false,
+          "icon": "⛩️",
+          "num": "SK 04",
+          "name": "ワット・シーサワイ",
+          "desc": "クメール様式の3基の仏塔（プラーン）が並ぶ寺院跡。もとはヒンドゥー教寺院として建てられ、後に仏教寺院へ改修された歴史を持つ。周囲を囲む堀と赤煉瓦の塔のコントラストが美しい。",
+          "badge": "クメール様式",
+          "prompt_en": "Flat vector illustration of Wat Sri Sawai Sukhothai Thailand, three tall Khmer-style corncob-shaped brick prangs standing in a row, surrounded by a moat, morning light, wide landscape",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Wat+Sri+Sawai+Sukhothai"
+        },
+        {
+          "must": false,
+          "icon": "🏮",
+          "num": "SK 05",
+          "name": "ロイクラトン・光と音のショー（11月）",
+          "desc": "スコータイは灯篭流し「ロイクラトン」発祥の地とされ、毎年11月の満月の夜に歴史公園内で大規模な光と音のショーが開催される。ライトアップされた遺跡を背景に打ち上げ花火や伝統舞踊が披露され、川に浮かべる灯篭の灯りが水面を埋め尽くす。",
+          "badge": "季節イベント",
+          "prompt_en": "Flat vector illustration of Loy Krathong festival at Sukhothai Historical Park Thailand at night, illuminated ancient brick stupas in the background, floating candle lanterns covering the surface of a pond, silhouettes of a crowd, fireworks in the night sky, wide landscape",
+          "type": "activity",
+          "no_map": true
         }
       ]
     }
@@ -2586,7 +2938,7 @@
     },
     {
       "title": "南部の島々は、それぞれ別の国のようだ",
-      "body": "プーケット・クラビ・コサムイ・コパンガン——タイの南部には個性の全く異なる島が点在する。観光地化されたリゾートビーチもあれば、石灰岩の断崖に囲まれた秘境の入り江もある。ファンガー湾のジェームズボンド島、クラビの<a onclick=\"showSpot('KB 01')\" class=\"keyword-link\">ライレイビーチ</a>、コパンガンの<a onclick=\"showSpot('SM 02')\" class=\"keyword-link\">フルムーンパーティー</a>と、目的によって選ぶ島が変わる。バンコクから国内線で1〜2時間——都市と海を同じ旅で欲張れるのはタイならではだ。",
+      "body": "プーケット・クラビ・コサムイ・コパンガン——タイの南部には個性の全く異なる島が点在する。観光地化されたリゾートビーチもあれば、石灰岩の断崖に囲まれた秘境の入り江もある。<a onclick=\"showSpot('PH 02')\" class=\"keyword-link\">ファンガー湾（ジェームズボンド島）</a>、クラビの<a onclick=\"showSpot('KB 01')\" class=\"keyword-link\">ライレイビーチ</a>、コパンガンの<a onclick=\"showSpot('SM 02')\" class=\"keyword-link\">フルムーンパーティー</a>と、目的によって選ぶ島が変わる。バンコクから国内線で1〜2時間——都市と海を同じ旅で欲張れるのはタイならではだ。",
       "image": "素材/観光スポット/ライレイビーチ.webp",
       "spot_ref": "KB 01"
     }
