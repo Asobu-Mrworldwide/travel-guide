@@ -34,11 +34,11 @@
   },
   "overview": {
     "country_question": "ベトナムってどんな国？",
-    "description_html": "南北に約1,650km、細長く伸びるインドシナ半島の国ベトナム。北部ハノイの古都情緒、中部ホイアンのランタンが灯る旧市街、南部ホーチミンの熱気とバイクの奔流——同じ国とは思えないほど表情豊かな旅ができる。<span style='display:block;margin-top:0.5em'>朝から晩まで途切れないバイクのクラクション、道端の低い椅子で<a onclick=\"showFood('No.01')\" class=\"spot-link\">フォー</a>をすする人々、路地に漂うベトナムコーヒーの香り——落ち着かないはずなのに、なぜか居心地がいい。それがこの国の不思議な魔力だ。</span>",
+    "description_html": "南北に約1,650km、細長く伸びるインドシナ半島の国ベトナム。北部ハノイの古都情緒、中部ホイアンのランタン、南部ホーチミンの熱気とバイクの奔流——同じ国とは思えないほど表情豊かな旅ができる。<span style='display:block;margin-top:0.5em'>朝から晩まで途切れないバイクのクラクション、道端でフォーをすする人々、路地に漂うコーヒーの香り——落ち着かないはずなのに、なぜか居心地がいい。</span>",
     "flag_html": "<div style=\"display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden\"><svg width=\"150\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"-15 -10 30 20\"><path fill=\"#DA251d\" d=\"M-20-15h40v30h-40z\"/><g id=\"b\" transform=\"translate(0 -6)\"><path id=\"a\" fill=\"#FF0\" transform=\"rotate(18)\" d=\"M0 0v6h4\"/><use xlink:href=\"#a\" transform=\"scale(-1 1)\"/></g><g id=\"c\" transform=\"rotate(72)\"><use xlink:href=\"#b\"/><use xlink:href=\"#b\" transform=\"rotate(72)\"/></g><use xlink:href=\"#c\" transform=\"scale(-1 1)\"/></svg></div>",
     "flag_caption": "Cờ đỏ sao vàng（コー・ドー・サオ・ヴァン）― ベトナム語で「金星紅旗」",
     "top_spot_name": "ハロン湾",
-    "top_spot_desc": "南シナ海に約1,600の石灰岩の奇岩が林立する世界遺産の景勝地。クルーズ船で1〜2泊しながら鍾乳洞やカヤックを楽しむのが定番。",
+    "top_spot_desc": "南シナ海に1,600もの石灰岩の奇岩が林立する世界遺産。クルーズ船で1〜2泊し鍾乳洞やカヤックを楽しむのが定番。",
     "top_spot_image": "素材/観光スポット/ハロン湾クルーズ.webp",
     "top_food_name": "フォー",
     "top_food_desc": "牛骨や鶏ガラでじっくり出汁を取った、ベトナムを代表する米麺料理。パクチーやライムを添え、店ごとに異なる味わいが楽しめる国民食。",
@@ -48,7 +48,7 @@
     "difficulty_label_color": "#b09000",
     "difficulty_pct": "45",
     "difficulty_bar": "linear-gradient(90deg,#00a86b,#66cc99)",
-    "japan_popularity_html": "近年、直行便の増加とともに日本人旅行者が急増中のアジア屈指の人気旅行先。<strong>ビザ不要・物価安い・グルメが豊富・北から南まで表情が違う</strong>のが魅力で、リピーターも多い。",
+    "japan_popularity_html": "近年、直行便の増加とともに日本人旅行者が急増中のアジア屈指の人気旅行先。<strong>ビザ不要・物価が安い・グルメが豊富・北から南まで表情が異なる</strong>のが魅力で、何度訪れても新しい発見があるとリピーターも多い。",
     "flight_hours": "直行便で約6〜6.5時間（乗継便あり）",
     "timezone": "日本 −2時間",
     "visa": "不要（45日）",
@@ -164,7 +164,7 @@
     }
   ],
   "season_mini": {
-    "description": "ベトナムは南北に長く、北部と南部で気候が大きく異なります。北部（ハノイ）は四季があり、南部（ホーチミン）は乾季・雨季の2シーズン。",
+    "description": "南北に長いベトナムは地域で気候が大きく異なる。北部は四季があり、南部は乾季・雨季の2シーズン制。",
     "city_name": "ハノイ",
     "months": [
       {
@@ -817,7 +817,7 @@
       {
         "icon": "🍜",
         "name": "食費（1日）",
-        "detail_html": "屋台・食堂なら1食100〜300円が当たり前<br>レストランでも500〜1,200円以内が多い<br>屋台では現金払いが基本。WiseカードはATM引き出しに便利。",
+        "detail_html": "屋台・食堂なら1食100〜300円、レストランでも500〜1,200円以内が多い<br>屋台では現金払いが基本。WiseカードはATM引き出しに便利。",
         "price": "400〜2,000円/日",
         "affiliate": "wise"
       },
@@ -1093,62 +1093,8 @@
     "cash_daily_high": "1000000",
     "cash_note": "1,000 VND ≈ 6円で計算",
     "cash_tip_title": "ゼロの桁数に注意しよう",
-    "cash_tip_body": "ベトナムドンは紙幣の桁数が非常に多く、10万VND札と50万VND札を見間違えやすい。色と数字を必ず確認する癖をつけよう。屋台ではお釣りが出ないことも多いので小額紙幣を用意しておくと安心。",
-    "cta_title": "出発前にマナーも確認しよう！🙏",
-    "cta_desc": "ベトナムならではのマナーを知っておくと現地での行動がスムーズ。<br>道路の渡り方・食事・寺院見学など旅行者が知っておくべきポイントをまとめました。"
+    "cash_tip_body": "ベトナムドンは紙幣の桁数が非常に多く、10万VND札と50万VND札を見間違えやすい。色と数字を必ず確認する癖をつけよう。屋台ではお釣りが出ないことも多いので小額紙幣を用意しておくと安心。"
   },
-  "manner_cards": [
-    {
-      "type": "do",
-      "icon": "🚶",
-      "title": "バイクの奔流は「一定速度で堂々と」渡る",
-      "desc": "信号がない交差点でも、周りを見ながら歩調を変えずゆっくり渡ればバイクが避けてくれる。急に立ち止まったり走ったりするのが一番危険。"
-    },
-    {
-      "type": "dont",
-      "icon": "🥢",
-      "title": "箸をご飯に突き立てない",
-      "desc": "お供え物を連想させるためタブー。箸は箸置きに置くか、お椀の縁にかけておく。"
-    },
-    {
-      "type": "do",
-      "icon": "👟",
-      "title": "寺院・民家では靴を脱ぐ",
-      "desc": "寺院や地元の家庭に上がる際は靴を脱ぐのが基本マナー。肌の露出も控えめに。"
-    },
-    {
-      "type": "dont",
-      "icon": "👤",
-      "title": "頭を触らない",
-      "desc": "タイ・ラオスなど周辺国同様、頭は神聖な部分とされる。子供でも軽々しく撫でないほうがよい。"
-    },
-    {
-      "type": "do",
-      "icon": "💰",
-      "title": "市場では値切り交渉が基本",
-      "desc": "観光客向けの市場は言い値が高めに設定されていることが多い。笑顔で交渉するのがベトナム流。"
-    },
-    {
-      "type": "dont",
-      "icon": "💵",
-      "title": "チップは義務ではないが心付けとして",
-      "desc": "高級店やツアーガイドには少額のチップが喜ばれる。屋台やローカル食堂では不要。"
-    },
-    {
-      "type": "do",
-      "icon": "📸",
-      "title": "少数民族の人々を撮る際は一言確認を",
-      "desc": "北部の山岳地帯では少数民族の生活風景に出会う機会も多いが、撮影前に必ず許可を取ること。"
-    },
-    {
-      "type": "dont",
-      "icon": "🗣️",
-      "title": "戦争の話題はデリケートに",
-      "desc": "ベトナム戦争関連の史跡は多いが、政治的な話題は現地の人と踏み込みすぎないほうが無難。"
-    }
-  ],
-  "manner_cta_title": "現地の言葉で話しかけてみよう！💬",
-  "manner_cta_desc": "ベトナム語の簡単なフレーズ集。<br>挨拶ひとつで現地の人の反応がぐっと変わります。",
   "phrases": {
     "multi": false,
     "decks": [
@@ -1956,7 +1902,7 @@
           "icon": "🚣",
           "num": "HAN 07",
           "name": "チャンアンの景観複合体",
-          "desc": "「陸のハロン湾」と称される世界遺産。石灰岩の奇岩がそびえる中を小舟で水路を進み、洞窟をくぐり抜けながら進む静かなクルーズが人気。ニンビン省に位置し、ハノイから日帰りツアーの定番。",
+          "desc": "「陸のハロン湾」と称される世界遺産。石灰岩の奇岩の中を小舟で水路を進み洞窟をくぐる静かなクルーズが人気で、ハノイから日帰り定番。",
           "badge": "世界遺産・日帰り定番",
           "prompt_en": "Trang An Landscape Complex Ninh Binh Vietnam, small rowing boats navigating through limestone karst river caves, lush green scenery, Vietnam",
           "type": "nature",
@@ -1968,7 +1914,7 @@
           "icon": "⛪",
           "num": "HAN 08",
           "name": "セント・ジョセフ大聖堂",
-          "desc": "1886年建立、パリのノートルダム大聖堂を模したネオゴシック様式の教会。旧市街の一角にそびえる黒ずんだ石造りの外観が印象的で、周辺のカフェから塔を眺めながらエッグコーヒーを楽しむのが定番の過ごし方。",
+          "desc": "1886年建立、パリのノートルダム大聖堂を模したネオゴシック様式の教会。周辺のカフェから塔を眺めエッグコーヒーを楽しむのが定番。",
           "badge": "旧市街のランドマーク",
           "prompt_en": "St. Joseph's Cathedral Hanoi, neo-Gothic stone church facade, Old Quarter street cafes nearby, Vietnam, travel photography",
           "type": "religious",
@@ -2178,7 +2124,7 @@
           "icon": "🏯",
           "num": "DAD 07",
           "name": "フエの建造物群",
-          "desc": "阮（グエン）朝の都として栄えたベトナム屈指の歴史都市。堀に囲まれた王宮フエ・シタデルや歴代皇帝陵が広がる世界遺産で、ホイアン・ミーソン聖域と並ぶ中部3大世界遺産のひとつ。ダナンからは車・列車どちらもハイヴァン峠を越える絶景ルートで約2〜3時間の日帰り圏内。",
+          "desc": "阮（グエン）朝の都として栄えたベトナム屈指の歴史都市。堀に囲まれた王宮フエ・シタデルや歴代皇帝陵が広がる世界遺産で、中部3大世界遺産のひとつ。",
           "badge": "世界遺産・中部3大遺産",
           "prompt_en": "Hue Imperial City Vietnam, ancient Nguyen dynasty citadel with ornate gates and moat, traditional Vietnamese royal architecture, Vietnam",
           "type": "heritage",
@@ -2364,7 +2310,7 @@
           "icon": "🌃",
           "num": "CTO 03",
           "name": "ニンキエウ埠頭",
-          "desc": "カントー川沿いに整備された遊歩道。夜はライトアップされ、屋台や夜市が立ち並ぶ地元の憩いの場になる。",
+          "desc": "カントー川沿いに整備された遊歩道。夜はライトアップされ、屋台や夜市が立ち並ぶ地元の憩いの場になっている。",
           "badge": "夜市・散策",
           "prompt_en": "Ninh Kieu Wharf Can Tho at night, riverside promenade with colorful lights, night market stalls, Mekong river view, Vietnam",
           "type": "townscape",
@@ -2376,7 +2322,7 @@
           "icon": "🌉",
           "num": "CTO 04",
           "name": "カントー橋",
-          "desc": "メコン川に架かる東南アジア最長クラスの斜張橋。ライトアップされた夜景は川沿いから一望できる。",
+          "desc": "メコン川に架かる東南アジア最長クラスの斜張橋。ライトアップされた美しい夜景は川沿いの遊歩道から一望できる。",
           "badge": "近代建築",
           "prompt_en": "Can Tho Bridge, long cable-stayed bridge spanning the Mekong River, illuminated at dusk, Vietnam",
           "type": "townscape",
@@ -2427,7 +2373,7 @@
           "icon": "🚡",
           "num": "PQ 01",
           "name": "フーコック・ケーブルカー",
-          "desc": "本島とアンタイ諸島を結ぶ、世界最長級（約8km）の海上ロープウェイ。眼下に広がるタイランド湾の島々とグラデーションの海を一望でき、終点のアミューズメントパークまで一気に渡れる。",
+          "desc": "本島とアンタイ諸島を結ぶ、世界最長級（約8km）の海上ロープウェイ。眼下に広がる島々とグラデーションの海を一望できる。",
           "badge": "世界最長級・必見",
           "prompt_en": "Phu Quoc Cable Car Vietnam, longest over-sea cable car, gondolas crossing turquoise sea with islands below, travel photography",
           "type": "activity",
@@ -2439,7 +2385,7 @@
           "icon": "🏖️",
           "num": "PQ 02",
           "name": "サオビーチ",
-          "desc": "粉砂糖のような白砂と遠浅のエメラルドグリーンの海が広がる、島南部の定番ビーチ。ビーチチェアに寝転んでのんびり過ごすもよし、シャロー・ウォーターを歩いて沖まで進むもよしの人気スポット。",
+          "desc": "粉砂糖のような白砂と遠浅のエメラルドグリーンの海が広がる、島南部の定番ビーチ。のんびり過ごすのも沖まで歩くのも人気。",
           "badge": "島随一のビーチ",
           "prompt_en": "Sao Beach Phu Quoc Vietnam, powder white sand beach with shallow turquoise water, palm trees, travel photography",
           "type": "nature",
@@ -2463,7 +2409,7 @@
           "icon": "🐟",
           "num": "PQ 04",
           "name": "アンタイ諸島アイランドホッピング",
-          "desc": "ケーブルカーの発着点でもある小島群を、ボートで巡るシュノーケリングツアー。透明度の高い海で熱帯魚を観察したり、島のビーチでのんびり過ごしたりと自由度の高い日帰りアクティビティ。",
+          "desc": "ケーブルカーの発着点でもある小島群をボートで巡るシュノーケリングツアー。透明度の高い海で熱帯魚を観察できる日帰りアクティビティ。",
           "badge": "定番アイランドホッピング",
           "prompt_en": "An Thoi Islands Phu Quoc, island hopping boat tour, snorkeling in clear turquoise water, small tropical islets, Vietnam",
           "type": "activity",
@@ -2538,7 +2484,7 @@
           "icon": "🌾",
           "num": "SPA 02",
           "name": "ムオンホア渓谷の棚田",
-          "desc": "少数民族が幾世代にもわたって切り拓いてきた、山の斜面に幾重にも連なる棚田地帯。田植え前後（5〜6月）は水鏡、稲刈り前（9月）は黄金色と、季節ごとに異なる表情を見せる。",
+          "desc": "少数民族が幾世代にもわたって切り拓いた、山の斜面に連なる棚田地帯。田植え前後は水鏡、稲刈り前は黄金色と季節で表情を変える。",
           "badge": "絶景の棚田",
           "prompt_en": "Muong Hoa Valley rice terraces Sapa Vietnam, layered green terraced fields on mountainside, misty morning, travel photography",
           "type": "nature",
@@ -2550,7 +2496,7 @@
           "icon": "🥾",
           "num": "SPA 03",
           "name": "少数民族の村トレッキング（カットカット村）",
-          "desc": "モン族・ザオ族など少数民族の伝統集落を巡るトレッキングツアー。棚田の畦道を歩きながら藍染めの民族衣装や機織りの様子を見学でき、地元ガイドの案内で数時間〜1日かけて巡るのが定番。",
+          "desc": "モン族・ザオ族など少数民族の伝統集落を巡るトレッキングツアー。棚田の畦道を歩き藍染めの民族衣装や機織りを見学できる。",
           "badge": "定番トレッキング",
           "prompt_en": "Cat Cat Village Sapa Vietnam, ethnic minority hillside village with traditional houses, terraced fields, trekkers on a mountain path, travel photography",
           "type": "activity",
@@ -2611,7 +2557,7 @@
   ],
   "courses": {
     "intro": "直行便6〜6.5時間・時差2時間のベトナムは「北から南まで、まるで違う顔を見せる」のが最大の強み。初めてならハノイとハロン湾に絞った<strong>週末プラン</strong>、2回目以降や連休が取れるなら中部ダナン・ホイアンまで足を延ばす<strong>南北縦断プラン</strong>がおすすめ。もっと欲張りたい人向けに、メコンデルタまで南北を制覇する全部乗せルートも紹介しています。",
-    "stable_title": "定番の2大プラン",
+    "stable_title": "北部に絞るか、全土を縦断するか選べるプラン",
     "stable_intro": "ベトナム旅行の基本は「ハノイ（北部）」と「ホーチミン（南部）」のどちらを起点にするか、そしてどこまで足を延ばすかで難易度が変わる。南北約1,650kmと長いため、国内移動は飛行機が基本になります。",
     "stable_plans": [
       {
