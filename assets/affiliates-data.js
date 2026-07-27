@@ -66,7 +66,7 @@ const AFFILIATES = {
     label: 'trifaについて →',
     desc:  '日本発のeSIMサービス。渡航先・日数・容量から最適なプランを選べる。アプリから前日でも購入・設定可能。',
     btn:   'trifaを見る →',
-    url:   'https://trifa.jp/'
+    url:   'https://t.afi-b.com/visit.php?a=k15291p-k498811H&p=o988181W'
   },
 
   klook: {
@@ -197,7 +197,7 @@ const BOOKING_BOXES = {
   sim: {
     title: '海外用eSIM・SIMサービスをチェックする',
     buttons: [
-      { className: 'btn-trifa',   label: 'trifaで見る →',   url: 'https://trifa.jp/', desc: '日本語サポート付きで初心者でも安心。前日でもアプリから即購入・即設定できる' },
+      { className: 'btn-trifa',   label: 'trifaで見る →',   url: 'https://t.afi-b.com/visit.php?a=k15291p-k498811H&p=o988181W', desc: '日本語サポート付きで初心者でも安心。前日でもアプリから即購入・即設定できる' },
       { className: 'btn-airalo',  label: 'Airaloで見る →',  url: 'https://airalo.tpo.li/uKCCx4UI', desc: '世界200以上の国と地域に対応。必要な分だけ買えて余らせない' },
     ]
   },
@@ -260,7 +260,7 @@ const AFFILIATE_CARDS = {
     ],
     note:  '',
     btn:   'trifaを見る →',
-    url:   'https://trifa.jp/',
+    url:   'https://t.afi-b.com/visit.php?a=k15291p-k498811H&p=o988181W',
     color: '#3d5afe',
   },
 
