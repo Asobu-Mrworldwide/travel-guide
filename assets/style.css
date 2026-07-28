@@ -209,10 +209,13 @@ section.active{display:block}
 .ms,.local{color:var(--green);font-weight:700;font-size:0.95em}
 .roma{color:#999;font-size:0.8em;display:block;margin-top:1px}
 .cat-hdr td{background:#c8e6d5!important;color:#004d33;font-weight:700;font-size:0.8em;padding:8px 12px}
-.play-btn{background:var(--green);border:none;border-radius:50%;width:30px;height:30px;color:#fff;font-size:0.75em;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;flex-shrink:0}
-.play-btn:hover{background:#004d35}
-.play-btn.playing{background:#e74c3c}
-.phrase-tbl .audio-td{width:38px;padding:4px 8px;text-align:center}
+@media(max-width:520px){
+  .phrase-tbl{table-layout:fixed}
+  .phrase-tbl th,.phrase-tbl td{padding:7px 8px}
+  .jp{font-size:0.82em}
+  .ms,.local{font-size:0.85em}
+  .roma{font-size:0.72em}
+}
 
 /* 予算・費用 */
 .budget-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 0;border-bottom:1px solid #b8b8b8}

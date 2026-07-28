@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
@@ -180,6 +182,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
       
       <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
       
@@ -321,8 +324,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/祖国解放戦争勝利記念館.webp" alt="祖国解放戦争勝利記念館" loading="lazy"><a href="https://maps.google.com/?q=Victorious+Fatherland+Liberation+War+Museum+Pyongyang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="pyongyang" data-stype="townscape" data-spot-num="PYO 09">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="pyongyang" data-stype="townscape" data-spot-num="PYO 09">
+      
       <div class="num">PYO 09</div>
       <div class="name-row"><div class="name">人民大学習堂</div><span class="badge">国内最大の図書館・必見</span></div>
       <div class="desc">金日成広場の正面にそびえる、10階建て・3000万冊を収蔵する国内最大の図書館。6階バルコニーから広場と主体思想塔を一望できる。</div>
@@ -389,8 +392,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/板門店（軍事境界線）.webp" alt="板門店（軍事境界線）" loading="lazy"></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="kaesong" data-stype="museum" data-spot-num="KAE 02">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="kaesong" data-stype="museum" data-spot-num="KAE 02">
+      
       <div class="num">KAE 02</div>
       <div class="name-row"><div class="name">開城高麗博物館</div><span class="badge">世界遺産</span></div>
       <div class="desc">高麗王朝時代の最高学府だった成均館の建物を利用した博物館。世界遺産「開城の史跡群」の構成資産のひとつで、伝統建築の中に高麗青磁などの出土品が展示されている。</div>
@@ -695,22 +698,6 @@ function filterPhraseDeck(deckId, btn) {
     d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
   });
 }
-let _phraseAudio = null;
-let _phraseBtn = null;
-function playPhrase(file, btn) {
-  if (_phraseAudio) {
-    _phraseAudio.pause();
-    _phraseAudio = null;
-    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
-  }
-  const audio = new Audio('audio/phrases/' + file);
-  audio.play().catch(() => {});
-  _phraseAudio = audio;
-  _phraseBtn = btn;
-  btn.textContent = '■';
-  btn.classList.add('playing');
-  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
-}
 
 /* 現金目安カード */
 let cashDays = 5;
@@ -833,7 +820,7 @@ function filterSpots(dim, value, btn) {
     const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
-      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.stype === activeType);
       const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
@@ -850,7 +837,7 @@ function filterFood(dim, value, btn) {
   const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#food-grid .item-card').forEach(el => {
-    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.ftype === activeType);
     const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
@@ -152,6 +154,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="food-filter-type">
+      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
       
       <button class="filter-btn active" data-filter="all" onclick="filterFood('type','all',this)">すべて</button>
       
@@ -209,7 +212,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="main" data-fcity="cebu" data-food-num="No.03">
+    <div class="item-card has-img must" data-ftype="main" data-fcity="cebu" data-food-num="No.03">
       <div class="num">No.03</div>
       <div class="name-row"><div class="name">レチョン</div><span class="badge">祝いの席の主役</span></div>
       <div class="desc">丸ごと1頭の豚を炭火でじっくり焼き上げる、フィリピンの祝いの席に欠かせないごちそう。パリパリの皮とジューシーな肉のコントラストが絶品で、セブ島のレチョンは特に有名。</div>
@@ -220,7 +223,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.04">
+    <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.04">
       <div class="num">No.04</div>
       <div class="name-row"><div class="name">シニガン</div><span class="badge">酸っぱい家庭の味</span></div>
       <div class="desc">タマリンドの酸味を効かせた具だくさんのスープ料理。豚肉・エビ・魚など具材のバリエーションが豊富で、フィリピンの食卓に欠かせない家庭料理の代表格。</div>
@@ -231,7 +234,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="noodle" data-fcity="national" data-food-num="No.05">
+    <div class="item-card has-img must" data-ftype="noodle" data-fcity="national" data-food-num="No.05">
       <div class="num">No.05</div>
       <div class="name-row"><div class="name">パンシット</div><span class="badge">お祝いの麺料理</span></div>
       <div class="desc">米麺や小麦麺を野菜・肉と炒め合わせた麺料理。「長生き」を願う縁起物として誕生日にも食べられ、種類によって麺の太さや味付けが異なる。</div>
@@ -264,7 +267,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.08">
+    <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.08">
       <div class="num">No.08</div>
       <div class="name-row"><div class="name">ロンガニサ</div><span class="badge">朝食の定番ソーセージ</span></div>
       <div class="desc">ニンニクと甘みの効いたフィリピン式ソーセージ。地域ごとに味付けが異なり、タプシログのように目玉焼き・ご飯とセットで朝食に食べるのが定番。</div>
@@ -330,7 +333,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="sweet" data-fcity="national" data-food-num="No.14">
+    <div class="item-card has-img must" data-ftype="sweet" data-fcity="national" data-food-num="No.14">
       <div class="num">No.14</div>
       <div class="name-row"><div class="name">ハロハロ</div><span class="badge">混ぜて楽しむかき氷</span></div>
       <div class="desc">かき氷に小豆・ナタデココ・プリン・ウベアイスなど様々なトッピングを層にして盛った、混ぜて食べる南国スイーツ。「ハロハロ」はタガログ語で「混ぜ混ぜ」を意味する。</div>
@@ -462,7 +465,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="sweet" data-fcity="national" data-food-num="No.26">
+    <div class="item-card has-img must" data-ftype="sweet" data-fcity="national" data-food-num="No.26">
       <div class="num">No.26</div>
       <div class="name-row"><div class="name">レチェ・フラン</div><span class="badge">定番の濃厚プリン</span></div>
       <div class="desc">卵黄をたっぷり使いカラメルソースをかけて蒸し焼きにするフィリピン風の濃厚プリン。スペイン統治の影響を受けた定番スイーツで、ハロハロのトッピングにも登場する。</div>
@@ -576,22 +579,6 @@ function filterPhraseDeck(deckId, btn) {
   document.querySelectorAll('.phrase-deck').forEach(d => {
     d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
   });
-}
-let _phraseAudio = null;
-let _phraseBtn = null;
-function playPhrase(file, btn) {
-  if (_phraseAudio) {
-    _phraseAudio.pause();
-    _phraseAudio = null;
-    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
-  }
-  const audio = new Audio('audio/phrases/' + file);
-  audio.play().catch(() => {});
-  _phraseAudio = audio;
-  _phraseBtn = btn;
-  btn.textContent = '■';
-  btn.classList.add('playing');
-  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
 }
 
 /* 現金目安カード */
@@ -715,7 +702,7 @@ function filterSpots(dim, value, btn) {
     const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
-      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.stype === activeType);
       const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
@@ -732,7 +719,7 @@ function filterFood(dim, value, btn) {
   const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#food-grid .item-card').forEach(el => {
-    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.ftype === activeType);
     const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
@@ -180,6 +182,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
       
       <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">史跡・文化</button>
       
@@ -265,8 +268,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スカイタワー.webp" alt="スカイタワー" loading="lazy"><a href="https://maps.google.com/?q=Sky+Tower+Auckland" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="auckland" data-stype="museum" data-spot-num="AKL 02">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="auckland" data-stype="museum" data-spot-num="AKL 02">
+      
       <div class="num">AKL 02</div>
       <div class="name-row"><div class="name">オークランド戦争記念博物館</div><span class="badge">マオリ文化の至宝</span></div>
       <div class="desc">マオリの伝統的な集会所や巨大なカヌーなど、マオリ・太平洋文化の至宝を collectionする博物館。館内で行われるマオリ文化公演では伝統舞踊ハカも鑑賞できる。</div>
@@ -465,8 +468,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウェリントン・ケーブルカー.webp" alt="ウェリントン・ケーブルカー" loading="lazy"><a href="https://maps.google.com/?q=Wellington+Cable+Car" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="wellington" data-stype="museum" data-spot-num="WLG 02">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="wellington" data-stype="museum" data-spot-num="WLG 02">
+      
       <div class="num">WLG 02</div>
       <div class="name-row"><div class="name">テ・パパ・トンガレワ（国立博物館）</div><span class="badge">無料の国立博物館・必見</span></div>
       <div class="desc">入場無料、ニュージーランドの自然・歴史・マオリ文化を網羅する国立博物館。実物大の恐竜化石から、伝統的なマラエ（集会所）の再現展示まで幅広く楽しめる。</div>
@@ -549,8 +552,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クライストチャーチ植物園.webp" alt="クライストチャーチ植物園" loading="lazy"><a href="https://maps.google.com/?q=Christchurch+Botanic+Gardens" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="christchurch" data-stype="religious" data-spot-num="CHC 02">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="christchurch" data-stype="religious" data-spot-num="CHC 02">
+      
       <div class="num">CHC 02</div>
       <div class="name-row"><div class="name">カードボード・カテドラル</div><span class="badge">復興のシンボル</span></div>
       <div class="desc">2011年の大地震で被災した大聖堂に代わり、紙管を建材に使った仮設の大聖堂として建てられたユニークな教会。復興のシンボルとして今も現役で使われている。</div>
@@ -633,16 +636,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <div class="item-grid">
     
-    <div class="item-card spot has-spot-img must" data-city="queenstown" data-stype="activity" data-spot-num="ZQN 01">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="queenstown" data-stype="activity" data-spot-num="ZQN 01">
+      
       <div class="num">ZQN 01</div>
       <div class="name-row"><div class="name">スカイライン・クイーンズタウン</div><span class="badge">定番の展望スポット・必見</span></div>
       <div class="desc">ゴンドラで一気に登る、街とワカティプ湖を見下ろす展望スポット。頂上のレストランでの食事に加え、山肌を滑り降りるルージュも人気アクティビティ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スカイライン・クイーンズタウン.webp" alt="スカイライン・クイーンズタウン" loading="lazy"><a href="https://maps.google.com/?q=Skyline+Queenstown" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="queenstown" data-stype="activity" data-spot-num="ZQN 02">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="queenstown" data-stype="activity" data-spot-num="ZQN 02">
+      
       <div class="num">ZQN 02</div>
       <div class="name-row"><div class="name">カワラウ橋バンジー</div><span class="badge">世界初のバンジー発祥地</span></div>
       <div class="desc">1988年、世界で初めて商業バンジージャンプが行われた歴史的な橋。43mの高さから澄んだ渓谷の川面へ飛び込む、アドベンチャースポーツ発祥の地ならではの体験。</div>
@@ -730,22 +733,6 @@ function filterPhraseDeck(deckId, btn) {
   document.querySelectorAll('.phrase-deck').forEach(d => {
     d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
   });
-}
-let _phraseAudio = null;
-let _phraseBtn = null;
-function playPhrase(file, btn) {
-  if (_phraseAudio) {
-    _phraseAudio.pause();
-    _phraseAudio = null;
-    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
-  }
-  const audio = new Audio('audio/phrases/' + file);
-  audio.play().catch(() => {});
-  _phraseAudio = audio;
-  _phraseBtn = btn;
-  btn.textContent = '■';
-  btn.classList.add('playing');
-  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
 }
 
 /* 現金目安カード */
@@ -869,7 +856,7 @@ function filterSpots(dim, value, btn) {
     const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
-      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.stype === activeType);
       const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
@@ -886,7 +873,7 @@ function filterFood(dim, value, btn) {
   const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#food-grid .item-card').forEach(el => {
-    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.ftype === activeType);
     const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });

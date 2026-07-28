@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
@@ -152,6 +154,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="food-filter-type">
+      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
       
       <button class="filter-btn " data-filter="rice" onclick="filterFood('type','rice',this)">ご飯もの</button>
       
@@ -394,7 +397,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.20">
+    <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.20">
       <div class="num">No.20</div>
       <div class="name-row"><div class="name">ラザニア</div><span class="badge">定番家庭料理</span></div>
       <div class="desc">板状パスタとミートソース・ベシャメルソースを何層にも重ねてオーブンで焼き上げる、日本でもおなじみのパスタ料理。エミリア＝ロマーニャ州が発祥地とされる。</div>
@@ -438,7 +441,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.24">
+    <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.24">
       <div class="num">No.24</div>
       <div class="name-row"><div class="name">カプレーゼサラダ</div><span class="badge">定番前菜</span></div>
       <div class="desc">トマト・モッツァレラ・バジルを重ねただけのシンプルなサラダ。カプリ島発祥とされ、赤・白・緑の彩りがイタリア国旗を思わせる定番前菜。</div>
@@ -592,7 +595,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.38">
+    <div class="item-card has-img must" data-ftype="dessert" data-fcity="national" data-food-num="No.38">
       <div class="num">No.38</div>
       <div class="name-row"><div class="name">パンナコッタ</div><span class="badge">定番プリン</span></div>
       <div class="desc">生クリームと砂糖を軽く固めた、つるんとした口当たりのデザート。ピエモンテ州トリノ発祥とされ、シンプルながらもイタリアを代表するスイーツのひとつ。</div>
@@ -729,22 +732,6 @@ function filterPhraseDeck(deckId, btn) {
     d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
   });
 }
-let _phraseAudio = null;
-let _phraseBtn = null;
-function playPhrase(file, btn) {
-  if (_phraseAudio) {
-    _phraseAudio.pause();
-    _phraseAudio = null;
-    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
-  }
-  const audio = new Audio('audio/phrases/' + file);
-  audio.play().catch(() => {});
-  _phraseAudio = audio;
-  _phraseBtn = btn;
-  btn.textContent = '■';
-  btn.classList.add('playing');
-  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
-}
 
 /* 現金目安カード */
 let cashDays = 5;
@@ -867,7 +854,7 @@ function filterSpots(dim, value, btn) {
     const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
-      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.stype === activeType);
       const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
@@ -884,7 +871,7 @@ function filterFood(dim, value, btn) {
   const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#food-grid .item-card').forEach(el => {
-    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.ftype === activeType);
     const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });

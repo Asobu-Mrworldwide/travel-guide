@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
@@ -152,6 +154,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="food-filter-type">
+      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
       
       <button class="filter-btn active" data-filter="all" onclick="filterFood('type','all',this)">すべて</button>
       
@@ -211,7 +214,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.03">
+    <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.03">
       <div class="num">No.03</div>
       <div class="name-row"><div class="name">トルティージャ・エスパニョーラ</div><span class="badge">家庭の味オムレツ</span></div>
       <div class="desc">じゃがいもと玉ねぎをたっぷり使った厚焼きオムレツ。バルの定番タパスであり、家庭の食卓にも欠かせない、スペイン人のソウルフード。</div>
@@ -222,7 +225,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="sweet" data-fcity="national" data-food-num="No.04">
+    <div class="item-card has-img must" data-ftype="sweet" data-fcity="national" data-food-num="No.04">
       <div class="num">No.04</div>
       <div class="name-row"><div class="name">チュロス・コン・チョコラテ</div><span class="badge">定番の朝食スイーツ</span></div>
       <div class="desc">カリッと揚げたチュロスを、とろりと濃厚なホットチョコレートにひたして食べる定番の朝食・おやつ。朝早くから開くチュレリア（専門店）で味わうのが本場流。</div>
@@ -255,7 +258,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.07">
+    <div class="item-card has-img must" data-ftype="drink" data-fcity="national" data-food-num="No.07">
       <div class="num">No.07</div>
       <div class="name-row"><div class="name">サングリア</div><span class="badge">定番の果実ワイン</span></div>
       <div class="desc">赤ワインにオレンジやレモンなどの果物を漬け込んだ、フルーティーで飲みやすい定番カクテル。暑い日のテラス席にぴったりの、旅情を盛り上げる一杯。</div>
@@ -343,7 +346,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
     
-    <div class="item-card has-img " data-ftype="main" data-fcity="sevilla" data-food-num="No.15">
+    <div class="item-card has-img must" data-ftype="main" data-fcity="sevilla" data-food-num="No.15">
       <div class="num">No.15</div>
       <div class="name-row"><div class="name">ガスパチョ</div><span class="badge">冷製トマトスープ</span></div>
       <div class="desc">完熟トマトをベースに野菜とオリーブオイルをミキサーにかけた、アンダルシア発祥の冷製スープ。灼熱の南部の夏を乗り切るための、飲むサラダとも呼べる一皿。</div>
@@ -502,22 +505,6 @@ function filterPhraseDeck(deckId, btn) {
     d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
   });
 }
-let _phraseAudio = null;
-let _phraseBtn = null;
-function playPhrase(file, btn) {
-  if (_phraseAudio) {
-    _phraseAudio.pause();
-    _phraseAudio = null;
-    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
-  }
-  const audio = new Audio('audio/phrases/' + file);
-  audio.play().catch(() => {});
-  _phraseAudio = audio;
-  _phraseBtn = btn;
-  btn.textContent = '■';
-  btn.classList.add('playing');
-  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
-}
 
 /* 現金目安カード */
 let cashDays = 5;
@@ -640,7 +627,7 @@ function filterSpots(dim, value, btn) {
     const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
-      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.stype === activeType);
       const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
@@ -657,7 +644,7 @@ function filterFood(dim, value, btn) {
   const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#food-grid .item-card').forEach(el => {
-    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.ftype === activeType);
     const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });

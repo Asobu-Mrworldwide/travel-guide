@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
@@ -180,6 +182,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
     <div class="filter-row" id="spots-filter-type">
+      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
       
       <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
       
@@ -311,8 +314,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/広蔵市場（クァンジャンシジャン）.webp" alt="広蔵市場（クァンジャンシジャン）" loading="lazy"><a href="https://maps.google.com/?q=Gwangjang+Market+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="seoul" data-stype="heritage" data-spot-num="SEL 09">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="seoul" data-stype="heritage" data-spot-num="SEL 09">
+      
       <div class="num">SEL 09</div>
       <div class="name-row"><div class="name">昌徳宮（チャンドックン）</div><span class="badge">世界遺産の離宮</span></div>
       <div class="desc">ユネスコ世界遺産の朝鮮王朝の離宮。裏手の「秘苑」は予約制ツアーでのみ入れる庭園で、韓国庭園の最高傑作とされる。</div>
@@ -423,8 +426,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/甘川文化村.webp" alt="甘川文化村" loading="lazy"><a href="https://maps.google.com/?q=Gamcheon+Culture+Village+Busan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
-    <div class="item-card spot has-spot-img must" data-city="busan" data-stype="market" data-spot-num="BUS 03">
-      <div class="must-badge">⭐</div>
+    <div class="item-card spot has-spot-img " data-city="busan" data-stype="market" data-spot-num="BUS 03">
+      
       <div class="num">BUS 03</div>
       <div class="name-row"><div class="name">チャガルチ市場</div><span class="badge">海鮮市場</span></div>
       <div class="desc">韓国最大級の水産市場。新鮮な海鮮をその場で選んで2階の食堂で調理してもらえる海鮮好き必見のスポット。</div>
@@ -681,22 +684,6 @@ function filterPhraseDeck(deckId, btn) {
     d.style.display = (d.dataset.deckId === deckId) ? '' : 'none';
   });
 }
-let _phraseAudio = null;
-let _phraseBtn = null;
-function playPhrase(file, btn) {
-  if (_phraseAudio) {
-    _phraseAudio.pause();
-    _phraseAudio = null;
-    if (_phraseBtn) { _phraseBtn.textContent = '▶'; _phraseBtn.classList.remove('playing'); }
-  }
-  const audio = new Audio('audio/phrases/' + file);
-  audio.play().catch(() => {});
-  _phraseAudio = audio;
-  _phraseBtn = btn;
-  btn.textContent = '■';
-  btn.classList.add('playing');
-  audio.onended = () => { btn.textContent = '▶'; btn.classList.remove('playing'); _phraseAudio = null; };
-}
 
 /* 現金目安カード */
 let cashDays = 5;
@@ -819,7 +806,7 @@ function filterSpots(dim, value, btn) {
     const regionOk = activeRegion === 'all' || card.dataset.region === activeRegion;
     let visibleCount = 0;
     card.querySelectorAll('.item-grid .item-card').forEach(el => {
-      const typeOk = activeType === 'all' || el.dataset.stype === activeType;
+      const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.stype === activeType);
       const show = cityOk && regionOk && typeOk;
       el.style.display = show ? '' : 'none';
       if (show) visibleCount++;
@@ -836,7 +823,7 @@ function filterFood(dim, value, btn) {
   const activeType = document.querySelector('#food-filter-type .filter-btn.active')?.dataset.filter || 'all';
   const activeCity = document.querySelector('#food-filter-city .filter-btn.active')?.dataset.filter || 'all';
   document.querySelectorAll('#food-grid .item-card').forEach(el => {
-    const typeOk = activeType === 'all' || el.dataset.ftype === activeType;
+    const typeOk = activeType === 'all' || (activeType === 'must' ? el.classList.contains('must') : el.dataset.ftype === activeType);
     const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });
