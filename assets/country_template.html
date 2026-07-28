@@ -91,6 +91,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point:last-child{border-bottom:none}
 .sp-point-body{flex:1;min-width:0}
 .sp-point-title{font-size:0.95em;font-weight:700;margin-bottom:8px;line-height:1.5}
+.sp-point-title a{color:inherit;text-decoration:underline;cursor:pointer}
+.sp-point-title a:hover{opacity:0.75}
 .sp-point-text{font-size:0.82em;color:#444;line-height:1.8}
 .sp-point-img{width:120px;height:90px;object-fit:cover;flex-shrink:0;display:block}
 @media(max-width:700px){.sp-point{flex-direction:column}.sp-point-img{width:100%;height:auto;aspect-ratio:16/9}}
@@ -197,7 +199,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     {% for pt in spot_points %}
     <div class="sp-point">
       <div class="sp-point-body">
-        <div class="sp-point-title">{{pt.title}}</div>
+        <div class="sp-point-title">{% if pt.spot_ref %}<a onclick="showSpot('{{pt.spot_ref}}')" class="spot-link">{{pt.title}}</a>{% else %}{% if pt.food_ref %}<a onclick="showFood('{{pt.food_ref}}')" class="spot-link">{{pt.title}}</a>{% else %}{{pt.title}}{% endif %}{% endif %}</div>
         <div class="sp-point-text">{{pt.body}}</div>
       </div>
       {% if pt.image %}<img src="{{pt.image}}" alt="{{pt.title}}" class="sp-point-img">{% endif %}

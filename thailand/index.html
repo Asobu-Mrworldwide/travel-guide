@@ -91,6 +91,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point:last-child{border-bottom:none}
 .sp-point-body{flex:1;min-width:0}
 .sp-point-title{font-size:0.95em;font-weight:700;margin-bottom:8px;line-height:1.5}
+.sp-point-title a{color:inherit;text-decoration:underline;cursor:pointer}
+.sp-point-title a:hover{opacity:0.75}
 .sp-point-text{font-size:0.82em;color:#444;line-height:1.8}
 .sp-point-img{width:120px;height:90px;object-fit:cover;flex-shrink:0;display:block}
 @media(max-width:700px){.sp-point{flex-direction:column}.sp-point-img{width:100%;height:auto;aspect-ratio:16/9}}
@@ -160,7 +162,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="sp-point">
       <div class="sp-point-body">
-        <div class="sp-point-title">黄金の寺院が、街の中に当然のようにある</div>
+        <div class="sp-point-title"><a onclick="showSpot('BK 04')" class="spot-link">黄金の寺院が、街の中に当然のようにある</a></div>
         <div class="sp-point-text">バンコク市内だけで400を超える寺院が点在し、BTSを降りてすぐに金色の仏塔が目に飛び込んでくる。<a onclick="showSpot('BK 01')" class="spot-link">ワット・プラケオ</a>のエメラルド仏、<a onclick="showSpot('BK 03')" class="spot-link">ワット・ポー</a>の全長46mの涅槃仏（ねはんぶつ）、チャオプラヤー川沿いに立つ<a onclick="showSpot('BK 04')" class="spot-link">ワット・アルン</a>——どれも「こんなものが街なかに？」と思わずにいられない規模と美しさだ。早朝に訪れると、橙色の袈裟（けさ）をまとった僧侶が境内を歩く光景に出会える。</div>
       </div>
       <img src="素材/観光スポット/ワット・アルン（暁の寺）.webp" alt="黄金の寺院が、街の中に当然のようにある" class="sp-point-img">
@@ -168,7 +170,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="sp-point">
       <div class="sp-point-body">
-        <div class="sp-point-title">屋台は、タイ人の台所だ</div>
+        <div class="sp-point-title"><a onclick="showSpot('BK 10')" class="spot-link">屋台は、タイ人の台所だ</a></div>
         <div class="sp-point-text">タイでは自宅で料理をせず、近所の屋台で食事を済ませる人が珍しくない。<a onclick="showFood('No.01')" class="keyword-link">パッタイ</a>・<a onclick="showFood('No.06')" class="keyword-link">カオマンガイ</a>・<a onclick="showFood('No.05')" class="keyword-link">ソムタム</a>・<a onclick="showFood('No.02')" class="keyword-link">トムヤムクン</a>——どれも日本円で100〜200円前後。観光客向けに味を調整しているわけでなく、地元の人が毎日食べているそのままの味がそこにある。バンコクの<a onclick="showSpot('BK 05')" class="keyword-link">カオサン通り</a>やチェンマイの夜市は、世界中の旅行者と地元の人が同じ皿を囲む不思議な空間だ。</div>
       </div>
       <img src="素材/観光スポット/ナイトマーケット.webp" alt="屋台は、タイ人の台所だ" class="sp-point-img">
@@ -176,7 +178,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="sp-point">
       <div class="sp-point-body">
-        <div class="sp-point-title">象と過ごす半日が、旅の記憶になる</div>
+        <div class="sp-point-title"><a onclick="showSpot('CM 02')" class="spot-link">象と過ごす半日が、旅の記憶になる</a></div>
         <div class="sp-point-text">チェンマイ郊外に点在する<a onclick="showSpot('CM 02')" class="keyword-link">エレファントサンクチュアリ</a>では、象使いに頼らず自由に歩き回る象と間近に過ごせる。餌を手から与え、泥浴びを一緒にする体験は、動物園とは別次元の密度がある。「倫理的な象体験」という概念が広まったのもここ数年のことで、ショーを行わず象の自然な行動を尊重する施設を選ぶことが、今の旅のスタンダードになりつつある。</div>
       </div>
       <img src="素材/観光スポット/エレファントサンクチュアリ.webp" alt="象と過ごす半日が、旅の記憶になる" class="sp-point-img">
@@ -184,7 +186,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="sp-point">
       <div class="sp-point-body">
-        <div class="sp-point-title">南部の島々は、それぞれ別の国のようだ</div>
+        <div class="sp-point-title"><a onclick="showSpot('KB 01')" class="spot-link">南部の島々は、それぞれ別の国のようだ</a></div>
         <div class="sp-point-text">プーケット・クラビ・コサムイ・コパンガン——タイの南部には個性の全く異なる島が点在する。観光地化されたリゾートビーチもあれば、石灰岩の断崖に囲まれた秘境の入り江もある。<a onclick="showSpot('PH 02')" class="keyword-link">ファンガー湾（ジェームズボンド島）</a>、クラビの<a onclick="showSpot('KB 01')" class="keyword-link">ライレイビーチ</a>、コパンガンの<a onclick="showSpot('SM 02')" class="keyword-link">フルムーンパーティー</a>と、目的によって選ぶ島が変わる。バンコクから国内線で1〜2時間——都市と海を同じ旅で欲張れるのはタイならではだ。</div>
       </div>
       <img src="素材/観光スポット/ライレイビーチ.webp" alt="南部の島々は、それぞれ別の国のようだ" class="sp-point-img">
