@@ -315,7 +315,7 @@ function initAffiliates() {
 document.addEventListener('DOMContentLoaded', initAffiliates);
 
 document.addEventListener('click', e => {
-  document.querySelectorAll('.skyscanner-choice.open').forEach(el => {
+  document.querySelectorAll('.flight-choice.open').forEach(el => {
     if (!el.parentElement.contains(e.target)) el.classList.remove('open');
   });
 });
