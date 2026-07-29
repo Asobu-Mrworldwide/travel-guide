@@ -186,26 +186,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="sp-point">
       <div class="sp-point-body">
-        <div class="sp-point-title"><a onclick="showSpot('QUE 02')" class="spot-link">ケベック旧市街は北米で唯一の城壁都市</a></div>
-        <div class="sp-point-text">アメリカ・カナダを通じて城壁が完全な形で残る唯一の街。夜になると外灯に照らされた石畳がヨーロッパさながらの雰囲気に包まれる。</div>
-      </div>
-      <img src="素材/観光スポット/ケベック旧市街.webp" alt="ケベック旧市街は北米で唯一の城壁都市" class="sp-point-img">
-    </div>
-    
-    <div class="sp-point">
-      <div class="sp-point-body">
         <div class="sp-point-title"><a onclick="showSpot('MON 01')" class="spot-link">モントリオールとトロントの言語の違いに注意</a></div>
         <div class="sp-point-text">英語圏のトロントに対し、モントリオールがあるケベック州は事実上フランス語が第一言語。標識や店員との会話もフランス語が基本になるため、簡単な挨拶を覚えておくと現地の反応が良くなる。</div>
       </div>
       <img src="素材/観光スポット/モントリオール旧市街.webp" alt="モントリオールとトロントの言語の違いに注意" class="sp-point-img">
-    </div>
-    
-    <div class="sp-point">
-      <div class="sp-point-body">
-        <div class="sp-point-title"><a onclick="showSpot('BAN 02')" class="spot-link">バンフはレンタカーが観光の生命線</a></div>
-        <div class="sp-point-text">レイク・ルイーズやモレーン湖など主要スポットは公共交通の便が限られるため、レンタカーでの移動が基本。夏季シーズンはモレーン湖への道が非常に混雑するため早朝到着がおすすめ。</div>
-      </div>
-      <img src="素材/観光スポット/モレーン湖.webp" alt="バンフはレンタカーが観光の生命線" class="sp-point-img">
     </div>
     
     <div style="padding:10px 16px;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button><button class="see-more" style="margin:0" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button></div>
@@ -582,8 +566,8 @@ function filterPhraseDeck(deckId, btn) {
 let cashDays = 5;
 const CURRENCY = 'CAD';
 const RATE = 108;
-const CASH_LOW = 10;
-const CASH_HIGH = 30;
+const CASH_LOW = 15;
+const CASH_HIGH = 20;
 function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;

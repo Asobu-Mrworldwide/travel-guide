@@ -99,10 +99,13 @@ const AFFILIATES_CSS = `
   justify-content:center;
   height:44px;
   border-radius:6px;
+  border:none;
   text-decoration:none;
   font-size:14px;
+  font-family:inherit;
   font-weight:600;
   color:#ffffff;
+  cursor:pointer;
   transition:opacity 0.2s ease, transform 0.1s ease;
   width:100%;
 }
@@ -110,6 +113,35 @@ const AFFILIATES_CSS = `
   opacity:0.85;
   transform:translateY(-1px);
 }
+.flight-choice-wrap{position:relative}
+.flight-choice{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  right:0;
+  background:#fff;
+  border:1px solid #e9ecef;
+  border-radius:6px;
+  padding:8px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.15);
+  z-index:10;
+}
+.flight-choice.open{display:flex}
+.flight-choice a{
+  display:block;
+  padding:9px;
+  text-align:center;
+  background:#eef5fd;
+  border-radius:5px;
+  color:#0770e3;
+  font-weight:600;
+  font-size:13px;
+  text-decoration:none;
+}
+.flight-choice a:hover{background:#dcecfb}
 .btn-agoda{background-color:#202636;border-bottom:3px solid #111520}
 .btn-bookingcom{background-color:#003580;border-bottom:3px solid #002254}
 .btn-expedia{background-color:#1f4985;border-bottom:3px solid #122f59}
@@ -239,8 +271,33 @@ function initAffiliates() {
     const box = BOOKING_BOXES[key];
     if (!box) { console.warn('affiliates.js: unknown booking box key →', key); return; }
 
+    const dest = el.dataset.dest;
     const wrap = document.createElement('div');
     wrap.className = 'booking-box';
+
+    if (key === 'flights' && dest) {
+      wrap.innerHTML = `
+        <p class="booking-title">${box.title}</p>
+        <div class="booking-buttons">
+          <div class="booking-btn-group flight-choice-wrap">
+            <button type="button" class="btn-booking btn-skyscanner" onclick="this.nextElementSibling.classList.toggle('open')">Skyscannerで見る →</button>
+            <div class="flight-choice">
+              <a href="https://www.skyscanner.jp/transport/flights/nrt/${dest}/" target="_blank" rel="noopener">東京発 →</a>
+              <a href="https://www.skyscanner.jp/transport/flights/kix/${dest}/" target="_blank" rel="noopener">大阪発 →</a>
+            </div>
+          </div>
+          <div class="booking-btn-group flight-choice-wrap">
+            <button type="button" class="btn-booking btn-googleflights" onclick="this.nextElementSibling.classList.toggle('open')">Google Flightsで見る →</button>
+            <div class="flight-choice">
+              <a href="https://www.google.com/travel/flights?q=Flights%20from%20NRT%20to%20${dest.toUpperCase()}" target="_blank" rel="noopener">東京発 →</a>
+              <a href="https://www.google.com/travel/flights?q=Flights%20from%20KIX%20to%20${dest.toUpperCase()}" target="_blank" rel="noopener">大阪発 →</a>
+            </div>
+          </div>
+        </div>`;
+      el.replaceWith(wrap);
+      return;
+    }
+
     wrap.innerHTML = `
       <p class="booking-title">${box.title}</p>
       <div class="booking-buttons">
@@ -256,3 +313,9 @@ function initAffiliates() {
 }
 
 document.addEventListener('DOMContentLoaded', initAffiliates);
+
+document.addEventListener('click', e => {
+  document.querySelectorAll('.skyscanner-choice.open').forEach(el => {
+    if (!el.parentElement.contains(e.target)) el.classList.remove('open');
+  });
+});

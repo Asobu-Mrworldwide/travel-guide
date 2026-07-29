@@ -20,6 +20,8 @@ generate.py の末尾から自動的に呼び出される（generate() の最後
   - 死んだフィールドの残存（manner_cards 等）
   - courses.stable_title の汎用文言チェック
   - phrases カテゴリの項目数（_country_template.json との一致）
+  - practical.cash_daily_low/high が budget.items（食費・交通費の中央値×現金依存度係数）の
+    計算式から大きく外れていないか（実測値による個別上書きは±40%程度まで許容）
 """
 import json, re, os, glob, sys
 
@@ -46,6 +48,34 @@ RANGES = [
 ]
 
 GENERIC_STABLE_TITLES = {'定番の2大プラン', 'モデルコース'}
+
+def _parse_price_range(s):
+    """'1,000〜4,000円/日' のような文字列から[下限, 上限]（円）を取り出す。'1.5万'表記にも対応。"""
+    if not s:
+        return None
+    s2 = s.replace(',', '')
+    def conv(tok):
+        m = re.match(r'([\d.]+)万', tok)
+        if m:
+            return float(m.group(1)) * 10000
+        m2 = re.match(r'([\d.]+)', tok)
+        return float(m2.group(1)) if m2 else None
+    nums = [conv(n) for n in re.findall(r'[\d.]+万?', s2)]
+    nums = [n for n in nums if n is not None]
+    return nums[:2] if len(nums) >= 2 else None
+
+_INTERCITY_TRANSPORT_MARKERS = ('国内線', 'レンタカー', 'フライト', '飛行機', '隣島', '島間')
+
+def _cash_dependency_mult(label):
+    if not label:
+        return None
+    if '高' in label:
+        return 1.0
+    if '低' in label:
+        return 0.2
+    if '中' in label:
+        return 0.7
+    return None
 
 
 def check_country(country_id, data=None, root_dir=None, verbose=True):
@@ -144,6 +174,36 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
     st = _get(data, 'courses.stable_title')
     if st in GENERIC_STABLE_TITLES:
         issues.append(f'[stable_title 汎用文言] "{st}"（国固有の見出しに変更を検討）')
+
+    # ── cash_daily_low/high の妥当性（食費・交通費の中央値×現金依存度係数との照合） ──
+    prac = data.get('practical', {})
+    cdl, cdh = prac.get('cash_daily_low'), prac.get('cash_daily_high')
+    rate = prac.get('exchange_rate')
+    mult = _cash_dependency_mult(prac.get('cash_dependency'))
+    if cdl and cdh and rate and mult:
+        food = transport = None
+        transport_is_intercity = False
+        for it in data.get('budget', {}).get('items', []):
+            if '食費' in it.get('name', ''):
+                food = _parse_price_range(it.get('price'))
+            if '交通費' in it.get('name', ''):
+                transport = _parse_price_range(it.get('price'))
+                if any(m in it.get('detail_html', '') for m in _INTERCITY_TRANSPORT_MARKERS):
+                    transport_is_intercity = True
+        if food and transport:
+            try:
+                transport_component = transport[0] if transport_is_intercity else (transport[0] + transport[1]) / 2
+                median_jpy = (food[0] + food[1]) / 2 + transport_component
+                rate_f = float(rate)
+                expected_low = median_jpy * mult / rate_f
+                expected_high = expected_low * 1.3
+                actual_low, actual_high = float(cdl), float(cdh)
+                if expected_low > 0 and not (0.5 <= actual_low / expected_low <= 1.6):
+                    issues.append(f'[cash_daily_low 目安からの乖離] 実測/上書きでなければ再計算を推奨: 現在{cdl} 計算目安≈{expected_low:.0f}')
+                if expected_high > 0 and not (0.5 <= actual_high / expected_high <= 1.6):
+                    issues.append(f'[cash_daily_high 目安からの乖離] 実測/上書きでなければ再計算を推奨: 現在{cdh} 計算目安≈{expected_high:.0f}')
+            except (ValueError, ZeroDivisionError):
+                pass
 
     # ── phrases カテゴリ項目数（テンプレートと比較） ──
     tpl_path = os.path.join(root_dir, 'assets', 'tools', '_country_template.json')

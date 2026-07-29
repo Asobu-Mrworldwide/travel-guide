@@ -473,8 +473,8 @@ function filterPhraseDeck(deckId, btn) {
 let cashDays = 5;
 const CURRENCY = 'THB';
 const RATE = 4.9;
-const CASH_LOW = 300;
-const CASH_HIGH = 1500;
+const CASH_LOW = 400;
+const CASH_HIGH = 500;
 function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;
