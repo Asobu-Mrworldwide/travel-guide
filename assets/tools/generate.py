@@ -292,6 +292,31 @@ def _esc(s):
     """JS文字列内のシングルクォートをエスケープ"""
     return str(s).replace("'", "\\'")
 
+SITE_BASE_URL = 'https://worldmappy.com'
+
+def _html_attr_esc(s):
+    """HTML属性値として安全な文字列にエスケープ（"・&・<・>）"""
+    return (str(s).replace('&', '&amp;').replace('"', '&quot;')
+            .replace('<', '&lt;').replace('>', '&gt;'))
+
+def _strip_tags_plain(html):
+    return re.sub(r'<[^>]+>', '', html or '').strip()
+
+def _build_og_context(data, country_id, outfile):
+    """OGP（og:title/description/image/url）用のコンテキストを組み立てる"""
+    desc_raw = _strip_tags_plain(data.get('overview', {}).get('description_html', ''))
+    if len(desc_raw) > 120:
+        desc_raw = desc_raw[:119] + '…'
+    hero = data.get('hero_image', '')
+    image_url = f"{SITE_BASE_URL}/{urllib.parse.quote(country_id)}/{urllib.parse.quote(hero)}" if hero else ''
+    page_url = f"{SITE_BASE_URL}/{urllib.parse.quote(country_id)}/" if outfile == 'index.html' \
+        else f"{SITE_BASE_URL}/{urllib.parse.quote(country_id)}/{outfile}"
+    return {
+        'og_description': _html_attr_esc(desc_raw),
+        'og_image': _html_attr_esc(image_url),
+        'og_url': _html_attr_esc(page_url),
+    }
+
 def update_index(country_id, data, root_dir):
     """
     index.html の COUNTRIES 配列に国カードを追加する（未登録の場合のみ）。
@@ -580,6 +605,8 @@ def generate(country_id):
             ctx['needs_gmaps']     = slug in ('basic', 'budget')
             ctx['container_style'] = 'max-width:1000px' if slug in ('spots', 'food') else ''
             ctx['page_title']      = base_title if slug == 'basic' else f'{name}の{label}｜{base_title}'
+            ctx.update(_build_og_context(data, country_id, outfile))
+            ctx['og_title']        = _html_attr_esc(ctx['page_title'])
             html = _render(tpl, ctx)
             with open(os.path.join(country_dir, outfile), 'w', encoding='utf-8') as f:
                 f.write(html)
@@ -595,6 +622,8 @@ def generate(country_id):
         ctx['sec_active']      = {s: ('active' if s == 'basic' else '') for s in SECTIONS}
         ctx['needs_gmaps']     = True
         ctx['container_style'] = ''
+        ctx.update(_build_og_context(data, country_id, 'index.html'))
+        ctx['og_title']        = _html_attr_esc(data.get('page_title', ''))
         html = _render(tpl, ctx)
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write(html)

@@ -75,26 +75,21 @@
           <p class="cl-section-title">エリアで探す</p>
           <div class="cl-chip-row">${areaHtml}</div>
         </div>
-        <div class="cl-social">
-          <p class="cl-social-title">公式アカウントをフォロー</p>
-          <div class="cl-social-icons">
-            <a href="#" target="_blank" rel="noopener" class="cl-social-icon" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a href="#" target="_blank" rel="noopener" class="cl-social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <div class="cl-bottom">
+          <div class="cl-bottom-group">
+            <span class="cl-bottom-label">公式アカウント</span>
+            <div class="cl-social-icons">
+              <a href="#" target="_blank" rel="noopener" class="cl-social-icon" aria-label="X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              <a href="#" target="_blank" rel="noopener" class="cl-social-icon" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            </div>
           </div>
-        </div>
-        <div class="cl-share">
-          <p class="cl-share-title">この記事をシェアする</p>
-          <div class="cl-share-buttons">
-            <a href="#" id="cl-share-x" target="_blank" rel="noopener" class="cl-share-btn cl-share-btn-x"><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>シェア</a>
-            <button type="button" id="cl-share-copy" class="cl-share-btn cl-share-btn-copy"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l1-1"/></svg>リンクをコピー</button>
-          </div>
+          <div class="cl-divider-v"></div>
+          <button type="button" id="cl-share-copy" class="cl-copy-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l1-1"/></svg>このページのリンクをコピー</button>
         </div>
       </div>
     </div>`;
   document.currentScript.insertAdjacentHTML("beforebegin", html);
 
-  const shareXBtn = document.getElementById("cl-share-x");
-  if (shareXBtn) shareXBtn.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(document.title) + "&url=" + encodeURIComponent(location.href);
   const shareCopyBtn = document.getElementById("cl-share-copy");
   if (shareCopyBtn) shareCopyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(location.href).then(() => {
