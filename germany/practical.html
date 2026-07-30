@@ -119,11 +119,22 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <a href="practical.html" class="active">旅の準備</a>
   <a href="phrases.html" class="">フレーズ</a>
   <button onclick="window.open('../common/checklist.html?from=germany','_blank')">持ち物リスト</button>
+  <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
+  <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
 </nav>
 <script>
   (function() {
-    var activeTab = document.querySelector('nav a.active');
+    var nav = document.querySelector('nav');
+    var activeTab = nav.querySelector('a.active');
     if (activeTab) { activeTab.scrollIntoView({block: 'nearest', inline: 'center'}); }
+    function updateNavFade() {
+      var max = nav.scrollWidth - nav.clientWidth;
+      nav.classList.toggle('has-left', nav.scrollLeft > 4);
+      nav.classList.toggle('has-right', nav.scrollLeft < max - 4);
+    }
+    updateNavFade();
+    nav.addEventListener('scroll', updateNavFade, {passive: true});
+    window.addEventListener('resize', updateNavFade);
   })();
 </script>
 
