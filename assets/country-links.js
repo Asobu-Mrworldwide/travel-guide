@@ -94,8 +94,14 @@
   if (shareCopyBtn) shareCopyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(location.href).then(() => {
       const original = shareCopyBtn.innerHTML;
+      // ボタン内のテキストが短くなって幅が縮み、SNSアイコン行と横並びにレイアウトが崩れるのを防ぐため、
+      // 切り替え前の幅を固定してから文言を変える
+      shareCopyBtn.style.width = shareCopyBtn.offsetWidth + "px";
       shareCopyBtn.innerHTML = "コピーしました！";
-      setTimeout(() => { shareCopyBtn.innerHTML = original; }, 2000);
+      setTimeout(() => {
+        shareCopyBtn.innerHTML = original;
+        shareCopyBtn.style.width = "";
+      }, 2000);
     });
   });
 })();
