@@ -63,14 +63,39 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
 
 /* メインコンテンツ */
 .main{max-width:1200px;margin:0 auto;padding:24px 20px}
-.results-info{font-size:0.8em;color:var(--sub);margin-bottom:14px}
+.results-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.results-info{font-size:0.8em;color:var(--sub)}
 .results-info strong{color:var(--primary)}
+.view-toggle{display:flex;gap:6px;flex-shrink:0}
+.view-toggle button{display:flex;align-items:center;gap:5px;font-size:0.74em;font-weight:700;padding:5px 12px;border:1px solid #d4dbe8;background:#fff;color:#777;border-radius:6px;cursor:pointer;transition:all 0.15s}
+.view-toggle button:hover{border-color:var(--primary)}
+.view-toggle button.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.view-toggle svg{width:14px;height:14px}
+@media(max-width:520px){.view-toggle button span{display:none}.view-toggle button{padding:6px 10px}}
 
 /* 国カードグリッド */
 .country-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media(max-width:900px){.country-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:620px){.country-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:420px){.country-grid{grid-template-columns:1fr}}
+
+/* コンパクト表示 */
+.country-grid.view-compact{grid-template-columns:repeat(6,1fr);gap:10px}
+@media(max-width:900px){.country-grid.view-compact{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:620px){.country-grid.view-compact{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:420px){.country-grid.view-compact{grid-template-columns:repeat(2,1fr)}}
+.country-grid.view-compact .card-hero{height:88px}
+.country-grid.view-compact .card-catch,.country-grid.view-compact .card-meta{display:none}
+.country-grid.view-compact .card-body{padding:8px 10px 8px}
+.country-grid.view-compact .card-name{font-size:0.85em}
+
+/* リスト表示 */
+.country-grid.view-list{grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:720px){.country-grid.view-list{grid-template-columns:1fr}}
+.country-grid.view-list .country-card{display:flex}
+.country-grid.view-list .card-hero{width:130px;height:auto;min-height:96px;flex-shrink:0}
+.country-grid.view-list .card-body{flex:1;min-width:0;padding:10px 14px}
+.country-grid.view-list .card-catch{-webkit-line-clamp:2}
 
 /* 国カード */
 .country-card{background:var(--card);border-radius:6px;overflow:hidden;border:1px solid var(--border);box-shadow:none;transition:transform 0.18s,border-color 0.18s;cursor:pointer}
@@ -269,7 +294,14 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
 </div>
 
 <div class="main">
-  <div class="results-info" id="resultsInfo"></div>
+  <div class="results-row">
+    <div class="results-info" id="resultsInfo"></div>
+    <div class="view-toggle" id="viewToggle">
+      <button data-view="standard" onclick="setView('standard')" aria-label="通常表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>通常</span></button>
+      <button data-view="compact" onclick="setView('compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
+      <button data-view="list" onclick="setView('list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
+    </div>
+  </div>
   <div class="country-grid" id="countryGrid"></div>
 </div>
 
@@ -742,10 +774,11 @@ function renderCards() {
     return;
   }
 
+  const availableCount = filtered.filter(c => c.available).length;
   const hasFilter = selectedMonths.length > 0 || selectedBudgets.length > 0 || selectedTags.length > 0;
   info.innerHTML = hasFilter
     ? `<strong>${filtered.length}件</strong>の旅先が見つかりました`
-    : `<strong>${filtered.length}カ国</strong>を掲載中`;
+    : `<strong>${availableCount}カ国</strong>を公開中`;
 
   grid.innerHTML = filtered.map(c => {
     const tagHtml = c.tags.slice(0,4).map(t => `<span class="card-tag">${t}</span>`).join('');
@@ -773,8 +806,22 @@ function renderCards() {
   }).join('');
 }
 
+let currentView = localStorage.getItem('countryView') || 'standard';
+function setView(view) {
+  currentView = view;
+  localStorage.setItem('countryView', view);
+  const grid = document.getElementById('countryGrid');
+  grid.classList.remove('view-compact', 'view-list');
+  if (view === 'compact') grid.classList.add('view-compact');
+  else if (view === 'list') grid.classList.add('view-list');
+  document.querySelectorAll('#viewToggle button').forEach(b => {
+    b.classList.toggle('on', b.dataset.view === view);
+  });
+}
+
 buildMonthChips();
 renderCards();
+setView(currentView);
 
 /* ヘッダー: 下スクロールで隠す・上スクロールで表示 */
 (function(){
