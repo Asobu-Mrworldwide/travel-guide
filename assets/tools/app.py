@@ -471,7 +471,7 @@ with tab2:
                 _targets = []
                 for _sec in _bulk_data.get("spot_sections", []):
                     for _sp in _sec.get("spots", []):
-                        if not _sp.get("image") and _sp.get("prompt_en"):
+                        if not image_exists(country_id, _sp) and _sp.get("prompt_en"):
                             _targets.append(_sp)
                 _out_dir = ROOT_DIR / country_id / "素材" / "観光スポット"
                 _out_dir.mkdir(parents=True, exist_ok=True)
