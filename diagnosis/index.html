@@ -35,7 +35,6 @@ body{
 
 /* ヒーロー */
 .diag-hero{text-align:center;padding:44px 20px 28px}
-.diag-hero-icon{font-size:2.8em;margin-bottom:10px;line-height:1}
 .diag-badge{display:inline-block;background:var(--green);color:#fff;font-size:0.72em;font-weight:700;padding:3px 14px;border-radius:20px;margin-bottom:14px}
 .diag-hero h1{font-size:1.55em;font-weight:900;margin-bottom:10px;line-height:1.3}
 .diag-hero p{font-size:0.85em;color:var(--sub);line-height:1.85;max-width:480px;margin:0 auto}
@@ -48,28 +47,56 @@ body{
 .progress-bar-bg{background:#e4eceb;border-radius:20px;height:7px;overflow:hidden}
 .progress-bar-fill{background:var(--green);height:100%;border-radius:20px;width:0%;transition:width 0.3s ease}
 
-/* 軸ラベル */
-.axis-label{display:flex;align-items:center;gap:10px;margin:28px 0 14px;font-size:0.78em;font-weight:700;color:var(--green);letter-spacing:0.03em}
-.axis-label::before,.axis-label::after{content:'';flex:1;height:1px;background:var(--border)}
+/* スワイプセクション */
+.swipe-section{margin-bottom:32px;position:relative}
 
-/* 質問カード */
-.q-card{background:#fff;border-radius:10px;border:1px solid var(--border);margin-bottom:12px;overflow:hidden}
-.q-header{padding:14px 18px 12px}
-.q-num{font-size:0.7em;font-weight:700;color:var(--green);margin-bottom:3px;letter-spacing:0.04em}
-.q-text{font-size:0.93em;font-weight:700;line-height:1.5;color:var(--text)}
-.q-options{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border)}
-.q-opt{cursor:pointer;display:flex;position:relative}
-.q-opt:first-child{border-right:1px solid var(--border)}
-.q-opt input[type=radio]{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
-.q-opt-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:16px 12px;font-size:0.8em;color:var(--sub);line-height:1.55;transition:background 0.15s,color 0.15s;width:100%;user-select:none}
-.q-opt input:checked ~ .q-opt-inner{background:var(--green-light);color:var(--green);font-weight:700}
-.q-opt input:checked ~ .q-opt-inner .q-icon{background:var(--green);color:#fff}
-.q-icon{font-size:1.45em;background:#f0f2f0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background 0.15s;flex-shrink:0}
+/* サイドラベル（ドラッグ中にフェードイン） */
+.swipe-side-labels{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;height:32px}
+.ssl{font-size:0.8em;font-weight:700;opacity:0;transition:opacity 0.1s;display:flex;align-items:center;gap:6px;pointer-events:none}
+.ssl-left{color:#c94a29}
+.ssl-right{color:var(--green)}
+.ssl-arrow{font-size:1.3em;line-height:1}
 
-/* 送信ボタン */
-.diag-submit{display:block;width:100%;background:var(--green);color:#fff;border:none;border-radius:30px;padding:16px;font-size:0.97em;font-weight:700;cursor:pointer;transition:background 0.2s,transform 0.15s,box-shadow 0.15s;margin-top:20px;letter-spacing:0.02em}
-.diag-submit:disabled{background:#b0b8b4;cursor:not-allowed;box-shadow:none}
-.diag-submit:not(:disabled):hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(21,115,91,0.3)}
+/* カードスタック */
+.card-stack{position:relative;height:380px;margin:0 auto;max-width:420px;touch-action:pan-y}
+
+/* スワイプカード */
+.swipe-card{
+  position:absolute;inset:0;
+  background:#fff;border-radius:16px;
+  box-shadow:0 6px 28px rgba(0,0,0,0.1);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  cursor:grab;user-select:none;
+  transform-origin:50% 110%;
+  will-change:transform;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.swipe-card[data-behind="1"]{transform:scale(0.95) translateY(10px);pointer-events:none}
+.swipe-card[data-behind="2"]{transform:scale(0.90) translateY(20px);pointer-events:none}
+.swipe-card[data-behind="3"]{transform:scale(0.87) translateY(28px);pointer-events:none;opacity:0}
+
+.sc-body{padding:28px 24px 16px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.sc-qnum{font-size:0.7em;font-weight:700;color:var(--green);margin-bottom:14px;letter-spacing:0.04em}
+.sc-text{font-size:1em;font-weight:700;line-height:1.65;color:var(--text)}
+
+/* 選択肢（カード下部） */
+.sc-choices{display:grid;grid-template-columns:1fr 1px 1fr;border-top:1px solid var(--border)}
+.sc-choice{padding:14px 14px;font-size:0.75em;line-height:1.5;color:#999;display:flex;flex-direction:column;gap:4px;transition:color 0.15s,background 0.15s}
+.sc-choice-arrow{font-size:1em;font-weight:700;line-height:1}
+.sc-choice-text{line-height:1.45}
+.sc-left{text-align:left;border-radius:0 0 0 16px}
+.sc-right{text-align:right;align-items:flex-end;border-radius:0 0 16px 0}
+.sc-divider{background:var(--border)}
+
+/* ドラッグ中の選択肢ハイライト */
+.swipe-card.dragging-left .sc-left{color:#c94a29;background:#fff5f3}
+.swipe-card.dragging-right .sc-right{color:var(--green);background:var(--green-light)}
+
+/* カラーオーバーレイ */
+.sc-overlay{position:absolute;inset:0;opacity:0;pointer-events:none;border-radius:16px}
+.sc-overlay-l{background:linear-gradient(135deg,rgba(201,74,41,0.18) 0%,transparent 60%)}
+.sc-overlay-r{background:linear-gradient(225deg,rgba(29,144,116,0.18) 0%,transparent 60%)}
 
 /* リセットボタン */
 .diag-reset{display:inline-block;background:none;border:1.5px solid var(--border);color:var(--sub);border-radius:30px;padding:9px 26px;font-size:0.82em;font-weight:700;cursor:pointer;margin-top:12px;transition:border-color 0.2s,color 0.2s;font-family:inherit}
@@ -82,7 +109,7 @@ body{
 
 .result-card{border-radius:14px;overflow:hidden;margin:32px 0 20px;box-shadow:0 6px 28px rgba(0,0,0,0.12)}
 .result-card-top{padding:36px 24px 28px;text-align:center;color:#fff;position:relative}
-.result-illust{width:130px;height:130px;border-radius:50%;margin:0 auto 16px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:3.8em;border:3px solid rgba(255,255,255,0.35);line-height:1}
+.result-illust{width:130px;height:130px;border-radius:50%;margin:0 auto 16px;background:rgba(255,255,255,0.18);border:3px solid rgba(255,255,255,0.35)}
 .result-type-code{font-size:3.2em;font-weight:900;letter-spacing:6px;line-height:1;margin-bottom:6px;font-family:monospace,sans-serif;opacity:0.85}
 .result-type-name{font-size:1.35em;font-weight:900;margin-bottom:14px;line-height:1.3}
 .result-traits{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
@@ -147,7 +174,6 @@ footer a:hover{text-decoration:underline}
 
   <!-- ヒーロー -->
   <div class="diag-hero">
-    <div class="diag-hero-icon">✈️</div>
     <div><span class="diag-badge">全9問・無料診断</span></div>
     <h1>あなたの旅行タイプを診断</h1>
     <p>計画性・アクティブ度・社交性の3軸から、旅のスタイルを8タイプに分類します。一緒に旅する相手との相性もわかります。</p>
@@ -164,153 +190,14 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <!-- 診断フォーム -->
-  <form id="quiz-form" novalidate>
-
-    <div class="axis-label">計画性 — 計画派(P) vs 直感派(F)</div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q1</div>
-        <div class="q-text">旅行前の準備スタイルは？</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q1" value="P">
-          <div class="q-opt-inner"><span class="q-icon">📋</span>観光スポット・ルート・食事をすべて調べてから出発する</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q1" value="F">
-          <div class="q-opt-inner"><span class="q-icon">🌀</span>行き先だけ決めて、細かいことは現地で考える</div>
-        </label>
-      </div>
+  <!-- スワイプ診断 -->
+  <div class="swipe-section" id="swipe-section">
+    <div class="swipe-side-labels">
+      <div class="ssl ssl-left" id="ssl-left"><span class="ssl-arrow">←</span><span id="ssl-left-text"></span></div>
+      <div class="ssl ssl-right" id="ssl-right"><span id="ssl-right-text"></span><span class="ssl-arrow">→</span></div>
     </div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q2</div>
-        <div class="q-text">旅先でハプニングが起きたら？（予約ミス・乗り遅れなど）</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q2" value="P">
-          <div class="q-opt-inner"><span class="q-icon">😰</span>焦る。計画が崩れるとストレスを感じる</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q2" value="F">
-          <div class="q-opt-inner"><span class="q-icon">😄</span>むしろワクワクする。なんとかなると思える</div>
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q3</div>
-        <div class="q-text">ホテルや航空券はいつ予約する？</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q3" value="P">
-          <div class="q-opt-inner"><span class="q-icon">📅</span>早めに全部押さえたい。直前では落ち着かない</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q3" value="F">
-          <div class="q-opt-inner"><span class="q-icon">🎲</span>ギリギリでもOK。気が向いたときに取る</div>
-        </label>
-      </div>
-    </div>
-
-    <div class="axis-label">アクティブ度 — アクティブ(A) vs のんびり(R)</div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q4</div>
-        <div class="q-text">旅先での1日のボリューム感は？</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q4" value="A">
-          <div class="q-opt-inner"><span class="q-icon">🏃</span>朝から晩まで観光を詰め込みたい</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q4" value="R">
-          <div class="q-opt-inner"><span class="q-icon">☕</span>1〜2か所をじっくり楽しんで、あとはのんびりしたい</div>
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q5</div>
-        <div class="q-text">ハイキング・ダイビング・サイクリングなどのアクティビティは？</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q5" value="A">
-          <div class="q-opt-inner"><span class="q-icon">🤿</span>積極的に参加したい。旅の醍醐味だと思う</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q5" value="R">
-          <div class="q-opt-inner"><span class="q-icon">🖼️</span>散歩・美術館・カフェくらいがちょうどいい</div>
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q6</div>
-        <div class="q-text">旅行中の移動量は？</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q6" value="A">
-          <div class="q-opt-inner"><span class="q-icon">👟</span>1日1万歩以上でも全然平気。とにかく動きたい</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q6" value="R">
-          <div class="q-opt-inner"><span class="q-icon">🚌</span>なるべく交通機関を使って体力を温存したい</div>
-        </label>
-      </div>
-    </div>
-
-    <div class="axis-label">社交性 — 社交派(S) vs ひとり旅派(L)</div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q7</div>
-        <div class="q-text">旅行のスタイルは？</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q7" value="S">
-          <div class="q-opt-inner"><span class="q-icon">👫</span>友人・家族など誰かと一緒に行くのが好き</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q7" value="L">
-          <div class="q-opt-inner"><span class="q-icon">🧍</span>一人で自分のペースで動くのが好き</div>
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q8</div>
-        <div class="q-text">旅先で地元の人や他の旅行者と話す機会があったら？</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q8" value="S">
-          <div class="q-opt-inner"><span class="q-icon">💬</span>積極的に話しかけて仲良くなりたい</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q8" value="L">
-          <div class="q-opt-inner"><span class="q-icon">🎧</span>挨拶程度でOK。一人の時間を大切にしたい</div>
-        </label>
-      </div>
-    </div>
-
-    <div class="q-card">
-      <div class="q-header">
-        <div class="q-num">Q9</div>
-        <div class="q-text">旅の思い出はどう扱う？</div>
-      </div>
-      <div class="q-options">
-        <label class="q-opt"><input type="radio" name="q9" value="S">
-          <div class="q-opt-inner"><span class="q-icon">📱</span>リアルタイムでSNS発信・友人にシェアしたい</div>
-        </label>
-        <label class="q-opt"><input type="radio" name="q9" value="L">
-          <div class="q-opt-inner"><span class="q-icon">📔</span>自分だけの記録として残したい。あまり共有しない</div>
-        </label>
-      </div>
-    </div>
-
-    <button type="submit" class="diag-submit" id="submit-btn" disabled>全9問に回答してから診断できます</button>
-
-  </form>
+    <div class="card-stack" id="card-stack"></div>
+  </div>
 
   <!-- 結果セクション -->
   <div id="result-section">
@@ -334,7 +221,7 @@ footer a:hover{text-decoration:underline}
   <!-- 相性チェック -->
   <div id="compat-section">
     <div class="compat-wrap">
-      <div class="compat-title">🤝 相性チェック</div>
+      <div class="compat-title">相性チェック</div>
       <div class="compat-subtitle">一緒に旅する相手のタイプを選ぶと、相性と旅のアドバイスが表示されます。</div>
       <div class="type-btn-grid" id="type-btn-grid"></div>
       <div class="compat-result" id="compat-result">
@@ -362,22 +249,65 @@ footer a:hover{text-decoration:underline}
 </footer>
 
 <script>
+// 質問データ（axis: PF / AR / SL、val0が第1選択肢の値）
+const QUESTIONS = [
+  {axis:'PF', val0:'P', text:'旅行前の準備スタイルは？',
+    opt0:'観光スポット・ルート・食事をすべて調べてから出発する',
+    opt1:'行き先だけ決めて、細かいことは現地で考える'},
+  {axis:'PF', val0:'P', text:'旅先でハプニングが起きたら？（予約ミス・乗り遅れなど）',
+    opt0:'焦る。計画が崩れるとストレスを感じる',
+    opt1:'むしろワクワクする。なんとかなると思える'},
+  {axis:'PF', val0:'P', text:'ホテルや航空券はいつ予約する？',
+    opt0:'早めに全部押さえたい。直前では落ち着かない',
+    opt1:'ギリギリでもOK。気が向いたときに取る'},
+  {axis:'AR', val0:'A', text:'旅先での1日のボリューム感は？',
+    opt0:'朝から晩まで観光を詰め込みたい',
+    opt1:'1〜2か所をじっくり楽しんで、あとはのんびりしたい'},
+  {axis:'AR', val0:'A', text:'ハイキング・ダイビング・サイクリングなどのアクティビティは？',
+    opt0:'積極的に参加したい。旅の醍醐味だと思う',
+    opt1:'散歩・美術館・カフェくらいがちょうどいい'},
+  {axis:'AR', val0:'A', text:'旅行中の移動量は？',
+    opt0:'1日1万歩以上でも全然平気。とにかく動きたい',
+    opt1:'なるべく交通機関を使って体力を温存したい'},
+  {axis:'SL', val0:'S', text:'旅行のスタイルは？',
+    opt0:'友人・家族など誰かと一緒に行くのが好き',
+    opt1:'一人で自分のペースで動くのが好き'},
+  {axis:'SL', val0:'S', text:'旅先で地元の人や他の旅行者と話す機会があったら？',
+    opt0:'積極的に話しかけて仲良くなりたい',
+    opt1:'挨拶程度でOK。一人の時間を大切にしたい'},
+  {axis:'SL', val0:'S', text:'旅の思い出はどう扱う？',
+    opt0:'リアルタイムでSNS発信・友人にシェアしたい',
+    opt1:'自分だけの記録として残したい。あまり共有しない'},
+];
+
+// Fisher-Yates シャッフル
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+let shuffledQ = [];
+
 const TYPES = {
-  PAS:{name:'遠征隊長型',   emoji:'🗺️', color:'#2563a0', traits:['計画派','アクティブ','社交派'],
+  PAS:{name:'遠征隊長型',   color:'#2563a0', traits:['計画派','アクティブ','社交派'],
     desc:'綿密な計画で仲間を巻き込みながらアクティブに動くタイプ。事前リサーチが万全で旅のトラブルにも強く、グループの頼れる存在になることが多い。旅程表を作成したり、全員分の予約を取りまとめたりするのが苦にならない。'},
-  PAL:{name:'単独登頂型',   emoji:'⛰️', color:'#1d9074', traits:['計画派','アクティブ','ひとり旅'],
+  PAL:{name:'単独登頂型',   color:'#1d9074', traits:['計画派','アクティブ','ひとり旅'],
     desc:'計画は完璧、行動は一人で黙々とこなすタイプ。マイナースポットや早朝の観光など「一人だからこそ」の体験を追求し、自分のペースで深く旅を楽しむ。誰かに合わせる必要がないぶん、行動の自由度は最大になる。'},
-  PRS:{name:'旅のホスト型', emoji:'🏡', color:'#e07b39', traits:['計画派','のんびり','社交派'],
+  PRS:{name:'旅のホスト型', color:'#e07b39', traits:['計画派','のんびり','社交派'],
     desc:'ゆったりペースで人との時間を大事にする世話役タイプ。旅先でも相手に合わせた計画を立て、みんなが快適に過ごせるよう気を配る。急がず焦らず、会話やご飯を丁寧に楽しみながら旅を積み重ねていく。'},
-  PRL:{name:'静寂の巡礼者型',emoji:'🕊️', color:'#7b5ea7', traits:['計画派','のんびり','ひとり旅'],
+  PRL:{name:'静寂の巡礼者型',color:'#7b5ea7', traits:['計画派','のんびり','ひとり旅'],
     desc:'計画通りに、静かな場所を一人で味わうタイプ。混雑を避けた穴場スポットや早朝・夕暮れ時の景色など、ひっそりとした非日常を探し求める。旅の目的が「体験」よりも「内省と発見」にあるような旅人。'},
-  FAS:{name:'祭りの案内人型',emoji:'🎉', color:'#c94a29', traits:['直感派','アクティブ','社交派'],
+  FAS:{name:'祭りの案内人型',color:'#c94a29', traits:['直感派','アクティブ','社交派'],
     desc:'その場のノリで人を巻き込みアクティブに動くタイプ。旅先で出会った人と意気投合して予定外の冒険に繰り出すことも多く、旅に「予定外のドラマ」を生み出す存在。計画のなさが逆に新しい出会いを呼び込む。'},
-  FAL:{name:'風来坊型',     emoji:'🌊', color:'#3a8a8a', traits:['直感派','アクティブ','ひとり旅'],
+  FAL:{name:'風来坊型',     color:'#3a8a8a', traits:['直感派','アクティブ','ひとり旅'],
     desc:'気ままに動き回る、単独行動のアクティブ派。地図を持たずに路地を歩いたり、気になった交通機関にとりあえず乗ってみたりと、行き当たりばったりの冒険を楽しむ。「迷子になること」すら旅の醍醐味と捉えられる。'},
-  FRS:{name:'宿の常連型',   emoji:'🍺', color:'#c8940a', traits:['直感派','のんびり','社交派'],
+  FRS:{name:'宿の常連型',   color:'#c8940a', traits:['直感派','のんびり','社交派'],
     desc:'行き当たりばったりでも人との会話を楽しむタイプ。宿のオーナーや地元の人と自然に仲良くなり、口コミで絶品の店や隠れた観光地を教えてもらうことが多い。旅が「人と出会う旅」になる。'},
-  FRL:{name:'漂流者型',     emoji:'🌙', color:'#607d8b', traits:['直感派','のんびり','ひとり旅'],
+  FRL:{name:'漂流者型',     color:'#607d8b', traits:['直感派','のんびり','ひとり旅'],
     desc:'計画なし、ペースもマイペース、完全ソロの漂流者。風が吹く方へ、電車が来た方へと自由に流れ続けることが何より心地よい。誰にも縛られず、どこにも急がず、旅そのものを目的とした純粋なさすらい人。'},
 };
 
@@ -421,42 +351,196 @@ const COMPAT = {
 };
 
 let myType = null;
+let currentIdx = 0;
+let axisVotes = {};
+let mouseMoveHandler = null;
+let mouseUpHandler = null;
 
-// プログレス管理
-const form = document.getElementById('quiz-form');
-const submitBtn = document.getElementById('submit-btn');
-const NAMES = ['q1','q2','q3','q4','q5','q6','q7','q8','q9'];
+function getOppositeVal(v) { return v==='P'?'F':v==='A'?'R':'L'; }
 
-form.addEventListener('change', updateProgress);
-
-function updateProgress() {
-  const answered = NAMES.filter(n => form.elements[n].value).length;
-  document.getElementById('progress-fill').style.width = (answered / 9 * 100) + '%';
-  document.getElementById('progress-text').textContent = answered + ' / 9 問';
-  if (answered === 9) {
-    submitBtn.disabled = false;
-    submitBtn.textContent = '診断する →';
-  } else {
-    submitBtn.disabled = true;
-    submitBtn.textContent = '全9問に回答してから診断できます（あと' + (9 - answered) + '問）';
-  }
+function updateProgress(n) {
+  document.getElementById('progress-fill').style.width = (n / 9 * 100) + '%';
+  document.getElementById('progress-text').textContent = n + ' / 9 問';
 }
 
-// 送信
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const d = Object.fromEntries(new FormData(form));
-  const p = ['q1','q2','q3'].filter(q => d[q]==='P').length >= 2 ? 'P' : 'F';
-  const a = ['q4','q5','q6'].filter(q => d[q]==='A').length >= 2 ? 'A' : 'R';
-  const s = ['q7','q8','q9'].filter(q => d[q]==='S').length >= 2 ? 'S' : 'L';
-  myType = p + a + s;
-  showResult(myType);
-});
+function initSwipe() {
+  shuffledQ = shuffle(QUESTIONS);
+  currentIdx = 0;
+  axisVotes = {PF:{P:0,F:0}, AR:{A:0,R:0}, SL:{S:0,L:0}};
+  updateProgress(0);
+
+  const stack = document.getElementById('card-stack');
+  stack.innerHTML = '';
+
+  // Append reverse so realIdx=0 ends up last in DOM (= topmost with position:absolute)
+  [...shuffledQ].reverse().forEach((q, revIdx) => {
+    const realIdx = shuffledQ.length - 1 - revIdx;
+    const card = document.createElement('div');
+    card.className = 'swipe-card';
+    const behind = Math.min(realIdx, 3);
+    if (behind > 0) card.dataset.behind = behind;
+
+    card.innerHTML = `
+      <div class="sc-overlay sc-overlay-l"></div>
+      <div class="sc-overlay sc-overlay-r"></div>
+      <div class="sc-body">
+        <div class="sc-qnum">Q${realIdx + 1} / 9</div>
+        <div class="sc-text">${q.text}</div>
+      </div>
+      <div class="sc-choices">
+        <div class="sc-choice sc-left">
+          <span class="sc-choice-arrow">←</span>
+          <span class="sc-choice-text">${q.opt1}</span>
+        </div>
+        <div class="sc-divider"></div>
+        <div class="sc-choice sc-right">
+          <span class="sc-choice-text">${q.opt0}</span>
+          <span class="sc-choice-arrow">→</span>
+        </div>
+      </div>`;
+    stack.appendChild(card);
+  });
+
+  attachSwipeHandlers();
+}
+
+function getActiveCard() {
+  const cards = document.querySelectorAll('.swipe-card');
+  return cards.length ? cards[cards.length - 1] : null;
+}
+
+function attachSwipeHandlers() {
+  const stack = document.getElementById('card-stack');
+
+  if (mouseMoveHandler) document.removeEventListener('mousemove', mouseMoveHandler);
+  if (mouseUpHandler)   document.removeEventListener('mouseup',   mouseUpHandler);
+
+  let startX = 0, startY = 0, isDragging = false;
+  let activeCard = null;
+  const THRESHOLD = 90;
+
+  function onStart(x, y) {
+    activeCard = getActiveCard();
+    if (!activeCard) return;
+    startX = x; startY = y;
+    isDragging = true;
+    activeCard.style.transition = 'none';
+  }
+
+  function onMove(x, y) {
+    if (!isDragging || !activeCard) return;
+    const dx = x - startX;
+    const dy = y - startY;
+    // Cancel if gesture is clearly vertical and hasn't gone far horizontally yet
+    if (Math.abs(dy) > Math.abs(dx) * 1.8 && Math.abs(dx) < 20) {
+      isDragging = false; return;
+    }
+
+    const rotate = dx / 320 * 18;
+    activeCard.style.transform = `translateX(${dx}px) rotate(${rotate}deg)`;
+
+    const pct = Math.min(Math.abs(dx) / THRESHOLD, 1);
+    const ovlL = activeCard.querySelector('.sc-overlay-l');
+    const ovlR = activeCard.querySelector('.sc-overlay-r');
+    if (dx < 0) {
+      ovlL.style.opacity = pct; ovlR.style.opacity = 0;
+      activeCard.classList.add('dragging-left'); activeCard.classList.remove('dragging-right');
+    } else if (dx > 0) {
+      ovlR.style.opacity = pct; ovlL.style.opacity = 0;
+      activeCard.classList.add('dragging-right'); activeCard.classList.remove('dragging-left');
+    } else {
+      ovlL.style.opacity = 0; ovlR.style.opacity = 0;
+      activeCard.classList.remove('dragging-left','dragging-right');
+    }
+
+    const q = shuffledQ[currentIdx];
+    document.getElementById('ssl-left-text').textContent  = q.opt1;
+    document.getElementById('ssl-right-text').textContent = q.opt0;
+    document.getElementById('ssl-left').style.opacity  = dx < 0 ? pct : 0;
+    document.getElementById('ssl-right').style.opacity = dx > 0 ? pct : 0;
+  }
+
+  function onEnd(x) {
+    if (!isDragging || !activeCard) return;
+    isDragging = false;
+    const dx = x - startX;
+    if (Math.abs(dx) >= THRESHOLD) {
+      commitSwipe(dx > 0 ? 'right' : 'left', activeCard);
+    } else {
+      activeCard.style.transition = 'transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275)';
+      activeCard.style.transform = '';
+      activeCard.querySelector('.sc-overlay-l').style.opacity = 0;
+      activeCard.querySelector('.sc-overlay-r').style.opacity = 0;
+      activeCard.classList.remove('dragging-left','dragging-right');
+      document.getElementById('ssl-left').style.opacity  = 0;
+      document.getElementById('ssl-right').style.opacity = 0;
+    }
+    activeCard = null;
+  }
+
+  stack.addEventListener('touchstart', e => onStart(e.touches[0].clientX, e.touches[0].clientY), {passive:true});
+  stack.addEventListener('touchmove', e => {
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+    if (Math.abs(dx) > Math.abs(dy)) e.preventDefault();
+    onMove(e.touches[0].clientX, e.touches[0].clientY);
+  }, {passive:false});
+  stack.addEventListener('touchend', e => onEnd(e.changedTouches[0].clientX));
+  stack.addEventListener('mousedown', e => { e.preventDefault(); onStart(e.clientX, e.clientY); });
+
+  mouseMoveHandler = e => onMove(e.clientX, e.clientY);
+  mouseUpHandler   = e => onEnd(e.clientX);
+  document.addEventListener('mousemove', mouseMoveHandler);
+  document.addEventListener('mouseup',   mouseUpHandler);
+}
+
+function commitSwipe(dir, card) {
+  const q = shuffledQ[currentIdx];
+  const val = dir === 'right' ? q.val0 : getOppositeVal(q.val0);
+  axisVotes[q.axis][val]++;
+
+  const flyX = dir === 'right' ? window.innerWidth + 100 : -(window.innerWidth + 100);
+  card.style.transition = 'transform 0.45s cubic-bezier(0.55,0,1,0.7), opacity 0.35s';
+  card.style.transform  = `translateX(${flyX}px) rotate(${dir==='right'?25:-25}deg)`;
+  card.style.opacity = '0';
+  card.style.pointerEvents = 'none';
+
+  document.getElementById('ssl-left').style.opacity  = 0;
+  document.getElementById('ssl-right').style.opacity = 0;
+
+  currentIdx++;
+  updateProgress(currentIdx);
+
+  // Promote remaining cards
+  const remaining = Array.from(document.querySelectorAll('.swipe-card')).filter(c => c !== card);
+  const n = remaining.length;
+  remaining.forEach((c, i) => {
+    const behind = n - 1 - i;
+    if (behind === 0) {
+      c.style.transition = 'transform 0.3s ease';
+      void c.getBoundingClientRect(); // force reflow so transition fires
+      c.removeAttribute('data-behind');
+    } else {
+      c.dataset.behind = String(Math.min(behind, 3));
+    }
+  });
+
+  setTimeout(() => {
+    card.remove();
+    if (currentIdx === 9) {
+      const pf = axisVotes.PF.P >= axisVotes.PF.F ? 'P' : 'F';
+      const ar = axisVotes.AR.A >= axisVotes.AR.R ? 'A' : 'R';
+      const sl = axisVotes.SL.S >= axisVotes.SL.L ? 'S' : 'L';
+      myType = pf + ar + sl;
+      document.getElementById('swipe-section').style.display = 'none';
+      document.querySelector('.progress-wrap').style.display = 'none';
+      showResult(myType);
+    }
+  }, 500);
+}
 
 function showResult(type) {
   const t = TYPES[type];
-
-  document.getElementById('result-emoji').textContent = t.emoji;
   document.getElementById('result-code').textContent = type;
   document.getElementById('result-name').textContent = t.name;
   document.getElementById('result-desc').textContent = t.desc;
@@ -467,12 +551,9 @@ function showResult(type) {
   buildCompatButtons(type);
 
   const rs = document.getElementById('result-section');
-  rs.style.display = 'block';
-  rs.classList.add('show');
-
+  rs.style.display = 'block'; rs.classList.add('show');
   const cs = document.getElementById('compat-section');
-  cs.style.display = 'block';
-  cs.classList.add('show');
+  cs.style.display = 'block'; cs.classList.add('show');
 
   rs.scrollIntoView({behavior:'smooth', block:'start'});
 }
@@ -482,9 +563,7 @@ function buildCompatButtons(type) {
   grid.innerHTML = '';
   Object.entries(TYPES).forEach(([code, info]) => {
     const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'type-btn';
-    btn.dataset.type = code;
+    btn.type = 'button'; btn.className = 'type-btn'; btn.dataset.type = code;
     btn.innerHTML = `<div class="tb-code" style="color:${info.color}">${code}</div><div class="tb-name">${info.name.replace('型','')}</div>`;
     btn.addEventListener('click', () => selectCompat(code, btn, info.color));
     grid.appendChild(btn);
@@ -492,16 +571,13 @@ function buildCompatButtons(type) {
 }
 
 function selectCompat(theirType, btn, color) {
-  // ボタン状態リセット
   document.querySelectorAll('.type-btn').forEach(b => {
     const c = b.dataset.type;
-    b.style.background = '';
-    b.style.borderColor = '';
+    b.style.background = ''; b.style.borderColor = '';
     b.querySelector('.tb-code').style.color = TYPES[c].color;
     b.querySelector('.tb-name').style.color = '';
   });
-  btn.style.background = color;
-  btn.style.borderColor = color;
+  btn.style.background = color; btn.style.borderColor = color;
   btn.querySelector('.tb-code').style.color = '#fff';
   btn.querySelector('.tb-name').style.color = 'rgba(255,255,255,0.85)';
 
@@ -517,26 +593,26 @@ function selectCompat(theirType, btn, color) {
   document.getElementById('compat-text').textContent = data.text;
 
   const cr = document.getElementById('compat-result');
-  cr.classList.add('show');
-  cr.style.display = 'block';
+  cr.classList.add('show'); cr.style.display = 'block';
 }
 
-// リセット
 document.getElementById('reset-btn').addEventListener('click', () => {
-  form.reset();
   myType = null;
-  updateProgress();
-
   ['result-section','compat-section'].forEach(id => {
     const el = document.getElementById(id);
-    el.style.display = 'none';
-    el.classList.remove('show');
+    el.style.display = 'none'; el.classList.remove('show');
   });
   document.getElementById('compat-result').classList.remove('show');
   document.getElementById('compat-result').style.display = 'none';
 
-  form.scrollIntoView({behavior:'smooth', block:'start'});
+  document.getElementById('swipe-section').style.display = '';
+  document.querySelector('.progress-wrap').style.display = '';
+
+  initSwipe();
+  document.getElementById('swipe-section').scrollIntoView({behavior:'smooth', block:'start'});
 });
+
+initSwipe();
 </script>
 </body>
 </html>

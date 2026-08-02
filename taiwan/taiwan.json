@@ -123,6 +123,58 @@
       "badge": "渓谷美",
       "badge_class": "green",
       "description": "太魯閣峡谷の断崖と太平洋を望む東海岸の玄関口"
+    },
+    {
+      "id": "chiayi",
+      "name": "嘉義（かぎ）",
+      "lat": "23.5090",
+      "lng": "120.8027",
+      "zoom": "12",
+      "color": "#000095",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "阿里山の玄関口",
+      "badge_class": "green",
+      "description": "阿里山登山鉄道の起点。鶏肉飯の本場で、雲海と桜を見に来る旅人が集まる南部の街"
+    },
+    {
+      "id": "penghu",
+      "name": "澎湖（ほうこ）",
+      "lat": "23.5711",
+      "lng": "119.5793",
+      "zoom": "11",
+      "color": "#000095",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "離島リゾート",
+      "badge_class": "green",
+      "description": "台湾海峡に浮かぶ64の島々。エメラルドブルーの海と玄武岩の奇岩が連続する南国の離島"
+    },
+    {
+      "id": "kinmen",
+      "name": "金門（きんもん）",
+      "lat": "24.4491",
+      "lng": "118.3767",
+      "zoom": "12",
+      "color": "#000095",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "要塞の離島",
+      "badge_class": "green",
+      "description": "中国福建省のすぐそばの要塞島。閩南式伝統建築と軍事遺産が色濃く残る歴史の島"
+    },
+    {
+      "id": "green_island",
+      "name": "緑島（りょくとう）",
+      "lat": "22.6626",
+      "lng": "121.4900",
+      "zoom": "13",
+      "color": "#000095",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "海中温泉と珊瑚礁",
+      "badge_class": "green",
+      "description": "台東沖の火山島。世界稀少の海中温泉と国内屈指のダイビングスポットを持つ上級者向け離島"
     }
   ],
   "season_mini": {
@@ -1068,6 +1120,21 @@
     {
       "id": "tainan",
       "label": "台南"
+    },
+    {
+      "id": "jiufen",
+      "label": "九份・十分",
+      "active": false
+    },
+    {
+      "id": "hualien",
+      "label": "花蓮",
+      "active": false
+    },
+    {
+      "id": "chiayi",
+      "label": "嘉義",
+      "active": false
     }
   ],
   "food_items": [
@@ -1460,6 +1527,33 @@
       "wiki_url": "https://www.google.com/search?q=%E8%8A%B1%E8%93%AE%E3%81%AE%E9%BA%BB%E7%B3%AC%EF%BC%88%E6%9B%BE%E8%A8%98%E9%BA%BB%E7%B3%AC%E3%81%AA%E3%81%A9%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86",
       "order_ico": "🍡",
       "order_name_en": "Hualien Mochi"
+    },
+    {
+      "num": "No.26",
+      "icon": "🍚",
+      "name": "鶏肉飯（ジーロウファン）",
+      "city": "chiayi",
+      "desc": "七面鳥のそぼろに甘辛い魯汁（ルージー）をかけた嘉義名物の丼飯。100元以下で食べられる庶民の味で、地元民は1日に何度でも食べると言われるほど奥深い一品。",
+      "badge": "嘉義名物丼",
+      "prompt_en": "Taiwanese turkey rice bowl chiayi, shredded turkey meat with soy sauce gravy over white rice in a small ceramic bowl, side dishes, casual local diner interior, morning light"
+    },
+    {
+      "num": "No.27",
+      "icon": "🥮",
+      "name": "太陽餅（タイヤンピン）",
+      "city": "taichung",
+      "desc": "台中の名物土産として知られるサクサクのパイ生地にマルトース飴を包んだ焼き菓子。老舗の明裕珍や太陽堂が発祥で、形が太陽を連想させることからその名がついた。",
+      "badge": "台中みやげの定番",
+      "prompt_en": "Taiwanese sun cake taichung bakery, round flaky golden pastry rounds displayed in a traditional confectionery shop, warm interior lighting, several cakes on display"
+    },
+    {
+      "num": "No.28",
+      "icon": "🍺",
+      "name": "台湾ビール・熱炒（ルーチャオ）",
+      "city": "national",
+      "desc": "台湾ビールを片手に炒め料理を肴にする大衆居酒屋スタイルが熱炒（ルーチャオ）。1皿100元均一の安さで地元の人々が深夜まで飲み食いする台湾の夜の顔。旅行者にも強くすすめたい体験。",
+      "badge": "台湾の大衆居酒屋",
+      "prompt_en": "Taiwanese hot stir fry restaurant late night, outdoor tables crowded with locals drinking Taiwan beer and sharing stir-fried dishes, neon signs glowing, lively bustling atmosphere"
     }
   ],
   "spots_section_title": "台湾 観光スポット",
@@ -1492,6 +1586,26 @@
     {
       "id": "hualien",
       "label": "花蓮",
+      "active": false
+    },
+    {
+      "id": "chiayi",
+      "label": "嘉義・阿里山",
+      "active": false
+    },
+    {
+      "id": "penghu",
+      "label": "澎湖",
+      "active": false
+    },
+    {
+      "id": "kinmen",
+      "label": "金門",
+      "active": false
+    },
+    {
+      "id": "green_island",
+      "label": "緑島",
       "active": false
     }
   ],
@@ -1674,6 +1788,28 @@
           "image": "素材/観光スポット/野柳地質公園.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Yehliu+Geopark"
+        },
+        {
+          "must": false,
+          "icon": "♨️",
+          "num": "TPE 14",
+          "name": "北投温泉（ペイトウおんせん）",
+          "desc": "MRTで台北市内から直接アクセスできる温泉地。日本統治時代整備の北投温泉博物館や地熱谷が残り、硫黄泉から碳酸泉まで複数の泉質を楽しめる。",
+          "badge": "台北市内の温泉郷",
+          "prompt_en": "Beitou hot spring Taiwan, Japanese colonial-era wooden bathhouse building surrounded by lush green hillside, morning steam rising from thermal pools, a few visitors in the distance",
+          "type": "nature",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🏮",
+          "num": "TPE 15",
+          "name": "寧夏夜市（ねいかよいち）",
+          "desc": "台北の地元民に愛される老舗夜市。士林・饒河と違い屋台の密度と地元感が段違い。蚵仔煎・肉粥・豬血糕など台湾小吃の教科書のような一角。",
+          "badge": "地元民の台所",
+          "prompt_en": "Ningxia night market Taipei crowded street food scene, rows of illuminated stalls with vendors cooking traditional Taiwanese snacks, warm orange street lighting at night, small crowds walking",
+          "type": "food",
+          "no_map": true
         }
       ]
     },
@@ -1733,6 +1869,17 @@
           "image": "素材/観光スポット/十分（じゅうふん）（天燈上げ）.webp",
           "type": "activity",
           "map_url": "https://maps.app.goo.gl/XmCJ2e8VRPkXET68A"
+        },
+        {
+          "must": false,
+          "icon": "🐱",
+          "num": "JIU 04",
+          "name": "猴硐猫村（ホウトンねこむら）",
+          "desc": "九份から電車で数駅の廃坑炭鉱町に、今では百匹以上の猫が自由に暮らす猫の聖地。廃墟の風景と猫が織りなす不思議な空気感が漂い、猫好きには外せない立ち寄りスポット。",
+          "badge": "猫の聖地",
+          "prompt_en": "Houtong cat village Taiwan, dozens of cats lounging on weathered stone walls and abandoned mining buildings, lush green hillside backdrop, afternoon light",
+          "type": "nature",
+          "no_map": true
         }
       ]
     },
@@ -2132,6 +2279,190 @@
           "map_url": "https://maps.google.com/?q=Pine+Garden+Hualien"
         }
       ]
+    },
+    {
+      "city_id": "chiayi",
+      "city_name": "嘉義（かぎ）",
+      "city_image": "",
+      "city_prompt": "Alishan mountain railway station Taiwan surrounded by ancient cypress forest in morning mist, pink cherry blossoms on the platform, a few passengers waiting for the narrow-gauge train",
+      "city_desc": "阿里山登山鉄道の起点となる南部の都市。台湾一の鶏肉飯と、標高2000m超の阿里山で見る雲海・日の出が最大の見どころ",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "台北から台湾高鉄で約1時間45分。嘉義駅から阿里山まで路線バスで約2時間または阿里山森林鉄路（登山鉄道）で"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "3〜4月（桜の見頃）または10〜11月（雲海の好条件が多い）",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "回り方",
+          "value": "嘉義市内は半日、阿里山は1泊2日が理想"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🌁",
+          "num": "CYI 01",
+          "name": "阿里山（ありさん）",
+          "desc": "台湾の霊山として親しまれる標高2000m超の山岳エリア。早朝の雲海と日の出を見るため宿泊客が始発列車に乗り込む。3〜4月の桜（吉野桜）も絶景。",
+          "badge": "台湾の霊山・雲海の名所",
+          "prompt_en": "Alishan Taiwan sea of clouds at dawn viewed from mountain peak, silhouettes of ancient cypress trees emerging from white mist below, warm orange sunrise light, dramatic mountain scenery",
+          "type": "nature",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🍚",
+          "num": "CYI 02",
+          "name": "嘉義市街（鶏肉飯の聖地）",
+          "desc": "鶏肉飯（ジーロウファン）の本場。七面鳥のそぼろご飯は100元以下で食べられる嘉義の庶民の味。文化路夜市と合わせて周ると嘉義の日常を体感できる。",
+          "badge": "鶏肉飯の本場",
+          "prompt_en": "Chiayi city Taiwan local eatery street scene, small traditional rice bowl restaurant with bowls of turkey rice shredded meat topping, morning light, a few local customers",
+          "type": "food",
+          "map_url": "https://maps.google.com/?q=嘉義市,Taiwan"
+        }
+      ]
+    },
+    {
+      "city_id": "penghu",
+      "city_name": "澎湖（ほうこ）",
+      "city_image": "",
+      "city_prompt": "Penghu archipelago Taiwan turquoise sea with dramatic basalt rock formations along coastline, small fishing boats in pristine bay, clear water, summer afternoon",
+      "city_desc": "台湾海峡に浮かぶ64の島からなる離島群。エメラルドブルーの海と玄武岩の奇岩が続く海岸、断崖の天川や赤崁古堡など歴史も秘めた南国リゾート",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "台北松山・高雄・嘉義空港から国内線で約45〜55分。馬公空港着"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "5〜9月（海の透明度が高く水上アクティビティが楽しめる）",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "回り方",
+          "value": "レンタルバイクまたはタクシーチャーターで島を一周"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🪨",
+          "num": "PEH 01",
+          "name": "天川（グランドキャニオン）",
+          "desc": "玄武岩の柱状節理が海蝕でえぐられ、層状の断崖が形成された台湾のグランドキャニオン。夕日に染まる岩肌の迫力は圧巻で、澎湖でも指折りの絶景ポイントとして人気が高い。",
+          "badge": "台湾のグランドキャニオン",
+          "prompt_en": "Penghu Taiwan Tianchuan basalt columnar jointing sea cliffs, dramatic layered rock formations above turquoise ocean, golden hour sunset light on the rocky coastline, silhouettes of visitors at the edge",
+          "type": "nature",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🤿",
+          "num": "PEH 02",
+          "name": "南海諸島（シュノーケリング・離島巡り）",
+          "desc": "台湾でも屈指の透明度を誇る南海諸島（七美島・吉貝島など）。シュノーケリングで珊瑚礁と熱帯魚に出会え、日帰りツアーが各島から充実している。",
+          "badge": "珊瑚礁の楽園",
+          "prompt_en": "Penghu south islands Taiwan snorkeling in crystal clear turquoise water, colorful coral reef visible below the surface, two small figures snorkeling in the distance, tropical fish",
+          "type": "nature",
+          "no_map": true
+        }
+      ]
+    },
+    {
+      "city_id": "kinmen",
+      "city_name": "金門（きんもん）",
+      "city_image": "",
+      "city_prompt": "Kinmen island Taiwan traditional Fujian-style red brick stone houses in a quiet village, banyan trees lining old road, warm afternoon light, historical atmosphere",
+      "city_desc": "中国福建省と目と鼻の先に位置する要塞島。中華民国軍が死守した歴史と、明・清時代の閩南式建築が色濃く残るユニークな離島で、高粱酒と牛肉干も名物",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "台北松山・高雄・台南空港から国内線で約40〜55分。尚義空港着"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "10〜4月（夏は暑く台風リスクあり）"
+        },
+        {
+          "label": "回り方",
+          "value": "レンタルバイクまたはタクシーで古厝集落や要塞跡を周る"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "KMN 01",
+          "name": "古厝（閩南式伝統建築）集落",
+          "desc": "赤レンガと燕尾屋根が特徴的な明・清時代の閩南式建築が集落ごとに保存される。山后民俗文化村や水頭聚落は村丸ごと歴史遺産として整備されている。",
+          "badge": "閩南建築の聖地",
+          "prompt_en": "Kinmen Taiwan traditional Fujian-style stone village, red brick buildings with upturned swallow-tail roof eaves, flowering plants along narrow alleyways, afternoon sunlight, historical atmosphere",
+          "type": "historic",
+          "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "⚓",
+          "num": "KMN 02",
+          "name": "翟山坑道（地下水路坑道）",
+          "desc": "軍が掘削した島内最大の地下水路坑道。全長約357mのアーチ型花崗岩トンネルに海水が入り込み、ボートで巡ることもできる。反共軍事遺産の象徴。",
+          "badge": "地下水路坑道",
+          "prompt_en": "Zaishan tunnel Kinmen Taiwan underground granite military tunnel with arched ceiling reflecting on still dark water channel, dramatic interior lighting inside the cavern",
+          "type": "historic",
+          "map_url": "https://maps.google.com/?q=翟山坑道,Kinmen,Taiwan"
+        }
+      ]
+    },
+    {
+      "city_id": "green_island",
+      "city_name": "緑島（りょくとう）",
+      "city_image": "",
+      "city_prompt": "Green Island Taiwan crystal clear turquoise ocean with colorful coral reef visible through the water, rugged volcanic rock coastline, scuba divers in the distance, tropical summer",
+      "city_desc": "台東沖33kmに浮かぶ小さな火山島。東洋でも稀少な海中温泉（朝日温泉）と、国内屈指の透明度を誇るダイビングスポットが揃う、上級者向けの絶景離島",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "台東空港から小型プロペラ機で約15分、または台東富岡漁港からフェリーで約50分"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "5〜10月（海の透明度が高いダイビングシーズン）"
+        },
+        {
+          "label": "回り方",
+          "value": "レンタルバイクで島一周（約17km）が定番。1泊2日が理想"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "♨️",
+          "num": "GRI 01",
+          "name": "朝日温泉（海中温泉）",
+          "desc": "世界でも稀な海水と温泉が混じる海辺の岩風呂。満潮時は海と一体になる野趣あふれる露天風呂で、日の出タイミングが特に人気の緑島定番の朝。",
+          "badge": "世界稀少の海中温泉",
+          "prompt_en": "Green Island Taiwan Zhaori hot spring oceanside rocky coastal pool, natural seawater mixing pool with ocean waves in background, early morning sunrise light reflecting on the water",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=朝日温泉,Green+Island,Taiwan"
+        },
+        {
+          "must": true,
+          "icon": "🤿",
+          "num": "GRI 02",
+          "name": "緑島ダイビング",
+          "desc": "透明度30m超の豊かな珊瑚礁を持ち、台湾本島屈指のダイビングスポットとして知られる。ウミガメやマンタとの遭遇率も高く、体験ダイビングも充実。",
+          "badge": "台湾一の珊瑚礁",
+          "prompt_en": "Green Island Taiwan underwater scuba diving, vibrant coral reef with tropical fish, sea turtle swimming near surface, crystal clear blue water visibility, two small diver silhouettes in distance",
+          "type": "nature",
+          "no_map": true
+        }
+      ]
     }
   ],
   "courses": {
@@ -2369,6 +2700,11 @@
       "body": "<a onclick=\"showSpot('TPE 01')\" class=\"keyword-link\">台北101</a>の展望台も良いが、定番は象山から101入りの夜景を撮ること。MRT象山駅から往復1時間ほどの手軽なハイキングで、料金は無料。夕方に登って、日没から夜景に変わるマジックアワーを狙うのがおすすめ。",
       "image": "素材/観光スポット/象山ハイキングコース.webp",
       "spot_ref": "TPE 06"
+    },
+    {
+      "title": "阿里山の雲海は「始発列車」の争奪戦",
+      "body": "日の出に合わせた阿里山の雲海観賞は、早朝4時台発の登山列車に乗る必要がある。チケットは前日に完売することも多く、宿泊者限定の事前予約枠を活用するのが賢い選択肢である。",
+      "spot_ref": "CYI 01"
     }
   ],
   "food_modal_phrase_main": "我要這個，謝謝。（ウォー ヤオ ジェイガ、シェシェ）",
