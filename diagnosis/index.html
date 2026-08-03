@@ -50,7 +50,7 @@ body{
 /* スワイプセクション */
 .swipe-section{margin-bottom:32px;position:relative}
 
-/* サイドラベル（ドラッグ中にフェードイン） */
+/* サイドラベル */
 .swipe-side-labels{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;height:32px}
 .ssl{font-size:0.8em;font-weight:700;opacity:0;transition:opacity 0.1s;display:flex;align-items:center;gap:6px;pointer-events:none}
 .ssl-left{color:#c94a29}
@@ -58,7 +58,7 @@ body{
 .ssl-arrow{font-size:1.3em;line-height:1}
 
 /* カードスタック */
-.card-stack{position:relative;height:380px;margin:0 auto;max-width:420px;touch-action:pan-y}
+.card-stack{position:relative;height:340px;margin:0 auto;max-width:420px;touch-action:pan-y}
 
 /* スワイプカード */
 .swipe-card{
@@ -70,33 +70,34 @@ body{
   cursor:grab;user-select:none;
   transform-origin:50% 110%;
   will-change:transform;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:transform 0.3s ease,opacity 0.3s ease;
 }
 .swipe-card[data-behind="1"]{transform:scale(0.95) translateY(10px);pointer-events:none}
 .swipe-card[data-behind="2"]{transform:scale(0.90) translateY(20px);pointer-events:none}
 .swipe-card[data-behind="3"]{transform:scale(0.87) translateY(28px);pointer-events:none;opacity:0}
 
-.sc-body{padding:28px 24px 16px;flex:1;display:flex;flex-direction:column;justify-content:center}
-.sc-qnum{font-size:0.7em;font-weight:700;color:var(--green);margin-bottom:14px;letter-spacing:0.04em}
-.sc-text{font-size:1em;font-weight:700;line-height:1.65;color:var(--text)}
+.sc-body{padding:24px 24px 14px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.sc-qnum{font-size:0.7em;font-weight:700;color:var(--green);margin-bottom:10px;letter-spacing:0.04em;display:flex;align-items:center;gap:8px}
+.sc-backup-badge{background:#f0a500;color:#fff;font-size:0.78em;font-weight:700;padding:1px 8px;border-radius:10px;letter-spacing:0}
+.sc-text{font-size:0.97em;font-weight:700;line-height:1.7;color:var(--text)}
 
 /* 選択肢（カード下部） */
 .sc-choices{display:grid;grid-template-columns:1fr 1px 1fr;border-top:1px solid var(--border)}
-.sc-choice{padding:14px 14px;font-size:0.75em;line-height:1.5;color:#999;display:flex;flex-direction:column;gap:4px;transition:color 0.15s,background 0.15s}
-.sc-choice-arrow{font-size:1em;font-weight:700;line-height:1}
-.sc-choice-text{line-height:1.45}
-.sc-left{text-align:left;border-radius:0 0 0 16px}
-.sc-right{text-align:right;align-items:flex-end;border-radius:0 0 16px 0}
+.sc-choice{padding:14px 16px;font-size:0.85em;font-weight:700;color:#b0b8b4;display:flex;flex-direction:column;align-items:center;gap:4px;transition:color 0.15s,background 0.15s}
+.sc-choice-arrow{font-size:1.1em;line-height:1}
+.sc-choice-label{font-size:0.95em}
+.sc-left{border-radius:0 0 0 16px}
+.sc-right{border-radius:0 0 16px 0}
 .sc-divider{background:var(--border)}
 
-/* ドラッグ中の選択肢ハイライト */
+/* ドラッグ中ハイライト */
 .swipe-card.dragging-left .sc-left{color:#c94a29;background:#fff5f3}
 .swipe-card.dragging-right .sc-right{color:var(--green);background:var(--green-light)}
 
 /* カラーオーバーレイ */
 .sc-overlay{position:absolute;inset:0;opacity:0;pointer-events:none;border-radius:16px}
-.sc-overlay-l{background:linear-gradient(135deg,rgba(201,74,41,0.18) 0%,transparent 60%)}
-.sc-overlay-r{background:linear-gradient(225deg,rgba(29,144,116,0.18) 0%,transparent 60%)}
+.sc-overlay-l{background:linear-gradient(135deg,rgba(201,74,41,0.15) 0%,transparent 60%)}
+.sc-overlay-r{background:linear-gradient(225deg,rgba(29,144,116,0.15) 0%,transparent 60%)}
 
 /* リセットボタン */
 .diag-reset{display:inline-block;background:none;border:1.5px solid var(--border);color:var(--sub);border-radius:30px;padding:9px 26px;font-size:0.82em;font-weight:700;cursor:pointer;margin-top:12px;transition:border-color 0.2s,color 0.2s;font-family:inherit}
@@ -110,7 +111,7 @@ body{
 .result-card{border-radius:14px;overflow:hidden;margin:32px 0 20px;box-shadow:0 6px 28px rgba(0,0,0,0.12)}
 .result-card-top{padding:36px 24px 28px;text-align:center;color:#fff;position:relative}
 .result-illust{width:130px;height:130px;border-radius:50%;margin:0 auto 16px;background:rgba(255,255,255,0.18);border:3px solid rgba(255,255,255,0.35)}
-.result-type-code{font-size:3.2em;font-weight:900;letter-spacing:6px;line-height:1;margin-bottom:6px;font-family:monospace,sans-serif;opacity:0.85}
+.result-type-code{font-size:2.8em;font-weight:900;letter-spacing:5px;line-height:1;margin-bottom:6px;font-family:monospace,sans-serif;opacity:0.85}
 .result-type-name{font-size:1.35em;font-weight:900;margin-bottom:14px;line-height:1.3}
 .result-traits{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .trait-badge{background:rgba(255,255,255,0.2);color:#fff;font-size:0.73em;font-weight:700;padding:4px 13px;border-radius:20px;border:1px solid rgba(255,255,255,0.32)}
@@ -126,10 +127,10 @@ body{
 .compat-title{font-size:1em;font-weight:900;margin-bottom:4px}
 .compat-subtitle{font-size:0.82em;color:var(--sub);margin-bottom:18px;line-height:1.6}
 
-.type-btn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
-.type-btn{border:2px solid var(--border);background:#fff;border-radius:10px;padding:12px 6px 10px;cursor:pointer;text-align:center;transition:border-color 0.15s,background 0.15s;font-family:inherit;position:relative}
-.type-btn .tb-code{font-size:0.92em;font-weight:900;font-family:monospace,sans-serif;line-height:1;margin-bottom:4px}
-.type-btn .tb-name{font-size:0.6em;color:var(--sub);line-height:1.3}
+.type-btn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:20px}
+.type-btn{border:2px solid var(--border);background:#fff;border-radius:10px;padding:10px 4px 8px;cursor:pointer;text-align:center;transition:border-color 0.15s,background 0.15s;font-family:inherit}
+.type-btn .tb-code{font-size:0.82em;font-weight:900;font-family:monospace,sans-serif;line-height:1;margin-bottom:3px}
+.type-btn .tb-name{font-size:0.56em;color:var(--sub);line-height:1.3}
 .type-btn:hover:not(.selected){border-color:var(--green);background:var(--green-light)}
 
 .compat-result{display:none;padding-top:18px;border-top:1px solid var(--border);animation:fadeUp 0.3s ease}
@@ -151,14 +152,14 @@ footer a:hover{text-decoration:underline}
 
 /* レスポンシブ */
 @media(max-width:520px){
-  .type-btn-grid{grid-template-columns:repeat(4,1fr);gap:6px}
-  .type-btn{padding:10px 4px 8px}
-  .type-btn .tb-code{font-size:0.82em}
-  .type-btn .tb-name{font-size:0.56em}
-  .result-type-code{font-size:2.4em;letter-spacing:4px}
+  .type-btn-grid{grid-template-columns:repeat(4,1fr);gap:4px}
+  .type-btn{padding:8px 2px 6px}
+  .type-btn .tb-code{font-size:0.72em}
+  .type-btn .tb-name{font-size:0.5em}
+  .result-type-code{font-size:2.2em;letter-spacing:4px}
   .result-type-name{font-size:1.15em}
   .diag-hero h1{font-size:1.3em}
-  .result-illust{width:110px;height:110px;font-size:3.2em}
+  .result-illust{width:110px;height:110px}
   .page-wrap{padding:0 14px 50px}
 }
 </style>
@@ -174,16 +175,16 @@ footer a:hover{text-decoration:underline}
 
   <!-- ヒーロー -->
   <div class="diag-hero">
-    <div><span class="diag-badge">全9問・無料診断</span></div>
+    <div><span class="diag-badge">16問・無料診断</span></div>
     <h1>あなたの旅行タイプを診断</h1>
-    <p>計画性・アクティブ度・社交性の3軸から、旅のスタイルを8タイプに分類します。一緒に旅する相手との相性もわかります。</p>
+    <p>計画性・目的・社交性・快適さの4軸から、旅のスタイルを16タイプに分類します。右スワイプで「はい」、左スワイプで「いいえ」。一緒に旅する相手との相性もわかります。</p>
   </div>
 
   <!-- プログレスバー -->
   <div class="progress-wrap">
     <div class="progress-label">
       <span>回答の進み具合</span>
-      <span id="progress-text">0 / 9 問</span>
+      <span id="progress-text">0 / 16 問</span>
     </div>
     <div class="progress-bar-bg">
       <div class="progress-bar-fill" id="progress-fill"></div>
@@ -193,8 +194,8 @@ footer a:hover{text-decoration:underline}
   <!-- スワイプ診断 -->
   <div class="swipe-section" id="swipe-section">
     <div class="swipe-side-labels">
-      <div class="ssl ssl-left" id="ssl-left"><span class="ssl-arrow">←</span><span id="ssl-left-text"></span></div>
-      <div class="ssl ssl-right" id="ssl-right"><span id="ssl-right-text"></span><span class="ssl-arrow">→</span></div>
+      <div class="ssl ssl-left" id="ssl-left"><span class="ssl-arrow">←</span><span>いいえ</span></div>
+      <div class="ssl ssl-right" id="ssl-right"><span>はい</span><span class="ssl-arrow">→</span></div>
     </div>
     <div class="card-stack" id="card-stack"></div>
   </div>
@@ -203,7 +204,7 @@ footer a:hover{text-decoration:underline}
   <div id="result-section">
     <div class="result-card">
       <div class="result-card-top" id="result-top">
-        <div class="result-illust" id="result-emoji"></div>
+        <div class="result-illust" id="result-illust"></div>
         <div class="result-type-code" id="result-code"></div>
         <div class="result-type-name" id="result-name"></div>
         <div class="result-traits" id="result-traits"></div>
@@ -249,36 +250,42 @@ footer a:hover{text-decoration:underline}
 </footer>
 
 <script>
-// 質問データ（axis: PF / AR / SL、val0が第1選択肢の値）
-const QUESTIONS = [
-  {axis:'PF', val0:'P', text:'旅行前の準備スタイルは？',
-    opt0:'観光スポット・ルート・食事をすべて調べてから出発する',
-    opt1:'行き先だけ決めて、細かいことは現地で考える'},
-  {axis:'PF', val0:'P', text:'旅先でハプニングが起きたら？（予約ミス・乗り遅れなど）',
-    opt0:'焦る。計画が崩れるとストレスを感じる',
-    opt1:'むしろワクワクする。なんとかなると思える'},
-  {axis:'PF', val0:'P', text:'ホテルや航空券はいつ予約する？',
-    opt0:'早めに全部押さえたい。直前では落ち着かない',
-    opt1:'ギリギリでもOK。気が向いたときに取る'},
-  {axis:'AR', val0:'A', text:'旅先での1日のボリューム感は？',
-    opt0:'朝から晩まで観光を詰め込みたい',
-    opt1:'1〜2か所をじっくり楽しんで、あとはのんびりしたい'},
-  {axis:'AR', val0:'A', text:'ハイキング・ダイビング・サイクリングなどのアクティビティは？',
-    opt0:'積極的に参加したい。旅の醍醐味だと思う',
-    opt1:'散歩・美術館・カフェくらいがちょうどいい'},
-  {axis:'AR', val0:'A', text:'旅行中の移動量は？',
-    opt0:'1日1万歩以上でも全然平気。とにかく動きたい',
-    opt1:'なるべく交通機関を使って体力を温存したい'},
-  {axis:'SL', val0:'S', text:'旅行のスタイルは？',
-    opt0:'友人・家族など誰かと一緒に行くのが好き',
-    opt1:'一人で自分のペースで動くのが好き'},
-  {axis:'SL', val0:'S', text:'旅先で地元の人や他の旅行者と話す機会があったら？',
-    opt0:'積極的に話しかけて仲良くなりたい',
-    opt1:'挨拶程度でOK。一人の時間を大切にしたい'},
-  {axis:'SL', val0:'S', text:'旅の思い出はどう扱う？',
-    opt0:'リアルタイムでSNS発信・友人にシェアしたい',
-    opt1:'自分だけの記録として残したい。あまり共有しない'},
-];
+// ===== 質問データ =====
+// axis: PF / IO / SL / HW、yesVal: はい回答に対応する文字
+const BASE_QUESTIONS = {
+  PF: [
+    {yesVal:'P', text:'旅行前に、行程表を作ってから出発する'},
+    {yesVal:'F', text:'気になる店を見つけたら、予定になくてもその場で入る'},
+    {yesVal:'P', text:'宿や移動手段は、出発前にすべて予約しておく'},
+    {yesVal:'F', text:'予定が崩れても、逆に面白い展開だと思える'},
+  ],
+  IO: [
+    {yesVal:'I', text:'歴史的建造物や美術館を見ると、テンションが上がる'},
+    {yesVal:'O', text:'何もせずボーッとする時間があると、心から満たされる'},
+    {yesVal:'I', text:'旅の思い出は「学んだこと」として残ることが多い'},
+    {yesVal:'O', text:'観光より、海やスパでのんびりする方が旅の目的だ'},
+  ],
+  SL: [
+    {yesVal:'S', text:'現地の人や他の旅行者に、自分から話しかける方だ'},
+    {yesVal:'L', text:'旅は仲間とより、一人で過ごす方が落ち着く'},
+    {yesVal:'S', text:'相席や賑やかな食堂でも、気にせず楽しめる'},
+    {yesVal:'L', text:'旅の予定は、あまり人に話さず自分の中で完結させたい'},
+  ],
+  HW: [
+    {yesVal:'H', text:'宿は、清潔さや設備の良さを最優先で選ぶ'},
+    {yesVal:'W', text:'現地らしい多少不便な場所にも、むしろ行ってみたい'},
+    {yesVal:'H', text:'移動は、タクシーなど快適な手段を優先したい'},
+    {yesVal:'W', text:'停電・断水・虫などのトラブルも、旅の醍醐味だと思える'},
+  ],
+};
+
+// 2-2同数になった軸の追加問題（1問で確定）
+const BACKUP_QUESTIONS = {
+  PF: {axis:'PF', yesVal:'P', text:'旅先での移動時間や乗り換えを、細かく事前に調べておく'},
+  IO: {axis:'IO', yesVal:'I', text:'現地の生活や文化的背景を知ると、旅の満足度が上がる'},
+  SL: {axis:'SL', yesVal:'S', text:'知らない人とでも、旅先なら気軽に会話できる'},
+  HW: {axis:'HW', yesVal:'H', text:'多少値段が高くても、快適さを優先して宿や移動を選ぶ'},
+};
 
 // Fisher-Yates シャッフル
 function shuffle(arr) {
@@ -290,118 +297,168 @@ function shuffle(arr) {
   return a;
 }
 
-let shuffledQ = [];
+function buildShuffledBase() {
+  const all = [];
+  Object.entries(BASE_QUESTIONS).forEach(([axis, qs]) => {
+    qs.forEach(q => all.push({...q, axis}));
+  });
+  return shuffle(all);
+}
 
+// ===== 16タイプ定義 =====
 const TYPES = {
-  PAS:{name:'遠征隊長型',   color:'#2563a0', traits:['計画派','アクティブ','社交派'],
-    desc:'綿密な計画で仲間を巻き込みながらアクティブに動くタイプ。事前リサーチが万全で旅のトラブルにも強く、グループの頼れる存在になることが多い。旅程表を作成したり、全員分の予約を取りまとめたりするのが苦にならない。'},
-  PAL:{name:'単独登頂型',   color:'#1d9074', traits:['計画派','アクティブ','ひとり旅'],
-    desc:'計画は完璧、行動は一人で黙々とこなすタイプ。マイナースポットや早朝の観光など「一人だからこそ」の体験を追求し、自分のペースで深く旅を楽しむ。誰かに合わせる必要がないぶん、行動の自由度は最大になる。'},
-  PRS:{name:'旅のホスト型', color:'#e07b39', traits:['計画派','のんびり','社交派'],
-    desc:'ゆったりペースで人との時間を大事にする世話役タイプ。旅先でも相手に合わせた計画を立て、みんなが快適に過ごせるよう気を配る。急がず焦らず、会話やご飯を丁寧に楽しみながら旅を積み重ねていく。'},
-  PRL:{name:'静寂の巡礼者型',color:'#7b5ea7', traits:['計画派','のんびり','ひとり旅'],
-    desc:'計画通りに、静かな場所を一人で味わうタイプ。混雑を避けた穴場スポットや早朝・夕暮れ時の景色など、ひっそりとした非日常を探し求める。旅の目的が「体験」よりも「内省と発見」にあるような旅人。'},
-  FAS:{name:'祭りの案内人型',color:'#c94a29', traits:['直感派','アクティブ','社交派'],
-    desc:'その場のノリで人を巻き込みアクティブに動くタイプ。旅先で出会った人と意気投合して予定外の冒険に繰り出すことも多く、旅に「予定外のドラマ」を生み出す存在。計画のなさが逆に新しい出会いを呼び込む。'},
-  FAL:{name:'風来坊型',     color:'#3a8a8a', traits:['直感派','アクティブ','ひとり旅'],
-    desc:'気ままに動き回る、単独行動のアクティブ派。地図を持たずに路地を歩いたり、気になった交通機関にとりあえず乗ってみたりと、行き当たりばったりの冒険を楽しむ。「迷子になること」すら旅の醍醐味と捉えられる。'},
-  FRS:{name:'宿の常連型',   color:'#c8940a', traits:['直感派','のんびり','社交派'],
-    desc:'行き当たりばったりでも人との会話を楽しむタイプ。宿のオーナーや地元の人と自然に仲良くなり、口コミで絶品の店や隠れた観光地を教えてもらうことが多い。旅が「人と出会う旅」になる。'},
-  FRL:{name:'漂流者型',     color:'#607d8b', traits:['直感派','のんびり','ひとり旅'],
-    desc:'計画なし、ペースもマイペース、完全ソロの漂流者。風が吹く方へ、電車が来た方へと自由に流れ続けることが何より心地よい。誰にも縛られず、どこにも急がず、旅そのものを目的とした純粋なさすらい人。'},
+  PISH:{name:'文化旅行の設計者', color:'#2563a0',
+    traits:['計画派','文化・学び','社交派','快適志向'],
+    desc:'綿密な計画で仲間と快適に文化旅行を楽しむタイプ。美術館や遺跡を事前リサーチし、ランチもディナーも予約済みで迷わない。グループ旅行の頼れる幹事として輝く存在。'},
+  PISW:{name:'調査隊長', color:'#1a6b3a',
+    traits:['計画派','文化・学び','社交派','ワイルド'],
+    desc:'計画を立てて仲間と文化・歴史の探求に出かけるタイプ。多少不便な場所でも計画通りに動き、仲間と学びを共有する。フィールドワーク型の旅が得意な頼れるリーダー。'},
+  PILH:{name:'静かな学者', color:'#7b5ea7',
+    traits:['計画派','文化・学び','ひとり旅','快適志向'],
+    desc:'計画的に一人で快適に文化を巡るタイプ。美術館の閉館時間やアクセス方法を事前に調べ、集中して展示や史跡に向き合う。快適な宿で旅の余韻と学びを整理する時間も旅の一部。'},
+  PILW:{name:'フィールドワーカー', color:'#4a7a59',
+    traits:['計画派','文化・学び','ひとり旅','ワイルド'],
+    desc:'計画は入念に立てるが宿や移動は多少ワイルドでも構わない、一人で文化・歴史を追うタイプ。テントを張りながら古代遺跡を巡るような学術的なストイック旅が真骨頂。'},
+  POSH:{name:'リゾートの幹事', color:'#e07b39',
+    traits:['計画派','リフレッシュ','社交派','快適志向'],
+    desc:'仲間と一緒に快適なリゾートをしっかり計画して楽しむタイプ。ホテルもアクティビティも事前予約済みで誰もが満足する旅を実現する。限られた休日を最大限に活用する段取りの達人。'},
+  POSW:{name:'アウトドア隊長', color:'#3a7540',
+    traits:['計画派','リフレッシュ','社交派','ワイルド'],
+    desc:'計画的に仲間とアウトドアやキャンプを楽しむタイプ。行程と装備をしっかり整えてから自然に飛び込む。テントや焚き火も「計画の一部」として楽しむ、組織的な冒険家。'},
+  POLH:{name:'プレミアム隠居人', color:'#c8940a',
+    traits:['計画派','リフレッシュ','ひとり旅','快適志向'],
+    desc:'計画通りに一人で快適にリフレッシュするタイプ。最高の旅館や温泉・スパを事前に予約し、完璧な「ひとり休暇」を実現する。読書や昼寝も計画の一部に組み込む自己管理の達人。'},
+  POLW:{name:'孤独なキャンパー', color:'#607d8b',
+    traits:['計画派','リフレッシュ','ひとり旅','ワイルド'],
+    desc:'一人で計画的にワイルドな自然の中でリフレッシュするタイプ。ルートと装備を入念に準備し、誰もいない山や海岸で完全に一人の時間を過ごす。孤独な自然体験が最高の充電源。'},
+  FISH:{name:'文化の社交師', color:'#c94a29',
+    traits:['直感派','文化・学び','社交派','快適志向'],
+    desc:'気ままに仲間と快適に文化巡りを楽しむタイプ。予定になかった美術館に気づいたら入り、出会った人と感動を共有する。旅先でも知的好奇心と社交力がフル回転するコミュニティの核。'},
+  FISW:{name:'裏路地の探検家', color:'#8b4513',
+    traits:['直感派','文化・学び','社交派','ワイルド'],
+    desc:'直感で動きながら仲間と文化的な冒険をするタイプ。地元民しか知らない路地や市場に迷い込み、その場の空気を仲間と笑いながら体験する。予定外の発見が最高の旅の記憶になる。'},
+  FILH:{name:'直感の知識人', color:'#3a8a8a',
+    traits:['直感派','文化・学び','ひとり旅','快適志向'],
+    desc:'気の向くままに一人で快適に文化を探索するタイプ。計画は立てないが良質な博物館や遺跡に自然と引き寄せられる。快適な宿で旅の振り返りと読書を楽しむ、一人旅の知的冒険家。'},
+  FILW:{name:'風来坊の研究者', color:'#5c4033',
+    traits:['直感派','文化・学び','ひとり旅','ワイルド'],
+    desc:'直感のまま一人で文化と自然を同時に追うタイプ。宿の質より体験の質を重視し、多少の不便も学びの素材として受け入れる。予定表なし・宿は当日探し、でも収穫は最大という旅人。'},
+  FOSH:{name:'自由なリゾーター', color:'#d47a00',
+    traits:['直感派','リフレッシュ','社交派','快適志向'],
+    desc:'気ままに仲間と快適にリフレッシュするタイプ。どこに行くかは直前に決めても、着いた先では最高の宿とビーチで全力でくつろぐ。一緒にいる仲間と笑う時間が最大の旅の目的。'},
+  FOSW:{name:'バックパッカーの主役', color:'#3a7044',
+    traits:['直感派','リフレッシュ','社交派','ワイルド'],
+    desc:'自由に仲間とワイルドにリフレッシュするタイプ。行き先も宿も当日決め、出会った旅人と意気投合してそのまま次の街へ向かうことも。雑多な環境でも仲間がいれば最高の旅になる。'},
+  FOLH:{name:'ひとり漂流リゾーター', color:'#5e7a8a',
+    traits:['直感派','リフレッシュ','ひとり旅','快適志向'],
+    desc:'気まぐれに一人で快適にリフレッシュするタイプ。いつ・どこへ行くかは直感で決め、気に入った宿に長く滞在することも。誰にも縛られず、心地よさだけを基準に動く自由な旅人。'},
+  FOLW:{name:'完全なる漂流者', color:'#6b5e62',
+    traits:['直感派','リフレッシュ','ひとり旅','ワイルド'],
+    desc:'計画も仲間も快適さも不要、ただ自由に流れるタイプ。宿は当日探し、食事は屋台、移動手段は乗れたもの。旅そのものが目的の完全なる自由人。すべてが旅の醍醐味になる。'},
 };
 
-const COMPAT = {
-  'FAL-FAL':{pct:65,text:'それぞれ好きに動きすぎて、気づいたら別行動になっていることも。集合時間だけは決めておくのが吉。'},
-  'FAS-FAS':{pct:80,text:'勢いだけでどんどん進める最強コンビ。ただし計画ゼロ同士だと大事な予約を忘れがちなので、片方だけでも事前準備を。'},
-  'FRL-FRL':{pct:75,text:'お互い完全マイペースで気を使わない関係。ただし合流ポイントすら曖昧になりがちなので、最低限の連絡だけは忘れずに。'},
-  'FRS-FRS':{pct:85,text:'その場のノリと人懐っこさで自然と楽しい旅に。決断力がどちらも弱いので、決める係を先に決めておくと安心。'},
-  'PAL-PAL':{pct:70,text:'お互い一人の時間を尊重できるので気は楽。ただし会話が減りがちなので、意識的に予定を共有する時間を作ると◎。'},
-  'PAS-PAS':{pct:95,text:'似た者同士で息はぴったり。ただし2人ともリーダー気質なので、たまに主導権の取り合いに。役割分担を決めておくと最強コンビ。'},
-  'PRL-PRL':{pct:85,text:'静かな旅を好む者同士、無言でも心地よい時間を過ごせる。ただし刺激不足になりがちなので、たまには非日常を意識的に入れて。'},
-  'PRS-PRS':{pct:90,text:'まったり&お世話好き同士で、譲り合いすぎて逆に決まらないことも。どちらかがたまに引っ張る役をやると旅がスムーズ。'},
-  'FAL-FAS':{pct:65,text:'勢い重視は共通、社交と単独で違う。行動は別々でも、夜に感想を共有するだけで満足度が上がる。'},
-  'FAL-FRL':{pct:70,text:'単独志向・直感派という共通点があり、干渉しない心地よさがある。たまの合流タイムだけ決めておくと安心。'},
-  'FAL-FRS':{pct:45,text:'単独×社交、アクティブ×のんびりで方向性が違う。無理に予定を合わせず、気が向いたら合流するくらいがベスト。'},
-  'FAL-PAL':{pct:70,text:'単独志向は共通、計画有無だけ違う。PALが大枠を決め、FALはその中で自由に動くと心地よい。'},
-  'FAL-PAS':{pct:50,text:'社交と単独、計画と直感がどちらもズレる組み合わせ。無理に合わせず、日程の一部だけ一緒に行動するのが現実的。'},
-  'FAL-PRL':{pct:50,text:'単独志向は近いが、テンポと計画有無が違う。静かな時間帯だけ一緒に過ごすスタイルが合う。'},
-  'FAL-PRS':{pct:40,text:'社交×単独、のんびり×アクティブでズレが大きい。共有時間を短めに設定するのが現実的。'},
-  'FAS-FRL':{pct:35,text:'社交×単独、アクティブ×のんびりでほぼ真逆。同じ旅に出るより、部分的に合流する形が向いている。'},
-  'FAS-FRS':{pct:80,text:'直感的で社交的な点が共通し、ノリが合いやすい。決める人がいないと迷走するので、片方が舵取り役に。'},
-  'FAS-PAL':{pct:45,text:'単独×社交、計画×直感でズレが大きい。お互いの旅のスタイルを最初に共有しておくことが重要。'},
-  'FAS-PAS':{pct:75,text:'勢いは合うが、計画有無で衝突しやすい。PASが大枠だけ決め、細部はFASの直感に任せるとうまく回る。'},
-  'FAS-PRL':{pct:30,text:'静か×社交、計画×直感とほぼ真逆。同じ旅程で動くより、目的地だけ合わせる程度がちょうどいい。'},
-  'FAS-PRS':{pct:60,text:'社交性は合うが、テンポが正反対。PRSがゆったり枠を作り、FASがアクセントを加える関係が理想的。'},
-  'FRL-FRS':{pct:60,text:'社交×単独でズレはあるが、直感派・のんびりという共通点でテンポは合う。無理に一緒にいなくても楽しめる関係。'},
-  'FRL-PAL':{pct:65,text:'単独志向は似ているが、計画有無が真逆。互いのペースに口を出さない距離感が心地よい関係に。'},
-  'FRL-PAS':{pct:40,text:'ほぼ真逆のタイプ。旅の目的自体をすり合わせないと、お互いストレスになりやすい組み合わせ。'},
-  'FRL-PRL':{pct:85,text:'静かに一人を好む点が共通し、居心地の良い距離感が保てる。会話が少なくても不安にならない関係。'},
-  'FRL-PRS':{pct:55,text:'社交×単独で方向性が違うが、のんびりペースは共通。無理に一緒にいようとしないことがコツ。'},
-  'FRS-PAL':{pct:50,text:'静かに一人 vs その場のノリで社交、方向性が異なる。無理に合流し続けず、時間を区切るのがおすすめ。'},
-  'FRS-PAS':{pct:70,text:'社交性は合うが、テンポとペースが逆。PASが枠組みを作り、FRSがその場の空気を作る役に回ると心地よい。'},
-  'FRS-PRL':{pct:45,text:'静か×社交でペースが噛み合いにくい。あえて別行動の時間を多めに取ると心地よい。'},
-  'FRS-PRS':{pct:90,text:'社交性・ペースともに近く、非常に相性が良い。会話も弾みやすく、自然体で楽しめる組み合わせ。'},
-  'PAL-PAS':{pct:80,text:'計画力は同じでも、社交と単独で温度差。集合・自由時間を分けて過ごせば互いのペースを尊重できる。'},
-  'PAL-PRL':{pct:80,text:'計画派同士、静かに一人を好む点も共通。過ごし方は似ているので、日程の共有だけしっかりしておけば快適。'},
-  'PAL-PRS':{pct:60,text:'単独×社交で温度差あり。PALに一人時間を確保しつつ、要所だけ一緒に過ごすとバランスが取れる。'},
-  'PAS-PRL':{pct:55,text:'アクティブ×静かで方向性がかなり違う。旅程を分割して、合流タイムだけ揃える工夫が必要。'},
-  'PAS-PRS':{pct:85,text:'社交性は共通、テンポだけ違う。PASがスケジュールを引っ張り、PRSが人との時間を担当すると役割がハマる。'},
-  'PRL-PRS':{pct:75,text:'のんびり志向は共通、社交と単独で違う。人と過ごす時間と静かな時間を交互に作るとどちらも満足。'},
+// ===== 相性計算（軸一致数ベース・アルゴリズム算出） =====
+const AXIS_CHAR_NAMES = {
+  P:'計画派', F:'ノリ重視',
+  I:'文化・学び重視', O:'リフレッシュ重視',
+  S:'社交志向', L:'単独志向',
+  H:'快適志向', W:'ワイルド志向',
 };
+const AXIS_MISMATCH_NOTES = [
+  '計画性とその場のノリが逆方向。役割を分けると旅がスムーズ。',
+  '文化・学びとリフレッシュで旅の目的が異なる。時間配分を話し合って。',
+  '社交と単独志向でペースが違う。自由時間を多めに確保するのがコツ。',
+  '宿・移動の快適さへのこだわりが逆。予算配分を事前に決めておこう。',
+];
+function getCompat(typeA, typeB) {
+  const mismatches = [0,1,2,3].filter(i => typeA[i] !== typeB[i]);
+  const matchCount = 4 - mismatches.length;
+  const pct = [20, 40, 60, 78, 95][matchCount];
 
+  let text;
+  if (matchCount === 4) {
+    text = 'ほぼ同じ旅スタイル。意見が一致しやすく、旅の計画がスムーズ。似すぎて刺激が少なくなることだけ注意。';
+  } else if (matchCount === 0) {
+    text = '4軸すべて逆方向のタイプ。旅の目的・ペース・過ごし方が根本から異なる。事前に優先事項を丁寧にすり合わせることが必須。';
+  } else {
+    const notes = mismatches.map(i => AXIS_MISMATCH_NOTES[i]);
+    if (matchCount === 3) {
+      text = `旅のスタイルはほぼ同じ。${notes[0]}`;
+    } else if (matchCount === 2) {
+      text = `2軸は一致、残り2軸でズレがある。${notes.join(' ')}`;
+    } else {
+      text = `スタイルの差が大きめ。${notes.join(' ')} 旅の前に目的を共有しておこう。`;
+    }
+  }
+  return {pct, text};
+}
+
+// ===== スワイプUI 状態 =====
 let myType = null;
 let currentIdx = 0;
+let totalQuestions = 16;
 let axisVotes = {};
+let questionQueue = [];
 let mouseMoveHandler = null;
 let mouseUpHandler = null;
 
-function getOppositeVal(v) { return v==='P'?'F':v==='A'?'R':'L'; }
+function getOppositeVal(v) {
+  return {P:'F',F:'P',I:'O',O:'I',S:'L',L:'S',H:'W',W:'H'}[v];
+}
 
-function updateProgress(n) {
-  document.getElementById('progress-fill').style.width = (n / 9 * 100) + '%';
-  document.getElementById('progress-text').textContent = n + ' / 9 問';
+function updateProgress(n, total) {
+  document.getElementById('progress-fill').style.width = (n / total * 100) + '%';
+  document.getElementById('progress-text').textContent = n + ' / ' + total + ' 問';
 }
 
 function initSwipe() {
-  shuffledQ = shuffle(QUESTIONS);
+  questionQueue = buildShuffledBase();
   currentIdx = 0;
-  axisVotes = {PF:{P:0,F:0}, AR:{A:0,R:0}, SL:{S:0,L:0}};
-  updateProgress(0);
+  totalQuestions = 16;
+  axisVotes = {PF:{P:0,F:0}, IO:{I:0,O:0}, SL:{S:0,L:0}, HW:{H:0,W:0}};
+  updateProgress(0, 16);
 
   const stack = document.getElementById('card-stack');
   stack.innerHTML = '';
 
-  // Append reverse so realIdx=0 ends up last in DOM (= topmost with position:absolute)
-  [...shuffledQ].reverse().forEach((q, revIdx) => {
-    const realIdx = shuffledQ.length - 1 - revIdx;
-    const card = document.createElement('div');
-    card.className = 'swipe-card';
-    const behind = Math.min(realIdx, 3);
-    if (behind > 0) card.dataset.behind = behind;
-
-    card.innerHTML = `
-      <div class="sc-overlay sc-overlay-l"></div>
-      <div class="sc-overlay sc-overlay-r"></div>
-      <div class="sc-body">
-        <div class="sc-qnum">Q${realIdx + 1} / 9</div>
-        <div class="sc-text">${q.text}</div>
-      </div>
-      <div class="sc-choices">
-        <div class="sc-choice sc-left">
-          <span class="sc-choice-arrow">←</span>
-          <span class="sc-choice-text">${q.opt1}</span>
-        </div>
-        <div class="sc-divider"></div>
-        <div class="sc-choice sc-right">
-          <span class="sc-choice-text">${q.opt0}</span>
-          <span class="sc-choice-arrow">→</span>
-        </div>
-      </div>`;
-    stack.appendChild(card);
+  // 逆順でappendすることでQ0が最後(topmost)になる
+  [...questionQueue].reverse().forEach((q, revIdx) => {
+    const realIdx = questionQueue.length - 1 - revIdx;
+    appendCard(q, realIdx + 1, Math.min(realIdx, 3));
   });
 
   attachSwipeHandlers();
+}
+
+function appendCard(q, displayNum, behind, isBackup) {
+  const stack = document.getElementById('card-stack');
+  const card = document.createElement('div');
+  card.className = 'swipe-card';
+  if (behind > 0) card.dataset.behind = String(behind);
+
+  const qnumHtml = isBackup
+    ? `Q${displayNum} <span class="sc-backup-badge">追加問題</span>`
+    : `Q${displayNum} / ${totalQuestions}`;
+
+  card.innerHTML = `
+    <div class="sc-overlay sc-overlay-l"></div>
+    <div class="sc-overlay sc-overlay-r"></div>
+    <div class="sc-body">
+      <div class="sc-qnum">${qnumHtml}</div>
+      <div class="sc-text">${q.text}</div>
+    </div>
+    <div class="sc-choices">
+      <div class="sc-choice sc-left">
+        <span class="sc-choice-arrow">←</span>
+        <span class="sc-choice-label">いいえ</span>
+      </div>
+      <div class="sc-divider"></div>
+      <div class="sc-choice sc-right">
+        <span class="sc-choice-label">はい</span>
+        <span class="sc-choice-arrow">→</span>
+      </div>
+    </div>`;
+  stack.appendChild(card);
 }
 
 function getActiveCard() {
@@ -411,7 +468,6 @@ function getActiveCard() {
 
 function attachSwipeHandlers() {
   const stack = document.getElementById('card-stack');
-
   if (mouseMoveHandler) document.removeEventListener('mousemove', mouseMoveHandler);
   if (mouseUpHandler)   document.removeEventListener('mouseup',   mouseUpHandler);
 
@@ -431,17 +487,15 @@ function attachSwipeHandlers() {
     if (!isDragging || !activeCard) return;
     const dx = x - startX;
     const dy = y - startY;
-    // Cancel if gesture is clearly vertical and hasn't gone far horizontally yet
     if (Math.abs(dy) > Math.abs(dx) * 1.8 && Math.abs(dx) < 20) {
       isDragging = false; return;
     }
 
-    const rotate = dx / 320 * 18;
-    activeCard.style.transform = `translateX(${dx}px) rotate(${rotate}deg)`;
-
+    activeCard.style.transform = `translateX(${dx}px) rotate(${dx / 320 * 18}deg)`;
     const pct = Math.min(Math.abs(dx) / THRESHOLD, 1);
     const ovlL = activeCard.querySelector('.sc-overlay-l');
     const ovlR = activeCard.querySelector('.sc-overlay-r');
+
     if (dx < 0) {
       ovlL.style.opacity = pct; ovlR.style.opacity = 0;
       activeCard.classList.add('dragging-left'); activeCard.classList.remove('dragging-right');
@@ -453,9 +507,6 @@ function attachSwipeHandlers() {
       activeCard.classList.remove('dragging-left','dragging-right');
     }
 
-    const q = shuffledQ[currentIdx];
-    document.getElementById('ssl-left-text').textContent  = q.opt1;
-    document.getElementById('ssl-right-text').textContent = q.opt0;
     document.getElementById('ssl-left').style.opacity  = dx < 0 ? pct : 0;
     document.getElementById('ssl-right').style.opacity = dx > 0 ? pct : 0;
   }
@@ -495,12 +546,12 @@ function attachSwipeHandlers() {
 }
 
 function commitSwipe(dir, card) {
-  const q = shuffledQ[currentIdx];
-  const val = dir === 'right' ? q.val0 : getOppositeVal(q.val0);
+  const q = questionQueue[currentIdx];
+  const val = dir === 'right' ? q.yesVal : getOppositeVal(q.yesVal);
   axisVotes[q.axis][val]++;
 
   const flyX = dir === 'right' ? window.innerWidth + 100 : -(window.innerWidth + 100);
-  card.style.transition = 'transform 0.45s cubic-bezier(0.55,0,1,0.7), opacity 0.35s';
+  card.style.transition = 'transform 0.45s cubic-bezier(0.55,0,1,0.7),opacity 0.35s';
   card.style.transform  = `translateX(${flyX}px) rotate(${dir==='right'?25:-25}deg)`;
   card.style.opacity = '0';
   card.style.pointerEvents = 'none';
@@ -509,16 +560,16 @@ function commitSwipe(dir, card) {
   document.getElementById('ssl-right').style.opacity = 0;
 
   currentIdx++;
-  updateProgress(currentIdx);
+  updateProgress(currentIdx, totalQuestions);
 
-  // Promote remaining cards
+  // 残りカードのプロモーション
   const remaining = Array.from(document.querySelectorAll('.swipe-card')).filter(c => c !== card);
   const n = remaining.length;
   remaining.forEach((c, i) => {
     const behind = n - 1 - i;
     if (behind === 0) {
       c.style.transition = 'transform 0.3s ease';
-      void c.getBoundingClientRect(); // force reflow so transition fires
+      void c.getBoundingClientRect();
       c.removeAttribute('data-behind');
     } else {
       c.dataset.behind = String(Math.min(behind, 3));
@@ -527,16 +578,42 @@ function commitSwipe(dir, card) {
 
   setTimeout(() => {
     card.remove();
-    if (currentIdx === 9) {
-      const pf = axisVotes.PF.P >= axisVotes.PF.F ? 'P' : 'F';
-      const ar = axisVotes.AR.A >= axisVotes.AR.R ? 'A' : 'R';
-      const sl = axisVotes.SL.S >= axisVotes.SL.L ? 'S' : 'L';
-      myType = pf + ar + sl;
-      document.getElementById('swipe-section').style.display = 'none';
-      document.querySelector('.progress-wrap').style.display = 'none';
-      showResult(myType);
+
+    if (currentIdx === 16) {
+      // 16問完了 → 同数チェック
+      const tiedAxes = Object.keys(axisVotes).filter(axis => {
+        const vals = Object.values(axisVotes[axis]);
+        return vals[0] === vals[1];
+      });
+
+      if (tiedAxes.length > 0) {
+        // 追加問題を逆順でappend（最初の軸がtopmost）
+        totalQuestions = 16 + tiedAxes.length;
+        updateProgress(currentIdx, totalQuestions);
+        [...tiedAxes].reverse().forEach((axis, revIdx) => {
+          const bIdx = tiedAxes.length - 1 - revIdx;
+          const bq = BACKUP_QUESTIONS[axis];
+          questionQueue.push(bq);
+          appendCard(bq, 16 + bIdx + 1, Math.min(bIdx, 3), true);
+        });
+      } else {
+        computeAndShowResult();
+      }
+    } else if (currentIdx === totalQuestions) {
+      computeAndShowResult();
     }
   }, 500);
+}
+
+function computeAndShowResult() {
+  const pf = axisVotes.PF.P >= axisVotes.PF.F ? 'P' : 'F';
+  const io = axisVotes.IO.I >= axisVotes.IO.O ? 'I' : 'O';
+  const sl = axisVotes.SL.S >= axisVotes.SL.L ? 'S' : 'L';
+  const hw = axisVotes.HW.H >= axisVotes.HW.W ? 'H' : 'W';
+  myType = pf + io + sl + hw;
+  document.getElementById('swipe-section').style.display = 'none';
+  document.querySelector('.progress-wrap').style.display  = 'none';
+  showResult(myType);
 }
 
 function showResult(type) {
@@ -564,7 +641,7 @@ function buildCompatButtons(type) {
   Object.entries(TYPES).forEach(([code, info]) => {
     const btn = document.createElement('button');
     btn.type = 'button'; btn.className = 'type-btn'; btn.dataset.type = code;
-    btn.innerHTML = `<div class="tb-code" style="color:${info.color}">${code}</div><div class="tb-name">${info.name.replace('型','')}</div>`;
+    btn.innerHTML = `<div class="tb-code" style="color:${info.color}">${code}</div><div class="tb-name">${info.name}</div>`;
     btn.addEventListener('click', () => selectCompat(code, btn, info.color));
     grid.appendChild(btn);
   });
@@ -581,16 +658,13 @@ function selectCompat(theirType, btn, color) {
   btn.querySelector('.tb-code').style.color = '#fff';
   btn.querySelector('.tb-name').style.color = 'rgba(255,255,255,0.85)';
 
-  const key = [myType, theirType].sort().join('-');
-  const data = COMPAT[key];
-  if (!data) return;
-
-  document.getElementById('compat-pct-val').textContent = data.pct + '%';
+  const {pct, text} = getCompat(myType, theirType);
+  document.getElementById('compat-pct-val').textContent = pct + '%';
   document.getElementById('compat-pct-val').style.color = color;
-  document.getElementById('compat-bar').style.width = data.pct + '%';
+  document.getElementById('compat-bar').style.width = pct + '%';
   document.getElementById('compat-bar').style.background = color;
   document.getElementById('compat-pair').textContent = myType + ' × ' + theirType;
-  document.getElementById('compat-text').textContent = data.text;
+  document.getElementById('compat-text').textContent = text;
 
   const cr = document.getElementById('compat-result');
   cr.classList.add('show'); cr.style.display = 'block';
@@ -606,7 +680,7 @@ document.getElementById('reset-btn').addEventListener('click', () => {
   document.getElementById('compat-result').style.display = 'none';
 
   document.getElementById('swipe-section').style.display = '';
-  document.querySelector('.progress-wrap').style.display = '';
+  document.querySelector('.progress-wrap').style.display  = '';
 
   initSwipe();
   document.getElementById('swipe-section').scrollIntoView({behavior:'smooth', block:'start'});
