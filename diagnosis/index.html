@@ -81,7 +81,7 @@ body{
 .sc-backup-badge{background:#f0a500;color:#fff;font-size:0.78em;font-weight:700;padding:1px 8px;border-radius:10px;letter-spacing:0}
 .sc-text{font-size:0.97em;font-weight:700;line-height:1.7;color:var(--text)}
 
-/* 選択肢（カード下部） */
+/* 選択肢 */
 .sc-choices{display:grid;grid-template-columns:1fr 1px 1fr;border-top:1px solid var(--border)}
 .sc-choice{padding:14px 16px;font-size:0.85em;font-weight:700;color:#b0b8b4;display:flex;flex-direction:column;align-items:center;gap:4px;transition:color 0.15s,background 0.15s}
 .sc-choice-arrow{font-size:1.1em;line-height:1}
@@ -89,8 +89,6 @@ body{
 .sc-left{border-radius:0 0 0 16px}
 .sc-right{border-radius:0 0 16px 0}
 .sc-divider{background:var(--border)}
-
-/* ドラッグ中ハイライト */
 .swipe-card.dragging-left .sc-left{color:#c94a29;background:#fff5f3}
 .swipe-card.dragging-right .sc-right{color:var(--green);background:var(--green-light)}
 
@@ -108,42 +106,55 @@ body{
 #result-section.show{display:block;animation:fadeUp 0.45s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 
+/* 結果カード */
 .result-card{border-radius:14px;overflow:hidden;margin:32px 0 20px;box-shadow:0 6px 28px rgba(0,0,0,0.12)}
 .result-card-top{padding:36px 24px 28px;text-align:center;color:#fff;position:relative}
-.result-illust{width:130px;height:130px;border-radius:50%;margin:0 auto 16px;background:rgba(255,255,255,0.18);border:3px solid rgba(255,255,255,0.35)}
+.result-illust{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;background:rgba(255,255,255,0.18);border:3px solid rgba(255,255,255,0.35);display:flex;align-items:center;justify-content:center;font-size:3.2em;line-height:1}
 .result-type-code{font-size:2.8em;font-weight:900;letter-spacing:5px;line-height:1;margin-bottom:6px;font-family:monospace,sans-serif;opacity:0.85}
 .result-type-name{font-size:1.35em;font-weight:900;margin-bottom:14px;line-height:1.3}
 .result-traits{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 .trait-badge{background:rgba(255,255,255,0.2);color:#fff;font-size:0.73em;font-weight:700;padding:4px 13px;border-radius:20px;border:1px solid rgba(255,255,255,0.32)}
 
-.result-card-body{background:#fff;padding:22px 22px 24px}
+.result-card-body{background:#fff;padding:22px 22px 28px}
 .result-body-label{font-size:0.7em;font-weight:700;color:var(--green);margin-bottom:6px;letter-spacing:0.04em}
 .result-desc{font-size:0.86em;color:#333;line-height:1.85}
 
-/* 相性チェック */
-#compat-section{display:none}
-#compat-section.show{display:block;animation:fadeUp 0.45s ease}
-.compat-wrap{background:#fff;border-radius:14px;border:1px solid var(--border);padding:22px;margin:0 0 24px}
-.compat-title{font-size:1em;font-weight:900;margin-bottom:4px}
-.compat-subtitle{font-size:0.82em;color:var(--sub);margin-bottom:18px;line-height:1.6}
+/* ─── セクションヘッダー 1・2・3 ─── */
+.rsec-header{display:flex;align-items:center;gap:10px;margin:22px 0 14px;padding-top:20px;border-top:1px solid var(--border)}
+.rsec-num{width:24px;height:24px;background:var(--green);color:#fff;border-radius:50%;font-size:0.72em;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rsec-title{font-size:0.92em;font-weight:900}
 
-.type-btn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:20px}
-.type-btn{border:2px solid var(--border);background:#fff;border-radius:10px;padding:10px 4px 8px;cursor:pointer;text-align:center;transition:border-color 0.15s,background 0.15s;font-family:inherit}
-.type-btn .tb-code{font-size:0.82em;font-weight:900;font-family:monospace,sans-serif;line-height:1;margin-bottom:3px}
-.type-btn .tb-name{font-size:0.56em;color:var(--sub);line-height:1.3}
-.type-btn:hover:not(.selected){border-color:var(--green);background:var(--green-light)}
+/* ─── 性格特性: 軸グリッド ─── */
+.axis-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.axis-card{background:#f8faf9;border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.axis-card-label{font-size:0.64em;font-weight:700;color:var(--sub);margin-bottom:8px;letter-spacing:0.05em}
+.axis-toggle{display:flex;gap:5px;margin-bottom:8px}
+.axis-opt{flex:1;padding:5px 6px;border-radius:6px;font-size:0.7em;font-weight:700;text-align:center;background:#e8eceb;color:#aaa;line-height:1.3}
+.axis-opt.selected{background:var(--green);color:#fff}
+.axis-desc{font-size:0.73em;color:#555;line-height:1.6}
 
-.compat-result{display:none;padding-top:18px;border-top:1px solid var(--border);animation:fadeUp 0.3s ease}
-.compat-result.show{display:block}
-.compat-header{display:flex;align-items:center;gap:16px;margin-bottom:14px}
-.compat-pct-block{text-align:center;flex-shrink:0}
-.compat-pct{font-size:2.5em;font-weight:900;line-height:1;display:block}
-.compat-pct-label{font-size:0.68em;color:var(--sub);display:block;margin-top:2px}
-.compat-bar-wrap{flex:1}
-.compat-bar-bg{background:#e4eceb;border-radius:20px;height:10px;overflow:hidden;margin-bottom:6px}
-.compat-bar-fill{height:100%;border-radius:20px;transition:width 0.6s ease}
-.compat-pair{font-size:0.78em;color:var(--sub);font-weight:600}
-.compat-text-box{font-size:0.85em;line-height:1.85;color:#333;background:#f4f8f6;border-radius:8px;padding:14px 16px;border-left:3px solid var(--green)}
+/* ─── 旅スタイル ─── */
+.travel-style-box{background:#f4f8f6;border-radius:10px;padding:14px 16px;font-size:0.86em;color:#333;line-height:1.85;border-left:3px solid var(--green)}
+
+/* ─── 相性ミニカード（自動算出） ─── */
+.compat-group-label{font-size:0.76em;font-weight:700;margin:14px 0 8px;display:flex;align-items:center;gap:6px}
+.cg-good{color:var(--green)}
+.cg-bad{color:#c94a29}
+.compat-mini-list{display:flex;flex-direction:column;gap:8px}
+.cmc{background:#fff;border-radius:10px;border:1px solid var(--border);border-left-width:3px;padding:12px 14px}
+.cmc-header{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.cmc-code{font-size:0.78em;font-weight:900;font-family:monospace,sans-serif;flex-shrink:0;min-width:38px}
+.cmc-name{font-size:0.8em;font-weight:700;flex:1;min-width:0}
+.cmc-pct{font-size:0.85em;font-weight:900;flex-shrink:0}
+.cmc-bar-bg{width:52px;height:4px;background:#e4eceb;border-radius:20px;overflow:hidden;flex-shrink:0}
+.cmc-bar-fill{height:100%;border-radius:20px}
+.cmc-text{font-size:0.75em;color:var(--sub);line-height:1.55}
+.compat-note{font-size:0.74em;color:var(--sub);margin-top:14px;line-height:1.65;padding:10px 14px;background:#f8faf9;border-radius:8px;border:1px solid var(--border)}
+
+/* ─── 国を探すCTAボタン ─── */
+.country-search-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:16px 24px;border-radius:30px;font-size:0.92em;font-weight:900;margin:24px 0 12px;transition:background 0.2s;box-shadow:0 4px 16px rgba(29,144,116,0.28)}
+.country-search-cta:hover{background:var(--green-dark)}
+.cta-arrow{font-size:1.1em}
 
 /* フッター */
 footer{text-align:center;padding:32px 16px;font-size:0.78em;color:#fff;background:#6B5E62;margin-top:0}
@@ -152,15 +163,14 @@ footer a:hover{text-decoration:underline}
 
 /* レスポンシブ */
 @media(max-width:520px){
-  .type-btn-grid{grid-template-columns:repeat(4,1fr);gap:4px}
-  .type-btn{padding:8px 2px 6px}
-  .type-btn .tb-code{font-size:0.72em}
-  .type-btn .tb-name{font-size:0.5em}
   .result-type-code{font-size:2.2em;letter-spacing:4px}
   .result-type-name{font-size:1.15em}
   .diag-hero h1{font-size:1.3em}
-  .result-illust{width:110px;height:110px}
+  .result-illust{width:100px;height:100px;font-size:2.6em}
   .page-wrap{padding:0 14px 50px}
+}
+@media(max-width:480px){
+  .axis-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -210,36 +220,40 @@ footer a:hover{text-decoration:underline}
         <div class="result-traits" id="result-traits"></div>
       </div>
       <div class="result-card-body">
-        <div class="result-body-label">このタイプの特徴</div>
-        <div class="result-desc" id="result-desc"></div>
-      </div>
-    </div>
-    <div style="text-align:center">
-      <button class="diag-reset" id="reset-btn">もう一度診断する</button>
-    </div>
-  </div>
 
-  <!-- 相性チェック -->
-  <div id="compat-section">
-    <div class="compat-wrap">
-      <div class="compat-title">相性チェック</div>
-      <div class="compat-subtitle">一緒に旅する相手のタイプを選ぶと、相性と旅のアドバイスが表示されます。</div>
-      <div class="type-btn-grid" id="type-btn-grid"></div>
-      <div class="compat-result" id="compat-result">
-        <div class="compat-header">
-          <div class="compat-pct-block">
-            <span class="compat-pct" id="compat-pct-val"></span>
-            <span class="compat-pct-label">相性スコア</span>
-          </div>
-          <div class="compat-bar-wrap">
-            <div class="compat-bar-bg">
-              <div class="compat-bar-fill" id="compat-bar"></div>
-            </div>
-            <div class="compat-pair" id="compat-pair"></div>
-          </div>
+        <!-- 1 性格特性 -->
+        <div class="rsec-header">
+          <span class="rsec-num">1</span>
+          <span class="rsec-title">性格特性</span>
         </div>
-        <div class="compat-text-box" id="compat-text"></div>
+        <div class="axis-grid" id="axis-grid"></div>
+        <div class="result-body-label">総合タイプ解説</div>
+        <div class="result-desc" id="result-desc"></div>
+
+        <!-- 2 おすすめ旅スタイル -->
+        <div class="rsec-header">
+          <span class="rsec-num">2</span>
+          <span class="rsec-title">おすすめ旅スタイル</span>
+        </div>
+        <div class="travel-style-box" id="result-travel-style"></div>
+
+        <!-- 3 相性のいい旅行タイプ -->
+        <div class="rsec-header">
+          <span class="rsec-num">3</span>
+          <span class="rsec-title">相性のいい旅行タイプ</span>
+        </div>
+        <div id="compat-auto"></div>
+
       </div>
+    </div>
+
+    <a class="country-search-cta" id="country-search-cta" href="../">
+      <span>このタイプに合う国を探す</span>
+      <span class="cta-arrow">→</span>
+    </a>
+
+    <div style="text-align:center;margin-top:4px">
+      <button class="diag-reset" id="reset-btn">もう一度診断する</button>
     </div>
   </div>
 
@@ -251,7 +265,6 @@ footer a:hover{text-decoration:underline}
 
 <script>
 // ===== 質問データ =====
-// axis: PF / IO / SL / HW、yesVal: はい回答に対応する文字
 const BASE_QUESTIONS = {
   PF: [
     {yesVal:'P', text:'旅行前に、行程表を作ってから出発する'},
@@ -279,7 +292,6 @@ const BASE_QUESTIONS = {
   ],
 };
 
-// 2-2同数になった軸の追加問題（1問で確定）
 const BACKUP_QUESTIONS = {
   PF: {axis:'PF', yesVal:'P', text:'旅先での移動時間や乗り換えを、細かく事前に調べておく'},
   IO: {axis:'IO', yesVal:'I', text:'現地の生活や文化的背景を知ると、旅の満足度が上がる'},
@@ -287,7 +299,6 @@ const BACKUP_QUESTIONS = {
   HW: {axis:'HW', yesVal:'H', text:'多少値段が高くても、快適さを優先して宿や移動を選ぶ'},
 };
 
-// Fisher-Yates シャッフル
 function shuffle(arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
@@ -305,65 +316,91 @@ function buildShuffledBase() {
   return shuffle(all);
 }
 
+// ===== 軸情報 =====
+const AXIS_INFO = {
+  PF:{label:'計画性',
+    P:{short:'計画派',desc:'行程・宿・交通を事前に固める安心型。計画通りに動くことで旅の満足度が高まる。'},
+    F:{short:'直感派',desc:'その場の感覚や偶然の出会いに委ねる自由型。予定外の発見が旅の醍醐味になる。'}},
+  IO:{label:'旅の目的',
+    I:{short:'文化・学び重視',desc:'歴史・美術・現地文化への好奇心が旅の原動力。場所の背景を知ることで旅の深みが増す。'},
+    O:{short:'絶景・リフレッシュ重視',desc:'大自然・ビーチ・絶景や、温泉・スパでの充電が旅の目的。五感で感じる体験を求める。'}},
+  SL:{label:'行動スタイル',
+    S:{short:'協調派',desc:'仲間との感動の共有が旅の喜び。グループでの体験が旅の充実度を高める。'},
+    L:{short:'マイペース派',desc:'自分のペースと興味で動く独立型。自由行動の時間が旅の質を保つ鍵。'}},
+  HW:{label:'快適さへのこだわり',
+    H:{short:'快適志向',desc:'宿の清潔さ・快適な移動・整った設備を重視。旅のストレスを最小限に抑えて楽しめる。'},
+    W:{short:'ワイルド志向',desc:'多少の不便や予定外のトラブルも旅の一部として楽しめる順応型。現地らしい環境に飛び込む。'}},
+};
+
 // ===== 16タイプ定義 =====
 const TYPES = {
   PISH:{name:'文化旅行の設計者', color:'#2563a0',
     traits:['計画派','文化・学び','協調派','快適志向'],
-    desc:'綿密な計画で仲間と快適に文化旅行を楽しむタイプ。美術館や遺跡を事前リサーチし、ランチもディナーも予約済みで迷わない。グループ旅行の頼れる幹事として輝く存在。'},
+    desc:'綿密な計画で仲間と快適に文化旅行を楽しむタイプ。美術館や遺跡を事前リサーチし、ランチもディナーも予約済みで迷わない。グループ旅行の頼れる幹事として輝く存在。',
+    travelStyle:'綿密な行程で仲間と快適に文化・歴史を巡るタイプ。美術館や世界遺産を効率よく回り、快適なホテルでその日の発見を語り合う夜が旅のクライマックス。ヨーロッパの歴史都市や東アジアの文化圏が特に向いている。'},
   PISW:{name:'調査隊長', color:'#1a6b3a',
     traits:['計画派','文化・学び','協調派','ワイルド'],
-    desc:'計画を立てて仲間と文化・歴史の探求に出かけるタイプ。多少不便な場所でも計画通りに動き、仲間と学びを共有する。フィールドワーク型の旅が得意な頼れるリーダー。'},
+    desc:'計画を立てて仲間と文化・歴史の探求に出かけるタイプ。多少不便な場所でも計画通りに動き、仲間と学びを共有する。フィールドワーク型の旅が得意な頼れるリーダー。',
+    travelStyle:'計画したルートで仲間と文化・歴史の探求に出かける体力型旅人。多少の不便も仲間と笑えれば問題なし。遺跡や史跡を歩いて巡るフィールドワーク型の旅が最も充実する。シルクロードや東南アジアの歴史地区が向いている。'},
   PILH:{name:'静かな学者', color:'#7b5ea7',
     traits:['計画派','文化・学び','マイペース派','快適志向'],
-    desc:'計画的にマイペースで快適に文化を巡るタイプ。美術館の閉館時間やアクセス方法を事前に調べ、自分のペースで展示や史跡に向き合う。快適な宿で旅の余韻と学びを整理する時間も旅の一部。'},
+    desc:'計画的にマイペースで快適に文化を巡るタイプ。美術館の閉館時間やアクセス方法を事前に調べ、自分のペースで展示や史跡に向き合う。快適な宿で旅の余韻と学びを整理する時間も旅の一部。',
+    travelStyle:'事前に調べ尽くしてから、一人または少人数で展示や史跡とじっくり向き合う旅が理想。快適な宿で振り返りと読書ができる環境を重視。美術館の閉館時間まで計算に入れた丁寧な旅のスタイル。'},
   PILW:{name:'フィールドワーカー', color:'#4a7a59',
     traits:['計画派','文化・学び','マイペース派','ワイルド'],
-    desc:'計画は入念に立てるが宿や移動は多少ワイルドでも構わない、自分のペースで文化・歴史を追うタイプ。テントを張りながら古代遺跡を巡るような学術的なストイック旅が真骨頂。'},
+    desc:'計画は入念に立てるが宿や移動は多少ワイルドでも構わない、自分のペースで文化・歴史を追うタイプ。テントを張りながら古代遺跡を巡るような学術的なストイック旅が真骨頂。',
+    travelStyle:'入念な下調べをしてから、一人で遺跡・史跡の探求に没頭するストイック旅。宿の快適さより体験の充実を優先し、テント泊や簡素な宿も問題なし。一般的な観光ルートを外れた穴場を自力で開拓できる。'},
   POSH:{name:'リゾートの幹事', color:'#e07b39',
     traits:['計画派','絶景・リフレッシュ','協調派','快適志向'],
-    desc:'仲間と一緒に快適なリゾートをしっかり計画して楽しむタイプ。ホテルもアクティビティも事前予約済みで誰もが満足する旅を実現する。限られた休日を最大限に活用する段取りの達人。'},
+    desc:'仲間と一緒に快適なリゾートをしっかり計画して楽しむタイプ。ホテルもアクティビティも事前予約済みで誰もが満足する旅を実現する。限られた休日を最大限に活用する段取りの達人。',
+    travelStyle:'旅行前にホテル・アクティビティ・レストランをすべて予約し、仲間と快適なリゾートや絶景スポットを満喫する。限られた連休を最大限に活用するプランニングが得意で、ビーチリゾートや観光施設が充実した旅先が最適。'},
   POSW:{name:'アウトドア隊長', color:'#3a7540',
     traits:['計画派','絶景・リフレッシュ','協調派','ワイルド'],
-    desc:'計画的に仲間とアウトドアやキャンプを楽しむタイプ。行程と装備をしっかり整えてから自然に飛び込む。テントや焚き火も「計画の一部」として楽しむ、組織的な冒険家。'},
+    desc:'計画的に仲間とアウトドアやキャンプを楽しむタイプ。行程と装備をしっかり整えてから自然に飛び込む。テントや焚き火も「計画の一部」として楽しむ、組織的な冒険家。',
+    travelStyle:'装備・ルート・宿を計画してから、仲間と自然の中でアクティビティを楽しむアウトドア派。山岳トレッキングやキャンプが得意で、チームとしての計画力と実行力が旅の充実度を高める。'},
   POLH:{name:'プレミアム隠居人', color:'#c8940a',
     traits:['計画派','絶景・リフレッシュ','マイペース派','快適志向'],
-    desc:'計画通りにマイペースで快適にリフレッシュするタイプ。旅館や温泉・スパも事前予約済みで、他人のペースに左右されない時間を徹底的に楽しむ。読書や昼寝も計画の一部に組み込む自己管理の達人。'},
+    desc:'計画通りにマイペースで快適にリフレッシュするタイプ。旅館や温泉・スパも事前予約済みで、他人のペースに左右されない時間を徹底的に楽しむ。読書や昼寝も計画の一部に組み込む自己管理の達人。',
+    travelStyle:'一人で計画通りに、快適にリフレッシュする自己メンテナンス型旅行者。温泉・スパ・高原リゾートを事前予約し、他人のペースに左右されない完全な自分時間を楽しむ。旅の目的は完全な充電と回復。'},
   POLW:{name:'孤独なキャンパー', color:'#607d8b',
     traits:['計画派','絶景・リフレッシュ','マイペース派','ワイルド'],
-    desc:'マイペースに、計画的にワイルドな自然の中でリフレッシュするタイプ。ルートと装備を入念に準備し、人混みのない山や海岸で静かな時間を過ごす。自分のペースで動ける行程設計が最大の強み。'},
+    desc:'マイペースに、計画的にワイルドな自然の中でリフレッシュするタイプ。ルートと装備を入念に準備し、人混みのない山や海岸で静かな時間を過ごす。自分のペースで動ける行程設計が最大の強み。',
+    travelStyle:'ルートと装備を入念に準備し、単独で人混みのない山や秘境に出かける。計画的な単独行でひたすら自然と向き合う静けさを楽しむ。宿はテントや山小屋で十分なストイックな旅スタイル。'},
   FISH:{name:'文化の社交師', color:'#c94a29',
     traits:['直感派','文化・学び','協調派','快適志向'],
-    desc:'気ままに仲間と快適に文化巡りを楽しむタイプ。予定になかった美術館に気づいたら入り、出会った人と感動を共有する。旅先でも知的好奇心と社交力がフル回転するコミュニティの核。'},
+    desc:'気ままに仲間と快適に文化巡りを楽しむタイプ。予定になかった美術館に気づいたら入り、出会った人と感動を共有する。旅先でも知的好奇心と社交力がフル回転するコミュニティの核。',
+    travelStyle:'気まぐれに文化体験を楽しみながら、仲間と快適な宿でその日の発見を語り合う社交派。予定外の博物館や路地裏の発見を仲間と共有することが旅の醍醐味。都市型の旅先でこそ輝けるタイプ。'},
   FISW:{name:'裏路地の探検家', color:'#8b4513',
     traits:['直感派','文化・学び','協調派','ワイルド'],
-    desc:'直感で動きながら仲間と文化的な冒険をするタイプ。地元民しか知らない路地や市場に迷い込み、その場の空気を仲間と笑いながら体験する。予定外の発見が最高の旅の記憶になる。'},
+    desc:'直感で動きながら仲間と文化的な冒険をするタイプ。地元民しか知らない路地や市場に迷い込み、その場の空気を仲間と笑いながら体験する。予定外の発見が最高の旅の記憶になる。',
+    travelStyle:'地元民しか知らない路地や市場に仲間と迷い込む発見型旅人。アジア・中東など路地裏の文化が豊かな旅先でこそ本領発揮。多少の不便も仲間と笑えれば最高の旅の記憶になる。'},
   FILH:{name:'直感の知識人', color:'#3a8a8a',
     traits:['直感派','文化・学び','マイペース派','快適志向'],
-    desc:'気の向くままにマイペースで快適に文化を探索するタイプ。計画は立てないが良質な博物館や遺跡に自然と引き寄せられる。快適な宿で旅の振り返りと読書をじっくり楽しむ知的冒険家。'},
+    desc:'気の向くままにマイペースで快適に文化を探索するタイプ。計画は立てないが良質な博物館や遺跡に自然と引き寄せられる。快適な宿で旅の振り返りと読書をじっくり楽しむ知的冒険家。',
+    travelStyle:'計画なしでも博物館や史跡に引き寄せられる知的な旅人。快適な宿でその日の発見を整理しながら旅の世界に浸れる夜が理想。読書と旅の境界線が曖昧になる旅スタイルが本質。'},
   FILW:{name:'風来坊の研究者', color:'#5c4033',
     traits:['直感派','文化・学び','マイペース派','ワイルド'],
-    desc:'直感のままマイペースに文化と自然を同時に追うタイプ。宿の質より体験の質を重視し、多少の不便も学びの素材として受け入れる。予定表なし・宿は当日探し、でも収穫は最大という旅人。'},
+    desc:'直感のままマイペースに文化と自然を同時に追うタイプ。宿の質より体験の質を重視し、多少の不便も学びの素材として受け入れる。予定表なし・宿は当日探し、でも収穫は最大という旅人。',
+    travelStyle:'宿は当日探し・予定はゼロ、でも文化・歴史の収穫は誰よりも多い希有な旅人。路地裏の食堂、誰も知らない寺院、地元民だけの市場——すべてが旅の真骨頂。正規ルート外への迷い込みが旅の価値を上げる。'},
   FOSH:{name:'自由なリゾーター', color:'#d47a00',
     traits:['直感派','絶景・リフレッシュ','協調派','快適志向'],
-    desc:'気ままに仲間と快適にリフレッシュするタイプ。どこに行くかは直前に決めても、着いた先では最高の宿とビーチで全力でくつろぐ。一緒にいる仲間と笑う時間が最大の旅の目的。'},
+    desc:'気ままに仲間と快適にリフレッシュするタイプ。どこに行くかは直前に決めても、着いた先では最高の宿とビーチで全力でくつろぐ。一緒にいる仲間と笑う時間が最大の旅の目的。',
+    travelStyle:'仲間がいれば行き先はどこでもOK。着いた先ではいい宿とビーチで全力くつろぎ。旅のテーマは「仲間と笑う時間を最大化すること」。ビーチリゾートや快適な観光地が最も充実する旅先になる。'},
   FOSW:{name:'バックパッカーの主役', color:'#3a7044',
     traits:['直感派','絶景・リフレッシュ','協調派','ワイルド'],
-    desc:'自由に仲間とワイルドにリフレッシュするタイプ。行き先も宿も当日決め、出会った旅人と意気投合してそのまま次の街へ向かうことも。雑多な環境でも仲間がいれば最高の旅になる。'},
+    desc:'自由に仲間とワイルドにリフレッシュするタイプ。行き先も宿も当日決め、出会った旅人と意気投合してそのまま次の街へ向かうことも。雑多な環境でも仲間がいれば最高の旅になる。',
+    travelStyle:'行き先・宿・ルートはすべて当日決め、出会った旅人と意気投合してそのまま次の街へ。バックパッカー文化のゲストハウスやホステルに自然と居場所ができるタイプ。東南アジアやインドなどが特に向いている。'},
   FOLH:{name:'ひとり漂流リゾーター', color:'#5e7a8a',
     traits:['直感派','絶景・リフレッシュ','マイペース派','快適志向'],
-    desc:'気まぐれにマイペースで快適にリフレッシュするタイプ。いつ・どこへ行くかは直感で決め、気に入った宿に長く滞在することも。他人のペースに合わせず、心地よさだけを基準に動く自由な旅人。'},
+    desc:'気まぐれにマイペースで快適にリフレッシュするタイプ。いつ・どこへ行くかは直感で決め、気に入った宿に長く滞在することも。他人のペースに合わせず、心地よさだけを基準に動く自由な旅人。',
+    travelStyle:'気の向くままに目的地を選び、気に入ったら何泊でも滞在する究極の自分軸旅行者。快適な宿で誰にも邪魔されない時間を大切にする。旅の期間も行き先も気分次第で変えられる状況が理想。'},
   FOLW:{name:'完全なる漂流者', color:'#6b5e62',
     traits:['直感派','絶景・リフレッシュ','マイペース派','ワイルド'],
-    desc:'誰かのペースに合わせることも快適さも不要、ただ自由に流れるタイプ。宿は当日探し、食事は屋台、移動手段は乗れたもの。旅そのものが目的の完全なる自由人。すべてが旅の醍醐味になる。'},
+    desc:'誰かのペースに合わせることも快適さも不要、ただ自由に流れるタイプ。宿は当日探し、食事は屋台、移動手段は乗れたもの。旅そのものが目的の完全なる自由人。すべてが旅の醍醐味になる。',
+    travelStyle:'旅の予定もこだわりもない、乗れた乗り物に乗り・目の前の屋台で食べ・当日探した宿に泊まる完全なる自由旅人。旅そのものを生きるような最上級のフリースタイル旅行者。'},
 };
 
-// ===== 相性計算（軸一致数ベース・アルゴリズム算出） =====
-const AXIS_CHAR_NAMES = {
-  P:'計画派', F:'ノリ重視',
-  I:'文化・学び重視', O:'絶景・リフレッシュ重視',
-  S:'協調派', L:'マイペース派',
-  H:'快適志向', W:'ワイルド志向',
-};
+// ===== 相性計算 =====
 const AXIS_MISMATCH_NOTES = [
   '計画性とその場のノリが逆方向。役割を分けると旅がスムーズ。',
   '文化・学びと絶景・リフレッシュで旅の目的が異なる。時間配分を話し合って。',
@@ -393,7 +430,7 @@ function getCompat(typeA, typeB) {
   return {pct, text};
 }
 
-// ===== スワイプUI 状態 =====
+// ===== スワイプUI =====
 let myType = null;
 let currentIdx = 0;
 let totalQuestions = 16;
@@ -421,7 +458,6 @@ function initSwipe() {
   const stack = document.getElementById('card-stack');
   stack.innerHTML = '';
 
-  // 逆順でappendすることでQ0が最後(topmost)になる
   [...questionQueue].reverse().forEach((q, revIdx) => {
     const realIdx = questionQueue.length - 1 - revIdx;
     appendCard(q, realIdx + 1, Math.min(realIdx, 3));
@@ -562,7 +598,6 @@ function commitSwipe(dir, card) {
   currentIdx++;
   updateProgress(currentIdx, totalQuestions);
 
-  // 残りカードのプロモーション
   const remaining = Array.from(document.querySelectorAll('.swipe-card')).filter(c => c !== card);
   const n = remaining.length;
   remaining.forEach((c, i) => {
@@ -580,14 +615,12 @@ function commitSwipe(dir, card) {
     card.remove();
 
     if (currentIdx === 16) {
-      // 16問完了 → 同数チェック
       const tiedAxes = Object.keys(axisVotes).filter(axis => {
         const vals = Object.values(axisVotes[axis]);
         return vals[0] === vals[1];
       });
 
       if (tiedAxes.length > 0) {
-        // 追加問題を逆順でappend（最初の軸がtopmost）
         totalQuestions = 16 + tiedAxes.length;
         updateProgress(currentIdx, totalQuestions);
         [...tiedAxes].reverse().forEach((axis, revIdx) => {
@@ -618,6 +651,7 @@ function computeAndShowResult() {
 
 function showResult(type) {
   const t = TYPES[type];
+
   document.getElementById('result-code').textContent = type;
   document.getElementById('result-name').textContent = t.name;
   document.getElementById('result-desc').textContent = t.desc;
@@ -625,59 +659,87 @@ function showResult(type) {
   document.getElementById('result-traits').innerHTML =
     t.traits.map(tr => `<span class="trait-badge">${tr}</span>`).join('');
 
-  buildCompatButtons(type);
+  // IO軸に応じたアイコン
+  document.getElementById('result-illust').textContent = type[1] === 'I' ? '🏛️' : '🏖️';
+
+  // 1 性格特性: 軸グリッド
+  buildAxisGrid(type);
+
+  // 2 おすすめ旅スタイル
+  document.getElementById('result-travel-style').textContent = t.travelStyle;
+
+  // 3 相性のいい旅行タイプ（自動算出）
+  buildAutoCompat(type);
+
+  // 国探しCTAのリンク
+  document.getElementById('country-search-cta').href = '../index.html?type=' + type;
 
   const rs = document.getElementById('result-section');
-  rs.style.display = 'block'; rs.classList.add('show');
-  const cs = document.getElementById('compat-section');
-  cs.style.display = 'block'; cs.classList.add('show');
-
+  rs.style.display = 'block';
+  rs.classList.add('show');
   rs.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-function buildCompatButtons(type) {
-  const grid = document.getElementById('type-btn-grid');
-  grid.innerHTML = '';
-  Object.entries(TYPES).forEach(([code, info]) => {
-    const btn = document.createElement('button');
-    btn.type = 'button'; btn.className = 'type-btn'; btn.dataset.type = code;
-    btn.innerHTML = `<div class="tb-code" style="color:${info.color}">${code}</div><div class="tb-name">${info.name}</div>`;
-    btn.addEventListener('click', () => selectCompat(code, btn, info.color));
-    grid.appendChild(btn);
-  });
+function buildAxisGrid(type) {
+  const axes = [
+    {key:'PF', val:type[0]},
+    {key:'IO', val:type[1]},
+    {key:'SL', val:type[2]},
+    {key:'HW', val:type[3]},
+  ];
+  const grid = document.getElementById('axis-grid');
+  grid.innerHTML = axes.map(({key, val}) => {
+    const info = AXIS_INFO[key];
+    const [a, b] = key.split('');
+    const aInfo = info[a], bInfo = info[b];
+    const selectedInfo = val === a ? aInfo : bInfo;
+    return `
+    <div class="axis-card">
+      <div class="axis-card-label">${info.label}</div>
+      <div class="axis-toggle">
+        <div class="axis-opt${val===a?' selected':''}">${aInfo.short}</div>
+        <div class="axis-opt${val===b?' selected':''}">${bInfo.short}</div>
+      </div>
+      <div class="axis-desc">${selectedInfo.desc}</div>
+    </div>`;
+  }).join('');
 }
 
-function selectCompat(theirType, btn, color) {
-  document.querySelectorAll('.type-btn').forEach(b => {
-    const c = b.dataset.type;
-    b.style.background = ''; b.style.borderColor = '';
-    b.querySelector('.tb-code').style.color = TYPES[c].color;
-    b.querySelector('.tb-name').style.color = '';
-  });
-  btn.style.background = color; btn.style.borderColor = color;
-  btn.querySelector('.tb-code').style.color = '#fff';
-  btn.querySelector('.tb-name').style.color = 'rgba(255,255,255,0.85)';
+function buildAutoCompat(myType) {
+  const scores = Object.entries(TYPES)
+    .filter(([code]) => code !== myType)
+    .map(([code, info]) => ({ code, info, ...getCompat(myType, code) }))
+    .sort((a, b) => b.pct - a.pct);
 
-  const {pct, text} = getCompat(myType, theirType);
-  document.getElementById('compat-pct-val').textContent = pct + '%';
-  document.getElementById('compat-pct-val').style.color = color;
-  document.getElementById('compat-bar').style.width = pct + '%';
-  document.getElementById('compat-bar').style.background = color;
-  document.getElementById('compat-pair').textContent = myType + ' × ' + theirType;
-  document.getElementById('compat-text').textContent = text;
+  const top3 = scores.slice(0, 3);
+  const bottom3 = scores.slice(-3).reverse();
 
-  const cr = document.getElementById('compat-result');
-  cr.classList.add('show'); cr.style.display = 'block';
+  function renderCards(items) {
+    return items.map(({code, info, pct, text}) => `
+    <div class="cmc" style="border-left-color:${info.color}">
+      <div class="cmc-header">
+        <span class="cmc-code" style="color:${info.color}">${code}</span>
+        <span class="cmc-name">${info.name}</span>
+        <span class="cmc-pct" style="color:${info.color}">${pct}%</span>
+        <div class="cmc-bar-bg"><div class="cmc-bar-fill" style="width:${pct}%;background:${info.color}"></div></div>
+      </div>
+      <div class="cmc-text">${text}</div>
+    </div>`).join('');
+  }
+
+  document.getElementById('compat-auto').innerHTML = `
+    <div class="compat-group-label cg-good">◎ 相性が良いタイプ（上位3つ）</div>
+    <div class="compat-mini-list">${renderCards(top3)}</div>
+    <div class="compat-group-label cg-bad" style="margin-top:18px">△ 工夫が必要なタイプ（下位3つ）</div>
+    <div class="compat-mini-list">${renderCards(bottom3)}</div>
+    <div class="compat-note">旅のスタイルが異なっていても、お互いの特性を理解して役割を分担すれば旅の幅が広がります。</div>`;
 }
 
 document.getElementById('reset-btn').addEventListener('click', () => {
   myType = null;
-  ['result-section','compat-section'].forEach(id => {
-    const el = document.getElementById(id);
-    el.style.display = 'none'; el.classList.remove('show');
-  });
-  document.getElementById('compat-result').classList.remove('show');
-  document.getElementById('compat-result').style.display = 'none';
+  const rs = document.getElementById('result-section');
+  rs.style.display = 'none';
+  rs.classList.remove('show');
 
   document.getElementById('swipe-section').style.display = '';
   document.querySelector('.progress-wrap').style.display  = '';

@@ -114,6 +114,15 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
 .card-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0}
 .card-tag{background:#eef3fd;color:var(--primary-dark);padding:2px 7px;border-radius:8px;font-size:0.65em;font-weight:600}
 
+/* タイプフィルターバナー */
+.type-filter-banner{display:none;align-items:center;gap:10px;background:#e8f6f2;border:1px solid #b2ddd3;border-radius:8px;padding:9px 14px;margin-bottom:14px;font-size:0.82em;flex-wrap:wrap}
+.type-filter-banner.show{display:flex}
+.type-filter-icon{font-size:1.1em;flex-shrink:0}
+.type-filter-text{flex:1;min-width:0;color:#1a1a1a;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.type-filter-text span{font-family:monospace,sans-serif;color:var(--primary-dark)}
+.type-filter-clear{background:none;border:1.5px solid #b2ddd3;color:#444;border-radius:20px;padding:3px 12px;font-size:0.9em;font-weight:700;cursor:pointer;white-space:nowrap;transition:border-color 0.15s,color 0.15s;flex-shrink:0;font-family:inherit}
+.type-filter-clear:hover{border-color:var(--primary);color:var(--primary)}
+
 /* 空状態 */
 .empty-state{text-align:center;padding:60px 20px;color:var(--sub)}
 .empty-state .ico{font-size:3em;margin-bottom:12px}
@@ -294,6 +303,11 @@ body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meir
 </div>
 
 <div class="main">
+  <div class="type-filter-banner" id="typeFilterBanner">
+    <span class="type-filter-icon">🧭</span>
+    <span class="type-filter-text" id="typeFilterText"></span>
+    <button class="type-filter-clear" onclick="clearTypeFilter()">✕ フィルターを解除</button>
+  </div>
   <div class="results-row">
     <div class="results-info" id="resultsInfo"></div>
     <div class="view-toggle" id="viewToggle">
@@ -573,6 +587,42 @@ let selectedBudgets = [];
 let selectedTags = [];
 let selectedRegions = [];
 let selectedFlights = [];
+let selectedType = null; // 診断タイプフィルター ('PISH' 等)
+
+// タイプ→フィルター条件マッピング
+const TYPE_IO_TAGS = {
+  I: ['歴史','世界遺産','都市','史跡'],
+  O: ['ビーチ','自然','リゾート','アウトドア','絶景','サファリ'],
+};
+const TYPE_HW_BUDGETS = {
+  H: ['budget2','budget3'],
+  W: ['budget1'],
+};
+const TYPE_NAMES = {
+  PISH:'文化旅行の設計者',PISW:'調査隊長',PILH:'静かな学者',PILW:'フィールドワーカー',
+  POSH:'リゾートの幹事',POSW:'アウトドア隊長',POLH:'プレミアム隠居人',POLW:'孤独なキャンパー',
+  FISH:'文化の社交師',FISW:'裏路地の探検家',FILH:'直感の知識人',FILW:'風来坊の研究者',
+  FOSH:'自由なリゾーター',FOSW:'バックパッカーの主役',FOLH:'ひとり漂流リゾーター',FOLW:'完全なる漂流者',
+};
+
+function setTypeFilter(type) {
+  selectedType = type;
+  const name = TYPE_NAMES[type] || type;
+  document.getElementById('typeFilterText').innerHTML =
+    `診断タイプ <span>${type}</span>（${name}）に合う旅先を表示中`;
+  document.getElementById('typeFilterBanner').classList.add('show');
+  renderCards();
+}
+
+function clearTypeFilter() {
+  selectedType = null;
+  document.getElementById('typeFilterBanner').classList.remove('show');
+  // URLパラメータも消す
+  const url = new URL(location.href);
+  url.searchParams.delete('type');
+  history.replaceState(null, '', url.toString());
+  renderCards();
+}
 
 const FLIGHT_BUCKETS = {
   f5:  h => h <= 5,
@@ -700,6 +750,7 @@ function resetAll() {
   selectedTags = [];
   selectedRegions = [];
   selectedFlights = [];
+  if (selectedType) clearTypeFilter();
   document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
   syncHolidayChips();
   renderCards();
@@ -735,13 +786,18 @@ window.addEventListener('DOMContentLoaded', () => {
     panel.style.opacity = '0';
     panel.classList.add('closed');
   }
-  // ?region=xxx でエリアフィルターを自動適用
   const params = new URLSearchParams(location.search);
+  // ?region=xxx でエリアフィルターを自動適用
   const region = params.get('region');
   if (region && document.getElementById('r-' + region)) {
     selectedRegions.push(region);
     document.getElementById('r-' + region).classList.add('active');
     renderCards();
+  }
+  // ?type=XXXX で診断タイプフィルターを自動適用
+  const type = params.get('type');
+  if (type && TYPE_NAMES[type]) {
+    setTypeFilter(type);
   }
 });
 
@@ -750,6 +806,13 @@ function matchesFilters(c) {
   if (selectedBudgets.length > 0 && !selectedBudgets.some(b => c.budget.includes(b))) return false;
   if (selectedTags.length > 0 && !selectedTags.every(t => c.tags.includes(t))) return false;
   if (selectedRegions.length > 0 && !selectedRegions.includes(c.region)) return false;
+  // 診断タイプフィルター: IO軸でタグ、HW軸で予算を絞り込む
+  if (selectedType) {
+    const io = selectedType[1]; // I or O
+    const hw = selectedType[3]; // H or W
+    if (!TYPE_IO_TAGS[io].some(t => c.tags.includes(t))) return false;
+    if (!TYPE_HW_BUDGETS[hw].some(b => c.budget.includes(b))) return false;
+  }
   if (selectedFlights.length > 0) {
     if (typeof c.flightHours !== 'number') return false;
     if (!selectedFlights.some(f => FLIGHT_BUCKETS[f](c.flightHours))) return false;
@@ -775,7 +838,7 @@ function renderCards() {
   }
 
   const availableCount = filtered.filter(c => c.available).length;
-  const hasFilter = selectedMonths.length > 0 || selectedBudgets.length > 0 || selectedTags.length > 0;
+  const hasFilter = selectedMonths.length > 0 || selectedBudgets.length > 0 || selectedTags.length > 0 || !!selectedType;
   info.innerHTML = hasFilter
     ? `<strong>${filtered.length}件</strong>の旅先が見つかりました`
     : `<strong>${availableCount}カ国</strong>を公開中`;
