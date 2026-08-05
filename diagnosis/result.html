@@ -130,6 +130,14 @@ body{
 .share-btn.line{background:#06c755;color:#fff}
 .share-btn.copy{background:#fff;color:#444;border:1.5px solid var(--border)}
 .share-btn.copy.copied{background:var(--green);color:#fff;border-color:var(--green)}
+.share-btn.saveimg{background:#fff;color:#444;border:1.5px solid var(--border)}
+.share-btn.saveimg.saved{background:var(--green);color:#fff;border-color:var(--green)}
+.share-btn.native{background:var(--green);color:#fff;display:none}
+
+/* シェア画像プレビュー */
+.share-image-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.share-image-preview{width:120px;height:120px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.15);flex-shrink:0}
+.share-image-caption{font-size:0.72em;color:var(--sub);line-height:1.6}
 
 /* 国を探すCTAボタン */
 .country-search-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:16px 24px;border-radius:30px;font-size:0.92em;font-weight:900;margin:24px 0 12px;transition:background 0.2s;box-shadow:0 4px 16px rgba(29,144,116,0.28)}
@@ -299,10 +307,19 @@ footer a:hover{text-decoration:underline}
   <div class="share-block" id="share-block">
     <div class="share-block-title">結果をシェアする</div>
     <div class="share-block-sub">友達を誘って、お互いの旅行タイプを比べてみませんか？</div>
+
+    <div class="share-image-row">
+      <img class="share-image-preview" id="share-image-preview" alt="シェア用画像プレビュー">
+      <div class="share-image-caption">この画像を保存して、SNSの投稿やストーリーズに使えます。</div>
+    </div>
+    <canvas id="share-canvas" width="1080" height="1080" style="display:none"></canvas>
+
     <div class="share-buttons">
+      <button class="share-btn native" id="share-native" type="button">📤 共有する（Instagram等）</button>
       <a class="share-btn x" id="share-x" href="#" target="_blank" rel="noopener">𝕏 でシェア</a>
       <a class="share-btn line" id="share-line" href="#" target="_blank" rel="noopener">LINEでシェア</a>
       <button class="share-btn copy" id="share-copy" type="button">🔗 リンクをコピー</button>
+      <button class="share-btn saveimg" id="share-saveimg" type="button">🖼️ 画像を保存</button>
     </div>
   </div>
 
@@ -507,6 +524,103 @@ function buildAutoCompat(myType) {
     <div class="compat-note">旅のスタイルが異なっていても、お互いの特性を理解して役割を分担すれば旅の幅が広がります。</div>`;
 }
 
+// ===== シェア画像生成 =====
+function shadeColor(hex, percent) {
+  const num = parseInt(hex.replace('#',''), 16);
+  const r = Math.max(0, Math.min(255, (num >> 16) + Math.round(255 * percent)));
+  const g = Math.max(0, Math.min(255, ((num >> 8) & 0xff) + Math.round(255 * percent)));
+  const b = Math.max(0, Math.min(255, (num & 0xff) + Math.round(255 * percent)));
+  return '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0')).join('');
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function drawShareImage(type) {
+  const t = TYPES[type];
+  const canvas = document.getElementById('share-canvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const jpFont = "'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meiryo,sans-serif";
+
+  // 背景グラデーション
+  const grad = ctx.createLinearGradient(0, 0, W, H);
+  grad.addColorStop(0, t.color);
+  grad.addColorStop(1, shadeColor(t.color, -0.28));
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.textAlign = 'center';
+
+  // 上部タグ
+  ctx.fillStyle = 'rgba(255,255,255,0.75)';
+  ctx.font = `700 30px ${jpFont}`;
+  ctx.fillText('World Mappy 旅行タイプ診断', W/2, 130);
+
+  // アイコン円
+  const iconY = 330;
+  ctx.beginPath();
+  ctx.arc(W/2, iconY, 130, 0, Math.PI*2);
+  ctx.fillStyle = 'rgba(255,255,255,0.18)';
+  ctx.fill();
+  ctx.lineWidth = 5;
+  ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+  ctx.stroke();
+  ctx.font = '150px sans-serif';
+  ctx.fillStyle = '#fff';
+  ctx.fillText(type[1] === 'I' ? '🏛️' : '🏖️', W/2, iconY + 55);
+
+  // タイプコード
+  ctx.font = "900 110px 'Courier New', monospace";
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+  ctx.fillText(type, W/2, 590);
+
+  // タイプ名
+  ctx.font = `900 56px ${jpFont}`;
+  ctx.fillStyle = '#fff';
+  ctx.fillText(t.name, W/2, 670);
+
+  // トレイトバッジ（中央揃えで自前レイアウト）
+  ctx.font = `700 28px ${jpFont}`;
+  const padX = 26, gap = 14, chipH = 56, chipY = 730;
+  const widths = t.traits.map(tr => ctx.measureText(tr).width + padX*2);
+  const totalW = widths.reduce((a,b) => a+b, 0) + gap*(widths.length-1);
+  let cx = W/2 - totalW/2;
+  t.traits.forEach((tr, i) => {
+    const w = widths[i];
+    ctx.fillStyle = 'rgba(255,255,255,0.22)';
+    roundRect(ctx, cx, chipY, w, chipH, chipH/2);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+    ctx.lineWidth = 2;
+    roundRect(ctx, cx, chipY, w, chipH, chipH/2);
+    ctx.stroke();
+    ctx.fillStyle = '#fff';
+    ctx.fillText(tr, cx + w/2, chipY + chipH/2 + 10);
+    cx += w + gap;
+  });
+
+  // 下部の白いバー
+  const barH = 130;
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, H - barH, W, barH);
+  ctx.fillStyle = '#1a1a1a';
+  ctx.font = `900 34px ${jpFont}`;
+  ctx.fillText('あなたの旅行タイプは？', W/2, H - barH/2 - 8);
+  ctx.font = `600 24px ${jpFont}`;
+  ctx.fillStyle = '#666';
+  ctx.fillText('16種類・無料診断 → World Mappy', W/2, H - barH/2 + 32);
+
+  return canvas;
+}
+
 // ===== シェア機能 =====
 function setupShare(myTypeCode) {
   const quizUrl = new URL('index.html', location.href).toString();
@@ -526,6 +640,45 @@ function setupShare(myTypeCode) {
       btn.classList.add('copied');
       setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 2000);
     });
+  });
+
+  // シェア用画像の生成・プレビュー・保存
+  const canvas = drawShareImage(myTypeCode);
+  document.getElementById('share-image-preview').src = canvas.toDataURL('image/png');
+
+  // 対応デバイスのみ「共有する」ボタンを表示（Web Share API）
+  if (navigator.share) {
+    canvas.toBlob(blob => {
+      const file = new File([blob], `worldmappy-${myTypeCode}.png`, {type:'image/png'});
+      if (!navigator.canShare || navigator.canShare({files:[file]})) {
+        const nativeBtn = document.getElementById('share-native');
+        nativeBtn.style.display = '';
+        nativeBtn.addEventListener('click', async () => {
+          try {
+            await navigator.share({files:[file], title:'World Mappy 旅行タイプ診断', text});
+          } catch (e) { /* ユーザーがキャンセルした場合は何もしない */ }
+        });
+      }
+    }, 'image/png');
+  }
+
+  document.getElementById('share-saveimg').addEventListener('click', () => {
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `worldmappy-${myTypeCode}.png`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+
+      const btn = document.getElementById('share-saveimg');
+      const original = btn.textContent;
+      btn.textContent = '✓ 保存しました';
+      btn.classList.add('saved');
+      setTimeout(() => { btn.textContent = original; btn.classList.remove('saved'); }, 2000);
+    }, 'image/png');
   });
 }
 
