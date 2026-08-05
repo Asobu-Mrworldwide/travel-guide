@@ -502,11 +502,11 @@ with tab2:
                             _bulk_data["hero_image"] = f"{_rel_prefix}{_name}.webp"
                         else:
                             _t["image"] = f"{_rel_prefix}{_name}.webp"
+                        save_json(country_id, _bulk_data)  # 1枚ごとに保存（中断時の消失を防ぐ）
                         _log.append(f"✅ {_name}（残{_cr}cr）")
                     except Exception as e:
                         _log.append(f"❌ {_name}: {e}")
                 _prog.progress(1.0, text="完了！")
-                save_json(country_id, _bulk_data)
                 st.success("\n".join(_log))
 
     st.divider()
