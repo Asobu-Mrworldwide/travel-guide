@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅行タイプ診断 | World Mappy</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#1d9074;
+  --green-dark:#15735b;
+  --green-light:#e8f6f2;
+  --text:#1a1a1a;
+  --sub:#555;
+  --border:#dce6e2;
+}
+body{
+  font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meiryo,sans-serif;
+  background:#f0f4f2;
+  color:var(--text);
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ヘッダー */
+.site-header{background:var(--green-dark);padding:13px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,0.15);position:sticky;top:0;z-index:100}
+.site-logo{font-size:1.3em;font-weight:900;color:#fff;letter-spacing:-0.5px;text-decoration:none}
+.site-logo span{color:#ffc200}
+.site-tagline{font-size:0.75em;color:rgba(255,255,255,0.65);margin-left:auto}
+
+/* ヘッダー内タイプ一覧メニュー */
+.header-nav{position:relative;margin-left:16px}
+.header-nav-btn{display:flex;align-items:center;gap:5px;background:none;border:none;color:rgba(255,255,255,0.9);font-size:0.82em;font-weight:700;cursor:pointer;padding:6px 4px;font-family:inherit}
+.header-nav-btn:hover{color:#fff}
+.header-nav-btn .caret{font-size:0.7em;transition:transform 0.2s}
+.header-nav-btn.open .caret{transform:rotate(180deg)}
+.header-nav-panel{display:none;position:absolute;top:calc(100% + 12px);left:0;background:#fff;border-radius:10px;box-shadow:0 10px 32px rgba(0,0,0,0.22);padding:16px;width:340px;z-index:200}
+.header-nav-panel.open{display:block}
+.hn-group{margin-bottom:12px}
+.hn-group:last-child{margin-bottom:0}
+.hn-group-label{font-size:0.66em;font-weight:700;margin-bottom:6px;padding-left:2px}
+.hn-chip-row{display:flex;flex-wrap:wrap;gap:5px}
+.hn-chip{font-size:0.74em;font-weight:900;font-family:monospace,sans-serif;padding:5px 11px;border-radius:6px;border:1.5px solid var(--border);background:#f8faf9;color:#555;cursor:pointer;transition:all 0.15s;text-align:left;text-decoration:none;display:inline-block}
+.hn-chip:hover{border-color:var(--green);color:var(--green);background:var(--green-light)}
+@media(max-width:520px){
+  .header-nav-panel{position:fixed;left:12px;right:12px;width:auto;top:56px}
+}
+
+/* レイアウト */
+.page-wrap{max-width:720px;margin:0 auto;padding:0 20px 60px}
+
+/* ヒーロー */
+.diag-hero{text-align:center;padding:44px 20px 28px}
+.diag-badge{display:inline-block;background:var(--green);color:#fff;font-size:0.72em;font-weight:700;padding:3px 14px;border-radius:20px;margin-bottom:14px}
+.diag-hero h1{font-size:1.55em;font-weight:900;margin-bottom:10px;line-height:1.3}
+.diag-hero p{font-size:0.85em;color:var(--sub);line-height:1.85;max-width:480px;margin:0 auto}
+
+/* プログレスバー */
+.progress-wrap{background:#fff;border-radius:10px;border:1px solid var(--border);padding:14px 18px;margin:0 0 20px}
+.progress-label{display:flex;justify-content:space-between;font-size:0.78em;margin-bottom:8px}
+.progress-label span:first-child{font-weight:700}
+.progress-label span:last-child{color:var(--green);font-weight:700}
+.progress-bar-bg{background:#e4eceb;border-radius:20px;height:7px;overflow:hidden}
+.progress-bar-fill{background:var(--green);height:100%;border-radius:20px;width:0%;transition:width 0.3s ease}
+
+/* スワイプセクション */
+.swipe-section{margin-bottom:32px;position:relative}
+
+/* サイドラベル */
+.swipe-side-labels{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;height:32px}
+.ssl{font-size:0.8em;font-weight:700;opacity:0;transition:opacity 0.1s;display:flex;align-items:center;gap:6px;pointer-events:none}
+.ssl-left{color:#c94a29}
+.ssl-right{color:var(--green)}
+.ssl-arrow{font-size:1.3em;line-height:1}
+
+/* カードスタック */
+.card-stack{position:relative;height:340px;margin:0 auto;max-width:420px;touch-action:pan-y}
+
+/* スワイプカード */
+.swipe-card{
+  position:absolute;inset:0;
+  background:#fff;border-radius:16px;
+  box-shadow:0 6px 28px rgba(0,0,0,0.1);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  cursor:grab;user-select:none;
+  transform-origin:50% 110%;
+  will-change:transform;
+  transition:transform 0.3s ease,opacity 0.3s ease;
+}
+.swipe-card[data-behind="1"]{transform:scale(0.95) translateY(10px);pointer-events:none}
+.swipe-card[data-behind="2"]{transform:scale(0.90) translateY(20px);pointer-events:none}
+.swipe-card[data-behind="3"]{transform:scale(0.87) translateY(28px);pointer-events:none;opacity:0}
+
+.sc-body{padding:24px 24px 14px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.sc-qnum{font-size:0.7em;font-weight:700;color:var(--green);margin-bottom:10px;letter-spacing:0.04em;display:flex;align-items:center;gap:8px}
+.sc-backup-badge{background:#f0a500;color:#fff;font-size:0.78em;font-weight:700;padding:1px 8px;border-radius:10px;letter-spacing:0}
+.sc-text{font-size:0.97em;font-weight:700;line-height:1.7;color:var(--text)}
+
+/* 選択肢 */
+.sc-choices{display:grid;grid-template-columns:1fr 1px 1fr;border-top:1px solid var(--border)}
+.sc-choice{padding:14px 16px;font-size:0.85em;font-weight:700;color:#b0b8b4;display:flex;flex-direction:column;align-items:center;gap:4px;transition:color 0.15s,background 0.15s}
+.sc-choice-arrow{font-size:1.1em;line-height:1}
+.sc-choice-label{font-size:0.95em}
+.sc-left{border-radius:0 0 0 16px}
+.sc-right{border-radius:0 0 16px 0}
+.sc-divider{background:var(--border)}
+.swipe-card.dragging-left .sc-left{color:#c94a29;background:#fff5f3}
+.swipe-card.dragging-right .sc-right{color:var(--green);background:var(--green-light)}
+
+/* カラーオーバーレイ */
+.sc-overlay{position:absolute;inset:0;opacity:0;pointer-events:none;border-radius:16px}
+.sc-overlay-l{background:linear-gradient(135deg,rgba(201,74,41,0.15) 0%,transparent 60%)}
+.sc-overlay-r{background:linear-gradient(225deg,rgba(29,144,116,0.15) 0%,transparent 60%)}
+
+/* フッター */
+footer{text-align:center;padding:32px 16px;font-size:0.78em;color:#fff;background:#6B5E62;margin-top:0}
+footer a{color:#fff;text-decoration:none;margin:0 10px}
+footer a:hover{text-decoration:underline}
+
+/* レスポンシブ */
+@media(max-width:520px){
+  .diag-hero h1{font-size:1.3em}
+  .page-wrap{padding:0 14px 50px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../" class="site-logo">World <span>Mappy</span></a>
+  <div class="header-nav">
+    <button class="header-nav-btn" id="header-nav-btn" onclick="toggleHeaderNav()">
+      旅行タイプ一覧 <span class="caret">▼</span>
+    </button>
+    <div class="header-nav-panel" id="header-nav-panel">
+      <div class="hn-group">
+        <div class="hn-group-label" style="color:#2563a0">計画 × 文化・学び</div>
+        <div class="hn-chip-row">
+          <a class="hn-chip" href="result.html?type=PISH">PISH</a>
+          <a class="hn-chip" href="result.html?type=PISW">PISW</a>
+          <a class="hn-chip" href="result.html?type=PILH">PILH</a>
+          <a class="hn-chip" href="result.html?type=PILW">PILW</a>
+        </div>
+      </div>
+      <div class="hn-group">
+        <div class="hn-group-label" style="color:#e07b39">計画 × 絶景・リフレッシュ</div>
+        <div class="hn-chip-row">
+          <a class="hn-chip" href="result.html?type=POSH">POSH</a>
+          <a class="hn-chip" href="result.html?type=POSW">POSW</a>
+          <a class="hn-chip" href="result.html?type=POLH">POLH</a>
+          <a class="hn-chip" href="result.html?type=POLW">POLW</a>
+        </div>
+      </div>
+      <div class="hn-group">
+        <div class="hn-group-label" style="color:#c94a29">直感 × 文化・学び</div>
+        <div class="hn-chip-row">
+          <a class="hn-chip" href="result.html?type=FISH">FISH</a>
+          <a class="hn-chip" href="result.html?type=FISW">FISW</a>
+          <a class="hn-chip" href="result.html?type=FILH">FILH</a>
+          <a class="hn-chip" href="result.html?type=FILW">FILW</a>
+        </div>
+      </div>
+      <div class="hn-group">
+        <div class="hn-group-label" style="color:#d47a00">直感 × 絶景・リフレッシュ</div>
+        <div class="hn-chip-row">
+          <a class="hn-chip" href="result.html?type=FOSH">FOSH</a>
+          <a class="hn-chip" href="result.html?type=FOSW">FOSW</a>
+          <a class="hn-chip" href="result.html?type=FOLH">FOLH</a>
+          <a class="hn-chip" href="result.html?type=FOLW">FOLW</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="site-tagline">世界の旅行ガイド</span>
+</header>
+
+<div class="page-wrap">
+
+  <!-- ヒーロー -->
+  <div class="diag-hero">
+    <div><span class="diag-badge">16問・無料診断</span></div>
+    <h1>あなたの旅行タイプを診断</h1>
+    <p>計画性・旅の目的（文化 vs 絶景・リフレッシュ）・社交性・快適さの4軸から、旅のスタイルを16タイプに分類します。右スワイプで「はい」、左スワイプで「いいえ」。一緒に旅する相手との相性もわかります。</p>
+  </div>
+
+  <!-- プログレスバー -->
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span>回答の進み具合</span>
+      <span id="progress-text">0 / 16 問</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- スワイプ診断 -->
+  <div class="swipe-section" id="swipe-section">
+    <div class="swipe-side-labels">
+      <div class="ssl ssl-left" id="ssl-left"><span class="ssl-arrow">←</span><span>いいえ</span></div>
+      <div class="ssl ssl-right" id="ssl-right"><span>はい</span><span class="ssl-arrow">→</span></div>
+    </div>
+    <div class="card-stack" id="card-stack"></div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<footer>
+  <a href="../">トップへ戻る</a>
+</footer>
+
+<script>
+// ===== 質問データ =====
+const BASE_QUESTIONS = {
+  PF: [
+    {yesVal:'P', text:'旅行前に、行程表を作ってから出発する'},
+    {yesVal:'F', text:'気になる店を見つけたら、予定になくてもその場で入る'},
+    {yesVal:'P', text:'宿や移動手段は、出発前にすべて予約しておく'},
+    {yesVal:'F', text:'予定が崩れても、逆に面白い展開だと思える'},
+  ],
+  IO: [
+    {yesVal:'I', text:'歴史的建造物や美術館を見ると、テンションが上がる'},
+    {yesVal:'O', text:'旅先で絶景スポットや展望台があれば、優先的に訪れる'},
+    {yesVal:'I', text:'旅の思い出は「学んだこと」として残ることが多い'},
+    {yesVal:'O', text:'観光より、海やスパでのんびりする方が旅の目的だ'},
+  ],
+  SL: [
+    {yesVal:'S', text:'旅先では、同行者と感動をその場で共有できると満足度が上がる'},
+    {yesVal:'L', text:'旅中、自分だけで動く時間が一定量ないとしんどい'},
+    {yesVal:'S', text:'旅仲間のペースや好みに合わせるのは、それほど苦にならない'},
+    {yesVal:'L', text:'旅先でも、起床や食事のタイミングを自分で決めたい'},
+  ],
+  HW: [
+    {yesVal:'H', text:'宿は、清潔さや設備の良さを最優先で選ぶ'},
+    {yesVal:'W', text:'現地らしい多少不便な場所にも、むしろ行ってみたい'},
+    {yesVal:'H', text:'移動は、タクシーなど快適な手段を優先したい'},
+    {yesVal:'W', text:'停電・断水・虫などのトラブルも、旅の醍醐味だと思える'},
+  ],
+};
+
+const BACKUP_QUESTIONS = {
+  PF: {axis:'PF', yesVal:'P', text:'旅先での移動時間や乗り換えを、細かく事前に調べておく'},
+  IO: {axis:'IO', yesVal:'I', text:'現地の生活や文化的背景を知ると、旅の満足度が上がる'},
+  SL: {axis:'SL', yesVal:'S', text:'一人で食事やアクティビティをするのに、少し抵抗がある'},
+  HW: {axis:'HW', yesVal:'H', text:'多少値段が高くても、快適さを優先して宿や移動を選ぶ'},
+};
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildShuffledBase() {
+  const all = [];
+  Object.entries(BASE_QUESTIONS).forEach(([axis, qs]) => {
+    qs.forEach(q => all.push({...q, axis}));
+  });
+  return shuffle(all);
+}
+
+// ===== スワイプUI =====
+let currentIdx = 0;
+let totalQuestions = 16;
+let axisVotes = {};
+let questionQueue = [];
+let mouseMoveHandler = null;
+let mouseUpHandler = null;
+
+function getOppositeVal(v) {
+  return {P:'F',F:'P',I:'O',O:'I',S:'L',L:'S',H:'W',W:'H'}[v];
+}
+
+function updateProgress(n, total) {
+  document.getElementById('progress-fill').style.width = (n / total * 100) + '%';
+  document.getElementById('progress-text').textContent = n + ' / ' + total + ' 問';
+}
+
+function initSwipe() {
+  questionQueue = buildShuffledBase();
+  currentIdx = 0;
+  totalQuestions = 16;
+  axisVotes = {PF:{P:0,F:0}, IO:{I:0,O:0}, SL:{S:0,L:0}, HW:{H:0,W:0}};
+  updateProgress(0, 16);
+
+  const stack = document.getElementById('card-stack');
+  stack.innerHTML = '';
+
+  [...questionQueue].reverse().forEach((q, revIdx) => {
+    const realIdx = questionQueue.length - 1 - revIdx;
+    appendCard(q, realIdx + 1, Math.min(realIdx, 3));
+  });
+
+  attachSwipeHandlers();
+}
+
+function appendCard(q, displayNum, behind, isBackup) {
+  const stack = document.getElementById('card-stack');
+  const card = document.createElement('div');
+  card.className = 'swipe-card';
+  if (behind > 0) card.dataset.behind = String(behind);
+
+  const qnumHtml = isBackup
+    ? `Q${displayNum} <span class="sc-backup-badge">追加問題</span>`
+    : `Q${displayNum} / ${totalQuestions}`;
+
+  card.innerHTML = `
+    <div class="sc-overlay sc-overlay-l"></div>
+    <div class="sc-overlay sc-overlay-r"></div>
+    <div class="sc-body">
+      <div class="sc-qnum">${qnumHtml}</div>
+      <div class="sc-text">${q.text}</div>
+    </div>
+    <div class="sc-choices">
+      <div class="sc-choice sc-left">
+        <span class="sc-choice-arrow">←</span>
+        <span class="sc-choice-label">いいえ</span>
+      </div>
+      <div class="sc-divider"></div>
+      <div class="sc-choice sc-right">
+        <span class="sc-choice-label">はい</span>
+        <span class="sc-choice-arrow">→</span>
+      </div>
+    </div>`;
+  stack.appendChild(card);
+}
+
+function getActiveCard() {
+  const cards = document.querySelectorAll('.swipe-card');
+  return cards.length ? cards[cards.length - 1] : null;
+}
+
+function attachSwipeHandlers() {
+  const stack = document.getElementById('card-stack');
+  if (mouseMoveHandler) document.removeEventListener('mousemove', mouseMoveHandler);
+  if (mouseUpHandler)   document.removeEventListener('mouseup',   mouseUpHandler);
+
+  let startX = 0, startY = 0, isDragging = false;
+  let activeCard = null;
+  const THRESHOLD = 90;
+
+  function onStart(x, y) {
+    activeCard = getActiveCard();
+    if (!activeCard) return;
+    startX = x; startY = y;
+    isDragging = true;
+    activeCard.style.transition = 'none';
+  }
+
+  function onMove(x, y) {
+    if (!isDragging || !activeCard) return;
+    const dx = x - startX;
+    const dy = y - startY;
+    if (Math.abs(dy) > Math.abs(dx) * 1.8 && Math.abs(dx) < 20) {
+      isDragging = false; return;
+    }
+
+    activeCard.style.transform = `translateX(${dx}px) rotate(${dx / 320 * 18}deg)`;
+    const pct = Math.min(Math.abs(dx) / THRESHOLD, 1);
+    const ovlL = activeCard.querySelector('.sc-overlay-l');
+    const ovlR = activeCard.querySelector('.sc-overlay-r');
+
+    if (dx < 0) {
+      ovlL.style.opacity = pct; ovlR.style.opacity = 0;
+      activeCard.classList.add('dragging-left'); activeCard.classList.remove('dragging-right');
+    } else if (dx > 0) {
+      ovlR.style.opacity = pct; ovlL.style.opacity = 0;
+      activeCard.classList.add('dragging-right'); activeCard.classList.remove('dragging-left');
+    } else {
+      ovlL.style.opacity = 0; ovlR.style.opacity = 0;
+      activeCard.classList.remove('dragging-left','dragging-right');
+    }
+
+    document.getElementById('ssl-left').style.opacity  = dx < 0 ? pct : 0;
+    document.getElementById('ssl-right').style.opacity = dx > 0 ? pct : 0;
+  }
+
+  function onEnd(x) {
+    if (!isDragging || !activeCard) return;
+    isDragging = false;
+    const dx = x - startX;
+    if (Math.abs(dx) >= THRESHOLD) {
+      commitSwipe(dx > 0 ? 'right' : 'left', activeCard);
+    } else {
+      activeCard.style.transition = 'transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275)';
+      activeCard.style.transform = '';
+      activeCard.querySelector('.sc-overlay-l').style.opacity = 0;
+      activeCard.querySelector('.sc-overlay-r').style.opacity = 0;
+      activeCard.classList.remove('dragging-left','dragging-right');
+      document.getElementById('ssl-left').style.opacity  = 0;
+      document.getElementById('ssl-right').style.opacity = 0;
+    }
+    activeCard = null;
+  }
+
+  stack.addEventListener('touchstart', e => onStart(e.touches[0].clientX, e.touches[0].clientY), {passive:true});
+  stack.addEventListener('touchmove', e => {
+    const dx = e.touches[0].clientX - startX;
+    const dy = e.touches[0].clientY - startY;
+    if (Math.abs(dx) > Math.abs(dy)) e.preventDefault();
+    onMove(e.touches[0].clientX, e.touches[0].clientY);
+  }, {passive:false});
+  stack.addEventListener('touchend', e => onEnd(e.changedTouches[0].clientX));
+  stack.addEventListener('mousedown', e => { e.preventDefault(); onStart(e.clientX, e.clientY); });
+
+  mouseMoveHandler = e => onMove(e.clientX, e.clientY);
+  mouseUpHandler   = e => onEnd(e.clientX);
+  document.addEventListener('mousemove', mouseMoveHandler);
+  document.addEventListener('mouseup',   mouseUpHandler);
+}
+
+function commitSwipe(dir, card) {
+  const q = questionQueue[currentIdx];
+  const val = dir === 'right' ? q.yesVal : getOppositeVal(q.yesVal);
+  axisVotes[q.axis][val]++;
+
+  const flyX = dir === 'right' ? window.innerWidth + 100 : -(window.innerWidth + 100);
+  card.style.transition = 'transform 0.45s cubic-bezier(0.55,0,1,0.7),opacity 0.35s';
+  card.style.transform  = `translateX(${flyX}px) rotate(${dir==='right'?25:-25}deg)`;
+  card.style.opacity = '0';
+  card.style.pointerEvents = 'none';
+
+  document.getElementById('ssl-left').style.opacity  = 0;
+  document.getElementById('ssl-right').style.opacity = 0;
+
+  currentIdx++;
+  updateProgress(currentIdx, totalQuestions);
+
+  const remaining = Array.from(document.querySelectorAll('.swipe-card')).filter(c => c !== card);
+  const n = remaining.length;
+  remaining.forEach((c, i) => {
+    const behind = n - 1 - i;
+    if (behind === 0) {
+      c.style.transition = 'transform 0.3s ease';
+      void c.getBoundingClientRect();
+      c.removeAttribute('data-behind');
+    } else {
+      c.dataset.behind = String(Math.min(behind, 3));
+    }
+  });
+
+  setTimeout(() => {
+    card.remove();
+
+    if (currentIdx === 16) {
+      const tiedAxes = Object.keys(axisVotes).filter(axis => {
+        const vals = Object.values(axisVotes[axis]);
+        return vals[0] === vals[1];
+      });
+
+      if (tiedAxes.length > 0) {
+        totalQuestions = 16 + tiedAxes.length;
+        updateProgress(currentIdx, totalQuestions);
+        [...tiedAxes].reverse().forEach((axis, revIdx) => {
+          const bIdx = tiedAxes.length - 1 - revIdx;
+          const bq = BACKUP_QUESTIONS[axis];
+          questionQueue.push(bq);
+          appendCard(bq, 16 + bIdx + 1, Math.min(bIdx, 3), true);
+        });
+      } else {
+        finishQuiz();
+      }
+    } else if (currentIdx === totalQuestions) {
+      finishQuiz();
+    }
+  }, 500);
+}
+
+function finishQuiz() {
+  const pf = axisVotes.PF.P >= axisVotes.PF.F ? 'P' : 'F';
+  const io = axisVotes.IO.I >= axisVotes.IO.O ? 'I' : 'O';
+  const sl = axisVotes.SL.S >= axisVotes.SL.L ? 'S' : 'L';
+  const hw = axisVotes.HW.H >= axisVotes.HW.W ? 'H' : 'W';
+  const type = pf + io + sl + hw;
+  sessionStorage.setItem('myType', type);
+  location.href = 'result.html?type=' + type;
+}
+
+// ヘッダーの「旅行タイプ一覧」ドロップダウン
+function toggleHeaderNav() {
+  document.getElementById('header-nav-btn').classList.toggle('open');
+  document.getElementById('header-nav-panel').classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  const nav = document.querySelector('.header-nav');
+  if (nav && !nav.contains(e.target)) {
+    document.getElementById('header-nav-btn').classList.remove('open');
+    document.getElementById('header-nav-panel').classList.remove('open');
+  }
+});
+
+initSwipe();
+</script>
+</body>
+</html>

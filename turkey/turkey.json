@@ -1,0 +1,1499 @@
+{
+  "multipage": true,
+  "id": "turkey",
+  "name": "トルコ",
+  "name_en": "Turkey",
+  "page_title": "トルコ旅行ガイド",
+  "hero_image": "素材/ヒーロー.webp",
+  "hero_alt": "アヤソフィアとブルーモスクの尖塔、ボスポラス海峡の夕景",
+  "hero_prompt": "Istanbul skyline at sunset with Hagia Sophia and Blue Mosque minarets silhouetted against golden sky, Bosphorus strait with a small ferry boat, seagulls in the distance, warm evening light, travel illustration style",
+  "overview": {
+    "country_question": "トルコってどんなところ？",
+    "description_html": "直行便で約13時間、時差6時間のトルコはヨーロッパとアジアの文化が交わる国。<strong>荘厳な<a onclick=\"showSpot('IST 01')\" class=\"keyword-link\">アヤソフィア</a>やブルーモスク、香辛料の香るグランドバザール、熱気球が舞うカッパドキアの奇岩地帯、そして絶品の<a onclick=\"showFood('No.1')\" class=\"keyword-link\">ケバブ</a>や紅茶</strong>まで、ひとつの国で異なる文化と絶景が幾重にも重なり合い、親日的なホスピタリティが旅人を迎えてくれる。",
+    "flag_html": "<div style=\"display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden\"><svg width=\"150\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 12 8\"><path fill=\"#E30A17\" d=\"M0 0h12v8H0z\"/><circle cx=\"4.25\" cy=\"4\" r=\"2\" fill=\"#fff\"/><circle cx=\"4.75\" cy=\"4\" r=\"1.6\" fill=\"#e30a17\"/><path fill=\"#fff\" d=\"M5.83334 4l1.80901 .58779-1.11804-1.53885v1.90212l1.11804-1.53885z\"/></svg></div>",
+    "flag_caption": "赤地に白い三日月と星。オスマン帝国以来のイスラム世界を象徴する図案とされる。",
+    "top_spot_name": "アヤソフィア",
+    "top_spot_desc": "ビザンツ帝国の大聖堂からモスクへと姿を変えた、1500年の歴史を持つ世界遺産。",
+    "top_spot_image": "",
+    "top_food_name": "ケバブ",
+    "top_food_desc": "炭火で焼いた肉を薄切りにした、トルコを代表する国民食。パンに挟んだり皿盛りにしたりと、屋台から高級店まで味わい方は幅広く楽しめる。",
+    "top_food_image": "",
+    "difficulty_label": "ふつう",
+    "difficulty_label_bg": "#fff4e0",
+    "difficulty_label_color": "#cc8400",
+    "difficulty_pct": "55",
+    "difficulty_bar": "linear-gradient(90deg,#e30a17,#ff6b6b)",
+    "japan_popularity_html": "エルトゥールル号事件以来の親日国として知られ、旅先でも歓迎されやすい。<strong>世界遺産級の建築・バザールでの買い物・カッパドキアの熱気球</strong>とSNS映えする景色が揃い、ヨーロッパとアジアを一度に体感できる旅先として人気が高まっている。",
+    "flight_hours": "直行便で約13時間（乗継便あり）",
+    "iata_code": "ist",
+    "timezone": "日本 −6時間",
+    "visa": "不要（90日）",
+    "budget_range": "18〜35万円",
+    "language": "トルコ語（英語は観光地で広く通じる）",
+    "currency_name": "トルコリラ(TRY)",
+    "currency_rate": "1TRY ≈ 3.3円",
+    "danger_level": 1,
+    "danger_label": "レベル1：十分注意",
+    "danger_color": "#f2b90c",
+    "danger_note": "シリア・イラク国境地帯はレベル3〜4、イスタンブール・カッパドキア・パムッカレ・アンタルヤなど西部〜南部の観光地は対象外",
+    "danger_url": "https://www.anzen.mofa.go.jp/riskmap/"
+  },
+  "map": {
+    "element_id": "turkey-map",
+    "center_lat": "38.9",
+    "center_lng": "32.5",
+    "zoom": "6",
+    "map_id": "ebb608e55ed157f8630c407e",
+    "country_label": "トルコ"
+  },
+  "cities": [
+    {
+      "id": "istanbul",
+      "name": "イスタンブール",
+      "lat": "41.0082",
+      "lng": "28.9784",
+      "zoom": "12",
+      "color": "#E30A17",
+      "marker_size": "14",
+      "marker_label": "★",
+      "badge": "最大都市",
+      "badge_class": "",
+      "description": "ヨーロッパとアジアをまたぐ旧都。アヤソフィアとバザールが凝縮するトルコ旅の拠点"
+    },
+    {
+      "id": "cappadocia",
+      "name": "カッパドキア",
+      "lat": "38.6431",
+      "lng": "34.8286",
+      "zoom": "12",
+      "color": "#cc5500",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "熱気球",
+      "badge_class": "green",
+      "description": "奇岩の谷を熱気球が埋め尽くす、トルコ観光のハイライト"
+    },
+    {
+      "id": "pamukkale",
+      "name": "パムッカレ",
+      "lat": "37.9136",
+      "lng": "29.1187",
+      "zoom": "13",
+      "color": "#0099cc",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "石灰棚",
+      "badge_class": "green",
+      "description": "真っ白な石灰棚と古代都市ヒエラポリスが並ぶ世界遺産"
+    },
+    {
+      "id": "antalya",
+      "name": "アンタルヤ",
+      "lat": "36.8969",
+      "lng": "30.7133",
+      "zoom": "12",
+      "color": "#0099cc",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "地中海リゾート",
+      "badge_class": "green",
+      "description": "トルコ屈指のリゾート都市。旧市街カレイチと地中海のビーチが魅力"
+    },
+    {
+      "id": "izmir",
+      "name": "イズミル・エフェソス",
+      "lat": "38.4237",
+      "lng": "27.1428",
+      "zoom": "11",
+      "color": "#006847",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "古代遺跡",
+      "badge_class": "green",
+      "description": "エーゲ海沿岸の港町。古代都市エフェソスの遺跡群への玄関口"
+    }
+  ],
+  "season_mini": {
+    "description": "ボスポラス海峡を挟みヨーロッパとアジアが交わる国で、四季のあるイスタンブールと灼熱の内陸が同居する。",
+    "city_name": "イスタンブール",
+    "months": [
+      { "icon": "🌥️", "temp": "8°", "type": "t-cold" },
+      { "icon": "🌥️", "temp": "8°", "type": "t-cold" },
+      { "icon": "⛅", "temp": "10°", "type": "t-mild" },
+      { "icon": "⛅", "temp": "14°", "type": "t-mild" },
+      { "icon": "☀️", "temp": "19°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "24°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "27°", "type": "t-hot1" },
+      { "icon": "☀️", "temp": "27°", "type": "t-hot1" },
+      { "icon": "☀️", "temp": "23°", "type": "t-warm" },
+      { "icon": "⛅", "temp": "18°", "type": "t-mild" },
+      { "icon": "🌥️", "temp": "13°", "type": "t-mild" },
+      { "icon": "🌥️", "temp": "10°", "type": "t-mild" }
+    ]
+  },
+  "basic_data": [
+    {
+      "label": "首都",
+      "value": "アンカラ",
+      "note": "最大都市イスタンブールとは別。政治の中心地",
+      "compare_html": ""
+    },
+    {
+      "label": "独立年",
+      "value": "1923年",
+      "note": "オスマン帝国滅亡後、ムスタファ・ケマルによりトルコ共和国建国",
+      "compare_html": ""
+    },
+    {
+      "label": "人口",
+      "value": "約8,600万人",
+      "note": "日本の約1.7倍",
+      "compare_html": ""
+    },
+    {
+      "label": "面積",
+      "value": "約78万 km²",
+      "note": "日本の約2倍。国土の大半はアジア側のアナトリア半島",
+      "compare_html": ""
+    },
+    {
+      "label": "宗教",
+      "value": "イスラム教が大多数",
+      "note": "憲法上は政教分離の世俗国家。飲酒も可能",
+      "compare_html": ""
+    },
+    {
+      "label": "民族",
+      "value": "トルコ系が7割以上",
+      "note": "クルド系など多様な民族が暮らす多民族国家",
+      "compare_html": ""
+    },
+    {
+      "label": "言語",
+      "value": "",
+      "note": "文字はアラビア文字からラテン文字に改革された歴史を持ち、日本語の語順に近い膠着語のため文法的な親近感を覚える人も多い",
+      "compare_html": ""
+    },
+    {
+      "label": "通貨",
+      "value": "",
+      "note": "",
+      "compare_html": ""
+    }
+  ],
+  "season": {
+    "description_html": "トルコは国土が広く、地域によって気候がまったく異なります。イスタンブールは四季がありベストは<strong>春・秋</strong>、内陸のカッパドキアは寒暖差が激しく夏は乾いた暑さ・冬は氷点下、エーゲ海・地中海沿岸は夏に灼熱、冬でも温暖です。<br><span style=\"font-weight:700;color:#555\">色が濃いオレンジほど気温が高い</span>ことを示しています。",
+    "tip_title": "航空券が安い時期",
+    "tip_body": "夏休み（7〜8月）と年末年始は日本発・現地発とも高騰しやすい。狙い目は3〜4月・10〜11月の中間シーズンで、気候も安定していて航空券も比較的落ち着く。",
+    "cities": [
+      {
+        "name": "イスタンブール",
+        "city_id": "istanbul",
+        "best_note": "ベスト：4〜6月・9〜10月（穏やかで観光しやすい）／ 7〜8月は蒸し暑く混雑、12〜2月は曇天と冷たい雨が多い。",
+        "note": "ボスポラス海峡に面した海洋性の気候で、夏は30°C近くまで上がるが湿度は東南アジアほど高くない。冬は氷点下になることは稀だが、北風と曇天続きで体感は肌寒い。歴史地区は石畳が多く、雨の日は滑りやすい靴に注意。",
+        "months": [
+          { "icon": "🌥️", "temp": "8°C", "type": "t-cold" },
+          { "icon": "🌥️", "temp": "8°C", "type": "t-cold" },
+          { "icon": "⛅", "temp": "10°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "14°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "19°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "24°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "27°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "27°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "23°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "18°C", "type": "t-mild" },
+          { "icon": "🌥️", "temp": "13°C", "type": "t-mild" },
+          { "icon": "🌥️", "temp": "10°C", "type": "t-mild" }
+        ]
+      },
+      {
+        "name": "カッパドキア",
+        "city_id": "cappadocia",
+        "best_note": "ベスト：4〜6月・9〜10月（気球フライトの安定率が高い）／ 7〜8月は乾いた猛暑、12〜2月は雪と氷点下の朝が続く。",
+        "note": "標高1000m超の高原に位置する大陸性気候で、朝晩の寒暖差が非常に大きい。夏の日中は35°C近くまで上がる一方、朝は10°C台まで冷え込むこともある。冬は雪化粧した奇岩地帯も幻想的だが、気球フライトは強風で欠航しやすい。",
+        "months": [
+          { "icon": "❄️", "temp": "0°C", "type": "t-cold" },
+          { "icon": "❄️", "temp": "2°C", "type": "t-cold" },
+          { "icon": "⛅", "temp": "7°C", "type": "t-cold" },
+          { "icon": "☀️", "temp": "12°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "17°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "22°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "25°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "25°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "20°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "14°C", "type": "t-mild" },
+          { "icon": "🌥️", "temp": "8°C", "type": "t-cold" },
+          { "icon": "❄️", "temp": "2°C", "type": "t-cold" }
+        ]
+      },
+      {
+        "name": "エーゲ海・地中海沿岸（パムッカレ・アンタルヤ・イズミル）",
+        "city_id": "antalya",
+        "best_note": "ベスト：4〜6月・9〜10月（暑すぎず海も楽しめる）／ 7〜8月は35°C超の酷暑、12〜2月は雨が多いが氷点下にはならない。",
+        "note": "地中海性気候で夏は乾燥した強い日差しが続き、日中35°C近くまで上がる。冬でも10°C台と温暖で降雪はほぼないが、雨の日が多くなる。パムッカレの石灰棚は素足で歩くため、冬でも足元が冷たいことは覚悟しておきたい。",
+        "months": [
+          { "icon": "🌧️", "temp": "11°C", "type": "t-mild" },
+          { "icon": "🌧️", "temp": "12°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "14°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "18°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "23°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "31°C", "type": "t-hot2" },
+          { "icon": "☀️", "temp": "31°C", "type": "t-hot2" },
+          { "icon": "☀️", "temp": "27°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "22°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "17°C", "type": "t-mild" },
+          { "icon": "🌧️", "temp": "13°C", "type": "t-mild" }
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "intro": "トルコは直行便が長距離な分、旅行費用は東南アジアより高め。ただし物価自体はトルコリラ安の影響で日本人にはお得感が強く、屋台のケバブや紅茶は驚くほど安い。国内移動は格安航空と長距離バスを組み合わせるのが定番です。",
+    "plan_rows": [
+      { "label": "航空券（往復）", "eco": "12〜16万円", "std": "18〜25万円", "lux": "35万円〜" },
+      { "label": "ホテル（1泊）", "eco": "3,000〜6,000円", "std": "8,000〜15,000円", "lux": "25,000円〜" },
+      { "label": "食費（1日）", "eco": "1,200〜2,500円", "std": "2,500〜4,200円", "lux": "6,000円〜" },
+      { "label": "交通（1日）", "eco": "400〜800円", "std": "800〜1,800円", "lux": "3,000円〜" }
+    ],
+    "total_eco": "8〜12万円",
+    "total_std": "14〜20万円",
+    "total_lux": "28万円〜",
+    "items": [
+      {
+        "icon": "plane-paper",
+        "name": "航空券（往復）",
+        "detail_html": "トルコ航空が成田から直行便を毎日運航<br>カタール航空等の経由便なら安く抑えられる",
+        "price": "12〜35万円",
+        "affiliate": ""
+      },
+      {
+        "icon": "bed",
+        "name": "ホテル（1泊）",
+        "detail_html": "ゲストハウス3,000〜6,000円・中級8,000〜15,000円<br>洞窟ホテルが名物のカッパドキアは割高傾向",
+        "price": "〜3万円/泊",
+        "affiliate": ""
+      },
+      {
+        "icon": "ramen",
+        "name": "食費（1日）",
+        "detail_html": "屋台のケバブやシミットなら1食200〜400円<br>レストランでも1食800〜1,500円と物価安め",
+        "price": "1,200〜4,200円/日",
+        "affiliate": "wise"
+      },
+      {
+        "icon": "🚕",
+        "name": "交通費（1日）",
+        "detail_html": "イスタンブールカードでトラム・地下鉄・フェリー<br>都市間移動は国内線・長距離バスが基本（航空券とは別枠）",
+        "price": "400〜1,800円/日",
+        "affiliate": "grab"
+      },
+      {
+        "icon": "📍",
+        "name": "観光・アクティビティ",
+        "detail_html": "カッパドキア熱気球ツアーは1.5〜2.5万円と高め<br>トプカプ宮殿やエフェソス入場は1,000〜2,000円",
+        "price": "1,000〜25,000円/日",
+        "affiliate": "klook"
+      },
+      {
+        "icon": "🌐",
+        "name": "SIM・Wi-Fi",
+        "detail_html": "空港でTurkcell等のSIMが購入可能<br>eSIMなら出発前にアプリで設定完了",
+        "price": "1,000〜3,000円",
+        "affiliate": ""
+      }
+    ],
+    "savings_tips_html": "・チップは10%が目安（サービス料込みか確認）<br>・美術館パス（ミュージアムパス）で入場料をまとめて節約"
+  },
+  "practical": {
+    "prac_cards": [
+      { "icon": "visa", "title": "ビザ", "value": "不要（90日）" },
+      { "icon": "💱", "title": "通貨", "value": "トルコリラ（TRY/₺）　1TRY ≈ 3.3円" },
+      { "icon": "🔌", "title": "コンセント", "value": "Cタイプ・Fタイプ（丸2穴・アース端子付き）。230V/50Hz（変換注意）" },
+      { "icon": "wifi", "title": "Wi-Fi", "value": "都市部は快適。地方や遺跡周辺は圏外エリアも" },
+      { "icon": "clock", "title": "時差", "value": "日本 −6時間" },
+      { "icon": "🌡️", "title": "気温", "value": "夏27°C・冬9°C前後。内陸のカッパドキアは寒暖差が大きく冬は氷点下" },
+      { "icon": "🙏", "title": "チップ", "value": "10%が目安。レストランの会計に端数を上乗せして渡すのが一般的" },
+      { "icon": "💧", "title": "水道水", "value": "飲用不可。硬水で味に癖があるためペットボトル推奨" },
+      { "icon": "🔒", "title": "治安", "value": "十分注意。国境地帯は危険、観光地の西部・中部・南部は概ね良好だがスリに注意" },
+      { "icon": "💳", "title": "カード払い", "value": "都市部は普及。バザールの屋台や地方の小店は現金が中心" }
+    ],
+    "prep_steps": [
+      {
+        "title": "パスポート取得・更新",
+        "timing": "1〜2ヶ月前",
+        "timing_color": "#e30a17",
+        "border_color": "#e30a17",
+        "bar_color": "linear-gradient(to bottom,#e30a17,#cc5500)",
+        "desc_html": "トルコ入国には<strong>残存有効期間150日以上・未使用査証欄2ページ以上</strong>が必要。滞在日数以上あればいいという国とは基準が違うので早めに確認を。"
+      },
+      {
+        "title": "海外対応クレジットカードの申込",
+        "timing": "1ヶ月前",
+        "timing_color": "#cc5500",
+        "border_color": "#cc5500",
+        "bar_color": "linear-gradient(to bottom,#cc5500,#b09000)",
+        "desc_html": "審査・発行に2〜3週間かかることがある。両替レートが良くATM引き出しにも対応している<a href=\"#\" data-affiliate=\"wise\" data-affiliate-label=\"Wiseカード\" data-affiliate-class=\"inline-affiliate-link\"></a>があるとリラの現金調達もスムーズ。"
+      },
+      {
+        "title": "航空券・ホテルの予約",
+        "timing": "2〜3ヶ月前",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "#b09000",
+        "desc_html": "長距離路線なので早期予約が価格差に直結する。カッパドキアの洞窟ホテルは人気室から埋まるため、日程が決まったら早めの確保がおすすめ。"
+      },
+      {
+        "title": "海外旅行保険の加入",
+        "timing": "出発前日まで",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "linear-gradient(to bottom,#b09000,#0099cc)",
+        "desc_html": "クレカ付帯保険で代用できる場合も多いが、補償範囲と利用条件（利用付帯か自動付帯か）は事前に確認しておこう。"
+      },
+      {
+        "title": "SIM・eSIMの準備",
+        "timing": "1〜2週間前",
+        "timing_color": "#0099cc",
+        "border_color": "#0099cc",
+        "bar_color": "linear-gradient(to bottom,#0099cc,#006847)",
+        "desc_html": "eSIMなら出発前に購入・設定まで完了できて到着後すぐ使える。物理SIM派は空港のTurkcell等のカウンターで購入可能。"
+      },
+      {
+        "title": "パスポート残存有効期間の最終確認",
+        "timing": "出発直前",
+        "timing_color": "#006847",
+        "border_color": "#006847",
+        "bar_color": "",
+        "desc_html": "出発直前にもう一度、残存有効期間150日以上・査証欄2ページ以上を確認。搭乗手続きで引っかかるケースが多いので油断は禁物。"
+      }
+    ],
+    "tour_intro": "",
+    "special_note_title": "パスポート残存有効期間は150日以上必須",
+    "special_note_html": "トルコは日本人にとって90日間のビザ免除国ですが、入国時にパスポートの残存有効期間が150日（90日＋60日）以上、未使用の査証欄が見開き2ページ以上必要です。他国より基準が厳しめなので、出発前に必ず確認しておきましょう。",
+    "special_note_url": "https://www.tr.emb-japan.go.jp/",
+    "special_note_url_label": "在トルコ日本国大使館",
+    "flight_lead": "成田からトルコ航空の直行便が毎日運航しており所要約13時間。カタール航空・エミレーツ航空などの経由便は価格を抑えやすく、乗り継ぎ地での数時間のトランジット観光も楽しめます。",
+    "flight_intro": "成田からトルコ航空の直行便が毎日運航。所要約13時間、経由便なら価格を抑えやすい。",
+    "airlines": [
+      {
+        "logo": "../素材/航空会社/Turkish Airlines.svg",
+        "name": "トルコ航空",
+        "desc": "トルコのフラッグキャリア。成田からの直行便を毎日運航し、機内食の評判も高い。",
+        "price": "往復 15〜25万円"
+      },
+      {
+        "logo": "../素材/航空会社/Qatar Airways.svg",
+        "name": "カタール航空",
+        "desc": "ドーハ経由の代表的な選択肢。サービス評価が高く、乗継時間を活かした無料市内観光も。",
+        "price": "往復 12〜20万円"
+      },
+      {
+        "logo": "../素材/航空会社/Emirates.svg",
+        "name": "エミレーツ航空",
+        "desc": "ドバイ経由。機材・機内サービスの快適さで人気が高いが直行便より価格は高め。",
+        "price": "往復 15〜24万円"
+      }
+    ],
+    "flight_tip_html": "・夏休み（7〜8月）と年末年始は高騰しやすい<br>・トルコ航空は日本発着で唯一の直行便、争奪戦になりやすいので早めの予約が安心<br>・経由便は乗継時間が長くなりがちなので復路の疲労も考慮を",
+    "hotel_map_center": { "lat": 41.0082, "lng": 28.9784, "zoom": 13 },
+    "hotel_areas": [
+      {
+        "id": "sultanahmet",
+        "name": "スルタンアフメット",
+        "tag": "旧市街・観光の中心",
+        "tag_color": "green",
+        "desc": "アヤソフィア・ブルーモスク・トプカプ宮殿が徒歩圏に集まる旧市街の中心。観光には抜群に便利だが、その分価格は高め。",
+        "price": "格安 4,000〜7,000円　中級 10,000〜18,000円",
+        "maps_url": "https://www.google.com/maps/place/Sultanahmet",
+        "lat": 41.0053,
+        "lng": 28.9769
+      },
+      {
+        "id": "beyoglu",
+        "name": "ベイオール（タクシム・イスティクラル通り）",
+        "tag": "繁華街・夜も賑やか",
+        "tag_color": "green",
+        "desc": "新市街の中心で、レストランやバーが集まる歩行者天国イスティクラル通りが軸。地下鉄・トラムでの移動もしやすく、旧市街観光にも便利。",
+        "price": "格安 3,500〜7,000円　中級 9,000〜16,000円",
+        "maps_url": "https://www.google.com/maps/place/Taksim+Square",
+        "lat": 41.0369,
+        "lng": 28.985
+      },
+      {
+        "id": "kadikoy",
+        "name": "カドキョイ（アジア側）",
+        "tag": "地元感・コスパ重視",
+        "tag_color": "",
+        "desc": "ボスポラス海峡を渡ったアジア側にある落ち着いた住宅街兼繁華街。観光客が少なくローカルな雰囲気を味わえ、宿代も旧市街より抑えやすい。",
+        "price": "格安 3,000〜5,500円　中級 7,000〜13,000円",
+        "maps_url": "https://www.google.com/maps/place/Kadikoy",
+        "lat": 40.99,
+        "lng": 29.0274
+      }
+    ],
+    "hotel_tip": "初めてならスルタンアフメット周辺が観光に一番便利だが、旧市街は観光客向け価格になりがち。値段を抑えたいならベイオールやカドキョイも選択肢に。夜遅くの帰宅がある日程では、駅や大通りから近い立地を優先すると安心。",
+    "sim_intro": "",
+    "apps": [
+      {
+        "icon": "🚕",
+        "name": "BiTaksi",
+        "type_label": "配車アプリ",
+        "desc": "トルコ最大手の配車アプリ。行き先を地図で指定でき、言葉の不安なく安全にタクシーを呼べる。料金の目安も事前に確認できる。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "🗺️",
+        "name": "Google マップ",
+        "type_label": "地図・ナビ（オフライン対応）",
+        "desc": "トラム・地下鉄・フェリーの乗換案内までカバー。旧市街の細い路地歩きにも欠かせない。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "google-translate",
+        "name": "Google 翻訳",
+        "type_label": "翻訳・カメラ翻訳",
+        "desc": "トルコ語はラテン文字なので読み方の見当はつくが、メニューや看板の意味はカメラ翻訳が確実。トルコ語パックを事前にDLしておこう。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "getyourguide",
+        "name": "GetYourGuide（ゲットユアガイド）",
+        "type_label": "現地ツアー・チケット事前予約",
+        "desc": "アヤソフィアやトプカプ宮殿のスキップ・ザ・ライン付きツアー、カッパドキアの熱気球予約に強い。欧州発サービスならではの品揃え。",
+        "affiliate": "getyourguide",
+        "is_last": false
+      },
+      {
+        "icon": "viator",
+        "name": "Viator（ビアター）",
+        "type_label": "現地ツアー・チケット事前予約",
+        "desc": "Tripadvisor系列で口コミ件数が多く、日程を選べる幅も広い。ボスポラスクルーズや日帰りツアーの比較に便利。",
+        "affiliate": "viator",
+        "is_last": true
+      }
+    ],
+    "tour_platforms": ["getyourguide", "viator"],
+    "country_items_label": "<span style=\"display:inline-flex;align-items:center;gap:6px;vertical-align:middle\"><span style=\"display:inline-block;line-height:0;border:1px solid #ddd;border-radius:2px;overflow:hidden;flex-shrink:0\"><svg width=\"17\" height=\"11\" viewBox=\"0 0 12 8\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#E30A17\" d=\"M0 0h12v8H0z\"/><circle cx=\"4.25\" cy=\"4\" r=\"2\" fill=\"#fff\"/><circle cx=\"4.75\" cy=\"4\" r=\"1.6\" fill=\"#e30a17\"/><path fill=\"#fff\" d=\"M5.83334 4l1.80901 .58779-1.11804-1.53885v1.90212l1.11804-1.53885z\"/></svg></span>トルコ特有の持ち物</span>",
+    "country_items": [
+      "Cタイプ・Fタイプ変換プラグ（230V/50Hz）",
+      "肌の露出を抑えた服とスカーフ（モスク訪問時、女性は頭を覆う必要あり）",
+      "歩きやすい靴（石畳の旧市街・遺跡は足元が悪い）",
+      "防寒着（カッパドキアの朝と早朝の気球ツアーは冷え込む）",
+      "サングラス・日焼け止め（地中海沿岸は日差しが強い）",
+      "ウェットティッシュ（バザールや屋台の食べ歩き用）"
+    ],
+    "currency_code": "TRY",
+    "exchange_rate": "3.3",
+    "cash_dependency": "中",
+    "cash_dependency_color": "#b09000",
+    "cash_dependency_note": "都市部の店舗・ホテルはカードOK、バザールの屋台やチップ・地方の小店は現金が中心",
+    "cash_daily_low": "800",
+    "cash_daily_high": "1050",
+    "cash_note": "1 TRY ≈ 3.3円で計算",
+    "money_intro": "トルコリラは日本の空港ではほぼ両替できないため、現地の空港や街の両替所（Döviz）で調達します。両替所ごとにレート差があるので、複数箇所を比較するのがコツ。都市部はカード払いも広く普及しています。",
+    "hotel_intro": "宿はまず地区で選ぶのが重要。スルタンアフメットは観光に便利だが夜は落ち着いた雰囲気で、繁華街で遊びたいならベイオール周辺が向いています。観光地周辺は客引きやタクシーのぼったくりもあるため、初日くらいは駅や大通りに近い安心できる立地を選びましょう。",
+    "cash_tip_title": "イスタンブールカードを最初に買おう",
+    "cash_tip_body": "トラム・地下鉄・バス・フェリーで使える交通系ICカード。空港や主要駅の自動販売機で購入でき、チャージして使う。1枚あれば市内交通がぐっと楽になるので、到着したらまず確保しておきたい。"
+  },
+  "phrases": {
+    "multi": false,
+    "decks": [
+      {
+        "id": "tr",
+        "active": true,
+        "language_name": "トルコ語",
+        "card_title": "🃏 トルコ語 旅行フレーズカード",
+        "categories": [
+          {
+            "label": "👋 あいさつ",
+            "items": [
+              { "jp": "こんにちは", "foreign": "Merhaba", "reading": "メルハバ", "audio": "" },
+              { "jp": "元気ですか？", "foreign": "Nasılsın?", "reading": "ナスルスン？", "audio": "" },
+              { "jp": "元気です", "foreign": "İyiyim", "reading": "イイイム", "audio": "" },
+              { "jp": "さようなら", "foreign": "Hoşça kal", "reading": "ホシチャ カル", "audio": "" },
+              { "jp": "はじめまして", "foreign": "Memnun oldum", "reading": "メムヌン オルドゥム", "audio": "" },
+              { "jp": "（景色や物に）綺麗ですね！", "foreign": "Çok güzel!", "reading": "チョック ギュゼル！", "audio": "" },
+              { "jp": "美人ですね", "foreign": "Çok güzelsin!", "reading": "チョック ギュゼルスィン！", "audio": "" },
+              { "jp": "愛してる", "foreign": "Seni seviyorum", "reading": "セニ セヴィヨルム", "audio": "" }
+            ]
+          },
+          {
+            "label": "🙏 基本表現",
+            "items": [
+              { "jp": "ありがとう", "foreign": "Teşekkür ederim", "reading": "テシェッキュル エデリム", "audio": "" },
+              { "jp": "すみません", "foreign": "Affedersiniz", "reading": "アッフェデルスィニズ", "audio": "" },
+              { "jp": "ごめんなさい", "foreign": "Özür dilerim", "reading": "オズュル ディレリム", "audio": "" },
+              { "jp": "大丈夫・気にしないで", "foreign": "Sorun değil", "reading": "ソルン デイル", "audio": "" },
+              { "jp": "はい / いいえ", "foreign": "Evet / Hayır", "reading": "エヴェット／ハユル", "audio": "" },
+              { "jp": "わかりません", "foreign": "Anlamıyorum", "reading": "アンラムヨルム", "audio": "" },
+              { "jp": "もう一度言ってください", "foreign": "Tekrar söyler misiniz?", "reading": "テクラル ソイレル ミスィニズ？", "audio": "" },
+              { "jp": "名前は〜です", "foreign": "Benim adım ~", "reading": "ベニム アドゥム 〜", "audio": "" },
+              { "jp": "名前は何ですか？", "foreign": "Adınız ne?", "reading": "アドゥヌズ ネ？", "audio": "" },
+              { "jp": "日本人です", "foreign": "Japonyalıyım", "reading": "ジャポンヤルユム", "audio": "" }
+            ]
+          },
+          {
+            "label": "🍽️ レストラン・ショッピング",
+            "items": [
+              { "jp": "おすすめは何ですか？", "foreign": "Ne tavsiye edersiniz?", "reading": "ネ タヴスィイェ エデルスィニズ？", "audio": "" },
+              { "jp": "〜はありますか？", "foreign": "~ var mı?", "reading": "〜 ヴァル ム？", "audio": "" },
+              { "jp": "これをください", "foreign": "Bunu istiyorum", "reading": "ブヌ イスティヨルム", "audio": "" },
+              { "jp": "おいしい！", "foreign": "Çok lezzetli!", "reading": "チョック レッゼットリ！", "audio": "" },
+              { "jp": "辛い", "foreign": "Acı", "reading": "アジュ", "audio": "" },
+              { "jp": "辛くしないでください", "foreign": "Acı olmasın lütfen", "reading": "アジュ オルマスン リュトフェン", "audio": "" },
+              { "jp": "お会計をお願いします", "foreign": "Hesap lütfen", "reading": "ヘサップ リュトフェン", "audio": "" },
+              { "jp": "いくらですか？", "foreign": "Ne kadar?", "reading": "ネ カダル？", "audio": "" },
+              { "jp": "高い、安くしてください", "foreign": "Pahalı, indirim yapar mısınız?", "reading": "パハル、インディリム ヤパル ムスヌズ？", "audio": "" },
+              { "jp": "トイレはどこですか？", "foreign": "Tuvalet nerede?", "reading": "トゥヴァレット ネレデ？", "audio": "" }
+            ]
+          },
+          {
+            "label": "🔢 数字",
+            "items": [
+              { "jp": "0〜5", "foreign": "Sıfır・Bir・İki・Üç・Dört・Beş", "reading": "スフル・ビル・イキ・ウチュ・ドルト・ベシュ", "audio": "" },
+              { "jp": "6〜10", "foreign": "Altı・Yedi・Sekiz・Dokuz・On", "reading": "アルトゥ・イェディ・セキズ・ドクズ・オン", "audio": "" }
+            ]
+          },
+          {
+            "label": "🆘 観光・トラブル",
+            "items": [
+              { "jp": "写真を撮ってもいいですか？", "foreign": "Fotoğraf çekebilir miyim?", "reading": "フォトオラフ チェケビリル ミイム？", "audio": "" },
+              { "jp": "安全ですか？", "foreign": "Güvenli mi?", "reading": "ギュヴェンリ ミ？", "audio": "" },
+              { "jp": "助けてください！", "foreign": "İmdat!", "reading": "イムダット！", "audio": "" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "food_section_title": "トルコグルメ",
+  "food_filter_types": [
+    { "id": "all", "label": "すべて", "active": true },
+    { "id": "main", "label": "メイン料理", "active": false },
+    { "id": "snack", "label": "軽食・スナック", "active": false },
+    { "id": "dessert", "label": "スイーツ", "active": false },
+    { "id": "drink", "label": "ドリンク", "active": false }
+  ],
+  "food_filter_cities": [
+    { "id": "istanbul", "label": "イスタンブール" },
+    { "id": "national", "label": "全国共通" }
+  ],
+  "food_modal_phrase_main": "Bunu istiyorum, teşekkürler.（ブヌ イスティヨルム、テシェッキュルレル）",
+  "food_modal_phrase_sub": "Burada（ブラダ／店内で）・Paket（パケット／持ち帰り）",
+  "food_items": [
+    {
+      "num": "No.1",
+      "name": "ケバブ（ドネルケバブ）",
+      "badge": "トルコの国民食",
+      "type": "main",
+      "city": "national",
+      "desc": "回転する肉の塊を薄く削ぎ切りにした、世界的にも知られるトルコ料理の代表格。パンに挟んだり、皿盛りで野菜と一緒に食べたりと屋台から専門店まで味わい方は幅広い。",
+      "image": "素材/グルメ/ケバブ（ドネルケバブ）.webp",
+      "prompt_en": "Doner kebab rotating on vertical spit, thin slices of grilled meat being carved, street food stall in the evening, food photography",
+      "plate_color": "",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%89%E3%83%8D%E3%83%AB%E3%82%B1%E3%83%90%E3%83%96%20%E3%83%88%E3%83%AB%E3%82%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🥙",
+      "order_name_en": "Doner Kebab",
+      "must": true
+    },
+    {
+      "num": "No.2",
+      "name": "アダナケバブ",
+      "badge": "南部発祥の辛口串",
+      "type": "main",
+      "city": "national",
+      "desc": "ピリ辛の挽き肉を平串に巻いて炭火で焼いた、南部アダナ発祥の名物ケバブ。焼きたてはジューシーで、付け合わせのサラダやピラフと一緒に楽しむのが定番。",
+      "image": "素材/グルメ/アダナケバブ.webp",
+      "prompt_en": "Adana kebab, spicy minced meat grilled on flat skewers over charcoal, served with grilled tomato and flatbread, food photography",
+      "plate_color": "metal plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%83%80%E3%83%8A%E3%82%B1%E3%83%90%E3%83%96%20%E3%83%88%E3%83%AB%E3%82%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🍢",
+      "order_name_en": "Adana Kebab"
+    },
+    {
+      "num": "No.3",
+      "name": "イスケンデルケバブ",
+      "badge": "ブルサ発祥の一皿",
+      "type": "main",
+      "city": "national",
+      "desc": "薄切りのドネル肉をピタパンの上にのせ、トマトソースと溶かしバター、ヨーグルトをかけた贅沢な一皿。19世紀のブルサで生まれたとされる名物料理。",
+      "image": "素材/グルメ/イスケンデルケバブ.webp",
+      "prompt_en": "Iskender kebab, sliced doner meat over cubed pita bread with tomato sauce, melted butter and yogurt, restaurant plating, food photography",
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A4%E3%82%B9%E3%82%B1%E3%83%B3%E3%83%80%E3%82%B1%E3%83%90%E3%83%96%20%E3%83%88%E3%83%AB%E3%82%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🍽️",
+      "order_name_en": "Iskender Kebab"
+    },
+    {
+      "num": "No.4",
+      "name": "バクラヴァ",
+      "badge": "トルコ菓子の王様",
+      "type": "dessert",
+      "city": "national",
+      "desc": "薄いパイ生地を何層にも重ね、刻んだピスタチオを挟んでシロップに漬けたトルコを代表する甘いお菓子。一切れでも十分に甘く、チャイとの相性が抜群。",
+      "image": "素材/グルメ/バクラヴァ.webp",
+      "prompt_en": "Baklava pieces stacked on a tray, golden layered pastry with crushed pistachios and honey syrup glistening, food photography",
+      "plate_color": "copper tray",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%82%AF%E3%83%A9%E3%83%B4%E3%82%A1%20%E3%83%88%E3%83%AB%E3%82%B3%20%E3%81%8A%E8%8F%93%E5%AD%90",
+      "order_ico": "🍰",
+      "order_name_en": "Baklava",
+      "must": true
+    },
+    {
+      "num": "No.5",
+      "name": "トルコ紅茶（チャイ）",
+      "badge": "生活に欠かせない一杯",
+      "type": "drink",
+      "city": "national",
+      "desc": "チューリップ型のグラスで供される真っ赤な紅茶。バザールでも商談の合間でも、どこでも勧められるトルコ人の生活に欠かせない存在で、砂糖を溶かして飲む。",
+      "image": "素材/グルメ/トルコ紅茶（チャイ）.webp",
+      "prompt_en": "Turkish tea in tulip-shaped glass on saucer with two sugar cubes, steam rising, bazaar setting in background, food photography",
+      "plate_color": "tulip glass",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%88%E3%83%AB%E3%82%B3%E7%B4%85%E8%8C%B6%20%E3%83%81%E3%83%A3%E3%82%A4%20%E9%A3%B2%E3%81%BF%E7%89%A9",
+      "order_ico": "🍵",
+      "order_name_en": "Turkish Tea (Çay)",
+      "must": true
+    },
+    {
+      "num": "No.6",
+      "name": "トルココーヒー",
+      "badge": "世界遺産級の飲み方",
+      "type": "drink",
+      "city": "national",
+      "desc": "極細挽きの豆を煮出す独特の淹れ方で作る濃厚なコーヒー。飲み方自体がユネスコ無形文化遺産に登録されており、飲んだ後にカップの底で占いをする文化もある。",
+      "image": "素材/グルメ/トルココーヒー.webp",
+      "prompt_en": "Turkish coffee in small ornate cup on copper tray with Turkish delight, thick dark coffee, traditional serving, food photography",
+      "plate_color": "small ceramic cup",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%88%E3%83%AB%E3%82%B3%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%20%E9%A3%B2%E3%81%BF%E7%89%A9",
+      "order_ico": "☕",
+      "order_name_en": "Turkish Coffee"
+    },
+    {
+      "num": "No.7",
+      "name": "メゼ（前菜盛り合わせ）",
+      "badge": "食事の始まりの主役",
+      "type": "main",
+      "city": "national",
+      "desc": "フムスやナスのペースト、ヨーグルトサラダなど小皿料理を数種類並べた前菜。ラク（アニス酒）と一緒に少しずつつまみながら、ゆっくり食事を始めるのがトルコ流。",
+      "image": "素材/グルメ/メゼ（前菜盛り合わせ）.webp",
+      "prompt_en": "Turkish meze spread, small dishes of hummus, eggplant puree, yogurt salads and olives arranged on table, food photography",
+      "plate_color": "small ceramic dishes",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A1%E3%82%BC%20%E3%83%88%E3%83%AB%E3%82%B3%20%E5%89%8D%E8%8F%9C",
+      "order_ico": "🥗",
+      "order_name_en": "Meze"
+    },
+    {
+      "num": "No.8",
+      "name": "シミット",
+      "badge": "町角のごま輪パン",
+      "type": "snack",
+      "city": "istanbul",
+      "desc": "ごまをまぶした輪っか形のパンで、街角のワゴンで山積みに売られているトルコの朝食・軽食の定番。外はカリッと中はもちっとした食感で、チャイとの相性も良い。",
+      "image": "素材/グルメ/シミット.webp",
+      "prompt_en": "Simit sesame bread rings stacked on street vendor cart, golden crust, Istanbul morning street scene, food photography",
+      "plate_color": "street cart tray",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B7%E3%83%9F%E3%83%83%E3%83%88%20%E3%83%88%E3%83%AB%E3%82%B3%20%E3%83%91%E3%83%B3",
+      "order_ico": "🥯",
+      "order_name_en": "Simit",
+      "must": true
+    },
+    {
+      "num": "No.9",
+      "name": "ピデ（トルコ風ピザ）",
+      "badge": "舟形の焼きたてパン",
+      "type": "main",
+      "city": "national",
+      "desc": "舟のような形に伸ばした生地にチーズやひき肉をのせ、窯で焼き上げるトルコ風ピザ。生地の香ばしさが際立つシンプルな料理で、地方によって具材の傾向が異なる。",
+      "image": "素材/グルメ/ピデ（トルコ風ピザ）.webp",
+      "prompt_en": "Turkish pide, boat-shaped flatbread topped with cheese and minced meat fresh from wood oven, sliced on wooden board, food photography",
+      "plate_color": "wooden board",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%94%E3%83%87%20%E3%83%88%E3%83%AB%E3%82%B3%E9%A2%A8%E3%83%94%E3%82%B6",
+      "order_ico": "🍕",
+      "order_name_en": "Pide"
+    },
+    {
+      "num": "No.10",
+      "name": "ラフマジュン",
+      "badge": "薄焼き肉のせパン",
+      "type": "snack",
+      "city": "national",
+      "desc": "極薄の生地にスパイスの効いたひき肉ソースを塗って焼いた、トルコ風の薄焼きパン。レモンとパセリを添えて巻いて食べ、アイランと合わせるのが定番の軽食。",
+      "image": "素材/グルメ/ラフマジュン.webp",
+      "prompt_en": "Lahmacun thin flatbread topped with spiced minced meat, rolled with lemon and parsley on top, street food, food photography",
+      "plate_color": "paper wrapper",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A9%E3%83%95%E3%83%9E%E3%82%B8%E3%83%A5%E3%83%B3%20%E3%83%88%E3%83%AB%E3%82%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🌯",
+      "order_name_en": "Lahmacun"
+    },
+    {
+      "num": "No.11",
+      "name": "ロクム（ターキッシュ・デライト）",
+      "badge": "お土産の定番菓子",
+      "type": "dessert",
+      "city": "national",
+      "desc": "でんぷんと砂糖を練り上げたもっちり食感の伝統菓子。ローズウォーターやピスタチオなど味の種類が豊富で、粉砂糖をまぶした彩り豊かな見た目もお土産に人気。",
+      "image": "素材/グルメ/ロクム（トルコ求肥）.webp",
+      "prompt_en": "Turkish delight lokum cubes dusted with powdered sugar, colorful varieties with pistachio pieces, gift box display, food photography",
+      "plate_color": "wooden tray",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%AD%E3%82%AF%E3%83%A0%20%E3%83%88%E3%83%AB%E3%82%B3%E3%81%AE%E3%81%8A%E8%8F%93%E5%AD%90",
+      "order_ico": "🍬",
+      "order_name_en": "Turkish Delight (Lokum)",
+      "must": true
+    },
+    {
+      "num": "No.12",
+      "name": "マントゥ（トルコ風水餃子）",
+      "badge": "小さな水餃子",
+      "type": "main",
+      "city": "national",
+      "desc": "指先ほどの小さな餃子を茹で、ニンニクヨーグルトソースと唐辛子バターをかけて食べるトルコ風水餃子。見た目以上に手間がかかる家庭料理として親しまれている。",
+      "image": "素材/グルメ/マントゥ（トルコ風水餃子）.webp",
+      "prompt_en": "Turkish manti, tiny boiled dumplings topped with garlic yogurt sauce and red chili butter, close-up plate, food photography",
+      "plate_color": "white ceramic bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9E%E3%83%B3%E3%83%88%E3%82%A5%20%E3%83%88%E3%83%AB%E3%82%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🥟",
+      "order_name_en": "Manti"
+    },
+    {
+      "num": "No.13",
+      "name": "キョフテ（肉団子）",
+      "badge": "トルコ式ミートボール",
+      "type": "main",
+      "city": "national",
+      "desc": "スパイスと玉ねぎを混ぜ込んだ挽き肉を焼き上げたトルコ風ミートボール。地域ごとに形や味付けが少しずつ異なり、専門店では焼き加減や配合を競う名店が多い。",
+      "image": "素材/グルメ/キョフテ（肉団子）.webp",
+      "prompt_en": "Turkish kofte grilled meatballs on plate with grilled peppers and rice pilaf, char marks visible, food photography",
+      "plate_color": "metal plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AD%E3%83%A7%E3%83%95%E3%83%86%20%E3%83%88%E3%83%AB%E3%82%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🍖",
+      "order_name_en": "Kofte"
+    },
+    {
+      "num": "No.14",
+      "name": "バルック・エキメッキ（鯖サンド）",
+      "badge": "港町の立ち食い名物",
+      "type": "snack",
+      "city": "istanbul",
+      "desc": "ガラタ橋のたもとで揺れる船上で焼いた鯖を、玉ねぎとレタスと一緒にパンに挟んだイスタンブール名物。潮風を感じながら立ち食いするのが正しい楽しみ方。",
+      "image": "素材/グルメ/バルック・エキメッキ（鯖サンド）.webp",
+      "prompt_en": "Balik ekmek grilled mackerel sandwich, fish tucked in bread with onions and lettuce, Galata Bridge and boats in background, food photography",
+      "plate_color": "paper wrapper",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%90%E3%83%AB%E3%83%83%E3%82%AF%E3%83%BB%E3%82%A8%E3%82%AD%E3%83%A1%E3%83%83%E3%82%AD%20%E3%83%88%E3%83%AB%E3%82%B3%20%E9%AF%96%E3%82%B5%E3%83%B3%E3%83%89",
+      "order_ico": "🐟",
+      "order_name_en": "Balik Ekmek (Fish Sandwich)"
+    },
+    {
+      "num": "No.15",
+      "name": "ギョズレメ",
+      "badge": "屋台の手作りクレープ",
+      "type": "snack",
+      "city": "national",
+      "desc": "薄く伸ばした生地にチーズやほうれん草、じゃがいもを包んで鉄板で焼くトルコ風クレープ。バザールや観光地の屋台でおばあちゃんが実演販売していることも多い。",
+      "image": "素材/グルメ/ギョズレメ.webp",
+      "prompt_en": "Gozleme Turkish flatbread being cooked on round griddle, filled with cheese and spinach, elderly woman's hands rolling dough in background, food photography",
+      "plate_color": "wooden board",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AE%E3%83%A7%E3%82%BA%E3%83%AC%E3%83%A1%20%E3%83%88%E3%83%AB%E3%82%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🫓",
+      "order_name_en": "Gozleme"
+    },
+    {
+      "num": "No.16",
+      "name": "キュネフェ",
+      "badge": "とろけるチーズスイーツ",
+      "type": "dessert",
+      "city": "national",
+      "desc": "カダイフという極細麺状の生地でチーズを挟み、シロップをかけて焼き上げた温かいデザート。切った瞬間にチーズが糸を引く見た目のインパクトも人気の理由。",
+      "image": "素材/グルメ/キュネフェ.webp",
+      "prompt_en": "Kunefe Turkish dessert, shredded pastry pie with melted cheese stretching as it is cut, syrup glaze, pistachio topping, food photography",
+      "plate_color": "copper pan",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AD%E3%83%A5%E3%83%8D%E3%83%95%E3%82%A7%20%E3%83%88%E3%83%AB%E3%82%B3%20%E3%81%8A%E8%8F%93%E5%AD%90",
+      "order_ico": "🧀",
+      "order_name_en": "Kunefe"
+    },
+    {
+      "num": "No.17",
+      "name": "アイラン",
+      "badge": "食事のお供の塩味ヨーグルト飲料",
+      "type": "drink",
+      "city": "national",
+      "desc": "ヨーグルトを水と塩で割った、さっぱりとした飲むヨーグルト。ケバブやピデなど脂の多い料理と一緒に頼むと口の中がリセットされ、食事がより進む名脇役。",
+      "image": "素材/グルメ/アイラン.webp",
+      "prompt_en": "Ayran Turkish salted yogurt drink in tall glass, white creamy beverage with light foam, kebab restaurant table setting, food photography",
+      "plate_color": "tall glass",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%20%E3%83%88%E3%83%AB%E3%82%B3%20%E9%A3%B2%E3%81%BF%E7%89%A9",
+      "order_ico": "🥛",
+      "order_name_en": "Ayran"
+    },
+    {
+      "num": "No.18",
+      "name": "トルコ式朝食（カフバルトゥ）",
+      "badge": "テーブルを埋め尽くす朝食",
+      "type": "main",
+      "city": "national",
+      "desc": "チーズ・オリーブ・トマト・ジャム・卵料理などが所狭しと並ぶボリューム満点の朝食。ホテルの朝食からカフェの専門店まで、トルコ旅行で必ず出会う食文化。",
+      "image": "素材/グルメ/トルコ式朝食（カフバルトゥ）.webp",
+      "prompt_en": "Turkish breakfast spread kahvalti, small plates of cheese, olives, tomatoes, jam and eggs covering table, tea glasses, morning light, food photography",
+      "plate_color": "assorted small dishes",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%95%E3%83%90%E3%83%AB%E3%83%88%E3%82%A5%20%E3%83%88%E3%83%AB%E3%82%B3%E5%BC%8F%E6%9C%9D%E9%A3%9F",
+      "order_ico": "🍳",
+      "order_name_en": "Turkish Breakfast (Kahvalti)"
+    },
+    {
+      "num": "No.19",
+      "name": "レンズ豆のスープ（メルジメッキ・チョルバス）",
+      "badge": "国民的スープ",
+      "type": "main",
+      "city": "national",
+      "desc": "レンズ豆を煮込んでなめらかに仕上げた、日本の味噌汁に匹敵する存在の定番スープ。レモンを絞り、パンを浸して食べるのが定番で、食堂では朝から晩まで頼まれている。",
+      "image": "素材/グルメ/レンズ豆のスープ（メルジメッキ・チョルバス）.webp",
+      "prompt_en": "Turkish red lentil soup mercimek corbasi in bowl, smooth golden-orange soup with lemon wedge and chili flakes on the side, food photography",
+      "plate_color": "white ceramic bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A1%E3%83%AB%E3%82%B8%E3%83%A1%E3%83%83%E3%82%AD%E3%83%BB%E3%83%81%E3%83%A7%E3%83%AB%E3%83%90%E3%82%B9%20%E3%83%88%E3%83%AB%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🥣",
+      "order_name_en": "Lentil Soup (Mercimek Çorbası)",
+      "must": true
+    },
+    {
+      "num": "No.20",
+      "name": "ドンドゥルマ（トルコ風アイス）",
+      "badge": "パフォーマンスが名物",
+      "type": "dessert",
+      "city": "national",
+      "desc": "サーレップと乳香で伸びる粘り気が特徴のねっとりアイス。屋台の売り子がコーンをじらして渡す寸劇のようなパフォーマンスも名物で、観光客に人気が高い。",
+      "image": "素材/グルメ/ドンドゥルマ（トルコ風アイス）.webp",
+      "prompt_en": "Turkish ice cream dondurma being stretched on a long metal paddle by a street vendor, thick stretchy texture, colorful cart, daytime street food photography",
+      "plate_color": "metal cone holder",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%89%E3%83%B3%E3%83%89%E3%82%A5%E3%83%AB%E3%83%9E%20%E3%83%88%E3%83%AB%E3%82%B3%E9%A2%A8%E3%82%A2%E3%82%A4%E3%82%B9",
+      "order_ico": "🍦",
+      "order_name_en": "Turkish Ice Cream (Dondurma)"
+    },
+    {
+      "num": "No.21",
+      "name": "フレッシュジュース（ザクロ・オレンジ）",
+      "badge": "街角の定番ドリンク",
+      "type": "drink",
+      "city": "istanbul",
+      "desc": "手動搾り器でその場で搾ってくれる、酸味と甘みが濃いフレッシュジュース。イスタンブールの街角の至るところに屋台があり、食べ歩きの合間の水分補給に重宝する。",
+      "image": "素材/グルメ/フレッシュジュース（ザクロ・オレンジ）.webp",
+      "prompt_en": "Fresh pomegranate and orange juice stall in Istanbul street, colorful fruit displayed on cart, glasses of vivid red and orange juice, daytime street photography",
+      "plate_color": "clear glass",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%88%E3%83%AB%E3%82%B3%20%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9%20%E3%82%B6%E3%82%AF%E3%83%AD",
+      "order_ico": "🍊",
+      "order_name_en": "Fresh Juice (Pomegranate / Orange)"
+    }
+  ],
+  "spots_section_title": "トルコ 観光スポット",
+  "spots_filter_types": [
+    { "id": "heritage", "label": "世界遺産・史跡" },
+    { "id": "religious", "label": "宗教施設" },
+    { "id": "nature", "label": "自然" },
+    { "id": "market", "label": "ショッピング" },
+    { "id": "museum", "label": "博物館・美術館" },
+    { "id": "townscape", "label": "街並み・建築" },
+    { "id": "activity", "label": "アクティビティ" }
+  ],
+  "spots_filter_cities": [
+    { "id": "istanbul", "label": "イスタンブール", "active": false },
+    { "id": "cappadocia", "label": "カッパドキア", "active": false },
+    { "id": "pamukkale", "label": "パムッカレ", "active": false },
+    { "id": "antalya", "label": "アンタルヤ", "active": false },
+    { "id": "izmir", "label": "イズミル・エフェソス", "active": false }
+  ],
+  "spot_sections": [
+    {
+      "city_id": "istanbul",
+      "city_name": "イスタンブール",
+      "city_image": "",
+      "city_prompt": "Istanbul old city skyline with Hagia Sophia and Blue Mosque domes and minarets at dusk, Bosphorus strait in foreground, travel photography",
+      "city_desc": "ヨーロッパとアジアの境に立つ旧都。ビザンツ・オスマン両帝国の遺産が旧市街に凝縮し、バザールの喧騒とボスポラスの潮風が同居する",
+      "city_info": [
+        { "label": "アクセス", "value": "イスタンブール空港から市内まで空港シャトル・地下鉄で約1時間" },
+        { "label": "おすすめ時期", "value": "4〜6月・9〜10月", "link_section": "season", "link_btn_index": 0 },
+        { "label": "宿泊エリア", "value": "スルタンアフメット / ベイオール / カドキョイ" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🕌",
+          "num": "IST 01",
+          "name": "アヤソフィア",
+          "desc": "6世紀のビザンツ大聖堂からモスクへと姿を変えた世界遺産。巨大なドームとモザイク壁画が織りなす荘厳な空間。",
+          "badge": "世界遺産",
+          "prompt_en": "Hagia Sophia interior, massive dome with golden mosaics and Islamic calligraphy medallions, soft light streaming through windows, travel photography",
+          "image": "素材/観光スポット/アヤソフィア.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Hagia+Sophia"
+        },
+        {
+          "must": true,
+          "icon": "🕌",
+          "num": "IST 02",
+          "name": "ブルーモスク（スルタンアフメト・モスク）",
+          "desc": "内壁を彩る青いイズニックタイルからその名がついた、6本のミナレットを持つ壮麗なモスク。現役の礼拝所でもある。",
+          "badge": "現役の礼拝所",
+          "prompt_en": "Blue Mosque exterior with six minarets against blue sky, cascading domes, tourists as small silhouettes in courtyard, travel photography",
+          "image": "素材/観光スポット/ブルーモスク.webp",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Blue+Mosque+Istanbul"
+        },
+        {
+          "must": true,
+          "icon": "🏰",
+          "num": "IST 03",
+          "name": "トプカプ宮殿",
+          "desc": "オスマン帝国のスルタンが約400年暮らした宮殿。宝物館の巨大ダイヤモンドやハーレムの装飾は必見の見どころ。",
+          "badge": "オスマン帝国の宮殿",
+          "prompt_en": "Topkapi Palace courtyard with Ottoman architecture, ornate gate and gardens, tourists walking in the distance, travel photography",
+          "image": "素材/観光スポット/トプカプ宮殿.webp",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Topkapi+Palace"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "IST 04",
+          "name": "グランドバザール",
+          "desc": "4000店以上がひしめく世界最大級の屋根付き市場。絨毯・貴金属・陶器など見て回るだけでも数時間かかる迷宮。",
+          "badge": "世界最大級の市場",
+          "prompt_en": "Grand Bazaar Istanbul interior, ornate painted arched ceilings, colorful shop displays of lamps and textiles, crowds of shoppers walking, travel photography",
+          "image": "素材/観光スポット/グランドバザール.webp",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Grand+Bazaar+Istanbul"
+        },
+        {
+          "must": false,
+          "icon": "⛴️",
+          "num": "IST 05",
+          "name": "ボスポラス海峡クルーズ",
+          "desc": "ヨーロッパとアジアを分かつ海峡を船で行き来するクルーズ。海上から眺めるオスマン建築の宮殿群は格別の景色。",
+          "badge": "海峡クルーズ",
+          "prompt_en": "Bosphorus strait cruise ferry with Istanbul waterfront palaces in background, seagulls flying alongside boat, golden hour light, travel photography",
+          "image": "素材/観光スポット/ボスポラス海峡クルーズ.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Bosphorus+Cruise+Istanbul"
+        },
+        {
+          "must": false,
+          "icon": "🗼",
+          "num": "IST 06",
+          "name": "ガラタ塔",
+          "desc": "新市街にそびえる中世の石造りの塔。展望フロアからは旧市街とボスポラス海峡を一望できる、夕景の名スポット。",
+          "badge": "夕景の名スポット",
+          "prompt_en": "Galata Tower medieval stone tower at sunset, Istanbul cityscape and Bosphorus in background, silhouettes of visitors below, travel photography",
+          "image": "素材/観光スポット/ガラタ塔.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Galata+Tower"
+        },
+        {
+          "must": false,
+          "icon": "🕯️",
+          "num": "IST 07",
+          "name": "バシリカ・シスタン（地下宮殿）",
+          "desc": "ビザンツ帝国時代の巨大な地下貯水槽。336本の円柱が薄暗い水面に映り込む幻想的な空間で、メデューサの顔の柱台も見どころ。",
+          "badge": "幻想的な地下貯水槽",
+          "prompt_en": "Basilica Cistern Istanbul, rows of ancient columns reflected in shallow water under dim atmospheric lighting, a few small silhouettes of visitors, travel photography",
+          "image": "素材/観光スポット/バシリカ・シスタン.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Basilica+Cistern+Istanbul"
+        },
+        {
+          "must": false,
+          "icon": "🌶️",
+          "num": "IST 08",
+          "name": "エジプシャンバザール（スパイスバザール）",
+          "desc": "17世紀創建のL字型市場。色とりどりのスパイスやトルコ菓子、ドライフルーツが山積みにされ、香りに包まれながら歩くだけでも楽しい。",
+          "badge": "香り立つ香辛料市場",
+          "prompt_en": "Egyptian Spice Bazaar Istanbul, colorful pyramids of spices and dried fruits in market stalls, crowds of people walking through the arched corridor, warm interior light, travel photography",
+          "image": "素材/観光スポット/エジプシャンバザール.webp",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Egyptian+Spice+Bazaar+Istanbul"
+        }
+      ]
+    },
+    {
+      "city_id": "cappadocia",
+      "city_name": "カッパドキア",
+      "city_image": "",
+      "city_prompt": "Cappadocia fairy chimney rock formations at sunrise with dozens of colorful hot air balloons floating above, travel photography",
+      "city_desc": "奇岩「妖精の煙突」が連なる大地に、早朝の熱気球が数十機も浮かぶ幻想的な光景が広がる。洞窟をくり抜いたホテルも名物",
+      "city_info": [
+        { "label": "アクセス", "value": "イスタンブールから国内線でカイセリ／ネヴシェヒル空港まで約1.5時間" },
+        { "label": "おすすめ時期", "value": "4〜6月・9〜10月", "link_section": "season", "link_btn_index": 1 },
+        { "label": "宿泊エリア", "value": "ギョレメ（洞窟ホテルが集まる中心地）" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🎈",
+          "num": "CAP 01",
+          "name": "カッパドキア熱気球ツアー",
+          "desc": "日の出とともに数十機の熱気球が奇岩地帯を埋め尽くす、カッパドキア観光の象徴的な体験。天候により欠航もある。",
+          "badge": "早朝のハイライト",
+          "prompt_en": "Dozens of colorful hot air balloons floating over Cappadocia fairy chimney valley at sunrise, warm golden light, small silhouettes of balloon baskets, travel photography",
+          "image": "素材/観光スポット/カッパドキア熱気球ツアー.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Cappadocia+Hot+Air+Balloon"
+        },
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "CAP 02",
+          "name": "ギョレメ野外博物館",
+          "desc": "岩をくり抜いた教会群が点在する世界遺産。ビザンツ時代のフレスコ画が今も鮮やかに残る、修道院跡の集合体。",
+          "badge": "世界遺産",
+          "prompt_en": "Goreme Open Air Museum, rock-cut cave churches carved into fairy chimney formations, hiking trail with a few small figures for scale, travel photography",
+          "image": "素材/観光スポット/ギョレメ野外博物館.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Goreme+Open+Air+Museum"
+        },
+        {
+          "must": false,
+          "icon": "🕳️",
+          "num": "CAP 03",
+          "name": "カイマクル地下都市",
+          "desc": "迫害から逃れた古代の人々が掘った、地下8層にも及ぶ巨大な地下都市。狭い通路を進む探検気分が味わえる。",
+          "badge": "地下8層の迷宮",
+          "prompt_en": "Kaymakli underground city tunnels, ancient carved stone passageways and chambers, dim lighting, a tiny hiker figure visible in the passage, travel photography",
+          "image": "素材/観光スポット/カイマクル地下都市.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Kaymakli+Underground+City"
+        },
+        {
+          "must": false,
+          "icon": "🥾",
+          "num": "CAP 04",
+          "name": "ウフララ渓谷",
+          "desc": "深く切れ込んだ緑豊かな渓谷をハイキングできる自然スポット。岩壁に刻まれた教会跡も点在し、気球観光とは違う静けさが魅力。",
+          "badge": "渓谷ハイキング",
+          "prompt_en": "Ihlara Valley hiking trail through green canyon with river, rock walls with cave church openings, a few small hikers walking, travel photography",
+          "image": "素材/観光スポット/ウフララ渓谷.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Ihlara+Valley"
+        }
+      ]
+    },
+    {
+      "city_id": "pamukkale",
+      "city_name": "パムッカレ",
+      "city_image": "",
+      "city_prompt": "Pamukkale white travertine terraces with turquoise pools, tourists as small distant figures walking barefoot, golden hour light, travel photography",
+      "city_desc": "石灰岩が幾重にも段を成す真っ白な棚田状の温泉。丘の上には古代都市ヒエラポリスの遺跡が広がる、二重の世界遺産地帯",
+      "city_info": [
+        { "label": "アクセス", "value": "イスタンブールから国内線でデニズリ空港まで約1.5時間、空港から車で約1時間" },
+        { "label": "おすすめ時期", "value": "4〜6月・9〜10月", "link_section": "season", "link_btn_index": 2 },
+        { "label": "宿泊エリア", "value": "パムッカレ村（丘のふもとが便利）" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "💠",
+          "num": "PAM 01",
+          "name": "パムッカレ石灰棚",
+          "desc": "「綿の城」を意味する名の通り、石灰華が段々畑状に広がる真っ白な絶景。温泉水を湛えた棚田を素足で歩いて楽しむ。",
+          "badge": "世界遺産",
+          "prompt_en": "Pamukkale white travertine terraces with turquoise mineral pools cascading down hillside, silhouettes of visitors walking barefoot at golden hour, travel photography",
+          "image": "素材/観光スポット/パムッカレ石灰棚.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Pamukkale"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "PAM 02",
+          "name": "ヒエラポリス古代都市",
+          "desc": "丘の上に広がる古代ローマの温泉保養都市跡。大劇場や墓地遺跡、コロナード通りが残り、往時の繁栄を今に伝えている。",
+          "badge": "世界遺産",
+          "prompt_en": "Hierapolis ancient ruins on hilltop above Pamukkale travertines, Roman theater and columns, a few small tourists for scale, travel photography",
+          "image": "素材/観光スポット/ヒエラポリス古代都市.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Hierapolis+Ancient+City"
+        },
+        {
+          "must": false,
+          "icon": "♨️",
+          "num": "PAM 03",
+          "name": "クレオパトラ・プール",
+          "desc": "古代の柱が沈む温泉プールで泳げる珍しいスポット。伝説ではクレオパトラも入浴したとされ、有料だが人気が高い。",
+          "badge": "古代遺構の温泉プール",
+          "prompt_en": "Cleopatra Pool Pamukkale, ancient marble columns submerged in warm turquoise thermal pool, swimmers as small distant figures, travel photography",
+          "image": "素材/観光スポット/クレオパトラ・プール.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Cleopatra+Pool+Pamukkale"
+        }
+      ]
+    },
+    {
+      "city_id": "antalya",
+      "city_name": "アンタルヤ",
+      "city_image": "",
+      "city_prompt": "Antalya Kaleici old town harbor with Ottoman houses and yachts, Mediterranean sea in background, warm afternoon light, travel photography",
+      "city_desc": "地中海に面したトルコ屈指のリゾート都市。旧市街カレイチの石畳と、透明度の高いビーチが徒歩圏に共存する",
+      "city_info": [
+        { "label": "アクセス", "value": "イスタンブールから国内線でアンタルヤ空港まで約1.5時間" },
+        { "label": "おすすめ時期", "value": "4〜6月・9〜10月", "link_section": "season", "link_btn_index": 2 },
+        { "label": "宿泊エリア", "value": "カレイチ旧市街 / コンヤアルトゥ" }
+      ],
+      "spots": [
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "ANT 01",
+          "name": "カレイチ旧市街",
+          "desc": "オスマン様式の木造家屋が並ぶ石畳の旧市街。小さな港にヨットが並ぶ光景は地中海リゾートらしい雰囲気にあふれる。",
+          "badge": "旧市街散策",
+          "prompt_en": "Kaleici old town Antalya, narrow cobblestone streets with Ottoman wooden houses, small harbor with yachts visible in distance, travel photography",
+          "image": "素材/観光スポット/カレイチ旧市街.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Kaleici+Antalya"
+        },
+        {
+          "must": false,
+          "icon": "💦",
+          "num": "ANT 02",
+          "name": "デュデン滝",
+          "desc": "地中海へ直接流れ落ちる珍しい海岸の滝。崖の裏側から滝を眺められる洞窟があり、涼しく爽快な体験ができる。",
+          "badge": "海に落ちる滝",
+          "prompt_en": "Duden Waterfalls Antalya, water cascading directly into the Mediterranean Sea from cliff, spray mist, travel photography",
+          "image": "素材/観光スポット/デュデン滝.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Duden+Waterfalls+Antalya"
+        },
+        {
+          "must": false,
+          "icon": "🏖️",
+          "num": "ANT 03",
+          "name": "コンヤアルトゥ・ビーチ",
+          "desc": "市街地から徒歩圏の砂利ビーチ。背後にタウルス山脈がそびえる眺めが特徴的で、地中海リゾート気分を手軽に味わえる。",
+          "badge": "市街地から徒歩圏",
+          "prompt_en": "Konyaalti Beach Antalya, pebble beach with turquoise Mediterranean water and Taurus mountains in background, beachgoers as small distant figures, travel photography",
+          "image": "素材/観光スポット/コンヤアルトゥ・ビーチ.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Konyaalti+Beach"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "ANT 04",
+          "name": "アスペンドス古代劇場",
+          "desc": "現存する古代ローマ劇場の中でも保存状態が随一とされる遺跡。今も夏には音楽祭やオペラの舞台として使われている。",
+          "badge": "保存状態随一の古代劇場",
+          "prompt_en": "Aspendos ancient Roman theater, massive well-preserved stone amphitheater structure, a few small tourists on the steps for scale, travel photography",
+          "image": "素材/観光スポット/アスペンドス古代劇場.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Aspendos+Theatre"
+        }
+      ]
+    },
+    {
+      "city_id": "izmir",
+      "city_name": "イズミル・エフェソス",
+      "city_image": "",
+      "city_prompt": "Ephesus ancient ruins with Library of Celsus facade, marble columns and paved street, tourists as small distant figures, golden afternoon light, travel photography",
+      "city_desc": "エーゲ海に面した港町イズミルを拠点に、古代都市エフェソスの遺跡群や陶器の村シリンジェへ足を延ばせるエリア",
+      "city_info": [
+        { "label": "アクセス", "value": "イスタンブールから国内線でイズミル空港まで約1時間" },
+        { "label": "おすすめ時期", "value": "4〜6月・9〜10月", "link_section": "season", "link_btn_index": 2 },
+        { "label": "宿泊エリア", "value": "セルチュク（エフェソス観光の拠点） / イズミル市街" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "IZM 01",
+          "name": "エフェソス古代遺跡（ケルスス図書館）",
+          "desc": "古代地中海世界屈指の規模を誇る都市遺跡。2階建てのケルスス図書館のファサードは、トルコ観光を象徴する光景のひとつ。",
+          "badge": "世界遺産級の古代都市",
+          "prompt_en": "Library of Celsus facade at Ephesus ancient ruins, ornate two-story marble columns and statues, paved ancient street, tourists as small distant figures, golden afternoon light, travel photography",
+          "image": "素材/観光スポット/エフェソス古代遺跡.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Ephesus+Ancient+City"
+        },
+        {
+          "must": false,
+          "icon": "🏠",
+          "num": "IZM 02",
+          "name": "聖母マリアの家",
+          "desc": "聖母マリアが晩年を過ごしたと伝わる小さな石造りの家。宗教を問わず巡礼者が訪れる、山中の静かな祈りの場。",
+          "badge": "巡礼地",
+          "prompt_en": "House of the Virgin Mary, small stone chapel building surrounded by trees on hillside, pilgrims as small distant figures, soft light, travel photography",
+          "image": "素材/観光スポット/聖母マリアの家.webp",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=House+of+Virgin+Mary+Ephesus"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "IZM 03",
+          "name": "シリンジェ村",
+          "desc": "ワイン造りと陶器で知られる、丘の斜面に石造りの家々が連なる小さな村。エフェソス観光の合間に立ち寄りやすい。",
+          "badge": "ワインと陶器の村",
+          "prompt_en": "Sirince village hillside with white stone houses and terracotta roofs, wine shop displays, narrow lane, travel photography",
+          "image": "素材/観光スポット/シリンジェ村.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Sirince+Village"
+        },
+        {
+          "must": false,
+          "icon": "🕌",
+          "num": "IZM 04",
+          "name": "コナック広場・時計塔",
+          "desc": "イズミルの街のシンボルである時計塔が立つ広場。海沿いの遊歩道が続き、地元の人々の憩いの場としても親しまれている。",
+          "badge": "イズミルのシンボル",
+          "prompt_en": "Konak Square clock tower Izmir, Ottoman-era ornate clock tower, waterfront promenade with people walking, evening light, travel photography",
+          "image": "素材/観光スポット/コナック広場・時計塔.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Konak+Square+Izmir"
+        }
+      ]
+    }
+  ],
+  "transport_items": [
+    {
+      "icon": "✈️",
+      "name": "国際線（直行便）",
+      "desc": "成田からトルコ航空の直行便が毎日運航し所要約13時間。カタール航空等の経由便も選択肢として豊富にある。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🛫",
+      "name": "国内線（格安航空）",
+      "desc": "国土が広いため都市間移動の主役。THY・ペガサス航空等が就航し、早期予約で片道3,000円台からと格安。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚌",
+      "name": "長距離バス（オトビュス）",
+      "desc": "全国を網羅する充実のバス網。座席は広く軽食サービス付きも多く、夜行移動でホテル代を浮かせる旅人にも人気。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚋",
+      "name": "イスタンブール市内交通",
+      "desc": "トラム・地下鉄・フェリーが充実し、イスタンブールカード1枚で乗り放題感覚に。渋滞を避けたい時はフェリーが快適。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚗",
+      "name": "レンタカー",
+      "desc": "カッパドキアやパムッカレなど郊外を自由に回るなら便利。市街地は交通量が多いので、地方エリアでの利用がおすすめ。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚕",
+      "name": "タクシー・配車アプリ",
+      "desc": "メーター制だが遠回りされることもあるため、配車アプリBiTaksiを使うと料金も経路も明確で安心して利用できる。",
+      "affiliate": "",
+      "is_last": true
+    }
+  ],
+  "courses": {
+    "intro": "直行便約13時間・時差6時間のトルコは「ヨーロッパとアジアを一度に旅できる」のが最大の強み。初めてならイスタンブールに絞った<strong>市内滞在プラン</strong>、2回目以降や連休が取れるなら熱気球のカッパドキアと石灰棚のパムッカレを巡る<strong>三都市周遊プラン</strong>がおすすめ。バスを乗り継いでエーゲ海・地中海沿岸を巡る、少し難易度の高いルートも紹介しています。",
+    "stable_title": "イスタンブールに絞るか、飛行機で三都市を巡るか選べるプラン",
+    "stable_intro": "トルコは国土が広く、都市間の移動には国内線が現実的な選択肢になります。市内滞在プランはイスタンブール連泊で身軽に、三都市周遊プランは飛行機でカッパドキア・パムッカレへ足を延ばします。",
+    "stable_plans": [
+      {
+        "label": "プランA",
+        "title": "イスタンブール＋プリンセス諸島　3泊4日",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "green",
+            "content_html": "<strong>イスタンブール到着 → スルタンアフメット散策</strong><br>午後着なら夕方までにホテルへ荷物を預け、<a onclick=\"showSpot('IST 01')\" class=\"spot-link\">アヤソフィア</a>と<a onclick=\"showSpot('IST 02')\" class=\"spot-link\">ブルーモスク</a>周辺を軽く散策。夜はトルコ式朝食ならぬケバブとチャイで旅の始まりを味わう。"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "green",
+            "content_html": "<strong>トプカプ宮殿 → グランドバザール → ボスポラスクルーズ</strong><br>午前は<a onclick=\"showSpot('IST 03')\" class=\"spot-link\">トプカプ宮殿</a>、午後は<a onclick=\"showSpot('IST 04')\" class=\"spot-link\">グランドバザール</a>でお土産探し。夕方は<a onclick=\"showSpot('IST 05')\" class=\"spot-link\">ボスポラス海峡クルーズ</a>で海から夕景を眺める。"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "red",
+            "content_html": "<strong>プリンセス諸島で島時間</strong><br>フェリーで日帰りできる<a onclick=\"showFood('No.14')\" class=\"spot-link\">プリンセス諸島</a>へ。車の乗り入れが制限された島は自転車や馬車で移動し、都会の喧騒から離れた静かな午後を過ごせる。夕方はイスタンブールに戻り<a onclick=\"showSpot('IST 06')\" class=\"spot-link\">ガラタ塔</a>周辺で夜景を楽しむ。",
+            "transport_note": {
+              "duration": "イスタンブール→プリンセス諸島→イスタンブール（フェリー 往復約2時間）",
+              "ferry": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 4",
+            "badge_class": "",
+            "content_html": "<strong>スパイスバザールでお土産 → 帰国</strong><br>最終日はスパイスバザールでチャイやロクムを調達し、空港へ。直行便なら翌日には日本着。"
+          }
+        ],
+        "tip": "スルタンアフメット周辺は歩いて回れる範囲に主要スポットが集中しているので、タクシー代をかけずに旧市街だけで密度の濃い観光が完結する。"
+      },
+      {
+        "label": "プランB",
+        "title": "イスタンブール＋カッパドキア＋パムッカレ　5泊6日",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "green",
+            "content_html": "<strong>イスタンブール到着 → 旧市街散策</strong><br><a onclick=\"showSpot('IST 01')\" class=\"spot-link\">アヤソフィア</a>・<a onclick=\"showSpot('IST 02')\" class=\"spot-link\">ブルーモスク</a>を巡り、旅の雰囲気に慣れる初日。"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "green",
+            "content_html": "<strong>トプカプ宮殿 → グランドバザール</strong><br><a onclick=\"showSpot('IST 03')\" class=\"spot-link\">トプカプ宮殿</a>と<a onclick=\"showSpot('IST 04')\" class=\"spot-link\">グランドバザール</a>でイスタンブールの歴史と活気を満喫する。"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "red",
+            "content_html": "<strong>カッパドキア到着 → 奇岩地帯を散策</strong><br><a onclick=\"showSpot('CAP 02')\" class=\"spot-link\">ギョレメ野外博物館</a>を訪ね、洞窟ホテルにチェックイン。早朝の気球フライトに備えて早めに就寝を。",
+            "pre_transit": {
+              "duration": "イスタンブール→カッパドキア（国内線 約1.5時間）",
+              "plane": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 4",
+            "badge_class": "red",
+            "content_html": "<strong>熱気球フライト → カイマクル地下都市</strong><br>日の出とともに<a onclick=\"showSpot('CAP 01')\" class=\"spot-link\">熱気球ツアー</a>へ。午後は<a onclick=\"showSpot('CAP 03')\" class=\"spot-link\">カイマクル地下都市</a>を探検し、カッパドキアの二つの顔を体験する。"
+          },
+          {
+            "transit": false,
+            "label": "Day 5",
+            "badge_class": "red",
+            "content_html": "<strong>パムッカレの石灰棚と古代都市</strong><br>真っ白な<a onclick=\"showSpot('PAM 01')\" class=\"spot-link\">石灰棚</a>を素足で歩き、<a onclick=\"showSpot('PAM 02')\" class=\"spot-link\">ヒエラポリス古代都市</a>の遺跡を散策する。",
+            "pre_transit": {
+              "duration": "カッパドキア→パムッカレ（国内線・車 約2.5〜3時間）",
+              "plane": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 6",
+            "badge_class": "",
+            "content_html": "<strong>帰国</strong><br>デニズリ空港またはイスタンブール経由で帰国便へ。三都市を巡った濃密な旅の締めくくり。",
+            "pre_transit": {
+              "duration": "パムッカレ→イスタンブール空港（国内線 約1.5時間）",
+              "plane": true
+            }
+          }
+        ],
+        "tip": "国内線はTHYやペガサス航空が頻発しており、早期予約で片道3,000円台から狙える。カッパドキアの気球は強風で欠航することもあるので、滞在を2泊確保しておくと安心。"
+      }
+    ],
+    "adventure_title": "バスで巡る「エーゲ海・地中海沿岸縦断」",
+    "adventure_note_html": "トルコの長距離バス網を使いこなせば、エーゲ海と地中海の沿岸都市を陸路でつなぐ旅ができる。飛行機任せの周遊とは違う、車窓の移り変わりを味わう上級者向けルートを紹介します。",
+    "adventure_plan": {
+      "title": "エーゲ海・地中海沿岸バス縦断　6泊7日",
+      "days": [
+        {
+          "transit": false,
+          "label": "Day 1",
+          "badge_class": "green",
+          "content_html": "<strong>イスタンブール到着</strong><br>旧市街を散策し、この日はイスタンブールで1泊。夜は長距離バスターミナルの場所を確認しておくとスムーズ。"
+        },
+        {
+          "transit": false,
+          "label": "Day 2",
+          "badge_class": "red",
+          "content_html": "<strong>イズミルへ移動 → シリンジェ村</strong><br>到着後は<a onclick=\"showSpot('IZM 03')\" class=\"spot-link\">シリンジェ村</a>へ足を延ばし、ワインと陶器の小さな村を散策する。",
+          "pre_transit": {
+            "duration": "イスタンブール→イズミル（長距離バス 夜行約8時間）",
+            "bus": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 3",
+          "badge_class": "red",
+          "content_html": "<strong>エフェソス古代遺跡</strong><br><a onclick=\"showSpot('IZM 01')\" class=\"spot-link\">ケルスス図書館</a>をはじめとする古代都市の遺跡群をたっぷり半日かけて巡る。"
+        },
+        {
+          "transit": false,
+          "label": "Day 4",
+          "badge_class": "red",
+          "content_html": "<strong>パムッカレの石灰棚</strong><br>真っ白な<a onclick=\"showSpot('PAM 01')\" class=\"spot-link\">石灰棚</a>を歩き、丘の上の<a onclick=\"showSpot('PAM 02')\" class=\"spot-link\">ヒエラポリス</a>で古代ローマの繁栄をたどる。",
+          "pre_transit": {
+            "duration": "イズミル→パムッカレ（長距離バス 約3.5時間）",
+            "bus": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 5",
+          "badge_class": "green",
+          "content_html": "<strong>アンタルヤ：カレイチ旧市街</strong><br>石畳の<a onclick=\"showSpot('ANT 01')\" class=\"spot-link\">カレイチ旧市街</a>を歩き、地中海のビーチで一息つく南部の拠点都市。",
+          "pre_transit": {
+            "duration": "パムッカレ→アンタルヤ（長距離バス 約4時間）",
+            "bus": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 6",
+          "badge_class": "green",
+          "content_html": "<strong>デュデン滝 → アスペンドス古代劇場</strong><br>海に落ちる<a onclick=\"showSpot('ANT 02')\" class=\"spot-link\">デュデン滝</a>と、保存状態随一の<a onclick=\"showSpot('ANT 04')\" class=\"spot-link\">アスペンドス古代劇場</a>を巡り、沿岸縦断の締めくくりとする。"
+        },
+        {
+          "transit": false,
+          "label": "Day 7",
+          "badge_class": "",
+          "content_html": "<strong>帰国</strong><br>アンタルヤ空港からイスタンブール経由、または直行便で帰国。陸路で辿った沿岸の記憶とともに旅を終える。",
+          "pre_transit": {
+            "duration": "アンタルヤ→イスタンブール空港（国内線 約1.5時間）",
+            "plane": true
+          }
+        }
+      ],
+      "tip": "長距離バスは座席指定制で車内サービスも充実しているが、夜行移動は体力を消耗する。バスターミナル（オトガル）は市街地からやや離れることが多いので、乗り継ぎの送迎手段を事前に確認しておこう。"
+    },
+    "cta_title": "ベストシーズンもチェックしよう！🌤️",
+    "cta_desc": "イスタンブールと内陸・沿岸では気候が大きく異なります。旅の目的地に合わせてシーズンを選びましょう。"
+  },
+  "spot_points": [
+    {
+      "title": "アヤソフィアは「二つの宗教の重なり」と服装ルールに注意",
+      "body": "<a onclick=\"showSpot('IST 01')\" class=\"keyword-link\">アヤソフィア</a>最大の見どころは、ビザンツ時代のモザイク画とオスマン時代のイスラム装飾が同じドームの下に共存している点。2020年にモスクへ再改修されたため礼拝時間は観光が制限される。女性は髪を覆うスカーフと肩・膝を隠す服装が必須で、入口では無料の貸し出しスカーフも用意されている。同じ現役モスクの<a onclick=\"showSpot('IST 02')\" class=\"keyword-link\">ブルーモスク</a>でも同様のルールが適用されるので覚えておきたい。",
+      "image": "素材/観光スポット/アヤソフィア.webp",
+      "spot_ref": "IST 01"
+    },
+    {
+      "title": "熱気球は「前日夜の天候確認」が肝心",
+      "body": "<a onclick=\"showSpot('CAP 01')\" class=\"keyword-link\">カッパドキアの熱気球</a>は強風だと当日早朝に欠航が決まる。連泊すれば翌朝に再チャレンジできるので、日程には必ず予備日を1日組み込んでおきたい。フライトは日の出前のホテル送迎から始まり、着陸後のスパークリングワインで乾杯するのが定番の締めくくりになっている。",
+      "image": "素材/観光スポット/カッパドキア熱気球ツアー.webp",
+      "spot_ref": "CAP 01"
+    },
+    {
+      "title": "パムッカレは「素足で歩く」のがルール",
+      "body": "<a onclick=\"showSpot('PAM 01')\" class=\"keyword-link\">石灰棚</a>を保護するため、靴を履いたままの立ち入りは禁止されている。水は思ったより冷たいことも多いので、タオルを1枚持っておくと快適。丘の上の<a onclick=\"showSpot('PAM 02')\" class=\"keyword-link\">ヒエラポリス</a>まで足を延ばせば、古代都市と絶景を一度に楽しめる。",
+      "image": "素材/観光スポット/パムッカレ石灰棚.webp",
+      "spot_ref": "PAM 01"
+    },
+    {
+      "title": "バザールは「グランド」と「エジプシャン」を使い分ける",
+      "body": "<a onclick=\"showSpot('IST 04')\" class=\"keyword-link\">グランドバザール</a>は絨毯やジュエリー、雑貨などお土産探しの本命。値札は交渉前提の高め設定なので、笑顔でhalf（半額）から交渉を始めるのが定番の流儀だ。一方<a onclick=\"showSpot('IST 08')\" class=\"keyword-link\">エジプシャンバザール</a>はスパイスやドライフルーツ、お菓子など日常使いの品が中心で、値段も比較的良心的。目的に応じて2つのバザールを使い分けたい。",
+      "image": "素材/観光スポット/グランドバザール.webp",
+      "spot_ref": "IST 04"
+    }
+  ],
+  "index_card": {
+    "flag": "🇹🇷",
+    "catch": "アヤソフィアの尖塔が夕焼けに染まる中、香辛料バザールの灯りとチャイの湯気が石畳にゆらりと揺らめく",
+    "region": "中東・ヨーロッパ",
+    "best_label": "4〜6月・9〜10月",
+    "gradient": "linear-gradient(135deg,#E30A17 0%,#cc0000 100%)",
+    "budget": ["budget2", "budget3"],
+    "best_months": [4, 5, 6, 9, 10],
+    "tags": ["世界遺産", "グルメ", "歴史", "気球"]
+  }
+}

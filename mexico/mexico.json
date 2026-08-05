@@ -1,0 +1,1495 @@
+{
+  "multipage": true,
+  "id": "mexico",
+  "name": "メキシコ",
+  "name_en": "Mexico",
+  "page_title": "メキシコ旅行ガイド",
+  "hero_image": "素材/ヒーロー.webp",
+  "hero_alt": "夕焼けに染まるチチェン・イッツァのピラミッド、エル・カスティージョ",
+  "hero_prompt": "Chichen Itza El Castillo pyramid at golden sunset, Maya step pyramid silhouette against orange sky, a few small tourists in the distance for scale, travel illustration style",
+  "overview": {
+    "country_question": "メキシコってどんなところ？",
+    "description_html": "直行便で約13時間、時差15時間のメキシコは、古代マヤ・アステカ文明の遺跡とスペイン統治時代のカラフルな街並みが同居する広大な国。<strong>ピラミッドが並ぶ<a onclick=\"showSpot('YUC 01')\" class=\"keyword-link\">チチェン・イッツァ</a>や極彩色の旧市街、屋台の<a onclick=\"showFood('No.1')\" class=\"keyword-link\">タコス</a>やメスカル、テキーラ</strong>まで、陽気な国民性と鮮やかな色彩がどこまでも旅人を温かく迎えてくれる。",
+    "flag_html": "<div style=\"display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden\"><img src=\"素材/国旗.svg\" width=\"175\" height=\"100\" alt=\"メキシコ国旗\"></div>",
+    "flag_caption": "緑・白・赤の三色旗。中央の国章にはサボテンに止まりヘビをくわえるワシが描かれ、アステカ建国神話に由来する。",
+    "top_spot_name": "チチェン・イッツァ",
+    "top_spot_desc": "マヤ文明が築いた新・世界七不思議のひとつに数えられる巨大なピラミッド遺跡。",
+    "top_spot_image": "",
+    "top_food_name": "タコス",
+    "top_food_desc": "コーントルティーヤに焼いた肉や香草を挟んだメキシコの国民食。屋台から高級店まで、味わい方は幅広く楽しめる。",
+    "top_food_image": "",
+    "difficulty_label": "ふつう",
+    "difficulty_label_bg": "#e8f5ee",
+    "difficulty_label_color": "var(--green)",
+    "difficulty_pct": "55",
+    "difficulty_bar": "linear-gradient(90deg,#006847,#66cc99)",
+    "japan_popularity_html": "極彩色の街並みや死者の日、ルチャリブレなど独特な文化がSNSで人気上昇中。<strong>マヤ文明の遺跡やフリーダ・カーロゆかりの美術館、本場のタコス</strong>を目当てに訪れる旅行者が増えている。",
+    "flight_hours": "直行便で約13〜14時間",
+    "iata_code": "mex",
+    "timezone": "日本 −15時間。カンクン・リビエラマヤ地区は−14時間",
+    "visa": "不要（180日）",
+    "budget_range": "25〜45万円",
+    "language": "スペイン語（英語は観光地で通じるが限定的）",
+    "currency_name": "メキシコペソ(MXN)",
+    "currency_rate": "1MXN ≈ 9.3円",
+    "danger_level": 1,
+    "danger_label": "レベル1：十分注意",
+    "danger_color": "#f2b90c",
+    "danger_note": "ゲレロ州チルパンシンゴ市周辺はレベル3、タマウリパス州やハリスコ州トマトラン市・チャパラ湖等南部地域はレベル2、メキシコシティ中心部やカンクン等の主要観光地はレベル1",
+    "danger_url": "https://www.anzen.mofa.go.jp/riskmap/"
+  },
+  "map": {
+    "element_id": "mexico-map",
+    "center_lat": "23.6",
+    "center_lng": "-102.5",
+    "zoom": "5",
+    "map_id": "ebb608e55ed157f8630c407e",
+    "country_label": "メキシコ"
+  },
+  "cities": [
+    {
+      "id": "mexico_city",
+      "name": "メキシコシティ",
+      "lat": "19.4326",
+      "lng": "-99.1332",
+      "zoom": "12",
+      "color": "#006847",
+      "marker_size": "14",
+      "marker_label": "★",
+      "badge": "首都",
+      "badge_class": "",
+      "description": "標高2,240mの高原に広がる巨大首都。ソカロ周辺の歴史地区とテオティワカン遺跡への玄関口"
+    },
+    {
+      "id": "cancun",
+      "name": "カンクン・リビエラマヤ",
+      "lat": "21.1619",
+      "lng": "-86.8515",
+      "zoom": "11",
+      "color": "#0099cc",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "カリブ海リゾート",
+      "badge_class": "green",
+      "description": "真っ白なビーチが続くカリブ海リゾート地帯。トゥルム遺跡やセノーテも点在する"
+    },
+    {
+      "id": "yucatan",
+      "name": "メリダ・チチェン・イッツァ",
+      "lat": "20.6843",
+      "lng": "-88.5678",
+      "zoom": "10",
+      "color": "#cc5500",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "マヤ遺跡",
+      "badge_class": "green",
+      "description": "新・世界七不思議のピラミッドが立つユカタン半島内陸部。古都メリダが観光拠点"
+    },
+    {
+      "id": "oaxaca",
+      "name": "オアハカ",
+      "lat": "17.0732",
+      "lng": "-96.7266",
+      "zoom": "12",
+      "color": "#b09000",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "美食の古都",
+      "badge_class": "green",
+      "description": "モーレ料理とメスカルで知られる美食の街。郊外にはモンテ・アルバン遺跡が広がる"
+    },
+    {
+      "id": "guanajuato",
+      "name": "グアナファト",
+      "lat": "21.0190",
+      "lng": "-101.2574",
+      "zoom": "13",
+      "color": "#cc0001",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "世界遺産の街並み",
+      "badge_class": "green",
+      "description": "パステルカラーの家並みが丘の斜面を埋める旧鉱山都市。サンミゲル・デ・アジェンデも近い"
+    }
+  ],
+  "season_mini": {
+    "description": "高原の首都と、常夏のカリブ海リゾートが同居する国。地域によって気候がまったく異なる。",
+    "city_name": "メキシコシティ",
+    "months": [
+      { "icon": "⛅", "temp": "17°", "type": "t-mild" },
+      { "icon": "☀️", "temp": "19°", "type": "t-mild" },
+      { "icon": "☀️", "temp": "21°", "type": "t-warm" },
+      { "icon": "☀️", "temp": "22°", "type": "t-warm" },
+      { "icon": "🌧️", "temp": "22°", "type": "t-warm" },
+      { "icon": "🌧️", "temp": "21°", "type": "t-warm" },
+      { "icon": "🌧️", "temp": "20°", "type": "t-mild" },
+      { "icon": "🌧️", "temp": "20°", "type": "t-mild" },
+      { "icon": "🌧️", "temp": "20°", "type": "t-mild" },
+      { "icon": "⛅", "temp": "19°", "type": "t-mild" },
+      { "icon": "⛅", "temp": "18°", "type": "t-mild" },
+      { "icon": "⛅", "temp": "17°", "type": "t-mild" }
+    ]
+  },
+  "basic_data": [
+    { "label": "首都", "value": "メキシコシティ", "note": "標高2,240mの高原都市。世界有数の巨大都市圏を形成する", "compare_html": "" },
+    { "label": "独立年", "value": "1810年（1821年に独立達成）", "note": "1810年の「ドロレスの叫び」で独立戦争が始まり、11年後にスペインから独立", "compare_html": "" },
+    { "label": "人口", "value": "約1億3,000万人", "note": "日本とほぼ同規模", "compare_html": "" },
+    { "label": "面積", "value": "約196万 km²", "note": "日本の約5倍。北米大陸南部を占める広大な国土", "compare_html": "" },
+    { "label": "宗教", "value": "カトリックが約8割", "note": "死者の日やグアダルーペの聖母信仰など、先住民文化と混ざった独自の信仰形態が根付く", "compare_html": "" },
+    { "label": "民族", "value": "メスティーソ（混血）が約6割", "note": "マヤ・ナワ等の先住民系住民も多く、地域ごとに異なる先住民文化が色濃く残る", "compare_html": "" },
+    { "label": "言語", "value": "", "note": "68の先住民言語が公認されており、ユカタン半島ではマヤ語も日常的に話される", "compare_html": "" },
+    { "label": "通貨", "value": "", "note": "", "compare_html": "" }
+  ],
+  "season": {
+    "description_html": "メキシコは国土が広く、地域によって気候がまったく異なります。高原の首都メキシコシティ・オアハカ・グアナファトは年中温暖でベストは<strong>乾季の11〜4月</strong>、カリブ海沿岸のカンクン・リビエラマヤは高温多湿で6〜11月はハリケーン季、内陸のユカタン半島は雨季前の4〜5月が特に高温になります。<br><span style=\"font-weight:700;color:#555\">色が濃いオレンジほど気温が高い</span>ことを示しています。",
+    "tip_title": "航空券が安い時期",
+    "tip_body": "夏休み（7〜8月）と年末年始、死者の日（10月末〜11月頭）は高騰しやすい。狙い目は乾季にあたる1〜3月・11月で、気候も安定していて航空券も比較的落ち着く。",
+    "cities": [
+      {
+        "name": "メキシコシティ（オアハカ・グアナファト等の内陸高原都市）",
+        "city_id": "mexico_city",
+        "best_note": "ベスト：11〜4月の乾季（爽やかで観光しやすい）／ 5〜10月は雨季で午後にスコールが多く、朝晩は年中肌寒い。",
+        "note": "標高2,000m超の高原気候で、日中は20°C前後と過ごしやすいが朝晩は10°C近くまで冷え込む。5〜10月の雨季は毎日午後にスコールが降るが数十分でやむことが多く、乾季は乾燥して紫外線が強い。",
+        "months": [
+          { "icon": "⛅", "temp": "17°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "19°C", "type": "t-mild" },
+          { "icon": "☀️", "temp": "21°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "22°C", "type": "t-warm" },
+          { "icon": "🌧️", "temp": "22°C", "type": "t-warm" },
+          { "icon": "🌧️", "temp": "21°C", "type": "t-warm" },
+          { "icon": "🌧️", "temp": "20°C", "type": "t-mild" },
+          { "icon": "🌧️", "temp": "20°C", "type": "t-mild" },
+          { "icon": "🌧️", "temp": "20°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "19°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "18°C", "type": "t-mild" },
+          { "icon": "⛅", "temp": "17°C", "type": "t-mild" }
+        ]
+      },
+      {
+        "name": "カンクン・リビエラマヤ（トゥルム・プラヤ・デル・カルメン）",
+        "city_id": "cancun",
+        "best_note": "ベスト：11〜4月（湿度が下がりビーチ日和）／ 6〜11月はハリケーン季で特に8〜10月は暴風雨の危険、5〜9月は蒸し暑い。",
+        "note": "年中高温多湿のカリブ海性気候で、日中は30°C前後まで上がる。6〜11月はハリケーン季にあたり、直撃すれば運休や施設閉鎖も起こりうるため天気予報の確認が欠かせない。乾季でも湿度は高めで、海風がないと蒸し暑さを感じやすい。",
+        "months": [
+          { "icon": "☀️", "temp": "26°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "29°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "30°C", "type": "t-hot2" },
+          { "icon": "🌧️", "temp": "30°C", "type": "t-hot2" },
+          { "icon": "🌧️", "temp": "29°C", "type": "t-hot1" },
+          { "icon": "🌧️", "temp": "29°C", "type": "t-hot1" },
+          { "icon": "🌧️", "temp": "29°C", "type": "t-hot1" },
+          { "icon": "🌧️", "temp": "28°C", "type": "t-hot1" },
+          { "icon": "⛅", "temp": "27°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "26°C", "type": "t-warm" }
+        ]
+      },
+      {
+        "name": "メリダ・チチェン・イッツァ（ユカタン半島内陸）",
+        "city_id": "yucatan",
+        "best_note": "ベスト：11〜3月（比較的過ごしやすい）／ 4〜5月は雨季前の猛暑で40°C近くまで上がる日も、6〜10月はハリケーン季で蒸し暑い。",
+        "note": "沿岸部より内陸で海風が届かない分、体感的にはより蒸し暑い。特に雨季直前の4〜5月は「乾季の暑さのピーク」と呼ばれ40°C近くまで気温が上がるため、遺跡観光は早朝の涼しい時間帯を狙いたい。",
+        "months": [
+          { "icon": "☀️", "temp": "24°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "26°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-hot1" },
+          { "icon": "☀️", "temp": "31°C", "type": "t-hot2" },
+          { "icon": "☀️", "temp": "32°C", "type": "t-hot2" },
+          { "icon": "🌧️", "temp": "30°C", "type": "t-hot2" },
+          { "icon": "🌧️", "temp": "29°C", "type": "t-hot1" },
+          { "icon": "🌧️", "temp": "29°C", "type": "t-hot1" },
+          { "icon": "🌧️", "temp": "28°C", "type": "t-hot1" },
+          { "icon": "🌧️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "25°C", "type": "t-warm" },
+          { "icon": "⛅", "temp": "24°C", "type": "t-warm" }
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "intro": "メキシコは直行便が長距離な分、旅行費用は東南アジアより高め。ただしペソ建ての現地物価は日本人にはお得感が強く、屋台タコスやローカル食堂は驚くほど安い。都市間移動は国内線が基本になるため、その分の予算も見込んでおきたい。",
+    "plan_rows": [
+      { "label": "航空券（往復）", "eco": "15〜20万円", "std": "22〜30万円", "lux": "40万円〜" },
+      { "label": "ホテル（1泊）", "eco": "3,000〜6,000円", "std": "9,000〜18,000円", "lux": "30,000円〜" },
+      { "label": "食費（1日）", "eco": "1,500〜3,000円", "std": "3,000〜6,000円", "lux": "10,000円〜" },
+      { "label": "交通（1日）", "eco": "300〜700円", "std": "700〜2,000円", "lux": "4,000円〜" }
+    ],
+    "total_eco": "10〜15万円",
+    "total_std": "18〜28万円",
+    "total_lux": "35万円〜",
+    "items": [
+      {
+        "icon": "plane-paper",
+        "name": "航空券（往復）",
+        "detail_html": "ANAが成田-メキシコシティ直行便を毎日運航<br>アメリカ経由便なら費用を抑えられることも",
+        "price": "15〜40万円",
+        "affiliate": ""
+      },
+      {
+        "icon": "bed",
+        "name": "ホテル（1泊）",
+        "detail_html": "ゲストハウス3,000〜6,000円・中級9,000〜18,000円<br>カンクンのリゾートホテルは割高傾向",
+        "price": "〜3万円/泊",
+        "affiliate": ""
+      },
+      {
+        "icon": "ramen",
+        "name": "食費（1日）",
+        "detail_html": "屋台タコスなら1食200〜500円<br>レストランでも1食1,000〜2,500円と物価は控えめ",
+        "price": "1,500〜6,000円/日",
+        "affiliate": "wise"
+      },
+      {
+        "icon": "🚕",
+        "name": "交通費（1日）",
+        "detail_html": "メトロ・バスは1回50〜150円と格安<br>都市間移動は国内線が基本（航空券とは別枠）",
+        "price": "300〜2,000円/日",
+        "affiliate": "grab"
+      },
+      {
+        "icon": "📍",
+        "name": "観光・アクティビティ",
+        "detail_html": "チチェン・イッツァ入場は約3,000円<br>セノーテツアーや遺跡ガイドは1万円前後が目安",
+        "price": "3,000〜15,000円",
+        "affiliate": "klook"
+      },
+      {
+        "icon": "🌐",
+        "name": "SIM・Wi-Fi",
+        "detail_html": "空港でTelcel等のSIMが購入可能<br>eSIMなら出発前にアプリで設定完了",
+        "price": "1,000〜3,000円",
+        "affiliate": ""
+      }
+    ],
+    "savings_tips_html": "・市場（メルカド）の食堂は安くて美味しい穴場が多い<br>・チップは会計の10〜15%を目安に現金で用意しておく"
+  },
+  "practical": {
+    "prac_cards": [
+      { "icon": "visa", "title": "ビザ", "value": "不要（180日）" },
+      { "icon": "💱", "title": "通貨", "value": "メキシコペソ（MXN/$）　1MXN ≈ 9.3円" },
+      { "icon": "🔌", "title": "コンセント", "value": "Aタイプ（日本と同じ）。127V/60Hz（変換注意）" },
+      { "icon": "wifi", "title": "Wi-Fi", "value": "都市部は快適。地方や遺跡周辺は圏外エリアも" },
+      { "icon": "clock", "title": "時差", "value": "日本 −15時間" },
+      { "icon": "🌡️", "title": "気温", "value": "高原20°C・沿岸30°C前後。高原は乾燥し朝晩涼しいが、カリブ海沿岸は高温多湿でハリケーン季（6〜11月）は雨が多い" },
+      { "icon": "🙏", "title": "チップ", "value": "10〜15%が目安。観光地やホテルのレストランでは15%以上を求められることも" },
+      { "icon": "💧", "title": "水道水", "value": "飲用不可。ペットボトルの水が基本" },
+      { "icon": "🔒", "title": "治安", "value": "十分注意。麻薬組織関連の事件が起きる地域があるため訪問前に地域別の最新情報を確認したい" },
+      { "icon": "💳", "title": "カード払い", "value": "都市部は普及。屋台や市場、地方の小店は現金が中心" }
+    ],
+    "prep_steps": [
+      {
+        "title": "パスポート取得・更新",
+        "timing": "1〜2ヶ月前",
+        "timing_color": "#006847",
+        "border_color": "#006847",
+        "bar_color": "linear-gradient(to bottom,#006847,#1a8a5a)",
+        "desc_html": "メキシコ入国には<strong>パスポートの残存有効期間が滞在日数以上</strong>あればよいが、余裕を持って半年以上残しておくと安心。"
+      },
+      {
+        "title": "海外対応クレジットカードの申込",
+        "timing": "1ヶ月前",
+        "timing_color": "#1a8a5a",
+        "border_color": "#1a8a5a",
+        "bar_color": "linear-gradient(to bottom,#1a8a5a,#b09000)",
+        "desc_html": "審査・発行に2〜3週間かかることがある。両替レートが良くATM引き出しにも対応している<a href=\"#\" data-affiliate=\"wise\" data-affiliate-label=\"Wiseカード\" data-affiliate-class=\"inline-affiliate-link\"></a>があるとペソの現金調達もスムーズ。"
+      },
+      {
+        "title": "航空券・ホテルの予約",
+        "timing": "2〜3ヶ月前",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "#b09000",
+        "desc_html": "長距離路線で直行便は1社のみのため早期予約が価格差に直結する。死者の日（10月末〜11月頭）は世界中から観光客が集中するため特に早めの確保がおすすめ。"
+      },
+      {
+        "title": "海外旅行保険の加入",
+        "timing": "出発前日まで",
+        "timing_color": "#b09000",
+        "border_color": "#b09000",
+        "bar_color": "linear-gradient(to bottom,#b09000,#cc5500)",
+        "desc_html": "クレカ付帯保険で代用できる場合も多いが、補償範囲と利用条件（利用付帯か自動付帯か）は事前に確認しておこう。"
+      },
+      {
+        "title": "SIM・eSIMの準備",
+        "timing": "1〜2週間前",
+        "timing_color": "#cc5500",
+        "border_color": "#cc5500",
+        "bar_color": "",
+        "desc_html": "eSIMなら出発前に購入・設定まで完了できて到着後すぐ使える。物理SIM派は空港のTelcel等のカウンターで購入可能。"
+      }
+    ],
+    "tour_intro": "",
+    "special_note_title": "",
+    "special_note_html": "",
+    "special_note_url": "",
+    "special_note_url_label": "",
+    "flight_lead": "成田からANAの直行便が毎日運航しており所要約13時間。アメリカン航空・ユナイテッド航空等のアメリカ経由便は選択肢が豊富で、価格を抑えやすいこともあります。",
+    "flight_intro": "成田からANAの直行便が毎日運航。所要約13時間、アメリカ経由便なら選択肢が広がる。",
+    "airlines": [
+      {
+        "logo": "../素材/航空会社/ANA.svg",
+        "name": "ANA（全日空）",
+        "desc": "国際線最長路線のひとつとして成田-メキシコシティを毎日直行便で運航。時差ボケが少ないと評判。",
+        "price": "往復 18〜30万円"
+      },
+      {
+        "logo": "../素材/航空会社/American Airlines.svg",
+        "name": "アメリカン航空",
+        "desc": "ダラス等アメリカ主要都市を経由。乗継便ながら選択肢が多く、価格を抑えやすい代表格。",
+        "price": "往復 15〜25万円"
+      },
+      {
+        "logo": "../素材/航空会社/United Airlines.svg",
+        "name": "ユナイテッド航空",
+        "desc": "ヒューストンやロサンゼルス経由の便が充実。カンクン等リゾート地への乗継も組みやすい。",
+        "price": "往復 15〜26万円"
+      }
+    ],
+    "flight_tip_html": "・夏休み（7〜8月）と死者の日シーズン（10月末〜11月頭）は高騰しやすい<br>・ANA直行便は争奪戦になりやすいので早めの予約が安心<br>・カンクン直行を狙うならアメリカ経由便も比較検討したい",
+    "hotel_map_center": { "lat": 19.4326, "lng": -99.1332, "zoom": 12 },
+    "hotel_areas": [
+      {
+        "id": "roma-condesa",
+        "name": "ローマ・ノルテ／コンデサ",
+        "tag": "おしゃれエリア・カフェ充実",
+        "tag_color": "green",
+        "desc": "おしゃれなカフェやレストラン、ブティックが並ぶトレンド発信地。治安も比較的よく、観光の合間の一休みにも便利。",
+        "price": "格安 4,000〜7,000円　中級 10,000〜18,000円",
+        "maps_url": "https://www.google.com/maps/place/Roma+Norte",
+        "lat": 19.4173,
+        "lng": -99.1624
+      },
+      {
+        "id": "polanco",
+        "name": "ポランコ",
+        "tag": "高級住宅街・治安良好",
+        "tag_color": "green",
+        "desc": "メキシコシティ屈指の高級住宅街で治安も良好。国立人類学博物館やチャプルテペック公園にも近く、落ち着いた滞在に向く。",
+        "price": "中級 12,000〜20,000円　高級 25,000円〜",
+        "maps_url": "https://www.google.com/maps/place/Polanco",
+        "lat": 19.4326,
+        "lng": -99.1932
+      },
+      {
+        "id": "centro-historico",
+        "name": "セントロ・イストリコ（歴史地区）",
+        "tag": "観光の中心・徒歩で回れる",
+        "tag_color": "",
+        "desc": "ソカロや大聖堂、宮殿が徒歩圏に集まる歴史地区。観光には抜群に便利だが、夜間の人通りが少ない路地は避けたい。",
+        "price": "格安 3,500〜6,000円　中級 8,000〜15,000円",
+        "maps_url": "https://www.google.com/maps/place/Centro+Historico+Mexico+City",
+        "lat": 19.4326,
+        "lng": -99.1332
+      }
+    ],
+    "hotel_tip": "メキシコシティは地区によって治安差が大きいため、宿は必ず評判の良いエリアから選びたい。初めてならローマ・ノルテやポランコなど治安の安定したエリアが安心で、夜遅くの帰宅がある日程では大通りやメトロ駅から近い立地を優先しよう。",
+    "sim_intro": "",
+    "apps": [
+      {
+        "icon": "🚕",
+        "name": "Uber",
+        "type_label": "配車アプリ",
+        "desc": "メキシコの都市部で広く普及する配車アプリ。行き先を地図で指定でき、言葉の不安なく安全に移動できる料金も事前確認可能。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "🗺️",
+        "name": "Google マップ",
+        "type_label": "地図・ナビ（オフライン対応）",
+        "desc": "メトロ・バスの乗換案内までカバー。遺跡や郊外の観光地では電波が弱いこともあるのでオフライン地図の事前DLが安心。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "google-translate",
+        "name": "Google 翻訳",
+        "type_label": "翻訳・カメラ翻訳",
+        "desc": "スペイン語はラテン文字なので読み方の見当はつくが、メニューや看板の意味はカメラ翻訳が確実。スペイン語パックを事前にDLしておこう。",
+        "affiliate": "",
+        "is_last": false
+      },
+      {
+        "icon": "viator",
+        "name": "Viator（ビアター）",
+        "type_label": "現地ツアー・チケット事前予約",
+        "desc": "Tripadvisor系列で北米・中南米エリアの品揃えが豊富。チチェン・イッツァ日帰りツアーやセノーテ体験の比較に便利。",
+        "affiliate": "viator",
+        "is_last": true
+      }
+    ],
+    "tour_platforms": ["viator"],
+    "country_items_label": "<span style=\"display:inline-flex;align-items:center;gap:6px;vertical-align:middle\"><span style=\"display:inline-block;line-height:0;border:1px solid #ddd;border-radius:2px;overflow:hidden;flex-shrink:0\"><img src=\"素材/国旗.svg\" width=\"17\" height=\"10\" alt=\"\"></span>メキシコ特有の持ち物</span>",
+    "country_items": [
+      "日焼け止め・帽子・サングラス（高原・沿岸とも紫外線が強い）",
+      "サンダルまたは濡れてもいい靴（セノーテ・ビーチ遊び用）",
+      "羽織れる上着（高原都市は朝晩冷え込みやすい）",
+      "虫よけスプレー（ジャングルの遺跡・セノーテ周辺は虫が多い）",
+      "チップ用の小額ペソ紙幣（レストラン・ポーターで頻繁に使う）",
+      "モバイルバッテリー（遺跡観光は移動と撮影で消耗が早い）"
+    ],
+    "currency_code": "MXN",
+    "exchange_rate": "9.3",
+    "cash_dependency": "中",
+    "cash_dependency_color": "#b09000",
+    "cash_dependency_note": "都市部の店舗・ホテルはカードOK、屋台や市場、チップ、地方の小店は現金が中心",
+    "cash_daily_low": "300",
+    "cash_daily_high": "400",
+    "cash_note": "1 MXN ≈ 9.3円で計算",
+    "money_intro": "メキシコペソは日本の空港ではほぼ両替できないため、現地の空港や街の両替所（Casa de Cambio）で調達します。両替所ごとにレート差があるので、複数箇所を比較するのがコツ。都市部はカード払いも広く普及しています。",
+    "hotel_intro": "宿はまず地区で選ぶのが重要。メキシコシティは地区によって治安差が大きく、ローマ・ノルテやポランコなど評判の良いエリアを選びたい。カンクンは繁華街のダウンタウンより、安全に管理されたゾナ・オテレラ（ホテルゾーン）が旅行者には無難。",
+    "cash_tip_title": "チップ用の小額紙幣を常に持っておこう",
+    "cash_tip_body": "メキシコはレストラン・ポーター・ツアーガイドなどチップの機会が多い国。20〜100ペソ紙幣を多めに崩しておくと、いちいち両替せずスムーズに渡せる。ATMでまとめて引き出した際は両替所で崩してもらうのがおすすめ。"
+  },
+  "phrases": {
+    "multi": false,
+    "decks": [
+      {
+        "id": "es",
+        "active": true,
+        "language_name": "スペイン語",
+        "card_title": "🃏 スペイン語（メキシコ） 旅行フレーズカード",
+        "categories": [
+          {
+            "label": "👋 あいさつ",
+            "items": [
+              { "jp": "こんにちは", "foreign": "Hola", "reading": "オラ", "audio": "" },
+              { "jp": "元気ですか？", "foreign": "¿Cómo estás?", "reading": "コモ エスタス？", "audio": "" },
+              { "jp": "元気です", "foreign": "Estoy bien", "reading": "エストイ ビエン", "audio": "" },
+              { "jp": "さようなら", "foreign": "Adiós", "reading": "アディオス", "audio": "" },
+              { "jp": "はじめまして", "foreign": "Mucho gusto", "reading": "ムーチョ グスト", "audio": "" },
+              { "jp": "（景色や物に）綺麗ですね！", "foreign": "¡Qué bonito!", "reading": "ケ ボニート！", "audio": "" },
+              { "jp": "美人ですね", "foreign": "Eres muy guapa", "reading": "エレス ムイ グアパ", "audio": "" },
+              { "jp": "愛してる", "foreign": "Te amo", "reading": "テ アモ", "audio": "" }
+            ]
+          },
+          {
+            "label": "🙏 基本表現",
+            "items": [
+              { "jp": "ありがとう", "foreign": "Gracias", "reading": "グラシアス", "audio": "" },
+              { "jp": "すみません", "foreign": "Disculpe", "reading": "ディスクルペ", "audio": "" },
+              { "jp": "ごめんなさい", "foreign": "Lo siento", "reading": "ロ シエント", "audio": "" },
+              { "jp": "大丈夫・気にしないで", "foreign": "No hay problema", "reading": "ノ アイ プロブレマ", "audio": "" },
+              { "jp": "はい / いいえ", "foreign": "Sí / No", "reading": "シ／ノ", "audio": "" },
+              { "jp": "わかりません", "foreign": "No entiendo", "reading": "ノ エンティエンド", "audio": "" },
+              { "jp": "もう一度言ってください", "foreign": "¿Puede repetirlo?", "reading": "プエデ レペティルロ？", "audio": "" },
+              { "jp": "名前は〜です", "foreign": "Me llamo ~", "reading": "メ ジャモ 〜", "audio": "" },
+              { "jp": "名前は何ですか？", "foreign": "¿Cómo te llamas?", "reading": "コモ テ ジャマス？", "audio": "" },
+              { "jp": "日本人です", "foreign": "Soy japonés / japonesa", "reading": "ソイ ハポネス／ハポネサ", "audio": "" }
+            ]
+          },
+          {
+            "label": "🍽️ レストラン・ショッピング",
+            "items": [
+              { "jp": "おすすめは何ですか？", "foreign": "¿Qué me recomienda?", "reading": "ケ メ レコミエンダ？", "audio": "" },
+              { "jp": "〜はありますか？", "foreign": "¿Tiene ~?", "reading": "ティエネ 〜？", "audio": "" },
+              { "jp": "これをください", "foreign": "Quiero esto, por favor", "reading": "キエロ エスト、ポル ファボール", "audio": "" },
+              { "jp": "おいしい！", "foreign": "¡Está delicioso!", "reading": "エスタ デリシオソ！", "audio": "" },
+              { "jp": "辛い", "foreign": "Picante", "reading": "ピカンテ", "audio": "" },
+              { "jp": "辛くしないでください", "foreign": "Sin picante, por favor", "reading": "シン ピカンテ、ポル ファボール", "audio": "" },
+              { "jp": "お会計をお願いします", "foreign": "La cuenta, por favor", "reading": "ラ クエンタ、ポル ファボール", "audio": "" },
+              { "jp": "いくらですか？", "foreign": "¿Cuánto cuesta?", "reading": "クアント クエスタ？", "audio": "" },
+              { "jp": "高い、安くしてください", "foreign": "Es caro, ¿me hace un descuento?", "reading": "エス カロ、メ アセ ウン デスクエント？", "audio": "" },
+              { "jp": "トイレはどこですか？", "foreign": "¿Dónde está el baño?", "reading": "ドンデ エスタ エル バニョ？", "audio": "" }
+            ]
+          },
+          {
+            "label": "🔢 数字",
+            "items": [
+              { "jp": "0〜5", "foreign": "Cero・Uno・Dos・Tres・Cuatro・Cinco", "reading": "セロ・ウノ・ドス・トレス・クアトロ・シンコ", "audio": "" },
+              { "jp": "6〜10", "foreign": "Seis・Siete・Ocho・Nueve・Diez", "reading": "セイス・シエテ・オチョ・ヌエベ・ディエス", "audio": "" }
+            ]
+          },
+          {
+            "label": "🆘 観光・トラブル",
+            "items": [
+              { "jp": "写真を撮ってもいいですか？", "foreign": "¿Puedo tomar una foto?", "reading": "プエド トマール ウナ フォト？", "audio": "" },
+              { "jp": "安全ですか？", "foreign": "¿Es seguro?", "reading": "エス セグロ？", "audio": "" },
+              { "jp": "助けてください！", "foreign": "¡Ayuda!", "reading": "アユーダ！", "audio": "" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "food_section_title": "メキシコグルメ",
+  "food_filter_types": [
+    { "id": "all", "label": "すべて", "active": true },
+    { "id": "main", "label": "メイン料理", "active": false },
+    { "id": "snack", "label": "軽食・スナック", "active": false },
+    { "id": "dessert", "label": "スイーツ", "active": false },
+    { "id": "drink", "label": "ドリンク", "active": false }
+  ],
+  "food_filter_cities": [
+    { "id": "national", "label": "全国共通" },
+    { "id": "oaxaca", "label": "オアハカ" },
+    { "id": "yucatan", "label": "ユカタン半島" }
+  ],
+  "food_modal_phrase_main": "Quiero esto, por favor.（キエロ エスト、ポル ファボール）",
+  "food_modal_phrase_sub": "Para aquí（パラ アキ／店内で）・Para llevar（パラ ジェバール／持ち帰り）",
+  "food_items": [
+    {
+      "num": "No.1",
+      "name": "タコス・アル・パストール",
+      "badge": "メキシコの国民食",
+      "type": "main",
+      "city": "national",
+      "desc": "回転する肉の塊を薄く削ぎ切りにし、パイナップルを添えた屋台の定番タコス。パクチーとサルサをかけて食べるのが定番で、苦手なら「Sin cilantro」と伝えよう。",
+      "image": "素材/グルメ/タコス・アル・パストール.webp",
+      "prompt_en": "Tacos al pastor being carved from a vertical spit with pineapple on top, small corn tortillas on a plate, street taco stand in the evening, food photography",
+      "plate_color": "",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%BF%E3%82%B3%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%91%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%20%E6%96%99%E7%90%86",
+      "order_ico": "🌮",
+      "order_name_en": "Tacos al Pastor",
+      "must": true
+    },
+    {
+      "num": "No.2",
+      "name": "ワカモレ",
+      "badge": "アボカドの定番ディップ",
+      "type": "snack",
+      "city": "national",
+      "desc": "熟したアボカドを潰し、ライムやコリアンダー、玉ねぎを混ぜたディップ。トルティーヤチップスと一緒に前菜として食べるのが定番で、家庭ごとに味が異なる。",
+      "image": "素材/グルメ/ワカモレ.webp",
+      "prompt_en": "Guacamole in a stone molcajete bowl with tortilla chips arranged around it, fresh cilantro and lime on top, food photography",
+      "plate_color": "stone molcajete bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%AF%E3%82%AB%E3%83%A2%E3%83%AC%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🥑",
+      "order_name_en": "Guacamole",
+      "must": true
+    },
+    {
+      "num": "No.3",
+      "name": "モーレ・ポブラーノ",
+      "badge": "プエブラ・オアハカ発祥の伝統ソース",
+      "type": "main",
+      "city": "oaxaca",
+      "desc": "唐辛子やチョコレート、スパイスなど20種以上の材料を煮込んだ濃厚な伝統ソース。厳密にはプエブラ州発祥だが、オアハカは「7種のモーレ」で名高い本場でもある。",
+      "image": "素材/グルメ/モーレ・ポブラーノ.webp",
+      "prompt_en": "Mole poblano sauce poured over chicken on a plate, dark brown rich sauce with sesame seed garnish, rice on the side, food photography",
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A2%E3%83%BC%E3%83%AC%E3%83%BB%E3%83%9D%E3%83%96%E3%83%A9%E3%83%BC%E3%83%8E%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🍗",
+      "order_name_en": "Mole Poblano",
+      "must": true
+    },
+    {
+      "num": "No.4",
+      "name": "タマレス",
+      "badge": "トウモロコシの葉包み蒸し料理",
+      "type": "main",
+      "city": "national",
+      "desc": "トウモロコシ生地に肉や野菜を詰め、葉で包んで蒸し上げる伝統料理。朝食の屋台でよく売られており、地域ごとに具材や包む葉（バナナの葉等）が異なる。",
+      "image": "素材/グルメ/タマレス.webp",
+      "prompt_en": "Tamales wrapped in corn husks, some unwrapped showing steamed masa filling, stacked in a steamer basket, morning street stall, food photography",
+      "plate_color": "corn husk wrapper",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%BF%E3%83%9E%E3%83%AC%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🫔",
+      "order_name_en": "Tamales"
+    },
+    {
+      "num": "No.5",
+      "name": "ケサディーヤ",
+      "badge": "とろけるチーズの軽食",
+      "type": "snack",
+      "city": "national",
+      "desc": "トルティーヤにチーズや具材を挟んで焼いた軽食。屋台では花（キノコの一種のワカシュ等）やひき肉を挟むこともあり、日本で知られる形とはやや違う個性がある。",
+      "image": "素材/グルメ/ケサディーヤ.webp",
+      "prompt_en": "Quesadilla folded tortilla with melted cheese stretching as it is cut in half, griddle in background, street food stand, food photography",
+      "plate_color": "griddle",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B1%E3%82%B5%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A4%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🧀",
+      "order_name_en": "Quesadilla"
+    },
+    {
+      "num": "No.6",
+      "name": "チュロス",
+      "badge": "揚げたてシナモンスイーツ",
+      "type": "dessert",
+      "city": "national",
+      "desc": "揚げたての生地にシナモンシュガーをまぶした定番スイーツ。チョコレートソースに浸して食べるのが人気で、市場や屋台で焼きたてを頬張るのが旅の楽しみになる。",
+      "image": "素材/グルメ/チュロス.webp",
+      "prompt_en": "Freshly fried churros dusted with cinnamon sugar, served with a cup of melted chocolate dipping sauce, market stall setting, food photography",
+      "plate_color": "paper cone",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%A5%E3%83%AD%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E3%81%8A%E8%8F%93%E5%AD%90",
+      "order_ico": "🥖",
+      "order_name_en": "Churros"
+    },
+    {
+      "num": "No.7",
+      "name": "テキーラ",
+      "badge": "リュウゼツランの蒸留酒",
+      "type": "drink",
+      "city": "national",
+      "desc": "アガベ（リュウゼツラン）を原料とする世界的に有名な蒸留酒。テキーラ町周辺が原産地として法律で保護されており、塩とライムを添えたショットが定番の飲み方。",
+      "image": "素材/グルメ/テキーラ.webp",
+      "prompt_en": "Tequila shot glass with salt and lime wedge on wooden bar counter, agave plants visible through window, warm evening light, food photography",
+      "plate_color": "shot glass",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%86%E3%82%AD%E3%83%BC%E3%83%A9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9",
+      "order_ico": "🥃",
+      "order_name_en": "Tequila",
+      "must": true
+    },
+    {
+      "num": "No.8",
+      "name": "メスカル",
+      "badge": "オアハカの燻香蒸留酒",
+      "type": "drink",
+      "city": "oaxaca",
+      "desc": "野生のアガベを地中の窯で焼いてから蒸留する、オアハカ発祥のスモーキーな蒸留酒。テキーラより種類が多彩で、専門バー（メスカレリア）で飲み比べる旅行者も多い。",
+      "image": "素材/グルメ/メスカル.webp",
+      "prompt_en": "Mezcal poured into small clay cup with dried orange slices and worm salt on the side, rustic mezcaleria bar counter, food photography",
+      "plate_color": "clay cup",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A1%E3%82%B9%E3%82%AB%E3%83%AB%20%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%E9%A3%B2%E3%81%BF%E7%89%A9",
+      "order_ico": "🍶",
+      "order_name_en": "Mezcal"
+    },
+    {
+      "num": "No.9",
+      "name": "チレス・エン・ノガダ",
+      "badge": "国旗色の祝祭料理",
+      "type": "main",
+      "city": "national",
+      "desc": "ひき肉と果物を詰めたポブラーノ唐辛子に、白いクルミソースとザクロをかけた一皿。緑・白・赤の国旗色になることから独立記念日前後の季節料理として親しまれる。",
+      "image": "素材/グルメ/チレス・エン・ノガダ.webp",
+      "prompt_en": "Chiles en nogada, stuffed poblano pepper covered in creamy white walnut sauce with pomegranate seeds and parsley on top, festive plating, food photography",
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%AC%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%B3%E3%83%BB%E3%83%8E%E3%82%AC%E3%83%80%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🫑",
+      "order_name_en": "Chiles en Nogada"
+    },
+    {
+      "num": "No.10",
+      "name": "ポソレ",
+      "badge": "粒トウモロコシのスープ",
+      "type": "main",
+      "city": "national",
+      "desc": "殻を取り除いた粒トウモロコシ（カカワジントレ）を豚肉や鶏肉と煮込んだ伝統スープ。刻みキャベツやラディッシュ、ライムを好みで加えて味を調えながら食べる。",
+      "image": "素材/グルメ/ポソレ.webp",
+      "prompt_en": "Pozole soup bowl with hominy corn and pork, topped with shredded cabbage, radish slices and lime, side condiments, food photography",
+      "plate_color": "clay bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9D%E3%82%BD%E3%83%AC%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🍲",
+      "order_name_en": "Pozole"
+    },
+    {
+      "num": "No.11",
+      "name": "エロテ・エスキーテス",
+      "badge": "屋台のとうもろこし",
+      "type": "snack",
+      "city": "national",
+      "desc": "茹でたトウモロコシにマヨネーズ、チーズ、チリパウダーをまぶした屋台グルメ。串に刺した「エロテ」と、カップ入りの実だけの「エスキーテス」の2スタイルがある。",
+      "image": "素材/グルメ/エロテ・エスキーテス.webp",
+      "prompt_en": "Elote corn on a stick coated with mayonnaise, cheese and chili powder, street vendor cart in background, food photography",
+      "plate_color": "wooden stick",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A8%E3%83%AD%E3%83%86%20%E3%82%A8%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%86%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🌽",
+      "order_name_en": "Elote / Esquites"
+    },
+    {
+      "num": "No.12",
+      "name": "チャンプラード",
+      "badge": "トウモロコシのホットチョコ",
+      "type": "drink",
+      "city": "national",
+      "desc": "トウモロコシ粉とチョコレートを煮込んだとろみのある温かい飲み物。シナモンの香りが効いており、朝食のタマレスと一緒に飲むのがメキシコの朝の定番。",
+      "image": "素材/グルメ/チャンプラード.webp",
+      "prompt_en": "Champurrado hot chocolate corn drink in a clay mug, thick and frothy, steam rising, traditional Mexican breakfast setting, food photography",
+      "plate_color": "clay mug",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%83%B3%E3%83%97%E3%83%A9%E3%83%BC%E3%83%89%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9",
+      "order_ico": "☕",
+      "order_name_en": "Champurrado"
+    },
+    {
+      "num": "No.13",
+      "name": "セビーチェ",
+      "badge": "海沿いの爽やかな一皿",
+      "type": "main",
+      "city": "national",
+      "desc": "白身魚やエビをライム果汁でマリネし、トマトや玉ねぎと和えた爽やかな料理。カンクンなど沿岸部の名物で、トスターダ（揚げトルティーヤ）にのせて食べるのが定番。",
+      "image": "素材/グルメ/セビーチェ.webp",
+      "prompt_en": "Ceviche with white fish and shrimp marinated in lime juice, tomato and onion, served on crispy tostada, beachside restaurant table, food photography",
+      "plate_color": "glass bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%BB%E3%83%93%E3%83%BC%E3%83%81%E3%82%A7%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🐟",
+      "order_name_en": "Ceviche"
+    },
+    {
+      "num": "No.14",
+      "name": "コチニータ・ピビル",
+      "badge": "ユカタン半島の蒸し豚",
+      "type": "main",
+      "city": "yucatan",
+      "desc": "アチオテペーストに漬け込んだ豚肉をバナナの葉で包み、じっくり蒸し焼きにするユカタン半島の郷土料理。酸味のある紫玉ねぎのピクルスを添えて食べるのが定番。",
+      "image": "素材/グルメ/コチニータ・ピビル.webp",
+      "prompt_en": "Cochinita pibil slow-roasted pork wrapped in banana leaf, shredded orange-red meat served with pickled red onions, Yucatan restaurant plating, food photography",
+      "plate_color": "banana leaf",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B3%E3%83%81%E3%83%8B%E3%83%BC%E3%82%BF%E3%83%BB%E3%83%94%E3%83%93%E3%83%AB%20%E3%83%A6%E3%82%AB%E3%82%BF%E3%83%B3%E6%96%99%E7%90%86",
+      "order_ico": "🍖",
+      "order_name_en": "Cochinita Pibil",
+      "must": true
+    },
+    {
+      "num": "No.15",
+      "name": "チラキーレス",
+      "badge": "定番の朝食プレート",
+      "type": "main",
+      "city": "national",
+      "desc": "揚げたトルティーヤチップスをサルサで煮込み、目玉焼きやチーズ、サワークリームをのせた朝食の定番。二日酔いにも効くと言われる、メキシコの家庭の味。",
+      "image": "素材/グルメ/チラキーレス.webp",
+      "prompt_en": "Chilaquiles breakfast plate, fried tortilla chips simmered in red salsa topped with fried egg, cheese and cream, morning light, food photography",
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%A9%E3%82%AD%E3%83%BC%E3%83%AC%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🍳",
+      "order_name_en": "Chilaquiles"
+    },
+    {
+      "num": "No.16",
+      "name": "オルチャータ",
+      "badge": "米で作る乳白色の甘い飲み物",
+      "type": "drink",
+      "city": "national",
+      "desc": "米を水に浸してすり潰し、シナモンや砂糖で甘く仕上げた冷たい飲み物。辛い料理の合間に飲むと口の中がリセットされる、屋台や食堂の定番ドリンク。",
+      "image": "素材/グルメ/オルチャータ.webp",
+      "prompt_en": "Horchata rice drink in tall glass with ice, milky white beverage with cinnamon dusting on top, market stall background, food photography",
+      "plate_color": "tall glass",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AA%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BF%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9",
+      "order_ico": "🥛",
+      "order_name_en": "Horchata"
+    },
+    {
+      "num": "No.17",
+      "name": "ミチェラーダ",
+      "badge": "ビールベースのカクテル",
+      "type": "drink",
+      "city": "national",
+      "desc": "ビールにライム果汁やホットソース、塩を加えたピリ辛カクテル。グラスの縁に塩とチリパウダーをまぶすのが定番で、暑い日の昼下がりに飲むのが心地よい。",
+      "image": "素材/グルメ/ミチェラーダ.webp",
+      "prompt_en": "Michelada beer cocktail in tall glass with chili-salt rim, lime wedge garnish, condensation on glass, outdoor terrace setting, food photography",
+      "plate_color": "tall glass",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9F%E3%83%81%E3%82%A7%E3%83%A9%E3%83%BC%E3%83%80%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9",
+      "order_ico": "🍺",
+      "order_name_en": "Michelada"
+    },
+    {
+      "num": "No.18",
+      "name": "エンチラーダス",
+      "badge": "サルサに浸したロール料理",
+      "type": "main",
+      "city": "national",
+      "desc": "具材を巻いたトルティーヤをサルサに浸して焼いた家庭料理。緑（サルサベルデ）や赤（サルサロハ）などソースの種類が豊富で、チーズをたっぷりかけて食べる。",
+      "image": "素材/グルメ/エンチラーダス.webp",
+      "prompt_en": "Enchiladas rolled tortillas covered in red salsa and melted cheese, garnished with onion and cream, home-style plating, food photography",
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A9%E3%83%BC%E3%83%80%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🌯",
+      "order_name_en": "Enchiladas"
+    },
+    {
+      "num": "No.19",
+      "name": "トラユーダ",
+      "badge": "オアハカ風ピザ",
+      "type": "main",
+      "city": "oaxaca",
+      "desc": "薄く大きなトウモロコシ生地に豆ペーストと肉、オアハカチーズをのせて焼いた「オアハカ風ピザ」。パリッとした生地とチーズのコクが人気。",
+      "image": "素材/グルメ/トラユーダ.webp",
+      "prompt_en": "Tlayuda Oaxacan dish, large thin crispy corn tortilla topped with bean paste, shredded meat and melted Oaxaca cheese, food photography",
+      "plate_color": "wooden board",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%88%E3%83%A9%E3%83%A6%E3%83%BC%E3%83%80%20%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%E6%96%99%E7%90%86",
+      "order_ico": "🫓",
+      "order_name_en": "Tlayuda"
+    },
+    {
+      "num": "No.20",
+      "name": "ケソ・オアハカ（オアハカチーズ）",
+      "badge": "さけるチーズの元祖",
+      "type": "snack",
+      "city": "oaxaca",
+      "desc": "メキシコ中で愛される「さけるチーズ」の元祖。裂いて焼くととろけて糸を引き、ケサディーヤやトラユーダなど様々な料理に使われる万能チーズ。",
+      "image": "素材/グルメ/ケソ・オアハカ（オアハカチーズ）.webp",
+      "prompt_en": "Queso Oaxaca string cheese, hand-pulled strands of white cheese on a wooden board, some melted and stretchy, food photography",
+      "plate_color": "wooden board",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B1%E3%82%BD%E3%83%BB%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%20%E3%83%81%E3%83%BC%E3%82%BA",
+      "order_ico": "🧀",
+      "order_name_en": "Oaxaca Cheese (Queso Oaxaca)"
+    },
+    {
+      "num": "No.21",
+      "name": "ソパ・デ・リマ",
+      "badge": "ユカタンの定番ライムスープ",
+      "type": "main",
+      "city": "yucatan",
+      "desc": "ライムの酸味が効いたユカタン半島の伝統スープ。鶏肉と揚げトルティーヤが入り、さっぱりした味わいは暑い気候でも食欲をそそる日本人好みの一杯。",
+      "image": "素材/グルメ/ソパ・デ・リマ.webp",
+      "prompt_en": "Sopa de lima Yucatan lime soup, clear broth with shredded chicken, lime slices and crispy fried tortilla strips, food photography",
+      "plate_color": "white ceramic bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%BD%E3%83%91%E3%83%BB%E3%83%87%E3%83%BB%E3%83%AA%E3%83%9E%20%E3%83%A6%E3%82%AB%E3%82%BF%E3%83%B3%E6%96%99%E7%90%86",
+      "order_ico": "🍋",
+      "order_name_en": "Lime Soup (Sopa de Lima)"
+    },
+    {
+      "num": "No.22",
+      "name": "カルニータス",
+      "badge": "タコスの定番具材",
+      "type": "main",
+      "city": "national",
+      "desc": "豚肉をラードでじっくり煮込み、外はカリッと中はホロホロに仕上げた煮込み料理。タコスの具材としても定番で、屋台や食堂で必ず見かける味。",
+      "image": "素材/グルメ/カルニータス.webp",
+      "prompt_en": "Carnitas slow-cooked pork, crispy edges and tender shredded meat piled on a platter, cilantro and lime garnish, food photography",
+      "plate_color": "metal tray",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%8B%E3%83%BC%E3%82%BF%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🐷",
+      "order_name_en": "Carnitas"
+    },
+    {
+      "num": "No.23",
+      "name": "サルサ（赤・緑）",
+      "badge": "辛さの基準",
+      "type": "snack",
+      "city": "national",
+      "desc": "青唐辛子ベースの緑（サルサ・ベルデ）と辛いチリの赤（サルサ・ロハ）は辛さの系統が違う。ハバネロ入りは特に強烈なので少量から試したい。",
+      "image": "素材/グルメ/サルサ（赤・緑）.webp",
+      "prompt_en": "Two small bowls of Mexican salsa, green tomatillo salsa verde and red chili salsa roja side by side, fresh chili peppers as garnish, food photography",
+      "plate_color": "small ceramic bowls",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B5%E3%83%AB%E3%82%B5%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86",
+      "order_ico": "🌶️",
+      "order_name_en": "Salsa (Roja / Verde)"
+    }
+  ],
+  "spots_section_title": "メキシコ 観光スポット",
+  "spots_filter_types": [
+    { "id": "heritage", "label": "世界遺産・史跡" },
+    { "id": "religious", "label": "宗教施設" },
+    { "id": "nature", "label": "自然" },
+    { "id": "market", "label": "ショッピング" },
+    { "id": "museum", "label": "博物館・美術館" },
+    { "id": "townscape", "label": "街並み・建築" },
+    { "id": "activity", "label": "アクティビティ" }
+  ],
+  "spots_filter_cities": [
+    { "id": "mexico_city", "label": "メキシコシティ", "active": false },
+    { "id": "cancun", "label": "カンクン・リビエラマヤ", "active": false },
+    { "id": "yucatan", "label": "メリダ・チチェン・イッツァ", "active": false },
+    { "id": "oaxaca", "label": "オアハカ", "active": false },
+    { "id": "guanajuato", "label": "グアナファト", "active": false }
+  ],
+  "spot_sections": [
+    {
+      "city_id": "mexico_city",
+      "city_name": "メキシコシティ",
+      "city_image": "",
+      "city_prompt": "Mexico City Zocalo square with Metropolitan Cathedral and National Palace, wide plaza with a few small figures for scale, golden afternoon light, travel photography",
+      "city_desc": "標高2,240mの高原に広がる巨大首都。アステカ帝国の遺構の上に築かれたソカロ周辺の歴史地区と、周辺に点在する遺跡・美術館が旅の拠点になる",
+      "city_info": [
+        { "label": "アクセス", "value": "メキシコシティ国際空港から市内まで地下鉄・タクシーで約30分〜1時間" },
+        { "label": "おすすめ時期", "value": "11〜4月の乾季", "link_section": "season", "link_btn_index": 0 },
+        { "label": "宿泊エリア", "value": "ローマ・ノルテ / ポランコ / セントロ・イストリコ" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "CDMX 01",
+          "name": "ソカロ（憲法広場）とメトロポリタン大聖堂",
+          "desc": "アステカ帝国の神殿跡に築かれた世界最大級の広場。隣接する大聖堂と国立宮殿がメキシコの歴史の重層性を物語る。",
+          "badge": "世界遺産",
+          "prompt_en": "Zocalo square Mexico City with Metropolitan Cathedral facade, wide plaza with Mexican flag, a few small figures walking, golden afternoon light, travel photography",
+          "image": "素材/観光スポット/ソカロ.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Zocalo+Mexico+City"
+        },
+        {
+          "must": false,
+          "icon": "🎭",
+          "num": "CDMX 02",
+          "name": "ベジャス・アルテス宮殿",
+          "desc": "大理石造りの白い外観と、ディエゴ・リベラらのフレスコ壁画で知られる文化芸術の殿堂。屋上テラスからの旧市街の眺めも人気。",
+          "badge": "文化芸術の殿堂",
+          "prompt_en": "Palacio de Bellas Artes Mexico City, white marble Art Nouveau building with ornate dome, small figures for scale in plaza, travel photography",
+          "image": "素材/観光スポット/ベジャス・アルテス宮殿.webp",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Palacio+de+Bellas+Artes"
+        },
+        {
+          "must": true,
+          "icon": "🎨",
+          "num": "CDMX 03",
+          "name": "フリーダ・カーロ博物館（青い家）",
+          "desc": "画家フリーダ・カーロが生まれ育った鮮やかな青い家。作品や私物、日用品がそのまま展示され、彼女の人生を身近に感じられる。",
+          "badge": "コヨアカン地区の名所",
+          "prompt_en": "Frida Kahlo Museum Casa Azul exterior, vivid cobalt blue courtyard walls with green trim, potted plants, soft daytime light, travel photography",
+          "image": "素材/観光スポット/フリーダ・カーロ博物館.webp",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Museo+Frida+Kahlo"
+        },
+        {
+          "must": true,
+          "icon": "🔺",
+          "num": "CDMX 04",
+          "name": "テオティワカン遺跡",
+          "desc": "「太陽のピラミッド」がそびえる古代都市国家の遺構。頂上まで登ると、月のピラミッドまで続く「死者の大通り」を一望できる。",
+          "badge": "世界遺産",
+          "prompt_en": "Teotihuacan Pyramid of the Sun with Avenue of the Dead stretching into the distance, a few small hikers climbing the steps, golden hour light, travel photography",
+          "image": "素材/観光スポット/テオティワカン遺跡.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Teotihuacan"
+        },
+        {
+          "must": false,
+          "icon": "🛶",
+          "num": "CDMX 05",
+          "name": "ソチミルコの運河（トラヒネラ）",
+          "desc": "アステカ時代の水上農法が残る運河地帯。極彩色の手漕ぎ舟トラヒネラに乗り、音楽や軽食の売り子が行き交う独特の水上文化を体験できる。",
+          "badge": "世界遺産",
+          "prompt_en": "Xochimilco canal with colorful trajinera boats, mariachi musicians on a passing boat, canal-side trees, festive daytime atmosphere, travel photography",
+          "image": "素材/観光スポット/ソチミルコの運河.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Xochimilco"
+        },
+        {
+          "must": false,
+          "icon": "🏰",
+          "num": "CDMX 06",
+          "name": "チャプルテペック城・公園",
+          "desc": "アメリカ大陸唯一の王宮が建つ広大な森林公園。城内の博物館と丘上からの市街展望に加え、公園自体もCDMX市民憩いの緑地として親しまれている。",
+          "badge": "南北アメリカ唯一の王宮",
+          "prompt_en": "Chapultepec Castle Mexico City, hilltop palace with European architecture surrounded by lush forest park, a few small figures walking the pathway, golden afternoon light, travel photography",
+          "image": "素材/観光スポット/チャプルテペック城.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Chapultepec+Castle+Mexico+City"
+        },
+        {
+          "must": true,
+          "icon": "🗿",
+          "num": "CDMX 07",
+          "name": "国立人類学博物館",
+          "desc": "アステカの太陽の石をはじめ、メキシコ中の古代文明の至宝が集まる中南米最大級の博物館。この博物館目当てにCDMXを訪れる旅行者も多い、メキシコ観光の目玉。",
+          "badge": "中南米最大級の博物館",
+          "prompt_en": "National Museum of Anthropology Mexico City, Aztec Sun Stone displayed under dramatic lighting, grand exhibition hall, a few small figures viewing exhibits, travel photography",
+          "image": "素材/観光スポット/国立人類学博物館.webp",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Museo+Nacional+de+Antropologia+Mexico+City"
+        }
+      ]
+    },
+    {
+      "city_id": "cancun",
+      "city_name": "カンクン・リビエラマヤ",
+      "city_image": "",
+      "city_prompt": "Cancun Zona Hotelera beach with turquoise Caribbean water and white sand, palm trees, a few small figures walking along the shore, travel photography",
+      "city_desc": "真っ白なビーチと透き通るカリブ海が続くリゾート地帯。マヤ遺跡とセノーテ（天然の泉）が点在し、リゾートと古代文明を両方楽しめる",
+      "city_info": [
+        { "label": "アクセス", "value": "カンクン国際空港からホテルゾーンまでバス・タクシーで約30分" },
+        { "label": "おすすめ時期", "value": "11〜4月（ハリケーン季を避ける）", "link_section": "season", "link_btn_index": 1 },
+        { "label": "宿泊エリア", "value": "ゾナ・オテレラ（ホテルゾーン） / プラヤ・デル・カルメン" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏖️",
+          "num": "CAN 01",
+          "name": "ゾナ・オテレラ（カンクンのホテルゾーン）",
+          "desc": "細長い砂州に高級リゾートホテルが並ぶエリア。エメラルドグリーンの海と白砂のビーチが約20kmにわたって続く、カンクン観光の中心地。",
+          "badge": "カリブ海のビーチリゾート",
+          "prompt_en": "Cancun Hotel Zone beach, turquoise Caribbean water with white sand and palm trees, a few beachgoers as small distant figures, bright midday light, travel photography",
+          "image": "素材/観光スポット/ゾナ・オテレラ.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Cancun+Hotel+Zone"
+        },
+        {
+          "must": true,
+          "icon": "🔺",
+          "num": "CAN 02",
+          "name": "トゥルム遺跡",
+          "desc": "断崖の上に建つ、カリブ海を見下ろす唯一のマヤ遺跡。青い海と古代遺跡が同時に楽しめる、リビエラマヤ屈指のフォトジェニックなスポット。",
+          "badge": "海辺のマヤ遺跡",
+          "prompt_en": "Tulum ruins on a clifftop overlooking turquoise Caribbean sea, ancient stone Maya temple structure, a few small tourists for scale, golden afternoon light, travel photography",
+          "image": "素材/観光スポット/トゥルム遺跡.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Tulum+Ruins"
+        },
+        {
+          "must": false,
+          "icon": "💧",
+          "num": "CAN 03",
+          "name": "グラン・セノーテ",
+          "desc": "石灰岩の地下に広がる神秘的な天然プール。ダイバーに人気の高いドス・オホスと並ぶ定番で、透明な水中を鍾乳石が飾る幻想的な光景が広がる。",
+          "badge": "天然の泉",
+          "prompt_en": "Gran Cenote underground natural pool with crystal clear turquoise water, limestone stalactites, sunlight beams through cave opening, a swimmer as small distant figure, travel photography",
+          "image": "素材/観光スポット/グラン・セノーテ.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Gran+Cenote+Tulum"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "CAN 04",
+          "name": "プラヤ・デル・カルメン キンタ・アベニーダ",
+          "desc": "海沿いを南北に貫く歩行者天国の目抜き通り。ショップやレストラン、バーが軒を連ね、カンクンより落ち着いた雰囲気でビーチタウンを楽しめる。",
+          "badge": "ビーチタウンの目抜き通り",
+          "prompt_en": "Quinta Avenida Playa del Carmen pedestrian street, colorful shops and outdoor restaurants, crowds of people walking in the evening, string lights, travel photography",
+          "image": "素材/観光スポット/キンタ・アベニーダ.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Quinta+Avenida+Playa+del+Carmen"
+        }
+      ]
+    },
+    {
+      "city_id": "yucatan",
+      "city_name": "メリダ・チチェン・イッツァ",
+      "city_image": "",
+      "city_prompt": "Chichen Itza El Castillo pyramid on green lawn under blue sky, a few small tourists walking in the distance, midday travel photography",
+      "city_desc": "新・世界七不思議に選ばれたピラミッドが立つユカタン半島の内陸部。古都メリダを拠点に、マヤ文明の遺跡群を巡る旅ができる",
+      "city_info": [
+        { "label": "アクセス", "value": "メリダ空港またはカンクンから車・バスでチチェン・イッツァまで約2〜3時間" },
+        { "label": "おすすめ時期", "value": "11〜3月（雨季・猛暑を避ける）", "link_section": "season", "link_btn_index": 2 },
+        { "label": "宿泊エリア", "value": "メリダ市街（プラサ・グランデ周辺）" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🔺",
+          "num": "YUC 01",
+          "name": "チチェン・イッツァ（エル・カスティージョ）",
+          "desc": "新・世界七不思議のひとつ、マヤ文明最大級のピラミッド遺跡。春分・秋分には階段の影が蛇の姿を描く天文学的な仕掛けが今も残る。",
+          "badge": "新・世界七不思議",
+          "prompt_en": "Chichen Itza El Castillo step pyramid, precise geometric Maya architecture on green lawn, a few small tourists in the distance, bright midday light, travel photography",
+          "image": "素材/観光スポット/チチェン・イッツァ.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Chichen+Itza"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "YUC 02",
+          "name": "メリダ プラサ・グランデ",
+          "desc": "パステルカラーのコロニアル建築に囲まれた古都メリダの中心広場。周辺には大聖堂や州庁舎が並び、夜はライトアップされた散策が心地よい。",
+          "badge": "古都の中心広場",
+          "prompt_en": "Plaza Grande Merida, colonial cathedral and pastel-colored buildings around a central square, people strolling in the evening, warm light, travel photography",
+          "image": "素材/観光スポット/プラサ・グランデ.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Plaza+Grande+Merida"
+        },
+        {
+          "must": false,
+          "icon": "🔺",
+          "num": "YUC 03",
+          "name": "ウシュマル遺跡",
+          "desc": "チチェン・イッツァに次ぐ規模を誇るマヤ遺跡で、団体観光客が少なく静かに巡れるのが魅力。曲線を多用した「魔法使いのピラミッド」が見どころ。",
+          "badge": "世界遺産",
+          "prompt_en": "Uxmal ancient Maya pyramid with rounded architectural style, the Pyramid of the Magician, a few small tourists for scale, travel photography",
+          "image": "素材/観光スポット/ウシュマル遺跡.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Uxmal"
+        },
+        {
+          "must": false,
+          "icon": "💧",
+          "num": "YUC 04",
+          "name": "セノーテ・イキル",
+          "desc": "地表がぽっかりと開いた天窓型のセノーテ。垂れ下がるツタと差し込む光が幻想的で、チチェン・イッツァ観光とあわせて訪れやすい。",
+          "badge": "天然の泉",
+          "prompt_en": "Cenote Ik Kil open-air sinkhole pool, vines hanging from the circular opening above, sunlight streaming down onto turquoise water, swimmers as small distant figures, travel photography",
+          "image": "素材/観光スポット/セノーテ・イキル.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Cenote+Ik+Kil"
+        }
+      ]
+    },
+    {
+      "city_id": "oaxaca",
+      "city_name": "オアハカ",
+      "city_image": "",
+      "city_prompt": "Oaxaca historic center with Santo Domingo church facade, colonial colorful buildings, a few small figures walking, golden afternoon light, travel photography",
+      "city_desc": "モーレやメスカルなど美食で名高い古都。パステルカラーのコロニアル建築と先住民文化の市場が同居し、郊外にはモンテ・アルバン遺跡が広がる",
+      "city_info": [
+        { "label": "アクセス", "value": "メキシコシティから国内線でオアハカ空港まで約1時間" },
+        { "label": "おすすめ時期", "value": "11〜4月の乾季", "link_section": "season", "link_btn_index": 0 },
+        { "label": "宿泊エリア", "value": "セントロ（ソカロ周辺の旧市街）" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "OAX 01",
+          "name": "サント・ドミンゴ教会と旧市街",
+          "desc": "金箔の装飾で埋め尽くされた内部が圧巻のバロック様式教会。周辺のパステルカラーの街並みは世界遺産に登録され、散策だけでも見応えがある。",
+          "badge": "世界遺産",
+          "prompt_en": "Santo Domingo church Oaxaca facade, ornate baroque stone architecture, colorful colonial street in foreground, a few small figures walking, golden afternoon light, travel photography",
+          "image": "素材/観光スポット/サント・ドミンゴ教会.webp",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Templo+de+Santo+Domingo+Oaxaca"
+        },
+        {
+          "must": false,
+          "icon": "🔺",
+          "num": "OAX 02",
+          "name": "モンテ・アルバン遺跡",
+          "desc": "山頂を切り開いて築かれたサポテカ文明の古代都市遺跡。周囲を見渡す立地から、オアハカ盆地の絶景を一望できる展望スポットでもある。",
+          "badge": "世界遺産",
+          "prompt_en": "Monte Alban ancient Zapotec ruins on hilltop plateau, stone pyramids and plaza with panoramic valley views, a few small tourists for scale, travel photography",
+          "image": "素材/観光スポット/モンテ・アルバン遺跡.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Monte+Alban"
+        },
+        {
+          "must": false,
+          "icon": "💦",
+          "num": "OAX 03",
+          "name": "イエルベ・エル・アグア",
+          "desc": "鉱物を含んだ水が石灰化してできた「石化した滝」。天然の展望プールから山々を見渡せる、郊外の隠れた絶景スポットとして人気が高まっている。",
+          "badge": "石化した滝",
+          "prompt_en": "Hierve el Agua petrified waterfall rock formations, natural infinity pools overlooking mountain valley, a few small swimmers for scale, golden hour light, travel photography",
+          "image": "素材/観光スポット/イエルベ・エル・アグア.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Hierve+el+Agua"
+        },
+        {
+          "must": false,
+          "icon": "🛍️",
+          "num": "OAX 04",
+          "name": "メルカド・20・デ・ノビエンブレ",
+          "desc": "炭火焼き肉のコーナー「パシージョ・デ・ウマダス」が名物の市場。煙が立ち込める一角で好きな肉を選び、その場で焼いてもらう食べ歩きが楽しい。",
+          "badge": "美食市場",
+          "prompt_en": "Mercado 20 de Noviembre Oaxaca, smoky grilled meat stalls with hanging cuts, crowds of people walking through market aisle, food photography",
+          "image": "素材/観光スポット/メルカド20デノビエンブレ.webp",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Mercado+20+de+Noviembre+Oaxaca"
+        }
+      ]
+    },
+    {
+      "city_id": "guanajuato",
+      "city_name": "グアナファト",
+      "city_image": "",
+      "city_prompt": "Guanajuato hillside cityscape with pastel-colored colonial houses stacked on the slope, Callejonero performers in narrow alley, dusk light, travel photography",
+      "city_desc": "銀鉱山で栄えた旧市街が丘の斜面にパステルカラーで積み重なる世界遺産の街。地下道路や細い路地が入り組む、迷い込むのが楽しい街並み",
+      "city_info": [
+        { "label": "アクセス", "value": "メキシコシティから長距離バスで約4〜5時間、または国内線でレオン空港まで約1時間" },
+        { "label": "おすすめ時期", "value": "11〜4月の乾季", "link_section": "season", "link_btn_index": 0 },
+        { "label": "宿泊エリア", "value": "旧市街中心部（ハルディン・デ・ラ・ウニオン周辺）" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏘️",
+          "num": "GTO 01",
+          "name": "カレホン・デル・ベソ（口づけの小径）",
+          "desc": "幅わずか68cmの路地で、向かい合うバルコニーから恋人たちが口づけを交わす伝説で有名。パステルカラーの家並みが密集する象徴的な一角。",
+          "badge": "恋人たちの伝説",
+          "prompt_en": "Callejon del Beso narrow alley Guanajuato, pastel-colored houses with balconies almost touching overhead, a couple as small silhouettes, warm evening light, travel photography",
+          "image": "素材/観光スポット/カレホン・デル・ベソ.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Callejon+del+Beso+Guanajuato"
+        },
+        {
+          "must": false,
+          "icon": "🎭",
+          "num": "GTO 02",
+          "name": "フアレス劇場",
+          "desc": "古代ギリシャ風の柱廊が印象的な19世紀の劇場。内部は赤とゴールドを基調とした豪奢な装飾で、コンサートやオペラの公演も行われる街のシンボル。",
+          "badge": "街のシンボル",
+          "prompt_en": "Teatro Juarez Guanajuato neoclassical facade with green bronze statues on top of columns, plaza in front, a few small figures, travel photography",
+          "image": "素材/観光スポット/フアレス劇場.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Teatro+Juarez+Guanajuato"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "GTO 03",
+          "name": "ミイラ博物館",
+          "desc": "乾燥した土壌の影響で自然にミイラ化した遺体を展示する、少し異色な博物館。19世紀の埋葬事情を伝える資料としても興味深い、街の名物スポット。",
+          "badge": "異色の博物館",
+          "prompt_en": "Museo de las Momias Guanajuato exterior entrance, colonial building facade, dim interior glimpse through doorway, travel photography",
+          "image": "素材/観光スポット/ミイラ博物館.webp",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Museo+de+las+Momias+Guanajuato"
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "GTO 04",
+          "name": "サンミゲル・デ・アジェンデ パロキア",
+          "desc": "ピンク色のゴシック建築がひときわ目を引く教会。グアナファトから日帰りできる人気の古都で、街全体がフォトジェニックな世界遺産に登録されている。",
+          "badge": "世界遺産",
+          "prompt_en": "Parroquia de San Miguel Arcangel pink Gothic church facade San Miguel de Allende, colonial plaza in foreground, a few small figures, golden afternoon light, travel photography",
+          "image": "素材/観光スポット/サンミゲルデアジェンデ.webp",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Parroquia+de+San+Miguel+Arcangel"
+        },
+        {
+          "must": true,
+          "icon": "🚡",
+          "num": "GTO 05",
+          "name": "ピピラの丘",
+          "desc": "ケーブルカーで登る丘の展望台。おもちゃ箱をひっくり返したようなグアナファトのカラフルな街並みを一望できる、街観光のハイライト。",
+          "badge": "街を一望する定番展望台",
+          "prompt_en": "Pipila hill viewpoint Guanajuato, panoramic view of colorful colonial houses covering the hillside, a few small tourists at the overlook, golden afternoon light, travel photography",
+          "image": "素材/観光スポット/ピピラの丘.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Monumento+al+Pipila+Guanajuato"
+        }
+      ]
+    }
+  ],
+  "transport_items": [
+    {
+      "icon": "✈️",
+      "name": "国際線（直行便）",
+      "desc": "成田からANAの直行便が毎日運航し所要約13時間。アメリカ経由便も選択肢として豊富にあり価格を抑えやすい。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🛫",
+      "name": "国内線（格安航空）",
+      "desc": "国土が広いため都市間移動の主役。アエロメヒコやボラリス等が就航し、早期予約で片道4,000円台からと格安。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚌",
+      "name": "長距離バス（ADO等）",
+      "desc": "全国を網羅する快適なバス網。ADOなど1等バスは座席が広くリクライニングも深く、夜行移動でホテル代を浮かせる旅人にも人気。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚇",
+      "name": "メキシコシティ市内交通",
+      "desc": "地下鉄が格安で網羅的だが混雑が激しい。旅行者には安全性の高いメトロブス（BRT）やUberの併用がおすすめ。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚐",
+      "name": "コレクティーボ（乗合バン）",
+      "desc": "ユカタン半島やリビエラマヤで活躍する乗合バン。決まったルートを走り、手を挙げれば乗車できる地元密着の移動手段。",
+      "affiliate": "",
+      "is_last": false
+    },
+    {
+      "icon": "🚕",
+      "name": "タクシー・配車アプリ",
+      "desc": "流しのタクシーはトラブルも報告されるため、配車アプリUberを使うと料金も経路も明確で安心して利用できる。",
+      "affiliate": "",
+      "is_last": true
+    }
+  ],
+  "courses": {
+    "intro": "直行便約13時間・時差15時間のメキシコは「古代文明の遺跡とスペイン統治時代の街並みを一度に旅できる」のが最大の強み。初めてならメキシコシティに拠点を絞った<strong>テオティワカン日帰りプラン</strong>、2回目以降や連休が取れるなら国内線でユカタン半島まで飛ぶ<strong>マヤ遺跡周遊プラン</strong>がおすすめ。バスと国内線を乗り継いでコロニアル都市を巡る、少し難易度の高いルートも紹介しています。",
+    "stable_title": "メキシコシティ連泊か、飛行機でユカタン半島まで足を延ばすか選べるプラン",
+    "stable_intro": "メキシコは国土が広く、都市間の移動には国内線が現実的な選択肢になります。テオティワカン日帰りプランはメキシコシティ連泊で身軽に、マヤ遺跡周遊プランは飛行機でユカタン半島へ足を延ばします。",
+    "stable_plans": [
+      {
+        "label": "プランA",
+        "title": "メキシコシティ＋テオティワカン　4泊5日",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "green",
+            "content_html": "<strong>メキシコシティ到着 → ソカロ散策</strong><br>午後着なら夕方までにホテルへ荷物を預け、<a onclick=\"showSpot('CDMX 01')\" class=\"spot-link\">ソカロと大聖堂</a>周辺を軽く散策。夜は屋台のタコスで旅の始まりを味わう。"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "green",
+            "content_html": "<strong>ベジャス・アルテス宮殿 → コヨアカン地区</strong><br>午前は<a onclick=\"showSpot('CDMX 02')\" class=\"spot-link\">ベジャス・アルテス宮殿</a>、午後はコヨアカン地区の<a onclick=\"showSpot('CDMX 03')\" class=\"spot-link\">フリーダ・カーロ博物館</a>を訪ねる。"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "red",
+            "content_html": "<strong>テオティワカン遺跡へ日帰り</strong><br>太陽と月のピラミッドがそびえる<a onclick=\"showSpot('CDMX 04')\" class=\"spot-link\">テオティワカン遺跡</a>へ。頂上まで登る体力を考え、朝早い時間の出発がおすすめ。",
+            "transport_note": {
+              "duration": "メキシコシティ→テオティワカン→メキシコシティ（バス 往復約2時間）",
+              "bus": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 4",
+            "badge_class": "red",
+            "content_html": "<strong>ソチミルコの運河で舟遊び</strong><br>極彩色の舟<a onclick=\"showSpot('CDMX 05')\" class=\"spot-link\">トラヒネラ</a>に乗り、音楽と軽食が行き交う水上文化を体験。夕方はローマ・ノルテのカフェで一息つく。"
+          },
+          {
+            "transit": false,
+            "label": "Day 5",
+            "badge_class": "",
+            "content_html": "<strong>市場でお土産 → 帰国</strong><br>最終日は市場でメスカルやテキーラを調達し、空港へ。直行便なら翌日には日本着。"
+          }
+        ],
+        "tip": "ソカロ周辺は地下鉄・徒歩で回れる範囲に主要スポットが集中しているので、タクシー代をかけずに歴史地区だけで密度の濃い観光が完結する。"
+      },
+      {
+        "label": "プランB",
+        "title": "メキシコシティ＋ユカタン半島（チチェン・イッツァ／トゥルム）　6泊7日",
+        "days": [
+          {
+            "transit": false,
+            "label": "Day 1",
+            "badge_class": "green",
+            "content_html": "<strong>メキシコシティ到着 → 旧市街散策</strong><br><a onclick=\"showSpot('CDMX 01')\" class=\"spot-link\">ソカロ</a>と<a onclick=\"showSpot('CDMX 02')\" class=\"spot-link\">ベジャス・アルテス宮殿</a>を巡り、旅の雰囲気に慣れる初日。"
+          },
+          {
+            "transit": false,
+            "label": "Day 2",
+            "badge_class": "green",
+            "content_html": "<strong>テオティワカン遺跡 → コヨアカン地区</strong><br><a onclick=\"showSpot('CDMX 04')\" class=\"spot-link\">テオティワカン遺跡</a>で古代文明を体感し、午後は<a onclick=\"showSpot('CDMX 03')\" class=\"spot-link\">フリーダ・カーロ博物館</a>へ。"
+          },
+          {
+            "transit": false,
+            "label": "Day 3",
+            "badge_class": "red",
+            "content_html": "<strong>メリダ到着 → プラサ・グランデ散策</strong><br><a onclick=\"showSpot('YUC 02')\" class=\"spot-link\">プラサ・グランデ</a>周辺のコロニアル建築を眺めながら、翌日の遺跡観光に備える。",
+            "pre_transit": {
+              "duration": "メキシコシティ→メリダ（国内線 約2時間）",
+              "plane": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 4",
+            "badge_class": "red",
+            "content_html": "<strong>チチェン・イッツァ → セノーテ・イキル</strong><br>新・世界七不思議の<a onclick=\"showSpot('YUC 01')\" class=\"spot-link\">チチェン・イッツァ</a>を訪ね、帰路は<a onclick=\"showSpot('YUC 04')\" class=\"spot-link\">セノーテ・イキル</a>で涼をとる。"
+          },
+          {
+            "transit": false,
+            "label": "Day 5",
+            "badge_class": "red",
+            "content_html": "<strong>トゥルム遺跡 → グラン・セノーテ</strong><br>断崖の上に建つ<a onclick=\"showSpot('CAN 02')\" class=\"spot-link\">トゥルム遺跡</a>と、透明度抜群の<a onclick=\"showSpot('CAN 03')\" class=\"spot-link\">グラン・セノーテ</a>を巡る。",
+            "pre_transit": {
+              "duration": "メリダ→トゥルム（長距離バス 約4時間）",
+              "bus": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 6",
+            "badge_class": "red",
+            "content_html": "<strong>カンクンのホテルゾーンでビーチ</strong><br>最終日前はエメラルドグリーンの海が広がる<a onclick=\"showSpot('CAN 01')\" class=\"spot-link\">ホテルゾーン</a>でのんびり過ごす。",
+            "pre_transit": {
+              "duration": "トゥルム→カンクン（バス 約2時間）",
+              "bus": true
+            }
+          },
+          {
+            "transit": false,
+            "label": "Day 7",
+            "badge_class": "",
+            "content_html": "<strong>帰国</strong><br>カンクン空港からメキシコシティ経由、または直行便で帰国便へ。マヤ遺跡とリゾートを両方楽しんだ旅の締めくくり。"
+          }
+        ],
+        "tip": "ユカタン半島は炎天下の遺跡観光が続くため、日焼け対策と朝早い時間帯の行動が快適に過ごすコツ。長距離バスは1等ADOバスなら座席も広く快適。"
+      }
+    ],
+    "adventure_title": "バスと国内線で辿る「コロニアル都市縦断」",
+    "adventure_note_html": "メキシコの長距離バス網（ADO）と国内線を組み合わせれば、高原に広がるコロニアル都市を次々と巡る旅ができる。リゾートや遺跡巡りとは違う、街並みそのものを味わう上級者向けルートを紹介します。",
+    "adventure_plan": {
+      "title": "メキシコシティ→グアナファト→オアハカ　6泊7日",
+      "days": [
+        {
+          "transit": false,
+          "label": "Day 1",
+          "badge_class": "green",
+          "content_html": "<strong>メキシコシティ到着</strong><br>旧市街を散策し、この日はメキシコシティで1泊。夜は長距離バスターミナルの場所を確認しておくとスムーズ。"
+        },
+        {
+          "transit": false,
+          "label": "Day 2",
+          "badge_class": "green",
+          "content_html": "<strong>テオティワカン遺跡</strong><br><a onclick=\"showSpot('CDMX 04')\" class=\"spot-link\">太陽のピラミッド</a>をはじめとする古代都市の遺構をたっぷり半日かけて巡る。"
+        },
+        {
+          "transit": false,
+          "label": "Day 3",
+          "badge_class": "red",
+          "content_html": "<strong>グアナファトへ移動 → カレホン・デル・ベソ</strong><br>到着後は<a onclick=\"showSpot('GTO 01')\" class=\"spot-link\">カレホン・デル・ベソ</a>周辺の迷路のような路地を歩く。",
+          "pre_transit": {
+            "duration": "メキシコシティ→グアナファト（長距離バス 約4.5時間）",
+            "bus": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 4",
+          "badge_class": "red",
+          "content_html": "<strong>フアレス劇場 → ミイラ博物館 → サンミゲル・デ・アジェンデ日帰り</strong><br><a onclick=\"showSpot('GTO 02')\" class=\"spot-link\">フアレス劇場</a>と<a onclick=\"showSpot('GTO 03')\" class=\"spot-link\">ミイラ博物館</a>を巡った後、日帰りで<a onclick=\"showSpot('GTO 04')\" class=\"spot-link\">サンミゲル・デ・アジェンデ</a>へ足を延ばす。",
+          "transport_note": {
+            "duration": "グアナファト→サンミゲル・デ・アジェンデ→グアナファト（バス 往復約2時間）",
+            "bus": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 5",
+          "badge_class": "red",
+          "content_html": "<strong>オアハカへ移動 → サント・ドミンゴ教会</strong><br>到着後は<a onclick=\"showSpot('OAX 01')\" class=\"spot-link\">サント・ドミンゴ教会</a>周辺の世界遺産地区を散策する。",
+          "pre_transit": {
+            "duration": "グアナファト（レオン空港）→メキシコシティ経由→オアハカ（国内線 乗継含め約3時間）",
+            "plane": true
+          }
+        },
+        {
+          "transit": false,
+          "label": "Day 6",
+          "badge_class": "red",
+          "content_html": "<strong>モンテ・アルバン遺跡 → メルカド・20・デ・ノビエンブレ</strong><br>山頂の<a onclick=\"showSpot('OAX 02')\" class=\"spot-link\">モンテ・アルバン遺跡</a>を巡り、夜は<a onclick=\"showSpot('OAX 04')\" class=\"spot-link\">メルカド・20・デ・ノビエンブレ</a>で炭火焼き肉を味わい、コロニアル都市縦断の締めくくりとする。"
+        },
+        {
+          "transit": false,
+          "label": "Day 7",
+          "badge_class": "",
+          "content_html": "<strong>帰国</strong><br>オアハカ空港からメキシコシティ経由で帰国。バスと国内線で辿った街並みの記憶とともに旅を終える。",
+          "pre_transit": {
+            "duration": "オアハカ→メキシコシティ空港（国内線 約1時間）",
+            "plane": true
+          }
+        }
+      ],
+      "tip": "ADOの長距離バスは座席指定制で快適だが、山道が多い区間は酔いやすいので酔い止めがあると安心。バスターミナルは市街地からやや離れることが多いので、乗り継ぎの送迎手段を事前に確認しておこう。"
+    },
+    "cta_title": "ベストシーズンもチェックしよう！🌤️",
+    "cta_desc": "高原の首都とカリブ海沿岸では気候が大きく異なります。旅の目的地に合わせてシーズンを選びましょう。"
+  },
+  "spot_points": [
+    {
+      "title": "テオティワカンは「午前中」に登るのが鉄則",
+      "body": "<a onclick=\"showSpot('CDMX 04')\" class=\"keyword-link\">テオティワカン</a>の太陽のピラミッドは標高2,000m超の直射日光の下、200段以上の階段を登る体力勝負のスポット。日陰はほぼないため帽子・日焼け止め・歩きやすい靴が必須で、水も多めに持参したい。午後は日差しが強く混雑もするため、朝一番の入場を狙うと涼しく空いた状態で登れる。頂上からは月のピラミッドまで続く死者の大通りが一望できる。",
+      "image": "素材/観光スポット/テオティワカン遺跡.webp",
+      "spot_ref": "CDMX 04"
+    },
+    {
+      "title": "チチェン・イッツァは「早朝到着」で団体を避ける",
+      "body": "<a onclick=\"showSpot('YUC 01')\" class=\"keyword-link\">チチェン・イッツァ</a>は日中になるとカンクンからの日帰りバスツアーが大量に到着し、写真を撮るのも一苦労になる。開場直後の時間帯なら人が少なく、気温もまだ穏やかで快適に見学できる。春分・秋分前後は「ククルカンの降臨」を見るための観光客でさらに混雑する。",
+      "image": "素材/観光スポット/チチェン・イッツァ.webp",
+      "spot_ref": "YUC 01"
+    },
+    {
+      "title": "フリーダ・カーロ博物館は「事前予約」が必須",
+      "body": "<a onclick=\"showSpot('CDMX 03')\" class=\"keyword-link\">青い家</a>は人気が高く、当日券のみでの入場はほぼ不可能なため、公式サイトで日時指定チケットを事前予約しておく必要がある。館内の写真撮影には別途チケットが必要な場合もあるので、訪問前に最新の規定を確認しておきたい。",
+      "image": "素材/観光スポット/フリーダ・カーロ博物館.webp",
+      "spot_ref": "CDMX 03"
+    },
+    {
+      "title": "セノーテは「日焼け止め禁止」の場所がある",
+      "body": "<a onclick=\"showSpot('CAN 03')\" class=\"keyword-link\">セノーテ</a>の多くは水質保護のため、通常の日焼け止めの使用が禁止されており、生分解性タイプのみ許可されるケースが多い。持参し忘れた場合は入口の売店で購入できることが多いが、割高になりやすいので事前準備がおすすめ。",
+      "image": "素材/観光スポット/グラン・セノーテ.webp",
+      "spot_ref": "CAN 03"
+    }
+  ],
+  "index_card": {
+    "flag": "🇲🇽",
+    "catch": "ピラミッドの影が長く伸びる高原の夕暮れに、屋台のタコスと陽気なマリアッチの音色が街角を彩る",
+    "region": "北米・中南米",
+    "best_label": "11〜4月",
+    "gradient": "linear-gradient(135deg,#006847 0%,#ce1126 100%)",
+    "budget": ["budget3", "budget4"],
+    "best_months": [11, 12, 1, 2, 3, 4],
+    "tags": ["世界遺産", "グルメ", "自然", "歴史", "マヤ遺跡"]
+  }
+}
