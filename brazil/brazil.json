@@ -124,6 +124,19 @@
       "badge": "アマゾンの玄関口",
       "badge_class": "green",
       "description": "アマゾン川流域最大の都市。熱帯雨林クルーズやジャングルロッジへの拠点となる秘境の玄関口"
+    },
+    {
+      "id": "lencois",
+      "name": "レンソイス・マラニャンセス",
+      "lat": "-2.7461",
+      "lng": "-42.8258",
+      "zoom": "11",
+      "color": "#00b8a9",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "世界遺産の白い砂丘",
+      "badge_class": "green",
+      "description": "純白の砂丘とエメラルドグリーンのラグーンが広がる、2024年に世界遺産登録された北東部の絶景エリア"
     }
   ],
   "season_mini": {
@@ -163,7 +176,7 @@
         "name": "リオデジャネイロ",
         "city_id": "rio",
         "best_note": "ベスト：6〜9月の冬（乾燥して過ごしやすい）／ 12〜3月は真夏で猛暑・にわか雨も多い。",
-        "note": "季節は日本と真逆で12〜3月が夏、6〜8月が冬。夏は30°C超の猛暑に加え湿度も高く、午後は突然のスコールが降ることも多い。冬でも20°C前後あり厚手の上着は不要だが、朝晩はやや涼しく感じる。",
+        "note": "季節は日本と真逆で12〜3月が夏、6〜8月が冬にあたる。夏は30°C超の猛暑に加え湿度も高く、午後は突然のスコールが降ることも多い。冬でも20°C前後あり厚手の上着は不要だが、朝晩はやや涼しく感じられる。",
         "months": [
           { "icon": "🌧️", "temp": "29°C", "type": "t-hot1" },
           { "icon": "🌧️", "temp": "29°C", "type": "t-hot1" },
@@ -183,7 +196,7 @@
         "name": "サンパウロ（オウロ・プレット等ミナス高原）",
         "city_id": "sao_paulo",
         "best_note": "ベスト：4〜9月（乾季で晴天が多い）／ 12〜3月は雨季で午後のスコールが頻発、冬は朝晩10°C近くまで冷え込む。",
-        "note": "標高750m超の高原にあり、リオより涼しく過ごしやすい。12〜3月の雨季は毎日のように夕立があるが数十分で止むことが多く、6〜8月の乾季は空気が乾燥し朝晩は肌寒いため羽織りものが必須。",
+        "note": "標高750m超の高原にあり、リオより涼しく過ごしやすい気候。12〜3月の雨季は毎日のように夕立があるが数十分で止むことが多く、6〜8月の乾季は空気が乾燥し朝晩は肌寒いため薄手の羽織りものが必須になる。",
         "months": [
           { "icon": "🌧️", "temp": "23°C", "type": "t-warm" },
           { "icon": "🌧️", "temp": "23°C", "type": "t-warm" },
@@ -203,7 +216,7 @@
         "name": "フォス・ド・イグアス",
         "city_id": "iguacu",
         "best_note": "ベスト：4〜9月（乾季で滝の水量・気温とも比較的穏やか）／ 12〜3月は高温多湿で35°C近くまで上がる日も。",
-        "note": "内陸の亜熱帯気候で、夏（12〜3月）は35°C近くまで上がり湿度も高く滝周辺は蒸し暑い。冬（6〜8月）でも日中20°C前後と過ごしやすいが、南極からの寒波が入ると急に冷え込むこともある。",
+        "note": "内陸の亜熱帯気候で、夏（12〜3月）は35°C近くまで上がり湿度も高く滝周辺は蒸し暑い。冬（6〜8月）でも日中20°C前後と過ごしやすいが、南極からの寒波が入ると急に冷え込むこともあるので上着があると安心。",
         "months": [
           { "icon": "☀️", "temp": "27°C", "type": "t-warm" },
           { "icon": "☀️", "temp": "27°C", "type": "t-warm" },
@@ -223,7 +236,7 @@
         "name": "サルバドール（バイーア州）",
         "city_id": "salvador",
         "best_note": "ベスト：9〜3月（乾季でビーチ日和）／ 4〜7月は雨季で降水量が多く、大西洋からの湿った風で年中蒸し暑い。",
-        "note": "他地域と雨季・乾季が逆転するのが特徴で、4〜7月が雨季にあたる。年間を通じて気温差が小さく常夏だが、湿度が高いため体感的には数字以上に蒸し暑く感じやすい。",
+        "note": "他地域と雨季・乾季が逆転するのが特徴で、4〜7月が雨季にあたる。年間を通じて気温差が小さく常夏の気候だが、湿度が高いため体感的には数字以上に蒸し暑く感じやすいので、通気性の良い服装で過ごすのがおすすめ。",
         "months": [
           { "icon": "☀️", "temp": "27°C", "type": "t-warm" },
           { "icon": "☀️", "temp": "27°C", "type": "t-warm" },
@@ -237,6 +250,26 @@
           { "icon": "☀️", "temp": "26°C", "type": "t-warm" },
           { "icon": "☀️", "temp": "26°C", "type": "t-warm" },
           { "icon": "☀️", "temp": "27°C", "type": "t-warm" }
+        ]
+      },
+      {
+        "name": "レンソイス・マラニャンセス",
+        "city_id": "lencois",
+        "best_note": "ベスト：6〜9月（雨季で溜まった水がラグーンとして残る絶景シーズン）／ 10月以降は乾季で干上がり、1〜5月は雨季で増水しすぎて回れないことも。",
+        "note": "赤道に近い北東部の熱帯気候で、年間を通じ気温差は小さく常に暑い。1〜6月の雨季に溜まった雨水が6〜9月にラグーンとして残るが、10月以降は蒸発して真っ白な砂漠だけになるため、訪問時期の見極めがとても重要になる。",
+        "months": [
+          { "icon": "🌧️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "🌧️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "🌧️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "🌧️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "🌧️", "temp": "27°C", "type": "t-warm" },
+          { "icon": "💧", "temp": "27°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "☀️", "temp": "28°C", "type": "t-warm" },
+          { "icon": "🌧️", "temp": "27°C", "type": "t-warm" }
         ]
       }
     ]
@@ -358,7 +391,7 @@
     "special_note_html": "",
     "special_note_url": "",
     "special_note_url_label": "",
-    "flight_lead": "日本からブラジルへの直行便はなく、米国（ダラス・ヒューストン等）や中東（ドバイ等）、欧州経由が基本ルート。乗継含め合計25〜28時間ほどの長丁場になります。",
+    "flight_lead": "日本からブラジルへの直行便はなく、米国（ダラス・ヒューストン等）や中東（ドバイ等）、欧州経由が基本ルートになります。乗継便を含めると合計25〜28時間ほどの長丁場の移動になることを覚悟しておきましょう。",
     "flight_intro": "直行便はなく米国・中東・欧州経由が基本。乗継含め所要25〜28時間ほどの長距離移動になる。",
     "airlines": [
       {
@@ -480,7 +513,7 @@
     "cash_daily_high": "45",
     "cash_note": "1 BRL ≈ 31円で計算",
     "money_intro": "ブラジルレアルは日本の空港ではほぼ両替できないため、現地の空港や街の両替所（Casa de Câmbio）で調達します。カード社会が進んでおり、両替は少額にとどめてカード払いを中心にするのが実用的です。",
-    "hotel_intro": "宿はまず地区で選ぶのが重要。リオは地区によって治安差が大きく、イパネマ・レブロン・ボタフォゴなど評判の良いエリアを選びたい。夜着の日程では特に、地下鉄駅や大通りから近く人通りのある立地を優先しよう。",
+    "hotel_intro": "宿はまず地区で選ぶのが重要。リオは地区によって治安差が大きく、イパネマ・レブロン・ボタフォゴなど評判の良いエリアを選びたい。夜着の日程では特に、地下鉄駅や大通りから近く人通りのある立地を優先しましょう。",
     "cash_tip_title": "少額紙幣を崩しておくと会計がスムーズ",
     "cash_tip_body": "ブラジルはカード払いが主流だが、屋台や小額の会計、チップでは現金が便利な場面もある。R$100の高額紙幣は小さな店でお釣りを渋られることがあるので、ATMで引き出したら早めに崩しておこう。"
   },
@@ -565,6 +598,7 @@
   ],
   "food_filter_cities": [
     { "id": "national", "label": "全国共通" },
+    { "id": "rio", "label": "リオデジャネイロ" },
     { "id": "salvador", "label": "サルバドール・バイーア" },
     { "id": "minas", "label": "ミナス・ジェライス" }
   ],
@@ -817,17 +851,74 @@
     },
     {
       "num": "No.18",
-      "name": "ムケッカとは別のペイシャーダ",
-      "badge": "サンパウロ発祥の魚介煮込み",
+      "name": "ペイシャーダ",
+      "badge": "北東部発祥の魚介煮込み",
       "type": "main",
       "city": "national",
-      "desc": "トマトベースのスープで白身魚やエビを煮込んだ、沿岸部で広く食べられる魚介料理。地域ごとにレシピが異なり、パンを浸して食べるのも定番の楽しみ方。",
+      "desc": "トマトベースのスープで白身魚やエビを煮込んだ、セアラー州など北東部発祥の魚介料理。地域ごとにレシピが異なり、パンを浸して食べるのも定番の楽しみ方。",
       "image": "素材/グルメ/ペイシャーダ.webp",
       "prompt_en": "Peixada fish stew in tomato-based broth with shrimp, served in a large pot, coastal restaurant table setting, food photography",
       "plate_color": "ceramic pot",
       "wiki_url": "https://www.google.com/search?q=%E3%83%9A%E3%82%A4%E3%82%B7%E3%83%A3%E3%83%BC%E3%83%80%20%E3%83%96%E3%83%A9%E3%82%B8%E3%83%AB%E6%96%99%E7%90%86",
       "order_ico": "🐠",
       "order_name_en": "Peixada"
+    },
+    {
+      "num": "No.19",
+      "name": "キベ",
+      "badge": "軽食の定番",
+      "type": "snack",
+      "city": "national",
+      "desc": "中東系移民が伝えた、香辛料を効かせたひき肉と挽き割り小麦のスナック。コシーニャと並ぶ軽食の定番で、ビュッフェ形式の食堂でも必ず見かける。",
+      "image": "素材/グルメ/キベ.webp",
+      "prompt_en": "Kibe Brazilian Middle Eastern snack, torpedo-shaped fried bulgur and meat croquettes on a plate, golden crust, food photography",
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AD%E3%83%99%20%E3%83%96%E3%83%A9%E3%82%B8%E3%83%AB%E6%96%99%E7%90%86",
+      "order_ico": "🥙",
+      "order_name_en": "Kibe"
+    },
+    {
+      "num": "No.20",
+      "name": "フィレ・オズワルド・アランニャ",
+      "badge": "リオ発祥のガーリックステーキ",
+      "type": "main",
+      "city": "rio",
+      "desc": "大量の刻みニンニクをカリッと香ばしく炒めて牛ステーキにたっぷり乗せた、リオ発祥の名物料理。ライス・フライドポテトを添えるのが定番の食べ方。",
+      "image": "素材/グルメ/フィレ・オズワルド・アランニャ.webp",
+      "prompt_en": "Filé à Oswaldo Aranha, grilled steak topped with crispy golden garlic slices, rice and fries on the side, food photography",
+      "plate_color": "white ceramic plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%95%E3%82%A3%E3%83%AC%E3%83%BB%E3%82%AA%E3%82%BA%E3%83%AF%E3%83%AB%E3%83%89%E3%83%BB%E3%82%A2%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%A3",
+      "order_ico": "🥩",
+      "order_name_en": "Filé à Oswaldo Aranha",
+      "must": true
+    },
+    {
+      "num": "No.21",
+      "name": "スコ・ナトゥラウ（フレッシュジュース）",
+      "badge": "街角のジュースバー",
+      "type": "drink",
+      "city": "national",
+      "desc": "街のあちこちにあるジュースバーで搾る、クプアスやカシューなど珍しい果物のフレッシュジュース。暑い日の水分補給に欠かせない。",
+      "image": "素材/グルメ/スコ・ナトゥラウ（フレッシュジュース）.webp",
+      "prompt_en": "Suco natural Brazilian fresh fruit juice bar, colorful glasses of cupuaçu and cashew fruit juice on the counter, tropical fruit display, food photography",
+      "plate_color": "clear glass",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B9%E3%82%B3%E3%83%BB%E3%83%8A%E3%83%88%E3%82%A5%E3%83%A9%E3%82%A6%20%E3%83%95%E3%83%AC%E3%83%83%E3%82%B7%E3%83%A5%E3%82%B8%E3%83%A5%E3%83%BC%E3%82%B9",
+      "order_ico": "🥤",
+      "order_name_en": "Suco Natural (Fresh Juice)"
+    },
+    {
+      "num": "No.22",
+      "name": "チョッピ",
+      "badge": "冷え冷えの生ビール",
+      "type": "drink",
+      "city": "national",
+      "desc": "きめ細かい泡が特徴の極冷えブラジル生ビール。バルやシュラスコ専門店で食事と一緒に頼むのが定番で、暑い気候との相性は抜群。",
+      "image": "素材/グルメ/チョッピ.webp",
+      "prompt_en": "Chopp Brazilian draft beer, tall glass with thick creamy foam and condensation, bar table setting, food photography",
+      "plate_color": "tall glass",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%81%E3%83%A7%E3%83%83%E3%83%94%20%E3%83%96%E3%83%A9%E3%82%B8%E3%83%AB%E3%83%93%E3%83%BC%E3%83%AB",
+      "order_ico": "🍺",
+      "order_name_en": "Chopp"
     }
   ],
   "spots_section_title": "ブラジル 観光スポット",
@@ -846,7 +937,8 @@
     { "id": "iguacu", "label": "フォス・ド・イグアス", "active": false },
     { "id": "salvador", "label": "サルバドール", "active": false },
     { "id": "ouro_preto", "label": "オウロ・プレット", "active": false },
-    { "id": "manaus", "label": "マナウス", "active": false }
+    { "id": "manaus", "label": "マナウス", "active": false },
+    { "id": "lencois", "label": "レンソイス・マラニャンセス", "active": false }
   ],
   "spot_sections": [
     {
@@ -932,6 +1024,30 @@
           "image": "素材/観光スポット/ティジュカ国立公園.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Tijuca+National+Park+Rio"
+        },
+        {
+          "must": true,
+          "icon": "🏰",
+          "num": "RIO 07",
+          "name": "コパカバーナ・フォート",
+          "desc": "コパカバーナ海岸の南端に立つ要塞。海岸線を一望できる展望台があり、館内の老舗カフェ「コロンボ」でひと休みするのも定番。",
+          "badge": "海岸を一望する要塞",
+          "prompt_en": "Copacabana Fort at the end of the beach, historic stone fortress with ocean view terrace, coastline curve visible in the distance, golden afternoon light, travel photography",
+          "image": "素材/観光スポット/コパカバーナ・フォート.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Forte+de+Copacabana"
+        },
+        {
+          "must": true,
+          "icon": "🏝️",
+          "num": "RIO 08",
+          "name": "イルハ・グランデ",
+          "desc": "リオから船で行ける美しい離島。透明度抜群のビーチと熱帯雨林トレイルが広がり、車の乗り入れ禁止で静かな時間が流れる。",
+          "badge": "日帰り・1泊で行ける離島",
+          "prompt_en": "Ilha Grande island near Rio, pristine turquoise beach fringed by lush rainforest hills, a small wooden boat near the shore, bright midday light, travel photography",
+          "image": "素材/観光スポット/イルハ・グランデ.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Ilha+Grande+Brazil"
         }
       ]
     },
@@ -1006,6 +1122,30 @@
           "image": "素材/観光スポット/リベルダーデ.webp",
           "type": "townscape",
           "map_url": "https://maps.google.com/?q=Liberdade+Sao+Paulo"
+        },
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "SP 06",
+          "name": "サンパウロ大聖堂（カテドラル・セ）",
+          "desc": "旧市街の中心に立つネオ・ゴシック様式の巨大聖堂。8,000人を収容できる内部空間と壮麗なステンドグラスが見どころ。",
+          "badge": "旧市街のシンボル",
+          "prompt_en": "São Paulo Cathedral Catedral da Sé, neo-Gothic twin spires against sky, plaza in foreground with crowds of people walking, daytime light, travel photography",
+          "image": "素材/観光スポット/サンパウロ大聖堂.webp",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Catedral+da+Se+Sao+Paulo"
+        },
+        {
+          "must": false,
+          "icon": "🖼️",
+          "num": "SP 07",
+          "name": "ピナコテッカ",
+          "desc": "ブラジル最古の美術館のひとつで、MASPと並ぶアート鑑賞の名所。19〜20世紀のブラジル絵画・彫刻の充実したコレクションを誇る。",
+          "badge": "ブラジル最古級の美術館",
+          "prompt_en": "Pinacoteca de São Paulo museum interior, historic brick building with skylight gallery, a few small figures viewing paintings, soft natural light, travel photography",
+          "image": "素材/観光スポット/ピナコテッカ.webp",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Pinacoteca+de+Sao+Paulo"
         }
       ]
     },
@@ -1242,6 +1382,68 @@
           "image": "素材/観光スポット/アマゾンジャングルロッジ.webp",
           "type": "activity",
           "map_url": "https://maps.google.com/?q=Amazon+Jungle+Lodge+Manaus"
+        }
+      ]
+    },
+    {
+      "city_id": "lencois",
+      "city_name": "レンソイス・マラニャンセス",
+      "city_image": "",
+      "city_prompt": "Lençóis Maranhenses white sand dunes with turquoise blue lagoons scattered across the landscape, aerial-style travel photography, bright midday light",
+      "city_desc": "純白の砂丘とエメラルドグリーンのラグーンが織りなす、2024年に世界遺産登録された北東部の絶景エリア。乾季限定で現れる幻想的な光景で知られる",
+      "city_info": [
+        { "label": "アクセス", "value": "サンパウロ・リオから国内線でサンルイスへ、拠点の町バレイリーニャスまで車で約4時間" },
+        { "label": "おすすめ時期", "value": "6〜9月限定（ラグーンが現れる季節）", "link_section": "season", "link_btn_index": 4 },
+        { "label": "宿泊エリア", "value": "拠点の町バレイリーニャス" }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏜️",
+          "num": "LEN 01",
+          "name": "レンソイス・マラニャンセス国立公園",
+          "desc": "純白の砂丘が地平線まで広がる2024年世界遺産の絶景公園。雨季にはあちこちに透明なラグーンが現れる。",
+          "badge": "世界遺産（2024年登録）",
+          "prompt_en": "Lençóis Maranhenses national park, endless white sand dunes stretching to the horizon, a few tiny hiker figures for scale, bright midday light, travel photography",
+          "image": "素材/観光スポット/レンソイス・マラニャンセス国立公園.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Lencois+Maranhenses+National+Park"
+        },
+        {
+          "must": true,
+          "icon": "💧",
+          "num": "LEN 02",
+          "name": "ラゴア・アズール（ブルーラグーン）",
+          "desc": "透明度抜群のコバルトブルーのラグーン。人気ルート「ラゴア・アズール・サーキット」の主役で、遊泳も楽しめる。",
+          "badge": "定番の絶景ラグーン",
+          "prompt_en": "Lagoa Azul blue lagoon Lençóis Maranhenses, vivid turquoise water surrounded by white sand dunes, a few small swimmers in the distance, bright daylight, travel photography",
+          "image": "素材/観光スポット/ラゴア・アズール.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Lagoa+Azul+Lencois+Maranhenses"
+        },
+        {
+          "must": false,
+          "icon": "🌅",
+          "num": "LEN 03",
+          "name": "ラゴア・ボニータ",
+          "desc": "砂丘の頂から沈む夕日を見渡せる、レンソイス随一の夕景スポット。刻々と染まる空とラグーンの色彩が美しい。",
+          "badge": "夕日鑑賞のベストスポット",
+          "prompt_en": "Lagoa Bonita sunset viewpoint Lençóis Maranhenses, silhouettes of a few small figures atop a dune watching the sunset over lagoons, warm golden and orange sky, travel photography",
+          "image": "素材/観光スポット/ラゴア・ボニータ.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Lagoa+Bonita+Lencois+Maranhenses"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "LEN 04",
+          "name": "アチンス",
+          "desc": "砂漠の最果てにひっそりと佇む小さな漁村。ハンモックで昼寝を楽しむ、旅の終着点にふさわしいのどかなリゾート。",
+          "badge": "砂漠の果ての漁村",
+          "prompt_en": "Atins fishing village at the edge of the dunes, simple beachside huts and hammocks, small boats on the shore, warm afternoon light, travel photography",
+          "image": "素材/観光スポット/アチンス.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Atins+Maranhao"
         }
       ]
     }
