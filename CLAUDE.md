@@ -236,6 +236,19 @@
 
 2026-07削除。「旅行難易度」カード（`difficulty_label`/`difficulty_pct`/`difficulty_bar`でバーとバッジを描画）用に各国のJSONへ長文の説明を書いていたが、`assets/country_template.html`側でこのフィールドを参照している箇所が1つもなく、実際には**どのページにも表示されていなかった**（ユーザーが「マレーシアだけ空欄」と気づいたことで発覚）。表示されない死んだフィールドだったため、`_country_template.json`を含む全JSONから削除した。新しい国を作る際は`difficulty_label`/`difficulty_label_bg`/`difficulty_label_color`/`difficulty_pct`/`difficulty_bar`の5つだけを書けばよく、`difficulty_desc`は書かない。
 
+### `difficulty_bar`・`difficulty_label_bg`・`difficulty_label_color`の配色ルール
+
+2026-08制定。`difficulty_bar`（バーのグラデーション）は`difficulty_label`（バッジの文言）に応じて以下の4パターンに統一する。**国旗の色を流用しない**——2026-08にトルコ・インドネシアの`difficulty_bar`が国旗の赤系グラデーションになっており、「ふつう」なのに視覚的には最難関のように見えてしまう問題が発覚し、他国の慣習に合わせて修正した実績あり。
+
+| `difficulty_label` | `difficulty_bar`（グラデーション） | `difficulty_label_bg` | `difficulty_label_color` |
+|---|---|---|---|
+| やさしい | `linear-gradient(90deg,#00a86b,#66cc99)` | `#e8f5ee` | `var(--green)` |
+| ふつう／普通 | `linear-gradient(90deg,#00a86b,#ffcc80)` | `#fff4e0` | `#b09000` |
+| やや難しい／やや易しい | `linear-gradient(90deg,#ff9800,#ffcc80)` | `#fff3e0` | `#e65100` |
+| 最難関 | `linear-gradient(90deg,#cc0001,#8a0000)` | `#fdeaea` | `#cc0001` |
+
+`difficulty_pct`（バーの塗りつぶし割合）はラベルとは別に各国の実情に応じて0〜100の数値で設定してよいが、色自体は上記表のラベル単位の配色から外れないこと。北朝鮮（`最難関`・100%）のような特殊枠も表の配色パターンにそのまま従う。
+
 ## `manner_cards`・`manner_cta_title`/`manner_cta_desc`・`practical.cta_title`/`practical.cta_desc`は廃止済み（新規国のJSONに書かない）
 
 2026-07削除。`difficulty_desc`と同じパターンで、`country_template.html`側にこれらのフィールドを参照している箇所が1つもなく、**どのページにも表示されていなかった**（おそらく過去に存在したマナー専用セクションの名残）。全国のJSON・`_country_template.json`から削除済み。新しい国を作る際はこの4フィールドを書かない。
