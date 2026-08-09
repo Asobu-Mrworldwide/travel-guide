@@ -123,49 +123,7 @@
 
 <header class="site-header">
   <a href="../" class="site-logo">World <span>Mappy</span></a>
-  <div class="header-nav">
-    <button class="header-nav-btn" id="header-nav-btn" onclick="toggleHeaderNav()">
-      旅行タイプ一覧 <span class="caret">▼</span>
-    </button>
-    <div class="header-nav-panel" id="header-nav-panel">
-      <div class="hn-group">
-        <div class="hn-group-label" style="color:#2563a0">計画 × 文化・学び</div>
-        <div class="hn-chip-row">
-          <a class="hn-chip" data-type="PISH" href="?type=PISH">PISH</a>
-          <a class="hn-chip" data-type="PISW" href="?type=PISW">PISW</a>
-          <a class="hn-chip" data-type="PILH" href="?type=PILH">PILH</a>
-          <a class="hn-chip" data-type="PILW" href="?type=PILW">PILW</a>
-        </div>
-      </div>
-      <div class="hn-group">
-        <div class="hn-group-label" style="color:#e07b39">計画 × 絶景・リフレッシュ</div>
-        <div class="hn-chip-row">
-          <a class="hn-chip" data-type="POSH" href="?type=POSH">POSH</a>
-          <a class="hn-chip" data-type="POSW" href="?type=POSW">POSW</a>
-          <a class="hn-chip" data-type="POLH" href="?type=POLH">POLH</a>
-          <a class="hn-chip" data-type="POLW" href="?type=POLW">POLW</a>
-        </div>
-      </div>
-      <div class="hn-group">
-        <div class="hn-group-label" style="color:#c94a29">直感 × 文化・学び</div>
-        <div class="hn-chip-row">
-          <a class="hn-chip" data-type="FISH" href="?type=FISH">FISH</a>
-          <a class="hn-chip" data-type="FISW" href="?type=FISW">FISW</a>
-          <a class="hn-chip" data-type="FILH" href="?type=FILH">FILH</a>
-          <a class="hn-chip" data-type="FILW" href="?type=FILW">FILW</a>
-        </div>
-      </div>
-      <div class="hn-group">
-        <div class="hn-group-label" style="color:#d47a00">直感 × 絶景・リフレッシュ</div>
-        <div class="hn-chip-row">
-          <a class="hn-chip" data-type="FOSH" href="?type=FOSH">FOSH</a>
-          <a class="hn-chip" data-type="FOSW" href="?type=FOSW">FOSW</a>
-          <a class="hn-chip" data-type="FOLH" href="?type=FOLH">FOLH</a>
-          <a class="hn-chip" data-type="FOLW" href="?type=FOLW">FOLW</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <a class="header-diag-link" href="types.html">旅行タイプ一覧</a>
   <span class="site-tagline">世界の旅行ガイド</span>
 </header>
 
@@ -406,19 +364,6 @@ function getCompat(typeA, typeB) {
   }
   return {pct, text};
 }
-
-// ===== ヘッダーの「旅行タイプ一覧」ドロップダウン =====
-function toggleHeaderNav() {
-  document.getElementById('header-nav-btn').classList.toggle('open');
-  document.getElementById('header-nav-panel').classList.toggle('open');
-}
-document.addEventListener('click', e => {
-  const nav = document.querySelector('.header-nav');
-  if (nav && !nav.contains(e.target)) {
-    document.getElementById('header-nav-btn').classList.remove('open');
-    document.getElementById('header-nav-panel').classList.remove('open');
-  }
-});
 
 // ===== 軸グリッド =====
 function buildAxisGrid(type) {
