@@ -371,7 +371,7 @@ const COUNTRIES = [
   },
   {
     name:'台湾', nameEn:'Taiwan', flag:'🇹🇼',
-    catch:'管理人が学生の頃初めて一人旅した国だ。海外なのに安心感があるのは何故だろう。親日国でご飯が美味しいからに決まっている！',
+    catch:'九份の石段に赤提灯が連なる夕暮れ、湯けむりと夜市の喧騒、屋台の油の匂いが旧き良き台湾の路地に立ちのぼる',
     region:'東アジア', flight:'約3〜4時間', flightHours:4, budget:['budget1','budget2'],
     bestMonths:[2,3,9,10], bestLabel:'10〜11月・3〜4月',
     tags:['グルメ','夜市','歴史','絶景'],
@@ -381,7 +381,7 @@ const COUNTRIES = [
   },
   {
     name:'シンガポール', nameEn:'Singapore', flag:'🇸🇬',
-    catch:'マーライオンは噂よりはがっかりしなかった。トランジットでも観光できちゃうが腰を据えて巡ってみて欲しい。',
+    catch:'マリーナベイの摩天楼にスーパーツリーの光が灯り、屋台街のラクサとチキンライスの湯気が夜風に流れる',
     region:'東南アジア', flight:'約7〜8時間', flightHours:8, budget:['budget2','budget3'],
     bestMonths:[1,2,3], bestLabel:'2〜4月（通年OK）',
     tags:['グルメ','都市','夜景','家族旅行'],
@@ -391,7 +391,7 @@ const COUNTRIES = [
   },
   {
     name:'スリランカ民主社会主義共和国', nameEn:'Sri Lanka', flag:'🇱🇰',
-    catch:'セイロンティを飲む度に高原列車から見た広大な茶畑を思い出す。香りと記憶がリンクする不思議な国だ。',
+    catch:'霧に沈む中央高地を走る紅茶列車の車窓いっぱいに、摘みたての茶葉の香りと涼しい風が静かにきらめく',
     region:'南アジア', flight:'約9〜10時間', flightHours:10, budget:['budget2','budget3'],
     bestMonths:[11,0,1,2], bestLabel:'12〜3月',
     tags:['世界遺産','紅茶','自然','グルメ'],
@@ -431,7 +431,7 @@ const COUNTRIES = [
   },
   {
     name:'フィリピン', nameEn:'Philippines', flag:'🇵🇭',
-    catch:'石灰岩の断崖が縁取るラグーンに、バンカーボートの影と潮騒が静かに重なる',
+    catch:'切り立つ石灰岩の断崖が抱くエメラルドのラグーンで、バンカーボートの航跡と潮騒の匂いが陽光にきらめく',
     region:'東南アジア', flight:'約4.5〜5時間', flightHours:5, budget:['budget1'],
     bestMonths:[11,0,1,2,3,4], bestLabel:'12〜5月',
     tags:['ビーチ','リゾート','グルメ','自然','ダイビング'],
@@ -461,7 +461,7 @@ const COUNTRIES = [
   },
   {
     name:'北朝鮮', nameEn:'North Korea (DPRK)', flag:'🇰🇵',
-    catch:'巨大な指導者像とがらんとした大通りが、統制の静けさの中にたたずむ',
+    catch:'車もまばらな広い大通りと巨大な指導者像が居並ぶ首都の中心部を、案内員同行の一団がそっと歩き抜ける',
     region:'東アジア', flight:'日本からの直行便なし', budget:['budget3'],
     bestMonths:[3,4,8,9], bestLabel:'現在は渡航不可（参考情報）',
     tags:['史跡','特殊事情','ツアー限定','現在渡航不可'],
@@ -471,7 +471,7 @@ const COUNTRIES = [
   },
   {
     name:'ドイツ', nameEn:'Germany', flag:'🇩🇪',
-    catch:'石畳の旧市街とビールジョッキの乾杯が、古城の丘に静かにこだまする',
+    catch:'石畳に響くビールジョッキの乾杯の音と、焼きたてプレッツェルの香ばしい匂いが古城の丘へ静かに広がる',
     region:'ヨーロッパ', flight:'直行便で約13〜14時間', flightHours:14, budget:['budget2'],
     bestMonths:[4,5,8,9], bestLabel:'5〜6月・9〜10月',
     tags:['歴史','グルメ','古城','クリスマスマーケット'],
@@ -481,7 +481,7 @@ const COUNTRIES = [
   },
   {
     name:'ニュージーランド', nameEn:'New Zealand', flag:'🇳🇿',
-    catch:'地熱の湯気とマオリの太鼓が、南半球の澄んだ大地に静かに響く',
+    catch:'地熱の間欠泉から立ちのぼる湯気と、力強いハカの足踏みが、氷河と羊の牧草地へ静かに染み渡る',
     region:'オセアニア', flight:'直行便で約11時間', flightHours:11, budget:['budget3'],
     bestMonths:[10,11,0,1,2], bestLabel:'11〜3月（南半球の夏）',
     tags:['自然','アウトドア','マオリ文化','映画のロケ地'],
@@ -530,13 +530,14 @@ const COUNTRIES = [
     url:'brazil/index.html', available:true
   },
   {
-    name:'バリ島（インドネシア）', nameEn:'Bali', flag:'🇮🇩',
-    catch:'朝もやに包まれた棚田の緑がうねる丘に、女性たちが毎朝手向けるチャナンサリの花が静かに揺れる',
-    region:'東南アジア', flight:'約7〜8時間', flightHours:8, budget:['budget1','budget2'],
-    bestMonths:[3,4,5,6,7,8,9], bestLabel:'4〜10月',
-    tags:['ビーチ','自然','リゾート','アウトドア'],
-    gradient:'linear-gradient(135deg,#c45000 0%,#ffaa40 100%)',
-    url:'#', available:false
+    name:'インドネシア', nameEn:'Indonesia', flag:'🇮🇩',
+    catch:'早朝の寺院にくゆる線香の煙と棚田を渡る朝風に乗って、遠くのガムランの音色がそっとたゆたう',
+    region:'東南アジア', flight:'直行便で約7〜8時間（乗継便あり）', budget:['budget1','budget2'],
+    bestMonths:[4,5,6,7,8,9,10], bestLabel:'4〜10月の乾季',
+    tags:['世界遺産','自然','ビーチ','リゾート','棚田'],
+    gradient:'linear-gradient(135deg,#CE1126 0%,#7a0000 100%)',
+    cardImg:'indonesia/素材/ヒーロー.webp',
+    url:'indonesia/index.html', available:true
   },
   {
     name:'フランス', nameEn:'France', flag:'🇫🇷',
