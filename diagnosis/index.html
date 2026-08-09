@@ -85,8 +85,18 @@
 
 <header class="site-header">
   <a href="../" class="site-logo">World <span>Mappy</span></a>
-  <a class="header-diag-link" href="types.html">旅行タイプ一覧</a>
   <span class="site-tagline">世界の旅行ガイド</span>
+  <a class="header-diag-link" href="types.html">旅行タイプ一覧</a>
+  <div class="hb-wrap">
+    <button class="hb-btn" id="hb-btn" aria-label="メニューを開く" onclick="toggleHbMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="hb-panel" id="hb-panel">
+      <a href="../index.html"><span class="hb-icon">🌍</span>World Mappy トップ</a>
+      <a href="index.html"><span class="hb-icon">🧭</span>旅行タイプ診断</a>
+      <a href="types.html"><span class="hb-icon">📋</span>旅行タイプ一覧</a>
+    </div>
+  </div>
 </header>
 
 <div class="page-wrap">
@@ -396,6 +406,18 @@ function finishQuiz() {
 
 
 initSwipe();
+
+function toggleHbMenu() {
+  document.getElementById('hb-btn').classList.toggle('open');
+  document.getElementById('hb-panel').classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  const wrap = document.querySelector('.hb-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    document.getElementById('hb-btn').classList.remove('open');
+    document.getElementById('hb-panel').classList.remove('open');
+  }
+});
 </script>
 </body>
 </html>
