@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅行タイプ一覧 | World Mappy</title>
+<link rel="canonical" href="https://worldmappy.com/diagnosis/types.html">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#1d9074;
+  --green-dark:#15735b;
+  --green-light:#e8f6f2;
+  --text:#1a1a1a;
+  --sub:#555;
+  --border:#dce6e2;
+}
+body{
+  font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meiryo,sans-serif;
+  background:#f0f4f2;
+  color:var(--text);
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ヘッダー */
+.site-header{background:var(--green-dark);padding:13px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 2px 6px rgba(0,0,0,0.15);position:sticky;top:0;z-index:100}
+.site-logo{font-size:1.3em;font-weight:900;color:#fff;letter-spacing:-0.5px;text-decoration:none}
+.site-logo span{color:#ffc200}
+.site-tagline{font-size:0.75em;color:rgba(255,255,255,0.65);margin-left:auto}
+.header-diag-link{font-size:0.8em;color:rgba(255,255,255,0.85);text-decoration:none;border:1px solid rgba(255,255,255,0.35);padding:5px 14px;border-radius:20px;white-space:nowrap}
+.header-diag-link:hover{background:rgba(255,255,255,0.15)}
+
+/* ヒーロー */
+.hero{text-align:center;padding:52px 20px 40px;background:#fff;border-bottom:1px solid var(--border)}
+.hero-badge{display:inline-block;background:var(--green);color:#fff;font-size:0.72em;font-weight:700;padding:3px 14px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-size:1.9em;font-weight:900;margin-bottom:12px;line-height:1.25}
+.hero p{font-size:0.88em;color:var(--sub);max-width:520px;margin:0 auto 24px;line-height:1.85}
+.hero-cta{display:inline-block;background:var(--green);color:#fff;font-size:0.88em;font-weight:700;padding:11px 28px;border-radius:24px;text-decoration:none;transition:background 0.2s}
+.hero-cta:hover{background:var(--green-dark)}
+
+/* 軸説明バー */
+.axes-bar{background:#fff;border-bottom:1px solid var(--border);padding:18px 24px}
+.axes-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:center}
+.axis-chip{font-size:0.8em;color:var(--sub)}
+.axis-chip strong{color:var(--text)}
+
+/* グループセクション */
+.group-section{padding:48px 20px}
+.group-section:nth-child(odd){background:#f8faf9}
+.group-section:nth-child(even){background:#fff}
+.group-inner{max-width:960px;margin:0 auto}
+
+.group-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid}
+.group-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0}
+.group-title{font-size:1.3em;font-weight:900;margin-bottom:4px}
+.group-sub{font-size:0.82em;color:var(--sub);line-height:1.65}
+
+/* カードグリッド */
+.card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:800px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.card-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+/* タイプカード */
+.type-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.07);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform 0.18s,box-shadow 0.18s;cursor:pointer}
+.type-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.13)}
+
+.tc-head{padding:24px 16px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px;position:relative}
+.tc-code{font-size:1.85em;font-weight:900;font-family:monospace,sans-serif;color:#fff;letter-spacing:2px;text-shadow:0 1px 3px rgba(0,0,0,0.2);margin-bottom:6px}
+.tc-name{font-size:0.72em;font-weight:700;color:rgba(255,255,255,0.92);text-align:center;line-height:1.3}
+
+.tc-body{padding:14px 14px 16px;flex:1;display:flex;flex-direction:column;gap:10px}
+.tc-traits{display:flex;flex-wrap:wrap;gap:4px}
+.tc-trait{font-size:0.67em;background:#f0f4f2;color:#3a5a50;padding:2px 8px;border-radius:10px;font-weight:600}
+.tc-desc{font-size:0.75em;color:var(--sub);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* グループカラー */
+.g-pi .group-header{border-color:#2563a0}
+.g-pi .group-icon{background:#dbeafe}
+.g-pi .group-title{color:#1e3a6e}
+
+.g-po .group-header{border-color:#c8690a}
+.g-po .group-icon{background:#fde8cc}
+.g-po .group-title{color:#7a3a00}
+
+.g-fi .group-header{border-color:#9b3a1e}
+.g-fi .group-icon{background:#fde8e2}
+.g-fi .group-title{color:#6b2010}
+
+.g-fo .group-header{border-color:#2a7044}
+.g-fo .group-icon{background:#d4ede0}
+.g-fo .group-title{color:#1a4a2a}
+
+/* フッター */
+footer{text-align:center;padding:36px 20px;font-size:0.78em;color:#aaa;background:#f0f4f2}
+footer a{color:var(--green);text-decoration:none}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="site-logo" href="../index.html">World <span>Mappy</span></a>
+  <span class="site-tagline">海外旅行ガイド</span>
+  <a class="header-diag-link" href="index.html">診断を受ける</a>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">16タイプ</div>
+  <h1>あなたの旅行タイプは？</h1>
+  <p>計画性・旅の目的・ペース・快適さへのこだわり——4つの軸の組み合わせで、旅のスタイルは16通りに分かれます。あなたはどのタイプ？</p>
+  <a class="hero-cta" href="index.html">診断スタート</a>
+</section>
+
+<div class="axes-bar">
+  <div class="axes-inner">
+    <span class="axis-chip"><strong>軸1</strong>　計画派 P ／ 直感派 F</span>
+    <span class="axis-chip"><strong>軸2</strong>　文化・学び I ／ 絶景・リフレッシュ O</span>
+    <span class="axis-chip"><strong>軸3</strong>　協調派 S ／ マイペース派 L</span>
+    <span class="axis-chip"><strong>軸4</strong>　快適志向 H ／ ワイルド志向 W</span>
+  </div>
+</div>
+
+<!-- PI グループ -->
+<section class="group-section g-pi">
+  <div class="group-inner">
+    <div class="group-header">
+      <div class="group-icon">🏛️</div>
+      <div>
+        <div class="group-title">計画派 × 文化・学び</div>
+        <div class="group-sub">下調べと準備を欠かさず、歴史・芸術・文化への知的好奇心を旅の軸に置くタイプ群。<br>行程の精度が満足度に直結する、旅の設計者たち。</div>
+      </div>
+    </div>
+    <div class="card-grid" id="grid-pi"></div>
+  </div>
+</section>
+
+<!-- PO グループ -->
+<section class="group-section g-po">
+  <div class="group-inner">
+    <div class="group-header">
+      <div class="group-icon">🏔️</div>
+      <div>
+        <div class="group-title">計画派 × 絶景・リフレッシュ</div>
+        <div class="group-sub">しっかりと計画を立てたうえで、絶景・自然・リゾートでの回復を旅の目的とするタイプ群。<br>段取りの達人が、最高のリフレッシュを実現する。</div>
+      </div>
+    </div>
+    <div class="card-grid" id="grid-po"></div>
+  </div>
+</section>
+
+<!-- FI グループ -->
+<section class="group-section g-fi">
+  <div class="group-inner">
+    <div class="group-header">
+      <div class="group-icon">🧭</div>
+      <div>
+        <div class="group-title">直感派 × 文化・学び</div>
+        <div class="group-sub">計画より直感を信じ、路地裏・市場・美術館に自然と引き寄せられるタイプ群。<br>予定外の発見が、旅を最高の記憶に変える。</div>
+      </div>
+    </div>
+    <div class="card-grid" id="grid-fi"></div>
+  </div>
+</section>
+
+<!-- FO グループ -->
+<section class="group-section g-fo">
+  <div class="group-inner">
+    <div class="group-header">
+      <div class="group-icon">🌊</div>
+      <div>
+        <div class="group-title">直感派 × 絶景・リフレッシュ</div>
+        <div class="group-sub">行き先も宿もその場で決め、絶景・自然・リゾートを感覚のまま満喫するタイプ群。<br>自由であること自体が、旅の醍醐味になる。</div>
+      </div>
+    </div>
+    <div class="card-grid" id="grid-fo"></div>
+  </div>
+</section>
+
+<footer>
+  <a href="../index.html">World Mappy</a> &nbsp;|&nbsp; <a href="index.html">旅行タイプ診断</a>
+</footer>
+
+<script>
+const TYPES = {
+  PISH:{name:'文化旅行の設計者', color:'#2563a0',
+    traits:['計画派','文化・学び','協調派','快適志向'],
+    desc:'綿密な計画性と仲間との時間を大切にしながら、文化・歴史への知的好奇心を満たす王道派の旅行者。'},
+  PISW:{name:'調査隊長', color:'#1a6b3a',
+    traits:['計画派','文化・学び','協調派','ワイルド'],
+    desc:'綿密な事前準備と仲間との協働を大事にしながら、多少の不便もいとわず文化・歴史の核心に迫ろうとする探求型の旅行者。'},
+  PILH:{name:'静かな学者', color:'#7b5ea7',
+    traits:['計画派','文化・学び','マイペース派','快適志向'],
+    desc:'綿密な下調べと自分のペースを何より大切にしながら、文化や歴史とじっくり向き合う内省型の旅行者。'},
+  PILW:{name:'フィールドワーカー', color:'#4a7a59',
+    traits:['計画派','文化・学び','マイペース派','ワイルド'],
+    desc:'入念な下調べと自分のペースを重視しながら、多少の不便も学びの一部として受け入れる求道的な旅行者。'},
+  POSH:{name:'リゾートの幹事', color:'#e07b39',
+    traits:['計画派','絶景・リフレッシュ','協調派','快適志向'],
+    desc:'綿密な計画力を発揮しながら、仲間と一緒に絶景・リゾートでの快適な時間を最大化しようとする段取り上手な旅行者。'},
+  POSW:{name:'アウトドア隊長', color:'#3a7540',
+    traits:['計画派','絶景・リフレッシュ','協調派','ワイルド'],
+    desc:'計画性を発揮しながら、仲間と一緒に自然の中へ飛び込んでいく組織的なアウトドア派。'},
+  POLH:{name:'プレミアム隠居人', color:'#c8940a',
+    traits:['計画派','絶景・リフレッシュ','マイペース派','快適志向'],
+    desc:'計画性を発揮しながら、他人のペースに左右されず快適にリフレッシュすることを最優先する自己管理型の旅行者。'},
+  POLW:{name:'孤独なキャンパー', color:'#607d8b',
+    traits:['計画派','絶景・リフレッシュ','マイペース派','ワイルド'],
+    desc:'計画性とマイペースを両立させながら、人混みを避けて自然の静けさそのものを求める孤高の旅行者。'},
+  FISH:{name:'文化の社交師', color:'#c94a29',
+    traits:['直感派','文化・学び','協調派','快適志向'],
+    desc:'その場のノリと仲間との一体感を大切にしながら、文化的な発見にも敏感な社交派の旅行者。'},
+  FISW:{name:'裏路地の探検家', color:'#8b4513',
+    traits:['直感派','文化・学び','協調派','ワイルド'],
+    desc:'直感で動きながら、仲間と一緒に文化的な発見を追い求める好奇心旺盛な旅行者。'},
+  FILH:{name:'直感の知識人', color:'#3a8a8a',
+    traits:['直感派','文化・学び','マイペース派','快適志向'],
+    desc:'計画を立てずとも自然と良質な文化体験に引き寄せられる、直感型の知的旅行者。'},
+  FILW:{name:'風来坊の研究者', color:'#5c4033',
+    traits:['直感派','文化・学び','マイペース派','ワイルド'],
+    desc:'文化と歴史への深い知的好奇心を持ちながら、行き先も宿も旅の途中で決める完全な自由旅行者。'},
+  FOSH:{name:'自由なリゾーター', color:'#d47a00',
+    traits:['直感派','絶景・リフレッシュ','協調派','快適志向'],
+    desc:'細かい計画を立てず、仲間と一緒に絶景や快適さをその場のノリで満喫する陽気な旅行者。'},
+  FOSW:{name:'バックパッカーの主役', color:'#3a7044',
+    traits:['直感派','絶景・リフレッシュ','協調派','ワイルド'],
+    desc:'計画を立てず、仲間や旅先で出会った人たちとその場のノリで自由に動き回るバックパッカー気質の旅行者。'},
+  FOLH:{name:'ひとり漂流リゾーター', color:'#5e7a8a',
+    traits:['直感派','絶景・リフレッシュ','マイペース派','快適志向'],
+    desc:'計画を立てず、誰にも合わせず、快適さだけを基準に気の向くまま動く自分軸の旅行者。'},
+  FOLW:{name:'完全なる漂流者', color:'#6b5e62',
+    traits:['直感派','絶景・リフレッシュ','マイペース派','ワイルド'],
+    desc:'計画も快適さへのこだわりも持たず、ただその瞬間の流れに身を任せる究極の自由旅行者。'},
+};
+
+const GROUPS = {
+  pi: ['PISH','PISW','PILH','PILW'],
+  po: ['POSH','POSW','POLH','POLW'],
+  fi: ['FISH','FISW','FILH','FILW'],
+  fo: ['FOSH','FOSW','FOLH','FOLW'],
+};
+
+function buildCard(code) {
+  const t = TYPES[code];
+  const a = document.createElement('a');
+  a.className = 'type-card';
+  a.href = `result.html?type=${code}`;
+  a.innerHTML = `
+    <div class="tc-head" style="background:${t.color}">
+      <div class="tc-code">${code}</div>
+      <div class="tc-name">${t.name}</div>
+    </div>
+    <div class="tc-body">
+      <div class="tc-traits">${t.traits.map(tr=>`<span class="tc-trait">${tr}</span>`).join('')}</div>
+      <div class="tc-desc">${t.desc}</div>
+    </div>`;
+  return a;
+}
+
+Object.entries(GROUPS).forEach(([key, codes]) => {
+  const grid = document.getElementById(`grid-${key}`);
+  codes.forEach(code => grid.appendChild(buildCard(code)));
+});
+</script>
+</body>
+</html>
