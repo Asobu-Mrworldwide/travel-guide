@@ -8,12 +8,18 @@ import os
 SITE_BASE_URL = 'https://worldmappy.com'
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-COUNTRIES = [
-    'mexico', 'turkey', 'indonesia', 'newzealand', 'malaysia', 'spain',
-    'singapore', 'korea', 'philippines', 'north_korea', 'thailand',
-    'taiwan', 'srilanka', 'italy', 'germany', 'canada', 'brazil',
-    'vietnam', 'uzbekistan', 'south_africa', 'laos',
-]
+NON_COUNTRY_DIRS = {'assets', 'common', 'compare', 'diagnosis', '.git', '__pycache__'}
+
+def _discover_countries():
+    """<dir>/<dir>.json が存在するトップレベルディレクトリを国ページとして自動検出する"""
+    countries = []
+    for name in sorted(os.listdir(ROOT)):
+        if name in NON_COUNTRY_DIRS or name.startswith('.'):
+            continue
+        country_dir = os.path.join(ROOT, name)
+        if os.path.isdir(country_dir) and os.path.isfile(os.path.join(country_dir, f'{name}.json')):
+            countries.append(name)
+    return countries
 
 COUNTRY_PAGES = [
     ('index.html', '', 0.9, 'weekly'),
@@ -40,7 +46,7 @@ def build():
     today = datetime.date.today().isoformat()
     urls = [(f'{SITE_BASE_URL}/', 1.0, 'weekly')]
 
-    for country in COUNTRIES:
+    for country in _discover_countries():
         for _, suffix, priority, freq in COUNTRY_PAGES:
             loc = f'{SITE_BASE_URL}/{country}/{suffix}'
             urls.append((loc, priority, freq))

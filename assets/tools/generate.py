@@ -13,6 +13,10 @@ try:
     from check_rules import check_country as _check_rules
 except ImportError:
     _check_rules = None
+try:
+    from gen_sitemap import build as _build_sitemap
+except ImportError:
+    _build_sitemap = None
 
 # ──────────────────────────────────────────
 # イラスト画像の自動圧縮（表示速度対策）
@@ -630,6 +634,10 @@ def generate(country_id):
         print(f'✅ 生成完了: {out_path}')
 
     update_index(country_id, data, root_dir)
+
+    # ── sitemap.xml を実ページ構成から再生成 ──
+    if _build_sitemap:
+        _build_sitemap()
 
     # ── 執筆ルール一括チェック（文字数・schema・must比率など） ──
     if _check_rules:
