@@ -571,6 +571,11 @@ def generate(country_id):
 
     data['__root_dir__'] = os.path.normpath(root_dir)
 
+    # グルメタブの「すべて」ボタンは表示しない（未選択時に全件表示されるため不要）
+    data['food_filter_types'] = [
+        ft for ft in data.get('food_filter_types', []) if ft.get('id') != 'all'
+    ]
+
     country_dir = os.path.join(root_dir, country_id)
     os.makedirs(os.path.join(country_dir, '素材', 'グルメ'),       exist_ok=True)
     os.makedirs(os.path.join(country_dir, '素材', '観光スポット'), exist_ok=True)
