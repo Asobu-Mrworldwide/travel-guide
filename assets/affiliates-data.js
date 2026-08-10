@@ -58,7 +58,7 @@ const AFFILIATES = {
     label: 'Wiseカードについて →',
     desc:  '実勢レートに近いレートで両替・送金できるプリペイドカード。現地ATMでの引き出しも手数料が安い。',
     btn:   '公式サイトを見る →',
-    url:   'https://wise.com/jp/'
+    url:   'https://wise.prf.hn/click/camref:1011l5NvUx/destination:https%3A%2F%2Fwise.com%2Fjp%2Fcard%2F'
   },
 
   trifa: {
@@ -243,7 +243,7 @@ const AFFILIATE_CARDS = {
     ],
     note:  '',
     btn:   '公式サイトを見る →',
-    url:   'https://wise.com/jp/',
+    url:   'https://wise.prf.hn/click/camref:1011l5NvUx/destination:https%3A%2F%2Fwise.com%2Fjp%2Fcard%2F',
     color: '#1a9068',
   },
 
