@@ -189,7 +189,7 @@ const BOOKING_BOXES = {
   flights: {
     title: '航空券を比較サイトでチェックする',
     buttons: [
-      { className: 'btn-skyscanner',   label: 'Skyscannerで見る →',    url: 'https://www.skyscanner.jp/' },
+      { className: 'btn-skyscanner',   label: 'Skyscannerで見る →',    url: 'https://px.a8.net/svt/ejp?a8mat=4B8B4P+D8W8C2+5WOE+5ZU2A' },
       { className: 'btn-googleflights', label: 'Google Flightsで見る →', url: 'https://www.google.com/travel/flights' },
     ]
   },

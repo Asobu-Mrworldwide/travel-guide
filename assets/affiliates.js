@@ -276,15 +276,12 @@ function initAffiliates() {
     wrap.className = 'booking-box';
 
     if (key === 'flights' && dest) {
+      const skyscannerBtn = box.buttons.find(b => b.className === 'btn-skyscanner');
       wrap.innerHTML = `
         <p class="booking-title">${box.title}</p>
         <div class="booking-buttons">
-          <div class="booking-btn-group flight-choice-wrap">
-            <button type="button" class="btn-booking btn-skyscanner" onclick="this.nextElementSibling.classList.toggle('open')">Skyscannerで見る →</button>
-            <div class="flight-choice">
-              <a href="https://www.skyscanner.jp/transport/flights/nrt/${dest}/" target="_blank" rel="noopener">東京発 →</a>
-              <a href="https://www.skyscanner.jp/transport/flights/kix/${dest}/" target="_blank" rel="noopener">大阪発 →</a>
-            </div>
+          <div class="booking-btn-group">
+            <a href="${skyscannerBtn.url}" target="_blank" rel="noopener" class="btn-booking btn-skyscanner">Skyscannerで見る →</a>
           </div>
           <div class="booking-btn-group flight-choice-wrap">
             <button type="button" class="btn-booking btn-googleflights" onclick="this.nextElementSibling.classList.toggle('open')">Google Flightsで見る →</button>
