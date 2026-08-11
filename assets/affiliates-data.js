@@ -294,6 +294,12 @@ const AFFILIATE_CARDS = {
     btn:   'Skyscannerで見る →',
     url:   'https://px.a8.net/svt/ejp?a8mat=4B8B4P+D8W8C2+5WOE+5ZU2A',
     color: '#0770e3',
+    bannerImg: {
+      url:    'https://px.a8.net/svt/ejp?a8mat=4B8B4P+D8W8C2+5WOE+5Z6WX',
+      imgSrc: 'https://www23.a8.net/svt/bgt?aid=260728153801&wid=001&eno=01&mid=s00000027563001004000&mc=1',
+      pixel:  'https://www16.a8.net/0.gif?a8mat=4B8B4P+D8W8C2+5WOE+5Z6WX',
+      w: 120, h: 60,
+    },
   },
 
   epos: {

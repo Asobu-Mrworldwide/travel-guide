@@ -156,7 +156,7 @@ const AFFILIATES_CSS = `
   .booking-title{text-align:left}
 }
 
-/* ── 固定バナー広告（タブごとに商材を出し分け・閉じたら再表示しない） ── */
+/* ── 固定バナー広告（タブごとに商材を出し分け・閉じたら同セッション中は再表示しない） ── */
 .sticky-ad-banner{
   position:fixed;left:0;right:0;bottom:0;z-index:900;
   background:#fff;border-top:1px solid #ddd;
@@ -175,6 +175,37 @@ const AFFILIATES_CSS = `
 .sab-btn{flex-shrink:0;color:#fff;font-size:0.72em;font-weight:700;padding:7px 13px;border-radius:16px;text-decoration:none;white-space:nowrap}
 .sab-close{flex-shrink:0;background:none;border:none;color:#aaa;font-size:1em;padding:2px 4px;cursor:pointer;line-height:1}
 .sab-close:hover{color:#666}
+@media(min-width:1020px){
+  .sticky-ad-banner{
+    left:auto;right:24px;bottom:auto;top:100px;
+    max-width:260px;margin:0;
+    flex-wrap:wrap;position:fixed;
+    border:1px solid #ddd;border-radius:12px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.12);
+    padding:14px 16px 12px;
+  }
+  .sab-icon{order:1}
+  .sab-body{order:2;flex:1 1 auto}
+  .sab-close{order:3;position:absolute;top:10px;right:10px;background:#f2f2f2;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:0.8em;padding:0}
+  .sab-btn{order:4;flex:1 0 100%;text-align:center;margin-top:10px}
+}
+.sticky-ad-banner-img{
+  padding:0;position:relative;max-width:none;width:fit-content;
+  border:none;box-shadow:0 -2px 10px rgba(0,0,0,0.15);border-radius:6px 6px 0 0;
+  overflow:visible;
+}
+.sticky-ad-banner-img a{display:block;line-height:0}
+.sticky-ad-banner-img .sab-close{
+  position:absolute;top:-9px;right:-9px;background:#fff;border:1px solid #ddd;
+  border-radius:50%;width:20px;height:20px;display:flex;align-items:center;
+  justify-content:center;font-size:0.7em;box-shadow:0 1px 4px rgba(0,0,0,0.15);
+}
+@media(min-width:1020px){
+  .sticky-ad-banner-img{
+    top:100px;bottom:auto;right:24px;left:auto;
+    box-shadow:0 4px 20px rgba(0,0,0,0.12);border-radius:6px;
+  }
+}
 `;
 
 /* =====================================================
@@ -335,21 +366,33 @@ function initAffiliates() {
     if (!c) { el.remove(); return; }
 
     const storageKey = 'sticky-ad-closed:' + location.pathname;
-    if (localStorage.getItem(storageKey)) { el.remove(); return; }
+    if (sessionStorage.getItem(storageKey)) { el.remove(); return; }
 
     const banner = document.createElement('div');
     banner.className = 'sticky-ad-banner';
-    banner.innerHTML = `
-      <span class="sab-icon" style="background:${c.color}1a">${c.icon}</span>
-      <div class="sab-body">
-        <div class="sab-name">${c.name}</div>
-        <div class="sab-tagline">${c.tagline}</div>
-      </div>
-      <a href="${c.url}" target="_blank" rel="noopener" class="sab-btn" style="background:${c.color}">見る →</a>
-      <button type="button" class="sab-close" aria-label="閉じる">✕</button>`;
+
+    if (c.bannerImg) {
+      const bi = c.bannerImg;
+      banner.classList.add('sticky-ad-banner-img');
+      banner.innerHTML = `
+        <a href="${bi.url}" target="_blank" rel="noopener">
+          <img src="${bi.imgSrc}" width="${bi.w}" height="${bi.h}" alt="${c.name}">
+        </a>
+        ${bi.pixel ? `<img src="${bi.pixel}" width="1" height="1" alt="" style="position:absolute;left:-9999px">` : ''}
+        <button type="button" class="sab-close" aria-label="閉じる">✕</button>`;
+    } else {
+      banner.innerHTML = `
+        <span class="sab-icon" style="background:${c.color}1a">${c.icon}</span>
+        <div class="sab-body">
+          <div class="sab-name">${c.name}</div>
+          <div class="sab-tagline">${c.tagline}</div>
+        </div>
+        <a href="${c.url}" target="_blank" rel="noopener" class="sab-btn" style="background:${c.color}">見る →</a>
+        <button type="button" class="sab-close" aria-label="閉じる">✕</button>`;
+    }
 
     banner.querySelector('.sab-close').addEventListener('click', () => {
-      localStorage.setItem(storageKey, '1');
+      sessionStorage.setItem(storageKey, '1');
       banner.remove();
     });
 
