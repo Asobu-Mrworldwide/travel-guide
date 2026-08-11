@@ -107,6 +107,16 @@
 .diag-reset{display:inline-block;background:none;border:1.5px solid var(--border);color:var(--sub);text-decoration:none;border-radius:30px;padding:9px 26px;font-size:0.82em;font-weight:700;cursor:pointer;margin-top:12px;transition:border-color 0.2s,color 0.2s;font-family:inherit}
 .diag-reset:hover{border-color:var(--green);color:var(--green)}
 
+/* フィードバック */
+.feedback-block{background:#fff;border-radius:12px;border:1px solid var(--border);padding:20px;margin:16px 0;text-align:center}
+.feedback-title{font-size:0.88em;font-weight:700;color:#333;margin-bottom:14px}
+.feedback-btns{display:flex;gap:10px;justify-content:center}
+.feedback-btn{flex:1;max-width:160px;padding:10px 0;border-radius:30px;border:1.5px solid var(--border);background:#fff;font-size:0.85em;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:#444}
+.feedback-btn:hover{border-color:var(--green);color:var(--green)}
+.feedback-btn.selected-good{background:var(--green);color:#fff;border-color:var(--green)}
+.feedback-btn.selected-bad{background:#c94a29;color:#fff;border-color:#c94a29}
+.feedback-thanks{font-size:0.82em;color:var(--sub);margin-top:10px}
+
 /* レスポンシブ */
 @media(max-width:520px){
   .result-type-code{font-size:2.2em;letter-spacing:4px}
@@ -243,6 +253,16 @@
       <button class="share-btn copy" id="share-copy" type="button">🔗 リンクをコピー</button>
       <button class="share-btn saveimg" id="share-saveimg" type="button">🖼️ 画像を保存</button>
     </div>
+  </div>
+
+  <!-- フィードバック -->
+  <div class="feedback-block" id="feedback-block" style="display:none">
+    <div class="feedback-title">この診断は当たっていましたか？</div>
+    <div class="feedback-btns" id="feedback-btns">
+      <button class="feedback-btn" id="fb-good" type="button">👍 当たってた</button>
+      <button class="feedback-btn" id="fb-bad" type="button">👎 ちょっと違う</button>
+    </div>
+    <div class="feedback-thanks" id="feedback-thanks" style="display:none">フィードバックありがとうございました！</div>
   </div>
 
   <a class="country-search-cta" id="country-search-cta" href="../">
