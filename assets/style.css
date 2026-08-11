@@ -96,10 +96,17 @@ footer a{color:#fff;text-decoration:none;margin:0 10px}
 .cl-divider-v{width:1px;height:34px;background:rgba(255,255,255,0.18)}
 .cl-copy-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 20px;border-radius:22px;font-size:0.8em;font-weight:700;background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.35);cursor:pointer;transition:background 0.15s,border-color 0.15s}
 .cl-copy-btn:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6)}
+.cl-diag-banner{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.15)}
+.cl-diag-info{display:flex;flex-direction:column;gap:3px}
+.cl-diag-title{font-size:0.88em;font-weight:700;color:#fff}
+.cl-diag-desc{font-size:0.73em;color:rgba(255,255,255,0.6)}
+.cl-diag-btn{background:#2563eb;color:#fff;font-size:0.82em;font-weight:700;padding:9px 20px;border-radius:24px;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:background 0.15s}
+.cl-diag-btn:hover{background:#1d4ed8}
 @media(max-width:520px){
   .country-links{padding:20px 14px}
   .cl-bottom{gap:18px}
   .cl-divider-v{display:none}
+  .cl-diag-banner{flex-direction:column;align-items:flex-start;gap:10px}
 }
 
 /* ラベルタグ */
