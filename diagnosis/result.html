@@ -701,26 +701,52 @@ document.addEventListener('click', e => {
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 import { getDatabase, ref, set, increment } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
+const FB_CONFIG = {
+  apiKey: "AIzaSyBUhndaLEcGHW4SKzSsZ4--HW4zXM2plD0",
+  authDomain: "worldmappy-923a6.firebaseapp.com",
+  databaseURL: "https://worldmappy-923a6-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "worldmappy-923a6",
+  storageBucket: "worldmappy-923a6.firebasestorage.app",
+  messagingSenderId: "957333409172",
+  appId: "1:957333409172:web:9fedbda60722820fa9d381"
+};
+
+const app = initializeApp(FB_CONFIG);
+const db = getDatabase(app);
 const urlType = new URLSearchParams(location.search).get('type');
+
+// 診断カウント＋タイプ別カウント（1セッション1回）
 if (urlType && !sessionStorage.getItem('diag_counted')) {
   sessionStorage.setItem('diag_counted', '1');
+  const today = new Date().toLocaleDateString('sv-SE');
   try {
-    const app = initializeApp({
-      apiKey: "AIzaSyBUhndaLEcGHW4SKzSsZ4--HW4zXM2plD0",
-      authDomain: "worldmappy-923a6.firebaseapp.com",
-      databaseURL: "https://worldmappy-923a6-default-rtdb.asia-southeast1.firebasedatabase.app",
-      projectId: "worldmappy-923a6",
-      storageBucket: "worldmappy-923a6.firebasestorage.app",
-      messagingSenderId: "957333409172",
-      appId: "1:957333409172:web:9fedbda60722820fa9d381"
-    });
-    const db = getDatabase(app);
-    const today = new Date().toLocaleDateString('sv-SE');
     await Promise.all([
       set(ref(db, 'diagnosis/total'), increment(1)),
-      set(ref(db, 'diagnosis/daily/' + today), increment(1))
+      set(ref(db, 'diagnosis/daily/' + today), increment(1)),
+      set(ref(db, 'types/' + urlType), increment(1)),
     ]);
   } catch(e) {}
+}
+
+// フィードバック（自分の結果のみ）
+const myType = sessionStorage.getItem('myType');
+if (urlType && myType === urlType) {
+  document.getElementById('feedback-block').style.display = '';
+  if (sessionStorage.getItem('diag_feedback')) {
+    const prev = sessionStorage.getItem('diag_feedback');
+    document.getElementById('fb-' + prev)?.classList.add('selected-' + prev);
+    document.getElementById('feedback-btns').style.display = 'none';
+    document.getElementById('feedback-thanks').style.display = '';
+  } else {
+    ['good', 'bad'].forEach(kind => {
+      document.getElementById('fb-' + kind).addEventListener('click', async () => {
+        sessionStorage.setItem('diag_feedback', kind);
+        document.getElementById('feedback-btns').style.display = 'none';
+        document.getElementById('feedback-thanks').style.display = '';
+        try { await set(ref(db, 'feedback/' + kind), increment(1)); } catch(e) {}
+      });
+    });
+  }
 }
 </script>
 </body>
