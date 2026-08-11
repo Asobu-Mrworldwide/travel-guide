@@ -8,9 +8,11 @@
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="diagnosis.css">
 <style>
+body { background: #fff; }
+
 /* ヒーロー */
 .lp-hero {
-  background: #f0f4f2;
+  background: #e8f6f2;
   padding: 52px 24px 60px;
   text-align: center;
   color: #1a2a3a;
@@ -54,40 +56,49 @@
   color: rgba(26,42,58,0.35);
 }
 
-/* 統計バー */
-.lp-stats {
-  background: #e4eae7;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 16px 24px;
+/* 統計カード */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 20px 0;
 }
-.lp-stat { text-align: center; color: #1a2a3a; }
-.lp-stat-num {
-  font-size: 1.5em;
+.stat-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #dce6e2;
+  border-top: 3px solid var(--card-color, #15735b);
+  padding: 20px 16px 18px;
+  text-align: center;
+}
+.stat-num {
+  font-size: 2em;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  color: var(--card-color);
+  letter-spacing: -0.03em;
   line-height: 1;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
 }
-.lp-stat-label {
+.stat-type-name {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: var(--card-color);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+.stat-type-code {
+  font-size: 0.65em;
+  font-family: monospace;
+  color: #aaa;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+}
+.stat-label {
   font-size: 0.68em;
-  color: rgba(26,42,58,0.5);
-  margin-top: 4px;
-}
-
-/* ウェーブ区切り */
-.lp-wave {
-  background: #e4eae7;
-  height: 32px;
-  position: relative;
-}
-.lp-wave::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 32px;
-  background: #f0f4f2;
-  border-radius: 32px 32px 0 0;
+  color: #999;
 }
 
 /* セクション共通 */
@@ -233,17 +244,25 @@
   <a class="lp-cta" href="quiz.html">診断スタート →</a>
   <div class="lp-note">無料・登録不要・約2分</div>
 </div>
-<div class="lp-stats">
-  <div class="lp-stat">
-    <div class="lp-stat-num" id="stat-total">—</div>
-    <div class="lp-stat-label">累計診断数</div>
+<div class="stat-cards">
+  <div class="stat-card" style="--card-color:#2a9d82">
+    <div class="stat-num" id="stat-today">—</div>
+    <div class="stat-label">本日の診断数</div>
   </div>
-  <div class="lp-stat">
-    <div class="lp-stat-num" id="stat-today">—</div>
-    <div class="lp-stat-label">本日の診断数</div>
+  <div class="stat-card" style="--card-color:#c8940a">
+    <div class="stat-num" id="stat-total">—</div>
+    <div class="stat-label">累計診断数</div>
+  </div>
+  <div class="stat-card" style="--card-color:#3a6a9a">
+    <div class="stat-num" id="stat-accuracy">—</div>
+    <div class="stat-label">正答性評価</div>
+  </div>
+  <div class="stat-card" style="--card-color:#8a5ea0">
+    <div class="stat-type-name" id="stat-top-name">—</div>
+    <div class="stat-type-code" id="stat-top-code"></div>
+    <div class="stat-label">今一番多いタイプ</div>
   </div>
 </div>
-<div class="lp-wave"></div>
 
 <!-- 4つの軸 -->
 <div class="lp-section">
@@ -332,6 +351,24 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
+const TYPE_NAMES = {
+  PISH:'中間管理職', PISW:'特派員', PILH:'茶道部', PILW:'凝り性',
+  POSH:'工場長', POSW:'シェルパ', POLH:'温泉ソムリエ', POLW:'猟師',
+  FISH:'ゴールデンレトリバー', FISW:'お祭り男', FILH:'探偵', FILW:'風来坊',
+  FOSH:'副本部長', FOSW:'ダチョウ', FOLH:'独身貴族', FOLW:'ターザン'
+};
+
+function countUp(el, target, suffix = '') {
+  const duration = 1200, start = performance.now();
+  const step = now => {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(eased * target).toLocaleString('ja-JP') + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
 const app = initializeApp({
   apiKey: "AIzaSyBUhndaLEcGHW4SKzSsZ4--HW4zXM2plD0",
   authDomain: "worldmappy-923a6.firebaseapp.com",
@@ -345,14 +382,28 @@ const db = getDatabase(app);
 const today = new Date().toLocaleDateString('sv-SE');
 
 try {
-  const [totalSnap, todaySnap] = await Promise.all([
+  const [totalSnap, todaySnap, typesSnap, goodSnap, badSnap] = await Promise.all([
     get(ref(db, 'diagnosis/total')),
-    get(ref(db, 'diagnosis/daily/' + today))
+    get(ref(db, 'diagnosis/daily/' + today)),
+    get(ref(db, 'types')),
+    get(ref(db, 'feedback/good')),
+    get(ref(db, 'feedback/bad')),
   ]);
-  const total = totalSnap.val() || 0;
-  const todayCount = todaySnap.val() || 0;
-  document.getElementById('stat-total').textContent = total.toLocaleString('ja-JP');
-  document.getElementById('stat-today').textContent = todayCount.toLocaleString('ja-JP');
+
+  countUp(document.getElementById('stat-total'), totalSnap.val() || 0);
+  countUp(document.getElementById('stat-today'), todaySnap.val() || 0);
+
+  const good = goodSnap.val() || 0, bad = badSnap.val() || 0;
+  if (good + bad > 0) {
+    countUp(document.getElementById('stat-accuracy'), Math.round(good / (good + bad) * 100), '%');
+  }
+
+  const typesData = typesSnap.val();
+  if (typesData) {
+    const topCode = Object.entries(typesData).reduce((a, b) => b[1] > a[1] ? b : a)[0];
+    document.getElementById('stat-top-name').textContent = TYPE_NAMES[topCode] || topCode;
+    document.getElementById('stat-top-code').textContent = topCode;
+  }
 } catch(e) {}
 </script>
 
