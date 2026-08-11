@@ -131,7 +131,7 @@
     </button>
     <div class="hb-panel" id="hb-panel">
       <a href="../index.html">World Mappy トップ</a>
-      <a href="index.html">旅行タイプを診断する</a>
+      <a href="quiz.html">旅行タイプを診断する</a>
       <a href="types.html">旅行タイプ一覧</a>
     </div>
   </div>
@@ -143,7 +143,7 @@
   <div class="viewing-banner" id="viewing-banner">
     <span class="viewing-banner-icon">👀</span>
     <span class="viewing-banner-text" id="viewing-banner-text"></span>
-    <a class="viewing-banner-link" id="viewing-banner-link" href="index.html">診断してみる</a>
+    <a class="viewing-banner-link" id="viewing-banner-link" href="quiz.html">診断してみる</a>
   </div>
 
   <!-- タイプブラウザ（常時表示） -->
@@ -251,7 +251,7 @@
   </a>
 
   <div style="text-align:center;margin-top:4px">
-    <a class="diag-reset" id="bottom-action-link" href="index.html">もう一度診断する</a>
+    <a class="diag-reset" id="bottom-action-link" href="quiz.html">もう一度診断する</a>
   </div>
 
 </div><!-- /page-wrap -->
@@ -532,7 +532,7 @@ function drawShareImage(type) {
 
 // ===== シェア機能 =====
 function setupShare(myTypeCode) {
-  const quizUrl = new URL('index.html', location.href).toString();
+  const quizUrl = new URL('quiz.html', location.href).toString();
   const t = TYPES[myTypeCode];
   const text = `私の旅行タイプは「${t.name}」でした！あなたの旅行タイプは？ #WorldMappy 旅行タイプ診断`;
 
@@ -632,7 +632,7 @@ function renderResult(type) {
     shareBlock.style.display = '';
     setupShare(type);
     bottomLink.textContent = 'もう一度診断する';
-    bottomLink.href = 'index.html';
+    bottomLink.href = 'quiz.html';
   } else {
     // 閲覧中（一覧・相性カード経由、または未診断）
     banner.classList.add('show');
@@ -646,10 +646,10 @@ function renderResult(type) {
       document.getElementById('viewing-banner-text').textContent =
         'この性格分析を閲覧中です。あなたの旅行タイプを診断してみませんか？';
       document.getElementById('viewing-banner-link').textContent = '診断してみる';
-      document.getElementById('viewing-banner-link').href = 'index.html';
+      document.getElementById('viewing-banner-link').href = 'quiz.html';
     }
     bottomLink.textContent = '診断してタイプを見つける';
-    bottomLink.href = 'index.html';
+    bottomLink.href = 'quiz.html';
   }
 }
 
@@ -658,7 +658,7 @@ function renderResult(type) {
   const params = new URLSearchParams(location.search);
   const type = params.get('type');
   if (!type || !TYPES[type]) {
-    location.href = 'index.html';
+    location.href = 'quiz.html';
     return;
   }
   renderResult(type);
