@@ -155,6 +155,26 @@ const AFFILIATES_CSS = `
   .booking-btn-group{flex:1}
   .booking-title{text-align:left}
 }
+
+/* ── 固定バナー広告（タブごとに商材を出し分け・閉じたら再表示しない） ── */
+.sticky-ad-banner{
+  position:fixed;left:0;right:0;bottom:0;z-index:900;
+  background:#fff;border-top:1px solid #ddd;
+  box-shadow:0 -2px 10px rgba(0,0,0,0.08);
+  padding:9px 12px;
+  display:flex;align-items:center;gap:10px;
+  max-width:520px;margin:0 auto;
+}
+.sab-icon{
+  flex-shrink:0;width:34px;height:34px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:1.15em;
+}
+.sab-body{flex:1;min-width:0}
+.sab-name{font-size:0.76em;font-weight:700;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sab-tagline{font-size:0.68em;color:#777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sab-btn{flex-shrink:0;color:#fff;font-size:0.72em;font-weight:700;padding:7px 13px;border-radius:16px;text-decoration:none;white-space:nowrap}
+.sab-close{flex-shrink:0;background:none;border:none;color:#aaa;font-size:1em;padding:2px 4px;cursor:pointer;line-height:1}
+.sab-close:hover{color:#666}
 `;
 
 /* =====================================================
@@ -306,6 +326,34 @@ function initAffiliates() {
       </div>`;
 
     el.replaceWith(wrap);
+  });
+
+  // ── 固定バナー広告（タブごとに商材を出し分け） ──
+  document.querySelectorAll('[data-sticky-banner]').forEach(el => {
+    const key = el.dataset.stickyBanner;
+    const c = AFFILIATE_CARDS[key];
+    if (!c) { el.remove(); return; }
+
+    const storageKey = 'sticky-ad-closed:' + location.pathname;
+    if (localStorage.getItem(storageKey)) { el.remove(); return; }
+
+    const banner = document.createElement('div');
+    banner.className = 'sticky-ad-banner';
+    banner.innerHTML = `
+      <span class="sab-icon" style="background:${c.color}1a">${c.icon}</span>
+      <div class="sab-body">
+        <div class="sab-name">${c.name}</div>
+        <div class="sab-tagline">${c.tagline}</div>
+      </div>
+      <a href="${c.url}" target="_blank" rel="noopener" class="sab-btn" style="background:${c.color}">見る →</a>
+      <button type="button" class="sab-close" aria-label="閉じる">✕</button>`;
+
+    banner.querySelector('.sab-close').addEventListener('click', () => {
+      localStorage.setItem(storageKey, '1');
+      banner.remove();
+    });
+
+    el.replaceWith(banner);
   });
 }
 

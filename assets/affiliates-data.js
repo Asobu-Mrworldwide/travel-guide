@@ -281,6 +281,36 @@ const AFFILIATE_CARDS = {
     color: '#6c4ff6',
   },
 
+  skyscanner: {
+    icon:    '✈️',
+    name:    'Skyscanner',
+    tagline: '航空券の料金比較サイト',
+    points: [
+      '複数の航空会社・予約サイトを一括比較',
+      '価格アラートで値下がりを通知',
+      '最安値カレンダーで安い日程を探しやすい',
+    ],
+    note:  '',
+    btn:   'Skyscannerで見る →',
+    url:   'https://px.a8.net/svt/ejp?a8mat=4B8B4P+D8W8C2+5WOE+5ZU2A',
+    color: '#0770e3',
+  },
+
+  epos: {
+    icon:    '<img src="../assets/epos.png" alt="エポスカード" style="height:20px;width:auto;display:block">',
+    name:    'エポスカード',
+    tagline: '年会費無料でも海外旅行保険が付くカード',
+    points: [
+      '年会費が永年無料で維持コストゼロ',
+      '旅行費用の支払いで海外旅行保険が付帯（利用付帯）',
+      '保険目的のサブカードとして持つ人が多い',
+    ],
+    note:  '※ 補償内容・付帯条件は公式サイトでご確認ください',
+    btn:   '公式サイトを見る →',
+    url:   'https://px.a8.net/svt/ejp?a8mat=4B8COW+9NP62A+38L8+BXYE9',
+    color: '#c8102e',
+  },
+
   grab: {
     icon:    '🚗',
     name:    'Grab',

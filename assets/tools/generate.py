@@ -584,6 +584,18 @@ def generate(country_id):
 
     SECTIONS = ['basic', 'spots', 'food', 'course', 'budget', 'practical', 'phrases']
 
+    # ── タブごとの固定バナー広告（sticky banner）に出す商材のキー ──
+    # ツアー予約系（Klook等）は反応が薄いため対象外。Skyscanner・Wise・Airalo・trifa・Eposの5種のみで回す。
+    STICKY_AD_BY_SLUG = {
+        'basic':     'skyscanner',
+        'spots':     'airalo',
+        'food':      'trifa',
+        'course':    'epos',
+        'budget':    'wise',
+        'practical': 'skyscanner',
+        'phrases':   'epos',
+    }
+
     if data.get('multipage'):
         # ── 分割ページモード（タブごとに個別HTML） ──
         pages = [
@@ -614,6 +626,7 @@ def generate(country_id):
             ctx['needs_gmaps']     = slug in ('basic', 'budget')
             ctx['container_style'] = 'max-width:1000px' if slug in ('spots', 'food') else ''
             ctx['page_title']      = base_title if slug == 'basic' else f'{name}の{label}｜{base_title}'
+            ctx['sticky_ad_key']    = STICKY_AD_BY_SLUG.get(slug, 'wise')
             ctx.update(_build_og_context(data, country_id, outfile))
             ctx['og_title']        = _html_attr_esc(ctx['page_title'])
             html = _render(tpl, ctx)
@@ -631,6 +644,7 @@ def generate(country_id):
         ctx['sec_active']      = {s: ('active' if s == 'basic' else '') for s in SECTIONS}
         ctx['needs_gmaps']     = True
         ctx['container_style'] = ''
+        ctx['sticky_ad_key']    = STICKY_AD_BY_SLUG.get('basic', 'wise')
         ctx.update(_build_og_context(data, country_id, 'index.html'))
         ctx['og_title']        = _html_attr_esc(data.get('page_title', ''))
         html = _render(tpl, ctx)
