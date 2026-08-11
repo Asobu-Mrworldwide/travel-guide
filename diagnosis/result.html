@@ -676,5 +676,32 @@ document.addEventListener('click', e => {
   }
 });
 </script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import { getDatabase, ref, set, increment } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+
+const urlType = new URLSearchParams(location.search).get('type');
+if (urlType && !sessionStorage.getItem('diag_counted')) {
+  sessionStorage.setItem('diag_counted', '1');
+  try {
+    const app = initializeApp({
+      apiKey: "AIzaSyBUhndaLEcGHW4SKzSsZ4--HW4zXM2plD0",
+      authDomain: "worldmappy-923a6.firebaseapp.com",
+      databaseURL: "https://worldmappy-923a6-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "worldmappy-923a6",
+      storageBucket: "worldmappy-923a6.firebasestorage.app",
+      messagingSenderId: "957333409172",
+      appId: "1:957333409172:web:9fedbda60722820fa9d381"
+    });
+    const db = getDatabase(app);
+    const today = new Date().toLocaleDateString('sv-SE');
+    await Promise.all([
+      set(ref(db, 'diagnosis/total'), increment(1)),
+      set(ref(db, 'diagnosis/daily/' + today), increment(1))
+    ]);
+  } catch(e) {}
+}
+</script>
 </body>
 </html>

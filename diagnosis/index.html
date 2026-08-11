@@ -54,6 +54,27 @@
   color: rgba(255,255,255,0.45);
 }
 
+/* 統計バー */
+.lp-stats {
+  background: rgba(0,0,0,0.18);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 16px 24px;
+}
+.lp-stat { text-align: center; color: #fff; }
+.lp-stat-num {
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.lp-stat-label {
+  font-size: 0.68em;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+
 /* ウェーブ区切り */
 .lp-wave {
   background: #15735b;
@@ -245,6 +266,16 @@
   <a class="lp-cta" href="quiz.html">診断スタート →</a>
   <div class="lp-note">無料・登録不要・約2分</div>
 </div>
+<div class="lp-stats">
+  <div class="lp-stat">
+    <div class="lp-stat-num" id="stat-total">—</div>
+    <div class="lp-stat-label">累計診断数</div>
+  </div>
+  <div class="lp-stat">
+    <div class="lp-stat-num" id="stat-today">—</div>
+    <div class="lp-stat-label">本日の診断数</div>
+  </div>
+</div>
 <div class="lp-wave"></div>
 
 <!-- 4つの軸 -->
@@ -336,6 +367,34 @@
   <a href="../">World Mappy トップ</a>
   <a href="quiz.html">旅行タイプ診断</a>
 </footer>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyBUhndaLEcGHW4SKzSsZ4--HW4zXM2plD0",
+  authDomain: "worldmappy-923a6.firebaseapp.com",
+  databaseURL: "https://worldmappy-923a6-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "worldmappy-923a6",
+  storageBucket: "worldmappy-923a6.firebasestorage.app",
+  messagingSenderId: "957333409172",
+  appId: "1:957333409172:web:9fedbda60722820fa9d381"
+});
+const db = getDatabase(app);
+const today = new Date().toLocaleDateString('sv-SE');
+
+try {
+  const [totalSnap, todaySnap] = await Promise.all([
+    get(ref(db, 'diagnosis/total')),
+    get(ref(db, 'diagnosis/daily/' + today))
+  ]);
+  const total = totalSnap.val() || 0;
+  const todayCount = todaySnap.val() || 0;
+  document.getElementById('stat-total').textContent = total.toLocaleString('ja-JP');
+  document.getElementById('stat-today').textContent = todayCount.toLocaleString('ja-JP');
+} catch(e) {}
+</script>
 
 <script>
 function toggleHbMenu() {
