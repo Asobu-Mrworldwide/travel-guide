@@ -282,7 +282,7 @@ const AFFILIATE_CARDS = {
   },
 
   skyscanner: {
-    icon:    '✈️',
+    icon:    '<img src="../assets/skyscanner-icon.png" alt="Skyscanner" style="width:28px;height:28px;object-fit:cover;border-radius:6px;display:block">',
     name:    'Skyscanner',
     tagline: '航空券の料金比較サイト',
     points: [
@@ -307,8 +307,14 @@ const AFFILIATE_CARDS = {
     ],
     note:  '※ 補償内容・付帯条件は公式サイトでご確認ください',
     btn:   '公式サイトを見る →',
-    url:   'https://px.a8.net/svt/ejp?a8mat=4B8COW+9NP62A+38L8+BXYE9',
+    url:   'https://px.a8.net/svt/ejp?a8mat=4B8COW+9NP62A+38L8+BY641',
     color: '#c8102e',
+    rawAdWidget: {
+      divId:      'div_admane_async_1734_658_2973',
+      scriptSrc:  'https://ad-verification.a8.net/ad/js/brandsafe.js',
+      params:     "'//ad-verification.a8.net/ad', '_site=1734&_article=658&_link=2973&_image=3221&_ns=1&sad=s00000015110002', '260730176584', '4B8COW+9NP62A+38L8+BY641'",
+      pixel:      'https://www18.a8.net/0.gif?a8mat=4B8COW+9NP62A+38L8+BY641',
+    },
   },
 
   grab: {

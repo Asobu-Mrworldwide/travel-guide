@@ -177,17 +177,19 @@ const AFFILIATES_CSS = `
 .sab-close:hover{color:#666}
 @media(min-width:1020px){
   .sticky-ad-banner{
-    left:auto;right:24px;bottom:auto;top:100px;
-    max-width:260px;margin:0;
+    left:auto;right:24px;bottom:auto;top:140px;
+    max-width:340px;margin:0;
     flex-wrap:wrap;position:fixed;
-    border:1px solid #ddd;border-radius:12px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.12);
-    padding:14px 16px 12px;
+    border:1px solid #ddd;border-radius:14px;
+    box-shadow:0 6px 28px rgba(0,0,0,0.14);
+    padding:20px 22px 18px;
   }
-  .sab-icon{order:1}
+  .sab-icon{order:1;width:48px;height:48px;font-size:1.6em;border-radius:10px}
   .sab-body{order:2;flex:1 1 auto}
-  .sab-close{order:3;position:absolute;top:10px;right:10px;background:#f2f2f2;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:0.8em;padding:0}
-  .sab-btn{order:4;flex:1 0 100%;text-align:center;margin-top:10px}
+  .sab-name{font-size:1.05em}
+  .sab-tagline{font-size:0.88em}
+  .sab-close{order:3;position:absolute;top:12px;right:12px;background:#f2f2f2;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:0.9em;padding:0}
+  .sab-btn{order:4;flex:1 0 100%;text-align:center;margin-top:14px;font-size:0.92em;padding:11px 16px;border-radius:20px}
 }
 .sticky-ad-banner-img{
   padding:0;position:relative;max-width:none;width:fit-content;
@@ -202,7 +204,7 @@ const AFFILIATES_CSS = `
 }
 @media(min-width:1020px){
   .sticky-ad-banner-img{
-    top:100px;bottom:auto;right:24px;left:auto;
+    top:140px;bottom:auto;right:24px;left:auto;
     box-shadow:0 4px 20px rgba(0,0,0,0.12);border-radius:6px;
   }
 }
@@ -371,7 +373,37 @@ function initAffiliates() {
     const banner = document.createElement('div');
     banner.className = 'sticky-ad-banner';
 
-    if (c.bannerImg) {
+    if (c.rawAdWidget) {
+      const rw = c.rawAdWidget;
+      banner.classList.add('sticky-ad-banner-img');
+
+      const slot = document.createElement('div');
+      slot.id = rw.divId;
+      banner.appendChild(slot);
+
+      const s1 = document.createElement('script');
+      s1.src = rw.scriptSrc;
+      s1.onload = () => {
+        const s2 = document.createElement('script');
+        s2.textContent = `brandsafe_js_async(${rw.params});`;
+        document.body.appendChild(s2);
+      };
+      document.body.appendChild(s1);
+
+      if (rw.pixel) {
+        const pixel = document.createElement('img');
+        pixel.src = rw.pixel; pixel.width = 1; pixel.height = 1; pixel.alt = '';
+        pixel.style.position = 'absolute'; pixel.style.left = '-9999px';
+        banner.appendChild(pixel);
+      }
+
+      const closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'sab-close';
+      closeBtn.setAttribute('aria-label', '閉じる');
+      closeBtn.textContent = '✕';
+      banner.appendChild(closeBtn);
+    } else if (c.bannerImg) {
       const bi = c.bannerImg;
       banner.classList.add('sticky-ad-banner-img');
       banner.innerHTML = `
@@ -381,8 +413,10 @@ function initAffiliates() {
         ${bi.pixel ? `<img src="${bi.pixel}" width="1" height="1" alt="" style="position:absolute;left:-9999px">` : ''}
         <button type="button" class="sab-close" aria-label="閉じる">✕</button>`;
     } else {
+      const isImgIcon = c.icon.trim().startsWith('<img');
+      const iconBg = isImgIcon ? 'transparent' : `${c.color}1a`;
       banner.innerHTML = `
-        <span class="sab-icon" style="background:${c.color}1a">${c.icon}</span>
+        <span class="sab-icon" style="background:${iconBg}">${c.icon}</span>
         <div class="sab-body">
           <div class="sab-name">${c.name}</div>
           <div class="sab-tagline">${c.tagline}</div>
