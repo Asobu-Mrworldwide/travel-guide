@@ -726,7 +726,7 @@ if (urlType && !sessionStorage.getItem('diag_counted')) {
       set(ref(db, 'diagnosis/daily/' + today), increment(1)),
       set(ref(db, 'types/' + urlType), increment(1)),
     ]);
-  } catch(e) {}
+  } catch(e) { console.error('diag write error:', e); }
 }
 
 // フィードバック（自分の結果のみ）

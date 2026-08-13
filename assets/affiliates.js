@@ -181,7 +181,7 @@ const AFFILIATES_CSS = `
 .sab-logo-img-desktop{display:none}
 @media(min-width:1020px){
   .sticky-ad-banner{
-    left:auto;right:24px;bottom:auto;top:140px;
+    left:auto;right:24px;bottom:24px;top:auto;
     max-width:340px;margin:0;
     flex-wrap:wrap;position:fixed;
     border:1px solid #ddd;border-radius:0;
@@ -194,7 +194,7 @@ const AFFILIATES_CSS = `
   .sab-name{font-size:1.05em}
   .sab-tagline{font-size:0.88em}
   .sab-close{position:absolute;top:10px;right:10px;background:#f2f2f2;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.62em;padding:0}
-  .sab-btn{order:4;flex:1 0 100%;text-align:center;margin-top:14px;font-size:0.92em;padding:11px 16px;border-radius:20px}
+  .sab-btn{order:4;flex:1 0 100%;text-align:center;margin-top:14px;font-size:0.78em;padding:8px 14px;border-radius:18px}
 
   .sab-link-logo{flex-direction:column;align-items:stretch}
   .sab-logo-img{width:100%;height:auto;order:0}
@@ -219,7 +219,7 @@ const AFFILIATES_CSS = `
 }
 @media(min-width:1020px){
   .sticky-ad-banner-img{
-    top:140px;bottom:auto;right:24px;left:auto;
+    top:auto;bottom:24px;right:24px;left:auto;
     box-shadow:0 4px 20px rgba(0,0,0,0.12);border-radius:0;
   }
 }

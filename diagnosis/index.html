@@ -332,6 +332,7 @@ try {
   }
 
   const typesData = typesSnap.val();
+  console.log('types data:', typesData);
   if (typesData) {
     const topCode = Object.entries(typesData).reduce((a, b) => b[1] > a[1] ? b : a)[0];
     const nameEl = document.getElementById('stat-top-name');
