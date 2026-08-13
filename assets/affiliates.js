@@ -181,11 +181,11 @@ const AFFILIATES_CSS = `
 .sab-logo-img-desktop{display:none}
 @media(min-width:1020px){
   .sticky-ad-banner{
-    left:auto;right:24px;bottom:24px;top:auto;
+    left:auto;right:24px;top:140px;bottom:auto;
     max-width:340px;margin:0;
     flex-wrap:wrap;position:fixed;
     border:1px solid #ddd;border-radius:0;
-    box-shadow:0 6px 28px rgba(0,0,0,0.14);
+    box-shadow:none;
     padding:20px 22px 18px;
   }
   .sab-link{width:100%;flex-wrap:wrap}
@@ -219,8 +219,8 @@ const AFFILIATES_CSS = `
 }
 @media(min-width:1020px){
   .sticky-ad-banner-img{
-    top:auto;bottom:24px;right:24px;left:auto;
-    box-shadow:0 4px 20px rgba(0,0,0,0.12);border-radius:0;
+    top:140px;bottom:auto;right:24px;left:auto;
+    box-shadow:none;border-radius:0;
   }
 }
 `;
@@ -461,7 +461,45 @@ function initAffiliates() {
     });
 
     el.replaceWith(banner);
+    _initStickyBannerFooterAvoidance(banner);
   });
+}
+
+/* フッターに重ならないよう、近づいたらfixed→absoluteに切り替える */
+function _initStickyBannerFooterAvoidance(banner) {
+  const footer = document.querySelector('.country-links') || document.querySelector('footer');
+  if (!footer) return;
+
+  const GAP = 16;
+  const FIXED_TOP = 140;
+  function update() {
+    if (!document.body.contains(banner)) { window.removeEventListener('scroll', update); window.removeEventListener('resize', update); return; }
+    if (window.innerWidth < 1020) {
+      if (banner.style.position === 'absolute') {
+        banner.style.position = '';
+        banner.style.top = '';
+        banner.style.bottom = '';
+      }
+      return;
+    }
+    const footerTop = footer.getBoundingClientRect().top;
+    const bannerHeight = banner.offsetHeight;
+    if (footerTop < FIXED_TOP + bannerHeight + GAP) {
+      banner.style.position = 'absolute';
+      const footerAbsTop = footerTop + window.scrollY;
+      banner.style.top = (footerAbsTop - bannerHeight - GAP) + 'px';
+      banner.style.bottom = 'auto';
+    } else {
+      if (banner.style.position === 'absolute') {
+        banner.style.position = '';
+        banner.style.top = '';
+        banner.style.bottom = '';
+      }
+    }
+  }
+  update();
+  window.addEventListener('scroll', update, {passive: true});
+  window.addEventListener('resize', update);
 }
 
 document.addEventListener('DOMContentLoaded', initAffiliates);
