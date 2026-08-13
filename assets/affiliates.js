@@ -167,7 +167,7 @@ const AFFILIATES_CSS = `
 }
 .sab-link{display:flex;align-items:center;gap:10px;flex:1;min-width:0;text-decoration:none;color:inherit}
 .sab-icon{
-  flex-shrink:0;width:34px;height:34px;border-radius:8px;overflow:hidden;
+  flex-shrink:0;width:34px;height:34px;border-radius:0;overflow:hidden;
   display:flex;align-items:center;justify-content:center;font-size:1.15em;
 }
 .sab-body{flex:1;min-width:0}
@@ -176,7 +176,7 @@ const AFFILIATES_CSS = `
 .sab-btn{flex-shrink:0;color:#fff;font-size:0.72em;font-weight:700;padding:7px 13px;border-radius:16px;text-decoration:none;white-space:nowrap}
 .sab-close{flex-shrink:0;background:none;border:none;color:#aaa;font-size:1em;padding:2px 4px;cursor:pointer;line-height:1;z-index:1}
 .sab-close:hover{color:#666}
-.sab-logo-img{width:34px;height:34px;object-fit:cover;flex-shrink:0;border-radius:8px;display:none}
+.sab-logo-img{width:34px;height:34px;object-fit:cover;flex-shrink:0;border-radius:0;display:none}
 .sab-logo-img-mobile{display:block}
 .sab-logo-img-desktop{display:none}
 @media(min-width:1020px){
@@ -184,30 +184,31 @@ const AFFILIATES_CSS = `
     left:auto;right:24px;bottom:auto;top:140px;
     max-width:340px;margin:0;
     flex-wrap:wrap;position:fixed;
-    border:1px solid #ddd;border-radius:14px;
+    border:1px solid #ddd;border-radius:0;
     box-shadow:0 6px 28px rgba(0,0,0,0.14);
     padding:20px 22px 18px;
   }
   .sab-link{width:100%;flex-wrap:wrap}
-  .sab-icon{order:1;width:48px;height:48px;font-size:1.6em;border-radius:10px}
+  .sab-icon{order:1;width:48px;height:48px;font-size:1.6em;border-radius:0}
   .sab-body{order:2;flex:1 1 auto}
   .sab-name{font-size:1.05em}
   .sab-tagline{font-size:0.88em}
-  .sab-close{position:absolute;top:12px;right:12px;background:#f2f2f2;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:0.9em;padding:0}
+  .sab-close{position:absolute;top:10px;right:10px;background:#f2f2f2;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:0.62em;padding:0}
   .sab-btn{order:4;flex:1 0 100%;text-align:center;margin-top:14px;font-size:0.92em;padding:11px 16px;border-radius:20px}
 
   .sab-link-logo{flex-direction:column;align-items:stretch}
   .sab-logo-img{width:100%;height:auto;order:0}
   .sab-logo-img-mobile{display:none}
   .sab-logo-img-desktop{display:block}
+  .sticky-ad-banner-logo{padding:0}
   .sticky-ad-banner-logo .sab-name{display:none}
-  .sticky-ad-banner-logo .sab-body{order:2;flex:0 0 auto}
-  .sticky-ad-banner-logo .sab-tagline{white-space:normal;text-align:center;font-size:0.85em;margin-top:10px}
-  .sticky-ad-banner-logo .sab-btn{order:3;margin-top:12px}
+  .sticky-ad-banner-logo .sab-body{order:2;flex:0 0 auto;padding:0 20px}
+  .sticky-ad-banner-logo .sab-tagline{white-space:normal;text-align:center;font-size:0.85em;margin-top:8px}
+  .sticky-ad-banner-logo .sab-btn{order:3;margin:8px 20px 12px}
 }
 .sticky-ad-banner-img{
   padding:0;position:relative;max-width:none;width:fit-content;
-  border:none;box-shadow:0 -2px 10px rgba(0,0,0,0.15);border-radius:6px 6px 0 0;
+  border:none;box-shadow:0 -2px 10px rgba(0,0,0,0.15);border-radius:0;
   overflow:visible;
 }
 .sticky-ad-banner-img a{display:block;line-height:0}
@@ -219,7 +220,7 @@ const AFFILIATES_CSS = `
 @media(min-width:1020px){
   .sticky-ad-banner-img{
     top:140px;bottom:auto;right:24px;left:auto;
-    box-shadow:0 4px 20px rgba(0,0,0,0.12);border-radius:6px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.12);border-radius:0;
   }
 }
 `;
