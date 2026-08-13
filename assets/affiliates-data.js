@@ -282,7 +282,9 @@ const AFFILIATE_CARDS = {
   },
 
   skyscanner: {
-    icon:    '<img src="../assets/skyscanner-icon.png" alt="Skyscanner" style="width:28px;height:28px;object-fit:cover;border-radius:6px;display:block">',
+    icon:      '<img src="../assets/skyscanner-logo.png" alt="Skyscanner" style="width:100%;height:100%;object-fit:contain;display:block">',
+    mobileIconImg: '../assets/skyscanner-icon.png',
+    logoImg:   '../assets/skyscanner-logo.png',
     name:    'Skyscanner',
     tagline: '航空券の料金比較サイト',
     points: [

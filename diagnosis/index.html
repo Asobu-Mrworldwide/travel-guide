@@ -75,6 +75,10 @@ body { background: #fff; }
   border-top: 4px solid var(--card-color, #15735b);
   padding: 24px 16px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 .stat-num {
   font-size: 2.2em;
@@ -261,8 +265,10 @@ body { background: #fff; }
     <div class="stat-label">正答性評価</div>
   </div>
   <div class="stat-card" style="--card-color:#8a5ea0">
-    <div class="stat-type-name" id="stat-top-name">—</div>
-    <div class="stat-type-code" id="stat-top-code"></div>
+    <div>
+      <div class="stat-num" id="stat-top-name">—</div>
+      <div class="stat-type-code" id="stat-top-code"></div>
+    </div>
     <div class="stat-label">今一番多いタイプ</div>
   </div>
 </div>
@@ -329,7 +335,9 @@ try {
   const typesData = typesSnap.val();
   if (typesData) {
     const topCode = Object.entries(typesData).reduce((a, b) => b[1] > a[1] ? b : a)[0];
-    document.getElementById('stat-top-name').textContent = TYPE_NAMES[topCode] || topCode;
+    const nameEl = document.getElementById('stat-top-name');
+    nameEl.className = 'stat-type-name';
+    nameEl.textContent = TYPE_NAMES[topCode] || topCode;
     document.getElementById('stat-top-code').textContent = topCode;
   }
 } catch(e) { console.error('Firebase stats error:', e); }

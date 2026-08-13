@@ -159,22 +159,26 @@ const AFFILIATES_CSS = `
 /* ── 固定バナー広告（タブごとに商材を出し分け・閉じたら同セッション中は再表示しない） ── */
 .sticky-ad-banner{
   position:fixed;left:0;right:0;bottom:0;z-index:900;
-  background:#fff;border-top:1px solid #ddd;
+  background:rgba(255,255,255,0.92);border-top:1px solid #ddd;
   box-shadow:0 -2px 10px rgba(0,0,0,0.08);
   padding:9px 12px;
   display:flex;align-items:center;gap:10px;
   max-width:520px;margin:0 auto;
 }
+.sab-link{display:flex;align-items:center;gap:10px;flex:1;min-width:0;text-decoration:none;color:inherit}
 .sab-icon{
-  flex-shrink:0;width:34px;height:34px;border-radius:8px;
+  flex-shrink:0;width:34px;height:34px;border-radius:8px;overflow:hidden;
   display:flex;align-items:center;justify-content:center;font-size:1.15em;
 }
 .sab-body{flex:1;min-width:0}
 .sab-name{font-size:0.76em;font-weight:700;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sab-tagline{font-size:0.68em;color:#777;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sab-btn{flex-shrink:0;color:#fff;font-size:0.72em;font-weight:700;padding:7px 13px;border-radius:16px;text-decoration:none;white-space:nowrap}
-.sab-close{flex-shrink:0;background:none;border:none;color:#aaa;font-size:1em;padding:2px 4px;cursor:pointer;line-height:1}
+.sab-close{flex-shrink:0;background:none;border:none;color:#aaa;font-size:1em;padding:2px 4px;cursor:pointer;line-height:1;z-index:1}
 .sab-close:hover{color:#666}
+.sab-logo-img{width:34px;height:34px;object-fit:cover;flex-shrink:0;border-radius:8px;display:none}
+.sab-logo-img-mobile{display:block}
+.sab-logo-img-desktop{display:none}
 @media(min-width:1020px){
   .sticky-ad-banner{
     left:auto;right:24px;bottom:auto;top:140px;
@@ -184,12 +188,22 @@ const AFFILIATES_CSS = `
     box-shadow:0 6px 28px rgba(0,0,0,0.14);
     padding:20px 22px 18px;
   }
+  .sab-link{width:100%;flex-wrap:wrap}
   .sab-icon{order:1;width:48px;height:48px;font-size:1.6em;border-radius:10px}
   .sab-body{order:2;flex:1 1 auto}
   .sab-name{font-size:1.05em}
   .sab-tagline{font-size:0.88em}
-  .sab-close{order:3;position:absolute;top:12px;right:12px;background:#f2f2f2;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:0.9em;padding:0}
+  .sab-close{position:absolute;top:12px;right:12px;background:#f2f2f2;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:0.9em;padding:0}
   .sab-btn{order:4;flex:1 0 100%;text-align:center;margin-top:14px;font-size:0.92em;padding:11px 16px;border-radius:20px}
+
+  .sab-link-logo{flex-direction:column;align-items:stretch}
+  .sab-logo-img{width:100%;height:auto;order:0}
+  .sab-logo-img-mobile{display:none}
+  .sab-logo-img-desktop{display:block}
+  .sticky-ad-banner-logo .sab-name{display:none}
+  .sticky-ad-banner-logo .sab-body{order:2;flex:0 0 auto}
+  .sticky-ad-banner-logo .sab-tagline{white-space:normal;text-align:center;font-size:0.85em;margin-top:10px}
+  .sticky-ad-banner-logo .sab-btn{order:3;margin-top:12px}
 }
 .sticky-ad-banner-img{
   padding:0;position:relative;max-width:none;width:fit-content;
@@ -412,16 +426,31 @@ function initAffiliates() {
         </a>
         ${bi.pixel ? `<img src="${bi.pixel}" width="1" height="1" alt="" style="position:absolute;left:-9999px">` : ''}
         <button type="button" class="sab-close" aria-label="閉じる">✕</button>`;
+    } else if (c.logoImg) {
+      banner.classList.add('sticky-ad-banner-logo');
+      banner.innerHTML = `
+        <a href="${c.url}" target="_blank" rel="noopener" class="sab-link sab-link-logo">
+          ${c.mobileIconImg ? `<img src="${c.mobileIconImg}" alt="${c.name}" class="sab-logo-img sab-logo-img-mobile">` : ''}
+          <img src="${c.logoImg}" alt="${c.name}" class="sab-logo-img sab-logo-img-desktop">
+          <div class="sab-body">
+            <div class="sab-name">${c.name}</div>
+            <div class="sab-tagline">${c.tagline}</div>
+          </div>
+          <span class="sab-btn" style="background:${c.color}">見る →</span>
+        </a>
+        <button type="button" class="sab-close" aria-label="閉じる">✕</button>`;
     } else {
       const isImgIcon = c.icon.trim().startsWith('<img');
       const iconBg = isImgIcon ? 'transparent' : `${c.color}1a`;
       banner.innerHTML = `
-        <span class="sab-icon" style="background:${iconBg}">${c.icon}</span>
-        <div class="sab-body">
-          <div class="sab-name">${c.name}</div>
-          <div class="sab-tagline">${c.tagline}</div>
-        </div>
-        <a href="${c.url}" target="_blank" rel="noopener" class="sab-btn" style="background:${c.color}">見る →</a>
+        <a href="${c.url}" target="_blank" rel="noopener" class="sab-link">
+          <span class="sab-icon" style="background:${iconBg}">${c.icon}</span>
+          <div class="sab-body">
+            <div class="sab-name">${c.name}</div>
+            <div class="sab-tagline">${c.tagline}</div>
+          </div>
+          <span class="sab-btn" style="background:${c.color}">見る →</span>
+        </a>
         <button type="button" class="sab-close" aria-label="閉じる">✕</button>`;
     }
 

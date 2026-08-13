@@ -718,6 +718,7 @@ const urlType = new URLSearchParams(location.search).get('type');
 // 診断カウント＋タイプ別カウント（1セッション1回）
 if (urlType && !sessionStorage.getItem('diag_counted')) {
   sessionStorage.setItem('diag_counted', '1');
+  sessionStorage.removeItem('diag_feedback');
   const today = new Date().toLocaleDateString('sv-SE');
   try {
     await Promise.all([
