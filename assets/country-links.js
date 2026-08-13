@@ -64,19 +64,9 @@
     `<a href="${base}index.html?region=${encodeURIComponent(region)}" class="cl-chip">${region}</a>`
   ).join("");
 
-  const diagBannerHtml = isDiagPage ? "" : `
-    <div class="cl-diag-banner">
-      <div class="cl-diag-info">
-        <span class="cl-diag-title">旅行タイプ診断</span>
-        <span class="cl-diag-desc">計画派・直感派など16タイプで旅スタイルを診断</span>
-      </div>
-      <a href="${base}diagnosis/index.html" class="cl-diag-btn">見る →</a>
-    </div>`;
-
   const html = `
     <div class="country-links">
       <div class="country-links-inner">
-        ${diagBannerHtml}
         ${nearbyHtml ? `
         <div class="cl-section">
           <p class="cl-section-title">周辺国から探す</p>

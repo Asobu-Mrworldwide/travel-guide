@@ -243,7 +243,7 @@ body { background: #fff; }
 <!-- ヒーロー -->
 <div class="lp-hero">
   <div class="lp-hero-quote">「自分の旅行スタイルを言語化できました」</div>
-  <div class="lp-hero-sub">計画派か直感派か、文化派か絶景派か。<br>4つの軸から、あなたの旅スタイルを<br>16タイプに診断します。</div>
+  <div class="lp-hero-sub">たった３分で，なぜあの人との旅行が楽しくなかったのか，明快に理解できちゃいます。<br>お互いの旅行スタイルを理解して，風通しの良い旅行を楽しみましょう。</div>
   <a class="lp-cta" href="quiz.html">診断スタート →</a>
   <div class="lp-note">無料・登録不要・約2分</div>
 </div>
@@ -276,7 +276,7 @@ body { background: #fff; }
 </footer>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 const TYPE_NAMES = {
@@ -297,19 +297,19 @@ function countUp(el, target, suffix = '') {
   requestAnimationFrame(step);
 }
 
-const app = initializeApp({
-  apiKey: "AIzaSyBUhndaLEcGHW4SKzSsZ4--HW4zXM2plD0",
-  authDomain: "worldmappy-923a6.firebaseapp.com",
-  databaseURL: "https://worldmappy-923a6-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "worldmappy-923a6",
-  storageBucket: "worldmappy-923a6.firebasestorage.app",
-  messagingSenderId: "957333409172",
-  appId: "1:957333409172:web:9fedbda60722820fa9d381"
-});
-const db = getDatabase(app);
-const today = new Date().toLocaleDateString('sv-SE');
-
 try {
+  const app = getApps().length ? getApp() : initializeApp({
+    apiKey: "AIzaSyBUhndaLEcGHW4SKzSsZ4--HW4zXM2plD0",
+    authDomain: "worldmappy-923a6.firebaseapp.com",
+    databaseURL: "https://worldmappy-923a6-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "worldmappy-923a6",
+    storageBucket: "worldmappy-923a6.firebasestorage.app",
+    messagingSenderId: "957333409172",
+    appId: "1:957333409172:web:9fedbda60722820fa9d381"
+  });
+  const db = getDatabase(app);
+  const today = new Date().toLocaleDateString('sv-SE');
+
   const [totalSnap, todaySnap, typesSnap, goodSnap, badSnap] = await Promise.all([
     get(ref(db, 'diagnosis/total')),
     get(ref(db, 'diagnosis/daily/' + today)),
@@ -332,7 +332,7 @@ try {
     document.getElementById('stat-top-name').textContent = TYPE_NAMES[topCode] || topCode;
     document.getElementById('stat-top-code').textContent = topCode;
   }
-} catch(e) {}
+} catch(e) { console.error('Firebase stats error:', e); }
 </script>
 
 <script>
