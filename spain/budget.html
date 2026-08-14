@@ -599,6 +599,28 @@ function closeSpotPopup() {
   document.body.style.overflow = '';
 }
 
+function setItemView(kind, view) {
+  localStorage.setItem(kind + 'ItemView', view);
+  const grids = kind === 'food'
+    ? document.querySelectorAll('#food-grid')
+    : document.querySelectorAll('#spots-grid .item-grid');
+  grids.forEach(grid => {
+    grid.classList.remove('view-compact', 'view-list');
+    if (view === 'compact') grid.classList.add('view-compact');
+    else if (view === 'list') grid.classList.add('view-list');
+  });
+  document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
+    b.classList.toggle('on', b.dataset.view === view);
+  });
+}
+(function() {
+  ['food', 'spots'].forEach(kind => {
+    const saved = localStorage.getItem(kind + 'ItemView');
+    if (saved) setItemView(kind, saved);
+    else document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="standard"]').forEach(b => b.classList.add('on'));
+  });
+})();
+
 function filterSpots(dim, value, btn) {
   const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');
   const isToggleOff = value !== 'all' && btn.classList.contains('active');

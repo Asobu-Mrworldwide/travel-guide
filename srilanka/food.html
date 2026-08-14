@@ -193,6 +193,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
   </div>
+  <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
+    <div class="view-toggle" id="foodViewToggle">
+      <button data-view="standard" onclick="setItemView('food','standard')" aria-label="通常表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>通常</span></button>
+      <button data-view="compact" onclick="setItemView('food','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
+      <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
+    </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
@@ -501,6 +508,28 @@ function closeSpotPopup() {
   document.getElementById('sp-popup').style.display = 'none';
   document.body.style.overflow = '';
 }
+
+function setItemView(kind, view) {
+  localStorage.setItem(kind + 'ItemView', view);
+  const grids = kind === 'food'
+    ? document.querySelectorAll('#food-grid')
+    : document.querySelectorAll('#spots-grid .item-grid');
+  grids.forEach(grid => {
+    grid.classList.remove('view-compact', 'view-list');
+    if (view === 'compact') grid.classList.add('view-compact');
+    else if (view === 'list') grid.classList.add('view-list');
+  });
+  document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
+    b.classList.toggle('on', b.dataset.view === view);
+  });
+}
+(function() {
+  ['food', 'spots'].forEach(kind => {
+    const saved = localStorage.getItem(kind + 'ItemView');
+    if (saved) setItemView(kind, saved);
+    else document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="standard"]').forEach(b => b.classList.add('on'));
+  });
+})();
 
 function filterSpots(dim, value, btn) {
   const rowId = dim === 'type' ? '#spots-filter-type' : (dim === 'region' ? '#spots-filter-region' : '#spots-filter-row');

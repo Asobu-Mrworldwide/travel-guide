@@ -111,6 +111,110 @@
       "badge": "車のいない島",
       "badge_class": "green",
       "description": "自動車もバイクもない小さな島々。透明度の高い海でのんびり過ごせる"
+    },
+    {
+      "id": "east_java",
+      "name": "東ジャワ（ブロモ山・イジェン火山）",
+      "lat": "-7.9425",
+      "lng": "112.9530",
+      "zoom": "10",
+      "color": "#e91e63",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "絶景の火山地帯",
+      "badge_class": "green",
+      "description": "月面のような火口とブルーフレイムで知られる、ジャワ島東部の火山観光の拠点"
+    },
+    {
+      "id": "papua",
+      "name": "パプア（ラジャ・アンパット諸島）",
+      "lat": "-0.2287",
+      "lng": "130.5219",
+      "zoom": "9",
+      "color": "#009688",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "世界最高峰のダイビング",
+      "badge_class": "green",
+      "description": "地球上で最も生物多様性が豊かな「奇跡の海」が広がる、秘境のダイビングエリア"
+    },
+    {
+      "id": "sumatra",
+      "name": "スマトラ島（トバ湖）",
+      "lat": "-2.6845",
+      "lng": "98.8756",
+      "zoom": "9",
+      "color": "#4caf50",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "東南アジア最大のカルデラ湖",
+      "badge_class": "",
+      "description": "巨大なカルデラ湖にバタック族の独自文化が息づく、スマトラ島北部の自然と伝統のエリア"
+    },
+    {
+      "id": "sulawesi",
+      "name": "スラウェシ島（タナ・トラジャ）",
+      "lat": "-3.0876",
+      "lng": "119.8228",
+      "zoom": "9",
+      "color": "#9c27b0",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "独自の葬祭文化",
+      "badge_class": "",
+      "description": "船型の伝統家屋トンコナンと壮大な葬祭儀礼が残る、スラウェシ島山岳部の文化エリア"
+    },
+    {
+      "id": "kalimantan",
+      "name": "カリマンタン（タンジュンプティン）",
+      "lat": "-2.7167",
+      "lng": "111.8333",
+      "zoom": "9",
+      "color": "#795548",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "野生オランウータンの聖地",
+      "badge_class": "",
+      "description": "ボルネオ島の熱帯雨林に野生のオランウータンが暮らす、ジャングル川クルーズの拠点"
+    },
+    {
+      "id": "flores",
+      "name": "フローレス島（キリムトゥ山）",
+      "lat": "-8.7583",
+      "lng": "121.8167",
+      "zoom": "9",
+      "color": "#ff5722",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "三色に変化する神秘の湖",
+      "badge_class": "green",
+      "description": "三色に変化する火口湖と巨石文化の集落が残る、フローレス島中央部の秘境エリア"
+    },
+    {
+      "id": "belitung",
+      "name": "ブリトゥン島",
+      "lat": "-2.7410",
+      "lng": "107.6482",
+      "zoom": "10",
+      "color": "#03a9f4",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "奇岩が点在する白砂ビーチ",
+      "badge_class": "green",
+      "description": "巨大な花崗岩の奇岩と真っ白なビーチが広がる、スマトラ沖の穴場リゾート島"
+    },
+    {
+      "id": "bandung",
+      "name": "バンドン",
+      "lat": "-6.9175",
+      "lng": "107.6191",
+      "zoom": "11",
+      "color": "#607d8b",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "火山と高原の避暑地",
+      "badge_class": "",
+      "description": "活火山と乳白色の火口湖、コロニアル建築の街並みが揃う西ジャワの高原都市"
     }
   ],
   "season_mini": {
@@ -1038,6 +1142,14 @@
     {
       "id": "national",
       "label": "全国共通"
+    },
+    {
+      "id": "sulawesi",
+      "label": "スラウェシ島"
+    },
+    {
+      "id": "sumatra",
+      "label": "スマトラ島"
     }
   ],
   "food_modal_phrase_main": "Saya mau ini, terima kasih.（サヤ マウ イニ、トゥリマ カシ）",
@@ -1426,6 +1538,90 @@
       "wiki_url": "https://www.google.com/search?q=%E3%82%AF%E3%82%A8%E3%83%BB%E3%83%A9%E3%83%94%E3%82%B9%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E8%8F%93%E5%AD%90",
       "order_ico": "🍰",
       "order_name_en": "Kue Lapis"
+    },
+    {
+      "num": "No.28",
+      "name": "コトマカッサル",
+      "badge": "スラウェシ発祥の濃厚牛スープ",
+      "type": "main",
+      "city": "sulawesi",
+      "desc": "牛肉と内臓を香辛料と落花生でじっくり煮込んだ、マカッサル発祥の濃厚スープ。ケトゥパッ（ちまき状のご飯）を添えて食べるのが定番。",
+      "image": "素材/グルメ/コトマカッサル.webp",
+      "prompt_en": "Coto Makassar Indonesian rich beef offal soup with peanut broth, served with ketupat rice cake, Sulawesi street food, food photography",
+      "plate_color": "white bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B3%E3%83%88%E3%83%9E%E3%82%AB%E3%83%83%E3%82%B5%E3%83%AB%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86",
+      "order_ico": "🍲",
+      "order_name_en": "Coto Makassar"
+    },
+    {
+      "num": "No.29",
+      "name": "ミーアチェ",
+      "badge": "スパイシーなアチェ風焼きそば",
+      "type": "main",
+      "city": "sumatra",
+      "desc": "太麺をクミンやカルダモンなど濃厚なスパイスで炒めた、スマトラ島アチェ地方の名物麺。牛肉や海鮮を加えた食べ応えのある一皿。",
+      "image": "素材/グルメ/ミーアチェ.webp",
+      "prompt_en": "Mie Aceh Indonesian spicy fried noodles with beef and seafood, thick yellow noodles, Sumatra street food, food photography",
+      "plate_color": "banana leaf plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%82%A2%E3%83%81%E3%82%A7%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86",
+      "order_ico": "🍜",
+      "order_name_en": "Mie Aceh"
+    },
+    {
+      "num": "No.30",
+      "name": "クラッ・テロール",
+      "badge": "ジャカルタ発祥の名物軽食",
+      "type": "snack",
+      "city": "jakarta",
+      "desc": "もち米と卵、干しエビを炭火で焼き固めたジャカルタ発祥の軽食。パリッとした食感と香ばしさが特徴で、祭りの屋台でも定番の一品。",
+      "image": "素材/グルメ/クラッ・テロール.webp",
+      "prompt_en": "Kerak telor Indonesian egg and sticky rice omelette with dried shrimp, Jakarta traditional street food, food photography",
+      "plate_color": "banana leaf plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%AF%E3%83%A9%E3%83%83%E3%83%BB%E3%83%86%E3%83%AD%E3%83%BC%E3%83%AB%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86",
+      "order_ico": "🍳",
+      "order_name_en": "Kerak Telor"
+    },
+    {
+      "num": "No.31",
+      "name": "ナシクニン",
+      "badge": "祝い事で振る舞われる黄色いご飯",
+      "type": "main",
+      "city": "national",
+      "desc": "ターメリックとココナッツミルクで炊いた黄色いご飯。誕生日や祭事で円錐形に盛り付けて振る舞われる、縁起の良い料理として親しまれている。",
+      "image": "素材/グルメ/ナシクニン.webp",
+      "prompt_en": "Nasi kuning Indonesian yellow turmeric rice cone with side dishes, festive presentation, food photography",
+      "plate_color": "banana leaf plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%8A%E3%82%B7%E3%82%AF%E3%83%8B%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86",
+      "order_ico": "🍚",
+      "order_name_en": "Nasi Kuning"
+    },
+    {
+      "num": "No.32",
+      "name": "エスピサンイジョ",
+      "badge": "南部発祥のバナナかき氷デザート",
+      "type": "dessert",
+      "city": "national",
+      "desc": "バナナを緑色の生地で包んで蒸し、シロップとかき氷をかけたスラウェシ島マカッサル発祥のデザート。冷たく甘い定番のおやつ。",
+      "image": "素材/グルメ/エスピサンイジョ.webp",
+      "prompt_en": "Es pisang ijo Indonesian green banana dessert with shaved ice and syrup, colorful dessert bowl, food photography",
+      "plate_color": "glass bowl",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A8%E3%82%B9%E3%83%94%E3%82%B5%E3%83%B3%E3%82%A4%E3%82%B8%E3%83%A7%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%20%E3%83%87%E3%82%B6%E3%83%BC%E3%83%88",
+      "order_ico": "🍨",
+      "order_name_en": "Es Pisang Ijo"
+    },
+    {
+      "num": "No.33",
+      "name": "コピルアック",
+      "badge": "希少なジャコウネココーヒー",
+      "type": "drink",
+      "city": "national",
+      "desc": "ジャコウネコが食べたコーヒー豆から作られる希少なコーヒー。まろやかな酸味と独特の香りが特徴で、高級品として観光客にも人気。",
+      "image": "素材/グルメ/コピルアック.webp",
+      "prompt_en": "Kopi luwak Indonesian civet coffee served in small cup, coffee beans on the side, food photography",
+      "plate_color": "small cup",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%B3%E3%83%94%E3%83%AB%E3%82%A2%E3%83%83%E3%82%AF%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%20%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC",
+      "order_ico": "☕",
+      "order_name_en": "Kopi Luwak"
     }
   ],
   "spots_section_title": "インドネシア 観光スポット",
@@ -1483,6 +1679,46 @@
     {
       "id": "gili",
       "label": "ギリ諸島・ロンボク",
+      "active": false
+    },
+    {
+      "id": "east_java",
+      "label": "東ジャワ",
+      "active": false
+    },
+    {
+      "id": "papua",
+      "label": "パプア",
+      "active": false
+    },
+    {
+      "id": "sumatra",
+      "label": "スマトラ島",
+      "active": false
+    },
+    {
+      "id": "sulawesi",
+      "label": "スラウェシ島",
+      "active": false
+    },
+    {
+      "id": "kalimantan",
+      "label": "カリマンタン",
+      "active": false
+    },
+    {
+      "id": "flores",
+      "label": "フローレス島",
+      "active": false
+    },
+    {
+      "id": "belitung",
+      "label": "ブリトゥン島",
+      "active": false
+    },
+    {
+      "id": "bandung",
+      "label": "バンドン",
       "active": false
     }
   ],
@@ -1885,6 +2121,506 @@
           "image": "素材/観光スポット/クタ・ロンボク・ビーチ.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Kuta+Lombok"
+        }
+      ]
+    },
+    {
+      "city_id": "east_java",
+      "city_name": "東ジャワ（ブロモ山・イジェン火山）",
+      "city_image": "",
+      "city_prompt": "Mount Bromo volcano crater at sunrise, smoking caldera surrounded by sea of clouds, small figures on viewpoint ridge in the distance, travel photography",
+      "city_desc": "月面のような火口原とブルーフレイムの火山湖が広がる、ジャワ島東部の火山観光エリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "スラバヤから車で約3〜4時間、イジェンへはバニュワンギ経由が便利"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "4〜10月の乾季（視界がクリア）"
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "チェモロラワン村（ブロモ側） / バニュワンギ（イジェン側）"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🌋",
+          "num": "JAV 01",
+          "name": "ブロモ山",
+          "desc": "月面のような火口原が広がる活火山。日の出とともに雲海に浮かぶ姿は、ボロブドゥールと並ぶジャワ島屈指の絶景。",
+          "badge": "ジャワ島屈指のサンライズ絶景",
+          "prompt_en": "Mount Bromo volcano crater at sunrise, smoking caldera surrounded by sea of clouds, silhouettes of visitors on viewpoint, travel photography",
+          "image": "素材/観光スポット/ブロモ山.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Mount+Bromo"
+        },
+        {
+          "icon": "🔥",
+          "num": "JAV 02",
+          "name": "イジェン火山",
+          "desc": "夜間に青い炎「ブルーフレイム」が噴き出す、世界でも数少ない現象が見られる火山湖。強酸性の火口湖の水面も神秘的な光景をつくる。",
+          "badge": "世界的に珍しいブルーフレイム",
+          "prompt_en": "Ijen crater blue fire at night, sulfur miners with small lanterns in the distance, turquoise acidic crater lake, travel photography",
+          "image": "素材/観光スポット/イジェン火山.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Kawah+Ijen"
+        },
+        {
+          "icon": "💧",
+          "num": "JAV 03",
+          "name": "トゥンパック・セウー",
+          "desc": "馬蹄形の断崖から無数の水流が流れ落ちる、「千の滝」と称される東ジャワ屈指の秘境滝。トレッキングの先に広がる迫力の景観。",
+          "badge": "馬蹄形の秘境の滝",
+          "prompt_en": "Tumpak Sewu waterfall, horseshoe shaped cliff with countless streams of water, a tiny hiker figure for scale, morning light, travel photography",
+          "image": "素材/観光スポット/トゥンパック・セウー.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Tumpak+Sewu+Waterfall"
+        },
+        {
+          "icon": "🍓",
+          "num": "JAV 04",
+          "name": "バトゥ",
+          "desc": "マラン近郊の高原リゾートタウン。フルーツピッキングやアニマルパーク、テーマパークが集まり、家族連れの避暑地として人気。",
+          "badge": "高原の避暑地",
+          "prompt_en": "Batu highland town near Malang, strawberry picking farm on hillside, cool mountain air, small figures walking, travel photography",
+          "image": "素材/観光スポット/バトゥ.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Batu,+East+Java"
+        }
+      ]
+    },
+    {
+      "city_id": "papua",
+      "city_name": "パプア（ラジャ・アンパット諸島）",
+      "city_image": "",
+      "city_prompt": "Piaynemo viewpoint Raja Ampat, karst islands scattered across turquoise sea seen from above, silhouette of a visitor at the viewpoint railing, golden hour, travel photography",
+      "city_desc": "地球上で最も生物多様性が豊かな「奇跡の海」が広がる、パプア地方の秘境ダイビングエリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ジャカルタから国内線でソロン経由、ワイゲオ島まで空路と船で約1日"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "10〜4月（海況が安定）"
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "ワイサイ（ワイゲオ島）周辺のリゾート"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏝️",
+          "num": "PAP 01",
+          "name": "ピアナモ展望台",
+          "desc": "カルスト地形の無数の島々を見渡す、ラジャ・アンパットを象徴する展望スポット。急な階段を登った先に広がる絶景は圧巻。",
+          "badge": "ラジャ・アンパットを象徴する絶景",
+          "prompt_en": "Piaynemo viewpoint, karst islands scattered across turquoise lagoon seen from above, silhouette of a visitor at railing, golden hour, travel photography",
+          "image": "素材/観光スポット/ピアナモ展望台.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Piaynemo+Viewpoint"
+        },
+        {
+          "icon": "🐚",
+          "num": "PAP 02",
+          "name": "ワヤグ島",
+          "desc": "ピアナモよりもさらに奥地にある静かな絶景ポイント。人の少ない秘境で、緑の島々が海に浮かぶ光景を独り占めできる。",
+          "badge": "秘境の絶景ポイント",
+          "prompt_en": "Wayag island viewpoint, green karst islands in turquoise sea, remote and quiet, small figure for scale, travel photography",
+          "image": "素材/観光スポット/ワヤグ島.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Wayag+Island"
+        },
+        {
+          "icon": "🐠",
+          "num": "PAP 03",
+          "name": "カビ島",
+          "desc": "サンゴ礁と豊かな海洋生物に恵まれた、世界屈指のダイビング・シュノーケリングスポット。マンタやジンベエザメに出会えることもある。",
+          "badge": "世界屈指のダイブスポット",
+          "prompt_en": "Kri island coral reef, colorful fish and coral underwater, a diver silhouette in the distance, underwater photography",
+          "image": "素材/観光スポット/カビ島.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Kri+Island"
+        },
+        {
+          "icon": "🦜",
+          "num": "PAP 04",
+          "name": "ワイゲオ島",
+          "desc": "ラジャ・アンパット観光の拠点となる島。極楽鳥の求愛ダンスを間近で観察できるツアーが人気で、独自の生態系が息づく。",
+          "badge": "極楽鳥観察の拠点",
+          "prompt_en": "Waigeo island rainforest, bird of paradise on a branch, small figure of a birdwatcher in the distance, morning light, travel photography",
+          "image": "素材/観光スポット/ワイゲオ島.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Waigeo+Island"
+        }
+      ]
+    },
+    {
+      "city_id": "sumatra",
+      "city_name": "スマトラ島（トバ湖）",
+      "city_image": "",
+      "city_prompt": "Lake Toba viewed from hillside, vast caldera lake surrounded by mountains, Samosir island visible in the middle, small figures for scale, travel photography",
+      "city_desc": "巨大なカルデラ湖にバタック族の独自文化が息づく、スマトラ島北部の自然と伝統のエリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "メダンから車で約4〜5時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "5〜9月の乾季"
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "サモシール島（トゥクトゥク）周辺"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏔️",
+          "num": "SUM 01",
+          "name": "トバ湖",
+          "desc": "火山の巨大噴火が生んだ、東南アジア最大のカルデラ湖。周囲を山々に囲まれた雄大な景観は、スマトラ島を代表する絶景。",
+          "badge": "東南アジア最大のカルデラ湖",
+          "prompt_en": "Lake Toba panorama, vast caldera lake surrounded by green mountains, small boat on the water, travel photography",
+          "image": "素材/観光スポット/トバ湖.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Lake+Toba"
+        },
+        {
+          "icon": "🏘️",
+          "num": "SUM 02",
+          "name": "サモシール島",
+          "desc": "トバ湖に浮かぶ島で、バタック族の伝統的な船型家屋や王の石造りの墓が点在する。独自の文化と静かな湖畔の暮らしに触れられる。",
+          "badge": "バタック族の伝統文化が残る島",
+          "prompt_en": "Samosir island, traditional Batak boat-shaped houses by the lake, small figures walking, travel photography",
+          "image": "素材/観光スポット/サモシール島.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Samosir+Island"
+        },
+        {
+          "icon": "💦",
+          "num": "SUM 03",
+          "name": "シピソピソの滝",
+          "desc": "トバ湖畔に流れ落ちる落差120mの滝。展望台から一望でき、緑の渓谷に轟音を響かせながら流れ落ちる姿は迫力満点。",
+          "badge": "落差120mの迫力の滝",
+          "prompt_en": "Sipiso-piso waterfall, 120 meter drop into green valley near Lake Toba, viewpoint with small figures for scale, travel photography",
+          "image": "素材/観光スポット/シピソピソの滝.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Sipiso-piso+Waterfall"
+        },
+        {
+          "icon": "🦧",
+          "num": "SUM 04",
+          "name": "ブキッラワン国立公園",
+          "desc": "野生のオランウータンに出会えるジャングルトレッキングの名所。ガイドとともに熱帯雨林を歩き、生態系の豊かさを体感できる。",
+          "badge": "野生オランウータンとの遭遇",
+          "prompt_en": "Bukit Lawang rainforest, wild orangutan on a tree branch, a small hiker figure with guide in the distance, travel photography",
+          "image": "素材/観光スポット/ブキッラワン国立公園.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Bukit+Lawang"
+        }
+      ]
+    },
+    {
+      "city_id": "sulawesi",
+      "city_name": "スラウェシ島（タナ・トラジャ）",
+      "city_image": "",
+      "city_prompt": "Kete Kesu village Tana Toraja, traditional Tongkonan boat-shaped houses in a row, misty morning light, small figures walking between houses, travel photography",
+      "city_desc": "船型の伝統家屋トンコナンと壮大な葬祭儀礼が残る、スラウェシ島山岳部の文化エリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "マカッサルから車で約8時間、ランテパオへの国内線もあり"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "5〜9月の乾季"
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "ランテパオ周辺"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏠",
+          "num": "SUL 01",
+          "name": "ケテケス",
+          "desc": "船型の伝統家屋トンコナンが並ぶ集落。隣接する古い墓地には吊り棺や頭蓋骨が並び、トラジャの葬祭文化を象徴する光景が広がる。",
+          "badge": "トンコナン家屋群が並ぶ集落",
+          "prompt_en": "Kete Kesu village, traditional Tongkonan boat-shaped houses in a row, misty morning light, small figures walking, travel photography",
+          "image": "素材/観光スポット/ケテケス.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Kete+Kesu"
+        },
+        {
+          "icon": "⚰️",
+          "num": "SUL 02",
+          "name": "ロンダ",
+          "desc": "断崖に彫られた岩窟墓と、吊るされた木製の棺が並ぶ独特の墓地。ガイド同行の洞窟探検で、トラジャ族の死生観に触れられる。",
+          "badge": "断崖の岩窟墓と吊り棺",
+          "prompt_en": "Londa burial cliff, carved rock graves and hanging wooden coffins, a guide with lantern in the distance, travel photography",
+          "image": "素材/観光スポット/ロンダ.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Londa+Toraja"
+        },
+        {
+          "icon": "🚣",
+          "num": "SUL 03",
+          "name": "サダン川ラフティング",
+          "desc": "棚田と山々を望みながら急流を下るアクティビティ。トラジャの雄大な自然を全身で体感できる、他地域にはないアクセントになる。",
+          "badge": "棚田を望むラフティング",
+          "prompt_en": "Sadan river rafting, small raft with paddlers on rapids, rice terraces and mountains in the background, travel photography",
+          "image": "素材/観光スポット/サダン川ラフティング.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Sungai+Sadan"
+        },
+        {
+          "icon": "🌾",
+          "num": "SUL 04",
+          "name": "ブンタオ",
+          "desc": "階段状に連なる棚田と伝統家屋を一望できる高台。朝霧に包まれた田園風景は、トラジャの静かな山岳文化を象徴する光景。",
+          "badge": "棚田を望む展望スポット",
+          "prompt_en": "Buntao viewpoint, terraced rice fields and traditional houses in morning mist, small figures for scale, travel photography",
+          "image": "素材/観光スポット/ブンタオ.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Buntao,+Toraja"
+        }
+      ]
+    },
+    {
+      "city_id": "kalimantan",
+      "city_name": "カリマンタン（タンジュンプティン）",
+      "city_image": "",
+      "city_prompt": "Tanjung Puting rainforest river, traditional wooden klotok boat cruising, wild orangutan visible on riverbank tree, travel photography",
+      "city_desc": "ボルネオ島の熱帯雨林に野生のオランウータンが暮らす、ジャングル川クルーズの拠点",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ジャカルタから国内線でパンカラン・ブンまで約1.5時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "5〜9月の乾季"
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "パンカラン・ブン、またはクロトック船上泊"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🦧",
+          "num": "KAL 01",
+          "name": "タンジュンプティン国立公園",
+          "desc": "世界最大級のオランウータン保護区。熱帯雨林をクロトック船で進みキャンプ・リーキーへ向かう船旅は、野生のオランウータンと出会う特別な体験。",
+          "badge": "野生オランウータンの聖地",
+          "prompt_en": "Tanjung Puting rainforest, wild orangutan on riverbank tree, small klotok boat on the river, travel photography",
+          "image": "素材/観光スポット/タンジュンプティン国立公園.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Tanjung+Puting+National+Park"
+        },
+        {
+          "icon": "🐒",
+          "num": "KAL 02",
+          "name": "キャンプ・リーキー",
+          "desc": "保護されたオランウータンの餌付けを間近で見学できる研究拠点。ジャングルの奥で野生に戻る前の個体の姿を観察できる。",
+          "badge": "オランウータン餌付け見学",
+          "prompt_en": "Camp Leakey orangutan feeding platform, rangers and orangutans in the rainforest clearing, travel photography",
+          "image": "素材/観光スポット/キャンプ・リーキー.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Camp+Leakey"
+        },
+        {
+          "icon": "🚤",
+          "num": "KAL 03",
+          "name": "セコニェル川クロトック船クルーズ",
+          "desc": "伝統的な木造船「クロトック」でジャングルの川を遡るクルーズ。船上泊をしながらテナガザルや野鳥の声に包まれる旅ができる。",
+          "badge": "ジャングル川の船旅",
+          "prompt_en": "Sekonyer river cruise, traditional wooden klotok houseboat, dense rainforest on both banks, golden hour, travel photography",
+          "image": "素材/観光スポット/セコニェル川クロトック船クルーズ.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Sekonyer+River"
+        }
+      ]
+    },
+    {
+      "city_id": "flores",
+      "city_name": "フローレス島（キリムトゥ山）",
+      "city_image": "",
+      "city_prompt": "Kelimutu volcano three colored crater lakes, viewed from ridge at sunrise, small figures of visitors at the viewpoint, travel photography",
+      "city_desc": "三色に変化する火口湖と巨石文化の集落が残る、フローレス島中央部の秘境エリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "バリ島またはラブアンバジョから国内線でマウメレ空港まで約1〜1.5時間、モニ村へ車で約1.5時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "5〜9月の乾季"
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "モニ村（キリムトゥ山の麓）"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🌋",
+          "num": "FLO 01",
+          "name": "キリムトゥ山",
+          "desc": "3つの火口湖がそれぞれ異なる色に変化する神秘の山。青・緑・黒褐色に染まる湖面は、地元では魂が宿る場所として信仰されている。",
+          "badge": "三色に変化する神秘の火口湖",
+          "prompt_en": "Kelimutu volcano three colored crater lakes, viewed from ridge at sunrise, silhouettes of visitors at the viewpoint, travel photography",
+          "image": "素材/観光スポット/キリムトゥ山.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Kelimutu"
+        },
+        {
+          "icon": "🏘️",
+          "num": "FLO 02",
+          "name": "ベナ村",
+          "desc": "石積みの祭壇と伝統家屋が並ぶ、ンガダ族の集落。今も日常生活が営まれる中で、巨石文化と伝統儀礼の名残を間近に見られる。",
+          "badge": "巨石文化が残る伝統集落",
+          "prompt_en": "Bena traditional village, thatched roof houses and stone megalithic altars, small figures walking, travel photography",
+          "image": "素材/観光スポット/ベナ村.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Bena+Village"
+        },
+        {
+          "icon": "🐠",
+          "num": "FLO 03",
+          "name": "リウン海洋公園",
+          "desc": "17の島々に囲まれたサンゴ礁が広がる、フローレス島北部の穴場ダイビングスポット。透明度の高い海で静かなシュノーケリングが楽しめる。",
+          "badge": "穴場のダイビングスポット",
+          "prompt_en": "Riung marine park, small islands and coral reef in clear turquoise water, a small boat for scale, travel photography",
+          "image": "素材/観光スポット/リウン海洋公園.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Riung+Marine+Park"
+        }
+      ]
+    },
+    {
+      "city_id": "belitung",
+      "city_name": "ブリトゥン島",
+      "city_image": "",
+      "city_prompt": "Tanjung Tinggi beach Belitung, giant granite boulders on white sand beach, turquoise sea, small figures for scale, golden hour, travel photography",
+      "city_desc": "巨大な花崗岩の奇岩と真っ白なビーチが広がる、スマトラ沖の穴場リゾート島",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ジャカルタから国内線でタンジュンパンダン空港まで約50分"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "4〜10月の乾季"
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "タンジュンパンダン市街、またはビーチ沿いのリゾート"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🪨",
+          "num": "BEL 01",
+          "name": "タンジュンティンギビーチ",
+          "desc": "巨大な花崗岩の奇岩が点在する、映画の舞台にもなった真っ白なビーチ。透明度の高いエメラルドグリーンの海とのコントラストが美しい。",
+          "badge": "花崗岩の奇岩が並ぶビーチ",
+          "prompt_en": "Tanjung Tinggi beach, giant granite boulders on white sand, turquoise sea, small figures walking for scale, travel photography",
+          "image": "素材/観光スポット/タンジュンティンギビーチ.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Tanjung+Tinggi+Beach"
+        },
+        {
+          "icon": "🗼",
+          "num": "BEL 02",
+          "name": "レンクアス島",
+          "desc": "オランダ統治時代の白い灯台が立つ小島。奇岩を縫うようにボートで巡り、灯台に登れば周囲の島々を一望できる。",
+          "badge": "灯台が立つ小島",
+          "prompt_en": "Lengkuas island lighthouse, white colonial lighthouse surrounded by granite rocks and turquoise sea, travel photography",
+          "image": "素材/観光スポット/レンクアス島.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Lengkuas+Island"
+        },
+        {
+          "icon": "🤿",
+          "num": "BEL 03",
+          "name": "ブリトゥン島シュノーケリングツアー",
+          "desc": "奇岩の間を縫うようにボートで島巡りをしながら、透明度の高い海でシュノーケリングを楽しむ定番ツアー。複数の島を1日で回れる。",
+          "badge": "島巡りシュノーケリングツアー",
+          "prompt_en": "Belitung island hopping boat tour, small wooden boats among granite rock islands, snorkelers in clear water, travel photography",
+          "image": "素材/観光スポット/ブリトゥン島シュノーケリングツアー.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Belitung+Island"
+        }
+      ]
+    },
+    {
+      "city_id": "bandung",
+      "city_name": "バンドン",
+      "city_image": "",
+      "city_prompt": "Kawah Putih white crater lake near Bandung, milky turquoise water surrounded by barren volcanic landscape, small figures for scale, travel photography",
+      "city_desc": "活火山と乳白色の火口湖、コロニアル建築の街並みが揃う西ジャワの高原都市",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "ジャカルタから車または高速鉄道で約2〜3時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "5〜9月の乾季"
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "ブラガ通り周辺（市街地の中心）"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🌋",
+          "num": "BDG 01",
+          "name": "タンクバンプラフ山",
+          "desc": "船をひっくり返したような形の火口が特徴の活火山。バンドン市街から日帰りで訪れやすく、噴気を上げる火口を間近で見学できる。",
+          "badge": "船形の火口を持つ活火山",
+          "prompt_en": "Tangkuban Perahu volcano crater, smoking crater rim, small figures of visitors on the viewing platform, travel photography",
+          "image": "素材/観光スポット/タンクバンプラフ山.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Tangkuban+Perahu"
+        },
+        {
+          "icon": "💠",
+          "num": "BDG 02",
+          "name": "カワプティ",
+          "desc": "硫黄分を含んだ乳白色の水をたたえる火口湖。天候や時間帯によって水の色が変化し、荒涼とした風景写真スポットとして人気。",
+          "badge": "乳白色に輝く火口湖",
+          "prompt_en": "Kawah Putih white crater lake, milky turquoise sulfur water surrounded by barren landscape, small figures for scale, travel photography",
+          "image": "素材/観光スポット/カワプティ.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Kawah+Putih"
+        },
+        {
+          "icon": "🏛️",
+          "num": "BDG 03",
+          "name": "ブラガ通り",
+          "desc": "オランダ統治時代のコロニアル建築が並ぶ、バンドンのメインストリート。カフェやアートギャラリーが軒を連ね、街歩きが楽しいエリア。",
+          "badge": "コロニアル建築が残る街並み",
+          "prompt_en": "Jalan Braga Bandung, colonial era architecture street, cafes and art galleries, people walking, evening light, travel photography",
+          "image": "素材/観光スポット/ブラガ通り.webp",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Jalan+Braga"
         }
       ]
     }

@@ -162,6 +162,14 @@ section.active{display:block}
 .sm-dot{height:52px;border-radius:5px;font-size:0.9em;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;width:100%}
 .sm-t{display:block;font-size:0.7em;font-weight:700;line-height:1;text-align:center;width:100%}
 
+/* 表示切り替え（通常/コンパクト/リスト） */
+.view-toggle{display:flex;gap:6px;flex-shrink:0}
+.view-toggle button{display:flex;align-items:center;gap:5px;font-size:0.74em;font-weight:700;padding:5px 12px;border:1px solid #d4dbe8;background:#fff;color:#777;border-radius:6px;cursor:pointer;transition:all 0.15s}
+.view-toggle button:hover{border-color:var(--green)}
+.view-toggle button.on{background:var(--green);color:#fff;border-color:var(--green)}
+.view-toggle svg{width:14px;height:14px}
+@media(max-width:520px){.view-toggle button span{display:none}.view-toggle button{padding:6px 10px}}
+
 /* 観光スポット・グルメカード（全国共通） */
 .item-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .item-card{background:#fff;border-radius:6px;padding:18px;border:1px solid #c8d0e0;box-shadow:none;display:flex;flex-direction:column;position:relative;overflow:hidden}
@@ -176,6 +184,28 @@ section.active{display:block}
 .item-card .badge{display:inline-block;background:#e8f5ee;color:var(--green);padding:2px 10px;border-radius:20px;font-size:0.68em;font-weight:700;white-space:nowrap;vertical-align:middle;margin-left:4px}
 .item-card.must{position:relative;border:2px solid #f5c400;border-radius:6px;box-shadow:none}
 .must-badge{position:absolute;top:6px;right:8px;font-size:1.4em;line-height:1}
+
+/* 観光スポット・グルメ: コンパクト表示（画像縮小・説明文は残す） */
+.item-grid.view-compact{grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:900px){.item-grid.view-compact{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.item-grid.view-compact{grid-template-columns:repeat(2,1fr)}}
+.item-grid.view-compact .item-card{padding:10px}
+.item-grid.view-compact .spot-img-wrap{aspect-ratio:4/3;margin-left:-10px;margin-right:-10px}
+.item-grid.view-compact .food-img{max-height:100px}
+.item-grid.view-compact .desc{font-size:0.76em;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.item-grid.view-compact .order-btn,.item-grid.view-compact .wiki-link{display:none}
+
+/* 観光スポット・グルメ: リスト表示（小サムネ＋名前・タグのみ） */
+.item-grid.view-list{grid-template-columns:1fr;gap:8px}
+.item-grid.view-list .item-card{flex-direction:row;align-items:center;gap:12px;padding:10px}
+.item-grid.view-list .item-card .num{display:none}
+.item-grid.view-list .desc{display:none}
+.item-grid.view-list .order-btn,.item-grid.view-list .wiki-link{display:none}
+.item-grid.view-list .name-row{margin-bottom:0}
+.item-grid.view-list .spot-img-wrap{order:-1;width:60px;height:60px;aspect-ratio:auto;margin:0;flex-shrink:0;border-radius:6px}
+.item-grid.view-list .spot-img-wrap .spot-map-btn{display:none}
+.item-grid.view-list .spot-img-placeholder{order:-1;width:60px;height:60px;flex-shrink:0;margin:0}
+.item-grid.view-list .food-img{order:-1;width:60px;height:60px;max-height:60px;object-fit:cover;margin:0;flex-shrink:0;border-radius:6px}
 .map-btn{display:block;text-align:right;font-size:0.7em;color:#aaa;text-decoration:none;margin-top:6px;font-weight:600}
 .map-btn:hover{color:#555;text-decoration:underline}
 .wiki-link{display:block;text-align:right;font-size:0.7em;color:#aaa;text-decoration:none;margin-top:auto;padding-top:8px;font-weight:600}
