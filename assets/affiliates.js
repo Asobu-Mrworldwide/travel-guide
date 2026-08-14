@@ -467,7 +467,9 @@ function initAffiliates() {
 
 /* フッターに重ならないよう、近づいたらfixed→absoluteに切り替える */
 function _initStickyBannerFooterAvoidance(banner) {
-  const footer = document.querySelector('.country-links') || document.querySelector('footer');
+  const activeSection = document.querySelector('section.active') || document.querySelector('.container');
+  const footer = (activeSection && activeSection.querySelector('.tab-cta')) || document.querySelector('.tab-cta')
+    || document.querySelector('.country-links') || document.querySelector('footer');
   if (!footer) return;
 
   const GAP = 16;
@@ -500,6 +502,10 @@ function _initStickyBannerFooterAvoidance(banner) {
   update();
   window.addEventListener('scroll', update, {passive: true});
   window.addEventListener('resize', update);
+  window.addEventListener('scrollend', update);
+  banner.querySelectorAll('img').forEach(img => {
+    if (!img.complete) img.addEventListener('load', update);
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initAffiliates);

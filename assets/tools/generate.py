@@ -423,6 +423,10 @@ def generate(country_id):
     with open(tpl_path, encoding='utf-8') as f:
         tpl = f.read()
 
+    # affiliates.js/affiliates-data.js のキャッシュバスター（更新時刻ベース）
+    _aff_js_path = os.path.join(assets_dir, 'affiliates.js')
+    cache_bust = str(int(os.path.getmtime(_aff_js_path))) if os.path.exists(_aff_js_path) else '1'
+
     # ── グルメ・観光スポット画像の自動検出 ──────────────────────
     # 素材/グルメ/<料理名>.webp または 素材/観光スポット/<スポット名>.webp が
     # 存在すれば image フィールドを自動補完し JSON を更新する
@@ -627,6 +631,7 @@ def generate(country_id):
             ctx['container_style'] = 'max-width:1000px' if slug in ('spots', 'food') else ''
             ctx['page_title']      = base_title if slug == 'basic' else f'{name}の{label}｜{base_title}'
             ctx['sticky_ad_key']    = STICKY_AD_BY_SLUG.get(slug, 'wise')
+            ctx['cache_bust']       = cache_bust
             ctx.update(_build_og_context(data, country_id, outfile))
             ctx['og_title']        = _html_attr_esc(ctx['page_title'])
             html = _render(tpl, ctx)
@@ -645,6 +650,7 @@ def generate(country_id):
         ctx['needs_gmaps']     = True
         ctx['container_style'] = ''
         ctx['sticky_ad_key']    = STICKY_AD_BY_SLUG.get('basic', 'wise')
+        ctx['cache_bust']       = cache_bust
         ctx.update(_build_og_context(data, country_id, 'index.html'))
         ctx['og_title']        = _html_attr_esc(data.get('page_title', ''))
         html = _render(tpl, ctx)

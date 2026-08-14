@@ -8,9 +8,9 @@
 
 /* カラー変数 */
 :root{
-  --green:#2F6F6B;       /* メインカラー */
-  --green-dark:#1F4F4C;  /* ホバー・強調用 */
-  --green-light:#EFE6D4; /* 薄い背景用 */
+  --green:#1d9074;       /* メインカラー */
+  --green-dark:#15735b;  /* ホバー・強調用 */
+  --green-light:#e8f6f2; /* 薄い背景用 */
   --red:#C0392B;         /* 警告・DON'T 専用 */
   --yellow:#D9A441;
   --bg:#ffffff;          /* 全体の背景 */
@@ -61,7 +61,7 @@ h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 /* サイトヘッダー: スクロールでスライド表示/非表示（タブナビは常時表示、別要素） */
 #site-top-bar{position:sticky;top:0;z-index:1000;transition:transform 0.3s ease}
 #site-top-bar.header-hidden{transform:translateY(-100%)}
-.site-header{background:#1F4F4C;padding:13px 20px;display:flex;align-items:center;gap:10px;line-height:1.45}
+.site-header{background:#15735b;padding:13px 20px;display:flex;align-items:center;gap:10px;line-height:1.45}
 .site-logo{font-size:1.3em;font-weight:900;color:#fff;letter-spacing:-0.5px;white-space:nowrap;text-decoration:none}
 .site-logo span{color:#D9A441}
 .site-tagline{font-size:0.75em;color:rgba(255,255,255,0.65);margin-left:auto;white-space:nowrap}
