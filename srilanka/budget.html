@@ -30,8 +30,8 @@
 <meta name="twitter:image" content="https://worldmappy.com/srilanka/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786681851" defer></script>
-<script src="../assets/affiliates.js?v=1786681851" defer></script>
+<script src="../assets/affiliates-data.js?v=1786787054" defer></script>
+<script src="../assets/affiliates.js?v=1786787054" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -558,12 +558,15 @@ function showSpot(numId) {
   popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  popOrder.style.display = 'none';
+  popOrder.onclick = null;
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 /* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
-var FOOD_DATA = {"No.1": {"num": "No.1", "name": "ライス＆カリー", "desc": "白米に数種類のカレーとサンボル（ココナッツの薬味）を少しずつ盛り合わせるスリランカの定食。家庭・食堂ごとに味付けが異なる奥深さがあり、何度食べても飽きない。", "img": "素材/グルメ/ライス＆カリー.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A9%E3%82%A4%E3%82%B9%EF%BC%86%E3%82%AB%E3%83%AA%E3%83%BC%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.2": {"num": "No.2", "name": "コットゥロティ", "desc": "刻んだロティ（薄焼きパン）を野菜・卵・肉と一緒に鉄板で細かく刻みながら炒める豪快な一品。調理中の「カンカン」という金属音がスリランカの夜の風物詩。", "img": "素材/グルメ/コットゥロティ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%83%E3%83%88%E3%82%A5%E3%83%AD%E3%83%86%E3%82%A3%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.3": {"num": "No.3", "name": "ホッパー（アーッパ）", "desc": "米粉とココナッツミルクの生地を専用鍋で焼き上げる、お椀型のクレープ。縁はパリッと中はもちっとした食感で、中央に卵を落とした「エッグホッパー」が特に人気。", "img": "素材/グルメ/ホッパー（アーッパ）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9B%E3%83%83%E3%83%91%E3%83%BC%EF%BC%88%E3%82%A2%E3%83%BC%E3%83%83%E3%83%91%EF%BC%89%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.4": {"num": "No.4", "name": "ストリングホッパー", "desc": "米粉を細い麺状に押し出して蒸し上げた白い円盤状の主食。カレーと絡めて食べるのが定番で、優しい味わいでいくらでも食べられる。", "img": "素材/グルメ/ストリングホッパー.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B9%E3%83%88%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%83%E3%83%91%E3%83%BC%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.5": {"num": "No.5", "name": "魚のアンブルティヤル", "desc": "「ゴラカ」という酸味の強い果実とスパイスでカツオを黒く煮しめた南部の郷土料理。酸味と塩気が凝縮された濃厚な味わいで、ご飯のおかずに最適な一品。", "img": "素材/グルメ/魚のアンブルティヤル.webp", "wikiUrl": "https://www.google.com/search?q=%E9%AD%9A%E3%81%AE%E3%82%A2%E3%83%B3%E3%83%96%E3%83%AB%E3%83%86%E3%82%A3%E3%83%A4%E3%83%AB%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.6": {"num": "No.6", "name": "デビルドチキン", "desc": "唐辛子とスパイスをたっぷり効かせて炒めた激辛系チキン料理。植民地時代に西洋料理と融合して生まれたとされ、ビールのお供に最適。", "img": "素材/グルメ/デビルドチキン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%87%E3%83%93%E3%83%AB%E3%83%89%E3%83%81%E3%82%AD%E3%83%B3%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.7": {"num": "No.7", "name": "ランプライス", "desc": "複数のカレーとご飯をバナナの葉で包んで蒸し上げた、オランダ系移民バーガー人が伝えた料理。包みを開けた瞬間に香りが広がる、コロンボの名物グルメ。", "img": "素材/グルメ/ランプライス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A9%E3%83%B3%E3%83%97%E3%83%A9%E3%82%A4%E3%82%B9%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.8": {"num": "No.8", "name": "サモサ", "desc": "スパイシーな野菜や肉を三角形の皮で包んで揚げた軽食。惣菜パンや揚げ物などの軽食全般を指す「ショートイーツ」の代表格で、街のベーカリーに山積みになって売られている。", "img": "素材/グルメ/サモサ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B5%E3%83%A2%E3%82%B5%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.9": {"num": "No.9", "name": "キング・ココナッツウォーター", "desc": "オレンジ色の殻を持つ「キングココナッツ」の天然果汁。道端で切りたてを飲めるのがスリランカ流。ほのかな甘さで暑い日の水分補給に最適。", "img": "素材/グルメ/キング・ココナッツウォーター.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%BC%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.10": {"num": "No.10", "name": "セイロンティー", "desc": "高原の紅茶畑で育つ世界的ブランド「セイロンティー」。ヌワラエリヤ・キャンディなど産地ごとに風味が異なり、ティーファクトリーでの試飲も楽しみのひとつ。", "img": "素材/グルメ/セイロンティー.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BB%E3%82%A4%E3%83%AD%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BC%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.11": {"num": "No.11", "name": "ワタラッパン", "desc": "ジャガリー（ヤシ砂糖）とココナッツミルク、卵で作る蒸しプリン。カルダモンの香りとカラメルのような濃厚な甘さが特徴の、お祝いの席の定番デザート。", "img": "素材/グルメ/ワタラッパン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AF%E3%82%BF%E3%83%A9%E3%83%83%E3%83%91%E3%83%B3%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.12": {"num": "No.12", "name": "クルクル", "desc": "米粉生地を渦巻き状に成形して揚げた、ポルトガル系移民由来の伝統菓子。サクサクとした軽い食感で、クリスマスなどのお祝いにも登場する。", "img": "素材/グルメ/クルクル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%AB%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.13": {"num": "No.13", "name": "ポル・サンボール", "desc": "削ったココナッツに唐辛子・タマネギ・ライム・燻製魚をすり潰して混ぜた辛いふりかけ。ライス＆カリーに必ずといって良いほど添えられる国民的相棒。", "img": "素材/グルメ/ポル・サンボール.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9D%E3%83%AB%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.14": {"num": "No.14", "name": "パリップ", "desc": "レンズ豆をココナッツミルクとスパイスで煮込んだ辛さ控えめのカレー。「毎食でも食べる」ほどの定番おかずで、辛い料理が並ぶ食卓全体のバランスを取る一品。", "img": "素材/グルメ/パリップ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%91%E3%83%AA%E3%83%83%E3%83%97%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}, "No.15": {"num": "No.15", "name": "ジンジャービスケット", "desc": "生姜のピリッとした風味が効いた素朴な味わいのビスケット。マリバン（Maliban）社のものが特に有名で、スーパーやバザールで箱買いできる手頃さから、ばらまき土産としても大人気。", "img": "素材/グルメ/ジンジャービスケット.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B8%E3%83%B3%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%93%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB"}, "No.16": {"num": "No.16", "name": "キリバット", "desc": "ココナッツミルクで炊いた白い米をひし形に切り分けて食べる「祝い事のご飯」。シンハラ正月や誕生日など人生の節目に必ず炊かれ、ポル・サンボールと共に食べる。", "img": "", "wikiUrl": "https://www.google.com/search?q=%E3%82%AD%E3%83%AA%E3%83%90%E3%83%83%E3%83%88%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86"}};
+var FOOD_DATA = {"No.1": {"num": "No.1", "name": "ライス＆カリー", "desc": "白米に数種類のカレーとサンボル（ココナッツの薬味）を少しずつ盛り合わせるスリランカの定食。家庭・食堂ごとに味付けが異なる奥深さがあり、何度食べても飽きない。", "img": "素材/グルメ/ライス＆カリー.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A9%E3%82%A4%E3%82%B9%EF%BC%86%E3%82%AB%E3%83%AA%E3%83%BC%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🍛", "Rice and Curry", "ライス＆カリー", "", "素材/グルメ/ライス＆カリー.webp"]}, "No.2": {"num": "No.2", "name": "コットゥロティ", "desc": "刻んだロティ（薄焼きパン）を野菜・卵・肉と一緒に鉄板で細かく刻みながら炒める豪快な一品。調理中の「カンカン」という金属音がスリランカの夜の風物詩。", "img": "素材/グルメ/コットゥロティ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%83%E3%83%88%E3%82%A5%E3%83%AD%E3%83%86%E3%82%A3%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🥘", "Kottu Roti", "コットゥロティ", "", "素材/グルメ/コットゥロティ.webp"]}, "No.3": {"num": "No.3", "name": "ホッパー（アーッパ）", "desc": "米粉とココナッツミルクの生地を専用鍋で焼き上げる、お椀型のクレープ。縁はパリッと中はもちっとした食感で、中央に卵を落とした「エッグホッパー」が特に人気。", "img": "素材/グルメ/ホッパー（アーッパ）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9B%E3%83%83%E3%83%91%E3%83%BC%EF%BC%88%E3%82%A2%E3%83%BC%E3%83%83%E3%83%91%EF%BC%89%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🥞", "Hoppers", "ホッパー（アーッパ）", "", "素材/グルメ/ホッパー（アーッパ）.webp"]}, "No.4": {"num": "No.4", "name": "ストリングホッパー", "desc": "米粉を細い麺状に押し出して蒸し上げた白い円盤状の主食。カレーと絡めて食べるのが定番で、優しい味わいでいくらでも食べられる。", "img": "素材/グルメ/ストリングホッパー.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B9%E3%83%88%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%9B%E3%83%83%E3%83%91%E3%83%BC%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🍜", "String Hoppers", "ストリングホッパー", "", "素材/グルメ/ストリングホッパー.webp"]}, "No.5": {"num": "No.5", "name": "魚のアンブルティヤル", "desc": "「ゴラカ」という酸味の強い果実とスパイスでカツオを黒く煮しめた南部の郷土料理。酸味と塩気が凝縮された濃厚な味わいで、ご飯のおかずに最適な一品。", "img": "素材/グルメ/魚のアンブルティヤル.webp", "wikiUrl": "https://www.google.com/search?q=%E9%AD%9A%E3%81%AE%E3%82%A2%E3%83%B3%E3%83%96%E3%83%AB%E3%83%86%E3%82%A3%E3%83%A4%E3%83%AB%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🐟", "Fish Ambul Thiyal", "魚のアンブルティヤル", "", "素材/グルメ/魚のアンブルティヤル.webp"]}, "No.6": {"num": "No.6", "name": "デビルドチキン", "desc": "唐辛子とスパイスをたっぷり効かせて炒めた激辛系チキン料理。植民地時代に西洋料理と融合して生まれたとされ、ビールのお供に最適。", "img": "素材/グルメ/デビルドチキン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%87%E3%83%93%E3%83%AB%E3%83%89%E3%83%81%E3%82%AD%E3%83%B3%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🌶️", "Devilled Chicken", "デビルドチキン", "", "素材/グルメ/デビルドチキン.webp"]}, "No.7": {"num": "No.7", "name": "ランプライス", "desc": "複数のカレーとご飯をバナナの葉で包んで蒸し上げた、オランダ系移民バーガー人が伝えた料理。包みを開けた瞬間に香りが広がる、コロンボの名物グルメ。", "img": "素材/グルメ/ランプライス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A9%E3%83%B3%E3%83%97%E3%83%A9%E3%82%A4%E3%82%B9%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🎁", "Lamprais", "ランプライス", "", "素材/グルメ/ランプライス.webp"]}, "No.8": {"num": "No.8", "name": "サモサ", "desc": "スパイシーな野菜や肉を三角形の皮で包んで揚げた軽食。惣菜パンや揚げ物などの軽食全般を指す「ショートイーツ」の代表格で、街のベーカリーに山積みになって売られている。", "img": "素材/グルメ/サモサ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B5%E3%83%A2%E3%82%B5%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🥟", "Samosa", "サモサ", "", "素材/グルメ/サモサ.webp"]}, "No.9": {"num": "No.9", "name": "キング・ココナッツウォーター", "desc": "オレンジ色の殻を持つ「キングココナッツ」の天然果汁。道端で切りたてを飲めるのがスリランカ流。ほのかな甘さで暑い日の水分補給に最適。", "img": "素材/グルメ/キング・ココナッツウォーター.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%BB%E3%82%B3%E3%82%B3%E3%83%8A%E3%83%83%E3%83%84%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%BF%E3%83%BC%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🥥", "King Coconut Water", "キング・ココナッツウォーター", "", "素材/グルメ/キング・ココナッツウォーター.webp"]}, "No.10": {"num": "No.10", "name": "セイロンティー", "desc": "高原の紅茶畑で育つ世界的ブランド「セイロンティー」。ヌワラエリヤ・キャンディなど産地ごとに風味が異なり、ティーファクトリーでの試飲も楽しみのひとつ。", "img": "素材/グルメ/セイロンティー.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BB%E3%82%A4%E3%83%AD%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BC%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🍵", "Ceylon Tea", "セイロンティー", "", "素材/グルメ/セイロンティー.webp"]}, "No.11": {"num": "No.11", "name": "ワタラッパン", "desc": "ジャガリー（ヤシ砂糖）とココナッツミルク、卵で作る蒸しプリン。カルダモンの香りとカラメルのような濃厚な甘さが特徴の、お祝いの席の定番デザート。", "img": "素材/グルメ/ワタラッパン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AF%E3%82%BF%E3%83%A9%E3%83%83%E3%83%91%E3%83%B3%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🍮", "Watalappan", "ワタラッパン", "", "素材/グルメ/ワタラッパン.webp"]}, "No.12": {"num": "No.12", "name": "クルクル", "desc": "米粉生地を渦巻き状に成形して揚げた、ポルトガル系移民由来の伝統菓子。サクサクとした軽い食感で、クリスマスなどのお祝いにも登場する。", "img": "素材/グルメ/クルクル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AF%E3%83%AB%E3%82%AF%E3%83%AB%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🌀", "Kokis", "クルクル", "", "素材/グルメ/クルクル.webp"]}, "No.13": {"num": "No.13", "name": "ポル・サンボール", "desc": "削ったココナッツに唐辛子・タマネギ・ライム・燻製魚をすり潰して混ぜた辛いふりかけ。ライス＆カリーに必ずといって良いほど添えられる国民的相棒。", "img": "素材/グルメ/ポル・サンボール.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9D%E3%83%AB%E3%83%BB%E3%82%B5%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%AB%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🥥", "Pol Sambol", "ポル・サンボール", "", "素材/グルメ/ポル・サンボール.webp"]}, "No.14": {"num": "No.14", "name": "パリップ", "desc": "レンズ豆をココナッツミルクとスパイスで煮込んだ辛さ控えめのカレー。「毎食でも食べる」ほどの定番おかずで、辛い料理が並ぶ食卓全体のバランスを取る一品。", "img": "素材/グルメ/パリップ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%91%E3%83%AA%E3%83%83%E3%83%97%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🍛", "Parippu", "パリップ", "", "素材/グルメ/パリップ.webp"]}, "No.15": {"num": "No.15", "name": "ジンジャービスケット", "desc": "生姜のピリッとした風味が効いた素朴な味わいのビスケット。マリバン（Maliban）社のものが特に有名で、スーパーやバザールで箱買いできる手頃さから、ばらまき土産としても大人気。", "img": "素材/グルメ/ジンジャービスケット.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B8%E3%83%B3%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%93%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB", "orderParams": ["🍪", "Ginger Biscuits", "ジンジャービスケット", "", "素材/グルメ/ジンジャービスケット.webp"]}, "No.16": {"num": "No.16", "name": "キリバット", "desc": "ココナッツミルクで炊いた白い米をひし形に切り分けて食べる「祝い事のご飯」。シンハラ正月や誕生日など人生の節目に必ず炊かれ、ポル・サンボールと共に食べる。", "img": "", "wikiUrl": "https://www.google.com/search?q=%E3%82%AD%E3%83%AA%E3%83%90%E3%83%83%E3%83%88%20%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%20%E6%96%99%E7%90%86", "orderParams": ["🍚", "Kiribath", "キリバット", "", ""]}};
 function showFood(numId) {
   var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
   if (!o) {
@@ -571,12 +574,14 @@ function showFood(numId) {
     if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
     var imgEl = card.querySelector('.food-img');
     var wikiBtn = card.querySelector('.wiki-link');
+    var orderBtnEl = card.querySelector('.order-btn');
     o = {
       num:  (card.querySelector('.num') || {}).textContent || '',
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
       img:  imgEl ? imgEl.src : '',
-      wikiUrl: wikiBtn ? wikiBtn.href : ''
+      wikiUrl: wikiBtn ? wikiBtn.href : '',
+      orderOnclick: orderBtnEl ? orderBtnEl.getAttribute('onclick') : null
     };
   }
   document.getElementById('sp-pop-num').textContent  = o.num  || '';
@@ -589,6 +594,17 @@ function showFood(numId) {
   popMap.textContent = '詳しく調べる →';
   if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  if (o.orderParams) {
+    popOrder.onclick = function(e) { e.stopPropagation(); openFoodModal(o.orderParams[0], o.orderParams[1], o.orderParams[2], o.orderParams[3], o.orderParams[4]); };
+    popOrder.style.display = 'inline-flex';
+  } else if (o.orderOnclick) {
+    popOrder.setAttribute('onclick', o.orderOnclick);
+    popOrder.style.display = 'inline-flex';
+  } else {
+    popOrder.style.display = 'none';
+    popOrder.onclick = null;
+  }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -598,6 +614,13 @@ function closeSpotPopup() {
   document.getElementById('sp-popup').style.display = 'none';
   document.body.style.overflow = '';
 }
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.item-grid.view-list .item-card');
+  if (!card || e.target.closest('a,button')) return;
+  if (card.dataset.foodNum) showFood(card.dataset.foodNum);
+  else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
+});
 
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView', view);
@@ -616,8 +639,13 @@ function setItemView(kind, view) {
 (function() {
   ['food', 'spots'].forEach(kind => {
     const saved = localStorage.getItem(kind + 'ItemView');
-    if (saved) setItemView(kind, saved);
-    else document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="standard"]').forEach(b => b.classList.add('on'));
+    if (saved) { setItemView(kind, saved); return; }
+    const defaultView = window.innerWidth <= 620 ? 'compact' : 'standard';
+    const grids = kind === 'food'
+      ? document.querySelectorAll('#food-grid')
+      : document.querySelectorAll('#spots-grid .item-grid');
+    if (defaultView === 'compact') grids.forEach(grid => grid.classList.add('view-compact'));
+    document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
 })();
 
@@ -834,7 +862,8 @@ function closeFoodModal() {
       <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
       <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
       <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
-      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button id="sp-pop-order" style="display:none;align-items:center;gap:3px;padding:6px 12px;background:#fff;border:1.5px solid #dadce0;color:#5f6368;font-size:0.78em;font-weight:600;border-radius:20px;cursor:pointer;white-space:nowrap">🌐 店員に聞く</button>
         <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
       </div>
     </div>

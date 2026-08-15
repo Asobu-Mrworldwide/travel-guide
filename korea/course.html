@@ -30,8 +30,8 @@
 <meta name="twitter:image" content="https://worldmappy.com/korea/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786681851" defer></script>
-<script src="../assets/affiliates.js?v=1786681851" defer></script>
+<script src="../assets/affiliates-data.js?v=1786787054" defer></script>
+<script src="../assets/affiliates.js?v=1786787054" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -465,12 +465,15 @@ function showSpot(numId) {
   popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  popOrder.style.display = 'none';
+  popOrder.onclick = null;
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 /* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
-var FOOD_DATA = {"No.1": {"num": "No.1", "name": "サムギョプサル", "desc": "厚切り豚バラ肉を鉄板で焼き、サンチュやエゴマの葉で包んで食べる韓国焼肉の王道。1人前1,200円前後、ソジュとの相性は抜群。", "img": "素材/グルメ/サムギョプサル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B5%E3%83%A0%E3%82%AE%E3%83%A7%E3%83%97%E3%82%B5%E3%83%AB%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.2": {"num": "No.2", "name": "ビビンバ", "desc": "ナムルと肉、コチュジャンをよく混ぜて食べる韓国料理の代表。石焼き器で提供される全州（チョンジュ）式は、底のおこげも楽しめる定番スタイル。", "img": "素材/グルメ/ビビンバ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%93%E3%83%93%E3%83%B3%E3%83%90%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.3": {"num": "No.3", "name": "キムチチゲ", "desc": "熟成キムチと豚肉・豆腐を煮込んだ酸味と辛味の効いた鍋料理。グツグツと沸騰した状態で運ばれ、白いご飯と一緒に食べれば芯から温まる。", "img": "素材/グルメ/キムチチゲ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AD%E3%83%A0%E3%83%81%E3%83%81%E3%82%B2%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.4": {"num": "No.4", "name": "タッカルビ", "desc": "鶏肉と野菜、餅をコチュジャンベースのタレで鉄板炒めにする料理。〆にチャーハンを追加するのがセットの定番で、春川（チュンチョン）が発祥地として有名。", "img": "素材/グルメ/タッカルビ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BF%E3%83%83%E3%82%AB%E3%83%AB%E3%83%93%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.5": {"num": "No.5", "name": "チーズトッポッキ", "desc": "もちもちのトッポッキに濃厚チーズをたっぷり絡めた進化系屋台グルメ。とろけるチーズが伸びる瞬間がフォトジェニックで、SNSで大人気の一品。", "img": "素材/グルメ/チーズトッポッキ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%BC%E3%82%BA%E3%83%88%E3%83%83%E3%83%9D%E3%83%83%E3%82%AD%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.6": {"num": "No.6", "name": "参鶏湯（サムゲタン）", "desc": "丸鶏にもち米・高麗人参・なつめを詰めて煮込んだ滋養強壮スープ。夏の暑気払いとして地元で人気があり、疲労回復の定番料理として親しまれている。", "img": "素材/グルメ/参鶏湯（サムゲタン）.webp", "wikiUrl": "https://www.google.com/search?q=%E5%8F%82%E9%B6%8F%E6%B9%AF%EF%BC%88%E3%82%B5%E3%83%A0%E3%82%B2%E3%82%BF%E3%83%B3%EF%BC%89%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.7": {"num": "No.7", "name": "キンパ", "desc": "ごま油の香るご飯と具材を海苔で巻いた韓国風海苔巻き。コンビニでも手軽に買えて食べ歩きにぴったりで、旅行者にも親しみやすい一品。", "img": "素材/グルメ/キンパ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AD%E3%83%B3%E3%83%91%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.8": {"num": "No.8", "name": "冷麺", "desc": "そば粉やでんぷんの麺を氷入りの冷たいスープで食べる、暑い夏に人気の一杯。焼肉店での〆の定番としても親しまれており、平壌式と咸興式がある。", "img": "素材/グルメ/冷麺.webp", "wikiUrl": "https://www.google.com/search?q=%E5%86%B7%E9%BA%BA%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.9": {"num": "No.9", "name": "コリアンフライドチキン", "desc": "二度揚げでカリッと仕上げた韓国式フライドチキン。ヤンニョム（甘辛ダレ）味が特に人気で「チメク」（チキン＋ビール）は定番の楽しみ方。", "img": "素材/グルメ/コリアンフライドチキン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%AA%E3%82%A2%E3%83%B3%E3%83%95%E3%83%A9%E3%82%A4%E3%83%89%E3%83%81%E3%82%AD%E3%83%B3%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.10": {"num": "No.10", "name": "ホットク", "desc": "揚げ焼きにした生地の中に黒糖とナッツが詰まった韓国式甘いパンケーキ。冬の屋台で行列ができるほどの人気グルメで、熱々を頬張るのが醍醐味。", "img": "素材/グルメ/ホットク.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9B%E3%83%83%E3%83%88%E3%82%AF%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.11": {"num": "No.11", "name": "ピンス", "desc": "ふわふわのミルク氷にきな粉やフルーツ、餅をトッピングした韓国式かき氷。ミルクで凍らせた氷を削る「ソルビン」スタイルが主流で、カフェごとに個性豊かなアレンジがある。", "img": "素材/グルメ/ピンス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%94%E3%83%B3%E3%82%B9%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.12": {"num": "No.12", "name": "釜山名物 ミルミョン＆テジクッパ", "desc": "釜山発祥の冷麺の一種ミルミョンと、豚骨スープに豚肉とご飯を入れたテジクッパ。どちらも地元民のソウルフードとして愛される、港町・釜山ならではの二枚看板。", "img": "素材/グルメ/釜山名物 ミルミョン＆テジクッパ.webp", "wikiUrl": "https://www.google.com/search?q=%E9%87%9C%E5%B1%B1%E5%90%8D%E7%89%A9%20%E3%83%9F%E3%83%AB%E3%83%9F%E3%83%A7%E3%83%B3%EF%BC%86%E3%83%86%E3%82%B8%E3%82%AF%E3%83%83%E3%83%91%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.13": {"num": "No.13", "name": "パジョン（海鮮チヂミ）", "desc": "小麦粉の生地に海鮮とネギをたっぷり混ぜて焼く韓国風お好み焼き。マッコリのお供として全土で愛される定番で、雨の日に食べる習慣が根付いている。", "img": "素材/グルメ/パジョン（海鮮チヂミ）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%91%E3%82%B8%E3%83%A7%E3%83%B3%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.14": {"num": "No.14", "name": "タッカンマリ", "desc": "鶏一羽をまるごと野菜と一緒にじっくり煮込んだシンプルな鍋料理。東大門には専門店街があり、締めはカルグクス（麺）やご飯で。日本の韓国料理店でも人気の高い定番メニュー。", "img": "素材/グルメ/タッカンマリ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BF%E3%83%83%E3%82%AB%E3%83%B3%E3%83%9E%E3%83%AA%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.15": {"num": "No.15", "name": "ソルロンタン", "desc": "牛骨と牛肉を白濁するまでじっくり煮込んだ、ソウルを代表する滋味深いスープ。塩気控えめで提供されるため、卓上の塩やネギで自分好みの味に調整するのが定番の食べ方。", "img": "素材/グルメ/ソルロンタン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BD%E3%83%AB%E3%83%AD%E3%83%B3%E3%82%BF%E3%83%B3%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.16": {"num": "No.16", "name": "済州島黒豚焼肉", "desc": "済州島固有の在来種「済州黒豚」を厚切りで焼く、島を代表するご馳走。脂身に甘みがあり、味噌だれや塩でシンプルに味わうのが地元流。専門店が集まる黒豚通りは観光客にも大人気。", "img": "素材/グルメ/済州島黒豚焼肉.webp", "wikiUrl": "https://www.google.com/search?q=%E6%B8%88%E5%B7%9E%E5%B3%B6%E9%BB%92%E8%B1%9A%E7%84%BC%E8%82%89%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.17": {"num": "No.17", "name": "カルチジョリム（太刀魚の煮付け）", "desc": "太刀魚を大根やコチュジャンベースのピリ辛だれでじっくり煮込んだ済州島の郷土料理。脂ののった太刀魚の身はほろほろと崩れるやわらかさで、ご飯が進む一皿として地元でも人気が高い。", "img": "素材/グルメ/カルチジョリム（太刀魚の煮付け）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%81%E3%82%B8%E3%83%A7%E3%83%AA%E3%83%A0%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}, "No.18": {"num": "No.18", "name": "コンナムルクッパ", "desc": "豆もやしをたっぷり煮込んだ透き通るスープに、卵やご飯を落として食べる全州の朝ごはん・二日酔い覚まし飯。あっさりした味わいながら旨みが染み出し、韓屋村散策前の一杯にちょうどいい。", "img": "素材/グルメ/コンナムルクッパ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%B3%E3%83%8A%E3%83%A0%E3%83%AB%E3%82%AF%E3%83%83%E3%83%91%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86"}};
+var FOOD_DATA = {"No.1": {"num": "No.1", "name": "サムギョプサル", "desc": "厚切り豚バラ肉を鉄板で焼き、サンチュやエゴマの葉で包んで食べる韓国焼肉の王道。1人前1,200円前後、ソジュとの相性は抜群。", "img": "素材/グルメ/サムギョプサル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B5%E3%83%A0%E3%82%AE%E3%83%A7%E3%83%97%E3%82%B5%E3%83%AB%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🥓", "Samgyeopsal", "サムギョプサル", "", "素材/グルメ/サムギョプサル.webp"]}, "No.2": {"num": "No.2", "name": "ビビンバ", "desc": "ナムルと肉、コチュジャンをよく混ぜて食べる韓国料理の代表。石焼き器で提供される全州（チョンジュ）式は、底のおこげも楽しめる定番スタイル。", "img": "素材/グルメ/ビビンバ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%93%E3%83%93%E3%83%B3%E3%83%90%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍚", "Bibimbap", "ビビンバ", "", "素材/グルメ/ビビンバ.webp"]}, "No.3": {"num": "No.3", "name": "キムチチゲ", "desc": "熟成キムチと豚肉・豆腐を煮込んだ酸味と辛味の効いた鍋料理。グツグツと沸騰した状態で運ばれ、白いご飯と一緒に食べれば芯から温まる。", "img": "素材/グルメ/キムチチゲ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AD%E3%83%A0%E3%83%81%E3%83%81%E3%82%B2%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍲", "Kimchi Jjigae", "キムチチゲ", "", "素材/グルメ/キムチチゲ.webp"]}, "No.4": {"num": "No.4", "name": "タッカルビ", "desc": "鶏肉と野菜、餅をコチュジャンベースのタレで鉄板炒めにする料理。〆にチャーハンを追加するのがセットの定番で、春川（チュンチョン）が発祥地として有名。", "img": "素材/グルメ/タッカルビ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BF%E3%83%83%E3%82%AB%E3%83%AB%E3%83%93%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍗", "Dakgalbi", "タッカルビ", "", "素材/グルメ/タッカルビ.webp"]}, "No.5": {"num": "No.5", "name": "チーズトッポッキ", "desc": "もちもちのトッポッキに濃厚チーズをたっぷり絡めた進化系屋台グルメ。とろけるチーズが伸びる瞬間がフォトジェニックで、SNSで大人気の一品。", "img": "素材/グルメ/チーズトッポッキ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%BC%E3%82%BA%E3%83%88%E3%83%83%E3%83%9D%E3%83%83%E3%82%AD%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🧀", "Cheese Tteokbokki", "チーズトッポッキ", "", "素材/グルメ/チーズトッポッキ.webp"]}, "No.6": {"num": "No.6", "name": "参鶏湯（サムゲタン）", "desc": "丸鶏にもち米・高麗人参・なつめを詰めて煮込んだ滋養強壮スープ。夏の暑気払いとして地元で人気があり、疲労回復の定番料理として親しまれている。", "img": "素材/グルメ/参鶏湯（サムゲタン）.webp", "wikiUrl": "https://www.google.com/search?q=%E5%8F%82%E9%B6%8F%E6%B9%AF%EF%BC%88%E3%82%B5%E3%83%A0%E3%82%B2%E3%82%BF%E3%83%B3%EF%BC%89%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍗", "Samgyetang", "参鶏湯（サムゲタン）", "", "素材/グルメ/参鶏湯（サムゲタン）.webp"]}, "No.7": {"num": "No.7", "name": "キンパ", "desc": "ごま油の香るご飯と具材を海苔で巻いた韓国風海苔巻き。コンビニでも手軽に買えて食べ歩きにぴったりで、旅行者にも親しみやすい一品。", "img": "素材/グルメ/キンパ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AD%E3%83%B3%E3%83%91%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍙", "Gimbap", "キンパ", "", "素材/グルメ/キンパ.webp"]}, "No.8": {"num": "No.8", "name": "冷麺", "desc": "そば粉やでんぷんの麺を氷入りの冷たいスープで食べる、暑い夏に人気の一杯。焼肉店での〆の定番としても親しまれており、平壌式と咸興式がある。", "img": "素材/グルメ/冷麺.webp", "wikiUrl": "https://www.google.com/search?q=%E5%86%B7%E9%BA%BA%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍜", "Naengmyeon", "冷麺", "", "素材/グルメ/冷麺.webp"]}, "No.9": {"num": "No.9", "name": "コリアンフライドチキン", "desc": "二度揚げでカリッと仕上げた韓国式フライドチキン。ヤンニョム（甘辛ダレ）味が特に人気で「チメク」（チキン＋ビール）は定番の楽しみ方。", "img": "素材/グルメ/コリアンフライドチキン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%AA%E3%82%A2%E3%83%B3%E3%83%95%E3%83%A9%E3%82%A4%E3%83%89%E3%83%81%E3%82%AD%E3%83%B3%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍗", "Yangnyeom Chicken", "コリアンフライドチキン", "", "素材/グルメ/コリアンフライドチキン.webp"]}, "No.10": {"num": "No.10", "name": "ホットク", "desc": "揚げ焼きにした生地の中に黒糖とナッツが詰まった韓国式甘いパンケーキ。冬の屋台で行列ができるほどの人気グルメで、熱々を頬張るのが醍醐味。", "img": "素材/グルメ/ホットク.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9B%E3%83%83%E3%83%88%E3%82%AF%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🥞", "Hotteok", "ホットク", "", "素材/グルメ/ホットク.webp"]}, "No.11": {"num": "No.11", "name": "ピンス", "desc": "ふわふわのミルク氷にきな粉やフルーツ、餅をトッピングした韓国式かき氷。ミルクで凍らせた氷を削る「ソルビン」スタイルが主流で、カフェごとに個性豊かなアレンジがある。", "img": "素材/グルメ/ピンス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%94%E3%83%B3%E3%82%B9%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍧", "Bingsu", "ピンス", "", "素材/グルメ/ピンス.webp"]}, "No.12": {"num": "No.12", "name": "釜山名物 ミルミョン＆テジクッパ", "desc": "釜山発祥の冷麺の一種ミルミョンと、豚骨スープに豚肉とご飯を入れたテジクッパ。どちらも地元民のソウルフードとして愛される、港町・釜山ならではの二枚看板。", "img": "素材/グルメ/釜山名物 ミルミョン＆テジクッパ.webp", "wikiUrl": "https://www.google.com/search?q=%E9%87%9C%E5%B1%B1%E5%90%8D%E7%89%A9%20%E3%83%9F%E3%83%AB%E3%83%9F%E3%83%A7%E3%83%B3%EF%BC%86%E3%83%86%E3%82%B8%E3%82%AF%E3%83%83%E3%83%91%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🦑", "Milmyeon & Dwaeji Gukbap", "釜山名物 ミルミョン＆テジクッパ", "", "素材/グルメ/釜山名物 ミルミョン＆テジクッパ.webp"]}, "No.13": {"num": "No.13", "name": "パジョン（海鮮チヂミ）", "desc": "小麦粉の生地に海鮮とネギをたっぷり混ぜて焼く韓国風お好み焼き。マッコリのお供として全土で愛される定番で、雨の日に食べる習慣が根付いている。", "img": "素材/グルメ/パジョン（海鮮チヂミ）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%91%E3%82%B8%E3%83%A7%E3%83%B3%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🥞", "Pajeon", "パジョン（海鮮チヂミ）", "", "素材/グルメ/パジョン（海鮮チヂミ）.webp"]}, "No.14": {"num": "No.14", "name": "タッカンマリ", "desc": "鶏一羽をまるごと野菜と一緒にじっくり煮込んだシンプルな鍋料理。東大門には専門店街があり、締めはカルグクス（麺）やご飯で。日本の韓国料理店でも人気の高い定番メニュー。", "img": "素材/グルメ/タッカンマリ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BF%E3%83%83%E3%82%AB%E3%83%B3%E3%83%9E%E3%83%AA%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🍗", "Dak Hanmari", "タッカンマリ", "", "素材/グルメ/タッカンマリ.webp"]}, "No.15": {"num": "No.15", "name": "ソルロンタン", "desc": "牛骨と牛肉を白濁するまでじっくり煮込んだ、ソウルを代表する滋味深いスープ。塩気控えめで提供されるため、卓上の塩やネギで自分好みの味に調整するのが定番の食べ方。", "img": "素材/グルメ/ソルロンタン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BD%E3%83%AB%E3%83%AD%E3%83%B3%E3%82%BF%E3%83%B3%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🥣", "Seolleongtang", "ソルロンタン", "", "素材/グルメ/ソルロンタン.webp"]}, "No.16": {"num": "No.16", "name": "済州島黒豚焼肉", "desc": "済州島固有の在来種「済州黒豚」を厚切りで焼く、島を代表するご馳走。脂身に甘みがあり、味噌だれや塩でシンプルに味わうのが地元流。専門店が集まる黒豚通りは観光客にも大人気。", "img": "素材/グルメ/済州島黒豚焼肉.webp", "wikiUrl": "https://www.google.com/search?q=%E6%B8%88%E5%B7%9E%E5%B3%B6%E9%BB%92%E8%B1%9A%E7%84%BC%E8%82%89%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🐷", "Jeju Heukdwaeji", "済州島黒豚焼肉", "", "素材/グルメ/済州島黒豚焼肉.webp"]}, "No.17": {"num": "No.17", "name": "カルチジョリム（太刀魚の煮付け）", "desc": "太刀魚を大根やコチュジャンベースのピリ辛だれでじっくり煮込んだ済州島の郷土料理。脂ののった太刀魚の身はほろほろと崩れるやわらかさで、ご飯が進む一皿として地元でも人気が高い。", "img": "素材/グルメ/カルチジョリム（太刀魚の煮付け）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%81%E3%82%B8%E3%83%A7%E3%83%AA%E3%83%A0%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🐟", "Galchi Jorim", "カルチジョリム（太刀魚の煮付け）", "", "素材/グルメ/カルチジョリム（太刀魚の煮付け）.webp"]}, "No.18": {"num": "No.18", "name": "コンナムルクッパ", "desc": "豆もやしをたっぷり煮込んだ透き通るスープに、卵やご飯を落として食べる全州の朝ごはん・二日酔い覚まし飯。あっさりした味わいながら旨みが染み出し、韓屋村散策前の一杯にちょうどいい。", "img": "素材/グルメ/コンナムルクッパ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%B3%E3%83%8A%E3%83%A0%E3%83%AB%E3%82%AF%E3%83%83%E3%83%91%20%E9%9F%93%E5%9B%BD%20%E6%96%99%E7%90%86", "orderParams": ["🌱", "Kongnamul Gukbap", "コンナムルクッパ", "", "素材/グルメ/コンナムルクッパ.webp"]}};
 function showFood(numId) {
   var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
   if (!o) {
@@ -478,12 +481,14 @@ function showFood(numId) {
     if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
     var imgEl = card.querySelector('.food-img');
     var wikiBtn = card.querySelector('.wiki-link');
+    var orderBtnEl = card.querySelector('.order-btn');
     o = {
       num:  (card.querySelector('.num') || {}).textContent || '',
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
       img:  imgEl ? imgEl.src : '',
-      wikiUrl: wikiBtn ? wikiBtn.href : ''
+      wikiUrl: wikiBtn ? wikiBtn.href : '',
+      orderOnclick: orderBtnEl ? orderBtnEl.getAttribute('onclick') : null
     };
   }
   document.getElementById('sp-pop-num').textContent  = o.num  || '';
@@ -496,6 +501,17 @@ function showFood(numId) {
   popMap.textContent = '詳しく調べる →';
   if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  if (o.orderParams) {
+    popOrder.onclick = function(e) { e.stopPropagation(); openFoodModal(o.orderParams[0], o.orderParams[1], o.orderParams[2], o.orderParams[3], o.orderParams[4]); };
+    popOrder.style.display = 'inline-flex';
+  } else if (o.orderOnclick) {
+    popOrder.setAttribute('onclick', o.orderOnclick);
+    popOrder.style.display = 'inline-flex';
+  } else {
+    popOrder.style.display = 'none';
+    popOrder.onclick = null;
+  }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -505,6 +521,13 @@ function closeSpotPopup() {
   document.getElementById('sp-popup').style.display = 'none';
   document.body.style.overflow = '';
 }
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.item-grid.view-list .item-card');
+  if (!card || e.target.closest('a,button')) return;
+  if (card.dataset.foodNum) showFood(card.dataset.foodNum);
+  else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
+});
 
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView', view);
@@ -523,8 +546,13 @@ function setItemView(kind, view) {
 (function() {
   ['food', 'spots'].forEach(kind => {
     const saved = localStorage.getItem(kind + 'ItemView');
-    if (saved) setItemView(kind, saved);
-    else document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="standard"]').forEach(b => b.classList.add('on'));
+    if (saved) { setItemView(kind, saved); return; }
+    const defaultView = window.innerWidth <= 620 ? 'compact' : 'standard';
+    const grids = kind === 'food'
+      ? document.querySelectorAll('#food-grid')
+      : document.querySelectorAll('#spots-grid .item-grid');
+    if (defaultView === 'compact') grids.forEach(grid => grid.classList.add('view-compact'));
+    document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
 })();
 
@@ -741,7 +769,8 @@ function closeFoodModal() {
       <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
       <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
       <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
-      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button id="sp-pop-order" style="display:none;align-items:center;gap:3px;padding:6px 12px;background:#fff;border:1.5px solid #dadce0;color:#5f6368;font-size:0.78em;font-weight:600;border-radius:20px;cursor:pointer;white-space:nowrap">🌐 店員に聞く</button>
         <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
       </div>
     </div>

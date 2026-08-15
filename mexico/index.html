@@ -30,8 +30,8 @@
 <meta name="twitter:image" content="https://worldmappy.com/mexico/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786681851" defer></script>
-<script src="../assets/affiliates.js?v=1786681851" defer></script>
+<script src="../assets/affiliates-data.js?v=1786787054" defer></script>
+<script src="../assets/affiliates.js?v=1786787054" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -192,18 +192,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="sp-point">
       <div class="sp-point-body">
-        <div class="sp-point-title"><a onclick="showSpot('CDMX 03')" class="spot-link">フリーダ・カーロ博物館は「事前予約」が必須</a></div>
-        <div class="sp-point-text"><a onclick="showSpot('CDMX 03')" class="keyword-link">青い家</a>は人気が高く、当日券のみでの入場はほぼ不可能なため、公式サイトで日時指定チケットを事前予約しておく必要がある。館内の写真撮影には別途チケットが必要な場合もあるので、訪問前に最新の規定を確認しておきたい。</div>
+        <div class="sp-point-title"><a onclick="showFood('No.1')" class="spot-link">タコス・アル・パストールは「立ち食い」が本場流</a></div>
+        <div class="sp-point-text"><a onclick="showFood('No.1')" class="keyword-link">タコス・アル・パストール</a>は垂直グリル「トロンポ」で炙った豚肉を薄く削ぎ切りにし、小さなコーントルティーヤに挟んで食べる屋台の定番。パイナップルをのせるのがメキシコシティ流で、1皿数十円という安さながら奥深い味わいがある。立ったまま数皿を食べ歩くのが地元流。</div>
       </div>
-      <img src="素材/観光スポット/フリーダ・カーロ博物館（青い家）.webp" alt="フリーダ・カーロ博物館は「事前予約」が必須" class="sp-point-img">
-    </div>
-    
-    <div class="sp-point">
-      <div class="sp-point-body">
-        <div class="sp-point-title"><a onclick="showSpot('CAN 03')" class="spot-link">セノーテは「日焼け止め禁止」の場所がある</a></div>
-        <div class="sp-point-text"><a onclick="showSpot('CAN 03')" class="keyword-link">セノーテ</a>の多くは水質保護のため、通常の日焼け止めの使用が禁止されており、生分解性タイプのみ許可されるケースが多い。持参し忘れた場合は入口の売店で購入できることが多いが、割高になりやすいので事前準備がおすすめ。</div>
-      </div>
-      <img src="素材/観光スポット/グラン・セノーテ.webp" alt="セノーテは「日焼け止め禁止」の場所がある" class="sp-point-img">
+      <img src="素材/グルメ/タコス・アル・パストール.webp" alt="タコス・アル・パストールは「立ち食い」が本場流" class="sp-point-img">
     </div>
     
     <div style="padding:10px 16px;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:6px"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button><button class="see-more" style="margin:0" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button></div>
@@ -577,12 +569,15 @@ function showSpot(numId) {
   popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  popOrder.style.display = 'none';
+  popOrder.onclick = null;
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 /* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
-var FOOD_DATA = {"No.1": {"num": "No.1", "name": "タコス・アル・パストール", "desc": "回転する肉の塊を薄く削ぎ切りにし、パイナップルを添えた屋台の定番タコス。パクチーとサルサをかけて食べるのが定番で、苦手なら「Sin cilantro」と伝えよう。", "img": "素材/グルメ/タコス・アル・パストール.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BF%E3%82%B3%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%91%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%20%E6%96%99%E7%90%86"}, "No.2": {"num": "No.2", "name": "ワカモレ", "desc": "熟したアボカドを潰し、ライムやコリアンダー、玉ねぎを混ぜたディップ。トルティーヤチップスと一緒に前菜として食べるのが定番で、家庭ごとに味が異なる。", "img": "素材/グルメ/ワカモレ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AF%E3%82%AB%E3%83%A2%E3%83%AC%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.3": {"num": "No.3", "name": "モーレ・ポブラーノ", "desc": "唐辛子やチョコレート、スパイスなど20種以上の材料を煮込んだ濃厚な伝統ソース。厳密にはプエブラ州発祥だが、オアハカは「7種のモーレ」で名高い本場でもある。", "img": "素材/グルメ/モーレ・ポブラーノ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A2%E3%83%BC%E3%83%AC%E3%83%BB%E3%83%9D%E3%83%96%E3%83%A9%E3%83%BC%E3%83%8E%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.4": {"num": "No.4", "name": "タマレス", "desc": "トウモロコシ生地に肉や野菜を詰め、葉で包んで蒸し上げる伝統料理。朝食の屋台でよく売られており、地域ごとに具材や包む葉（バナナの葉等）が異なる。", "img": "素材/グルメ/タマレス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BF%E3%83%9E%E3%83%AC%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.5": {"num": "No.5", "name": "ケサディーヤ", "desc": "トルティーヤにチーズや具材を挟んで焼いた軽食。屋台では花（キノコの一種のワカシュ等）やひき肉を挟むこともあり、日本で知られる形とはやや違う個性がある。", "img": "素材/グルメ/ケサディーヤ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B1%E3%82%B5%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A4%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.6": {"num": "No.6", "name": "チュロス", "desc": "揚げたての生地にシナモンシュガーをまぶした定番スイーツ。チョコレートソースに浸して食べるのが人気で、市場や屋台で焼きたてを頬張るのが旅の楽しみになる。", "img": "素材/グルメ/チュロス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%A5%E3%83%AD%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E3%81%8A%E8%8F%93%E5%AD%90"}, "No.7": {"num": "No.7", "name": "テキーラ", "desc": "アガベ（リュウゼツラン）を原料とする世界的に有名な蒸留酒。テキーラ町周辺が原産地として法律で保護されており、塩とライムを添えたショットが定番の飲み方。", "img": "素材/グルメ/テキーラ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%86%E3%82%AD%E3%83%BC%E3%83%A9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9"}, "No.8": {"num": "No.8", "name": "メスカル", "desc": "野生のアガベを地中の窯で焼いてから蒸留する、オアハカ発祥のスモーキーな蒸留酒。テキーラより種類が多彩で、専門バー（メスカレリア）で飲み比べる旅行者も多い。", "img": "素材/グルメ/メスカル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A1%E3%82%B9%E3%82%AB%E3%83%AB%20%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%E9%A3%B2%E3%81%BF%E7%89%A9"}, "No.9": {"num": "No.9", "name": "チレス・エン・ノガダ", "desc": "ひき肉と果物を詰めたポブラーノ唐辛子に、白いクルミソースとザクロをかけた一皿。緑・白・赤の国旗色になることから独立記念日前後の季節料理として親しまれる。", "img": "素材/グルメ/チレス・エン・ノガダ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%AC%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%B3%E3%83%BB%E3%83%8E%E3%82%AC%E3%83%80%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.10": {"num": "No.10", "name": "ポソレ", "desc": "殻を取り除いた粒トウモロコシ（カカワジントレ）を豚肉や鶏肉と煮込んだ伝統スープ。刻みキャベツやラディッシュ、ライムを好みで加えて味を調えながら食べる。", "img": "素材/グルメ/ポソレ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9D%E3%82%BD%E3%83%AC%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.11": {"num": "No.11", "name": "エロテ・エスキーテス", "desc": "茹でたトウモロコシにマヨネーズ、チーズ、チリパウダーをまぶした屋台グルメ。串に刺した「エロテ」と、カップ入りの実だけの「エスキーテス」の2スタイルがある。", "img": "素材/グルメ/エロテ・エスキーテス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A8%E3%83%AD%E3%83%86%20%E3%82%A8%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%86%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.12": {"num": "No.12", "name": "チャンプラード", "desc": "トウモロコシ粉とチョコレートを煮込んだとろみのある温かい飲み物。シナモンの香りが効いており、朝食のタマレスと一緒に飲むのがメキシコの朝の定番。", "img": "素材/グルメ/チャンプラード.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%83%B3%E3%83%97%E3%83%A9%E3%83%BC%E3%83%89%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9"}, "No.13": {"num": "No.13", "name": "セビーチェ", "desc": "白身魚やエビをライム果汁でマリネし、トマトや玉ねぎと和えた爽やかな料理。カンクンなど沿岸部の名物で、トスターダ（揚げトルティーヤ）にのせて食べるのが定番。", "img": "素材/グルメ/セビーチェ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BB%E3%83%93%E3%83%BC%E3%83%81%E3%82%A7%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.14": {"num": "No.14", "name": "コチニータ・ピビル", "desc": "アチオテペーストに漬け込んだ豚肉をバナナの葉で包み、じっくり蒸し焼きにするユカタン半島の郷土料理。酸味のある紫玉ねぎのピクルスを添えて食べるのが定番。", "img": "素材/グルメ/コチニータ・ピビル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%81%E3%83%8B%E3%83%BC%E3%82%BF%E3%83%BB%E3%83%94%E3%83%93%E3%83%AB%20%E3%83%A6%E3%82%AB%E3%82%BF%E3%83%B3%E6%96%99%E7%90%86"}, "No.15": {"num": "No.15", "name": "チラキーレス", "desc": "揚げたトルティーヤチップスをサルサで煮込み、目玉焼きやチーズ、サワークリームをのせた朝食の定番。二日酔いにも効くと言われる、メキシコの家庭の味。", "img": "素材/グルメ/チラキーレス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%A9%E3%82%AD%E3%83%BC%E3%83%AC%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.16": {"num": "No.16", "name": "オルチャータ", "desc": "米を水に浸してすり潰し、シナモンや砂糖で甘く仕上げた冷たい飲み物。辛い料理の合間に飲むと口の中がリセットされる、屋台や食堂の定番ドリンク。", "img": "素材/グルメ/オルチャータ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AA%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BF%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9"}, "No.17": {"num": "No.17", "name": "ミチェラーダ", "desc": "ビールにライム果汁やホットソース、塩を加えたピリ辛カクテル。グラスの縁に塩とチリパウダーをまぶすのが定番で、暑い日の昼下がりに飲むのが心地よい。", "img": "素材/グルメ/ミチェラーダ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9F%E3%83%81%E3%82%A7%E3%83%A9%E3%83%BC%E3%83%80%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9"}, "No.18": {"num": "No.18", "name": "エンチラーダス", "desc": "具材を巻いたトルティーヤをサルサに浸して焼いた家庭料理。緑（サルサベルデ）や赤（サルサロハ）などソースの種類が豊富で、チーズをたっぷりかけて食べる。", "img": "素材/グルメ/エンチラーダス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A9%E3%83%BC%E3%83%80%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.19": {"num": "No.19", "name": "トラユーダ", "desc": "薄く大きなトウモロコシ生地に豆ペーストと肉、オアハカチーズをのせて焼いた「オアハカ風ピザ」。パリッとした生地とチーズのコクが人気。", "img": "素材/グルメ/トラユーダ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%88%E3%83%A9%E3%83%A6%E3%83%BC%E3%83%80%20%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%E6%96%99%E7%90%86"}, "No.20": {"num": "No.20", "name": "ケソ・オアハカ（オアハカチーズ）", "desc": "メキシコ中で愛される「さけるチーズ」の元祖。裂いて焼くととろけて糸を引き、ケサディーヤやトラユーダなど様々な料理に使われる万能チーズ。", "img": "素材/グルメ/ケソ・オアハカ（オアハカチーズ）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B1%E3%82%BD%E3%83%BB%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%20%E3%83%81%E3%83%BC%E3%82%BA"}, "No.21": {"num": "No.21", "name": "ソパ・デ・リマ", "desc": "ライムの酸味が効いたユカタン半島の伝統スープ。鶏肉と揚げトルティーヤが入り、さっぱりした味わいは暑い気候でも食欲をそそる日本人好みの一杯。", "img": "素材/グルメ/ソパ・デ・リマ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BD%E3%83%91%E3%83%BB%E3%83%87%E3%83%BB%E3%83%AA%E3%83%9E%20%E3%83%A6%E3%82%AB%E3%82%BF%E3%83%B3%E6%96%99%E7%90%86"}, "No.22": {"num": "No.22", "name": "カルニータス", "desc": "豚肉をラードでじっくり煮込み、外はカリッと中はホロホロに仕上げた煮込み料理。タコスの具材としても定番で、屋台や食堂で必ず見かける味。", "img": "素材/グルメ/カルニータス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%8B%E3%83%BC%E3%82%BF%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}, "No.23": {"num": "No.23", "name": "サルサ（赤・緑）", "desc": "青唐辛子ベースの緑（サルサ・ベルデ）と辛いチリの赤（サルサ・ロハ）は辛さの系統が違う。ハバネロ入りは特に強烈なので少量から試したい。", "img": "素材/グルメ/サルサ（赤・緑）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B5%E3%83%AB%E3%82%B5%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86"}};
+var FOOD_DATA = {"No.1": {"num": "No.1", "name": "タコス・アル・パストール", "desc": "回転する肉の塊を薄く削ぎ切りにし、パイナップルを添えた屋台の定番タコス。パクチーとサルサをかけて食べるのが定番で、苦手なら「Sin cilantro」と伝えよう。", "img": "素材/グルメ/タコス・アル・パストール.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BF%E3%82%B3%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%91%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%20%E6%96%99%E7%90%86", "orderParams": ["🌮", "Tacos al Pastor", "タコス・アル・パストール", "", "素材/グルメ/タコス・アル・パストール.webp"]}, "No.2": {"num": "No.2", "name": "ワカモレ", "desc": "熟したアボカドを潰し、ライムやコリアンダー、玉ねぎを混ぜたディップ。トルティーヤチップスと一緒に前菜として食べるのが定番で、家庭ごとに味が異なる。", "img": "素材/グルメ/ワカモレ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AF%E3%82%AB%E3%83%A2%E3%83%AC%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🥑", "Guacamole", "ワカモレ", "", "素材/グルメ/ワカモレ.webp"]}, "No.3": {"num": "No.3", "name": "モーレ・ポブラーノ", "desc": "唐辛子やチョコレート、スパイスなど20種以上の材料を煮込んだ濃厚な伝統ソース。厳密にはプエブラ州発祥だが、オアハカは「7種のモーレ」で名高い本場でもある。", "img": "素材/グルメ/モーレ・ポブラーノ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A2%E3%83%BC%E3%83%AC%E3%83%BB%E3%83%9D%E3%83%96%E3%83%A9%E3%83%BC%E3%83%8E%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🍗", "Mole Poblano", "モーレ・ポブラーノ", "", "素材/グルメ/モーレ・ポブラーノ.webp"]}, "No.4": {"num": "No.4", "name": "タマレス", "desc": "トウモロコシ生地に肉や野菜を詰め、葉で包んで蒸し上げる伝統料理。朝食の屋台でよく売られており、地域ごとに具材や包む葉（バナナの葉等）が異なる。", "img": "素材/グルメ/タマレス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BF%E3%83%9E%E3%83%AC%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🫔", "Tamales", "タマレス", "", "素材/グルメ/タマレス.webp"]}, "No.5": {"num": "No.5", "name": "ケサディーヤ", "desc": "トルティーヤにチーズや具材を挟んで焼いた軽食。屋台では花（キノコの一種のワカシュ等）やひき肉を挟むこともあり、日本で知られる形とはやや違う個性がある。", "img": "素材/グルメ/ケサディーヤ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B1%E3%82%B5%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A4%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🧀", "Quesadilla", "ケサディーヤ", "", "素材/グルメ/ケサディーヤ.webp"]}, "No.6": {"num": "No.6", "name": "チュロス", "desc": "揚げたての生地にシナモンシュガーをまぶした定番スイーツ。チョコレートソースに浸して食べるのが人気で、市場や屋台で焼きたてを頬張るのが旅の楽しみになる。", "img": "素材/グルメ/チュロス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%A5%E3%83%AD%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E3%81%8A%E8%8F%93%E5%AD%90", "orderParams": ["🥖", "Churros", "チュロス", "", "素材/グルメ/チュロス.webp"]}, "No.7": {"num": "No.7", "name": "テキーラ", "desc": "アガベ（リュウゼツラン）を原料とする世界的に有名な蒸留酒。テキーラ町周辺が原産地として法律で保護されており、塩とライムを添えたショットが定番の飲み方。", "img": "素材/グルメ/テキーラ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%86%E3%82%AD%E3%83%BC%E3%83%A9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9", "orderParams": ["🥃", "Tequila", "テキーラ", "", "素材/グルメ/テキーラ.webp"]}, "No.8": {"num": "No.8", "name": "メスカル", "desc": "野生のアガベを地中の窯で焼いてから蒸留する、オアハカ発祥のスモーキーな蒸留酒。テキーラより種類が多彩で、専門バー（メスカレリア）で飲み比べる旅行者も多い。", "img": "素材/グルメ/メスカル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%A1%E3%82%B9%E3%82%AB%E3%83%AB%20%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%E9%A3%B2%E3%81%BF%E7%89%A9", "orderParams": ["🍶", "Mezcal", "メスカル", "", "素材/グルメ/メスカル.webp"]}, "No.9": {"num": "No.9", "name": "チレス・エン・ノガダ", "desc": "ひき肉と果物を詰めたポブラーノ唐辛子に、白いクルミソースとザクロをかけた一皿。緑・白・赤の国旗色になることから独立記念日前後の季節料理として親しまれる。", "img": "素材/グルメ/チレス・エン・ノガダ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%AC%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%B3%E3%83%BB%E3%83%8E%E3%82%AC%E3%83%80%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🫑", "Chiles en Nogada", "チレス・エン・ノガダ", "", "素材/グルメ/チレス・エン・ノガダ.webp"]}, "No.10": {"num": "No.10", "name": "ポソレ", "desc": "殻を取り除いた粒トウモロコシ（カカワジントレ）を豚肉や鶏肉と煮込んだ伝統スープ。刻みキャベツやラディッシュ、ライムを好みで加えて味を調えながら食べる。", "img": "素材/グルメ/ポソレ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9D%E3%82%BD%E3%83%AC%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🍲", "Pozole", "ポソレ", "", "素材/グルメ/ポソレ.webp"]}, "No.11": {"num": "No.11", "name": "エロテ・エスキーテス", "desc": "茹でたトウモロコシにマヨネーズ、チーズ、チリパウダーをまぶした屋台グルメ。串に刺した「エロテ」と、カップ入りの実だけの「エスキーテス」の2スタイルがある。", "img": "素材/グルメ/エロテ・エスキーテス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A8%E3%83%AD%E3%83%86%20%E3%82%A8%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%86%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🌽", "Elote / Esquites", "エロテ・エスキーテス", "", "素材/グルメ/エロテ・エスキーテス.webp"]}, "No.12": {"num": "No.12", "name": "チャンプラード", "desc": "トウモロコシ粉とチョコレートを煮込んだとろみのある温かい飲み物。シナモンの香りが効いており、朝食のタマレスと一緒に飲むのがメキシコの朝の定番。", "img": "素材/グルメ/チャンプラード.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%83%B3%E3%83%97%E3%83%A9%E3%83%BC%E3%83%89%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9", "orderParams": ["☕", "Champurrado", "チャンプラード", "", "素材/グルメ/チャンプラード.webp"]}, "No.13": {"num": "No.13", "name": "セビーチェ", "desc": "白身魚やエビをライム果汁でマリネし、トマトや玉ねぎと和えた爽やかな料理。カンクンなど沿岸部の名物で、トスターダ（揚げトルティーヤ）にのせて食べるのが定番。", "img": "素材/グルメ/セビーチェ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BB%E3%83%93%E3%83%BC%E3%83%81%E3%82%A7%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🐟", "Ceviche", "セビーチェ", "", "素材/グルメ/セビーチェ.webp"]}, "No.14": {"num": "No.14", "name": "コチニータ・ピビル", "desc": "アチオテペーストに漬け込んだ豚肉をバナナの葉で包み、じっくり蒸し焼きにするユカタン半島の郷土料理。酸味のある紫玉ねぎのピクルスを添えて食べるのが定番。", "img": "素材/グルメ/コチニータ・ピビル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B3%E3%83%81%E3%83%8B%E3%83%BC%E3%82%BF%E3%83%BB%E3%83%94%E3%83%93%E3%83%AB%20%E3%83%A6%E3%82%AB%E3%82%BF%E3%83%B3%E6%96%99%E7%90%86", "orderParams": ["🍖", "Cochinita Pibil", "コチニータ・ピビル", "", "素材/グルメ/コチニータ・ピビル.webp"]}, "No.15": {"num": "No.15", "name": "チラキーレス", "desc": "揚げたトルティーヤチップスをサルサで煮込み、目玉焼きやチーズ、サワークリームをのせた朝食の定番。二日酔いにも効くと言われる、メキシコの家庭の味。", "img": "素材/グルメ/チラキーレス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%81%E3%83%A9%E3%82%AD%E3%83%BC%E3%83%AC%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🍳", "Chilaquiles", "チラキーレス", "", "素材/グルメ/チラキーレス.webp"]}, "No.16": {"num": "No.16", "name": "オルチャータ", "desc": "米を水に浸してすり潰し、シナモンや砂糖で甘く仕上げた冷たい飲み物。辛い料理の合間に飲むと口の中がリセットされる、屋台や食堂の定番ドリンク。", "img": "素材/グルメ/オルチャータ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AA%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BF%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9", "orderParams": ["🥛", "Horchata", "オルチャータ", "", "素材/グルメ/オルチャータ.webp"]}, "No.17": {"num": "No.17", "name": "ミチェラーダ", "desc": "ビールにライム果汁やホットソース、塩を加えたピリ辛カクテル。グラスの縁に塩とチリパウダーをまぶすのが定番で、暑い日の昼下がりに飲むのが心地よい。", "img": "素材/グルメ/ミチェラーダ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9F%E3%83%81%E3%82%A7%E3%83%A9%E3%83%BC%E3%83%80%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9", "orderParams": ["🍺", "Michelada", "ミチェラーダ", "", "素材/グルメ/ミチェラーダ.webp"]}, "No.18": {"num": "No.18", "name": "エンチラーダス", "desc": "具材を巻いたトルティーヤをサルサに浸して焼いた家庭料理。緑（サルサベルデ）や赤（サルサロハ）などソースの種類が豊富で、チーズをたっぷりかけて食べる。", "img": "素材/グルメ/エンチラーダス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A9%E3%83%BC%E3%83%80%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🌯", "Enchiladas", "エンチラーダス", "", "素材/グルメ/エンチラーダス.webp"]}, "No.19": {"num": "No.19", "name": "トラユーダ", "desc": "薄く大きなトウモロコシ生地に豆ペーストと肉、オアハカチーズをのせて焼いた「オアハカ風ピザ」。パリッとした生地とチーズのコクが人気。", "img": "素材/グルメ/トラユーダ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%88%E3%83%A9%E3%83%A6%E3%83%BC%E3%83%80%20%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%E6%96%99%E7%90%86", "orderParams": ["🫓", "Tlayuda", "トラユーダ", "", "素材/グルメ/トラユーダ.webp"]}, "No.20": {"num": "No.20", "name": "ケソ・オアハカ（オアハカチーズ）", "desc": "メキシコ中で愛される「さけるチーズ」の元祖。裂いて焼くととろけて糸を引き、ケサディーヤやトラユーダなど様々な料理に使われる万能チーズ。", "img": "素材/グルメ/ケソ・オアハカ（オアハカチーズ）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B1%E3%82%BD%E3%83%BB%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%20%E3%83%81%E3%83%BC%E3%82%BA", "orderParams": ["🧀", "Oaxaca Cheese (Queso Oaxaca)", "ケソ・オアハカ（オアハカチーズ）", "", "素材/グルメ/ケソ・オアハカ（オアハカチーズ）.webp"]}, "No.21": {"num": "No.21", "name": "ソパ・デ・リマ", "desc": "ライムの酸味が効いたユカタン半島の伝統スープ。鶏肉と揚げトルティーヤが入り、さっぱりした味わいは暑い気候でも食欲をそそる日本人好みの一杯。", "img": "素材/グルメ/ソパ・デ・リマ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%BD%E3%83%91%E3%83%BB%E3%83%87%E3%83%BB%E3%83%AA%E3%83%9E%20%E3%83%A6%E3%82%AB%E3%82%BF%E3%83%B3%E6%96%99%E7%90%86", "orderParams": ["🍋", "Lime Soup (Sopa de Lima)", "ソパ・デ・リマ", "", "素材/グルメ/ソパ・デ・リマ.webp"]}, "No.22": {"num": "No.22", "name": "カルニータス", "desc": "豚肉をラードでじっくり煮込み、外はカリッと中はホロホロに仕上げた煮込み料理。タコスの具材としても定番で、屋台や食堂で必ず見かける味。", "img": "素材/グルメ/カルニータス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%8B%E3%83%BC%E3%82%BF%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🐷", "Carnitas", "カルニータス", "", "素材/グルメ/カルニータス.webp"]}, "No.23": {"num": "No.23", "name": "サルサ（赤・緑）", "desc": "青唐辛子ベースの緑（サルサ・ベルデ）と辛いチリの赤（サルサ・ロハ）は辛さの系統が違う。ハバネロ入りは特に強烈なので少量から試したい。", "img": "素材/グルメ/サルサ（赤・緑）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B5%E3%83%AB%E3%82%B5%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86", "orderParams": ["🌶️", "Salsa (Roja / Verde)", "サルサ（赤・緑）", "", "素材/グルメ/サルサ（赤・緑）.webp"]}};
 function showFood(numId) {
   var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
   if (!o) {
@@ -590,12 +585,14 @@ function showFood(numId) {
     if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
     var imgEl = card.querySelector('.food-img');
     var wikiBtn = card.querySelector('.wiki-link');
+    var orderBtnEl = card.querySelector('.order-btn');
     o = {
       num:  (card.querySelector('.num') || {}).textContent || '',
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
       img:  imgEl ? imgEl.src : '',
-      wikiUrl: wikiBtn ? wikiBtn.href : ''
+      wikiUrl: wikiBtn ? wikiBtn.href : '',
+      orderOnclick: orderBtnEl ? orderBtnEl.getAttribute('onclick') : null
     };
   }
   document.getElementById('sp-pop-num').textContent  = o.num  || '';
@@ -608,6 +605,17 @@ function showFood(numId) {
   popMap.textContent = '詳しく調べる →';
   if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  if (o.orderParams) {
+    popOrder.onclick = function(e) { e.stopPropagation(); openFoodModal(o.orderParams[0], o.orderParams[1], o.orderParams[2], o.orderParams[3], o.orderParams[4]); };
+    popOrder.style.display = 'inline-flex';
+  } else if (o.orderOnclick) {
+    popOrder.setAttribute('onclick', o.orderOnclick);
+    popOrder.style.display = 'inline-flex';
+  } else {
+    popOrder.style.display = 'none';
+    popOrder.onclick = null;
+  }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -617,6 +625,13 @@ function closeSpotPopup() {
   document.getElementById('sp-popup').style.display = 'none';
   document.body.style.overflow = '';
 }
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.item-grid.view-list .item-card');
+  if (!card || e.target.closest('a,button')) return;
+  if (card.dataset.foodNum) showFood(card.dataset.foodNum);
+  else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
+});
 
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView', view);
@@ -635,8 +650,13 @@ function setItemView(kind, view) {
 (function() {
   ['food', 'spots'].forEach(kind => {
     const saved = localStorage.getItem(kind + 'ItemView');
-    if (saved) setItemView(kind, saved);
-    else document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="standard"]').forEach(b => b.classList.add('on'));
+    if (saved) { setItemView(kind, saved); return; }
+    const defaultView = window.innerWidth <= 620 ? 'compact' : 'standard';
+    const grids = kind === 'food'
+      ? document.querySelectorAll('#food-grid')
+      : document.querySelectorAll('#spots-grid .item-grid');
+    if (defaultView === 'compact') grids.forEach(grid => grid.classList.add('view-compact'));
+    document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
 })();
 
@@ -853,7 +873,8 @@ function closeFoodModal() {
       <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
       <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
       <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
-      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button id="sp-pop-order" style="display:none;align-items:center;gap:3px;padding:6px 12px;background:#fff;border:1.5px solid #dadce0;color:#5f6368;font-size:0.78em;font-weight:600;border-radius:20px;cursor:pointer;white-space:nowrap">🌐 店員に聞く</button>
         <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
       </div>
     </div>

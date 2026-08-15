@@ -1079,6 +1079,9 @@ function showSpot(numId) {
   popMap.textContent = 'Googleマップで開く →';
   if (mapUrl && mapUrl !== 'javascript:void(0)') { popMap.href = mapUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  const popOrder = document.getElementById('sp-pop-order');
+  popOrder.style.display = 'none';
+  popOrder.onclick = null;
 
   const popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
@@ -1094,6 +1097,7 @@ function showFood(numId) {
   const imgUrl = imgEl ? imgEl.src : '';
   const wikiBtn = card.querySelector('.wiki-link');
   const wikiUrl = wikiBtn ? wikiBtn.href : '';
+  const orderBtn = card.querySelector('.order-btn');
 
   document.getElementById('sp-pop-num').textContent = num;
   document.getElementById('sp-pop-name').textContent = name;
@@ -1105,6 +1109,14 @@ function showFood(numId) {
   popMap.textContent = '詳しく調べる →';
   if (wikiUrl) { popMap.href = wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  const popOrder = document.getElementById('sp-pop-order');
+  if (orderBtn) {
+    popOrder.setAttribute('onclick', orderBtn.getAttribute('onclick'));
+    popOrder.style.display = 'inline-flex';
+  } else {
+    popOrder.style.display = 'none';
+    popOrder.onclick = null;
+  }
 
   const popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
@@ -1139,6 +1151,9 @@ function showSpot(numId) {
   popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  popOrder.style.display = 'none';
+  popOrder.onclick = null;
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -1152,12 +1167,14 @@ function showFood(numId) {
     if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
     var imgEl = card.querySelector('.food-img');
     var wikiBtn = card.querySelector('.wiki-link');
+    var orderBtnEl = card.querySelector('.order-btn');
     o = {
       num:  (card.querySelector('.num') || {}).textContent || '',
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
       img:  imgEl ? imgEl.src : '',
-      wikiUrl: wikiBtn ? wikiBtn.href : ''
+      wikiUrl: wikiBtn ? wikiBtn.href : '',
+      orderOnclick: orderBtnEl ? orderBtnEl.getAttribute('onclick') : null
     };
   }
   document.getElementById('sp-pop-num').textContent  = o.num  || '';
@@ -1170,6 +1187,17 @@ function showFood(numId) {
   popMap.textContent = '詳しく調べる →';
   if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  if (o.orderParams) {
+    popOrder.onclick = function(e) { e.stopPropagation(); openFoodModal(o.orderParams[0], o.orderParams[1], o.orderParams[2], o.orderParams[3], o.orderParams[4]); };
+    popOrder.style.display = 'inline-flex';
+  } else if (o.orderOnclick) {
+    popOrder.setAttribute('onclick', o.orderOnclick);
+    popOrder.style.display = 'inline-flex';
+  } else {
+    popOrder.style.display = 'none';
+    popOrder.onclick = null;
+  }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -1179,6 +1207,13 @@ function closeSpotPopup() {
   document.getElementById('sp-popup').style.display = 'none';
   document.body.style.overflow = '';
 }
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.item-grid.view-list .item-card');
+  if (!card || e.target.closest('a,button')) return;
+  if (card.dataset.foodNum) showFood(card.dataset.foodNum);
+  else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
+});
 
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView', view);
@@ -1197,8 +1232,13 @@ function setItemView(kind, view) {
 (function() {
   ['food', 'spots'].forEach(kind => {
     const saved = localStorage.getItem(kind + 'ItemView');
-    if (saved) setItemView(kind, saved);
-    else document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="standard"]').forEach(b => b.classList.add('on'));
+    if (saved) { setItemView(kind, saved); return; }
+    const defaultView = window.innerWidth <= 620 ? 'compact' : 'standard';
+    const grids = kind === 'food'
+      ? document.querySelectorAll('#food-grid')
+      : document.querySelectorAll('#spots-grid .item-grid');
+    if (defaultView === 'compact') grids.forEach(grid => grid.classList.add('view-compact'));
+    document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
 })();
 
@@ -1460,7 +1500,8 @@ function closeFoodModal() {
       <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
       <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
       <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
-      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button id="sp-pop-order" style="display:none;align-items:center;gap:3px;padding:6px 12px;background:#fff;border:1.5px solid #dadce0;color:#5f6368;font-size:0.78em;font-weight:600;border-radius:20px;cursor:pointer;white-space:nowrap">🌐 店員に聞く</button>
         <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
       </div>
     </div>

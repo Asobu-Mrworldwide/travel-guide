@@ -196,6 +196,7 @@ section.active{display:block}
 
 /* 観光スポット・グルメ: リスト表示（小サムネ＋名前・タグのみ） */
 .item-grid.view-list{grid-template-columns:1fr 1fr;gap:8px 16px}
+.item-grid.view-list .item-card{cursor:pointer}
 @media(max-width:900px){.item-grid.view-list{grid-template-columns:1fr}}
 .item-grid.view-list .item-card{flex-direction:row;align-items:center;gap:12px;padding:10px}
 .item-grid.view-list .item-card .num{display:none}

@@ -30,8 +30,8 @@
 <meta name="twitter:image" content="https://worldmappy.com/germany/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786681851" defer></script>
-<script src="../assets/affiliates.js?v=1786681851" defer></script>
+<script src="../assets/affiliates-data.js?v=1786787054" defer></script>
+<script src="../assets/affiliates.js?v=1786787054" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -546,12 +546,15 @@ function showSpot(numId) {
   popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  popOrder.style.display = 'none';
+  popOrder.onclick = null;
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 /* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
-var FOOD_DATA = {"No.01": {"num": "No.01", "name": "プレッツェル", "desc": "結び目型に焼き上げた、表面カリッと中もちもちのパン。ビアガーデンのおつまみやおやつとして親しまれ、バターを挟んだり岩塩をまぶしたりと食べ方も様々。", "img": "素材/グルメ/プレッツェル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%97%E3%83%AC%E3%83%83%E3%83%84%E3%82%A7%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.02": {"num": "No.02", "name": "カリーヴルスト", "desc": "焼いたソーセージにケチャップベースのカレーソースをかけ、カレー粉を振りかけたベルリン発祥のB級グルメ。屋台「インビス」の定番メニューで、フライドポテトと一緒に食べるのが定番。", "img": "素材/グルメ/カリーヴルスト.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%AA%E3%83%BC%E3%83%B4%E3%82%A9%E3%83%AB%E3%82%B9%E3%83%88%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.03": {"num": "No.03", "name": "シュニッツェル", "desc": "薄く伸ばした豚肉や仔牛肉に衣をつけてカリッと揚げ焼きにした一皿。レモンを絞ってシンプルに食べるのが定番で、ドイツ各地の食堂・レストランで見かける看板メニュー。", "img": "素材/グルメ/シュニッツェル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%8B%E3%83%83%E3%83%84%E3%82%A7%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.04": {"num": "No.04", "name": "ヴァイスヴルスト", "desc": "仔牛肉とベーコンで作る、茹でて食べる白いソーセージ。ミュンヘン発祥で、皮を剥いて甘いマスタードをつけ、プレッツェルと共に午前中に食べるのが伝統的な楽しみ方。", "img": "素材/グルメ/ヴァイスヴルスト.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%B4%E3%82%A1%E3%82%A4%E3%82%B9%E3%83%B4%E3%83%AB%E3%82%B9%E3%83%88%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.05": {"num": "No.05", "name": "ザワークラウト", "desc": "キャベツを塩漬けにして発酵させた、酸味のある付け合わせ。ソーセージや豚肉料理と共に供されることが多く、ドイツ料理には欠かせない存在。", "img": "素材/グルメ/ザワークラウト.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B6%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%88%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.06": {"num": "No.06", "name": "ザウアーブラーテン", "desc": "牛肉を酢やワインに数日間漬け込んでから煮込む、ドイツの伝統的な家庭料理。酸味の効いた濃厚なグレービーソースと、団子状のクヌーデルやレーズンを添えるレシピが定番。", "img": "素材/グルメ/ザウアーブラーテン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B6%E3%82%A6%E3%82%A2%E3%83%BC%E3%83%96%E3%83%A9%E3%83%BC%E3%83%86%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.07": {"num": "No.07", "name": "ケーゼシュペッツレ", "desc": "手作りの小麦麺シュペッツレにチーズを絡め、カリカリに炒めた玉ねぎをのせた南ドイツ・シュヴァーベン地方の郷土料理。ドイツ版マカロニチーズとも言われる、心温まる一皿。", "img": "素材/グルメ/ケーゼシュペッツレ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B1%E3%83%BC%E3%82%BC%E3%82%B7%E3%83%A5%E3%83%9A%E3%83%83%E3%83%84%E3%83%AC%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.08": {"num": "No.08", "name": "黒い森のケーキ", "desc": "チョコレートスポンジ・ホイップクリーム・チェリーを重ね、キルシュ酒（さくらんぼの蒸留酒）を効かせたドイツ南西部・黒い森地方発祥のケーキ。世界的にも知られるドイツ菓子の代表格。", "img": "素材/グルメ/黒い森のケーキ.webp", "wikiUrl": "https://www.google.com/search?q=%E9%BB%92%E3%81%84%E6%A3%AE%E3%81%AE%E3%82%B1%E3%83%BC%E3%82%AD%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.09": {"num": "No.09", "name": "ケルシュビール", "desc": "ケルンでのみ醸造が許される、すっきりとした喉ごしの淡色ビール。細長い専用グラス「シュタンゲ」で提供され、店員が飲み干す頃合いを見計らって次々おかわりを運んでくるのが名物。", "img": "素材/グルメ/ケルシュビール.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B1%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%93%E3%83%BC%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84"}, "No.10": {"num": "No.10", "name": "グリューワイン", "desc": "赤ワインにシナモン・クローブ・オレンジなどを加えて温めたホットワイン。11〜12月のクリスマスマーケットに欠かせない一杯で、専用マグカップ片手に街歩きを楽しむのが冬の風物詩。", "img": "素材/グルメ/グリューワイン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B0%E3%83%AA%E3%83%A5%E3%83%BC%E3%83%B4%E3%82%A1%E3%82%A4%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84"}, "No.11": {"num": "No.11", "name": "フィッシュブレートヒェン", "desc": "パンにニシンの酢漬けや焼き魚、玉ねぎ・ピクルスを挟んだ、港町ハンブルクらしい魚のサンドイッチ。魚市場や港沿いの屋台で手軽に買える、地元っ子の朝食・軽食の定番。", "img": "素材/グルメ/フィッシュブレートヒェン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%96%E3%83%AC%E3%83%BC%E3%83%88%E3%83%92%E3%82%A7%E3%83%B3%20%E3%83%8F%E3%83%B3%E3%83%96%E3%83%AB%E3%82%AF"}, "No.12": {"num": "No.12", "name": "ドイツビール", "desc": "1516年制定の「ビール純粋令」に基づき、麦芽・ホップ・水・酵母だけで造られる伝統の味。地域ごとに醸造所と個性が異なり、ビアガーデンで飲み比べるのも旅の楽しみのひとつ。", "img": "素材/グルメ/ドイツビール.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%89%E3%82%A4%E3%83%84%E3%83%93%E3%83%BC%E3%83%AB"}, "No.13": {"num": "No.13", "name": "ニュルンベルガー・ソーセージ", "desc": "小指ほどの小さなグリルソーセージ。炭火で香ばしく焼き、何本も串に刺して食べるのがスタイル。クリスマスマーケットの人気屋台メニュー。", "img": "素材/グルメ/ニュルンベルガー・ソーセージ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%8B%E3%83%A5%E3%83%AB%E3%83%B3%E3%83%99%E3%83%AB%E3%82%AF%E3%82%BD%E3%83%BC%E3%82%BB%E3%83%BC%E3%82%B8%20%E3%83%89%E3%82%A4%E3%83%84"}, "No.14": {"num": "No.14", "name": "レープクーヘン", "desc": "はちみつとスパイスを効かせたニュルンベルク発祥のジンジャーブレッド。チョコやアイシングで飾られたものが多く、クリスマスの定番土産。", "img": "素材/グルメ/レープクーヘン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AC%E3%83%BC%E3%83%97%E3%82%AF%E3%83%BC%E3%83%98%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84"}, "No.15": {"num": "No.15", "name": "シュヴァインスハクセ", "desc": "皮をパリパリに焼いた豚すね肉の豪快なロースト。ビアホールの定番中の定番で、冷えたビールとの組み合わせが鉄板のバイエルン名物の一皿。", "img": "素材/グルメ/シュヴァインスハクセ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A1%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%8F%E3%82%AF%E3%82%BB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.16": {"num": "No.16", "name": "シュトーレン", "desc": "ドライフルーツとナッツを練り込み粉砂糖をまぶした重厚なパウンドケーキ。クリスマス菓子の代表格で、薄切りにして少しずつ味わうのが伝統。", "img": "素材/グルメ/シュトーレン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%88%E3%83%BC%E3%83%AC%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.17": {"num": "No.17", "name": "マウルタッシェン", "desc": "ひき肉とほうれん草を詰めた大ぶりのパスタ。南ドイツ・シュヴァーベン地方の郷土料理で、スープに入れたり炒めたりと食べ方は様々。", "img": "素材/グルメ/マウルタッシェン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9E%E3%82%A6%E3%83%AB%E3%82%BF%E3%83%83%E3%82%B7%E3%82%A7%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.18": {"num": "No.18", "name": "クネーデル（クロース）", "desc": "ジャガイモやパンを丸めて茹でたもちもち食感の団子。ザウアーブラーテンなど濃厚なソースの肉料理に添えるドイツ定番の付け合わせ。", "img": "素材/グルメ/クネーデル（クロース）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AF%E3%83%8D%E3%83%BC%E3%83%87%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}, "No.19": {"num": "No.19", "name": "アップフェルシュトゥルーデル", "desc": "薄生地でシナモン風味のりんごを巻いて焼いた温かいアップルパイ。バニラソースやアイスクリームを添えて食べるのが定番で、南ドイツのカフェの名物スイーツ。", "img": "素材/グルメ/アップフェルシュトゥルーデル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%95%E3%82%A7%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%88%E3%82%A5%E3%83%AB%E3%83%BC%E3%83%87%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86"}};
+var FOOD_DATA = {"No.01": {"num": "No.01", "name": "プレッツェル", "desc": "結び目型に焼き上げた、表面カリッと中もちもちのパン。ビアガーデンのおつまみやおやつとして親しまれ、バターを挟んだり岩塩をまぶしたりと食べ方も様々。", "img": "素材/グルメ/プレッツェル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%97%E3%83%AC%E3%83%83%E3%83%84%E3%82%A7%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🥨", "Brezel", "プレッツェル", "", "素材/グルメ/プレッツェル.webp"]}, "No.02": {"num": "No.02", "name": "カリーヴルスト", "desc": "焼いたソーセージにケチャップベースのカレーソースをかけ、カレー粉を振りかけたベルリン発祥のB級グルメ。屋台「インビス」の定番メニューで、フライドポテトと一緒に食べるのが定番。", "img": "素材/グルメ/カリーヴルスト.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AB%E3%83%AA%E3%83%BC%E3%83%B4%E3%82%A9%E3%83%AB%E3%82%B9%E3%83%88%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🌭", "Currywurst", "カリーヴルスト", "", "素材/グルメ/カリーヴルスト.webp"]}, "No.03": {"num": "No.03", "name": "シュニッツェル", "desc": "薄く伸ばした豚肉や仔牛肉に衣をつけてカリッと揚げ焼きにした一皿。レモンを絞ってシンプルに食べるのが定番で、ドイツ各地の食堂・レストランで見かける看板メニュー。", "img": "素材/グルメ/シュニッツェル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%8B%E3%83%83%E3%83%84%E3%82%A7%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🍖", "Schnitzel", "シュニッツェル", "", "素材/グルメ/シュニッツェル.webp"]}, "No.04": {"num": "No.04", "name": "ヴァイスヴルスト", "desc": "仔牛肉とベーコンで作る、茹でて食べる白いソーセージ。ミュンヘン発祥で、皮を剥いて甘いマスタードをつけ、プレッツェルと共に午前中に食べるのが伝統的な楽しみ方。", "img": "素材/グルメ/ヴァイスヴルスト.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%B4%E3%82%A1%E3%82%A4%E3%82%B9%E3%83%B4%E3%83%AB%E3%82%B9%E3%83%88%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🌭", "Weisswurst", "ヴァイスヴルスト", "", "素材/グルメ/ヴァイスヴルスト.webp"]}, "No.05": {"num": "No.05", "name": "ザワークラウト", "desc": "キャベツを塩漬けにして発酵させた、酸味のある付け合わせ。ソーセージや豚肉料理と共に供されることが多く、ドイツ料理には欠かせない存在。", "img": "素材/グルメ/ザワークラウト.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B6%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%88%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🥬", "Sauerkraut", "ザワークラウト", "", "素材/グルメ/ザワークラウト.webp"]}, "No.06": {"num": "No.06", "name": "ザウアーブラーテン", "desc": "牛肉を酢やワインに数日間漬け込んでから煮込む、ドイツの伝統的な家庭料理。酸味の効いた濃厚なグレービーソースと、団子状のクヌーデルやレーズンを添えるレシピが定番。", "img": "素材/グルメ/ザウアーブラーテン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B6%E3%82%A6%E3%82%A2%E3%83%BC%E3%83%96%E3%83%A9%E3%83%BC%E3%83%86%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🍲", "Sauerbraten", "ザウアーブラーテン", "", "素材/グルメ/ザウアーブラーテン.webp"]}, "No.07": {"num": "No.07", "name": "ケーゼシュペッツレ", "desc": "手作りの小麦麺シュペッツレにチーズを絡め、カリカリに炒めた玉ねぎをのせた南ドイツ・シュヴァーベン地方の郷土料理。ドイツ版マカロニチーズとも言われる、心温まる一皿。", "img": "素材/グルメ/ケーゼシュペッツレ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B1%E3%83%BC%E3%82%BC%E3%82%B7%E3%83%A5%E3%83%9A%E3%83%83%E3%83%84%E3%83%AC%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🧀", "Kasespatzle", "ケーゼシュペッツレ", "", "素材/グルメ/ケーゼシュペッツレ.webp"]}, "No.08": {"num": "No.08", "name": "黒い森のケーキ", "desc": "チョコレートスポンジ・ホイップクリーム・チェリーを重ね、キルシュ酒（さくらんぼの蒸留酒）を効かせたドイツ南西部・黒い森地方発祥のケーキ。世界的にも知られるドイツ菓子の代表格。", "img": "素材/グルメ/黒い森のケーキ.webp", "wikiUrl": "https://www.google.com/search?q=%E9%BB%92%E3%81%84%E6%A3%AE%E3%81%AE%E3%82%B1%E3%83%BC%E3%82%AD%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🍰", "Schwarzwälder Kirschtorte", "黒い森のケーキ", "", "素材/グルメ/黒い森のケーキ.webp"]}, "No.09": {"num": "No.09", "name": "ケルシュビール", "desc": "ケルンでのみ醸造が許される、すっきりとした喉ごしの淡色ビール。細長い専用グラス「シュタンゲ」で提供され、店員が飲み干す頃合いを見計らって次々おかわりを運んでくるのが名物。", "img": "素材/グルメ/ケルシュビール.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B1%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%93%E3%83%BC%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84", "orderParams": ["🍺", "Kölsch", "ケルシュビール", "", "素材/グルメ/ケルシュビール.webp"]}, "No.10": {"num": "No.10", "name": "グリューワイン", "desc": "赤ワインにシナモン・クローブ・オレンジなどを加えて温めたホットワイン。11〜12月のクリスマスマーケットに欠かせない一杯で、専用マグカップ片手に街歩きを楽しむのが冬の風物詩。", "img": "素材/グルメ/グリューワイン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B0%E3%83%AA%E3%83%A5%E3%83%BC%E3%83%B4%E3%82%A1%E3%82%A4%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84", "orderParams": ["🍷", "Glühwein", "グリューワイン", "", "素材/グルメ/グリューワイン.webp"]}, "No.11": {"num": "No.11", "name": "フィッシュブレートヒェン", "desc": "パンにニシンの酢漬けや焼き魚、玉ねぎ・ピクルスを挟んだ、港町ハンブルクらしい魚のサンドイッチ。魚市場や港沿いの屋台で手軽に買える、地元っ子の朝食・軽食の定番。", "img": "素材/グルメ/フィッシュブレートヒェン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%96%E3%83%AC%E3%83%BC%E3%83%88%E3%83%92%E3%82%A7%E3%83%B3%20%E3%83%8F%E3%83%B3%E3%83%96%E3%83%AB%E3%82%AF", "orderParams": ["🐟", "Fischbrötchen", "フィッシュブレートヒェン", "", "素材/グルメ/フィッシュブレートヒェン.webp"]}, "No.12": {"num": "No.12", "name": "ドイツビール", "desc": "1516年制定の「ビール純粋令」に基づき、麦芽・ホップ・水・酵母だけで造られる伝統の味。地域ごとに醸造所と個性が異なり、ビアガーデンで飲み比べるのも旅の楽しみのひとつ。", "img": "素材/グルメ/ドイツビール.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%89%E3%82%A4%E3%83%84%E3%83%93%E3%83%BC%E3%83%AB", "orderParams": ["🍺", "German Beer", "ドイツビール", "", "素材/グルメ/ドイツビール.webp"]}, "No.13": {"num": "No.13", "name": "ニュルンベルガー・ソーセージ", "desc": "小指ほどの小さなグリルソーセージ。炭火で香ばしく焼き、何本も串に刺して食べるのがスタイル。クリスマスマーケットの人気屋台メニュー。", "img": "素材/グルメ/ニュルンベルガー・ソーセージ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%8B%E3%83%A5%E3%83%AB%E3%83%B3%E3%83%99%E3%83%AB%E3%82%AF%E3%82%BD%E3%83%BC%E3%82%BB%E3%83%BC%E3%82%B8%20%E3%83%89%E3%82%A4%E3%83%84", "orderParams": ["🌭", "Nürnberger Rostbratwurst", "ニュルンベルガー・ソーセージ", "", "素材/グルメ/ニュルンベルガー・ソーセージ.webp"]}, "No.14": {"num": "No.14", "name": "レープクーヘン", "desc": "はちみつとスパイスを効かせたニュルンベルク発祥のジンジャーブレッド。チョコやアイシングで飾られたものが多く、クリスマスの定番土産。", "img": "素材/グルメ/レープクーヘン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AC%E3%83%BC%E3%83%97%E3%82%AF%E3%83%BC%E3%83%98%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84", "orderParams": ["🍪", "Lebkuchen", "レープクーヘン", "", "素材/グルメ/レープクーヘン.webp"]}, "No.15": {"num": "No.15", "name": "シュヴァインスハクセ", "desc": "皮をパリパリに焼いた豚すね肉の豪快なロースト。ビアホールの定番中の定番で、冷えたビールとの組み合わせが鉄板のバイエルン名物の一皿。", "img": "素材/グルメ/シュヴァインスハクセ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A1%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%8F%E3%82%AF%E3%82%BB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🍖", "Schweinshaxe", "シュヴァインスハクセ", "", "素材/グルメ/シュヴァインスハクセ.webp"]}, "No.16": {"num": "No.16", "name": "シュトーレン", "desc": "ドライフルーツとナッツを練り込み粉砂糖をまぶした重厚なパウンドケーキ。クリスマス菓子の代表格で、薄切りにして少しずつ味わうのが伝統。", "img": "素材/グルメ/シュトーレン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%88%E3%83%BC%E3%83%AC%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🍞", "Stollen", "シュトーレン", "", "素材/グルメ/シュトーレン.webp"]}, "No.17": {"num": "No.17", "name": "マウルタッシェン", "desc": "ひき肉とほうれん草を詰めた大ぶりのパスタ。南ドイツ・シュヴァーベン地方の郷土料理で、スープに入れたり炒めたりと食べ方は様々。", "img": "素材/グルメ/マウルタッシェン.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9E%E3%82%A6%E3%83%AB%E3%82%BF%E3%83%83%E3%82%B7%E3%82%A7%E3%83%B3%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🥟", "Maultaschen", "マウルタッシェン", "", "素材/グルメ/マウルタッシェン.webp"]}, "No.18": {"num": "No.18", "name": "クネーデル（クロース）", "desc": "ジャガイモやパンを丸めて茹でたもちもち食感の団子。ザウアーブラーテンなど濃厚なソースの肉料理に添えるドイツ定番の付け合わせ。", "img": "素材/グルメ/クネーデル（クロース）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%AF%E3%83%8D%E3%83%BC%E3%83%87%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🥔", "Knödel", "クネーデル（クロース）", "", "素材/グルメ/クネーデル（クロース）.webp"]}, "No.19": {"num": "No.19", "name": "アップフェルシュトゥルーデル", "desc": "薄生地でシナモン風味のりんごを巻いて焼いた温かいアップルパイ。バニラソースやアイスクリームを添えて食べるのが定番で、南ドイツのカフェの名物スイーツ。", "img": "素材/グルメ/アップフェルシュトゥルーデル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%A2%E3%83%83%E3%83%97%E3%83%95%E3%82%A7%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%88%E3%82%A5%E3%83%AB%E3%83%BC%E3%83%87%E3%83%AB%20%E3%83%89%E3%82%A4%E3%83%84%20%E6%96%99%E7%90%86", "orderParams": ["🥧", "Apfelstrudel", "アップフェルシュトゥルーデル", "", "素材/グルメ/アップフェルシュトゥルーデル.webp"]}};
 function showFood(numId) {
   var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
   if (!o) {
@@ -559,12 +562,14 @@ function showFood(numId) {
     if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
     var imgEl = card.querySelector('.food-img');
     var wikiBtn = card.querySelector('.wiki-link');
+    var orderBtnEl = card.querySelector('.order-btn');
     o = {
       num:  (card.querySelector('.num') || {}).textContent || '',
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
       img:  imgEl ? imgEl.src : '',
-      wikiUrl: wikiBtn ? wikiBtn.href : ''
+      wikiUrl: wikiBtn ? wikiBtn.href : '',
+      orderOnclick: orderBtnEl ? orderBtnEl.getAttribute('onclick') : null
     };
   }
   document.getElementById('sp-pop-num').textContent  = o.num  || '';
@@ -577,6 +582,17 @@ function showFood(numId) {
   popMap.textContent = '詳しく調べる →';
   if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  if (o.orderParams) {
+    popOrder.onclick = function(e) { e.stopPropagation(); openFoodModal(o.orderParams[0], o.orderParams[1], o.orderParams[2], o.orderParams[3], o.orderParams[4]); };
+    popOrder.style.display = 'inline-flex';
+  } else if (o.orderOnclick) {
+    popOrder.setAttribute('onclick', o.orderOnclick);
+    popOrder.style.display = 'inline-flex';
+  } else {
+    popOrder.style.display = 'none';
+    popOrder.onclick = null;
+  }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -586,6 +602,13 @@ function closeSpotPopup() {
   document.getElementById('sp-popup').style.display = 'none';
   document.body.style.overflow = '';
 }
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.item-grid.view-list .item-card');
+  if (!card || e.target.closest('a,button')) return;
+  if (card.dataset.foodNum) showFood(card.dataset.foodNum);
+  else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
+});
 
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView', view);
@@ -604,8 +627,13 @@ function setItemView(kind, view) {
 (function() {
   ['food', 'spots'].forEach(kind => {
     const saved = localStorage.getItem(kind + 'ItemView');
-    if (saved) setItemView(kind, saved);
-    else document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="standard"]').forEach(b => b.classList.add('on'));
+    if (saved) { setItemView(kind, saved); return; }
+    const defaultView = window.innerWidth <= 620 ? 'compact' : 'standard';
+    const grids = kind === 'food'
+      ? document.querySelectorAll('#food-grid')
+      : document.querySelectorAll('#spots-grid .item-grid');
+    if (defaultView === 'compact') grids.forEach(grid => grid.classList.add('view-compact'));
+    document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
 })();
 
@@ -822,7 +850,8 @@ function closeFoodModal() {
       <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
       <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
       <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
-      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button id="sp-pop-order" style="display:none;align-items:center;gap:3px;padding:6px 12px;background:#fff;border:1.5px solid #dadce0;color:#5f6368;font-size:0.78em;font-weight:600;border-radius:20px;cursor:pointer;white-space:nowrap">🌐 店員に聞く</button>
         <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
       </div>
     </div>

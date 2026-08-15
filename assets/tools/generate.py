@@ -272,18 +272,31 @@ def build_spot_data_js(data):
 
 
 def build_food_data_js(data):
-    """food_items から num→{name,desc,img,wikiUrl} の JS オブジェクトリテラルを作る"""
+    """food_items から num→{name,desc,img,wikiUrl,orderParams} の JS オブジェクトリテラルを作る"""
     obj = {}
     for item in data.get('food_items', []):
         num = item.get('num', '')
         if not num:
             continue
+        order_ico = item.get('order_ico', '') or ''
+        order_name_en = item.get('order_name_en', '') or ''
+        pinyin = item.get('pinyin', '') or ''
+        name_ruby = item.get('name_ruby', '') or ''
+        name = item.get('name', '') or ''
+        img = item.get('image', '') or ''
+        order_params = None
+        if order_ico:
+            if name_ruby:
+                order_params = [order_ico, name_ruby, order_name_en, pinyin, img]
+            else:
+                order_params = [order_ico, order_name_en, name, pinyin, img]
         obj[num] = {
             'num': num,
             'name': item.get('name', ''),
             'desc': item.get('desc', ''),
             'img': item.get('image', '') or '',
             'wikiUrl': item.get('wiki_url', '') or '',
+            'orderParams': order_params,
         }
     return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
 

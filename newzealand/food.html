@@ -30,8 +30,8 @@
 <meta name="twitter:image" content="https://worldmappy.com/newzealand/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786681851" defer></script>
-<script src="../assets/affiliates.js?v=1786681851" defer></script>
+<script src="../assets/affiliates-data.js?v=1786787054" defer></script>
+<script src="../assets/affiliates.js?v=1786787054" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -437,12 +437,15 @@ function showSpot(numId) {
   popMap.textContent = 'Googleマップで開く →';
   if (o.mapUrl && o.mapUrl !== 'javascript:void(0)') { popMap.href = o.mapUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  popOrder.style.display = 'none';
+  popOrder.onclick = null;
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 }
 /* 分割ページモード: 埋め込みFOOD_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
-var FOOD_DATA = {"No.01": {"num": "No.01", "name": "パブロバ", "desc": "外はサクサク・中はふわふわのメレンゲに生クリームとキウイをのせた国民的デザート。1920年代に来訪したバレリーナのアンナ・パブロワにちなんで名付けられた。", "img": "素材/グルメ/パブロバ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%91%E3%83%96%E3%83%AD%E3%83%90%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%20%E6%96%99%E7%90%86"}, "No.02": {"num": "No.02", "name": "フィッシュ&チップス", "desc": "白身魚のフライと厚切りポテトを紙に包んで提供する定番メニュー。地元産のホキやスナッパーを使うことが多く、海辺の町では浜辺で食べるのが現地流。", "img": "素材/グルメ/フィッシュ&チップス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5%26%E3%83%81%E3%83%83%E3%83%97%E3%82%B9%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89"}, "No.03": {"num": "No.03", "name": "ミートパイ", "desc": "ひき肉やグレービーソースを詰めて焼き上げたパイ。ガソリンスタンドやベーカリーどこでも手に入る片手で食べられる軽食で、ニュージーランド人のソウルフードとして親しまれている。", "img": "素材/グルメ/ミートパイ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%83%88%E3%83%91%E3%82%A4%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89"}, "No.04": {"num": "No.04", "name": "ハンギ", "desc": "地中の焼き石でラム肉や野菜を蒸し焼きにするマオリの伝統料理。ロトルアの体験施設では伝統舞踊ハカとともに味わえるディナーツアーが定番。", "img": "素材/グルメ/ハンギ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%8F%E3%83%B3%E3%82%AE%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%20%E6%96%99%E7%90%86"}, "No.05": {"num": "No.05", "name": "ホーキーポーキー・アイスクリーム", "desc": "バニラアイスにハニカム状のカリカリ飴を練り込んだ、ニュージーランドで不動の人気を誇るアイスクリームフレーバー。スーパーのアイス売り場でも必ず見かける定番の味。", "img": "素材/グルメ/ホーキーポーキー・アイスクリーム.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9B%E3%83%BC%E3%82%AD%E3%83%BC%E3%83%9D%E3%83%BC%E3%82%AD%E3%83%BC%E3%82%A2%E3%82%A4%E3%82%B9%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89"}, "No.06": {"num": "No.06", "name": "フラットホワイト", "desc": "エスプレッソにきめ細かいミルクを合わせた凝縮感のあるコーヒー。「コーヒーの街」と称されるウェリントンのカフェ文化を象徴する一杯。", "img": "素材/グルメ/フラットホワイト.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%83%A9%E3%83%83%E3%83%88%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%20%E3%82%A6%E3%82%A7%E3%83%AA%E3%83%B3%E3%83%88%E3%83%B3"}, "No.07": {"num": "No.07", "name": "ロースト・ラム", "desc": "上質なNZラム肉をローズマリーなどのハーブと共にじっくりローストした一皿。臭みが少なく柔らかい肉質で、高級レストランからパブまで幅広く楽しめる。", "img": "素材/グルメ/ロースト・ラム.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%A0%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89"}, "No.08": {"num": "No.08", "name": "グリーンリップマッスル", "desc": "緑がかった殻が特徴の、ニュージーランド固有種のムール貝。白ワイン蒸しやガーリックバター焼きなど、シンプルな調理でその旨みを堪能するのが定番。マールボロ地方が産地として知られる。", "img": "素材/グルメ/グリーンリップマッスル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%AA%E3%83%83%E3%83%97%E3%83%9E%E3%83%83%E3%82%B9%E3%83%AB%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89"}, "No.09": {"num": "No.09", "name": "ホワイトベイト・フリッター", "desc": "稚魚（ホワイトベイト）を卵液に混ぜてカリッと焼き上げたお好み焼き風の一品。南島西海岸の春の風物詩で、旬の時期にしか味わえない地元で愛される郷土料理。", "img": "素材/グルメ/ホワイトベイト・フリッター.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%83%99%E3%82%A4%E3%83%88%E3%83%95%E3%83%AA%E3%83%83%E3%82%BF%E3%83%BC%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89"}, "No.10": {"num": "No.10", "name": "マヌカハニー", "desc": "マヌカの木の花から採れる、抗菌作用で知られる高級蜂蜜。UMF（活性強度）等級によって価格が大きく変わり、お土産の定番として空港でもまとめ買いする旅行者が多い。", "img": "素材/グルメ/マヌカハニー.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9E%E3%83%8C%E3%82%AB%E3%83%8F%E3%83%8B%E3%83%BC%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89"}, "No.11": {"num": "No.11", "name": "L&P（レモン&パエロア）", "desc": "「世界一のレモネード」がキャッチコピーのNZ発祥の炭酸レモネード。北島の町パエロアの鉱泉水を使ったのが名前の由来で、独特の甘酸っぱさが癖になる味。", "img": "素材/グルメ/L&P（レモン&パエロア）.webp", "wikiUrl": "https://www.google.com/search?q=L%26P%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%20%E3%83%89%E3%83%AA%E3%83%B3%E3%82%AF"}, "No.12": {"num": "No.12", "name": "グルメバーガー（NZビーフ・鹿肉バーガー）", "desc": "放牧NZビーフや鹿肉パティを使った厚みのあるグルメバーガー。クイーンズタウンの「ファーグバーガー」は深夜でも行列ができる伝説の名店として知られる。", "img": "素材/グルメ/グルメバーガー（NZビーフ・鹿肉バーガー）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B0%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%20%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%82%BF%E3%82%A6%E3%83%B3"}, "No.13": {"num": "No.13", "name": "ニュージーランドワイン（ソーヴィニヨン・ブラン／ピノ・ノワール）", "desc": "マールボロのソーヴィニヨン・ブランは柑橘とハーブの香りで世界的に有名。セントラル・オタゴのピノ・ノワールも冷涼な気候が育む上質な赤として高評価。", "img": "素材/グルメ/ニュージーランドワイン（ソーヴィニヨン・ブラン／ピノ・ノワール）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%E3%83%AF%E3%82%A4%E3%83%B3%20%E3%82%BD%E3%83%BC%E3%83%B4%E3%82%A3%E3%83%8B%E3%83%A8%E3%83%B3%E3%83%96%E3%83%A9%E3%83%B3"}};
+var FOOD_DATA = {"No.01": {"num": "No.01", "name": "パブロバ", "desc": "外はサクサク・中はふわふわのメレンゲに生クリームとキウイをのせた国民的デザート。1920年代に来訪したバレリーナのアンナ・パブロワにちなんで名付けられた。", "img": "素材/グルメ/パブロバ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%91%E3%83%96%E3%83%AD%E3%83%90%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%20%E6%96%99%E7%90%86", "orderParams": ["🍰", "Pavlova", "パブロバ", "", "素材/グルメ/パブロバ.webp"]}, "No.02": {"num": "No.02", "name": "フィッシュ&チップス", "desc": "白身魚のフライと厚切りポテトを紙に包んで提供する定番メニュー。地元産のホキやスナッパーを使うことが多く、海辺の町では浜辺で食べるのが現地流。", "img": "素材/グルメ/フィッシュ&チップス.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%A5%26%E3%83%81%E3%83%83%E3%83%97%E3%82%B9%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89", "orderParams": ["🐟", "Fish and Chips", "フィッシュ&チップス", "", "素材/グルメ/フィッシュ&チップス.webp"]}, "No.03": {"num": "No.03", "name": "ミートパイ", "desc": "ひき肉やグレービーソースを詰めて焼き上げたパイ。ガソリンスタンドやベーカリーどこでも手に入る片手で食べられる軽食で、ニュージーランド人のソウルフードとして親しまれている。", "img": "素材/グルメ/ミートパイ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%83%88%E3%83%91%E3%82%A4%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89", "orderParams": ["🥧", "Meat Pie", "ミートパイ", "", "素材/グルメ/ミートパイ.webp"]}, "No.04": {"num": "No.04", "name": "ハンギ", "desc": "地中の焼き石でラム肉や野菜を蒸し焼きにするマオリの伝統料理。ロトルアの体験施設では伝統舞踊ハカとともに味わえるディナーツアーが定番。", "img": "素材/グルメ/ハンギ.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%8F%E3%83%B3%E3%82%AE%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%20%E6%96%99%E7%90%86", "orderParams": ["🍖", "Hangi", "ハンギ", "", "素材/グルメ/ハンギ.webp"]}, "No.05": {"num": "No.05", "name": "ホーキーポーキー・アイスクリーム", "desc": "バニラアイスにハニカム状のカリカリ飴を練り込んだ、ニュージーランドで不動の人気を誇るアイスクリームフレーバー。スーパーのアイス売り場でも必ず見かける定番の味。", "img": "素材/グルメ/ホーキーポーキー・アイスクリーム.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9B%E3%83%BC%E3%82%AD%E3%83%BC%E3%83%9D%E3%83%BC%E3%82%AD%E3%83%BC%E3%82%A2%E3%82%A4%E3%82%B9%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89", "orderParams": ["🍨", "Hokey Pokey Ice Cream", "ホーキーポーキー・アイスクリーム", "", "素材/グルメ/ホーキーポーキー・アイスクリーム.webp"]}, "No.06": {"num": "No.06", "name": "フラットホワイト", "desc": "エスプレッソにきめ細かいミルクを合わせた凝縮感のあるコーヒー。「コーヒーの街」と称されるウェリントンのカフェ文化を象徴する一杯。", "img": "素材/グルメ/フラットホワイト.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%83%A9%E3%83%83%E3%83%88%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%20%E3%82%A6%E3%82%A7%E3%83%AA%E3%83%B3%E3%83%88%E3%83%B3", "orderParams": ["☕", "Flat White", "フラットホワイト", "", "素材/グルメ/フラットホワイト.webp"]}, "No.07": {"num": "No.07", "name": "ロースト・ラム", "desc": "上質なNZラム肉をローズマリーなどのハーブと共にじっくりローストした一皿。臭みが少なく柔らかい肉質で、高級レストランからパブまで幅広く楽しめる。", "img": "素材/グルメ/ロースト・ラム.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%AD%E3%83%BC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%A0%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89", "orderParams": ["🍖", "Roast Lamb", "ロースト・ラム", "", "素材/グルメ/ロースト・ラム.webp"]}, "No.08": {"num": "No.08", "name": "グリーンリップマッスル", "desc": "緑がかった殻が特徴の、ニュージーランド固有種のムール貝。白ワイン蒸しやガーリックバター焼きなど、シンプルな調理でその旨みを堪能するのが定番。マールボロ地方が産地として知られる。", "img": "素材/グルメ/グリーンリップマッスル.webp", "wikiUrl": "https://www.google.com/search?q=%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%83%AA%E3%83%83%E3%83%97%E3%83%9E%E3%83%83%E3%82%B9%E3%83%AB%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89", "orderParams": ["🦪", "Green-lipped Mussels", "グリーンリップマッスル", "", "素材/グルメ/グリーンリップマッスル.webp"]}, "No.09": {"num": "No.09", "name": "ホワイトベイト・フリッター", "desc": "稚魚（ホワイトベイト）を卵液に混ぜてカリッと焼き上げたお好み焼き風の一品。南島西海岸の春の風物詩で、旬の時期にしか味わえない地元で愛される郷土料理。", "img": "素材/グルメ/ホワイトベイト・フリッター.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%83%99%E3%82%A4%E3%83%88%E3%83%95%E3%83%AA%E3%83%83%E3%82%BF%E3%83%BC%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89", "orderParams": ["🐟", "Whitebait Fritter", "ホワイトベイト・フリッター", "", "素材/グルメ/ホワイトベイト・フリッター.webp"]}, "No.10": {"num": "No.10", "name": "マヌカハニー", "desc": "マヌカの木の花から採れる、抗菌作用で知られる高級蜂蜜。UMF（活性強度）等級によって価格が大きく変わり、お土産の定番として空港でもまとめ買いする旅行者が多い。", "img": "素材/グルメ/マヌカハニー.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%9E%E3%83%8C%E3%82%AB%E3%83%8F%E3%83%8B%E3%83%BC%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89", "orderParams": ["🍯", "Manuka Honey", "マヌカハニー", "", "素材/グルメ/マヌカハニー.webp"]}, "No.11": {"num": "No.11", "name": "L&P（レモン&パエロア）", "desc": "「世界一のレモネード」がキャッチコピーのNZ発祥の炭酸レモネード。北島の町パエロアの鉱泉水を使ったのが名前の由来で、独特の甘酸っぱさが癖になる味。", "img": "素材/グルメ/L&P（レモン&パエロア）.webp", "wikiUrl": "https://www.google.com/search?q=L%26P%20%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%20%E3%83%89%E3%83%AA%E3%83%B3%E3%82%AF", "orderParams": ["🥤", "L&P", "L&P（レモン&パエロア）", "", "素材/グルメ/L&P（レモン&パエロア）.webp"]}, "No.12": {"num": "No.12", "name": "グルメバーガー（NZビーフ・鹿肉バーガー）", "desc": "放牧NZビーフや鹿肉パティを使った厚みのあるグルメバーガー。クイーンズタウンの「ファーグバーガー」は深夜でも行列ができる伝説の名店として知られる。", "img": "素材/グルメ/グルメバーガー（NZビーフ・鹿肉バーガー）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B0%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%20%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%82%BF%E3%82%A6%E3%83%B3", "orderParams": ["🍔", "Fergburger", "グルメバーガー（NZビーフ・鹿肉バーガー）", "", "素材/グルメ/グルメバーガー（NZビーフ・鹿肉バーガー）.webp"]}, "No.13": {"num": "No.13", "name": "ニュージーランドワイン（ソーヴィニヨン・ブラン／ピノ・ノワール）", "desc": "マールボロのソーヴィニヨン・ブランは柑橘とハーブの香りで世界的に有名。セントラル・オタゴのピノ・ノワールも冷涼な気候が育む上質な赤として高評価。", "img": "素材/グルメ/ニュージーランドワイン（ソーヴィニヨン・ブラン／ピノ・ノワール）.webp", "wikiUrl": "https://www.google.com/search?q=%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%B8%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%89%E3%83%AF%E3%82%A4%E3%83%B3%20%E3%82%BD%E3%83%BC%E3%83%B4%E3%82%A3%E3%83%8B%E3%83%A8%E3%83%B3%E3%83%96%E3%83%A9%E3%83%B3", "orderParams": ["🍷", "NZ Wine", "ニュージーランドワイン（ソーヴィニヨン・ブラン／ピノ・ノワール）", "", "素材/グルメ/ニュージーランドワイン（ソーヴィニヨン・ブラン／ピノ・ノワール）.webp"]}};
 function showFood(numId) {
   var o = (window.FOOD_DATA && FOOD_DATA[numId]) ? FOOD_DATA[numId] : null;
   if (!o) {
@@ -450,12 +453,14 @@ function showFood(numId) {
     if (!card) { location.href = 'food.html?food=' + encodeURIComponent(numId); return; }
     var imgEl = card.querySelector('.food-img');
     var wikiBtn = card.querySelector('.wiki-link');
+    var orderBtnEl = card.querySelector('.order-btn');
     o = {
       num:  (card.querySelector('.num') || {}).textContent || '',
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
       img:  imgEl ? imgEl.src : '',
-      wikiUrl: wikiBtn ? wikiBtn.href : ''
+      wikiUrl: wikiBtn ? wikiBtn.href : '',
+      orderOnclick: orderBtnEl ? orderBtnEl.getAttribute('onclick') : null
     };
   }
   document.getElementById('sp-pop-num').textContent  = o.num  || '';
@@ -468,6 +473,17 @@ function showFood(numId) {
   popMap.textContent = '詳しく調べる →';
   if (o.wikiUrl) { popMap.href = o.wikiUrl; popMap.style.display = 'inline-flex'; }
   else { popMap.style.display = 'none'; }
+  var popOrder = document.getElementById('sp-pop-order');
+  if (o.orderParams) {
+    popOrder.onclick = function(e) { e.stopPropagation(); openFoodModal(o.orderParams[0], o.orderParams[1], o.orderParams[2], o.orderParams[3], o.orderParams[4]); };
+    popOrder.style.display = 'inline-flex';
+  } else if (o.orderOnclick) {
+    popOrder.setAttribute('onclick', o.orderOnclick);
+    popOrder.style.display = 'inline-flex';
+  } else {
+    popOrder.style.display = 'none';
+    popOrder.onclick = null;
+  }
   var popup = document.getElementById('sp-popup');
   popup.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -477,6 +493,13 @@ function closeSpotPopup() {
   document.getElementById('sp-popup').style.display = 'none';
   document.body.style.overflow = '';
 }
+
+document.addEventListener('click', function(e) {
+  const card = e.target.closest('.item-grid.view-list .item-card');
+  if (!card || e.target.closest('a,button')) return;
+  if (card.dataset.foodNum) showFood(card.dataset.foodNum);
+  else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
+});
 
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView', view);
@@ -495,8 +518,13 @@ function setItemView(kind, view) {
 (function() {
   ['food', 'spots'].forEach(kind => {
     const saved = localStorage.getItem(kind + 'ItemView');
-    if (saved) setItemView(kind, saved);
-    else document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="standard"]').forEach(b => b.classList.add('on'));
+    if (saved) { setItemView(kind, saved); return; }
+    const defaultView = window.innerWidth <= 620 ? 'compact' : 'standard';
+    const grids = kind === 'food'
+      ? document.querySelectorAll('#food-grid')
+      : document.querySelectorAll('#spots-grid .item-grid');
+    if (defaultView === 'compact') grids.forEach(grid => grid.classList.add('view-compact'));
+    document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
 })();
 
@@ -713,7 +741,8 @@ function closeFoodModal() {
       <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
       <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
       <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
-      <div style="display:flex;justify-content:flex-end;margin-top:12px">
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button id="sp-pop-order" style="display:none;align-items:center;gap:3px;padding:6px 12px;background:#fff;border:1.5px solid #dadce0;color:#5f6368;font-size:0.78em;font-weight:600;border-radius:20px;cursor:pointer;white-space:nowrap">🌐 店員に聞く</button>
         <a id="sp-pop-map" href="" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:0.78em;color:var(--green);font-weight:600;text-decoration:none;background:#f0f8f4;padding:6px 12px;border-radius:4px">Googleマップで開く →</a>
       </div>
     </div>

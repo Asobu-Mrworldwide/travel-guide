@@ -206,6 +206,21 @@ const AFFILIATES_CSS = `
   .sticky-ad-banner-logo .sab-tagline{white-space:normal;text-align:center;font-size:0.85em;margin-top:8px}
   .sticky-ad-banner-logo .sab-btn{order:3;margin:8px 20px 12px}
 }
+/* グルメ・観光スポットタブはPCでも左右余白がなく右側フロートが被るため、下部バナー表示に固定する */
+.sticky-ad-banner-force-bottom{
+  left:0;right:0;top:auto;bottom:0;
+  max-width:520px;margin:0 auto;
+  flex-wrap:nowrap;border:none;border-top:1px solid #ddd;border-radius:0;
+  box-shadow:0 -2px 10px rgba(0,0,0,0.08);
+  padding:9px 12px;
+}
+.sticky-ad-banner-force-bottom .sab-link{width:auto;flex-wrap:nowrap}
+.sticky-ad-banner-force-bottom .sab-icon{order:0;width:34px;height:34px;font-size:1.15em;border-radius:0}
+.sticky-ad-banner-force-bottom .sab-body{order:0;flex:1;min-width:0}
+.sticky-ad-banner-force-bottom .sab-name{font-size:0.76em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky-ad-banner-force-bottom .sab-tagline{font-size:0.68em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky-ad-banner-force-bottom .sab-close{position:static;background:none;border:none;border-radius:0;width:auto;height:auto;font-size:1em;padding:2px 4px}
+.sticky-ad-banner-force-bottom .sab-btn{order:0;flex:0 0 auto;text-align:left;margin-top:0;font-size:0.72em;padding:7px 13px;border-radius:16px}
 .sticky-ad-banner-img{
   padding:0;position:relative;max-width:none;width:fit-content;
   border:none;box-shadow:0 -2px 10px rgba(0,0,0,0.15);border-radius:0;
@@ -387,6 +402,9 @@ function initAffiliates() {
 
     const banner = document.createElement('div');
     banner.className = 'sticky-ad-banner';
+    // グルメ・観光スポットタブはPCでも左右余白がなく右側フロートカードが本文に被るため下部バナー表示にする
+    const isWideLayoutTab = /\/(food|spots)\.html$/.test(location.pathname);
+    if (isWideLayoutTab) banner.classList.add('sticky-ad-banner-force-bottom');
 
     if (c.rawAdWidget) {
       const rw = c.rawAdWidget;
@@ -467,6 +485,8 @@ function initAffiliates() {
 
 /* フッターに重ならないよう、近づいたらfixed→absoluteに切り替える */
 function _initStickyBannerFooterAvoidance(banner) {
+  // 下部バナー固定表示（グルメ・観光スポットタブ）はモバイル版と同じく常時fixedのままでよい
+  if (banner.classList.contains('sticky-ad-banner-force-bottom')) return;
   const activeSection = document.querySelector('section.active') || document.querySelector('.container');
   const footer = (activeSection && activeSection.querySelector('.tab-cta')) || document.querySelector('.tab-cta')
     || document.querySelector('.country-links') || document.querySelector('footer');
