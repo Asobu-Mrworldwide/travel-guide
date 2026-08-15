@@ -476,10 +476,36 @@ function initAffiliates() {
     banner.querySelector('.sab-close').addEventListener('click', () => {
       sessionStorage.setItem(storageKey, '1');
       banner.remove();
+      document.body.style.paddingBottom = '';
     });
 
     el.replaceWith(banner);
     _initStickyBannerFooterAvoidance(banner);
+    _reserveSpaceForBottomBanner(banner);
+  });
+}
+
+/* モバイル（常時下部固定）・PC下部バナー(force-bottom)は本文の最後の要素に被るので、
+   バナーの高さぶん body に padding-bottom を確保する */
+function _reserveSpaceForBottomBanner(banner) {
+  const isForceBottom = banner.classList.contains('sticky-ad-banner-force-bottom');
+  function update() {
+    if (!document.body.contains(banner)) {
+      document.body.style.paddingBottom = '';
+      window.removeEventListener('resize', update);
+      return;
+    }
+    // PC幅かつ force-bottom でない通常バナーは右側固定カードになるので本文に被らない
+    if (!isForceBottom && window.innerWidth >= 1020) {
+      document.body.style.paddingBottom = '';
+      return;
+    }
+    document.body.style.paddingBottom = (banner.offsetHeight + 12) + 'px';
+  }
+  update();
+  window.addEventListener('resize', update);
+  banner.querySelectorAll('img').forEach(img => {
+    if (!img.complete) img.addEventListener('load', update);
   });
 }
 
