@@ -193,10 +193,10 @@ section.active{display:block}
 .item-grid.view-compact .spot-img-wrap{aspect-ratio:4/3;margin-left:-10px;margin-right:-10px}
 .item-grid.view-compact .food-img{max-height:100px}
 .item-grid.view-compact .desc{font-size:0.76em;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.item-grid.view-compact .order-btn,.item-grid.view-compact .wiki-link{display:none}
 
 /* 観光スポット・グルメ: リスト表示（小サムネ＋名前・タグのみ） */
-.item-grid.view-list{grid-template-columns:1fr;gap:8px}
+.item-grid.view-list{grid-template-columns:1fr 1fr;gap:8px 16px}
+@media(max-width:900px){.item-grid.view-list{grid-template-columns:1fr}}
 .item-grid.view-list .item-card{flex-direction:row;align-items:center;gap:12px;padding:10px}
 .item-grid.view-list .item-card .num{display:none}
 .item-grid.view-list .desc{display:none}

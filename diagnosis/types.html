@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -101,7 +101,7 @@ body{font-size:16px}
 <div class="axes-bar">
   <div class="axes-inner">
     <span class="axis-chip"><strong>軸1</strong>　計画派 P ／ 直感派 F</span>
-    <span class="axis-chip"><strong>軸2</strong>　文化・学び I ／ 絶景・リフレッシュ O</span>
+    <span class="axis-chip"><strong>軸2</strong>　文化・学び C ／ 絶景・リフレッシュ N</span>
     <span class="axis-chip"><strong>軸3</strong>　協調派 S ／ マイペース派 L</span>
     <span class="axis-chip"><strong>軸4</strong>　快適志向 H ／ ワイルド志向 W</span>
   </div>
@@ -172,61 +172,61 @@ body{font-size:16px}
 
 <script>
 const TYPES = {
-  PISH:{name:'中間管理職', color:'#2563a0',
+  PCSH:{name:'中間管理職', color:'#2563a0',
     traits:['計画派','文化・学び','協調派','快適志向'],
     desc:'旅程はきっちり固め、メンバーの要望を調整しながら全員を満足させる。段取りと根回しでグループ旅行を完走させる縁の下の力持ち。'},
-  PISW:{name:'特派員', color:'#1a6b3a',
+  PCSW:{name:'特派員', color:'#1a6b3a',
     traits:['計画派','文化・学び','協調派','ワイルド'],
     desc:'下調べ万全で現地へ乗り込み、仲間と連携しながら文化の核心まで踏み込む現場主義者。タフな環境ほど本領を発揮する。'},
-  PILH:{name:'茶道部', color:'#7b5ea7',
+  PCLH:{name:'茶道部', color:'#7b5ea7',
     traits:['計画派','文化・学び','マイペース派','快適志向'],
     desc:'旅程を丁寧に組んで文化・歴史とじっくり向き合う内省派。急かされることが苦手で、一人で静かに深める時間を何より大切にする。'},
-  PILW:{name:'凝り性', color:'#4a7a59',
+  PCLW:{name:'凝り性', color:'#4a7a59',
     traits:['計画派','文化・学び','マイペース派','ワイルド'],
     desc:'気になった場所は徹底的に調べ尽くし、一人で黙々と深掘りする求道者。多少の不便も「現地の本質に近づく手段」として受け入れる。'},
-  POSH:{name:'工場長', color:'#e07b39',
+  PNSH:{name:'工場長', color:'#e07b39',
     traits:['計画派','絶景・リフレッシュ','協調派','快適志向'],
     desc:'綿密な計画でチームを統率し、絶景スポットを効率よく攻略する段取りの鬼。全員が楽しめる旅程を組む才能がある。'},
-  POSW:{name:'シェルパ', color:'#3a7540',
+  PNSW:{name:'シェルパ', color:'#3a7540',
     traits:['計画派','絶景・リフレッシュ','協調派','ワイルド'],
     desc:'仲間を安全に自然の奥地へ連れていく頼れる存在。事前準備を怠らず、ハードな環境ほど本領を発揮する。'},
-  POLH:{name:'温泉ソムリエ', color:'#c8940a',
+  PNLH:{name:'温泉ソムリエ', color:'#c8940a',
     traits:['計画派','絶景・リフレッシュ','マイペース派','快適志向'],
     desc:'リフレッシュの質にこだわるあまり旅程を緻密に設計してしまう自己管理型。誰にも邪魔されず、静かに最高の体験を味わう。'},
-  POLW:{name:'猟師', color:'#607d8b',
+  PNLW:{name:'猟師', color:'#607d8b',
     traits:['計画派','絶景・リフレッシュ','マイペース派','ワイルド'],
     desc:'計画を持ちながら単独で自然に分け入る孤高の旅行者。観光地もにぎわいも不要で、静けさの中にこそ旅の醍醐味を見出す。'},
-  FISH:{name:'ゴールデンレトリバー', color:'#c94a29',
+  FCSH:{name:'ゴールデンレトリバー', color:'#c94a29',
     traits:['直感派','文化・学び','協調派','快適志向'],
     desc:'どこでも仲間と盛り上がり、文化的な発見にも素直に反応する。人懐っこさと好奇心で旅先に自然と溶け込んでしまう天才。'},
-  FISW:{name:'お祭り男', color:'#8b4513',
+  FCSW:{name:'お祭り男', color:'#8b4513',
     traits:['直感派','文化・学び','協調派','ワイルド'],
     desc:'直感でどこへでも飛び込み、仲間と一緒に現地の文化を全身で体感する。テンションが高く、旅のムードメーカー的存在。'},
-  FILH:{name:'探偵', color:'#3a8a8a',
+  FCLH:{name:'探偵', color:'#3a8a8a',
     traits:['直感派','文化・学び','マイペース派','快適志向'],
     desc:'計画なしに街を歩くだけで、なぜか面白い場所を嗅ぎつける直感型の知的旅行者。偶然の発見こそが旅の醍醐味。'},
-  FILW:{name:'風来坊', color:'#5c4033',
+  FCLW:{name:'風来坊', color:'#5c4033',
     traits:['直感派','文化・学び','マイペース派','ワイルド'],
     desc:'文化への好奇心だけを羅針盤に、行き先も宿も決めずに旅する自由人。気ままさと知的探求心が同居している。'},
-  FOSH:{name:'副本部長', color:'#d47a00',
+  FNSH:{name:'副本部長', color:'#d47a00',
     traits:['直感派','絶景・リフレッシュ','協調派','快適志向'],
     desc:'計画は立てないが、なんとなくみんなをうまく巻き込んで快適な旅に着地させる不思議なまとめ役。'},
-  FOSW:{name:'ダチョウ', color:'#3a7044',
+  FNSW:{name:'ダチョウ', color:'#3a7044',
     traits:['直感派','絶景・リフレッシュ','協調派','ワイルド'],
     desc:'仲間を巻き込みながら次々と未知の場所へ突進していく体力お化け。計画なんて要らない、現場で考えればいい。'},
-  FOLH:{name:'独身貴族', color:'#5e7a8a',
+  FNLH:{name:'独身貴族', color:'#5e7a8a',
     traits:['直感派','絶景・リフレッシュ','マイペース派','快適志向'],
     desc:'誰のペースにも合わせず、自分が快適に過ごすことだけを考えて旅する。孤独を満喫できる大人の旅行者。'},
-  FOLW:{name:'ターザン', color:'#6b5e62',
+  FNLW:{name:'ターザン', color:'#6b5e62',
     traits:['直感派','絶景・リフレッシュ','マイペース派','ワイルド'],
     desc:'計画も快適さへのこだわりも不要。本能の赴くままに動き、自然や偶然の流れに身を委ねる究極の自由旅行者。'},
 };
 
 const GROUPS = {
-  pi: ['PISH','PISW','PILH','PILW'],
-  po: ['POSH','POSW','POLH','POLW'],
-  fi: ['FISH','FISW','FILH','FILW'],
-  fo: ['FOSH','FOSW','FOLH','FOLW'],
+  pi: ['PCSH','PCSW','PCLH','PCLW'],
+  po: ['PNSH','PNSW','PNLH','PNLW'],
+  fi: ['FCSH','FCSW','FCLH','FCLW'],
+  fo: ['FNSH','FNSW','FNLH','FNLW'],
 };
 
 function buildCard(code) {

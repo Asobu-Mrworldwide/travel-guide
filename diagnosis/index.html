@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -97,7 +97,8 @@ body { background: #fff; }
   line-height: 1.3;
 }
 .stat-type-code {
-  font-size: 0.65em;
+  font-size: 1.1em;
+  font-weight: 700;
   font-family: monospace;
   color: #777;
   margin-bottom: 6px;
@@ -286,11 +287,17 @@ import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebase
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 const TYPE_NAMES = {
-  PISH:'中間管理職', PISW:'特派員', PILH:'茶道部', PILW:'凝り性',
-  POSH:'工場長', POSW:'シェルパ', POLH:'温泉ソムリエ', POLW:'猟師',
-  FISH:'ゴールデンレトリバー', FISW:'お祭り男', FILH:'探偵', FILW:'風来坊',
-  FOSH:'副本部長', FOSW:'ダチョウ', FOLH:'独身貴族', FOLW:'ターザン'
+  PCSH:'中間管理職', PCSW:'特派員', PCLH:'茶道部', PCLW:'凝り性',
+  PNSH:'工場長', PNSW:'シェルパ', PNLH:'温泉ソムリエ', PNLW:'猟師',
+  FCSH:'ゴールデンレトリバー', FCSW:'お祭り男', FCLH:'探偵', FCLW:'風来坊',
+  FNSH:'副本部長', FNSW:'ダチョウ', FNLH:'独身貴族', FNLW:'ターザン',
 };
+// 旧IO軸表記(I/O)で保存された過去データを、新CN軸表記(C/N)に変換する
+function normalizeTypeCode(code) {
+  if (!code || code.length !== 4) return code;
+  const legacyMap = {I:'C', O:'N'};
+  return code[0] + (legacyMap[code[1]] || code[1]) + code[2] + code[3];
+}
 
 function countUp(el, target, suffix = '') {
   const duration = 1200, start = performance.now();
@@ -335,7 +342,12 @@ try {
   const typesData = typesSnap.val();
   console.log('types data:', typesData);
   if (typesData) {
-    const topCode = Object.entries(typesData).reduce((a, b) => b[1] > a[1] ? b : a)[0];
+    const merged = {};
+    Object.entries(typesData).forEach(([code, count]) => {
+      const norm = normalizeTypeCode(code);
+      merged[norm] = (merged[norm] || 0) + count;
+    });
+    const topCode = Object.entries(merged).reduce((a, b) => b[1] > a[1] ? b : a)[0];
     const nameEl = document.getElementById('stat-top-name');
     nameEl.className = 'stat-type-name';
     nameEl.textContent = TYPE_NAMES[topCode] || topCode;

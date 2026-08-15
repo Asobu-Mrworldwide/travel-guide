@@ -175,36 +175,36 @@ sessionStorage.removeItem('diag_counted');
 // ===== 質問データ =====
 const BASE_QUESTIONS = {
   PF: [
-    {yesVal:'P', text:'旅行前に、行程表を作ってから出発する'},
-    {yesVal:'F', text:'気になる店を見つけたら、予定になくてもその場で入る'},
-    {yesVal:'P', text:'宿や移動手段は、出発前にすべて予約しておく'},
-    {yesVal:'F', text:'予定が崩れても、逆に面白い展開だと思える'},
+    {yesVal:'P', text:'計画を立てて、あれこれ調べている段階が一番ワクワクする'},
+    {yesVal:'F', text:'旅行の当日、その日の気分で行き先を変更することがよくある'},
+    {yesVal:'F', text:'観光地のチケットを事前に買っておらず、当日その場で並ぶことがよくある'},
+    {yesVal:'P', text:'計画が崩れたときはまず立て直そうとするが、それが難しい状況になるとストレスを感じる'},
   ],
-  IO: [
-    {yesVal:'I', text:'歴史的建造物や美術館を見ると、テンションが上がる'},
-    {yesVal:'O', text:'旅先で絶景スポットや展望台があれば、優先的に訪れる'},
-    {yesVal:'I', text:'旅の思い出は「学んだこと」として残ることが多い'},
-    {yesVal:'O', text:'観光より、海やスパでのんびりする方が旅の目的だ'},
+  CN: [
+    {yesVal:'C', text:'旅先に歴史的な建造物や美術館、古い街並みがあると、テンションが上がる'},
+    {yesVal:'N', text:'世界遺産を訪れるなら、歴史や宗教の「文化遺産」よりも、絶景や秘境の「自然遺産」に惹かれる'},
+    {yesVal:'C', text:'旅先では、地元の人しかいないような居酒屋や食堂で、現地の人と話してみたい'},
+    {yesVal:'N', text:'旅先を選ぶときは、シュノーケリングやトレッキング、野生動物に出会うような「自然体験」をいちばん楽しみにしている'},
   ],
   SL: [
-    {yesVal:'S', text:'旅先では、同行者と感動をその場で共有できると満足度が上がる'},
-    {yesVal:'L', text:'旅中、自分だけで動く時間が一定量ないとしんどい'},
-    {yesVal:'S', text:'旅仲間のペースや好みに合わせるのは、それほど苦にならない'},
-    {yesVal:'L', text:'旅先でも、起床や食事のタイミングを自分で決めたい'},
+    {yesVal:'S', text:'旅先でいい景色や美味しいものに出会ったとき、その場ですぐに誰かと共感したい'},
+    {yesVal:'L', text:'誰かと一緒の旅行でも、数時間くらいは1人で自由にぶらぶらする時間が欲しい'},
+    {yesVal:'S', text:'一緒に行く人の「ここに行きたい」「これ食べたい」に合わせるのは、全く苦にならない'},
+    {yesVal:'L', text:'旅先であっても、起きる時間やご飯を食べるタイミングは、自分のペースで決めたい'},
   ],
   HW: [
-    {yesVal:'H', text:'宿は、清潔さや設備の良さを最優先で選ぶ'},
-    {yesVal:'W', text:'現地らしい多少不便な場所にも、むしろ行ってみたい'},
-    {yesVal:'H', text:'移動は、タクシーなど快適な手段を優先したい'},
-    {yesVal:'W', text:'停電・断水・虫などのトラブルも、旅の醍醐味だと思える'},
+    {yesVal:'H', text:'宿はただ寝るだけの場所ではなく、清潔で設備が整った空間でホテルステイそのものも快適に楽しみたい'},
+    {yesVal:'W', text:'観光地化されていない、現地らしい不便な場所にこそ行ってみたい'},
+    {yesVal:'H', text:'移動で体力を削られたくないので、お金を払ってでも快適な移動手段を選びたい'},
+    {yesVal:'W', text:'言葉が通じない、停電が起きるといった「想定外のハプニング」ほど燃える'},
   ],
 };
 
 const BACKUP_QUESTIONS = {
-  PF: {axis:'PF', yesVal:'P', text:'旅先での移動時間や乗り換えを、細かく事前に調べておく'},
-  IO: {axis:'IO', yesVal:'I', text:'現地の生活や文化的背景を知ると、旅の満足度が上がる'},
-  SL: {axis:'SL', yesVal:'S', text:'一人で食事やアクティビティをするのに、少し抵抗がある'},
-  HW: {axis:'HW', yesVal:'H', text:'多少値段が高くても、快適さを優先して宿や移動を選ぶ'},
+  PF: {axis:'PF', yesVal:'F', text:'旅行から帰ったあとに、「あそこも見ておけばよかった」と気づくことがよくある'},
+  CN: {axis:'CN', yesVal:'C', text:'「現地の歴史や文化を深く知るツアー」と「息をのむような絶景を巡るツアー」なら、迷わず前者の歴史ツアーを選ぶ'},
+  SL: {axis:'SL', yesVal:'S', text:'そもそも「一人旅」にはあまり興味がなく、旅行は誰かと一緒に行く方が楽しい'},
+  HW: {axis:'HW', yesVal:'W', text:'万が一に備えてあれこれ荷物を詰めるより、リュック1つで身軽に旅立つ方に憧れる'},
 };
 
 function shuffle(arr) {
@@ -237,7 +237,7 @@ let touchEndHandler = null;
 let mouseDownHandler = null;
 
 function getOppositeVal(v) {
-  return {P:'F',F:'P',I:'O',O:'I',S:'L',L:'S',H:'W',W:'H'}[v];
+  return {P:'F',F:'P',C:'N',N:'C',S:'L',L:'S',H:'W',W:'H'}[v];
 }
 
 
@@ -245,7 +245,7 @@ function initSwipe() {
   questionQueue = buildShuffledBase();
   currentIdx = 0;
   totalQuestions = 16;
-  axisVotes = {PF:{P:0,F:0}, IO:{I:0,O:0}, SL:{S:0,L:0}, HW:{H:0,W:0}};
+  axisVotes = {PF:{P:0,F:0}, CN:{C:0,N:0}, SL:{S:0,L:0}, HW:{H:0,W:0}};
   // updateProgress(0, 16);
 
   const stack = document.getElementById('card-stack');
@@ -313,13 +313,15 @@ function attachSwipeHandlers() {
   let startX = 0, startY = 0, isDragging = false;
   let activeCard = null;
   let lastTouchTime = 0;
+  let startTarget = null;
   const THRESHOLD = 90;
 
-  function onStart(x, y) {
+  function onStart(x, y, target) {
     if (isDragging) return;
     activeCard = getActiveCard();
     if (!activeCard) return;
     startX = x; startY = y;
+    startTarget = target || null;
     isDragging = true;
     activeCard.style.transition = 'none';
     activeCard.style.animation = 'none';
@@ -355,7 +357,11 @@ function attachSwipeHandlers() {
     isDragging = false;
     const dx = x - startX;
     const isTutorial = !!activeCard.dataset.tutorial;
-    if (Math.abs(dx) >= THRESHOLD && (!isTutorial || dx > 0)) {
+    const tapChoice = Math.abs(dx) < 10 && startTarget && startTarget.closest && startTarget.closest('.sc-choice');
+    const tapDir = tapChoice ? (tapChoice.classList.contains('sc-right') ? 'right' : 'left') : null;
+    if (tapDir && (!isTutorial || tapDir === 'right')) {
+      commitSwipe(tapDir, activeCard);
+    } else if (Math.abs(dx) >= THRESHOLD && (!isTutorial || dx > 0)) {
       commitSwipe(dx > 0 ? 'right' : 'left', activeCard);
     } else {
       activeCard.style.transition = 'transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275)';
@@ -369,7 +375,7 @@ function attachSwipeHandlers() {
     activeCard = null;
   }
 
-  touchStartHandler = e => { lastTouchTime = Date.now(); onStart(e.touches[0].clientX, e.touches[0].clientY); };
+  touchStartHandler = e => { lastTouchTime = Date.now(); onStart(e.touches[0].clientX, e.touches[0].clientY, e.target); };
   touchMoveHandler  = e => {
     const dx = e.touches[0].clientX - startX;
     const dy = e.touches[0].clientY - startY;
@@ -379,7 +385,7 @@ function attachSwipeHandlers() {
   touchEndHandler  = e => { lastTouchTime = Date.now(); e.preventDefault(); onEnd(e.changedTouches[0].clientX); };
   mouseDownHandler = e => {
     if (Date.now() - lastTouchTime < 700) return;
-    e.preventDefault(); onStart(e.clientX, e.clientY);
+    e.preventDefault(); onStart(e.clientX, e.clientY, e.target);
   };
 
   stack.addEventListener('touchstart', touchStartHandler, {passive:true});
@@ -452,11 +458,12 @@ function commitSwipe(dir, card) {
 
 function finishQuiz() {
   const pf = axisVotes.PF.P >= axisVotes.PF.F ? 'P' : 'F';
-  const io = axisVotes.IO.I >= axisVotes.IO.O ? 'I' : 'O';
+  const cn = axisVotes.CN.C >= axisVotes.CN.N ? 'C' : 'N';
   const sl = axisVotes.SL.S >= axisVotes.SL.L ? 'S' : 'L';
   const hw = axisVotes.HW.H >= axisVotes.HW.W ? 'H' : 'W';
-  const type = pf + io + sl + hw;
+  const type = pf + cn + sl + hw;
   sessionStorage.setItem('myType', type);
+  sessionStorage.setItem('myVotes', JSON.stringify(axisVotes));
   location.href = 'result.html?type=' + type;
 }
 
