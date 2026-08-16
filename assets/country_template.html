@@ -1402,28 +1402,28 @@ var PAGE_INDEX = {{page_index}};
 </script>
 
 <script>
-/* ヘッダー: スクロール量に連動して隠れる/現れる（タブナビは常に画面最上部に固定、上下には動かない） */
+/* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
 (function(){
   const header = document.getElementById('site-top-bar');
   const navEl = document.querySelector('nav');
   if (!header) return;
   header.style.transition = 'none';
-  let headerH = header.offsetHeight;
-  if (navEl) { navEl.style.transition = 'none'; navEl.style.top = headerH + 'px'; }
+  if (navEl) navEl.style.transition = 'none';
 
+  let headerH = header.offsetHeight;
   let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
   let lastY = window.scrollY;
   let ticking = false;
 
   function apply() {
     header.style.transform = 'translateY(-' + hideOffset + 'px)';
+    if (navEl) navEl.style.top = (headerH - hideOffset) + 'px';
     ticking = false;
   }
 
   window.addEventListener('resize', function(){
     headerH = header.offsetHeight;
     hideOffset = Math.min(hideOffset, headerH);
-    if (navEl) navEl.style.top = headerH + 'px';
     apply();
   });
 

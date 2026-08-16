@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="シンガポールのモデルコース｜シンガポール旅行ガイド">
 <meta name="twitter:description" content="東京23区ほどの小さな島に、未来都市のような高層ビル群と中華・マレー・インドの多文化が詰め込まれた都市国家。世界トップクラスの治安と清潔さ、英語が通じる安心感、そしてホーカー（屋台街）の絶品グルメで、初めての海外にも家族旅行にも死角があり…">
 <meta name="twitter:image" content="https://worldmappy.com/singapore/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1786837377">
+<link rel="stylesheet" href="../assets/style.css?v=1786858326">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786837377" defer></script>
-<script src="../assets/affiliates.js?v=1786837377" defer></script>
+<script src="../assets/affiliates-data.js?v=1786858326" defer></script>
+<script src="../assets/affiliates.js?v=1786858326" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -670,28 +670,28 @@ var PAGE_INDEX = 3;
 </script>
 
 <script>
-/* ヘッダー: スクロール量に連動して隠れる/現れる（タブナビは常に画面最上部に固定、上下には動かない） */
+/* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
 (function(){
   const header = document.getElementById('site-top-bar');
   const navEl = document.querySelector('nav');
   if (!header) return;
   header.style.transition = 'none';
-  let headerH = header.offsetHeight;
-  if (navEl) { navEl.style.transition = 'none'; navEl.style.top = headerH + 'px'; }
+  if (navEl) navEl.style.transition = 'none';
 
+  let headerH = header.offsetHeight;
   let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
   let lastY = window.scrollY;
   let ticking = false;
 
   function apply() {
     header.style.transform = 'translateY(-' + hideOffset + 'px)';
+    if (navEl) navEl.style.top = (headerH - hideOffset) + 'px';
     ticking = false;
   }
 
   window.addEventListener('resize', function(){
     headerH = header.offsetHeight;
     hideOffset = Math.min(hideOffset, headerH);
-    if (navEl) navEl.style.top = headerH + 'px';
     apply();
   });
 
