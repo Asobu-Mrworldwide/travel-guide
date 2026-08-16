@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>World Mappy — 国一覧プレビュー（Claude Design案3・実地図版）</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Cormorant+Garamond:wght@400;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="./destinations-real.js"></script>
+<script src="./world-map-ml.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #E9E6E0; }
+  body { font-family: 'Zen Kaku Gothic New', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #15735b; text-decoration: none; }
+  a:hover { color: #1d9074; }
+  ::selection { background: #ffc200; color: #1a1a1a; }
+  @keyframes wm-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes wm-pop { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+  .note { max-width: 1240px; margin: 0 auto; padding: 10px 4px; font: 12px/1.6 'Zen Kaku Gothic New', sans-serif; color: #666; }
+  .wrap { max-width: 1240px; margin: 0 auto 32px; background: #fff; color: #1a1a1a; box-shadow: 0 4px 30px rgba(0,0,0,.08); min-width: 320px; overflow: hidden; }
+
+  /* header */
+  .hd { background: #1d9074; color: #fff; }
+  .hd-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; }
+  .hd-brand { display: flex; align-items: baseline; gap: 12px; }
+  .hd-brand .logo { display: inline-flex; align-items: center; gap: 5px; font-size: 21px; font-weight: 900; letter-spacing: -.5px; color: #fff; }
+  .hd-brand .logo svg { width: 1.15em; height: 1.15em; vertical-align: -0.15em; }
+  .hd-brand .logo .hl { color: #ffc200; }
+  .hd-brand .jp { font-size: 10.5px; letter-spacing: .24em; color: rgba(255,255,255,.75); }
+  .hamburger { display: grid; gap: 4.5px; width: 42px; height: 42px; place-content: center; justify-items: center; border: 1px solid rgba(255,255,255,.4); border-radius: 5px; background: transparent; cursor: pointer; transition: background .25s ease; }
+  .hamburger.on { background: rgba(255,255,255,.22); }
+  .hamburger span { display: block; width: 18px; height: 2px; background: #fff; }
+  .megamenu { background: #15735b; border-top: 1px solid rgba(255,255,255,.18); padding: 26px 32px 30px; display: none; grid-template-columns: repeat(4,1fr); gap: 26px; animation: wm-pop .28s ease both; }
+  .megamenu.open { display: grid; }
+  .mm-col { display: grid; gap: 10px; align-content: start; }
+  .mm-col.about { border-left: 1px solid rgba(255,255,255,.18); padding-left: 26px; }
+  .mm-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .2em; color: #ffc200; }
+  .mm-col a, .mm-col p { font-size: 13px; color: rgba(255,255,255,.9); }
+  .mm-col p { margin: 0; line-height: 1.95; color: rgba(255,255,255,.82); font-size: 12.5px; }
+  .mm-col a { cursor: pointer; }
+
+  /* hero */
+  .hero { background: #f4fbf8; border-bottom: 1px solid #dde8e2; padding: 34px 40px 26px; display: grid; grid-template-columns: .72fr 1.28fr; gap: 36px; align-items: center; }
+  .hero-copy { display: grid; gap: 18px; animation: wm-rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-eyebrow { display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow .bar { width: 26px; height: 3px; background: #ffc200; }
+  .hero-eyebrow .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .2em; color: #1d9074; }
+  .hero h1 { margin: 0; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 44px; line-height: 1.3; letter-spacing: .02em; }
+  .hero p { margin: 0; font-size: 13.5px; line-height: 2.05; color: #3a3a3a; }
+  .hero-stats { display: flex; align-items: center; gap: 18px; border-top: 1px solid #dde8e2; padding-top: 15px; }
+  .hero-stats .n { font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #1d9074; display: block; }
+  .hero-stats .n.rec { color: #ffc200; }
+  .hero-stats .l { font-size: 10px; letter-spacing: .16em; color: #777; }
+  .hero-stats .sep { width: 1px; height: 34px; background: #dde8e2; }
+  world-map { display: block; position: relative; width: 100%; height: 430px; border: 1px solid #dde8e2; border-radius: 6px; overflow: hidden; }
+
+  /* search */
+  .searchbar { border-bottom: 1px solid #eee; padding: 22px 40px 20px; display: grid; gap: 12px; justify-items: center; }
+  .search-row { display: flex; align-items: center; gap: 12px; width: 100%; max-width: 760px; }
+  .search-field { position: relative; flex: 1; }
+  .search-shell { display: flex; align-items: center; gap: 10px; border: 2px solid #dde8e2; border-radius: 999px; background: #fff; padding: 0 7px; height: 52px; transition: border-color .25s ease, box-shadow .25s ease; }
+  .search-shell.focus { border-color: #1d9074; box-shadow: 0 6px 20px rgba(29,144,116,.16); }
+  .search-icon { flex: none; display: grid; place-content: center; width: 38px; height: 38px; font-size: 17px; color: #1d9074; }
+  .search-input { flex: 1; min-width: 0; margin-left: -4px; border: none; outline: none; background: transparent; font-family: inherit; font-size: 14.5px; color: #1a1a1a; height: 100%; }
+  .search-clear { flex: none; width: 28px; height: 28px; border: none; border-radius: 999px; background: #f0f0f0; font-family: inherit; font-size: 13px; color: #666; cursor: pointer; display: none; }
+  .search-clear.show { display: block; }
+  .detail-toggle { flex: none; display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 16px; border: none; border-radius: 999px; background: #f4fbf8; font-family: inherit; font-size: 12.5px; font-weight: 700; color: #15735b; cursor: pointer; transition: all .25s ease; }
+  .detail-toggle.open { background: #1d9074; color: #fff; }
+  .chip-count { display: none; place-content: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: #ffc200; color: #1a1a1a; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; }
+  .chip-count.show { display: grid; }
+  .suggest { position: absolute; top: 58px; left: 0; right: 0; z-index: 30; background: #fff; border: 1px solid #dde8e2; border-radius: 8px; box-shadow: 0 16px 36px rgba(26,26,26,.14); overflow: hidden; animation: wm-pop .2s ease both; display: none; }
+  .suggest.show { display: block; }
+  .suggest-group { border-top: 1px solid #f4f4f4; }
+  .suggest-group:first-child { border-top: none; }
+  .suggest-label { padding: 9px 16px 6px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: .18em; color: #aaa; }
+  .suggest-item { display: flex; align-items: center; gap: 11px; width: 100%; padding: 10px 16px; border: none; background: #fff; font-family: inherit; font-size: 13.5px; color: #1a1a1a; text-align: left; cursor: pointer; }
+  .suggest-item:hover { background: #f4fbf8; }
+  .suggest-item .ic { width: 20px; flex: none; text-align: center; color: #1d9074; font-size: 12px; }
+  .suggest-item .lb { flex: 1; }
+  .suggest-item .meta { font-size: 11.5px; color: #888; }
+  .suggest-empty { padding: 18px 16px; font-size: 13px; color: #888; }
+  .reset-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
+  .reset-btn { padding: 8px 15px; border: 1px solid #d0d0d0; border-radius: 999px; background: #fff; font-family: inherit; font-size: 12px; color: #3a3a3a; cursor: pointer; white-space: nowrap; display: none; }
+  .reset-btn.show { display: inline-block; }
+  .tokens { display: none; flex-wrap: wrap; align-items: center; justify-content: center; gap: 7px; }
+  .tokens.show { display: flex; }
+  .tokens .tlabel { font-size: 11px; letter-spacing: .14em; color: #888; margin-right: 3px; }
+  .token { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid #1d9074; border-radius: 999px; background: #e8f6f2; font-family: inherit; font-size: 12.5px; color: #15735b; cursor: pointer; }
+  .token:hover { background: #1d9074; color: #fff; }
+
+  .detail-panel { width: 100%; border: 1px solid #dde8e2; border-radius: 8px; background: #f4fbf8; padding: 18px 20px 20px; display: none; gap: 12px; animation: wm-pop .24s ease both; max-width: 1160px; }
+  .detail-panel.show { display: grid; }
+  .frow { display: flex; gap: 14px; align-items: flex-start; }
+  .frow .flabel { width: 6.5em; flex: none; font-size: 11px; letter-spacing: .14em; color: #15735b; padding-top: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip { padding: 7px 14px; border-radius: 999px; font-family: inherit; font-size: 12.5px; cursor: pointer; border: 1px solid #d0d0d0; background: #fff; color: #3a3a3a; transition: all .25s ease; }
+  .chip.on { border-color: #1d9074; background: #1d9074; color: #fff; }
+  .detail-panel-ft { display: flex; align-items: center; gap: 12px; border-top: 1px solid #dde8e2; padding-top: 12px; }
+  .detail-panel-ft .hint { font-size: 12px; color: #888; }
+  .close-detail { margin-left: auto; padding: 8px 18px; border: none; border-radius: 999px; background: #1d9074; font-family: inherit; font-size: 12.5px; color: #fff; cursor: pointer; }
+
+  /* index */
+  .idx { padding: 28px 40px 40px; }
+  .idx-hd { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 16px; }
+  .idx-hd-left { display: flex; align-items: baseline; gap: 12px; }
+  .idx-hd h2 { margin: 0; font-family: 'Shippori Mincho B1', serif; font-weight: 500; font-size: 24px; }
+  .idx-hd .sub-label { font-size: 11.5px; color: #888; }
+  .idx-hd .count { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; color: #aaa; }
+  .empty-state { border: 1px dashed #d0d0d0; border-radius: 6px; padding: 44px; display: none; gap: 14px; justify-items: center; text-align: center; }
+  .empty-state.show { display: grid; }
+  .empty-state .t1 { font-size: 14px; color: #3a3a3a; }
+  .empty-state .t2 { font-size: 12px; color: #888; }
+  .empty-state button { padding: 10px 20px; border: none; border-radius: 4px; background: #1d9074; color: #fff; font-family: inherit; font-size: 13px; cursor: pointer; }
+  .idx-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .card { display: grid; align-content: start; background: #fff; border: 1px solid #eee; border-radius: 6px; overflow: hidden; color: #1a1a1a; transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .3s ease; }
+  .card.selected { border-color: #ffc200; box-shadow: 0 8px 22px rgba(255,194,0,.28); }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(26,26,26,.12); }
+  .card.unavailable { opacity: .62; }
+  .card-img { position: relative; aspect-ratio: 16/9; background: #f5f7f5; overflow: hidden; }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card-img .grad { width: 100%; height: 100%; }
+  .badge-rec { position: absolute; top: 9px; left: 9px; background: #ffc200; color: #1a1a1a; font-size: 10px; font-weight: 700; letter-spacing: .1em; padding: 3px 8px; border-radius: 3px; }
+  .badge-area { position: absolute; top: 9px; right: 9px; background: rgba(255,255,255,.94); color: #15735b; font-size: 10.5px; padding: 3px 8px; border-radius: 3px; }
+  .badge-soon { position: absolute; bottom: 9px; right: 9px; background: rgba(26,26,26,.72); color: #fff; font-size: 10px; letter-spacing: .1em; padding: 3px 8px; border-radius: 3px; }
+  .card-body { padding: 14px 15px 16px; display: grid; gap: 9px; }
+  .card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .card-top .city { font-family: 'Shippori Mincho B1', serif; font-size: 19px; line-height: 1.25; }
+  .card-top .country { font-size: 11px; color: #888; }
+  .card-blurb { margin: 0; font-size: 12px; line-height: 1.85; color: #3a3a3a; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-months { display: grid; grid-template-columns: repeat(12,1fr); gap: 2px; }
+  .card-months span { height: 6px; border-radius: 1px; }
+  .card-bottom { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; border-top: 1px solid #f0f0f0; padding-top: 9px; font-size: 11.5px; color: #666; }
+  .card-bottom .hrs { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #1a1a1a; }
+  .card-bottom .yen { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #1d9074; }
+
+  /* footer */
+  .ft { background: #15735b; color: #fff; }
+  .ft-cols { padding: 40px 40px 30px; display: grid; grid-template-columns: 1.25fr 1fr 1fr 1.1fr; gap: 34px; }
+  .ft-brand { display: grid; gap: 14px; align-content: start; }
+  .ft-brand .row { display: flex; align-items: baseline; gap: 11px; }
+  .ft-brand .logo { display: inline-flex; align-items: center; gap: 5px; font-size: 20px; font-weight: 900; letter-spacing: -.5px; color: #fff; }
+  .ft-brand .logo svg { width: 1.1em; height: 1.1em; vertical-align: -0.15em; }
+  .ft-brand .logo .hl { color: #ffc200; }
+  .ft-brand .jp { font-size: 10px; letter-spacing: .22em; color: rgba(255,255,255,.7); }
+  .ft-brand p { margin: 0; font-size: 12.5px; line-height: 1.95; color: rgba(255,255,255,.78); }
+  .ft-col { display: grid; gap: 10px; align-content: start; }
+  .ft-col a { font-size: 12.5px; color: rgba(255,255,255,.85); }
+  .ft-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .2em; color: #ffc200; }
+  .ft-bottom { border-top: 1px solid rgba(255,255,255,.18); padding: 16px 40px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 11.5px; color: rgba(255,255,255,.7); }
+  .ft-bottom .links { display: flex; gap: 18px; }
+  .ft-bottom a { color: rgba(255,255,255,.7); }
+
+  @media (max-width: 900px) {
+    .hero, .ft-cols { grid-template-columns: 1fr; }
+    .idx-grid { grid-template-columns: repeat(2,1fr); }
+    .megamenu { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<p class="note">Claude Design案「World Mappy.dc.html」（実地図＝MapLibre GL＋検索バー＋条件パネル版）を、index.html の実データ（全29ヶ国）で再構成したテスト用プレビューです。本番サイトには含まれません。地図はドラッグで移動、スクロールで拡大するとおすすめ以外の国も現れます。</p>
+
+<div class="wrap">
+  <div class="hd">
+    <div class="hd-row">
+      <div class="hd-brand"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span class="hl">World</span>&nbsp;Mappy</span><span class="jp">まっぴー</span></div>
+      <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+    </div>
+    <div class="megamenu" id="megamenu">
+      <div class="mm-col"><span class="mm-label">AREA</span><div id="mmAreas"></div></div>
+      <div class="mm-col">
+        <span class="mm-label">SEASON</span>
+        <a href="#">正月に行ける国</a><a href="#">ゴールデンウィーク</a><a href="#">お盆・夏休み</a><a href="#">シルバーウィーク</a><a href="#">年末年始</a>
+      </div>
+      <div class="mm-col">
+        <span class="mm-label">GUIDE</span>
+        <a href="#">持ち物チェックリスト</a><a href="#">ビザ・入国手続き</a><a href="#">治安と注意点</a><a href="#">お金・両替・チップ</a><a href="#">現地SIM・通信</a>
+      </div>
+      <div class="mm-col about">
+        <span class="mm-label">ABOUT</span>
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="#">このサイトについて →</a><a href="#">お問い合わせ →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><span class="bar"></span><span class="lbl">WORLD TRAVEL ATLAS</span></div>
+      <h1>さあ、次の<br>旅先を探そう。</h1>
+      <p>情報が溢れるこの時代に、本当に必要な旅行情報だけを。地図はドラッグで動き、拡大するほど掲載国が増えていきます。</p>
+      <div class="hero-stats">
+        <div><span class="n" id="statTotal">-</span><span class="l">掲載国・都市</span></div>
+        <span class="sep"></span>
+        <div><span class="n" id="statAreas">-</span><span class="l">エリア</span></div>
+        <span class="sep"></span>
+        <div><span class="n rec" id="statRec">-</span><span class="l">おすすめ</span></div>
+      </div>
+    </div>
+    <world-map id="map"></world-map>
+  </div>
+
+  <div class="searchbar">
+    <div class="search-row">
+      <div class="search-field">
+        <div class="search-shell" id="searchShell">
+          <span class="search-icon">⌕</span>
+          <input class="search-input" id="searchInput" placeholder="国・都市・キーワードで探す">
+          <button class="search-clear" id="searchClear" aria-label="入力を消す">✕</button>
+          <button class="detail-toggle" id="detailToggle">
+            <span>詳細条件</span>
+            <span class="chip-count" id="chipCount">0</span>
+            <span class="caret" id="detailCaret">▼</span>
+          </button>
+        </div>
+        <div class="suggest" id="suggest"></div>
+      </div>
+    </div>
+
+    <div class="reset-row"><button class="reset-btn" id="resetBtn">✕ すべて解除</button></div>
+    <div class="tokens" id="tokens"><span class="tlabel">条件</span></div>
+
+    <div class="detail-panel" id="detailPanel">
+      <div class="frow"><span class="flabel">エリア</span><div class="chips" id="chipsArea"></div></div>
+      <div class="frow"><span class="flabel">ベストシーズン</span><div class="chips" id="chipsSeason"></div></div>
+      <div class="frow"><span class="flabel">飛行時間</span><div class="chips" id="chipsFlight"></div></div>
+      <div class="frow"><span class="flabel">予算感</span><div class="chips" id="chipsBudget"></div></div>
+      <div class="frow"><span class="flabel">タグ</span><div class="chips" id="chipsTag"></div></div>
+      <div class="detail-panel-ft"><span class="hint" id="panelHint"></span><button class="close-detail" id="closeDetail">閉じる</button></div>
+    </div>
+  </div>
+
+  <div class="idx" id="wm-index">
+    <div class="idx-hd">
+      <div class="idx-hd-left"><h2>旅先の索引</h2><span class="sub-label">カードをクリックすると国のページへ</span></div>
+      <span class="count" id="countLabel"></span>
+    </div>
+    <div class="empty-state" id="emptyState">
+      <span class="t1">条件に合う旅先が見つかりませんでした。</span>
+      <span class="t2">飛行時間や時期の条件をひとつ外すと見つかりやすくなります。</span>
+      <button id="emptyReset">条件をリセットする</button>
+    </div>
+    <div class="idx-grid" id="grid"></div>
+  </div>
+
+  <div class="ft">
+    <div class="ft-cols">
+      <div class="ft-brand">
+        <div class="row"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span class="hl">World</span>&nbsp;Mappy</span><span class="jp">まっぴー</span></div>
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめました。気候・飛行時間・予算の三つから、次の旅先を。</p>
+      </div>
+      <div class="ft-col"><span class="ft-label">AREA</span><div id="ftAreas"></div></div>
+      <div class="ft-col">
+        <span class="ft-label">GUIDE</span>
+        <a href="#">持ち物チェックリスト</a><a href="#">ビザ・入国手続き</a><a href="#">治安と注意点</a><a href="#">お金・両替・チップ</a><a href="#">現地SIM・通信</a><a href="#">よくある質問</a>
+      </div>
+      <div class="ft-col">
+        <span class="ft-label">SHARE</span>
+        <p style="margin:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,.78);">このページが役に立ったら、旅の相談相手に送ってあげてください。</p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="links"><a href="#">プライバシーポリシー</a><a href="#">免責事項</a><a href="#">運営者情報</a><a href="#">お問い合わせ</a></div>
+      <span>© 2026 World Mappy　<span style="letter-spacing:.16em;color:#ffc200;">楽しい旅を！</span></span>
+    </div>
+  </div>
+</div>
+
+<script>
+const T = { mOn: '#1d9074', mOff: '#e8f6f2' };
+const BUDGETS = ['格安', '中級', '高級'];
+const MONTHS = Array.from({length:12}, (_,i) => ({ label: (i+1)+'月', month: i+1 }));
+const HOLIDAYS = [{ label: '正月', month: 1 }, { label: 'GW', month: 5 }, { label: 'お盆', month: 8 }, { label: 'シルバーウィーク', month: 9 }];
+const SEASONS = MONTHS.concat(HOLIDAYS);
+const FLIGHTS = [
+  { label: '5時間以内', test: (h) => h <= 5 },
+  { label: '5〜10時間', test: (h) => h > 5 && h <= 10 },
+  { label: '10〜15時間', test: (h) => h > 10 && h <= 15 },
+  { label: '15時間以上', test: (h) => h > 15 },
+];
+const inSeason = (d, m) => (d.s <= d.e ? m >= d.s && m <= d.e : m >= d.s || m <= d.e);
+const EMPTY_F = { area: null, season: null, flight: null, budget: null, tag: null };
+
+function waitData() {
+  return new Promise((resolve) => {
+    if (window.WM_DESTINATIONS && window.WM_DESTINATIONS.length) return resolve();
+    window.addEventListener('wm-data', () => resolve(), { once: true });
+  });
+}
+
+waitData().then(main);
+
+function main() {
+  const ALL = window.WM_DESTINATIONS;
+  const AREAS = [...new Set(ALL.map(d => d.area))];
+  const tagFreq = {};
+  ALL.forEach(d => d.tags.forEach(t => { tagFreq[t] = (tagFreq[t]||0) + 1; }));
+  const TAGS = Object.keys(tagFreq).sort((a,b) => tagFreq[b]-tagFreq[a]).slice(0, 14);
+
+  const state = { f: Object.assign({}, EMPTY_F), sel: null, menuOpen: false, q: '', focus: false, detailOpen: false };
+
+  function matches(d, q) {
+    const hay = [d.city, d.country, d.area, d.budget, d.season, d.blurb].concat(d.tags).join(' ').toLowerCase();
+    return q.split(/\s+/).filter(Boolean).every((w) => {
+      if (hay.indexOf(w) >= 0) return true;
+      const mn = w.match(/^(\d{1,2})月?$/);
+      if (mn && inSeason(d, +mn[1])) return true;
+      const hol = HOLIDAYS.filter((h) => h.label.toLowerCase().indexOf(w) >= 0)[0];
+      if (hol && inSeason(d, hol.month)) return true;
+      const fl = FLIGHTS.filter((c) => c.label.toLowerCase().indexOf(w) >= 0)[0];
+      if (fl && fl.test(d.hours)) return true;
+      return false;
+    });
+  }
+
+  function suggestGroups(q) {
+    const hit = ALL.filter((d) => matches(d, q)).slice(0, 6);
+    const kw = [];
+    const push = (label, field, value, icon) => { if (kw.length < 5 && label.toLowerCase().indexOf(q) >= 0) kw.push({ label, field, value, icon }); };
+    AREAS.forEach((a) => push(a, 'area', a, '◍'));
+    TAGS.forEach((t) => push(t, 'tag', t, '#'));
+    FLIGHTS.forEach((c) => push(c.label, 'flight', c.label, '✈'));
+    HOLIDAYS.forEach((h) => push(h.label, 'season', h.label, '☀'));
+    BUDGETS.forEach((b) => push(b, 'budget', b, '¥'));
+    const groups = [];
+    if (hit.length) groups.push({ label: 'DESTINATIONS', items: hit.map((d) => ({ label: d.city, meta: d.country + '　' + d.area, icon: '◉', onPick: () => { state.q = d.city; state.focus = false; state.sel = d.id; renderAll(); } })) });
+    if (kw.length) groups.push({ label: 'CONDITIONS', items: kw.map((k) => ({ label: k.label, meta: '条件で絞る', icon: k.icon, onPick: () => { state.q = ''; state.focus = false; state.f[k.field] = k.value; renderAll(); } })) });
+    return groups;
+  }
+
+  function months(d) { return Array.from({length:12}, (_,i) => ({ n: i+1, bg: inSeason(d, i+1) ? T.mOn : T.mOff })); }
+
+  function renderMenu() {
+    document.getElementById('hamburger').classList.toggle('on', state.menuOpen);
+    document.getElementById('megamenu').classList.toggle('open', state.menuOpen);
+    const html = AREAS.map(a => `<a data-area="${a}">${a}</a>`).join('');
+    document.getElementById('mmAreas').innerHTML = html;
+    document.getElementById('ftAreas').innerHTML = html;
+    document.querySelectorAll('#mmAreas a, #ftAreas a').forEach(el => {
+      el.onclick = () => { state.f = Object.assign({}, EMPTY_F, { area: el.dataset.area }); state.menuOpen = false; renderAll(); document.getElementById('wm-index').scrollIntoView({ behavior: 'smooth' }); };
+    });
+  }
+
+  function renderChips() {
+    const mk = (containerId, values, field) => {
+      const el = document.getElementById(containerId);
+      el.innerHTML = '';
+      values.forEach(v => {
+        const btn = document.createElement('button');
+        btn.className = 'chip' + (state.f[field] === v ? ' on' : '');
+        btn.textContent = v;
+        btn.onclick = () => { state.f[field] = state.f[field] === v ? null : v; renderAll(); };
+        el.appendChild(btn);
+      });
+    };
+    mk('chipsArea', AREAS, 'area');
+    mk('chipsSeason', SEASONS.map(c => c.label), 'season');
+    mk('chipsFlight', FLIGHTS.map(c => c.label), 'flight');
+    mk('chipsBudget', BUDGETS, 'budget');
+    mk('chipsTag', TAGS, 'tag');
+  }
+
+  function filteredRows() {
+    const f = state.f, q = state.q.trim().toLowerCase();
+    const sm = f.season ? (SEASONS.filter(c => c.label === f.season)[0] || {}).month : null;
+    const fl = f.flight ? FLIGHTS.filter(c => c.label === f.flight)[0] : null;
+    let rows = ALL.filter(d => (!f.area || d.area === f.area)
+      && (!sm || inSeason(d, sm))
+      && (!fl || fl.test(d.hours))
+      && (!f.budget || d.budget === f.budget)
+      && (!f.tag || d.tags.indexOf(f.tag) >= 0)
+      && (!q || matches(d, q)));
+    if (state.sel) {
+      const hit = rows.filter(d => d.id === state.sel);
+      if (hit.length) rows = hit.concat(rows.filter(d => d.id !== state.sel));
+    }
+    return rows;
+  }
+
+  function renderSearch() {
+    const q = state.q.trim().toLowerCase();
+    document.getElementById('searchInput').value = state.q;
+    document.getElementById('searchShell').classList.toggle('focus', state.focus);
+    document.getElementById('searchClear').classList.toggle('show', !!state.q);
+    document.getElementById('detailToggle').classList.toggle('open', state.detailOpen);
+    document.getElementById('detailCaret').textContent = state.detailOpen ? '▲' : '▼';
+    const chipCount = Object.keys(state.f).filter(k => state.f[k]).length;
+    const cc = document.getElementById('chipCount');
+    cc.textContent = chipCount; cc.classList.toggle('show', chipCount > 0);
+
+    const groups = q ? suggestGroups(q) : [];
+    const showSuggest = state.focus && !!q;
+    const sEl = document.getElementById('suggest');
+    sEl.classList.toggle('show', showSuggest);
+    if (showSuggest) {
+      sEl.innerHTML = groups.length ? groups.map(g => `
+        <div class="suggest-group"><div class="suggest-label">${g.label}</div>
+        ${g.items.map((it,i) => `<button class="suggest-item" data-g="${g.label}" data-i="${i}"><span class="ic">${it.icon}</span><span class="lb">${it.label}</span><span class="meta">${it.meta}</span></button>`).join('')}
+        </div>`).join('') : `<div class="suggest-empty">一致する旅先が見つかりませんでした。</div>`;
+      groups.forEach(g => g.items.forEach((it, i) => {
+        const btn = sEl.querySelector(`[data-g="${g.label}"][data-i="${i}"]`);
+        if (btn) btn.onmousedown = it.onPick;
+      }));
+    }
+
+    const active = chipCount > 0 || !!state.q;
+    document.getElementById('resetBtn').classList.toggle('show', active);
+    const tokEl = document.getElementById('tokens');
+    tokEl.classList.toggle('show', active);
+    if (active) {
+      let html = '<span class="tlabel">条件</span>';
+      if (state.q) html += `<button class="token" id="tokQ">「${state.q.trim()}」<span style="font-size:10px;opacity:.8">✕</span></button>`;
+      Object.keys(state.f).filter(k => state.f[k]).forEach(k => {
+        html += `<button class="token" data-k="${k}">${state.f[k]}<span style="font-size:10px;opacity:.8">✕</span></button>`;
+      });
+      tokEl.innerHTML = html;
+      const tq = document.getElementById('tokQ'); if (tq) tq.onclick = () => { state.q = ''; renderAll(); };
+      tokEl.querySelectorAll('[data-k]').forEach(el => { el.onclick = () => { state.f[el.dataset.k] = null; renderAll(); }; });
+    }
+  }
+
+  function renderDetailPanel() {
+    document.getElementById('detailPanel').classList.toggle('show', state.detailOpen);
+    const active = Object.keys(state.f).filter(k => state.f[k]).length > 0 || !!state.q;
+    document.getElementById('panelHint').textContent = active ? '（地図も条件に合わせて動きます）' : '（地図にはおすすめを表示中。拡大するとすべて現れます）';
+  }
+
+  function renderGrid() {
+    const rows = filteredRows();
+    document.getElementById('countLabel').textContent = rows.length + 'カ国';
+    document.getElementById('emptyState').classList.toggle('show', rows.length === 0);
+    const grid = document.getElementById('grid');
+    grid.innerHTML = '';
+    rows.forEach(d => {
+      const card = document.createElement(d.available ? 'a' : 'div');
+      if (d.available) card.href = d.href;
+      card.className = 'card' + (state.sel === d.id ? ' selected' : '') + (!d.available ? ' unavailable' : '');
+      card.dataset.id = d.id;
+      const mo = months(d).map(m => `<span style="background:${m.bg}"></span>`).join('');
+      card.innerHTML = `
+        <div class="card-img">
+          ${d.cardImg ? `<img src="${d.cardImg}" alt="${d.city}">` : `<div class="grad" style="background:linear-gradient(135deg,#1d9074,#15735b)"></div>`}
+          ${d.rec ? '<span class="badge-rec">おすすめ</span>' : ''}
+          <span class="badge-area">${d.area}</span>
+          ${!d.available ? '<span class="badge-soon">準備中</span>' : ''}
+        </div>
+        <div class="card-body">
+          <div class="card-top"><span class="city">${d.city}</span><span class="country">${d.country}</span></div>
+          <p class="card-blurb">${d.blurb}</p>
+          <div class="card-months">${mo}</div>
+          <div class="card-bottom"><span>✈ <span class="hrs">${d.hours >= 90 ? '直行便なし' : d.hours.toFixed(1)+'h'}</span></span><span>${d.season}</span><span class="yen">${d.budget}</span></div>
+        </div>`;
+      card.addEventListener('click', (e) => { if (!d.available) e.preventDefault(); state.sel = d.id; renderAll(); });
+      card.addEventListener('mouseenter', () => document.getElementById('map').setAttribute('active', d.id));
+      card.addEventListener('mouseleave', () => document.getElementById('map').removeAttribute('active'));
+      grid.appendChild(card);
+    });
+  }
+
+  function renderMap() {
+    const map = document.getElementById('map');
+    const active = Object.keys(state.f).filter(k => state.f[k]).length > 0 || !!state.q;
+    const rows = filteredRows();
+    map.setAttribute('visible', active ? rows.map(d => d.id).join(',') : '__all__');
+    map.setAttribute('focus-area', state.f.area || '');
+    if (state.sel) map.setAttribute('selected', state.sel); else map.removeAttribute('selected');
+  }
+
+  function renderStats() {
+    document.getElementById('statTotal').textContent = ALL.length;
+    document.getElementById('statAreas').textContent = AREAS.length;
+    document.getElementById('statRec').textContent = ALL.filter(d => d.rec).length;
+  }
+
+  function renderAll() {
+    renderMenu();
+    renderChips();
+    renderSearch();
+    renderDetailPanel();
+    renderGrid();
+    renderMap();
+  }
+
+  document.getElementById('hamburger').onclick = () => { state.menuOpen = !state.menuOpen; renderAll(); };
+  document.getElementById('searchInput').oninput = (e) => { state.q = e.target.value; state.focus = true; renderAll(); };
+  document.getElementById('searchInput').onfocus = () => { state.focus = true; renderAll(); };
+  document.getElementById('searchInput').onblur = () => setTimeout(() => { state.focus = false; renderAll(); }, 120);
+  document.getElementById('searchInput').onkeydown = (e) => { if (e.key === 'Escape') { state.q = ''; state.focus = false; renderAll(); } };
+  document.getElementById('searchClear').onclick = () => { state.q = ''; renderAll(); };
+  document.getElementById('detailToggle').onclick = () => { state.detailOpen = !state.detailOpen; renderAll(); };
+  document.getElementById('closeDetail').onclick = () => { state.detailOpen = false; renderAll(); };
+  document.getElementById('resetBtn').onclick = () => { state.f = Object.assign({}, EMPTY_F); state.sel = null; state.q = ''; renderAll(); };
+  document.getElementById('emptyReset').onclick = () => { state.f = Object.assign({}, EMPTY_F); state.sel = null; state.q = ''; renderAll(); };
+  document.getElementById('map').addEventListener('pointselect', (e) => { state.sel = e.detail; renderAll(); });
+
+  renderStats();
+  renderAll();
+}
+</script>
+</body>
+</html>
