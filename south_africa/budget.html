@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="南アフリカ共和国の予算・費用｜南アフリカ共和国旅行ガイド">
 <meta name="twitter:description" content="未舗装路？道端に野生動物？命の保証は？まだそんなイメージの人は今すぐチケットを取りましょう。ケープタウンのテーブルマウンテン、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、圧倒的なスケールの自然と…">
 <meta name="twitter:image" content="https://worldmappy.com/south_africa/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/style.css?v=1786837377">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786787054" defer></script>
-<script src="../assets/affiliates.js?v=1786787054" defer></script>
+<script src="../assets/affiliates-data.js?v=1786837377" defer></script>
+<script src="../assets/affiliates.js?v=1786837377" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -797,13 +797,13 @@ var PAGE_INDEX = 4;
 </script>
 
 <script>
-/* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
+/* ヘッダー: スクロール量に連動して隠れる/現れる（タブナビは常に画面最上部に固定、上下には動かない） */
 (function(){
   const header = document.getElementById('site-top-bar');
   const navEl = document.querySelector('nav');
   if (!header) return;
   header.style.transition = 'none';
-  if (navEl) navEl.style.transition = 'none';
+  if (navEl) { navEl.style.transition = 'none'; navEl.style.top = '0'; }
 
   let headerH = header.offsetHeight;
   let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
@@ -812,7 +812,6 @@ var PAGE_INDEX = 4;
 
   function apply() {
     header.style.transform = 'translateY(-' + hideOffset + 'px)';
-    if (navEl) navEl.style.top = (headerH - hideOffset) + 'px';
     ticking = false;
   }
 

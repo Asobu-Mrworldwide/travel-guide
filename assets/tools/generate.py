@@ -436,9 +436,13 @@ def generate(country_id):
     with open(tpl_path, encoding='utf-8') as f:
         tpl = f.read()
 
-    # affiliates.js/affiliates-data.js のキャッシュバスター（更新時刻ベース）
-    _aff_js_path = os.path.join(assets_dir, 'affiliates.js')
-    cache_bust = str(int(os.path.getmtime(_aff_js_path))) if os.path.exists(_aff_js_path) else '1'
+    # affiliates.js/affiliates-data.js/style.css のキャッシュバスター（更新時刻ベース、最も新しいものを採用）
+    _cache_bust_paths = [
+        os.path.join(assets_dir, 'affiliates.js'),
+        os.path.join(assets_dir, 'style.css'),
+    ]
+    _mtimes = [os.path.getmtime(p) for p in _cache_bust_paths if os.path.exists(p)]
+    cache_bust = str(int(max(_mtimes))) if _mtimes else '1'
 
     # ── グルメ・観光スポット画像の自動検出 ──────────────────────
     # 素材/グルメ/<料理名>.webp または 素材/観光スポット/<スポット名>.webp が

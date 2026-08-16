@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="スリランカ民主社会主義共和国の観光スポット｜スリランカ旅行ガイド">
 <meta name="twitter:description" content="インド洋に浮かぶ「インドの涙」。古代遺跡・紅茶畑・野生のゾウ・南国のビーチが、九州よりやや小さい島土に凝縮されています。直行便で約9〜10時間、時差はわずか3時間半。隣がインドなのにこうも違うかとびっくりするほど、客引きも遠慮気味で逆に申…">
 <meta name="twitter:image" content="https://worldmappy.com/srilanka/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/style.css?v=1786837377">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786787054" defer></script>
-<script src="../assets/affiliates.js?v=1786787054" defer></script>
+<script src="../assets/affiliates-data.js?v=1786837377" defer></script>
+<script src="../assets/affiliates.js?v=1786837377" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -1001,13 +1001,13 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
+/* ヘッダー: スクロール量に連動して隠れる/現れる（タブナビは常に画面最上部に固定、上下には動かない） */
 (function(){
   const header = document.getElementById('site-top-bar');
   const navEl = document.querySelector('nav');
   if (!header) return;
   header.style.transition = 'none';
-  if (navEl) navEl.style.transition = 'none';
+  if (navEl) { navEl.style.transition = 'none'; navEl.style.top = '0'; }
 
   let headerH = header.offsetHeight;
   let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
@@ -1016,7 +1016,6 @@ var PAGE_INDEX = 1;
 
   function apply() {
     header.style.transform = 'translateY(-' + hideOffset + 'px)';
-    if (navEl) navEl.style.top = (headerH - hideOffset) + 'px';
     ticking = false;
   }
 

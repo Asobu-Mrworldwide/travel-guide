@@ -97,6 +97,7 @@
   font-size:0.85em;font-weight:700;color:var(--green);
   padding:13px 0;letter-spacing:0.02em;
   animation:tutHintPulse 1.6s ease-in-out infinite;
+  cursor:pointer;
 }
 .tut-swipe-hint-arrow{font-size:1.1em;line-height:1}
 @keyframes tutHintPulse{
@@ -499,14 +500,22 @@ function showTutorial() {
         </div>
       </div>
       <div style="padding:10px 14px;border-top:1px solid var(--border)">
-        <div class="tut-swipe-hint"><span class="tut-swipe-hint-arrow">→</span> ${step.hintLabel || '右にスワイプして次へ'}</div>
+        <div class="tut-swipe-hint" onclick="handleTutorialHintClick(this)"><span class="tut-swipe-hint-arrow">→</span> ${step.hintLabel || '右にスワイプして次へ'}</div>
       </div>`;
     stack.appendChild(card);
   });
   attachSwipeHandlers();
 }
 
+function handleTutorialHintClick(el) {
+  const card = el.closest('.swipe-card');
+  if (!card || card !== getActiveCard()) return;
+  advanceTutorialCard(card, 'right');
+}
+
 function advanceTutorialCard(card, dir) {
+  if (card.dataset.committed) return;
+  card.dataset.committed = '1';
   const flyX = (dir === 'left' ? -1 : 1) * (window.innerWidth + 100);
   card.style.transition = 'transform 0.45s cubic-bezier(0.55,0,1,0.7),opacity 0.35s';
   card.style.transform  = `translateX(${flyX}px) rotate(${dir==='left'?-25:25}deg)`;
