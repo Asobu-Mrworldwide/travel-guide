@@ -741,9 +741,9 @@ var PAGE_INDEX = 5;
   const navEl = document.querySelector('nav');
   if (!header) return;
   header.style.transition = 'none';
-  if (navEl) { navEl.style.transition = 'none'; navEl.style.top = '0'; }
-
   let headerH = header.offsetHeight;
+  if (navEl) { navEl.style.transition = 'none'; navEl.style.top = headerH + 'px'; }
+
   let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
   let lastY = window.scrollY;
   let ticking = false;
@@ -756,6 +756,7 @@ var PAGE_INDEX = 5;
   window.addEventListener('resize', function(){
     headerH = header.offsetHeight;
     hideOffset = Math.min(hideOffset, headerH);
+    if (navEl) navEl.style.top = headerH + 'px';
     apply();
   });
 
