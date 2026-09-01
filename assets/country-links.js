@@ -83,9 +83,9 @@
         <div class="sf-col">
           <span class="sf-label">GUIDE</span>
           <a href="${base}common/checklist.html">持ち物チェックリスト</a>
-          <!-- 診断ページ未公開のため無効化: <a href="${base}diagnosis/index.html">旅行タイプ診断</a> -->
-          <!-- 診断ページ未公開のため無効化: <a href="${base}diagnosis/types.html">旅行タイプ一覧</a> -->
-          <a href="${base}common/contact.html">お問い合わせ</a>
+          <a href="#">旅行タイプ診断</a>
+          <a href="#">旅行タイプ一覧</a>
+          <a href="#">よくある質問</a>
         </div>
         <div class="sf-col">
           <span class="sf-label">${thirdColLabel}</span>
@@ -105,6 +105,8 @@
       <div class="sf-bottom">
         <div class="sf-legal">
           <a href="${base}common/privacy.html">プライバシーポリシー</a>
+          <a href="#">免責事項</a>
+          <a href="#">運営者情報</a>
           <a href="${base}common/contact.html">お問い合わせ</a>
         </div>
         <span class="sf-copyright">© 2026 World Mappy　<span class="gold">楽しい旅を！</span></span>

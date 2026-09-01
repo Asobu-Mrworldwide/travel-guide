@@ -84,7 +84,8 @@
         this.restyle();
         this.makeMarkers(gl);
         this.paint();
-        if (this.getAttribute('focus-area')) this.focus();
+        if (this.getAttribute('selected')) this.zoomToSelected();
+        else if (this.getAttribute('focus-area')) this.focus();
         this.dispatchEvent(new CustomEvent('mapready', { bubbles: true, composed: true }));
       };
       map.on('load', ready);
@@ -163,6 +164,7 @@
         inner.style.visibility = shown ? 'visible' : 'hidden';
         el.style.pointerEvents = shown ? 'auto' : 'none';
         inner.style.transform = on || isSel ? 'scale(1.12)' : 'scale(1)';
+        el.classList.toggle('is-sel', isSel);
         el.style.zIndex = isSel ? 5 : on ? 4 : 1;
         dot.style.background = isSel ? YELLOW : GREEN;
         dot.style.width = dot.style.height = isSel ? '16px' : on ? '14px' : '12px';
@@ -178,15 +180,25 @@
       });
     }
 
-    // 選んだ国を中心に、近隣国も見える程度までズームイン
+    // 選んだ国をヒーロー右下（テキストと重ならない位置）に寄せて固定
     zoomToSelected() {
+      if (!this._map) return;
       const id = this.getAttribute('selected');
-      if (!id || !this._map) return;
+      if (!id) { this.focus(); return; }
       const p = this.points.filter((x) => x.id === id)[0];
       if (!p) return;
-      const z = Math.max(this._map.getZoom(), 3.6);
-      const off = (this.getAttribute('select-offset') || '0,0').split(',').map(Number);
-      this._map.easeTo({ center: [p.lon, p.lat], zoom: z, offset: [off[0] || 0, off[1] || 0], duration: 1000, easing: (t) => 1 - Math.pow(1 - t, 3) });
+      const z = Math.max(this._map.getZoom(), 3.8);
+      // select-offset="x,y"（px）指定があればそれを優先。無ければコンテナ比率で右下に配置
+      const raw = this.getAttribute('select-offset');
+      let off;
+      if (raw) {
+        const a = raw.split(',').map(Number);
+        off = [a[0] || 0, a[1] || 0];
+      } else {
+        const c = this._map.getContainer();
+        off = [c.clientWidth * 0.19, c.clientHeight * 0.20];
+      }
+      this._map.easeTo({ center: [p.lon, p.lat], zoom: z, offset: off, duration: 1000, easing: (t) => 1 - Math.pow(1 - t, 3) });
     }
 
     focus() {

@@ -39,7 +39,10 @@
   @keyframes wm-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   @keyframes wm-pop { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
   .maplibregl-ctrl-attrib { font-size: 10px; }
-  .maplibregl-ctrl-group, .maplibregl-ctrl-top-right { display: none !important; }
+  .wm-hero-map .maplibregl-ctrl-top-right { display: none !important; }
+  .wm-hero.map-on .wm-hero-map .maplibregl-ctrl-top-right { display: block !important; }
+  .wm-hero-map .maplibregl-ctrl-group { border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(20,60,40,0.16); }
+  .wm-hero-map .maplibregl-ctrl-top-right { margin: 12px; }
 
   .wm-page { min-width: 1280px; background: #fff; color: #23211C; }
 
@@ -95,6 +98,7 @@
   .wm-search-clear { flex: none; width: 26px; height: 26px; margin-right: 6px; border: none; border-radius: 999px; background: #f0f0f0; font-size: 12px; color: #666; cursor: pointer; }
   .wm-detail-btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 24px; border: none; border-radius: 999px; background: #14503C; font-size: 14px; font-weight: 700; color: #fff; cursor: pointer; white-space: nowrap; }
   .wm-detail-btn .cnt { display: grid; place-content: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: #F5B921; color: #23211C; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; }
+  .wm-detail-btn .detail-ic { display: none; }
 
   .wm-suggest { position: absolute; left: 0; right: 0; top: 70px; z-index: 30; background: #fff; border: 1px solid #E2E8DD; border-radius: 12px; box-shadow: 0 16px 36px rgba(20,60,40,0.16); overflow: hidden; animation: wm-pop .18s ease both; }
   .wm-suggest-group { border-top: 1px solid #f4f4f4; }
@@ -115,6 +119,9 @@
   .wm-chip { display: inline-flex; align-items: center; height: 32px; padding: 0 15px; border: 1px solid #DDE4D9; border-radius: 999px; background: #FAFCF8; font-family: inherit; font-size: 12px; font-weight: 500; color: #3C4A42; cursor: pointer; transition: all .2s ease; }
   .wm-chip:hover { border-color: #9FBFA8; }
   .wm-chip.on { border-color: #14503C; background: #14503C; color: #fff; }
+  .wm-chip-more { border-style: dashed; border-color: #C4CFBF; background: #fff; color: #6B7A6F; font-weight: 600; }
+  .wm-chip-more:hover { border-color: #9FBFA8; color: #14503C; }
+  .wm-chip-more.open { background: #EEF3EA; border-style: solid; }
   .wm-detail-foot { display: flex; align-items: center; gap: 12px; border-top: 1px solid #EEF2EB; padding-top: 12px; }
   .wm-detail-foot .hint { font-size: 12px; color: #8A968D; flex: 1; }
   .wm-detail-foot button { height: 34px; padding: 0 16px; border: none; border-radius: 999px; background: #14503C; font-size: 12.5px; font-weight: 700; color: #fff; cursor: pointer; }
@@ -237,7 +244,9 @@
     .wm-hero-map { pointer-events: none; }
     .wm-hero-map world-map { opacity: .62; }
     .wm-hero:not(.map-on) .wm-hero-map .maplibregl-marker { display: none !important; }
-    .wm-hero-map .maplibregl-ctrl-group, .wm-hero-map .maplibregl-ctrl-top-right { display: none !important; }
+    .wm-hero:not(.map-on).has-sel .wm-hero-map .maplibregl-marker.is-sel { display: block !important; }
+    .wm-hero.has-sel .wm-hero-map world-map { opacity: .82; }
+    .wm-hero:not(.map-on) .wm-hero-map .maplibregl-ctrl-top-right { display: none !important; }
     .wm-hero-inner { grid-template-columns: 1fr; padding: 22px 18px 20px; }
     .wm-hero-col { gap: 18px; }
     .wm-hero h1 { font-size: 34px; line-height: 1.3; text-shadow: 0 1px 3px rgba(255,255,255,0.95), 0 0 10px rgba(255,255,255,0.85); }
@@ -254,9 +263,10 @@
     .wm-search-frame.focus { border-color: #14503C; }
     .wm-search-frame svg.mag { margin-left: 10px; }
     .wm-search-frame input { margin-left: 8px; font-size: 15px; }
-    .wm-detail-btn { flex: none; width: 48px; height: 48px; margin-left: 8px; padding: 0; border-radius: 12px; background: #fff; border: 1px solid #DCE3D7; color: #14503C; font-size: 0; gap: 0; position: relative; }
+    .wm-detail-btn { flex: none; width: 48px; height: 48px; margin-left: 8px; padding: 0; border-radius: 12px; background: #fff; border: 1px solid #DCE3D7; color: #14503C; gap: 0; justify-content: center; position: relative; }
     .wm-detail-btn.on { background: #E4EFE4; border-color: #14503C; }
-    .wm-detail-btn::before { content: "≡"; font-size: 20px; line-height: 1; }
+    .wm-detail-btn .detail-ic { display: block; width: 22px; height: 22px; }
+    .wm-detail-btn .detail-tx { display: none; }
     .wm-detail-btn #detailCaret { display: none; }
     .wm-detail-btn .cnt { position: absolute; top: -5px; right: -5px; }
     .wm-suggest { position: static; top: auto; margin-top: 10px; border-radius: 10px; box-shadow: 0 12px 28px rgba(26,26,26,0.12); }
@@ -339,6 +349,11 @@
   .sf-legal a{color:rgba(255,255,255,0.7);text-decoration:none}
   .sf-legal a:hover{color:#fff}
   .sf-copyright .gold{letter-spacing:0.16em;color:#F5B921}
+  @media (max-width: 760px) {
+    .sf-grid { grid-template-columns: 1fr; padding: 28px 18px 24px; }
+    .sf-bottom { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 18px 20px; }
+    .sf-legal { flex-wrap: wrap; gap: 12px; }
+  }
 </style>
 </head>
 <body>
@@ -358,9 +373,9 @@
       <div class="wm-menu-col">
         <span class="wm-menu-label">GUIDE</span>
         <a href="common/checklist.html">持ち物チェックリスト</a>
-        <!-- 診断ページ未公開のため無効化: <a href="diagnosis/index.html">旅行タイプ診断</a> -->
-        <!-- 診断ページ未公開のため無効化: <a href="diagnosis/types.html">旅行タイプ一覧</a> -->
-        <a href="common/contact.html">よくある質問</a>
+        <a href="#">旅行タイプ診断</a>
+        <a href="#">旅行タイプ一覧</a>
+        <a href="#">よくある質問</a>
       </div>
       <div class="wm-menu-col" id="menuAreaCol">
         <span class="wm-menu-label">AREA</span>
@@ -379,7 +394,7 @@
   <!-- ヒーロー -->
   <section class="wm-hero">
     <div class="wm-hero-map">
-      <world-map id="wmMap" selected="" visible="__all__" focus-area=""></world-map>
+      <world-map id="wmMap" selected="" visible="__all__" focus-area="" center="100,13" zoom="1.15"></world-map>
       <img class="wm-compass" src="assets/top/compass.png" alt="">
     </div>
     <div class="wm-hero-inner">
@@ -420,7 +435,7 @@
         <svg class="mag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.6"></circle><line x1="15.4" y1="15.4" x2="21" y2="21"></line></svg>
         <input id="searchInput" placeholder="国・都市・キーワードで探す" autocomplete="off">
         <button class="wm-search-clear" id="clearBtn" style="display:none;" aria-label="入力を消す">✕</button>
-        <button class="wm-detail-btn" id="detailBtn">詳細条件 <span class="cnt" id="chipCount" style="display:none;"></span><span id="detailCaret" style="font-size:11px;">▼</span></button>
+        <button class="wm-detail-btn" id="detailBtn" aria-label="詳細条件"><svg class="detail-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg><span class="detail-tx">詳細条件</span> <span class="cnt" id="chipCount" style="display:none;"></span><span id="detailCaret" style="font-size:11px;">▼</span></button>
       </div>
       <div class="wm-suggest" id="suggestBox" style="display:none;"></div>
       <div class="wm-tokens" id="tokensRow"></div>
@@ -531,8 +546,12 @@
   const all = window.WM_DESTINATIONS || [];
   const AREAS = Array.from(new Set(all.map((d) => d.area)));
   const TAGS = Array.from(new Set(all.reduce((a, d) => a.concat(d.tags), [])));
+  // コアタグ（固定8種）は常時表示、それ以外の個性タグはプルダウンで開閉する
+  const CORE_TAGS = ['ビーチ', '世界遺産', 'グルメ', '自然', '都市', 'リゾート', '歴史', 'アウトドア'];
+  const CORE_TAGS_PRESENT = CORE_TAGS.filter((t) => TAGS.indexOf(t) >= 0);
+  const EXTRA_TAGS = TAGS.filter((t) => CORE_TAGS.indexOf(t) < 0);
 
-  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: 'card', sort: 'おすすめ', favs: [], favOnly: false, limit: 15 };
+  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: 'card', sort: 'おすすめ', favs: [], favOnly: false, limit: 15, tagExpand: false };
 
   function loadFavs() { try { return JSON.parse(localStorage.getItem('wm-favs') || '[]'); } catch (e) { return []; } }
   function saveFavs(list) { try { localStorage.setItem('wm-favs', JSON.stringify(list)); } catch (e) {} }
@@ -660,6 +679,7 @@
     $('wmMenu').style.display = state.menuOpen ? 'grid' : 'none';
     $('sheetBackdrop').classList.toggle('open', state.detailOpen);
     document.querySelector('.wm-hero').classList.toggle('map-on', state.mapOn);
+    document.querySelector('.wm-hero').classList.toggle('has-sel', !!state.sel && !state.mapOn);
     $('mapToggle').classList.toggle('on', state.mapOn);
     $('mapToggle').textContent = state.mapOn ? '一覧に戻る' : '地図を動かす';
     document.body.style.overflow = (isMobile && state.detailOpen) ? 'hidden' : '';
@@ -713,16 +733,27 @@
 
     // 詳細条件パネル
     $('detailPanel').classList.toggle('open', state.detailOpen);
+    const selTags = state.f.tag || [];
+    const visibleExtra = state.tagExpand ? EXTRA_TAGS : EXTRA_TAGS.filter((t) => selTags.indexOf(t) >= 0);
+    const tagValues = CORE_TAGS_PRESENT.concat(visibleExtra);
     const groupsDef = [
       { label: 'AREA / エリア', chips: chipsFor('area', AREAS) },
       { label: 'BEST SEASON / ベストシーズン', chips: chipsFor('season', SEASONS.map((c) => c.label)) },
       { label: 'FLIGHT TIME / 飛行時間', chips: chipsFor('flight', FLIGHTS.map((c) => c.label)) },
       { label: 'BUDGET / 予算', chips: chipsFor('budget', BUDGETS) },
-      { label: 'TAG / タグ', chips: chipsFor('tag', TAGS) },
+      { label: 'TAG / タグ', chips: chipsFor('tag', tagValues), tagToggle: EXTRA_TAGS.length > 0 },
     ];
     const dg = $('detailGroups');
-    dg.innerHTML = groupsDef.map((g, gi) => '<div class="wm-detail-row"><span class="gl">' + esc(g.label) + '</span><div class="chips">' + g.chips.map((c, ci) => '<button type="button" class="wm-chip' + (c.on ? ' on' : '') + '" data-dg="' + gi + '" data-dc="' + ci + '">' + esc(c.label) + '</button>').join('') + '</div></div>').join('');
+    dg.innerHTML = groupsDef.map((g, gi) => {
+      let chips = g.chips.map((c, ci) => '<button type="button" class="wm-chip' + (c.on ? ' on' : '') + '" data-dg="' + gi + '" data-dc="' + ci + '">' + esc(c.label) + '</button>').join('');
+      if (g.tagToggle) {
+        chips += '<button type="button" class="wm-chip wm-chip-more' + (state.tagExpand ? ' open' : '') + '" data-tagtoggle="1">' + (state.tagExpand ? '個性タグを閉じる ▲' : '個性タグ ＋' + EXTRA_TAGS.length + ' ▼') + '</button>';
+      }
+      return '<div class="wm-detail-row"><span class="gl">' + esc(g.label) + '</span><div class="chips">' + chips + '</div></div>';
+    }).join('');
     groupsDef.forEach((g, gi) => g.chips.forEach((c, ci) => { dg.querySelector('[data-dg="' + gi + '"][data-dc="' + ci + '"]').onclick = c.onClick; }));
+    const tagToggleBtn = dg.querySelector('[data-tagtoggle="1"]');
+    if (tagToggleBtn) tagToggleBtn.onclick = () => { state.tagExpand = !state.tagExpand; render(); };
     $('detailHint').textContent = active ? '地図も条件に合わせて動きます' : '';
     $('detailClearBtn').style.display = active ? '' : 'none';
     $('sheetCount').textContent = rows.length + '件が該当';
@@ -826,14 +857,35 @@
     if (row) map.setAttribute('active', row.getAttribute('data-dest-id'));
     else map.removeAttribute('active');
   }, true);
+  function slowScrollIntoView(el, dur) {
+    if (!el) return;
+    dur = dur || 1200;
+    const startY = window.pageYOffset;
+    const rect = el.getBoundingClientRect();
+    const maxY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const destY = Math.max(0, Math.min(startY + rect.top + rect.height / 2 - window.innerHeight / 2, maxY));
+    const dist = destY - startY;
+    if (Math.abs(dist) < 4) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { window.scrollTo(0, destY); return; }
+    const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    let t0 = null;
+    const step = (ts) => {
+      if (t0 === null) t0 = ts;
+      const p = Math.min(1, (ts - t0) / dur);
+      window.scrollTo(0, startY + dist * ease(p));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
   document.addEventListener('pointselect', (e) => {
     if (!e.detail) return;
     state.sel = e.detail;
     state.mapOn = false;
     render();
+    // 選択した国はヒーロー地図上でハイライトしたまま固定しつつ、その国のカードまでモーション付きでゆっくりスクロールダウン
     requestAnimationFrame(() => {
       const card = document.querySelector('#grid [data-dest-id="' + e.detail + '"]');
-      (card || $('wm-index')).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      slowScrollIntoView(card || $('wm-index'), 1300);
       if (card) { card.classList.remove('wm-flash'); void card.offsetWidth; card.classList.add('wm-flash'); }
     });
   });

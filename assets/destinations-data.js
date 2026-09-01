@@ -24,7 +24,7 @@
     { id: 'turkey', visa: true, rec: false, name: 'トルコ', nameEn: 'Turkey', area: 'ヨーロッパ', hours: 13, budget: '中級', tags: ['世界遺産', 'グルメ', '歴史', '気球'], months: [4,5,6,9,10], lat: 39.93, lon: 32.86, blurb: 'アヤソフィアの尖塔が夕焼けに染まる中、香辛料バザールの灯りとチャイの湯気が石畳にゆらりと揺らめく', url: 'turkey/index.html', img: 'turkey/素材/ヒーロー.webp' },
     { id: 'mexico', visa: true, rec: false, name: 'メキシコ', nameEn: 'Mexico', area: '北アメリカ', hours: 14, budget: '高級', tags: ['世界遺産', 'グルメ', '自然', '歴史', 'マヤ遺跡'], months: [11,12,1,2,3,4], lat: 19.43, lon: -99.13, blurb: 'ピラミッドの影が長く伸びる高原の夕暮れに、屋台のタコスと陽気なマリアッチの音色が街角を彩る', url: 'mexico/index.html', img: 'mexico/素材/ヒーロー.webp' },
     { id: 'brazil', visa: true, rec: false, name: 'ブラジル', nameEn: 'Brazil', area: '南米', hours: 28, budget: '高級', tags: ['ビーチ', '自然', '世界遺産', 'サンバ', 'グルメ'], months: [6,7,8,9], lat: -22.9, lon: -43.2, blurb: 'コパカバーナの白い波打ち際にサンバの太鼓が鳴り響き、丘の上からキリスト像がリオの夜景をそっと見守る', url: 'brazil/index.html', img: 'brazil/素材/ヒーロー.webp' },
-    { id: 'indonesia', visa: true, rec: false, name: 'インドネシア', nameEn: 'Indonesia', area: '東南アジア', hours: 8, budget: '格安', tags: ['世界遺産', '自然', 'ビーチ', 'リゾート', '棚田'], months: [4,5,6,7,8,9,10], lat: -8.65, lon: 115.22, blurb: '早朝の寺院にくゆる線香の煙と棚田を渡る朝風に乗って、遠くのガムランの音色がそっとたゆたう', url: 'indonesia/index.html' },
+    // インドネシア: イラスト未生成のため準備中（indonesia/ 配下のページ・JSONはコミット済み、画像が揃い次第ここへ戻す）
   ];
   window.WM_AREA_BOUNDS = {
     '東南アジア': [[92, -11], [141, 23]],

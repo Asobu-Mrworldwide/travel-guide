@@ -97,7 +97,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-text{font-size:0.85em;color:#3A3833;line-height:2}
 .sp-point-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border-radius:6px}
 .sp-point-img-square{aspect-ratio:1/1}
-@media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:2}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:1}}
+.sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
+@media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
 </style>
 </head>
 <body>
@@ -228,10 +229,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="sp-point">
       <div class="sp-point-body">
-        <div class="sp-point-title">阿里山の雲海は「始発列車」の争奪戦</div>
-        <div class="sp-point-text">日の出に合わせた阿里山の雲海観賞は、早朝4時台発の登山列車に乗る必要がある。チケットは前日に完売することも多く、宿泊者限定の事前予約枠を活用するのが賢い選択肢である。</div>
+        <div class="sp-point-title">台北101には「登らず撮る」選択肢も</div>
+        <div class="sp-point-text"><a onclick="showSpot('TPE 01')" class="keyword-link">台北101</a>の展望台も良いが、定番は<a onclick="showSpot('TPE 06')" class="keyword-link">象山</a>から101入りの夜景を撮ること。MRT象山駅から往復1時間ほどの手軽なハイキングで、料金は無料。夕方に登って、日没から夜景に変わるマジックアワーを狙うのがおすすめ。</div>
       </div>
-      
+      <img src="素材/観光スポット/象山ハイキングコース.webp" alt="台北101には「登らず撮る」選択肢も" class="sp-point-img" onclick="showSpot('TPE 06')" style="cursor:pointer">
     </div>
     
     <div style="padding:10px 16px;text-align:right;display:flex;flex-direction:row;justify-content:flex-end;flex-wrap:wrap;gap:10px"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button><button class="see-more" style="margin:0" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button></div>

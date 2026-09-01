@@ -238,15 +238,10 @@ body{background:#FAF7F2}
 .spec-micro .mv{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;white-space:nowrap;color:#14503C}
 .spec-radar{display:grid;grid-template-columns:200px minmax(0,1fr);gap:18px;align-items:center;border-top:1px solid #EFEBE3;padding-top:16px;margin-top:6px}
 .spec-radar svg{width:200px;height:180px}
-.spec-radar-lg{grid-template-columns:1fr;justify-items:center;border-top:0;padding-top:0;margin-top:0;gap:14px}
-.spec-radar-lg svg{width:min(300px,100%);height:248px}
-.spec-radar-lg > div{width:100%;min-width:0}
-.spec-lv{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-bottom:14px;padding-bottom:16px;border-bottom:1px solid #EFEBE3;font-size:13px;color:#55504A}
-.spec-lv > span{display:flex;align-items:center;gap:8px}
-.spec-lv b{font-weight:700;color:#3C3A34}
-.spec-lv .rt{white-space:nowrap}
-.spec-lv .on{color:#F2B01E;letter-spacing:1.5px}
-.spec-lv .off{color:#DED8CC;letter-spacing:1.5px}
+.spec-radar-lg{grid-template-columns:1fr;justify-items:center;border-top:0;padding-top:0;margin-top:0;gap:0}
+.spec-radar-lg svg{width:min(390px,100%);aspect-ratio:244/136;height:auto}
+.spec-radar-lg svg tspan{letter-spacing:0.4px}
+.spec-radar-lg > p{width:100%;margin-top:14px;padding-top:14px;border-top:1px solid #EFEBE3;text-align:left}
 .spec-radar p{margin:0;font-size:13px;line-height:2;color:#55504A}
 
 /* 04 おすすめの国 */
@@ -366,22 +361,19 @@ body{background:#FAF7F2}
   <div class="spec-panel">
     <div class="spec-h"><span class="no">02</span><span class="en">PRODUCT SPEC</span><span class="sep"></span><span class="ttl">製品スペック</span></div>
     <div class="spec-radar spec-radar-lg">
-      <svg viewBox="-22 -4 162 130" aria-hidden="true">
+      <svg viewBox="-62 -10 244 136" aria-hidden="true">
         <circle cx="58" cy="58" r="47" fill="#F7F5EF" stroke="#EFEBE3" stroke-width="1"></circle>
         <polygon points="58,12 104,58 58,104 12,58" fill="none" stroke="#E0DACD" stroke-width="1"></polygon>
         <polygon points="58,30 86,58 58,86 30,58" fill="none" stroke="#EFEBE3" stroke-width="1"></polygon>
         <line x1="58" y1="12" x2="58" y2="104" stroke="#EFEBE3" stroke-width="1"></line>
         <line x1="12" y1="58" x2="104" y2="58" stroke="#EFEBE3" stroke-width="1"></line>
         <polygon id="spec-radar-poly" points="58,58 58,58 58,58 58,58" fill="rgba(20,80,60,0.3)" stroke="#3E7A54" stroke-width="1.8"></polygon>
-        <text x="58" y="7" text-anchor="middle" font-size="8.5" fill="#55504A">計画力</text>
-        <text x="58" y="116" text-anchor="middle" font-size="8.5" fill="#55504A">協調性</text>
-        <text x="110" y="61" text-anchor="start" font-size="8.5" fill="#55504A">好奇心</text>
-        <text x="8" y="61" text-anchor="end" font-size="8.5" fill="#55504A">快適性</text>
+        <text x="58" y="4" text-anchor="middle" font-size="7" fill="#3C3A34" font-weight="700">計画力 <tspan id="rl-p"></tspan></text>
+        <text x="58" y="121" text-anchor="middle" font-size="7" fill="#3C3A34" font-weight="700">協調性 <tspan id="rl-s"></tspan></text>
+        <text x="114" y="60" text-anchor="start" font-size="7" fill="#3C3A34" font-weight="700">好奇心 <tspan id="rl-c"></tspan></text>
+        <text x="2" y="60" text-anchor="end" font-size="7" fill="#3C3A34" font-weight="700">快適性 <tspan id="rl-h"></tspan></text>
       </svg>
-      <div>
-        <div class="spec-lv" id="spec-lv"></div>
-        <p id="spec-radar-note"></p>
-      </div>
+      <p id="spec-radar-note"></p>
     </div>
     <div class="spec-micro" id="spec-micro"></div>
   </div>
@@ -1105,11 +1097,10 @@ function renderSpecSheet(rt){
     ['STATUS', '● 正常稼働中', '#14503C'],
   ].map(([k,v,c]) => '<div class="row"><span class="k">'+k+'</span><span class="v" style="color:'+c+'">'+v+'</span></div>').join(''));
 
-  // --- 03 PRODUCT SPEC（4軸レーダー + マイクロ） ---
+  // --- 02 PRODUCT SPEC（4軸レーダー + マイクロ） ---
   const v = [0,1,2,3].map(nOf);   // 各軸の Lv.1〜5（回答比率ベース、僅差は3固定）
-  const dot = n => '<span class="rt"><span class="on">'+'★★★★★'.slice(0,n)+'</span><span class="off">'+'★★★★★'.slice(0,5-n)+'</span></span>';
-  set('spec-lv', ['計画力','好奇心','協調性','快適性']
-    .map((lb,i) => '<span><b>'+lb+'</b>'+dot(v[i])+'</span>').join(''));
+  const dot = n => '<tspan fill="#EAB000">'+'★★★★★'.slice(0,n)+'</tspan><tspan fill="#D8D2C4">'+'★★★★★'.slice(0,5-n)+'</tspan>';
+  ['p','c','s','h'].forEach((k,i) => { const el = document.getElementById('rl-'+k); if (el) el.innerHTML = dot(v[i]); });
   const poly = document.getElementById('spec-radar-poly');
   if (poly) {
     const r = 46, cx = 58, cy = 58;

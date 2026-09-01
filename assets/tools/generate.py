@@ -164,8 +164,13 @@ def _render(text, ctx):
 
             elif tag.startswith('if '):
                 condition = tag[3:].strip()
+                negate = condition.startswith('not ')
+                if negate:
+                    condition = condition[4:].strip()
                 then_block, else_block, end_pos = _find_if(text, j + 2)
                 val = _get(condition, ctx)
+                if negate:
+                    val = not val
                 if val:
                     result.append(_render(then_block, ctx))
                 elif else_block is not None:

@@ -10,11 +10,14 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 NON_COUNTRY_DIRS = {'assets', 'common', 'compare', 'diagnosis', '.git', '__pycache__'}
 
+# 準備中の国（ページ・JSONはあるが未公開＝サイトマップに載せない）。公開時にここから外す。
+DRAFT_COUNTRIES = {'indonesia'}
+
 def _discover_countries():
     """<dir>/<dir>.json が存在するトップレベルディレクトリを国ページとして自動検出する"""
     countries = []
     for name in sorted(os.listdir(ROOT)):
-        if name in NON_COUNTRY_DIRS or name.startswith('.'):
+        if name in NON_COUNTRY_DIRS or name in DRAFT_COUNTRIES or name.startswith('.'):
             continue
         country_dir = os.path.join(ROOT, name)
         if os.path.isdir(country_dir) and os.path.isfile(os.path.join(country_dir, f'{name}.json')):
