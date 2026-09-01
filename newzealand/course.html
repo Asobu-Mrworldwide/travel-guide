@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ニュージーランドのモデルコース｜ニュージーランド旅行ガイド">
 <meta name="twitter:description" content="手つかずの大自然と、映画『ロード・オブ・ザ・リング』のロケ地として知られる雄大な風景が広がる南半球の島国。北島では地熱地帯とマオリ文化を、南島ではフィヨルドと雪山、アドベンチャースポーツを楽しめる。人口より羊が多いと言われるほど自然豊かな…">
 <meta name="twitter:image" content="https://worldmappy.com/newzealand/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1786858326">
+<link rel="stylesheet" href="../assets/style.css?v=1787925886">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786858326" defer></script>
-<script src="../assets/affiliates.js?v=1786858326" defer></script>
+<script src="../assets/affiliates-data.js?v=1787925886" defer></script>
+<script src="../assets/affiliates.js?v=1787925886" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -80,34 +80,71 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 #spots-grid .item-card.has-spot-img{padding-bottom:0 !important}
 #spots-grid .item-card.has-spot-img .desc{flex:1}
 
-/* クイックスペックカード（基本情報タブ） */
-#basic .qs-card{border:1px solid #e0e0e0;box-shadow:none}
-
 /* セクション間隔（全タブ共通） */
 #basic h2~h2,#spots h2~h2,#food h2~h2,#course h2~h2,#season h2~h2,
 #budget h2~h2,#practical h2~h2,#manner h2~h2,#phrases h2~h2,#transport h2~h2{margin-top:36px}
 #basic .qs-row{margin-top:28px;margin-bottom:0}
-.qs-section-title{font-size:18px;font-weight:700;color:var(--text);margin:6px 0 6px;letter-spacing:0.04em}
+.qs-section-title{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;color:var(--sub);margin:6px 0 14px;letter-spacing:0.14em;text-transform:uppercase}
+.section-subhead{font-family:'Shippori Mincho B1',serif;font-weight:500;font-size:1.2em;color:var(--text);margin:6px 0 12px;line-height:1.4}
 .cl-region{font-weight:700}
-.sp-points-wrap{background:#fff;border:1px solid #e0e0e0}
-.sp-point{display:flex;align-items:center;gap:16px;padding:16px;border-bottom:1px solid #e0e0e0}
-.sp-point:last-child{border-bottom:none}
-.sp-point-body{flex:1;min-width:0}
-.sp-point-title{font-size:0.95em;font-weight:700;margin-bottom:8px;line-height:1.5}
-.sp-point-title a{color:inherit;text-decoration:underline;cursor:pointer}
-.sp-point-title a:hover{opacity:0.75}
-.sp-point-text{font-size:0.82em;color:#444;line-height:1.8}
-.sp-point-img{width:120px;height:90px;object-fit:cover;flex-shrink:0;display:block}
-@media(max-width:700px){.sp-point{flex-direction:column}.sp-point-img{width:100%;height:auto;aspect-ratio:16/9}}
+.sp-points-wrap{background:transparent;border:none;display:grid;gap:26px}
+.sp-point{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:center;padding:0;border-bottom:none}
+.sp-point:nth-child(even){grid-template-columns:300px minmax(0,1fr)}
+.sp-point:nth-child(even) .sp-point-body{order:2}
+.sp-point:nth-child(even) .sp-point-img{order:1}
+.sp-point-body{flex:1;min-width:0;display:grid;gap:10px}
+.sp-point-title{font-family:'Shippori Mincho B1',serif;font-size:1.15em;font-weight:700;line-height:1.5;margin-bottom:0}
+.sp-point-text{font-size:0.85em;color:#3A3833;line-height:2}
+.sp-point-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border-radius:6px}
+.sp-point-img-square{aspect-ratio:1/1}
+@media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:2}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:1}}
 </style>
 </head>
 <body>
 
 <div id="site-top-bar">
 <header class="site-header">
-  <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a></div>
+  <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden"><svg width="200" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 600"><defs><clipPath id="b"><path d="M0 0h600v300H0z"/></clipPath><clipPath id="c"><path d="M0 0l300 150H0zm300 0h300L300 150zm0 150h300v150zm0 0v150H0z"/></clipPath><g id="d"><g id="a"><path d="M0 0v.5L1 0z" transform="translate(0 -.325)"/><path d="M0 0v-.5L1 0z" transform="rotate(-36 .5 -.162)"/></g><use xlink:href="#a" transform="scale(-1 1)"/><use xlink:href="#a" transform="rotate(72 0 0)"/><use xlink:href="#a" transform="rotate(-72 0 0)"/><use xlink:href="#a" transform="scale(-1 1) rotate(72)"/></g></defs><path fill="#012169" d="M0 0h1200v600H0z"/><path stroke="#FFF" d="M0 0l600 300M0 300L600 0" stroke-width="60" clip-path="url(#b)"/><path stroke="#C8102E" d="M0 0l600 300M0 300L600 0" stroke-width="40" clip-path="url(#c)"/><path stroke="#FFF" d="M300 0v300M0 150h600" stroke-width="100" clip-path="url(#b)"/><path stroke="#C8102E" d="M300 0v300M0 150h600" stroke-width="60" clip-path="url(#b)"/><use xlink:href="#d" fill="#FFF" transform="matrix(45.4 0 0 45.4 900 120)"/><use xlink:href="#d" fill="#C8102E" transform="matrix(30 0 0 30 900 120)"/><g transform="rotate(82 900 240)"><use xlink:href="#d" fill="#FFF" transform="rotate(-82 519.022 -457.666) scale(40.4)"/><use xlink:href="#d" fill="#C8102E" transform="rotate(-82 519.022 -457.666) scale(25)"/></g><g transform="rotate(82 900 240)"><use xlink:href="#d" fill="#FFF" transform="rotate(-82 668.57 -327.666) scale(45.4)"/><use xlink:href="#d" fill="#C8102E" transform="rotate(-82 668.57 -327.666) scale(30)"/></g><use xlink:href="#d" fill="#FFF" transform="matrix(50.4 0 0 50.4 900 480)"/><use xlink:href="#d" fill="#C8102E" transform="matrix(35 0 0 35 900 480)"/></svg></div></span><span class="site-country-name">ニュージーランド</span></a>
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<div id="hb-drawer" class="hb-drawer">
+  <div class="hb-col">
+    <span class="hb-label">GUIDE</span>
+    <a href="../common/checklist.html">持ち物チェックリスト</a>
+    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
+    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
+    <a href="../common/contact.html">お問い合わせ</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">このページ</span>
+    
+    <a href="index.html" class="">基本情報</a>
+    <a href="spots.html" class="">観光スポット</a>
+    <a href="food.html" class="">グルメ</a>
+    <a href="course.html" class="active">モデルコース</a>
+    <a href="budget.html" class="">予算・費用</a>
+    <a href="practical.html" class="">旅の準備</a>
+    <a href="phrases.html" class="">フレーズ</a>
+    
+    
+    <a href="../common/checklist.html?from=newzealand">持ち物リスト</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">近隣の国</span>
+    <div id="hb-nearby"></div>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">ABOUT</span>
+    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+    <a href="#">このサイトについて →</a>
+    <a href="../common/contact.html">お問い合わせ →</a>
+  </div>
+</div>
+
 </div>
 
 
@@ -145,6 +182,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 
 
+<div class="page-grid page-grid-course">
+<aside class="toc-sidebar" id="toc-sidebar">
+  <span class="toc-label">CONTENTS</span>
+  <div class="toc-list" id="toc-list"></div>
+</aside>
 <div class="container" style="">
 <div id="slides-wrap">
 
@@ -172,6 +214,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <!-- モデルコース -->
 <section id="course" class="active">
 
+  <div class="tab-eyebrow"><span class="tab-eyebrow-badge">COURSE</span><span class="tab-eyebrow-sub">モデルコース</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">New Zealand / 04</span></div>
   <h2>モデルコース</h2>
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">直行便で約11時間・時差3時間のニュージーランドは「北島の地熱・マオリ文化と南島の大自然、まったく違う2つの島を旅できる」のが最大の強み。初めてなら北島のオークランド・ロトルアに絞った<strong>オークランド＋ロトルアプラン</strong>、2回目以降やまとまった休みが取れるならクイーンズタウンまで南下する<strong>南北縦断プラン</strong>がおすすめ。もっと欲張りたい人向けに、ミルフォード・サウンドやトレッキングまで組み込んだルートも紹介しています。</p>
   <div class="course-type">
@@ -183,17 +226,26 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="s-card" style="padding-top:6px">
 
   
-  <div class="qs-section-title" style="margin:6px 0 8px">オークランド＋ロトルア　4泊6日</div>
+  <h3 class="section-subhead plan-title-row toc-sub" style="margin:6px 0 8px"><span>オークランド＋ロトルア　4泊6日</span><span class="plan-tip-tag"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+	<path d="M0 0h512v512H0z" fill="none" />
+	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
+	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
+	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
+</svg>ホビトン映画セットは繁忙期チケットが早めに埋まりやすい。出発の1〜2ヶ月前には公式サイトで事前予約しておこう。</span></h3>
   <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       
       
       <div class="tl-day">
         <div class="tl-badge green">Day 1</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>オークランド到着</strong><br>直行便で到着、機内での長旅の疲れをホテルで癒す。時差もあるため初日は無理せず、街を軽く散策する程度にとどめる。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>オークランド到着</strong><br>直行便で到着、機内での長旅の疲れをホテルで癒す。時差もあるため初日は無理せず、街を軽く散策する程度にとどめる。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -201,10 +253,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 2</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>スカイタワー → オークランド戦争記念博物館</strong><br><a onclick="showSpot('AKL 01')" class="spot-link">スカイタワー</a>から街を一望し、<a onclick="showSpot('AKL 02')" class="spot-link">オークランド戦争記念博物館</a>でマオリ文化に触れる、オークランドの魅力を凝縮した1日。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>スカイタワー → オークランド戦争記念博物館</strong><br><a onclick="showSpot('AKL 01')" class="spot-link">スカイタワー</a>から街を一望し、<a onclick="showSpot('AKL 02')" class="spot-link">オークランド戦争記念博物館</a>でマオリ文化に触れる、オークランドの魅力を凝縮した1日。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -218,10 +274,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge green">Day 4</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>テ・プイア → ワイオタプ・サーマル・ワンダーランド</strong><br><a onclick="showSpot('ROT 01')" class="spot-link">テ・プイア</a>の間欠泉に驚き、<a onclick="showSpot('ROT 02')" class="spot-link">ワイオタプ・サーマル・ワンダーランド</a>の極彩色の地熱プールを巡る、地球の息吹を感じる1日。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>テ・プイア → ワイオタプ・サーマル・ワンダーランド</strong><br><a onclick="showSpot('ROT 01')" class="spot-link">テ・プイア</a>の間欠泉に驚き、<a onclick="showSpot('ROT 02')" class="spot-link">ワイオタプ・サーマル・ワンダーランド</a>の極彩色の地熱プールを巡る、地球の息吹を感じる1日。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -229,10 +289,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge ">Day 5</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>タマキ・マオリ・ヴィレッジ → オークランドへ戻る</strong><br>夜は<a onclick="showSpot('ROT 03')" class="spot-link">タマキ・マオリ・ヴィレッジ</a>でハンギ料理とハカを堪能。翌朝オークランドへ戻り、最後の買い物を楽しむ。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>タマキ・マオリ・ヴィレッジ → オークランドへ戻る</strong><br>夜は<a onclick="showSpot('ROT 03')" class="spot-link">タマキ・マオリ・ヴィレッジ</a>でハンギ料理とハカを堪能。翌朝オークランドへ戻り、最後の買い物を楽しむ。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -240,34 +304,41 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge ">Day 6</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>帰国</strong><br>オークランド空港から直行便で日本へ。地熱地帯とマオリ文化を凝縮した、密度の濃い4泊6日のプランである。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>帰国</strong><br>オークランド空港から直行便で日本へ。地熱地帯とマオリ文化を凝縮した、密度の濃い4泊6日のプランである。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
       
     </div>
-    <div class="course-tip"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+  </div>
+  
+  <h3 class="section-subhead plan-title-row toc-sub" style="margin:6px 0 8px"><span>北島→南島縦断プラン　7泊9日</span><span class="plan-tip-tag"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
 	<path d="M0 0h512v512H0z" fill="none" />
 	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
 	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
-</svg><span>ホビトン映画セットは繁忙期チケットが早めに埋まりやすい。出発の1〜2ヶ月前には公式サイトで事前予約しておこう。</span></div>
-  </div>
-  
-  <div class="qs-section-title" style="margin:6px 0 8px">北島→南島縦断プラン　7泊9日</div>
+</svg>ミルフォード・サウンドは天候によりクルーズが中止になることもある。日程に余裕を持たせるか、悪天候時の代替プランも考えておくと安心。</span></h3>
   <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       
       
       <div class="tl-day">
         <div class="tl-badge green">Day 1</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>オークランド到着</strong><br>到着後はホテルで休息。翌日からの本格観光に備え、街を軽く散策する程度にとどめる。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>オークランド到着</strong><br>到着後はホテルで休息。翌日からの本格観光に備え、街を軽く散策する程度にとどめる。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -275,10 +346,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 2</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>スカイタワー → ワイヘキ島</strong><br><a onclick="showSpot('AKL 01')" class="spot-link">スカイタワー</a>から街を一望し、午後はフェリーで<a onclick="showSpot('AKL 03')" class="spot-link">ワイヘキ島</a>のワイナリーへ、ゆったりとした島時間を過ごす。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>スカイタワー → ワイヘキ島</strong><br><a onclick="showSpot('AKL 01')" class="spot-link">スカイタワー</a>から街を一望し、午後はフェリーで<a onclick="showSpot('AKL 03')" class="spot-link">ワイヘキ島</a>のワイナリーへ、ゆったりとした島時間を過ごす。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -292,10 +367,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge green">Day 4</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>ワイオタプ → タマキ・マオリ・ヴィレッジ</strong><br><a onclick="showSpot('ROT 02')" class="spot-link">ワイオタプ・サーマル・ワンダーランド</a>を巡り、夜は<a onclick="showSpot('ROT 03')" class="spot-link">タマキ・マオリ・ヴィレッジ</a>でハンギとハカを堪能する。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>ワイオタプ → タマキ・マオリ・ヴィレッジ</strong><br><a onclick="showSpot('ROT 02')" class="spot-link">ワイオタプ・サーマル・ワンダーランド</a>を巡り、夜は<a onclick="showSpot('ROT 03')" class="spot-link">タマキ・マオリ・ヴィレッジ</a>でハンギとハカを堪能する。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -315,10 +394,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 7</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>ミルフォード・サウンド日帰りクルーズ</strong><br><a onclick="showSpot('ZQN 03')" class="spot-link">ミルフォード・サウンド</a>への日帰りツアーに参加。「世界8番目の不思議」と称されるフィヨルドの絶景に圧倒される、旅のハイライトとなる1日。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>ミルフォード・サウンド日帰りクルーズ</strong><br><a onclick="showSpot('ZQN 03')" class="spot-link">ミルフォード・サウンド</a>への日帰りツアーに参加。「世界8番目の不思議」と称されるフィヨルドの絶景に圧倒される、旅のハイライトとなる1日。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -326,10 +409,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge green">Day 8</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>カワラウ橋バンジー → ファーグバーガー</strong><br>アドベンチャースポーツ発祥の地<a onclick="showSpot('ZQN 02')" class="spot-link">カワラウ橋バンジー</a>に挑戦し、<a onclick="showFood('No.12')" class="spot-link">ファーグバーガー</a>で旅の疲れを癒す。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>カワラウ橋バンジー → ファーグバーガー</strong><br>アドベンチャースポーツ発祥の地<a onclick="showSpot('ZQN 02')" class="spot-link">カワラウ橋バンジー</a>に挑戦し、<a onclick="showFood('No.12')" class="spot-link">ファーグバーガー</a>で旅の疲れを癒す。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -337,21 +424,19 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge ">Day 9</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>帰国</strong><br>クイーンズタウンからオークランド経由で日本へ。北島の地熱とマオリ文化、南島の絶景とスリル。対照的な2つの島の魅力を味わい尽くす、7泊9日の縦断プランである。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>帰国</strong><br>クイーンズタウンからオークランド経由で日本へ。北島の地熱とマオリ文化、南島の絶景とスリル。対照的な2つの島の魅力を味わい尽くす、7泊9日の縦断プランである。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
       
     </div>
-    <div class="course-tip"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
-	<path d="M0 0h512v512H0z" fill="none" />
-	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
-	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
-	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
-</svg><span>ミルフォード・サウンドは天候によりクルーズが中止になることもある。日程に余裕を持たせるか、悪天候時の代替プランも考えておくと安心。</span></div>
   </div>
   
   </div>
@@ -368,10 +453,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge green">Day 1</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>クイーンズタウン到着 → グレノーキーへ</strong><br>クイーンズタウン着後、車で<a onclick="showSpot('ZQN 06')" class="spot-link">グレノーキー</a>へ。『ロード・オブ・ザ・リング』の撮影地としても知られる、山岳ハイキングの玄関口に宿泊する。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>クイーンズタウン到着 → グレノーキーへ</strong><br>クイーンズタウン着後、車で<a onclick="showSpot('ZQN 06')" class="spot-link">グレノーキー</a>へ。『ロード・オブ・ザ・リング』の撮影地としても知られる、山岳ハイキングの玄関口に宿泊する。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -379,10 +468,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 2</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>本格トレッキング</strong><br>グレノーキー周辺の山岳トレイルを1日かけて歩く。サザンアルプスの雄大な景観と静寂に包まれる、南島の大自然を肌で感じる1日。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>本格トレッキング</strong><br>グレノーキー周辺の山岳トレイルを1日かけて歩く。サザンアルプスの雄大な景観と静寂に包まれる、南島の大自然を肌で感じる1日。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -402,24 +495,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge ">Day 5</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>トランツアルパイン鉄道 → 帰国</strong><br>サザンアルプスを横断する絶景列車に乗り、旅を締めくくる。クライストチャーチから帰国の途につく。大自然を存分に味わい尽くす、上級者向けの周遊ルートである。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>トランツアルパイン鉄道 → 帰国</strong><br>サザンアルプスを横断する絶景列車に乗り、旅を締めくくる。クライストチャーチから帰国の途につく。大自然を存分に味わい尽くす、上級者向けの周遊ルートである。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
       
     </div>
-    <div class="course-tip"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
-	<path d="M0 0h512v512H0z" fill="none" />
-	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
-	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
-	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
-</svg><span>グレノーキー周辺のトレッキングは本格的な装備と体力が必要なコースもある。事前に難易度・天候を確認し、無理のない計画を立てよう。</span></div>
   </div>
 
   </div>
+  <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
+
   <div class="tab-cta">
     <div class="tab-cta-title">さあ、ニュージーランド旅行の計画を始めよう</div>
     <p class="tab-cta-desc">地熱地帯とマオリ文化、フィヨルドとアドベンチャースポーツ——2つの島でまったく違う顔を見せるニュージーランドを、あなたなりのルートで巡ってみませんか。</p>
@@ -430,6 +523,35 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 </div><!-- /slides-wrap -->
 </div><!-- /container -->
+
+<aside class="side-rail">
+  <div class="rail-ad">
+    <span class="rail-ad-label">SPONSORED</span>
+    <div class="rail-ad-box" style="height:250px">広告 300 × 250</div>
+  </div>
+
+  <div class="rail-wish" id="rail-wish">
+    <div class="rail-wish-head"><span>行きたいリスト</span><span class="rail-wish-count" id="rail-wish-count">0</span></div>
+    <div class="rail-wish-body" id="rail-wish-body"></div>
+  </div>
+
+  <div class="rail-card">
+    <span class="rail-card-title">この国の関連ページ</span>
+    
+    <a href="budget.html">予算・費用を見る →</a>
+    <a href="course.html">モデルコースを見る →</a>
+    <a href="phrases.html">フレーズ集を見る →</a>
+    
+    
+  </div>
+
+  <div class="rail-ad sticky">
+    <span class="rail-ad-label">SPONSORED</span>
+    <div class="rail-ad-box" style="height:600px">広告 300 × 600</div>
+  </div>
+</aside>
+
+</div><!-- /page-grid -->
 
 <script>
 function filterPhraseDeck(deckId, btn) {
@@ -565,8 +687,11 @@ document.addEventListener('click', function(e) {
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
 });
 
+function itemViewBreakpoint() {
+  return window.innerWidth <= 620 ? 'mobile' : 'pc';
+}
 function setItemView(kind, view) {
-  localStorage.setItem(kind + 'ItemView', view);
+  localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
     ? document.querySelectorAll('#food-grid')
     : document.querySelectorAll('#spots-grid .item-grid');
@@ -581,13 +706,14 @@ function setItemView(kind, view) {
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
-    const saved = localStorage.getItem(kind + 'ItemView');
-    if (saved) { setItemView(kind, saved); return; }
-    const defaultView = window.innerWidth <= 620 ? 'compact' : 'standard';
+    const bp = itemViewBreakpoint();
+    const saved = localStorage.getItem(kind + 'ItemView_' + bp);
+    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
     if (defaultView === 'compact') grids.forEach(grid => grid.classList.add('view-compact'));
+    else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
 })();
@@ -618,6 +744,8 @@ function filterSpots(dim, value, btn) {
     });
     card.style.display = (cityOk && regionOk && visibleCount > 0) ? '' : 'none';
   });
+  const shownEl = document.getElementById('spots-count-shown');
+  if (shownEl) shownEl.textContent = document.querySelectorAll('#spots-grid .item-grid .item-card:not([style*="display: none"])').length;
 }
 
 function filterFood(dim, value, btn) {
@@ -632,6 +760,8 @@ function filterFood(dim, value, btn) {
     const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });
+  const shownEl = document.getElementById('food-count-shown');
+  if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
 }
 
 
@@ -707,6 +837,154 @@ var PAGE_INDEX = 3;
 </script>
 
 <script>
+/* ハンバーガーメニュー開閉 */
+(function(){
+  const btn = document.getElementById('hb-toggle-btn');
+  const drawer = document.getElementById('hb-drawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    const open = drawer.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  });
+})();
+</script>
+
+<script>
+/* 行きたいリスト（ウィッシュリスト）: 全国共通で localStorage に保存 */
+(function(){
+  const KEY = 'wm-wishlist';
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch(e){ return []; } }
+  function save(list){ try { localStorage.setItem(KEY, JSON.stringify(list)); } catch(e){} }
+  function keyOf(c, ci){ return c + '|' + ci; }
+
+  function render(){
+    const list = load();
+    const countEl = document.getElementById('wish-count');
+    const btn = document.getElementById('wish-toggle-btn');
+    if (countEl) countEl.textContent = list.length;
+    if (btn) btn.classList.toggle('has-items', list.length > 0);
+    document.querySelectorAll('.ci-wish-btn').forEach(function(el){
+      const k = keyOf(el.dataset.wishCountry, el.dataset.wishCity);
+      el.classList.toggle('on', list.some(function(it){ return it.k === k; }));
+    });
+    const panel = document.getElementById('wish-panel');
+    if (panel) {
+      if (!list.length) {
+        panel.innerHTML = '<div class="wp-empty">まだ何も追加されていません。<br>都市カードのハートマークから追加できます。</div>';
+      } else {
+        panel.innerHTML = list.map(function(it, i){
+          return '<div class="wp-row"><a href="' + (it.href || '#') + '">' + it.cityName + '<span class="wp-country">' + it.countryName + '</span></a>' +
+            '<button type="button" class="wp-remove" data-i="' + i + '" aria-label="削除">✕</button></div>';
+        }).join('');
+        panel.querySelectorAll('.wp-remove').forEach(function(rb){
+          rb.addEventListener('click', function(){
+            const i = parseInt(rb.dataset.i, 10);
+            const cur = load();
+            cur.splice(i, 1);
+            save(cur);
+            render();
+          });
+        });
+      }
+    }
+
+    const railCount = document.getElementById('rail-wish-count');
+    const railBody = document.getElementById('rail-wish-body');
+    if (railCount) railCount.textContent = list.length;
+    if (railBody) {
+      if (!list.length) {
+        railBody.innerHTML = '<span class="rail-wish-empty">気になる街の♡を押すと、ここにたまります。</span>';
+      } else {
+        railBody.innerHTML = list.map(function(it, i){
+          return '<div class="rail-wish-row"><a href="' + (it.href || '#') + '">' + it.cityName + '（' + it.countryName + '）</a>' +
+            '<button type="button" class="rail-wish-remove" data-i="' + i + '" aria-label="外す">✕</button></div>';
+        }).join('');
+        railBody.querySelectorAll('.rail-wish-remove').forEach(function(rb){
+          rb.addEventListener('click', function(){
+            const i = parseInt(rb.dataset.i, 10);
+            const cur = load();
+            cur.splice(i, 1);
+            save(cur);
+            render();
+          });
+        });
+      }
+    }
+  }
+
+  window.toggleWish = function(el){
+    const c = el.dataset.wishCountry, ci = el.dataset.wishCity;
+    const k = keyOf(c, ci);
+    let list = load();
+    if (list.some(function(it){ return it.k === k; })) {
+      list = list.filter(function(it){ return it.k !== k; });
+    } else {
+      list.push({ k: k, countryName: el.dataset.wishCountryName, cityName: el.dataset.wishCityName, href: '../' + c + '/index.html' });
+    }
+    save(list);
+    render();
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    render();
+    const toggleBtn = document.getElementById('wish-toggle-btn');
+    const panel = document.getElementById('wish-panel');
+    if (toggleBtn && panel) {
+      toggleBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        panel.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e){
+        if (!panel.contains(e.target) && e.target !== toggleBtn) panel.classList.remove('open');
+      });
+    }
+  });
+})();
+</script>
+
+<script>
+/* 目次サイドバー: 表示中セクション内の h2 から自動生成 */
+(function(){
+  function slugify(text, idx){ return 'toc-' + idx; }
+  function build(){
+    const list = document.getElementById('toc-list');
+    if (!list) return;
+    const activeSection = document.querySelector('section.active') || document.querySelector('.container section');
+    if (!activeSection) { list.parentElement.style.display = 'none'; return; }
+    const heads = activeSection.querySelectorAll('h2, h3.toc-sub');
+    if (!heads.length) { list.parentElement.style.display = 'none'; return; }
+    list.innerHTML = '';
+    heads.forEach(function(h, i){
+      if (!h.id) h.id = slugify(h.textContent, i);
+      h.style.scrollMarginTop = '96px';
+      const isSub = h.tagName === 'H3';
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      const firstSpan = h.querySelector('span:first-child');
+      a.textContent = firstSpan ? firstSpan.textContent : h.textContent;
+      if (isSub) a.classList.add('toc-sub-link');
+      list.appendChild(a);
+    });
+    const links = Array.from(list.querySelectorAll('a'));
+    const obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          links.forEach(function(l){ l.classList.remove('active'); });
+          const match = links.find(function(l){ return l.getAttribute('href') === '#' + entry.target.id; });
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-110px 0px -70% 0px' });
+    heads.forEach(function(h){ obs.observe(h); });
+  }
+  document.addEventListener('DOMContentLoaded', build);
+  
+})();
+</script>
+
+<script>
 /* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
 (function(){
   const header = document.getElementById('site-top-bar');
@@ -719,6 +997,7 @@ var PAGE_INDEX = 3;
   let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
   let lastY = window.scrollY;
   let ticking = false;
+  let pinned = false; // ドロワー展開中は常時表示に固定する
 
   function apply() {
     header.style.transform = 'translateY(-' + hideOffset + 'px)';
@@ -727,12 +1006,14 @@ var PAGE_INDEX = 3;
   }
 
   window.addEventListener('resize', function(){
+    if (pinned) return;
     headerH = header.offsetHeight;
     hideOffset = Math.min(hideOffset, headerH);
     apply();
   });
 
   window.addEventListener('scroll', function(){
+    if (pinned) return;
     const y = window.scrollY;
     const dy = y - lastY;
     lastY = y;
@@ -741,15 +1022,27 @@ var PAGE_INDEX = 3;
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
 
+  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
+  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
+  // nav位置がズレる不具合を防ぐ）
+  window._wmHeaderPin = function(on){
+    pinned = on;
+    if (on) {
+      hideOffset = 0;
+      header.style.transform = 'translateY(0)';
+      headerH = header.offsetHeight;
+      if (navEl) navEl.style.top = headerH + 'px';
+    } else {
+      lastY = window.scrollY;
+      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
+      apply();
+    }
+  };
+
   apply();
 })();
 </script>
 <script src="../assets/country-links.js"></script>
-<footer style="text-align:center;padding:24px 16px;font-size:0.78em;color:rgba(255,255,255,0.6);border-top:1px solid rgba(255,255,255,0.15);margin-top:0;background:#6B5E62">
-  <a href="../common/privacy.html" style="color:rgba(255,255,255,0.6);text-decoration:none;margin:0 10px">プライバシーポリシー</a>
-  <span>｜</span>
-  <span style="margin:0 10px">© 2026 ZenWorldGuide</span>
-</footer>
 
 <!-- 指差しモーダル -->
 <div id="food-modal" class="food-modal-overlay" onclick="closeFoodModal()">
@@ -812,6 +1105,6 @@ function closeFoodModal() {
     </div>
   </div>
 </div>
-<div data-sticky-banner="epos"></div>
+<!-- デザイン確認中のため一時停止: <div data-sticky-banner="epos"></div> -->
 </body>
 </html>

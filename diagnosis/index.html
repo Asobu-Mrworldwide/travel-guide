@@ -1,236 +1,148 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>旅行タイプ診断 | World Mappy</title>
-<meta name="description" content="計画性・旅の目的・社交性・快適さの4軸から、あなたの旅スタイルを16タイプに診断します。無料・登録不要・約2分。">
+<meta name="description" content="計画性・旅の目的・行動スタイル・快適さの4軸から、あなたの旅スタイルを16の「旅人モデル」に診断します。無料・登録不要・約3分。">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="diagnosis.css">
 <style>
-body { background: #fff; }
+  body { background: #fff; color: #2B2B28; }
+  .lp-wrap { min-width: 0; }
+  .lp-wrap section { display: block; } /* assets/style.css の section{display:none} を無効化 */
+  @keyframes wm-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-/* ヒーロー */
-.lp-hero {
-  background: #E5EDE9;
-  min-height: 52vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 24px;
-  text-align: center;
-  color: #1a2a3a;
-}
-.lp-hero-quote {
-  font-size: 2.4em;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-  color: #2d2d3a;
-}
-.lp-hero-sub {
-  font-size: 0.88em;
-  color: #3a3a4d;
-  line-height: 1.9;
-  margin-bottom: 36px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.lp-cta {
-  display: inline-block;
-  background: #15735b;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.05em;
-  border-radius: 50px;
-  padding: 18px 64px;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-}
-.lp-cta:hover { opacity: 0.88; transform: translateY(-1px); transition: all 0.15s; }
-.lp-note {
-  margin-top: 12px;
-  font-size: 0.72em;
-  color: rgba(45,45,58,0.35);
-}
+  /* ===== HERO ===== */
+  .lp-hero { position: relative; overflow: hidden; background: #fff; }
+  .lp-hero-in { max-width: 1140px; margin: 0 auto; padding: 40px 40px 0; display: grid; grid-template-columns: minmax(0, 460px) minmax(0, 1fr); gap: 20px; align-items: center; min-height: 540px; }
+  .lp-hero-copy { display: grid; gap: 24px; align-content: center; padding-bottom: 40px; position: relative; z-index: 2; }
+  .lp-hero-copy h1 { margin: 0; font-weight: 900; font-size: 52px; line-height: 1.34; letter-spacing: -0.01em; color: #23211C; }
+  .lp-hero-copy h1 .u { position: relative; display: inline-block; color: #14503C; }
+  .lp-hero-copy h1 .u::after { content: ""; position: absolute; left: 0; right: 0; bottom: 3px; height: 3px; background: #14503C; }
+  .lp-hero-copy h1 .q { position: relative; display: inline-block; }
+  .lp-hero-copy h1 .q::after { content: ""; position: absolute; left: -6px; right: 2px; bottom: 4px; height: 9px; border-radius: 999px; background: #F2C14E; z-index: -1; }
+  .lp-hero-copy .lead { margin: 0; font-size: 16.5px; line-height: 2; color: #55504A; }
+  .lp-hero-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: #7A756C; }
+  .lp-hero-meta .dot { display: inline-grid; place-content: center; width: 17px; height: 17px; border: 1.5px solid #A8A29A; border-radius: 999px; font-size: 9px; color: #A8A29A; }
+  .lp-hero-meta .sep { width: 1px; height: 14px; background: #DCD6CA; }
+  .lp-btn-yellow { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 22px 30px; border: none; border-radius: 8px; background: #F2C14E; color: #23211C; font-family: inherit; font-size: 19px; font-weight: 900; letter-spacing: 0.02em; cursor: pointer; box-shadow: 0 10px 26px rgba(200,148,10,0.28); transition: transform .2s ease, box-shadow .2s ease; text-decoration: none; }
+  .lp-btn-yellow:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(200,148,10,0.34); color: #23211C; }
+  .lp-hero-art { position: relative; min-height: 500px; }
+  .lp-hero-art .deco { position: absolute; pointer-events: none; }
+  .lp-hero-art .d-globe { right: -30px; top: 6px; width: 460px; opacity: 0.85; }
+  .lp-hero-art .d-route { left: -50px; top: 24px; width: 170px; opacity: 0.75; transform: rotate(-6deg); }
+  .lp-hero-art .d-pin { left: -6px; top: 4px; width: 28px; animation: wm-float 5.5s ease-in-out infinite; }
+  .lp-hero-art .d-plane { right: 4px; top: 84px; width: 44px; transform: rotate(-16deg); animation: wm-float 6.5s ease-in-out infinite; }
+  .lp-hero-art .travelers { position: absolute; left: 0; right: 0; bottom: 12px; height: 400px; display: flex; align-items: flex-end; justify-content: center; }
+  .lp-hero-art .travelers img { object-fit: contain; }
+  .lp-hero-art .t1 { height: 236px; margin-right: -34px; }
+  .lp-hero-art .t2 { height: 386px; position: relative; z-index: 3; }
+  .lp-hero-art .t3 { height: 226px; margin-left: -22px; }
+  .lp-hero-art .t4 { height: 218px; margin-left: -14px; }
 
-/* 統計カード */
-.stat-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 48px 24px;
-}
-.stat-card {
-  background: color-mix(in srgb, var(--card-color, #15735b) 8%, #fff);
-  border-radius: 6px;
-  border: 1px solid color-mix(in srgb, var(--card-color, #15735b) 18%, #fff);
-  border-top: 4px solid var(--card-color, #15735b);
-  padding: 24px 16px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.stat-num {
-  font-size: 2.2em;
-  font-weight: 700;
-  color: #1a2a3a;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  margin-bottom: 10px;
-  font-variant-numeric: tabular-nums;
-}
-.stat-type-name {
-  font-size: 1.2em;
-  font-weight: 700;
-  color: #1a2a3a;
-  margin-bottom: 4px;
-  line-height: 1.3;
-}
-.stat-type-code {
-  font-size: 1.1em;
-  font-weight: 700;
-  font-family: monospace;
-  color: #777;
-  margin-bottom: 6px;
-  letter-spacing: 2px;
-}
-.stat-label {
-  font-size: 0.7em;
-  color: #888;
-  font-weight: 500;
-}
+  /* ===== STATS ===== */
+  .lp-stats { max-width: 1140px; margin: 0 auto; padding: 12px 40px 76px; }
+  .lp-stats-band { border-radius: 14px; background: #E9F1EB; padding: 34px 20px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: start; }
+  .lp-stat { display: grid; gap: 9px; justify-items: center; text-align: center; padding: 0 12px; border-left: 1px solid #CFDFD4; }
+  .lp-stat:first-child { border-left-color: transparent; }
+  .lp-stat img { width: 42px; height: 42px; object-fit: contain; }
+  .lp-stat .v { display: flex; align-items: baseline; gap: 3px; }
+  .lp-stat .v .num { font-weight: 900; font-size: 38px; line-height: 1; letter-spacing: -0.01em; color: #14503C; font-variant-numeric: tabular-nums; }
+  .lp-stat .v .unit { font-size: 15px; font-weight: 700; color: #14503C; }
+  .lp-stat .en { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; color: #6E8478; }
+  .lp-stat .lbl { font-size: 12.5px; color: #55504A; }
 
-/* セクション共通 */
-.lp-section {
-  padding: 36px 20px;
-  max-width: 640px;
-  margin: 0 auto;
-}
-.lp-section-title {
-  font-size: 0.72em;
-  font-weight: 500;
-  color: #15735b;
-  letter-spacing: 0.1em;
-  text-align: center;
-  margin-bottom: 20px;
-}
+  /* ===== VARIETY ===== */
+  .lp-variety { background: #FAF7F2; }
+  .lp-variety-in { max-width: 1140px; margin: 0 auto; padding: 66px 40px 60px; display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 46px; align-items: center; }
+  .lp-variety-copy { display: grid; gap: 22px; }
+  .lp-variety-copy h2 { margin: 0; font-weight: 900; font-size: 28px; line-height: 1.5; color: #23211C; }
+  .lp-variety-copy p { margin: 0; font-size: 14.5px; line-height: 2.15; color: #55504A; }
+  .lp-variety-copy p.strong { color: #3C3A34; }
+  .lp-variety-copy p.strong b { font-weight: 900; }
+  .lp-btn-outline { justify-self: start; display: inline-flex; align-items: center; gap: 14px; padding: 17px 24px; border: 1.5px solid #14503C; border-radius: 8px; background: transparent; font-family: inherit; font-size: 15px; font-weight: 900; color: #14503C; cursor: pointer; transition: background .2s ease, color .2s ease; text-decoration: none; }
+  .lp-btn-outline:hover { background: #14503C; color: #FAF7F2; }
+  .lp-preview-head { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 14px; }
+  .lp-preview-head span { font-weight: 700; font-size: 17px; color: #3C3A34; }
+  .lp-preview-head img:first-child { width: 40px; transform: rotate(-8deg); }
+  .lp-preview-head img:last-child { width: 54px; }
+  .lp-preview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; align-items: end; }
+  .lp-preview-grid a { display: grid; gap: 8px; justify-items: center; padding: 8px 2px; border-radius: 10px; transition: background .2s ease; }
+  .lp-preview-grid a:hover { background: rgba(20,80,60,0.06); }
+  .lp-preview-grid img { height: 160px; object-fit: contain; }
+  .lp-preview-grid .l { font-size: 11.5px; color: #7A756C; white-space: nowrap; }
+  .lp-preview-grid .c { font-weight: 900; font-size: 16px; letter-spacing: 0.02em; color: #14503C; }
 
-/* 4軸 */
-.axes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.axis-card {
-  background: #fff;
-  border: 1px solid #dce6e2;
-  border-radius: 12px;
-  padding: 12px 14px;
-}
-.axis-vs {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.7em;
-  color: #666;
-  margin-bottom: 6px;
-}
-.axis-bar {
-  height: 5px;
-  background: #dceee8;
-  border-radius: 3px;
-  position: relative;
-  margin-bottom: 7px;
-}
-.axis-fill {
-  position: absolute;
-  height: 5px;
-  border-radius: 3px;
-  background: #15735b;
-}
-.axis-name {
-  font-size: 0.8em;
-  font-weight: 500;
-  color: #222;
-}
+  /* ===== KNOW ===== */
+  .lp-know { background: #fff; scroll-margin-top: 72px; }
+  .lp-know-in { max-width: 1140px; margin: 0 auto; padding: 72px 40px 76px; }
+  .lp-know-head { display: grid; gap: 14px; justify-items: center; text-align: center; margin-bottom: 44px; }
+  .lp-know-head h2 { margin: 0; font-weight: 900; font-size: 27px; color: #23211C; }
+  .lp-know-head .rule { width: 46px; height: 3px; border-radius: 999px; background: #14503C; }
+  .lp-know-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 268px; gap: 30px; align-items: start; }
+  .lp-know-item { display: grid; gap: 14px; justify-items: center; text-align: center; padding: 0 6px; border-right: 1px solid #EDE7DC; }
+  .lp-know-item .no { display: inline-grid; place-content: center; width: 30px; height: 30px; border-radius: 999px; background: #14503C; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: #fff; }
+  .lp-know-item img { width: 84px; height: 84px; object-fit: contain; }
+  .lp-know-item .t { font-weight: 900; font-size: 16.5px; color: #23211C; }
+  .lp-know-item p { margin: 0; font-size: 12.5px; line-height: 1.95; color: #55504A; }
+  .lp-manual-wrap { position: relative; padding-top: 8px; }
+  .lp-manual { position: relative; border: 1px solid #E3DCCE; border-radius: 4px; background: #FBF8F1; padding: 26px 20px 22px; box-shadow: 14px 14px 0 rgba(35,33,28,0.05), 0 10px 26px rgba(35,33,28,0.09); transform: rotate(2deg); display: grid; gap: 12px; justify-items: center; }
+  .lp-manual .mono { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.22em; color: #A8A29A; }
+  .lp-manual .code { display: flex; align-items: baseline; gap: 4px; }
+  .lp-manual .code b { font-weight: 900; font-size: 34px; letter-spacing: -0.01em; color: #23211C; }
+  .lp-manual .code span { font-size: 15px; font-weight: 700; color: #23211C; }
+  .lp-manual .ttl { font-weight: 900; font-size: 19px; color: #23211C; }
+  .lp-manual > img { height: 104px; object-fit: contain; }
+  .lp-manual .foot { display: flex; align-items: center; gap: 6px; padding-top: 6px; border-top: 1px solid #E8E2D8; width: 100%; justify-content: center; }
+  .lp-manual .foot img { width: 14px; height: 14px; object-fit: contain; }
+  .lp-manual .foot span { font-weight: 700; font-size: 11.5px; color: #3C3A34; }
+  .lp-seal { position: absolute; right: -30px; bottom: -34px; width: 118px; height: 118px; border-radius: 999px; background: #14503C; color: #fff; display: grid; place-content: center; text-align: center; font-size: 11.5px; font-weight: 700; line-height: 1.7; box-shadow: 0 8px 20px rgba(20,80,60,0.28); }
 
-/* 16タイプグリッド */
-.types-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-}
-.type-chip {
-  border-radius: 8px;
-  padding: 8px 4px;
-  text-align: center;
-  font-size: 0.68em;
-  font-weight: 500;
-  color: #fff;
-  line-height: 1.35;
-}
+  /* ===== CTA ===== */
+  .lp-cta-band { position: relative; background: #FBF3E2; overflow: hidden; scroll-margin-top: 72px; }
+  .lp-cta-band .deco { position: absolute; pointer-events: none; }
+  .lp-cta-band .c1 { left: 52px; top: 44px; width: 62px; opacity: 0.3; }
+  .lp-cta-band .c2 { right: 78px; top: 40px; width: 64px; opacity: 0.4; }
+  .lp-cta-band .c3 { right: 168px; bottom: 44px; width: 54px; opacity: 0.3; }
+  .lp-cta-band .c4 { left: 0; bottom: 0; width: 190px; opacity: 0.4; }
+  .lp-cta-band .c5 { left: 176px; bottom: 62px; width: 42px; opacity: 0.4; transform: rotate(12deg); }
+  .lp-cta-in { position: relative; max-width: 760px; margin: 0 auto; padding: 74px 40px 78px; display: grid; gap: 22px; justify-items: center; text-align: center; }
+  .lp-cta-in h2 { margin: 0; font-weight: 900; font-size: 31px; color: #23211C; }
+  .lp-cta-in .time { font-size: 13.5px; color: #6E675E; }
+  .lp-cta-in .lp-btn-yellow { width: 100%; max-width: 480px; padding: 24px 30px; font-size: 21px; }
 
-/* 診断の流れ */
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.step {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background: #fff;
-  border: 1px solid #dce6e2;
-  border-radius: 12px;
-  padding: 14px 16px;
-}
-.step-num {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #15735b;
-  color: #fff;
-  font-size: 0.78em;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.step-body strong {
-  display: block;
-  font-size: 0.88em;
-  font-weight: 500;
-  color: #111;
-  margin-bottom: 3px;
-}
-.step-body span {
-  font-size: 0.78em;
-  color: #666;
-  line-height: 1.5;
-}
+  footer { text-align: center; padding: 22px 16px 30px; font-size: 0.8em; color: var(--sub); }
+  footer a { color: var(--green-dark); }
 
-@media (max-width: 600px) {
-  .lp-hero-quote { font-size: 1.6em; white-space: normal; }
-  .stat-cards { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 32px 16px; }
-  .stat-num { font-size: 1.7em; }
-}
+  @media (max-width: 960px) {
+    .lp-hero-in { grid-template-columns: 1fr; padding: 28px 20px 0; min-height: 0; }
+    .lp-hero-copy { padding-bottom: 8px; }
+    .lp-hero-copy h1 { font-size: 34px; line-height: 1.3; }
+    .lp-hero-art { min-height: 300px; margin: 0 -20px; }
+    .lp-hero-art .d-globe { width: 300px; right: -40px; }
+    .lp-hero-art .travelers { height: 260px; }
+    .lp-hero-art .t1 { height: 150px; } .lp-hero-art .t2 { height: 240px; } .lp-hero-art .t3 { height: 144px; } .lp-hero-art .t4 { height: 138px; }
+    .lp-stats { padding: 4px 16px 44px; }
+    .lp-stats-band { grid-template-columns: 1fr 1fr; gap: 22px 0; padding: 24px 12px; }
+    .lp-stat:nth-child(odd) { border-left-color: transparent; }
+    .lp-stat .v .num { font-size: 30px; }
+    .lp-variety-in { grid-template-columns: 1fr; gap: 30px; padding: 46px 20px; }
+    .lp-preview-grid img { height: 120px; }
+    .lp-know-in { padding: 46px 20px 54px; }
+    .lp-know-grid { grid-template-columns: 1fr; gap: 26px; }
+    .lp-know-item { border-right: none; border-bottom: 1px solid #EDE7DC; padding-bottom: 22px; }
+    .lp-manual-wrap { justify-self: center; max-width: 268px; margin: 20px auto 40px; }
+    .lp-cta-in { padding: 54px 20px 60px; }
+    .lp-cta-in h2 { font-size: 24px; }
+  }
 </style>
 </head>
 <body>
 
 <header class="site-header">
-  <a href="./" class="site-logo"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a>
+  <a href="./" class="site-logo"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:4px;display:inline-block"><span>World</span> Mappy</a>
   <span class="site-tagline">世界の旅行ガイド</span>
   <a class="header-diag-link" href="types.html">旅行タイプ一覧</a>
   <div class="hb-wrap">
@@ -245,42 +157,148 @@ body { background: #fff; }
   </div>
 </header>
 
-<!-- ヒーロー -->
-<div class="lp-hero">
-  <div class="lp-hero-quote">「自分の旅行スタイルを言語化できました」</div>
-  <div class="lp-hero-sub">たった３分で，なぜあの人との旅行が楽しくなかったのか，明快に理解できちゃいます。<br>お互いの旅行スタイルを理解して，風通しの良い旅行を楽しみましょう。</div>
-  <a class="lp-cta" href="quiz.html">診断スタート →</a>
-</div>
-<div class="stat-cards">
-  <div class="stat-card" style="--card-color:#2a9d82">
-    <div class="stat-num" id="stat-today">—</div>
-    <div class="stat-label">本日の診断数</div>
-  </div>
-  <div class="stat-card" style="--card-color:#c8940a">
-    <div class="stat-num" id="stat-total">—</div>
-    <div class="stat-label">累計診断数</div>
-  </div>
-  <div class="stat-card" style="--card-color:#3a6a9a">
-    <div class="stat-num" id="stat-accuracy">—</div>
-    <div class="stat-label">正答性評価</div>
-  </div>
-  <div class="stat-card" style="--card-color:#8a5ea0">
-    <div>
-      <div class="stat-num" id="stat-top-name">—</div>
-      <div class="stat-type-code" id="stat-top-code"></div>
-    </div>
-    <div class="stat-label">今一番多いタイプ</div>
-  </div>
-</div>
+<div class="lp-wrap">
 
+  <!-- HERO -->
+  <section class="lp-hero">
+    <div class="lp-hero-in">
+      <div class="lp-hero-copy">
+        <h1>あなたは、<br>どの<span class="u">旅人モデル</span><span class="q">？</span></h1>
+        <p class="lead">16の旅人モデルから、<br>あなたの旅のクセを解析します。</p>
+        <div class="lp-hero-meta">
+          <span style="display:inline-flex;align-items:center;gap:7px;"><span class="dot">◎</span>所要時間：約3分</span>
+          <span class="sep"></span>
+          <span>全16問</span>
+        </div>
+        <a class="lp-btn-yellow" href="quiz.html" style="justify-self:start;min-width:292px;">旅人モデルを診断する<span style="font-size:20px;">→</span></a>
+      </div>
+      <div class="lp-hero-art">
+        <img class="deco d-globe" src="img/deco-globe.png" alt="">
+        <img class="deco d-route" src="img/deco-route.png" alt="">
+        <img class="deco d-pin" src="img/deco-pin.png" alt="">
+        <img class="deco d-plane" src="img/deco-plane.png" alt="">
+        <div class="travelers">
+          <img class="t1" src="img/traveler-map.png" alt="旅人モデル">
+          <img class="t2" src="img/traveler-hero.png" alt="旅人モデル">
+          <img class="t3" src="img/traveler-phone.png" alt="旅人モデル">
+          <img class="t4" src="img/traveler-suitcase.png" alt="旅人モデル">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="lp-stats">
+    <div class="lp-stats-band">
+      <div class="lp-stat">
+        <img src="img/icon-calendar.png" alt="">
+        <div class="v"><span class="num" id="stat-today">—</span><span class="unit">人</span></div>
+        <span class="en">TODAY'S ANALYSIS</span>
+        <span class="lbl">本日解析された旅人</span>
+      </div>
+      <div class="lp-stat">
+        <img src="img/icon-people.png" alt="">
+        <div class="v"><span class="num" id="stat-total">—</span><span class="unit">人</span></div>
+        <span class="en">TOTAL TRAVELERS</span>
+        <span class="lbl">これまでに解析された旅人</span>
+      </div>
+      <div class="lp-stat">
+        <img src="img/icon-heart.png" alt="">
+        <div class="v"><span class="num" id="stat-accuracy">—</span></div>
+        <span class="en">MATCH RATE</span>
+        <span class="lbl">「当たってる」と回答</span>
+      </div>
+      <div class="lp-stat">
+        <img src="img/icon-crown.png" alt="">
+        <div class="v"><span class="num" id="stat-top-name" style="font-size:26px;">—</span><span class="unit" id="stat-top-unit" style="display:none;">型</span></div>
+        <span class="en">POPULAR MODEL</span>
+        <span class="lbl" id="stat-top-code" style="font-family:'JetBrains Mono',monospace;letter-spacing:0.1em;color:#55504A;">現在もっとも多い旅人モデル</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- VARIETY -->
+  <section class="lp-variety">
+    <div class="lp-variety-in">
+      <div class="lp-variety-copy">
+        <h2>世界には、<br>いろんな旅人がいる。</h2>
+        <p>分刻みで予定を組む人。<br>気づけば知らない路地を歩いている人。<br>絶景のためなら多少の不便も気にしない人。<br>一緒にいる人が楽しんでいることが一番嬉しい人。</p>
+        <p class="strong">World Mappyでは、旅の価値観から<br><b>16種類の「旅人モデル」</b>に分類します。</p>
+        <a class="lp-btn-outline" href="types.html">16種類の旅人モデルを見る<span style="font-size:17px;">→</span></a>
+      </div>
+      <div>
+        <div class="lp-preview-head">
+          <img src="img/deco-paperplane.png" alt="">
+          <span>あなたはどのタイプ？</span>
+          <img src="img/deco-cloud.png" alt="">
+        </div>
+        <div class="lp-preview-grid">
+          <a href="types.html"><img src="img/traveler-phone.png" alt="計画重視タイプ"><span class="l">計画重視タイプ</span><span class="c">PCSH</span></a>
+          <a href="types.html"><img src="img/traveler-hero.png" alt="自由探検タイプ"><span class="l">自由探検タイプ</span><span class="c">FCLW</span></a>
+          <a href="types.html"><img src="img/traveler-suitcase.png" alt="協調サポートタイプ"><span class="l">協調サポートタイプ</span><span class="c">PCSW</span></a>
+          <a href="types.html"><img src="img/traveler-map.png" alt="知的探究タイプ"><span class="l">知的探究タイプ</span><span class="c">PNSH</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KNOW -->
+  <section id="lp-know" class="lp-know">
+    <div class="lp-know-in">
+      <div class="lp-know-head">
+        <h2>診断すると、こんなことがわかります。</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="lp-know-grid">
+        <div class="lp-know-item">
+          <span class="no">01</span>
+          <img src="img/icon-globe.png" alt="">
+          <span class="t">あなたの旅人モデル</span>
+          <p>PCSH型・FCLW型など、16種類の旅人モデルからあなたのタイプを判定します。</p>
+        </div>
+        <div class="lp-know-item">
+          <span class="no">02</span>
+          <img src="img/deco-globe.png" alt="">
+          <span class="t">旅人としての性能</span>
+          <p>計画性能、文化センサー、同行者適応性能などを解析し、あなたの特徴を可視化します。</p>
+        </div>
+        <div class="lp-know-item">
+          <span class="no">03</span>
+          <img src="img/deco-paperplane.png" alt="">
+          <span class="t">あなた専用の取扱説明書</span>
+          <p>診断結果からあなただけの「旅人取扱説明書」を発行。SNSでシェアもできます。</p>
+        </div>
+        <div class="lp-manual-wrap">
+          <div class="lp-manual">
+            <span class="mono">TRAVELER MANUAL</span>
+            <span class="code"><b>PCSH</b><span>型</span></span>
+            <span class="ttl">旅人取扱説明書</span>
+            <img src="img/traveler-hero.png" alt="">
+            <span class="foot"><img src="img/icon-globe.png" alt=""><span>World Mappy</span></span>
+          </div>
+          <div class="lp-seal">友達との旅行で<br>役立つこと<br>間違いなし！</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="lp-cta" class="lp-cta-band">
+    <img class="deco c1" src="img/deco-camera1.png" alt="">
+    <img class="deco c2" src="img/deco-suitcase.png" alt="">
+    <img class="deco c3" src="img/deco-camera2.png" alt="">
+    <img class="deco c4" src="img/deco-mountains.png" alt="">
+    <img class="deco c5" src="img/deco-plane.png" alt="">
+    <div class="lp-cta-in">
+      <h2>あなたという旅人を、解析してみよう。</h2>
+      <span class="time">所要時間 約3分</span>
+      <a class="lp-btn-yellow" href="quiz.html">旅人モデルを診断する<span style="font-size:22px;">→</span></a>
+    </div>
+  </section>
+
+</div>
 
 <script src="../assets/country-links.js"></script>
-<footer>
-  <a href="../">トップへ戻る</a>
-  <span>｜</span>
-  <a href="../common/privacy.html">プライバシーポリシー</a>
-  <span style="margin:0 10px">© 2026 World Mappy</span>
-</footer>
 
 <script type="module">
 import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
@@ -292,13 +310,11 @@ const TYPE_NAMES = {
   FCSH:'ゴールデンレトリバー', FCSW:'お祭り男', FCLH:'探偵', FCLW:'風来坊',
   FNSH:'副本部長', FNSW:'ダチョウ', FNLH:'独身貴族', FNLW:'ターザン',
 };
-// 旧IO軸表記(I/O)で保存された過去データを、新CN軸表記(C/N)に変換する
 function normalizeTypeCode(code) {
   if (!code || code.length !== 4) return code;
   const legacyMap = {I:'C', O:'N'};
   return code[0] + (legacyMap[code[1]] || code[1]) + code[2] + code[3];
 }
-
 function countUp(el, target, suffix = '') {
   const duration = 1200, start = performance.now();
   const step = now => {
@@ -340,7 +356,6 @@ try {
   }
 
   const typesData = typesSnap.val();
-  console.log('types data:', typesData);
   if (typesData) {
     const merged = {};
     Object.entries(typesData).forEach(([code, count]) => {
@@ -349,9 +364,9 @@ try {
     });
     const topCode = Object.entries(merged).reduce((a, b) => b[1] > a[1] ? b : a)[0];
     const nameEl = document.getElementById('stat-top-name');
-    nameEl.className = 'stat-type-name';
-    nameEl.textContent = TYPE_NAMES[topCode] || topCode;
-    document.getElementById('stat-top-code').textContent = topCode;
+    nameEl.textContent = topCode + '型';
+    nameEl.style.fontFamily = "'JetBrains Mono', monospace";
+    document.getElementById('stat-top-code').textContent = TYPE_NAMES[topCode] || 'もっとも多い旅人モデル';
   }
 } catch(e) { console.error('Firebase stats error:', e); }
 </script>

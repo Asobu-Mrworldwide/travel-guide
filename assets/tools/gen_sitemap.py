@@ -38,8 +38,9 @@ OTHER_PAGES = [
     ('compare/flights.html', 0.5, 'monthly'),
     ('compare/hotels.html', 0.5, 'monthly'),
     ('compare/sim.html', 0.5, 'monthly'),
-    ('diagnosis/index.html', 0.6, 'monthly'),
-    ('diagnosis/types.html', 0.6, 'monthly'),
+    # 診断ページは未公開のためサイトマップから除外（公開時に復帰）
+    # ('diagnosis/index.html', 0.6, 'monthly'),
+    # ('diagnosis/types.html', 0.6, 'monthly'),
 ]
 
 def build():

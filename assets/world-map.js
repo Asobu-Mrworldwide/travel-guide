@@ -1,8 +1,7 @@
 /* <world-map> — MapLibre GL による本物の地図（パン／ズーム／横方向は無限ループ）。
    タイル: MapLibre demotiles（APIキー不要）。World Mappy 配色に再着色して使う。
    属性: selected(id) / active(id) / visible(カンマ区切りid。未指定=おすすめのみ) / focus-area(エリア名)
-   イベント: pointselect (detail = id)
-   ※ Claude Design プロジェクト内の world-map.js をそのまま流用（ロジック変更なし）。 */
+   イベント: pointselect (detail = id) */
 (function () {
   const CSS = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css';
   const JS = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
@@ -30,35 +29,44 @@
   const REVEAL_ZOOM = 2.6; // これ以上に拡大すると、おすすめ以外のピンも現れる
 
   class WorldMap extends HTMLElement {
-    static get observedAttributes() { return ['selected', 'active', 'visible', 'focus-area']; }
+    static get observedAttributes() { return ['selected', 'active', 'visible', 'focus-area', 'label-zoom']; }
     connectedCallback() {
       if (this._init) return;
       this._init = true;
       this.style.display = 'block';
       this.style.position = 'relative';
       this._host = document.createElement('div');
-      this._host.style.cssText = 'position:relative;width:100%;height:100%;background:#f4fbf8;';
+      this._host.style.cssText = 'position:relative;width:100%;height:100%;background:transparent;';
       this.appendChild(this._host);
       this._hint = document.createElement('div');
       this._hint.style.cssText = 'position:absolute;left:12px;bottom:12px;z-index:2;pointer-events:none;font:400 11px/1.5 "Zen Kaku Gothic New",sans-serif;color:#15735b;background:rgba(255,255,255,.86);border:1px solid #dde8e2;border-radius:999px;padding:5px 11px;transition:opacity .3s ease;';
-      this._hint.textContent = 'ドラッグで移動 ／ スクロールで拡大すると掲載国が増えます';
+      this._hint.textContent = '';
+      this._hint.style.display = 'none';
       this.appendChild(this._hint);
       this.boot();
+      if (window.ResizeObserver) {
+        this._ro = new ResizeObserver(() => { if (this._map) this._map.resize(); });
+        this._ro.observe(this);
+      }
     }
+    disconnectedCallback() { if (this._ro) this._ro.disconnect(); }
     attributeChangedCallback(n) {
       if (!this._map) return;
       if (n === 'focus-area') this.focus();
-      else this.paint();
+      else {
+        if (n === 'selected') this.zoomToSelected();
+        this.paint();
+      }
     }
-    get points() { return window.WM_DESTINATIONS || []; }
+    get points() { const d = window.WM_DESTINATIONS; return d && d.length ? d : []; }
 
     async boot() {
       const gl = await lib();
       const map = new gl.Map({
         container: this._host,
         style: STYLE,
-        center: [40, 20],
-        zoom: 1.15,
+        center: (this.getAttribute('center') || '40,20').split(',').map(Number),
+        zoom: parseFloat(this.getAttribute('zoom')) || 1.15,
         minZoom: 0.6,
         maxZoom: 7,
         renderWorldCopies: true,
@@ -69,12 +77,19 @@
       map.touchZoomRotate.disableRotation();
       map.addControl(new gl.NavigationControl({ showCompass: false }), 'top-right');
       this._map = map;
-      map.on('load', () => {
+      const ready = () => {
+        if (this._ready) return;
+        this._ready = true;
+        this._map.resize();
         this.restyle();
         this.makeMarkers(gl);
         this.paint();
         if (this.getAttribute('focus-area')) this.focus();
-      });
+        this.dispatchEvent(new CustomEvent('mapready', { bubbles: true, composed: true }));
+      };
+      map.on('load', ready);
+      map.once('idle', ready);
+      map.on('data', () => { if (map.areTilesLoaded && map.areTilesLoaded()) ready(); });
       map.on('zoom', () => {
         this.paint();
         this._hint.style.opacity = map.getZoom() > 2 ? '0' : '1';
@@ -115,7 +130,7 @@
         const dot = document.createElement('span');
         dot.style.cssText = 'width:12px;height:12px;border-radius:999px;flex:none;background:' + GREEN + ';box-shadow:0 0 0 3px rgba(255,255,255,.95),0 1px 4px rgba(0,0,0,.22);transition:all .3s cubic-bezier(.2,.7,.2,1);';
         const lb = document.createElement('span');
-        lb.textContent = p.city;
+        lb.textContent = p.country || p.name || p.city;
         lb.style.cssText = 'font:500 11.5px/1 "Zen Kaku Gothic New",sans-serif;color:#15735b;background:rgba(255,255,255,.92);border:1px solid #dde8e2;border-radius:3px;padding:3px 6px;white-space:nowrap;transition:all .3s ease;';
         inner.appendChild(dot); inner.appendChild(lb);
         el.appendChild(inner);
@@ -141,25 +156,44 @@
       this._markers.forEach(({ p, el, inner, dot, lb }) => {
         const allowed = set ? set.indexOf(p.id) >= 0 : (p.rec || z >= REVEAL_ZOOM);
         const on = act === p.id, isSel = sel === p.id;
-        inner.style.opacity = allowed ? '1' : '0';
-        inner.style.visibility = allowed ? 'visible' : 'hidden';
-        el.style.pointerEvents = allowed ? 'auto' : 'none';
+        const lzA = parseFloat(this.getAttribute('label-zoom'));
+        const gated = !isNaN(lzA) && z < lzA && !isSel;
+        const shown = allowed && !gated;
+        inner.style.opacity = shown ? '1' : '0';
+        inner.style.visibility = shown ? 'visible' : 'hidden';
+        el.style.pointerEvents = shown ? 'auto' : 'none';
         inner.style.transform = on || isSel ? 'scale(1.12)' : 'scale(1)';
         el.style.zIndex = isSel ? 5 : on ? 4 : 1;
         dot.style.background = isSel ? YELLOW : GREEN;
         dot.style.width = dot.style.height = isSel ? '16px' : on ? '14px' : '12px';
-        lb.style.opacity = allowed && (p.rec || z >= 2.2 || on || isSel) ? '1' : '0';
+        const lzAttr = parseFloat(this.getAttribute('label-zoom'));
+        const hasLz = !isNaN(lzAttr);
+        const lz = hasLz ? lzAttr : 2.2;
+        const showLb = allowed && (on || isSel || z >= lz || (!hasLz && p.rec));
+        lb.style.opacity = showLb ? '1' : '0';
+        lb.style.visibility = showLb ? 'visible' : 'hidden';
         lb.style.borderColor = isSel ? YELLOW : '#dde8e2';
         lb.style.color = isSel ? '#8a6400' : DARK;
         lb.style.fontWeight = on || isSel ? 700 : 500;
       });
     }
 
+    // 選んだ国を中心に、近隣国も見える程度までズームイン
+    zoomToSelected() {
+      const id = this.getAttribute('selected');
+      if (!id || !this._map) return;
+      const p = this.points.filter((x) => x.id === id)[0];
+      if (!p) return;
+      const z = Math.max(this._map.getZoom(), 3.6);
+      const off = (this.getAttribute('select-offset') || '0,0').split(',').map(Number);
+      this._map.easeTo({ center: [p.lon, p.lat], zoom: z, offset: [off[0] || 0, off[1] || 0], duration: 1000, easing: (t) => 1 - Math.pow(1 - t, 3) });
+    }
+
     focus() {
       const name = this.getAttribute('focus-area');
       const b = name && (window.WM_AREA_BOUNDS || {})[name];
       if (b) this._map.fitBounds(b, { padding: 56, duration: 1100, maxZoom: 5 });
-      else this._map.easeTo({ center: [40, 20], zoom: 1.15, duration: 900 });
+      else this._map.easeTo({ center: (this.getAttribute('center') || '40,20').split(',').map(Number), zoom: parseFloat(this.getAttribute('zoom')) || 1.15, duration: 900 });
     }
 
     flyTo(id) {

@@ -9,7 +9,13 @@
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="diagnosis.css">
 <style>
-.page-wrap{padding-top:24px}
+body{background:#FAF7F2}
+.page-wrap{max-width:1040px;margin:0 auto;padding:26px 20px 64px}
+.viewing-banner,.type-browser,.share-block,.feedback-block,.country-search-cta,#bottom-action-link{max-width:760px;margin-left:auto;margin-right:auto}
+.result-manual-eyebrow,.result-card{max-width:760px;margin-left:auto;margin-right:auto}
+/* 診断結果 = 旅人取扱説明書。正典（Travel Diagnosis）の紙・スペックシート調に */
+.result-manual-eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.22em;color:#A8A29A}
+.result-manual-eyebrow::after{content:"";flex:1;height:1px;background:#E3DCCE}
 
 /* 閲覧状態バナー */
 .viewing-banner{display:none;align-items:center;gap:10px;background:#fff7e6;border:1px solid #ffe0a3;border-radius:10px;padding:11px 15px;margin-bottom:16px;font-size:0.8em;flex-wrap:wrap}
@@ -32,8 +38,8 @@
 .type-chip.mine::after{content:'あなた';position:absolute;top:-8px;right:-4px;background:#ffc200;color:#333;font-size:0.58em;font-weight:900;padding:1px 5px;border-radius:6px;white-space:nowrap;line-height:1.4;font-family:sans-serif}
 
 /* 結果カード */
-.result-card{border-radius:14px;overflow:hidden;margin:0 0 20px;box-shadow:0 6px 28px rgba(0,0,0,0.12)}
-.result-card-top{padding:36px 24px 28px;text-align:center;color:#fff;position:relative}
+.result-card{border-radius:6px;overflow:hidden;margin:0 0 20px;border:1px solid #E3DCCE;box-shadow:0 10px 26px rgba(35,33,28,0.10),8px 8px 0 rgba(35,33,28,0.04)}
+.result-card-top{padding:34px 24px 26px;text-align:center;color:#fff;position:relative}
 .result-illust{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;background:rgba(255,255,255,0.18);border:3px solid rgba(255,255,255,0.35);display:flex;align-items:center;justify-content:center;font-size:3.2em;line-height:1}
 .result-type-code{font-size:2.8em;font-weight:900;letter-spacing:5px;line-height:1;margin-bottom:6px;font-family:monospace,sans-serif;opacity:0.85}
 .result-type-name{font-size:1.35em;font-weight:900;margin-bottom:14px;line-height:1.3}
@@ -47,9 +53,9 @@
 .result-desc p:last-child{margin-bottom:0}
 
 /* セクションヘッダー 1・2・3 */
-.rsec-header{display:flex;align-items:center;gap:10px;margin:22px 0 14px;padding-top:20px;border-top:1px solid var(--border)}
-.rsec-num{width:24px;height:24px;background:var(--green);color:#fff;border-radius:50%;font-size:0.72em;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.rsec-title{font-size:0.92em;font-weight:900}
+.rsec-header{display:flex;align-items:center;gap:10px;margin:24px 0 14px;padding-top:22px;border-top:1px solid #DCD6CA}
+.rsec-num{width:26px;height:26px;background:#14503C;color:#fff;border-radius:50%;font-family:'JetBrains Mono',monospace;font-size:0.66em;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rsec-title{font-size:0.96em;font-weight:900;color:#23211C}
 
 /* 性格特性: 軸グリッド */
 .axis-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
@@ -69,8 +75,8 @@
 
 /* 相性ミニカード（自動算出・クリック可能） */
 .compat-group-label{font-size:0.76em;font-weight:700;margin:14px 0 8px;display:flex;align-items:center;gap:6px}
-.cg-good{color:var(--green)}
-.cg-bad{color:#c94a29}
+.cg-good{color:#14503C}
+.cg-bad{color:#A8503A}
 .compat-mini-list{display:flex;flex-direction:column;gap:8px}
 .cmc{background:#fff;border-radius:10px;border:1px solid var(--border);border-left-width:3px;padding:12px 14px;text-decoration:none;color:inherit;display:block;transition:transform 0.15s,box-shadow 0.15s;cursor:pointer}
 .cmc:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(0,0,0,0.1)}
@@ -120,7 +126,7 @@
 .feedback-btn{flex:1;max-width:160px;padding:10px 0;border-radius:30px;border:1.5px solid var(--border);background:#fff;font-size:0.85em;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:#444}
 .feedback-btn:hover{border-color:var(--green);color:var(--green)}
 .feedback-btn.selected-good{background:var(--green);color:#fff;border-color:var(--green)}
-.feedback-btn.selected-bad{background:#c94a29;color:#fff;border-color:#c94a29}
+.feedback-btn.selected-bad{background:#A8503A;color:#fff;border-color:#A8503A}
 .feedback-thanks{font-size:0.82em;color:var(--sub);margin-top:10px}
 
 /* レスポンシブ */
@@ -133,12 +139,174 @@
 @media(max-width:480px){
   .axis-grid{grid-template-columns:1fr}
 }
+
+/* ===== 正典スペックシート（旅人取扱説明書） ===== */
+.spec{max-width:1040px;margin:0 auto}
+.spec-steps{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 0 18px;flex-wrap:wrap}
+.spec-steps .s{width:20px;height:20px;border-radius:999px;background:#DED8CC;color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;display:grid;place-content:center;flex-shrink:0}
+.spec-steps .s.done{background:#BEC7BE}
+.spec-steps .s.now{background:#14503C}
+.spec-steps .lb{font-size:12.5px;font-weight:700;color:#8C877E;margin-right:6px}
+.spec-steps .s.now + .lb{color:#14503C}
+.spec-steps .ln{width:26px;height:1px;background:#DCD6CA;margin-right:6px}
+.spec-retry{position:absolute;right:0;top:0;display:inline-flex;align-items:center;height:38px;padding:0 18px;border:1px solid #DCD6CA;border-radius:999px;background:#fff;font-size:12.5px;font-weight:700;color:#3C3A34}
+.spec-hidden{display:none}
+.spec-panel{border:1px solid #E8E2D8;border-radius:12px;background:#fff;padding:22px 24px 24px;margin-bottom:20px;box-shadow:0 2px 0 rgba(20,40,30,0.03),0 8px 20px rgba(20,40,30,0.05)}
+.spec-h{display:flex;align-items:center;gap:10px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #E8E2D8;flex-wrap:wrap}
+.spec-h .no{width:26px;height:26px;border-radius:6px;background:#14503C;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;display:grid;place-content:center;flex-shrink:0}
+.spec-h .en{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.1em;color:#14503C}
+.spec-h .sep{width:1px;height:13px;background:#DCD6CA}
+.spec-h .ttl{font-size:13px;font-weight:700;color:#3C3A34}
+.spec-grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.spec-col{display:flex;flex-direction:column;gap:20px;min-width:0}
+.spec-col > .spec-panel{margin:0}
+.spec-col > .spec-panel:last-child{flex:1}
+@media(max-width:900px){.spec-grid2{grid-template-columns:1fr}.spec-col > .spec-panel:last-child{flex:none}}
+.id-stamp{position:absolute;right:-18px;bottom:-14px;width:108px;transform:rotate(-8deg)}
+.id-side{position:relative}
+/* 05 COMPATIBILITY */
+.cmp-head{display:flex;align-items:center;gap:8px;margin:4px 0 10px;font-size:12.5px;font-weight:700}
+.cmp-head .dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.cmp-head.good{color:#14503C} .cmp-head.good .dot{background:#14503C}
+.cmp-head.bad{color:#A8503A;margin-top:16px} .cmp-head.bad .dot{background:#A8503A}
+.cmp-row{text-align:left;width:100%;border:1px solid #E8E2D8;border-radius:10px;background:#FBF8F1;padding:13px 16px;display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;margin-bottom:10px;color:inherit;text-decoration:none}
+.cmp-row.bad{border-color:#EEDCD5;background:#FDF6F3}
+.cmp-row img{width:52px;height:52px;object-fit:contain}
+.cmp-row .nm{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.cmp-row .nm b{font-weight:900;font-size:16px;color:#23211C}
+.cmp-row .nm span{font-size:11.5px;color:#8C877E}
+.cmp-row .tx{font-size:11.5px;line-height:1.6;color:#55504A;margin:4px 0}
+.cmp-row .bar{display:block;height:6px;border-radius:999px;background:#E8E2D8;overflow:hidden}
+.cmp-row .bar i{display:block;height:100%;background:#14503C}
+.cmp-row.bad .bar{background:#EEDCD5} .cmp-row.bad .bar i{background:#A8503A}
+.cmp-row .pct{font-weight:900;font-size:28px;line-height:1;color:#23211C;white-space:nowrap}
+.cmp-row.bad .pct{color:#A8503A}
+.cmp-row .pct small{font-size:13px}
+.cmp-all{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:50px;border:1px solid #DCD6CA;border-radius:8px;background:#fff;font-size:13.5px;font-weight:700;color:#3C3A34;margin-top:4px}
+
+/* 01 アイデンティティ */
+.id-card{position:relative;overflow:hidden}
+.id-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px 300px;gap:20px;align-items:start}
+.id-grid > div{min-width:0}
+@media(max-width:1080px){.id-grid{grid-template-columns:1fr}}
+.id-modelno{display:flex;align-items:center;gap:10px;border-bottom:1px solid #E8E2D8;padding-bottom:10px;flex-wrap:wrap}
+.id-modelno .l1{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8C877E}
+.id-modelno .l2{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.06em;color:#A8A29A}
+.id-modelno .no{padding:3px 10px;border:1px solid #DCD6CA;border-radius:4px;background:#FBF8F1;color:#3C3A34;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700}
+.id-code{font-weight:900;font-size:60px;line-height:1.05;letter-spacing:-0.01em;color:#23211C;margin:14px 0 0;white-space:nowrap}
+.id-code span{font-size:27px}
+.id-name{font-weight:900;font-size:42px;line-height:1.2;color:#14503C;margin:2px 0 0}
+.id-hero{overflow:hidden}
+.id-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.id-chips span{display:inline-flex;align-items:center;gap:6px;border:1px solid #DCD6CA;border-radius:7px;padding:7px 12px;font-size:12.5px;font-weight:700;color:#3C3A34;background:#fff}
+.id-chips span img{width:14px;height:14px;object-fit:contain}
+.id-quote{margin:14px 0 0;position:relative;padding-left:22px;font-size:14.5px;line-height:1.95;color:#3C3A34}
+.id-quote::before{content:"\201C";position:absolute;left:0;top:-2px;font-size:22px;color:#C9C2B4}
+.id-hero{height:380px;display:grid;place-items:end center}
+.id-hero img{max-height:380px;max-width:100%;object-fit:contain}
+.id-side{border:1px solid #E3DCCE;border-radius:10px;background:#FBF8F1;padding:20px 22px 24px;display:grid;gap:12px}
+.id-side .head{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:#3C3A34;border-bottom:1px solid #E3DCCE;padding-bottom:11px}
+.id-side .row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:10px;align-items:baseline;padding-bottom:9px;border-bottom:1px solid #EDE7DC}
+.id-side .row .k{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.06em;color:#8C877E}
+.id-side .row .v{font-size:12.5px;font-weight:700;color:#3C3A34}
+.id-side .mfg{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.07em;color:#8C877E}
+.id-side .mfg + b{font-size:13px;color:#3C3A34}
+.id-deco{position:absolute;pointer-events:none;opacity:0.6}
+
+/* 02 プロフィール軸行 */
+.spec-axis-row{display:grid;grid-template-columns:46px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid #EFEBE3}
+.spec-axis-row img{width:44px;height:44px;object-fit:contain}
+.spec-axis-row .top{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:6px}
+.spec-axis-row .en{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.09em;color:#14503C}
+.spec-axis-row .lb{font-size:13.5px;font-weight:700;color:#23211C}
+.spec-axis-row .pk{margin-left:auto;font-size:11.5px;color:#8C877E}
+.spec-axis-row p{margin:0;font-size:12.5px;line-height:1.95;color:#55504A}
+.spec-note{display:flex;align-items:center;gap:10px;border:1px solid #F0E3C4;border-radius:8px;background:#FDF7E7;padding:13px 16px;font-size:12.5px;font-weight:700;color:#3C3A34;margin-top:6px}
+.spec-note img{width:20px;height:20px;object-fit:contain}
+
+/* 03 スペックバー + レーダー */
+.spec-bar-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #EFEBE3}
+.spec-bar-row img{width:30px;height:30px;object-fit:contain}
+.spec-bar-row .lab{flex:1;font-size:13px;color:#23211C}
+.spec-bar-row .lab small{color:#8C877E;font-size:11.5px}
+.spec-bar-row .dots{font-size:17px;letter-spacing:2px;white-space:nowrap}
+.spec-bar-row .dots .on{color:#F2B01E}
+.spec-bar-row .dots .off{color:#DED8CC}
+.spec-micro{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.spec-micro > div{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #E8E2D8;border-radius:7px;background:#FBF8F1;padding:10px 12px}
+.spec-micro .mk{font-size:11px;line-height:1.45;color:#55504A}
+.spec-micro .mv{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;white-space:nowrap;color:#14503C}
+.spec-radar{display:grid;grid-template-columns:200px minmax(0,1fr);gap:18px;align-items:center;border-top:1px solid #EFEBE3;padding-top:16px;margin-top:6px}
+.spec-radar svg{width:200px;height:180px}
+.spec-radar-lg{grid-template-columns:1fr;justify-items:center;border-top:0;padding-top:0;margin-top:0;gap:14px}
+.spec-radar-lg svg{width:min(300px,100%);height:248px}
+.spec-radar-lg > div{width:100%;min-width:0}
+.spec-lv{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-bottom:14px;padding-bottom:16px;border-bottom:1px solid #EFEBE3;font-size:13px;color:#55504A}
+.spec-lv > span{display:flex;align-items:center;gap:8px}
+.spec-lv b{font-weight:700;color:#3C3A34}
+.spec-lv .rt{white-space:nowrap}
+.spec-lv .on{color:#F2B01E;letter-spacing:1.5px}
+.spec-lv .off{color:#DED8CC;letter-spacing:1.5px}
+.spec-radar p{margin:0;font-size:13px;line-height:2;color:#55504A}
+
+/* 04 おすすめの国 */
+.spec-country-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.spec-country-grid a{position:relative;display:block;border-radius:8px;overflow:hidden;border:1px solid #E8E2D8}
+.spec-country-grid img{display:block;width:100%;height:104px;object-fit:cover}
+.spec-country-grid .cap{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;padding:7px 9px;background:rgba(255,255,255,0.94);font-size:12px;font-weight:700;color:#23211C}
+.spec-country-grid .cap span{color:#8C877E}
+.spec-country-grid a.noimg{min-height:104px;background:linear-gradient(135deg,#EAF3EE,#D8E7DE);display:flex;align-items:flex-end}
+.spec-country-grid a.noimg .cap{position:static;width:100%}
+.spec-cta-in{display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;border-radius:8px;background:#14503C;color:#fff;font-size:13.5px;font-weight:700;margin-top:12px}
+
+/* 06 ヒント */
+.spec-tip-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+.spec-tip-cards > div{display:grid;gap:12px;justify-items:center;text-align:center;padding:16px 6px;border:1px solid #EFEBE3;border-radius:10px;background:#FBF9F4}
+.spec-tip-cards img{width:60px;height:60px;object-fit:contain}
+.spec-tip-cards span{font-size:12.5px;line-height:1.8;color:#3C3A34}
+.spec-h .en.tip{color:#8F6415}
+
+/* 07 INCLUDED 付属品 */
+.spec-incl{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:center}
+.spec-incl-book{display:block;width:100%;max-width:200px;filter:drop-shadow(0 12px 22px rgba(35,33,28,0.18))}
+.spec-incl-list{display:grid;gap:10px;margin:0 0 14px;padding:0;list-style:none}
+.spec-incl-list li{display:flex;align-items:center;gap:9px;font-size:13px;color:#3C3A34}
+.spec-incl-list li::before{content:"✓";color:#2E7D53;font-weight:900}
+.spec-incl-btns{display:grid;gap:10px}
+.spec-incl-btns a{display:flex;align-items:center;justify-content:space-between;min-height:50px;padding:0 20px;border-radius:8px;font-size:13.5px;font-weight:900}
+.spec-incl-btns .primary{background:#ffc200;color:#23211C}
+.spec-incl-btns .ghost{background:#fff;border:1px solid #E3DCCE;color:#3C3A34}
+@media(max-width:600px){.spec-incl{grid-template-columns:1fr;justify-items:center}}
+
+/* CTA バンド（正典: 緑帯84px + 下に2ボタン + 右に紙飛行機の子ども240px） */
+.spec-cta-wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:20px;align-items:end;margin-top:8px}
+.spec-cta-col{display:grid;gap:12px;min-width:0}
+.spec-cta-band{display:flex;align-items:center;justify-content:center;gap:16px;min-height:84px;padding:14px 24px;border-radius:10px;background:#14503C;color:#fff;text-align:center}
+.spec-cta-band .txt{display:grid;gap:4px}
+.spec-cta-band h2{margin:0;font-weight:900;font-size:25px;color:#fff;border:0;padding:0;line-height:1.25}
+.spec-cta-band p{margin:0;font-size:12.5px;color:rgba(255,255,255,0.8);line-height:1.7}
+.spec-cta-band .arw{font-size:22px;flex-shrink:0}
+.spec-cta-sub{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.spec-cta-sub a{display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:0 20px;border:1px solid #DCD6CA;border-radius:8px;background:#fff;font-size:13.5px;font-weight:700;color:#3C3A34}
+.spec-cta-wrap > img{width:240px;object-fit:contain;justify-self:end}
+@media(max-width:900px){.spec-cta-wrap{grid-template-columns:1fr}.spec-cta-wrap > img{display:none}}
+@media(max-width:600px){.spec-cta-band{flex-direction:column;gap:8px}.spec-cta-band h2{font-size:21px}.spec-cta-sub{grid-template-columns:1fr}}
+
+@media(max-width:900px){
+  .id-grid{grid-template-columns:1fr}
+  .id-hero{height:220px;order:-1}
+  .id-hero img{max-height:220px}
+  .id-code{font-size:44px}.id-name{font-size:30px}
+  .spec-micro,.spec-tip-cards,.spec-country-grid{grid-template-columns:1fr 1fr}
+  .spec-radar{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .spec-cta-band img{position:static;margin-top:8px}
+}
 </style>
 </head>
 <body>
 
 <header class="site-header">
-  <a href="index.html" class="site-logo"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a>
+  <a href="index.html" class="site-logo"><img src="..\assets\site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:4px;display:inline-block"><span>World</span> Mappy</a>
   <span class="site-tagline">世界の旅行ガイド</span>
   <a class="header-diag-link" href="types.html">旅行タイプ一覧</a>
   <div class="hb-wrap">
@@ -155,91 +323,126 @@
 
 <div class="page-wrap">
 
-  <!-- 閲覧状態バナー -->
-  <div class="viewing-banner" id="viewing-banner">
-    <span class="viewing-banner-icon">👀</span>
-    <span class="viewing-banner-text" id="viewing-banner-text"></span>
-    <a class="viewing-banner-link" id="viewing-banner-link" href="quiz.html">診断してみる</a>
+  <!-- 診断ステップ -->
+  <div class="spec spec-steps">
+    <span class="s done">1</span><span class="lb">タイプ診断</span><span class="ln"></span>
+    <span class="s done">2</span><span class="lb">診断中</span><span class="ln"></span>
+    <span class="s now">3</span><span class="lb">結果発表</span>
+    <a class="spec-retry" href="quiz.html">もう一度診断する</a>
   </div>
 
-  <!-- タイプブラウザ（常時表示） -->
-  <div class="type-browser" id="type-browser">
-    <div class="type-browser-title">タイプ一覧 — クリックして性格分析を見る</div>
-    <div class="type-groups">
-      <div class="type-group" style="border-left-color:#2563a0">
-        <div class="type-group-label" style="color:#2563a0">計画 × 文化・学び</div>
-        <div class="type-chips">
-          <a class="type-chip" data-type="PCSH" href="?type=PCSH">PCSH</a>
-          <a class="type-chip" data-type="PCSW" href="?type=PCSW">PCSW</a>
-          <a class="type-chip" data-type="PCLH" href="?type=PCLH">PCLH</a>
-          <a class="type-chip" data-type="PCLW" href="?type=PCLW">PCLW</a>
-        </div>
+  <div class="spec">
+
+  <!-- 01 IDENTITY -->
+  <div class="spec-panel id-card">
+    <img class="id-deco" src="img/r/route.png" alt="" style="left:40%;top:8px;width:150px;opacity:.75">
+    <img class="id-deco" src="img/r/pin.png" alt="" style="left:54%;top:44px;width:24px;opacity:1">
+    <img class="id-deco" src="img/r/plane.png" alt="" style="right:32%;top:62px;width:34px;transform:rotate(14deg);opacity:1">
+    <img class="id-deco" src="img/r/seal.png" alt="" style="right:22%;top:12px;width:78px;opacity:.5">
+    <div class="spec-h"><span class="no">01</span><span class="ttl">あなたの旅人モデルは…</span></div>
+    <div class="id-grid">
+      <div>
+        <div class="id-modelno"><span class="l1">TRAVELER MODEL</span><span class="l2">MODEL NO.</span><span class="no" id="id-modelno">—</span></div>
+        <div class="id-code" id="id-code">—<span>型</span></div>
+        <div class="id-name" id="id-name">—</div>
+        <div class="id-chips" id="id-chips"></div>
+        <p class="id-quote" id="id-quote"></p>
       </div>
-      <div class="type-group" style="border-left-color:#e07b39">
-        <div class="type-group-label" style="color:#e07b39">計画 × 絶景・リフレッシュ</div>
-        <div class="type-chips">
-          <a class="type-chip" data-type="PNSH" href="?type=PNSH">PNSH</a>
-          <a class="type-chip" data-type="PNSW" href="?type=PNSW">PNSW</a>
-          <a class="type-chip" data-type="PNLH" href="?type=PNLH">PNLH</a>
-          <a class="type-chip" data-type="PNLW" href="?type=PNLW">PNLW</a>
-        </div>
+      <div class="id-hero"><img id="id-hero-img" src="img/r/model-hero.png" alt=""></div>
+      <div class="id-side">
+        <span class="head">IDENTITY CARD</span>
+        <div id="id-side-rows"></div>
+        <div><span class="mfg">MANUFACTURED BY</span><br><b>World Mappy Inc.</b></div>
+        <img class="id-stamp" src="img/r/stamp.png" alt="WORLD MAPPY APPROVED">
       </div>
-      <div class="type-group" style="border-left-color:#c94a29">
-        <div class="type-group-label" style="color:#c94a29">直感 × 文化・学び</div>
-        <div class="type-chips">
-          <a class="type-chip" data-type="FCSH" href="?type=FCSH">FCSH</a>
-          <a class="type-chip" data-type="FCSW" href="?type=FCSW">FCSW</a>
-          <a class="type-chip" data-type="FCLH" href="?type=FCLH">FCLH</a>
-          <a class="type-chip" data-type="FCLW" href="?type=FCLW">FCLW</a>
-        </div>
+    </div>
+  </div>
+
+  <div class="spec-grid2">
+
+  <div class="spec-col">
+
+  <!-- 02 PRODUCT SPEC -->
+  <div class="spec-panel">
+    <div class="spec-h"><span class="no">02</span><span class="en">PRODUCT SPEC</span><span class="sep"></span><span class="ttl">製品スペック</span></div>
+    <div class="spec-radar spec-radar-lg">
+      <svg viewBox="-22 -4 162 130" aria-hidden="true">
+        <circle cx="58" cy="58" r="47" fill="#F7F5EF" stroke="#EFEBE3" stroke-width="1"></circle>
+        <polygon points="58,12 104,58 58,104 12,58" fill="none" stroke="#E0DACD" stroke-width="1"></polygon>
+        <polygon points="58,30 86,58 58,86 30,58" fill="none" stroke="#EFEBE3" stroke-width="1"></polygon>
+        <line x1="58" y1="12" x2="58" y2="104" stroke="#EFEBE3" stroke-width="1"></line>
+        <line x1="12" y1="58" x2="104" y2="58" stroke="#EFEBE3" stroke-width="1"></line>
+        <polygon id="spec-radar-poly" points="58,58 58,58 58,58 58,58" fill="rgba(20,80,60,0.3)" stroke="#3E7A54" stroke-width="1.8"></polygon>
+        <text x="58" y="7" text-anchor="middle" font-size="8.5" fill="#55504A">計画力</text>
+        <text x="58" y="116" text-anchor="middle" font-size="8.5" fill="#55504A">協調性</text>
+        <text x="110" y="61" text-anchor="start" font-size="8.5" fill="#55504A">好奇心</text>
+        <text x="8" y="61" text-anchor="end" font-size="8.5" fill="#55504A">快適性</text>
+      </svg>
+      <div>
+        <div class="spec-lv" id="spec-lv"></div>
+        <p id="spec-radar-note"></p>
       </div>
-      <div class="type-group" style="border-left-color:#d47a00">
-        <div class="type-group-label" style="color:#d47a00">直感 × 絶景・リフレッシュ</div>
-        <div class="type-chips">
-          <a class="type-chip" data-type="FNSH" href="?type=FNSH">FNSH</a>
-          <a class="type-chip" data-type="FNSW" href="?type=FNSW">FNSW</a>
-          <a class="type-chip" data-type="FNLH" href="?type=FNLH">FNLH</a>
-          <a class="type-chip" data-type="FNLW" href="?type=FNLW">FNLW</a>
+    </div>
+    <div class="spec-micro" id="spec-micro"></div>
+  </div>
+
+  <!-- 04 RECOMMENDED ENVIRONMENT -->
+  <div class="spec-panel spec-hidden" id="spec-country-sec">
+    <div class="spec-h"><span class="no">04</span><span class="en">RECOMMENDED ENVIRONMENT</span><span class="sep"></span><span class="ttl">推奨動作環境</span></div>
+    <p style="margin:0 0 16px;font-size:13px;line-height:2;color:#55504A;text-wrap:pretty" id="spec-env-lead"></p>
+    <span style="font-size:13px;font-weight:700;color:#3C3A34">このモデルが性能を発揮する環境</span>
+    <div id="spec-env" style="margin-top:8px"></div>
+    <div style="display:grid;gap:3px;margin:14px 0 8px"><span style="font-size:13px;font-weight:700;color:#14503C" id="spec-country-title">おすすめの国</span><span style="font-size:11.5px;color:#8C877E">計画ページで旅のヒントをチェック！</span></div>
+    <div class="spec-country-grid" id="spec-country-grid"></div>
+    <a class="spec-cta-in" id="spec-country-cta" href="../">他のおすすめの国を見る<span>→</span></a>
+  </div>
+
+  <!-- 06 PERFORMANCE TIP -->
+  <div class="spec-panel spec-hidden" id="spec-tip-sec">
+    <div class="spec-h"><span class="no">06</span><span class="en tip">PERFORMANCE TIP</span><span class="sep"></span><span class="ttl">開発者からのヒント</span></div>
+    <p style="margin:0;font-size:13px;line-height:2;color:#55504A" id="spec-tip-text"></p>
+    <div class="spec-tip-cards" id="spec-tip-cards"></div>
+  </div>
+
+  </div><!-- /spec-col -->
+
+  <div class="spec-col">
+
+  <!-- 03 TRAVELER PROFILE -->
+  <div class="spec-panel">
+    <div class="spec-h"><span class="no">03</span><span class="en">TRAVELER PROFILE</span><span class="sep"></span><span class="ttl">総合タイプ解説</span></div>
+    <div id="spec-axis-rows"></div>
+    <div class="spec-note"><img src="img/r/ic-heart.png" alt=""><span id="spec-profile-note"></span></div>
+  </div>
+
+  <!-- 05 COMPATIBILITY -->
+  <div class="spec-panel" id="spec-compat-sec">
+    <div class="spec-h"><span class="no">05</span><span class="en">COMPATIBILITY</span><span class="sep"></span><span class="ttl">互換性（他モデルとの相性）</span></div>
+    <div id="compat-auto"></div>
+  </div>
+
+  <!-- 07 INCLUDED -->
+  <div class="spec-panel" id="spec-incl-sec">
+    <div class="spec-h"><span class="no">07</span><span class="en">INCLUDED</span><span class="sep"></span><span class="ttl">付属品</span></div>
+    <p style="margin:0 0 12px;font-size:13px;line-height:2;color:#55504A" id="spec-incl-lead">本製品には、取扱説明書が付属しています。ご家族やご友人に共有して、より良い旅のサポートを受けましょう。</p>
+    <div class="spec-incl">
+      <div><img class="spec-incl-book" id="spec-incl-book" src="img/r/manual-book.png" alt="旅人取扱説明書"></div>
+      <div>
+        <ul class="spec-incl-list">
+          <li>基本仕様</li><li>正しい扱い方</li><li>使用上の注意</li><li>推奨環境</li>
+        </ul>
+        <div class="spec-incl-btns">
+          <a class="primary" id="spec-incl-open" href="types.html">取扱説明書を開く<span>→</span></a>
+          <a class="ghost" href="#share-block">この結果をシェアする<span>→</span></a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- 結果カード -->
-  <div class="result-card">
-    <div class="result-card-top" id="result-top">
-      <div class="result-illust" id="result-illust"></div>
-      <div class="result-type-code" id="result-code"></div>
-      <div class="result-type-name" id="result-name"></div>
-      <div class="result-traits" id="result-traits"></div>
-    </div>
-    <div class="result-card-body">
+  </div><!-- /spec-col -->
 
-      <!-- 1 性格特性 -->
-      <div class="rsec-header">
-        <span class="rsec-num">1</span>
-        <span class="rsec-title">性格特性</span>
-      </div>
-      <div class="axis-grid" id="axis-grid"></div>
-      <div class="result-body-label">総合タイプ解説</div>
-      <div class="result-desc" id="result-desc"></div>
-
-      <!-- 2 おすすめ旅スタイル -->
-      <div class="rsec-header">
-        <span class="rsec-num">2</span>
-        <span class="rsec-title">おすすめ旅スタイル</span>
-      </div>
-      <div class="travel-style-box" id="result-travel-style"></div>
-
-      <!-- 3 相性のいい旅行タイプ -->
-      <div class="rsec-header">
-        <span class="rsec-num">3</span>
-        <span class="rsec-title">相性のいい旅行タイプ</span>
-      </div>
-      <div id="compat-auto"></div>
-
-    </div>
-  </div>
+  </div><!-- /spec-grid2 -->
+  </div><!-- /spec -->
 
   <!-- 結果をシェアする -->
   <div class="share-block" id="share-block">
@@ -271,23 +474,28 @@
     <div class="feedback-thanks" id="feedback-thanks" style="display:none">フィードバックありがとうございました！</div>
   </div>
 
-  <a class="country-search-cta" id="country-search-cta" href="../">
-    <span>このタイプに合う国を探す</span>
-    <span class="cta-arrow">→</span>
-  </a>
-
-  <div style="text-align:center;margin-top:4px">
-    <a class="diag-reset" id="bottom-action-link" href="quiz.html">もう一度診断する</a>
+  <div class="spec" style="margin-top:24px">
+    <div class="spec-cta-wrap">
+      <div class="spec-cta-col">
+        <a class="spec-cta-band" href="../index.html" id="spec-band-cta">
+          <span class="txt">
+            <h2>このモデルにおすすめの国を探す</h2>
+            <p>旅のヒントやモデルに合った過ごし方をチェック！</p>
+          </span>
+          <span class="arw">→</span>
+        </a>
+        <div class="spec-cta-sub">
+          <a href="quiz.html">もう一度診断する<span>→</span></a>
+          <a href="types.html">16種類の旅人モデルを見る<span>→</span></a>
+        </div>
+      </div>
+      <img src="img/r/paperplane-kid.png" alt="">
+    </div>
   </div>
 
 </div><!-- /page-wrap -->
 
-<footer>
-  <a href="../">トップへ戻る</a>
-  <span>｜</span>
-  <a href="../common/privacy.html">プライバシーポリシー</a>
-  <span style="margin:0 10px">© 2026 World Mappy</span>
-</footer>
+<script src="../assets/country-links.js"></script>
 
 <script>
 // ===== 軸情報 =====
@@ -448,9 +656,9 @@ function getCompat(typeA, typeB) {
     if (matchCount === 3) {
       text = `旅のスタイルはほぼ同じ。${notes[0]}`;
     } else if (matchCount === 2) {
-      text = `2軸は一致、残り2軸でズレがある。${notes.join(' ')}`;
+      text = `2軸でズレがある。${notes[0]}`;
     } else {
-      text = `スタイルの差が大きめ。${notes.join(' ')} 旅の前に目的を共有しておこう。`;
+      text = `スタイルの差が大きめ。${notes[0]}旅の前に目的を共有しておこう。`;
     }
   }
   return {pct, text};
@@ -547,29 +755,28 @@ function buildAutoCompat(myType) {
     .map(([code, info]) => ({ code, info, ...getCompat(myType, code) }))
     .sort((a, b) => b.pct - a.pct);
 
-  const top3 = scores.slice(0, 3);
-  const bottom3 = scores.slice(-3).reverse();
+  const top2 = scores.slice(0, 2);
+  const bottom1 = scores.slice(-1);
 
-  function renderCards(items) {
-    return items.map(({code, info, pct, text}) => `
-    <a class="cmc" style="border-left-color:${info.color}" href="?type=${code}">
-      <div class="cmc-header">
-        <span class="cmc-code" style="color:${info.color}">${code}</span>
-        <span class="cmc-name">${info.name}</span>
-        <span class="cmc-pct" style="color:${info.color}">${pct}%</span>
-        <div class="cmc-bar-bg"><div class="cmc-bar-fill" style="width:${pct}%;background:${info.color}"></div></div>
-        <span class="cmc-arrow">›</span>
-      </div>
-      <div class="cmc-text">${text}</div>
+  function rows(items, bad, offset) {
+    return items.map(({code, info, pct, text}, i) => `
+    <a class="cmp-row${bad ? ' bad' : ''}" href="?type=${code}">
+      <img src="${BUSTS[(i + offset) % BUSTS.length]}" alt="">
+      <span>
+        <span class="nm"><b>${code}型</b><span>（${info.name}）</span></span>
+        <span class="tx">${text}</span>
+        <span class="bar"><i style="width:${pct}%"></i></span>
+      </span>
+      <span class="pct">${pct}<small>%</small></span>
     </a>`).join('');
   }
 
   document.getElementById('compat-auto').innerHTML = `
-    <div class="compat-group-label cg-good">◎ 相性が良いタイプ（上位3つ）</div>
-    <div class="compat-mini-list">${renderCards(top3)}</div>
-    <div class="compat-group-label cg-bad" style="margin-top:18px">△ 工夫が必要なタイプ（下位3つ）</div>
-    <div class="compat-mini-list">${renderCards(bottom3)}</div>
-    <div class="compat-note">旅のスタイルが異なっていても、お互いの特性を理解して役割を分担すれば旅の幅が広がります。</div>`;
+    <div class="cmp-head good"><span class="dot"></span>相性のいいモデル ─ 一緒に旅すると最高のパフォーマンス</div>
+    ${rows(top2, false, 0)}
+    <div class="cmp-head bad"><span class="dot"></span>ひと工夫でうまくいくモデル ─ 役割分担がカギ</div>
+    ${rows(bottom1, true, 2)}
+    <a class="cmp-all" href="types.html">全モデルとの相性を確認する<img src="img/r/ic-group.png" alt="" style="width:18px;height:18px;object-fit:contain"></a>`;
 }
 
 // ===== シェア画像生成 =====
@@ -746,74 +953,20 @@ function buildDescFromAxisText(type) {
 function renderResult(type) {
   const t = TYPES[type];
 
-  document.getElementById('result-code').textContent = type;
-  document.getElementById('result-name').textContent = t.name;
-  document.getElementById('result-desc').innerHTML = buildDescFromAxisText(type);
-  document.getElementById('result-top').style.background = t.color;
-  document.getElementById('result-traits').innerHTML =
-    t.traits.map(tr => `<span class="trait-badge">${tr}</span>`).join('');
-
-  document.getElementById('result-illust').textContent = type[1] === 'C' ? '🏛️' : '🏖️';
-
-  buildAxisGrid(type);
-  document.getElementById('result-travel-style').textContent = t.travelStyle;
   buildAutoCompat(type);
 
-  document.getElementById('country-search-cta').href = '../index.html?type=' + type;
   document.title = `${t.name}（${type}）診断結果 | World Mappy`;
 
-  // タイプブラウザ／ヘッダーnav のアクティブ状態
-  document.querySelectorAll('.type-chip, .hn-chip').forEach(c => {
-    c.classList.toggle('active', c.dataset.type === type);
-  });
-
-  // 自分の診断結果 vs 閲覧中の判定
+  // 自分の診断結果を表示中のときだけシェアブロックを出す
   const myType = sessionStorage.getItem('myType');
-  document.querySelectorAll('.type-chip').forEach(c => {
-    c.classList.toggle('mine', c.dataset.type === myType);
-  });
-
-  const banner = document.getElementById('viewing-banner');
   const shareBlock = document.getElementById('share-block');
-  const bottomLink = document.getElementById('bottom-action-link');
-
   if (myType === type) {
-    // 自分の診断結果を表示中
-    banner.classList.remove('show');
     shareBlock.style.display = '';
     setupShare(type);
-    bottomLink.textContent = 'もう一度診断する';
-    bottomLink.href = 'quiz.html';
   } else {
-    // 閲覧中（一覧・相性カード経由、または未診断）
-    banner.classList.add('show');
     shareBlock.style.display = 'none';
-    if (myType && TYPES[myType]) {
-      document.getElementById('viewing-banner-text').textContent =
-        'この性格分析を閲覧中です。あなたの診断結果は ' + myType + '（' + TYPES[myType].name + '）です';
-      document.getElementById('viewing-banner-link').textContent = '自分の結果に戻る';
-      document.getElementById('viewing-banner-link').href = '?type=' + myType;
-    } else {
-      document.getElementById('viewing-banner-text').textContent =
-        'この性格分析を閲覧中です。あなたの旅行タイプを診断してみませんか？';
-      document.getElementById('viewing-banner-link').textContent = '診断してみる';
-      document.getElementById('viewing-banner-link').href = 'quiz.html';
-    }
-    bottomLink.textContent = '診断してタイプを見つける';
-    bottomLink.href = 'quiz.html';
   }
 }
-
-// ===== 初期化：URLパラメータからタイプを決定 =====
-(function init() {
-  const params = new URLSearchParams(location.search);
-  const type = params.get('type');
-  if (!type || !TYPES[type]) {
-    location.href = 'quiz.html';
-    return;
-  }
-  renderResult(type);
-})();
 
 function toggleHbMenu() {
   document.getElementById('hb-btn').classList.toggle('open');
@@ -826,6 +979,206 @@ document.addEventListener('click', e => {
     document.getElementById('hb-panel').classList.remove('open');
   }
 });
+
+/* ===== スペックシート（旅人取扱説明書）描画 =====
+   Claude Design 正典 "Travel Diagnosis PC.dc.html" の派生ロジックを忠実移植。
+   すべて型コード rt の4文字（P/F・C/N・S/L・H/W）から機械的に導出する。 */
+const RES_ICON = ['img/r/ic-plan.png','img/r/ic-culture.png','img/r/ic-group.png','img/r/ic-comfort.png'];
+const ENV_ICON = ['img/r/ic-culture.png','img/r/ic-heart.png','img/r/ic-group.png','img/r/ic-comfort.png','img/r/ic-calendar.png'];
+const TIP_ICON = ['img/r/ic-bulb.png','img/r/ic-heart.png','img/r/ic-plan.png'];
+const AXIS_EN  = ['PLANNING','CULTURE','GROUP','COMFORT'];
+
+function _stars(n){ n=Math.max(0,Math.min(5,n)); return '<span class="on">'+'★★★★★'.slice(0,n)+'</span><span class="off">'+'★★★★★'.slice(0,5-n)+'</span>'; }
+function SPEC(rt){ return [
+  {label:'旅程制御性能', sub:'計画力', n: rt[0]==='P'?5:2},
+  {label:'文化探知性能', sub:'好奇心', n: rt[1]==='C'?5:3},
+  {label:'同行者同期性能', sub:'協調性', n: rt[2]==='S'?5:3},
+  {label:'快適環境要求', sub:'快適性', n: rt[3]==='H'?5:2},
+]; }
+// マイクロスペック：★バー（＝各軸の寄り度）とは別に、2軸を掛け合わせた「旅の設計値」を出す。
+function MICRO(rt){
+  const P = rt[0]==='P', C = rt[1]==='C', S = rt[2]==='S', H = rt[3]==='H';
+  return [
+    {k:'最適な同行人数',     v: S ? (H?'3〜6人':'2〜4人') : (H?'1〜3人':'1〜2人'), c:'#2B2B28'},
+    {k:'旅程の予備日',       v: P ? (H?'0日':'1日') : (H?'2日':'2〜3日'), c:'#2B2B28'},
+    {k:'1日の平均行動距離',  v: C ? (H?'6〜8km':'8〜10km') : (H?'10〜12km':'15km+'), c:'#2B2B28'},
+    {k:'事前予約・手配の量', v: P ? (C?'多い':'ふつう') : (C?'少なめ':'ほぼ不要'), c: (P&&C) ? '#B3402F' : '#2B2B28'},
+    {k:'予算の主な配分先',   v: H ? (C?'宿・ガイド':'宿・移動') : (C?'入場料・食事':'アクティビティ'), c:'#2B2B28'},
+    {k:'向いている旅の長さ', v: P ? (H?'2〜4日':'4〜7日') : (H?'1週間前後':'長期・周遊'), c:'#1D7A63'},
+  ];
+}
+function ENVIRON(rt){ return [
+  {label:'歴史・文化が豊かな都市', n: rt[1]==='C'?5:3},
+  {label:'絶景・大自然スポット', n: rt[1]==='N'?5:3},
+  {label:'グループ・家族旅行', n: rt[2]==='S'?5:3},
+  {label:'快適な宿・移動環境', n: rt[3]==='H'?5:2},
+  {label:'完全ノープラン旅', n: rt[0]==='F'?5:2},
+]; }
+function TIPS(rt){ return [
+  rt[0]==='P' ? {a:'予定の中に',b:'自分時間をつくる'} : {a:'要予約だけは',b:'先に押さえる'},
+  rt[1]==='C' ? {a:'地元の人に',b:'おすすめを聞く'} : {a:'天気で行き先を',b:'入れ替える'},
+  rt[2]==='S' ? {a:'感動はその場で',b:'しっかり共有する'} : {a:'一人時間を',b:'遠慮なく取る'},
+]; }
+function TIP_TEXT(rt){
+  const lead = rt[2]==='S'
+    ? '同行者の満足を優先しすぎると、自分の希望が後回しになることがあります。'
+    : '自分のペースを保てる一方、同行者の期待とのズレが生まれることがあります。';
+  const fix = rt[0]==='P'
+    ? '旅程にひとつだけ「自分のための予定」を足すと、あなた自身の満足度も大きく向上します。'
+    : '要予約のものだけ先に押さえておくと、自由さを保ったまま失敗が減ります。';
+  return lead + fix;
+}
+function RADAR(rt){
+  const v=[rt[0]==='P'?5:2, rt[1]==='C'?5:3, rt[2]==='S'?5:3, rt[3]==='H'?5:2];
+  const r=46,cx=58,cy=58;
+  return [[cx,cy-r*v[0]/5],[cx+r*v[1]/5,cy],[cx,cy+r*v[2]/5],[cx-r*v[3]/5,cy]]
+    .map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+}
+function CATEGORY(rt){ return rt[0]==='P' ? (rt[2]==='S'?'Balance Traveler':'Planner Traveler')
+                                          : (rt[2]==='S'?'Social Traveler':'Free Traveler'); }
+function RADAR_NOTE(rt){
+  return (rt[0]==='P'?'計画力':'瞬発力')+'・'+(rt[2]==='S'?'協調性':'自立性')+'・'
+    +(rt[1]==='C'?'文化探知':'絶景探知')+'のバランスが高く、旅の安定稼働を支える高性能モデル。';
+}
+function COUNTRIES(rt){
+  const key = rt[1] + rt[3];
+  return ({
+    CH:['イタリア','台湾','チェコ'],   CW:['ベトナム','インド','ペルー'],
+    NH:['スイス','ニュージーランド','ハワイ'], NW:['アイスランド','ネパール','モンゴル'],
+  })[key] || ['イタリア','台湾','チェコ'];
+}
+/* 正典の国名 → サイト内の国ページ（存在するものだけ写真リンク化） */
+const COUNTRY_PAGE = {
+  'イタリア':'italy','台湾':'taiwan','ベトナム':'vietnam','ニュージーランド':'newzealand',
+};
+const BUSTS = ['img/r/bust-1.png','img/r/bust-2.png','img/r/bust-3.png','img/r/model-hero.png'];
+
+/* 02 TRAVELER PROFILE（4軸の解説行 + 締めの一文） */
+function buildProfile(rt){
+  const t = TYPES[rt]; if (!t) return;
+  const set = (id,v) => { const e = document.getElementById(id); if (e) e.innerHTML = v; };
+  let levels = []; try { levels = computeAxisLevels(rt); } catch(e) {}
+  const rows = ['PF','CN','SL','HW'].map((key,i) => {
+    const val = rt[i], info = AXIS_INFO[key], L = levels[i] || {};
+    const tier = (L.diff === undefined || L.diff >= 4) ? 4 : (L.diff >= 2 ? 2 : 1);
+    const desc = (AXIS_TEXT[key] && AXIS_TEXT[key][val] && AXIS_TEXT[key][val][tier]) || info[val].desc;
+    return '<div class="spec-axis-row"><img src="'+RES_ICON[i]+'" alt=""><div>'
+      + '<div class="top"><span class="en">'+AXIS_EN[i]+'</span>'
+      + '<span style="width:1px;height:11px;background:#DCD6CA;display:inline-block"></span>'
+      + '<span class="lb">'+info.label+'</span><span class="pk">'+info[val].short+'</span></div>'
+      + '<p>'+desc+'</p></div></div>';
+  }).join('');
+  set('spec-axis-rows', rows);
+  set('spec-profile-note', t.closing || '');
+}
+
+function renderSpecSheet(rt){
+  const t = (TYPES || {})[rt];
+  if (!t) return;
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.innerHTML = v; };
+
+  // --- スペック値（§03のバー・§01のMODEL NO.で共用） ---
+  // 自分の診断結果を見ているときは実際の回答（投票数）から算出、他タイプ閲覧中は正典の標準値。
+  let lv = []; try { lv = computeAxisLevels(rt); } catch(e) {}
+  const spec = SPEC(rt);
+  // level===3 は「2:2で5問目に入り 3:2 で決着した僅差の軸」。勝敗によらず ★3 に寄せる。
+  const nOf = i => {
+    const L = lv[i];
+    if (!L || L.level == null) return spec[i].n;
+    if (L.level === 3) return 3;
+    return Math.max(1, Math.min(5, Math.round(L.aPct / 20)));
+  };
+  const personalized = lv.some(x => x && x.level != null);
+  const specDigits = [0,1,2,3].map(nOf).join('');
+
+  // --- 01 IDENTITY ---
+  set('id-modelno', rt + '-' + specDigits);
+  set('id-code', rt + '<span>型</span>');
+  set('id-name', t.name);
+  set('id-chips', (t.traits||[]).map((x,i) => '<span><img src="'+RES_ICON[i]+'" alt="">'+x+'</span>').join(''));
+  set('id-quote', t.closing || t.travelStyle || '');
+  set('id-side-rows', [
+    ['MODEL NAME', t.name, '#23211C'],
+    ['MODEL NO.', rt, '#23211C'],
+    ['CATEGORY', CATEGORY(rt), '#23211C'],
+    ['VERSION', '1.0', '#23211C'],
+    ['STATUS', '● 正常稼働中', '#14503C'],
+  ].map(([k,v,c]) => '<div class="row"><span class="k">'+k+'</span><span class="v" style="color:'+c+'">'+v+'</span></div>').join(''));
+
+  // --- 03 PRODUCT SPEC（4軸レーダー + マイクロ） ---
+  const v = [0,1,2,3].map(nOf);   // 各軸の Lv.1〜5（回答比率ベース、僅差は3固定）
+  const dot = n => '<span class="rt"><span class="on">'+'★★★★★'.slice(0,n)+'</span><span class="off">'+'★★★★★'.slice(0,5-n)+'</span></span>';
+  set('spec-lv', ['計画力','好奇心','協調性','快適性']
+    .map((lb,i) => '<span><b>'+lb+'</b>'+dot(v[i])+'</span>').join(''));
+  const poly = document.getElementById('spec-radar-poly');
+  if (poly) {
+    const r = 46, cx = 58, cy = 58;
+    poly.setAttribute('points', [
+      [cx, cy - r*v[0]/5], [cx + r*v[1]/5, cy], [cx, cy + r*v[2]/5], [cx - r*v[3]/5, cy]
+    ].map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' '));
+  }
+  set('spec-radar-note', RADAR_NOTE(rt)
+    + (personalized ? '' : '<br><span style="color:#8C877E;font-size:11.5px">※あなたの回答からではなく、このタイプの標準値を表示しています。</span>'));
+  set('spec-micro', MICRO(rt).map(m =>
+    '<div><span class="mk">'+m.k+'</span><span class="mv" style="color:'+m.c+'">'+m.v+'</span></div>'
+  ).join(''));
+
+  // --- travelStyle（原稿）を分割：前半＝相性のいい旅先（§04）／末尾＝実行アドバイス（§06） ---
+  const tsParts = (t.travelStyle || '').split('。').filter(Boolean);
+  const tsLead = tsParts.length > 1 ? tsParts.slice(0, -1).join('。') + '。' : '';
+  const tsTip  = tsParts.length ? tsParts.slice(-1)[0] + '。' : '';
+
+  // --- 04 RECOMMENDED ENVIRONMENT + おすすめの国 ---
+  document.getElementById('spec-country-sec').classList.remove('spec-hidden');
+  set('spec-env-lead', tsLead);
+  set('spec-env', ENVIRON(rt).map((e,i) =>
+    '<div class="spec-bar-row"><img src="'+ENV_ICON[i % ENV_ICON.length]+'" alt=""><span class="lab">'+e.label+'</span><span class="dots">'+_stars(e.n)+'</span></div>'
+  ).join(''));
+  set('spec-country-title', rt + '型におすすめの国');
+  set('spec-country-grid', COUNTRIES(rt).map(name => {
+    const id = COUNTRY_PAGE[name];
+    return id
+      ? '<a href="../'+id+'/index.html"><img src="../'+id+'/素材/ヒーロー.webp" alt="'+name+'" loading="lazy"><span class="cap">'+name+'<span>→</span></span></a>'
+      : '<a href="../index.html" class="noimg"><span class="cap">'+name+'<span>→</span></span></a>';
+  }).join(''));
+  document.getElementById('spec-country-cta').href = '../index.html';
+
+  // --- 06 PERFORMANCE TIP ---
+  document.getElementById('spec-tip-sec').classList.remove('spec-hidden');
+  set('spec-tip-text', tsTip || TIP_TEXT(rt));
+  set('spec-tip-cards', TIPS(rt).map((x,i) =>
+    '<div><img src="'+TIP_ICON[i % TIP_ICON.length]+'" alt=""><span>'+x.a+'<br>'+x.b+'</span></div>'
+  ).join(''));
+
+  // --- 07 INCLUDED 付属品 ---
+  const book = document.getElementById('spec-incl-book'); if (book) book.alt = '旅人取扱説明書';
+  set('spec-incl-lead', '本製品には、取扱説明書が付属しています。ご家族やご友人に共有して、より良い旅のサポートを受けましょう。');
+
+  const bandCta = document.getElementById('spec-band-cta'); if (bandCta) bandCta.href = '../index.html';
+}
+
+// §02〜§07 の配置：番号の偶数→左列 / 奇数→右列（固定）。スマホ幅では左列に番号順で集約。
+function layoutSpecCols(){
+  const cols = document.querySelectorAll('.spec-grid2 .spec-col');
+  if (cols.length < 2) return;
+  const panels = [...document.querySelectorAll('.spec-grid2 .spec-panel')]
+    .sort((a,b) => (+a.querySelector('.spec-h .no').textContent) - (+b.querySelector('.spec-h .no').textContent));
+  const mobile = window.matchMedia('(max-width:900px)').matches;
+  panels.forEach(p => {
+    const n = +p.querySelector('.spec-h .no').textContent;
+    cols[mobile ? 0 : (n % 2 === 0 ? 0 : 1)].appendChild(p);
+  });
+}
+
+(function init(){
+  const rt = new URLSearchParams(location.search).get('type');
+  if (!rt || !TYPES[rt]) { location.href = 'quiz.html'; return; }
+  renderResult(rt);
+  buildProfile(rt);
+  renderSpecSheet(rt);
+  layoutSpecCols();
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(layoutSpecCols, 150); });
+})();
 </script>
 
 <script type="module">

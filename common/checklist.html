@@ -17,62 +17,120 @@
 <link rel="canonical" href="https://worldmappy.com/common/checklist.html">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-.progress-bar{background:#d4dfd8;border-radius:20px;height:8px;margin:12px 0 6px;overflow:hidden}
-.progress-fill{height:100%;background:var(--green);border-radius:20px;transition:width 0.3s ease}
-.progress-label{font-size:0.78em;color:var(--sub)}
-.checklist-actions{display:flex;gap:8px;margin:4px 0 0;flex-wrap:wrap}
-.cat-count{font-size:0.72em;color:var(--sub);font-weight:400}
-.items-inner{background:#fff;border-radius:6px;padding:4px 16px;margin-top:4px}
-.item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #eef2f0;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.item:last-child{border-bottom:none}
-.item input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;margin-top:3px;accent-color:var(--green);cursor:pointer}
-.item-text{flex:1}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.page-grid .container{margin-bottom:0}
+.page-grid{padding-bottom:40px}
+.toc-sidebar{top:20px}
+.side-rail{display:flex;flex-direction:column;gap:14px;align-self:stretch;background:none;padding:0;border-radius:0;box-shadow:none}
+.progress-rail{flex-shrink:0;position:sticky;top:20px;border:1px solid #CFE0D7;border-radius:10px;background:#FAF7F2;padding:16px 18px;display:grid;gap:12px;box-shadow:0 2px 0 rgba(20,40,30,0.05),0 6px 16px rgba(20,40,30,0.06)}
+.rail-card-group{flex-shrink:0;display:grid;gap:14px;background:#fff;border-radius:10px;padding:18px;box-shadow:0 2px 0 rgba(20,40,30,0.05),0 6px 16px rgba(20,40,30,0.06)}
+.rail-ad.sticky{position:static}
+.progress-card-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.progress-card-title{font-size:0.8em;font-weight:700;color:var(--green)}
+.progress-reset-btn{padding:6px 13px;border:1px solid #CFE0D7;border-radius:999px;background:#fff;font-family:inherit;font-size:0.72em;color:var(--sub);cursor:pointer}
+.progress-counts{display:grid;grid-template-columns:1fr 1px 1fr;gap:12px;align-items:center}
+.progress-count{display:flex;align-items:baseline;gap:7px}
+.progress-count-label{font-size:0.75em;color:var(--sub)}
+.progress-count-num{font-family:'Shippori Mincho B1',serif;font-size:1.6em;line-height:1;color:var(--green)}
+.progress-count-num.opt{color:var(--sub)}
+.progress-count-total{font-family:'JetBrains Mono',monospace;font-size:0.78em;color:#7D9C8E}
+.progress-divider{width:1px;height:28px;background:#CFE0D7}
+.progress-bar{background:#e2efe9;border-radius:999px;height:8px;overflow:hidden}
+.progress-fill{height:100%;background:var(--green);border-radius:999px;transition:width 0.35s cubic-bezier(.2,.8,.2,1)}
+.cat-count{font-family:'JetBrains Mono',monospace;font-size:0.72em;color:var(--sub)}
+.items-inner{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:4px}
+.item{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:12px;align-items:start;text-align:left;padding:14px 15px;border:1px solid #E8E2D8;border-radius:10px;box-shadow:0 2px 0 rgba(20,40,30,0.06),0 6px 14px rgba(20,40,30,0.07);background:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:all 0.2s ease}
+.item.checked{background:#FAF7F2;border-color:#CFE0D7}
+.item-box{display:grid;place-content:center;width:24px;height:24px;border:2px solid #CFC7B9;border-radius:6px;background:#fff;font-size:13px;line-height:1;color:#fff;transition:all 0.2s ease}
+.item.checked .item-box{background:var(--green);border-color:var(--green)}
+.item.checked .item-box::before{content:"✓"}
+.item-text{display:grid;gap:4px;min-width:0}
 .item-name{font-size:0.85em;font-weight:700;transition:color 0.2s;line-height:1.4}
-.item-note{font-size:0.73em;color:var(--sub);margin-top:2px;line-height:1.55}
-.item.checked .item-name{color:#bbb;text-decoration:line-through}
-.item.checked .item-note{color:#ccc}
-.item-tag{font-size:0.65em;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;flex-shrink:0;margin-top:3px}
+.item-note{font-size:0.73em;color:var(--sub);line-height:1.6}
+.item.checked .item-name{color:#b8b8b8;text-decoration:line-through}
+.item.checked .item-note{color:#cacaca}
+.item-tag{align-self:start;font-size:0.63em;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.item-ad{display:grid;gap:8px;padding:15px 16px;border:1px solid #E8E2D8;border-radius:10px;box-shadow:0 2px 0 rgba(20,40,30,0.06),0 6px 14px rgba(20,40,30,0.07);background:#FAF7F2}
+.item-ad-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.item-ad-label{font-size:0.75em;font-weight:700;color:#55504A}
+.item-ad-sponsored{font-family:'JetBrains Mono',monospace;font-size:0.56em;letter-spacing:0.16em;color:#b8b8b8}
+.item-ad-box{width:100%;min-height:70px;border:1px dashed #d8d8d8;border-radius:4px;display:grid;place-content:center;background:#fff;font-size:0.72em;color:#b8b8b8;text-align:center}
 .tag-must{background:#fff0f0;color:var(--red)}
 .tag-opt{background:#f0f0f0;color:#888}
-.rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
-.rule-cell{background:#f5f7f5;border-radius:6px;padding:10px}
-.rule-cell-lbl{font-size:0.7em;color:var(--sub);font-weight:700;margin-bottom:3px}
-.rule-cell-val{font-size:0.82em;font-weight:700}
-.rule-cell-note{font-size:0.68em;color:var(--sub);margin-top:2px}
-.info-box{border-radius:6px;padding:10px 12px;margin-bottom:8px}
-.info-box-title{font-size:0.75em;font-weight:700;margin-bottom:4px}
-.info-box ul{font-size:0.73em;color:var(--sub);line-height:1.8;padding-left:16px}
+.rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.rule-cell{background:#fff;border:1px solid #E8E2D8;border-radius:10px;box-shadow:0 2px 0 rgba(20,40,30,0.06),0 6px 14px rgba(20,40,30,0.07);padding:16px 18px}
+.rule-cell-lbl{font-size:0.68em;letter-spacing:0.08em;color:var(--sub);margin-bottom:5px}
+.rule-cell-val{font-family:'JetBrains Mono',monospace;font-size:1.15em;font-weight:700;color:var(--green)}
+.rule-cell-note{font-size:0.7em;color:var(--sub);margin-top:5px}
+.info-box{border:1px solid #CFE0D7;border-radius:10px;background:#FAF7F2;padding:14px 16px}
+.info-box-title{font-size:0.8em;font-weight:700;color:var(--green);margin-bottom:5px}
+.info-box ul{font-size:0.76em;color:#4A5F55;line-height:1.85;padding-left:16px;margin:0}
 .qs-section-title{font-size:18px;font-weight:700;color:var(--text);letter-spacing:0.04em}
-.s-card.category{padding-top:6px;padding-bottom:12px}
+.s-card.category{padding-top:6px;padding-bottom:12px;scroll-margin-top:96px}
 .s-card{margin-top:0}
-@keyframes slideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
-#progress-wrap.is-fixed{animation:slideDown 0.25s ease}
+@media(max-width:700px){.items-inner,.rule-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a></div>
-  <div class="site-tagline">まっぴー｜世界の旅行情報まとめ</div>
+  <span class="site-country-badge"><span class="site-country-name">持ち物チェックリスト</span></span>
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
+<div id="hb-drawer" class="hb-drawer">
+  <div class="hb-col">
+    <span class="hb-label">GUIDE</span>
+    <a href="checklist.html" class="active">持ち物チェックリスト</a>
+    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
+    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">このページ</span>
+    <a href="#rules">機内持ち込みルール</a>
+    <a href="#cat-docs">必須書類</a>
+    <a href="#cat-elec">電子機器・充電</a>
+    <a href="#cat-health">衛生・健康</a>
+    <a href="#cat-clothes">衣類・身の回り</a>
+    <a href="#cat-toiletry">洗面・お風呂・洗濯</a>
+    <a href="#cat-flight">機内・移動用</a>
+    <a href="#cat-useful">あると便利なアプリ</a>
+    <a href="#cat-goods">その他</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">旅先を探す</span>
+    <a href="../index.html">すべての旅先を見る →</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">ABOUT</span>
+    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+    <a href="#">このサイトについて →</a>
+    <a href="contact.html">お問い合わせ →</a>
+  </div>
+</div>
+
+<div class="page-grid">
+<aside class="toc-sidebar" id="toc-sidebar">
+  <span class="toc-label">CONTENTS</span>
+  <div class="toc-list" id="toc-list"></div>
+</aside>
 <div class="container">
 
-  <h2 style="margin-top:16px">持ち物チェックリスト</h2>
-
   <!-- 機内持ち込みルール -->
-  <div class="s-card" style="padding-top:6px">
-    <div class="qs-section-title" style="margin:0 0 8px">機内持ち込みルール</div>
-    <div class="items-inner" style="padding:12px 16px">
-      <div class="rule-grid">
-        <div class="rule-cell"><div class="rule-cell-lbl">サイズ（目安）</div><div class="rule-cell-val">55×40×25 cm</div><div class="rule-cell-note">3辺合計115cm以内が目安</div></div>
-        <div class="rule-cell"><div class="rule-cell-lbl">重量（目安）</div><div class="rule-cell-val">7〜10 kg</div><div class="rule-cell-note">LCCは7kg・一般航空は10kg前後</div></div>
-      </div>
-      <div class="info-box" style="background:#fff8f0">
+  <div class="s-card" id="rules" style="padding-top:20px;scroll-margin-top:96px">
+    <h2 style="margin-top:0">機内持ち込みルール</h2>
+    <div class="rule-grid">
+      <div class="rule-cell"><div class="rule-cell-lbl">サイズ（目安）</div><div class="rule-cell-val">55×40×25 cm</div><div class="rule-cell-note">3辺合計115cm以内が目安</div></div>
+      <div class="rule-cell"><div class="rule-cell-lbl">重量（目安）</div><div class="rule-cell-val">7〜10 kg</div><div class="rule-cell-note">LCCは7kg・一般航空は10kg前後</div></div>
+      <div class="info-box">
         <div class="info-box-title">💧 液体物ルール</div>
         <ul><li>1容器あたり <strong style="color:var(--text)">100ml以下</strong></li><li>合計 <strong style="color:var(--text)">1L以内</strong>（透明ジップロックに収める）</li></ul>
       </div>
-      <div class="info-box" style="background:#f0f4ff">
+      <div class="info-box">
         <div class="info-box-title">🧴 スプレー類のルール</div>
         <ul>
           <li>虫除け・制汗・日焼け止めは <strong style="color:var(--text)">100ml以下であれば持ち込み可</strong></li>
@@ -80,155 +138,192 @@
           <li>医薬品の吸入スプレーは <strong style="color:var(--text)">量に関わらず持ち込み可</strong></li>
         </ul>
       </div>
-      <div style="font-size:0.7em;color:#e07000;font-weight:600">⚠️ 航空会社によって異なります。搭乗前に必ず確認してください。</div>
     </div>
+    <div style="margin-top:10px;border:1px solid #EBC98A;border-radius:10px;background:#FAF7F2;padding:12px 16px;font-size:0.75em;line-height:1.9;color:#5A4632">⚠️ 航空会社によって異なります。搭乗前に必ず確認してください。</div>
   </div>
-
-  <!-- 進捗 -->
-  <hr style="border:none;border-top:1px solid #b0c4b8;margin:0 20px">
-  <div id="progress-wrap" class="s-card" style="padding:12px 20px">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div style="flex:1;display:flex;flex-direction:column;gap:6px">
-        <div style="display:flex;align-items:center;gap:10px">
-          <span class="item-tag tag-must" style="flex-shrink:0">必須</span>
-          <div class="progress-bar" style="flex:1;margin:0"><div class="progress-fill" id="progress-fill-must" style="width:0%"></div></div>
-          <span class="progress-label" id="progress-label-must" style="flex-shrink:0;min-width:40px;text-align:right">0 / 0</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px">
-          <span class="item-tag tag-opt" style="flex-shrink:0">任意</span>
-          <div class="progress-bar" style="flex:1;margin:0"><div class="progress-fill" id="progress-fill-opt" style="width:0%;background:#888"></div></div>
-          <span class="progress-label" id="progress-label-opt" style="flex-shrink:0;min-width:40px;text-align:right">0 / 0</span>
-        </div>
-      </div>
-      <button class="btn outline" onclick="resetAll()" style="flex-shrink:0;padding:4px 14px;font-size:0.8em;align-self:center">リセット</button>
-    </div>
-  </div>
-  <!-- 固定時のプレースホルダー -->
-  <div id="progress-placeholder" style="display:none;height:60px"></div>
 
   <!-- 必須書類 -->
   <div class="s-card category" id="cat-docs">
-    <div class="qs-section-title" style="margin:0 0 8px">必須書類 <span class="cat-count" id="count-docs"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">必須書類</h2><span style="flex:1"></span><span class="cat-count" id="count-docs"></span></div>
     <div class="items-inner">
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">パスポート</div><div class="item-note">入国時点で残存有効期間6ヶ月以上・査証スタンプ用の空白ページ2ページ以上が必要。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">航空券の予約番号（印刷 or スクショ）</div><div class="item-note">予約確認メールを残しておくかスクショを撮っておくとスムーズ。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ホテル予約確認書（印刷 or スクショ）</div><div class="item-note">入国審査で宿泊先を聞かれることがある。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">海外旅行保険の証書</div><div class="item-note">病院受診時・緊急時に必要。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">クレジットカード（海外対応）2枚</div><div class="item-note">Visa / Mastercardが便利。海外手数料が低くATM引き出しにも対応したWiseカードがおすすめ。紛失・不具合に備えて2枚持参が安心。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">現金（現地通貨）</div><div class="item-note">屋台・ローカル市場など現金のみの場所に備えて少額持参。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">緊急連絡先メモ（紙）</div><div class="item-note">大使館・保険会社・カード紛失連絡先に加え、家族の電話番号なども。スマホとは別に紙で携帯。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">入国カードの事前確認・記入</div><div class="item-note">国によっては入国前にオンラインまたは紙への記入が必要。渡航先の入国手続きを事前に確認しておこう。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ボールペン</div><div class="item-note">入国カードの記入に必要。機内で配られることもあるが持参しておくと安心。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">戸籍謄本</div><div class="item-note">海外でパスポートを紛失した際の再発行手続きに必要。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">パスポート</div><div class="item-note">入国時点で残存有効期間6ヶ月以上・査証スタンプ用の空白ページ2ページ以上が必要。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">航空券の予約番号（印刷 or スクショ）</div><div class="item-note">予約確認メールを残しておくかスクショを撮っておくとスムーズ。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ホテル予約確認書（印刷 or スクショ）</div><div class="item-note">入国審査で宿泊先を聞かれることがある。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">海外旅行保険の証書</div><div class="item-note">病院受診時・緊急時に必要。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item-ad">
+        <div class="item-ad-head"><span class="item-ad-label">おすすめ海外旅行保険</span><span class="item-ad-sponsored">SPONSORED</span></div>
+        <div class="item-ad-box">広告</div>
+      </div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">クレジットカード（海外対応）2枚</div><div class="item-note">Visa / Mastercardが便利。海外手数料が低くATM引き出しにも対応したWiseカードがおすすめ。紛失・不具合に備えて2枚持参が安心。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">現金（現地通貨）</div><div class="item-note">屋台・ローカル市場など現金のみの場所に備えて少額持参。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">緊急連絡先メモ（紙）</div><div class="item-note">大使館・保険会社・カード紛失連絡先に加え、家族の電話番号なども。スマホとは別に紙で携帯。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">入国カードの事前確認・記入</div><div class="item-note">国によっては入国前にオンラインまたは紙への記入が必要。渡航先の入国手続きを事前に確認しておこう。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ボールペン</div><div class="item-note">入国カードの記入に必要。機内で配られることもあるが持参しておくと安心。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">戸籍謄本</div><div class="item-note">海外でパスポートを紛失した際の再発行手続きに必要。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>
   </div>
 
   <!-- 電子機器・充電 -->
   <div class="s-card category" id="cat-elec">
-    <div class="qs-section-title" style="margin:0 0 8px">電子機器・充電 <span class="cat-count" id="count-elec"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">電子機器・充電</h2><span style="flex:1"></span><span class="cat-count" id="count-elec"></span></div>
     <div class="items-inner">
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">スマートフォン・充電ケーブル</div><div class="item-note">地図・翻訳・配車アプリなどに必須。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">変換アダプター</div><div class="item-note">全世界対応タイプを1つ持っておくと、どの国でも使えて便利。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">SIM / eSIM</div><div class="item-note">現地SIMまたはeSIMを事前に用意しておくとスムーズ。到着後すぐにネットが使えて安心。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">モバイルバッテリー</div><div class="item-note">機内持ち込みのみOK（預け荷物はNG）。最大2個まで。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">イヤホン</div><div class="item-note">機内・カフェでの使用に。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">カメラ</div><div class="item-note">スマホで代用する場合は不要。使い捨てカメラはエモい写真が撮れると人気。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">以前使っていたスマホ</div><div class="item-note">メインのスマホを紛失・破損した際の予備に。Wi-Fi環境さえあれば難をしのげる。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">スマートフォン・充電ケーブル</div><div class="item-note">地図・翻訳・配車アプリなどに必須。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">変換アダプター</div><div class="item-note">全世界対応タイプを1つ持っておくと、どの国でも使えて便利。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">SIM / eSIM</div><div class="item-note">現地SIMまたはeSIMを事前に用意しておくとスムーズ。到着後すぐにネットが使えて安心。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item-ad">
+        <div class="item-ad-head"><span class="item-ad-label">おすすめeSIM</span><span class="item-ad-sponsored">SPONSORED</span></div>
+        <div class="item-ad-box">広告</div>
+      </div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">モバイルバッテリー</div><div class="item-note">機内持ち込みのみOK（預け荷物はNG）。最大2個まで。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">イヤホン</div><div class="item-note">機内・カフェでの使用に。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">カメラ</div><div class="item-note">スマホで代用する場合は不要。使い捨てカメラはエモい写真が撮れると人気。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">以前使っていたスマホ</div><div class="item-note">メインのスマホを紛失・破損した際の予備に。Wi-Fi環境さえあれば難をしのげる。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>
   </div>
 
   <!-- 衛生・健康 -->
   <div class="s-card category" id="cat-health">
-    <div class="qs-section-title" style="margin:0 0 8px">衛生・健康 <span class="cat-count" id="count-health"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">衛生・健康</h2><span style="flex:1"></span><span class="cat-count" id="count-health"></span></div>
     <div class="items-inner">
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">常備薬（頭痛・胃腸薬など）</div><div class="item-note">海外の薬は成分や量が異なることも。使い慣れた薬を持参。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">日焼け止め</div><div class="item-note">強い紫外線対策に。SPF50+を推奨。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ポケットティッシュ・ウェットティッシュ</div><div class="item-note">有料トイレや屋台利用時に重宝。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">虫除けスプレー</div><div class="item-note">屋外観光・自然が多いエリアでの虫刺され対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ビニール袋</div><div class="item-note">濡れた衣類の収納、ゴミ袋、液体漏れ対策など何かと活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">フィルム石鹸</div><div class="item-note">薄いシート状の携帯石鹸。外出先での手洗いに重宝。かさばらない。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">マスク</div><div class="item-note">体調不良時・機内の乾燥対策にも効果的。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">目薬・コンタクト用品</div><div class="item-note">機内の乾燥で目が疲れやすい。コンタクトレンズ使用者は替えのレンズや洗浄液も忘れずに。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">常備薬（頭痛・胃腸薬など）</div><div class="item-note">海外の薬は成分や量が異なることも。使い慣れた薬を持参。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">日焼け止め</div><div class="item-note">強い紫外線対策に。SPF50+を推奨。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ポケットティッシュ・ウェットティッシュ</div><div class="item-note">有料トイレや屋台利用時に重宝。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">虫除けスプレー</div><div class="item-note">屋外観光・自然が多いエリアでの虫刺され対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ビニール袋</div><div class="item-note">濡れた衣類の収納、ゴミ袋、液体漏れ対策など何かと活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">フィルム石鹸</div><div class="item-note">薄いシート状の携帯石鹸。外出先での手洗いに重宝。かさばらない。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">マスク</div><div class="item-note">体調不良時・機内の乾燥対策にも効果的。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">目薬・コンタクト用品</div><div class="item-note">機内の乾燥で目が疲れやすい。コンタクトレンズ使用者は替えのレンズや洗浄液も忘れずに。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>
   </div>
 
   <!-- 衣類・身の回り -->
   <div class="s-card category" id="cat-clothes">
-    <div class="qs-section-title" style="margin:0 0 8px">衣類・身の回り <span class="cat-count" id="count-clothes"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">衣類・身の回り</h2><span style="flex:1"></span><span class="cat-count" id="count-clothes"></span></div>
     <div class="items-inner">
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ボディバッグ</div><div class="item-note">街歩きに便利。前掛けにするとスリ対策にもなる。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">財布</div><div class="item-note">必要最低限のカードと現金だけ入れておくと安心。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">薄手の羽織もの・カーディガン</div><div class="item-note">ショッピングモール・機内の冷房は強め。夏でも1枚必須。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">歩きやすいサンダル・スニーカー</div><div class="item-note">観光で長距離歩くことが多い。宗教施設入場時は制限される場合あり。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">下着・靴下（日数分+α）</div><div class="item-note">毎日ホテルで洗濯するなら2日分あれば十分。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">Tシャツ（日数分）</div><div class="item-note">熱帯では薄手・速乾素材が◎。洗濯する前提なら2枚で十分。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ウィンドブレーカー</div><div class="item-note">防風・防寒に。明るい色は写真映えもするのでおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ウルトラライトダウン</div><div class="item-note">薄くてコンパクト。機内や冷房の効いた室内での防寒に活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">カーゴパンツ</div><div class="item-note">ポケットが多く、パスポートや現金を分散収納できる。盗難被害を最小限に。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">帽子・サングラス</div><div class="item-note">強い日差しや紫外線対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">折りたたみ傘</div><div class="item-note">突然の雨に備えて。コンパクトなものが便利。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ボディバッグ</div><div class="item-note">街歩きに便利。前掛けにするとスリ対策にもなる。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item-ad">
+        <div class="item-ad-head"><span class="item-ad-label">編集部おすすめグッズ</span><span class="item-ad-sponsored">SPONSORED</span></div>
+        <div class="item-ad-box">広告</div>
+      </div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">財布</div><div class="item-note">必要最低限のカードと現金だけ入れておくと安心。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">薄手の羽織もの・カーディガン</div><div class="item-note">ショッピングモール・機内の冷房は強め。夏でも1枚必須。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">歩きやすいサンダル・スニーカー</div><div class="item-note">観光で長距離歩くことが多い。宗教施設入場時は制限される場合あり。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">下着・靴下（日数分+α）</div><div class="item-note">毎日ホテルで洗濯するなら2日分あれば十分。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">Tシャツ（日数分）</div><div class="item-note">熱帯では薄手・速乾素材が◎。洗濯する前提なら2枚で十分。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ウィンドブレーカー</div><div class="item-note">防風・防寒に。明るい色は写真映えもするのでおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ウルトラライトダウン</div><div class="item-note">薄くてコンパクト。機内や冷房の効いた室内での防寒に活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">カーゴパンツ</div><div class="item-note">ポケットが多く、パスポートや現金を分散収納できる。盗難被害を最小限に。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">帽子・サングラス</div><div class="item-note">強い日差しや紫外線対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">折りたたみ傘</div><div class="item-note">突然の雨に備えて。コンパクトなものが便利。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>
   </div>
 
   <!-- 洗面・お風呂 -->
   <div class="s-card category" id="cat-toiletry">
-    <div class="qs-section-title" style="margin:0 0 8px">洗面・お風呂・洗濯 <span class="cat-count" id="count-toiletry"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">洗面・お風呂・洗濯</h2><span style="flex:1"></span><span class="cat-count" id="count-toiletry"></span></div>
     <div class="items-inner">
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">歯ブラシ・歯磨き粉</div><div class="item-note">ホテルによっては用意されていない場合がある。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">シャンプー・コンディショナー</div><div class="item-note">多くのホテルに備え付けあり。品質が気になる場合は持参を。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ボディソープ・洗顔料</div><div class="item-note">固形タイプであれば液体制限を気にせず機内持ち込み可能。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">スキンケア用品（化粧水・乳液など）</div><div class="item-note">機内持ち込みは1容器100ml以下・合計1Lまで。小分け容器に詰め替えると便利。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ボディタオル</div><div class="item-note">ホテルに備え付けがないことも多いため持参がおすすめ。速乾タイプが便利。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">カミソリ</div><div class="item-note">電気シェーバーがおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ビーチサンダル</div><div class="item-note">ホテルの室内やシャワー室での使用に。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">洗濯グッズ（洗剤・洗濯袋・物干しロープ）</div><div class="item-note">ホテルで洗濯する派に。つけ置きできる洗濯袋が便利。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">歯ブラシ・歯磨き粉</div><div class="item-note">ホテルによっては用意されていない場合がある。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">シャンプー・コンディショナー</div><div class="item-note">多くのホテルに備え付けあり。品質が気になる場合は持参を。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ボディソープ・洗顔料</div><div class="item-note">固形タイプであれば液体制限を気にせず機内持ち込み可能。</div></div><span class="item-tag tag-must">必須</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">スキンケア用品（化粧水・乳液など）</div><div class="item-note">機内持ち込みは1容器100ml以下・合計1Lまで。小分け容器に詰め替えると便利。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ボディタオル</div><div class="item-note">ホテルに備え付けがないことも多いため持参がおすすめ。速乾タイプが便利。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">カミソリ</div><div class="item-note">電気シェーバーがおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ビーチサンダル</div><div class="item-note">ホテルの室内やシャワー室での使用に。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">洗濯グッズ（洗剤・洗濯袋・物干しロープ）</div><div class="item-note">ホテルで洗濯する派に。つけ置きできる洗濯袋が便利。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>
   </div>
 
   <!-- 機内・移動用 -->
   <div class="s-card category" id="cat-flight">
-    <div class="qs-section-title" style="margin:0 0 8px">機内・移動用 <span class="cat-count" id="count-flight"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">機内・移動用</h2><span style="flex:1"></span><span class="cat-count" id="count-flight"></span></div>
     <div class="items-inner">
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">ネックピロー</div><div class="item-note">LCCはヘッドレストが簡素なので重宝するが、FSC（一般航空）はヘッドレストがしっかりしているので不要なことも多い。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">アイマスク・耳栓</div><div class="item-note">夜行便・長距離移動での睡眠の質を上げる。ホットアイマスクがあるとより快適。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">機内用スリッパ</div><div class="item-note">LCCでは配られないことがある。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">保湿クリーム・リップクリーム</div><div class="item-note">機内は非常に乾燥する。液体は100ml以下に。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ネックピロー</div><div class="item-note">LCCはヘッドレストが簡素なので重宝するが、FSC（一般航空）はヘッドレストがしっかりしているので不要なことも多い。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">アイマスク・耳栓</div><div class="item-note">夜行便・長距離移動での睡眠の質を上げる。ホットアイマスクがあるとより快適。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">機内用スリッパ</div><div class="item-note">LCCでは配られないことがある。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">保湿クリーム・リップクリーム</div><div class="item-note">機内は非常に乾燥する。液体は100ml以下に。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>
   </div>
 
   <!-- あると便利なアプリ -->
   <div class="s-card category" id="cat-useful">
-    <div class="qs-section-title" style="margin:0 0 8px">あると便利なアプリ <span class="cat-count" id="count-useful"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">あると便利なアプリ</h2><span style="flex:1"></span><span class="cat-count" id="count-useful"></span></div>
     <div class="items-inner">
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">配車アプリ（Grab・Uber など）</div><div class="item-note">出発前にDLしておこう。流しのタクシーより安全・安心で料金も事前確定。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">クラウドバックアップの設定（Google フォト・iCloud）</div><div class="item-note">スマホ紛失時に写真が消えるのが最大のダメージ。出発前に自動バックアップをONに。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">WhatsApp（ワッツアップ）</div><div class="item-note">海外では主流のメッセージアプリ。ツアー案内や予約確認がWhatsApp経由で届くことも多い。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">モバイルデータ通信の使用制限設定</div><div class="item-note">動画・SNSアプリなどはWi-Fi接続時のみに制限しておくのがおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">自動バックアップ・自動アップデートをWi-Fiのみに</div><div class="item-note">モバイルデータで大容量の自動処理が走るとデータをあっという間に消費する。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">オフライン地図（Google Maps）</div><div class="item-note">出発前に現地エリアをオフライン保存しておけばWi-Fiなしでも地図・ナビが使える。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">Google翻訳アプリ</div><div class="item-note">カメラで写すだけで翻訳できる。言語パックを事前にDLしておけばオフラインでも使用可能。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">配車アプリ（Grab・Uber など）</div><div class="item-note">出発前にDLしておこう。流しのタクシーより安全・安心で料金も事前確定。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item-ad">
+        <div class="item-ad-head"><span class="item-ad-label">海外用モバイルWi-Fi</span><span class="item-ad-sponsored">SPONSORED</span></div>
+        <div class="item-ad-box">広告</div>
+      </div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">クラウドバックアップの設定（Google フォト・iCloud）</div><div class="item-note">スマホ紛失時に写真が消えるのが最大のダメージ。出発前に自動バックアップをONに。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">WhatsApp（ワッツアップ）</div><div class="item-note">海外では主流のメッセージアプリ。ツアー案内や予約確認がWhatsApp経由で届くことも多い。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">モバイルデータ通信の使用制限設定</div><div class="item-note">動画・SNSアプリなどはWi-Fi接続時のみに制限しておくのがおすすめ。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">自動バックアップ・自動アップデートをWi-Fiのみに</div><div class="item-note">モバイルデータで大容量の自動処理が走るとデータをあっという間に消費する。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">オフライン地図（Google Maps）</div><div class="item-note">出発前に現地エリアをオフライン保存しておけばWi-Fiなしでも地図・ナビが使える。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">Google翻訳アプリ</div><div class="item-note">カメラで写すだけで翻訳できる。言語パックを事前にDLしておけばオフラインでも使用可能。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>
   </div>
 
   <!-- その他 -->
   <div class="s-card category" id="cat-goods">
-    <div class="qs-section-title" style="margin:0 0 8px">その他 <span class="cat-count" id="count-goods"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">その他</h2><span style="flex:1"></span><span class="cat-count" id="count-goods"></span></div>
     <div class="items-inner">
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">エコバッグ・折りたたみトート</div><div class="item-note">お土産を買いすぎた際のセカンドバッグとしても活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">南京錠・鍵</div><div class="item-note">ゲストハウスや荷物の盗難対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">圧縮袋</div><div class="item-note">衣類をコンパクトに収納。帰りのスーツケースの空きを確保。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">双眼鏡</div><div class="item-note">観光スポット・野生動物観察・夜景鑑賞などに。</div></div><span class="item-tag tag-opt">任意</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox"><div class="item-text"><div class="item-name">AirTag（エアタグ）</div><div class="item-note">スーツケースに入れておくと紛失・盗難時に位置を追跡できる。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">エコバッグ・折りたたみトート</div><div class="item-note">お土産を買いすぎた際のセカンドバッグとしても活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">南京錠・鍵</div><div class="item-note">ゲストハウスや荷物の盗難対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item-ad">
+        <div class="item-ad-head"><span class="item-ad-label">編集部おすすめグッズ</span><span class="item-ad-sponsored">SPONSORED</span></div>
+        <div class="item-ad-box">広告</div>
+      </div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">圧縮袋</div><div class="item-note">衣類をコンパクトに収納。帰りのスーツケースの空きを確保。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">双眼鏡</div><div class="item-note">観光スポット・野生動物観察・夜景鑑賞などに。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">AirTag（エアタグ）</div><div class="item-note">スーツケースに入れておくと紛失・盗難時に位置を追跡できる。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>
   </div>
 
 </div>
 
-<footer>
-  <a href="privacy.html">プライバシーポリシー</a>
-  <span>｜</span>
-  <span style="margin:0 10px">© 2026 World Mappy</span>
-</footer>
+<aside class="side-rail">
+  <div class="progress-rail" id="progress-wrap">
+    <div class="progress-card-head">
+      <span class="progress-card-title">チェック状況</span>
+      <button class="progress-reset-btn" onclick="resetAll()">リセット</button>
+    </div>
+    <div class="progress-counts">
+      <div class="progress-count">
+        <span class="progress-count-label">必須</span>
+        <span class="progress-count-num" id="progress-must-num">0</span>
+        <span class="progress-count-total">/ <span id="progress-must-total">0</span></span>
+      </div>
+      <span class="progress-divider"></span>
+      <div class="progress-count">
+        <span class="progress-count-label">任意</span>
+        <span class="progress-count-num opt" id="progress-opt-num">0</span>
+        <span class="progress-count-total">/ <span id="progress-opt-total">0</span></span>
+      </div>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill-total" style="width:0%"></div></div>
+  </div>
+
+  <div class="rail-card-group">
+    <div class="rail-ad">
+      <span class="rail-ad-label">SPONSORED</span>
+      <div class="rail-ad-box" style="height:250px">広告 300 × 250</div>
+    </div>
+
+    <div class="rail-card">
+      <span class="rail-card-title">あわせてチェック</span>
+      <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
+      <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
+      <a href="../index.html">すべての旅先を見る →</a>
+    </div>
+
+    <div class="rail-ad sticky">
+      <span class="rail-ad-label">SPONSORED</span>
+      <div class="rail-ad-box" style="height:600px">広告 300 × 600</div>
+    </div>
+  </div>
+</aside>
+</div><!-- /page-grid -->
+
+<script src="../assets/country-links.js"></script>
 
 <script>
 const STORAGE_KEY = 'checklist_v2';
@@ -266,10 +361,13 @@ function updateProgress(){
   const optItems  = items.filter(el => el.querySelector('.tag-opt'));
   const mustDone  = mustItems.filter(el => el.querySelector('input').checked).length;
   const optDone   = optItems.filter(el => el.querySelector('input').checked).length;
-  document.getElementById('progress-label-must').textContent = `${mustDone} / ${mustItems.length}`;
-  document.getElementById('progress-fill-must').style.width  = (mustItems.length ? mustDone/mustItems.length*100 : 0) + '%';
-  document.getElementById('progress-label-opt').textContent  = `${optDone} / ${optItems.length}`;
-  document.getElementById('progress-fill-opt').style.width   = (optItems.length ? optDone/optItems.length*100 : 0) + '%';
+  document.getElementById('progress-must-num').textContent   = mustDone;
+  document.getElementById('progress-must-total').textContent = mustItems.length;
+  document.getElementById('progress-opt-num').textContent    = optDone;
+  document.getElementById('progress-opt-total').textContent  = optItems.length;
+  const totalDone  = mustDone + optDone;
+  const totalItems = mustItems.length + optItems.length;
+  document.getElementById('progress-fill-total').style.width = (totalItems ? totalDone/totalItems*100 : 0) + '%';
   document.querySelectorAll('.category').forEach(cat => {
     const catItems = cat.querySelectorAll('.item');
     const catDone = [...catItems].filter(el => el.querySelector('input').checked).length;
@@ -293,65 +391,31 @@ function resetAll(){
 load();
 updateProgress();
 
-// 進捗バーのスクロール固定
+// 目次サイドバー: h2 から自動生成
 (function(){
-  const wrap = document.getElementById('progress-wrap');
-  const placeholder = document.getElementById('progress-placeholder');
-  const sentinel = document.getElementById('cat-docs');
-  let isFixed = false;
-
-  function applyFixed(){
-    if(isFixed) return;
-    isFixed = true;
-    const rect = wrap.getBoundingClientRect();
-    placeholder.style.height = wrap.offsetHeight + 'px';
-    placeholder.style.display = 'block';
-    wrap.style.position = 'fixed';
-    wrap.style.top = '0';
-    wrap.style.left = rect.left + 'px';
-    wrap.style.width = rect.width + 'px';
-    wrap.style.background = '#E5EDE9';
-    wrap.style.zIndex = '200';
-    wrap.style.borderBottom = '1px solid #d4dfd8';
-    wrap.style.padding = '12px 20px';
-    wrap.style.margin = '0';
-    wrap.style.borderRadius = '0';
-    wrap.classList.add('is-fixed');
-  }
-
-  function removeFixed(){
-    if(!isFixed) return;
-    isFixed = false;
-    placeholder.style.display = 'none';
-    wrap.style.position = '';
-    wrap.style.top = '';
-    wrap.style.left = '';
-    wrap.style.width = '';
-    wrap.style.background = '';
-    wrap.style.zIndex = '';
-    wrap.style.borderBottom = '';
-    wrap.style.padding = '12px 20px';
-    wrap.style.margin = '';
-    wrap.style.borderRadius = '';
-    wrap.classList.remove('is-fixed');
-  }
-
-  function onScroll(){
-    const sentinelTop = sentinel.getBoundingClientRect().top;
-    if(sentinelTop <= 0){
-      applyFixed();
-    } else {
-      removeFixed();
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, {passive: true});
-  window.addEventListener('resize', function(){
-    if(isFixed){
-      removeFixed();
-      onScroll();
-    }
+  const list = document.getElementById('toc-list');
+  if (!list) return;
+  const heads = document.querySelectorAll('.container h2');
+  if (!heads.length) { list.parentElement.style.display = 'none'; return; }
+  heads.forEach(function(h, i){
+    if (!h.id) h.id = 'toc-' + i;
+    h.style.scrollMarginTop = '96px';
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    list.appendChild(a);
   });
+  const links = Array.from(list.querySelectorAll('a'));
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        links.forEach(function(l){ l.classList.remove('active'); });
+        const match = links.find(function(l){ return l.getAttribute('href') === '#' + entry.target.id; });
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-110px 0px -70% 0px' });
+  heads.forEach(function(h){ obs.observe(h); });
 })();
 
 /* ヘッダー: 下スクロールで隠す・上スクロールで表示 */
@@ -365,6 +429,18 @@ updateProgress();
     else { header.classList.remove('header-hidden'); }
     lastY = y;
   }, { passive: true });
+})();
+
+/* ハンバーガーメニュー開閉 */
+(function(){
+  const btn = document.getElementById('hb-toggle-btn');
+  const drawer = document.getElementById('hb-drawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    const open = drawer.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
 })();
 </script>
 </body>

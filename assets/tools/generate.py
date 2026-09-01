@@ -605,6 +605,11 @@ def generate(country_id):
 
     SECTIONS = ['basic', 'spots', 'food', 'course', 'budget', 'practical', 'phrases']
 
+    _spot_sections_all  = data.get('spot_sections', [])
+    _spots_city_count   = len(_spot_sections_all)
+    _spots_total_count  = sum(len(s.get('spots', [])) for s in _spot_sections_all)
+    spots_eyebrow_meta  = f"{data.get('name', '')} {_spots_city_count}都市・{_spots_total_count}スポット"
+
     # ── タブごとの固定バナー広告（sticky banner）に出す商材のキー ──
     # ツアー予約系（Klook等）は反応が薄いため対象外。Skyscanner・Wise・Airalo・trifa・Eposの5種のみで回す。
     STICKY_AD_BY_SLUG = {
@@ -641,11 +646,23 @@ def generate(country_id):
             ctx['food_data_js']    = food_data_js
             ctx['page_order_js']   = page_order_js
             ctx['page_index']      = idx
+            ctx['page_slug']       = slug
+            ctx['spots_eyebrow_meta'] = spots_eyebrow_meta
+            if slug == 'spots':
+                new_sections = []
+                for section in ctx.get('spot_sections', []):
+                    sec2 = dict(section)
+                    sec2['spot_count'] = len(section.get('spots', []))
+                    new_sections.append(sec2)
+                ctx['spot_sections']     = new_sections
+                ctx['spots_total_count'] = _spots_total_count
+            if slug == 'food':
+                ctx['food_total_count'] = len(ctx.get('food_items', []))
             ctx['show']            = {s: (s == slug) for s in SECTIONS}
             ctx['nav_active']      = {s: ('active' if s == slug else '') for s in SECTIONS}
             ctx['sec_active']      = {s: ('active' if s == slug else '') for s in SECTIONS}
             ctx['needs_gmaps']     = slug in ('basic', 'budget')
-            ctx['container_style'] = 'max-width:1000px' if slug in ('spots', 'food') else ''
+            ctx['container_style'] = ''
             ctx['page_title']      = base_title if slug == 'basic' else f'{name}の{label}｜{base_title}'
             ctx['sticky_ad_key']    = STICKY_AD_BY_SLUG.get(slug, 'wise')
             ctx['cache_bust']       = cache_bust
@@ -666,6 +683,16 @@ def generate(country_id):
         ctx['sec_active']      = {s: ('active' if s == 'basic' else '') for s in SECTIONS}
         ctx['needs_gmaps']     = True
         ctx['container_style'] = ''
+        ctx['page_slug']       = 'basic'
+        ctx['spots_eyebrow_meta'] = spots_eyebrow_meta
+        new_sections = []
+        for section in ctx.get('spot_sections', []):
+            sec2 = dict(section)
+            sec2['spot_count'] = len(section.get('spots', []))
+            new_sections.append(sec2)
+        ctx['spot_sections']     = new_sections
+        ctx['spots_total_count'] = _spots_total_count
+        ctx['food_total_count']  = len(ctx.get('food_items', []))
         ctx['sticky_ad_key']    = STICKY_AD_BY_SLUG.get('basic', 'wise')
         ctx['cache_bust']       = cache_bust
         ctx.update(_build_og_context(data, country_id, 'index.html'))

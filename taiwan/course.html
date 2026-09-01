@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="台湾のモデルコース｜台湾旅行ガイド">
 <meta name="twitter:description" content="直行便で約3〜4時間、時差はたった1時間。機内食を食べて一眠りしたら、もう夜市の匂いの中にいます。小籠包や牛肉麺などの絶品グルメ、提灯が灯る九份、歴史ある寺廟、そして日本語すら通じることのある親日的な空気。友人にはじめての一人旅をしたいと…">
 <meta name="twitter:image" content="https://worldmappy.com/taiwan/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1786858326">
+<link rel="stylesheet" href="../assets/style.css?v=1787925886">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1786858326" defer></script>
-<script src="../assets/affiliates.js?v=1786858326" defer></script>
+<script src="../assets/affiliates-data.js?v=1787925886" defer></script>
+<script src="../assets/affiliates.js?v=1787925886" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -80,34 +80,71 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 #spots-grid .item-card.has-spot-img{padding-bottom:0 !important}
 #spots-grid .item-card.has-spot-img .desc{flex:1}
 
-/* クイックスペックカード（基本情報タブ） */
-#basic .qs-card{border:1px solid #e0e0e0;box-shadow:none}
-
 /* セクション間隔（全タブ共通） */
 #basic h2~h2,#spots h2~h2,#food h2~h2,#course h2~h2,#season h2~h2,
 #budget h2~h2,#practical h2~h2,#manner h2~h2,#phrases h2~h2,#transport h2~h2{margin-top:36px}
 #basic .qs-row{margin-top:28px;margin-bottom:0}
-.qs-section-title{font-size:18px;font-weight:700;color:var(--text);margin:6px 0 6px;letter-spacing:0.04em}
+.qs-section-title{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;color:var(--sub);margin:6px 0 14px;letter-spacing:0.14em;text-transform:uppercase}
+.section-subhead{font-family:'Shippori Mincho B1',serif;font-weight:500;font-size:1.2em;color:var(--text);margin:6px 0 12px;line-height:1.4}
 .cl-region{font-weight:700}
-.sp-points-wrap{background:#fff;border:1px solid #e0e0e0}
-.sp-point{display:flex;align-items:center;gap:16px;padding:16px;border-bottom:1px solid #e0e0e0}
-.sp-point:last-child{border-bottom:none}
-.sp-point-body{flex:1;min-width:0}
-.sp-point-title{font-size:0.95em;font-weight:700;margin-bottom:8px;line-height:1.5}
-.sp-point-title a{color:inherit;text-decoration:underline;cursor:pointer}
-.sp-point-title a:hover{opacity:0.75}
-.sp-point-text{font-size:0.82em;color:#444;line-height:1.8}
-.sp-point-img{width:120px;height:90px;object-fit:cover;flex-shrink:0;display:block}
-@media(max-width:700px){.sp-point{flex-direction:column}.sp-point-img{width:100%;height:auto;aspect-ratio:16/9}}
+.sp-points-wrap{background:transparent;border:none;display:grid;gap:26px}
+.sp-point{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:center;padding:0;border-bottom:none}
+.sp-point:nth-child(even){grid-template-columns:300px minmax(0,1fr)}
+.sp-point:nth-child(even) .sp-point-body{order:2}
+.sp-point:nth-child(even) .sp-point-img{order:1}
+.sp-point-body{flex:1;min-width:0;display:grid;gap:10px}
+.sp-point-title{font-family:'Shippori Mincho B1',serif;font-size:1.15em;font-weight:700;line-height:1.5;margin-bottom:0}
+.sp-point-text{font-size:0.85em;color:#3A3833;line-height:2}
+.sp-point-img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border-radius:6px}
+.sp-point-img-square{aspect-ratio:1/1}
+@media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:2}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:1}}
 </style>
 </head>
 <body>
 
 <div id="site-top-bar">
 <header class="site-header">
-  <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a></div>
+  <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><g fill-rule="evenodd"><path d="M0 0h900v600H0z" fill="#fe0000"/><path d="M0 0h450v300H0z" fill="#000095"/></g><path d="M225 37.5l-56.25 209.928L322.428 93.75 112.5 150l209.928 56.25L168.75 52.572 225 262.5l56.25-209.928L127.572 206.25 337.5 150 127.572 93.75 281.25 247.428 225 37.5" fill="#fff" paint-order="markers fill stroke"/><circle cy="150" cx="225" r="60" fill="#fff" stroke="#000095" stroke-width="7.5"/></svg></div></span><span class="site-country-name">台湾</span></a>
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<div id="hb-drawer" class="hb-drawer">
+  <div class="hb-col">
+    <span class="hb-label">GUIDE</span>
+    <a href="../common/checklist.html">持ち物チェックリスト</a>
+    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
+    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
+    <a href="../common/contact.html">お問い合わせ</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">このページ</span>
+    
+    <a href="index.html" class="">基本情報</a>
+    <a href="spots.html" class="">観光スポット</a>
+    <a href="food.html" class="">グルメ</a>
+    <a href="course.html" class="active">モデルコース</a>
+    <a href="budget.html" class="">予算・費用</a>
+    <a href="practical.html" class="">旅の準備</a>
+    <a href="phrases.html" class="">フレーズ</a>
+    
+    
+    <a href="../common/checklist.html?from=taiwan">持ち物リスト</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">近隣の国</span>
+    <div id="hb-nearby"></div>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">ABOUT</span>
+    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+    <a href="#">このサイトについて →</a>
+    <a href="../common/contact.html">お問い合わせ →</a>
+  </div>
+</div>
+
 </div>
 
 
@@ -145,6 +182,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 
 
+<div class="page-grid page-grid-course">
+<aside class="toc-sidebar" id="toc-sidebar">
+  <span class="toc-label">CONTENTS</span>
+  <div class="toc-list" id="toc-list"></div>
+</aside>
 <div class="container" style="">
 <div id="slides-wrap">
 
@@ -172,6 +214,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <!-- モデルコース -->
 <section id="course" class="active">
 
+  <div class="tab-eyebrow"><span class="tab-eyebrow-badge">COURSE</span><span class="tab-eyebrow-sub">モデルコース</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Taiwan / 04</span></div>
   <h2>モデルコース</h2>
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">直行便3〜4時間・時差1時間の台湾は「短い休みでも成立する」のが最大の強み。初めてなら台北＋九份に絞った<strong>週末プラン</strong>、2回目以降や連休が取れるなら新幹線で西部を巡る<strong>縦断プラン</strong>がおすすめ。それでも物足りない！という人向けに、少し難易度の高いプランも紹介しています。</p>
   <div class="course-type">
@@ -183,17 +226,26 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="s-card" style="padding-top:6px">
 
   
-  <div class="qs-section-title" style="margin:6px 0 8px">台北 ＋ 九份・十分　3泊4日</div>
+  <h3 class="section-subhead plan-title-row toc-sub" style="margin:6px 0 8px"><span>台北 ＋ 九份・十分　3泊4日</span><span class="plan-tip-tag"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+	<path d="M0 0h512v512H0z" fill="none" />
+	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
+	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
+	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
+</svg>九份は週末夕方が最も混雑する。可能なら平日に組み込み、帰りのバス行列を避けたいなら夕食は台北に戻ってからにするのがスムーズ。</span></h3>
   <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       
       
       <div class="tl-day">
         <div class="tl-badge green">Day 1</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台北到着 → 龍山寺 → 夜市デビュー</strong><br>午前便なら昼過ぎに台北着。空港MRTで市内へ入りホテルに荷物を預けたら、<a onclick="showSpot('TPE 03')" class="spot-link">龍山寺</a>と周辺の下町を散策。夜は<a onclick="showSpot('TPE 05')" class="spot-link">士林夜市</a>で<a onclick="showFood('No.4')" class="spot-link">胡椒餅</a>・鹽酥雞・牡蠣オムレツをはしご。初日から台湾の熱気に浸かろう。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台北到着 → 龍山寺 → 夜市デビュー</strong><br>午前便なら昼過ぎに台北着。空港MRTで市内へ入りホテルに荷物を預けたら、<a onclick="showSpot('TPE 03')" class="spot-link">龍山寺</a>と周辺の下町を散策。夜は<a onclick="showSpot('TPE 05')" class="spot-link">士林夜市</a>で<a onclick="showFood('No.4')" class="spot-link">胡椒餅</a>・鹽酥雞・牡蠣オムレツをはしご。初日から台湾の熱気に浸かろう。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -201,10 +253,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge green">Day 2</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>故宮博物院 → 台北101 → 象山夜景</strong><br>午前は<a onclick="showSpot('TPE 02')" class="spot-link">国立故宮博物院</a>で翠玉白菜と対面。午後は<a onclick="showSpot('TPE 01')" class="spot-link">台北101</a>周辺でショッピングして、夕方は<a onclick="showSpot('TPE 06')" class="spot-link">象山</a>へ。101入りの夜景は登った者だけのご褒美。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>故宮博物院 → 台北101 → 象山夜景</strong><br>午前は<a onclick="showSpot('TPE 02')" class="spot-link">国立故宮博物院</a>で翠玉白菜と対面。午後は<a onclick="showSpot('TPE 01')" class="spot-link">台北101</a>周辺でショッピングして、夕方は<a onclick="showSpot('TPE 06')" class="spot-link">象山</a>へ。101入りの夜景は登った者だけのご褒美。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -212,10 +268,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 3</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>十分で天燈上げ → 夕暮れの九份</strong><br>午前中に<a onclick="showSpot('JIU 03')" class="spot-link">十分</a>で願い事を書いた天燈を空へ。午後は<a onclick="showSpot('JIU 01')" class="spot-link">九份老街</a>へ移動し、<a onclick="showSpot('JIU 02')" class="spot-link">豎崎路</a>（けんざきろ）の茶藝館でお茶をしながら提灯の点灯を待つ。この順番なら九份のベストタイムに間に合う。<div class="tl-transport-note"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 36 36"><path fill="#939598" d="M0 34h36v2H0z"/><path fill="#58595B" d="M8 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M7 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><path fill="#58595B" d="M16 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M15 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><circle fill="#58595B" cx="32" cy="32" r="3"/><circle fill="#292F33" cx="32" cy="32" r="2"/><circle fill="#58595B" cx="24" cy="32" r="3"/><circle fill="#292F33" cx="24" cy="32" r="2"/><path fill="#5C913B" d="M0 28h36v4H0z"/><path fill="#FFE8B6" d="M0 16h36v12H0z"/><path fill="#FFAC33" d="M0 26h36v2H0z"/><path fill="#77B255" d="M32.555 14H3.445C1.969 14 .693 14.81 0 16h36c-.693-1.19-1.969-2-3.445-2z"/><path d="M5 22c0 .553-.447 1-1 1H2c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1H8c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2z" fill="#55ACEE"/></svg></span><span>台北→十分→九份<br>（電車・バス 約1〜1.5時間）</span></div></div></div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>十分で天燈上げ → 夕暮れの九份</strong><br>午前中に<a onclick="showSpot('JIU 03')" class="spot-link">十分</a>で願い事を書いた天燈を空へ。午後は<a onclick="showSpot('JIU 01')" class="spot-link">九份老街</a>へ移動し、<a onclick="showSpot('JIU 02')" class="spot-link">豎崎路</a>（けんざきろ）の茶藝館でお茶をしながら提灯の点灯を待つ。この順番なら九份のベストタイムに間に合う。<div class="tl-transport-note"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 36 36"><path fill="#939598" d="M0 34h36v2H0z"/><path fill="#58595B" d="M8 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M7 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><path fill="#58595B" d="M16 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M15 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><circle fill="#58595B" cx="32" cy="32" r="3"/><circle fill="#292F33" cx="32" cy="32" r="2"/><circle fill="#58595B" cx="24" cy="32" r="3"/><circle fill="#292F33" cx="24" cy="32" r="2"/><path fill="#5C913B" d="M0 28h36v4H0z"/><path fill="#FFE8B6" d="M0 16h36v12H0z"/><path fill="#FFAC33" d="M0 26h36v2H0z"/><path fill="#77B255" d="M32.555 14H3.445C1.969 14 .693 14.81 0 16h36c-.693-1.19-1.969-2-3.445-2z"/><path d="M5 22c0 .553-.447 1-1 1H2c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1H8c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2z" fill="#55ACEE"/></svg></span><span>台北→十分→九份<br>（電車・バス 約1〜1.5時間）</span></div></div></div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -223,34 +283,41 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge ">Day 4</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>迪化街でお土産 → 帰国</strong><br>最終日は<a onclick="showSpot('TPE 07')" class="spot-link">迪化街</a>でパイナップルケーキとお茶を調達。昼の飛行機ならその日の夕方には日本着。月曜の仕事にも間に合う。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>迪化街でお土産 → 帰国</strong><br>最終日は<a onclick="showSpot('TPE 07')" class="spot-link">迪化街</a>でパイナップルケーキとお茶を調達。昼の飛行機ならその日の夕方には日本着。月曜の仕事にも間に合う。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
       
     </div>
-    <div class="course-tip"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+  </div>
+  
+  <h3 class="section-subhead plan-title-row toc-sub" style="margin:6px 0 8px"><span>新幹線で西部縦断　5泊6日</span><span class="plan-tip-tag"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
 	<path d="M0 0h512v512H0z" fill="none" />
 	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
 	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
-</svg><span>九份は週末夕方が最も混雑する。可能なら平日に組み込み、帰りのバス行列を避けたいなら夕食は台北に戻ってからにするのがスムーズ。</span></div>
-  </div>
-  
-  <div class="qs-section-title" style="margin:6px 0 8px">新幹線で西部縦断　5泊6日</div>
+</svg>台湾新幹線は外国人限定の割引パスや早割（アーリーバード最大35%OFF）がある。都市間は毎回1時間前後なので、1都市1泊ずつでも意外と疲れない。</span></h3>
   <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       
       
       <div class="tl-day">
         <div class="tl-badge green">Day 1</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台北到着 → 西門町 → 夜市</strong><br>ホテルに荷物を置いたら「台湾の原宿」西門町を散策し、夜は<a onclick="showSpot('TPE 08')" class="spot-link">饒河街観光夜市</a>へ。一本道で回りやすく、入口の<a onclick="showFood('No.4')" class="spot-link">胡椒餅</a>は必食。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台北到着 → 西門町 → 夜市</strong><br>ホテルに荷物を置いたら「台湾の原宿」西門町を散策し、夜は<a onclick="showSpot('TPE 08')" class="spot-link">饒河街観光夜市</a>へ。一本道で回りやすく、入口の<a onclick="showFood('No.4')" class="spot-link">胡椒餅</a>は必食。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -258,10 +325,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge green">Day 2</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台北定番巡り</strong><br><a onclick="showSpot('TPE 02')" class="spot-link">故宮博物院</a> → <a onclick="showSpot('TPE 04')" class="spot-link">中正紀念堂</a>の衛兵交代式 → <a onclick="showSpot('TPE 01')" class="spot-link">台北101</a>と、台北のハイライトを1日で。夜は<a onclick="showFood('No.1')" class="spot-link">小籠包</a>の名店で乾杯。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台北定番巡り</strong><br><a onclick="showSpot('TPE 02')" class="spot-link">故宮博物院</a> → <a onclick="showSpot('TPE 04')" class="spot-link">中正紀念堂</a>の衛兵交代式 → <a onclick="showSpot('TPE 01')" class="spot-link">台北101</a>と、台北のハイライトを1日で。夜は<a onclick="showFood('No.1')" class="spot-link">小籠包</a>の名店で乾杯。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -269,10 +340,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 3</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 128 128"><g><g><path style="fill:#543529;" d="M29.3,105.76c0,0-0.37,1.11-0.38,1.98s0.12,2.64,1.68,2.64c2.02,0,24.86-0.07,35.87,0s31.28-0.14,32.7-0.22c1.42-0.07,1.03-3.22,0.94-4.3L29.3,105.76z"/><path style="fill:#874D36;" d="M102.23,116.02l2.89,1.99c0,0,1.87,1.63,2.12,2.61c0.25,0.98-0.33,2.84-1.16,3.23L62.74,124l-40.42-0.12c-0.63-0.16-1.39-0.77-1.58-1.89s0.43-2.37,0.82-3.15c0.39-0.78,8.43-2.81,8.43-2.81L102.23,116.02z"/><path style="fill:#B88956;" d="M25.89,113.94c-0.78,0.01-1.35,0.94-1.82,1.55c-1.22,1.57-1.99,2.56-2.5,3.35c-0.7,1.09,0.7,2.03,1.95,2.03s83.39,0.12,83.59-0.41c0.27-0.7-1.33-3.09-2.65-5.29c-0.46-0.77-1.46-1.82-2.36-1.81L25.89,113.94z"/><path style="fill:#A06841;" d="M32.22,100.82l-2.78,4.53c-0.48,0.78,0.08,1.78,1,1.78l68.52-0.04c0.91,0,1.47-0.99,1.01-1.77l-2.69-4.51H32.22z"/><g><g><path style="fill:#88857C;" d="M47.25,101.55l-8.15,22.39h-4.94l-2.83-5.39l9.04-19.45C40.37,99.09,47.7,100.1,47.25,101.55z"/><path style="fill:#C8C9C6;" d="M28.81,123.97c0.12-0.42,8.45-17.94,8.45-17.94c0.52-1.09,4.91-0.6,4.2,1.46s-5.74,16.44-5.74,16.44L28.81,123.97z"/></g><g><path style="fill:#88857C;" d="M79.99,101.55l8.19,22.36l4.89-0.01l2.84-5.35l-9.04-19.45C86.88,99.09,79.54,100.1,79.99,101.55z"/><path style="fill:#C8C9C6;" d="M98.42,123.88c-0.12-0.42-8.47-17.91-8.47-17.91c-0.52-1.09-4.91-0.6-4.2,1.46c0.72,2.06,5.76,16.47,5.76,16.47L98.42,123.88z"/></g></g></g><path style="fill:#82AEC0;" d="M100.2,98.08c0.14,1.71-0.9,3.24-2.36,3.48c-4.85,0.77-16.44,2.24-34.54,2.24c-17.97,0-29.3-1.45-34.09-2.23c-1.48-0.24-2.51-1.8-2.35-3.53L26.84,80.9h73.38L100.2,98.08z"/><path style="fill:#546E7A;" d="M26.84,80.9l0,6.06c0,0,17.38,0.9,36.68,0.9s36.69-1.04,36.69-1.04V80.9H26.84z"/><path style="fill:#E0E0E0;" d="M63.38,84.79l0.14-24.05l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67C29.9,84.45,38.98,84.79,63.38,84.79z"/><g><path style="fill:#2167A1;" d="M96.76,8.01C91.92,6.04,82.26,4,63.53,4S35.13,6.04,30.29,8.01C28.3,8.82,27,11.96,27,14.14l-1.18,39.43l10.53,15.61l26.91,13.01c33.58,0,38.83-0.29,38.83-0.29l-2.05-67.76C100.05,11.96,98.75,8.82,96.76,8.01z"/><path style="fill:#2686C6;" d="M94.49,9.42c-4.53-1.84-13.44-3.68-30.96-3.68S37.09,7.58,32.57,9.42c-1.86,0.76-3.08,3.03-3.08,5.07l0.16,24.39c0.03,5.42,3.57,10.2,8.74,11.83l25.86,8.75l24.82-8.67c5.18-1.67,8.68-6.51,8.65-11.95l-0.16-24.25C97.56,12.55,96.35,10.18,94.49,9.42z"/></g><g><g><polygon style="fill:#BAE2FD;" points="93.51,31.48 66.25,31.48 66.61,14.81 91.48,14.81 "/><path style="fill:#37474F;" d="M91.64,12.95H67.06c-0.92,0-1.65,0.99-1.59,2.16l0.46,16.19c0.05,1.07,0.75,1.9,1.59,1.9h25.35c1.22,0,2.12-1.44,1.86-2.96l-1.55-15.7C93.03,13.61,92.38,12.95,91.64,12.95z M69.23,15.72h20.45c0.73,0,1.36,0.63,1.54,1.53l0.95,10.64c0.26,1.29-0.5,2.54-1.54,2.54H69.5c-0.83,0-1.52-0.82-1.58-1.88l-0.26-10.64C67.58,16.73,68.31,15.72,69.23,15.72z"/></g><g><polygon style="fill:#BAE2FD;" points="34.49,31.48 61.75,31.48 61.39,14.81 36.52,14.81 "/><path style="fill:#37474F;" d="M34.81,14.54l-1.55,15.7c-0.26,1.52,0.64,2.96,1.86,2.96h25.35c0.84,0,1.53-0.83,1.59-1.9l0.46-16.19c0.06-1.17-0.67-2.16-1.59-2.16H36.36C35.62,12.95,34.97,13.61,34.81,14.54z M60.35,17.91l-0.26,10.64c-0.06,1.06-0.75,1.88-1.58,1.88H37.36c-1.04,0-1.8-1.25-1.54-2.54l0.95-10.64c0.18-0.9,0.81-1.53,1.54-1.53h20.45C59.69,15.72,60.42,16.73,60.35,17.91z"/></g></g><g><g><g><g><path style="fill:#01579B;" d="M84.01,43.89c-1.15-2.57-3.12-3.54-5.19-3.03c-2.07,0.51-3.14,2.55-2.83,4.66c0.41,2.87,3.06,5.7,6.42,4.12C84.59,48.62,85.15,46.43,84.01,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="79.73" cy="44.6" r="3.13"/></g></g></g><g><g><g><path style="fill:#01579B;" d="M43.99,43.89c1.15-2.57,3.12-3.54,5.19-3.03c2.07,0.51,3.14,2.55,2.83,4.66c-0.41,2.87-3.06,5.7-6.42,4.12C43.41,48.62,42.85,46.43,43.99,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="48.27" cy="44.6" r="3.13"/></g></g></g></g><path style="fill:#E0E0E0;" d="M63.53,60.73l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0c0,0,2.15-4.36,2.15-11.7S63.53,60.73,63.53,60.73z"/><path style="fill:#BDBDBD;" d="M63.53,60.73l37.7-7.16L101.89,77l0,5.59c0,0.89-0.69,1.62-1.57,1.67c-3.17,0.19-12.25,0.53-36.65,0.53c-0.05,0-0.09,0-0.14,0V60.73z"/><path style="opacity:0.2;fill:#424242;" d="M25.16,82.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0l0,0v0c0.05,0,0.09,0,0.14,0c24.4,0,33.48-0.34,36.65-0.53c0.88-0.05,1.57-0.78,1.57-1.67l0-5.54H25.16L25.16,82.59z"/><path style="fill:#94D1E0;" d="M31.7,89.75c-1.38-0.14-2.57,0.95-2.57,2.34c0,3.12,0.05,6.52,2.21,7.19c2.38,0.74,15.73,1.48,22.07,1.68c1.38,0.04,2.49-1.11,2.41-2.48l-0.3-5.1c-0.07-1.22-1.07-2.18-2.29-2.21C45.36,91.04,36.12,90.2,31.7,89.75z"/><g><g><g><g><circle style="fill:#757575;" cx="85.76" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="85.76" cy="66.82" r="4.32"/></g></g></g><g><g><g><circle style="fill:#9E9E9E;" cx="42.24" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="42.24" cy="66.82" r="4.32"/></g></g></g></g></g><g><g><g><g><polygon style="fill:#FFFFFF;" points="57.55,30.42 50.22,30.42 40.72,15.72 48.06,15.72 "/></g></g></g><g><g><g><polygon style="fill:#FFFFFF;" points="87.28,30.42 79.94,30.42 70.45,15.72 77.78,15.72 "/></g></g></g></g></svg></span><span>台北→台中<br>（台湾新幹線 約1時間）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台中：宮原眼科 → 高美湿地の夕日</strong><br><a onclick="showSpot('TXG 01')" class="spot-link">宮原眼科</a>でアイスとお土産を楽しみ、午後は<a onclick="showSpot('TXG 03')" class="spot-link">審計新村</a>を散策。夕方は<a onclick="showSpot('TXG 02')" class="spot-link">高美湿地</a>へ。水面に空が映る夕景は台湾屈指の絶景。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台中：宮原眼科 → 高美湿地の夕日</strong><br><a onclick="showSpot('TXG 01')" class="spot-link">宮原眼科</a>でアイスとお土産を楽しみ、午後は<a onclick="showSpot('TXG 03')" class="spot-link">審計新村</a>を散策。夕方は<a onclick="showSpot('TXG 02')" class="spot-link">高美湿地</a>へ。水面に空が映る夕景は台湾屈指の絶景。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -280,10 +355,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 4</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 128 128"><g><g><path style="fill:#543529;" d="M29.3,105.76c0,0-0.37,1.11-0.38,1.98s0.12,2.64,1.68,2.64c2.02,0,24.86-0.07,35.87,0s31.28-0.14,32.7-0.22c1.42-0.07,1.03-3.22,0.94-4.3L29.3,105.76z"/><path style="fill:#874D36;" d="M102.23,116.02l2.89,1.99c0,0,1.87,1.63,2.12,2.61c0.25,0.98-0.33,2.84-1.16,3.23L62.74,124l-40.42-0.12c-0.63-0.16-1.39-0.77-1.58-1.89s0.43-2.37,0.82-3.15c0.39-0.78,8.43-2.81,8.43-2.81L102.23,116.02z"/><path style="fill:#B88956;" d="M25.89,113.94c-0.78,0.01-1.35,0.94-1.82,1.55c-1.22,1.57-1.99,2.56-2.5,3.35c-0.7,1.09,0.7,2.03,1.95,2.03s83.39,0.12,83.59-0.41c0.27-0.7-1.33-3.09-2.65-5.29c-0.46-0.77-1.46-1.82-2.36-1.81L25.89,113.94z"/><path style="fill:#A06841;" d="M32.22,100.82l-2.78,4.53c-0.48,0.78,0.08,1.78,1,1.78l68.52-0.04c0.91,0,1.47-0.99,1.01-1.77l-2.69-4.51H32.22z"/><g><g><path style="fill:#88857C;" d="M47.25,101.55l-8.15,22.39h-4.94l-2.83-5.39l9.04-19.45C40.37,99.09,47.7,100.1,47.25,101.55z"/><path style="fill:#C8C9C6;" d="M28.81,123.97c0.12-0.42,8.45-17.94,8.45-17.94c0.52-1.09,4.91-0.6,4.2,1.46s-5.74,16.44-5.74,16.44L28.81,123.97z"/></g><g><path style="fill:#88857C;" d="M79.99,101.55l8.19,22.36l4.89-0.01l2.84-5.35l-9.04-19.45C86.88,99.09,79.54,100.1,79.99,101.55z"/><path style="fill:#C8C9C6;" d="M98.42,123.88c-0.12-0.42-8.47-17.91-8.47-17.91c-0.52-1.09-4.91-0.6-4.2,1.46c0.72,2.06,5.76,16.47,5.76,16.47L98.42,123.88z"/></g></g></g><path style="fill:#82AEC0;" d="M100.2,98.08c0.14,1.71-0.9,3.24-2.36,3.48c-4.85,0.77-16.44,2.24-34.54,2.24c-17.97,0-29.3-1.45-34.09-2.23c-1.48-0.24-2.51-1.8-2.35-3.53L26.84,80.9h73.38L100.2,98.08z"/><path style="fill:#546E7A;" d="M26.84,80.9l0,6.06c0,0,17.38,0.9,36.68,0.9s36.69-1.04,36.69-1.04V80.9H26.84z"/><path style="fill:#E0E0E0;" d="M63.38,84.79l0.14-24.05l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67C29.9,84.45,38.98,84.79,63.38,84.79z"/><g><path style="fill:#2167A1;" d="M96.76,8.01C91.92,6.04,82.26,4,63.53,4S35.13,6.04,30.29,8.01C28.3,8.82,27,11.96,27,14.14l-1.18,39.43l10.53,15.61l26.91,13.01c33.58,0,38.83-0.29,38.83-0.29l-2.05-67.76C100.05,11.96,98.75,8.82,96.76,8.01z"/><path style="fill:#2686C6;" d="M94.49,9.42c-4.53-1.84-13.44-3.68-30.96-3.68S37.09,7.58,32.57,9.42c-1.86,0.76-3.08,3.03-3.08,5.07l0.16,24.39c0.03,5.42,3.57,10.2,8.74,11.83l25.86,8.75l24.82-8.67c5.18-1.67,8.68-6.51,8.65-11.95l-0.16-24.25C97.56,12.55,96.35,10.18,94.49,9.42z"/></g><g><g><polygon style="fill:#BAE2FD;" points="93.51,31.48 66.25,31.48 66.61,14.81 91.48,14.81 "/><path style="fill:#37474F;" d="M91.64,12.95H67.06c-0.92,0-1.65,0.99-1.59,2.16l0.46,16.19c0.05,1.07,0.75,1.9,1.59,1.9h25.35c1.22,0,2.12-1.44,1.86-2.96l-1.55-15.7C93.03,13.61,92.38,12.95,91.64,12.95z M69.23,15.72h20.45c0.73,0,1.36,0.63,1.54,1.53l0.95,10.64c0.26,1.29-0.5,2.54-1.54,2.54H69.5c-0.83,0-1.52-0.82-1.58-1.88l-0.26-10.64C67.58,16.73,68.31,15.72,69.23,15.72z"/></g><g><polygon style="fill:#BAE2FD;" points="34.49,31.48 61.75,31.48 61.39,14.81 36.52,14.81 "/><path style="fill:#37474F;" d="M34.81,14.54l-1.55,15.7c-0.26,1.52,0.64,2.96,1.86,2.96h25.35c0.84,0,1.53-0.83,1.59-1.9l0.46-16.19c0.06-1.17-0.67-2.16-1.59-2.16H36.36C35.62,12.95,34.97,13.61,34.81,14.54z M60.35,17.91l-0.26,10.64c-0.06,1.06-0.75,1.88-1.58,1.88H37.36c-1.04,0-1.8-1.25-1.54-2.54l0.95-10.64c0.18-0.9,0.81-1.53,1.54-1.53h20.45C59.69,15.72,60.42,16.73,60.35,17.91z"/></g></g><g><g><g><g><path style="fill:#01579B;" d="M84.01,43.89c-1.15-2.57-3.12-3.54-5.19-3.03c-2.07,0.51-3.14,2.55-2.83,4.66c0.41,2.87,3.06,5.7,6.42,4.12C84.59,48.62,85.15,46.43,84.01,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="79.73" cy="44.6" r="3.13"/></g></g></g><g><g><g><path style="fill:#01579B;" d="M43.99,43.89c1.15-2.57,3.12-3.54,5.19-3.03c2.07,0.51,3.14,2.55,2.83,4.66c-0.41,2.87-3.06,5.7-6.42,4.12C43.41,48.62,42.85,46.43,43.99,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="48.27" cy="44.6" r="3.13"/></g></g></g></g><path style="fill:#E0E0E0;" d="M63.53,60.73l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0c0,0,2.15-4.36,2.15-11.7S63.53,60.73,63.53,60.73z"/><path style="fill:#BDBDBD;" d="M63.53,60.73l37.7-7.16L101.89,77l0,5.59c0,0.89-0.69,1.62-1.57,1.67c-3.17,0.19-12.25,0.53-36.65,0.53c-0.05,0-0.09,0-0.14,0V60.73z"/><path style="opacity:0.2;fill:#424242;" d="M25.16,82.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0l0,0v0c0.05,0,0.09,0,0.14,0c24.4,0,33.48-0.34,36.65-0.53c0.88-0.05,1.57-0.78,1.57-1.67l0-5.54H25.16L25.16,82.59z"/><path style="fill:#94D1E0;" d="M31.7,89.75c-1.38-0.14-2.57,0.95-2.57,2.34c0,3.12,0.05,6.52,2.21,7.19c2.38,0.74,15.73,1.48,22.07,1.68c1.38,0.04,2.49-1.11,2.41-2.48l-0.3-5.1c-0.07-1.22-1.07-2.18-2.29-2.21C45.36,91.04,36.12,90.2,31.7,89.75z"/><g><g><g><g><circle style="fill:#757575;" cx="85.76" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="85.76" cy="66.82" r="4.32"/></g></g></g><g><g><g><circle style="fill:#9E9E9E;" cx="42.24" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="42.24" cy="66.82" r="4.32"/></g></g></g></g></g><g><g><g><g><polygon style="fill:#FFFFFF;" points="57.55,30.42 50.22,30.42 40.72,15.72 48.06,15.72 "/></g></g></g><g><g><g><polygon style="fill:#FFFFFF;" points="87.28,30.42 79.94,30.42 70.45,15.72 77.78,15.72 "/></g></g></g></g></svg></span><span>台中→台南<br>（台湾新幹線 約50分）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台南：古都さんぽと小吃（シャオチー）三昧</strong><br><a onclick="showSpot('TNN 01')" class="spot-link">赤崁楼</a> → <a onclick="showSpot('TNN 04')" class="spot-link">林百貨</a> → 夕方は<a onclick="showSpot('TNN 03')" class="spot-link">神農街</a>へ。移動の合間に担仔麺（タンツーメン）・牛肉湯（ぎゅうにくとう）・サバヒー粥と、小吃（シャオチー）の聖地の実力を食べて確かめる1日。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台南：古都さんぽと小吃（シャオチー）三昧</strong><br><a onclick="showSpot('TNN 01')" class="spot-link">赤崁楼</a> → <a onclick="showSpot('TNN 04')" class="spot-link">林百貨</a> → 夕方は<a onclick="showSpot('TNN 03')" class="spot-link">神農街</a>へ。移動の合間に担仔麺（タンツーメン）・牛肉湯（ぎゅうにくとう）・サバヒー粥と、小吃（シャオチー）の聖地の実力を食べて確かめる1日。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -291,10 +370,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 5</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 128 128"><g><g><path style="fill:#543529;" d="M29.3,105.76c0,0-0.37,1.11-0.38,1.98s0.12,2.64,1.68,2.64c2.02,0,24.86-0.07,35.87,0s31.28-0.14,32.7-0.22c1.42-0.07,1.03-3.22,0.94-4.3L29.3,105.76z"/><path style="fill:#874D36;" d="M102.23,116.02l2.89,1.99c0,0,1.87,1.63,2.12,2.61c0.25,0.98-0.33,2.84-1.16,3.23L62.74,124l-40.42-0.12c-0.63-0.16-1.39-0.77-1.58-1.89s0.43-2.37,0.82-3.15c0.39-0.78,8.43-2.81,8.43-2.81L102.23,116.02z"/><path style="fill:#B88956;" d="M25.89,113.94c-0.78,0.01-1.35,0.94-1.82,1.55c-1.22,1.57-1.99,2.56-2.5,3.35c-0.7,1.09,0.7,2.03,1.95,2.03s83.39,0.12,83.59-0.41c0.27-0.7-1.33-3.09-2.65-5.29c-0.46-0.77-1.46-1.82-2.36-1.81L25.89,113.94z"/><path style="fill:#A06841;" d="M32.22,100.82l-2.78,4.53c-0.48,0.78,0.08,1.78,1,1.78l68.52-0.04c0.91,0,1.47-0.99,1.01-1.77l-2.69-4.51H32.22z"/><g><g><path style="fill:#88857C;" d="M47.25,101.55l-8.15,22.39h-4.94l-2.83-5.39l9.04-19.45C40.37,99.09,47.7,100.1,47.25,101.55z"/><path style="fill:#C8C9C6;" d="M28.81,123.97c0.12-0.42,8.45-17.94,8.45-17.94c0.52-1.09,4.91-0.6,4.2,1.46s-5.74,16.44-5.74,16.44L28.81,123.97z"/></g><g><path style="fill:#88857C;" d="M79.99,101.55l8.19,22.36l4.89-0.01l2.84-5.35l-9.04-19.45C86.88,99.09,79.54,100.1,79.99,101.55z"/><path style="fill:#C8C9C6;" d="M98.42,123.88c-0.12-0.42-8.47-17.91-8.47-17.91c-0.52-1.09-4.91-0.6-4.2,1.46c0.72,2.06,5.76,16.47,5.76,16.47L98.42,123.88z"/></g></g></g><path style="fill:#82AEC0;" d="M100.2,98.08c0.14,1.71-0.9,3.24-2.36,3.48c-4.85,0.77-16.44,2.24-34.54,2.24c-17.97,0-29.3-1.45-34.09-2.23c-1.48-0.24-2.51-1.8-2.35-3.53L26.84,80.9h73.38L100.2,98.08z"/><path style="fill:#546E7A;" d="M26.84,80.9l0,6.06c0,0,17.38,0.9,36.68,0.9s36.69-1.04,36.69-1.04V80.9H26.84z"/><path style="fill:#E0E0E0;" d="M63.38,84.79l0.14-24.05l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67C29.9,84.45,38.98,84.79,63.38,84.79z"/><g><path style="fill:#2167A1;" d="M96.76,8.01C91.92,6.04,82.26,4,63.53,4S35.13,6.04,30.29,8.01C28.3,8.82,27,11.96,27,14.14l-1.18,39.43l10.53,15.61l26.91,13.01c33.58,0,38.83-0.29,38.83-0.29l-2.05-67.76C100.05,11.96,98.75,8.82,96.76,8.01z"/><path style="fill:#2686C6;" d="M94.49,9.42c-4.53-1.84-13.44-3.68-30.96-3.68S37.09,7.58,32.57,9.42c-1.86,0.76-3.08,3.03-3.08,5.07l0.16,24.39c0.03,5.42,3.57,10.2,8.74,11.83l25.86,8.75l24.82-8.67c5.18-1.67,8.68-6.51,8.65-11.95l-0.16-24.25C97.56,12.55,96.35,10.18,94.49,9.42z"/></g><g><g><polygon style="fill:#BAE2FD;" points="93.51,31.48 66.25,31.48 66.61,14.81 91.48,14.81 "/><path style="fill:#37474F;" d="M91.64,12.95H67.06c-0.92,0-1.65,0.99-1.59,2.16l0.46,16.19c0.05,1.07,0.75,1.9,1.59,1.9h25.35c1.22,0,2.12-1.44,1.86-2.96l-1.55-15.7C93.03,13.61,92.38,12.95,91.64,12.95z M69.23,15.72h20.45c0.73,0,1.36,0.63,1.54,1.53l0.95,10.64c0.26,1.29-0.5,2.54-1.54,2.54H69.5c-0.83,0-1.52-0.82-1.58-1.88l-0.26-10.64C67.58,16.73,68.31,15.72,69.23,15.72z"/></g><g><polygon style="fill:#BAE2FD;" points="34.49,31.48 61.75,31.48 61.39,14.81 36.52,14.81 "/><path style="fill:#37474F;" d="M34.81,14.54l-1.55,15.7c-0.26,1.52,0.64,2.96,1.86,2.96h25.35c0.84,0,1.53-0.83,1.59-1.9l0.46-16.19c0.06-1.17-0.67-2.16-1.59-2.16H36.36C35.62,12.95,34.97,13.61,34.81,14.54z M60.35,17.91l-0.26,10.64c-0.06,1.06-0.75,1.88-1.58,1.88H37.36c-1.04,0-1.8-1.25-1.54-2.54l0.95-10.64c0.18-0.9,0.81-1.53,1.54-1.53h20.45C59.69,15.72,60.42,16.73,60.35,17.91z"/></g></g><g><g><g><g><path style="fill:#01579B;" d="M84.01,43.89c-1.15-2.57-3.12-3.54-5.19-3.03c-2.07,0.51-3.14,2.55-2.83,4.66c0.41,2.87,3.06,5.7,6.42,4.12C84.59,48.62,85.15,46.43,84.01,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="79.73" cy="44.6" r="3.13"/></g></g></g><g><g><g><path style="fill:#01579B;" d="M43.99,43.89c1.15-2.57,3.12-3.54,5.19-3.03c2.07,0.51,3.14,2.55,2.83,4.66c-0.41,2.87-3.06,5.7-6.42,4.12C43.41,48.62,42.85,46.43,43.99,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="48.27" cy="44.6" r="3.13"/></g></g></g></g><path style="fill:#E0E0E0;" d="M63.53,60.73l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0c0,0,2.15-4.36,2.15-11.7S63.53,60.73,63.53,60.73z"/><path style="fill:#BDBDBD;" d="M63.53,60.73l37.7-7.16L101.89,77l0,5.59c0,0.89-0.69,1.62-1.57,1.67c-3.17,0.19-12.25,0.53-36.65,0.53c-0.05,0-0.09,0-0.14,0V60.73z"/><path style="opacity:0.2;fill:#424242;" d="M25.16,82.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0l0,0v0c0.05,0,0.09,0,0.14,0c24.4,0,33.48-0.34,36.65-0.53c0.88-0.05,1.57-0.78,1.57-1.67l0-5.54H25.16L25.16,82.59z"/><path style="fill:#94D1E0;" d="M31.7,89.75c-1.38-0.14-2.57,0.95-2.57,2.34c0,3.12,0.05,6.52,2.21,7.19c2.38,0.74,15.73,1.48,22.07,1.68c1.38,0.04,2.49-1.11,2.41-2.48l-0.3-5.1c-0.07-1.22-1.07-2.18-2.29-2.21C45.36,91.04,36.12,90.2,31.7,89.75z"/><g><g><g><g><circle style="fill:#757575;" cx="85.76" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="85.76" cy="66.82" r="4.32"/></g></g></g><g><g><g><circle style="fill:#9E9E9E;" cx="42.24" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="42.24" cy="66.82" r="4.32"/></g></g></g></g></g><g><g><g><g><polygon style="fill:#FFFFFF;" points="57.55,30.42 50.22,30.42 40.72,15.72 48.06,15.72 "/></g></g></g><g><g><g><polygon style="fill:#FFFFFF;" points="87.28,30.42 79.94,30.42 70.45,15.72 77.78,15.72 "/></g></g></g></g></svg></span><span>台南→高雄<br>（台湾新幹線 約15分）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>高雄：美麗島駅 → 駁二 → 旗津</strong><br>まず<a onclick="showSpot('KHH 01')" class="spot-link">美麗島駅</a>の光のドームに感動し、<a onclick="showSpot('KHH 03')" class="spot-link">駁二芸術特区</a>を散策。フェリーで<a onclick="showSpot('KHH 04')" class="spot-link">旗津半島</a>へ渡って海鮮ディナーで締める。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>高雄：美麗島駅 → 駁二 → 旗津</strong><br>まず<a onclick="showSpot('KHH 01')" class="spot-link">美麗島駅</a>の光のドームに感動し、<a onclick="showSpot('KHH 03')" class="spot-link">駁二芸術特区</a>を散策。フェリーで<a onclick="showSpot('KHH 04')" class="spot-link">旗津半島</a>へ渡って海鮮ディナーで締める。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -302,21 +385,19 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge ">Day 6</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>帰国</strong><br>高雄（小港空港）から直行便で帰国。直行便がない日は新幹線で桃園に戻って桃園空港から。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>帰国</strong><br>高雄（小港空港）から直行便で帰国。直行便がない日は新幹線で桃園に戻って桃園空港から。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
       
     </div>
-    <div class="course-tip"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
-	<path d="M0 0h512v512H0z" fill="none" />
-	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
-	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
-	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
-</svg><span>台湾新幹線は外国人限定の割引パスや早割（アーリーバード最大35%OFF）がある。都市間は毎回1時間前後なので、1都市1泊ずつでも意外と疲れない。</span></div>
   </div>
   
   </div>
@@ -326,17 +407,26 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">台湾好きの間で憧れとして語られるのが、島をぐるっと一周する「環島（ホァンダオ）」。鉄道だけでも一周でき、西部の都市文化と東海岸の雄大な自然を一度に味わえます。ここでは鉄道環島の6泊7日モデルを紹介します。</p>
   <div class="s-card" style="padding-top:6px">
-  <div class="qs-section-title" style="margin:6px 0 8px">鉄道で台湾一周　6泊7日</div>
+  <h3 class="section-subhead plan-title-row toc-sub" style="margin:6px 0 8px"><span>鉄道で台湾一周　6泊7日</span><span class="plan-tip-tag"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+	<path d="M0 0h512v512H0z" fill="none" />
+	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
+	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
+	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
+</svg>東部の台鉄特急（太魯閣号・普悠瑪号）は全席指定で週末は売り切れやすい。台鉄公式アプリで14日前から予約を。太魯閣渓谷の遊歩道は震災復旧が2031年以降まで続く見込みのエリアもあるため、花蓮観光は海岸線と市内中心で計画するのが現実的。</span></h3>
   <div style="background:#fff;padding:20px 24px">
     <div class="course-timeline">
       
       
       <div class="tl-day">
         <div class="tl-badge green">Day 1</div>
+        <div class="tl-body">
         
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台北到着</strong><br>環島の起点は台北。到着日は夜市で腹ごしらえをして、この日は台北で1泊。移動中の車窓も楽しみたいので、翌朝の明るい時間に出発して花蓮へ向かう。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台北到着</strong><br>環島の起点は台北。到着日は夜市で腹ごしらえをして、この日は台北で1泊。移動中の車窓も楽しみたいので、翌朝の明るい時間に出発して花蓮へ向かう。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -344,10 +434,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 2</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 36 36"><path fill="#939598" d="M0 34h36v2H0z"/><path fill="#58595B" d="M8 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M7 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><path fill="#58595B" d="M16 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M15 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><circle fill="#58595B" cx="32" cy="32" r="3"/><circle fill="#292F33" cx="32" cy="32" r="2"/><circle fill="#58595B" cx="24" cy="32" r="3"/><circle fill="#292F33" cx="24" cy="32" r="2"/><path fill="#5C913B" d="M0 28h36v4H0z"/><path fill="#FFE8B6" d="M0 16h36v12H0z"/><path fill="#FFAC33" d="M0 26h36v2H0z"/><path fill="#77B255" d="M32.555 14H3.445C1.969 14 .693 14.81 0 16h36c-.693-1.19-1.969-2-3.445-2z"/><path d="M5 22c0 .553-.447 1-1 1H2c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1H8c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2z" fill="#55ACEE"/></svg></span><span>台北→花蓮<br>（台鉄特急 約2〜2.5時間）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>花蓮：東海岸の玄関口</strong><br>断崖と太平洋が続く東海岸へ。七星潭の海岸や東大門夜市で、西部とは違うのんびりした空気を味わう。※太魯閣渓谷は2024年の地震の影響で主要歩道の多くが閉鎖中。訪問を検討する場合は必ず公式サイトで最新の開放状況を確認しよう。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>花蓮：東海岸の玄関口</strong><br>断崖と太平洋が続く東海岸へ。七星潭の海岸や東大門夜市で、西部とは違うのんびりした空気を味わう。※太魯閣渓谷は2024年の地震の影響で主要歩道の多くが閉鎖中。訪問を検討する場合は必ず公式サイトで最新の開放状況を確認しよう。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -355,10 +449,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 3</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 36 36"><path fill="#939598" d="M0 34h36v2H0z"/><path fill="#58595B" d="M8 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M7 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><path fill="#58595B" d="M16 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M15 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><circle fill="#58595B" cx="32" cy="32" r="3"/><circle fill="#292F33" cx="32" cy="32" r="2"/><circle fill="#58595B" cx="24" cy="32" r="3"/><circle fill="#292F33" cx="24" cy="32" r="2"/><path fill="#5C913B" d="M0 28h36v4H0z"/><path fill="#FFE8B6" d="M0 16h36v12H0z"/><path fill="#FFAC33" d="M0 26h36v2H0z"/><path fill="#77B255" d="M32.555 14H3.445C1.969 14 .693 14.81 0 16h36c-.693-1.19-1.969-2-3.445-2z"/><path d="M5 22c0 .553-.447 1-1 1H2c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1H8c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2z" fill="#55ACEE"/></svg></span><span>花蓮→台東<br>（台鉄 約1.5〜2時間）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台東：田園と温泉</strong><br>台鉄の車窓に広がる緑豊かな田園風景が、環島の中でも指折りのハイライト区間。台東に着いたら知本温泉に宿を取り、露天風呂に浸かりながら旅の中日をゆっくり癒す。市街地のパイナップルケーキ店や、夕方の海岸沿いの散歩もあわせて楽しみたい。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台東：田園と温泉</strong><br>台鉄の車窓に広がる緑豊かな田園風景が、環島の中でも指折りのハイライト区間。台東に着いたら知本温泉に宿を取り、露天風呂に浸かりながら旅の中日をゆっくり癒す。市街地のパイナップルケーキ店や、夕方の海岸沿いの散歩もあわせて楽しみたい。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -366,10 +464,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge red">Day 4</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 36 36"><path fill="#939598" d="M0 34h36v2H0z"/><path fill="#58595B" d="M8 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M7 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><path fill="#58595B" d="M16 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M15 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><circle fill="#58595B" cx="32" cy="32" r="3"/><circle fill="#292F33" cx="32" cy="32" r="2"/><circle fill="#58595B" cx="24" cy="32" r="3"/><circle fill="#292F33" cx="24" cy="32" r="2"/><path fill="#5C913B" d="M0 28h36v4H0z"/><path fill="#FFE8B6" d="M0 16h36v12H0z"/><path fill="#FFAC33" d="M0 26h36v2H0z"/><path fill="#77B255" d="M32.555 14H3.445C1.969 14 .693 14.81 0 16h36c-.693-1.19-1.969-2-3.445-2z"/><path d="M5 22c0 .553-.447 1-1 1H2c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1H8c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2z" fill="#55ACEE"/></svg></span><span>台東→高雄<br>（台鉄・南廻線 約2〜2.5時間）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>高雄：港町の夜</strong><br>南廻線で島の南端を回り込んで高雄へ。<a onclick="showSpot('KHH 01')" class="spot-link">美麗島駅</a>と<a onclick="showSpot('KHH 03')" class="spot-link">駁二芸術特区</a>を巡り、夜市で乾杯。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>高雄：港町の夜</strong><br>南廻線で島の南端を回り込んで高雄へ。<a onclick="showSpot('KHH 01')" class="spot-link">美麗島駅</a>と<a onclick="showSpot('KHH 03')" class="spot-link">駁二芸術特区</a>を巡り、夜市で乾杯。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -377,10 +479,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge green">Day 5</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 36 36"><path fill="#939598" d="M0 34h36v2H0z"/><path fill="#58595B" d="M8 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M7 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><path fill="#58595B" d="M16 32c0-1.657-1.344-3-3-3s-3 1.343-3 3 1.343 3 3 3 3-1.343 3-3z"/><path fill="#292F33" d="M15 32c0-1.105-.896-2-2-2s-2 .895-2 2 .896 2 2 2 2-.895 2-2z"/><circle fill="#58595B" cx="32" cy="32" r="3"/><circle fill="#292F33" cx="32" cy="32" r="2"/><circle fill="#58595B" cx="24" cy="32" r="3"/><circle fill="#292F33" cx="24" cy="32" r="2"/><path fill="#5C913B" d="M0 28h36v4H0z"/><path fill="#FFE8B6" d="M0 16h36v12H0z"/><path fill="#FFAC33" d="M0 26h36v2H0z"/><path fill="#77B255" d="M32.555 14H3.445C1.969 14 .693 14.81 0 16h36c-.693-1.19-1.969-2-3.445-2z"/><path d="M5 22c0 .553-.447 1-1 1H2c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1H8c-.552 0-1-.447-1-1v-2c0-.553.448-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2zm6 0c0 .553-.447 1-1 1h-2c-.553 0-1-.447-1-1v-2c0-.553.447-1 1-1h2c.553 0 1 .447 1 1v2z" fill="#55ACEE"/></svg></span><span>高雄→台南<br>（台鉄 約40分）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台南：古都と小吃（シャオチー）</strong><br><a onclick="showSpot('TNN 01')" class="spot-link">赤崁楼</a>や<a onclick="showSpot('TNN 02')" class="spot-link">安平古堡</a>で台湾の歴史に触れ、食は牛肉湯（ぎゅうにくとう）から<a onclick="showFood('No.10')" class="spot-link">豆花</a>まで小吃（シャオチー）づくしで。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台南：古都と小吃（シャオチー）</strong><br><a onclick="showSpot('TNN 01')" class="spot-link">赤崁楼</a>や<a onclick="showSpot('TNN 02')" class="spot-link">安平古堡</a>で台湾の歴史に触れ、食は牛肉湯（ぎゅうにくとう）から<a onclick="showFood('No.10')" class="spot-link">豆花</a>まで小吃（シャオチー）づくしで。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -388,10 +494,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge green">Day 6</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 128 128"><g><g><path style="fill:#543529;" d="M29.3,105.76c0,0-0.37,1.11-0.38,1.98s0.12,2.64,1.68,2.64c2.02,0,24.86-0.07,35.87,0s31.28-0.14,32.7-0.22c1.42-0.07,1.03-3.22,0.94-4.3L29.3,105.76z"/><path style="fill:#874D36;" d="M102.23,116.02l2.89,1.99c0,0,1.87,1.63,2.12,2.61c0.25,0.98-0.33,2.84-1.16,3.23L62.74,124l-40.42-0.12c-0.63-0.16-1.39-0.77-1.58-1.89s0.43-2.37,0.82-3.15c0.39-0.78,8.43-2.81,8.43-2.81L102.23,116.02z"/><path style="fill:#B88956;" d="M25.89,113.94c-0.78,0.01-1.35,0.94-1.82,1.55c-1.22,1.57-1.99,2.56-2.5,3.35c-0.7,1.09,0.7,2.03,1.95,2.03s83.39,0.12,83.59-0.41c0.27-0.7-1.33-3.09-2.65-5.29c-0.46-0.77-1.46-1.82-2.36-1.81L25.89,113.94z"/><path style="fill:#A06841;" d="M32.22,100.82l-2.78,4.53c-0.48,0.78,0.08,1.78,1,1.78l68.52-0.04c0.91,0,1.47-0.99,1.01-1.77l-2.69-4.51H32.22z"/><g><g><path style="fill:#88857C;" d="M47.25,101.55l-8.15,22.39h-4.94l-2.83-5.39l9.04-19.45C40.37,99.09,47.7,100.1,47.25,101.55z"/><path style="fill:#C8C9C6;" d="M28.81,123.97c0.12-0.42,8.45-17.94,8.45-17.94c0.52-1.09,4.91-0.6,4.2,1.46s-5.74,16.44-5.74,16.44L28.81,123.97z"/></g><g><path style="fill:#88857C;" d="M79.99,101.55l8.19,22.36l4.89-0.01l2.84-5.35l-9.04-19.45C86.88,99.09,79.54,100.1,79.99,101.55z"/><path style="fill:#C8C9C6;" d="M98.42,123.88c-0.12-0.42-8.47-17.91-8.47-17.91c-0.52-1.09-4.91-0.6-4.2,1.46c0.72,2.06,5.76,16.47,5.76,16.47L98.42,123.88z"/></g></g></g><path style="fill:#82AEC0;" d="M100.2,98.08c0.14,1.71-0.9,3.24-2.36,3.48c-4.85,0.77-16.44,2.24-34.54,2.24c-17.97,0-29.3-1.45-34.09-2.23c-1.48-0.24-2.51-1.8-2.35-3.53L26.84,80.9h73.38L100.2,98.08z"/><path style="fill:#546E7A;" d="M26.84,80.9l0,6.06c0,0,17.38,0.9,36.68,0.9s36.69-1.04,36.69-1.04V80.9H26.84z"/><path style="fill:#E0E0E0;" d="M63.38,84.79l0.14-24.05l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67C29.9,84.45,38.98,84.79,63.38,84.79z"/><g><path style="fill:#2167A1;" d="M96.76,8.01C91.92,6.04,82.26,4,63.53,4S35.13,6.04,30.29,8.01C28.3,8.82,27,11.96,27,14.14l-1.18,39.43l10.53,15.61l26.91,13.01c33.58,0,38.83-0.29,38.83-0.29l-2.05-67.76C100.05,11.96,98.75,8.82,96.76,8.01z"/><path style="fill:#2686C6;" d="M94.49,9.42c-4.53-1.84-13.44-3.68-30.96-3.68S37.09,7.58,32.57,9.42c-1.86,0.76-3.08,3.03-3.08,5.07l0.16,24.39c0.03,5.42,3.57,10.2,8.74,11.83l25.86,8.75l24.82-8.67c5.18-1.67,8.68-6.51,8.65-11.95l-0.16-24.25C97.56,12.55,96.35,10.18,94.49,9.42z"/></g><g><g><polygon style="fill:#BAE2FD;" points="93.51,31.48 66.25,31.48 66.61,14.81 91.48,14.81 "/><path style="fill:#37474F;" d="M91.64,12.95H67.06c-0.92,0-1.65,0.99-1.59,2.16l0.46,16.19c0.05,1.07,0.75,1.9,1.59,1.9h25.35c1.22,0,2.12-1.44,1.86-2.96l-1.55-15.7C93.03,13.61,92.38,12.95,91.64,12.95z M69.23,15.72h20.45c0.73,0,1.36,0.63,1.54,1.53l0.95,10.64c0.26,1.29-0.5,2.54-1.54,2.54H69.5c-0.83,0-1.52-0.82-1.58-1.88l-0.26-10.64C67.58,16.73,68.31,15.72,69.23,15.72z"/></g><g><polygon style="fill:#BAE2FD;" points="34.49,31.48 61.75,31.48 61.39,14.81 36.52,14.81 "/><path style="fill:#37474F;" d="M34.81,14.54l-1.55,15.7c-0.26,1.52,0.64,2.96,1.86,2.96h25.35c0.84,0,1.53-0.83,1.59-1.9l0.46-16.19c0.06-1.17-0.67-2.16-1.59-2.16H36.36C35.62,12.95,34.97,13.61,34.81,14.54z M60.35,17.91l-0.26,10.64c-0.06,1.06-0.75,1.88-1.58,1.88H37.36c-1.04,0-1.8-1.25-1.54-2.54l0.95-10.64c0.18-0.9,0.81-1.53,1.54-1.53h20.45C59.69,15.72,60.42,16.73,60.35,17.91z"/></g></g><g><g><g><g><path style="fill:#01579B;" d="M84.01,43.89c-1.15-2.57-3.12-3.54-5.19-3.03c-2.07,0.51-3.14,2.55-2.83,4.66c0.41,2.87,3.06,5.7,6.42,4.12C84.59,48.62,85.15,46.43,84.01,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="79.73" cy="44.6" r="3.13"/></g></g></g><g><g><g><path style="fill:#01579B;" d="M43.99,43.89c1.15-2.57,3.12-3.54,5.19-3.03c2.07,0.51,3.14,2.55,2.83,4.66c-0.41,2.87-3.06,5.7-6.42,4.12C43.41,48.62,42.85,46.43,43.99,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="48.27" cy="44.6" r="3.13"/></g></g></g></g><path style="fill:#E0E0E0;" d="M63.53,60.73l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0c0,0,2.15-4.36,2.15-11.7S63.53,60.73,63.53,60.73z"/><path style="fill:#BDBDBD;" d="M63.53,60.73l37.7-7.16L101.89,77l0,5.59c0,0.89-0.69,1.62-1.57,1.67c-3.17,0.19-12.25,0.53-36.65,0.53c-0.05,0-0.09,0-0.14,0V60.73z"/><path style="opacity:0.2;fill:#424242;" d="M25.16,82.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0l0,0v0c0.05,0,0.09,0,0.14,0c24.4,0,33.48-0.34,36.65-0.53c0.88-0.05,1.57-0.78,1.57-1.67l0-5.54H25.16L25.16,82.59z"/><path style="fill:#94D1E0;" d="M31.7,89.75c-1.38-0.14-2.57,0.95-2.57,2.34c0,3.12,0.05,6.52,2.21,7.19c2.38,0.74,15.73,1.48,22.07,1.68c1.38,0.04,2.49-1.11,2.41-2.48l-0.3-5.1c-0.07-1.22-1.07-2.18-2.29-2.21C45.36,91.04,36.12,90.2,31.7,89.75z"/><g><g><g><g><circle style="fill:#757575;" cx="85.76" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="85.76" cy="66.82" r="4.32"/></g></g></g><g><g><g><circle style="fill:#9E9E9E;" cx="42.24" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="42.24" cy="66.82" r="4.32"/></g></g></g></g></g><g><g><g><g><polygon style="fill:#FFFFFF;" points="57.55,30.42 50.22,30.42 40.72,15.72 48.06,15.72 "/></g></g></g><g><g><g><polygon style="fill:#FFFFFF;" points="87.28,30.42 79.94,30.42 70.45,15.72 77.78,15.72 "/></g></g></g></g></svg></span><span>台南→台中<br>（台湾新幹線 約50分）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>台中：夕日で締める</strong><br><a onclick="showSpot('TXG 01')" class="spot-link">宮原眼科</a>と<a onclick="showSpot('TXG 03')" class="spot-link">審計新村</a>を巡り、ラストは<a onclick="showSpot('TXG 02')" class="spot-link">高美湿地</a>の夕日。一周してきた旅の締めくくりにふさわしい絶景。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>台中：夕日で締める</strong><br><a onclick="showSpot('TXG 01')" class="spot-link">宮原眼科</a>と<a onclick="showSpot('TXG 03')" class="spot-link">審計新村</a>を巡り、ラストは<a onclick="showSpot('TXG 02')" class="spot-link">高美湿地</a>の夕日。一周してきた旅の締めくくりにふさわしい絶景。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
@@ -399,24 +509,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
       <div class="tl-day">
         <div class="tl-badge ">Day 7</div>
+        <div class="tl-body">
         <div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 128 128"><g><g><path style="fill:#543529;" d="M29.3,105.76c0,0-0.37,1.11-0.38,1.98s0.12,2.64,1.68,2.64c2.02,0,24.86-0.07,35.87,0s31.28-0.14,32.7-0.22c1.42-0.07,1.03-3.22,0.94-4.3L29.3,105.76z"/><path style="fill:#874D36;" d="M102.23,116.02l2.89,1.99c0,0,1.87,1.63,2.12,2.61c0.25,0.98-0.33,2.84-1.16,3.23L62.74,124l-40.42-0.12c-0.63-0.16-1.39-0.77-1.58-1.89s0.43-2.37,0.82-3.15c0.39-0.78,8.43-2.81,8.43-2.81L102.23,116.02z"/><path style="fill:#B88956;" d="M25.89,113.94c-0.78,0.01-1.35,0.94-1.82,1.55c-1.22,1.57-1.99,2.56-2.5,3.35c-0.7,1.09,0.7,2.03,1.95,2.03s83.39,0.12,83.59-0.41c0.27-0.7-1.33-3.09-2.65-5.29c-0.46-0.77-1.46-1.82-2.36-1.81L25.89,113.94z"/><path style="fill:#A06841;" d="M32.22,100.82l-2.78,4.53c-0.48,0.78,0.08,1.78,1,1.78l68.52-0.04c0.91,0,1.47-0.99,1.01-1.77l-2.69-4.51H32.22z"/><g><g><path style="fill:#88857C;" d="M47.25,101.55l-8.15,22.39h-4.94l-2.83-5.39l9.04-19.45C40.37,99.09,47.7,100.1,47.25,101.55z"/><path style="fill:#C8C9C6;" d="M28.81,123.97c0.12-0.42,8.45-17.94,8.45-17.94c0.52-1.09,4.91-0.6,4.2,1.46s-5.74,16.44-5.74,16.44L28.81,123.97z"/></g><g><path style="fill:#88857C;" d="M79.99,101.55l8.19,22.36l4.89-0.01l2.84-5.35l-9.04-19.45C86.88,99.09,79.54,100.1,79.99,101.55z"/><path style="fill:#C8C9C6;" d="M98.42,123.88c-0.12-0.42-8.47-17.91-8.47-17.91c-0.52-1.09-4.91-0.6-4.2,1.46c0.72,2.06,5.76,16.47,5.76,16.47L98.42,123.88z"/></g></g></g><path style="fill:#82AEC0;" d="M100.2,98.08c0.14,1.71-0.9,3.24-2.36,3.48c-4.85,0.77-16.44,2.24-34.54,2.24c-17.97,0-29.3-1.45-34.09-2.23c-1.48-0.24-2.51-1.8-2.35-3.53L26.84,80.9h73.38L100.2,98.08z"/><path style="fill:#546E7A;" d="M26.84,80.9l0,6.06c0,0,17.38,0.9,36.68,0.9s36.69-1.04,36.69-1.04V80.9H26.84z"/><path style="fill:#E0E0E0;" d="M63.38,84.79l0.14-24.05l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67C29.9,84.45,38.98,84.79,63.38,84.79z"/><g><path style="fill:#2167A1;" d="M96.76,8.01C91.92,6.04,82.26,4,63.53,4S35.13,6.04,30.29,8.01C28.3,8.82,27,11.96,27,14.14l-1.18,39.43l10.53,15.61l26.91,13.01c33.58,0,38.83-0.29,38.83-0.29l-2.05-67.76C100.05,11.96,98.75,8.82,96.76,8.01z"/><path style="fill:#2686C6;" d="M94.49,9.42c-4.53-1.84-13.44-3.68-30.96-3.68S37.09,7.58,32.57,9.42c-1.86,0.76-3.08,3.03-3.08,5.07l0.16,24.39c0.03,5.42,3.57,10.2,8.74,11.83l25.86,8.75l24.82-8.67c5.18-1.67,8.68-6.51,8.65-11.95l-0.16-24.25C97.56,12.55,96.35,10.18,94.49,9.42z"/></g><g><g><polygon style="fill:#BAE2FD;" points="93.51,31.48 66.25,31.48 66.61,14.81 91.48,14.81 "/><path style="fill:#37474F;" d="M91.64,12.95H67.06c-0.92,0-1.65,0.99-1.59,2.16l0.46,16.19c0.05,1.07,0.75,1.9,1.59,1.9h25.35c1.22,0,2.12-1.44,1.86-2.96l-1.55-15.7C93.03,13.61,92.38,12.95,91.64,12.95z M69.23,15.72h20.45c0.73,0,1.36,0.63,1.54,1.53l0.95,10.64c0.26,1.29-0.5,2.54-1.54,2.54H69.5c-0.83,0-1.52-0.82-1.58-1.88l-0.26-10.64C67.58,16.73,68.31,15.72,69.23,15.72z"/></g><g><polygon style="fill:#BAE2FD;" points="34.49,31.48 61.75,31.48 61.39,14.81 36.52,14.81 "/><path style="fill:#37474F;" d="M34.81,14.54l-1.55,15.7c-0.26,1.52,0.64,2.96,1.86,2.96h25.35c0.84,0,1.53-0.83,1.59-1.9l0.46-16.19c0.06-1.17-0.67-2.16-1.59-2.16H36.36C35.62,12.95,34.97,13.61,34.81,14.54z M60.35,17.91l-0.26,10.64c-0.06,1.06-0.75,1.88-1.58,1.88H37.36c-1.04,0-1.8-1.25-1.54-2.54l0.95-10.64c0.18-0.9,0.81-1.53,1.54-1.53h20.45C59.69,15.72,60.42,16.73,60.35,17.91z"/></g></g><g><g><g><g><path style="fill:#01579B;" d="M84.01,43.89c-1.15-2.57-3.12-3.54-5.19-3.03c-2.07,0.51-3.14,2.55-2.83,4.66c0.41,2.87,3.06,5.7,6.42,4.12C84.59,48.62,85.15,46.43,84.01,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="79.73" cy="44.6" r="3.13"/></g></g></g><g><g><g><path style="fill:#01579B;" d="M43.99,43.89c1.15-2.57,3.12-3.54,5.19-3.03c2.07,0.51,3.14,2.55,2.83,4.66c-0.41,2.87-3.06,5.7-6.42,4.12C43.41,48.62,42.85,46.43,43.99,43.89z"/></g></g><g><g><circle style="fill:#F44336;" cx="48.27" cy="44.6" r="3.13"/></g></g></g></g><path style="fill:#E0E0E0;" d="M63.53,60.73l-37.7-7.16L25.16,77l0,5.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0c0,0,2.15-4.36,2.15-11.7S63.53,60.73,63.53,60.73z"/><path style="fill:#BDBDBD;" d="M63.53,60.73l37.7-7.16L101.89,77l0,5.59c0,0.89-0.69,1.62-1.57,1.67c-3.17,0.19-12.25,0.53-36.65,0.53c-0.05,0-0.09,0-0.14,0V60.73z"/><path style="opacity:0.2;fill:#424242;" d="M25.16,82.59c0,0.89,0.69,1.62,1.57,1.67c3.17,0.19,12.25,0.53,36.65,0.53c0.05,0,0.09,0,0.14,0l0,0v0c0.05,0,0.09,0,0.14,0c24.4,0,33.48-0.34,36.65-0.53c0.88-0.05,1.57-0.78,1.57-1.67l0-5.54H25.16L25.16,82.59z"/><path style="fill:#94D1E0;" d="M31.7,89.75c-1.38-0.14-2.57,0.95-2.57,2.34c0,3.12,0.05,6.52,2.21,7.19c2.38,0.74,15.73,1.48,22.07,1.68c1.38,0.04,2.49-1.11,2.41-2.48l-0.3-5.1c-0.07-1.22-1.07-2.18-2.29-2.21C45.36,91.04,36.12,90.2,31.7,89.75z"/><g><g><g><g><circle style="fill:#757575;" cx="85.76" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="85.76" cy="66.82" r="4.32"/></g></g></g><g><g><g><circle style="fill:#9E9E9E;" cx="42.24" cy="66.23" r="5.88"/></g></g><g><g><circle style="fill:#FFFDE7;" cx="42.24" cy="66.82" r="4.32"/></g></g></g></g></g><g><g><g><g><polygon style="fill:#FFFFFF;" points="57.55,30.42 50.22,30.42 40.72,15.72 48.06,15.72 "/></g></g></g><g><g><g><polygon style="fill:#FFFFFF;" points="87.28,30.42 79.94,30.42 70.45,15.72 77.78,15.72 "/></g></g></g></g></svg></span><span>台中→台北→桃園空港<br>（台湾新幹線 約1時間）</span></div></div>
-        <div style="display:flex;gap:14px;align-items:flex-start">
-          <div class="tl-content" style="flex:1;min-width:0"><strong>帰国</strong><br>空港から帰国便へ。地図の上をぐるりと一周した達成感はひとしお。</div>
-          
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0"><strong>帰国</strong><br>空港から帰国便へ。地図の上をぐるりと一周した達成感はひとしお。</div>
+            
+          </div>
+        </div>
         </div>
       </div>
       
       
     </div>
-    <div class="course-tip"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
-	<path d="M0 0h512v512H0z" fill="none" />
-	<path fill="#00B89C" d="M508.333 32.666C508.333 16.35 494.984 3 478.668 3H29.032C14.348 3 2.333 15.015 2.333 29.699v452.602C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666z" />
-	<path fill="#009E83" d="M478.668 488.915H29.032c-14.684 0-26.699-12.015-26.699-26.699v20.085C2.333 496.985 14.348 509 29.032 509h449.635c16.316 0 29.666-13.35 29.666-29.666v-20.085c0 16.316-13.349 29.666-29.665 29.666" />
-	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
-</svg><span>東部の台鉄特急（太魯閣号・普悠瑪号）は全席指定で週末は売り切れやすい。台鉄公式アプリで14日前から予約を。太魯閣渓谷の遊歩道は震災復旧が2031年以降まで続く見込みのエリアもあるため、花蓮観光は海岸線と市内中心で計画するのが現実的。</span></div>
   </div>
 
   </div>
+  <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
+
   <div class="tab-cta">
     <div class="tab-cta-title">ベストシーズンもチェックしよう！🌤️</div>
     <p class="tab-cta-desc">台北と南部では雨の季節が異なります。旅の目的地に合わせてシーズンを選びましょう。</p>
@@ -427,6 +537,35 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 </div><!-- /slides-wrap -->
 </div><!-- /container -->
+
+<aside class="side-rail">
+  <div class="rail-ad">
+    <span class="rail-ad-label">SPONSORED</span>
+    <div class="rail-ad-box" style="height:250px">広告 300 × 250</div>
+  </div>
+
+  <div class="rail-wish" id="rail-wish">
+    <div class="rail-wish-head"><span>行きたいリスト</span><span class="rail-wish-count" id="rail-wish-count">0</span></div>
+    <div class="rail-wish-body" id="rail-wish-body"></div>
+  </div>
+
+  <div class="rail-card">
+    <span class="rail-card-title">この国の関連ページ</span>
+    
+    <a href="budget.html">予算・費用を見る →</a>
+    <a href="course.html">モデルコースを見る →</a>
+    <a href="phrases.html">フレーズ集を見る →</a>
+    
+    
+  </div>
+
+  <div class="rail-ad sticky">
+    <span class="rail-ad-label">SPONSORED</span>
+    <div class="rail-ad-box" style="height:600px">広告 300 × 600</div>
+  </div>
+</aside>
+
+</div><!-- /page-grid -->
 
 <script>
 function filterPhraseDeck(deckId, btn) {
@@ -562,8 +701,11 @@ document.addEventListener('click', function(e) {
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
 });
 
+function itemViewBreakpoint() {
+  return window.innerWidth <= 620 ? 'mobile' : 'pc';
+}
 function setItemView(kind, view) {
-  localStorage.setItem(kind + 'ItemView', view);
+  localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
     ? document.querySelectorAll('#food-grid')
     : document.querySelectorAll('#spots-grid .item-grid');
@@ -578,13 +720,14 @@ function setItemView(kind, view) {
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
-    const saved = localStorage.getItem(kind + 'ItemView');
-    if (saved) { setItemView(kind, saved); return; }
-    const defaultView = window.innerWidth <= 620 ? 'compact' : 'standard';
+    const bp = itemViewBreakpoint();
+    const saved = localStorage.getItem(kind + 'ItemView_' + bp);
+    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
     if (defaultView === 'compact') grids.forEach(grid => grid.classList.add('view-compact'));
+    else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
 })();
@@ -615,6 +758,8 @@ function filterSpots(dim, value, btn) {
     });
     card.style.display = (cityOk && regionOk && visibleCount > 0) ? '' : 'none';
   });
+  const shownEl = document.getElementById('spots-count-shown');
+  if (shownEl) shownEl.textContent = document.querySelectorAll('#spots-grid .item-grid .item-card:not([style*="display: none"])').length;
 }
 
 function filterFood(dim, value, btn) {
@@ -629,6 +774,8 @@ function filterFood(dim, value, btn) {
     const cityOk = activeCity === 'all' || el.dataset.fcity === activeCity;
     el.style.display = (typeOk && cityOk) ? '' : 'none';
   });
+  const shownEl = document.getElementById('food-count-shown');
+  if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
 }
 
 
@@ -704,6 +851,154 @@ var PAGE_INDEX = 3;
 </script>
 
 <script>
+/* ハンバーガーメニュー開閉 */
+(function(){
+  const btn = document.getElementById('hb-toggle-btn');
+  const drawer = document.getElementById('hb-drawer');
+  if (!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    const open = drawer.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  });
+})();
+</script>
+
+<script>
+/* 行きたいリスト（ウィッシュリスト）: 全国共通で localStorage に保存 */
+(function(){
+  const KEY = 'wm-wishlist';
+  function load(){ try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch(e){ return []; } }
+  function save(list){ try { localStorage.setItem(KEY, JSON.stringify(list)); } catch(e){} }
+  function keyOf(c, ci){ return c + '|' + ci; }
+
+  function render(){
+    const list = load();
+    const countEl = document.getElementById('wish-count');
+    const btn = document.getElementById('wish-toggle-btn');
+    if (countEl) countEl.textContent = list.length;
+    if (btn) btn.classList.toggle('has-items', list.length > 0);
+    document.querySelectorAll('.ci-wish-btn').forEach(function(el){
+      const k = keyOf(el.dataset.wishCountry, el.dataset.wishCity);
+      el.classList.toggle('on', list.some(function(it){ return it.k === k; }));
+    });
+    const panel = document.getElementById('wish-panel');
+    if (panel) {
+      if (!list.length) {
+        panel.innerHTML = '<div class="wp-empty">まだ何も追加されていません。<br>都市カードのハートマークから追加できます。</div>';
+      } else {
+        panel.innerHTML = list.map(function(it, i){
+          return '<div class="wp-row"><a href="' + (it.href || '#') + '">' + it.cityName + '<span class="wp-country">' + it.countryName + '</span></a>' +
+            '<button type="button" class="wp-remove" data-i="' + i + '" aria-label="削除">✕</button></div>';
+        }).join('');
+        panel.querySelectorAll('.wp-remove').forEach(function(rb){
+          rb.addEventListener('click', function(){
+            const i = parseInt(rb.dataset.i, 10);
+            const cur = load();
+            cur.splice(i, 1);
+            save(cur);
+            render();
+          });
+        });
+      }
+    }
+
+    const railCount = document.getElementById('rail-wish-count');
+    const railBody = document.getElementById('rail-wish-body');
+    if (railCount) railCount.textContent = list.length;
+    if (railBody) {
+      if (!list.length) {
+        railBody.innerHTML = '<span class="rail-wish-empty">気になる街の♡を押すと、ここにたまります。</span>';
+      } else {
+        railBody.innerHTML = list.map(function(it, i){
+          return '<div class="rail-wish-row"><a href="' + (it.href || '#') + '">' + it.cityName + '（' + it.countryName + '）</a>' +
+            '<button type="button" class="rail-wish-remove" data-i="' + i + '" aria-label="外す">✕</button></div>';
+        }).join('');
+        railBody.querySelectorAll('.rail-wish-remove').forEach(function(rb){
+          rb.addEventListener('click', function(){
+            const i = parseInt(rb.dataset.i, 10);
+            const cur = load();
+            cur.splice(i, 1);
+            save(cur);
+            render();
+          });
+        });
+      }
+    }
+  }
+
+  window.toggleWish = function(el){
+    const c = el.dataset.wishCountry, ci = el.dataset.wishCity;
+    const k = keyOf(c, ci);
+    let list = load();
+    if (list.some(function(it){ return it.k === k; })) {
+      list = list.filter(function(it){ return it.k !== k; });
+    } else {
+      list.push({ k: k, countryName: el.dataset.wishCountryName, cityName: el.dataset.wishCityName, href: '../' + c + '/index.html' });
+    }
+    save(list);
+    render();
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    render();
+    const toggleBtn = document.getElementById('wish-toggle-btn');
+    const panel = document.getElementById('wish-panel');
+    if (toggleBtn && panel) {
+      toggleBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        panel.classList.toggle('open');
+      });
+      document.addEventListener('click', function(e){
+        if (!panel.contains(e.target) && e.target !== toggleBtn) panel.classList.remove('open');
+      });
+    }
+  });
+})();
+</script>
+
+<script>
+/* 目次サイドバー: 表示中セクション内の h2 から自動生成 */
+(function(){
+  function slugify(text, idx){ return 'toc-' + idx; }
+  function build(){
+    const list = document.getElementById('toc-list');
+    if (!list) return;
+    const activeSection = document.querySelector('section.active') || document.querySelector('.container section');
+    if (!activeSection) { list.parentElement.style.display = 'none'; return; }
+    const heads = activeSection.querySelectorAll('h2, h3.toc-sub');
+    if (!heads.length) { list.parentElement.style.display = 'none'; return; }
+    list.innerHTML = '';
+    heads.forEach(function(h, i){
+      if (!h.id) h.id = slugify(h.textContent, i);
+      h.style.scrollMarginTop = '96px';
+      const isSub = h.tagName === 'H3';
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      const firstSpan = h.querySelector('span:first-child');
+      a.textContent = firstSpan ? firstSpan.textContent : h.textContent;
+      if (isSub) a.classList.add('toc-sub-link');
+      list.appendChild(a);
+    });
+    const links = Array.from(list.querySelectorAll('a'));
+    const obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          links.forEach(function(l){ l.classList.remove('active'); });
+          const match = links.find(function(l){ return l.getAttribute('href') === '#' + entry.target.id; });
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-110px 0px -70% 0px' });
+    heads.forEach(function(h){ obs.observe(h); });
+  }
+  document.addEventListener('DOMContentLoaded', build);
+  
+})();
+</script>
+
+<script>
 /* ヘッダー: スクロール量にそのまま連動して隠れる/現れる（タブナビは常時表示、隠れた分だけ追従） */
 (function(){
   const header = document.getElementById('site-top-bar');
@@ -716,6 +1011,7 @@ var PAGE_INDEX = 3;
   let hideOffset = 0;   // 0=完全に表示 〜 headerH=完全に隠れる
   let lastY = window.scrollY;
   let ticking = false;
+  let pinned = false; // ドロワー展開中は常時表示に固定する
 
   function apply() {
     header.style.transform = 'translateY(-' + hideOffset + 'px)';
@@ -724,12 +1020,14 @@ var PAGE_INDEX = 3;
   }
 
   window.addEventListener('resize', function(){
+    if (pinned) return;
     headerH = header.offsetHeight;
     hideOffset = Math.min(hideOffset, headerH);
     apply();
   });
 
   window.addEventListener('scroll', function(){
+    if (pinned) return;
     const y = window.scrollY;
     const dy = y - lastY;
     lastY = y;
@@ -738,15 +1036,27 @@ var PAGE_INDEX = 3;
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
 
+  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
+  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
+  // nav位置がズレる不具合を防ぐ）
+  window._wmHeaderPin = function(on){
+    pinned = on;
+    if (on) {
+      hideOffset = 0;
+      header.style.transform = 'translateY(0)';
+      headerH = header.offsetHeight;
+      if (navEl) navEl.style.top = headerH + 'px';
+    } else {
+      lastY = window.scrollY;
+      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
+      apply();
+    }
+  };
+
   apply();
 })();
 </script>
 <script src="../assets/country-links.js"></script>
-<footer style="text-align:center;padding:24px 16px;font-size:0.78em;color:rgba(255,255,255,0.6);border-top:1px solid rgba(255,255,255,0.15);margin-top:0;background:#6B5E62">
-  <a href="../common/privacy.html" style="color:rgba(255,255,255,0.6);text-decoration:none;margin:0 10px">プライバシーポリシー</a>
-  <span>｜</span>
-  <span style="margin:0 10px">© 2026 ZenWorldGuide</span>
-</footer>
 
 <!-- 指差しモーダル -->
 <div id="food-modal" class="food-modal-overlay" onclick="closeFoodModal()">
@@ -809,6 +1119,6 @@ function closeFoodModal() {
     </div>
   </div>
 </div>
-<div data-sticky-banner="epos"></div>
+<!-- デザイン確認中のため一時停止: <div data-sticky-banner="epos"></div> -->
 </body>
 </html>
