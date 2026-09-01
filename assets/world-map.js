@@ -125,7 +125,9 @@
     makeMarkers(gl) {
       this._markers = this.points.map((p) => {
         const el = document.createElement('div');
-        el.style.cssText = 'cursor:pointer;';
+        // クリック判定が小さくてシビアだったので、透明な余白でタップ範囲を広げる
+        // （見た目の位置は下の Marker offset で相殺）
+        el.style.cssText = 'cursor:pointer;padding:12px 10px;';
         const inner = document.createElement('span');
         inner.style.cssText = 'display:flex;align-items:center;gap:6px;transform-origin:left center;transition:transform .3s cubic-bezier(.2,.7,.2,1),opacity .3s ease;';
         const dot = document.createElement('span');
@@ -135,13 +137,16 @@
         lb.style.cssText = 'font:500 11.5px/1 "Zen Kaku Gothic New",sans-serif;color:#15735b;background:rgba(255,255,255,.92);border:1px solid #dde8e2;border-radius:3px;padding:3px 6px;white-space:nowrap;transition:all .3s ease;';
         inner.appendChild(dot); inner.appendChild(lb);
         el.appendChild(inner);
-        el.addEventListener('mouseenter', () => this.setAttribute('active', p.id));
-        el.addEventListener('mouseleave', () => this.removeAttribute('active'));
+        // 広げた透明余白どうしが重なる密集地域で、ポインタが乗っている方を最前面にして取りこぼしを防ぐ
+        el.addEventListener('pointerenter', () => { el.style.zIndex = 9; this.setAttribute('active', p.id); });
+        el.addEventListener('pointerleave', () => { el.style.zIndex = ''; this.removeAttribute('active'); });
         el.addEventListener('click', (e) => {
           e.stopPropagation();
           this.dispatchEvent(new CustomEvent('pointselect', { detail: p.id, bubbles: true, composed: true }));
         });
-        const marker = new gl.Marker({ element: el, anchor: 'left', offset: [-6, 0] })
+        // el に padding:12px 10px を足したぶん、ドット中心が右へずれるので offset で戻す
+        // （padding-left 10 + ドット半径 6 = 16 を左へ／anchor:left は縦中心なので y は 0）
+        const marker = new gl.Marker({ element: el, anchor: 'left', offset: [-16, 0] })
           .setLngLat([p.lon, p.lat]).addTo(this._map);
         return { p, el, inner, dot, lb, marker };
       });
@@ -165,7 +170,7 @@
         el.style.pointerEvents = shown ? 'auto' : 'none';
         inner.style.transform = on || isSel ? 'scale(1.12)' : 'scale(1)';
         el.classList.toggle('is-sel', isSel);
-        el.style.zIndex = isSel ? 5 : on ? 4 : 1;
+        el.style.zIndex = on ? 6 : isSel ? 5 : 1;
         dot.style.background = isSel ? YELLOW : GREEN;
         dot.style.width = dot.style.height = isSel ? '16px' : on ? '14px' : '12px';
         const lzAttr = parseFloat(this.getAttribute('label-zoom'));

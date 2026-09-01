@@ -87,7 +87,7 @@
           <a href="#">旅行タイプ一覧</a>
           <a href="#">よくある質問</a>
         </div>
-        <div class="sf-col">
+        <div class="sf-col${currentCountry ? '' : ' sf-col-area'}">
           <span class="sf-label">${thirdColLabel}</span>
           ${thirdColHtml}
           ${currentCountry ? `<a href="${base}index.html" class="sf-gold-link">すべての旅先を見る →</a>` : ''}
