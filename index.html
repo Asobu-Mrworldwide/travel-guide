@@ -169,24 +169,25 @@
   .wm-empty button { padding: 10px 20px; border: none; border-radius: 999px; background: #14503C; color: #fff; font-family: inherit; font-size: 13px; cursor: pointer; }
 
   .wm-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
-  .wm-grid.compact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .wm-grid.list { grid-template-columns: 1fr; gap: 0; }
 
-  .wm-card { position: relative; display: grid; align-content: start; border: 1px solid #E7EDE3; border-radius: 12px; background: #fff; overflow: hidden; box-shadow: 0 2px 10px rgba(20,60,40,0.05); transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .3s ease; }
-  .wm-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(20,60,40,0.12); }
+  .wm-card { position: relative; display: grid; align-content: start; border: 1.5px solid #C4D3B8; border-radius: 12px; background: #fff; overflow: hidden; box-shadow: 0 3px 12px rgba(20,60,40,0.09); transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .3s ease; cursor: pointer; }
+  .wm-card-foot { cursor: pointer; }
+  .wm-card:hover { transform: translateY(-5px); box-shadow: 0 14px 28px rgba(20,60,40,0.14); border-color: #14503C; }
   .wm-card.sel { border-color: #F5B921; box-shadow: 0 10px 24px rgba(245,185,33,0.28); }
   @keyframes wm-flash { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245,185,33,0.55); } 25% { transform: scale(1.025); box-shadow: 0 12px 28px rgba(20,60,40,0.16), 0 0 0 4px rgba(245,185,33,0.5); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245,185,33,0); } }
   .wm-card.wm-flash { animation: wm-flash 1.1s cubic-bezier(.2,.7,.2,1); }
   .wm-card-media { position: relative; height: 128px; background: #FBFDF9; }
   .wm-card-media .ph { position: absolute; inset: 10px; background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 6px; }
+  .wm-card-media-link { position: absolute; inset: 0; z-index: 1; display: block; }
   .wm-card-media .ph.illus { background-size: contain; background: linear-gradient(135deg,#1D7A63,#125F4E); display: grid; place-items: center; color: rgba(255,255,255,.9); font-size: 26px; }
   .wm-fav-btn { position: absolute; right: 8px; top: 8px; z-index: 2; display: grid; place-items: center; width: 30px; height: 30px; border: none; border-radius: 50%; background: rgba(255,255,255,0.92); box-shadow: 0 1px 5px rgba(20,60,40,0.16); cursor: pointer; transition: transform .2s ease; }
   .wm-fav-btn:hover { transform: scale(1.12); }
   .wm-fav-btn svg { width: 18px; height: 18px; }
   .wm-card-link { display: grid; align-content: start; gap: 7px; padding: 12px 14px 0; color: #23211C; }
-  .wm-card-link .area { font-size: 11px; color: #8A968D; }
+  .wm-card-link .area { font-size: 12px; color: #8A968D; }
   .wm-card-link .name { font-weight: 900; font-size: 20px; line-height: 1.2; color: #14503C; }
-  .wm-card-link .blurb { margin: 0; font-size: 11.5px; line-height: 1.85; color: #56625A; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.4em; }
+  .wm-card-link .blurb { margin: 0; font-size: 13px; line-height: 1.85; color: #56625A; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.4em; }
   .wm-card-link .tags { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 2px; min-height: 26px; }
   .wm-card-link .tags span { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 4px; background: #EEF3EA; font-size: 11px; color: #45514A; }
   .wm-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; padding: 11px 14px; border-top: 1px solid #EEF2EB; background: #FCFDFB; font-size: 12px; color: #45514A; }
@@ -196,6 +197,7 @@
   .wm-row { display: grid; grid-template-columns: 220px 1fr 150px 140px 44px; gap: 18px; align-items: center; padding: 13px 8px; border-bottom: 1px solid #EEF2EB; color: #23211C; }
   .wm-row.head { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #8A968D; border-bottom: 2px solid #EEF2EB; }
   .wm-row:hover:not(.head) { background: #F7FAF4; }
+  .wm-row[data-url] { cursor: pointer; }
   .wm-row.sel { background: #FCF3DE; }
   .wm-row .nm { font-weight: 900; font-size: 16px; color: #14503C; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .wm-row .bl { font-size: 12px; color: #56625A; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -264,7 +266,7 @@
     .wm-search-frame.focus { border-color: #14503C; }
     .wm-search-frame svg.mag { margin-left: 10px; }
     .wm-search-frame input { margin-left: 8px; font-size: 15px; }
-    .wm-detail-btn { flex: none; width: 48px; height: 48px; margin-left: 8px; padding: 0; border-radius: 12px; background: #fff; border: 1px solid #DCE3D7; color: #14503C; gap: 0; justify-content: center; position: relative; }
+    .wm-detail-btn { flex: none; align-self: center; width: 36px; height: 36px; margin-left: 4px; padding: 0; border-radius: 999px; background: #fff; border: 1px solid #DCE3D7; color: #14503C; gap: 0; justify-content: center; position: relative; }
     .wm-detail-btn.on { background: #E4EFE4; border-color: #14503C; }
     .wm-detail-btn .detail-ic { display: block; width: 22px; height: 22px; }
     .wm-detail-btn .detail-tx { display: none; }
@@ -298,10 +300,11 @@
     .wm-map-toggle { display: inline-flex; }
     .wm-hero-inner { transition: opacity .35s ease; }
     .wm-hero.map-on .wm-hero-inner { opacity: 0; pointer-events: none; }
+    .wm-hero.map-on .wm-hero-inner, .wm-hero.map-on .wm-hero-col > * { pointer-events: none !important; }
     .wm-hero.map-on .wm-hero-map { pointer-events: auto; }
     .wm-hero.map-on .wm-hero-map world-map { opacity: 1; }
     .wm-hero.map-on { min-height: 420px; }
-    .wm-grid, .wm-grid.compact { grid-template-columns: 1fr !important; gap: 16px; }
+    .wm-grid { grid-template-columns: 1fr !important; gap: 16px; }
     .wm-card-media { height: 170px; }
     .wm-card-media .ph { background-size: cover; }
     .wm-card-link .blurb { -webkit-line-clamp: 3; min-height: 0; font-size: 13px; line-height: 1.9; }
@@ -630,8 +633,15 @@
       && (!f.tag.length || f.tag.some((t) => d.tags.indexOf(t) >= 0))
       && (!q || matches(d, q)));
     if (state.favOnly) rows = rows.filter((d) => state.favs.indexOf(d.id) >= 0);
+    const nowMonth = new Date().getMonth() + 1;
     const SORTS = {
-      'おすすめ': (a, b) => (b.rec ? 1 : 0) - (a.rec ? 1 : 0) || all.indexOf(a) - all.indexOf(b),
+      // 「おすすめ」= 今がベストシーズンの国が上（月が変わるとトップも入れ替わる）。
+      // 同点は rec フラグ → 旬が短い国ほど上（年中シーズンのマレーシア等がトップに居座らないように）
+      // → destinations-data.js の配列順。
+      'おすすめ': (a, b) => (inSeason(b, nowMonth) ? 1 : 0) - (inSeason(a, nowMonth) ? 1 : 0)
+        || (b.rec ? 1 : 0) - (a.rec ? 1 : 0)
+        || a.months.length - b.months.length
+        || all.indexOf(a) - all.indexOf(b),
       '飛行時間が短い': (a, b) => a.hours - b.hours,
       '予算が安い': (a, b) => BUDGETS.indexOf(a.budget) - BUDGETS.indexOf(b.budget) || a.hours - b.hours,
     };
@@ -786,11 +796,10 @@
     $('indexCount').textContent = rows.length + 'ヵ国';
     const VIEW_IC = {
       card: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"></rect><rect x="9" y="2" width="5" height="5" rx="1"></rect><rect x="2" y="9" width="5" height="5" rx="1"></rect><rect x="9" y="9" width="5" height="5" rx="1"></rect></svg>',
-      compact: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="1.8" y="3" width="5.2" height="4.2" rx="1"></rect><path d="M9.4 4h4.8M9.4 6.6h3.4"></path><rect x="1.8" y="8.8" width="5.2" height="4.2" rx="1"></rect><path d="M9.4 9.8h4.8M9.4 12.4h3.4"></path></svg>',
       list: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12"></path></svg>',
     };
     const vb = $('viewBtns');
-    vb.innerHTML = [['card', 'カード'], ['compact', 'コンパクト'], ['list', 'リスト']].map(([id, l]) => '<button type="button" class="wm-view' + (state.view === id ? ' on' : '') + '" data-view="' + id + '">' + VIEW_IC[id] + '<span>' + esc(l) + '</span></button>').join('');
+    vb.innerHTML = [['card', 'カード'], ['list', 'リスト']].map(([id, l]) => '<button type="button" class="wm-view' + (state.view === id ? ' on' : '') + '" data-view="' + id + '">' + VIEW_IC[id] + '<span>' + esc(l) + '</span></button>').join('');
     vb.querySelectorAll('[data-view]').forEach((el) => { el.onclick = () => { state.view = el.getAttribute('data-view'); render(); }; });
 
     const ft = $('favToggle');
@@ -802,13 +811,13 @@
 
     // グリッド
     const grid = $('grid');
-    grid.className = 'wm-grid' + (state.view === 'compact' ? ' compact' : state.view === 'list' ? ' list' : '');
+    grid.className = 'wm-grid' + (state.view === 'list' ? ' list' : '');
     const shown = rows.slice(0, state.limit);
     let html = '';
     if (state.view === 'list') {
       html += '<div class="wm-row head"><span>DESTINATION</span><span>ABOUT</span><span>BEST SEASON</span><span>FLIGHT / BUDGET</span><span></span></div>';
       shown.forEach((d) => {
-        html += '<div class="wm-row' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '">'
+        html += '<div class="wm-row' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '" data-url="' + esc(d.url) + '">'
           + '<a class="nm" href="' + esc(d.url) + '">' + esc(d.name) + '</a>'
           + '<span class="bl">' + esc(d.blurb) + '</span>'
           + '<span class="mono" style="font-size:12px;color:#56625A;">' + esc(seasonLabelOf(d)) + '</span>'
@@ -821,15 +830,15 @@
         const ph = d.img
           ? '<div class="ph" style="background-image:url(' + esc(d.img) + ')"></div>'
           : '<div class="ph illus">🗺</div>';
-        html += '<div class="wm-card' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '">'
-          + '<div class="wm-card-media">' + ph
+        html += '<div class="wm-card' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '" data-url="' + esc(d.url) + '">'
+          + '<div class="wm-card-media"><a class="wm-card-media-link" href="' + esc(d.url) + '" tabindex="-1" aria-hidden="true">' + ph + '</a>'
           + '<button type="button" class="wm-fav-btn" data-fav="' + esc(d.id) + '" aria-label="お気に入り">' + heartSvg(d.id) + '</button></div>'
           + '<a class="wm-card-link" href="' + esc(d.url) + '">'
           + '<span class="area">' + esc(d.area) + '</span>'
           + '<span class="name">' + esc(d.name) + '</span>'
-          + (state.view === 'compact' ? '' : '<p class="blurb">' + esc(d.blurb) + '</p>')
+          + '<p class="blurb">' + esc(d.blurb) + '</p>'
           + '<span class="tags">' + d.tags.slice(0, 3).map((t) => '<span>' + esc(t) + '</span>').join('') + '</span>'
-          + (state.view === 'compact' ? '' : '<span class="wm-card-months">' + Array.from({ length: 12 }, (_, i) => '<span style="background:' + (inSeason(d, i + 1) ? '#1D7A63' : '#EAF3EE') + '"></span>').join('') + '</span><span class="wm-card-season">ベスト ' + esc(seasonLabelOf(d)) + '</span>')
+          + '<span class="wm-card-months">' + Array.from({ length: 12 }, (_, i) => '<span style="background:' + (inSeason(d, i + 1) ? '#1D7A63' : '#EAF3EE') + '"></span>').join('') + '</span><span class="wm-card-season">ベスト ' + esc(seasonLabelOf(d)) + '</span>'
           + '</a>'
           + '<div class="wm-card-foot"><span class="k"><b>✈</b>' + d.hours.toFixed(1) + 'h</span><span class="k"><b>¥</b>予算：' + esc(d.budget) + '</span></div>'
           + '</div>';
@@ -872,6 +881,14 @@
     if (row) map.setAttribute('active', row.getAttribute('data-dest-id'));
     else map.removeAttribute('active');
   }, true);
+
+  // カード／リスト行のどこを押しても国ページへ（お気に入りボタン・既存リンクは除外）
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('a, button, [data-fav]')) return;
+    if (String(window.getSelection())) return;
+    const item = e.target.closest('.wm-card[data-url], .wm-row[data-url]');
+    if (item) window.location.href = item.getAttribute('data-url');
+  });
   function slowScrollIntoView(el, dur) {
     if (!el) return;
     dur = dur || 1300;
