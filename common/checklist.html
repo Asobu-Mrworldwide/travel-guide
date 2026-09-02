@@ -31,7 +31,7 @@
 .progress-counts{display:grid;grid-template-columns:1fr 1px 1fr;gap:12px;align-items:center}
 .progress-count{display:flex;align-items:baseline;gap:7px}
 .progress-count-label{font-size:0.75em;color:var(--sub)}
-.progress-count-num{font-family:'Shippori Mincho B1',serif;font-size:1.6em;line-height:1;color:var(--green)}
+.progress-count-num{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:1.6em;line-height:1;color:var(--green)}
 .progress-count-num.opt{color:var(--sub)}
 .progress-count-total{font-family:'JetBrains Mono',monospace;font-size:0.78em;color:#7D9C8E}
 .progress-divider{width:1px;height:28px;background:#CFE0D7}
@@ -55,6 +55,11 @@
 .item-ad-label{font-size:0.75em;font-weight:700;color:#55504A}
 .item-ad-sponsored{font-family:'JetBrains Mono',monospace;font-size:0.56em;letter-spacing:0.16em;color:#b8b8b8}
 .item-ad-box{width:100%;min-height:70px;border:1px dashed #d8d8d8;border-radius:4px;display:grid;place-content:center;background:#fff;font-size:0.72em;color:#b8b8b8;text-align:center}
+.item-ad-product{display:grid;gap:6px;padding:12px 14px;border:1px solid #E8E2D8;border-radius:8px;background:#fff;text-decoration:none;transition:border-color 0.15s}
+.item-ad-product:hover{border-color:var(--green)}
+.item-ad-product-name{font-size:0.8em;font-weight:700;color:var(--text);line-height:1.5}
+.item-ad-product-desc{font-size:0.72em;color:var(--sub);line-height:1.7}
+.item-ad-product-btn{justify-self:end;margin-top:2px;font-size:0.72em;font-weight:700;color:#fff;background:var(--green);border-radius:999px;padding:6px 14px}
 .tag-must{background:#fff0f0;color:var(--red)}
 .tag-opt{background:#f0f0f0;color:#888}
 .rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
@@ -169,13 +174,25 @@
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">スマートフォン・充電ケーブル</div><div class="item-note">地図・翻訳・配車アプリなどに必須。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">変換アダプター</div><div class="item-note">全世界対応タイプを1つ持っておくと、どの国でも使えて便利。</div></div><span class="item-tag tag-must">必須</span></div>
-      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">SIM / eSIM</div><div class="item-note">現地SIMまたはeSIMを事前に用意しておくとスムーズ。到着後すぐにネットが使えて安心。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item-ad">
-        <div class="item-ad-head"><span class="item-ad-label">おすすめeSIM</span><span class="item-ad-sponsored">SPONSORED</span></div>
-        <div class="item-ad-box">広告</div>
+        <div class="item-ad-head"><span class="item-ad-label">おすすめの変換プラグ</span><span class="item-ad-sponsored">SPONSORED</span></div>
+        <a class="item-ad-product" href="https://www.amazon.co.jp/dp/B0FZJYRLZW?tag=worldmappy-22&linkCode=ll2&linkId=1c8b46a32976eba56b87f776f2aed350" target="_blank" rel="noopener sponsored nofollow">
+          <span class="item-ad-product-name">TESSAN 超薄型 旅行用変換プラグ</span>
+          <span class="item-ad-product-desc">海外のコンセントに挿せる変換プラグ。USB-C×2・USB-A×1ポート付きで、スマホやモバイルバッテリーも同時に充電できて荷物が減らせる。</span>
+          <span class="item-ad-product-btn">Amazonで見る →</span>
+        </a>
       </div>
+      <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">SIM / eSIM</div><div class="item-note">現地SIMまたはeSIMを事前に用意しておくとスムーズ。到着後すぐにネットが使えて安心。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">モバイルバッテリー</div><div class="item-note">機内持ち込みのみOK（預け荷物はNG）。最大2個まで。</div></div><span class="item-tag tag-opt">任意</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">イヤホン</div><div class="item-note">機内・カフェでの使用に。</div></div><span class="item-tag tag-opt">任意</span></div>
+      <div class="item-ad">
+        <div class="item-ad-head"><span class="item-ad-label">おすすめのオープンイヤー型イヤホン</span><span class="item-ad-sponsored">SPONSORED</span></div>
+        <a class="item-ad-product" href="https://www.amazon.co.jp/dp/B0GLGJTQ7C?tag=worldmappy-22&linkCode=ll2&linkId=fc22235061e5e7e38c3630a5a8490cbe" target="_blank" rel="noopener sponsored nofollow">
+          <span class="item-ad-product-name">SOUNDPEATS オープンイヤー型イヤホン</span>
+          <span class="item-ad-product-desc">ノイズキャンセリングはなく機内向きではないが、街歩きや移動中に生活音やその国特有の音を聞き逃さない。耳をふさがないので長時間つけても痛くならない。</span>
+          <span class="item-ad-product-btn">Amazonで見る →</span>
+        </a>
+      </div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">カメラ</div><div class="item-note">スマホで代用する場合は不要。使い捨てカメラはエモい写真が撮れると人気。</div></div><span class="item-tag tag-opt">任意</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">以前使っていたスマホ</div><div class="item-note">メインのスマホを紛失・破損した際の予備に。Wi-Fi環境さえあれば難をしのげる。</div></div><span class="item-tag tag-opt">任意</span></div>
     </div>

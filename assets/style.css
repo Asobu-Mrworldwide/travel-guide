@@ -6,7 +6,7 @@
 /* リセット */
 *{box-sizing:border-box;margin:0;padding:0}
 
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* カラー変数（2026-08 リニューアル: World Mappy 新デザイン準拠） */
 :root{
@@ -105,14 +105,14 @@ a:hover{color:var(--green)}
 .tab-eyebrow-sub{font-size:0.72em;letter-spacing:0.02em;color:var(--sub)}
 .tab-eyebrow-line{flex:1;height:1px;background:#E8E2D8;min-width:20px}
 .tab-eyebrow-num{font-family:'JetBrains Mono',monospace;font-size:0.66em;letter-spacing:0.1em;color:#A39D93;white-space:nowrap;text-transform:uppercase}
-.page-h1{margin:0;font-family:'Shippori Mincho B1',serif;font-weight:500;font-size:1.55em;line-height:1.3;letter-spacing:0.01em;color:var(--text);border-bottom:none;padding-bottom:0}
+.page-h1{margin:0;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.55em;line-height:1.3;letter-spacing:0.01em;color:var(--text);border-bottom:none;padding-bottom:0}
 .page-h1-bar{display:grid;grid-template-columns:2.4fr 1fr 6fr;gap:4px;height:5px;margin-top:12px}
 .page-h1-bar span:nth-child(1){background:var(--green)}
 .page-h1-bar span:nth-child(2){background:var(--yellow)}
 .page-h1-bar span:nth-child(3){background:#DCE8E2}
 
 /* 見出し */
-h2{font-family:'Shippori Mincho B1',serif;font-weight:500;font-size:1.5em;color:var(--text);margin:10px 0 14px;letter-spacing:0.01em;border-bottom:solid 2px var(--green);padding-bottom:9px;position:relative}
+h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.5em;color:var(--text);margin:10px 0 14px;letter-spacing:0.01em;border-bottom:solid 2px var(--green);padding-bottom:9px;position:relative}
 h2::after{content:none}
 h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 
@@ -452,7 +452,7 @@ section.active{display:block}
 .course-type-lbl{font-size:0.68em;font-weight:700;padding:3px 9px;border-radius:3px;color:#fff}
 .course-type-lbl.red{background:var(--red)}
 .course-type-lbl.green{background:var(--green)}
-.course-type-title{font-family:'Shippori Mincho B1',serif;font-weight:500;font-size:1.35em;color:var(--text)}
+.course-type-title{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.35em;color:var(--text)}
 .course-plan-lbl{display:inline-block;font-size:0.65em;font-weight:700;padding:3px 10px;border-radius:20px;border:1.5px solid var(--green);color:var(--green);background:#e8f5ee;margin-bottom:10px}
 .course-plan-title{font-size:1em;font-weight:700;margin-bottom:16px;display:flex;align-items:baseline;gap:10px}
 .season-tip-box{position:relative;margin:2em 0 0.5em;padding:16px 18px;border:1px solid #CFE0D7;border-radius:8px;box-shadow:0 2px 0 rgba(20,40,30,0.06),0 6px 14px rgba(20,40,30,0.07);background:#FAF7F2}
@@ -533,7 +533,7 @@ section.active{display:block}
 .ci-badge{display:inline-flex;align-items:center;width:fit-content;font-size:0.62em;font-weight:700;color:var(--green-dark);background:var(--green-light);border-radius:3px;padding:2px 8px;vertical-align:middle;margin-left:6px}
 .ci-badge.green{color:var(--green-dark);background:var(--green-light)}
 .ci-name-row{margin-bottom:0;line-height:1.35}
-.ci-name{font-family:'Shippori Mincho B1',serif;font-size:1.05em;font-weight:500;display:inline}
+.ci-name{font-family:'Zen Kaku Gothic New',sans-serif;font-size:1.05em;font-weight:500;display:inline}
 .ci-desc{font-size:0.78em;color:var(--sub);line-height:1.7;flex:1}
 .ci-bottom{display:flex;justify-content:flex-end;align-items:center;margin-top:2px}
 .ci-spots{font-size:0.75em;color:var(--green-dark);font-weight:700;background:none;border:none;cursor:pointer;padding:0;text-decoration:none;white-space:nowrap;margin-left:auto;display:block}
@@ -543,7 +543,7 @@ section.active{display:block}
 .city-section-header{grid-column:1/-1;padding:16px 18px;margin:0 0 16px;background:#FAF7F2;border:1px solid #CFE0D7;border-radius:8px;box-shadow:0 2px 0 rgba(20,40,30,0.06),0 6px 14px rgba(20,40,30,0.07)}
 .item-grid>.city-section-header:first-child{margin-top:-16px}
 .item-grid>.city-section-header:not(:first-child){margin-top:20px}
-.csh-title{display:flex;align-items:baseline;gap:11px;font-family:'Shippori Mincho B1',serif;font-weight:500;font-size:1.4em;color:var(--text);margin:0 0 11px;border-bottom:none;padding-bottom:0}
+.csh-title{display:flex;align-items:baseline;gap:11px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.4em;color:var(--text);margin:0 0 11px;border-bottom:none;padding-bottom:0}
 .csh-title::after{content:attr(data-count) ' spots';font-family:'JetBrains Mono',monospace;font-size:0.6em;font-weight:700;letter-spacing:0.02em;color:var(--green)}
 .csh-desc{font-size:0.8em;color:#3A3833;margin-bottom:12px;line-height:1.7}
 .csh-img{display:block;width:calc(100% + 2em);margin:-0.5em -1em 12px;height:140px;object-fit:cover;border-radius:0}
