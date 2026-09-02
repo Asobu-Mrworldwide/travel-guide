@@ -169,6 +169,11 @@
   .wm-empty button { padding: 10px 20px; border: none; border-radius: 999px; background: #14503C; color: #fff; font-family: inherit; font-size: 13px; cursor: pointer; }
 
   .wm-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+  .wm-grid.compact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .wm-grid.compact .wm-card { grid-template-columns: 132px 1fr; grid-template-rows: 1fr auto; min-height: 124px; align-content: stretch; }
+  .wm-grid.compact .wm-card-media { grid-column: 1; grid-row: 1 / span 2; height: 100%; }
+  .wm-grid.compact .wm-card-link { grid-column: 2; grid-row: 1; padding: 12px 14px 6px; gap: 6px; }
+  .wm-grid.compact .wm-card-foot { grid-column: 2; grid-row: 2; margin-top: 0; padding: 0 14px 12px; border-top: none; background: transparent; }
   .wm-grid.list { grid-template-columns: 1fr; gap: 0; }
 
   .wm-card { position: relative; display: grid; align-content: start; border: 1.5px solid #C4D3B8; border-radius: 12px; background: #fff; overflow: hidden; box-shadow: 0 3px 12px rgba(20,60,40,0.09); transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .3s ease; cursor: pointer; }
@@ -303,7 +308,8 @@
     .wm-hero.map-on .wm-hero-map { pointer-events: auto; }
     .wm-hero.map-on .wm-hero-map world-map { opacity: 1; }
     .wm-hero.map-on { min-height: 420px; }
-    .wm-grid { grid-template-columns: 1fr !important; gap: 16px; }
+    .wm-grid, .wm-grid.compact { grid-template-columns: 1fr !important; gap: 16px; }
+    .wm-grid.compact .wm-card { grid-template-columns: 116px 1fr; min-height: 116px; }
     .wm-card-media { height: 170px; }
     .wm-card-media .ph { background-size: cover; }
     .wm-card-link .blurb { -webkit-line-clamp: 3; min-height: 0; font-size: 13px; line-height: 1.9; }
@@ -793,10 +799,11 @@
     $('indexCount').textContent = rows.length + 'ヵ国';
     const VIEW_IC = {
       card: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"></rect><rect x="9" y="2" width="5" height="5" rx="1"></rect><rect x="2" y="9" width="5" height="5" rx="1"></rect><rect x="9" y="9" width="5" height="5" rx="1"></rect></svg>',
+      compact: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="1.8" y="3" width="5.2" height="4.2" rx="1"></rect><path d="M9.4 4h4.8M9.4 6.6h3.4"></path><rect x="1.8" y="8.8" width="5.2" height="4.2" rx="1"></rect><path d="M9.4 9.8h4.8M9.4 12.4h3.4"></path></svg>',
       list: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h12"></path></svg>',
     };
     const vb = $('viewBtns');
-    vb.innerHTML = [['card', 'カード'], ['list', 'リスト']].map(([id, l]) => '<button type="button" class="wm-view' + (state.view === id ? ' on' : '') + '" data-view="' + id + '">' + VIEW_IC[id] + '<span>' + esc(l) + '</span></button>').join('');
+    vb.innerHTML = [['card', 'カード'], ['compact', 'コンパクト'], ['list', 'リスト']].map(([id, l]) => '<button type="button" class="wm-view' + (state.view === id ? ' on' : '') + '" data-view="' + id + '">' + VIEW_IC[id] + '<span>' + esc(l) + '</span></button>').join('');
     vb.querySelectorAll('[data-view]').forEach((el) => { el.onclick = () => { state.view = el.getAttribute('data-view'); render(); }; });
 
     const ft = $('favToggle');
@@ -808,7 +815,7 @@
 
     // グリッド
     const grid = $('grid');
-    grid.className = 'wm-grid' + (state.view === 'list' ? ' list' : '');
+    grid.className = 'wm-grid' + (state.view === 'compact' ? ' compact' : state.view === 'list' ? ' list' : '');
     const shown = rows.slice(0, state.limit);
     let html = '';
     if (state.view === 'list') {
@@ -832,9 +839,9 @@
           + '<button type="button" class="wm-fav-btn" data-fav="' + esc(d.id) + '" aria-label="お気に入り">' + heartSvg(d.id) + '</button></div>'
           + '<a class="wm-card-link" href="' + esc(d.url) + '">'
           + '<span class="name">' + esc(d.name) + '</span>'
-          + '<p class="blurb">' + esc(d.blurb) + '</p>'
+          + (state.view === 'compact' ? '' : '<p class="blurb">' + esc(d.blurb) + '</p>')
           + '<span class="tags">' + d.tags.slice(0, 3).map((t) => '<span>' + esc(t) + '</span>').join('') + '</span>'
-          + '<span class="wm-card-months">' + Array.from({ length: 12 }, (_, i) => '<span style="background:' + (inSeason(d, i + 1) ? '#1D7A63' : '#EAF3EE') + '"></span>').join('') + '</span><span class="wm-card-season">ベスト ' + esc(seasonLabelOf(d)) + '</span>'
+          + (state.view === 'compact' ? '' : '<span class="wm-card-months">' + Array.from({ length: 12 }, (_, i) => '<span style="background:' + (inSeason(d, i + 1) ? '#1D7A63' : '#EAF3EE') + '"></span>').join('') + '</span><span class="wm-card-season">ベスト ' + esc(seasonLabelOf(d)) + '</span>')
           + '</a>'
           + '<div class="wm-card-foot"><span class="k"><b>✈</b>' + d.hours.toFixed(1) + 'h</span><span class="k"><b>¥</b>予算：' + esc(d.budget) + '</span></div>'
           + '</div>';
