@@ -86,16 +86,26 @@ a:hover{color:var(--green)}
 @media(max-width:1240px){.page-grid{grid-template-columns:196px minmax(0,1fr)}.side-rail{display:none}}
 @media(max-width:1020px){.page-grid{grid-template-columns:1fr;padding:0}.toc-sidebar{display:none}.page-grid .container{margin:16px auto;max-width:calc(100% - 32px)}}
 /* .s-lead / .s-body: PC では存在しないものとして扱い、スマホでのみカード分割に使う */
-.s-lead,.s-body{display:contents}
+.s-lead,.s-body,.tab-body{display:contents}
 @media(max-width:520px){
   .page-grid{padding:0 0 26px;background:var(--bg-page)}
   .page-grid .container{margin:0;max-width:none;border-radius:0;box-shadow:none;padding:0;overflow:visible;background:transparent;min-height:0}
-  /* スマホ: セクションを白カードに分割（基本情報タブは s-lead / s-body の2枚、その他タブはセクション全体で1枚） */
-  .s-lead,.s-body,
-  #slides-wrap>section:not(:has(.s-lead)){
-    display:block;background:var(--card);border-radius:12px;padding:16px 14px;margin:14px 10px 0;
+  #slides-wrap{overflow-x:clip}
+  /* スマホ: セクションを白カードに分割（基本情報タブは s-card ごと、その他タブは tab-body ごと） */
+  .s-lead,
+  .s-body>.s-card,
+  .tab-body,
+  #slides-wrap>section:not(:has(.s-lead)):not(:has(.tab-body)){
+    display:block;background:var(--card);border-radius:12px;padding:16px 14px;margin:16px 10px 0;
     box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07)}
-  .s-body>h2:first-child{margin-top:0 !important}
+  #slides-wrap>section:has(.tab-body){display:contents}
+  .s-body{display:contents}
+  .s-body>.s-card>h2:first-child,.tab-body>h2:first-child{margin-top:0 !important;padding-top:0;border-top:none}
+  .tab-body>.s-card,.tab-body .spot-section-card{background:none !important;border:none !important;box-shadow:none !important;padding:0 !important;margin:0 !important}
+  .s-body>.season-tip-box,.s-body>.infeed-ad,
+  #slides-wrap>section:has(.tab-body)>.infeed-ad{margin:16px 10px 0 !important}
+  .s-body>.tab-cta,
+  #slides-wrap>section:has(.tab-body)>.tab-cta{margin:16px 10px 20px !important}
 }
 
 /* カード */
@@ -116,6 +126,7 @@ a:hover{color:var(--green)}
 .tab-eyebrow-sub{font-size:0.72em;letter-spacing:0.02em;color:var(--sub)}
 .tab-eyebrow-line{flex:1;height:1px;background:#E8E2D8;min-width:20px}
 .tab-eyebrow-num{font-family:'JetBrains Mono',monospace;font-size:0.66em;letter-spacing:0.1em;color:#A39D93;white-space:nowrap;text-transform:uppercase}
+@media(max-width:520px){.tab-eyebrow{display:none}}
 .page-h1{margin:0;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.55em;line-height:1.3;letter-spacing:0.01em;color:var(--text);border-bottom:none;padding-bottom:0}
 .page-h1-bar{display:grid;grid-template-columns:2.4fr 1fr 6fr;gap:4px;height:5px;margin-top:12px}
 .page-h1-bar span:nth-child(1){background:var(--green)}
@@ -123,7 +134,8 @@ a:hover{color:var(--green)}
 .page-h1-bar span:nth-child(3){background:#DCE8E2}
 
 /* 見出し */
-h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.5em;color:var(--text);margin:10px 0 14px;letter-spacing:0.01em;border-bottom:solid 2px var(--green);padding-bottom:9px;position:relative}
+h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.5em;color:var(--text);margin:44px 0 16px;padding:24px 0 9px;letter-spacing:0.01em;border-top:1px solid #D8D2C4;border-bottom:solid 2px var(--green);position:relative}
+.tab-eyebrow + h2,.tab-eyebrow + .tab-body > h2:first-child,.s-lead + .s-body > .s-card:first-child > h2:first-child,.csh-title{margin-top:0;padding-top:0;border-top:none}
 h2::after{content:none}
 h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 
@@ -521,8 +533,8 @@ section.active{display:block}
 .course-tip{margin-top:8px;font-size:0.72em;color:var(--green);font-weight:600;display:flex;align-items:flex-start;gap:5px}
 .plan-title-row{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
 .plan-title-row>span:first-child{font-weight:700}
-.plan-tip-tag{display:inline-flex;align-items:center;gap:4px;font-size:0.62em;font-weight:700;color:var(--green-dark);background:var(--green-light);border:1px solid #b8dcc9;padding:3px 10px;border-radius:20px;white-space:nowrap}
-.plan-tip-tag svg{flex-shrink:0;width:0.9em;height:0.9em}
+.plan-tip-tag{display:inline-flex;align-items:flex-start;gap:5px;font-size:0.62em;font-weight:700;line-height:1.55;color:var(--green-dark);background:var(--green-light);border:1px solid #b8dcc9;padding:4px 11px;border-radius:12px;max-width:100%}
+.plan-tip-tag svg{flex-shrink:0;width:0.9em;height:0.9em;margin-top:0.2em}
 .course-tip svg{flex-shrink:0}
 .tl-transit{display:flex;align-items:center;justify-content:center;gap:9px;margin:4px 0 24px 0;padding:9px 14px;border:1px dashed #d8c8a8;border-radius:5px;background:#FAF7F2;color:#6b6154;font-size:0.72em}
 .tl-transit::before{content:none}

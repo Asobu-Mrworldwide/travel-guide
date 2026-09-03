@@ -6,7 +6,7 @@
   const CSS = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css';
   const JS = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
   const STYLE = 'https://demotiles.maplibre.org/style.json';
-  const GREEN = '#1d9074', DARK = '#15735b', YELLOW = '#ffc200';
+  const GREEN = '#168B78', DARK = '#15735b', YELLOW = '#ffc200';
 
   let libP = null;
   const lib = () => (libP = libP || new Promise((res, rej) => {
@@ -91,6 +91,9 @@
       map.on('load', ready);
       map.once('idle', ready);
       map.on('data', () => { if (map.areTilesLoaded && map.areTilesLoaded()) ready(); });
+      // 初回 restyle がスタイル未ロードで空振りするケースがあるため、idle のたびに再適用（冪等）
+      map.on('idle', () => this.restyle());
+      map.on('styledata', () => this.restyle());
       map.on('zoom', () => {
         this.paint();
         this._hint.style.opacity = map.getZoom() > 2 ? '0' : '1';
@@ -99,7 +102,7 @@
 
     restyle() {
       const map = this._map;
-      const WATER = '#dceeea', LAND = '#ffffff', LINE = '#c2d8d0';
+      const WATER = '#D6E5DE', LAND = '#FDFCF6', LINE = '#D9E2D3', GRID = '#ECE7D8';
       const set = (id, prop, val) => {
         try { map.setPaintProperty(id, prop, val); }
         catch (e) { console.warn('[world-map] restyle skipped', id, prop, e.message); }
@@ -112,7 +115,8 @@
           set(id, 'fill-opacity', 1);
           set(id, 'fill-outline-color', LINE);
         } else if (l.type === 'line') {
-          set(id, 'line-color', LINE);
+          const grid = /geoline|graticule|grid|lat|lon/i.test(id);
+          set(id, 'line-color', grid ? GRID : LINE);
           set(id, 'line-width', 0.7);
         } else if (l.type === 'symbol') {
           set(id, 'text-color', '#7d8f88');
@@ -120,6 +124,9 @@
           set(id, 'text-halo-width', 1.2);
         }
       });
+      // demotiles の陸レイヤーを id 直指定で確実に上書き
+      set('countries-fill', 'fill-color', LAND);
+      set('crimea-fill', 'fill-color', LAND);
     }
 
     makeMarkers(gl) {

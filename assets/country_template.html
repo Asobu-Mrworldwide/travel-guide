@@ -269,8 +269,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">{{overview.description_html}}</div>
   </div>
   <div class="s-body">
-  <h2 style="margin-top:32px">{{name}}ってどんなところ？</h2>
   <div class="s-card">
+  <h2>{{name}}ってどんなところ？</h2>
 
     {% if spot_points %}
     <div class="sp-points-wrap">
@@ -308,7 +308,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><span style="display:inline-flex;align-items:center;gap:5px;vertical-align:middle"><span style="display:inline-block;line-height:0;border-radius:2px;overflow:hidden;flex-shrink:0"><svg width="15" height="10" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff" height="600" width="900"/><circle fill="#bc002d" cx="450" cy="300" r="180"/></svg></span>日本人に人気？</span></span><p style="font-size:0.82em;line-height:1.7;color:#444">{{overview.japan_popularity_html}}</p></div>
 
-  <div class="s-card" style="margin-top:32px;padding-top:16px">
+  <div class="s-card">
     <!-- 主要都市 -->
     <h2 id="my-cities">主要都市</h2>
     <div style="overflow:hidden">
@@ -387,9 +387,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       {% endfor %}
     </div>
     </div><!-- end overflow:hidden 主要都市 -->
+  </div><!-- end s-card 主要都市 -->
 
+  <div class="s-card">
     <!-- ベストシーズン -->
-    <h2 id="season" style="margin-top:36px">ベストシーズン</h2>
+    <h2 id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
@@ -425,10 +427,9 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:plane-fly}} {{season.tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{season.tip_body}}</p></div>
 
-  <div style="margin-top:32px"></div>
-  <!-- 基本データ -->
-  <h2>基本データ</h2>
   <div class="s-card">
+    <!-- 基本データ -->
+    <h2>基本データ</h2>
     <div style="background:#fff;padding:4px 0">
     <div style="text-align:center;padding:20px 16px;border-bottom:1px solid #e0e0e0">
       {{overview.flag_html}}
@@ -460,6 +461,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {% if show.budget %}<section id="budget" class="{{sec_active.budget}}">
 {{custom_top_budget}}
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">BUDGET</span><span class="tab-eyebrow-sub">予算・費用</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 05</span></div>
+  <div class="tab-body">
   <h2>旅行費用の目安</h2>
   {% if budget.intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{budget.intro}}</p>{% endif %}
   <div style="overflow-x:auto">
@@ -645,6 +647,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
 
   <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:tip}} 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
+  </div><!-- /tab-body -->
 
     {{custom_bottom_budget}}
   <div class="tab-cta">
@@ -657,6 +660,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <!-- 旅の準備 -->
 {% if show.practical %}<section id="practical" class="{{sec_active.practical}}">
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">PRACTICAL</span><span class="tab-eyebrow-sub">旅の準備</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 06</span></div>
+  <div class="tab-body">
   <h2>準備は早めに</h2>
 
   <div class="prac-grid">
@@ -782,6 +786,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   </div>
 
+  </div><!-- /tab-body -->
+
   <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
 
   <div class="tab-cta">
@@ -797,6 +803,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <!-- フレーズ -->
 {% if show.phrases %}<section id="phrases" class="{{sec_active.phrases}}">
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">PHRASES</span><span class="tab-eyebrow-sub">旅行フレーズ集</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 07</span></div>
+  <div class="tab-body">
   <h2>旅行フレーズ集</h2>
   {% if phrases.multi %}
   <div class="filter-row" id="phrase-deck-tabs" style="margin-bottom:12px">
@@ -820,6 +827,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   </div>
   {% endfor %}
+  </div><!-- /tab-body -->
+
   <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
 
   <div class="tab-cta">
@@ -833,6 +842,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {% if show.food %}<section id="food" class="{{sec_active.food}}">
 {{custom_top_food}}
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 03</span></div>
+  <div class="tab-body">
   <h2>{{food_section_title}}</h2>
   <div class="filter-group">
     <div class="filter-label">カテゴリー</div>
@@ -878,6 +888,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     {% endfor %}
   </div>
   </div>
+  </div><!-- /tab-body -->
+
   <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
 
   <div class="tab-cta">
@@ -892,6 +904,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {% if show.spots %}<section id="spots" class="{{sec_active.spots}}">
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">SIGHTSEEING SPOTS</span><span class="tab-eyebrow-sub">{{spots_eyebrow_meta}}</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 02</span></div>
 {{custom_top_spots}}
+  <div class="tab-body">
   <h2>{{spots_section_title}}</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
   <div class="filter-group">
@@ -960,6 +973,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     {% endfor %}
   </div>
+  </div><!-- /tab-body -->
+
   <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
 
   <div class="tab-cta">
@@ -974,6 +989,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {% if show.course %}<section id="course" class="{{sec_active.course}}">
 {{custom_top_course}}
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">COURSE</span><span class="tab-eyebrow-sub">モデルコース</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 04</span></div>
+  <div class="tab-body">
   <h2>モデルコース</h2>
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">{{courses.intro}}</p>
   <div class="course-type">
@@ -1045,6 +1061,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
 
   </div>
+  </div><!-- /tab-body -->
+
   <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
 
   <div class="tab-cta">

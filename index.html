@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="assets/destinations-data.js"></script>
-<script src="assets/world-map.js"></script>
+<script src="assets/world-map.js?v=20260903"></script>
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: #ffffff; }
@@ -65,8 +65,8 @@
   .wm-menu-about p { margin: 0; font-size: 12.5px; line-height: 1.95; color: rgba(255,255,255,0.82); }
 
   /* ===== ヒーロー ===== */
-  .wm-hero { position: relative; overflow: hidden; }
-  .wm-hero-map { position: absolute; left: 34%; top: 0; right: 0; bottom: 0; background: #F1F5EA; border-radius: 14% 0 0 14% / 55% 0 0 45%; overflow: hidden; }
+  .wm-hero { position: relative; overflow: hidden; background: #FAF8EF; padding-bottom: 46px; }
+  .wm-hero-map { position: absolute; left: 34%; top: 0; right: 0; bottom: 0; background: #D6E5DE; border-radius: 14% 0 0 14% / 55% 0 0 45%; overflow: hidden; }
   .wm-hero-map world-map { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: none; border-radius: 0; }
   .wm-hero-map world-map > div:not(:first-child) { display: none !important; }
   .wm-hero-inner { position: relative; z-index: 5; display: grid; grid-template-columns: minmax(0, 600px); padding: 44px; pointer-events: none; }
@@ -130,7 +130,7 @@
   .wm-detail-foot .clr { background: #fff; border: 1px solid #DDE4D9; color: #45514A; }
 
   @keyframes wm-sheet { from { transform: translateY(100%); } to { transform: none; } }
-  .wm-searchband { position: relative; z-index: 10; max-width: 700px; margin: -26px 0 0; padding: 0 44px; }
+  .wm-searchband { position: relative; z-index: 10; max-width: 700px; margin: -70px 0 0; padding: 0 44px; }
   .wm-tokens { display: none; flex-wrap: wrap; gap: 7px; padding-top: 12px; }
   .wm-tokens.show { display: flex; }
   .wm-token { flex: none; display: inline-flex; align-items: center; gap: 7px; min-height: 32px; padding: 0 12px; border: 1px solid #14503C; border-radius: 999px; background: #E8F6F2; font-family: inherit; font-size: 12px; color: #15735b; cursor: pointer; white-space: nowrap; }
@@ -250,7 +250,8 @@
     .wm-menu { grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px 16px 26px; }
     .wm-menu-about { border-left: none; padding-left: 0; grid-column: 1 / -1; }
 
-    .wm-hero-map { left: 0; top: 0; border-radius: 0; background: linear-gradient(180deg, #DCE9DA 0%, #E7F0E4 100%); }
+    .wm-hero { padding-bottom: 0; }
+    .wm-hero-map { left: 0; top: 0; bottom: 0; border-radius: 0; background: linear-gradient(180deg, #D6E5DE 0%, #E3EEE8 100%); }
     .wm-compass { display: none; }
     .wm-hero-map { pointer-events: none; }
     .wm-hero-map world-map { opacity: .62; }
@@ -303,8 +304,10 @@
     .wm-index-head .ttl span.emo { display: none; }
     .wm-index-head h2 { font-size: 20px; }
     .wm-index-count { display: block; margin-left: auto; }
-    .wm-index-controls { flex-direction: column; align-items: stretch; gap: 12px; width: 100%; order: 3; }
-    .wm-ctrl { flex-wrap: nowrap; overflow-x: auto; }
+    .wm-index-controls { flex-direction: column; align-items: stretch; gap: 14px; width: 100%; order: 3; }
+    .wm-ctrl { flex-wrap: wrap; row-gap: 8px; align-items: flex-start; }
+    .wm-ctrl .lbl { width: 100%; margin-bottom: 2px; }
+    #sortBtns, #viewBtns { flex-wrap: wrap; row-gap: 8px; }
     .wm-map-toggle { display: inline-flex; }
     .wm-hero-inner { transition: opacity .35s ease; }
     .wm-hero.map-on .wm-hero-inner { opacity: 0; pointer-events: none; }
@@ -978,12 +981,13 @@
       try { layers = map.getStyle().layers || []; } catch (e) { return; }
       layers.forEach((l) => {
         const water = /water|ocean|sea|lake|bathymetry/i.test(l.id);
+        const grid = /geoline|graticule|grid/i.test(l.id);
         try {
           if (l.type === 'background') map.setPaintProperty(l.id, 'background-opacity', 0);
           else if (l.type === 'fill') {
             if (water) map.setPaintProperty(l.id, 'fill-opacity', 0);
-            else { map.setPaintProperty(l.id, 'fill-color', '#FFFFFF'); map.setPaintProperty(l.id, 'fill-outline-color', '#DCE4D3'); }
-          } else if (l.type === 'line') map.setPaintProperty(l.id, 'line-color', '#DCE4D3');
+            else { map.setPaintProperty(l.id, 'fill-color', '#FDFCF6'); map.setPaintProperty(l.id, 'fill-outline-color', '#D9E2D3'); }
+          } else if (l.type === 'line') map.setPaintProperty(l.id, 'line-color', grid ? '#ECE7D8' : '#D9E2D3');
           else if (l.type === 'symbol') map.setLayerZoomRange(l.id, 3, 24);
         } catch (e) {}
       });
