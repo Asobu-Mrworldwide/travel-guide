@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   html,body{margin:0;padding:0;background:#fff}
-  body{font-family:'Zen Kaku Gothic New',sans-serif;color:#1F2A44;background:#fff;font-size:16px;line-height:1.7}
+  body{font-family:'Zen Kaku Gothic New',sans-serif;color:#1F2A44;background:#fff}
   .wm-shell h2{border:0;margin:0;padding:0}
   .wm-content a{color:#15735b;text-decoration:none}
   .wm-content a:hover{color:#14503C}
@@ -54,37 +54,40 @@
 <body>
 <div class="wm-shell" style="width: 100%; min-width: 1180px; background: #fff;">
 
-<header class="site-header">
-  <a href="../index.html" class="site-logo"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:4px;display:inline-block"><span>World</span> Mappy</a>
-  <span class="site-country-badge"><span class="site-country-name">お問い合わせ</span></span>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー"><span></span><span></span><span></span></button>
+<header class="wm-header">
+  <div class="wm-header-top">
+    <a class="wm-logo" href="../index.html">
+      <img src="../assets/site-logo.png" width="30" height="30" alt="World Mappy">
+      <span class="wm-logo-text"><span class="gold">World</span><span>Mappy</span></span>
+    </a>
+    <button class="wm-hb" id="hbBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+  <div class="wm-menu" id="wmMenu" style="display:none;">
+    <div class="wm-menu-col">
+      <span class="wm-menu-label">GUIDE</span>
+      <a href="checklist.html">持ち物チェックリスト</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="contact.html" style="color:#fff">お問い合わせ</a>
+    </div>
+    <div class="wm-menu-col">
+      <span class="wm-menu-label">このページ</span>
+      <a href="#ct-about">お問い合わせについて</a>
+      <a href="#ct-form">お問い合わせフォーム</a>
+      <a href="#ct-faq">送信の前に</a>
+    </div>
+    <div class="wm-menu-col">
+      <span class="wm-menu-label">MORE</span>
+      <a href="../index.html">すべての旅先を見る →</a>
+    </div>
+    <div class="wm-menu-col wm-menu-about">
+      <span class="wm-menu-label">ABOUT</span>
+      <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+      <a href="about.html">運営者情報 →</a>
+      <a href="privacy.html">プライバシーポリシー →</a>
+      <a href="disclaimer.html">免責事項 →</a>
+    </div>
+  </div>
 </header>
-
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="checklist.html">持ち物チェックリスト</a>
-    <a href="faq.html">よくある質問</a>
-    <a href="contact.html" class="active">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    <a href="#ct-about">お問い合わせについて</a>
-    <a href="#ct-form">お問い合わせフォーム</a>
-    <a href="#ct-faq">送信の前に</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">旅先を探す</span>
-    <a href="../index.html">すべての旅先を見る →</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="about.html">運営者情報 →</a>
-    <a href="privacy.html">プライバシーポリシー →</a>
-    <a href="disclaimer.html">免責事項 →</a>
-  </div>
-</div>
 
   <div class="wm-hero" style="position: relative; height: 218px; background: #FCF6E8; overflow: hidden;">
     <img class="wm-hero-deco" src="../assets/common/22_cloud.png" alt="" style="position: absolute; left: 176px; top: 34px; width: 68px; object-fit: contain; opacity: 0.75;">
@@ -188,9 +191,12 @@
 
 <script>
 (function(){
-  var btn=document.getElementById('hb-toggle-btn'), drawer=document.getElementById('hb-drawer');
-  if(!btn||!drawer)return;
-  btn.addEventListener('click',function(){var o=drawer.classList.toggle('open');btn.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';});
+  var btn=document.getElementById('hbBtn'), menu=document.getElementById('wmMenu');
+  if(!btn||!menu)return;
+  function set(o){ menu.style.display=o?'grid':'none'; btn.classList.toggle('open',o); }
+  btn.addEventListener('click',function(e){ e.stopPropagation(); set(menu.style.display==='none'); });
+  document.addEventListener('click',function(e){ if(menu.style.display!=='none' && !e.target.closest('#wmMenu')) set(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
 })();
 </script>
 </body>

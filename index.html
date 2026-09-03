@@ -111,7 +111,8 @@
   .wm-suggest-item .mt { font-size: 11.5px; color: #8A968D; }
   .wm-suggest-empty { padding: 18px 16px; font-size: 13px; color: #8A968D; }
 
-  .wm-detail { display: none; grid-gap: 14px; padding: 20px 22px; border: 1px solid #E2E8DD; border-radius: 14px; background: #fff; box-shadow: 0 6px 18px rgba(20,60,40,0.07); max-width: 700px; margin: 12px 0 0 44px; animation: wm-pop .2s ease both; }
+  .wm-detail { display: none; grid-gap: 16px; padding: 22px 28px; border: 1px solid #E2E8DD; border-radius: 14px; background: #fff; box-shadow: 0 6px 18px rgba(20,60,40,0.07); margin: 12px 44px 0; animation: wm-pop .2s ease both; }
+  @media (min-width: 761px) { .wm-detail-row { grid-template-columns: 128px 1fr; align-items: start; gap: 9px 18px; } .wm-detail-row .gl { padding-top: 6px; } }
   .wm-detail.open { display: grid; }
   #detailGroups { display: grid; gap: 18px; }
   .wm-detail-row { display: grid; gap: 9px; }
@@ -162,7 +163,8 @@
   .wm-map-toggle.on { background: #14503C; color: #fff; }
   .wm-pill.fav { display: inline-flex; align-items: center; gap: 9px; }
   .wm-pill.fav.on { border-color: #F5B921; background: #FCEFC0; color: #14503C; }
-  .wm-pill.fav svg { width: 16px; height: 16px; }
+  .wm-pill.fav svg { width: 16px; height: 16px; stroke: #E23B3B; }
+  .wm-pill.fav.on svg { fill: #E23B3B; stroke: #E23B3B; }
 
   .wm-empty { border: 1px dashed #d0d0d0; border-radius: 10px; padding: 44px; display: none; gap: 14px; justify-items: center; text-align: center; }
   .wm-empty.show { display: grid; }
@@ -283,7 +285,7 @@
     .wm-tokens.show { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
 
     .wm-sheet-backdrop.open { display: block; position: fixed; inset: 0; z-index: 55; background: rgba(20,30,25,0.34); animation: wm-pop .2s ease both; }
-    .wm-detail { position: fixed !important; left: 0; right: 0; bottom: 0; top: auto; z-index: 60; width: auto; max-height: 85vh; overflow-y: auto; border: none; border-top: 1px solid #DCE3D7; border-radius: 16px 16px 0 0; box-shadow: 0 -12px 34px rgba(26,26,26,0.18); padding: 0 18px calc(18px + env(safe-area-inset-bottom)); animation: wm-sheet .28s cubic-bezier(.2,.7,.2,1) both; }
+    .wm-detail { position: fixed !important; left: 0; right: 0; bottom: 0; top: auto; margin: 0; z-index: 60; width: auto; max-height: 85vh; overflow-y: auto; border: none; border-top: 1px solid #DCE3D7; border-radius: 16px 16px 0 0; box-shadow: 0 -12px 34px rgba(26,26,26,0.18); padding: 0 18px calc(18px + env(safe-area-inset-bottom)); animation: wm-sheet .28s cubic-bezier(.2,.7,.2,1) both; }
     #detailGroups { gap: 20px; padding: 4px 0 16px; }
     .wm-sheet-head { position: sticky; top: 0; z-index: 1; display: grid; justify-items: center; gap: 10px; padding: 8px 0 12px; background: #fff; border-bottom: 1px solid #EEF2EB; }
     .wm-sheet-head .grip { display: block; width: 44px; height: 4px; border-radius: 999px; background: #DCE3D7; }
@@ -490,10 +492,6 @@
       <div class="wm-index-controls">
         <div class="wm-ctrl"><span class="lbl">並び順</span><div style="display:flex;gap:8px;" id="sortBtns"></div></div>
         <div class="wm-ctrl"><span class="lbl">表示</span><div style="display:flex;gap:15px;" id="viewBtns"></div></div>
-        <button class="wm-pill fav" id="favToggle" style="display:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.6C7 17.2 3.4 14 3.4 9.9 3.4 7.1 5.6 5 8.3 5c1.6 0 2.9.7 3.7 1.9C12.8 5.7 14.1 5 15.7 5c2.7 0 4.9 2.1 4.9 4.9 0 4.1-3.6 7.3-8.6 10.7Z"></path></svg>
-          <span id="favCountLabel">お気に入り 0</span>
-        </button>
       </div>
     </div>
 
@@ -577,7 +575,7 @@
   const CORE_TAGS_PRESENT = CORE_TAGS.filter((t) => TAGS.indexOf(t) >= 0);
   const EXTRA_TAGS = TAGS.filter((t) => CORE_TAGS.indexOf(t) < 0);
 
-  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: 'card', sort: 'おすすめ', favs: [], favOnly: false, limit: 15, tagExpand: false };
+  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: 'card', sort: 'おすすめ', favs: [], limit: 15, tagExpand: false };
 
   function loadFavs() { try { return JSON.parse(localStorage.getItem('wm-favs') || '[]'); } catch (e) { return []; } }
   function saveFavs(list) { try { localStorage.setItem('wm-favs', JSON.stringify(list)); } catch (e) {} }
@@ -585,7 +583,7 @@
     const i = state.favs.indexOf(id);
     state.favs = i >= 0 ? state.favs.filter((x) => x !== id) : state.favs.concat([id]);
     saveFavs(state.favs);
-    if (!state.favs.length) state.favOnly = false;
+    if (!state.favs.length && state.sort === 'お気に入り') state.sort = 'おすすめ';
     render();
   }
 
@@ -640,18 +638,20 @@
       && (!f.budget.length || f.budget.indexOf(d.budget) >= 0)
       && (!f.tag.length || f.tag.some((t) => d.tags.indexOf(t) >= 0))
       && (!q || matches(d, q)));
-    if (state.favOnly) rows = rows.filter((d) => state.favs.indexOf(d.id) >= 0);
     const nowMonth = new Date().getMonth() + 1;
+    // 「おすすめ」= 今がベストシーズンの国が上（月が変わるとトップも入れ替わる）。
+    // 同点は rec フラグ → 旬が短い国ほど上（年中シーズンのマレーシア等がトップに居座らないように）
+    // → destinations-data.js の配列順。
+    const recommendCmp = (a, b) => (inSeason(b, nowMonth) ? 1 : 0) - (inSeason(a, nowMonth) ? 1 : 0)
+      || (b.rec ? 1 : 0) - (a.rec ? 1 : 0)
+      || a.months.length - b.months.length
+      || all.indexOf(a) - all.indexOf(b);
     const SORTS = {
-      // 「おすすめ」= 今がベストシーズンの国が上（月が変わるとトップも入れ替わる）。
-      // 同点は rec フラグ → 旬が短い国ほど上（年中シーズンのマレーシア等がトップに居座らないように）
-      // → destinations-data.js の配列順。
-      'おすすめ': (a, b) => (inSeason(b, nowMonth) ? 1 : 0) - (inSeason(a, nowMonth) ? 1 : 0)
-        || (b.rec ? 1 : 0) - (a.rec ? 1 : 0)
-        || a.months.length - b.months.length
-        || all.indexOf(a) - all.indexOf(b),
+      'おすすめ': recommendCmp,
       '飛行時間が短い': (a, b) => a.hours - b.hours,
       '予算が安い': (a, b) => BUDGETS.indexOf(a.budget) - BUDGETS.indexOf(b.budget) || a.hours - b.hours,
+      // お気に入り登録した国を先頭へ。グループ内は「おすすめ」順。
+      'お気に入り': (a, b) => (state.favs.indexOf(b.id) >= 0 ? 1 : 0) - (state.favs.indexOf(a.id) >= 0 ? 1 : 0) || recommendCmp(a, b),
     };
     rows = rows.slice().sort(SORTS[state.sort] || SORTS['おすすめ']);
     if (state.sel) {
@@ -738,7 +738,7 @@
     tr.querySelectorAll('[data-tok]').forEach((el) => {
       const k = el.getAttribute('data-tok');
       el.onclick = k === 'reset'
-        ? () => { state.f = emptyF(); state.q = ''; state.sel = null; state.favOnly = false; state.limit = 15; render(); }
+        ? () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 15; render(); }
         : tokens[+k].onRemove;
     });
 
@@ -799,8 +799,11 @@
 
     // 並び順 / 表示
     const sb = $('sortBtns');
-    sb.innerHTML = ['おすすめ', '飛行時間が短い', '予算が安い'].map((l) => '<button type="button" class="' + pillCls(state.sort === l) + '" data-sort="' + esc(l) + '">' + esc(l) + '</button>').join('');
-    sb.querySelectorAll('[data-sort]').forEach((el) => { el.onclick = () => { state.sort = el.getAttribute('data-sort'); state.sel = null; render(); }; });
+    const heartIc = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;margin-right:5px;vertical-align:-2px;"><path d="M12 20.6C7 17.2 3.4 14 3.4 9.9 3.4 7.1 5.6 5 8.3 5c1.6 0 2.9.7 3.7 1.9C12.8 5.7 14.1 5 15.7 5c2.7 0 4.9 2.1 4.9 4.9 0 4.1-3.6 7.3-8.6 10.7Z"></path></svg>';
+    const sortDefs = [['おすすめ', 'おすすめ'], ['飛行時間が短い', '飛行時間が短い'], ['予算が安い', '予算が安い']];
+    if (state.favs.length) sortDefs.push(['お気に入り', heartIc + 'お気に入り ' + state.favs.length]);
+    sb.innerHTML = sortDefs.map(([v, label]) => '<button type="button" class="' + pillCls(state.sort === v) + (v === 'お気に入り' ? ' fav' : '') + '" data-sort="' + esc(v) + '">' + label + '</button>').join('');
+    sb.querySelectorAll('[data-sort]').forEach((el) => { el.onclick = () => { const v = el.getAttribute('data-sort'); state.sort = (v === state.sort && v !== 'おすすめ') ? 'おすすめ' : v; state.sel = null; state.limit = 15; render(); }; });
     $('indexCount').textContent = rows.length + 'ヵ国';
     const VIEW_IC = {
       card: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"></rect><rect x="9" y="2" width="5" height="5" rx="1"></rect><rect x="2" y="9" width="5" height="5" rx="1"></rect><rect x="9" y="9" width="5" height="5" rx="1"></rect></svg>',
@@ -810,11 +813,6 @@
     const vb = $('viewBtns');
     vb.innerHTML = [['card', 'カード'], ['compact', 'コンパクト'], ['list', 'リスト']].map(([id, l]) => '<button type="button" class="wm-view' + (state.view === id ? ' on' : '') + '" data-view="' + id + '">' + VIEW_IC[id] + '<span>' + esc(l) + '</span></button>').join('');
     vb.querySelectorAll('[data-view]').forEach((el) => { el.onclick = () => { state.view = el.getAttribute('data-view'); render(); }; });
-
-    const ft = $('favToggle');
-    ft.style.display = state.favs.length ? '' : 'none';
-    ft.classList.toggle('on', state.favOnly);
-    $('favCountLabel').textContent = 'お気に入り ' + state.favs.length;
 
     $('emptyBox').classList.toggle('show', rows.length === 0);
 
@@ -885,11 +883,21 @@
   $('searchInput').addEventListener('blur', () => { setTimeout(() => { state.focus = false; render(); }, 140); });
   $('searchInput').addEventListener('keydown', (e) => { if (e.key === 'Escape') { state.q = ''; state.focus = false; render(); } });
   $('clearBtn').addEventListener('click', () => { state.q = ''; render(); });
-  $('detailBtn').addEventListener('click', () => { state.detailOpen = !state.detailOpen; render(); });
+  $('detailBtn').addEventListener('click', () => {
+    state.detailOpen = !state.detailOpen;
+    render();
+    if (state.detailOpen && !window.matchMedia('(max-width: 760px)').matches) {
+      requestAnimationFrame(() => {
+        const p = $('detailPanel');
+        const top = window.pageYOffset + p.getBoundingClientRect().top - 24;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      });
+    }
+  });
   $('sheetBackdrop').addEventListener('click', () => { state.detailOpen = false; render(); });
   $('detailCloseBtn').addEventListener('click', () => { state.detailOpen = false; render(); });
-  $('detailClearBtn').addEventListener('click', () => { state.f = emptyF(); state.q = ''; state.sel = null; state.favOnly = false; state.limit = 15; render(); });
-  $('emptyResetBtn').addEventListener('click', () => { state.f = emptyF(); state.q = ''; state.sel = null; state.favOnly = false; state.limit = 15; render(); });
+  $('detailClearBtn').addEventListener('click', () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 15; render(); });
+  $('emptyResetBtn').addEventListener('click', () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 15; render(); });
 
   document.addEventListener('mouseover', (e) => {
     const row = e.target && e.target.closest && e.target.closest('[data-dest-id]');

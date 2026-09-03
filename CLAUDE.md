@@ -38,6 +38,10 @@
 
 判断基準: 前後の`transit`行の`duration`が「その日の観光と地続きの移動」なのか「宿泊地を移す移動」なのかで使い分ける。台湾プランAの「台北→十分→九份」はDay3のうちに完結する日帰り移動なので`transport_note`に変更済み（2026-07）。
 
+### `days[].badge_class`（Dayバッジの色）は廃止済み
+
+2026-09削除。`days[].badge_class`（`""`/`"green"`/`"red"`/`"gray"`）でDay番号バッジを緑・赤に塗り分けていたが、**赤の付け方が国ごとにバラバラ**（スペイン=緑赤交互で見た目のリズム、韓国=帰国日だけ赤、イタリア=丸一日観光の日を赤…）で、凡例もなく初見で意味不明だったため、`country_template.html`から`{{day.badge_class}}`を削除し**全バッジを緑に統一**した（`.tl-badge.red`のCSSも削除、全22 course.htmlから`tl-badge red/green/gray`を除去済み）。新しい国のJSONで`badge_class`を書いても無視される（書かなくてよい）。
+
 ### 移動日（transit）のアイコン指定
 
 `day.transit: true`の行は`plane`/`taxi`/`ferry`/`walk`/`train`（新幹線・高速鉄道のイラスト）/`local_train`（🚆絵文字、在来線・普通列車用）のいずれかのフラグを立てる。`train`は新幹線・KTX・Afrosiyob高速鉄道など**明示的に高速鉄道と呼べるものだけ**に使い、それ以外の在来線（台湾の台鉄、スリランカの高原鉄道など）は`local_train`を使うこと。どのフラグも立てない場合はバスアイコンがデフォルトになる。テンプレート内でこの分岐は`stable_plans`用と`adventure_plan`用で**2箇所に重複定義**されているため、`country_template.html`側を修正する場合は必ず両方に同じ変更を反映すること（`{% if day.ferry %}`で検索すると2件ヒットするはず）。
