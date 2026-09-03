@@ -79,6 +79,31 @@
 .s-card.category{padding-top:6px;padding-bottom:12px;scroll-margin-top:96px}
 .s-card{margin-top:0}
 @media(max-width:700px){.items-inner,.rule-grid{grid-template-columns:1fr}.items-inner .item-ad:has(.item-ad-product){grid-row:auto}}
+h2{border-top:none;padding-top:0;margin-top:0}
+/* 機内持ち込みルール: 白カード1枚。中の個別カード（枠・背景）はすべてフラット化 */
+#rules{border:1px solid #E8E2D8;border-radius:12px;background:#fff;box-shadow:0 2px 0 rgba(20,40,30,0.05),0 6px 16px rgba(20,40,30,0.06);padding:18px 20px}
+#rules .rule-grid{gap:8px 32px;margin-bottom:14px}
+#rules .rule-cell,#rules .info-box{border:none;box-shadow:none;background:none;padding:0}
+#rules .info-box+.info-box{margin-top:12px}
+#rules>div:last-child{border:none !important;background:none !important;border-radius:0 !important;padding:10px 0 0 !important;margin-top:6px !important;color:#8a7350 !important}
+@media(max-width:1020px){
+  .side-rail{display:contents}
+  .side-rail .rail-ad,.side-rail .rail-card-group{display:none !important}
+  /* チェック状況カード: 必須書類の直前に待機し、スクロールで画面上部に貼り付く */
+  .progress-rail{position:sticky;top:0;z-index:1001;display:flex;align-items:center;flex-wrap:wrap;gap:5px 14px;margin:10px 0 18px;padding:9px 14px 10px;border:1px solid #CFE0D7;border-radius:10px;box-shadow:0 5px 16px rgba(20,40,30,.14)}
+  .progress-rail.pinned{margin:0 -12px 18px;border-radius:0;border-left:none;border-right:none;box-shadow:0 6px 16px rgba(20,40,30,.18)}
+  .progress-card-head{order:0}
+  .progress-card-title{font-size:.72em}
+  .progress-reset-btn{padding:3px 10px;font-size:.66em}
+  .progress-counts{order:1;display:flex;gap:14px;margin-left:auto}
+  .progress-divider{display:none}
+  .progress-count{gap:5px}
+  .progress-count-num{font-size:1.05em}
+  .progress-count-label{font-size:.68em}
+  .progress-bar{order:2;flex:1 0 100%;height:5px}
+  .page-grid .container{padding:12px 12px 0;overflow:visible}
+  .s-card.category{scroll-margin-top:104px}
+}
 </style>
 </head>
 <body>
@@ -432,6 +457,31 @@ function resetAll(){
 
 load();
 updateProgress();
+
+// チェック状況バー: スマホでは「必須書類」の直前へ移動し、sticky で追従させる
+(function(){
+  const bar = document.getElementById('progress-wrap');
+  const firstCat = document.querySelector('.s-card.category');
+  if (!bar || !firstCat) return;
+  const mq = window.matchMedia('(max-width:1020px)');
+  const home = bar.parentNode, next = bar.nextSibling;
+  function place(){
+    if (mq.matches){
+      if (bar.nextElementSibling !== firstCat) firstCat.parentNode.insertBefore(bar, firstCat);
+    } else if (bar.parentNode !== home){
+      home.insertBefore(bar, next);
+    }
+  }
+  place();
+  mq.addEventListener('change', place);
+  // 画面上部に貼り付いたら全幅フラット表示に切り替え
+  function syncPinned(){
+    bar.classList.toggle('pinned', mq.matches && bar.getBoundingClientRect().top <= 1);
+  }
+  syncPinned();
+  window.addEventListener('scroll', syncPinned, { passive: true });
+  window.addEventListener('resize', syncPinned);
+})();
 
 // 目次サイドバー: h2 から自動生成
 (function(){

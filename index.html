@@ -66,7 +66,7 @@
 
   /* ===== ヒーロー ===== */
   .wm-hero { position: relative; overflow: hidden; background: #FAF8EF; padding-bottom: 46px; }
-  .wm-hero-map { position: absolute; left: 34%; top: 0; right: 0; bottom: 0; background: #D6E5DE; border-radius: 14% 0 0 14% / 55% 0 0 45%; overflow: hidden; }
+  .wm-hero-map { position: absolute; left: 34%; top: 0; right: 0; bottom: 0; background: linear-gradient(180deg, #D6E5DE 0%, #E3EEE8 100%); border-radius: 14% 0 0 14% / 55% 0 0 45%; overflow: hidden; }
   .wm-hero-map world-map { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border: none; border-radius: 0; }
   .wm-hero-map world-map > div:not(:first-child) { display: none !important; }
   .wm-hero-inner { position: relative; z-index: 5; display: grid; grid-template-columns: minmax(0, 600px); padding: 44px; pointer-events: none; }
@@ -257,7 +257,7 @@
     .wm-hero-map world-map { opacity: .62; }
     .wm-hero:not(.map-on) .wm-hero-map .maplibregl-marker { display: none !important; }
     .wm-hero:not(.map-on).has-sel .wm-hero-map .maplibregl-marker.is-sel { display: block !important; }
-    .wm-hero.has-sel .wm-hero-map world-map { opacity: .82; }
+    .wm-hero.has-sel .wm-hero-map world-map { opacity: .55; }
     .wm-hero:not(.map-on) .wm-hero-map .maplibregl-ctrl-top-right { display: none !important; }
     .wm-hero-inner { grid-template-columns: 1fr; padding: 22px 18px 96px; }
     .wm-hero-col { gap: 18px; }
