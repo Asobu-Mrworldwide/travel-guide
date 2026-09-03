@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
@@ -17,123 +16,228 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>プライバシーポリシー｜World Mappy</title>
 <link rel="canonical" href="https://worldmappy.com/common/privacy.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --green:#6495ed;--bg:#f5f7f5;--text:#1a1a1a;--sub:#555;
-}
-body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);font-size:16px}
-
-.hero{
-  background:linear-gradient(160deg,#3a6bc4 0%,#6495ed 100%);
-  padding:28px 20px 20px;color:#fff;
-}
-.hero h1{font-size:1.4em;font-weight:900;letter-spacing:1px}
-.hero p{font-size:0.85em;opacity:0.85;margin-top:6px}
-
-.back-link{display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:0.82em;opacity:0.8;text-decoration:none;margin-bottom:12px}
-.back-link:hover{opacity:1}
-
-.container{max-width:860px;margin:0 auto;padding:20px 16px 60px}
-
-.section{background:#fff;border-radius:14px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:16px}
-.section-title{font-size:0.95em;font-weight:900;color:var(--green);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #e8eef8}
-.section p{font-size:0.88em;color:var(--sub);line-height:1.9;margin-bottom:10px}
-.section p:last-child{margin-bottom:0}
-.section a{color:var(--green);font-weight:700;text-decoration:none}
-.section a:hover{text-decoration:underline}
-
-.info-table{width:100%;border-collapse:collapse;font-size:0.85em;margin-top:4px}
-.info-table tr{border-bottom:1px solid #f0f0f0}
-.info-table tr:last-child{border-bottom:none}
-.info-table th{text-align:left;padding:9px 10px;color:var(--sub);font-weight:600;width:38%;background:#f8f9fb;border-radius:4px}
-.info-table td{padding:9px 10px;color:var(--text);line-height:1.7}
-
-.notice{background:#f8f9fb;border-left:4px solid #6495ed;border-radius:8px;padding:12px 14px;font-size:0.84em;color:#444;line-height:1.8;margin-top:10px}
-
-.updated{text-align:right;font-size:0.78em;color:#bbb;margin-top:20px}
-
-@media(max-width:520px){
-  .hero h1{font-size:1.2em}
-  .section{padding:16px}
-}
+  html,body{margin:0;padding:0;background:#fff}
+  body{font-family:'Zen Kaku Gothic New',sans-serif;color:#1F2A44;background:#fff;font-size:16px;line-height:1.7}
+  .wm-shell h2{border:0;margin:0;padding:0}
+  .wm-content a{color:#15735b;text-decoration:none}
+  .wm-content a:hover{color:#14503C}
+  ::selection{background:#F5C63C;color:#1a2b4a}
+  @keyframes wm-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes wm-open{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  @keyframes wm-float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-9px) rotate(-8deg)}}
+  .wm-rise{animation:wm-rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .wm-float{animation:wm-float 5.5s ease-in-out infinite}
+  .wm-toc-a:hover{color:#15735b}
+  .wm-submit:hover{background:#14503C !important}
+  .wm-fq-btn:hover{background:#FBF8F0 !important}
+  .wm-cta-yellow:hover{background:#E0AB05 !important}
+  @media (max-width:1180px){
+    .wm-shell{min-width:0 !important}
+    .wm-hero{height:auto !important;padding:24px 0 26px !important}
+    .wm-hero-copy{padding:0 18px !important}
+    .wm-hero-h1{font-size:27px !important}
+    .wm-faq-h1{font-size:42px !important}
+    .wm-hero-deco{display:none !important}
+    .wm-content{grid-template-columns:1fr !important;gap:0 !important;padding:28px 18px 8px !important}
+    .wm-toc{display:none !important}
+    .wm-deftable{grid-template-columns:1fr !important}
+    .wm-cardgrid{grid-template-columns:1fr !important}
+    .wm-form-row{grid-template-columns:1fr !important}
+    .wm-band{flex-direction:column !important;align-items:flex-start !important}
+    .wm-foot-top{grid-template-columns:1fr 1fr !important;padding:32px 20px 24px !important}
+    .wm-foot-bottom{flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:16px 20px !important}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .wm-float,.wm-rise{animation:none !important}
+  }
 </style>
 </head>
 <body>
+<div class="wm-shell" style="width: 100%; min-width: 1180px; background: #fff;">
 
-<div class="hero">
-  <a class="back-link" href="../index.html" onclick="if(history.length>1){history.back();return false;}">← 前のページに戻る</a>
-  <h1>プライバシーポリシー</h1>
-  <p>個人情報の取り扱いおよびサイト運営に関する方針</p>
+<header class="site-header">
+  <a href="../index.html" class="site-logo"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:4px;display:inline-block"><span>World</span> Mappy</a>
+  <span class="site-country-badge"><span class="site-country-name">プライバシーポリシー</span></span>
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー"><span></span><span></span><span></span></button>
+</header>
+
+<div id="hb-drawer" class="hb-drawer">
+  <div class="hb-col">
+    <span class="hb-label">GUIDE</span>
+    <a href="checklist.html">持ち物チェックリスト</a>
+    <a href="faq.html">よくある質問</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">このページ</span>
+    <a href="#pp-operator">運営者情報</a>
+    <a href="#pp-analytics">アクセス解析ツール</a>
+    <a href="#pp-cookie">Cookieの使用</a>
+    <a href="#pp-ads">アフィリエイト・広告</a>
+    <a href="#pp-disclaimer">免責事項</a>
+    <a href="#pp-copyright">著作権について</a>
+    <a href="#pp-revision">ポリシーの改定</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">旅先を探す</span>
+    <a href="../index.html">すべての旅先を見る →</a>
+  </div>
+  <div class="hb-col">
+    <span class="hb-label">ABOUT</span>
+    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+    <a href="about.html">運営者情報 →</a>
+    <a href="privacy.html" class="active">プライバシーポリシー →</a>
+    <a href="disclaimer.html">免責事項 →</a>
+  </div>
 </div>
 
-<div class="container">
+  <div class="wm-hero" style="position: relative; height: 218px; background: #FCF6E8; overflow: hidden;">
+    <img class="wm-hero-deco" src="../assets/common/22_cloud.png" alt="" style="position: absolute; left: 176px; top: 34px; width: 68px; object-fit: contain; opacity: 0.75;">
+    <img class="wm-hero-deco wm-float" src="../assets/common/30_airplane.png" alt="" style="position: absolute; left: 148px; top: 104px; width: 84px; object-fit: contain;">
+    <img class="wm-hero-deco" src="../assets/common/22_cloud.png" alt="" style="position: absolute; right: 396px; top: 40px; width: 62px; object-fit: contain; opacity: 0.8;">
+    <img class="wm-hero-deco" src="../assets/common/01_globe.png" alt="" style="position: absolute; right: 150px; top: 40px; width: 176px; object-fit: contain;">
 
-  <!-- 運営者情報 -->
-  <div class="section">
-    <div class="section-title">運営者情報</div>
-    <table class="info-table">
-      <tr><th>サイト名</th><td>World Mappy（worldmappy.com）</td></tr>
-      <tr><th>運営者</th><td>非公開（個人運営）</td></tr>
-      <tr><th>お問い合わせ</th><td><a href="contact.html">お問い合わせフォーム</a>よりご連絡ください</td></tr>
-    </table>
-  </div>
-
-  <!-- アクセス解析 -->
-  <div class="section">
-    <div class="section-title">アクセス解析ツールについて</div>
-    <p>当サイトでは、Googleが提供するアクセス解析ツール「Google Analytics」を使用しています。Google Analyticsは、アクセス情報の収集のためにCookieを使用します。収集されるデータは匿名で、個人を特定するものではありません。</p>
-    <p>Google Analyticsによるデータ収集を無効にしたい場合は、<a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google アナリティクス オプトアウト アドオン</a>をご利用ください。</p>
-    <p>Google Analyticsのデータ収集・処理の詳細については、<a href="https://policies.google.com/privacy" target="_blank">Googleのプライバシーポリシー</a>をご確認ください。</p>
-  </div>
-
-  <!-- Cookie -->
-  <div class="section">
-    <div class="section-title">Cookieの使用について</div>
-    <p>当サイトでは、以下の目的でCookieを使用しています。</p>
-    <table class="info-table" style="margin-top:8px">
-      <tr><th>アクセス解析</th><td>Google Analyticsによるサイト利用状況の把握</td></tr>
-      <tr><th>広告配信</th><td>アフィリエイト広告の表示・効果測定</td></tr>
-    </table>
-    <p style="margin-top:10px">ブラウザの設定によりCookieを無効にすることが可能ですが、一部機能が正常に動作しなくなる場合があります。</p>
-  </div>
-
-  <!-- アフィリエイト -->
-  <div class="section">
-    <div class="section-title">アフィリエイト・広告について</div>
-    <p>当サイトは、以下のアフィリエイトプログラムに参加しています。紹介リンクを経由して商品・サービスをご購入いただいた場合、当サイトに一定の報酬が発生することがあります。</p>
-    <table class="info-table" style="margin-top:8px">
-      <tr><th>Skyscanner</th><td>航空券・ホテル検索サービスの紹介</td></tr>
-      <tr><th>その他ASP</th><td>A8.net・バリューコマース等を通じた旅行関連サービスの紹介</td></tr>
-    </table>
-    <div class="notice">
-      紹介・推薦するサービスは当サイトが独自に選定したものです。アフィリエイト報酬の有無によってコンテンツの内容が偏ることはありません。
+    <div class="wm-hero-copy" style="position: relative; display: grid; gap: 12px; align-content: center; height: 100%; padding: 0 0 0 316px;">
+      <div style="display: flex; align-items: baseline; gap: 18px;">
+        <h1 class="wm-hero-h1" style="margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spacing: -0.01em; color: #1F2A44;">プライバシーポリシー</h1>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: #A99672;">PRIVACY</span>
+      </div>
+      <p style="margin: 0; max-width: 400px; font-size: 14.5px; line-height: 1.85; letter-spacing: 0.02em; color: #4B5563;">個人情報の取り扱い、および広告・免責に関する方針をまとめています。</p>
     </div>
   </div>
 
-  <!-- 免責事項 -->
-  <div class="section">
-    <div class="section-title">免責事項</div>
-    <p>当サイトに掲載している旅行情報（料金・営業時間・ビザ要件・入国手続き等）は、執筆時点の情報をもとにしています。最新情報は必ず公式サイトや大使館等でご確認ください。</p>
-    <p>当サイトの情報を利用したことによるいかなる損害・トラブルについても、当サイトは一切の責任を負いかねます。</p>
-    <p>当サイトからリンクしている外部サイトのコンテンツ・プライバシーポリシーについては、各サイトの責任となります。</p>
+  <div class="wm-content wm-rise" style="display: grid; grid-template-columns: minmax(0, 1fr) 258px; gap: 44px; align-items: start; max-width: 1210px; margin: 0 auto; padding: 44px 34px 8px;">
+
+    <div style="display: grid; gap: 46px;">
+
+      <div id="pp-operator" style="display: grid; gap: 17px;">
+        <div style="display: flex; align-items: center; gap: 13px; padding-bottom: 12px; border-bottom: 1px solid #D9E4D6;">
+          <span style="flex: none; font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: #15735b;">01</span>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.01em; color: #14503C;">運営者情報</h2>
+        </div>
+        <div class="wm-deftable" style="display: grid; grid-template-columns: 152px minmax(0, 1fr); border: 1px solid #EDEAE1; border-radius: 12px; overflow: hidden;">
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; background: #FBF8F0; font-size: 13.5px; font-weight: 700; color: #4B5563;">サイト名</div>
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; font-size: 13.5px; line-height: 1.8; color: #1F2A44;">World Mappy（worldmappy.com）</div>
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; background: #FBF8F0; font-size: 13.5px; font-weight: 700; color: #4B5563;">運営者</div>
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; font-size: 13.5px; line-height: 1.8; color: #1F2A44;">非公開（個人運営）</div>
+          <div style="padding: 15px 18px; background: #FBF8F0; font-size: 13.5px; font-weight: 700; color: #4B5563;">お問い合わせ</div>
+          <div style="padding: 15px 18px; font-size: 13.5px; line-height: 1.8; color: #1F2A44;"><a href="contact.html" style="font-weight: 700;">お問い合わせフォーム</a>よりご連絡ください</div>
+        </div>
+      </div>
+
+      <div id="pp-analytics" style="display: grid; gap: 17px;">
+        <div style="display: flex; align-items: center; gap: 13px; padding-bottom: 12px; border-bottom: 1px solid #D9E4D6;">
+          <span style="flex: none; font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: #15735b;">02</span>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.01em; color: #14503C;">アクセス解析ツールについて</h2>
+        </div>
+        <div style="display: grid; gap: 13px;">
+          <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">当サイトでは、Googleが提供するアクセス解析ツール「Google Analytics」を使用しています。Google Analyticsは、アクセス情報の収集のためにCookieを使用します。収集されるデータは匿名で、個人を特定するものではありません。</p>
+          <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">データ収集を無効にしたい場合は、<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="font-weight: 700;">Google アナリティクス オプトアウト アドオン</a>をご利用ください。データの収集・処理の詳細については、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="font-weight: 700;">Googleのプライバシーポリシー</a>をご確認ください。</p>
+        </div>
+      </div>
+
+      <div id="pp-cookie" style="display: grid; gap: 17px;">
+        <div style="display: flex; align-items: center; gap: 13px; padding-bottom: 12px; border-bottom: 1px solid #D9E4D6;">
+          <span style="flex: none; font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: #15735b;">03</span>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.01em; color: #14503C;">Cookieの使用について</h2>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #4B5563;">当サイトでは、以下の目的でCookieを使用しています。</p>
+        <div class="wm-deftable" style="display: grid; grid-template-columns: 152px minmax(0, 1fr); border: 1px solid #EDEAE1; border-radius: 12px; overflow: hidden;">
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; background: #FBF8F0; font-size: 13.5px; font-weight: 700; color: #4B5563;">アクセス解析</div>
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; font-size: 13.5px; line-height: 1.8; color: #1F2A44;">Google Analyticsによるサイト利用状況の把握</div>
+          <div style="padding: 15px 18px; background: #FBF8F0; font-size: 13.5px; font-weight: 700; color: #4B5563;">広告配信</div>
+          <div style="padding: 15px 18px; font-size: 13.5px; line-height: 1.8; color: #1F2A44;">アフィリエイト広告の表示・効果測定</div>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.95; color: #4B5563;">ブラウザの設定によりCookieを無効にすることが可能ですが、一部機能が正常に動作しなくなる場合があります。</p>
+      </div>
+
+      <div id="pp-ads" style="display: grid; gap: 17px;">
+        <div style="display: flex; align-items: center; gap: 13px; padding-bottom: 12px; border-bottom: 1px solid #D9E4D6;">
+          <span style="flex: none; font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: #15735b;">04</span>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.01em; color: #14503C;">アフィリエイト・広告について</h2>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">当サイトは、以下のアフィリエイトプログラムに参加しています。紹介リンクを経由して商品・サービスをご購入いただいた場合、当サイトに一定の報酬が発生することがあります。</p>
+        <div class="wm-deftable" style="display: grid; grid-template-columns: 152px minmax(0, 1fr); border: 1px solid #EDEAE1; border-radius: 12px; overflow: hidden;">
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; background: #FBF8F0; font-size: 13.5px; font-weight: 700; color: #4B5563;">Amazonアソシエイト</div>
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; font-size: 13.5px; line-height: 1.8; color: #1F2A44;">旅行に役立つ商品の紹介（Amazon.co.jpを宣伝しリンクすることによって紹介料を得る手段を提供することを目的に設定されたアフィリエイトプログラム）</div>
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; background: #FBF8F0; font-size: 13.5px; font-weight: 700; color: #4B5563;">Skyscanner</div>
+          <div style="padding: 15px 18px; border-bottom: 1px solid #F2EFE7; font-size: 13.5px; line-height: 1.8; color: #1F2A44;">航空券・ホテル検索サービスの紹介</div>
+          <div style="padding: 15px 18px; background: #FBF8F0; font-size: 13.5px; font-weight: 700; color: #4B5563;">その他ASP</div>
+          <div style="padding: 15px 18px; font-size: 13.5px; line-height: 1.8; color: #1F2A44;">Klook・もしもアフィリエイト等を通じた旅行関連サービスの紹介</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; border-radius: 12px; background: #FBF8F0;">
+          <img src="../assets/common/13_question-bubble.png" alt="" style="flex: none; width: 24px; height: 24px; margin-top: 2px; object-fit: contain;">
+          <p style="margin: 0; font-size: 13.5px; line-height: 1.9; text-wrap: pretty; color: #4B5563;">紹介・推薦するサービスは当サイトが独自に選定したものです。アフィリエイト報酬の有無によってコンテンツの内容が偏ることはありません。</p>
+        </div>
+      </div>
+
+      <div id="pp-disclaimer" style="display: grid; gap: 17px;">
+        <div style="display: flex; align-items: center; gap: 13px; padding-bottom: 12px; border-bottom: 1px solid #D9E4D6;">
+          <span style="flex: none; font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: #15735b;">05</span>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.01em; color: #14503C;">免責事項</h2>
+        </div>
+        <div style="display: grid; gap: 13px;">
+          <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">当サイトに掲載している旅行情報（料金・営業時間・ビザ要件・入国手続き等）は、執筆時点の情報をもとにしています。最新情報は必ず公式サイトや大使館等でご確認ください。</p>
+          <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">当サイトの情報を利用したことによるいかなる損害・トラブルについても、当サイトは一切の責任を負いかねます。くわしくは<a href="disclaimer.html" style="font-weight: 700;">免責事項</a>のページをご覧ください。</p>
+          <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">当サイトからリンクしている外部サイトのコンテンツ・プライバシーポリシーについては、各サイトの責任となります。</p>
+        </div>
+      </div>
+
+      <div id="pp-copyright" style="display: grid; gap: 17px;">
+        <div style="display: flex; align-items: center; gap: 13px; padding-bottom: 12px; border-bottom: 1px solid #D9E4D6;">
+          <span style="flex: none; font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: #15735b;">06</span>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.01em; color: #14503C;">著作権について</h2>
+        </div>
+        <div style="display: grid; gap: 13px;">
+          <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">当サイトに掲載されているテキスト・デザイン・構成等の著作権は運営者に帰属します。無断転載・複製はお断りします。</p>
+          <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">引用する場合は出典を明記のうえ、引用の範囲内でご利用ください。</p>
+        </div>
+      </div>
+
+      <div id="pp-revision" style="display: grid; gap: 17px;">
+        <div style="display: flex; align-items: center; gap: 13px; padding-bottom: 12px; border-bottom: 1px solid #D9E4D6;">
+          <span style="flex: none; font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: #15735b;">07</span>
+          <h2 style="margin: 0; font-size: 22px; font-weight: 900; letter-spacing: 0.01em; color: #14503C;">プライバシーポリシーの改定</h2>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.95; text-wrap: pretty; color: #4B5563;">本プライバシーポリシーは、法令改正・サービス変更等に伴い予告なく変更する場合があります。変更後は本ページに掲載した時点で効力が発生します。</p>
+      </div>
+
+      <div class="wm-band" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; border-radius: 12px; background: #FBF8F0;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #A99672;">LAST UPDATED　2026.06</span>
+        <a href="contact.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 18px; border-radius: 999px; background: #15735b; font-size: 13px; font-weight: 700; color: #fff;">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="wm-toc" style="position: sticky; top: 76px; display: grid; gap: 4px; padding: 20px 18px; border: 1px solid #EDEAE1; border-radius: 14px;">
+      <span style="padding-bottom: 8px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; color: #C9B896;">CONTENTS</span>
+      <a class="wm-toc-a" href="#pp-operator" style="padding: 8px 0; font-size: 13px; line-height: 1.6; color: #4B5563;">01　運営者情報</a>
+      <a class="wm-toc-a" href="#pp-analytics" style="padding: 8px 0; font-size: 13px; line-height: 1.6; color: #4B5563;">02　アクセス解析ツール</a>
+      <a class="wm-toc-a" href="#pp-cookie" style="padding: 8px 0; font-size: 13px; line-height: 1.6; color: #4B5563;">03　Cookieの使用</a>
+      <a class="wm-toc-a" href="#pp-ads" style="padding: 8px 0; font-size: 13px; line-height: 1.6; color: #4B5563;">04　アフィリエイト・広告</a>
+      <a class="wm-toc-a" href="#pp-disclaimer" style="padding: 8px 0; font-size: 13px; line-height: 1.6; color: #4B5563;">05　免責事項</a>
+      <a class="wm-toc-a" href="#pp-copyright" style="padding: 8px 0; font-size: 13px; line-height: 1.6; color: #4B5563;">06　著作権について</a>
+      <a class="wm-toc-a" href="#pp-revision" style="padding: 8px 0; font-size: 13px; line-height: 1.6; color: #4B5563;">07　ポリシーの改定</a>
+    </div>
   </div>
 
-  <!-- 著作権 -->
-  <div class="section">
-    <div class="section-title">著作権について</div>
-    <p>当サイトに掲載されているテキスト・デザイン・構成等の著作権は運営者に帰属します。無断転載・複製はお断りします。</p>
-    <p>引用する場合は出典を明記のうえ、引用の範囲内でご利用ください。</p>
+  <div style="overflow: hidden;">
+    <img src="../assets/common/skyline-footer.png" alt="" style="display: block; width: 100%; margin: -19% 0 -5.6%;">
   </div>
 
-  <!-- 改定 -->
-  <div class="section">
-    <div class="section-title">プライバシーポリシーの改定</div>
-    <p>本プライバシーポリシーは、法令改正・サービス変更等に伴い予告なく変更する場合があります。変更後は本ページに掲載した時点で効力が発生します。</p>
-  </div>
-
-  <p class="updated">最終更新：2026年6月</p>
-
+  <script src="../assets/country-links.js"></script>
 </div>
+
+<script>
+(function(){
+  var btn=document.getElementById('hb-toggle-btn'), drawer=document.getElementById('hb-drawer');
+  if(!btn||!drawer)return;
+  btn.addEventListener('click',function(){var o=drawer.classList.toggle('open');btn.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';});
+})();
+</script>
 </body>
 </html>

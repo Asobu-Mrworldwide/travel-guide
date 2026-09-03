@@ -36,8 +36,11 @@ COUNTRY_PAGES = [
 
 OTHER_PAGES = [
     ('common/checklist.html', 0.6, 'monthly'),
+    ('common/faq.html', 0.5, 'monthly'),
+    ('common/about.html', 0.3, 'yearly'),
     ('common/contact.html', 0.3, 'yearly'),
     ('common/privacy.html', 0.3, 'yearly'),
+    ('common/disclaimer.html', 0.3, 'yearly'),
     ('compare/flights.html', 0.5, 'monthly'),
     ('compare/hotels.html', 0.5, 'monthly'),
     ('compare/sim.html', 0.5, 'monthly'),
