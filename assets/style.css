@@ -85,7 +85,18 @@ a:hover{color:var(--green)}
 
 @media(max-width:1240px){.page-grid{grid-template-columns:196px minmax(0,1fr)}.side-rail{display:none}}
 @media(max-width:1020px){.page-grid{grid-template-columns:1fr;padding:0}.toc-sidebar{display:none}.page-grid .container{margin:16px auto;max-width:calc(100% - 32px)}}
-@media(max-width:520px){.page-grid{padding:0 0 24px;background:var(--bg-page)}.page-grid .container{margin:12px 10px;max-width:none;border-radius:12px;box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07);padding:16px 14px}}
+/* .s-lead / .s-body: PC では存在しないものとして扱い、スマホでのみカード分割に使う */
+.s-lead,.s-body{display:contents}
+@media(max-width:520px){
+  .page-grid{padding:0 0 26px;background:var(--bg-page)}
+  .page-grid .container{margin:0;max-width:none;border-radius:0;box-shadow:none;padding:0;overflow:visible;background:transparent;min-height:0}
+  /* スマホ: セクションを白カードに分割（基本情報タブは s-lead / s-body の2枚、その他タブはセクション全体で1枚） */
+  .s-lead,.s-body,
+  #slides-wrap>section:not(:has(.s-lead)){
+    display:block;background:var(--card);border-radius:12px;padding:16px 14px;margin:14px 10px 0;
+    box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07)}
+  .s-body>h2:first-child{margin-top:0 !important}
+}
 
 /* カード */
 .card{background:var(--card);border-radius:8px;padding:18px;border:1px solid #E8E2D8;box-shadow:none}
