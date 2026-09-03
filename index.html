@@ -245,7 +245,9 @@
   @media (max-width: 760px) {
     body { font-size: 15px; }
     .wm-page { min-width: 0; }
-    .wm-header { position: sticky; top: 0; z-index: 40; }
+    .wm-header { position: sticky; top: 0; z-index: 40; transition: transform .28s ease; }
+    body.hdr-hidden .wm-header { transform: translateY(-100%); }
+    body.hdr-hidden .wm-searchband { top: 0; }
     .wm-header-top { padding: 0 16px; }
     .wm-menu { grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px 16px 26px; }
     .wm-menu-about { border-left: none; padding-left: 0; grid-column: 1 / -1; }
@@ -270,7 +272,7 @@
     .wm-stat .ic img { width: 34px; height: 34px; }
     .wm-stat .num { font-size: 20px; }
     .wm-stat .lbl { font-size: 10px; white-space: nowrap; }
-    .wm-searchband { position: sticky; top: 52px; z-index: 30; max-width: none; margin: 0; padding: 11px 18px 12px; background: #fff; border-bottom: 1px solid #eee; }
+    .wm-searchband { position: sticky; top: 52px; z-index: 30; max-width: none; margin: 0; padding: 11px 18px 12px; background: #fff; border-bottom: 1px solid #eee; transition: top .28s ease; }
     .wm-search-frame { height: 48px; padding: 0 6px 0 6px; border: 2px solid #DCE3D7; box-shadow: none; }
     .wm-search-frame.focus { border-color: #14503C; }
     .wm-search-frame svg.mag { margin-left: 10px; }
@@ -590,15 +592,19 @@
     render();
   }
 
+  // 全角英数→半角・カタカナ→ひらがなに畳んで、表記ゆれ（「ｂ」で「Brazil」、「ぶ」で「ブラジル」）を吸収する
+  const fold = (s) => (s || '').normalize('NFKC').toLowerCase().replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
+
   function matches(d, q) {
-    const hay = [d.name, d.nameEn, d.area, d.budget, d.blurb].concat(d.tags).join(' ').toLowerCase();
-    return q.split(/\s+/).filter(Boolean).every((w) => {
+    const hay = fold([d.name, d.nameEn, d.area, d.budget, d.blurb].concat(d.tags).join(' '));
+    return q.split(/\s+/).filter(Boolean).every((w0) => {
+      const w = fold(w0);
       if (hay.indexOf(w) >= 0) return true;
       const mn = w.match(/^(\d{1,2})月?$/);
       if (mn && inSeason(d, +mn[1])) return true;
-      const hol = HOLIDAYS.filter((h) => h.label.toLowerCase().indexOf(w) >= 0)[0];
+      const hol = HOLIDAYS.filter((h) => fold(h.label).indexOf(w) >= 0)[0];
       if (hol && inSeason(d, hol.month)) return true;
-      const fl = FLIGHTS.filter((c) => c.label.toLowerCase().indexOf(w) >= 0)[0];
+      const fl = FLIGHTS.filter((c) => fold(c.label).indexOf(w) >= 0)[0];
       if (fl && fl.test(d.hours)) return true;
       return false;
     });
@@ -615,10 +621,25 @@
     return values.map((label) => ({ label, on: cur.indexOf(label) >= 0, onClick: () => set(field, label) }));
   }
 
+  // 候補の並び: 国名の先頭一致 > 国名・英名の部分一致 > その他（説明文などのヒット）
+  function relevance(d, q) {
+    const w = fold(q.trim().split(/\s+/)[0] || '');
+    if (!w) return 0;
+    const nm = fold(d.name), en = fold(d.nameEn);
+    if (nm.startsWith(w) || en.startsWith(w)) return 3;
+    if (nm.indexOf(w) >= 0 || en.indexOf(w) >= 0) return 2;
+    if (fold((d.tags || []).concat(d.area).join(' ')).indexOf(w) >= 0) return 1;
+    return 0;
+  }
   function suggestGroups(q) {
-    const hit = all.filter((d) => matches(d, q)).slice(0, 6);
+    const hit = all.filter((d) => matches(d, q))
+      .map((d) => [d, relevance(d, q)])
+      .sort((a, b) => b[1] - a[1])
+      .map((x) => x[0])
+      .slice(0, 6);
+    const fq = fold(q);
     const kw = [];
-    const push = (label, field, value, icon) => { if (kw.length < 5 && label.toLowerCase().indexOf(q) >= 0) kw.push({ label, field, value, icon }); };
+    const push = (label, field, value, icon) => { if (kw.length < 5 && fold(label).indexOf(fq) >= 0) kw.push({ label, field, value, icon }); };
     AREAS.forEach((a) => push(a, 'area', a, '◍'));
     TAGS.forEach((t) => push(t, 'tag', t, '#'));
     FLIGHTS.forEach((c) => push(c.label, 'flight', c.label, '✈'));
@@ -657,6 +678,8 @@
       'お気に入り': (a, b) => (state.favs.indexOf(b.id) >= 0 ? 1 : 0) - (state.favs.indexOf(a.id) >= 0 ? 1 : 0) || recommendCmp(a, b),
     };
     rows = rows.slice().sort(SORTS[state.sort] || SORTS['おすすめ']);
+    // フリーワード検索中は、国名一致を説明文だけの一致より上に出す
+    if (q) rows.sort((a, b) => relevance(b, q) - relevance(a, q));
     if (state.sel) {
       const hit = rows.filter((d) => d.id === state.sel);
       if (hit.length) rows = hit.concat(rows.filter((d) => d.id !== state.sel));
@@ -732,7 +755,6 @@
 
     // 選択中の条件（トークン）
     const tokens = [];
-    if (state.q) tokens.push({ label: '「' + state.q.trim() + '」', onRemove: () => { state.q = ''; render(); } });
     FIELDS.forEach((k) => (f[k] || []).forEach((val) => tokens.push({ label: val, onRemove: () => set(k, val) })));
     const tr = $('tokensRow');
     tr.classList.toggle('show', tokens.length > 0);
@@ -881,10 +903,35 @@
   });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && state.menuOpen) { state.menuOpen = false; render(); } });
   $('mapToggle').addEventListener('click', () => { state.mapOn = !state.mapOn; render(); });
+
+  // スクロール下方向でヘッダーを隠す／上方向・最上部で戻す
+  (function hideHeaderOnScroll() {
+    let lastY = window.pageYOffset, ticking = false;
+    const update = () => {
+      const y = window.pageYOffset;
+      if (y > lastY + 6 && y > 120) document.body.classList.add('hdr-hidden');
+      else if (y < lastY - 6 || y < 60) document.body.classList.remove('hdr-hidden');
+      lastY = y;
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+  })();
   $('searchInput').addEventListener('input', (e) => { state.q = e.target.value; state.focus = true; state.limit = 15; render(); });
   $('searchInput').addEventListener('focus', () => { state.focus = true; render(); });
   $('searchInput').addEventListener('blur', () => { setTimeout(() => { state.focus = false; render(); }, 140); });
-  $('searchInput').addEventListener('keydown', (e) => { if (e.key === 'Escape') { state.q = ''; state.focus = false; render(); } });
+  $('searchInput').addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { state.q = ''; state.focus = false; render(); }
+    else if (e.key === 'Enter' && !e.isComposing) {
+      e.preventDefault();
+      state.focus = false;
+      e.target.blur();
+      render();
+      const sec = document.getElementById('wm-index');
+      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
   $('clearBtn').addEventListener('click', () => { state.q = ''; render(); });
   $('detailBtn').addEventListener('click', () => {
     state.detailOpen = !state.detailOpen;

@@ -638,8 +638,13 @@ section.active{display:block}
   .sm-dot{height:46px;font-size:0.85em}
   .month-dot{height:54px;font-size:0.8em}
   .md-t{font-size:0.75em}
-  nav{justify-content:flex-start}
-  nav button,nav a{font-size:0.82em;padding:11px 10px}
+  /* スマホではタブバーを画面下部に固定表示する */
+  nav{justify-content:flex-start;position:fixed !important;top:auto !important;bottom:0;left:0;right:0;transform:none !important;border-bottom:none;border-top:1px solid rgba(30,136,229,0.15);box-shadow:0 -4px 20px rgba(26,37,48,0.10);padding-bottom:env(safe-area-inset-bottom)}
+  nav button,nav a{font-size:0.82em;padding:11px 10px;border-bottom:none;border-top:4px solid transparent;margin-bottom:0;margin-top:-1px}
+  nav button.active,nav a.active{border-bottom-color:transparent;border-top-color:var(--green);border-radius:0 0 10px 10px}
+  .nav-fade-left{background:linear-gradient(to right,rgba(246,244,239,0.95),rgba(246,244,239,0))}
+  .nav-fade-right{background:linear-gradient(to left,rgba(246,244,239,0.95),rgba(246,244,239,0))}
+  body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
   .card .lbl{font-size:0.78em}
   .card .val{font-size:1em}
   .card .note{font-size:0.8em}

@@ -1192,8 +1192,8 @@ const app = initializeApp(FB_CONFIG);
 const db = getDatabase(app);
 const urlType = new URLSearchParams(location.search).get('type');
 
-// 診断カウント＋タイプ別カウント（1セッション1回）
-if (urlType && !sessionStorage.getItem('diag_counted')) {
+// 診断カウント＋タイプ別カウント（クイズを実際に完了した本人のみ・1セッション1回）
+if (urlType && sessionStorage.getItem('myType') === urlType && !sessionStorage.getItem('diag_counted')) {
   sessionStorage.setItem('diag_counted', '1');
   sessionStorage.removeItem('diag_feedback');
   const today = new Date().toLocaleDateString('sv-SE');
