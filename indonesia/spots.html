@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="インドネシアの観光スポット｜インドネシア旅行ガイド">
 <meta name="twitter:description" content="直行便で約7〜8時間、時差1〜2時間のインドネシアは1万7,000もの島々が連なる世界最大の群島国家。世界遺産ボロブドゥール寺院、棚田とヒンドゥー寺院が広がるバリ島、コモドドラゴンが生きるコモド国立公園、そしてナシゴレンをはじめとする多彩…">
 <meta name="twitter:image" content="https://worldmappy.com/indonesia/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><path fill="#fff" d="M0 0h3v2H0z"/><path fill="red" d="M0 0h3v1H0z"/></svg></div></span><span class="site-country-name">インドネシア</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=indonesia">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">インドネシアを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=indonesia">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,60 +272,78 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>インドネシア 観光スポット</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング・街並み</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング・街並み</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="bali" onclick="filterSpots('city','bali',this)">バリ島</button>
+              
+              <button class="filter-btn " data-filter="jakarta" onclick="filterSpots('city','jakarta',this)">ジャカルタ</button>
+              
+              <button class="filter-btn " data-filter="yogyakarta" onclick="filterSpots('city','yogyakarta',this)">ジョグジャカルタ</button>
+              
+              <button class="filter-btn " data-filter="labuan_bajo" onclick="filterSpots('city','labuan_bajo',this)">ラブアンバジョ・コモド</button>
+              
+              <button class="filter-btn " data-filter="gili" onclick="filterSpots('city','gili',this)">ギリ諸島・ロンボク</button>
+              
+              <button class="filter-btn " data-filter="east_java" onclick="filterSpots('city','east_java',this)">東ジャワ</button>
+              
+              <button class="filter-btn " data-filter="papua" onclick="filterSpots('city','papua',this)">パプア</button>
+              
+              <button class="filter-btn " data-filter="sumatra" onclick="filterSpots('city','sumatra',this)">スマトラ島</button>
+              
+              <button class="filter-btn " data-filter="sulawesi" onclick="filterSpots('city','sulawesi',this)">スラウェシ島</button>
+              
+              <button class="filter-btn " data-filter="kalimantan" onclick="filterSpots('city','kalimantan',this)">カリマンタン</button>
+              
+              <button class="filter-btn " data-filter="flores" onclick="filterSpots('city','flores',this)">フローレス島</button>
+              
+              <button class="filter-btn " data-filter="belitung" onclick="filterSpots('city','belitung',this)">ブリトゥン島</button>
+              
+              <button class="filter-btn " data-filter="bandung" onclick="filterSpots('city','bandung',this)">バンドン</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="bali" onclick="filterSpots('city','bali',this)">バリ島</button>
-      
-      <button class="filter-btn " data-filter="jakarta" onclick="filterSpots('city','jakarta',this)">ジャカルタ</button>
-      
-      <button class="filter-btn " data-filter="yogyakarta" onclick="filterSpots('city','yogyakarta',this)">ジョグジャカルタ</button>
-      
-      <button class="filter-btn " data-filter="labuan_bajo" onclick="filterSpots('city','labuan_bajo',this)">ラブアンバジョ・コモド</button>
-      
-      <button class="filter-btn " data-filter="gili" onclick="filterSpots('city','gili',this)">ギリ諸島・ロンボク</button>
-      
-      <button class="filter-btn " data-filter="east_java" onclick="filterSpots('city','east_java',this)">東ジャワ</button>
-      
-      <button class="filter-btn " data-filter="papua" onclick="filterSpots('city','papua',this)">パプア</button>
-      
-      <button class="filter-btn " data-filter="sumatra" onclick="filterSpots('city','sumatra',this)">スマトラ島</button>
-      
-      <button class="filter-btn " data-filter="sulawesi" onclick="filterSpots('city','sulawesi',this)">スラウェシ島</button>
-      
-      <button class="filter-btn " data-filter="kalimantan" onclick="filterSpots('city','kalimantan',this)">カリマンタン</button>
-      
-      <button class="filter-btn " data-filter="flores" onclick="filterSpots('city','flores',this)">フローレス島</button>
-      
-      <button class="filter-btn " data-filter="belitung" onclick="filterSpots('city','belitung',this)">ブリトゥン島</button>
-      
-      <button class="filter-btn " data-filter="bandung" onclick="filterSpots('city','bandung',this)">バンドン</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">51</span> / <span id="spots-count-total">51</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -303,6 +351,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -337,64 +386,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="bali" data-stype="nature" data-spot-num="BAL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BAL 01</div>
-      <div class="name-row"><div class="name">テガラランの棚田</div><span class="badge">バリを象徴する絶景</span></div>
+      <div class="num-row"><span class="num">BAL 01</span><span class="badge">バリを象徴する絶景</span></div>
+      <div class="name-row"><div class="name">テガラランの棚田</div></div>
       <div class="desc">幾層にも重なる緑の棚田が丘の斜面を覆う、バリ島を象徴する絶景。伝統的な灌漑システム「スバック」も見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/テガラランの棚田.webp" alt="テガラランの棚田" loading="lazy"><a href="https://maps.google.com/?q=Tegallalang+Rice+Terrace" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="bali" data-stype="nature" data-spot-num="BAL 02">
       <div class="must-badge">⭐</div>
-      <div class="num">BAL 02</div>
-      <div class="name-row"><div class="name">ウブド・モンキーフォレスト</div><span class="badge">神聖な森の公園</span></div>
+      <div class="num-row"><span class="num">BAL 02</span><span class="badge">神聖な森の公園</span></div>
+      <div class="name-row"><div class="name">ウブド・モンキーフォレスト</div></div>
       <div class="desc">苔むした古い石像と野生の猿が暮らす神聖な森林公園。うっそうとした緑の中を歩けば、街の喧騒を忘れる静けさに包まれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウブド・モンキーフォレスト.webp" alt="ウブド・モンキーフォレスト" loading="lazy"><a href="https://maps.google.com/?q=Ubud+Monkey+Forest" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bali" data-stype="religious" data-spot-num="BAL 03">
       
-      <div class="num">BAL 03</div>
-      <div class="name-row"><div class="name">ティルタウンプル寺院</div><span class="badge">聖なる泉の寺院</span></div>
+      <div class="num-row"><span class="num">BAL 03</span><span class="badge">聖なる泉の寺院</span></div>
+      <div class="name-row"><div class="name">ティルタウンプル寺院</div></div>
       <div class="desc">聖なる泉が湧く水浴び寺院。参拝者が列をなして沐浴する光景が見られ、バリ・ヒンドゥーの信仰を肌で感じられる場所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ティルタウンプル寺院.webp" alt="ティルタウンプル寺院" loading="lazy"><a href="https://maps.google.com/?q=Tirta+Empul+Temple" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="bali" data-stype="religious" data-spot-num="BAL 04">
       <div class="must-badge">⭐</div>
-      <div class="num">BAL 04</div>
-      <div class="name-row"><div class="name">ウルワツ寺院・ケチャダンス</div><span class="badge">断崖の夕景スポット</span></div>
+      <div class="num-row"><span class="num">BAL 04</span><span class="badge">断崖の夕景スポット</span></div>
+      <div class="name-row"><div class="name">ウルワツ寺院・ケチャダンス</div></div>
       <div class="desc">断崖絶壁に建つ聖地。夕暮れには火を囲んで踊るケチャダンスが上演され、燃える夕日と炎の輪が幻想的な光景をつくる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウルワツ寺院・ケチャダンス.webp" alt="ウルワツ寺院・ケチャダンス" loading="lazy"><a href="https://maps.google.com/?q=Uluwatu+Temple" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="bali" data-stype="religious" data-spot-num="BAL 05">
       <div class="must-badge">⭐</div>
-      <div class="num">BAL 05</div>
-      <div class="name-row"><div class="name">タナロット寺院</div><span class="badge">海上の夕景寺院</span></div>
+      <div class="num-row"><span class="num">BAL 05</span><span class="badge">海上の夕景寺院</span></div>
+      <div class="name-row"><div class="name">タナロット寺院</div></div>
       <div class="desc">海に浮かぶ岩の上に建つヒンドゥー教寺院。満潮時は島のように孤立し、夕焼けに染まるシルエットはバリ島屈指の絶景として知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タナロット寺院.webp" alt="タナロット寺院" loading="lazy"><a href="https://maps.google.com/?q=Tanah+Lot" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bali" data-stype="activity" data-spot-num="BAL 06">
       
-      <div class="num">BAL 06</div>
-      <div class="name-row"><div class="name">バトゥール山サンライズトレッキング</div><span class="badge">御来光トレッキング</span></div>
+      <div class="num-row"><span class="num">BAL 06</span><span class="badge">御来光トレッキング</span></div>
+      <div class="name-row"><div class="name">バトゥール山サンライズトレッキング</div></div>
       <div class="desc">深夜から登り始め、山頂で御来光を迎える人気アクティビティ。眼下に広がる雲海とバトゥール湖の景観は登った者だけのご褒美。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バトゥール山サンライズトレッキング.webp" alt="バトゥール山サンライズトレッキング" loading="lazy"><a href="https://maps.google.com/?q=Mount+Batur" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bali" data-stype="nature" data-spot-num="BAL 07">
       
-      <div class="num">BAL 07</div>
-      <div class="name-row"><div class="name">スミニャック・クタビーチ</div><span class="badge">サンセットビーチ</span></div>
+      <div class="num-row"><span class="num">BAL 07</span><span class="badge">サンセットビーチ</span></div>
+      <div class="name-row"><div class="name">スミニャック・クタビーチ</div></div>
       <div class="desc">サーフィンとサンセットで知られる南部の代表的なビーチエリア。夕方になるとビーチクラブに人が集まり、南国らしい開放的な雰囲気に包まれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スミニャック・クタビーチ.webp" alt="スミニャック・クタビーチ" loading="lazy"><a href="https://maps.google.com/?q=Seminyak+Beach" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bali" data-stype="nature" data-spot-num="BAL 08">
       
-      <div class="num">BAL 08</div>
-      <div class="name-row"><div class="name">ヌサペニダ島日帰りツアー</div><span class="badge">離島の絶景巡り</span></div>
+      <div class="num-row"><span class="num">BAL 08</span><span class="badge">離島の絶景巡り</span></div>
+      <div class="name-row"><div class="name">ヌサペニダ島日帰りツアー</div></div>
       <div class="desc">断崖絶壁と真っ青な海が広がる離島。恐竜の背のような奇岩「ケリンキング・ビーチ」は写真好きに人気の絶景ポイント。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヌサペニダ島日帰りツアー.webp" alt="ヌサペニダ島日帰りツアー" loading="lazy"><a href="https://maps.google.com/?q=Nusa+Penida+Kelingking+Beach" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -433,32 +482,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="jakarta" data-stype="townscape" data-spot-num="JKT 01">
       <div class="must-badge">⭐</div>
-      <div class="num">JKT 01</div>
-      <div class="name-row"><div class="name">コタトゥア（ジャカルタ旧市街）</div><span class="badge">オランダ統治時代の旧市街</span></div>
+      <div class="num-row"><span class="num">JKT 01</span><span class="badge">オランダ統治時代の旧市街</span></div>
+      <div class="name-row"><div class="name">コタトゥア（ジャカルタ旧市街）</div></div>
       <div class="desc">オランダ統治時代の面影を残す石畳のエリア。カラフルなレンタサイクルで広場を巡る観光客の姿が名物になっている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コタトゥア.webp" alt="コタトゥア（ジャカルタ旧市街）" loading="lazy"><a href="https://maps.google.com/?q=Kota+Tua+Jakarta" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="jakarta" data-stype="townscape" data-spot-num="JKT 02">
       
-      <div class="num">JKT 02</div>
-      <div class="name-row"><div class="name">モナス（独立記念塔）</div><span class="badge">独立のシンボル</span></div>
+      <div class="num-row"><span class="num">JKT 02</span><span class="badge">独立のシンボル</span></div>
+      <div class="name-row"><div class="name">モナス（独立記念塔）</div></div>
       <div class="desc">金箔で覆われた炎のモニュメントが頂を飾る、独立を象徴する132mの塔。展望台からはジャカルタ市街を一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モナス.webp" alt="モナス（独立記念塔）" loading="lazy"><a href="https://maps.google.com/?q=Monas+National+Monument" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="jakarta" data-stype="religious" data-spot-num="JKT 03">
       
-      <div class="num">JKT 03</div>
-      <div class="name-row"><div class="name">イスティクラル・モスク</div><span class="badge">東南アジア最大級のモスク</span></div>
+      <div class="num-row"><span class="num">JKT 03</span><span class="badge">東南アジア最大級のモスク</span></div>
+      <div class="name-row"><div class="name">イスティクラル・モスク</div></div>
       <div class="desc">東南アジア最大級の規模を誇るモスク。20万人を収容できるとされる巨大な空間は、静けさと荘厳さを兼ね備えている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イスティクラル・モスク.webp" alt="イスティクラル・モスク" loading="lazy"><a href="https://maps.google.com/?q=Istiqlal+Mosque" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="jakarta" data-stype="museum" data-spot-num="JKT 04">
       
-      <div class="num">JKT 04</div>
-      <div class="name-row"><div class="name">インドネシア国立博物館</div><span class="badge">国立の総合博物館</span></div>
+      <div class="num-row"><span class="num">JKT 04</span><span class="badge">国立の総合博物館</span></div>
+      <div class="name-row"><div class="name">インドネシア国立博物館</div></div>
       <div class="desc">考古学から民族衣装まで、多民族国家インドネシアの歴史を一度に学べる博物館。古代の青銅像コレクションでも知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/インドネシア国立博物館.webp" alt="インドネシア国立博物館" loading="lazy"><a href="https://maps.google.com/?q=National+Museum+of+Indonesia" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -497,32 +546,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="yogyakarta" data-stype="heritage" data-spot-num="YOG 01">
       <div class="must-badge">⭐</div>
-      <div class="num">YOG 01</div>
-      <div class="name-row"><div class="name">ボロブドゥール寺院</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">YOG 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ボロブドゥール寺院</div></div>
       <div class="desc">9世紀に築かれた世界最大級の仏教遺跡。日の出とともに幾重にも重なるストゥーパが霧の中に浮かび上がる光景は圧巻。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボロブドゥール寺院.webp" alt="ボロブドゥール寺院" loading="lazy"><a href="https://maps.google.com/?q=Borobudur+Temple" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="yogyakarta" data-stype="heritage" data-spot-num="YOG 02">
       <div class="must-badge">⭐</div>
-      <div class="num">YOG 02</div>
-      <div class="name-row"><div class="name">プランバナン寺院</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">YOG 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">プランバナン寺院</div></div>
       <div class="desc">東南アジア最大級のヒンドゥー教遺跡。天を突く尖塔が林立する姿は壮観で、夕暮れ時には敷地内でラーマーヤナ舞踊が上演される。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プランバナン寺院.webp" alt="プランバナン寺院" loading="lazy"><a href="https://maps.google.com/?q=Prambanan+Temple" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="yogyakarta" data-stype="heritage" data-spot-num="YOG 03">
       
-      <div class="num">YOG 03</div>
-      <div class="name-row"><div class="name">ジョグジャカルタ王宮（クラトン）</div><span class="badge">現役の王宮</span></div>
+      <div class="num-row"><span class="num">YOG 03</span><span class="badge">現役の王宮</span></div>
+      <div class="name-row"><div class="name">ジョグジャカルタ王宮（クラトン）</div></div>
       <div class="desc">今も国王一族が暮らす現役の宮殿。ジャワ様式の建築とガムラン演奏を間近に感じられる、王家の伝統文化に触れる場所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジョグジャカルタ王宮.webp" alt="ジョグジャカルタ王宮（クラトン）" loading="lazy"><a href="https://maps.google.com/?q=Kraton+Yogyakarta" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="yogyakarta" data-stype="market" data-spot-num="YOG 04">
       
-      <div class="num">YOG 04</div>
-      <div class="name-row"><div class="name">マリオボロ通り</div><span class="badge">ジョグジャの目抜き通り</span></div>
+      <div class="num-row"><span class="num">YOG 04</span><span class="badge">ジョグジャの目抜き通り</span></div>
+      <div class="name-row"><div class="name">マリオボロ通り</div></div>
       <div class="desc">バティックや工芸品の店が軒を連ねる、街のメインストリート。夜になると屋台や大道芸人で賑わい、庶民の活気を肌で感じられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マリオボロ通り.webp" alt="マリオボロ通り" loading="lazy"><a href="https://maps.google.com/?q=Malioboro+Street" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -561,32 +610,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="labuan_bajo" data-stype="nature" data-spot-num="LAB 01">
       <div class="must-badge">⭐</div>
-      <div class="num">LAB 01</div>
-      <div class="name-row"><div class="name">コモド国立公園（コモドドラゴン）</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">LAB 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">コモド国立公園（コモドドラゴン）</div></div>
       <div class="desc">世界最大のトカゲ、コモドドラゴンが野生のまま生息する世界遺産。レンジャー同行のトレッキングで間近に観察できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コモド国立公園.webp" alt="コモド国立公園（コモドドラゴン）" loading="lazy"><a href="https://maps.google.com/?q=Komodo+National+Park" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="labuan_bajo" data-stype="nature" data-spot-num="LAB 02">
       <div class="must-badge">⭐</div>
-      <div class="num">LAB 02</div>
-      <div class="name-row"><div class="name">ピンクビーチ</div><span class="badge">世界でも珍しい桃色の砂浜</span></div>
+      <div class="num-row"><span class="num">LAB 02</span><span class="badge">世界でも珍しい桃色の砂浜</span></div>
+      <div class="name-row"><div class="name">ピンクビーチ</div></div>
       <div class="desc">微生物の殻が混ざり合い、砂浜がほんのり桃色に染まる世界でも珍しいビーチ。透明度の高い海はシュノーケリングにも最適。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピンクビーチ.webp" alt="ピンクビーチ" loading="lazy"><a href="https://maps.google.com/?q=Pink+Beach+Komodo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="labuan_bajo" data-stype="nature" data-spot-num="LAB 03">
       
-      <div class="num">LAB 03</div>
-      <div class="name-row"><div class="name">パダール島展望台</div><span class="badge">3色の入江を望む絶景</span></div>
+      <div class="num-row"><span class="num">LAB 03</span><span class="badge">3色の入江を望む絶景</span></div>
+      <div class="name-row"><div class="name">パダール島展望台</div></div>
       <div class="desc">3色に染まる入江を見下ろせる、コモド諸島随一のビュースポット。頂上までの階段は急だが、登り切った先の景色は苦労に見合う絶景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パダール島展望台.webp" alt="パダール島展望台" loading="lazy"><a href="https://maps.google.com/?q=Padar+Island" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="labuan_bajo" data-stype="activity" data-spot-num="LAB 04">
       
-      <div class="num">LAB 04</div>
-      <div class="name-row"><div class="name">マンタポイント・シュノーケリング</div><span class="badge">マンタと泳げる海</span></div>
+      <div class="num-row"><span class="num">LAB 04</span><span class="badge">マンタと泳げる海</span></div>
+      <div class="name-row"><div class="name">マンタポイント・シュノーケリング</div></div>
       <div class="desc">オニイトマキエイ（マンタ）と一緒に泳げる世界屈指のスポット。透明度の高い海でウミガメやサンゴ礁の魚群も楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マンタポイント・シュノーケリング.webp" alt="マンタポイント・シュノーケリング" loading="lazy"><a href="https://maps.google.com/?q=Manta+Point+Komodo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -625,24 +674,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="gili" data-stype="nature" data-spot-num="GIL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">GIL 01</div>
-      <div class="name-row"><div class="name">ギリ・トラワンガン</div><span class="badge">車のない島</span></div>
+      <div class="num-row"><span class="num">GIL 01</span><span class="badge">車のない島</span></div>
+      <div class="name-row"><div class="name">ギリ・トラワンガン</div></div>
       <div class="desc">ギリ諸島最大の島で、車もバイクもなく移動は徒歩か自転車、馬車のみ。夜はビーチバーが賑わい、昼は透明な海でシュノーケリングが楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ギリ・トラワンガン.webp" alt="ギリ・トラワンガン" loading="lazy"><a href="https://maps.google.com/?q=Gili+Trawangan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="gili" data-stype="nature" data-spot-num="GIL 02">
       
-      <div class="num">GIL 02</div>
-      <div class="name-row"><div class="name">ギリ・アイル シュノーケリング</div><span class="badge">ウミガメと泳げる海</span></div>
+      <div class="num-row"><span class="num">GIL 02</span><span class="badge">ウミガメと泳げる海</span></div>
+      <div class="name-row"><div class="name">ギリ・アイル シュノーケリング</div></div>
       <div class="desc">ウミガメと遭遇できる確率が高いことで知られる静かな島。ギリ・トラワンガンより落ち着いた雰囲気で、のんびり過ごしたい旅人に人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ギリ・アイル.webp" alt="ギリ・アイル シュノーケリング" loading="lazy"><a href="https://maps.google.com/?q=Gili+Air" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="gili" data-stype="nature" data-spot-num="GIL 03">
       
-      <div class="num">GIL 03</div>
-      <div class="name-row"><div class="name">クタ・ロンボク・ビーチ</div><span class="badge">ロンボク島の静かなビーチ</span></div>
+      <div class="num-row"><span class="num">GIL 03</span><span class="badge">ロンボク島の静かなビーチ</span></div>
+      <div class="name-row"><div class="name">クタ・ロンボク・ビーチ</div></div>
       <div class="desc">白砂と丘に囲まれたロンボク島南部のビーチ。バリのクタとは対照的に静かで、上質な波を求めるサーファーにも支持されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クタ・ロンボク・ビーチ.webp" alt="クタ・ロンボク・ビーチ" loading="lazy"><a href="https://maps.google.com/?q=Kuta+Lombok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -681,32 +730,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="east_java" data-stype="nature" data-spot-num="JAV 01">
       <div class="must-badge">⭐</div>
-      <div class="num">JAV 01</div>
-      <div class="name-row"><div class="name">ブロモ山</div><span class="badge">ジャワ島屈指のサンライズ絶景</span></div>
+      <div class="num-row"><span class="num">JAV 01</span><span class="badge">ジャワ島屈指のサンライズ絶景</span></div>
+      <div class="name-row"><div class="name">ブロモ山</div></div>
       <div class="desc">月面のような火口原が広がる活火山。日の出とともに雲海に浮かぶ姿は、ボロブドゥールと並ぶジャワ島屈指の絶景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブロモ山.webp" alt="ブロモ山" loading="lazy"><a href="https://maps.google.com/?q=Mount+Bromo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="east_java" data-stype="nature" data-spot-num="JAV 02">
       
-      <div class="num">JAV 02</div>
-      <div class="name-row"><div class="name">イジェン火山</div><span class="badge">世界的に珍しいブルーフレイム</span></div>
+      <div class="num-row"><span class="num">JAV 02</span><span class="badge">世界的に珍しいブルーフレイム</span></div>
+      <div class="name-row"><div class="name">イジェン火山</div></div>
       <div class="desc">夜間に青い炎「ブルーフレイム」が噴き出す、世界でも数少ない現象が見られる火山湖。強酸性の火口湖の水面も神秘的な光景をつくる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イジェン火山.webp" alt="イジェン火山" loading="lazy"><a href="https://maps.google.com/?q=Kawah+Ijen" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="east_java" data-stype="nature" data-spot-num="JAV 03">
       
-      <div class="num">JAV 03</div>
-      <div class="name-row"><div class="name">トゥンパック・セウー</div><span class="badge">馬蹄形の秘境の滝</span></div>
+      <div class="num-row"><span class="num">JAV 03</span><span class="badge">馬蹄形の秘境の滝</span></div>
+      <div class="name-row"><div class="name">トゥンパック・セウー</div></div>
       <div class="desc">馬蹄形の断崖から無数の水流が流れ落ちる、「千の滝」と称される東ジャワ屈指の秘境滝。トレッキングの先に広がる迫力の景観。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トゥンパック・セウー.webp" alt="トゥンパック・セウー" loading="lazy"><a href="https://maps.google.com/?q=Tumpak+Sewu+Waterfall" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="east_java" data-stype="activity" data-spot-num="JAV 04">
       
-      <div class="num">JAV 04</div>
-      <div class="name-row"><div class="name">バトゥ</div><span class="badge">高原の避暑地</span></div>
+      <div class="num-row"><span class="num">JAV 04</span><span class="badge">高原の避暑地</span></div>
+      <div class="name-row"><div class="name">バトゥ</div></div>
       <div class="desc">マラン近郊の高原リゾートタウン。フルーツピッキングやアニマルパーク、テーマパークが集まり、家族連れの避暑地として人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バトゥ.webp" alt="バトゥ" loading="lazy"><a href="https://maps.google.com/?q=Batu,+East+Java" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -745,32 +794,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="papua" data-stype="nature" data-spot-num="PAP 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PAP 01</div>
-      <div class="name-row"><div class="name">ピアナモ展望台</div><span class="badge">ラジャ・アンパットを象徴する絶景</span></div>
+      <div class="num-row"><span class="num">PAP 01</span><span class="badge">ラジャ・アンパットを象徴する絶景</span></div>
+      <div class="name-row"><div class="name">ピアナモ展望台</div></div>
       <div class="desc">カルスト地形の無数の島々を見渡す、ラジャ・アンパットを象徴する展望スポット。急な階段を登った先に広がる絶景は圧巻。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピアナモ展望台.webp" alt="ピアナモ展望台" loading="lazy"><a href="https://maps.google.com/?q=Piaynemo+Viewpoint" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="papua" data-stype="nature" data-spot-num="PAP 02">
       
-      <div class="num">PAP 02</div>
-      <div class="name-row"><div class="name">ワヤグ島</div><span class="badge">秘境の絶景ポイント</span></div>
+      <div class="num-row"><span class="num">PAP 02</span><span class="badge">秘境の絶景ポイント</span></div>
+      <div class="name-row"><div class="name">ワヤグ島</div></div>
       <div class="desc">ピアナモよりもさらに奥地にある静かな絶景ポイント。人の少ない秘境で、緑の島々が海に浮かぶ光景を独り占めできる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワヤグ島.webp" alt="ワヤグ島" loading="lazy"><a href="https://maps.google.com/?q=Wayag+Island" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="papua" data-stype="activity" data-spot-num="PAP 03">
       
-      <div class="num">PAP 03</div>
-      <div class="name-row"><div class="name">カビ島</div><span class="badge">世界屈指のダイブスポット</span></div>
+      <div class="num-row"><span class="num">PAP 03</span><span class="badge">世界屈指のダイブスポット</span></div>
+      <div class="name-row"><div class="name">カビ島</div></div>
       <div class="desc">サンゴ礁と豊かな海洋生物に恵まれた、世界屈指のダイビング・シュノーケリングスポット。マンタやジンベエザメに出会えることもある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カビ島.webp" alt="カビ島" loading="lazy"><a href="https://maps.google.com/?q=Kri+Island" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="papua" data-stype="nature" data-spot-num="PAP 04">
       
-      <div class="num">PAP 04</div>
-      <div class="name-row"><div class="name">ワイゲオ島</div><span class="badge">極楽鳥観察の拠点</span></div>
+      <div class="num-row"><span class="num">PAP 04</span><span class="badge">極楽鳥観察の拠点</span></div>
+      <div class="name-row"><div class="name">ワイゲオ島</div></div>
       <div class="desc">ラジャ・アンパット観光の拠点となる島。極楽鳥の求愛ダンスを間近で観察できるツアーが人気で、独自の生態系が息づく。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワイゲオ島.webp" alt="ワイゲオ島" loading="lazy"><a href="https://maps.google.com/?q=Waigeo+Island" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -809,32 +858,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="sumatra" data-stype="nature" data-spot-num="SUM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SUM 01</div>
-      <div class="name-row"><div class="name">トバ湖</div><span class="badge">東南アジア最大のカルデラ湖</span></div>
+      <div class="num-row"><span class="num">SUM 01</span><span class="badge">東南アジア最大のカルデラ湖</span></div>
+      <div class="name-row"><div class="name">トバ湖</div></div>
       <div class="desc">火山の巨大噴火が生んだ、東南アジア最大のカルデラ湖。周囲を山々に囲まれた雄大な景観は、スマトラ島を代表する絶景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トバ湖.webp" alt="トバ湖" loading="lazy"><a href="https://maps.google.com/?q=Lake+Toba" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sumatra" data-stype="heritage" data-spot-num="SUM 02">
       
-      <div class="num">SUM 02</div>
-      <div class="name-row"><div class="name">サモシール島</div><span class="badge">バタック族の伝統文化が残る島</span></div>
+      <div class="num-row"><span class="num">SUM 02</span><span class="badge">バタック族の伝統文化が残る島</span></div>
+      <div class="name-row"><div class="name">サモシール島</div></div>
       <div class="desc">トバ湖に浮かぶ島で、バタック族の伝統的な船型家屋や王の石造りの墓が点在する。独自の文化と静かな湖畔の暮らしに触れられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サモシール島.webp" alt="サモシール島" loading="lazy"><a href="https://maps.google.com/?q=Samosir+Island" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sumatra" data-stype="nature" data-spot-num="SUM 03">
       
-      <div class="num">SUM 03</div>
-      <div class="name-row"><div class="name">シピソピソの滝</div><span class="badge">落差120mの迫力の滝</span></div>
+      <div class="num-row"><span class="num">SUM 03</span><span class="badge">落差120mの迫力の滝</span></div>
+      <div class="name-row"><div class="name">シピソピソの滝</div></div>
       <div class="desc">トバ湖畔に流れ落ちる落差120mの滝。展望台から一望でき、緑の渓谷に轟音を響かせながら流れ落ちる姿は迫力満点。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シピソピソの滝.webp" alt="シピソピソの滝" loading="lazy"><a href="https://maps.google.com/?q=Sipiso-piso+Waterfall" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sumatra" data-stype="activity" data-spot-num="SUM 04">
       
-      <div class="num">SUM 04</div>
-      <div class="name-row"><div class="name">ブキッラワン国立公園</div><span class="badge">野生オランウータンとの遭遇</span></div>
+      <div class="num-row"><span class="num">SUM 04</span><span class="badge">野生オランウータンとの遭遇</span></div>
+      <div class="name-row"><div class="name">ブキッラワン国立公園</div></div>
       <div class="desc">野生のオランウータンに出会えるジャングルトレッキングの名所。ガイドとともに熱帯雨林を歩き、生態系の豊かさを体感できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブキッラワン国立公園.webp" alt="ブキッラワン国立公園" loading="lazy"><a href="https://maps.google.com/?q=Bukit+Lawang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -873,32 +922,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="sulawesi" data-stype="heritage" data-spot-num="SUL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SUL 01</div>
-      <div class="name-row"><div class="name">ケテケス</div><span class="badge">トンコナン家屋群が並ぶ集落</span></div>
+      <div class="num-row"><span class="num">SUL 01</span><span class="badge">トンコナン家屋群が並ぶ集落</span></div>
+      <div class="name-row"><div class="name">ケテケス</div></div>
       <div class="desc">船型の伝統家屋トンコナンが並ぶ集落。隣接する古い墓地には吊り棺や頭蓋骨が並び、トラジャの葬祭文化を象徴する光景が広がる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ケテケス.webp" alt="ケテケス" loading="lazy"><a href="https://maps.google.com/?q=Kete+Kesu" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sulawesi" data-stype="heritage" data-spot-num="SUL 02">
       
-      <div class="num">SUL 02</div>
-      <div class="name-row"><div class="name">ロンダ</div><span class="badge">断崖の岩窟墓と吊り棺</span></div>
+      <div class="num-row"><span class="num">SUL 02</span><span class="badge">断崖の岩窟墓と吊り棺</span></div>
+      <div class="name-row"><div class="name">ロンダ</div></div>
       <div class="desc">断崖に彫られた岩窟墓と、吊るされた木製の棺が並ぶ独特の墓地。ガイド同行の洞窟探検で、トラジャ族の死生観に触れられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ロンダ.webp" alt="ロンダ" loading="lazy"><a href="https://maps.google.com/?q=Londa+Toraja" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sulawesi" data-stype="activity" data-spot-num="SUL 03">
       
-      <div class="num">SUL 03</div>
-      <div class="name-row"><div class="name">サダン川ラフティング</div><span class="badge">棚田を望むラフティング</span></div>
+      <div class="num-row"><span class="num">SUL 03</span><span class="badge">棚田を望むラフティング</span></div>
+      <div class="name-row"><div class="name">サダン川ラフティング</div></div>
       <div class="desc">棚田と山々を望みながら急流を下るアクティビティ。トラジャの雄大な自然を全身で体感できる、他地域にはないアクセントになる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サダン川ラフティング.webp" alt="サダン川ラフティング" loading="lazy"><a href="https://maps.google.com/?q=Sungai+Sadan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sulawesi" data-stype="nature" data-spot-num="SUL 04">
       
-      <div class="num">SUL 04</div>
-      <div class="name-row"><div class="name">ブンタオ</div><span class="badge">棚田を望む展望スポット</span></div>
+      <div class="num-row"><span class="num">SUL 04</span><span class="badge">棚田を望む展望スポット</span></div>
+      <div class="name-row"><div class="name">ブンタオ</div></div>
       <div class="desc">階段状に連なる棚田と伝統家屋を一望できる高台。朝霧に包まれた田園風景は、トラジャの静かな山岳文化を象徴する光景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブンタオ.webp" alt="ブンタオ" loading="lazy"><a href="https://maps.google.com/?q=Buntao,+Toraja" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -937,24 +986,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="kalimantan" data-stype="nature" data-spot-num="KAL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">KAL 01</div>
-      <div class="name-row"><div class="name">タンジュンプティン国立公園</div><span class="badge">野生オランウータンの聖地</span></div>
+      <div class="num-row"><span class="num">KAL 01</span><span class="badge">野生オランウータンの聖地</span></div>
+      <div class="name-row"><div class="name">タンジュンプティン国立公園</div></div>
       <div class="desc">世界最大級のオランウータン保護区。熱帯雨林をクロトック船で進みキャンプ・リーキーへ向かう船旅は、野生のオランウータンと出会う特別な体験。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タンジュンプティン国立公園.webp" alt="タンジュンプティン国立公園" loading="lazy"><a href="https://maps.google.com/?q=Tanjung+Puting+National+Park" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kalimantan" data-stype="nature" data-spot-num="KAL 02">
       
-      <div class="num">KAL 02</div>
-      <div class="name-row"><div class="name">キャンプ・リーキー</div><span class="badge">オランウータン餌付け見学</span></div>
+      <div class="num-row"><span class="num">KAL 02</span><span class="badge">オランウータン餌付け見学</span></div>
+      <div class="name-row"><div class="name">キャンプ・リーキー</div></div>
       <div class="desc">保護されたオランウータンの餌付けを間近で見学できる研究拠点。ジャングルの奥で野生に戻る前の個体の姿を観察できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/キャンプ・リーキー.webp" alt="キャンプ・リーキー" loading="lazy"><a href="https://maps.google.com/?q=Camp+Leakey" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kalimantan" data-stype="activity" data-spot-num="KAL 03">
       
-      <div class="num">KAL 03</div>
-      <div class="name-row"><div class="name">セコニェル川クロトック船クルーズ</div><span class="badge">ジャングル川の船旅</span></div>
+      <div class="num-row"><span class="num">KAL 03</span><span class="badge">ジャングル川の船旅</span></div>
+      <div class="name-row"><div class="name">セコニェル川クロトック船クルーズ</div></div>
       <div class="desc">伝統的な木造船「クロトック」でジャングルの川を遡るクルーズ。船上泊をしながらテナガザルや野鳥の声に包まれる旅ができる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/セコニェル川クロトック船クルーズ.webp" alt="セコニェル川クロトック船クルーズ" loading="lazy"><a href="https://maps.google.com/?q=Sekonyer+River" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -993,24 +1042,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="flores" data-stype="nature" data-spot-num="FLO 01">
       <div class="must-badge">⭐</div>
-      <div class="num">FLO 01</div>
-      <div class="name-row"><div class="name">キリムトゥ山</div><span class="badge">三色に変化する神秘の火口湖</span></div>
+      <div class="num-row"><span class="num">FLO 01</span><span class="badge">三色に変化する神秘の火口湖</span></div>
+      <div class="name-row"><div class="name">キリムトゥ山</div></div>
       <div class="desc">3つの火口湖がそれぞれ異なる色に変化する神秘の山。青・緑・黒褐色に染まる湖面は、地元では魂が宿る場所として信仰されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/キリムトゥ山.webp" alt="キリムトゥ山" loading="lazy"><a href="https://maps.google.com/?q=Kelimutu" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="flores" data-stype="heritage" data-spot-num="FLO 02">
       
-      <div class="num">FLO 02</div>
-      <div class="name-row"><div class="name">ベナ村</div><span class="badge">巨石文化が残る伝統集落</span></div>
+      <div class="num-row"><span class="num">FLO 02</span><span class="badge">巨石文化が残る伝統集落</span></div>
+      <div class="name-row"><div class="name">ベナ村</div></div>
       <div class="desc">石積みの祭壇と伝統家屋が並ぶ、ンガダ族の集落。今も日常生活が営まれる中で、巨石文化と伝統儀礼の名残を間近に見られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ベナ村.webp" alt="ベナ村" loading="lazy"><a href="https://maps.google.com/?q=Bena+Village" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="flores" data-stype="activity" data-spot-num="FLO 03">
       
-      <div class="num">FLO 03</div>
-      <div class="name-row"><div class="name">リウン海洋公園</div><span class="badge">穴場のダイビングスポット</span></div>
+      <div class="num-row"><span class="num">FLO 03</span><span class="badge">穴場のダイビングスポット</span></div>
+      <div class="name-row"><div class="name">リウン海洋公園</div></div>
       <div class="desc">17の島々に囲まれたサンゴ礁が広がる、フローレス島北部の穴場ダイビングスポット。透明度の高い海で静かなシュノーケリングが楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/リウン海洋公園.webp" alt="リウン海洋公園" loading="lazy"><a href="https://maps.google.com/?q=Riung+Marine+Park" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1049,24 +1098,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="belitung" data-stype="nature" data-spot-num="BEL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BEL 01</div>
-      <div class="name-row"><div class="name">タンジュンティンギビーチ</div><span class="badge">花崗岩の奇岩が並ぶビーチ</span></div>
+      <div class="num-row"><span class="num">BEL 01</span><span class="badge">花崗岩の奇岩が並ぶビーチ</span></div>
+      <div class="name-row"><div class="name">タンジュンティンギビーチ</div></div>
       <div class="desc">巨大な花崗岩の奇岩が点在する、映画の舞台にもなった真っ白なビーチ。透明度の高いエメラルドグリーンの海とのコントラストが美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タンジュンティンギビーチ.webp" alt="タンジュンティンギビーチ" loading="lazy"><a href="https://maps.google.com/?q=Tanjung+Tinggi+Beach" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="belitung" data-stype="nature" data-spot-num="BEL 02">
       
-      <div class="num">BEL 02</div>
-      <div class="name-row"><div class="name">レンクアス島</div><span class="badge">灯台が立つ小島</span></div>
+      <div class="num-row"><span class="num">BEL 02</span><span class="badge">灯台が立つ小島</span></div>
+      <div class="name-row"><div class="name">レンクアス島</div></div>
       <div class="desc">オランダ統治時代の白い灯台が立つ小島。奇岩を縫うようにボートで巡り、灯台に登れば周囲の島々を一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/レンクアス島.webp" alt="レンクアス島" loading="lazy"><a href="https://maps.google.com/?q=Lengkuas+Island" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="belitung" data-stype="activity" data-spot-num="BEL 03">
       
-      <div class="num">BEL 03</div>
-      <div class="name-row"><div class="name">ブリトゥン島シュノーケリングツアー</div><span class="badge">島巡りシュノーケリングツアー</span></div>
+      <div class="num-row"><span class="num">BEL 03</span><span class="badge">島巡りシュノーケリングツアー</span></div>
+      <div class="name-row"><div class="name">ブリトゥン島シュノーケリングツアー</div></div>
       <div class="desc">奇岩の間を縫うようにボートで島巡りをしながら、透明度の高い海でシュノーケリングを楽しむ定番ツアー。複数の島を1日で回れる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブリトゥン島シュノーケリングツアー.webp" alt="ブリトゥン島シュノーケリングツアー" loading="lazy"><a href="https://maps.google.com/?q=Belitung+Island" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1105,24 +1154,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="bandung" data-stype="nature" data-spot-num="BDG 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BDG 01</div>
-      <div class="name-row"><div class="name">タンクバンプラフ山</div><span class="badge">船形の火口を持つ活火山</span></div>
+      <div class="num-row"><span class="num">BDG 01</span><span class="badge">船形の火口を持つ活火山</span></div>
+      <div class="name-row"><div class="name">タンクバンプラフ山</div></div>
       <div class="desc">船をひっくり返したような形の火口が特徴の活火山。バンドン市街から日帰りで訪れやすく、噴気を上げる火口を間近で見学できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タンクバンプラフ山.webp" alt="タンクバンプラフ山" loading="lazy"><a href="https://maps.google.com/?q=Tangkuban+Perahu" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bandung" data-stype="nature" data-spot-num="BDG 02">
       
-      <div class="num">BDG 02</div>
-      <div class="name-row"><div class="name">カワプティ</div><span class="badge">乳白色に輝く火口湖</span></div>
+      <div class="num-row"><span class="num">BDG 02</span><span class="badge">乳白色に輝く火口湖</span></div>
+      <div class="name-row"><div class="name">カワプティ</div></div>
       <div class="desc">硫黄分を含んだ乳白色の水をたたえる火口湖。天候や時間帯によって水の色が変化し、荒涼とした風景写真スポットとして人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カワプティ.webp" alt="カワプティ" loading="lazy"><a href="https://maps.google.com/?q=Kawah+Putih" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bandung" data-stype="townscape" data-spot-num="BDG 03">
       
-      <div class="num">BDG 03</div>
-      <div class="name-row"><div class="name">ブラガ通り</div><span class="badge">コロニアル建築が残る街並み</span></div>
+      <div class="num-row"><span class="num">BDG 03</span><span class="badge">コロニアル建築が残る街並み</span></div>
+      <div class="name-row"><div class="name">ブラガ通り</div></div>
       <div class="desc">オランダ統治時代のコロニアル建築が並ぶ、バンドンのメインストリート。カフェやアートギャラリーが軒を連ね、街歩きが楽しいエリア。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブラガ通り.webp" alt="ブラガ通り" loading="lazy"><a href="https://maps.google.com/?q=Jalan+Braga" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1306,7 +1355,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -1315,6 +1364,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -1328,12 +1399,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -1341,6 +1413,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1387,6 +1460,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1462,16 +1545,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1646,23 +1767,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

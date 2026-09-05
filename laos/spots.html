@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ラオス人民民主共和国の観光スポット｜ラオス旅行ガイド">
 <meta name="twitter:description" content="東南アジアで唯一の内陸国。ゆったりと流れるメコン川・托鉢僧の列・金色の仏塔が今も日常に溶け込む「微笑みの国」です。フランス統治時代の面影が残るルアンパバーンの旧市街は街ごと世界遺産、山岳地帯にはカルスト地形の絶景も広がります。バンコクやハ…">
 <meta name="twitter:image" content="https://worldmappy.com/laos/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 4"><path fill="#ce1126" d="M0 0h6v4H0z"/><path fill="#002868" d="M0 1h6v2H0z"/><circle fill="#fff" cx="3" cy="2" r=".8"/></svg></div></span><span class="site-country-name">ラオス人民民主共和国</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=laos">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">ラオス人民民主共和国を旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=laos">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,48 +272,66 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>ラオス 観光スポット</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="vientiane" onclick="filterSpots('city','vientiane',this)">ビエンチャン</button>
+              
+              <button class="filter-btn " data-filter="luang_prabang" onclick="filterSpots('city','luang_prabang',this)">ルアンパバーン</button>
+              
+              <button class="filter-btn " data-filter="vang_vieng" onclick="filterSpots('city','vang_vieng',this)">バンビエン</button>
+              
+              <button class="filter-btn " data-filter="phonsavan" onclick="filterSpots('city','phonsavan',this)">シェンクワン</button>
+              
+              <button class="filter-btn " data-filter="pakse" onclick="filterSpots('city','pakse',this)">パクセー・南部</button>
+              
+              <button class="filter-btn " data-filter="si_phan_don" onclick="filterSpots('city','si_phan_don',this)">シーパンドン</button>
+              
+              <button class="filter-btn " data-filter="nong_khiaw" onclick="filterSpots('city','nong_khiaw',this)">ノーンキアウ</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="vientiane" onclick="filterSpots('city','vientiane',this)">ビエンチャン</button>
-      
-      <button class="filter-btn " data-filter="luang_prabang" onclick="filterSpots('city','luang_prabang',this)">ルアンパバーン</button>
-      
-      <button class="filter-btn " data-filter="vang_vieng" onclick="filterSpots('city','vang_vieng',this)">バンビエン</button>
-      
-      <button class="filter-btn " data-filter="phonsavan" onclick="filterSpots('city','phonsavan',this)">シェンクワン</button>
-      
-      <button class="filter-btn " data-filter="pakse" onclick="filterSpots('city','pakse',this)">パクセー・南部</button>
-      
-      <button class="filter-btn " data-filter="si_phan_don" onclick="filterSpots('city','si_phan_don',this)">シーパンドン</button>
-      
-      <button class="filter-btn " data-filter="nong_khiaw" onclick="filterSpots('city','nong_khiaw',this)">ノーンキアウ</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">33</span> / <span id="spots-count-total">33</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -291,6 +339,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -325,56 +374,56 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="vientiane" data-stype="religious" data-spot-num="VTE 01">
       <div class="must-badge">⭐</div>
-      <div class="num">VTE 01</div>
-      <div class="name-row"><div class="name">タート・ルアン</div><span class="badge">国家的象徴</span></div>
+      <div class="num-row"><span class="num">VTE 01</span><span class="badge">国家的象徴</span></div>
+      <div class="name-row"><div class="name">タート・ルアン</div></div>
       <div class="desc">黄金に輝く仏塔がそびえるラオスの国家的象徴。16世紀創建と伝わり、紙幣や国章のデザインにも使われている、ラオス仏教の中心地。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タート・ルアン.webp" alt="タート・ルアン" loading="lazy"><a href="https://maps.google.com/?q=Pha+That+Luang+Vientiane" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="vientiane" data-stype="religious" data-spot-num="VTE 02">
       <div class="must-badge">⭐</div>
-      <div class="num">VTE 02</div>
-      <div class="name-row"><div class="name">ワット・シーサケット</div><span class="badge">最古の寺院</span></div>
+      <div class="num-row"><span class="num">VTE 02</span><span class="badge">最古の寺院</span></div>
+      <div class="name-row"><div class="name">ワット・シーサケット</div></div>
       <div class="desc">ビエンチャンで最古とされる寺院。回廊には2,000体近い仏像が並び、19世紀のシャム軍侵攻を生き延びた貴重な建築として知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・シーサケット.webp" alt="ワット・シーサケット" loading="lazy"><a href="https://maps.google.com/?q=Wat+Sisaket+Vientiane" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vientiane" data-stype="townscape" data-spot-num="VTE 03">
       
-      <div class="num">VTE 03</div>
-      <div class="name-row"><div class="name">パトゥーサイ</div><span class="badge">ラオスの凱旋門</span></div>
+      <div class="num-row"><span class="num">VTE 03</span><span class="badge">ラオスの凱旋門</span></div>
+      <div class="name-row"><div class="name">パトゥーサイ</div></div>
       <div class="desc">パリの凱旋門を彷彿とさせる戦没者慰霊碑。展望台からビエンチャン市街を一望でき、建設資材の転用エピソードが残る逸話も。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パトゥーサイ.webp" alt="パトゥーサイ" loading="lazy"><a href="https://maps.google.com/?q=Patuxai+Vientiane" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vientiane" data-stype="market" data-spot-num="VTE 04">
       
-      <div class="num">VTE 04</div>
-      <div class="name-row"><div class="name">メコン川ナイトマーケット</div><span class="badge">夕景×グルメ</span></div>
+      <div class="num-row"><span class="num">VTE 04</span><span class="badge">夕景×グルメ</span></div>
+      <div class="name-row"><div class="name">メコン川ナイトマーケット</div></div>
       <div class="desc">メコン川沿いの遊歩道に毎晩並ぶ屋台市場。衣類・雑貨から屋台グルメまで揃い、川向こうのタイの明かりを眺めながらの散策が心地よい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/メコン川ナイトマーケット.webp" alt="メコン川ナイトマーケット" loading="lazy"><a href="https://maps.google.com/?q=Vientiane+Night+Market" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vientiane" data-stype="museum" data-spot-num="VTE 05">
       
-      <div class="num">VTE 05</div>
-      <div class="name-row"><div class="name">COPE視覚センター</div><span class="badge">戦争の歴史を学ぶ</span></div>
+      <div class="num-row"><span class="num">VTE 05</span><span class="badge">戦争の歴史を学ぶ</span></div>
+      <div class="name-row"><div class="name">COPE視覚センター</div></div>
       <div class="desc">内戦・不発弾（UXO）被害者を支援するNGOが運営する資料館。ラオスが「世界で最も爆撃を受けた国」と呼ばれる歴史と、義肢製作の現場を知る貴重な学びの場。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/COPE視覚センター.webp" alt="COPE視覚センター" loading="lazy"><a href="https://maps.google.com/?q=COPE+Visitor+Centre+Vientiane" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vientiane" data-stype="activity" data-spot-num="VTE 06">
       
-      <div class="num">VTE 06</div>
-      <div class="name-row"><div class="name">ブッダパーク（ワット・シエンクワン）</div><span class="badge">個性派アート</span></div>
+      <div class="num-row"><span class="num">VTE 06</span><span class="badge">個性派アート</span></div>
+      <div class="name-row"><div class="name">ブッダパーク（ワット・シエンクワン）</div></div>
       <div class="desc">奇抜な巨大コンクリート像が広場一面に並ぶ、1958年創設の屋外彫刻公園。仏教とヒンドゥー教が混然一体となった独特の世界観がSNSで人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブッダパーク（ワット・シエンクワン）.webp" alt="ブッダパーク（ワット・シエンクワン）" loading="lazy"><a href="https://maps.google.com/?q=Buddha+Park+Vientiane+Laos" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vientiane" data-stype="museum" data-spot-num="VTE 07">
       
-      <div class="num">VTE 07</div>
-      <div class="name-row"><div class="name">ホー・プラケオ</div><span class="badge">旧王室寺院の至宝</span></div>
+      <div class="num-row"><span class="num">VTE 07</span><span class="badge">旧王室寺院の至宝</span></div>
+      <div class="name-row"><div class="name">ホー・プラケオ</div></div>
       <div class="desc">かつてエメラルド仏を安置していた王室寺院跡の博物館。本尊はバンコクへ持ち去られたが、クメール様式の石彫など仏教美術のコレクションが残る。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ホー・プラケオ.webp" alt="ホー・プラケオ" loading="lazy"><a href="https://maps.google.com/?q=Wat+Ho+Phra+Keo+Vientiane" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -413,64 +462,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="luang_prabang" data-stype="townscape" data-spot-num="LPQ 01">
       <div class="must-badge">⭐</div>
-      <div class="num">LPQ 01</div>
-      <div class="name-row"><div class="name">プーシーの丘</div><span class="badge">夕日の絶景</span></div>
+      <div class="num-row"><span class="num">LPQ 01</span><span class="badge">夕日の絶景</span></div>
+      <div class="name-row"><div class="name">プーシーの丘</div></div>
       <div class="desc">旧市街中心にそびえる小高い丘。328段の階段を上ると、メコン川とカーン川に挟まれた古都と山並みを一望できる、夕暮れ時の定番ビュースポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プーシーの丘.webp" alt="プーシーの丘" loading="lazy"><a href="https://maps.google.com/?q=Mount+Phousi+Luang+Prabang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="luang_prabang" data-stype="nature" data-spot-num="LPQ 02">
       <div class="must-badge">⭐</div>
-      <div class="num">LPQ 02</div>
-      <div class="name-row"><div class="name">クアンシーの滝</div><span class="badge">エメラルドの滝</span></div>
+      <div class="num-row"><span class="num">LPQ 02</span><span class="badge">エメラルドの滝</span></div>
+      <div class="name-row"><div class="name">クアンシーの滝</div></div>
       <div class="desc">エメラルドグリーンの水をたたえた石灰岩の段瀑。天然のプールで泳ぐこともでき、麓にはツキノワグマの保護施設も併設されている、ラオス随一の絶景スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クアンシーの滝.webp" alt="クアンシーの滝" loading="lazy"><a href="https://maps.google.com/?q=Kuang+Si+Falls+Laos" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="luang_prabang" data-stype="religious" data-spot-num="LPQ 03">
       <div class="must-badge">⭐</div>
-      <div class="num">LPQ 03</div>
-      <div class="name-row"><div class="name">ワット・シェントーン</div><span class="badge">最も美しい寺院</span></div>
+      <div class="num-row"><span class="num">LPQ 03</span><span class="badge">最も美しい寺院</span></div>
+      <div class="name-row"><div class="name">ワット・シェントーン</div></div>
       <div class="desc">「生命の木」のガラスモザイクで彩られた、ラオスで最も美しいとされる王室寺院。優美な曲線を描く屋根はルアンパバーン様式建築の最高傑作と称される。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・シェントーン.webp" alt="ワット・シェントーン" loading="lazy"><a href="https://maps.google.com/?q=Wat+Xieng+Thong+Luang+Prabang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="luang_prabang" data-stype="activity" data-spot-num="LPQ 04">
       
-      <div class="num">LPQ 04</div>
-      <div class="name-row"><div class="name">托鉢（タンバート）</div><span class="badge">早朝の神聖な儀式</span></div>
+      <div class="num-row"><span class="num">LPQ 04</span><span class="badge">早朝の神聖な儀式</span></div>
+      <div class="name-row"><div class="name">托鉢（タンバート）</div></div>
       <div class="desc">夜明け前、オレンジ色の袈裟を纏った僧侶の列が旧市街の通りを静かに歩き、住民や旅行者からもち米の布施を受け取る神聖な光景。信仰行事として敬意を持って見守りたい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/托鉢（タンバート）.webp" alt="托鉢（タンバート）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="luang_prabang" data-stype="market" data-spot-num="LPQ 05">
       
-      <div class="num">LPQ 05</div>
-      <div class="name-row"><div class="name">ルアンパバーン・ナイトマーケット</div><span class="badge">手工芸品の宝庫</span></div>
+      <div class="num-row"><span class="num">LPQ 05</span><span class="badge">手工芸品の宝庫</span></div>
+      <div class="name-row"><div class="name">ルアンパバーン・ナイトマーケット</div></div>
       <div class="desc">旧市街のメインストリートを毎晩埋め尽くす手工芸品市場。少数民族の刺繍布や竹細工、提灯が並ぶランタンの灯りに照らされた通りは、街歩きだけでも楽しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ルアンパバーン・ナイトマーケット.webp" alt="ルアンパバーン・ナイトマーケット" loading="lazy"><a href="https://maps.google.com/?q=Luang+Prabang+Night+Market" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="luang_prabang" data-stype="museum" data-spot-num="LPQ 06">
       
-      <div class="num">LPQ 06</div>
-      <div class="name-row"><div class="name">王宮博物館（ホーカム）</div><span class="badge">旧王宮</span></div>
+      <div class="num-row"><span class="num">LPQ 06</span><span class="badge">旧王宮</span></div>
+      <div class="name-row"><div class="name">王宮博物館（ホーカム）</div></div>
       <div class="desc">1904年建造の旧ラオス王室の宮殿を利用した博物館。最後の国王一家の私物や黄金の玉座を展示し、仏植民地様式との融合建築も見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/王宮博物館（ホーカム）.webp" alt="王宮博物館（ホーカム）" loading="lazy"><a href="https://maps.google.com/?q=Royal+Palace+Museum+Luang+Prabang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="luang_prabang" data-stype="religious" data-spot-num="LPQ 07">
       
-      <div class="num">LPQ 07</div>
-      <div class="name-row"><div class="name">パークウー洞窟</div><span class="badge">仏像で埋め尽くされた洞窟</span></div>
+      <div class="num-row"><span class="num">LPQ 07</span><span class="badge">仏像で埋め尽くされた洞窟</span></div>
+      <div class="name-row"><div class="name">パークウー洞窟</div></div>
       <div class="desc">メコン川とウー川の合流点にある2つの洞窟。地元の人々が奉納してきた数千体の仏像が並び、メコン川を遡るボートクルーズで訪れるのが定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パークウー洞窟.webp" alt="パークウー洞窟" loading="lazy"><a href="https://maps.google.com/?q=Pak+Ou+Caves+Laos" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="luang_prabang" data-stype="activity" data-spot-num="LPQ 08">
       
-      <div class="num">LPQ 08</div>
-      <div class="name-row"><div class="name">クアンシー・ベア・レスキューセンター</div><span class="badge">滝とセットの保護施設</span></div>
+      <div class="num-row"><span class="num">LPQ 08</span><span class="badge">滝とセットの保護施設</span></div>
+      <div class="name-row"><div class="name">クアンシー・ベア・レスキューセンター</div></div>
       <div class="desc">クアンシーの滝の入場ルート沿いにある、密猟や違法飼育から保護されたツキノワグマの保護施設。くつろぐクマを間近で観察でき、滝とセットで訪れる定番コース。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Kuang+Si+Bear+Rescue+Centre" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -487,7 +536,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         
         <div class="csh-item">
           <div class="csh-lbl">アクセス</div>
-          <div class="csh-val">ルアンパバーンから車・バスで約3時間</div>
+          <div class="csh-val">ルアンパバーンから車・バスで約4〜6時間</div>
           
         </div>
         
@@ -509,16 +558,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="nong_khiaw" data-stype="nature" data-spot-num="NGK 01">
       <div class="must-badge">⭐</div>
-      <div class="num">NGK 01</div>
-      <div class="name-row"><div class="name">パ・デーン展望台</div><span class="badge">雲海と奇岩の絶景ハイク</span></div>
+      <div class="num-row"><span class="num">NGK 01</span><span class="badge">雲海と奇岩の絶景ハイク</span></div>
+      <div class="name-row"><div class="name">パ・デーン展望台</div></div>
       <div class="desc">急な山道を1時間ほど登った先に広がる、奇岩と雲海の絶景で知られる展望台。早朝は雲海に石灰岩の峰々が浮かぶラオス屈指の絶景に出会える。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Pha+Daeng+Viewpoint+Nong+Khiaw" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="nong_khiaw" data-stype="activity" data-spot-num="NGK 02">
       
-      <div class="num">NGK 02</div>
-      <div class="name-row"><div class="name">ナムウー川クルーズ</div><span class="badge">秘境の川旅</span></div>
+      <div class="num-row"><span class="num">NGK 02</span><span class="badge">秘境の川旅</span></div>
+      <div class="name-row"><div class="name">ナムウー川クルーズ</div></div>
       <div class="desc">のどかな石灰岩の山々を縫うナムウー川のロングテールボートクルーズ。少数民族の村ムアンゴイへ向かう、北部ラオスならではの川旅体験。</div>
       <div class="spot-img-wrap spot-img-placeholder"></div>
     </div>
@@ -557,40 +606,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="vang_vieng" data-stype="nature" data-spot-num="VVG 01">
       <div class="must-badge">⭐</div>
-      <div class="num">VVG 01</div>
-      <div class="name-row"><div class="name">ブルーラグーン</div><span class="badge">天然の青い泉</span></div>
+      <div class="num-row"><span class="num">VVG 01</span><span class="badge">天然の青い泉</span></div>
+      <div class="name-row"><div class="name">ブルーラグーン</div></div>
       <div class="desc">石灰岩の岩肌から湧き出る、鮮やかなブルーの水をたたえた天然プール。ロープブランコで飛び込む旅行者の歓声が絶えない、バンビエンの定番アクティビティスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブルーラグーン.webp" alt="ブルーラグーン" loading="lazy"><a href="https://maps.google.com/?q=Blue+Lagoon+Vang+Vieng" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vang_vieng" data-stype="nature" data-spot-num="VVG 02">
       
-      <div class="num">VVG 02</div>
-      <div class="name-row"><div class="name">タムチャン洞窟</div><span class="badge">絶景鍾乳洞</span></div>
+      <div class="num-row"><span class="num">VVG 02</span><span class="badge">絶景鍾乳洞</span></div>
+      <div class="name-row"><div class="name">タムチャン洞窟</div></div>
       <div class="desc">町を見下ろす断崖に口を開ける鍾乳洞。急な階段を上った先の洞窟内部からは、ナムソン川とカルスト山脈を望む絶景が広がる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タムチャン洞窟.webp" alt="タムチャン洞窟" loading="lazy"><a href="https://maps.google.com/?q=Tham+Chang+Cave+Vang+Vieng" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="vang_vieng" data-stype="activity" data-spot-num="VVG 03">
       
-      <div class="num">VVG 03</div>
-      <div class="name-row"><div class="name">ナムソン川チュービング</div><span class="badge">定番アクティビティ</span></div>
+      <div class="num-row"><span class="num">VVG 03</span><span class="badge">定番アクティビティ</span></div>
+      <div class="name-row"><div class="name">ナムソン川チュービング</div></div>
       <div class="desc">浮き輪に乗ってナムソン川をのんびり下る、バンビエン名物のアクティビティ。川沿いのバーで一休みしながら、カルスト山脈を眺める開放感は格別。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナムソン川チュービング.webp" alt="ナムソン川チュービング" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vang_vieng" data-stype="nature" data-spot-num="VVG 04">
       
-      <div class="num">VVG 04</div>
-      <div class="name-row"><div class="name">パーグアン展望台</div><span class="badge">朝日の絶景ハイク</span></div>
+      <div class="num-row"><span class="num">VVG 04</span><span class="badge">朝日の絶景ハイク</span></div>
+      <div class="name-row"><div class="name">パーグアン展望台</div></div>
       <div class="desc">早朝のハイキングで登る岩山の展望台。雲海に浮かぶカルスト山脈と朝日を望む絶景は、体力を使う価値のあるご褒美になる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パーグアン展望台.webp" alt="パーグアン展望台" loading="lazy"><a href="https://maps.google.com/?q=Pha+Ngern+Viewpoint+Vang+Vieng" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vang_vieng" data-stype="nature" data-spot-num="VVG 05">
       
-      <div class="num">VVG 05</div>
-      <div class="name-row"><div class="name">ナムサーン展望台</div><span class="badge">バイクの奇抜フォトスポット</span></div>
+      <div class="num-row"><span class="num">VVG 05</span><span class="badge">バイクの奇抜フォトスポット</span></div>
+      <div class="name-row"><div class="name">ナムサーン展望台</div></div>
       <div class="desc">岩山の山頂に据えられたバイクが目印の、SNSで話題になった新定番の展望台。カルスト山脈の絶景とバイクにまたがる奇抜な写真が若者に人気。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Nam+Xay+Viewpoint+Vang+Vieng" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -629,24 +678,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="phonsavan" data-stype="heritage" data-spot-num="XKH 01">
       <div class="must-badge">⭐</div>
-      <div class="num">XKH 01</div>
-      <div class="name-row"><div class="name">プレーン・オブ・ジャーズ サイト1</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">XKH 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">プレーン・オブ・ジャーズ サイト1</div></div>
       <div class="desc">2,000年以上前に作られたとされる巨大な石壺が草原に点在する、謎多き世界遺産（2019年登録）。誰が何の目的で作ったのか、今なお解明されていない古代の遺構。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プレーン・オブ・ジャーズ サイト1.webp" alt="プレーン・オブ・ジャーズ サイト1" loading="lazy"><a href="https://maps.google.com/?q=Plain+of+Jars+Site+1+Xieng+Khouang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="phonsavan" data-stype="museum" data-spot-num="XKH 02">
       
-      <div class="num">XKH 02</div>
-      <div class="name-row"><div class="name">MAG不発弾処理センター</div><span class="badge">戦争の歴史を学ぶ</span></div>
+      <div class="num-row"><span class="num">XKH 02</span><span class="badge">戦争の歴史を学ぶ</span></div>
+      <div class="name-row"><div class="name">MAG不発弾処理センター</div></div>
       <div class="desc">ベトナム戦争時代に投下された不発弾（UXO）の除去活動を行うNGOの展示施設。ラオスが今も抱える戦争の爪痕と、その克服への取り組みを学べる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/MAG不発弾処理センター.webp" alt="MAG不発弾処理センター" loading="lazy"><a href="https://maps.google.com/?q=MAG+UXO+Visitor+Information+Centre+Phonsavan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="phonsavan" data-stype="market" data-spot-num="XKH 03">
       
-      <div class="num">XKH 03</div>
-      <div class="name-row"><div class="name">モン族の織物村</div><span class="badge">少数民族の手仕事</span></div>
+      <div class="num-row"><span class="num">XKH 03</span><span class="badge">少数民族の手仕事</span></div>
+      <div class="name-row"><div class="name">モン族の織物村</div></div>
       <div class="desc">山岳少数民族モン族の伝統的な機織りや藍染めの技術に触れられる集落。色鮮やかな刺繍布は旅の記念にもぴったり。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モン族の織物村.webp" alt="モン族の織物村" loading="lazy"></div>
     </div>
@@ -685,40 +734,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="pakse" data-stype="heritage" data-spot-num="CHX 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CHX 01</div>
-      <div class="name-row"><div class="name">ワット・プー</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">CHX 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ワット・プー</div></div>
       <div class="desc">アンコール・ワットより古い歴史を持つ、ヒンドゥー教由来のクメール遺跡。世界遺産で、山の斜面に続く石段と密林に佇む祠堂群が神秘的。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・プー.webp" alt="ワット・プー" loading="lazy"><a href="https://maps.google.com/?q=Wat+Phou+Champasak" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="pakse" data-stype="nature" data-spot-num="CHX 02">
       <div class="must-badge">⭐</div>
-      <div class="num">CHX 02</div>
-      <div class="name-row"><div class="name">タートファーンの滝</div><span class="badge">落差120mの双子滝</span></div>
+      <div class="num-row"><span class="num">CHX 02</span><span class="badge">落差120mの双子滝</span></div>
+      <div class="name-row"><div class="name">タートファーンの滝</div></div>
       <div class="desc">ボラベン高原にある落差120mの二条の滝。ジャングルの渓谷へ豪快に流れ落ちる様は迫力満点で、リゾートのテラスから眺めるのが定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タートファーンの滝.webp" alt="タートファーンの滝" loading="lazy"><a href="https://maps.google.com/?q=Tad+Fane+Waterfall+Laos" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pakse" data-stype="nature" data-spot-num="CHX 03">
       
-      <div class="num">CHX 03</div>
-      <div class="name-row"><div class="name">タートヤーンの滝</div><span class="badge">泳げる高原の滝</span></div>
+      <div class="num-row"><span class="num">CHX 03</span><span class="badge">泳げる高原の滝</span></div>
+      <div class="name-row"><div class="name">タートヤーンの滝</div></div>
       <div class="desc">パクセーから車で約1時間、ボラベン高原にある高さ42mの滝。滝つぼで泳ぐことができ、複数の展望ポイントから違った表情を楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タートヤーンの滝.webp" alt="タートヤーンの滝" loading="lazy"><a href="https://maps.google.com/?q=Tad+Yuang+Waterfall+Laos" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="pakse" data-stype="activity" data-spot-num="CHX 04">
       
-      <div class="num">CHX 04</div>
-      <div class="name-row"><div class="name">ボラベン高原コーヒー農園めぐり</div><span class="badge">コーヒーの一大産地</span></div>
+      <div class="num-row"><span class="num">CHX 04</span><span class="badge">コーヒーの一大産地</span></div>
+      <div class="name-row"><div class="name">ボラベン高原コーヒー農園めぐり</div></div>
       <div class="desc">ラオス産アラビカ豆の一大産地ボラベン高原で、農園見学と試飲を楽しむツアー。滝巡りと組み合わせたドライブが定番で、涼しい空気も魅力。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボラベン高原コーヒー農園めぐり.webp" alt="ボラベン高原コーヒー農園めぐり" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pakse" data-stype="museum" data-spot-num="CHX 05">
       
-      <div class="num">CHX 05</div>
-      <div class="name-row"><div class="name">ワット・プー博物館</div><span class="badge">遺跡巡り前の必見スポット</span></div>
+      <div class="num-row"><span class="num">CHX 05</span><span class="badge">遺跡巡り前の必見スポット</span></div>
+      <div class="name-row"><div class="name">ワット・プー博物館</div></div>
       <div class="desc">世界遺産ワット・プーの入場口付近にある博物館。出土したクメール美術の彫刻やヒンドゥー神話のレリーフを展示し、遺跡見学前に立ち寄りたい。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Wat+Phou+Museum+Champasak" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -757,24 +806,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img " data-city="si_phan_don" data-stype="nature" data-spot-num="SPD 01">
       
-      <div class="num">SPD 01</div>
-      <div class="name-row"><div class="name">ドーンコーン島</div><span class="badge">最大の島</span></div>
+      <div class="num-row"><span class="num">SPD 01</span><span class="badge">最大の島</span></div>
+      <div class="name-row"><div class="name">ドーンコーン島</div></div>
       <div class="desc">シーパンドンで最も大きな島。フランス統治時代の建物や田園風景が残り、自転車で島を一周しながらのんびりとした村の暮らしに触れられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ドーンコーン島.webp" alt="ドーンコーン島" loading="lazy"><a href="https://maps.google.com/?q=Don+Khong+Island+Laos" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="si_phan_don" data-stype="nature" data-spot-num="SPD 02">
       
-      <div class="num">SPD 02</div>
-      <div class="name-row"><div class="name">リーピーの滝</div><span class="badge">轟音の大瀑布</span></div>
+      <div class="num-row"><span class="num">SPD 02</span><span class="badge">轟音の大瀑布</span></div>
+      <div class="name-row"><div class="name">リーピーの滝</div></div>
       <div class="desc">メコン川の水を全て飲み込むかのような轟音を立てる大瀑布。東南アジア最大級の水量を誇り、雨季には特に迫力を増す。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/リーピーの滝.webp" alt="リーピーの滝" loading="lazy"><a href="https://maps.google.com/?q=Li+Phi+Falls+Laos" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="si_phan_don" data-stype="nature" data-spot-num="SPD 04">
       
-      <div class="num">SPD 04</div>
-      <div class="name-row"><div class="name">ドーンデット島の夕日</div><span class="badge">何もしない贅沢</span></div>
+      <div class="num-row"><span class="num">SPD 04</span><span class="badge">何もしない贅沢</span></div>
+      <div class="name-row"><div class="name">ドーンデット島の夕日</div></div>
       <div class="desc">ハンモックに揺られながらメコン川に沈む夕日を眺める、シーパンドン滞在のハイライト。何もしない贅沢を味わう、旅の終盤にふさわしい時間。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ドーンデット島の夕日.webp" alt="ドーンデット島の夕日" loading="lazy"><a href="https://maps.google.com/?q=Don+Det+Island+Laos" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -958,7 +1007,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -967,6 +1016,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -980,12 +1051,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -993,6 +1065,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1039,6 +1112,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1114,16 +1197,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1298,23 +1419,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

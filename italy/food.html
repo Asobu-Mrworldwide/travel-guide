@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="イタリアのグルメ｜イタリア旅行ガイド">
 <meta name="twitter:description" content="古代ローマの遺跡が今も息づく首都ローマ、ルネサンス美術のフィレンツェ、水の都ヴェネツィア、モードの発信地ミラノ——一つの国に全く違う時代と文化が積み重なるイタリア。南北に長い国土はエリアで表情が変わり、経済とデザインの北部、古代とルネサン…">
 <meta name="twitter:image" content="https://worldmappy.com/italy/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden"><svg width="150" height="100" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg"><path fill="#008C45" d="M0 0h1v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/><path fill="#CD212A" d="M2 0h1v2H2z"/></svg></div></span><span class="site-country-name">イタリア</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="">観光スポット</a>
-    <a href="food.html" class="active">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=italy">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">イタリアを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=italy">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -213,40 +243,58 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Italy / 03</span></div>
   <div class="tab-body">
   <h2>イタリアグルメ図鑑</h2>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="food-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn " data-filter="rice" onclick="filterFood('type','rice',this)">ご飯もの</button>
-      
-      <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">おかず・麺</button>
-      
-      <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">スイーツ</button>
-      
-      <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">ドリンク</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="food-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn " data-filter="rice" onclick="filterFood('type','rice',this)">ご飯もの</button>
+              
+              <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">おかず・麺</button>
+              
+              <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">スイーツ</button>
+              
+              <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">ドリンク</button>
+              
+            </div>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア限定</div>
+            <div class="filter-row" id="food-filter-city">
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
+              
+              <button class="filter-btn" data-filter="rome" onclick="filterFood('city','rome',this)">ローマ</button>
+              
+              <button class="filter-btn" data-filter="florence" onclick="filterFood('city','florence',this)">フィレンツェ</button>
+              
+              <button class="filter-btn" data-filter="venice" onclick="filterFood('city','venice',this)">ヴェネツィア</button>
+              
+              <button class="filter-btn" data-filter="milan" onclick="filterFood('city','milan',this)">ミラノ</button>
+              
+              <button class="filter-btn" data-filter="napoli" onclick="filterFood('city','napoli',this)">ナポリ</button>
+              
+              <button class="filter-btn" data-filter="sicilia" onclick="filterFood('city','sicilia',this)">シチリア</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetFoodFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-label">エリア限定</div>
-    <div class="filter-row" id="food-filter-city">
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
-      
-      <button class="filter-btn" data-filter="rome" onclick="filterFood('city','rome',this)">ローマ</button>
-      
-      <button class="filter-btn" data-filter="florence" onclick="filterFood('city','florence',this)">フィレンツェ</button>
-      
-      <button class="filter-btn" data-filter="venice" onclick="filterFood('city','venice',this)">ヴェネツィア</button>
-      
-      <button class="filter-btn" data-filter="milan" onclick="filterFood('city','milan',this)">ミラノ</button>
-      
-      <button class="filter-btn" data-filter="napoli" onclick="filterFood('city','napoli',this)">ナポリ</button>
-      
-      <button class="filter-btn" data-filter="sicilia" onclick="filterFood('city','sicilia',this)">シチリア</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="food-count-shown">47</span> / <span id="food-count-total">47</span> 品を表示</span>
     <div class="view-toggle" id="foodViewToggle">
@@ -255,12 +303,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
   </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="napoli" data-food-num="No.01">
-      <div class="num">No.01</div>
-      <div class="name-row"><div class="name">マルゲリータピザ</div><span class="badge">国民的料理</span></div>
+      <div class="num-row"><span class="num">No.01</span><span class="badge">国民的料理</span></div>
+      <div class="name-row"><div class="name">マルゲリータピザ</div></div>
       <div class="desc">ナポリ発祥、薄い生地をもちもちに焼いた本場のピザ。トマト・モッツァレラ・バジルの三色がイタリア国旗を表す、世界中で愛される一枚。</div>
       <img src="素材/グルメ/マルゲリータピザ.webp" alt="マルゲリータピザ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%B2%E3%83%AA%E3%83%BC%E3%82%BF%E3%83%94%E3%82%B6%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -270,8 +319,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="rome" data-food-num="No.02">
-      <div class="num">No.02</div>
-      <div class="name-row"><div class="name">カルボナーラ</div><span class="badge">ローマ4大パスタ</span></div>
+      <div class="num-row"><span class="num">No.02</span><span class="badge">ローマ4大パスタ</span></div>
+      <div class="name-row"><div class="name">カルボナーラ</div></div>
       <div class="desc">卵・グアンチャーレ（豚頬肉）・ペコリーノチーズだけで仕上げるローマの定番パスタ。生クリームを使わない濃厚なコクが本場の味。</div>
       <img src="素材/グルメ/カルボナーラ.webp" alt="カルボナーラ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%9C%E3%83%8A%E3%83%BC%E3%83%A9%20%E3%83%AD%E3%83%BC%E3%83%9E%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -281,8 +330,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="rome" data-food-num="No.03">
-      <div class="num">No.03</div>
-      <div class="name-row"><div class="name">カチョ・エ・ペペ</div><span class="badge">ローマ4大パスタ</span></div>
+      <div class="num-row"><span class="num">No.03</span><span class="badge">ローマ4大パスタ</span></div>
+      <div class="name-row"><div class="name">カチョ・エ・ペペ</div></div>
       <div class="desc">ペコリーノチーズと黒胡椒だけで作るシンプル極まりないローマの郷土パスタ。少ない材料ながら乳化の技術が味を左右する奥深い一皿。</div>
       <img src="素材/グルメ/カチョ・エ・ペペ.webp" alt="カチョ・エ・ペペ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%83%81%E3%83%A7%E3%83%BB%E3%82%A8%E3%83%BB%E3%83%9A%E3%83%9A%20%E3%83%91%E3%82%B9%E3%82%BF" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -292,8 +341,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="dessert" data-fcity="venice" data-food-num="No.04">
-      <div class="num">No.04</div>
-      <div class="name-row"><div class="name">ティラミス</div><span class="badge">定番デザート</span></div>
+      <div class="num-row"><span class="num">No.04</span><span class="badge">定番デザート</span></div>
+      <div class="name-row"><div class="name">ティラミス</div></div>
       <div class="desc">ヴェネト州発祥、コーヒーを染み込ませたビスケットとマスカルポーネクリームを層にしたイタリアを代表するデザート。本場の一皿は驚くほど軽い口当たり。</div>
       <img src="素材/グルメ/ティラミス.webp" alt="ティラミス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%86%E3%82%A3%E3%83%A9%E3%83%9F%E3%82%B9%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -303,8 +352,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="dessert" data-fcity="national" data-food-num="No.05">
-      <div class="num">No.05</div>
-      <div class="name-row"><div class="name">ジェラート</div><span class="badge">食べ歩きの定番</span></div>
+      <div class="num-row"><span class="num">No.05</span><span class="badge">食べ歩きの定番</span></div>
+      <div class="name-row"><div class="name">ジェラート</div></div>
       <div class="desc">空気含有量が少なく素材の風味が濃厚なイタリア式アイス。街角のジェラテリアで何種類も食べ比べながら歩くのが旅の楽しみのひとつ。</div>
       <img src="素材/グルメ/ジェラート.webp" alt="ジェラート" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B8%E3%82%A7%E3%83%A9%E3%83%BC%E3%83%88%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -314,8 +363,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="rice" data-fcity="milan" data-food-num="No.06">
-      <div class="num">No.06</div>
-      <div class="name-row"><div class="name">リゾット・アッラ・ミラネーゼ</div><span class="badge">ミラノ名物</span></div>
+      <div class="num-row"><span class="num">No.06</span><span class="badge">ミラノ名物</span></div>
+      <div class="name-row"><div class="name">リゾット・アッラ・ミラネーゼ</div></div>
       <div class="desc">サフランで黄金色に炊いたミラノの郷土リゾット。骨髄出汁とバターのコクが溶け込んだ見た目も鮮やかな一皿で、コトレッタとセットで食べるのが現地の定番。</div>
       <img src="素材/グルメ/リゾット・アッラ・ミラネーゼ.webp" alt="リゾット・アッラ・ミラネーゼ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%AA%E3%82%BE%E3%83%83%E3%83%88%E3%83%BB%E3%82%A2%E3%83%83%E3%83%A9%E3%83%BB%E3%83%9F%E3%83%A9%E3%83%8D%E3%83%BC%E3%82%BC" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -325,8 +374,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="milan" data-food-num="No.07">
-      <div class="num">No.07</div>
-      <div class="name-row"><div class="name">コトレッタ・アラ・ミラネーゼ</div><span class="badge">ミラノ名物</span></div>
+      <div class="num-row"><span class="num">No.07</span><span class="badge">ミラノ名物</span></div>
+      <div class="name-row"><div class="name">コトレッタ・アラ・ミラネーゼ</div></div>
       <div class="desc">骨付き仔牛肉に衣をつけてバターで揚げ焼きにしたミラノ風カツレツ。日本のとんかつのルーツとも言われる一品で、レモンを絞って食べる。</div>
       <img src="素材/グルメ/コトレッタ・アラ・ミラネーゼ.webp" alt="コトレッタ・アラ・ミラネーゼ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B3%E3%83%88%E3%83%AC%E3%83%83%E3%82%BF%E3%83%BB%E3%82%A2%E3%83%A9%E3%83%BB%E3%83%9F%E3%83%A9%E3%83%8D%E3%83%BC%E3%82%BC" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -336,8 +385,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="florence" data-food-num="No.08">
-      <div class="num">No.08</div>
-      <div class="name-row"><div class="name">ビステッカ・アッラ・フィオレンティーナ</div><span class="badge">フィレンツェ名物</span></div>
+      <div class="num-row"><span class="num">No.08</span><span class="badge">フィレンツェ名物</span></div>
+      <div class="name-row"><div class="name">ビステッカ・アッラ・フィオレンティーナ</div></div>
       <div class="desc">キアーナ牛のTボーンステーキを炭火でレアに焼き上げるトスカーナの豪快な名物料理。1kg超えのボリュームで数人でシェアするのが定番。</div>
       <img src="素材/グルメ/ビステッカ・アッラ・フィオレンティーナ.webp" alt="ビステッカ・アッラ・フィオレンティーナ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%93%E3%82%B9%E3%83%86%E3%83%83%E3%82%AB%E3%83%BB%E3%82%A2%E3%83%83%E3%83%A9%E3%83%BB%E3%83%95%E3%82%A3%E3%82%AA%E3%83%AC%E3%83%B3%E3%83%86%E3%82%A3%E3%83%BC%E3%83%8A" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -347,8 +396,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.09">
-      <div class="num">No.09</div>
-      <div class="name-row"><div class="name">トルテッリーニ</div><span class="badge">ボローニャ名物</span></div>
+      <div class="num-row"><span class="num">No.09</span><span class="badge">ボローニャ名物</span></div>
+      <div class="name-row"><div class="name">トルテッリーニ</div></div>
       <div class="desc">肉やチーズを詰めた指輪型の小さなパスタ。ボローニャ発祥で、鶏の出汁スープに浮かべる「イン・ブロード」が本場ならではの食べ方。</div>
       <img src="素材/グルメ/トルテッリーニ.webp" alt="トルテッリーニ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%88%E3%83%AB%E3%83%86%E3%83%83%E3%83%AA%E3%83%BC%E3%83%8B%20%E3%83%9C%E3%83%AD%E3%83%BC%E3%83%8B%E3%83%A3" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -358,8 +407,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.10">
-      <div class="num">No.10</div>
-      <div class="name-row"><div class="name">生ハムとメロン</div><span class="badge">前菜の定番</span></div>
+      <div class="num-row"><span class="num">No.10</span><span class="badge">前菜の定番</span></div>
+      <div class="name-row"><div class="name">生ハムとメロン</div></div>
       <div class="desc">プロシュット・クルードの塩気とメロンの甘さが絶妙に合うイタリアの前菜。パルマ産の生ハムが特に有名で、シンプルながら夏の食卓に欠かせない。</div>
       <img src="素材/グルメ/生ハムとメロン.webp" alt="生ハムとメロン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E7%94%9F%E3%83%8F%E3%83%A0%E3%81%A8%E3%83%A1%E3%83%AD%E3%83%B3%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -369,8 +418,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.11">
-      <div class="num">No.11</div>
-      <div class="name-row"><div class="name">パルミジャーノ・レッジャーノ</div><span class="badge">チーズの王様</span></div>
+      <div class="num-row"><span class="num">No.11</span><span class="badge">チーズの王様</span></div>
+      <div class="name-row"><div class="name">パルミジャーノ・レッジャーノ</div></div>
       <div class="desc">エミリア＝ロマーニャ州特産の長期熟成硬質チーズ。「チーズの王様」と称され、パスタに削りかけるだけで格段に風味が増す定番食材。</div>
       <img src="素材/グルメ/パルミジャーノ・レッジャーノ.webp" alt="パルミジャーノ・レッジャーノ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%91%E3%83%AB%E3%83%9F%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8E%E3%83%BB%E3%83%AC%E3%83%83%E3%82%B8%E3%83%A3%E3%83%BC%E3%83%8E" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -380,8 +429,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="drink" data-fcity="national" data-food-num="No.12">
-      <div class="num">No.12</div>
-      <div class="name-row"><div class="name">エスプレッソ</div><span class="badge">バール文化の象徴</span></div>
+      <div class="num-row"><span class="num">No.12</span><span class="badge">バール文化の象徴</span></div>
+      <div class="name-row"><div class="name">エスプレッソ</div></div>
       <div class="desc">イタリア人の生活に欠かせない一杯。バールのカウンターで数分、立ったまま飲み干すのが現地流で、1〜2ユーロと手頃な値段も魅力。</div>
       <img src="素材/グルメ/エスプレッソ.webp" alt="エスプレッソ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%82%BD%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -391,8 +440,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="venice" data-food-num="No.13">
-      <div class="num">No.13</div>
-      <div class="name-row"><div class="name">アペロール・スプリッツ</div><span class="badge">ヴェネツィア発祥</span></div>
+      <div class="num-row"><span class="num">No.13</span><span class="badge">ヴェネツィア発祥</span></div>
+      <div class="name-row"><div class="name">アペロール・スプリッツ</div></div>
       <div class="desc">オレンジ色が鮮やかなヴェネツィア発祥の食前酒。夕暮れ時に運河沿いのバールで泡立つグラスを傾けるのが現地の定番の過ごし方。</div>
       <img src="素材/グルメ/アペロール・スプリッツ.webp" alt="アペロール・スプリッツ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%9A%E3%83%AD%E3%83%BC%E3%83%AB%E3%83%BB%E3%82%B9%E3%83%97%E3%83%AA%E3%83%83%E3%83%84" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -402,8 +451,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.14">
-      <div class="num">No.14</div>
-      <div class="name-row"><div class="name">フォカッチャ</div><span class="badge">リグーリア名物</span></div>
+      <div class="num-row"><span class="num">No.14</span><span class="badge">リグーリア名物</span></div>
+      <div class="name-row"><div class="name">フォカッチャ</div></div>
       <div class="desc">オリーブオイルをたっぷり染み込ませて焼く平たいパン。リグーリア州（チンクエテッレ周辺）が本場で、塩気ときめ細かい食感が特徴。</div>
       <img src="素材/グルメ/フォカッチャ.webp" alt="フォカッチャ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%95%E3%82%A9%E3%82%AB%E3%83%83%E3%83%81%E3%83%A3%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -413,8 +462,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="sicilia" data-food-num="No.15">
-      <div class="num">No.15</div>
-      <div class="name-row"><div class="name">アランチーニ</div><span class="badge">シチリア名物</span></div>
+      <div class="num-row"><span class="num">No.15</span><span class="badge">シチリア名物</span></div>
+      <div class="name-row"><div class="name">アランチーニ</div></div>
       <div class="desc">ライスコロッケのようなシチリア名物の揚げ物。中にはラグーソースやチーズが詰まっており、熱々を頬張る食べ歩きにぴったりの一品。</div>
       <img src="素材/グルメ/アランチーニ.webp" alt="アランチーニ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%A9%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8B%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -424,8 +473,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="sicilia" data-food-num="No.16">
-      <div class="num">No.16</div>
-      <div class="name-row"><div class="name">カンノーリ</div><span class="badge">シチリア名物</span></div>
+      <div class="num-row"><span class="num">No.16</span><span class="badge">シチリア名物</span></div>
+      <div class="name-row"><div class="name">カンノーリ</div></div>
       <div class="desc">パリパリの筒状生地にリコッタチーズのクリームを詰めたシチリア発祥の伝統菓子。両端からピスタチオがのぞく見た目も可愛らしい。</div>
       <img src="素材/グルメ/カンノーリ.webp" alt="カンノーリ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%83%B3%E3%83%8E%E3%83%BC%E3%83%AA%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -435,8 +484,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="milan" data-food-num="No.17">
-      <div class="num">No.17</div>
-      <div class="name-row"><div class="name">オッソブーコ</div><span class="badge">ミラノ名物</span></div>
+      <div class="num-row"><span class="num">No.17</span><span class="badge">ミラノ名物</span></div>
+      <div class="name-row"><div class="name">オッソブーコ</div></div>
       <div class="desc">仔牛のすね肉を骨ごと白ワインでじっくり煮込んだミラノの郷土料理。骨の中の骨髄をすくって食べるのが通の楽しみとされる一皿。</div>
       <img src="素材/グルメ/オッソブーコ.webp" alt="オッソブーコ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AA%E3%83%83%E3%82%BD%E3%83%96%E3%83%BC%E3%82%B3%20%E3%83%9F%E3%83%A9%E3%83%8E" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -446,8 +495,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.18">
-      <div class="num">No.18</div>
-      <div class="name-row"><div class="name">ブルスケッタ</div><span class="badge">前菜の定番</span></div>
+      <div class="num-row"><span class="num">No.18</span><span class="badge">前菜の定番</span></div>
+      <div class="name-row"><div class="name">ブルスケッタ</div></div>
       <div class="desc">カリッと焼いたバゲットにトマトやオリーブオイルをのせたシンプルな前菜。バールの軽食としても愛されており、素材の味が命の一品。</div>
       <img src="素材/グルメ/ブルスケッタ.webp" alt="ブルスケッタ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%96%E3%83%AB%E3%82%B9%E3%82%B1%E3%83%83%E3%82%BF%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -457,8 +506,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="napoli" data-food-num="No.19">
-      <div class="num">No.19</div>
-      <div class="name-row"><div class="name">リモンチェッロ</div><span class="badge">南部名物リキュール</span></div>
+      <div class="num-row"><span class="num">No.19</span><span class="badge">南部名物リキュール</span></div>
+      <div class="name-row"><div class="name">リモンチェッロ</div></div>
       <div class="desc">アマルフィ海岸などレモンの名産地で作る爽やかな甘さのレモンリキュール。食後酒として冷やしてグラスに注ぎ、ゆっくり味わうのが現地流。</div>
       <img src="素材/グルメ/リモンチェッロ.webp" alt="リモンチェッロ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%A2%E3%83%B3%E3%83%81%E3%82%A7%E3%83%83%E3%83%AD%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -468,8 +517,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.20">
-      <div class="num">No.20</div>
-      <div class="name-row"><div class="name">ラザニア</div><span class="badge">定番家庭料理</span></div>
+      <div class="num-row"><span class="num">No.20</span><span class="badge">定番家庭料理</span></div>
+      <div class="name-row"><div class="name">ラザニア</div></div>
       <div class="desc">板状パスタとミートソース・ベシャメルソースを何層にも重ねてオーブンで焼き上げる、日本でもおなじみのパスタ料理。エミリア＝ロマーニャ州が発祥地とされる。</div>
       <img src="素材/グルメ/ラザニア.webp" alt="ラザニア" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%A9%E3%82%B6%E3%83%8B%E3%82%A2%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -479,8 +528,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="rome" data-food-num="No.21">
-      <div class="num">No.21</div>
-      <div class="name-row"><div class="name">サルティンボッカ・アッラ・ロマーナ</div><span class="badge">ローマ名物</span></div>
+      <div class="num-row"><span class="num">No.21</span><span class="badge">ローマ名物</span></div>
+      <div class="name-row"><div class="name">サルティンボッカ・アッラ・ロマーナ</div></div>
       <div class="desc">薄切りの仔牛肉に生ハムとセージを載せて焼き上げる、ローマの定番料理。「口の中に飛び込む」という名の通り、ひと口で旨みが広がる軽やかな一皿。</div>
       <img src="素材/グルメ/サルティンボッカ・アッラ・ロマーナ.webp" alt="サルティンボッカ・アッラ・ロマーナ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B5%E3%83%AB%E3%83%86%E3%82%A3%E3%83%B3%E3%83%9C%E3%83%83%E3%82%AB%20%E3%83%AD%E3%83%BC%E3%83%9E" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -490,8 +539,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.22">
-      <div class="num">No.22</div>
-      <div class="name-row"><div class="name">ペスト・ジェノヴェーゼ</div><span class="badge">リグーリア名物</span></div>
+      <div class="num-row"><span class="num">No.22</span><span class="badge">リグーリア名物</span></div>
+      <div class="name-row"><div class="name">ペスト・ジェノヴェーゼ</div></div>
       <div class="desc">バジル・松の実・ニンニク・パルミジャーノをすり潰して作る緑色のソースを絡めたパスタ。ジェノバ発祥で、爽やかな香りが食欲をそそる。</div>
       <img src="素材/グルメ/ペスト・ジェノヴェーゼ.webp" alt="ペスト・ジェノヴェーゼ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9A%E3%82%B9%E3%83%88%E3%83%BB%E3%82%B8%E3%82%A7%E3%83%8E%E3%83%B4%E3%82%A7%E3%83%BC%E3%82%BC" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -501,8 +550,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="florence" data-food-num="No.23">
-      <div class="num">No.23</div>
-      <div class="name-row"><div class="name">リボッリータ</div><span class="badge">トスカーナ名物</span></div>
+      <div class="num-row"><span class="num">No.23</span><span class="badge">トスカーナ名物</span></div>
+      <div class="name-row"><div class="name">リボッリータ</div></div>
       <div class="desc">硬くなったパンと豆・野菜を煮込んだトスカーナの伝統スープ。「再び煮た」という名の通り、翌日温め直すとさらに美味しくなる素朴な家庭料理。</div>
       <img src="素材/グルメ/リボッリータ.webp" alt="リボッリータ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%AA%E3%83%9C%E3%83%83%E3%83%AA%E3%83%BC%E3%82%BF%20%E3%83%88%E3%82%B9%E3%82%AB%E3%83%BC%E3%83%8A" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -512,8 +561,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.24">
-      <div class="num">No.24</div>
-      <div class="name-row"><div class="name">カプレーゼサラダ</div><span class="badge">定番前菜</span></div>
+      <div class="num-row"><span class="num">No.24</span><span class="badge">定番前菜</span></div>
+      <div class="name-row"><div class="name">カプレーゼサラダ</div></div>
       <div class="desc">トマト・モッツァレラ・バジルを重ねただけのシンプルなサラダ。カプリ島発祥とされ、赤・白・緑の彩りがイタリア国旗を思わせる定番前菜。</div>
       <img src="素材/グルメ/カプレーゼサラダ.webp" alt="カプレーゼサラダ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%83%97%E3%83%AC%E3%83%BC%E3%82%BC%E3%82%B5%E3%83%A9%E3%83%80" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -523,8 +572,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="napoli" data-food-num="No.25">
-      <div class="num">No.25</div>
-      <div class="name-row"><div class="name">スフォリアテッラ</div><span class="badge">ナポリ名物</span></div>
+      <div class="num-row"><span class="num">No.25</span><span class="badge">ナポリ名物</span></div>
+      <div class="name-row"><div class="name">スフォリアテッラ</div></div>
       <div class="desc">貝殻のような層状の生地に、リコッタチーズやセモリナ粉のクリームを詰めたナポリの伝統菓子。パリパリの食感と優しい甘さが朝食にもぴったり。</div>
       <img src="素材/グルメ/スフォリアテッラ.webp" alt="スフォリアテッラ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B9%E3%83%95%E3%82%A9%E3%83%AA%E3%82%A2%E3%83%86%E3%83%83%E3%83%A9%20%E3%83%8A%E3%83%9D%E3%83%AA" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -534,8 +583,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="milan" data-food-num="No.26">
-      <div class="num">No.26</div>
-      <div class="name-row"><div class="name">パネットーネ</div><span class="badge">ミラノ名物</span></div>
+      <div class="num-row"><span class="num">No.26</span><span class="badge">ミラノ名物</span></div>
+      <div class="name-row"><div class="name">パネットーネ</div></div>
       <div class="desc">ドライフルーツを練り込んだミラノ発祥の発酵菓子パン。本来はクリスマスの定番だが、近年は一年を通してカフェやパン屋で見かけるようになった。</div>
       <img src="素材/グルメ/パネットーネ.webp" alt="パネットーネ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%91%E3%83%8D%E3%83%83%E3%83%88%E3%83%BC%E3%83%8D%20%E3%83%9F%E3%83%A9%E3%83%8E" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -545,8 +594,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="florence" data-food-num="No.27">
-      <div class="num">No.27</div>
-      <div class="name-row"><div class="name">ネグローニ</div><span class="badge">フィレンツェ発祥</span></div>
+      <div class="num-row"><span class="num">No.27</span><span class="badge">フィレンツェ発祥</span></div>
+      <div class="name-row"><div class="name">ネグローニ</div></div>
       <div class="desc">ジン・スイートベルモット・カンパリを同量ずつ混ぜた、フィレンツェ発祥のカクテル。ほろ苦い味わいが食前酒として親しまれている。</div>
       <img src="素材/グルメ/ネグローニ.webp" alt="ネグローニ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8D%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%8B%20%E3%82%AB%E3%82%AF%E3%83%86%E3%83%AB" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -556,8 +605,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="venice" data-food-num="No.28">
-      <div class="num">No.28</div>
-      <div class="name-row"><div class="name">プロセッコ</div><span class="badge">ヴェネト名物</span></div>
+      <div class="num-row"><span class="num">No.28</span><span class="badge">ヴェネト名物</span></div>
+      <div class="name-row"><div class="name">プロセッコ</div></div>
       <div class="desc">ヴェネト州が産地のスパークリングワイン。シャンパンより手頃な価格ながら華やかな香りで、アペロール・スプリッツのベースにも使われる。</div>
       <img src="素材/グルメ/プロセッコ.webp" alt="プロセッコ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%97%E3%83%AD%E3%82%BB%E3%83%83%E3%82%B3%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%88" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -567,8 +616,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="rice" data-fcity="national" data-food-num="No.29">
-      <div class="num">No.29</div>
-      <div class="name-row"><div class="name">ポレンタ</div><span class="badge">北イタリア家庭料理</span></div>
+      <div class="num-row"><span class="num">No.29</span><span class="badge">北イタリア家庭料理</span></div>
+      <div class="name-row"><div class="name">ポレンタ</div></div>
       <div class="desc">トウモロコシの粉を煮込んだ、北イタリアの伝統的な主食。チーズやソーセージと一緒に食べるのが定番で、地域によって柔らかさや味付けが異なる。</div>
       <img src="素材/グルメ/ポレンタ.webp" alt="ポレンタ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9D%E3%83%AC%E3%83%B3%E3%82%BF%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -578,8 +627,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.30">
-      <div class="num">No.30</div>
-      <div class="name-row"><div class="name">アマレッティ</div><span class="badge">伝統焼き菓子</span></div>
+      <div class="num-row"><span class="num">No.30</span><span class="badge">伝統焼き菓子</span></div>
+      <div class="name-row"><div class="name">アマレッティ</div></div>
       <div class="desc">アーモンドの粉で焼き上げた、外はカリッと中はしっとりの伝統的な焼き菓子。エスプレッソとの相性が抜群で、食後のお供として定番の一品。</div>
       <img src="素材/グルメ/アマレッティ.webp" alt="アマレッティ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%9E%E3%83%AC%E3%83%83%E3%83%86%E3%82%A3%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -589,8 +638,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.31">
-      <div class="num">No.31</div>
-      <div class="name-row"><div class="name">パスタ・エ・ファジョーリ</div><span class="badge">家庭の味スープ</span></div>
+      <div class="num-row"><span class="num">No.31</span><span class="badge">家庭の味スープ</span></div>
+      <div class="name-row"><div class="name">パスタ・エ・ファジョーリ</div></div>
       <div class="desc">豆とショートパスタをコトコト煮込んだ、イタリア全土で愛される家庭のスープ。素朴ながら滋味深い味わいで、リボッリータと並ぶ庶民のソウルフード。</div>
       <img src="素材/グルメ/パスタ・エ・ファジョーリ.webp" alt="パスタ・エ・ファジョーリ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%91%E3%82%B9%E3%82%BF%E3%83%BB%E3%82%A8%E3%83%BB%E3%83%95%E3%82%A1%E3%82%B8%E3%83%A7%E3%83%BC%E3%83%AA" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -600,8 +649,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.32">
-      <div class="num">No.32</div>
-      <div class="name-row"><div class="name">パニーノ／パニーニ</div><span class="badge">定番サンドイッチ</span></div>
+      <div class="num-row"><span class="num">No.32</span><span class="badge">定番サンドイッチ</span></div>
+      <div class="name-row"><div class="name">パニーノ／パニーニ</div></div>
       <div class="desc">具材を挟んだイタリア式サンドイッチ。中でもフィレンツェ名物「ランプレドット」（牛の第四胃袋の煮込みを挟んだパン）は、屋台で食べ歩ける観光客に人気の一品。</div>
       <img src="素材/グルメ/パニーノ／パニーニ.webp" alt="パニーノ／パニーニ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%91%E3%83%8B%E3%83%BC%E3%83%8E%20%E3%83%A9%E3%83%B3%E3%83%97%E3%83%AC%E3%83%89%E3%83%83%E3%83%88" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -611,8 +660,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.33">
-      <div class="num">No.33</div>
-      <div class="name-row"><div class="name">ボロネーゼ（ラグー・アッラ・ボロネーゼ）</div><span class="badge">世界的パスタソース</span></div>
+      <div class="num-row"><span class="num">No.33</span><span class="badge">世界的パスタソース</span></div>
+      <div class="name-row"><div class="name">ボロネーゼ（ラグー・アッラ・ボロネーゼ）</div></div>
       <div class="desc">ボローニャ発祥の、牛ひき肉と野菜を長時間煮込んだ濃厚なミートソース。日本のミートソースパスタの原型ともいわれ、本場では平打ち麺のタリアテッレに絡めるのが定番。</div>
       <img src="素材/グルメ/ボロネーゼ（ラグー・アッラ・ボロネーゼ）.webp" alt="ボロネーゼ（ラグー・アッラ・ボロネーゼ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9C%E3%83%AD%E3%83%8B%E3%83%BC%E3%82%BC%20%E3%83%A9%E3%82%B0%E3%83%BC" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -622,8 +671,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="rome" data-food-num="No.34">
-      <div class="num">No.34</div>
-      <div class="name-row"><div class="name">アマトリチャーナ</div><span class="badge">ローマ4大パスタ</span></div>
+      <div class="num-row"><span class="num">No.34</span><span class="badge">ローマ4大パスタ</span></div>
+      <div class="name-row"><div class="name">アマトリチャーナ</div></div>
       <div class="desc">グアンチャーレ（豚頬肉）とトマト、ペコリーノチーズで作る、カルボナーラ・カチョエペペと並ぶローマを代表するパスタ。ピリッとした唐辛子の辛みがアクセントになっている。</div>
       <img src="素材/グルメ/アマトリチャーナ.webp" alt="アマトリチャーナ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%9E%E3%83%88%E3%83%AA%E3%83%81%E3%83%A3%E3%83%BC%E3%83%8A" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -633,8 +682,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.35">
-      <div class="num">No.35</div>
-      <div class="name-row"><div class="name">ボンゴレ・ビアンコ</div><span class="badge">海沿いの定番パスタ</span></div>
+      <div class="num-row"><span class="num">No.35</span><span class="badge">海沿いの定番パスタ</span></div>
+      <div class="name-row"><div class="name">ボンゴレ・ビアンコ</div></div>
       <div class="desc">アサリを白ワインとニンニクでシンプルに仕上げたパスタ。ナポリやヴェネツィアなど海沿いの街で特に人気で、貝の旨みがオイルに溶け込んだ王道の味わい。</div>
       <img src="素材/グルメ/ボンゴレ・ビアンコ.webp" alt="ボンゴレ・ビアンコ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9C%E3%83%B3%E3%82%B4%E3%83%AC%E3%83%BB%E3%83%93%E3%82%A2%E3%83%B3%E3%82%B3" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -644,8 +693,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="venice" data-food-num="No.36">
-      <div class="num">No.36</div>
-      <div class="name-row"><div class="name">イカスミパスタ</div><span class="badge">ヴェネツィアの定番シーフード</span></div>
+      <div class="num-row"><span class="num">No.36</span><span class="badge">ヴェネツィアの定番シーフード</span></div>
+      <div class="name-row"><div class="name">イカスミパスタ</div></div>
       <div class="desc">イカスミをたっぷり絡めた、真っ黒な見た目が印象的なパスタ。ヴェネツィアを代表するシーフードパスタで、魚介の濃厚な旨みが凝縮されている。</div>
       <img src="素材/グルメ/イカスミパスタ.webp" alt="イカスミパスタ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A4%E3%82%AB%E3%82%B9%E3%83%9F%E3%83%91%E3%82%B9%E3%82%BF%20%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%84%E3%82%A3%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -655,8 +704,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="napoli" data-food-num="No.37">
-      <div class="num">No.37</div>
-      <div class="name-row"><div class="name">アクアパッツァ</div><span class="badge">南イタリア発祥の魚料理</span></div>
+      <div class="num-row"><span class="num">No.37</span><span class="badge">南イタリア発祥の魚料理</span></div>
+      <div class="name-row"><div class="name">アクアパッツァ</div></div>
       <div class="desc">魚介類をトマトや白ワイン、オリーブと一緒に煮込む、南イタリア・ナポリ発祥の豪快な魚料理。旨みが溶け込んだスープはパンでしっかり拭って味わいたい。</div>
       <img src="素材/グルメ/アクアパッツァ.webp" alt="アクアパッツァ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A2%E3%82%AF%E3%82%A2%E3%83%91%E3%83%83%E3%83%84%E3%82%A1" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -666,8 +715,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="dessert" data-fcity="national" data-food-num="No.38">
-      <div class="num">No.38</div>
-      <div class="name-row"><div class="name">パンナコッタ</div><span class="badge">定番プリン</span></div>
+      <div class="num-row"><span class="num">No.38</span><span class="badge">定番プリン</span></div>
+      <div class="name-row"><div class="name">パンナコッタ</div></div>
       <div class="desc">生クリームと砂糖を軽く固めた、つるんとした口当たりのデザート。ピエモンテ州トリノ発祥とされ、シンプルながらもイタリアを代表するスイーツのひとつ。</div>
       <img src="素材/グルメ/パンナコッタ.webp" alt="パンナコッタ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%91%E3%83%B3%E3%83%8A%E3%82%B3%E3%83%83%E3%82%BF%20%E3%83%88%E3%83%AA%E3%83%8E" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -677,8 +726,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="rome" data-food-num="No.39">
-      <div class="num">No.39</div>
-      <div class="name-row"><div class="name">マリトッツォ</div><span class="badge">ローマ発祥</span></div>
+      <div class="num-row"><span class="num">No.39</span><span class="badge">ローマ発祥</span></div>
+      <div class="name-row"><div class="name">マリトッツォ</div></div>
       <div class="desc">ふわふわのブリオッシュ生地にたっぷりの生クリームを挟んだローマ発祥のスイーツ。日本でも大ブームになった一品を、本場のバールで味わいたい。</div>
       <img src="素材/グルメ/マリトッツォ.webp" alt="マリトッツォ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9E%E3%83%AA%E3%83%88%E3%83%83%E3%83%84%E3%82%A9%20%E3%83%AD%E3%83%BC%E3%83%9E" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -688,8 +737,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="sicilia" data-food-num="No.40">
-      <div class="num">No.40</div>
-      <div class="name-row"><div class="name">グラニータ</div><span class="badge">シチリア発祥の氷菓</span></div>
+      <div class="num-row"><span class="num">No.40</span><span class="badge">シチリア発祥の氷菓</span></div>
+      <div class="name-row"><div class="name">グラニータ</div></div>
       <div class="desc">レモンやピスタチオなどのフレーバーを凍らせた、かき氷に似たシチリア発祥のフローズンスイーツ。パレルモやタオルミーナなど発祥地の暑い夏に欠かせない定番。</div>
       <img src="素材/グルメ/グラニータ.webp" alt="グラニータ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B0%E3%83%A9%E3%83%8B%E3%83%83%E3%82%BF%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -699,8 +748,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="sicilia" data-food-num="No.41">
-      <div class="num">No.41</div>
-      <div class="name-row"><div class="name">カッサータ</div><span class="badge">シチリア伝統菓子</span></div>
+      <div class="num-row"><span class="num">No.41</span><span class="badge">シチリア伝統菓子</span></div>
+      <div class="name-row"><div class="name">カッサータ</div></div>
       <div class="desc">リコッタチーズと砂糖漬けフルーツを使ったシチリアの伝統的なアイスケーキ。カラフルなマジパンで覆われた見た目も華やかで、お祝いの席にも登場する。</div>
       <img src="素材/グルメ/カッサータ.webp" alt="カッサータ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%83%83%E3%82%B5%E3%83%BC%E3%82%BF%20%E3%82%B7%E3%83%81%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -710,8 +759,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="drink" data-fcity="national" data-food-num="No.42">
-      <div class="num">No.42</div>
-      <div class="name-row"><div class="name">カプチーノ</div><span class="badge">朝食の定番</span></div>
+      <div class="num-row"><span class="num">No.42</span><span class="badge">朝食の定番</span></div>
+      <div class="name-row"><div class="name">カプチーノ</div></div>
       <div class="desc">エスプレッソにたっぷりの泡立てたミルクを合わせた、朝食の定番ドリンク。イタリアでは食後にカプチーノを頼まないのがマナーとされ、朝専用の飲み物として親しまれている。</div>
       <img src="素材/グルメ/カプチーノ.webp" alt="カプチーノ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%83%97%E3%83%81%E3%83%BC%E3%83%8E%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -721,8 +770,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.43">
-      <div class="num">No.43</div>
-      <div class="name-row"><div class="name">キャンティ／バローロ</div><span class="badge">最高峰の赤ワイン</span></div>
+      <div class="num-row"><span class="num">No.43</span><span class="badge">最高峰の赤ワイン</span></div>
+      <div class="name-row"><div class="name">キャンティ／バローロ</div></div>
       <div class="desc">トスカーナ州の「キャンティ」、ピエモンテ州の「バローロ」は、ともにイタリアを代表する最高峰の赤ワイン。産地のワイナリーを巡ってテイスティングを楽しむ旅も人気。</div>
       <img src="素材/グルメ/キャンティ／バローロ.webp" alt="キャンティ／バローロ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%86%E3%82%A3%20%E3%83%90%E3%83%AD%E3%83%BC%E3%83%AD%20%E3%83%AF%E3%82%A4%E3%83%B3" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -732,8 +781,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.44">
-      <div class="num">No.44</div>
-      <div class="name-row"><div class="name">モルタデッラ</div><span class="badge">ボローニャ名物のハム</span></div>
+      <div class="num-row"><span class="num">No.44</span><span class="badge">ボローニャ名物のハム</span></div>
+      <div class="name-row"><div class="name">モルタデッラ</div></div>
       <div class="desc">ピスタチオが練り込まれた、ボローニャ発祥のなめらかな豚肉ハム。薄くスライスして前菜やパニーノの具にするのが定番で、イタリア各地の食肉店で日常的に見かける看板食材。</div>
       <img src="素材/グルメ/モルタデッラ.webp" alt="モルタデッラ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%A2%E3%83%AB%E3%82%BF%E3%83%87%E3%83%83%E3%83%A9%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -743,8 +792,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="sicilia" data-food-num="No.45">
-      <div class="num">No.45</div>
-      <div class="name-row"><div class="name">パスタ・アッラ・ノルマ</div><span class="badge">シチリア代表のナスパスタ</span></div>
+      <div class="num-row"><span class="num">No.45</span><span class="badge">シチリア代表のナスパスタ</span></div>
+      <div class="name-row"><div class="name">パスタ・アッラ・ノルマ</div></div>
       <div class="desc">揚げナスとトマトソース、リコッタサラータを絡めたカターニア発祥のパスタ。作曲家ベッリーニの歌劇「ノルマ」に由来する名前で、ナスが旬を迎える夏に食べたいシチリアの看板料理。</div>
       <img src="素材/グルメ/パスタ・アッラ・ノルマ.webp" alt="パスタ・アッラ・ノルマ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%91%E3%82%B9%E3%82%BF%E3%83%BB%E3%82%A2%E3%83%83%E3%83%A9%E3%83%BB%E3%83%8E%E3%83%AB%E3%83%9E%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -754,8 +803,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.46">
-      <div class="num">No.46</div>
-      <div class="name-row"><div class="name">オレキエッテ</div><span class="badge">プーリア州の耳たぶパスタ</span></div>
+      <div class="num-row"><span class="num">No.46</span><span class="badge">プーリア州の耳たぶパスタ</span></div>
+      <div class="name-row"><div class="name">オレキエッテ</div></div>
       <div class="desc">「小さな耳」を意味する、くぼみのあるプーリア州発祥のパスタ。菜の花に似た苦味野菜チーメ・ディ・ラーパとアンチョビ・ニンニクで和えるのが定番で、素朴ながら滋味深い南イタリアの味。</div>
       <img src="素材/グルメ/オレキエッテ.webp" alt="オレキエッテ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AA%E3%83%AC%E3%82%AD%E3%82%A8%E3%83%83%E3%83%86%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -765,8 +814,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="florence" data-food-num="No.47">
-      <div class="num">No.47</div>
-      <div class="name-row"><div class="name">パッパルデッレ・アル・チンギアーレ</div><span class="badge">トスカーナの猪肉パスタ</span></div>
+      <div class="num-row"><span class="num">No.47</span><span class="badge">トスカーナの猪肉パスタ</span></div>
+      <div class="name-row"><div class="name">パッパルデッレ・アル・チンギアーレ</div></div>
       <div class="desc">幅広の平打ち麺に、赤ワインでじっくり煮込んだ猪肉のラグーを絡めたトスカーナの郷土パスタ。狩猟文化が根付く地域らしい濃厚な味わいで、秋から冬にかけての定番メニュー。</div>
       <img src="素材/グルメ/パッパルデッレ・アル・チンギアーレ.webp" alt="パッパルデッレ・アル・チンギアーレ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%91%E3%83%83%E3%83%91%E3%83%AB%E3%83%87%E3%83%83%E3%83%AC%E3%83%BB%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%81%E3%83%B3%E3%82%AE%E3%82%A2%E3%83%BC%E3%83%AC%20%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -955,7 +1004,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -964,6 +1013,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -977,12 +1048,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -990,6 +1062,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1036,6 +1109,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1111,16 +1194,54 @@ var PAGE_INDEX = 2;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1295,23 +1416,6 @@ var PAGE_INDEX = 2;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

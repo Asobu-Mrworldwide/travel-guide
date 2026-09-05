@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="台湾のグルメ｜台湾旅行ガイド">
 <meta name="twitter:description" content="直行便で約3〜4時間、時差はたった1時間。機内食を食べて一眠りしたら、もう夜市の匂いの中にいます。小籠包や牛肉麺などの絶品グルメ、提灯が灯る九份、歴史ある寺廟、そして日本語すら通じることのある親日的な空気。友人にはじめての一人旅をしたいと…">
 <meta name="twitter:image" content="https://worldmappy.com/taiwan/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600"><g fill-rule="evenodd"><path d="M0 0h900v600H0z" fill="#fe0000"/><path d="M0 0h450v300H0z" fill="#000095"/></g><path d="M225 37.5l-56.25 209.928L322.428 93.75 112.5 150l209.928 56.25L168.75 52.572 225 262.5l56.25-209.928L127.572 206.25 337.5 150 127.572 93.75 281.25 247.428 225 37.5" fill="#fff" paint-order="markers fill stroke"/><circle cy="150" cx="225" r="60" fill="#fff" stroke="#000095" stroke-width="7.5"/></svg></div></span><span class="site-country-name">台湾</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="">観光スポット</a>
-    <a href="food.html" class="active">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=taiwan">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">台湾を旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=taiwan">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -213,40 +243,58 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Taiwan / 03</span></div>
   <div class="tab-body">
   <h2>台湾グルメ</h2>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="food-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">メイン料理</button>
-      
-      <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">夜市スナック</button>
-      
-      <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">スイーツ</button>
-      
-      <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">ドリンク</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="food-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">メイン料理</button>
+              
+              <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">夜市スナック</button>
+              
+              <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">スイーツ</button>
+              
+              <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">ドリンク</button>
+              
+            </div>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア限定</div>
+            <div class="filter-row" id="food-filter-city">
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
+              
+              <button class="filter-btn" data-filter="taipei" onclick="filterFood('city','taipei',this)">台北</button>
+              
+              <button class="filter-btn" data-filter="taichung" onclick="filterFood('city','taichung',this)">台中</button>
+              
+              <button class="filter-btn" data-filter="tainan" onclick="filterFood('city','tainan',this)">台南</button>
+              
+              <button class="filter-btn" data-filter="jiufen" onclick="filterFood('city','jiufen',this)">九份・十分</button>
+              
+              <button class="filter-btn" data-filter="hualien" onclick="filterFood('city','hualien',this)">花蓮</button>
+              
+              <button class="filter-btn" data-filter="chiayi" onclick="filterFood('city','chiayi',this)">嘉義</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetFoodFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-label">エリア限定</div>
-    <div class="filter-row" id="food-filter-city">
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
-      
-      <button class="filter-btn" data-filter="taipei" onclick="filterFood('city','taipei',this)">台北</button>
-      
-      <button class="filter-btn" data-filter="taichung" onclick="filterFood('city','taichung',this)">台中</button>
-      
-      <button class="filter-btn" data-filter="tainan" onclick="filterFood('city','tainan',this)">台南</button>
-      
-      <button class="filter-btn" data-filter="jiufen" onclick="filterFood('city','jiufen',this)">九份・十分</button>
-      
-      <button class="filter-btn" data-filter="hualien" onclick="filterFood('city','hualien',this)">花蓮</button>
-      
-      <button class="filter-btn" data-filter="chiayi" onclick="filterFood('city','chiayi',this)">嘉義</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="food-count-shown">28</span> / <span id="food-count-total">28</span> 品を表示</span>
     <div class="view-toggle" id="foodViewToggle">
@@ -255,12 +303,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
   </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="taipei" data-food-num="No.1">
-      <div class="num">No.1</div>
-      <div class="name-row"><div class="name"><ruby>小籠包<rt>シャオロンバオ</rt></ruby></div><span class="badge">台湾グルメの代名詞</span></div>
+      <div class="num-row"><span class="num">No.1</span><span class="badge">台湾グルメの代名詞</span></div>
+      <div class="name-row"><div class="name"><ruby>小籠包<rt>シャオロンバオ</rt></ruby></div></div>
       <div class="desc">薄皮の中から熱々のスープがあふれる台湾名物。レンゲに乗せて皮を破り、スープを味わってから生姜と黒酢で。名店から街の食堂までレベルが高い。</div>
       <img src="素材/グルメ/小籠包.webp" alt="小籠包" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E5%B0%8F%E7%B1%A0%E5%8C%85%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -270,8 +319,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.2">
-      <div class="num">No.2</div>
-      <div class="name-row"><div class="name"><ruby>牛肉麺<rt>ニューロウミェン</rt></ruby></div><span class="badge">国民食</span></div>
+      <div class="num-row"><span class="num">No.2</span><span class="badge">国民食</span></div>
+      <div class="name-row"><div class="name"><ruby>牛肉麺<rt>ニューロウミェン</rt></ruby></div></div>
       <div class="desc">柔らかく煮込んだ牛肉の塊がゴロッと乗った麺料理。醤油ベースの紅焼と、あっさり塩味の清燉の2系統がある。専門店がコンテストを競うほどの国民食。</div>
       <img src="素材/グルメ/牛肉麺.webp" alt="牛肉麺" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E7%89%9B%E8%82%89%E9%BA%BA%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -281,8 +330,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.3">
-      <div class="num">No.3</div>
-      <div class="name-row"><div class="name"><ruby>魯肉飯<rt>ルーローハン</rt></ruby></div><span class="badge">庶民の味</span></div>
+      <div class="num-row"><span class="num">No.3</span><span class="badge">庶民の味</span></div>
+      <div class="name-row"><div class="name"><ruby>魯肉飯<rt>ルーローハン</rt></ruby></div></div>
       <div class="desc">甘辛く煮込んだ豚バラそぼろをご飯にかけた台湾のソウルフード。1杯150円前後と安く、小サイズなので夜市はしごの合間にもちょうどいい。</div>
       <img src="素材/グルメ/魯肉飯.webp" alt="魯肉飯" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E9%AD%AF%E8%82%89%E9%A3%AF%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -292,8 +341,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="taipei" data-food-num="No.4">
-      <div class="num">No.4</div>
-      <div class="name-row"><div class="name"><ruby>胡椒餅<rt>フージャオビン</rt></ruby></div><span class="badge">夜市の行列グルメ</span></div>
+      <div class="num-row"><span class="num">No.4</span><span class="badge">夜市の行列グルメ</span></div>
+      <div class="name-row"><div class="name"><ruby>胡椒餅<rt>フージャオビン</rt></ruby></div></div>
       <div class="desc">黒胡椒を効かせた肉餡入りの焼きパン。窯の内側に貼り付けて焼くため外はカリカリ、中は肉汁たっぷり。饒河街夜市の入口の店は行列必至の名物。</div>
       <img src="素材/グルメ/胡椒餅.webp" alt="胡椒餅" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E8%83%A1%E6%A4%92%E9%A4%85%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -303,8 +352,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.5">
-      <div class="num">No.5</div>
-      <div class="name-row"><div class="name"><ruby>葱抓餅<rt>ツォンジュアビン</rt></ruby></div><span class="badge">屋台の定番</span></div>
+      <div class="num-row"><span class="num">No.5</span><span class="badge">屋台の定番</span></div>
+      <div class="name-row"><div class="name"><ruby>葱抓餅<rt>ツォンジュアビン</rt></ruby></div></div>
       <div class="desc">ネギ入りの生地を鉄板でサクサクに焼き上げた台湾式ネギパンケーキ。卵・チーズ・バジルなどのトッピングを追加するのが定番の食べ方。</div>
       <img src="素材/グルメ/葱抓餅.webp" alt="葱抓餅" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E8%91%B1%E6%8A%93%E9%A4%85%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -314,8 +363,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.6">
-      <div class="num">No.6</div>
-      <div class="name-row"><div class="name"><ruby>臭豆腐<rt>チョウドウフ</rt></ruby></div><span class="badge">挑戦グルメ</span></div>
+      <div class="num-row"><span class="num">No.6</span><span class="badge">挑戦グルメ</span></div>
+      <div class="name-row"><div class="name"><ruby>臭豆腐<rt>チョウドウフ</rt></ruby></div></div>
       <div class="desc">発酵させた豆腐を揚げた、夜市に漂うあの匂いの正体。強烈な匂いに反して味は意外にもマイルドで、キャベツの甘酢漬けと一緒に食べるとクセになる人も多い。</div>
       <img src="素材/グルメ/臭豆腐.webp" alt="臭豆腐" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E8%87%AD%E8%B1%86%E8%85%90%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -325,8 +374,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.7">
-      <div class="num">No.7</div>
-      <div class="name-row"><div class="name"><ruby>鹽酥雞<rt>イエンスージー</rt></ruby>（台湾唐揚げ）</div><span class="badge">夜市の唐揚げ</span></div>
+      <div class="num-row"><span class="num">No.7</span><span class="badge">夜市の唐揚げ</span></div>
+      <div class="name-row"><div class="name"><ruby>鹽酥雞<rt>イエンスージー</rt></ruby>（台湾唐揚げ）</div></div>
       <div class="desc">一口大の鶏肉をカリッと揚げてバジルと一緒に袋に放り込んでくれる台湾式唐揚げ。五香粉の香りが独特で、ビールとの相性は反則級。</div>
       <img src="素材/グルメ/鹽酥雞（台湾唐揚げ）.webp" alt="鹽酥雞（台湾唐揚げ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E9%B9%BD%E9%85%A5%E9%9B%9E%EF%BC%88%E5%8F%B0%E6%B9%BE%E5%94%90%E6%8F%9A%E3%81%92%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -336,8 +385,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.8">
-      <div class="num">No.8</div>
-      <div class="name-row"><div class="name"><ruby>蚵仔煎<rt>オアジェン</rt></ruby>（牡蠣オムレツ）</div><span class="badge">夜市名物</span></div>
+      <div class="num-row"><span class="num">No.8</span><span class="badge">夜市名物</span></div>
+      <div class="name-row"><div class="name"><ruby>蚵仔煎<rt>オアジェン</rt></ruby>（牡蠣オムレツ）</div></div>
       <div class="desc">小粒の牡蠣と卵、さつまいも粉の生地をもちっと焼き上げ、甘辛いソースをかけた夜市の看板メニュー。独特のもちもち食感が記憶に残る一皿。</div>
       <img src="素材/グルメ/蚵仔煎（牡蠣オムレツ）.webp" alt="蚵仔煎（牡蠣オムレツ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E8%9A%B5%E4%BB%94%E7%85%8E%EF%BC%88%E7%89%A1%E8%A0%A3%E3%82%AA%E3%83%A0%E3%83%AC%E3%83%84%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -347,8 +396,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="taipei" data-food-num="No.9">
-      <div class="num">No.9</div>
-      <div class="name-row"><div class="name">マンゴーかき氷</div><span class="badge">夏の風物詩</span></div>
+      <div class="num-row"><span class="num">No.9</span><span class="badge">夏の風物詩</span></div>
+      <div class="name-row"><div class="name">マンゴーかき氷</div></div>
       <div class="desc">完熟マンゴーを山盛りにした台湾かき氷の王様。ミルク味の氷を薄く削った「雪花冰」タイプはふわふわ食感で、日本のかき氷とは別物のおいしさ。</div>
       <img src="素材/グルメ/マンゴーかき氷.webp" alt="マンゴーかき氷" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9E%E3%83%B3%E3%82%B4%E3%83%BC%E3%81%8B%E3%81%8D%E6%B0%B7%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -358,8 +407,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.10">
-      <div class="num">No.10</div>
-      <div class="name-row"><div class="name"><ruby>豆花<rt>ドウホア</rt></ruby></div><span class="badge">やさしい甘さ</span></div>
+      <div class="num-row"><span class="num">No.10</span><span class="badge">やさしい甘さ</span></div>
+      <div class="name-row"><div class="name"><ruby>豆花<rt>ドウホア</rt></ruby></div></div>
       <div class="desc">なめらかな豆腐プリンにシロップとトッピング（ピーナッツ・タピオカ・芋圓など）を合わせる伝統スイーツ。夏は氷入り、冬は温かい生姜シロップで。</div>
       <img src="素材/グルメ/豆花.webp" alt="豆花" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E8%B1%86%E8%8A%B1%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -369,8 +418,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="drink" data-fcity="taichung" data-food-num="No.11">
-      <div class="num">No.11</div>
-      <div class="name-row"><div class="name">珍珠奶茶（タピオカミルクティー）</div><span class="badge">台中発祥</span></div>
+      <div class="num-row"><span class="num">No.11</span><span class="badge">台中発祥</span></div>
+      <div class="name-row"><div class="name">珍珠奶茶（タピオカミルクティー）</div></div>
       <div class="desc">世界を席巻したタピオカミルクティーの発祥は台中の茶藝館（ちゃげいかん）「春水堂」とされる。本場は甘さ・氷の量を細かく指定でき、もちもちのタピオカは別格。</div>
       <img src="素材/グルメ/珍珠奶茶（タピオカミルクティー）.webp" alt="珍珠奶茶（タピオカミルクティー）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E7%8F%8D%E7%8F%A0%E5%A5%B6%E8%8C%B6%EF%BC%88%E3%82%BF%E3%83%94%E3%82%AA%E3%82%AB%E3%83%9F%E3%83%AB%E3%82%AF%E3%83%86%E3%82%A3%E3%83%BC%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -380,8 +429,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.12">
-      <div class="num">No.12</div>
-      <div class="name-row"><div class="name">鳳梨酥（パイナップルケーキ）</div><span class="badge">お土産の王様</span></div>
+      <div class="num-row"><span class="num">No.12</span><span class="badge">お土産の王様</span></div>
+      <div class="name-row"><div class="name">鳳梨酥（パイナップルケーキ）</div></div>
       <div class="desc">バター香る生地でパイナップル餡を包んだ台湾土産の定番。ブランドごとに餡の酸味や生地の食感が違うので、食べ比べて好みの店を見つけるのも楽しい。</div>
       <img src="素材/グルメ/鳳梨酥（パイナップルケーキ）.webp" alt="鳳梨酥（パイナップルケーキ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E9%B3%B3%E6%A2%A8%E9%85%A5%EF%BC%88%E3%83%91%E3%82%A4%E3%83%8A%E3%83%83%E3%83%97%E3%83%AB%E3%82%B1%E3%83%BC%E3%82%AD%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -391,8 +440,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.13">
-      <div class="num">No.13</div>
-      <div class="name-row"><div class="name"><ruby>鹹豆漿<rt>シェントウジャン</rt></ruby></div><span class="badge">朝ごはんの主役</span></div>
+      <div class="num-row"><span class="num">No.13</span><span class="badge">朝ごはんの主役</span></div>
+      <div class="name-row"><div class="name"><ruby>鹹豆漿<rt>シェントウジャン</rt></ruby></div></div>
       <div class="desc">ゆるく固まった温かいおぼろ豆腐のような豆乳スープ。お酢の酸味とラー油、揚げパン（油条）との相性が抜群で、朝にしか出会えない台湾らしい味。</div>
       <img src="素材/グルメ/鹹豆漿.webp" alt="鹹豆漿" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E9%B9%B9%E8%B1%86%E6%BC%BF%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -402,8 +451,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.14">
-      <div class="num">No.14</div>
-      <div class="name-row"><div class="name"><ruby>蛋餅<rt>ダンピン</rt></ruby></div><span class="badge">朝ごはんの主役</span></div>
+      <div class="num-row"><span class="num">No.14</span><span class="badge">朝ごはんの主役</span></div>
+      <div class="name-row"><div class="name"><ruby>蛋餅<rt>ダンピン</rt></ruby></div></div>
       <div class="desc">モチモチした薄いクレープ生地で卵やチーズ、台湾ハムを巻いた定番の卵焼き。甘辛いタレで食べる台湾式外食朝ごはんの代表格で、屋台で手軽に楽しめる。</div>
       <img src="素材/グルメ/蛋餅.webp" alt="蛋餅" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E8%9B%8B%E9%A4%85%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -413,8 +462,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.15">
-      <div class="num">No.15</div>
-      <div class="name-row"><div class="name"><ruby>大腸包小腸<rt>ダーチャンバオシャオチャン</rt></ruby></div><span class="badge">台湾式ホットドッグ</span></div>
+      <div class="num-row"><span class="num">No.15</span><span class="badge">台湾式ホットドッグ</span></div>
+      <div class="name-row"><div class="name"><ruby>大腸包小腸<rt>ダーチャンバオシャオチャン</rt></ruby></div></div>
       <div class="desc">もち米のソーセージ（大腸）に切れ目を入れ、ジューシーな台湾ソーセージ（小腸）を挟んだ「台湾式ホットドッグ」。夜市の行列名物のひとつ。</div>
       <img src="素材/グルメ/大腸包小腸.webp" alt="大腸包小腸" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E5%A4%A7%E8%85%B8%E5%8C%85%E5%B0%8F%E8%85%B8%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -424,8 +473,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.16">
-      <div class="num">No.16</div>
-      <div class="name-row"><div class="name"><ruby>麺線<rt>ミェンシェン</rt></ruby></div><span class="badge">夜市の絶品麺</span></div>
+      <div class="num-row"><span class="num">No.16</span><span class="badge">夜市の絶品麺</span></div>
+      <div class="name-row"><div class="name"><ruby>麺線<rt>ミェンシェン</rt></ruby></div></div>
       <div class="desc">カツオ出汁の効いたとろみスープに、ソーメンのような細麺とモツ・牡蠣が入った台湾ならではの麺料理。夜市や屋台で気軽に一杯楽しめる。</div>
       <img src="素材/グルメ/麺線.webp" alt="麺線" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E9%BA%BA%E7%B7%9A%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -435,8 +484,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.17">
-      <div class="num">No.17</div>
-      <div class="name-row"><div class="name"><ruby>地瓜球<rt>ディーグァチョウ</rt></ruby></div><span class="badge">夜市の歩き食べ定番</span></div>
+      <div class="num-row"><span class="num">No.17</span><span class="badge">夜市の歩き食べ定番</span></div>
+      <div class="name-row"><div class="name"><ruby>地瓜球<rt>ディーグァチョウ</rt></ruby></div></div>
       <div class="desc">さつまいものペーストを揚げた、外はカリカリ・中は空洞でモチモチのボール状スナック。夜市の歩き食べに欠かせない定番おやつ。</div>
       <img src="素材/グルメ/地瓜球.webp" alt="地瓜球" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E5%9C%B0%E7%93%9C%E7%90%83%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -446,8 +495,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="jiufen" data-food-num="No.18">
-      <div class="num">No.18</div>
-      <div class="name-row"><div class="name"><ruby>芋圓<rt>ユーユェン</rt></ruby></div><span class="badge">九份名物</span></div>
+      <div class="num-row"><span class="num">No.18</span><span class="badge">九份名物</span></div>
+      <div class="name-row"><div class="name"><ruby>芋圓<rt>ユーユェン</rt></ruby></div></div>
       <div class="desc">タロ芋やさつまいもから作ったモチモチのお団子で、九份の名物としても知られる。かき氷や豆花のトッピングにすると最高の組み合わせ。</div>
       <img src="素材/グルメ/芋圓.webp" alt="芋圓" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E8%8A%8B%E5%9C%93%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -457,8 +506,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.19">
-      <div class="num">No.19</div>
-      <div class="name-row"><div class="name">木瓜牛奶（パパイヤミルク）</div><span class="badge">台湾スタンドの人気ドリンク</span></div>
+      <div class="num-row"><span class="num">No.19</span><span class="badge">台湾スタンドの人気ドリンク</span></div>
+      <div class="name-row"><div class="name">木瓜牛奶（パパイヤミルク）</div></div>
       <div class="desc">濃厚でフレッシュなパパイヤと牛乳をミックスしたジュース。タピオカミルクティーと並ぶ台湾スタンドドリンクの人気者で、マンゴーシーズン以外でも楽しめる。</div>
       <img src="素材/グルメ/木瓜牛奶（パパイヤミルク）.webp" alt="木瓜牛奶（パパイヤミルク）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E6%9C%A8%E7%93%9C%E7%89%9B%E5%A5%B6%EF%BC%88%E3%83%91%E3%83%91%E3%82%A4%E3%83%A4%E3%83%9F%E3%83%AB%E3%82%AF%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -468,8 +517,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="tainan" data-food-num="No.20">
-      <div class="num">No.20</div>
-      <div class="name-row"><div class="name"><ruby>擔仔麵<rt>タンツーメン</rt></ruby></div><span class="badge">台南のソウルフード</span></div>
+      <div class="num-row"><span class="num">No.20</span><span class="badge">台南のソウルフード</span></div>
+      <div class="name-row"><div class="name"><ruby>擔仔麵<rt>タンツーメン</rt></ruby></div></div>
       <div class="desc">台南発祥の細麺料理。エビ出汁のスープに甘辛い肉そぼろとエビ1尾をのせた一口サイズが基本で、老舗「度小月」が発祥の店として広く知られる看板グルメ。</div>
       <img src="素材/グルメ/擔仔麵.webp" alt="擔仔麵" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E6%93%94%E4%BB%94%E9%BA%B5%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -479,8 +528,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="tainan" data-food-num="No.21">
-      <div class="num">No.21</div>
-      <div class="name-row"><div class="name"><ruby>牛肉湯<rt>ニューロウタン</rt></ruby></div><span class="badge">早朝が勝負の台南名物</span></div>
+      <div class="num-row"><span class="num">No.21</span><span class="badge">早朝が勝負の台南名物</span></div>
+      <div class="name-row"><div class="name"><ruby>牛肉湯<rt>ニューロウタン</rt></ruby></div></div>
       <div class="desc">薄切りの新鮮な牛肉を熱々のスープに数十秒くぐらせて食べる台南名物。近郊の屠畜場から届く朝一番の肉を使うため、行列店は早朝から昼過ぎで売り切れることも多い、鮮度が命の一杯。</div>
       <img src="素材/グルメ/牛肉湯.webp" alt="牛肉湯" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E7%89%9B%E8%82%89%E6%B9%AF%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -490,8 +539,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="tainan" data-food-num="No.22">
-      <div class="num">No.22</div>
-      <div class="name-row"><div class="name"><ruby>棺材板<rt>グァンツァイバン</rt></ruby></div><span class="badge">台南発祥の珍グルメ</span></div>
+      <div class="num-row"><span class="num">No.22</span><span class="badge">台南発祥の珍グルメ</span></div>
+      <div class="name-row"><div class="name"><ruby>棺材板<rt>グァンツァイバン</rt></ruby></div></div>
       <div class="desc">厚切り食パンをくり抜いて揚げ、シチューのような濃厚なクリームソースと具材を詰めた台南発祥の名物。棺桶のような見た目からこの名がついたが、味は洋食グラタンに近くクセになる人が多い。</div>
       <img src="素材/グルメ/棺材板.webp" alt="棺材板" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E6%A3%BA%E6%9D%90%E6%9D%BF%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -501,8 +550,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="snack" data-fcity="national" data-food-num="No.23">
-      <div class="num">No.23</div>
-      <div class="name-row"><div class="name"><ruby>大雞排<rt>ダージーパイ</rt></ruby></div><span class="badge">顔より大きい唐揚げ</span></div>
+      <div class="num-row"><span class="num">No.23</span><span class="badge">顔より大きい唐揚げ</span></div>
+      <div class="name-row"><div class="name"><ruby>大雞排<rt>ダージーパイ</rt></ruby></div></div>
       <div class="desc">叩いて薄く伸ばした鶏胸肉を丸ごと1枚揚げた、顔よりも大きいサイズが名物の夜市定番。五香粉や胡椒塩をふりかけて、揚げたてを紙袋のまま頬張るのが正しい食べ方。</div>
       <img src="素材/グルメ/大雞排.webp" alt="大雞排" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E5%A4%A7%E9%9B%9E%E6%8E%92%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -512,8 +561,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.24">
-      <div class="num">No.24</div>
-      <div class="name-row"><div class="name"><ruby>刈包<rt>グァバオ</rt></ruby>（台湾式ハンバーガー）</div><span class="badge">台湾式ハンバーガー</span></div>
+      <div class="num-row"><span class="num">No.24</span><span class="badge">台湾式ハンバーガー</span></div>
+      <div class="name-row"><div class="name"><ruby>刈包<rt>グァバオ</rt></ruby>（台湾式ハンバーガー）</div></div>
       <div class="desc">ふかふかの蒸しパンにとろとろ豚バラ・高菜漬け・砕きピーナッツをサンドした台湾式ハンバーガー。財布に似た形から縁起物ともされ、旧正月にも食べられる。</div>
       <img src="素材/グルメ/刈包（台湾式ハンバーガー）.webp" alt="刈包（台湾式ハンバーガー）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E5%88%88%E5%8C%85%EF%BC%88%E5%8F%B0%E6%B9%BE%E5%BC%8F%E3%83%8F%E3%83%B3%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -523,8 +572,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="hualien" data-food-num="No.25">
-      <div class="num">No.25</div>
-      <div class="name-row"><div class="name">花蓮の麻糬（曾記麻糬など）</div><span class="badge">花蓮土産の定番</span></div>
+      <div class="num-row"><span class="num">No.25</span><span class="badge">花蓮土産の定番</span></div>
+      <div class="name-row"><div class="name">花蓮の麻糬（曾記麻糬など）</div></div>
       <div class="desc">もちもちの求肥にピーナッツやタロ芋餡を包んだ花蓮名物のお土産スイーツ。「曾記麻糬」をはじめ市内に専門店が並び、試食しながらお気に入りの味を探すのも楽しい。</div>
       <img src="素材/グルメ/花蓮の麻糬（曾記麻糬など）.webp" alt="花蓮の麻糬（曾記麻糬など）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E8%8A%B1%E8%93%AE%E3%81%AE%E9%BA%BB%E7%B3%AC%EF%BC%88%E6%9B%BE%E8%A8%98%E9%BA%BB%E7%B3%AC%E3%81%AA%E3%81%A9%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -534,8 +583,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="" data-fcity="chiayi" data-food-num="No.26">
-      <div class="num">No.26</div>
-      <div class="name-row"><div class="name">鶏肉飯（ジーロウファン）</div><span class="badge">嘉義名物丼</span></div>
+      <div class="num-row"><span class="num">No.26</span><span class="badge">嘉義名物丼</span></div>
+      <div class="name-row"><div class="name">鶏肉飯（ジーロウファン）</div></div>
       <div class="desc">七面鳥のそぼろに甘辛い魯汁（ルージー）をかけた嘉義名物の丼飯。100元以下で食べられる庶民の味で、地元民は1日に何度でも食べると言われるほど奥深い一品。</div>
       <img src="素材/グルメ/鶏肉飯（ジーロウファン）.webp" alt="鶏肉飯（ジーロウファン）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E9%B6%8F%E8%82%89%E9%A3%AF%EF%BC%88%E3%82%B8%E3%83%BC%E3%83%AD%E3%82%A6%E3%83%95%E3%82%A1%E3%83%B3%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -545,8 +594,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="" data-fcity="taichung" data-food-num="No.27">
-      <div class="num">No.27</div>
-      <div class="name-row"><div class="name">太陽餅（タイヤンピン）</div><span class="badge">台中みやげの定番</span></div>
+      <div class="num-row"><span class="num">No.27</span><span class="badge">台中みやげの定番</span></div>
+      <div class="name-row"><div class="name">太陽餅（タイヤンピン）</div></div>
       <div class="desc">台中の名物土産として知られるサクサクのパイ生地にマルトース飴を包んだ焼き菓子。老舗の明裕珍や太陽堂が発祥で、形が太陽を連想させることからその名がついた。</div>
       <img src="素材/グルメ/太陽餅（タイヤンピン）.webp" alt="太陽餅（タイヤンピン）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E5%A4%AA%E9%99%BD%E9%A4%85%EF%BC%88%E3%82%BF%E3%82%A4%E3%83%A4%E3%83%B3%E3%83%94%E3%83%B3%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -556,8 +605,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="" data-fcity="national" data-food-num="No.28">
-      <div class="num">No.28</div>
-      <div class="name-row"><div class="name">台湾ビール・熱炒（ルーチャオ）</div><span class="badge">台湾の大衆居酒屋</span></div>
+      <div class="num-row"><span class="num">No.28</span><span class="badge">台湾の大衆居酒屋</span></div>
+      <div class="name-row"><div class="name">台湾ビール・熱炒（ルーチャオ）</div></div>
       <div class="desc">台湾ビールを片手に炒め料理を肴にする大衆居酒屋スタイルが熱炒（ルーチャオ）。1皿100元均一の安さで地元の人々が深夜まで飲み食いする台湾の夜の顔。旅行者にも強くすすめたい体験。</div>
       <img src="素材/グルメ/台湾ビール・熱炒（ルーチャオ）.webp" alt="台湾ビール・熱炒（ルーチャオ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E5%8F%B0%E6%B9%BE%E3%83%93%E3%83%BC%E3%83%AB%E3%83%BB%E7%86%B1%E7%82%92%EF%BC%88%E3%83%AB%E3%83%BC%E3%83%81%E3%83%A3%E3%82%AA%EF%BC%89%20%E5%8F%B0%E6%B9%BE%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -746,7 +795,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -755,6 +804,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -768,12 +839,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -781,6 +853,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -827,6 +900,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -902,16 +985,54 @@ var PAGE_INDEX = 2;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1086,23 +1207,6 @@ var PAGE_INDEX = 2;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

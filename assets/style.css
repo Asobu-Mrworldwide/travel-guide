@@ -191,19 +191,49 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
 .hb-toggle-btn:hover,.hb-toggle-btn.open{background:rgba(255,255,255,0.22)}
 .hb-toggle-btn span{display:block;width:18px;height:2px;background:#fff}
 
-.hb-drawer{display:none;background:var(--green-dark);border-top:1px solid rgba(255,255,255,0.18);padding:24px 32px 28px;grid-template-columns:repeat(4,1fr);gap:26px;max-height:calc(100vh - 90px);overflow-y:auto}
-.hb-drawer.open{display:grid;animation:wm-pop .24s ease both}
 @keyframes wm-pop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.hb-col{display:grid;gap:10px;align-content:start}
-.hb-col:nth-child(4){border-left:1px solid rgba(255,255,255,0.18);padding-left:26px}
-.hb-col p{margin:0;font-size:0.78em;line-height:1.9;color:rgba(255,255,255,0.82)}
-.hb-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;color:var(--yellow)}
-.hb-col a{font-size:0.82em;color:rgba(255,255,255,0.9);text-decoration:none}
-.hb-col a:hover{color:#fff}
-.hb-col a.active{color:var(--yellow);font-weight:700}
-#hb-nearby{display:grid;gap:10px}
-@media(max-width:1020px){.hb-drawer{grid-template-columns:repeat(2,1fr)}.hb-col:nth-child(4){border-left:none;padding-left:0}}
-@media(max-width:520px){.hb-drawer{grid-template-columns:1fr;padding:18px 20px 22px}.site-explore-link{display:none}}
+@keyframes hb-slide{from{transform:translateX(100%)}to{transform:none}}
+@keyframes hb-fade{from{opacity:0}to{opacity:1}}
+
+/* ハンバーガー: 右スライドのドロワー */
+.hb-scrim{position:fixed;inset:0;z-index:1090;background:rgba(20,35,28,0.5);animation:hb-fade .22s ease both}
+.hb-scrim[hidden]{display:none}
+.hb-drawer{position:fixed;top:0;right:0;bottom:0;z-index:1091;width:400px;max-width:88vw;display:flex;flex-direction:column;background:var(--green-dark);box-shadow:-18px 0 44px rgba(10,30,22,0.28);animation:hb-slide .28s cubic-bezier(.2,.7,.2,1) both}
+.hb-drawer[hidden]{display:none}
+.hb-drawer__head{flex:none;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:18px 22px 6px}
+.hb-drawer__brand{flex:1;display:grid;gap:5px;justify-items:center;padding-left:34px;text-align:center}
+.hb-drawer__brand .hb-logo{font-weight:900;font-size:21px;line-height:1;letter-spacing:-0.01em;color:#fff}
+.hb-drawer__brand .hb-logo b{color:#E0A63C;font-weight:900}
+.hb-drawer__tagline{font-size:11.5px;color:rgba(255,255,255,0.72)}
+.hb-drawer__close{flex:none;display:grid;place-content:center;width:34px;height:34px;border:none;background:none;font-family:inherit;font-size:24px;line-height:1;color:#fff;cursor:pointer}
+.hb-drawer__body{flex:1;min-height:0;overflow-y:auto;padding:12px 20px 0}
+.hb-sec--primary{display:flex;align-items:center;gap:12px;width:100%;min-height:52px;padding:0 16px;border:none;border-radius:8px;background:var(--green);font-family:inherit;font-size:15px;font-weight:700;color:#fff;text-align:left;cursor:pointer}
+.hb-sec{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;padding:0 4px;border:none;border-top:1px solid rgba(255,255,255,0.16);background:none;font-family:inherit;font-size:15px;font-weight:700;color:#fff;text-align:left;cursor:pointer}
+.hb-sec--last{border-bottom:1px solid rgba(255,255,255,0.16)}
+.hb-sec__label{flex:1}
+.hb-sec__caret{flex:none;font-size:12px;color:rgba(255,255,255,0.8)}
+.hb-panel{display:grid;padding:2px 0 12px}
+.hb-panel--primary{padding:6px 0 14px}
+.hb-panel[hidden]{display:none}
+.hb-item{display:flex;align-items:center;gap:10px;width:100%;min-height:44px;padding:0 8px 0 26px;border:none;border-bottom:1px solid rgba(255,255,255,0.1);background:none;font-family:inherit;font-size:14px;font-weight:400;color:rgba(255,255,255,0.9);text-align:left;cursor:pointer;text-decoration:none}
+.hb-item.active{font-weight:700;color:#E0A63C}
+.hb-item__dot{flex:none;width:7px;height:7px;margin-left:-16px;border-radius:50%;background:transparent}
+.hb-item.active .hb-item__dot{background:#F5C63C}
+.hb-item__label{flex:1}
+.hb-item__chev{flex:none;font-size:13px;color:rgba(255,255,255,0.45)}
+.hb-link{display:flex;align-items:center;min-height:42px;padding:0 10px;border-bottom:1px solid rgba(255,255,255,0.1);font-size:13.5px;color:rgba(255,255,255,0.9);text-decoration:none}
+.hb-link:last-child{border-bottom:none}
+.hb-link__note{margin-left:9px;font-size:10.5px;color:rgba(255,255,255,0.5)}
+#hb-nearby{display:grid}
+#hb-nearby a{display:flex;align-items:center;min-height:42px;padding:0 10px;border-bottom:1px solid rgba(255,255,255,0.1);font-size:13.5px;color:rgba(255,255,255,0.9);text-decoration:none}
+#hb-nearby a:last-child{border-bottom:none;color:#E0A63C;font-weight:700}
+.hb-about{display:grid;gap:10px;padding:14px 10px 12px}
+.hb-about p{margin:0;font-size:12.5px;line-height:1.95;color:rgba(255,255,255,0.82)}
+.hb-about a{font-size:13.5px;color:rgba(255,255,255,0.9)}
+.hb-cta-wrap{padding:22px 0 26px}
+.hb-cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;border-radius:999px;background:#F5C63C;font-size:14.5px;font-weight:700;color:#14503C;text-decoration:none}
+@media(max-width:520px){.site-explore-link{display:none}}
+@media(prefers-reduced-motion:reduce){.hb-drawer,.hb-scrim{animation:none}}
 
 /* 国別ページのヘッダー右端（国旗＋国名） */
 .site-country-badge{display:flex;align-items:center;gap:8px;margin-left:auto}
@@ -348,6 +378,9 @@ section.active{display:block}
 .item-card.spot{border-left:1px solid #E8E2D8;overflow:hidden}
 .item-card .ico{font-size:1.8em;margin-bottom:4px}
 .item-card .num{font-size:0.8em;font-weight:700;color:var(--red);margin-bottom:2px}
+.item-card .num-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.item-card .num-row .num{margin-bottom:0}
+.item-card .num-row .badge{margin-left:0}
 .item-card.spot .num{color:var(--green)}
 .item-card .name-row{margin-bottom:4px;line-height:1.6}
 .item-card .name{font-size:0.97em;font-weight:700;color:#222;line-height:1.4;display:inline}
@@ -358,20 +391,51 @@ section.active{display:block}
 .must-badge{position:absolute;top:6px;right:8px;font-size:1.4em;line-height:1}
 
 /* 観光スポット・グルメ: コンパクト表示（画像縮小・説明文は残す） */
-.item-grid.view-compact{grid-template-columns:repeat(4,1fr);gap:10px}
+.item-grid.view-compact{grid-template-columns:repeat(5,1fr);gap:9px}
+@media(max-width:1100px){.item-grid.view-compact{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:900px){.item-grid.view-compact{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:620px){.item-grid.view-compact{grid-template-columns:repeat(2,1fr)}}
-.item-grid.view-compact .item-card{padding:10px}
-.item-grid.view-compact .spot-img-wrap{aspect-ratio:4/3;margin-left:-10px;margin-right:-10px}
-.item-grid.view-compact .food-img{max-height:100px}
-.item-grid.view-compact .desc{font-size:0.76em;line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.item-grid.view-compact .item-card{padding:9px;cursor:pointer}
+.item-grid.view-compact .name{font-size:0.85em}
+.item-grid.view-compact .desc{font-size:0.72em;line-height:1.55}
+.item-grid.view-compact .num{font-size:0.72em}
+.item-grid.view-compact .badge{font-size:0.6em;padding:1px 7px}
+.item-grid.view-compact .item-card .order-btn,.item-grid.view-compact .item-card .wiki-link,.item-grid.view-compact .item-card .spot-map-btn{display:none}
+/* コンパクト表示: タイトル+説明の合計を約5行の固定高さに（JS fitCompactText がdescの高さを可変設定）。画像は16:9固定で下端そろえ、全カード同一高さ */
+.item-grid.view-compact .name{display:block;min-height:0}
+.item-grid.view-compact .item-card .desc{flex:none}
+.item-grid.view-compact .food-img,
+.item-grid.view-compact .spot-img-wrap{width:calc(100% + 20px);margin:10px -10px -10px;aspect-ratio:16/9;flex:none;min-height:0;max-height:none}
+.item-grid.view-compact .item-card{display:flex;flex-direction:column}
+.item-grid.view-compact .item-card .food-img,
+.item-grid.view-compact .item-card .spot-img-wrap{margin-top:auto}
+.item-grid.view-compact .food-img{object-fit:cover;height:auto}
+#food-grid.item-grid.view-compact .item-card.has-img{padding-bottom:10px !important}
+#food-grid.item-grid.view-compact .item-card.has-img .desc{background:none;padding-bottom:0;flex:none !important}
+.item-grid.view-compact .desc{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+/* コンパクト表示（スマホ）: 1列・横長カード（サムネ左＋テキスト右）で縦の間延びを解消 */
+@media(max-width:620px){
+  .item-grid.view-compact{grid-template-columns:1fr;gap:8px}
+  .item-grid.view-compact .item-card{display:block;position:relative;padding:10px 12px 10px 114px;min-height:112px}
+  .item-grid.view-compact .item-card .num,
+  .item-grid.view-compact .item-card .must-badge,
+  .item-grid.view-compact .item-card .badge{display:none}
+  .item-grid.view-compact .spot-img-wrap,
+  .item-grid.view-compact .spot-img-placeholder{position:absolute;left:10px;top:10px;width:92px;height:92px;aspect-ratio:auto;margin:0;border-radius:8px;overflow:hidden}
+  .item-grid.view-compact .spot-img-wrap .spot-map-btn{display:none}
+  .item-grid.view-compact .food-img{position:absolute;left:10px;top:10px;width:92px;height:92px;max-height:92px;aspect-ratio:auto;object-fit:cover;margin:0;border-radius:8px}
+  .item-grid.view-compact .name-row{display:block;margin-bottom:4px}
+  .item-grid.view-compact .name{display:block;font-size:0.92em;line-height:1.4;min-height:0}
+  .item-grid.view-compact .desc{height:auto !important;-webkit-line-clamp:2;font-size:0.76em}
+  #food-grid.item-grid.view-compact .item-card.has-img{padding-bottom:10px !important}
+}
 
 /* 観光スポット・グルメ: リスト表示（小サムネ＋名前・タグのみ） */
 .item-grid.view-list{grid-template-columns:1fr 1fr;gap:8px 16px}
 .item-grid.view-list .item-card{cursor:pointer}
 @media(max-width:900px){.item-grid.view-list{grid-template-columns:1fr}}
 .item-grid.view-list .item-card{flex-direction:row;align-items:center;gap:12px;padding:10px}
-.item-grid.view-list .item-card .num{display:none}
+.item-grid.view-list .item-card .num,.item-grid.view-list .item-card .num-row{display:none}
 .item-grid.view-list .desc{display:none}
 .item-grid.view-list .order-btn,.item-grid.view-list .wiki-link{display:none}
 .item-grid.view-list .name-row{margin-bottom:0}
@@ -390,10 +454,32 @@ section.active{display:block}
 .tab-cta-btn:hover{background:#008a5a}
 .filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
 .filter-group{margin-bottom:8px}
+.filter-bar{position:relative;display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;margin:18px 0 4px;padding-bottom:10px;border-bottom:1px solid #E8E2D8}
+.filter-bar .filter-toggle{flex:0 0 auto}
+.filter-bar .items-count-row{flex:1 1 auto;min-width:170px;margin:0;padding:0;border:0}
+.filter-toggle{margin:0}
+.filter-toggle>summary{list-style:none;display:flex;cursor:default;user-select:none;-webkit-user-select:none}
+.filter-toggle>summary::-webkit-details-marker{display:none}
+.ft-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:24px;font-size:0.85em;font-weight:700;color:#fff;background:var(--green);cursor:pointer;transition:background .15s;white-space:nowrap}
+.ft-btn:hover{background:var(--green-dark)}
+.filter-toggle:not([open]) .ft-btn{background:#fff;color:var(--green);border:1.5px solid var(--green);padding:7.5px 16.5px}
+.filter-toggle:not([open]) .ft-btn:hover{background:var(--green-light)}
+.ft-funnel{width:14px;height:14px;flex-shrink:0}
+.ft-caret{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(225deg);margin-left:3px;transition:transform .2s}
+.filter-toggle:not([open]) .ft-caret{transform:rotate(45deg) translateY(-1px)}
+.filter-toggle-body{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:40;background:#fff;border:1px solid #e0e0e0;border-radius:14px;padding:16px 16px 14px;box-shadow:0 10px 30px rgba(20,40,30,0.16)}
+.ft-cols{display:flex;gap:14px 26px;flex-wrap:wrap}
+.ft-col{flex:1;min-width:210px}
+.ft-actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}
+.ft-reset{background:#fff;border:1px solid #d5d5d5;color:#666;font-size:0.8em;font-weight:700;padding:9px 18px;border-radius:9px;cursor:pointer}
+.ft-reset:hover{background:#f0f0f0}
+.ft-apply{background:var(--green);border:none;color:#fff;font-size:0.82em;font-weight:700;padding:9px 24px;border-radius:9px;cursor:pointer}
+.ft-apply:hover{background:var(--green-dark)}
+.ft-btn,.ft-reset,.ft-apply,.view-toggle button{user-select:none;-webkit-user-select:none}
 #spots-grid{margin-top:0;padding:0 4px 16px}
 #food-grid{margin-top:0;padding:0 4px 16px}
 .filter-label{font-size:0.7em;font-weight:700;color:#999;letter-spacing:0.06em;margin-bottom:5px;text-transform:uppercase}
-.filter-btn{background:#f0f0f0;border:2px solid transparent;border-radius:20px;padding:6px 13px;font-size:0.82em;font-weight:600;cursor:pointer;color:#555;transition:all 0.2s}
+.filter-btn{background:#f0f0f0;border:2px solid transparent;border-radius:20px;padding:6px 13px;font-size:0.82em;font-weight:600;cursor:pointer;color:#555;transition:all 0.2s;user-select:none;-webkit-user-select:none}
 .filter-btn:hover{background:#dde8e2;color:var(--green)}
 .filter-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
 

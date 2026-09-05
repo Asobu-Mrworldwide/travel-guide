@@ -195,8 +195,15 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <section id="spots" class="active">
 
   <h2>都市別観光スポット</h2>
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+      <div class="ft-col">
   <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
+    <div class="filter-label">カテゴリ</div>
     <div class="filter-row" id="spots-filter-type">
       <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
       
@@ -216,7 +223,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       
     </div>
   </div>
-  
+      </div>
+      <div class="ft-col">
   <div class="filter-group">
     <div class="filter-label">エリア</div>
     <div class="filter-row" id="spots-filter-row">
@@ -234,9 +242,17 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button class="filter-btn " data-filter="kuching" onclick="filterSpots('city','kuching',this)">クチン</button>
       
       <button class="filter-btn " data-filter="langkawi" onclick="filterSpots('city','langkawi',this)">ランカウイ</button>
-      
+
     </div>
   </div>
+      </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
+    </div>
+  </details>
   <div id="spots-grid">
     
     <div class="s-card spot-section-card" data-city="kl" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
@@ -1139,7 +1155,15 @@ function filterFood(dim, value, btn) {
   });
 }
 
-
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
+}
 
 function showFilteredSpots(city) {
   location.href = 'spots.html?city=' + encodeURIComponent(city);

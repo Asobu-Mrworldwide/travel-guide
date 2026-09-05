@@ -107,55 +107,85 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none">{{icon:earth}}<span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag">{{overview.flag_html}}</span><span class="site-country-name">{{name}}</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    {% if multipage %}
-    <a href="index.html" class="{{nav_active.basic}}">基本情報</a>
-    <a href="spots.html" class="{{nav_active.spots}}">観光スポット</a>
-    <a href="food.html" class="{{nav_active.food}}">グルメ</a>
-    <a href="course.html" class="{{nav_active.course}}">モデルコース</a>
-    <a href="budget.html" class="{{nav_active.budget}}">予算・費用</a>
-    <a href="practical.html" class="{{nav_active.practical}}">旅の準備</a>
-    <a href="phrases.html" class="{{nav_active.phrases}}">フレーズ</a>
-    {% endif %}
-    {% if singlepage %}
-    <a href="#" onclick="show('basic',document.querySelectorAll('nav button')[0]);return false;" class="{{nav_active.basic}}">基本情報</a>
-    <a href="#" onclick="show('spots',document.querySelectorAll('nav button')[1]);return false;" class="{{nav_active.spots}}">観光スポット</a>
-    <a href="#" onclick="show('food',document.querySelectorAll('nav button')[2]);return false;" class="{{nav_active.food}}">グルメ</a>
-    <a href="#" onclick="show('course',document.querySelectorAll('nav button')[3]);return false;" class="{{nav_active.course}}">モデルコース</a>
-    <a href="#" onclick="show('budget',document.querySelectorAll('nav button')[4]);return false;" class="{{nav_active.budget}}">予算・費用</a>
-    <a href="#" onclick="show('practical',document.querySelectorAll('nav button')[5]);return false;" class="{{nav_active.practical}}">旅の準備</a>
-    <a href="#" onclick="show('phrases',document.querySelectorAll('nav button')[6]);return false;" class="{{nav_active.phrases}}">フレーズ</a>
-    {% endif %}
-    <a href="../common/checklist.html?from={{id}}">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">{{name}}を旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    {% if multipage %}
+      <a class="hb-item {{nav_active.basic}}" href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.spots}}" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.food}}" href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.course}}" href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.budget}}" href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.practical}}" href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.phrases}}" href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    {% endif %}
+    {% if singlepage %}
+      <a class="hb-item {{nav_active.basic}}" href="#" onclick="show('basic',document.querySelectorAll('nav button')[0]);return false;"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.spots}}" href="#" onclick="show('spots',document.querySelectorAll('nav button')[1]);return false;"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.food}}" href="#" onclick="show('food',document.querySelectorAll('nav button')[2]);return false;"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.course}}" href="#" onclick="show('course',document.querySelectorAll('nav button')[3]);return false;"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.budget}}" href="#" onclick="show('budget',document.querySelectorAll('nav button')[4]);return false;"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.practical}}" href="#" onclick="show('practical',document.querySelectorAll('nav button')[5]);return false;"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item {{nav_active.phrases}}" href="#" onclick="show('phrases',document.querySelectorAll('nav button')[6]);return false;"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    {% endif %}
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from={{id}}">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 {% if multipage %}
 <nav>
@@ -844,24 +874,42 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 03</span></div>
   <div class="tab-body">
   <h2>{{food_section_title}}</h2>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="food-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
-      {% for ft in food_filter_types %}
-      <button class="filter-btn {% if ft.active %}active{% endif %}" data-filter="{{ft.id}}" onclick="filterFood('type','{{ft.id}}',this)">{{ft.label}}</button>
-      {% endfor %}
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="food-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
+              {% for ft in food_filter_types %}
+              <button class="filter-btn {% if ft.active %}active{% endif %}" data-filter="{{ft.id}}" onclick="filterFood('type','{{ft.id}}',this)">{{ft.label}}</button>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア限定</div>
+            <div class="filter-row" id="food-filter-city">
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
+              {% for fc in food_filter_cities %}
+              <button class="filter-btn" data-filter="{{fc.id}}" onclick="filterFood('city','{{fc.id}}',this)">{{fc.label}}</button>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetFoodFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-label">エリア限定</div>
-    <div class="filter-row" id="food-filter-city">
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
-      {% for fc in food_filter_cities %}
-      <button class="filter-btn" data-filter="{{fc.id}}" onclick="filterFood('city','{{fc.id}}',this)">{{fc.label}}</button>
-      {% endfor %}
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="food-count-shown">{{food_total_count}}</span> / <span id="food-count-total">{{food_total_count}}</span> 品を表示</span>
     <div class="view-toggle" id="foodViewToggle">
@@ -870,12 +918,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
   </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     {% for item in food_items %}
     <div class="item-card has-img {% if item.must %}must{% endif %}" data-ftype="{{item.type}}" data-fcity="{{item.city}}" data-food-num="{{item.num}}">
-      <div class="num">{{item.num}}</div>
-      <div class="name-row"><div class="name">{% if item.name_ruby %}{{item.name_ruby}}{% else %}{{item.name}}{% endif %}</div><span class="badge">{{item.badge}}</span></div>
+      <div class="num-row"><span class="num">{{item.num}}</span><span class="badge">{{item.badge}}</span></div>
+      <div class="name-row"><div class="name">{% if item.name_ruby %}{{item.name_ruby}}{% else %}{{item.name}}{% endif %}</div></div>
       <div class="desc">{{item.desc}}</div>
       <img src="{{item.image}}" alt="{{item.name}}" class="food-img" loading="lazy">
       {% if item.wiki_url %}<a href="{{item.wiki_url}}" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>{% endif %}
@@ -907,33 +956,51 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>{{spots_section_title}}</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      {% for st in spots_filter_types %}
-      <button class="filter-btn" data-filter="{{st.id}}" onclick="filterSpots('type','{{st.id}}',this)">{{st.label}}</button>
-      {% endfor %}
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              {% for st in spots_filter_types %}
+              <button class="filter-btn" data-filter="{{st.id}}" onclick="filterSpots('type','{{st.id}}',this)">{{st.label}}</button>
+              {% endfor %}
+            </div>
+          </div>
+          {% if spots_filter_regions %}
+          <div class="filter-group">
+            <div class="filter-label">地方</div>
+            <div class="filter-row" id="spots-filter-region">
+              {% for fr in spots_filter_regions %}
+              <button class="filter-btn" data-filter="{{fr.id}}" onclick="filterSpots('region','{{fr.id}}',this)">{{fr.label}}</button>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              {% for fc in spots_filter_cities %}
+              <button class="filter-btn {% if fc.active %}active{% endif %}" data-filter="{{fc.id}}" onclick="filterSpots('city','{{fc.id}}',this)">{{fc.label}}</button>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  {% if spots_filter_regions %}
-  <div class="filter-group">
-    <div class="filter-label">地方</div>
-    <div class="filter-row" id="spots-filter-region">
-      {% for fr in spots_filter_regions %}
-      <button class="filter-btn" data-filter="{{fr.id}}" onclick="filterSpots('region','{{fr.id}}',this)">{{fr.label}}</button>
-      {% endfor %}
-    </div>
-  </div>
-  {% endif %}
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      {% for fc in spots_filter_cities %}
-      <button class="filter-btn {% if fc.active %}active{% endif %}" data-filter="{{fc.id}}" onclick="filterSpots('city','{{fc.id}}',this)">{{fc.label}}</button>
-      {% endfor %}
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">{{spots_total_count}}</span> / <span id="spots-count-total">{{spots_total_count}}</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -941,6 +1008,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     {% for section in spot_sections %}
@@ -963,8 +1031,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     {% for spot in section.spots %}
     <div class="item-card {% if spot.no_map %}no-map {% else %}spot {% endif %}has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}" data-stype="{{spot.type}}" data-spot-num="{{spot.num}}">
       {% if spot.must %}<div class="must-badge">{{icon:star}}</div>{% endif %}
-      <div class="num">{{spot.num}}</div>
-      <div class="name-row"><div class="name">{{spot.name}}</div><span class="badge">{{spot.badge}}</span></div>
+      <div class="num-row"><span class="num">{{spot.num}}</span><span class="badge">{{spot.badge}}</span></div>
+      <div class="name-row"><div class="name">{{spot.name}}</div></div>
       <div class="desc">{{spot.desc}}</div>
       {% if spot.image %}<div class="spot-img-wrap"><img class="spot-img" src="{{spot.image}}" alt="{{spot.name}}" loading="lazy">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% elif spot.no_map %}<span class="spot-map-btn" style="display:none"></span>{% endif %}{% if spot.wiki_url %}<a href="{{spot.wiki_url}}" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a>{% endif %}{% if spot.affiliate_url %}<a href="{{spot.affiliate_url}}" target="_blank" rel="noopener" class="spot-map-btn">{{spot.affiliate_label}} →</a>{% endif %}</div>{% else %}<div class="spot-img-wrap spot-img-placeholder">{% if spot.map_url %}<a href="{{spot.map_url}}" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a>{% elif spot.no_map %}<span class="spot-map-btn" style="display:none"></span>{% endif %}{% if spot.wiki_url %}<a href="{{spot.wiki_url}}" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a>{% endif %}{% if spot.affiliate_url %}<a href="{{spot.affiliate_url}}" target="_blank" rel="noopener" class="spot-map-btn">{{spot.affiliate_label}} →</a>{% endif %}</div>{% endif %}
     </div>
@@ -1345,7 +1413,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -1354,6 +1422,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -1367,12 +1457,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -1380,6 +1471,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1426,6 +1518,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 {% if singlepage %}
@@ -1546,16 +1648,54 @@ var PAGE_INDEX = {{page_index}};
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1691,7 +1831,7 @@ var PAGE_INDEX = {{page_index}};
   document.addEventListener('DOMContentLoaded', build);
   {% if singlepage %}
   const _origShow = window.show;
-  window.show = function(id, btn){ _origShow(id, btn); build(); };
+  window.show = function(id, btn){ _origShow(id, btn); build(); fitCompactText(); };
   {% endif %}
 })();
 </script>
@@ -1733,23 +1873,6 @@ var PAGE_INDEX = {{page_index}};
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ベトナムのグルメ｜ベトナム旅行ガイド">
 <meta name="twitter:description" content="南北に約1,650km、細長く伸びるインドシナ半島の国ベトナム。北部ハノイの古都情緒、中部ホイアンのランタン、南部ホーチミンの熱気とバイクの奔流——同じ国とは思えないほど表情豊かな旅ができる。朝から晩まで途切れないバイクのクラクション、道…">
 <meta name="twitter:image" content="https://worldmappy.com/vietnam/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-15 -10 30 20"><path fill="#DA251d" d="M-20-15h40v30h-40z"/><g id="b" transform="translate(0 -6)"><path id="a" fill="#FF0" transform="rotate(18)" d="M0 0v6h4"/><use xlink:href="#a" transform="scale(-1 1)"/></g><g id="c" transform="rotate(72)"><use xlink:href="#b"/><use xlink:href="#b" transform="rotate(72)"/></g><use xlink:href="#c" transform="scale(-1 1)"/></svg></div></span><span class="site-country-name">ベトナム</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="">観光スポット</a>
-    <a href="food.html" class="active">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=vietnam">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">ベトナムを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=vietnam">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -213,42 +243,60 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Vietnam / 03</span></div>
   <div class="tab-body">
   <h2>ベトナムグルメ図鑑</h2>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="food-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn " data-filter="noodle" onclick="filterFood('type','noodle',this)">麺料理</button>
-      
-      <button class="filter-btn " data-filter="rice" onclick="filterFood('type','rice',this)">ご飯もの</button>
-      
-      <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">軽食・屋台</button>
-      
-      <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">おかず</button>
-      
-      <button class="filter-btn " data-filter="sweet" onclick="filterFood('type','sweet',this)">スイーツ</button>
-      
-      <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">飲み物</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="food-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn " data-filter="noodle" onclick="filterFood('type','noodle',this)">麺料理</button>
+              
+              <button class="filter-btn " data-filter="rice" onclick="filterFood('type','rice',this)">ご飯もの</button>
+              
+              <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">軽食・屋台</button>
+              
+              <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">おかず</button>
+              
+              <button class="filter-btn " data-filter="sweet" onclick="filterFood('type','sweet',this)">スイーツ</button>
+              
+              <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">飲み物</button>
+              
+            </div>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア限定</div>
+            <div class="filter-row" id="food-filter-city">
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
+              
+              <button class="filter-btn" data-filter="hanoi" onclick="filterFood('city','hanoi',this)">ハノイ</button>
+              
+              <button class="filter-btn" data-filter="hcmc" onclick="filterFood('city','hcmc',this)">ホーチミン</button>
+              
+              <button class="filter-btn" data-filter="danang" onclick="filterFood('city','danang',this)">ダナン・ホイアン</button>
+              
+              <button class="filter-btn" data-filter="haiphong" onclick="filterFood('city','haiphong',this)">ハロン湾・ハイフォン</button>
+              
+              <button class="filter-btn" data-filter="cantho" onclick="filterFood('city','cantho',this)">カントー</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetFoodFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-label">エリア限定</div>
-    <div class="filter-row" id="food-filter-city">
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
-      
-      <button class="filter-btn" data-filter="hanoi" onclick="filterFood('city','hanoi',this)">ハノイ</button>
-      
-      <button class="filter-btn" data-filter="hcmc" onclick="filterFood('city','hcmc',this)">ホーチミン</button>
-      
-      <button class="filter-btn" data-filter="danang" onclick="filterFood('city','danang',this)">ダナン・ホイアン</button>
-      
-      <button class="filter-btn" data-filter="haiphong" onclick="filterFood('city','haiphong',this)">ハロン湾・ハイフォン</button>
-      
-      <button class="filter-btn" data-filter="cantho" onclick="filterFood('city','cantho',this)">カントー</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="food-count-shown">23</span> / <span id="food-count-total">23</span> 品を表示</span>
     <div class="view-toggle" id="foodViewToggle">
@@ -257,12 +305,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
   </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
     <div class="item-card has-img must" data-ftype="noodle" data-fcity="national" data-food-num="No.01">
-      <div class="num">No.01</div>
-      <div class="name-row"><div class="name">フォー</div><span class="badge">国民食</span></div>
+      <div class="num-row"><span class="num">No.01</span><span class="badge">国民食</span></div>
+      <div class="name-row"><div class="name">フォー</div></div>
       <div class="desc">牛骨や鶏ガラでじっくり出汁を取った米麺料理。パクチー・もやし・ライムを添え、店ごとに異なる味わいが楽しめる。牛肉（フォーボー）と鶏肉（フォーガー）が定番。</div>
       <img src="素材/グルメ/フォー.webp" alt="フォー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%95%E3%82%A9%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -272,8 +321,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="snack" data-fcity="national" data-food-num="No.02">
-      <div class="num">No.02</div>
-      <div class="name-row"><div class="name">バインミー</div><span class="badge">フランスパン×ベトナム</span></div>
+      <div class="num-row"><span class="num">No.02</span><span class="badge">フランスパン×ベトナム</span></div>
+      <div class="name-row"><div class="name">バインミー</div></div>
       <div class="desc">フランス統治時代の名残であるバゲットに、パテ・なます・パクチー・肉やハムを挟んだサンドイッチ。外はカリッと中はふわっとした食感が魅力の屋台の大定番。</div>
       <img src="素材/グルメ/バインミー.webp" alt="バインミー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%83%9F%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -283,8 +332,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="noodle" data-fcity="hanoi" data-food-num="No.03">
-      <div class="num">No.03</div>
-      <div class="name-row"><div class="name">ブンチャー</div><span class="badge">庶民の味</span></div>
+      <div class="num-row"><span class="num">No.03</span><span class="badge">庶民の味</span></div>
+      <div class="name-row"><div class="name">ブンチャー</div></div>
       <div class="desc">炭火で炙った豚肉団子と甘酸っぱいヌクマムだれに米麺と香草をつけて食べるハノイ名物。オバマ元大統領も食べたことで話題になり、北部の麺文化を代表する一杯。</div>
       <img src="素材/グルメ/ブンチャー.webp" alt="ブンチャー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%96%E3%83%B3%E3%83%81%E3%83%A3%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -294,8 +343,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="hanoi" data-food-num="No.04">
-      <div class="num">No.04</div>
-      <div class="name-row"><div class="name">チャーカーラボン</div><span class="badge">ウコン風味の魚料理</span></div>
+      <div class="num-row"><span class="num">No.04</span><span class="badge">ウコン風味の魚料理</span></div>
+      <div class="name-row"><div class="name">チャーカーラボン</div></div>
       <div class="desc">ウコンとディルで風味付けした魚を鉄鍋で焼きながら食べるハノイの郷土料理。専門店では目の前でジュージューと仕上げてくれる。</div>
       <img src="素材/グルメ/チャーカーラボン.webp" alt="チャーカーラボン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%83%BC%E3%82%AB%E3%83%BC%E3%83%A9%E3%83%9C%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -305,8 +354,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="hanoi" data-food-num="No.05">
-      <div class="num">No.05</div>
-      <div class="name-row"><div class="name">バインクオン</div><span class="badge">米粉クレープ</span></div>
+      <div class="num-row"><span class="num">No.05</span><span class="badge">米粉クレープ</span></div>
+      <div class="name-row"><div class="name">バインクオン</div></div>
       <div class="desc">極薄の米粉生地を蒸して作るクレープに、豚ひき肉ときくらげを包んだ朝食の定番。揚げエシャロットを散らしヌクマムにつけて食べる。</div>
       <img src="素材/グルメ/バインクオン.webp" alt="バインクオン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%82%AF%E3%82%AA%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -316,8 +365,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="hanoi" data-food-num="No.06">
-      <div class="num">No.06</div>
-      <div class="name-row"><div class="name">エッグコーヒー</div><span class="badge">卵黄クリームの濃厚コーヒー</span></div>
+      <div class="num-row"><span class="num">No.06</span><span class="badge">卵黄クリームの濃厚コーヒー</span></div>
+      <div class="name-row"><div class="name">エッグコーヒー</div></div>
       <div class="desc">泡立てた卵黄と練乳をベトナムコーヒーの上にのせたハノイ発祥の濃厚な一杯。デザート感覚で楽しめる名物ドリンクで、カフェが立ち並ぶ旧市街で試せる。</div>
       <img src="素材/グルメ/エッグコーヒー.webp" alt="エッグコーヒー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A8%E3%83%83%E3%82%B0%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -327,8 +376,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="rice" data-fcity="hcmc" data-food-num="No.07">
-      <div class="num">No.07</div>
-      <div class="name-row"><div class="name">コムタム</div><span class="badge">砕き米のワンプレート</span></div>
+      <div class="num-row"><span class="num">No.07</span><span class="badge">砕き米のワンプレート</span></div>
+      <div class="name-row"><div class="name">コムタム</div></div>
       <div class="desc">精米時に割れた砕き米に炭火焼き豚肉・目玉焼き・なますをのせたホーチミンの庶民食。ボリューム満点で安く、南部の食卓で米飯ものが主役になる代表的な一皿。</div>
       <img src="素材/グルメ/コムタム.webp" alt="コムタム" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B3%E3%83%A0%E3%82%BF%E3%83%A0%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -338,8 +387,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="noodle" data-fcity="hcmc" data-food-num="No.08">
-      <div class="num">No.08</div>
-      <div class="name-row"><div class="name">フーティウ</div><span class="badge">中華系の麺料理</span></div>
+      <div class="num-row"><span class="num">No.08</span><span class="badge">中華系の麺料理</span></div>
+      <div class="name-row"><div class="name">フーティウ</div></div>
       <div class="desc">中華系移民が伝えたコシのある麺をエビ・豚肉・もやしと透き通ったスープで食べる南部の麺料理。汁あり・汁なしどちらも人気で、朝食に特によく食べられる。</div>
       <img src="素材/グルメ/フーティウ.webp" alt="フーティウ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%95%E3%83%BC%E3%83%86%E3%82%A3%E3%82%A6%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -349,8 +398,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="snack" data-fcity="hcmc" data-food-num="No.09">
-      <div class="num">No.09</div>
-      <div class="name-row"><div class="name">バインセオ</div><span class="badge">ベトナム風お好み焼き</span></div>
+      <div class="num-row"><span class="num">No.09</span><span class="badge">ベトナム風お好み焼き</span></div>
+      <div class="name-row"><div class="name">バインセオ</div></div>
       <div class="desc">ターメリックで黄色く色付けたパリパリの生地に、エビ・豚肉・もやしを包んだ南部名物。サニーレタスで巻いてヌクマムにつけて食べる。</div>
       <img src="素材/グルメ/バインセオ.webp" alt="バインセオ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%82%BB%E3%82%AA%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -360,8 +409,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="snack" data-fcity="national" data-food-num="No.10">
-      <div class="num">No.10</div>
-      <div class="name-row"><div class="name">ゴイクオン</div><span class="badge">生春巻き</span></div>
+      <div class="num-row"><span class="num">No.10</span><span class="badge">生春巻き</span></div>
+      <div class="name-row"><div class="name">ゴイクオン</div></div>
       <div class="desc">米粉のライスペーパーでエビ・豚肉・米麺・香草を巻いた、さっぱりヘルシーな一品。ピーナッツソースにつけて食べるのが定番。南部での呼び名で、北部では「ネムクオン」と呼ばれる。</div>
       <img src="素材/グルメ/ゴイクオン.webp" alt="ゴイクオン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B4%E3%82%A4%E3%82%AF%E3%82%AA%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -371,8 +420,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.11">
-      <div class="num">No.11</div>
-      <div class="name-row"><div class="name">チャーゾー</div><span class="badge">揚げ春巻き</span></div>
+      <div class="num-row"><span class="num">No.11</span><span class="badge">揚げ春巻き</span></div>
+      <div class="name-row"><div class="name">チャーゾー</div></div>
       <div class="desc">豚ひき肉・春雨・きくらげを皮で包んでカリカリに揚げた春巻き。北部と南部で皮の厚さや味付けが微妙に異なり、南部での呼び名がチャーゾー、北部では「ネムザン」と呼ばれる。</div>
       <img src="素材/グルメ/チャーゾー.webp" alt="チャーゾー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BE%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -382,8 +431,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="noodle" data-fcity="danang" data-food-num="No.12">
-      <div class="num">No.12</div>
-      <div class="name-row"><div class="name">ミークアン</div><span class="badge">中部名物麺</span></div>
+      <div class="num-row"><span class="num">No.12</span><span class="badge">中部名物麺</span></div>
+      <div class="name-row"><div class="name">ミークアン</div></div>
       <div class="desc">黄色いターメリック麺に豚肉・エビ・落花生・パリパリの揚げ煎餅をのせた中部ダナン・ホイアン周辺の郷土麺。スープは少なめが本場流。</div>
       <img src="素材/グルメ/ミークアン.webp" alt="ミークアン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -393,8 +442,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="noodle" data-fcity="danang" data-food-num="No.13">
-      <div class="num">No.13</div>
-      <div class="name-row"><div class="name">カオラウ</div><span class="badge">ホイアン限定麺</span></div>
+      <div class="num-row"><span class="num">No.13</span><span class="badge">ホイアン限定麺</span></div>
+      <div class="name-row"><div class="name">カオラウ</div></div>
       <div class="desc">ホイアンの特定の井戸水でしか作れないとされる、コシのある太麺に叉焼と揚げワンタン風のクルトンをのせた名物麺。ホイアン以外ではほぼ食べられない。</div>
       <img src="素材/グルメ/カオラウ.webp" alt="カオラウ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%82%AA%E3%83%A9%E3%82%A6%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -404,8 +453,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="danang" data-food-num="No.14">
-      <div class="num">No.14</div>
-      <div class="name-row"><div class="name">ホワイトローズ（バインバオ・バインディック）</div><span class="badge">ホイアンの白バラ餃子</span></div>
+      <div class="num-row"><span class="num">No.14</span><span class="badge">ホイアンの白バラ餃子</span></div>
+      <div class="name-row"><div class="name">ホワイトローズ（バインバオ・バインディック）</div></div>
       <div class="desc">米粉の皮でエビを包んで蒸した半透明の点心。花のように成形されることから「ホワイトローズ」と呼ばれ、ホイアンを代表するグルメとして旅行者にも人気。</div>
       <img src="素材/グルメ/ホワイトローズ（バインバオ・バインディック）.webp" alt="ホワイトローズ（バインバオ・バインディック）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%83%90%E3%82%AA%E3%83%90%E3%82%A4%E3%83%B3%E3%83%90%E3%83%83%E3%83%88%EF%BC%88%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%83%AD%E3%83%BC%E3%82%BA%EF%BC%89%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -415,8 +464,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="noodle" data-fcity="haiphong" data-food-num="No.15">
-      <div class="num">No.15</div>
-      <div class="name-row"><div class="name">バインダークア</div><span class="badge">蟹肉入り赤麺</span></div>
+      <div class="num-row"><span class="num">No.15</span><span class="badge">蟹肉入り赤麺</span></div>
+      <div class="name-row"><div class="name">バインダークア</div></div>
       <div class="desc">蟹の甲羅から取った出汁と蟹肉を使った赤茶色の麺料理。ハイフォンの名物として地元で絶大な人気を誇り、蟹の旨みが凝縮されたスープが特徴の一杯。</div>
       <img src="素材/グルメ/バインダークア.webp" alt="バインダークア" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%83%80%E3%83%BC%E3%82%AF%E3%82%A2%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -426,8 +475,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="haiphong" data-food-num="No.16">
-      <div class="num">No.16</div>
-      <div class="name-row"><div class="name">ネムクア</div><span class="badge">蟹肉の揚げ春巻き</span></div>
+      <div class="num-row"><span class="num">No.16</span><span class="badge">蟹肉の揚げ春巻き</span></div>
+      <div class="name-row"><div class="name">ネムクア</div></div>
       <div class="desc">蟹肉と豚肉を大きめの皮で包んでカリッと揚げた、ハイフォン発祥の贅沢な揚げ春巻き。北部式揚げ春巻き「ネムザン」に蟹肉を加えた「ネムザン・クア」にあたり、祝いの席にも登場する。</div>
       <img src="素材/グルメ/ネムクア.webp" alt="ネムクア" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8D%E3%83%A0%E3%82%AF%E3%82%A2%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -437,8 +486,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="cantho" data-food-num="No.17">
-      <div class="num">No.17</div>
-      <div class="name-row"><div class="name">ラウマム</div><span class="badge">メコンデルタの発酵魚鍋</span></div>
+      <div class="num-row"><span class="num">No.17</span><span class="badge">メコンデルタの発酵魚鍋</span></div>
+      <div class="name-row"><div class="name">ラウマム</div></div>
       <div class="desc">発酵させた魚醤（マム）をベースに、川魚・エビ・野菜をたっぷり煮込む鍋料理。独特の風味がクセになるメコンデルタの郷土料理。</div>
       <img src="素材/グルメ/ラウマム.webp" alt="ラウマム" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%A9%E3%82%A6%E3%83%9E%E3%83%A0%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -448,8 +497,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="cantho" data-food-num="No.18">
-      <div class="num">No.18</div>
-      <div class="name-row"><div class="name">バインコット</div><span class="badge">一口サイズのミニお好み焼き</span></div>
+      <div class="num-row"><span class="num">No.18</span><span class="badge">一口サイズのミニお好み焼き</span></div>
+      <div class="name-row"><div class="name">バインコット</div></div>
       <div class="desc">小さな丸い鉄鍋で焼く一口サイズのお好み焼き。中にエビが一尾入り、香草とヌクマムにつけて食べる南部の軽食で、食べ歩きにもぴったりの屋台グルメ。</div>
       <img src="素材/グルメ/バインコット.webp" alt="バインコット" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%83%E3%83%88%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -459,8 +508,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="sweet" data-fcity="national" data-food-num="No.19">
-      <div class="num">No.19</div>
-      <div class="name-row"><div class="name">チェー</div><span class="badge">ベトナム風ぜんざい</span></div>
+      <div class="num-row"><span class="num">No.19</span><span class="badge">ベトナム風ぜんざい</span></div>
+      <div class="name-row"><div class="name">チェー</div></div>
       <div class="desc">豆・ゼリー・タピオカ・フルーツをココナッツミルクやシロップと混ぜて食べる、暑い国ならではの冷たいデザート。屋台で自分好みの具材を選べる店も多い。</div>
       <img src="素材/グルメ/チェー.webp" alt="チェー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%82%A7%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -470,8 +519,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="hanoi" data-food-num="No.20">
-      <div class="num">No.20</div>
-      <div class="name-row"><div class="name">ビアホイ</div><span class="badge">激安の生ビール</span></div>
+      <div class="num-row"><span class="num">No.20</span><span class="badge">激安の生ビール</span></div>
+      <div class="name-row"><div class="name">ビアホイ</div></div>
       <div class="desc">毎日その日仕込みで作られる保存料なしの生ビール。低い椅子に座って1杯十数円〜という破格の値段で楽しめる、ハノイの夕方の風物詩。</div>
       <img src="素材/グルメ/ビアホイ.webp" alt="ビアホイ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%93%E3%82%A2%E3%83%9B%E3%82%A4%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -481,8 +530,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.21">
-      <div class="num">No.21</div>
-      <div class="name-row"><div class="name">カフェスアダー</div><span class="badge">ベトナム式アイスコーヒー</span></div>
+      <div class="num-row"><span class="num">No.21</span><span class="badge">ベトナム式アイスコーヒー</span></div>
+      <div class="name-row"><div class="name">カフェスアダー</div></div>
       <div class="desc">深煎りの粉をフィルターでじっくり抽出し、練乳と氷で仕上げる濃厚な甘いアイスコーヒー。ベトナムの喫茶文化を象徴する一杯で、日本でも人気が高まっている。</div>
       <img src="素材/グルメ/カフェスアダー.webp" alt="カフェスアダー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%83%95%E3%82%A7%E3%82%B9%E3%82%A2%E3%83%80%E3%83%BC%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -492,8 +541,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="cantho" data-food-num="No.22">
-      <div class="num">No.22</div>
-      <div class="name-row"><div class="name">バインカン</div><span class="badge">メコンの素朴な焼き餅</span></div>
+      <div class="num-row"><span class="num">No.22</span><span class="badge">メコンの素朴な焼き餅</span></div>
+      <div class="name-row"><div class="name">バインカン</div></div>
       <div class="desc">米粉の生地を小さな土鍋に流し込んで焼き上げる南部の素朴なおやつ。うずらの卵や豚肉を落として焼くことが多く、屋台で焼きたてを頬張るのが醍醐味の一品。</div>
       <img src="素材/グルメ/バインカン.webp" alt="バインカン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%82%A4%E3%83%B3%E3%83%80%E3%83%BC%E3%83%B4%E3%82%A3%E3%82%A8%E3%83%B3%E3%83%81%E3%82%A7%E3%82%AA%EF%BC%8F%E3%83%90%E3%82%A4%E3%83%B3%E3%82%AB%E3%83%B3%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -503,8 +552,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="danang" data-food-num="No.23">
-      <div class="num">No.23</div>
-      <div class="name-row"><div class="name">ブンボーフエ</div><span class="badge">フエ発祥のピリ辛麺</span></div>
+      <div class="num-row"><span class="num">No.23</span><span class="badge">フエ発祥のピリ辛麺</span></div>
+      <div class="name-row"><div class="name">ブンボーフエ</div></div>
       <div class="desc">レモングラスと発酵エビペーストで香り高く仕立てた牛肉と豚足入りのピリ辛麺料理。フォーと並び称される中部ベトナムの看板グルメで、かつての古都フエで発展した。</div>
       <img src="素材/グルメ/ブンボーフエ.webp" alt="ブンボーフエ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%96%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%95%E3%82%A8%20%E3%83%99%E3%83%88%E3%83%8A%E3%83%A0%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -693,7 +742,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -702,6 +751,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -715,12 +786,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -728,6 +800,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -774,6 +847,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -849,16 +932,54 @@ var PAGE_INDEX = 2;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1033,23 +1154,6 @@ var PAGE_INDEX = 2;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

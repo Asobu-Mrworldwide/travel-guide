@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="南アフリカ共和国の観光スポット｜南アフリカ共和国旅行ガイド">
 <meta name="twitter:description" content="未舗装路？道端に野生動物？命の保証は？まだそんなイメージの人は今すぐチケットを取りましょう。ケープタウンのテーブルマウンテン、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、圧倒的なスケールの自然と…">
 <meta name="twitter:image" content="https://worldmappy.com/south_africa/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 9 6"><clipPath id="c"><path d="M0 0l4.5 3L0 6" id="b"/></clipPath><clipPath id="a"><path d="M0 0h9v6H0z"/></clipPath><g clip-path="url(#a)"><path d="M0 0v6h9V0z" fill="#001489"/><path d="M0 0v3h9V0z" fill="#e03c31"/><g stroke-width="2" stroke="#fff"><path d="M0 0l4.5 3L0 6m4.5-3H9" id="d"/><use xlink:href="#b" stroke="#ffb81c" clip-path="url(#c)"/></g><use xlink:href="#d" fill="none" stroke="#007749" stroke-width="1.2"/></g></svg></div></span><span class="site-country-name">南アフリカ共和国</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=south_africa">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">南アフリカ共和国を旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=south_africa">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,46 +272,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>南アフリカ 観光スポット</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="cape_town" onclick="filterSpots('city','cape_town',this)">ケープタウン</button>
+              
+              <button class="filter-btn " data-filter="johannesburg" onclick="filterSpots('city','johannesburg',this)">ヨハネスブルク</button>
+              
+              <button class="filter-btn " data-filter="durban" onclick="filterSpots('city','durban',this)">ダーバン</button>
+              
+              <button class="filter-btn " data-filter="kruger" onclick="filterSpots('city','kruger',this)">クルーガー</button>
+              
+              <button class="filter-btn " data-filter="oudtshoorn" onclick="filterSpots('city','oudtshoorn',this)">オウツホルン</button>
+              
+              <button class="filter-btn " data-filter="garden_route" onclick="filterSpots('city','garden_route',this)">ガーデンルート</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="cape_town" onclick="filterSpots('city','cape_town',this)">ケープタウン</button>
-      
-      <button class="filter-btn " data-filter="johannesburg" onclick="filterSpots('city','johannesburg',this)">ヨハネスブルク</button>
-      
-      <button class="filter-btn " data-filter="durban" onclick="filterSpots('city','durban',this)">ダーバン</button>
-      
-      <button class="filter-btn " data-filter="kruger" onclick="filterSpots('city','kruger',this)">クルーガー</button>
-      
-      <button class="filter-btn " data-filter="oudtshoorn" onclick="filterSpots('city','oudtshoorn',this)">オウツホルン</button>
-      
-      <button class="filter-btn " data-filter="garden_route" onclick="filterSpots('city','garden_route',this)">ガーデンルート</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">31</span> / <span id="spots-count-total">31</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -289,6 +337,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -323,88 +372,88 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="cape_town" data-stype="nature" data-spot-num="CPT 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CPT 01</div>
-      <div class="name-row"><div class="name">テーブルマウンテン</div><span class="badge">世界自然遺産</span></div>
+      <div class="num-row"><span class="num">CPT 01</span><span class="badge">世界自然遺産</span></div>
+      <div class="name-row"><div class="name">テーブルマウンテン</div></div>
       <div class="desc">標高1,086mの平頂山。ロープウェイで頂上へ上がれば、ケープタウン市街と大西洋を一望できる世界自然遺産。風が強い日は運休するため、晴れた午前中が狙い目。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/テーブルマウンテン.webp" alt="テーブルマウンテン" loading="lazy"><a href="https://maps.google.com/?q=Table+Mountain+Cape+Town" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="cape_town" data-stype="heritage" data-spot-num="CPT 02">
       <div class="must-badge">⭐</div>
-      <div class="num">CPT 02</div>
-      <div class="name-row"><div class="name">ロベン島</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">CPT 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ロベン島</div></div>
       <div class="desc">ネルソン・マンデラ元大統領が27年間収容されたユネスコ世界遺産の島。フェリーで30分。元受刑者がガイドを務める実体験の説明は圧倒的な迫力。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ロベン島.webp" alt="ロベン島" loading="lazy"><a href="https://maps.google.com/?q=Robben+Island" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="nature" data-spot-num="CPT 03">
       
-      <div class="num">CPT 03</div>
-      <div class="name-row"><div class="name">ボルダーズビーチ（ケープペンギン）</div><span class="badge">野生動物</span></div>
+      <div class="num-row"><span class="num">CPT 03</span><span class="badge">野生動物</span></div>
+      <div class="name-row"><div class="name">ボルダーズビーチ（ケープペンギン）</div></div>
       <div class="desc">ケープタウン南部、サイモンズタウン近郊の小さなビーチにケープペンギンのコロニーが生息。岩場を自由に歩き回るペンギンを至近距離で観察できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボルダーズビーチ（ケープペンギン）.webp" alt="ボルダーズビーチ（ケープペンギン）" loading="lazy"><a href="https://maps.google.com/?q=Boulders+Beach+Cape+Town" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="cape_town" data-stype="nature" data-spot-num="CPT 04">
       <div class="must-badge">⭐</div>
-      <div class="num">CPT 04</div>
-      <div class="name-row"><div class="name">喜望峰</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">CPT 04</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">喜望峰</div></div>
       <div class="desc">かつて「嵐の岬」と呼ばれたアフリカ大陸最南西端の岬。断崖絶壁と荒波が織りなす絶景は圧巻。ケープポイント展望台からの眺めも必見。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/喜望峰.webp" alt="喜望峰" loading="lazy"><a href="https://maps.google.com/?q=Cape+of+Good+Hope" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="townscape" data-spot-num="CPT 05">
       
-      <div class="num">CPT 05</div>
-      <div class="name-row"><div class="name">ボカープ地区</div><span class="badge">映えスポット</span></div>
+      <div class="num-row"><span class="num">CPT 05</span><span class="badge">映えスポット</span></div>
+      <div class="name-row"><div class="name">ボカープ地区</div></div>
       <div class="desc">カラフルな色彩の家々が並ぶケープタウンのマレー系住民地区。コバルトブルー・鮮やかなピンク・黄色の外壁が映えスポットとして人気が高い。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボカープ地区.webp" alt="ボカープ地区" loading="lazy"><a href="https://maps.google.com/?q=Bo-Kaap+Cape+Town" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="activity" data-spot-num="CPT 06">
       
-      <div class="num">CPT 06</div>
-      <div class="name-row"><div class="name">ステレンボッシュ（ワインランド）</div><span class="badge">ワイン</span></div>
+      <div class="num-row"><span class="num">CPT 06</span><span class="badge">ワイン</span></div>
+      <div class="name-row"><div class="name">ステレンボッシュ（ワインランド）</div></div>
       <div class="desc">ケープタウンから約45分のワイン産地。オーク並木の美しい街並みと100以上のワイナリーが集まり、テイスティングや農場ランチが楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ステレンボッシュ（ワインランド）.webp" alt="ステレンボッシュ（ワインランド）" loading="lazy"><a href="https://maps.google.com/?q=Stellenbosch+South+Africa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="market" data-spot-num="CPT 07">
       
-      <div class="num">CPT 07</div>
-      <div class="name-row"><div class="name">V&Aウォーターフロント</div><span class="badge">ショッピング</span></div>
+      <div class="num-row"><span class="num">CPT 07</span><span class="badge">ショッピング</span></div>
+      <div class="name-row"><div class="name">V&Aウォーターフロント</div></div>
       <div class="desc">ケープタウン港を改装した大型ショッピング＆観光エリア。レストラン・マーケット・水族館が揃い、テーブルマウンテンを背景にした夜景も美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/V&Aウォーターフロント.webp" alt="V&Aウォーターフロント" loading="lazy"><a href="https://maps.google.com/?q=V%26A+Waterfront+Cape+Town" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="nature" data-spot-num="CPT 08">
       
-      <div class="num">CPT 08</div>
-      <div class="name-row"><div class="name">カーステンボッシュ国立植物園</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">CPT 08</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">カーステンボッシュ国立植物園</div></div>
       <div class="desc">テーブルマウンテン東麓に広がる、ケープ植物区系保護地域としてユネスコ世界遺産にも登録された植物園。地上12mの空中回廊「ブームスラング」から絶景が広がる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カーステンボッシュ国立植物園.webp" alt="カーステンボッシュ国立植物園" loading="lazy"><a href="https://maps.google.com/?q=Kirstenbosch+National+Botanical+Garden" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="nature" data-spot-num="CPT 09">
       
-      <div class="num">CPT 09</div>
-      <div class="name-row"><div class="name">チャップマンズピーク・ドライブ</div><span class="badge">絶景ドライブ</span></div>
+      <div class="num-row"><span class="num">CPT 09</span><span class="badge">絶景ドライブ</span></div>
+      <div class="name-row"><div class="name">チャップマンズピーク・ドライブ</div></div>
       <div class="desc">ホウトベイとノードフックを結ぶ、断崖絶壁沿いの絶景ドライブルート。ボルダーズビーチ・喜望峰へ向かう道中に組み込むのが定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チャップマンズピーク・ドライブ.webp" alt="チャップマンズピーク・ドライブ" loading="lazy"><a href="https://maps.google.com/?q=Chapman%27s+Peak+Drive" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="nature" data-spot-num="CPT 10">
       
-      <div class="num">CPT 10</div>
-      <div class="name-row"><div class="name">キャンプス・ベイ</div><span class="badge">絶景ビーチ</span></div>
+      <div class="num-row"><span class="num">CPT 10</span><span class="badge">絶景ビーチ</span></div>
+      <div class="name-row"><div class="name">キャンプス・ベイ</div></div>
       <div class="desc">ツェルヴェ・アポストルズを背景にした、ケープタウンで最も絵になるビーチ。白砂と真っ青な大西洋のコントラストが美しく、夕日を眺めながら過ごすのが定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/キャンプス・ベイ.webp" alt="キャンプス・ベイ" loading="lazy"><a href="https://maps.google.com/?q=Camps+Bay+Beach+Cape+Town" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cape_town" data-stype="nature" data-spot-num="CPT 11">
       
-      <div class="num">CPT 11</div>
-      <div class="name-row"><div class="name">ハーマナス（ホエールウォッチング）</div><span class="badge">季節限定</span></div>
+      <div class="num-row"><span class="num">CPT 11</span><span class="badge">季節限定</span></div>
+      <div class="name-row"><div class="name">ハーマナス（ホエールウォッチング）</div></div>
       <div class="desc">ケープタウンから車で約1.5時間の海沿いの町。6〜11月にはナガスクジラが湾内に接近し、陸地からクジラが見られる世界でも珍しいスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハーマナス（ホエールウォッチング）.webp" alt="ハーマナス（ホエールウォッチング）" loading="lazy"><a href="https://maps.google.com/?q=Hermanus+South+Africa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -443,40 +492,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="johannesburg" data-stype="museum" data-spot-num="JHB 01">
       <div class="must-badge">⭐</div>
-      <div class="num">JHB 01</div>
-      <div class="name-row"><div class="name">アパルトヘイト博物館</div><span class="badge">歴史</span></div>
+      <div class="num-row"><span class="num">JHB 01</span><span class="badge">歴史</span></div>
+      <div class="name-row"><div class="name">アパルトヘイト博物館</div></div>
       <div class="desc">人種隔離政策（アパルトヘイト）の歴史を映像・写真・展示物で体感できる博物館。入口から白人・非白人に分けられ、当時の現実を追体験できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アパルトヘイト博物館.webp" alt="アパルトヘイト博物館" loading="lazy"><a href="https://maps.google.com/?q=Apartheid+Museum+Johannesburg" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="johannesburg" data-stype="heritage" data-spot-num="JHB 02">
       <div class="must-badge">⭐</div>
-      <div class="num">JHB 02</div>
-      <div class="name-row"><div class="name">ソウェト（ヴィラカジ通り）</div><span class="badge">歴史</span></div>
+      <div class="num-row"><span class="num">JHB 02</span><span class="badge">歴史</span></div>
+      <div class="name-row"><div class="name">ソウェト（ヴィラカジ通り）</div></div>
       <div class="desc">マンデラとデズモンド・ツツがともに住んだ唯一の通り。マンデラ・ハウスは現在博物館として公開。ソウェト出身のガイドによるツアーが現地の空気を最もよく伝えてくれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ソウェト（ヴィラカジ通り）.webp" alt="ソウェト（ヴィラカジ通り）" loading="lazy"><a href="https://maps.google.com/?q=Vilakazi+Street+Soweto" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="johannesburg" data-stype="townscape" data-spot-num="JHB 03">
       
-      <div class="num">JHB 03</div>
-      <div class="name-row"><div class="name">ポンテタワー</div><span class="badge">ツアー推奨</span></div>
+      <div class="num-row"><span class="num">JHB 03</span><span class="badge">ツアー推奨</span></div>
+      <div class="name-row"><div class="name">ポンテタワー</div></div>
       <div class="desc">中心が吹き抜けの円筒形になったアフリカ最高層の集合住宅（1975年築・54階建て）。「Dlala Nje」の地元ツアーなら安全に楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ポンテタワー.webp" alt="ポンテタワー" loading="lazy"><a href="https://maps.google.com/?q=Ponte+Tower+Johannesburg" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="johannesburg" data-stype="heritage" data-spot-num="JHB 04">
       
-      <div class="num">JHB 04</div>
-      <div class="name-row"><div class="name">人類のゆりかご（スタークフォンテイン洞窟）</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">JHB 04</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">人類のゆりかご（スタークフォンテイン洞窟）</div></div>
       <div class="desc">ヨハネスブルグから車で約1時間、最古級の人類化石が多数発見されたユネスコ世界遺産。実際の発掘現場を見学できる歴史・考古学の必見スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/人類のゆりかご（スタークフォンテイン洞窟）.webp" alt="人類のゆりかご（スタークフォンテイン洞窟）" loading="lazy"><a href="https://maps.google.com/?q=Sterkfontein+Caves+South+Africa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="johannesburg" data-stype="heritage" data-spot-num="JHB 05">
       
-      <div class="num">JHB 05</div>
-      <div class="name-row"><div class="name">コンスティテューション・ヒル</div><span class="badge">歴史</span></div>
+      <div class="num-row"><span class="num">JHB 05</span><span class="badge">歴史</span></div>
+      <div class="name-row"><div class="name">コンスティテューション・ヒル</div></div>
       <div class="desc">「ヨハネスブルグのロベン島」と呼ばれた旧刑務所跡地。マンデラも収監された「オールド・フォート」を見学でき、跡地には現在南アフリカ憲法裁判所が建つ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コンスティテューション・ヒル.webp" alt="コンスティテューション・ヒル" loading="lazy"><a href="https://maps.google.com/?q=Constitution+Hill+Johannesburg" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -515,32 +564,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="durban" data-stype="nature" data-spot-num="DBN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">DBN 01</div>
-      <div class="name-row"><div class="name">ゴールデンマイル</div><span class="badge">ビーチ</span></div>
+      <div class="num-row"><span class="num">DBN 01</span><span class="badge">ビーチ</span></div>
+      <div class="name-row"><div class="name">ゴールデンマイル</div></div>
       <div class="desc">ダーバン中心部に伸びる約6kmのビーチ沿いのプロムナード。サーフィン・ビーチバレー・マーケットが並び、年中温暖なインド洋を楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ゴールデンマイル.webp" alt="ゴールデンマイル" loading="lazy"><a href="https://maps.google.com/?q=Golden+Mile+Durban" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="durban" data-stype="market" data-spot-num="DBN 02">
       
-      <div class="num">DBN 02</div>
-      <div class="name-row"><div class="name">ヴィクトリアストリート・マーケット</div><span class="badge">マーケット</span></div>
+      <div class="num-row"><span class="num">DBN 02</span><span class="badge">マーケット</span></div>
+      <div class="name-row"><div class="name">ヴィクトリアストリート・マーケット</div></div>
       <div class="desc">ダーバン最大のインド系マーケット。スパイス・布・工芸品が溢れ、バニーチョウなどのストリートフードも楽しめる。インド系文化の香りが強い独特のエリア。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヴィクトリアストリート・マーケット.webp" alt="ヴィクトリアストリート・マーケット" loading="lazy"><a href="https://maps.google.com/?q=Victoria+Street+Market+Durban" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="durban" data-stype="activity" data-spot-num="DBN 03">
       <div class="must-badge">⭐</div>
-      <div class="num">DBN 03</div>
-      <div class="name-row"><div class="name">ウシャカ・マリンワールド</div><span class="badge">テーマパーク</span></div>
+      <div class="num-row"><span class="num">DBN 03</span><span class="badge">テーマパーク</span></div>
+      <div class="name-row"><div class="name">ウシャカ・マリンワールド</div></div>
       <div class="desc">ゴールデンマイル南端に広がるアフリカ最大級の海洋テーマパーク。世界有数の水族館に加えイルカ・アシカのショー、ウォータースライダーも併設され家族連れに人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウシャカ・マリンワールド.webp" alt="ウシャカ・マリンワールド" loading="lazy"><a href="https://maps.google.com/?q=uShaka+Marine+World+Durban" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="durban" data-stype="activity" data-spot-num="DBN 04">
       
-      <div class="num">DBN 04</div>
-      <div class="name-row"><div class="name">モーゼス・マビダ・スタジアム</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">DBN 04</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">モーゼス・マビダ・スタジアム</div></div>
       <div class="desc">2010年FIFAワールドカップのために建設されたダーバンのランドマーク。国旗を模したアーチの展望台から市街とインド洋を一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モーゼス・マビダ・スタジアム.webp" alt="モーゼス・マビダ・スタジアム" loading="lazy"><a href="https://maps.google.com/?q=Moses+Mabhida+Stadium+Durban" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -579,32 +628,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card no-map has-spot-img must" data-city="kruger" data-stype="activity" data-spot-num="KNP 01">
       <div class="must-badge">⭐</div>
-      <div class="num">KNP 01</div>
-      <div class="name-row"><div class="name">サンライズ・ゲームドライブ</div><span class="badge">ベスト体験</span></div>
+      <div class="num-row"><span class="num">KNP 01</span><span class="badge">ベスト体験</span></div>
+      <div class="name-row"><div class="name">サンライズ・ゲームドライブ</div></div>
       <div class="desc">夜明け前に出発し、ライオン・ヒョウなどの捕食動物が活動する時間帯を狙うドライブ。公認ガイドのオープン車で回るため、視界が広く野生の息吹を間近で感じられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サンライズ・ゲームドライブ.webp" alt="サンライズ・ゲームドライブ" loading="lazy"><a href="https://www.getyourguide.jp/" target="_blank" rel="noopener" class="spot-map-btn">GetYourGuideで探す →</a></div>
     </div>
     
     <div class="item-card no-map has-spot-img must" data-city="kruger" data-stype="nature" data-spot-num="KNP 02">
       <div class="must-badge">⭐</div>
-      <div class="num">KNP 02</div>
-      <div class="name-row"><div class="name">ビッグファイブ探索</div><span class="badge">野生動物</span></div>
+      <div class="num-row"><span class="num">KNP 02</span><span class="badge">野生動物</span></div>
+      <div class="name-row"><div class="name">ビッグファイブ探索</div></div>
       <div class="desc">ライオン・ヒョウ・ゾウ・サイ・バッファローの「ビッグファイブ」すべてが生息するクルーガー国立公園。乾季（5〜9月）は水辺に動物が集まり遭遇率が高い。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ビッグファイブ探索.webp" alt="ビッグファイブ探索" loading="lazy"><a href="https://www.getyourguide.jp/" target="_blank" rel="noopener" class="spot-map-btn">GetYourGuideで探す →</a></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="kruger" data-stype="activity" data-spot-num="KNP 03">
       
-      <div class="num">KNP 03</div>
-      <div class="name-row"><div class="name">サンセット・ナイトドライブ</div><span class="badge">オプション</span></div>
+      <div class="num-row"><span class="num">KNP 03</span><span class="badge">オプション</span></div>
+      <div class="name-row"><div class="name">サンセット・ナイトドライブ</div></div>
       <div class="desc">夕暮れから夜にかけて行うドライブ。ハイエナ・ライオン・ナイトエイプなど夜行性動物をスポットライトで探す。昼間とは異なる野生の顔が見られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サンセット・ナイトドライブ.webp" alt="サンセット・ナイトドライブ" loading="lazy"><a href="https://www.getyourguide.jp/" target="_blank" rel="noopener" class="spot-map-btn">GetYourGuideで探す →</a></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kruger" data-stype="nature" data-spot-num="KNP 04">
       
-      <div class="num">KNP 04</div>
-      <div class="name-row"><div class="name">ブライデ・リバー・キャニオン（神の窓／ブルックス・ラック・ポットホールズ）</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">KNP 04</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">ブライデ・リバー・キャニオン（神の窓／ブルックス・ラック・ポットホールズ）</div></div>
       <div class="desc">グランドキャニオンに次ぐ世界第3位の規模を誇る大峡谷。断崖から700m下を見渡す「神の窓」や甌穴群「ブルックス・ラック・ポットホールズ」が見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブライデ・リバー・キャニオン（神の窓／ブルックス・ラック・ポットホールズ）.webp" alt="ブライデ・リバー・キャニオン（神の窓／ブルックス・ラック・ポットホールズ）" loading="lazy"><a href="https://maps.google.com/?q=Blyde+River+Canyon+South+Africa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -643,24 +692,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="oudtshoorn" data-stype="activity" data-spot-num="OUD 01">
       <div class="must-badge">⭐</div>
-      <div class="num">OUD 01</div>
-      <div class="name-row"><div class="name">ダチョウ農場（ファームツアー）</div><span class="badge">体験</span></div>
+      <div class="num-row"><span class="num">OUD 01</span><span class="badge">体験</span></div>
+      <div class="name-row"><div class="name">ダチョウ農場（ファームツアー）</div></div>
       <div class="desc">クライン・カルー地方に点在する大型ダチョウ農場。手での餌やり体験ができる世界最古の農場ハイゲートなど個性が異なり、餌やり体験は必ず挑戦したい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ダチョウ農場（ファームツアー）.webp" alt="ダチョウ農場（ファームツアー）" loading="lazy"><a href="https://maps.google.com/?q=Highgate+Ostrich+Show+Farm+Oudtshoorn" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="oudtshoorn" data-stype="nature" data-spot-num="OUD 02">
       <div class="must-badge">⭐</div>
-      <div class="num">OUD 02</div>
-      <div class="name-row"><div class="name">カンゴ洞窟</div><span class="badge">自然</span></div>
+      <div class="num-row"><span class="num">OUD 02</span><span class="badge">自然</span></div>
+      <div class="name-row"><div class="name">カンゴ洞窟</div></div>
       <div class="desc">オウツホルンから約30kmに位置する南アフリカ最大の鍾乳洞。高さ15mを超える巨大なホールと壮大な石筍・鍾乳石が続く自然の宝庫。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カンゴ洞窟.webp" alt="カンゴ洞窟" loading="lazy"><a href="https://maps.google.com/?q=Cango+Caves" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="oudtshoorn" data-stype="nature" data-spot-num="OUD 03">
       
-      <div class="num">OUD 03</div>
-      <div class="name-row"><div class="name">カンゴ・ワイルドライフランチ</div><span class="badge">動物</span></div>
+      <div class="num-row"><span class="num">OUD 03</span><span class="badge">動物</span></div>
+      <div class="name-row"><div class="name">カンゴ・ワイルドライフランチ</div></div>
       <div class="desc">ダチョウだけでなくチーター・ワニ・カバなどの野生動物を間近で見られる複合施設。チーターとの触れ合い体験が特に人気で、家族連れにもおすすめ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カンゴ・ワイルドライフランチ.webp" alt="カンゴ・ワイルドライフランチ" loading="lazy"><a href="https://maps.google.com/?q=Cango+Wildlife+Ranch" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -699,32 +748,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="garden_route" data-stype="nature" data-spot-num="GR 01">
       <div class="must-badge">⭐</div>
-      <div class="num">GR 01</div>
-      <div class="name-row"><div class="name">クニスナ・ラグーン（ザ・ヘッズ）</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">GR 01</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">クニスナ・ラグーン（ザ・ヘッズ）</div></div>
       <div class="desc">森に囲まれた広大なラグーンと、大西洋の波が流れ込む断崖の切れ目「ザ・ヘッズ」が見どころ。フェリークルーズやカヤックでのんびり観察できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クニスナ・ラグーン（ザ・ヘッズ）.webp" alt="クニスナ・ラグーン（ザ・ヘッズ）" loading="lazy"><a href="https://maps.google.com/?q=Knysna+Heads+South+Africa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="garden_route" data-stype="nature" data-spot-num="GR 02">
       <div class="must-badge">⭐</div>
-      <div class="num">GR 02</div>
-      <div class="name-row"><div class="name">チチカマ国立公園（ストームズリバーの吊り橋）</div><span class="badge">自然</span></div>
+      <div class="num-row"><span class="num">GR 02</span><span class="badge">自然</span></div>
+      <div class="name-row"><div class="name">チチカマ国立公園（ストームズリバーの吊り橋）</div></div>
       <div class="desc">原生林とインド洋が隣接するガーデンルート最大の自然保護区。ストームズリバー河口の吊り橋を渡れば、切り立った渓谷と荒波の景観を間近に体感できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チチカマ国立公園（ストームズリバーの吊り橋）.webp" alt="チチカマ国立公園（ストームズリバーの吊り橋）" loading="lazy"><a href="https://maps.app.goo.gl/kiW9CvQRpJXX75PNA" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="garden_route" data-stype="activity" data-spot-num="GR 03">
       
-      <div class="num">GR 03</div>
-      <div class="name-row"><div class="name">ブロウクランス橋バンジー</div><span class="badge">絶叫アクティビティ</span></div>
+      <div class="num-row"><span class="num">GR 03</span><span class="badge">絶叫アクティビティ</span></div>
+      <div class="name-row"><div class="name">ブロウクランス橋バンジー</div></div>
       <div class="desc">高さ216mを誇る世界最高峰の橋げたバンジージャンプ。チチカマの渓谷めがけて飛び込む数秒間はガーデンルート随一のアドレナリン体験。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブロウクランス橋バンジー.webp" alt="ブロウクランス橋バンジー" loading="lazy"><a href="https://maps.google.com/?q=Bloukrans+Bridge+Bungy" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="garden_route" data-stype="nature" data-spot-num="GR 04">
       
-      <div class="num">GR 04</div>
-      <div class="name-row"><div class="name">プレッテンバーグベイ</div><span class="badge">ビーチ</span></div>
+      <div class="num-row"><span class="num">GR 04</span><span class="badge">ビーチ</span></div>
+      <div class="name-row"><div class="name">プレッテンバーグベイ</div></div>
       <div class="desc">ガーデンルート屈指のリゾートビーチタウン。真っ白な砂浜のロビーベイ・ビーチをはじめ、マリンアクティビティが充実する地元の富裕層にも人気の避暑地。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プレッテンバーグベイ.webp" alt="プレッテンバーグベイ" loading="lazy"><a href="https://maps.google.com/?q=Plettenberg+Bay+South+Africa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -908,7 +957,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -917,6 +966,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -930,12 +1001,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -943,6 +1015,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -989,6 +1062,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1064,16 +1147,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1248,23 +1369,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

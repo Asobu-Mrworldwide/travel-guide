@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="タイの観光スポット｜タイ旅行ガイド">
 <meta name="twitter:description" content="東南アジアの中心に位置するタイは、「微笑みの国」として知られる仏教国。黄金の寺院群、熱帯ジャングル、白砂のビーチ、屋台グルメ——旅の要素が全部ある。旅好きの知人がこう言っていた。「結局戻ってくるんはタイなんよ」と。料理は旨い、物価は安い、…">
 <meta name="twitter:image" content="https://worldmappy.com/thailand/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="#A51931" d="M0 0h9v6H0z"/><path fill="#F4F5F8" d="M0 1h9v4H0z"/><path fill="#2D2A4A" d="M0 2h9v2H0z"/></svg></div></span><span class="site-country-name">タイ</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=thailand">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">タイを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=thailand">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,52 +272,70 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>都市別観光スポット</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="bangkok" onclick="filterSpots('city','bangkok',this)">バンコク</button>
+              
+              <button class="filter-btn " data-filter="chiangmai" onclick="filterSpots('city','chiangmai',this)">チェンマイ</button>
+              
+              <button class="filter-btn " data-filter="phuket" onclick="filterSpots('city','phuket',this)">プーケット</button>
+              
+              <button class="filter-btn " data-filter="pattaya" onclick="filterSpots('city','pattaya',this)">パタヤ</button>
+              
+              <button class="filter-btn " data-filter="ayutthaya" onclick="filterSpots('city','ayutthaya',this)">アユタヤ</button>
+              
+              <button class="filter-btn " data-filter="samui" onclick="filterSpots('city','samui',this)">サムイ島</button>
+              
+              <button class="filter-btn " data-filter="krabi" onclick="filterSpots('city','krabi',this)">クラビ</button>
+              
+              <button class="filter-btn " data-filter="kohchang" onclick="filterSpots('city','kohchang',this)">コ・チャン</button>
+              
+              <button class="filter-btn " data-filter="sukhothai" onclick="filterSpots('city','sukhothai',this)">スコータイ</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="bangkok" onclick="filterSpots('city','bangkok',this)">バンコク</button>
-      
-      <button class="filter-btn " data-filter="chiangmai" onclick="filterSpots('city','chiangmai',this)">チェンマイ</button>
-      
-      <button class="filter-btn " data-filter="phuket" onclick="filterSpots('city','phuket',this)">プーケット</button>
-      
-      <button class="filter-btn " data-filter="pattaya" onclick="filterSpots('city','pattaya',this)">パタヤ</button>
-      
-      <button class="filter-btn " data-filter="ayutthaya" onclick="filterSpots('city','ayutthaya',this)">アユタヤ</button>
-      
-      <button class="filter-btn " data-filter="samui" onclick="filterSpots('city','samui',this)">サムイ島</button>
-      
-      <button class="filter-btn " data-filter="krabi" onclick="filterSpots('city','krabi',this)">クラビ</button>
-      
-      <button class="filter-btn " data-filter="kohchang" onclick="filterSpots('city','kohchang',this)">コ・チャン</button>
-      
-      <button class="filter-btn " data-filter="sukhothai" onclick="filterSpots('city','sukhothai',this)">スコータイ</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">58</span> / <span id="spots-count-total">58</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -295,6 +343,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -341,112 +390,112 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="religious" data-spot-num="BK 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BK 01</div>
-      <div class="name-row"><div class="name">ワット・プラケオ（エメラルド寺院）</div><span class="badge">王宮</span></div>
+      <div class="num-row"><span class="num">BK 01</span><span class="badge">王宮</span></div>
+      <div class="name-row"><div class="name">ワット・プラケオ（エメラルド寺院）</div></div>
       <div class="desc">バンコク王宮内に建つタイ最高の聖地。翡翠製の仏像・黄金の仏塔・精巧な壁画が圧巻。境内は広大で見どころが多い。入場料500THB。肌の露出は厳禁。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・プラケオ（エメラルド寺院）.webp" alt="ワット・プラケオ（エメラルド寺院）" loading="lazy"><a href="https://maps.google.com/?q=Wat+Phra+Kaew+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="heritage" data-spot-num="BK 02">
       <div class="must-badge">⭐</div>
-      <div class="num">BK 02</div>
-      <div class="name-row"><div class="name">王宮（グランドパレス）</div><span class="badge">世界的観光地</span></div>
+      <div class="num-row"><span class="num">BK 02</span><span class="badge">世界的観光地</span></div>
+      <div class="name-row"><div class="name">王宮（グランドパレス）</div></div>
       <div class="desc">チャクリー王朝の歴代王が暮らした宮殿。ヨーロッパ様式とタイ伝統建築が融合した豪華な建物群。ワット・プラケオと隣接しており同チケットで見学可能。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/王宮（グランドパレス）.webp" alt="王宮（グランドパレス）" loading="lazy"><a href="https://maps.google.com/?q=Grand+Palace+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="religious" data-spot-num="BK 03">
       <div class="must-badge">⭐</div>
-      <div class="num">BK 03</div>
-      <div class="name-row"><div class="name">ワット・ポー（涅槃仏寺院）</div><span class="badge">寺院</span></div>
+      <div class="num-row"><span class="num">BK 03</span><span class="badge">寺院</span></div>
+      <div class="name-row"><div class="name">ワット・ポー（涅槃仏寺院）</div></div>
       <div class="desc">全長46m・高さ15mの黄金の涅槃仏（ねはんぶつ、寝仏）が有名。タイ式マッサージ発祥の地でもあり、境内のマッサージスクールは伝統的に有名。王宮から徒歩圏内。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・ポー（涅槃仏寺院）.webp" alt="ワット・ポー（涅槃仏寺院）" loading="lazy"><a href="https://maps.app.goo.gl/KJazEAT9BrASkd379" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="bangkok" data-stype="religious" data-spot-num="BK 04">
       <div class="must-badge">⭐</div>
-      <div class="num">BK 04</div>
-      <div class="name-row"><div class="name">ワット・アルン（暁の寺）</div><span class="badge">夜景</span></div>
+      <div class="num-row"><span class="num">BK 04</span><span class="badge">夜景</span></div>
+      <div class="name-row"><div class="name">ワット・アルン（暁の寺）</div></div>
       <div class="desc">チャオプラヤー川西岸のシンボル。陶器モザイクで飾られた高さ82mの塔が川越しに映え、夜のライトアップは格別。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・アルン（暁の寺）.webp" alt="ワット・アルン（暁の寺）" loading="lazy"><a href="https://maps.app.goo.gl/ysakwXsuKj3xnuMBA" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="townscape" data-spot-num="BK 05">
       
-      <div class="num">BK 05</div>
-      <div class="name-row"><div class="name">カオサン通り</div><span class="badge">ナイトライフ</span></div>
+      <div class="num-row"><span class="num">BK 05</span><span class="badge">ナイトライフ</span></div>
+      <div class="name-row"><div class="name">カオサン通り</div></div>
       <div class="desc">世界中のバックパッカーが集まる活気あふれる通り。屋台グルメ・マッサージ・土産店・ゲストハウスが立ち並ぶ。夜は特に賑わいバンコク観光の定番スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カオサン通り.webp" alt="カオサン通り" loading="lazy"><a href="https://maps.google.com/?q=Khao+San+Road+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="market" data-spot-num="BK 06">
       
-      <div class="num">BK 06</div>
-      <div class="name-row"><div class="name">チャトゥチャック週末市場</div><span class="badge">週末限定</span></div>
+      <div class="num-row"><span class="num">BK 06</span><span class="badge">週末限定</span></div>
+      <div class="name-row"><div class="name">チャトゥチャック週末市場</div></div>
       <div class="desc">土日のみ開催されるアジア最大級の屋外マーケット。約15,000店舗が集まり、ファッション・雑貨・食器・植物・食べ物まで何でも揃う。BTS Mochit駅すぐ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チャトゥチャック週末市場.webp" alt="チャトゥチャック週末市場" loading="lazy"><a href="https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="market" data-spot-num="BK 07">
       
-      <div class="num">BK 07</div>
-      <div class="name-row"><div class="name">アイコンサイアム</div><span class="badge">ショッピング</span></div>
+      <div class="num-row"><span class="num">BK 07</span><span class="badge">ショッピング</span></div>
+      <div class="name-row"><div class="name">アイコンサイアム</div></div>
       <div class="desc">チャオプラヤー川沿いの超高級ショッピングモール。伝統的なタイ様式の水上マーケット「スームサイアム」が館内に。ルーフトップレストランから川の夜景も絶景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アイコンサイアム.webp" alt="アイコンサイアム" loading="lazy"><a href="https://maps.google.com/?q=ICONSIAM+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="religious" data-spot-num="BK 08">
       
-      <div class="num">BK 08</div>
-      <div class="name-row"><div class="name">ワット・トライミット</div><span class="badge">チャイナタウン</span></div>
+      <div class="num-row"><span class="num">BK 08</span><span class="badge">チャイナタウン</span></div>
+      <div class="name-row"><div class="name">ワット・トライミット</div></div>
       <div class="desc">チャイナタウン（ヤワラート）に位置する寺院。重さ5.5トン・純金製の「黄金仏」として世界最大の金仏像を安置。プラスメン門近くでアクセスも良好。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・トライミット.webp" alt="ワット・トライミット" loading="lazy"><a href="https://maps.google.com/?q=Wat+Traimit+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="bangkok" data-stype="townscape" data-spot-num="BK 09">
       
-      <div class="num">BK 09</div>
-      <div class="name-row"><div class="name">ルーフトップバー</div><span class="badge">夜景</span></div>
+      <div class="num-row"><span class="num">BK 09</span><span class="badge">夜景</span></div>
+      <div class="name-row"><div class="name">ルーフトップバー</div></div>
       <div class="desc">バンコクにはルーフトップバーが数多くあり、夜景が絶景。スカイバー（レバノン）やオクターブ（バンコクマリオット）が有名。ドレスコードがある場合も多いので要確認。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ルーフトップバー.webp" alt="ルーフトップバー" loading="lazy"></div>
     </div>
     
     <div class="item-card no-map has-spot-img must" data-city="bangkok" data-stype="market" data-spot-num="BK 10">
       <div class="must-badge">⭐</div>
-      <div class="num">BK 10</div>
-      <div class="name-row"><div class="name">ナイトマーケット</div><span class="badge">ナイト</span></div>
+      <div class="num-row"><span class="num">BK 10</span><span class="badge">ナイト</span></div>
+      <div class="name-row"><div class="name">ナイトマーケット</div></div>
       <div class="desc">バンコクのナイトマーケットはジョッドフェアズが有名。アート雑貨・古着・屋台グルメが集まり、地元の若者にも人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナイトマーケット.webp" alt="ナイトマーケット" loading="lazy"></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="bangkok" data-stype="market" data-spot-num="BK 11">
       
-      <div class="num">BK 11</div>
-      <div class="name-row"><div class="name">水上マーケット</div><span class="badge">体験</span></div>
+      <div class="num-row"><span class="num">BK 11</span><span class="badge">体験</span></div>
+      <div class="name-row"><div class="name">水上マーケット</div></div>
       <div class="desc">水路を舟が行き交う伝統的な市場。ダムヌン・サドゥアク（日帰り可）とアンパワー（週末夜市）が有名。木造船での買い物が非日常感たっぷり。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/水上マーケット.webp" alt="水上マーケット" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="townscape" data-spot-num="BK 12">
       
-      <div class="num">BK 12</div>
-      <div class="name-row"><div class="name">マハナコン スカイウォーク</div><span class="badge">夜景</span></div>
+      <div class="num-row"><span class="num">BK 12</span><span class="badge">夜景</span></div>
+      <div class="name-row"><div class="name">マハナコン スカイウォーク</div></div>
       <div class="desc">高さ314mのマハナコンタワー最上階にあるガラス張り展望台。床がガラスで眼下にバンコクの夜景が広がる体験が人気。夕暮れ〜夜景の時間帯がおすすめ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マハナコン スカイウォーク.webp" alt="マハナコン スカイウォーク" loading="lazy"><a href="https://maps.google.com/?q=King+Power+Mahanakhon+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="religious" data-spot-num="BK 13">
       
-      <div class="num">BK 13</div>
-      <div class="name-row"><div class="name">ワット・パクナム</div><span class="badge">穴場</span></div>
+      <div class="num-row"><span class="num">BK 13</span><span class="badge">穴場</span></div>
+      <div class="name-row"><div class="name">ワット・パクナム</div></div>
       <div class="desc">バンコク西部に位置する寺院。建物内部に高さ約80mの巨大な緑色の仏塔がそびえ、内部は幻想的な宇宙観をイメージした装飾が施されている。SNSで話題の穴場スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・パクナム.webp" alt="ワット・パクナム" loading="lazy"><a href="https://maps.google.com/?q=Wat+Paknam+Bhasicharoen+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bangkok" data-stype="activity" data-spot-num="BK 14">
       
-      <div class="num">BK 14</div>
-      <div class="name-row"><div class="name">ムエタイ観戦（ラジャダムナン・スタジアム）</div><span class="badge">伝統格闘技</span></div>
+      <div class="num-row"><span class="num">BK 14</span><span class="badge">伝統格闘技</span></div>
+      <div class="name-row"><div class="name">ムエタイ観戦（ラジャダムナン・スタジアム）</div></div>
       <div class="desc">ムエタイ発祥の地・バンコクで本場の試合を生観戦。儀式舞いから始まる肘・膝の打撃戦は迫力満点。観光客向けチケットも用意済み。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ムエタイ観戦（ラジャダムナン・スタジアム）.webp" alt="ムエタイ観戦（ラジャダムナン・スタジアム）" loading="lazy"><a href="https://maps.google.com/?q=Rajadamnern+Stadium+Bangkok" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -497,80 +546,80 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="chiangmai" data-stype="religious" data-spot-num="CM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CM 01</div>
-      <div class="name-row"><div class="name">ワット・ドイステープ</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">CM 01</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">ワット・ドイステープ</div></div>
       <div class="desc">市街を見下ろす1,080mの山頂に建つチェンマイのシンボル的寺院。306段の階段または車でアクセス可。山頂からチェンマイ市街を一望できる絶景が魅力。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・ドイステープ.webp" alt="ワット・ドイステープ" loading="lazy"><a href="https://maps.google.com/?q=Wat+Phra+That+Doi+Suthep+Chiang+Mai" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img must" data-city="chiangmai" data-stype="activity" data-spot-num="CM 02">
       <div class="must-badge">⭐</div>
-      <div class="num">CM 02</div>
-      <div class="name-row"><div class="name">エレファントサンクチュアリ</div><span class="badge">体験</span></div>
+      <div class="num-row"><span class="num">CM 02</span><span class="badge">体験</span></div>
+      <div class="name-row"><div class="name">エレファントサンクチュアリ</div></div>
       <div class="desc">象に乗らず間近で触れ合える倫理的な象の保護施設。象への給餌・沐浴体験が人気。チェンマイ周辺にいくつかの施設があり、半日〜1日ツアーで体験できる。事前予約推奨。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/エレファントサンクチュアリ.webp" alt="エレファントサンクチュアリ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="heritage" data-spot-num="CM 03">
       
-      <div class="num">CM 03</div>
-      <div class="name-row"><div class="name">旧市街・お堀</div><span class="badge">歴史地区</span></div>
+      <div class="num-row"><span class="num">CM 03</span><span class="badge">歴史地区</span></div>
+      <div class="name-row"><div class="name">旧市街・お堀</div></div>
       <div class="desc">正方形のお堀に囲まれた旧市街には寺院が30以上密集。チェンマイ最古のワット・チェディルアン・ワット・プラシンなどが歩いて回れる。自転車観光がおすすめ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/旧市街・お堀.webp" alt="旧市街・お堀" loading="lazy"><a href="https://maps.app.goo.gl/Noyo3dXz632txTm27" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="market" data-spot-num="CM 04">
       
-      <div class="num">CM 04</div>
-      <div class="name-row"><div class="name">サンデー＆サタデーナイトバザール</div><span class="badge">週末限定</span></div>
+      <div class="num-row"><span class="num">CM 04</span><span class="badge">週末限定</span></div>
+      <div class="name-row"><div class="name">サンデー＆サタデーナイトバザール</div></div>
       <div class="desc">週末に開催される大規模ナイトバザール。サタデーはウアライ通り、サンデーはラチャダムヌン通りが会場で、工芸品や屋台グルメが並ぶ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サンデー＆サタデーナイトバザール.webp" alt="サンデー＆サタデーナイトバザール" loading="lazy"><a href="https://maps.app.goo.gl/QempEhGntD9nJrt38" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="chiangmai" data-stype="activity" data-spot-num="CM 05">
       
-      <div class="num">CM 05</div>
-      <div class="name-row"><div class="name">チェンマイ花祭り（2月）</div><span class="badge">季節イベント</span></div>
+      <div class="num-row"><span class="num">CM 05</span><span class="badge">季節イベント</span></div>
+      <div class="name-row"><div class="name">チェンマイ花祭り（2月）</div></div>
       <div class="desc">毎年2月第1週末に開催される花の祭典。市内が色とりどりの花で飾られ、フラワーフロート・パレードが見どころ。チェンマイ旅行のベストタイミングのひとつ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チェンマイ花祭り（2月）.webp" alt="チェンマイ花祭り（2月）" loading="lazy"></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="chiangmai" data-stype="activity" data-spot-num="CM 06">
       
-      <div class="num">CM 06</div>
-      <div class="name-row"><div class="name">タイ古式マッサージ</div><span class="badge">体験</span></div>
+      <div class="num-row"><span class="num">CM 06</span><span class="badge">体験</span></div>
+      <div class="name-row"><div class="name">タイ古式マッサージ</div></div>
       <div class="desc">チェンマイはマッサージが格安で質が高いと評判。旧市街周辺に老舗店が集まり、1時間200〜400THBが目安。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タイ古式マッサージ.webp" alt="タイ古式マッサージ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="nature" data-spot-num="CM 07">
       
-      <div class="num">CM 07</div>
-      <div class="name-row"><div class="name">メーガムポーン村</div><span class="badge">山村・自然</span></div>
+      <div class="num-row"><span class="num">CM 07</span><span class="badge">山村・自然</span></div>
+      <div class="name-row"><div class="name">メーガムポーン村</div></div>
       <div class="desc">チェンマイ郊外の山間にある伝統的な山村。棚田・コーヒー農園・温泉が点在し、手付かずの自然と素朴な暮らしが体験できる。チェンマイから車で約1時間。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/メーガムポーン村.webp" alt="メーガムポーン村" loading="lazy"><a href="https://maps.app.goo.gl/HoT5d6xY9KXnXewQ6" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="chiangmai" data-stype="nature" data-spot-num="CM 08">
       
-      <div class="num">CM 08</div>
-      <div class="name-row"><div class="name">モンクトレイル</div><span class="badge">トレッキング</span></div>
+      <div class="num-row"><span class="num">CM 08</span><span class="badge">トレッキング</span></div>
+      <div class="name-row"><div class="name">モンクトレイル</div></div>
       <div class="desc">チェンマイ旧市街の南側に広がるトレッキングルート。僧侶が山中を歩いた古道を辿りながら、熱帯林・寺院・展望スポットを楽しめる。ガイド付きツアーが安心。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モンクトレイル.webp" alt="モンクトレイル" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="chiangmai" data-stype="religious" data-spot-num="CM 09">
       
-      <div class="num">CM 09</div>
-      <div class="name-row"><div class="name">チェンライ（ホワイトテンプル）</div><span class="badge">日帰り観光</span></div>
+      <div class="num-row"><span class="num">CM 09</span><span class="badge">日帰り観光</span></div>
+      <div class="name-row"><div class="name">チェンライ（ホワイトテンプル）</div></div>
       <div class="desc">チェンマイから北へ約3時間。純白モザイクで覆われたワット・ロンクン（ホワイトテンプル）は世界中の観光客を魅了する芸術的な寺院。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チェンライ（ホワイトテンプル）.webp" alt="チェンライ（ホワイトテンプル）" loading="lazy"><a href="https://maps.google.com/?q=Wat+Rong+Khun+Chiang+Rai" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="chiangmai" data-stype="activity" data-spot-num="CM 10">
       
-      <div class="num">CM 10</div>
-      <div class="name-row"><div class="name">イーペン・ランタン祭り（11月）</div><span class="badge">季節イベント</span></div>
+      <div class="num-row"><span class="num">CM 10</span><span class="badge">季節イベント</span></div>
+      <div class="name-row"><div class="name">イーペン・ランタン祭り（11月）</div></div>
       <div class="desc">11月の満月の夜、無数のランタンを夜空へ放つ幻想的な祭り。チェンマイ近郊の会場チケットは数ヶ月前に完売することも多い。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イーペン・ランタン祭り（11月）.webp" alt="イーペン・ランタン祭り（11月）" loading="lazy"></div>
     </div>
@@ -621,56 +670,56 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="phuket" data-stype="nature" data-spot-num="PH 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PH 01</div>
-      <div class="name-row"><div class="name">パトンビーチ</div><span class="badge">ビーチ</span></div>
+      <div class="num-row"><span class="num">PH 01</span><span class="badge">ビーチ</span></div>
+      <div class="name-row"><div class="name">パトンビーチ</div></div>
       <div class="desc">プーケット最大のビーチリゾート。白砂のビーチ・ウォータースポーツ・ナイトライフが充実。バングラ通りの夜の賑わいも有名。初めてのプーケットにおすすめのエリア。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パトンビーチ.webp" alt="パトンビーチ" loading="lazy"><a href="https://maps.google.com/?q=Patong+Beach+Phuket" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="phuket" data-stype="nature" data-spot-num="PH 02">
       <div class="must-badge">⭐</div>
-      <div class="num">PH 02</div>
-      <div class="name-row"><div class="name">ファンガー湾（ジェームズボンド島）</div><span class="badge">絶景クルーズ</span></div>
+      <div class="num-row"><span class="num">PH 02</span><span class="badge">絶景クルーズ</span></div>
+      <div class="name-row"><div class="name">ファンガー湾（ジェームズボンド島）</div></div>
       <div class="desc">石灰岩の奇岩が点在する絶景の湾。映画「007 黄金銃を持つ男」の舞台として有名。カヤック・ボートツアーで島巡りができる。プーケットから日帰りツアーが豊富。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ファンガー湾（ジェームズボンド島）.webp" alt="ファンガー湾（ジェームズボンド島）" loading="lazy"><a href="https://maps.google.com/?q=James+Bond+Island+Phang+Nga+Bay+Thailand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="phuket" data-stype="religious" data-spot-num="PH 03">
       
-      <div class="num">PH 03</div>
-      <div class="name-row"><div class="name">ビッグブッダ</div><span class="badge">入場無料</span></div>
+      <div class="num-row"><span class="num">PH 03</span><span class="badge">入場無料</span></div>
+      <div class="name-row"><div class="name">ビッグブッダ</div></div>
       <div class="desc">丘の上に建つ高さ45mの白い大仏像。プーケットのどこからでも見える島のシンボル。展望台からの360度のパノラマビューが絶景。入場無料。服装規定あり。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ビッグブッダ.webp" alt="ビッグブッダ" loading="lazy"><a href="https://maps.app.goo.gl/1mFDZrn2zx3wPzud8" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="phuket" data-stype="heritage" data-spot-num="PH 04">
       
-      <div class="num">PH 04</div>
-      <div class="name-row"><div class="name">プーケットオールドタウン</div><span class="badge">フォトスポット</span></div>
+      <div class="num-row"><span class="num">PH 04</span><span class="badge">フォトスポット</span></div>
+      <div class="name-row"><div class="name">プーケットオールドタウン</div></div>
       <div class="desc">中国系移民が築いたシノポルトガル建築が並ぶ旧市街。カラフルな壁画・カフェ・ギャラリーが点在しフォトジェニック。毎週日曜の「ウォーキングストリート」は必見。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プーケットオールドタウン.webp" alt="プーケットオールドタウン" loading="lazy"><a href="https://maps.google.com/?q=Phuket+Old+Town" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="phuket" data-stype="nature" data-spot-num="PH 05">
       
-      <div class="num">PH 05</div>
-      <div class="name-row"><div class="name">シミラン諸島</div><span class="badge">ダイビング</span></div>
+      <div class="num-row"><span class="num">PH 05</span><span class="badge">ダイビング</span></div>
+      <div class="name-row"><div class="name">シミラン諸島</div></div>
       <div class="desc">世界ランキング上位の透明度を誇る離島。プーケットからボートで約2時間。10月〜5月のみオープン、事前ツアー予約が必須。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シミラン諸島.webp" alt="シミラン諸島" loading="lazy"><a href="https://maps.google.com/?q=Similan+Islands+National+Park" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="phuket" data-stype="nature" data-spot-num="PH 06">
       
-      <div class="num">PH 06</div>
-      <div class="name-row"><div class="name">カロンビーチ・カタビーチ</div><span class="badge">ビーチ</span></div>
+      <div class="num-row"><span class="num">PH 06</span><span class="badge">ビーチ</span></div>
+      <div class="name-row"><div class="name">カロンビーチ・カタビーチ</div></div>
       <div class="desc">パトンより静かで落ち着いた雰囲気のビーチ。カロンは白砂が美しくファミリー向け、カタはサーフィンスポットとしても人気。ローカル感あるシーフードレストランも点在。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カロンビーチ・カタビーチ.webp" alt="カロンビーチ・カタビーチ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="phuket" data-stype="religious" data-spot-num="PH 07">
       
-      <div class="num">PH 07</div>
-      <div class="name-row"><div class="name">ワット・チャロン</div><span class="badge">総本山</span></div>
+      <div class="num-row"><span class="num">PH 07</span><span class="badge">総本山</span></div>
+      <div class="name-row"><div class="name">ワット・チャロン</div></div>
       <div class="desc">プーケットで最も格式高い寺院。19世紀の高僧を祀り地元の信仰の拠り所。金色の仏塔には仏舎利が納められ、内部の壁画も見応えがある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・チャロン.webp" alt="ワット・チャロン" loading="lazy"><a href="https://maps.google.com/?q=Wat+Chalong+Phuket" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -715,32 +764,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="pattaya" data-stype="nature" data-spot-num="PA 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PA 01</div>
-      <div class="name-row"><div class="name">コーラン島（サンゴ礁の島）</div><span class="badge">シュノーケリング</span></div>
+      <div class="num-row"><span class="num">PA 01</span><span class="badge">シュノーケリング</span></div>
+      <div class="name-row"><div class="name">コーラン島（サンゴ礁の島）</div></div>
       <div class="desc">パタヤからフェリーで約45分。透明度の高いサンゴ礁の海が広がるリゾート島。シュノーケリング・パラセーリング・バナナボートが楽しめる。日帰り旅行に最適。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コーラン島（サンゴ礁の島）.webp" alt="コーラン島（サンゴ礁の島）" loading="lazy"><a href="https://maps.google.com/?q=Koh+Larn+Pattaya" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pattaya" data-stype="activity" data-spot-num="PA 02">
       
-      <div class="num">PA 02</div>
-      <div class="name-row"><div class="name">ノンノク・ガーデン（農場・象ショー）</div><span class="badge">ファミリー</span></div>
+      <div class="num-row"><span class="num">PA 02</span><span class="badge">ファミリー</span></div>
+      <div class="name-row"><div class="name">ノンノク・ガーデン（農場・象ショー）</div></div>
       <div class="desc">果物農場・トロピカルガーデン・象ショー・動植物が一体となった大型テーマパーク。世界最大の熱帯庭園としてギネス認定。家族連れに人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ノンノク・ガーデン（農場・象ショー）.webp" alt="ノンノク・ガーデン（農場・象ショー）" loading="lazy"><a href="https://maps.app.goo.gl/ekPzZ2tw8APdHE4QA" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pattaya" data-stype="heritage" data-spot-num="PA 03">
       
-      <div class="num">PA 03</div>
-      <div class="name-row"><div class="name">サンクチュアリ・オブ・トゥルース</div><span class="badge">唯一無二</span></div>
+      <div class="num-row"><span class="num">PA 03</span><span class="badge">唯一無二</span></div>
+      <div class="name-row"><div class="name">サンクチュアリ・オブ・トゥルース</div></div>
       <div class="desc">木材のみで建てられた高さ105mの巨大木造寺院。職人による精巧な彫刻が全面を覆い圧巻。まだ建設中の生きた建築として40年以上かけて建設継続中。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サンクチュアリ・オブ・トゥルース.webp" alt="サンクチュアリ・オブ・トゥルース" loading="lazy"><a href="https://maps.google.com/?q=Sanctuary+of+Truth+Pattaya" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pattaya" data-stype="activity" data-spot-num="PA 04">
       
-      <div class="num">PA 04</div>
-      <div class="name-row"><div class="name">ティファニーショー</div><span class="badge">エンターテイメント</span></div>
+      <div class="num-row"><span class="num">PA 04</span><span class="badge">エンターテイメント</span></div>
+      <div class="name-row"><div class="name">ティファニーショー</div></div>
       <div class="desc">世界的に有名なレディーボーイによるカバレショー。豪華な衣装・ダンス・音楽が見どころ。毎晩数回公演があり、バンコクからのツアーでも訪れる人が多い。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ティファニーショー.webp" alt="ティファニーショー" loading="lazy"><a href="https://maps.google.com/?q=Tiffany+Show+Pattaya" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -785,40 +834,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img " data-city="ayutthaya" data-stype="heritage" data-spot-num="AY 01">
       
-      <div class="num">AY 01</div>
-      <div class="name-row"><div class="name">アユタヤ歴史公園</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">AY 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">アユタヤ歴史公園</div></div>
       <div class="desc">ユネスコ世界遺産に登録された遺跡群。ワット・プラシーサンペット・ワット・チャイワタナラームなど多数の遺跡が点在。レンタルバイクで巡るのがおすすめ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アユタヤ歴史公園.webp" alt="アユタヤ歴史公園" loading="lazy"><a href="https://maps.google.com/?q=Ayutthaya+Historical+Park" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="ayutthaya" data-stype="heritage" data-spot-num="AY 02">
       <div class="must-badge">⭐</div>
-      <div class="num">AY 02</div>
-      <div class="name-row"><div class="name">ワット・マハタート</div><span class="badge">フォトスポット</span></div>
+      <div class="num-row"><span class="num">AY 02</span><span class="badge">フォトスポット</span></div>
+      <div class="name-row"><div class="name">ワット・マハタート</div></div>
       <div class="desc">菩提樹（ぼだいじゅ）の根に包まれた仏頭が有名。なぜ木に埋まったのかは謎のまま。アユタヤで最も写真映えするスポットとして世界中からの観光客が訪れる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・マハタート.webp" alt="ワット・マハタート" loading="lazy"><a href="https://maps.google.com/?q=Wat+Mahathat+Ayutthaya" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="ayutthaya" data-stype="activity" data-spot-num="AY 03">
       
-      <div class="num">AY 03</div>
-      <div class="name-row"><div class="name">アユタヤ象乗り体験</div><span class="badge">体験</span></div>
+      <div class="num-row"><span class="num">AY 03</span><span class="badge">体験</span></div>
+      <div class="name-row"><div class="name">アユタヤ象乗り体験</div></div>
       <div class="desc">古都を象に乗って巡る伝統的な観光体験。アユタヤ歴史公園周辺で体験可能。倫理的な扱いをする施設を選ぶことが重要。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アユタヤ象乗り体験.webp" alt="アユタヤ象乗り体験" loading="lazy"></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="ayutthaya" data-stype="activity" data-spot-num="AY 04">
       
-      <div class="num">AY 04</div>
-      <div class="name-row"><div class="name">チャオプラヤー川クルーズ</div><span class="badge">クルーズ</span></div>
+      <div class="num-row"><span class="num">AY 04</span><span class="badge">クルーズ</span></div>
+      <div class="name-row"><div class="name">チャオプラヤー川クルーズ</div></div>
       <div class="desc">バンコクからアユタヤへの移動をクルーズ船で行うツアーが人気。川から眺める寺院群・田園風景が特別な体験。片道クルーズ＋復路は電車も選べる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チャオプラヤー川クルーズ.webp" alt="チャオプラヤー川クルーズ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="ayutthaya" data-stype="heritage" data-spot-num="AY 05">
       
-      <div class="num">AY 05</div>
-      <div class="name-row"><div class="name">バンパイン夏の離宮</div><span class="badge">離宮</span></div>
+      <div class="num-row"><span class="num">AY 05</span><span class="badge">離宮</span></div>
+      <div class="name-row"><div class="name">バンパイン夏の離宮</div></div>
       <div class="desc">歴代王の避暑地として使われた離宮。タイ・中国・欧風の建築が混在し、水上の東屋アイサワン・ティッパヤアートが見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バンパイン夏の離宮.webp" alt="バンパイン夏の離宮" loading="lazy"><a href="https://maps.google.com/?q=Bang+Pa-In+Royal+Palace" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -869,40 +918,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="krabi" data-stype="nature" data-spot-num="KB 01">
       <div class="must-badge">⭐</div>
-      <div class="num">KB 01</div>
-      <div class="name-row"><div class="name">ライレイビーチ</div><span class="badge">秘境ビーチ</span></div>
+      <div class="num-row"><span class="num">KB 01</span><span class="badge">秘境ビーチ</span></div>
+      <div class="name-row"><div class="name">ライレイビーチ</div></div>
       <div class="desc">三方を断崖に囲まれた陸路では行けない秘境ビーチ。ロングテールボートでのみアクセス可能。透明度の高い海と石灰岩の絶壁が作る景色はタイ屈指の絶景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ライレイビーチ.webp" alt="ライレイビーチ" loading="lazy"><a href="https://maps.google.com/?q=Railay+Beach+Krabi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="krabi" data-stype="nature" data-spot-num="KB 02">
       
-      <div class="num">KB 02</div>
-      <div class="name-row"><div class="name">エメラルドケーブ</div><span class="badge">隠し浜</span></div>
+      <div class="num-row"><span class="num">KB 02</span><span class="badge">隠し浜</span></div>
+      <div class="name-row"><div class="name">エメラルドケーブ</div></div>
       <div class="desc">コ・モック島にある洞窟を泳いで抜けた先に広がる隠し浜。フォーアイランドツアーで立ち寄れる。光が差し込む洞窟内の幻想的な雰囲気が有名。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/エメラルドケーブ.webp" alt="エメラルドケーブ" loading="lazy"><a href="https://maps.google.com/?q=Emerald+Cave+Koh+Mook+Thailand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="krabi" data-stype="nature" data-spot-num="KB 03">
       
-      <div class="num">KB 03</div>
-      <div class="name-row"><div class="name">アオナンビーチ</div><span class="badge">拠点ビーチ</span></div>
+      <div class="num-row"><span class="num">KB 03</span><span class="badge">拠点ビーチ</span></div>
+      <div class="name-row"><div class="name">アオナンビーチ</div></div>
       <div class="desc">クラビのメインビーチ。ホテル・レストラン・ツアー会社が集まる観光拠点。ロングテールボートでライレイや周辺の島へのアクセスも便利。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アオナンビーチ.webp" alt="アオナンビーチ" loading="lazy"><a href="https://maps.google.com/?q=Ao+Nang+Beach+Krabi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="krabi" data-stype="religious" data-spot-num="KB 04">
       
-      <div class="num">KB 04</div>
-      <div class="name-row"><div class="name">ワット・タムスア</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">KB 04</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">ワット・タムスア</div></div>
       <div class="desc">1,237段の急な階段を登った山頂に建つ寺院。頂上からクラビの海と島々を一望できる絶景スポット。早朝や夕方がおすすめ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・タムスア.webp" alt="ワット・タムスア" loading="lazy"><a href="https://maps.app.goo.gl/oc48ZCV1xMZoAz2Z7" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="krabi" data-stype="activity" data-spot-num="KB 05">
       
-      <div class="num">KB 05</div>
-      <div class="name-row"><div class="name">アイランドホッピング</div><span class="badge">島ツアー</span></div>
+      <div class="num-row"><span class="num">KB 05</span><span class="badge">島ツアー</span></div>
+      <div class="name-row"><div class="name">アイランドホッピング</div></div>
       <div class="desc">クラビ沖の島々をボートで巡るツアー。ピピ島・バンブー島・チキン島など透明度抜群の海と白砂ビーチを1日で満喫できる。シュノーケリング付きが定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アイランドホッピング.webp" alt="アイランドホッピング" loading="lazy"></div>
     </div>
@@ -953,40 +1002,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="samui" data-stype="nature" data-spot-num="SM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SM 01</div>
-      <div class="name-row"><div class="name">チャウエンビーチ</div><span class="badge">ビーチ</span></div>
+      <div class="num-row"><span class="num">SM 01</span><span class="badge">ビーチ</span></div>
+      <div class="name-row"><div class="name">チャウエンビーチ</div></div>
       <div class="desc">サムイ島最大・最も人気のビーチ。白砂と透き通る海が6km続く。ホテル・レストラン・ナイトライフが集中する島のメインエリア。夜はビーチ沿いのバーが賑わう。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チャウエンビーチ.webp" alt="チャウエンビーチ" loading="lazy"><a href="https://maps.google.com/?q=Chaweng+Beach+Koh+Samui" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samui" data-stype="activity" data-spot-num="SM 02">
       
-      <div class="num">SM 02</div>
-      <div class="name-row"><div class="name">フルムーンパーティー</div><span class="badge">月1回開催</span></div>
+      <div class="num-row"><span class="num">SM 02</span><span class="badge">月1回開催</span></div>
+      <div class="name-row"><div class="name">フルムーンパーティー</div></div>
       <div class="desc">サムイ島近隣のパンガン島で毎月満月の夜に開催される世界最大級のビーチパーティー。世界中から3万人以上が集まる。サムイ島からフェリーで約30分。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フルムーンパーティー.webp" alt="フルムーンパーティー" loading="lazy"><a href="https://maps.google.com/?q=Haad+Rin+Beach+Koh+Phangan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span><a href="https://en.wikipedia.org/wiki/Full_Moon_Party" target="_blank" rel="noopener" class="spot-map-btn">Wikipedia →</a></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samui" data-stype="nature" data-spot-num="SM 03">
       
-      <div class="num">SM 03</div>
-      <div class="name-row"><div class="name">アンソン国立公園（ダイビング）</div><span class="badge">ダイビング</span></div>
+      <div class="num-row"><span class="num">SM 03</span><span class="badge">ダイビング</span></div>
+      <div class="name-row"><div class="name">アンソン国立公園（ダイビング）</div></div>
       <div class="desc">サムイ島沖の国立公園。透明度の高い海でダイビング・シュノーケリングが楽しめる。ウミガメの目撃情報も多い。ボートツアーで日帰りアクセス可能。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アンソン国立公園（ダイビング）.webp" alt="アンソン国立公園（ダイビング）" loading="lazy"><a href="https://maps.google.com/?q=Ang+Thong+National+Marine+Park" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samui" data-stype="religious" data-spot-num="SM 04">
       
-      <div class="num">SM 04</div>
-      <div class="name-row"><div class="name">ビッグブッダ寺院</div><span class="badge">入場無料</span></div>
+      <div class="num-row"><span class="num">SM 04</span><span class="badge">入場無料</span></div>
+      <div class="name-row"><div class="name">ビッグブッダ寺院</div></div>
       <div class="desc">海中道路で繋がった小島に建つ高さ15mの黄金の仏像。サムイ島北部の海を見渡せる絶景スポット。入場無料。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ビッグブッダ寺院.webp" alt="ビッグブッダ寺院" loading="lazy"><a href="https://maps.app.goo.gl/GPaCuKK7jtVbPu1b8" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samui" data-stype="townscape" data-spot-num="SM 05">
       
-      <div class="num">SM 05</div>
-      <div class="name-row"><div class="name">フィッシャーマンズ・ビレッジ（ボープット）</div><span class="badge">夜市・散策</span></div>
+      <div class="num-row"><span class="num">SM 05</span><span class="badge">夜市・散策</span></div>
+      <div class="name-row"><div class="name">フィッシャーマンズ・ビレッジ（ボープット）</div></div>
       <div class="desc">古い漁村を改装したおしゃれな通り。木造の古民家がカフェや雑貨店に変わり、毎週金曜の夜は屋台が並ぶウォーキングストリートに。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フィッシャーマンズ・ビレッジ（ボープット）.webp" alt="フィッシャーマンズ・ビレッジ（ボープット）" loading="lazy"><a href="https://maps.google.com/?q=Fishermans+Village+Bophut+Koh+Samui" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1031,24 +1080,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="kohchang" data-stype="nature" data-spot-num="KC 01">
       <div class="must-badge">⭐</div>
-      <div class="num">KC 01</div>
-      <div class="name-row"><div class="name">ホワイトサンドビーチ</div><span class="badge">メインビーチ</span></div>
+      <div class="num-row"><span class="num">KC 01</span><span class="badge">メインビーチ</span></div>
+      <div class="name-row"><div class="name">ホワイトサンドビーチ</div></div>
       <div class="desc">コ・チャン最大・最も人気のビーチ。白砂のビーチにホテルやレストランが並ぶ島のメインエリア。夕日スポットとしても人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ホワイトサンドビーチ.webp" alt="ホワイトサンドビーチ" loading="lazy"><a href="https://maps.google.com/?q=White+Sand+Beach+Koh+Chang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kohchang" data-stype="nature" data-spot-num="KC 02">
       
-      <div class="num">KC 02</div>
-      <div class="name-row"><div class="name">カイベー島</div><span class="badge">シュノーケリング</span></div>
+      <div class="num-row"><span class="num">KC 02</span><span class="badge">シュノーケリング</span></div>
+      <div class="name-row"><div class="name">カイベー島</div></div>
       <div class="desc">コ・チャン沖に浮かぶ小島。シュノーケリングスポットとして有名でサンゴ礁と熱帯魚が豊富。ボートツアーで日帰り訪問できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カイベー島.webp" alt="カイベー島" loading="lazy"><a href="https://maps.google.com/?q=Koh+Kai+Bae+Koh+Chang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kohchang" data-stype="townscape" data-spot-num="KC 03">
       
-      <div class="num">KC 03</div>
-      <div class="name-row"><div class="name">バンバオ水上集落</div><span class="badge">水上集落</span></div>
+      <div class="num-row"><span class="num">KC 03</span><span class="badge">水上集落</span></div>
+      <div class="name-row"><div class="name">バンバオ水上集落</div></div>
       <div class="desc">コ・チャン北西部の水上集落。木製の桟橋の上にカフェ・レストラン・土産店が並ぶ。ローカルな雰囲気でシーフードも美味しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バンバオ水上集落.webp" alt="バンバオ水上集落" loading="lazy"><a href="https://maps.google.com/?q=Bang+Bao+Fishing+Village+Koh+Chang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1093,40 +1142,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="sukhothai" data-stype="heritage" data-spot-num="SK 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SK 01</div>
-      <div class="name-row"><div class="name">スコータイ歴史公園</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">SK 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">スコータイ歴史公園</div></div>
       <div class="desc">ユネスコ世界遺産のスコータイ王朝跡。約70の遺跡が点在し、レンガ造りの仏塔と蓮池が織りなす静かな風景はタイ建築の原点とされる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スコータイ歴史公園.webp" alt="スコータイ歴史公園" loading="lazy"><a href="https://maps.google.com/?q=Sukhothai+Historical+Park" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="sukhothai" data-stype="heritage" data-spot-num="SK 02">
       <div class="must-badge">⭐</div>
-      <div class="num">SK 02</div>
-      <div class="name-row"><div class="name">ワット・マハタート（スコータイ）</div><span class="badge">中心寺院</span></div>
+      <div class="num-row"><span class="num">SK 02</span><span class="badge">中心寺院</span></div>
+      <div class="name-row"><div class="name">ワット・マハタート（スコータイ）</div></div>
       <div class="desc">歴史公園の中心に建つ最大の寺院跡。蓮の形を模した塔（プラーン）と200体近い仏像群が圧巻。夕暮れのシルエットが特に美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・マハタート（スコータイ）.webp" alt="ワット・マハタート（スコータイ）" loading="lazy"><a href="https://maps.google.com/?q=Wat+Mahathat+Sukhothai" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="sukhothai" data-stype="heritage" data-spot-num="SK 03">
       <div class="must-badge">⭐</div>
-      <div class="num">SK 03</div>
-      <div class="name-row"><div class="name">ワット・シーチュム</div><span class="badge">フォトスポット</span></div>
+      <div class="num-row"><span class="num">SK 03</span><span class="badge">フォトスポット</span></div>
+      <div class="name-row"><div class="name">ワット・シーチュム</div></div>
       <div class="desc">高さ15mの巨大座仏「アチャナ仏」を細い建物の隙間に安置した寺院。狭い開口部から金色の指先だけが覗く独特の光景が有名。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・シーチュム.webp" alt="ワット・シーチュム" loading="lazy"><a href="https://maps.google.com/?q=Wat+Si+Chum+Sukhothai" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sukhothai" data-stype="heritage" data-spot-num="SK 04">
       
-      <div class="num">SK 04</div>
-      <div class="name-row"><div class="name">ワット・シーサワイ</div><span class="badge">クメール様式</span></div>
+      <div class="num-row"><span class="num">SK 04</span><span class="badge">クメール様式</span></div>
+      <div class="name-row"><div class="name">ワット・シーサワイ</div></div>
       <div class="desc">クメール様式の3基の塔（プラーン）が並ぶ寺院跡。元はヒンドゥー教寺院で後に仏教へ改修。堀と赤煉瓦のコントラストが美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ワット・シーサワイ.webp" alt="ワット・シーサワイ" loading="lazy"><a href="https://maps.google.com/?q=Wat+Sri+Sawai+Sukhothai" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="sukhothai" data-stype="activity" data-spot-num="SK 05">
       
-      <div class="num">SK 05</div>
-      <div class="name-row"><div class="name">ロイクラトン・光と音のショー（11月）</div><span class="badge">季節イベント</span></div>
+      <div class="num-row"><span class="num">SK 05</span><span class="badge">季節イベント</span></div>
+      <div class="name-row"><div class="name">ロイクラトン・光と音のショー（11月）</div></div>
       <div class="desc">スコータイはロイクラトン発祥の地。毎年11月の満月の夜、ライトアップされた遺跡を背景に伝統舞踊・花火・灯篭流しが彩る一大イベント。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ロイクラトン・光と音のショー（11月）.webp" alt="ロイクラトン・光と音のショー（11月）" loading="lazy"></div>
     </div>
@@ -1310,7 +1359,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -1319,6 +1368,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -1332,12 +1403,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -1345,6 +1417,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1391,6 +1464,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1466,16 +1549,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1650,23 +1771,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

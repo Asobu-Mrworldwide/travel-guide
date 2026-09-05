@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="北朝鮮の観光スポット｜北朝鮮旅行ガイド（参考情報）">
 <meta name="twitter:description" content="【重要】北朝鮮は2020年1月以降、一般観光客の受け入れを停止しており、2026年現在も再開の見通しは示されていません。本ページはコロナ禍以前の団体ツアーを基にした参考情報です。個人旅行は認められておらず、中国の指定旅行会社が催行する団体…">
 <meta name="twitter:image" content="https://worldmappy.com/north_korea/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="200" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 72 36"><rect fill="#024FA2" width="72" height="36"/><rect fill="#fff" y="6" width="72" height="24"/><rect fill="#ED1C27" y="7" width="72" height="22"/><circle fill="#fff" cx="24" cy="18" r="8"/><g id="star" transform="translate(24,18) scale(7.75)" fill="#ED1C27"><g id="cone"><polygon id="triangle" points="0,0 0,1 .5,1" transform="translate(0,-1) rotate(18)"/><use xlink:href="#triangle" transform="scale(-1,1)" id="use12"/></g><use xlink:href="#cone" transform="rotate(72)" id="use14"/><use xlink:href="#cone" transform="rotate(-72)" id="use16"/><use xlink:href="#cone" transform="rotate(144)" id="use18"/><use xlink:href="#cone" transform="rotate(-144)" id="use20"/></g></svg></div></span><span class="site-country-name">北朝鮮</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=north_korea">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">北朝鮮を旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=north_korea">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,44 +272,62 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>北朝鮮観光スポット図鑑</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">記念施設</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然・景勝地</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">記念施設</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然・景勝地</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="pyongyang" onclick="filterSpots('city','pyongyang',this)">平壌</button>
+              
+              <button class="filter-btn " data-filter="kaesong" onclick="filterSpots('city','kaesong',this)">開城</button>
+              
+              <button class="filter-btn " data-filter="myohyangsan" onclick="filterSpots('city','myohyangsan',this)">妙香山</button>
+              
+              <button class="filter-btn " data-filter="kumgangsan" onclick="filterSpots('city','kumgangsan',this)">金剛山</button>
+              
+              <button class="filter-btn " data-filter="wonsan" onclick="filterSpots('city','wonsan',this)">元山・葛麻海岸</button>
+              
+              <button class="filter-btn " data-filter="paektusan" onclick="filterSpots('city','paektusan',this)">白頭山</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="pyongyang" onclick="filterSpots('city','pyongyang',this)">平壌</button>
-      
-      <button class="filter-btn " data-filter="kaesong" onclick="filterSpots('city','kaesong',this)">開城</button>
-      
-      <button class="filter-btn " data-filter="myohyangsan" onclick="filterSpots('city','myohyangsan',this)">妙香山</button>
-      
-      <button class="filter-btn " data-filter="kumgangsan" onclick="filterSpots('city','kumgangsan',this)">金剛山</button>
-      
-      <button class="filter-btn " data-filter="wonsan" onclick="filterSpots('city','wonsan',this)">元山・葛麻海岸</button>
-      
-      <button class="filter-btn " data-filter="paektusan" onclick="filterSpots('city','paektusan',this)">白頭山</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">24</span> / <span id="spots-count-total">24</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -287,6 +335,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -333,80 +382,80 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="pyongyang" data-stype="heritage" data-spot-num="PYO 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PYO 01</div>
-      <div class="name-row"><div class="name">万寿台大記念碑</div><span class="badge">平壌観光の中心・必見</span></div>
+      <div class="num-row"><span class="num">PYO 01</span><span class="badge">平壌観光の中心・必見</span></div>
+      <div class="name-row"><div class="name">万寿台大記念碑</div></div>
       <div class="desc">金日成・金正日の巨大なブロンズ像が立つ、平壌観光で必ず訪れる場所。多くのツアーで献花と一礼が組み込まれ、写真は像全体が入るように撮影するのが慣例になっている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/万寿台大記念碑.webp" alt="万寿台大記念碑" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="pyongyang" data-stype="townscape" data-spot-num="PYO 02">
       <div class="must-badge">⭐</div>
-      <div class="num">PYO 02</div>
-      <div class="name-row"><div class="name">金日成広場</div><span class="badge">パレードの舞台・必見</span></div>
+      <div class="num-row"><span class="num">PYO 02</span><span class="badge">パレードの舞台・必見</span></div>
+      <div class="name-row"><div class="name">金日成広場</div></div>
       <div class="desc">大規模な軍事パレードやマスゲームの舞台として知られる、平壌中心部の巨大広場。正面には人民大学習堂がそびえ、広場に立つと街のスケール感を実感できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/金日成広場.webp" alt="金日成広場" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="pyongyang" data-stype="townscape" data-spot-num="PYO 03">
       <div class="must-badge">⭐</div>
-      <div class="num">PYO 03</div>
-      <div class="name-row"><div class="name">主体思想塔（チュチェタワー）</div><span class="badge">平壌随一の展望スポット</span></div>
+      <div class="num-row"><span class="num">PYO 03</span><span class="badge">平壌随一の展望スポット</span></div>
+      <div class="name-row"><div class="name">主体思想塔（チュチェタワー）</div></div>
       <div class="desc">大同江のほとりにそびえる、頂上に赤い炎を模したモニュメントを掲げる塔。エレベーターで展望台に上がれば、記念碑と広場が整然と並ぶ平壌の街並みを一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/主体思想塔（チュチェタワー）.webp" alt="主体思想塔（チュチェタワー）" loading="lazy"><a href="https://maps.google.com/?q=Juche+Tower+Pyongyang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pyongyang" data-stype="heritage" data-spot-num="PYO 04">
       
-      <div class="num">PYO 04</div>
-      <div class="name-row"><div class="name">凱旋門</div><span class="badge">パリより大きい凱旋門</span></div>
+      <div class="num-row"><span class="num">PYO 04</span><span class="badge">パリより大きい凱旋門</span></div>
+      <div class="name-row"><div class="name">凱旋門</div></div>
       <div class="desc">金日成の抗日闘争からの帰還を記念して建てられた、パリの凱旋門よりも一回り大きいとされる石造りの門。周辺は市民の憩いの公園にもなっている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/凱旋門.webp" alt="凱旋門" loading="lazy"><a href="https://maps.google.com/?q=Arch+of+Triumph+Pyongyang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img must" data-city="pyongyang" data-stype="religious" data-spot-num="PYO 05">
       <div class="must-badge">⭐</div>
-      <div class="num">PYO 05</div>
-      <div class="name-row"><div class="name">錦繍山太陽宮殿</div><span class="badge">最重要の記念施設</span></div>
+      <div class="num-row"><span class="num">PYO 05</span><span class="badge">最重要の記念施設</span></div>
+      <div class="name-row"><div class="name">錦繍山太陽宮殿</div></div>
       <div class="desc">金日成・金正日の遺体が安置される、国内で最も神聖とされる施設。見学には厳格な服装規定と一連の作法があり、長い動く歩道を経て棺の安置室へ向かう独特の体験となる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/錦繍山太陽宮殿.webp" alt="錦繍山太陽宮殿" loading="lazy"></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="pyongyang" data-stype="activity" data-spot-num="PYO 06">
       
-      <div class="num">PYO 06</div>
-      <div class="name-row"><div class="name">平壌地下鉄</div><span class="badge">駅が美術館のような地下鉄</span></div>
+      <div class="num-row"><span class="num">PYO 06</span><span class="badge">駅が美術館のような地下鉄</span></div>
+      <div class="name-row"><div class="name">平壌地下鉄</div></div>
       <div class="desc">旧ソ連様式の豪華な内装が続く、世界でも有数の深さを誇る地下鉄。各駅ごとに異なるシャンデリアや壁画が飾られ、駅自体が観光名所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/平壌地下鉄.webp" alt="平壌地下鉄" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pyongyang" data-stype="heritage" data-spot-num="PYO 07">
       
-      <div class="num">PYO 07</div>
-      <div class="name-row"><div class="name">万景台（金日成生家）</div><span class="badge">指導者生誕の地</span></div>
+      <div class="num-row"><span class="num">PYO 07</span><span class="badge">指導者生誕の地</span></div>
+      <div class="name-row"><div class="name">万景台（金日成生家）</div></div>
       <div class="desc">初代指導者・金日成が生まれ育ったとされる質素な藁ぶき屋根の家屋群。緑豊かな丘の中腹にあり、平壌市街の喧騒から離れたのどかな雰囲気が漂う。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/万景台（金日成生家）.webp" alt="万景台（金日成生家）" loading="lazy"><a href="https://maps.google.com/?q=Mangyongdae+Pyongyang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pyongyang" data-stype="museum" data-spot-num="PYO 08">
       
-      <div class="num">PYO 08</div>
-      <div class="name-row"><div class="name">祖国解放戦争勝利記念館</div><span class="badge">戦争博物館</span></div>
+      <div class="num-row"><span class="num">PYO 08</span><span class="badge">戦争博物館</span></div>
+      <div class="name-row"><div class="name">祖国解放戦争勝利記念館</div></div>
       <div class="desc">朝鮮戦争（祖国解放戦争）に関する巨大な展示施設。屋外には米軍から拿捕したプエブロ号が係留・展示されており、パノラマ館では360度の戦争絵巻を見ることができる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/祖国解放戦争勝利記念館.webp" alt="祖国解放戦争勝利記念館" loading="lazy"><a href="https://maps.google.com/?q=Victorious+Fatherland+Liberation+War+Museum+Pyongyang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pyongyang" data-stype="townscape" data-spot-num="PYO 09">
       
-      <div class="num">PYO 09</div>
-      <div class="name-row"><div class="name">人民大学習堂</div><span class="badge">国内最大の図書館・必見</span></div>
+      <div class="num-row"><span class="num">PYO 09</span><span class="badge">国内最大の図書館・必見</span></div>
+      <div class="name-row"><div class="name">人民大学習堂</div></div>
       <div class="desc">金日成広場の正面にそびえる、10階建て・3000万冊を収蔵する国内最大の図書館。6階バルコニーから広場と主体思想塔を一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/人民大学習堂.webp" alt="人民大学習堂" loading="lazy"><a href="https://maps.google.com/?q=Grand+People%27s+Study+House+Pyongyang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pyongyang" data-stype="activity" data-spot-num="PYO 10">
       
-      <div class="num">PYO 10</div>
-      <div class="name-row"><div class="name">綾羅島五一競技場</div><span class="badge">世界最大級のスタジアム</span></div>
+      <div class="num-row"><span class="num">PYO 10</span><span class="badge">世界最大級のスタジアム</span></div>
+      <div class="name-row"><div class="name">綾羅島五一競技場</div></div>
       <div class="desc">収容人数15万人ともいわれる世界最大級のスタジアム。上空から見るとマグノリアの花に見える屋根が特徴で、マスゲームの会場としても有名。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/綾羅島五一競技場.webp" alt="綾羅島五一競技場" loading="lazy"><a href="https://maps.google.com/?q=Rungrado+1st+of+May+Stadium+Pyongyang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -457,48 +506,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card no-map has-spot-img must" data-city="kaesong" data-stype="heritage" data-spot-num="KAE 01">
       <div class="must-badge">⭐</div>
-      <div class="num">KAE 01</div>
-      <div class="name-row"><div class="name">板門店（軍事境界線）</div><span class="badge">南北分断の最前線・必見</span></div>
+      <div class="num-row"><span class="num">KAE 01</span><span class="badge">南北分断の最前線・必見</span></div>
+      <div class="name-row"><div class="name">板門店（軍事境界線）</div></div>
       <div class="desc">南北を隔てる軍事境界線上にある共同警備区域（JSA）。青い建物をまたいで国境線が引かれ、韓国側とは異なる視点でこの特異な場所を体感できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/板門店（軍事境界線）.webp" alt="板門店（軍事境界線）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kaesong" data-stype="museum" data-spot-num="KAE 02">
       
-      <div class="num">KAE 02</div>
-      <div class="name-row"><div class="name">開城高麗博物館</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">KAE 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">開城高麗博物館</div></div>
       <div class="desc">高麗王朝時代の最高学府だった成均館の建物を利用した博物館。世界遺産「開城の史跡群」の構成資産のひとつで、伝統建築の中に高麗青磁などの出土品が展示されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/開城高麗博物館.webp" alt="開城高麗博物館" loading="lazy"><a href="https://maps.google.com/?q=Kaesong+Koryo+Museum" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kaesong" data-stype="heritage" data-spot-num="KAE 03">
       
-      <div class="num">KAE 03</div>
-      <div class="name-row"><div class="name">善竹橋</div><span class="badge">高麗王朝の史跡</span></div>
+      <div class="num-row"><span class="num">KAE 03</span><span class="badge">高麗王朝の史跡</span></div>
+      <div class="name-row"><div class="name">善竹橋</div></div>
       <div class="desc">高麗末期の忠臣が暗殺された場所として伝わる、開城で最も古い石橋のひとつ。橋のたもとには彼の死を悼む記念碑が建てられ、歴史ファンには外せない史跡。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/善竹橋.webp" alt="善竹橋" loading="lazy"><a href="https://maps.google.com/?q=Sonjuk+Bridge+Kaesong" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="kaesong" data-stype="townscape" data-spot-num="KAE 04">
       
-      <div class="num">KAE 04</div>
-      <div class="name-row"><div class="name">開城旧市街</div><span class="badge">世界遺産・古都の街並み</span></div>
+      <div class="num-row"><span class="num">KAE 04</span><span class="badge">世界遺産・古都の街並み</span></div>
+      <div class="name-row"><div class="name">開城旧市街</div></div>
       <div class="desc">瓦屋根の伝統家屋が連なる、朝鮮戦争の被害を比較的免れた街並み。平壌の近代的な景観とは対照的な、昔ながらの朝鮮半島の街並みを感じられる貴重なエリア。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/開城旧市街.webp" alt="開城旧市街" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kaesong" data-stype="nature" data-spot-num="KAE 05">
       
-      <div class="num">KAE 05</div>
-      <div class="name-row"><div class="name">松岳山</div><span class="badge">開城を見下ろす山</span></div>
+      <div class="num-row"><span class="num">KAE 05</span><span class="badge">開城を見下ろす山</span></div>
+      <div class="name-row"><div class="name">松岳山</div></div>
       <div class="desc">開城の街を見下ろす山で、風水上の要とされてきた山岳。ハイキングコースが整備され、山頂からは古都・開城の瓦屋根の街並みを一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/松岳山.webp" alt="松岳山" loading="lazy"><a href="https://maps.google.com/?q=Mount+Songak+Kaesong" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kaesong" data-stype="religious" data-spot-num="KAE 06">
       
-      <div class="num">KAE 06</div>
-      <div class="name-row"><div class="name">観音寺（クァヌムサ）</div><span class="badge">高麗時代の古刹</span></div>
+      <div class="num-row"><span class="num">KAE 06</span><span class="badge">高麗時代の古刹</span></div>
+      <div class="name-row"><div class="name">観音寺（クァヌムサ）</div></div>
       <div class="desc">970年創建、高麗時代にさかのぼる仏教寺院。石窟や七重の塔が残り、静かな山あいに佇む佇まいは平壌の記念碑群とは対照的な落ち着いた雰囲気を漂わせる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/観音寺（クァヌムサ）.webp" alt="観音寺（クァヌムサ）" loading="lazy"><a href="https://maps.google.com/?q=Kwanumsa+Temple+Kaesong" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -549,16 +598,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="myohyangsan" data-stype="museum" data-spot-num="MYO 01">
       <div class="must-badge">⭐</div>
-      <div class="num">MYO 01</div>
-      <div class="name-row"><div class="name">国際親善展覧館</div><span class="badge">巨大地下宮殿・必見</span></div>
+      <div class="num-row"><span class="num">MYO 01</span><span class="badge">巨大地下宮殿・必見</span></div>
+      <div class="name-row"><div class="name">国際親善展覧館</div></div>
       <div class="desc">山の中腹に築かれた巨大な地下宮殿で、世界各国から歴代指導者へ贈られた贈答品数十万点を収蔵展示する施設。公式ツアーの必須ルート。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/国際親善展覧館.webp" alt="国際親善展覧館" loading="lazy"><a href="https://maps.google.com/?q=International+Friendship+Exhibition+Myohyangsan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="myohyangsan" data-stype="religious" data-spot-num="MYO 02">
       <div class="must-badge">⭐</div>
-      <div class="num">MYO 02</div>
-      <div class="name-row"><div class="name">普賢寺（ポヒョンサ）</div><span class="badge">妙香山の名刹</span></div>
+      <div class="num-row"><span class="num">MYO 02</span><span class="badge">妙香山の名刹</span></div>
+      <div class="name-row"><div class="name">普賢寺（ポヒョンサ）</div></div>
       <div class="desc">1042年創建、妙香山の渓谷に佇む北朝鮮を代表する名刹。高麗時代の石塔や経典が残り、記念碑巡りの中で貴重な自然・文化体験になる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/普賢寺（ポヒョンサ）.webp" alt="普賢寺（ポヒョンサ）" loading="lazy"><a href="https://maps.google.com/?q=Pohyon+Temple+Myohyangsan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -609,16 +658,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="kumgangsan" data-stype="nature" data-spot-num="KKS 01">
       <div class="must-badge">⭐</div>
-      <div class="num">KKS 01</div>
-      <div class="name-row"><div class="name">金剛山（万物相）</div><span class="badge">朝鮮半島屈指の景勝地・必見</span></div>
+      <div class="num-row"><span class="num">KKS 01</span><span class="badge">朝鮮半島屈指の景勝地・必見</span></div>
+      <div class="name-row"><div class="name">金剛山（万物相）</div></div>
       <div class="desc">「万物相」と呼ばれる、あらゆる形の奇岩が林立する朝鮮半島屈指の景勝地。四季ごとに呼び名が変わるほど表情豊かな山として知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/金剛山（万物相）.webp" alt="金剛山（万物相）" loading="lazy"><a href="https://maps.google.com/?q=Mount+Kumgang+North+Korea" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="kumgangsan" data-stype="nature" data-spot-num="KKS 02">
       
-      <div class="num">KKS 02</div>
-      <div class="name-row"><div class="name">九龍淵瀑布（クリョンヨンポクポ）</div><span class="badge">金剛山最大の滝</span></div>
+      <div class="num-row"><span class="num">KKS 02</span><span class="badge">金剛山最大の滝</span></div>
+      <div class="name-row"><div class="name">九龍淵瀑布（クリョンヨンポクポ）</div></div>
       <div class="desc">落差74mの北朝鮮最大級の滝で、金剛山の渓谷ハイキングのハイライト。豪快な水しぶきと澄んだ滝つぼの碧が奇岩の山肌に映える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/九龍淵瀑布（クリョンヨンポクポ）.webp" alt="九龍淵瀑布（クリョンヨンポクポ）" loading="lazy"><a href="https://maps.google.com/?q=Kuryong+Falls+North+Korea" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -669,16 +718,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="wonsan" data-stype="activity" data-spot-num="WON 01">
       <div class="must-badge">⭐</div>
-      <div class="num">WON 01</div>
-      <div class="name-row"><div class="name">葛麻海岸観光地区</div><span class="badge">国家的リゾート開発の象徴・必見</span></div>
+      <div class="num-row"><span class="num">WON 01</span><span class="badge">国家的リゾート開発の象徴・必見</span></div>
+      <div class="name-row"><div class="name">葛麻海岸観光地区</div></div>
       <div class="desc">国家事業として大規模開発が進められた、白砂のビーチが約4kmにわたって続く巨大リゾート地区。近年の観光開発を象徴するエリア。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/葛麻海岸観光地区.webp" alt="葛麻海岸観光地区" loading="lazy"><a href="https://maps.google.com/?q=Kalma+Coastal+Tourist+Area+Wonsan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="wonsan" data-stype="activity" data-spot-num="WON 02">
       
-      <div class="num">WON 02</div>
-      <div class="name-row"><div class="name">松涛園（ソンドウォン）</div><span class="badge">地元に親しまれる松林の海岸</span></div>
+      <div class="num-row"><span class="num">WON 02</span><span class="badge">地元に親しまれる松林の海岸</span></div>
+      <div class="name-row"><div class="name">松涛園（ソンドウォン）</div></div>
       <div class="desc">元山市街に隣接する、白砂と松林が続く伝統的な海水浴場。葛麻海岸の新興リゾートとは対照的に、地元住民にも親しまれてきた昔ながらの避暑地としての顔を持つ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/松涛園（ソンドウォン）.webp" alt="松涛園（ソンドウォン）" loading="lazy"><a href="https://maps.google.com/?q=Songdowon+Wonsan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -729,16 +778,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="paektusan" data-stype="nature" data-spot-num="PAE 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PAE 01</div>
-      <div class="name-row"><div class="name">天池（チョンジ）</div><span class="badge">朝鮮民族の聖地・究極の絶景</span></div>
+      <div class="num-row"><span class="num">PAE 01</span><span class="badge">朝鮮民族の聖地・究極の絶景</span></div>
+      <div class="name-row"><div class="name">天池（チョンジ）</div></div>
       <div class="desc">標高2,750m、白頭山の山頂に広がるカルデラ湖。朝鮮民族の発祥地とされる神聖な場所で、全容を望めるのは夏の限られた日のみの幻の絶景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/天池（チョンジ）.webp" alt="天池（チョンジ）" loading="lazy"><a href="https://maps.google.com/?q=Lake+Chon+Mount+Paektu" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="paektusan" data-stype="townscape" data-spot-num="PAE 02">
       
-      <div class="num">PAE 02</div>
-      <div class="name-row"><div class="name">三池淵（サムジヨン）</div><span class="badge">白頭山観光の拠点</span></div>
+      <div class="num-row"><span class="num">PAE 02</span><span class="badge">白頭山観光の拠点</span></div>
+      <div class="name-row"><div class="name">三池淵（サムジヨン）</div></div>
       <div class="desc">白頭山南麓に広がる高原の町で、白頭山観光の拠点となる革命史跡エリア。カラマツの原生林と3つの湖が織りなす高原の風景が広がり、山頂への玄関口として整備が進む。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/三池淵（サムジヨン）.webp" alt="三池淵（サムジヨン）" loading="lazy"><a href="https://maps.google.com/?q=Samjiyon+North+Korea" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -922,7 +971,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -931,6 +980,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -944,12 +1015,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -957,6 +1029,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1003,6 +1076,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1078,16 +1161,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1262,23 +1383,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

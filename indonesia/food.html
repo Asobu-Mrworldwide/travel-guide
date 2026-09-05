@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="インドネシアのグルメ｜インドネシア旅行ガイド">
 <meta name="twitter:description" content="直行便で約7〜8時間、時差1〜2時間のインドネシアは1万7,000もの島々が連なる世界最大の群島国家。世界遺産ボロブドゥール寺院、棚田とヒンドゥー寺院が広がるバリ島、コモドドラゴンが生きるコモド国立公園、そしてナシゴレンをはじめとする多彩…">
 <meta name="twitter:image" content="https://worldmappy.com/indonesia/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><path fill="#fff" d="M0 0h3v2H0z"/><path fill="red" d="M0 0h3v1H0z"/></svg></div></span><span class="site-country-name">インドネシア</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="">観光スポット</a>
-    <a href="food.html" class="active">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=indonesia">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">インドネシアを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=indonesia">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -213,40 +243,58 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Indonesia / 03</span></div>
   <div class="tab-body">
   <h2>インドネシアグルメ</h2>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="food-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">メイン料理</button>
-      
-      <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">軽食・スナック</button>
-      
-      <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">スイーツ</button>
-      
-      <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">ドリンク</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="food-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">メイン料理</button>
+              
+              <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">軽食・スナック</button>
+              
+              <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">スイーツ</button>
+              
+              <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">ドリンク</button>
+              
+            </div>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア限定</div>
+            <div class="filter-row" id="food-filter-city">
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
+              
+              <button class="filter-btn" data-filter="bali" onclick="filterFood('city','bali',this)">バリ島</button>
+              
+              <button class="filter-btn" data-filter="jakarta" onclick="filterFood('city','jakarta',this)">ジャカルタ</button>
+              
+              <button class="filter-btn" data-filter="yogyakarta" onclick="filterFood('city','yogyakarta',this)">ジョグジャカルタ</button>
+              
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">全国共通</button>
+              
+              <button class="filter-btn" data-filter="sulawesi" onclick="filterFood('city','sulawesi',this)">スラウェシ島</button>
+              
+              <button class="filter-btn" data-filter="sumatra" onclick="filterFood('city','sumatra',this)">スマトラ島</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetFoodFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-label">エリア限定</div>
-    <div class="filter-row" id="food-filter-city">
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
-      
-      <button class="filter-btn" data-filter="bali" onclick="filterFood('city','bali',this)">バリ島</button>
-      
-      <button class="filter-btn" data-filter="jakarta" onclick="filterFood('city','jakarta',this)">ジャカルタ</button>
-      
-      <button class="filter-btn" data-filter="yogyakarta" onclick="filterFood('city','yogyakarta',this)">ジョグジャカルタ</button>
-      
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">全国共通</button>
-      
-      <button class="filter-btn" data-filter="sulawesi" onclick="filterFood('city','sulawesi',this)">スラウェシ島</button>
-      
-      <button class="filter-btn" data-filter="sumatra" onclick="filterFood('city','sumatra',this)">スマトラ島</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="food-count-shown">33</span> / <span id="food-count-total">33</span> 品を表示</span>
     <div class="view-toggle" id="foodViewToggle">
@@ -255,12 +303,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
   </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.1">
-      <div class="num">No.1</div>
-      <div class="name-row"><div class="name">ナシゴレン</div><span class="badge">インドネシアの国民食</span></div>
+      <div class="num-row"><span class="num">No.1</span><span class="badge">インドネシアの国民食</span></div>
+      <div class="name-row"><div class="name">ナシゴレン</div></div>
       <div class="desc">ケチャップマニス（甘辛醤油）で炒めた混ぜご飯に目玉焼きを添えた料理。屋台からホテルの朝食まで、島を問わず至る所で味わえる定番中の定番。</div>
       <img src="素材/グルメ/ナシゴレン.webp" alt="ナシゴレン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8A%E3%82%B7%E3%82%B4%E3%83%AC%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -270,8 +319,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.2">
-      <div class="num">No.2</div>
-      <div class="name-row"><div class="name">サテ（インドネシア風串焼き）</div><span class="badge">屋台の定番串焼き</span></div>
+      <div class="num-row"><span class="num">No.2</span><span class="badge">屋台の定番串焼き</span></div>
+      <div class="name-row"><div class="name">サテ（インドネシア風串焼き）</div></div>
       <div class="desc">鶏肉や牛肉、山羊肉を串に刺して炭火で焼き、濃厚なピーナッツソースをつけて食べる屋台料理の代表格。夜になると香ばしい煙があちこちに漂う。</div>
       <img src="素材/グルメ/サテ（インドネシア風串焼き）.webp" alt="サテ（インドネシア風串焼き）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B5%E3%83%86%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -281,8 +330,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.3">
-      <div class="num">No.3</div>
-      <div class="name-row"><div class="name">ルンダン</div><span class="badge">世界一おいしい料理に選出</span></div>
+      <div class="num-row"><span class="num">No.3</span><span class="badge">世界一おいしい料理に選出</span></div>
+      <div class="name-row"><div class="name">ルンダン</div></div>
       <div class="desc">牛肉をココナッツミルクと香辛料でじっくり煮込んだスマトラ島パダン発祥の料理。CNNの「世界で最も美味しい料理」に選ばれたこともある実力派。</div>
       <img src="素材/グルメ/ルンダン.webp" alt="ルンダン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%AB%E3%83%B3%E3%83%80%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -292,8 +341,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.4">
-      <div class="num">No.4</div>
-      <div class="name-row"><div class="name">ガドガド</div><span class="badge">野菜たっぷりのサラダ</span></div>
+      <div class="num-row"><span class="num">No.4</span><span class="badge">野菜たっぷりのサラダ</span></div>
+      <div class="name-row"><div class="name">ガドガド</div></div>
       <div class="desc">茹で野菜や厚揚げ、ゆで卵を濃厚なピーナッツソースで和えたインドネシア風サラダ。栄養バランスが良く、揚げせんべい（クルプック）を添えて食べる。</div>
       <img src="素材/グルメ/ガドガド.webp" alt="ガドガド" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AC%E3%83%89%E3%82%AC%E3%83%89%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -303,8 +352,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.5">
-      <div class="num">No.5</div>
-      <div class="name-row"><div class="name">ナシパダン</div><span class="badge">選んで盛るワンプレート</span></div>
+      <div class="num-row"><span class="num">No.5</span><span class="badge">選んで盛るワンプレート</span></div>
+      <div class="name-row"><div class="name">ナシパダン</div></div>
       <div class="desc">小皿に並んだ数十種類のおかずから好きなものを選んでご飯に添える、スマトラ島パダン地方発祥のスタイル。専門店では品数の豊富さが売り物になっている。</div>
       <img src="素材/グルメ/ナシパダン.webp" alt="ナシパダン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8A%E3%82%B7%E3%83%91%E3%83%80%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -314,8 +363,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.6">
-      <div class="num">No.6</div>
-      <div class="name-row"><div class="name">ミーゴレン</div><span class="badge">屋台の焼きそば</span></div>
+      <div class="num-row"><span class="num">No.6</span><span class="badge">屋台の焼きそば</span></div>
+      <div class="name-row"><div class="name">ミーゴレン</div></div>
       <div class="desc">甘辛い醤油ベースで炒めた太めの焼きそば。野菜やエビ、目玉焼きをのせるのが定番で、ナシゴレンと並ぶ屋台の二大看板メニュー。</div>
       <img src="素材/グルメ/ミーゴレン.webp" alt="ミーゴレン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%82%B4%E3%83%AC%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -325,8 +374,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.7">
-      <div class="num">No.7</div>
-      <div class="name-row"><div class="name">バクソ</div><span class="badge">地元民のソウルフード</span></div>
+      <div class="num-row"><span class="num">No.7</span><span class="badge">地元民のソウルフード</span></div>
+      <div class="name-row"><div class="name">バクソ</div></div>
       <div class="desc">牛肉団子が入った透明な出汁スープ。屋台の移動販売から専門店まで至る所で見かける庶民の味で、春雨や豆腐を加えて食べるのが定番のスタイル。</div>
       <img src="素材/グルメ/バクソ.webp" alt="バクソ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%82%AF%E3%82%BD%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -336,8 +385,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.8">
-      <div class="num">No.8</div>
-      <div class="name-row"><div class="name">サンバル</div><span class="badge">食卓に欠かせない辛味調味料</span></div>
+      <div class="num-row"><span class="num">No.8</span><span class="badge">食卓に欠かせない辛味調味料</span></div>
+      <div class="name-row"><div class="name">サンバル</div></div>
       <div class="desc">唐辛子とエビペーストなどをすり潰した辛味調味料。地域や家庭ごとにレシピが異なり、どんな料理にも添えられるインドネシア食文化の核となる存在。</div>
       <img src="素材/グルメ/サンバル.webp" alt="サンバル" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B5%E3%83%B3%E3%83%90%E3%83%AB%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E8%AA%BF%E5%91%B3%E6%96%99" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -347,8 +396,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="yogyakarta" data-food-num="No.9">
-      <div class="num">No.9</div>
-      <div class="name-row"><div class="name">グドゥッ</div><span class="badge">ジョグジャカルタの郷土料理</span></div>
+      <div class="num-row"><span class="num">No.9</span><span class="badge">ジョグジャカルタの郷土料理</span></div>
+      <div class="name-row"><div class="name">グドゥッ</div></div>
       <div class="desc">若いジャックフルーツをココナッツミルクと香辛料で甘辛く煮込んだ、ジョグジャカルタを代表する郷土料理。甘めの味付けが特徴でご飯との相性が良い。</div>
       <img src="素材/グルメ/グドゥッ.webp" alt="グドゥッ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B0%E3%83%89%E3%82%A5%E3%83%83%20%E3%82%B8%E3%83%A7%E3%82%B0%E3%82%B8%E3%83%A3%E3%82%AB%E3%83%AB%E3%82%BF%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -358,8 +407,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="bali" data-food-num="No.10">
-      <div class="num">No.10</div>
-      <div class="name-row"><div class="name">バビグリン</div><span class="badge">バリ島名物の豚の丸焼き</span></div>
+      <div class="num-row"><span class="num">No.10</span><span class="badge">バリ島名物の豚の丸焼き</span></div>
+      <div class="name-row"><div class="name">バビグリン</div></div>
       <div class="desc">香草を詰めた子豚を丸ごと炭火で焼き上げる、ヒンドゥー教徒が多いバリ島ならではの豪快な名物料理。パリパリの皮とジューシーな肉の対比が魅力。</div>
       <img src="素材/グルメ/バビグリン.webp" alt="バビグリン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%83%93%E3%82%B0%E3%83%AA%E3%83%B3%20%E3%83%90%E3%83%AA%E5%B3%B6%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -369,8 +418,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="bali" data-food-num="No.11">
-      <div class="num">No.11</div>
-      <div class="name-row"><div class="name">ナシチャンプル</div><span class="badge">バリ風ワンプレート定食</span></div>
+      <div class="num-row"><span class="num">No.11</span><span class="badge">バリ風ワンプレート定食</span></div>
+      <div class="name-row"><div class="name">ナシチャンプル</div></div>
       <div class="desc">ご飯を中心に、鶏肉・野菜・テンペ・サンバルなど数種のおかずを少しずつ盛り合わせたバリ島の定食スタイル。ワルンで最も注文しやすい一皿。</div>
       <img src="素材/グルメ/ナシチャンプル.webp" alt="ナシチャンプル" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8A%E3%82%B7%E3%83%81%E3%83%A3%E3%83%B3%E3%83%97%E3%83%AB%20%E3%83%90%E3%83%AA%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -380,8 +429,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.12">
-      <div class="num">No.12</div>
-      <div class="name-row"><div class="name">テンペ・タフ料理</div><span class="badge">大豆発酵食品の宝庫</span></div>
+      <div class="num-row"><span class="num">No.12</span><span class="badge">大豆発酵食品の宝庫</span></div>
+      <div class="name-row"><div class="name">テンペ・タフ料理</div></div>
       <div class="desc">大豆を発酵させたテンペと豆腐（タフ）を素揚げにした軽食。インドネシア発祥のテンペは高タンパクな伝統食材として世界的にも注目されている。</div>
       <img src="素材/グルメ/テンペ・タフ料理.webp" alt="テンペ・タフ料理" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%86%E3%83%B3%E3%83%9A%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E9%A3%9F%E5%93%81" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -391,8 +440,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.13">
-      <div class="num">No.13</div>
-      <div class="name-row"><div class="name">ソト（インドネシア風スープ）</div><span class="badge">地域ごとに違う顔を持つ汁物</span></div>
+      <div class="num-row"><span class="num">No.13</span><span class="badge">地域ごとに違う顔を持つ汁物</span></div>
+      <div class="name-row"><div class="name">ソト（インドネシア風スープ）</div></div>
       <div class="desc">鶏肉や牛肉を使った黄色いスパイススープ。地域ごとにレシピが異なり、ソト・アヤム（鶏肉）が最もポピュラーで、朝食としても親しまれている。</div>
       <img src="素材/グルメ/ソト（インドネシア風スープ）.webp" alt="ソト（インドネシア風スープ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%BD%E3%83%88%20%E3%82%A2%E3%83%A4%E3%83%A0%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -402,8 +451,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.14">
-      <div class="num">No.14</div>
-      <div class="name-row"><div class="name">マルタバ</div><span class="badge">屋台の甘辛パンケーキ</span></div>
+      <div class="num-row"><span class="num">No.14</span><span class="badge">屋台の甘辛パンケーキ</span></div>
+      <div class="name-row"><div class="name">マルタバ</div></div>
       <div class="desc">薄い生地に卵やひき肉を包んで焼く食事系と、チョコやチーズを挟む甘いスイーツ系の2種類がある屋台の人気メニュー。夜市の定番として親しまれている。</div>
       <img src="素材/グルメ/マルタバ.webp" alt="マルタバ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%BF%E3%83%90%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E9%A3%9F%E5%93%81" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -413,8 +462,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="bali" data-food-num="No.15">
-      <div class="num">No.15</div>
-      <div class="name-row"><div class="name">ラワール</div><span class="badge">バリ島の香草和え</span></div>
+      <div class="num-row"><span class="num">No.15</span><span class="badge">バリ島の香草和え</span></div>
+      <div class="name-row"><div class="name">ラワール</div></div>
       <div class="desc">刻んだ野菜や肉、ココナッツを香辛料と混ぜ合わせたバリ島の伝統料理。儀式の際に振る舞われることも多く、地元の家庭料理として今も受け継がれている。</div>
       <img src="素材/グルメ/ラワール.webp" alt="ラワール" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%A9%E3%83%AF%E3%83%BC%E3%83%AB%20%E3%83%90%E3%83%AA%E5%B3%B6%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -424,8 +473,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="dessert" data-fcity="national" data-food-num="No.16">
-      <div class="num">No.16</div>
-      <div class="name-row"><div class="name">ピサンゴレン</div><span class="badge">揚げバナナのおやつ</span></div>
+      <div class="num-row"><span class="num">No.16</span><span class="badge">揚げバナナのおやつ</span></div>
+      <div class="name-row"><div class="name">ピサンゴレン</div></div>
       <div class="desc">バナナに衣をつけてカリッと揚げた素朴なおやつ。屋台や市場のいたる所で売られており、練乳やチョコソースをかけて食べるのが定番。</div>
       <img src="素材/グルメ/ピサンゴレン.webp" alt="ピサンゴレン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%94%E3%82%B5%E3%83%B3%E3%82%B4%E3%83%AC%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E3%81%8A%E3%82%84%E3%81%A4" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -435,8 +484,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.17">
-      <div class="num">No.17</div>
-      <div class="name-row"><div class="name">エスチェンドル</div><span class="badge">涼を呼ぶ緑のデザート</span></div>
+      <div class="num-row"><span class="num">No.17</span><span class="badge">涼を呼ぶ緑のデザート</span></div>
+      <div class="name-row"><div class="name">エスチェンドル</div></div>
       <div class="desc">緑色の米粉団子とココナッツミルク、パームシュガーシロップ、かき氷を合わせた冷たいデザート。赤道直下の暑さを乗り切るのにぴったりな一品。</div>
       <img src="素材/グルメ/エスチェンドル.webp" alt="エスチェンドル" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B9%E3%83%81%E3%82%A7%E3%83%B3%E3%83%89%E3%83%AB%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E3%82%B9%E3%82%A4%E3%83%BC%E3%83%84" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -446,8 +495,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.18">
-      <div class="num">No.18</div>
-      <div class="name-row"><div class="name">ルジャック</div><span class="badge">甘辛フルーツサラダ</span></div>
+      <div class="num-row"><span class="num">No.18</span><span class="badge">甘辛フルーツサラダ</span></div>
+      <div class="name-row"><div class="name">ルジャック</div></div>
       <div class="desc">青マンゴーやパイナップルなど酸味のある果物に、唐辛子とパームシュガーのタレをかけて和えたインドネシア風フルーツサラダ。暑い日のおやつに人気。</div>
       <img src="素材/グルメ/ルジャック.webp" alt="ルジャック" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%AB%E3%82%B8%E3%83%A3%E3%83%83%E3%82%AF%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E3%81%8A%E3%82%84%E3%81%A4" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -457,8 +506,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.19">
-      <div class="num">No.19</div>
-      <div class="name-row"><div class="name">コピトゥブルック</div><span class="badge">インドネシア式ブラックコーヒー</span></div>
+      <div class="num-row"><span class="num">No.19</span><span class="badge">インドネシア式ブラックコーヒー</span></div>
+      <div class="name-row"><div class="name">コピトゥブルック</div></div>
       <div class="desc">粗く挽いたコーヒー粉にお湯を直接注ぎ、粉が沈むのを待って上澄みを飲む素朴な淹れ方。バリ島やジャワ島は良質なコーヒー産地としても知られる。</div>
       <img src="素材/グルメ/コピトゥブルック.webp" alt="コピトゥブルック" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B3%E3%83%94%E3%83%88%E3%82%A5%E3%83%96%E3%83%AB%E3%83%83%E3%82%AF%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -468,8 +517,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.20">
-      <div class="num">No.20</div>
-      <div class="name-row"><div class="name">エステ（アイスティー）</div><span class="badge">食事に欠かせない甘い定番</span></div>
+      <div class="num-row"><span class="num">No.20</span><span class="badge">食事に欠かせない甘い定番</span></div>
+      <div class="name-row"><div class="name">エステ（アイスティー）</div></div>
       <div class="desc">たっぷりの砂糖で甘く仕立てたインドネシア式アイスティー。暑さの中で食事に必ずと言っていいほど添えられる、庶民の生活に根づいた飲み物。</div>
       <img src="素材/グルメ/エステ（アイスティー）.webp" alt="エステ（アイスティー）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B9%E3%83%86%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E3%82%A2%E3%82%A4%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -479,8 +528,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="jakarta" data-food-num="No.21">
-      <div class="num">No.21</div>
-      <div class="name-row"><div class="name">ソトブタウィ</div><span class="badge">ジャカルタ発祥の濃厚スープ</span></div>
+      <div class="num-row"><span class="num">No.21</span><span class="badge">ジャカルタ発祥の濃厚スープ</span></div>
+      <div class="name-row"><div class="name">ソトブタウィ</div></div>
       <div class="desc">ジャカルタの郷土料理。ココナッツミルクと牛乳で仕立てた濃厚でクリーミーな牛肉スープで、鶏だしが定番のソトの中でもこってり系として異彩を放つ。</div>
       <img src="素材/グルメ/ソトブタウィ.webp" alt="ソトブタウィ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%BD%E3%83%88%E3%83%96%E3%82%BF%E3%82%A6%E3%82%A3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -490,8 +539,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.22">
-      <div class="num">No.22</div>
-      <div class="name-row"><div class="name">ブブールアヤム</div><span class="badge">定番の鶏肉粥</span></div>
+      <div class="num-row"><span class="num">No.22</span><span class="badge">定番の鶏肉粥</span></div>
+      <div class="name-row"><div class="name">ブブールアヤム</div></div>
       <div class="desc">鶏肉の出汁で炊いたお粥に、揚げにんにくやたくあん、クルプックを山盛りにのせて食べるインドネシアの朝食の定番。</div>
       <img src="素材/グルメ/ブブールアヤム.webp" alt="ブブールアヤム" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%96%E3%83%96%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%A4%E3%83%A0%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -501,8 +550,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.23">
-      <div class="num">No.23</div>
-      <div class="name-row"><div class="name">ペペス</div><span class="badge">バナナの葉で蒸す伝統料理</span></div>
+      <div class="num-row"><span class="num">No.23</span><span class="badge">バナナの葉で蒸す伝統料理</span></div>
+      <div class="name-row"><div class="name">ペペス</div></div>
       <div class="desc">魚や鶏肉、キノコなどを香辛料と共にバナナの葉で包んで蒸し焼きにしたジャワ島の伝統料理。葉の香りが具材に移った上品な味わい。</div>
       <img src="素材/グルメ/ペペス.webp" alt="ペペス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9A%E3%83%9A%E3%82%B9%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -512,8 +561,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.24">
-      <div class="num">No.24</div>
-      <div class="name-row"><div class="name">ペンペッ</div><span class="badge">パレンバン発祥の魚肉練り物</span></div>
+      <div class="num-row"><span class="num">No.24</span><span class="badge">パレンバン発祥の魚肉練り物</span></div>
+      <div class="name-row"><div class="name">ペンペッ</div></div>
       <div class="desc">スマトラ島パレンバン発祥の魚肉練り製品。甘酸っぱく辛いタレ「チュコ」をつけて食べる、屋台で人気の軽食。</div>
       <img src="素材/グルメ/ペンペッ.webp" alt="ペンペッ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9A%E3%83%B3%E3%83%9A%E3%83%83%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -523,8 +572,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="bali" data-food-num="No.25">
-      <div class="num">No.25</div>
-      <div class="name-row"><div class="name">アヤムブトゥトゥ</div><span class="badge">バリ島の激辛蒸し鶏</span></div>
+      <div class="num-row"><span class="num">No.25</span><span class="badge">バリ島の激辛蒸し鶏</span></div>
+      <div class="name-row"><div class="name">アヤムブトゥトゥ</div></div>
       <div class="desc">鶏を丸ごとスパイスで満たし、バナナの葉に包んで長時間蒸し焼きにするバリ島の伝統料理。強い香辛料が効いた激辛系の一皿。</div>
       <img src="素材/グルメ/アヤムブトゥトゥ.webp" alt="アヤムブトゥトゥ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%A4%E3%83%A0%E3%83%96%E3%83%88%E3%82%A5%E3%83%88%E3%82%A5%20%E3%83%90%E3%83%AA%E5%B3%B6%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -534,8 +583,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.26">
-      <div class="num">No.26</div>
-      <div class="name-row"><div class="name">クルプック</div><span class="badge">食卓に欠かせない揚げせんべい</span></div>
+      <div class="num-row"><span class="num">No.26</span><span class="badge">食卓に欠かせない揚げせんべい</span></div>
+      <div class="name-row"><div class="name">クルプック</div></div>
       <div class="desc">魚やエビのすり身を揚げたせんべい。ほぼ全ての食事に添えられる名脇役で、インドネシアの食卓に欠かせない存在。</div>
       <img src="素材/グルメ/クルプック.webp" alt="クルプック" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AF%E3%83%AB%E3%83%97%E3%83%83%E3%82%AF%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%20%E3%82%A8%E3%83%93%E3%81%9B%E3%82%93%E3%81%B9%E3%81%84" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -545,8 +594,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.27">
-      <div class="num">No.27</div>
-      <div class="name-row"><div class="name">クエ・ラピス</div><span class="badge">カラフルな層の蒸し菓子</span></div>
+      <div class="num-row"><span class="num">No.27</span><span class="badge">カラフルな層の蒸し菓子</span></div>
+      <div class="name-row"><div class="name">クエ・ラピス</div></div>
       <div class="desc">カラフルな層が重なる、ういろうのような食感の伝統的な蒸し菓子。祝い事の席でもよく振る舞われる定番スイーツ。</div>
       <img src="素材/グルメ/クエ・ラピス.webp" alt="クエ・ラピス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AF%E3%82%A8%E3%83%BB%E3%83%A9%E3%83%94%E3%82%B9%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E8%8F%93%E5%AD%90" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -556,8 +605,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="sulawesi" data-food-num="No.28">
-      <div class="num">No.28</div>
-      <div class="name-row"><div class="name">コトマカッサル</div><span class="badge">スラウェシ発祥の濃厚牛スープ</span></div>
+      <div class="num-row"><span class="num">No.28</span><span class="badge">スラウェシ発祥の濃厚牛スープ</span></div>
+      <div class="name-row"><div class="name">コトマカッサル</div></div>
       <div class="desc">牛肉と内臓を香辛料と落花生でじっくり煮込んだ、マカッサル発祥の濃厚スープ。ケトゥパッ（ちまき状のご飯）を添えて食べるのが定番。</div>
       <img src="素材/グルメ/コトマカッサル.webp" alt="コトマカッサル" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B3%E3%83%88%E3%83%9E%E3%82%AB%E3%83%83%E3%82%B5%E3%83%AB%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -567,8 +616,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="sumatra" data-food-num="No.29">
-      <div class="num">No.29</div>
-      <div class="name-row"><div class="name">ミーアチェ</div><span class="badge">スパイシーなアチェ風焼きそば</span></div>
+      <div class="num-row"><span class="num">No.29</span><span class="badge">スパイシーなアチェ風焼きそば</span></div>
+      <div class="name-row"><div class="name">ミーアチェ</div></div>
       <div class="desc">太麺をクミンやカルダモンなど濃厚なスパイスで炒めた、スマトラ島アチェ地方の名物麺。牛肉や海鮮を加えた食べ応えのある一皿。</div>
       <img src="素材/グルメ/ミーアチェ.webp" alt="ミーアチェ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%82%A2%E3%83%81%E3%82%A7%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -578,8 +627,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="jakarta" data-food-num="No.30">
-      <div class="num">No.30</div>
-      <div class="name-row"><div class="name">クラッ・テロール</div><span class="badge">ジャカルタ発祥の名物軽食</span></div>
+      <div class="num-row"><span class="num">No.30</span><span class="badge">ジャカルタ発祥の名物軽食</span></div>
+      <div class="name-row"><div class="name">クラッ・テロール</div></div>
       <div class="desc">もち米と卵、干しエビを炭火で焼き固めたジャカルタ発祥の軽食。パリッとした食感と香ばしさが特徴で、祭りの屋台でも定番の一品。</div>
       <img src="素材/グルメ/クラッ・テロール.webp" alt="クラッ・テロール" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AF%E3%83%A9%E3%83%83%E3%83%BB%E3%83%86%E3%83%AD%E3%83%BC%E3%83%AB%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -589,8 +638,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.31">
-      <div class="num">No.31</div>
-      <div class="name-row"><div class="name">ナシクニン</div><span class="badge">祝い事で振る舞われる黄色いご飯</span></div>
+      <div class="num-row"><span class="num">No.31</span><span class="badge">祝い事で振る舞われる黄色いご飯</span></div>
+      <div class="name-row"><div class="name">ナシクニン</div></div>
       <div class="desc">ターメリックとココナッツミルクで炊いた黄色いご飯。誕生日や祭事で円錐形に盛り付けて振る舞われる、縁起の良い料理として親しまれている。</div>
       <img src="素材/グルメ/ナシクニン.webp" alt="ナシクニン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8A%E3%82%B7%E3%82%AF%E3%83%8B%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -600,8 +649,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.32">
-      <div class="num">No.32</div>
-      <div class="name-row"><div class="name">エスピサンイジョ</div><span class="badge">南部発祥のバナナかき氷デザート</span></div>
+      <div class="num-row"><span class="num">No.32</span><span class="badge">南部発祥のバナナかき氷デザート</span></div>
+      <div class="name-row"><div class="name">エスピサンイジョ</div></div>
       <div class="desc">バナナを緑色の生地で包んで蒸し、シロップとかき氷をかけたスラウェシ島マカッサル発祥のデザート。冷たく甘い定番のおやつ。</div>
       <img src="素材/グルメ/エスピサンイジョ.webp" alt="エスピサンイジョ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A8%E3%82%B9%E3%83%94%E3%82%B5%E3%83%B3%E3%82%A4%E3%82%B8%E3%83%A7%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%20%E3%83%87%E3%82%B6%E3%83%BC%E3%83%88" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -611,8 +660,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.33">
-      <div class="num">No.33</div>
-      <div class="name-row"><div class="name">コピルアック</div><span class="badge">希少なジャコウネココーヒー</span></div>
+      <div class="num-row"><span class="num">No.33</span><span class="badge">希少なジャコウネココーヒー</span></div>
+      <div class="name-row"><div class="name">コピルアック</div></div>
       <div class="desc">ジャコウネコが食べたコーヒー豆から作られる希少なコーヒー。まろやかな酸味と独特の香りが特徴で、高級品として観光客にも人気。</div>
       <img src="素材/グルメ/コピルアック.webp" alt="コピルアック" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B3%E3%83%94%E3%83%AB%E3%82%A2%E3%83%83%E3%82%AF%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%20%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -801,7 +850,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -810,6 +859,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -823,12 +894,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -836,6 +908,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -882,6 +955,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -957,16 +1040,54 @@ var PAGE_INDEX = 2;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1141,23 +1262,6 @@ var PAGE_INDEX = 2;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

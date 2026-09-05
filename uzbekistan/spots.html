@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ウズベキスタンの観光スポット｜ウズベキスタン旅行ガイド">
 <meta name="twitter:description" content="中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた古都が点在する国。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知ら…">
 <meta name="twitter:image" content="https://worldmappy.com/uzbekistan/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="200" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 250"><path fill="#1eb53a" d="M0 0h500v250H0z"/><path fill="#0099b5" d="M0 0h500v125H0z"/><path fill="#ce1126" d="M0 80h500v90H0z"/><path fill="#fff" d="M0 85h500v80H0z"/><circle cx="70" cy="40" r="30" fill="#fff"/><circle cx="80" cy="40" r="30" fill="#0099b5"/><g fill="#fff" transform="translate(136 64)"><g id="e"><g id="d"><g id="c"><g id="b"><path id="a" d="M0-6v6h3" transform="rotate(18 0 -6)"/><use xlink:href="#a" transform="scale(-1 1)"/></g><use xlink:href="#b" transform="rotate(72)"/></g><use xlink:href="#b" transform="rotate(-72)"/><use xlink:href="#c" transform="rotate(144)"/></g><use xlink:href="#d" y="-24"/><use xlink:href="#d" y="-48"/></g><use xlink:href="#e" x="24"/><use xlink:href="#e" x="48"/><use xlink:href="#d" x="-48"/><use xlink:href="#d" x="-24"/><use xlink:href="#d" x="-24" y="-24"/></g></svg></div></span><span class="site-country-name">ウズベキスタン</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=uzbekistan">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">ウズベキスタンを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=uzbekistan">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,50 +272,68 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>都市別観光スポット</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="tashkent" onclick="filterSpots('city','tashkent',this)">タシュケント</button>
+              
+              <button class="filter-btn " data-filter="samarkand" onclick="filterSpots('city','samarkand',this)">サマルカンド</button>
+              
+              <button class="filter-btn " data-filter="bukhara" onclick="filterSpots('city','bukhara',this)">ブハラ</button>
+              
+              <button class="filter-btn " data-filter="khiva" onclick="filterSpots('city','khiva',this)">ヒヴァ</button>
+              
+              <button class="filter-btn " data-filter="fergana" onclick="filterSpots('city','fergana',this)">フェルガナ</button>
+              
+              <button class="filter-btn " data-filter="nukus" onclick="filterSpots('city','nukus',this)">ヌクス</button>
+              
+              <button class="filter-btn " data-filter="shahrisabz" onclick="filterSpots('city','shahrisabz',this)">シャフリサブス</button>
+              
+              <button class="filter-btn " data-filter="termez" onclick="filterSpots('city','termez',this)">テルメズ</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="tashkent" onclick="filterSpots('city','tashkent',this)">タシュケント</button>
-      
-      <button class="filter-btn " data-filter="samarkand" onclick="filterSpots('city','samarkand',this)">サマルカンド</button>
-      
-      <button class="filter-btn " data-filter="bukhara" onclick="filterSpots('city','bukhara',this)">ブハラ</button>
-      
-      <button class="filter-btn " data-filter="khiva" onclick="filterSpots('city','khiva',this)">ヒヴァ</button>
-      
-      <button class="filter-btn " data-filter="fergana" onclick="filterSpots('city','fergana',this)">フェルガナ</button>
-      
-      <button class="filter-btn " data-filter="nukus" onclick="filterSpots('city','nukus',this)">ヌクス</button>
-      
-      <button class="filter-btn " data-filter="shahrisabz" onclick="filterSpots('city','shahrisabz',this)">シャフリサブス</button>
-      
-      <button class="filter-btn " data-filter="termez" onclick="filterSpots('city','termez',this)">テルメズ</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">44</span> / <span id="spots-count-total">44</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -293,6 +341,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -339,64 +388,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="tashkent" data-stype="market" data-spot-num="TAS 01">
       <div class="must-badge">⭐</div>
-      <div class="num">TAS 01</div>
-      <div class="name-row"><div class="name">チョルスー・バザール</div><span class="badge">フォトスポット</span></div>
+      <div class="num-row"><span class="num">TAS 01</span><span class="badge">フォトスポット</span></div>
+      <div class="name-row"><div class="name">チョルスー・バザール</div></div>
       <div class="desc">中央アジア最大級のドーム型バザール。香辛料・乾燥フルーツ・手工芸品が並び、地元民の日常が垣間見える。朝の賑わいは特に圧巻。迷い込むだけで楽しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チョルスー・バザール.webp" alt="チョルスー・バザール" loading="lazy"><a href="https://maps.google.com/?q=Chorsu+Bazaar+Tashkent" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="religious" data-spot-num="TAS 02">
       
-      <div class="num">TAS 02</div>
-      <div class="name-row"><div class="name">ハズラティ・イモーム広場</div><span class="badge">聖地</span></div>
+      <div class="num-row"><span class="num">TAS 02</span><span class="badge">聖地</span></div>
+      <div class="name-row"><div class="name">ハズラティ・イモーム広場</div></div>
       <div class="desc">ウズベキスタン最大のイスラム複合施設。カラオル・モスク・ムイ・ムボラク図書館（世界最古のコーラン写本を所蔵）などが集まる聖地。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハズラティ・イモーム広場.webp" alt="ハズラティ・イモーム広場" loading="lazy"><a href="https://maps.google.com/?q=Hazrati+Imam+Complex+Tashkent" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="tashkent" data-stype="townscape" data-spot-num="TAS 03">
       
-      <div class="num">TAS 03</div>
-      <div class="name-row"><div class="name">タシュケント地下鉄</div><span class="badge">旧ソ連遺産</span></div>
+      <div class="num-row"><span class="num">TAS 03</span><span class="badge">旧ソ連遺産</span></div>
+      <div class="name-row"><div class="name">タシュケント地下鉄</div></div>
       <div class="desc">1977年開通の旧ソ連式地下鉄。各駅が異なる建築様式で装飾された「世界一美しい地下鉄」との呼び声も。乗車は数十UZSと格安。移動手段にもなる観光スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タシュケント地下鉄.webp" alt="タシュケント地下鉄" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="townscape" data-spot-num="TAS 04">
       
-      <div class="num">TAS 04</div>
-      <div class="name-row"><div class="name">独立広場（ムスタキリク広場）</div><span class="badge">入場無料</span></div>
+      <div class="num-row"><span class="num">TAS 04</span><span class="badge">入場無料</span></div>
+      <div class="name-row"><div class="name">独立広場（ムスタキリク広場）</div></div>
       <div class="desc">1991年の独立を記念した大広場。整備された庭園と永遠の炎が印象的。夕方になると地元市民が涼を求めて集まる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/独立広場（ムスタキリク広場）.webp" alt="独立広場（ムスタキリク広場）" loading="lazy"><a href="https://maps.google.com/?q=Mustaqillik+Maydoni+Tashkent" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="museum" data-spot-num="TAS 05">
       
-      <div class="num">TAS 05</div>
-      <div class="name-row"><div class="name">国立工芸博物館</div><span class="badge">工芸品</span></div>
+      <div class="num-row"><span class="num">TAS 05</span><span class="badge">工芸品</span></div>
+      <div class="name-row"><div class="name">国立工芸博物館</div></div>
       <div class="desc">19世紀の富豪邸宅を利用した博物館。建物の壁面を覆う精巧なイスラム装飾と、伝統工芸品の展示が見もの。入場料も安め。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/国立工芸博物館.webp" alt="国立工芸博物館" loading="lazy"><a href="https://maps.google.com/?q=State+Museum+of+Applied+Arts+Tashkent" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="museum" data-spot-num="TAS 06">
       
-      <div class="num">TAS 06</div>
-      <div class="name-row"><div class="name">アミール・ティムール博物館</div><span class="badge">ティムール朝</span></div>
+      <div class="num-row"><span class="num">TAS 06</span><span class="badge">ティムール朝</span></div>
+      <div class="name-row"><div class="name">アミール・ティムール博物館</div></div>
       <div class="desc">ティムール朝の歴史と文化財を集めた円形の博物館。青いリブ付きドームの外観が美しく、内部は金箔と細密画で装飾された豪華な展示室。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アミール・ティムール博物館.webp" alt="アミール・ティムール博物館" loading="lazy"><a href="https://maps.google.com/?q=Amir+Timur+Museum+Tashkent" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="religious" data-spot-num="TAS 07">
       
-      <div class="num">TAS 07</div>
-      <div class="name-row"><div class="name">ミノル・モスク</div><span class="badge">映えスポット</span></div>
+      <div class="num-row"><span class="num">TAS 07</span><span class="badge">映えスポット</span></div>
+      <div class="name-row"><div class="name">ミノル・モスク</div></div>
       <div class="desc">2014年完成のまだ新しい白亜のモスク。全面が白い大理石とタイルで覆われ、アンホール運河沿いに建つ姿は夜間のライトアップ時に特に幻想的。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミノル・モスク.webp" alt="ミノル・モスク" loading="lazy"><a href="https://maps.google.com/?q=Minor+Mosque+Tashkent" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="tashkent" data-stype="nature" data-spot-num="TAS 08">
       
-      <div class="num">TAS 08</div>
-      <div class="name-row"><div class="name">チムガン山＆チャルヴァク湖</div><span class="badge">日帰り自然</span></div>
+      <div class="num-row"><span class="num">TAS 08</span><span class="badge">日帰り自然</span></div>
+      <div class="name-row"><div class="name">チムガン山＆チャルヴァク湖</div></div>
       <div class="desc">タシュケントから車で約1.5〜2時間の山岳リゾートエリア。夏は湖でのボート遊びやハイキング、冬はスキーが楽しめる定番日帰り先。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チムガン山＆チャルヴァク湖.webp" alt="チムガン山＆チャルヴァク湖" loading="lazy"><a href="https://maps.google.com/?q=Charvak+Lake+Uzbekistan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -447,64 +496,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="samarkand" data-stype="heritage" data-spot-num="SAM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SAM 01</div>
-      <div class="name-row"><div class="name">レギスタン広場</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">SAM 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">レギスタン広場</div></div>
       <div class="desc">3つの壮麗なメドレセ（神学校）が向き合うサマルカンドの象徴。青タイルのモザイクと巨大なアーチが組み合わさった景観は写真では伝わりにくい。圧倒的な存在感がある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/レギスタン広場.webp" alt="レギスタン広場" loading="lazy"><a href="https://maps.google.com/?q=Registan+Square+Samarkand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="samarkand" data-stype="heritage" data-spot-num="SAM 02">
       <div class="must-badge">⭐</div>
-      <div class="num">SAM 02</div>
-      <div class="name-row"><div class="name">シャフリサブズィンダ廟群</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">SAM 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">シャフリサブズィンダ廟群</div></div>
       <div class="desc">ティムール朝の王族・聖人が眠る霊廟（れいびょう）群が小路沿いに続く。青・緑・金のタイル装飾が細部まで施されており、その密度に圧倒される。夕暮れ時がとくに美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シャフリサブズィンダ廟群.webp" alt="シャフリサブズィンダ廟群" loading="lazy"><a href="https://maps.google.com/?q=Shah-i-Zinda+Samarkand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="heritage" data-spot-num="SAM 03">
       
-      <div class="num">SAM 03</div>
-      <div class="name-row"><div class="name">グリ・アミール廟</div><span class="badge">ティムール廟</span></div>
+      <div class="num-row"><span class="num">SAM 03</span><span class="badge">ティムール廟</span></div>
+      <div class="name-row"><div class="name">グリ・アミール廟</div></div>
       <div class="desc">ティムール（タメルレーン）の墓廟。玉ねぎ型の青いドームと精巧な黄金の装飾が美しい。サマルカンドを統治したティムールが眠る聖地。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/グリ・アミール廟.webp" alt="グリ・アミール廟" loading="lazy"><a href="https://maps.google.com/?q=Gur-e-Amir+Mausoleum+Samarkand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="heritage" data-spot-num="SAM 04">
       
-      <div class="num">SAM 04</div>
-      <div class="name-row"><div class="name">ウルグ・ベク天文台</div><span class="badge">遺跡・博物館</span></div>
+      <div class="num-row"><span class="num">SAM 04</span><span class="badge">遺跡・博物館</span></div>
+      <div class="name-row"><div class="name">ウルグ・ベク天文台</div></div>
       <div class="desc">15世紀の天文学者・ウルグ・ベクが建設した天文台の遺跡。当時の精度で恒星の位置を計算していた技術の高さに驚く。博物館も併設。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウルグ・ベク天文台.webp" alt="ウルグ・ベク天文台" loading="lazy"><a href="https://maps.google.com/?q=Ulugh+Beg+Observatory+Samarkand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="religious" data-spot-num="SAM 05">
       
-      <div class="num">SAM 05</div>
-      <div class="name-row"><div class="name">ビビ・ハニム・モスク</div><span class="badge">修復済遺跡</span></div>
+      <div class="num-row"><span class="num">SAM 05</span><span class="badge">修復済遺跡</span></div>
+      <div class="name-row"><div class="name">ビビ・ハニム・モスク</div></div>
       <div class="desc">ティムールが愛妻のために建設した巨大モスク。かつては中央アジア最大のモスクだったが地震で崩壊し、現在は修復済み。正門の巨大なアーチが見もの。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ビビ・ハニム・モスク.webp" alt="ビビ・ハニム・モスク" loading="lazy"><a href="https://maps.google.com/?q=Bibi-Khanym+Mosque+Samarkand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="samarkand" data-stype="market" data-spot-num="SAM 06">
       <div class="must-badge">⭐</div>
-      <div class="num">SAM 06</div>
-      <div class="name-row"><div class="name">シアブ・バザール</div><span class="badge">名物市場</span></div>
+      <div class="num-row"><span class="num">SAM 06</span><span class="badge">名物市場</span></div>
+      <div class="name-row"><div class="name">シアブ・バザール</div></div>
       <div class="desc">ビビ・ハニム・モスクの真横に広がるサマルカンド最大の市場。名物のサマルカンドナンやドライフルーツを買うならここ。モスク観光とセットで訪れるのが定番中の定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シアブ・バザール.webp" alt="シアブ・バザール" loading="lazy"><a href="https://maps.google.com/?q=Siab+Bazaar+Samarkand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="religious" data-spot-num="SAM 07">
       
-      <div class="num">SAM 07</div>
-      <div class="name-row"><div class="name">ハズラティ・ヒズル・モスク</div><span class="badge">絶景モスク</span></div>
+      <div class="num-row"><span class="num">SAM 07</span><span class="badge">絶景モスク</span></div>
+      <div class="name-row"><div class="name">ハズラティ・ヒズル・モスク</div></div>
       <div class="desc">サマルカンドの街を一望できる丘の上に建つ美しいモスク。彩色された木造天井が見事で、敷地内には初代カリモフ大統領の霊廟もある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハズラティ・ヒズル・モスク.webp" alt="ハズラティ・ヒズル・モスク" loading="lazy"><a href="https://maps.google.com/?q=Hazrat+Khizr+Mosque+Samarkand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="samarkand" data-stype="activity" data-spot-num="SAM 08">
       
-      <div class="num">SAM 08</div>
-      <div class="name-row"><div class="name">コニギル村・メロス製紙工房</div><span class="badge">工芸体験</span></div>
+      <div class="num-row"><span class="num">SAM 08</span><span class="badge">工芸体験</span></div>
+      <div class="name-row"><div class="name">コニギル村・メロス製紙工房</div></div>
       <div class="desc">市街から車で約20分、桑の樹皮から紙を漉く伝統製法「サマルカンド・ペーパー」を復活させた工房。水車を使った製紙工程を見学できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コニギル村・メロス製紙工房.webp" alt="コニギル村・メロス製紙工房" loading="lazy"><a href="https://maps.google.com/?q=Meros+Paper+Mill+Konigil+Samarkand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -555,80 +604,80 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="bukhara" data-stype="heritage" data-spot-num="BUK 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BUK 01</div>
-      <div class="name-row"><div class="name">カラン・ミナレット</div><span class="badge">12世紀建造</span></div>
+      <div class="num-row"><span class="num">BUK 01</span><span class="badge">12世紀建造</span></div>
+      <div class="name-row"><div class="name">カラン・ミナレット</div></div>
       <div class="desc">1127年建設の高さ47mのミナレット。チンギス・ハンでさえ頭を下げたと伝わる。隣接するカラン・モスクとセットで眺めたいブハラの定番風景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カラン・ミナレット.webp" alt="カラン・ミナレット" loading="lazy"><a href="https://maps.google.com/?q=Kalyan+Minaret+Bukhara" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="heritage" data-spot-num="BUK 02">
       
-      <div class="num">BUK 02</div>
-      <div class="name-row"><div class="name">アルク城塞</div><span class="badge">古代要塞</span></div>
+      <div class="num-row"><span class="num">BUK 02</span><span class="badge">古代要塞</span></div>
+      <div class="name-row"><div class="name">アルク城塞</div></div>
       <div class="desc">2,000年以上の歴史を持つブハラ・ハン国の宮殿兼要塞。内部はハン国の歴史が展示される博物館になっており、王宮の暮らしが垣間見える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アルク城塞.webp" alt="アルク城塞" loading="lazy"><a href="https://maps.google.com/?q=Ark+of+Bukhara" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="heritage" data-spot-num="BUK 03">
       
-      <div class="num">BUK 03</div>
-      <div class="name-row"><div class="name">イスマイル・サーマーニー廟</div><span class="badge">10世紀建造</span></div>
+      <div class="num-row"><span class="num">BUK 03</span><span class="badge">10世紀建造</span></div>
+      <div class="name-row"><div class="name">イスマイル・サーマーニー廟</div></div>
       <div class="desc">10世紀建造の中央アジア最古のイスラム建築の一つ。煉瓦の積み方で生まれる光の陰影が美しく、時間帯によって表情が変わる。静かな公園の中に佇む。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イスマイル・サーマーニー廟.webp" alt="イスマイル・サーマーニー廟" loading="lazy"><a href="https://maps.google.com/?q=Samanid+Mausoleum+Bukhara" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="townscape" data-spot-num="BUK 04">
       
-      <div class="num">BUK 04</div>
-      <div class="name-row"><div class="name">ラビ・ハウズ</div><span class="badge">夕暮れ絶景</span></div>
+      <div class="num-row"><span class="num">BUK 04</span><span class="badge">夕暮れ絶景</span></div>
+      <div class="name-row"><div class="name">ラビ・ハウズ</div></div>
       <div class="desc">旧市街の中心にある人工池を囲む広場。夕暮れ時になると地元の人が涼を求めて集まり、カフェやレストランも活気を帯びる。ブハラ滞在の拠点にもなる場所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ラビ・ハウズ.webp" alt="ラビ・ハウズ" loading="lazy"><a href="https://maps.google.com/?q=Lyab-i+Hauz+Bukhara" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="religious" data-spot-num="BUK 05">
       
-      <div class="num">BUK 05</div>
-      <div class="name-row"><div class="name">バハウッディン廟</div><span class="badge">巡礼地</span></div>
+      <div class="num-row"><span class="num">BUK 05</span><span class="badge">巡礼地</span></div>
+      <div class="name-row"><div class="name">バハウッディン廟</div></div>
       <div class="desc">スーフィズムの高名な聖人の廟。世界各地からイスラム教巡礼者が訪れる聖地で、祈りを捧げる人々の姿も見られる。旧市街から少し離れた場所にある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バハウッディン廟.webp" alt="バハウッディン廟" loading="lazy"><a href="https://maps.google.com/?q=Şahı+Nakşıbend+Behaeddin-i+Buhari+Hazretleri" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="religious" data-spot-num="BUK 06">
       
-      <div class="num">BUK 06</div>
-      <div class="name-row"><div class="name">ミル・アラブ・メドレセ</div><span class="badge">現役神学校</span></div>
+      <div class="num-row"><span class="num">BUK 06</span><span class="badge">現役神学校</span></div>
+      <div class="name-row"><div class="name">ミル・アラブ・メドレセ</div></div>
       <div class="desc">カラン・ミナレットの真向かいに建つ、青いドームが美しい現役のイスラム神学校。内部見学は制限されているが、正面から眺めるファサードはブハラ屈指の美しさ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミル・アラブ・メドレセ.webp" alt="ミル・アラブ・メドレセ" loading="lazy"><a href="https://maps.google.com/?q=Mir-i-Arab+Madrasah+Bukhara" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="bukhara" data-stype="market" data-spot-num="BUK 07">
       
-      <div class="num">BUK 07</div>
-      <div class="name-row"><div class="name">タキ（トレードドーム）</div><span class="badge">シルクロード</span></div>
+      <div class="num-row"><span class="num">BUK 07</span><span class="badge">シルクロード</span></div>
+      <div class="name-row"><div class="name">タキ（トレードドーム）</div></div>
       <div class="desc">シルクロード時代から続く丸屋根の交差点市場。商売別に3つのドームが旧市街の交差点に点在し、今も工芸品や絨毯の店で賑わうブハラ街歩きの中心。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タキ（トレードドーム）.webp" alt="タキ（トレードドーム）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="religious" data-spot-num="BUK 08">
       
-      <div class="num">BUK 08</div>
-      <div class="name-row"><div class="name">ボロハウズ・モスク</div><span class="badge">木柱の美</span></div>
+      <div class="num-row"><span class="num">BUK 08</span><span class="badge">木柱の美</span></div>
+      <div class="name-row"><div class="name">ボロハウズ・モスク</div></div>
       <div class="desc">アルク城塞の向かいに建つ世界遺産のモスク。20本の細く高い木柱が並ぶ姿が優美で、前面の池（ハウズ）に映る柱の景色が美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボロハウズ・モスク.webp" alt="ボロハウズ・モスク" loading="lazy"><a href="https://maps.google.com/?q=Bolo+Hauz+Mosque+Bukhara" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="heritage" data-spot-num="BUK 09">
       
-      <div class="num">BUK 09</div>
-      <div class="name-row"><div class="name">チョル・ミノル</div><span class="badge">映えスポット</span></div>
+      <div class="num-row"><span class="num">BUK 09</span><span class="badge">映えスポット</span></div>
+      <div class="name-row"><div class="name">チョル・ミノル</div></div>
       <div class="desc">ターコイズブルーの小塔を4本頂く、他に類を見ない形のメドレセ門。絵葉書や観光ポスターの常連で、住宅街の中にひっそり佇む。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チョル・ミノル.webp" alt="チョル・ミノル" loading="lazy"><a href="https://maps.google.com/?q=Chor+Minor+Bukhara" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bukhara" data-stype="heritage" data-spot-num="BUK 10">
       
-      <div class="num">BUK 10</div>
-      <div class="name-row"><div class="name">チャシュマ・アイユブ廟</div><span class="badge">伝説の泉</span></div>
+      <div class="num-row"><span class="num">BUK 10</span><span class="badge">伝説の泉</span></div>
+      <div class="name-row"><div class="name">チャシュマ・アイユブ廟</div></div>
       <div class="desc">「ヨブの泉」を意味する12世紀建立の廟。預言者ヨブが杖で地面を突くと湧き出たという伝説の泉が今も湧く。テント状の珍しい屋根が目印。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チャシュマ・アイユブ廟.webp" alt="チャシュマ・アイユブ廟" loading="lazy"><a href="https://maps.google.com/?q=Chashma+Ayub+Mausoleum+Bukhara" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -679,56 +728,56 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="khiva" data-stype="heritage" data-spot-num="KHI 01">
       <div class="must-badge">⭐</div>
-      <div class="num">KHI 01</div>
-      <div class="name-row"><div class="name">イチャン・カラ（旧市街）</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">KHI 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">イチャン・カラ（旧市街）</div></div>
       <div class="desc">城壁に囲まれた旧市街全体がユネスコ世界遺産。迷路のような路地に霊廟・ミナレット・モスクが密集し、中世の時が止まったような空間が広がる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イチャン・カラ（旧市街）.webp" alt="イチャン・カラ（旧市街）" loading="lazy"><a href="https://maps.google.com/?q=Itchan+Kala+Khiva" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva" data-stype="heritage" data-spot-num="KHI 02">
       
-      <div class="num">KHI 02</div>
-      <div class="name-row"><div class="name">カルタ・ミノル</div><span class="badge">未完の塔</span></div>
+      <div class="num-row"><span class="num">KHI 02</span><span class="badge">未完の塔</span></div>
+      <div class="name-row"><div class="name">カルタ・ミノル</div></div>
       <div class="desc">1852年に着工されたが建主の死により未完成のまま残ったミナレット。太くて低い独特の形と鮮やかな青タイルがフォトスポットとして人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カルタ・ミノル.webp" alt="カルタ・ミノル" loading="lazy"><a href="https://maps.google.com/?q=Kalta+Minor+Minaret+Khiva" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva" data-stype="heritage" data-spot-num="KHI 03">
       
-      <div class="num">KHI 03</div>
-      <div class="name-row"><div class="name">イスラム・ホジャ・ミナレット</div><span class="badge">絶景スポット</span></div>
+      <div class="num-row"><span class="num">KHI 03</span><span class="badge">絶景スポット</span></div>
+      <div class="name-row"><div class="name">イスラム・ホジャ・ミナレット</div></div>
       <div class="desc">ヒヴァで最も高い（57m）ミナレット。頂上まで登ることができ、旧市街の全景と周囲に広がる砂漠が一望できる絶景スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イスラム・ホジャ・ミナレット.webp" alt="イスラム・ホジャ・ミナレット" loading="lazy"><a href="https://maps.google.com/?q=Islam+Khoja+Minaret+Khiva" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva" data-stype="heritage" data-spot-num="KHI 04">
       
-      <div class="num">KHI 04</div>
-      <div class="name-row"><div class="name">クフナ・アルク宮殿</div><span class="badge">王宮遺跡</span></div>
+      <div class="num-row"><span class="num">KHI 04</span><span class="badge">王宮遺跡</span></div>
+      <div class="name-row"><div class="name">クフナ・アルク宮殿</div></div>
       <div class="desc">ヒヴァ・ハン国の歴代ハンが暮らした宮殿。ハーレム・玉座の間・モスクなどが残り、ハン国の華やかな暮らしが垣間見える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クフナ・アルク宮殿.webp" alt="クフナ・アルク宮殿" loading="lazy"><a href="https://maps.google.com/?q=Kunya-Ark+Khiva" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva" data-stype="religious" data-spot-num="KHI 05">
       
-      <div class="num">KHI 05</div>
-      <div class="name-row"><div class="name">ジュマ・モスク</div><span class="badge">木柱の森</span></div>
+      <div class="num-row"><span class="num">KHI 05</span><span class="badge">木柱の森</span></div>
+      <div class="name-row"><div class="name">ジュマ・モスク</div></div>
       <div class="desc">200本を超える木彫りの柱が林立する、中央アジアでも極めて珍しい構造の金曜モスク。柱は一本一本彫刻が異なり、天窓から差し込む光が幻想的な空間をつくる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジュマ・モスク.webp" alt="ジュマ・モスク" loading="lazy"><a href="https://maps.google.com/?q=Juma+Mosque+Khiva" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva" data-stype="heritage" data-spot-num="KHI 06">
       
-      <div class="num">KHI 06</div>
-      <div class="name-row"><div class="name">タシュ・ハウリ宮殿</div><span class="badge">王宮遺跡</span></div>
+      <div class="num-row"><span class="num">KHI 06</span><span class="badge">王宮遺跡</span></div>
+      <div class="name-row"><div class="name">タシュ・ハウリ宮殿</div></div>
       <div class="desc">「石の家」を意味する19世紀のハン国の宮殿。150以上の部屋が3つの中庭を囲むように配置され、木彫りの柱と細密なタイル装飾の密度がヒヴァ随一。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タシュ・ハウリ宮殿.webp" alt="タシュ・ハウリ宮殿" loading="lazy"><a href="https://maps.google.com/?q=Tosh-Hovli+Palace+Khiva" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="khiva" data-stype="religious" data-spot-num="KHI 07">
       
-      <div class="num">KHI 07</div>
-      <div class="name-row"><div class="name">パフラヴァン・マフムード廟</div><span class="badge">守護聖人廟</span></div>
+      <div class="num-row"><span class="num">KHI 07</span><span class="badge">守護聖人廟</span></div>
+      <div class="name-row"><div class="name">パフラヴァン・マフムード廟</div></div>
       <div class="desc">詩人であり伝説的なレスラーでもあった聖人を祀る、ヒヴァの守護聖人廟。最も美しいと評されるタイル装飾の中庭が見どころで参拝者も多い。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パフラヴァン・マフムード廟.webp" alt="パフラヴァン・マフムード廟" loading="lazy"><a href="https://maps.google.com/?q=Pahlavon+Mahmud+Mausoleum+Khiva" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -779,32 +828,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card no-map has-spot-img " data-city="fergana" data-stype="activity" data-spot-num="FER 01">
       
-      <div class="num">FER 01</div>
-      <div class="name-row"><div class="name">リシタン（陶芸の街）</div><span class="badge">工芸体験</span></div>
+      <div class="num-row"><span class="num">FER 01</span><span class="badge">工芸体験</span></div>
+      <div class="name-row"><div class="name">リシタン（陶芸の街）</div></div>
       <div class="desc">車で約1時間のリシタンはウズベキスタン最高の陶芸産地。職人のアトリエを訪問し、青と白の伝統文様「イシコル」の陶器が生まれる工程を見学できる。購入もその場で。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/リシタン（陶芸の街）.webp" alt="リシタン（陶芸の街）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="fergana" data-stype="activity" data-spot-num="FER 02">
       
-      <div class="num">FER 02</div>
-      <div class="name-row"><div class="name">マルギラン絹工場</div><span class="badge">絹の道</span></div>
+      <div class="num-row"><span class="num">FER 02</span><span class="badge">絹の道</span></div>
+      <div class="name-row"><div class="name">マルギラン絹工場</div></div>
       <div class="desc">シルクロードを支えてきた絹の産地・マルギランで工場見学が楽しめる。繭から絹糸を手で紡ぐ工程を間近で見られる。「アドラス」と呼ばれる伝統絹織物のお土産が充実。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マルギラン絹工場.webp" alt="マルギラン絹工場" loading="lazy"><a href="https://maps.google.com/?q=Yodgorlik+Silk+Factory+Margilan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="fergana" data-stype="museum" data-spot-num="FER 03">
       
-      <div class="num">FER 03</div>
-      <div class="name-row"><div class="name">フェルガナ歴史博物館</div><span class="badge">博物館</span></div>
+      <div class="num-row"><span class="num">FER 03</span><span class="badge">博物館</span></div>
+      <div class="name-row"><div class="name">フェルガナ歴史博物館</div></div>
       <div class="desc">フェルガナ渓谷の歴史と考古学遺物を展示。農業と交易で栄えたこの地の背景を理解できる、入場料も安い穴場スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フェルガナ歴史博物館.webp" alt="フェルガナ歴史博物館" loading="lazy"><a href="https://maps.google.com/?q=Fergana+Regional+Museum+of+Local+Lore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="fergana" data-stype="heritage" data-spot-num="FER 04">
       <div class="must-badge">⭐</div>
-      <div class="num">FER 04</div>
-      <div class="name-row"><div class="name">コーカンド・ハン宮殿（フダヤル・ハン宮殿）</div><span class="badge">渓谷随一の名所</span></div>
+      <div class="num-row"><span class="num">FER 04</span><span class="badge">渓谷随一の名所</span></div>
+      <div class="name-row"><div class="name">コーカンド・ハン宮殿（フダヤル・ハン宮殿）</div></div>
       <div class="desc">車で約1.5時間のコーカンドに残る、フェルガナ渓谷で最も人気の観光地。黄色と緑を基調にした華やかなタイル装飾が他都市の青一色の建築と一線を画す。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コーカンド・ハン宮殿（フダヤル・ハン宮殿）.webp" alt="コーカンド・ハン宮殿（フダヤル・ハン宮殿）" loading="lazy"><a href="https://maps.google.com/?q=Khudayar+Khan+Palace+Kokand" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -849,24 +898,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="nukus" data-stype="museum" data-spot-num="NUK 01">
       <div class="must-badge">⭐</div>
-      <div class="num">NUK 01</div>
-      <div class="name-row"><div class="name">サヴィツキー美術館</div><span class="badge">必訪</span></div>
+      <div class="num-row"><span class="num">NUK 01</span><span class="badge">必訪</span></div>
+      <div class="name-row"><div class="name">サヴィツキー美術館</div></div>
       <div class="desc">「砂漠のルーブル」と呼ばれる世界屈指の前衛芸術コレクション。スターリン時代に弾圧された画家の作品を館長サヴィツキーが保護した物語は映画にも。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サヴィツキー美術館.webp" alt="サヴィツキー美術館" loading="lazy"><a href="https://maps.google.com/?q=Savitsky+Museum+Nukus" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="nukus" data-stype="nature" data-spot-num="NUK 02">
       <div class="must-badge">⭐</div>
-      <div class="num">NUK 02</div>
-      <div class="name-row"><div class="name">アラル海（船の墓場）</div><span class="badge">世界的絶景</span></div>
+      <div class="num-row"><span class="num">NUK 02</span><span class="badge">世界的絶景</span></div>
+      <div class="name-row"><div class="name">アラル海（船の墓場）</div></div>
       <div class="desc">かつて世界第4位の湖だったアラル海が農業用水の過剰取水で干上がった跡地。錆びついた漁船が砂漠に転がる光景は環境破壊の象徴として知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アラル海（船の墓場）.webp" alt="アラル海（船の墓場）" loading="lazy"><a href="https://maps.google.com/?q=Aral+Sea+Ship+Graveyard+Moynaq" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="nukus" data-stype="market" data-spot-num="NUK 03">
       
-      <div class="num">NUK 03</div>
-      <div class="name-row"><div class="name">マルカジー・バザール（ヌクス中央市場）</div><span class="badge">ローカル</span></div>
+      <div class="num-row"><span class="num">NUK 03</span><span class="badge">ローカル</span></div>
+      <div class="name-row"><div class="name">マルカジー・バザール（ヌクス中央市場）</div></div>
       <div class="desc">地元民の生活が息づくヌクスのローカル市場。観光地化されていない素朴な雰囲気で、カラカルパク地方の文化を身近に感じられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マルカジー・バザール（ヌクス中央市場）.webp" alt="マルカジー・バザール（ヌクス中央市場）" loading="lazy"><a href="https://maps.google.com/?q=Markaziy+Bazar+Nukus" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -905,16 +954,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="shahrisabz" data-stype="heritage" data-spot-num="SHA 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SHA 01</div>
-      <div class="name-row"><div class="name">アク・サライ宮殿跡</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">SHA 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">アク・サライ宮殿跡</div></div>
       <div class="desc">ティムールが故郷に築いた夏の大宮殿の遺構。高さ38mの巨大な門の一部だけが残るが、その規模から往時の壮大さが想像できる遺跡。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アク・サライ宮殿跡.webp" alt="アク・サライ宮殿跡" loading="lazy"><a href="https://maps.google.com/?q=Ak-Saray+Palace+Shahrisabz" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="shahrisabz" data-stype="heritage" data-spot-num="SHA 02">
       
-      <div class="num">SHA 02</div>
-      <div class="name-row"><div class="name">ドルッティロヴァト建築群</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">SHA 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ドルッティロヴァト建築群</div></div>
       <div class="desc">青いドームが美しいコク・グンバズ・モスクを中心とした建築群。ティムール一族ゆかりの霊廟（れいびょう）が並び、静かな環境でティムール朝建築をじっくり味わえる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ドルッティロヴァト建築群.webp" alt="ドルッティロヴァト建築群" loading="lazy"><a href="https://maps.google.com/?q=Dorut+Tilovat+Shahrisabz" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -953,16 +1002,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img " data-city="termez" data-stype="heritage" data-spot-num="TER 01">
       
-      <div class="num">TER 01</div>
-      <div class="name-row"><div class="name">ファヤズ・テパ</div><span class="badge">仏教遺跡</span></div>
+      <div class="num-row"><span class="num">TER 01</span><span class="badge">仏教遺跡</span></div>
+      <div class="name-row"><div class="name">ファヤズ・テパ</div></div>
       <div class="desc">1〜3世紀の仏教僧院遺跡。ストゥーパ（仏塔）や僧房の跡が残り、ガンダーラ様式の仏像もここから出土した。仏教が中央アジア経由で東へ伝わったことを実感できる場所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ファヤズ・テパ.webp" alt="ファヤズ・テパ" loading="lazy"><a href="https://maps.google.com/?q=Fayaz+Tepa+Termez" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="termez" data-stype="heritage" data-spot-num="TER 02">
       
-      <div class="num">TER 02</div>
-      <div class="name-row"><div class="name">カラ・テパ</div><span class="badge">要事前確認</span></div>
+      <div class="num-row"><span class="num">TER 02</span><span class="badge">要事前確認</span></div>
+      <div class="name-row"><div class="name">カラ・テパ</div></div>
       <div class="desc">丘に掘られた石窟と地上建築を組み合わせた大規模な仏教僧院遺跡。国境警備地帯にあり、訪問には事前許可やガイド同行が必要な場合がある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カラ・テパ.webp" alt="カラ・テパ" loading="lazy"><a href="https://maps.google.com/?q=Kara+Tepe+Termez" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1146,7 +1195,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -1155,6 +1204,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -1168,12 +1239,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -1181,6 +1253,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1227,6 +1300,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1302,16 +1385,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1486,23 +1607,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

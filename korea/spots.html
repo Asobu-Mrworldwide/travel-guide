@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="韓国の観光スポット｜韓国 旅行完全ガイド｜World Mappy">
 <meta name="twitter:description" content="日本から一番近い海外、韓国。飛行機で2時間ちょっと、時差もゼロの気軽さで、新しいカフェが並ぶ通りと李氏朝鮮時代の宮殿が同居する街。サムギョプサルからチーズトッポッキまで「今食べたいもの」が揃う食の国でもあり、ソウルの都会的な熱量と地方のロ…">
 <meta name="twitter:image" content="https://worldmappy.com/korea/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-36 -24 72 48"><path fill="#fff" d="M-36-24h72v48h-72z"/><g transform="rotate(-56.31)"><g id="b"><path id="a" d="M-6-25H6m-12 3H6m-12 3H6" stroke="#000" stroke-width="2"/><use xlink:href="#a" y="44"/></g><path stroke="#fff" d="M0 17v10"/><circle fill="#cd2e3a" r="12"/><path fill="#0047a0" d="M0-12A6 6 0 000 0a6 6 0 010 12 12 12 0 010-24z"/></g><g transform="rotate(-123.69)"><use xlink:href="#b"/><path stroke="#fff" d="M0-23.5v3M0 17v3.5m0 3v3"/></g></svg></div></span><span class="site-country-name">韓国</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=korea">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">韓国を旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=korea">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,46 +272,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>韓国のみどころ</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="seoul" onclick="filterSpots('city','seoul',this)">ソウル</button>
+              
+              <button class="filter-btn " data-filter="dmz" onclick="filterSpots('city','dmz',this)">DMZ</button>
+              
+              <button class="filter-btn " data-filter="busan" onclick="filterSpots('city','busan',this)">釜山</button>
+              
+              <button class="filter-btn " data-filter="gyeongju" onclick="filterSpots('city','gyeongju',this)">慶州</button>
+              
+              <button class="filter-btn " data-filter="jeju" onclick="filterSpots('city','jeju',this)">済州島</button>
+              
+              <button class="filter-btn " data-filter="jeonju" onclick="filterSpots('city','jeonju',this)">全州</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="seoul" onclick="filterSpots('city','seoul',this)">ソウル</button>
-      
-      <button class="filter-btn " data-filter="dmz" onclick="filterSpots('city','dmz',this)">DMZ</button>
-      
-      <button class="filter-btn " data-filter="busan" onclick="filterSpots('city','busan',this)">釜山</button>
-      
-      <button class="filter-btn " data-filter="gyeongju" onclick="filterSpots('city','gyeongju',this)">慶州</button>
-      
-      <button class="filter-btn " data-filter="jeju" onclick="filterSpots('city','jeju',this)">済州島</button>
-      
-      <button class="filter-btn " data-filter="jeonju" onclick="filterSpots('city','jeonju',this)">全州</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">31</span> / <span id="spots-count-total">31</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -289,6 +337,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -323,88 +372,88 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="seoul" data-stype="heritage" data-spot-num="SEL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SEL 01</div>
-      <div class="name-row"><div class="name">景福宮</div><span class="badge">朝鮮王朝の正宮</span></div>
+      <div class="num-row"><span class="num">SEL 01</span><span class="badge">朝鮮王朝の正宮</span></div>
+      <div class="name-row"><div class="name">景福宮</div></div>
       <div class="desc">朝鮮王朝の正宮。守門将交代式が毎日開催され、韓服を着て入場すると入場料が無料になる人気の特典もある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/景福宮.webp" alt="景福宮" loading="lazy"><a href="https://maps.google.com/?q=Gyeongbokgung+Palace+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="seoul" data-stype="townscape" data-spot-num="SEL 02">
       <div class="must-badge">⭐</div>
-      <div class="num">SEL 02</div>
-      <div class="name-row"><div class="name">北村韓屋村</div><span class="badge">伝統家屋の街並み</span></div>
+      <div class="num-row"><span class="num">SEL 02</span><span class="badge">伝統家屋の街並み</span></div>
+      <div class="name-row"><div class="name">北村韓屋村</div></div>
       <div class="desc">伝統家屋（韓屋）が斜面に立ち並ぶ景観地区。景福宮のすぐ東に位置し、韓服姿での撮影スポットとしても人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/北村韓屋村.webp" alt="北村韓屋村" loading="lazy"><a href="https://maps.google.com/?q=Bukchon+Hanok+Village+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="seoul" data-stype="market" data-spot-num="SEL 03">
       <div class="must-badge">⭐</div>
-      <div class="num">SEL 03</div>
-      <div class="name-row"><div class="name">明洞</div><span class="badge">コスメ＆屋台の聖地</span></div>
+      <div class="num-row"><span class="num">SEL 03</span><span class="badge">コスメ＆屋台の聖地</span></div>
+      <div class="name-row"><div class="name">明洞</div></div>
       <div class="desc">コスメショップ・屋台・免税店が密集するソウル随一の繁華街。夜は屋台グルメの食べ歩きが特に楽しいエリア。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/明洞.webp" alt="明洞" loading="lazy"><a href="https://maps.google.com/?q=Myeongdong+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="seoul" data-stype="townscape" data-spot-num="SEL 04">
       
-      <div class="num">SEL 04</div>
-      <div class="name-row"><div class="name">弘大（弘益大学周辺）</div><span class="badge">若者カルチャーの街</span></div>
+      <div class="num-row"><span class="num">SEL 04</span><span class="badge">若者カルチャーの街</span></div>
+      <div class="name-row"><div class="name">弘大（弘益大学周辺）</div></div>
       <div class="desc">アートな壁画やインディーズショップ、ライブハウスが集まる若者の街。週末には賑やかなフリーマーケットも開催される。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/弘大（弘益大学周辺）.webp" alt="弘大（弘益大学周辺）" loading="lazy"><a href="https://maps.google.com/?q=Hongdae+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="seoul" data-stype="activity" data-spot-num="SEL 05">
       
-      <div class="num">SEL 05</div>
-      <div class="name-row"><div class="name">Nソウルタワー</div><span class="badge">夜景の定番</span></div>
+      <div class="num-row"><span class="num">SEL 05</span><span class="badge">夜景の定番</span></div>
+      <div class="name-row"><div class="name">Nソウルタワー</div></div>
       <div class="desc">南山の頂に建つソウルのシンボルタワー。展望台からは市街を360度一望でき、愛の南京錠スポットとしても有名。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/Nソウルタワー.webp" alt="Nソウルタワー" loading="lazy"><a href="https://maps.google.com/?q=N+Seoul+Tower" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="seoul" data-stype="townscape" data-spot-num="SEL 06">
       
-      <div class="num">SEL 06</div>
-      <div class="name-row"><div class="name">東大門デザインプラザ（DDP）</div><span class="badge">近未来建築</span></div>
+      <div class="num-row"><span class="num">SEL 06</span><span class="badge">近未来建築</span></div>
+      <div class="name-row"><div class="name">東大門デザインプラザ（DDP）</div></div>
       <div class="desc">ザハ・ハディド設計の近未来的な建築。周辺は24時間営業の卸売ファッションビルが並ぶ夜通し買い物天国。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/東大門デザインプラザ（DDP）.webp" alt="東大門デザインプラザ（DDP）" loading="lazy"><a href="https://maps.google.com/?q=Dongdaemun+Design+Plaza+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="seoul" data-stype="activity" data-spot-num="SEL 07">
       
-      <div class="num">SEL 07</div>
-      <div class="name-row"><div class="name">ロッテワールドタワー（ソウルスカイ）</div><span class="badge">最新の絶景スポット</span></div>
+      <div class="num-row"><span class="num">SEL 07</span><span class="badge">最新の絶景スポット</span></div>
+      <div class="name-row"><div class="name">ロッテワールドタワー（ソウルスカイ）</div></div>
       <div class="desc">高さ555m、世界第6位の超高層ビル。展望台「ソウルスカイ」からは漢江とソウル市街を一望でき、Nソウルタワーとはひと味違う最新の絶景が楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ロッテワールドタワー（ソウルスカイ）.webp" alt="ロッテワールドタワー（ソウルスカイ）" loading="lazy"><a href="https://maps.google.com/?q=Lotte+World+Tower+Seoul+Sky" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="seoul" data-stype="market" data-spot-num="SEL 08">
       
-      <div class="num">SEL 08</div>
-      <div class="name-row"><div class="name">広蔵市場（クァンジャンシジャン）</div><span class="badge">ストリートフードの聖地</span></div>
+      <div class="num-row"><span class="num">SEL 08</span><span class="badge">ストリートフードの聖地</span></div>
+      <div class="name-row"><div class="name">広蔵市場（クァンジャンシジャン）</div></div>
       <div class="desc">100年以上の歴史を持つソウル最大級の伝統市場。緑豆チヂミやユッケの名物屋台が軒を連ね、近年は世界中から観光客が押し寄せる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/広蔵市場（クァンジャンシジャン）.webp" alt="広蔵市場（クァンジャンシジャン）" loading="lazy"><a href="https://maps.google.com/?q=Gwangjang+Market+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="seoul" data-stype="heritage" data-spot-num="SEL 09">
       
-      <div class="num">SEL 09</div>
-      <div class="name-row"><div class="name">昌徳宮（チャンドックン）</div><span class="badge">世界遺産の離宮</span></div>
+      <div class="num-row"><span class="num">SEL 09</span><span class="badge">世界遺産の離宮</span></div>
+      <div class="name-row"><div class="name">昌徳宮（チャンドックン）</div></div>
       <div class="desc">ユネスコ世界遺産の朝鮮王朝の離宮。裏手の「秘苑」は予約制ツアーでのみ入れる庭園で、韓国庭園の最高傑作とされる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/昌徳宮（チャンドックン）.webp" alt="昌徳宮（チャンドックン）" loading="lazy"><a href="https://maps.google.com/?q=Changdeokgung+Palace+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="seoul" data-stype="religious" data-spot-num="SEL 10">
       
-      <div class="num">SEL 10</div>
-      <div class="name-row"><div class="name">曹渓寺（チョゲサ）</div><span class="badge">都心の仏教総本山</span></div>
+      <div class="num-row"><span class="num">SEL 10</span><span class="badge">都心の仏教総本山</span></div>
+      <div class="name-row"><div class="name">曹渓寺（チョゲサ）</div></div>
       <div class="desc">曹渓宗総本山として韓国仏教の中心を担う都心の寺院。春には満開の桜と提灯が境内を彩る、都会の中の静けさが漂う貴重なスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/曹渓寺（チョゲサ）.webp" alt="曹渓寺（チョゲサ）" loading="lazy"><a href="https://maps.google.com/?q=Jogyesa+Temple+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="seoul" data-stype="museum" data-spot-num="SEL 11">
       
-      <div class="num">SEL 11</div>
-      <div class="name-row"><div class="name">国立中央博物館</div><span class="badge">韓国最大の博物館</span></div>
+      <div class="num-row"><span class="num">SEL 11</span><span class="badge">韓国最大の博物館</span></div>
+      <div class="name-row"><div class="name">国立中央博物館</div></div>
       <div class="desc">韓国最大かつ世界でも有数の規模を誇る国立博物館。先史時代から近現代まで韓国の歴史を網羅する常設展示は無料で見学でき、国宝級の金冠や仏像コレクションも必見。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/国立中央博物館.webp" alt="国立中央博物館" loading="lazy"><a href="https://maps.google.com/?q=National+Museum+of+Korea+Seoul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -443,8 +492,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card no-map has-spot-img " data-city="dmz" data-stype="heritage" data-spot-num="DMZ 01">
       
-      <div class="num">DMZ 01</div>
-      <div class="name-row"><div class="name">DMZ（非武装地帯）</div><span class="badge">南北分断の最前線</span></div>
+      <div class="num-row"><span class="num">DMZ 01</span><span class="badge">南北分断の最前線</span></div>
+      <div class="name-row"><div class="name">DMZ（非武装地帯）</div></div>
       <div class="desc">南北軍事境界線に沿って広がる緩衝地帯。第3トンネルや都羅山展望台を巡るツアーで、北朝鮮との国境を間近に体感できる定番デイツアー。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/DMZ（非武装地帯）.webp" alt="DMZ（非武装地帯）" loading="lazy"></div>
     </div>
@@ -483,48 +532,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="busan" data-stype="nature" data-spot-num="BUS 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BUS 01</div>
-      <div class="name-row"><div class="name">海雲台（ヘウンデ）ビーチ</div><span class="badge">定番ビーチ</span></div>
+      <div class="num-row"><span class="num">BUS 01</span><span class="badge">定番ビーチ</span></div>
+      <div class="name-row"><div class="name">海雲台（ヘウンデ）ビーチ</div></div>
       <div class="desc">釜山を代表する海水浴場。夏は海水浴客で賑わい、周辺には洒落たカフェやシーフードレストランが立ち並ぶ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/海雲台（ヘウンデ）ビーチ.webp" alt="海雲台（ヘウンデ）ビーチ" loading="lazy"><a href="https://maps.google.com/?q=Haeundae+Beach+Busan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="busan" data-stype="townscape" data-spot-num="BUS 02">
       <div class="must-badge">⭐</div>
-      <div class="num">BUS 02</div>
-      <div class="name-row"><div class="name">甘川文化村</div><span class="badge">釜山のマチュピチュ</span></div>
+      <div class="num-row"><span class="num">BUS 02</span><span class="badge">釜山のマチュピチュ</span></div>
+      <div class="name-row"><div class="name">甘川文化村</div></div>
       <div class="desc">カラフルな家々が階段状に並ぶ「釜山のマチュピチュ」。壁画やオブジェが点在し、写真映えスポットとして大人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/甘川文化村.webp" alt="甘川文化村" loading="lazy"><a href="https://maps.google.com/?q=Gamcheon+Culture+Village+Busan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="busan" data-stype="market" data-spot-num="BUS 03">
       
-      <div class="num">BUS 03</div>
-      <div class="name-row"><div class="name">チャガルチ市場</div><span class="badge">海鮮市場</span></div>
+      <div class="num-row"><span class="num">BUS 03</span><span class="badge">海鮮市場</span></div>
+      <div class="name-row"><div class="name">チャガルチ市場</div></div>
       <div class="desc">韓国最大級の水産市場。新鮮な海鮮をその場で選んで2階の食堂で調理してもらえる海鮮好き必見のスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チャガルチ市場.webp" alt="チャガルチ市場" loading="lazy"><a href="https://maps.google.com/?q=Jagalchi+Market+Busan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="busan" data-stype="religious" data-spot-num="BUS 04">
       
-      <div class="num">BUS 04</div>
-      <div class="name-row"><div class="name">海東龍宮寺</div><span class="badge">海沿いの寺院</span></div>
+      <div class="num-row"><span class="num">BUS 04</span><span class="badge">海沿いの寺院</span></div>
+      <div class="name-row"><div class="name">海東龍宮寺</div></div>
       <div class="desc">海沿いの岩場に建つ珍しい寺院。日の出の名所としても知られ、正月には初日の出を拝みに多くの参拝客が訪れる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/海東龍宮寺.webp" alt="海東龍宮寺" loading="lazy"><a href="https://maps.google.com/?q=Haedong+Yonggungsa+Temple+Busan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="busan" data-stype="nature" data-spot-num="BUS 05">
       
-      <div class="num">BUS 05</div>
-      <div class="name-row"><div class="name">太宗台（テジョンデ）</div><span class="badge">断崖の景勝地</span></div>
+      <div class="num-row"><span class="num">BUS 05</span><span class="badge">断崖の景勝地</span></div>
+      <div class="name-row"><div class="name">太宗台（テジョンデ）</div></div>
       <div class="desc">断崖絶壁と松林が広がる釜山南端の景勝地。展望台からは対馬まで見えるほど視界が開けることもあり、園内を周遊する観光列車「タヌビ・トレイン」で移動できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/太宗台（テジョンデ）.webp" alt="太宗台（テジョンデ）" loading="lazy"><a href="https://maps.google.com/?q=Taejongdae+Resort+Park+Busan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="busan" data-stype="nature" data-spot-num="BUS 06">
       
-      <div class="num">BUS 06</div>
-      <div class="name-row"><div class="name">広安里（クァンアルリ）ビーチ</div><span class="badge">夜景ビーチ</span></div>
+      <div class="num-row"><span class="num">BUS 06</span><span class="badge">夜景ビーチ</span></div>
+      <div class="name-row"><div class="name">広安里（クァンアルリ）ビーチ</div></div>
       <div class="desc">光安大橋のライトアップを一望できる釜山屈指のナイトビュースポット。海沿いにはおしゃれなカフェやバーが並び、夏は花火大会やドローンショーの会場としても賑わう。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/広安里（クァンアルリ）ビーチ.webp" alt="広安里（クァンアルリ）ビーチ" loading="lazy"><a href="https://maps.google.com/?q=Gwangalli+Beach+Busan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -563,32 +612,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="gyeongju" data-stype="heritage" data-spot-num="GYJ 01">
       <div class="must-badge">⭐</div>
-      <div class="num">GYJ 01</div>
-      <div class="name-row"><div class="name">仏国寺</div><span class="badge">世界遺産の古刹</span></div>
+      <div class="num-row"><span class="num">GYJ 01</span><span class="badge">世界遺産の古刹</span></div>
+      <div class="name-row"><div class="name">仏国寺</div></div>
       <div class="desc">新羅時代を代表する仏教寺院で、ユネスコ世界遺産に登録。多宝塔・釈迦塔など国宝級の石造建築が見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/仏国寺.webp" alt="仏国寺" loading="lazy"><a href="https://maps.google.com/?q=Bulguksa+Temple+Gyeongju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="gyeongju" data-stype="heritage" data-spot-num="GYJ 02">
       <div class="must-badge">⭐</div>
-      <div class="num">GYJ 02</div>
-      <div class="name-row"><div class="name">大陵苑</div><span class="badge">古墳群公園</span></div>
+      <div class="num-row"><span class="num">GYJ 02</span><span class="badge">古墳群公園</span></div>
+      <div class="name-row"><div class="name">大陵苑</div></div>
       <div class="desc">新羅時代の王や貴族の古墳が広がる公園。芝生に覆われた巨大な墳丘が並ぶ独特の景観は夜のライトアップも幻想的。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/大陵苑.webp" alt="大陵苑" loading="lazy"><a href="https://maps.google.com/?q=Daereungwon+Tomb+Complex+Gyeongju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="gyeongju" data-stype="heritage" data-spot-num="GYJ 03">
       
-      <div class="num">GYJ 03</div>
-      <div class="name-row"><div class="name">瞻星台</div><span class="badge">東アジア最古の天文台</span></div>
+      <div class="num-row"><span class="num">GYJ 03</span><span class="badge">東アジア最古の天文台</span></div>
+      <div class="name-row"><div class="name">瞻星台</div></div>
       <div class="desc">東アジア最古とされる天文観測台。石造りのシンプルな塔だが、夜間はライトアップされ幻想的な姿を見せてくれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/瞻星台.webp" alt="瞻星台" loading="lazy"><a href="https://maps.google.com/?q=Cheomseongdae+Observatory+Gyeongju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="gyeongju" data-stype="religious" data-spot-num="GYJ 04">
       <div class="must-badge">⭐</div>
-      <div class="num">GYJ 04</div>
-      <div class="name-row"><div class="name">石窟庵</div><span class="badge">世界遺産の石窟寺院</span></div>
+      <div class="num-row"><span class="num">GYJ 04</span><span class="badge">世界遺産の石窟寺院</span></div>
+      <div class="name-row"><div class="name">石窟庵</div></div>
       <div class="desc">仏国寺とあわせてユネスコ世界遺産に登録された、山中の人工石窟寺院。本尊の釈迦如来坐像は東アジア仏教彫刻の傑作とされ、ガラス越しに神秘的な姿を拝観できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/石窟庵.webp" alt="石窟庵" loading="lazy"><a href="https://maps.google.com/?q=Seokguram+Grotto+Gyeongju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -627,40 +676,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="jeju" data-stype="nature" data-spot-num="JEJ 01">
       <div class="must-badge">⭐</div>
-      <div class="num">JEJ 01</div>
-      <div class="name-row"><div class="name">城山日出峰</div><span class="badge">世界自然遺産</span></div>
+      <div class="num-row"><span class="num">JEJ 01</span><span class="badge">世界自然遺産</span></div>
+      <div class="name-row"><div class="name">城山日出峰</div></div>
       <div class="desc">海からせり上がる巨大な噴火口の丘。ユネスコ世界自然遺産に登録され、頂上からの日の出は済州観光のハイライト。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/城山日出峰.webp" alt="城山日出峰" loading="lazy"><a href="https://maps.google.com/?q=Seongsan+Ilchulbong+Jeju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="jeju" data-stype="nature" data-spot-num="JEJ 02">
       <div class="must-badge">⭐</div>
-      <div class="num">JEJ 02</div>
-      <div class="name-row"><div class="name">漢拏山</div><span class="badge">韓国最高峰</span></div>
+      <div class="num-row"><span class="num">JEJ 02</span><span class="badge">韓国最高峰</span></div>
+      <div class="name-row"><div class="name">漢拏山</div></div>
       <div class="desc">韓国最高峰（1,947m）で島の中心にそびえる休火山。登山ルートが整備され、頂上の火口湖ペンノクダムを目指すハイカーで賑わう。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/漢拏山.webp" alt="漢拏山" loading="lazy"><a href="https://maps.google.com/?q=Hallasan+Mountain+Jeju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="jeju" data-stype="nature" data-spot-num="JEJ 03">
       
-      <div class="num">JEJ 03</div>
-      <div class="name-row"><div class="name">牛島</div><span class="badge">離島ビーチ</span></div>
+      <div class="num-row"><span class="num">JEJ 03</span><span class="badge">離島ビーチ</span></div>
+      <div class="name-row"><div class="name">牛島</div></div>
       <div class="desc">済州島東部からフェリーで渡れる小さな離島。エメラルドグリーンの海が広がり、黒糖ピーナッツアイスが名物。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/牛島.webp" alt="牛島" loading="lazy"><a href="https://maps.google.com/?q=Udo+Island+Jeju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="jeju" data-stype="nature" data-spot-num="JEJ 04">
       <div class="must-badge">⭐</div>
-      <div class="num">JEJ 04</div>
-      <div class="name-row"><div class="name">万丈窟（マンジャングル）</div><span class="badge">世界自然遺産の溶岩洞窟</span></div>
+      <div class="num-row"><span class="num">JEJ 04</span><span class="badge">世界自然遺産の溶岩洞窟</span></div>
+      <div class="name-row"><div class="name">万丈窟（マンジャングル）</div></div>
       <div class="desc">全長13kmを超える世界最大級の溶岩洞窟で、済州島の火山地形を代表するユネスコ世界遺産。溶岩石柱など神秘的な地形が広がる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/万丈窟（マンジャングル）.webp" alt="万丈窟（マンジャングル）" loading="lazy"><a href="https://maps.google.com/?q=Manjanggul+Cave+Jeju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="jeju" data-stype="nature" data-spot-num="JEJ 05">
       
-      <div class="num">JEJ 05</div>
-      <div class="name-row"><div class="name">天地淵（チョンジヨン）滝</div><span class="badge">済州の名瀑</span></div>
+      <div class="num-row"><span class="num">JEJ 05</span><span class="badge">済州の名瀑</span></div>
+      <div class="name-row"><div class="name">天地淵（チョンジヨン）滝</div></div>
       <div class="desc">「天から地に降りる淵」の名を持つ済州島屈指の名瀑。夜はライトアップされ、周辺の遊歩道は亜熱帯植物に囲まれた散策コースとしても人気が高い。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/天地淵（チョンジヨン）滝.webp" alt="天地淵（チョンジヨン）滝" loading="lazy"><a href="https://maps.google.com/?q=Cheonjiyeon+Waterfall+Jeju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -699,32 +748,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="jeonju" data-stype="townscape" data-spot-num="JNJ 01">
       <div class="must-badge">⭐</div>
-      <div class="num">JNJ 01</div>
-      <div class="name-row"><div class="name">全州韓屋村</div><span class="badge">韓国最大の韓屋村</span></div>
+      <div class="num-row"><span class="num">JNJ 01</span><span class="badge">韓国最大の韓屋村</span></div>
+      <div class="name-row"><div class="name">全州韓屋村</div></div>
       <div class="desc">700棟近い韓屋が瓦屋根を連ねる韓国最大の伝統家屋密集地。韓服レンタルで散策するのが定番で、路地に並ぶ茶房やハンジ（韓紙）工房めぐりも楽しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/全州韓屋村.webp" alt="全州韓屋村" loading="lazy"><a href="https://maps.google.com/?q=Jeonju+Hanok+Village" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="jeonju" data-stype="heritage" data-spot-num="JNJ 02">
       
-      <div class="num">JNJ 02</div>
-      <div class="name-row"><div class="name">慶基殿</div><span class="badge">朝鮮王朝始祖の霊廟</span></div>
+      <div class="num-row"><span class="num">JNJ 02</span><span class="badge">朝鮮王朝始祖の霊廟</span></div>
+      <div class="name-row"><div class="name">慶基殿</div></div>
       <div class="desc">李氏朝鮮王朝の始祖・李成桂の御真（肖像画）を祀る霊廟。韓屋村の中心に位置し、境内の竹林と伝統建築が静かな時間を演出する、韓屋村観光の起点となるスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/慶基殿.webp" alt="慶基殿" loading="lazy"><a href="https://maps.google.com/?q=Gyeonggijeon+Shrine+Jeonju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="jeonju" data-stype="religious" data-spot-num="JNJ 03">
       <div class="must-badge">⭐</div>
-      <div class="num">JNJ 03</div>
-      <div class="name-row"><div class="name">殿洞聖堂</div><span class="badge">赤レンガの大聖堂</span></div>
+      <div class="num-row"><span class="num">JNJ 03</span><span class="badge">赤レンガの大聖堂</span></div>
+      <div class="name-row"><div class="name">殿洞聖堂</div></div>
       <div class="desc">ロマネスク様式の赤レンガが美しい韓国近代建築の代表作。すぐそばの韓屋村とのコントラストが際立つ人気の撮影スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/殿洞聖堂.webp" alt="殿洞聖堂" loading="lazy"><a href="https://maps.google.com/?q=Jeondong+Catholic+Church+Jeonju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="jeonju" data-stype="market" data-spot-num="JNJ 04">
       
-      <div class="num">JNJ 04</div>
-      <div class="name-row"><div class="name">南部市場</div><span class="badge">夜市で賑わう伝統市場</span></div>
+      <div class="num-row"><span class="num">JNJ 04</span><span class="badge">夜市で賑わう伝統市場</span></div>
+      <div class="name-row"><div class="name">南部市場</div></div>
       <div class="desc">全州最大の伝統市場で、昼は地元グルメの屋台が並び、金〜日曜の夜はナイトマーケット「青春夜市場」で賑わう。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/南部市場.webp" alt="南部市場" loading="lazy"><a href="https://maps.google.com/?q=Nambu+Market+Jeonju" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -908,7 +957,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -917,6 +966,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -930,12 +1001,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -943,6 +1015,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -989,6 +1062,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1064,16 +1147,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1248,23 +1369,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

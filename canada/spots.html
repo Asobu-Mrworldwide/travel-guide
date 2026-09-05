@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="カナダの観光スポット｜カナダ旅行ガイド">
 <meta name="twitter:description" content="世界第2位の広大な国土を持つ北米の国。トロント・モントリオールといった多文化都市から、カナディアンロッキーの絶景、極北のオーロラまで、ひとつの国とは思えないほど多様な旅ができる。英語圏とフランス語圏で文化も言語も異なり、夏の大自然アクティ…">
 <meta name="twitter:image" content="https://worldmappy.com/canada/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9600 4800" width="200" height="100"><path fill="#d52b1e" d="M0 0h2400l99 99h4602l99-99h2400v4800H7200l-99-99H2499l-99 99H0z"/><path fill="#fff" d="M2400 0h4800v4800H2400zm2490 4430l-45-863a95 95 0 01111-98l859 151-116-320a65 65 0 0120-73l941-762-212-99a65 65 0 01-34-79l186-572-542 115a65 65 0 01-73-38l-105-247-423 454a65 65 0 01-111-57l204-1052-327 189a65 65 0 01-91-27l-332-652-332 652a65 65 0 01-91 27l-327-189 204 1052a65 65 0 01-111 57l-423-454-105 247a65 65 0 01-73 38l-542-115 186 572a65 65 0 01-34 79l-212 99 941 762a65 65 0 0120 73l-116 320 859-151a95 95 0 01111 98l-45 863z"/></svg></div></span><span class="site-country-name">カナダ</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=canada">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">カナダを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=canada">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,46 +272,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>カナダ観光スポット図鑑</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="toronto" onclick="filterSpots('city','toronto',this)">トロント</button>
+              
+              <button class="filter-btn " data-filter="vancouver" onclick="filterSpots('city','vancouver',this)">バンクーバー</button>
+              
+              <button class="filter-btn " data-filter="montreal" onclick="filterSpots('city','montreal',this)">モントリオール</button>
+              
+              <button class="filter-btn " data-filter="quebec_city" onclick="filterSpots('city','quebec_city',this)">ケベックシティ</button>
+              
+              <button class="filter-btn " data-filter="banff" onclick="filterSpots('city','banff',this)">バンフ</button>
+              
+              <button class="filter-btn " data-filter="ottawa" onclick="filterSpots('city','ottawa',this)">オタワ</button>
+              
+              <button class="filter-btn " data-filter="yellowknife" onclick="filterSpots('city','yellowknife',this)">イエローナイフ</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="toronto" onclick="filterSpots('city','toronto',this)">トロント</button>
-      
-      <button class="filter-btn " data-filter="vancouver" onclick="filterSpots('city','vancouver',this)">バンクーバー</button>
-      
-      <button class="filter-btn " data-filter="montreal" onclick="filterSpots('city','montreal',this)">モントリオール</button>
-      
-      <button class="filter-btn " data-filter="quebec_city" onclick="filterSpots('city','quebec_city',this)">ケベックシティ</button>
-      
-      <button class="filter-btn " data-filter="banff" onclick="filterSpots('city','banff',this)">バンフ</button>
-      
-      <button class="filter-btn " data-filter="ottawa" onclick="filterSpots('city','ottawa',this)">オタワ</button>
-      
-      <button class="filter-btn " data-filter="yellowknife" onclick="filterSpots('city','yellowknife',this)">イエローナイフ</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">42</span> / <span id="spots-count-total">42</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -289,6 +337,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -335,48 +384,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="toronto" data-stype="townscape" data-spot-num="TOR 01">
       <div class="must-badge">⭐</div>
-      <div class="num">TOR 01</div>
-      <div class="name-row"><div class="name">CNタワー</div><span class="badge">展望台</span></div>
+      <div class="num-row"><span class="num">TOR 01</span><span class="badge">展望台</span></div>
+      <div class="name-row"><div class="name">CNタワー</div></div>
       <div class="desc">高さ553mを誇るトロントのシンボルタワー。ガラス張りの展望フロアからは市街と五大湖のひとつオンタリオ湖まで一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/CNタワー.webp" alt="CNタワー" loading="lazy"><a href="https://maps.google.com/?q=CN+Tower+Toronto" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="toronto" data-stype="museum" data-spot-num="TOR 02">
       
-      <div class="num">TOR 02</div>
-      <div class="name-row"><div class="name">ロイヤル・オンタリオ博物館</div><span class="badge">博物館</span></div>
+      <div class="num-row"><span class="num">TOR 02</span><span class="badge">博物館</span></div>
+      <div class="name-row"><div class="name">ロイヤル・オンタリオ博物館</div></div>
       <div class="desc">自然史・世界文化・恐竜化石まで幅広く展示するカナダ最大級の博物館。斬新なガラス張りの増築部分「クリスタル」も建築として見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ロイヤル・オンタリオ博物館.webp" alt="ロイヤル・オンタリオ博物館" loading="lazy"><a href="https://maps.google.com/?q=Royal+Ontario+Museum" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="toronto" data-stype="townscape" data-spot-num="TOR 03">
       
-      <div class="num">TOR 03</div>
-      <div class="name-row"><div class="name">ディスティラリー・ディストリクト</div><span class="badge">レンガの街並み</span></div>
+      <div class="num-row"><span class="num">TOR 03</span><span class="badge">レンガの街並み</span></div>
+      <div class="name-row"><div class="name">ディスティラリー・ディストリクト</div></div>
       <div class="desc">19世紀の蒸留所跡地を再開発した石畳のエリア。ギャラリーやカフェが軒を連ね、クリスマスシーズンはイルミネーションでも賑わう。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ディスティラリー・ディストリクト.webp" alt="ディスティラリー・ディストリクト" loading="lazy"><a href="https://maps.google.com/?q=Distillery+District+Toronto" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="toronto" data-stype="nature" data-spot-num="TOR 04">
       
-      <div class="num">TOR 04</div>
-      <div class="name-row"><div class="name">トロント諸島</div><span class="badge">都会のビーチ</span></div>
+      <div class="num-row"><span class="num">TOR 04</span><span class="badge">都会のビーチ</span></div>
+      <div class="name-row"><div class="name">トロント諸島</div></div>
       <div class="desc">フェリーで15分ほどの湖上に浮かぶ小島群。ビーチや遊歩道が整備され、対岸に広がるトロントの高層ビル群を一望できる穴場スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トロント諸島.webp" alt="トロント諸島" loading="lazy"><a href="https://maps.google.com/?q=Toronto+Islands" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="toronto" data-stype="nature" data-spot-num="TOR 05">
       <div class="must-badge">⭐</div>
-      <div class="num">TOR 05</div>
-      <div class="name-row"><div class="name">ナイアガラの滝</div><span class="badge">世界的な滝</span></div>
+      <div class="num-row"><span class="num">TOR 05</span><span class="badge">世界的な滝</span></div>
+      <div class="name-row"><div class="name">ナイアガラの滝</div></div>
       <div class="desc">毎秒数千トンの水が轟音とともに落下する世界屈指の滝。トロントから日帰りで訪れる人が多く、遊覧船で滝つぼ近くまで接近するツアーが人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナイアガラの滝.webp" alt="ナイアガラの滝" loading="lazy"><a href="https://maps.google.com/?q=Niagara+Falls+Canada" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="toronto" data-stype="market" data-spot-num="TOR 06">
       
-      <div class="num">TOR 06</div>
-      <div class="name-row"><div class="name">ケンジントン・マーケット</div><span class="badge">個性派マーケット</span></div>
+      <div class="num-row"><span class="num">TOR 06</span><span class="badge">個性派マーケット</span></div>
+      <div class="name-row"><div class="name">ケンジントン・マーケット</div></div>
       <div class="desc">古着屋やエスニック食材店がひしめく、トロントで最もカラフルで自由な空気が漂うエリア。壁画アートも多く、街歩きだけで刺激的な散策になる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ケンジントン・マーケット.webp" alt="ケンジントン・マーケット" loading="lazy"><a href="https://maps.google.com/?q=Kensington+Market+Toronto" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -427,48 +476,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="vancouver" data-stype="nature" data-spot-num="VAN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">VAN 01</div>
-      <div class="name-row"><div class="name">スタンレーパーク</div><span class="badge">都市公園</span></div>
+      <div class="num-row"><span class="num">VAN 01</span><span class="badge">都市公園</span></div>
+      <div class="name-row"><div class="name">スタンレーパーク</div></div>
       <div class="desc">市街地に隣接する400ヘクタール超の広大な公園。海沿いのサイクリングロードやトーテムポールが立ち並ぶエリアがあり、都会にいながら大自然を満喫できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スタンレーパーク.webp" alt="スタンレーパーク" loading="lazy"><a href="https://maps.google.com/?q=Stanley+Park+Vancouver" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vancouver" data-stype="nature" data-spot-num="VAN 02">
       
-      <div class="num">VAN 02</div>
-      <div class="name-row"><div class="name">グラウス・マウンテン</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">VAN 02</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">グラウス・マウンテン</div></div>
       <div class="desc">ゴンドラで一気に登れる市街地近郊の山。山頂からはバンクーバー市街と海を一望でき、冬はスキーやスノーシューも楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/グラウス・マウンテン.webp" alt="グラウス・マウンテン" loading="lazy"><a href="https://maps.google.com/?q=Grouse+Mountain" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vancouver" data-stype="market" data-spot-num="VAN 03">
       
-      <div class="num">VAN 03</div>
-      <div class="name-row"><div class="name">グランビル・アイランド</div><span class="badge">マーケット</span></div>
+      <div class="num-row"><span class="num">VAN 03</span><span class="badge">マーケット</span></div>
+      <div class="name-row"><div class="name">グランビル・アイランド</div></div>
       <div class="desc">パブリックマーケットやクラフト工房が集まる港沿いのエリア。新鮮な魚介やベーカリーが並び、地元客と観光客で賑わう食の中心地。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/グランビル・アイランド.webp" alt="グランビル・アイランド" loading="lazy"><a href="https://maps.google.com/?q=Granville+Island+Public+Market" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vancouver" data-stype="nature" data-spot-num="VAN 04">
       
-      <div class="num">VAN 04</div>
-      <div class="name-row"><div class="name">キャピラノ吊り橋</div><span class="badge">吊り橋</span></div>
+      <div class="num-row"><span class="num">VAN 04</span><span class="badge">吊り橋</span></div>
+      <div class="name-row"><div class="name">キャピラノ吊り橋</div></div>
       <div class="desc">渓谷の上70mに架かる全長137mの吊り橋。周辺には木々の間を渡るツリートップ・アドベンチャーもあり、スリルと自然を同時に味わえる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/キャピラノ吊り橋.webp" alt="キャピラノ吊り橋" loading="lazy"><a href="https://maps.google.com/?q=Capilano+Suspension+Bridge" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vancouver" data-stype="townscape" data-spot-num="VAN 05">
       
-      <div class="num">VAN 05</div>
-      <div class="name-row"><div class="name">ギャスタウン</div><span class="badge">レンガの街並み</span></div>
+      <div class="num-row"><span class="num">VAN 05</span><span class="badge">レンガの街並み</span></div>
+      <div class="name-row"><div class="name">ギャスタウン</div></div>
       <div class="desc">蒸気式の時計台で知られる、バンクーバー発祥の地とされる歴史地区。石畳の通りにブティックやカフェが並び、レトロな雰囲気が漂う。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ギャスタウン.webp" alt="ギャスタウン" loading="lazy"><a href="https://maps.google.com/?q=Gastown+Vancouver" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="vancouver" data-stype="activity" data-spot-num="VAN 06">
       
-      <div class="num">VAN 06</div>
-      <div class="name-row"><div class="name">ウィスラー</div><span class="badge">スキーリゾート</span></div>
+      <div class="num-row"><span class="num">VAN 06</span><span class="badge">スキーリゾート</span></div>
+      <div class="name-row"><div class="name">ウィスラー</div></div>
       <div class="desc">冬季オリンピックの舞台にもなった北米屈指のスキーリゾート。夏はゴンドラで山頂へ登りハイキングやマウンテンバイクも楽しめる、通年型の山岳リゾート。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウィスラー.webp" alt="ウィスラー" loading="lazy"><a href="https://maps.google.com/?q=Whistler+Blackcomb" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -519,48 +568,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img " data-city="montreal" data-stype="townscape" data-spot-num="MON 01">
       
-      <div class="num">MON 01</div>
-      <div class="name-row"><div class="name">モントリオール旧市街</div><span class="badge">旧市街</span></div>
+      <div class="num-row"><span class="num">MON 01</span><span class="badge">旧市街</span></div>
+      <div class="name-row"><div class="name">モントリオール旧市街</div></div>
       <div class="desc">石畳の路地に18〜19世紀の建物が並ぶ、ヨーロッパの街並みを思わせるエリア。馬車が行き交う旧港沿いは夜景スポットとしても人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モントリオール旧市街.webp" alt="モントリオール旧市街" loading="lazy"><a href="https://maps.google.com/?q=Old+Montreal" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="montreal" data-stype="religious" data-spot-num="MON 02">
       <div class="must-badge">⭐</div>
-      <div class="num">MON 02</div>
-      <div class="name-row"><div class="name">ノートルダム大聖堂</div><span class="badge">大聖堂</span></div>
+      <div class="num-row"><span class="num">MON 02</span><span class="badge">大聖堂</span></div>
+      <div class="name-row"><div class="name">ノートルダム大聖堂</div></div>
       <div class="desc">ゴシック・リバイバル様式の壮麗な内装で知られる大聖堂。深い青と金色に彩られた祭壇は、北米屈指の美しさと称される。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ノートルダム大聖堂.webp" alt="ノートルダム大聖堂" loading="lazy"><a href="https://maps.google.com/?q=Notre-Dame+Basilica+Montreal" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="montreal" data-stype="nature" data-spot-num="MON 03">
       
-      <div class="num">MON 03</div>
-      <div class="name-row"><div class="name">モン・ロワイヤル公園</div><span class="badge">展望台</span></div>
+      <div class="num-row"><span class="num">MON 03</span><span class="badge">展望台</span></div>
+      <div class="name-row"><div class="name">モン・ロワイヤル公園</div></div>
       <div class="desc">モントリオールの語源となった小山にある公園。展望台「キャッシュ・ダミーグ」からは市街を一望でき、地元民の憩いの場としても親しまれている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モン・ロワイヤル公園.webp" alt="モン・ロワイヤル公園" loading="lazy"><a href="https://maps.google.com/?q=Mount+Royal+Lookout+Montreal" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="montreal" data-stype="market" data-spot-num="MON 04">
       
-      <div class="num">MON 04</div>
-      <div class="name-row"><div class="name">ジャン・タロン市場</div><span class="badge">市場</span></div>
+      <div class="num-row"><span class="num">MON 04</span><span class="badge">市場</span></div>
+      <div class="name-row"><div class="name">ジャン・タロン市場</div></div>
       <div class="desc">北米最大級の屋外市場のひとつ。地元の農家が並べる新鮮な野菜・果物・チーズが所狭しと並び、食を通してケベックの豊かさを感じられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジャン・タロン市場.webp" alt="ジャン・タロン市場" loading="lazy"><a href="https://maps.google.com/?q=Jean-Talon+Market" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="montreal" data-stype="townscape" data-spot-num="MON 05">
       
-      <div class="num">MON 05</div>
-      <div class="name-row"><div class="name">プラトー・モンロワイヤル</div><span class="badge">カラフルな街並み</span></div>
+      <div class="num-row"><span class="num">MON 05</span><span class="badge">カラフルな街並み</span></div>
+      <div class="name-row"><div class="name">プラトー・モンロワイヤル</div></div>
       <div class="desc">螺旋階段のついたカラフルな二階建て住宅が並ぶ、モントリオールらしいおしゃれな住宅街。カフェやセレクトショップも多く散策が楽しいエリア。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プラトー・モンロワイヤル.webp" alt="プラトー・モンロワイヤル" loading="lazy"><a href="https://maps.google.com/?q=Plateau+Mont-Royal+Montreal" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="montreal" data-stype="activity" data-spot-num="MON 06">
       
-      <div class="num">MON 06</div>
-      <div class="name-row"><div class="name">モントリオール地下都市</div><span class="badge">地下都市</span></div>
+      <div class="num-row"><span class="num">MON 06</span><span class="badge">地下都市</span></div>
+      <div class="name-row"><div class="name">モントリオール地下都市</div></div>
       <div class="desc">地下鉄駅やショッピングモールを結ぶ総延長32kmにおよぶ世界最大級の地下街ネットワーク。極寒の冬でも外に出ずに移動・買い物ができる都市の知恵。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モントリオール地下都市.webp" alt="モントリオール地下都市" loading="lazy"><a href="https://maps.google.com/?q=Montreal+Underground+City+RESO" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -611,48 +660,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="quebec_city" data-stype="heritage" data-spot-num="QUE 01">
       <div class="must-badge">⭐</div>
-      <div class="num">QUE 01</div>
-      <div class="name-row"><div class="name">シャトー・フロンテナック</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">QUE 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">シャトー・フロンテナック</div></div>
       <div class="desc">セントローレンス川を見下ろす丘に建つ、城のような外観の名門ホテル。ケベック旧市街のシンボルとして世界で最も撮影されるホテルのひとつに数えられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シャトー・フロンテナック.webp" alt="シャトー・フロンテナック" loading="lazy"><a href="https://maps.google.com/?q=Chateau+Frontenac" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="quebec_city" data-stype="heritage" data-spot-num="QUE 02">
       
-      <div class="num">QUE 02</div>
-      <div class="name-row"><div class="name">ケベック旧市街</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">QUE 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ケベック旧市街</div></div>
       <div class="desc">北米で唯一、城壁がほぼ完全な形で残る旧市街。石畳の坂道や砲台の並ぶ遊歩道がユネスコ世界遺産に登録されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ケベック旧市街.webp" alt="ケベック旧市街" loading="lazy"><a href="https://maps.google.com/?q=Old+Quebec+City+walls" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="quebec_city" data-stype="nature" data-spot-num="QUE 03">
       
-      <div class="num">QUE 03</div>
-      <div class="name-row"><div class="name">モンモランシー滝</div><span class="badge">滝</span></div>
+      <div class="num-row"><span class="num">QUE 03</span><span class="badge">滝</span></div>
+      <div class="name-row"><div class="name">モンモランシー滝</div></div>
       <div class="desc">落差83mとナイアガラの滝を上回る高さを誇る滝。展望台や吊り橋から間近に迫力を体感でき、市街地から気軽にアクセスできる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モンモランシー滝.webp" alt="モンモランシー滝" loading="lazy"><a href="https://maps.google.com/?q=Montmorency+Falls" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="quebec_city" data-stype="townscape" data-spot-num="QUE 04">
       
-      <div class="num">QUE 04</div>
-      <div class="name-row"><div class="name">プティ・シャンプラン地区</div><span class="badge">石畳の路地</span></div>
+      <div class="num-row"><span class="num">QUE 04</span><span class="badge">石畳の路地</span></div>
+      <div class="name-row"><div class="name">プティ・シャンプラン地区</div></div>
       <div class="desc">北米最古と言われる商店街。石畳の細い路地にブティックやカフェが軒を連ね、冬はイルミネーションで幻想的な雰囲気に包まれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プティ・シャンプラン地区.webp" alt="プティ・シャンプラン地区" loading="lazy"><a href="https://maps.google.com/?q=Quartier+Petit+Champlain" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="quebec_city" data-stype="heritage" data-spot-num="QUE 05">
       
-      <div class="num">QUE 05</div>
-      <div class="name-row"><div class="name">プレーンズ・オブ・エイブラハム</div><span class="badge">古戦場公園</span></div>
+      <div class="num-row"><span class="num">QUE 05</span><span class="badge">古戦場公園</span></div>
+      <div class="name-row"><div class="name">プレーンズ・オブ・エイブラハム</div></div>
       <div class="desc">英仏の覇権を決した歴史的な戦いの舞台となった広大な公園。今は市民の憩いの場として親しまれ、セントローレンス川を望む散策路も気持ちいい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プレーンズ・オブ・エイブラハム.webp" alt="プレーンズ・オブ・エイブラハム" loading="lazy"><a href="https://maps.google.com/?q=Plains+of+Abraham+Quebec+City" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="quebec_city" data-stype="nature" data-spot-num="QUE 06">
       
-      <div class="num">QUE 06</div>
-      <div class="name-row"><div class="name">イル・ドルレアン</div><span class="badge">田園の島</span></div>
+      <div class="num-row"><span class="num">QUE 06</span><span class="badge">田園の島</span></div>
+      <div class="name-row"><div class="name">イル・ドルレアン</div></div>
       <div class="desc">セントローレンス川に浮かぶ、りんご農園やワイナリーが点在するのどかな島。市街地から橋一本で渡れる、ケベックの田園風景が広がる隠れた癒やしスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イル・ドルレアン.webp" alt="イル・ドルレアン" loading="lazy"><a href="https://maps.google.com/?q=Ile+d%27Orleans+Quebec" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -703,48 +752,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="banff" data-stype="nature" data-spot-num="BAN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BAN 01</div>
-      <div class="name-row"><div class="name">レイク・ルイーズ</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">BAN 01</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">レイク・ルイーズ</div></div>
       <div class="desc">エメラルドグリーンの湖面に氷河と山並みが映り込む、カナディアンロッキーを象徴する絶景湖。夏はカヌー、冬はスケートで楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/レイク・ルイーズ.webp" alt="レイク・ルイーズ" loading="lazy"><a href="https://maps.google.com/?q=Lake+Louise" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="banff" data-stype="nature" data-spot-num="BAN 02">
       <div class="must-badge">⭐</div>
-      <div class="num">BAN 02</div>
-      <div class="name-row"><div class="name">モレーン湖</div><span class="badge">絶景</span></div>
+      <div class="num-row"><span class="num">BAN 02</span><span class="badge">絶景</span></div>
+      <div class="name-row"><div class="name">モレーン湖</div></div>
       <div class="desc">「テンピークス」と呼ばれる10の山々に囲まれた鮮やかな青色の湖。かつてカナダの20ドル紙幣にも描かれた、隠れた絶景スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モレーン湖.webp" alt="モレーン湖" loading="lazy"><a href="https://maps.google.com/?q=Moraine+Lake" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="banff" data-stype="activity" data-spot-num="BAN 03">
       
-      <div class="num">BAN 03</div>
-      <div class="name-row"><div class="name">バンフ・ゴンドラ</div><span class="badge">展望台</span></div>
+      <div class="num-row"><span class="num">BAN 03</span><span class="badge">展望台</span></div>
+      <div class="name-row"><div class="name">バンフ・ゴンドラ</div></div>
       <div class="desc">硫黄山の山頂近くまで一気に登るゴンドラ。山頂の遊歩道からはボウ・バレーとバンフの町並みを360度見渡せる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バンフ・ゴンドラ.webp" alt="バンフ・ゴンドラ" loading="lazy"><a href="https://maps.google.com/?q=Banff+Gondola" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="banff" data-stype="activity" data-spot-num="BAN 04">
       
-      <div class="num">BAN 04</div>
-      <div class="name-row"><div class="name">ジョンストン渓谷</div><span class="badge">ハイキング</span></div>
+      <div class="num-row"><span class="num">BAN 04</span><span class="badge">ハイキング</span></div>
+      <div class="name-row"><div class="name">ジョンストン渓谷</div></div>
       <div class="desc">渓谷沿いに整備された遊歩道を歩き、迫力ある滝を間近に見られる人気のハイキングコース。冬は氷瀑となった滝を歩くツアーも人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジョンストン渓谷.webp" alt="ジョンストン渓谷" loading="lazy"><a href="https://maps.google.com/?q=Johnston+Canyon" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="banff" data-stype="nature" data-spot-num="BAN 05">
       
-      <div class="num">BAN 05</div>
-      <div class="name-row"><div class="name">ボウ滝</div><span class="badge">滝</span></div>
+      <div class="num-row"><span class="num">BAN 05</span><span class="badge">滝</span></div>
+      <div class="name-row"><div class="name">ボウ滝</div></div>
       <div class="desc">バンフの町から歩いて行ける、映画のロケ地にもなった落差の大きい滝。轟音とともに流れ落ちる水の迫力を、遊歩道から間近に楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボウ滝.webp" alt="ボウ滝" loading="lazy"><a href="https://maps.google.com/?q=Bow+Falls+Banff" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="banff" data-stype="activity" data-spot-num="BAN 06">
       
-      <div class="num">BAN 06</div>
-      <div class="name-row"><div class="name">アイスフィールズ・パークウェイ</div><span class="badge">絶景ドライブ</span></div>
+      <div class="num-row"><span class="num">BAN 06</span><span class="badge">絶景ドライブ</span></div>
+      <div class="name-row"><div class="name">アイスフィールズ・パークウェイ</div></div>
       <div class="desc">バンフとジャスパーを結ぶ、世界で最も美しいと称される山岳ドライブルート。氷河・氷河湖・野生動物が次々現れる、カナディアンロッキーの真骨頂。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アイスフィールズ・パークウェイ.webp" alt="アイスフィールズ・パークウェイ" loading="lazy"><a href="https://maps.google.com/?q=Icefields+Parkway" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -795,48 +844,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="ottawa" data-stype="heritage" data-spot-num="OTT 01">
       <div class="must-badge">⭐</div>
-      <div class="num">OTT 01</div>
-      <div class="name-row"><div class="name">カナダ国会議事堂</div><span class="badge">国会議事堂</span></div>
+      <div class="num-row"><span class="num">OTT 01</span><span class="badge">国会議事堂</span></div>
+      <div class="name-row"><div class="name">カナダ国会議事堂</div></div>
       <div class="desc">ゴシック・リバイバル様式の壮麗な建物が並ぶ、カナダ連邦議会の議事堂。夏の夜には建物をスクリーンにしたプロジェクションマッピングも上映される。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カナダ国会議事堂.webp" alt="カナダ国会議事堂" loading="lazy"><a href="https://maps.google.com/?q=Parliament+Hill+Ottawa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="ottawa" data-stype="heritage" data-spot-num="OTT 02">
       
-      <div class="num">OTT 02</div>
-      <div class="name-row"><div class="name">リドー運河</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">OTT 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">リドー運河</div></div>
       <div class="desc">北米最古の運河のひとつでユネスコ世界遺産。夏は遊覧船、冬は全長7.8kmにおよぶ世界最長の天然スケートリンクに姿を変える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/リドー運河.webp" alt="リドー運河" loading="lazy"><a href="https://maps.google.com/?q=Rideau+Canal+Ottawa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="ottawa" data-stype="museum" data-spot-num="OTT 03">
       
-      <div class="num">OTT 03</div>
-      <div class="name-row"><div class="name">カナダ国立美術館</div><span class="badge">美術館</span></div>
+      <div class="num-row"><span class="num">OTT 03</span><span class="badge">美術館</span></div>
+      <div class="name-row"><div class="name">カナダ国立美術館</div></div>
       <div class="desc">ガラスドームが印象的な美術館で、カナダ人アーティストの作品を中心に幅広いコレクションを収蔵。巨大なクモの彫刻「ママン」も名物。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カナダ国立美術館.webp" alt="カナダ国立美術館" loading="lazy"><a href="https://maps.google.com/?q=National+Gallery+of+Canada" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="ottawa" data-stype="market" data-spot-num="OTT 04">
       
-      <div class="num">OTT 04</div>
-      <div class="name-row"><div class="name">バイワード・マーケット</div><span class="badge">市場</span></div>
+      <div class="num-row"><span class="num">OTT 04</span><span class="badge">市場</span></div>
+      <div class="name-row"><div class="name">バイワード・マーケット</div></div>
       <div class="desc">1826年創業のカナダ最古級のマーケット。新鮮な農産物からビーバーテイルズなどのグルメ屋台まで揃う、オタワ市民の台所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バイワード・マーケット.webp" alt="バイワード・マーケット" loading="lazy"><a href="https://maps.google.com/?q=ByWard+Market" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="ottawa" data-stype="museum" data-spot-num="OTT 05">
       
-      <div class="num">OTT 05</div>
-      <div class="name-row"><div class="name">カナダ戦争博物館</div><span class="badge">博物館</span></div>
+      <div class="num-row"><span class="num">OTT 05</span><span class="badge">博物館</span></div>
+      <div class="name-row"><div class="name">カナダ戦争博物館</div></div>
       <div class="desc">カナダの軍事史を体感型の展示で紹介する博物館。実物の戦車や航空機の展示も迫力満点で、平和の尊さを考えさせられる内容になっている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カナダ戦争博物館.webp" alt="カナダ戦争博物館" loading="lazy"><a href="https://maps.google.com/?q=Canadian+War+Museum" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="ottawa" data-stype="nature" data-spot-num="OTT 06">
       
-      <div class="num">OTT 06</div>
-      <div class="name-row"><div class="name">ガティノー公園</div><span class="badge">自然公園</span></div>
+      <div class="num-row"><span class="num">OTT 06</span><span class="badge">自然公園</span></div>
+      <div class="name-row"><div class="name">ガティノー公園</div></div>
       <div class="desc">オタワ川を挟んだ対岸ケベック州側に広がる広大な自然公園。紅葉シーズンの美しさは格別で、ハイキングやサイクリングを楽しむ市民で賑わう。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ガティノー公園.webp" alt="ガティノー公園" loading="lazy"><a href="https://maps.google.com/?q=Gatineau+Park" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -887,48 +936,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card no-map has-spot-img must" data-city="yellowknife" data-stype="activity" data-spot-num="YEL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">YEL 01</div>
-      <div class="name-row"><div class="name">オーロラ鑑賞ツアー</div><span class="badge">オーロラ鑑賞</span></div>
+      <div class="num-row"><span class="num">YEL 01</span><span class="badge">オーロラ鑑賞</span></div>
+      <div class="name-row"><div class="name">オーロラ鑑賞ツアー</div></div>
       <div class="desc">世界屈指の観測成功率を誇る、緑に揺らめくオーロラを間近で見られるツアー。ティーピー型テントで暖を取りながら夜空を見上げるスタイルが定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/オーロラ鑑賞ツアー.webp" alt="オーロラ鑑賞ツアー" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="yellowknife" data-stype="townscape" data-spot-num="YEL 02">
       
-      <div class="num">YEL 02</div>
-      <div class="name-row"><div class="name">オールドタウン</div><span class="badge">レトロな街並み</span></div>
+      <div class="num-row"><span class="num">YEL 02</span><span class="badge">レトロな街並み</span></div>
+      <div class="name-row"><div class="name">オールドタウン</div></div>
       <div class="desc">ゴールドラッシュ時代の面影を残す、カラフルな家々が並ぶ湖畔のエリア。水上家屋やレトロな建物が独特の雰囲気を醸し出す。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/オールドタウン.webp" alt="オールドタウン" loading="lazy"><a href="https://maps.google.com/?q=Old+Town+Yellowknife" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="yellowknife" data-stype="nature" data-spot-num="YEL 03">
       
-      <div class="num">YEL 03</div>
-      <div class="name-row"><div class="name">グレートスレーブ湖</div><span class="badge">大自然</span></div>
+      <div class="num-row"><span class="num">YEL 03</span><span class="badge">大自然</span></div>
+      <div class="name-row"><div class="name">グレートスレーブ湖</div></div>
       <div class="desc">北米で最も深い湖のひとつ。夏はボートや釣り、冬は湖面が完全結氷しアイスロードとして車が走る、極北ならではの大自然。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/グレートスレーブ湖.webp" alt="グレートスレーブ湖" loading="lazy"><a href="https://maps.google.com/?q=Great+Slave+Lake" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="yellowknife" data-stype="museum" data-spot-num="YEL 04">
       
-      <div class="num">YEL 04</div>
-      <div class="name-row"><div class="name">プリンス・オブ・ウェールズ北方遺産センター</div><span class="badge">博物館</span></div>
+      <div class="num-row"><span class="num">YEL 04</span><span class="badge">博物館</span></div>
+      <div class="name-row"><div class="name">プリンス・オブ・ウェールズ北方遺産センター</div></div>
       <div class="desc">北部準州の自然史・先住民文化・鉱業の歴史を紹介する博物館。極北の暮らしと文化を理解するのにうってつけの施設。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プリンス・オブ・ウェールズ北方遺産センター.webp" alt="プリンス・オブ・ウェールズ北方遺産センター" loading="lazy"><a href="https://maps.google.com/?q=Prince+of+Wales+Northern+Heritage+Centre" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="yellowknife" data-stype="nature" data-spot-num="YEL 05">
       
-      <div class="num">YEL 05</div>
-      <div class="name-row"><div class="name">ブッシュ・パイロット記念碑</div><span class="badge">展望台</span></div>
+      <div class="num-row"><span class="num">YEL 05</span><span class="badge">展望台</span></div>
+      <div class="name-row"><div class="name">ブッシュ・パイロット記念碑</div></div>
       <div class="desc">岩山の上に立つ、極北の開拓を支えたパイロットたちを称える記念碑。イエローナイフの街とグレートスレーブ湖を一望できる絶好の展望スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブッシュ・パイロット記念碑.webp" alt="ブッシュ・パイロット記念碑" loading="lazy"><a href="https://maps.google.com/?q=Bush+Pilots+Monument+Yellowknife" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="yellowknife" data-stype="nature" data-spot-num="YEL 06">
       
-      <div class="num">YEL 06</div>
-      <div class="name-row"><div class="name">イエローナイフ・ベイ</div><span class="badge">水上家屋の入り江</span></div>
+      <div class="num-row"><span class="num">YEL 06</span><span class="badge">水上家屋の入り江</span></div>
+      <div class="name-row"><div class="name">イエローナイフ・ベイ</div></div>
       <div class="desc">オールドタウンに隣接する入り江で、水上に建つカラフルな家々が並ぶ独特の光景が広がる。夏はカヌー、冬は結氷した湖面を歩いて渡れる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イエローナイフ・ベイ.webp" alt="イエローナイフ・ベイ" loading="lazy"><a href="https://maps.google.com/?q=Yellowknife+Bay" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1112,7 +1161,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -1121,6 +1170,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -1134,12 +1205,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -1147,6 +1219,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1193,6 +1266,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1268,16 +1351,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1452,23 +1573,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="イタリアの観光スポット｜イタリア旅行ガイド">
 <meta name="twitter:description" content="古代ローマの遺跡が今も息づく首都ローマ、ルネサンス美術のフィレンツェ、水の都ヴェネツィア、モードの発信地ミラノ——一つの国に全く違う時代と文化が積み重なるイタリア。南北に長い国土はエリアで表情が変わり、経済とデザインの北部、古代とルネサン…">
 <meta name="twitter:image" content="https://worldmappy.com/italy/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden"><svg width="150" height="100" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg"><path fill="#008C45" d="M0 0h1v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/><path fill="#CD212A" d="M2 0h1v2H2z"/></svg></div></span><span class="site-country-name">イタリア</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=italy">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">イタリアを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=italy">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,95 +272,113 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>イタリア観光スポット図鑑</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+          <div class="filter-group">
+            <div class="filter-label">地方</div>
+            <div class="filter-row" id="spots-filter-region">
+              
+              <button class="filter-btn" data-filter="north" onclick="filterSpots('region','north',this)">北イタリア</button>
+              
+              <button class="filter-btn" data-filter="central" onclick="filterSpots('region','central',this)">中央イタリア</button>
+              
+              <button class="filter-btn" data-filter="south" onclick="filterSpots('region','south',this)">南イタリア</button>
+              
+              <button class="filter-btn" data-filter="islands" onclick="filterSpots('region','islands',this)">離島</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="rome" onclick="filterSpots('city','rome',this)">ローマ</button>
+              
+              <button class="filter-btn " data-filter="florence" onclick="filterSpots('city','florence',this)">フィレンツェ</button>
+              
+              <button class="filter-btn " data-filter="venice" onclick="filterSpots('city','venice',this)">ヴェネツィア</button>
+              
+              <button class="filter-btn " data-filter="milan" onclick="filterSpots('city','milan',this)">ミラノ</button>
+              
+              <button class="filter-btn " data-filter="torino" onclick="filterSpots('city','torino',this)">トリノ</button>
+              
+              <button class="filter-btn " data-filter="bologna" onclick="filterSpots('city','bologna',this)">ボローニャ</button>
+              
+              <button class="filter-btn " data-filter="verona" onclick="filterSpots('city','verona',this)">ヴェローナ</button>
+              
+              <button class="filter-btn " data-filter="genova" onclick="filterSpots('city','genova',this)">ジェノバ</button>
+              
+              <button class="filter-btn " data-filter="pisa" onclick="filterSpots('city','pisa',this)">ピサ</button>
+              
+              <button class="filter-btn " data-filter="siena" onclick="filterSpots('city','siena',this)">シエナ</button>
+              
+              <button class="filter-btn " data-filter="assisi" onclick="filterSpots('city','assisi',this)">アッシジ</button>
+              
+              <button class="filter-btn " data-filter="napoli" onclick="filterSpots('city','napoli',this)">ナポリ</button>
+              
+              <button class="filter-btn " data-filter="amalfi" onclick="filterSpots('city','amalfi',this)">アマルフィ・ポジターノ</button>
+              
+              <button class="filter-btn " data-filter="bari" onclick="filterSpots('city','bari',this)">バーリ</button>
+              
+              <button class="filter-btn " data-filter="alberobello" onclick="filterSpots('city','alberobello',this)">アルベロベッロ</button>
+              
+              <button class="filter-btn " data-filter="matera" onclick="filterSpots('city','matera',this)">マテーラ</button>
+              
+              <button class="filter-btn " data-filter="palermo" onclick="filterSpots('city','palermo',this)">パレルモ</button>
+              
+              <button class="filter-btn " data-filter="taormina" onclick="filterSpots('city','taormina',this)">タオルミーナ</button>
+              
+              <button class="filter-btn " data-filter="cagliari" onclick="filterSpots('city','cagliari',this)">カリアリ</button>
+              
+              <button class="filter-btn " data-filter="sangimignano" onclick="filterSpots('city','sangimignano',this)">サン・ジミニャーノ</button>
+              
+              <button class="filter-btn " data-filter="capri" onclick="filterSpots('city','capri',this)">カプリ島</button>
+              
+              <button class="filter-btn " data-filter="sorrento" onclick="filterSpots('city','sorrento',this)">ソレント</button>
+              
+              <button class="filter-btn " data-filter="agrigento" onclick="filterSpots('city','agrigento',this)">アグリジェント</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">地方</div>
-    <div class="filter-row" id="spots-filter-region">
-      
-      <button class="filter-btn" data-filter="north" onclick="filterSpots('region','north',this)">北イタリア</button>
-      
-      <button class="filter-btn" data-filter="central" onclick="filterSpots('region','central',this)">中央イタリア</button>
-      
-      <button class="filter-btn" data-filter="south" onclick="filterSpots('region','south',this)">南イタリア</button>
-      
-      <button class="filter-btn" data-filter="islands" onclick="filterSpots('region','islands',this)">離島</button>
-      
-    </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="rome" onclick="filterSpots('city','rome',this)">ローマ</button>
-      
-      <button class="filter-btn " data-filter="florence" onclick="filterSpots('city','florence',this)">フィレンツェ</button>
-      
-      <button class="filter-btn " data-filter="venice" onclick="filterSpots('city','venice',this)">ヴェネツィア</button>
-      
-      <button class="filter-btn " data-filter="milan" onclick="filterSpots('city','milan',this)">ミラノ</button>
-      
-      <button class="filter-btn " data-filter="torino" onclick="filterSpots('city','torino',this)">トリノ</button>
-      
-      <button class="filter-btn " data-filter="bologna" onclick="filterSpots('city','bologna',this)">ボローニャ</button>
-      
-      <button class="filter-btn " data-filter="verona" onclick="filterSpots('city','verona',this)">ヴェローナ</button>
-      
-      <button class="filter-btn " data-filter="genova" onclick="filterSpots('city','genova',this)">ジェノバ</button>
-      
-      <button class="filter-btn " data-filter="pisa" onclick="filterSpots('city','pisa',this)">ピサ</button>
-      
-      <button class="filter-btn " data-filter="siena" onclick="filterSpots('city','siena',this)">シエナ</button>
-      
-      <button class="filter-btn " data-filter="assisi" onclick="filterSpots('city','assisi',this)">アッシジ</button>
-      
-      <button class="filter-btn " data-filter="napoli" onclick="filterSpots('city','napoli',this)">ナポリ</button>
-      
-      <button class="filter-btn " data-filter="amalfi" onclick="filterSpots('city','amalfi',this)">アマルフィ・ポジターノ</button>
-      
-      <button class="filter-btn " data-filter="bari" onclick="filterSpots('city','bari',this)">バーリ</button>
-      
-      <button class="filter-btn " data-filter="alberobello" onclick="filterSpots('city','alberobello',this)">アルベロベッロ</button>
-      
-      <button class="filter-btn " data-filter="matera" onclick="filterSpots('city','matera',this)">マテーラ</button>
-      
-      <button class="filter-btn " data-filter="palermo" onclick="filterSpots('city','palermo',this)">パレルモ</button>
-      
-      <button class="filter-btn " data-filter="taormina" onclick="filterSpots('city','taormina',this)">タオルミーナ</button>
-      
-      <button class="filter-btn " data-filter="cagliari" onclick="filterSpots('city','cagliari',this)">カリアリ</button>
-      
-      <button class="filter-btn " data-filter="sangimignano" onclick="filterSpots('city','sangimignano',this)">サン・ジミニャーノ</button>
-      
-      <button class="filter-btn " data-filter="capri" onclick="filterSpots('city','capri',this)">カプリ島</button>
-      
-      <button class="filter-btn " data-filter="sorrento" onclick="filterSpots('city','sorrento',this)">ソレント</button>
-      
-      <button class="filter-btn " data-filter="agrigento" onclick="filterSpots('city','agrigento',this)">アグリジェント</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">95</span> / <span id="spots-count-total">95</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -338,6 +386,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -384,88 +433,88 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="rome" data-stype="heritage" data-spot-num="ROM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">ROM 01</div>
-      <div class="name-row"><div class="name">コロッセオ</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">ROM 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">コロッセオ</div></div>
       <div class="desc">紀元80年に完成した古代ローマの円形闘技場。約5万人を収容した観客席の遺構は、2000年前の建築技術の高さを今に伝える世界遺産。事前予約が必須級。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コロッセオ.webp" alt="コロッセオ" loading="lazy"><a href="https://maps.google.com/?q=Colosseum,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="rome" data-stype="heritage" data-spot-num="ROM 02">
       <div class="must-badge">⭐</div>
-      <div class="num">ROM 02</div>
-      <div class="name-row"><div class="name">フォロ・ロマーノ</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">ROM 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">フォロ・ロマーノ</div></div>
       <div class="desc">古代ローマの政治・経済の中心地だった広場跡。神殿や凱旋門の柱が立ち並ぶ景観は、かつての帝国の繁栄を今に伝える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フォロ・ロマーノ.webp" alt="フォロ・ロマーノ" loading="lazy"><a href="https://maps.google.com/?q=Roman+Forum,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="rome" data-stype="museum" data-spot-num="ROM 03">
       <div class="must-badge">⭐</div>
-      <div class="num">ROM 03</div>
-      <div class="name-row"><div class="name">バチカン美術館・システィーナ礼拝堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">ROM 03</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">バチカン美術館・システィーナ礼拝堂</div></div>
       <div class="desc">ミケランジェロの「天地創造」「最後の審判」が天井と壁を埋め尽くす、世界屈指の美術コレクション。長い回廊を経てたどり着く礼拝堂の圧倒的な迫力は必見。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バチカン美術館・システィーナ礼拝堂.webp" alt="バチカン美術館・システィーナ礼拝堂" loading="lazy"><a href="https://maps.google.com/?q=Vatican+Museums" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="rome" data-stype="religious" data-spot-num="ROM 04">
       <div class="must-badge">⭐</div>
-      <div class="num">ROM 04</div>
-      <div class="name-row"><div class="name">サン・ピエトロ大聖堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">ROM 04</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">サン・ピエトロ大聖堂</div></div>
       <div class="desc">カトリックの総本山、バチカン市国のシンボル。ミケランジェロ設計の巨大なドームに登れば、ローマの街並みを一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サン・ピエトロ大聖堂.webp" alt="サン・ピエトロ大聖堂" loading="lazy"><a href="https://maps.google.com/?q=St.+Peter%27s+Basilica,+Vatican" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="rome" data-stype="townscape" data-spot-num="ROM 05">
       <div class="must-badge">⭐</div>
-      <div class="num">ROM 05</div>
-      <div class="name-row"><div class="name">トレヴィの泉</div><span class="badge">定番フォトスポット</span></div>
+      <div class="num-row"><span class="num">ROM 05</span><span class="badge">定番フォトスポット</span></div>
+      <div class="name-row"><div class="name">トレヴィの泉</div></div>
       <div class="desc">後ろ向きにコインを投げると再びローマに戻れるという伝説で有名なバロック様式の噴水。夜のライトアップも美しく、常に観光客で賑わう。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トレヴィの泉.webp" alt="トレヴィの泉" loading="lazy"><a href="https://maps.google.com/?q=Trevi+Fountain,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rome" data-stype="heritage" data-spot-num="ROM 06">
       
-      <div class="num">ROM 06</div>
-      <div class="name-row"><div class="name">パンテオン</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">ROM 06</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">パンテオン</div></div>
       <div class="desc">2000年近く前に建てられた古代ローマの神殿で、現存する古代建築の中でも保存状態が抜群。天井の丸い開口部から差し込む光が神秘的な空間を作る。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パンテオン.webp" alt="パンテオン" loading="lazy"><a href="https://maps.google.com/?q=Pantheon,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rome" data-stype="townscape" data-spot-num="ROM 07">
       
-      <div class="num">ROM 07</div>
-      <div class="name-row"><div class="name">スペイン広場</div><span class="badge">映画の舞台</span></div>
+      <div class="num-row"><span class="num">ROM 07</span><span class="badge">映画の舞台</span></div>
+      <div class="name-row"><div class="name">スペイン広場</div></div>
       <div class="desc">映画『ローマの休日』の舞台としても知られる大階段。夕方には多くの若者や観光客が腰を下ろし、街の空気を楽しむ人気スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スペイン広場.webp" alt="スペイン広場" loading="lazy"><a href="https://maps.google.com/?q=Spanish+Steps,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rome" data-stype="townscape" data-spot-num="ROM 08">
       
-      <div class="num">ROM 08</div>
-      <div class="name-row"><div class="name">ナヴォーナ広場</div><span class="badge">街歩きの定番</span></div>
+      <div class="num-row"><span class="num">ROM 08</span><span class="badge">街歩きの定番</span></div>
+      <div class="name-row"><div class="name">ナヴォーナ広場</div></div>
       <div class="desc">バロック彫刻家ベルニーニ作の「四大河の噴水」が中央にそびえる、ローマで最も美しいとされる広場。周囲にはカフェやストリートアーティストが集う。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナヴォーナ広場.webp" alt="ナヴォーナ広場" loading="lazy"><a href="https://maps.google.com/?q=Piazza+Navona,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="rome" data-stype="museum" data-spot-num="ROM 09">
       <div class="must-badge">⭐</div>
-      <div class="num">ROM 09</div>
-      <div class="name-row"><div class="name">ガレリア・ボルゲーゼ</div><span class="badge">必見の美術館</span></div>
+      <div class="num-row"><span class="num">ROM 09</span><span class="badge">必見の美術館</span></div>
+      <div class="name-row"><div class="name">ガレリア・ボルゲーゼ</div></div>
       <div class="desc">カラヴァッジョ・ベルニーニの傑作が並ぶ、17世紀の別荘を改装した美術館。予約入替制でウフィツィのような混雑がなくじっくり鑑賞できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ガレリア・ボルゲーゼ.webp" alt="ガレリア・ボルゲーゼ" loading="lazy"><a href="https://maps.google.com/?q=Galleria+Borghese,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rome" data-stype="heritage" data-spot-num="ROM 10">
       
-      <div class="num">ROM 10</div>
-      <div class="name-row"><div class="name">サンタンジェロ城</div><span class="badge">絶景の要塞</span></div>
+      <div class="num-row"><span class="num">ROM 10</span><span class="badge">絶景の要塞</span></div>
+      <div class="name-row"><div class="name">サンタンジェロ城</div></div>
       <div class="desc">ハドリアヌス帝の霊廟として建てられ、後に教皇の要塞となった円筒形の城塞。屋上テラスからローマ市街とバチカンを一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サンタンジェロ城.webp" alt="サンタンジェロ城" loading="lazy"><a href="https://maps.google.com/?q=Castel+Sant%27Angelo,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rome" data-stype="townscape" data-spot-num="ROM 11">
       
-      <div class="num">ROM 11</div>
-      <div class="name-row"><div class="name">トラステヴェレ地区</div><span class="badge">夜が賑わう下町</span></div>
+      <div class="num-row"><span class="num">ROM 11</span><span class="badge">夜が賑わう下町</span></div>
+      <div class="name-row"><div class="name">トラステヴェレ地区</div></div>
       <div class="desc">テヴェレ川対岸に広がる、石畳とツタの絡む建物が続く下町情緒あふれるエリア。夜はトラットリアやワインバーが灯る「夜の顔」。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トラステヴェレ地区.webp" alt="トラステヴェレ地区" loading="lazy"><a href="https://maps.google.com/?q=Trastevere,+Rome" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -516,64 +565,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="florence" data-stype="religious" data-spot-num="FIR 01">
       <div class="must-badge">⭐</div>
-      <div class="num">FIR 01</div>
-      <div class="name-row"><div class="name">フィレンツェ大聖堂（花の聖母寺）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">FIR 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">フィレンツェ大聖堂（花の聖母寺）</div></div>
       <div class="desc">赤い巨大クーポラが街のシンボルとなっている大聖堂。ブルネレスキが設計したドームは当時最先端の建築技術の結晶で、クーポラ上からの眺めは絶景。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フィレンツェ大聖堂（花の聖母寺）.webp" alt="フィレンツェ大聖堂（花の聖母寺）" loading="lazy"><a href="https://maps.google.com/?q=Florence+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="florence" data-stype="museum" data-spot-num="FIR 02">
       <div class="must-badge">⭐</div>
-      <div class="num">FIR 02</div>
-      <div class="name-row"><div class="name">ウフィツィ美術館</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">FIR 02</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">ウフィツィ美術館</div></div>
       <div class="desc">ボッティチェリ「ヴィーナスの誕生」など、ルネサンス絵画の傑作が集まる世界屈指の美術館。メディチ家が集めたコレクションを堪能できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウフィツィ美術館.webp" alt="ウフィツィ美術館" loading="lazy"><a href="https://maps.google.com/?q=Uffizi+Gallery,+Florence" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="florence" data-stype="townscape" data-spot-num="FIR 03">
       <div class="must-badge">⭐</div>
-      <div class="num">FIR 03</div>
-      <div class="name-row"><div class="name">ヴェッキオ橋</div><span class="badge">定番フォトスポット</span></div>
+      <div class="num-row"><span class="num">FIR 03</span><span class="badge">定番フォトスポット</span></div>
+      <div class="name-row"><div class="name">ヴェッキオ橋</div></div>
       <div class="desc">アルノ川に架かる最古の橋で、橋の上に宝飾店が立ち並ぶ独特の光景が広がる。夕暮れ時の川面に映る街並みは特に美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヴェッキオ橋.webp" alt="ヴェッキオ橋" loading="lazy"><a href="https://maps.google.com/?q=Ponte+Vecchio,+Florence" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="florence" data-stype="nature" data-spot-num="FIR 04">
       
-      <div class="num">FIR 04</div>
-      <div class="name-row"><div class="name">ミケランジェロ広場</div><span class="badge">絶景スポット</span></div>
+      <div class="num-row"><span class="num">FIR 04</span><span class="badge">絶景スポット</span></div>
+      <div class="name-row"><div class="name">ミケランジェロ広場</div></div>
       <div class="desc">旧市街を見下ろす丘の上の展望広場。赤い屋根が連なるフィレンツェの街並みと大聖堂のクーポラを一望できる、夕景の名所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミケランジェロ広場.webp" alt="ミケランジェロ広場" loading="lazy"><a href="https://maps.google.com/?q=Piazzale+Michelangelo,+Florence" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="florence" data-stype="museum" data-spot-num="FIR 05">
       
-      <div class="num">FIR 05</div>
-      <div class="name-row"><div class="name">アカデミア美術館</div><span class="badge">世界的名作</span></div>
+      <div class="num-row"><span class="num">FIR 05</span><span class="badge">世界的名作</span></div>
+      <div class="name-row"><div class="name">アカデミア美術館</div></div>
       <div class="desc">ミケランジェロの傑作彫刻「ダビデ像」を間近で見られる美術館。5メートル近い巨像の圧倒的な存在感は必見。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アカデミア美術館.webp" alt="アカデミア美術館" loading="lazy"><a href="https://maps.google.com/?q=Accademia+Gallery,+Florence" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="florence" data-stype="heritage" data-spot-num="FIR 06">
       
-      <div class="num">FIR 06</div>
-      <div class="name-row"><div class="name">ピッティ宮殿・ボーボリ庭園</div><span class="badge">メディチ家ゆかりの地</span></div>
+      <div class="num-row"><span class="num">FIR 06</span><span class="badge">メディチ家ゆかりの地</span></div>
+      <div class="name-row"><div class="name">ピッティ宮殿・ボーボリ庭園</div></div>
       <div class="desc">メディチ家の壮麗な宮殿と、幾何学的に整えられた広大な庭園。旧市街の喧騒を離れてゆったり散策できる緑豊かなスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピッティ宮殿・ボーボリ庭園.webp" alt="ピッティ宮殿・ボーボリ庭園" loading="lazy"><a href="https://maps.google.com/?q=Pitti+Palace,+Florence" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="florence" data-stype="nature" data-spot-num="FIR 07">
       
-      <div class="num">FIR 07</div>
-      <div class="name-row"><div class="name">オルチャ渓谷の糸杉並木</div><span class="badge">世界遺産・絶景</span></div>
+      <div class="num-row"><span class="num">FIR 07</span><span class="badge">世界遺産・絶景</span></div>
+      <div class="name-row"><div class="name">オルチャ渓谷の糸杉並木</div></div>
       <div class="desc">フィレンツェから日帰りで行ける、トスカーナを象徴する田園風景オルチャ渓谷。糸杉が縁取る絵画のような景観は世界遺産にも登録。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/オルチャ渓谷の糸杉並木.webp" alt="オルチャ渓谷の糸杉並木" loading="lazy"><a href="https://maps.google.com/?q=Cipressi+di+San+Quirico+d%27Orcia" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="florence" data-stype="townscape" data-spot-num="FIR 08">
       
-      <div class="num">FIR 08</div>
-      <div class="name-row"><div class="name">ピエンツァ</div><span class="badge">世界遺産の丘</span></div>
+      <div class="num-row"><span class="num">FIR 08</span><span class="badge">世界遺産の丘</span></div>
+      <div class="name-row"><div class="name">ピエンツァ</div></div>
       <div class="desc">ルネサンス期に理想都市として計画された、丘の上の小さな町。展望台からはオルチャ渓谷の絶景を一望でき、ペコリーノチーズの名産地としても知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピエンツァ.webp" alt="ピエンツァ" loading="lazy"><a href="https://maps.google.com/?q=Pienza,+Italy" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -624,64 +673,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="venice" data-stype="religious" data-spot-num="VEN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">VEN 01</div>
-      <div class="name-row"><div class="name">サン・マルコ広場・大聖堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">VEN 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">サン・マルコ広場・大聖堂</div></div>
       <div class="desc">「世界一美しい広場」とナポレオンが称した街の中心。黄金のモザイクで彩られた大聖堂と、周囲を囲むカフェの音楽が独特の雰囲気を作る。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サン・マルコ広場・大聖堂.webp" alt="サン・マルコ広場・大聖堂" loading="lazy"><a href="https://maps.google.com/?q=St.+Mark%27s+Square,+Venice" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="venice" data-stype="heritage" data-spot-num="VEN 02">
       <div class="must-badge">⭐</div>
-      <div class="num">VEN 02</div>
-      <div class="name-row"><div class="name">ドゥカーレ宮殿</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">VEN 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ドゥカーレ宮殿</div></div>
       <div class="desc">ヴェネツィア共和国の総督が住んだゴシック様式の宮殿。豪華絢爛な内部装飾と、隣接する「ため息橋」の伝説も見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ドゥカーレ宮殿.webp" alt="ドゥカーレ宮殿" loading="lazy"><a href="https://maps.google.com/?q=Doge%27s+Palace,+Venice" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="venice" data-stype="townscape" data-spot-num="VEN 03">
       <div class="must-badge">⭐</div>
-      <div class="num">VEN 03</div>
-      <div class="name-row"><div class="name">リアルト橋</div><span class="badge">定番フォトスポット</span></div>
+      <div class="num-row"><span class="num">VEN 03</span><span class="badge">定番フォトスポット</span></div>
+      <div class="name-row"><div class="name">リアルト橋</div></div>
       <div class="desc">大運河に架かる最も有名な石橋。橋の上には土産物店が並び、運河を行き交うゴンドラや水上バスを眺めるビュースポットとしても人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/リアルト橋.webp" alt="リアルト橋" loading="lazy"><a href="https://maps.google.com/?q=Rialto+Bridge,+Venice" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="venice" data-stype="activity" data-spot-num="VEN 04">
       
-      <div class="num">VEN 04</div>
-      <div class="name-row"><div class="name">ゴンドラ体験</div><span class="badge">ヴェネツィアの定番体験</span></div>
+      <div class="num-row"><span class="num">VEN 04</span><span class="badge">ヴェネツィアの定番体験</span></div>
+      <div class="name-row"><div class="name">ゴンドラ体験</div></div>
       <div class="desc">船頭が漕ぐ伝統の木造船で、細い運河をゆったりと巡る体験。料金は時間制で決まっており、夕暮れ時は特にロマンチックな雰囲気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ゴンドラ体験.webp" alt="ゴンドラ体験" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="venice" data-stype="townscape" data-spot-num="VEN 05">
       
-      <div class="num">VEN 05</div>
-      <div class="name-row"><div class="name">ブラーノ島</div><span class="badge">カラフルな離島</span></div>
+      <div class="num-row"><span class="num">VEN 05</span><span class="badge">カラフルな離島</span></div>
+      <div class="name-row"><div class="name">ブラーノ島</div></div>
       <div class="desc">極彩色の家々が運河沿いに並ぶ、絵本のような漁師町。本島から水上バスで約45分、レース編みの伝統工芸でも知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブラーノ島.webp" alt="ブラーノ島" loading="lazy"><a href="https://maps.google.com/?q=Burano+Island,+Venice" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="venice" data-stype="market" data-spot-num="VEN 06">
       
-      <div class="num">VEN 06</div>
-      <div class="name-row"><div class="name">ムラーノ島</div><span class="badge">ガラス工芸の島</span></div>
+      <div class="num-row"><span class="num">VEN 06</span><span class="badge">ガラス工芸の島</span></div>
+      <div class="name-row"><div class="name">ムラーノ島</div></div>
       <div class="desc">700年以上の歴史を持つヴェネツィアングラスの生産地。工房見学や職人の実演を見学でき、繊細なガラス製品のショッピングも楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ムラーノ島.webp" alt="ムラーノ島" loading="lazy"><a href="https://maps.google.com/?q=Murano+Island,+Venice" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="venice" data-stype="nature" data-spot-num="VEN 07">
       
-      <div class="num">VEN 07</div>
-      <div class="name-row"><div class="name">トレ・チーメ・ディ・ラヴァレード（ドロミテ）</div><span class="badge">世界遺産・絶景</span></div>
+      <div class="num-row"><span class="num">VEN 07</span><span class="badge">世界遺産・絶景</span></div>
+      <div class="name-row"><div class="name">トレ・チーメ・ディ・ラヴァレード（ドロミテ）</div></div>
       <div class="desc">ヴェネツィアから足を延ばしたい世界遺産の山岳地帯ドロミテ。3本の尖った岩峰が突き出す絶景トレ・チーメは日帰りハイキングの定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トレ・チーメ・ディ・ラヴァレード（ドロミテ）.webp" alt="トレ・チーメ・ディ・ラヴァレード（ドロミテ）" loading="lazy"><a href="https://maps.google.com/?q=Tre+Cime+di+Lavaredo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="venice" data-stype="townscape" data-spot-num="VEN 08">
       
-      <div class="num">VEN 08</div>
-      <div class="name-row"><div class="name">コルティナ・ダンペッツォ</div><span class="badge">山岳リゾート</span></div>
+      <div class="num-row"><span class="num">VEN 08</span><span class="badge">山岳リゾート</span></div>
+      <div class="name-row"><div class="name">コルティナ・ダンペッツォ</div></div>
       <div class="desc">「ドロミテの女王」と呼ばれる山岳リゾートタウン。冬季オリンピックの開催地としても知られ、夏はドロミテ観光の拠点になる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コルティナ・ダンペッツォ.webp" alt="コルティナ・ダンペッツォ" loading="lazy"><a href="https://maps.google.com/?q=Cortina+d%27Ampezzo,+Italy" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -732,56 +781,56 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="milan" data-stype="religious" data-spot-num="MIL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">MIL 01</div>
-      <div class="name-row"><div class="name">ミラノ大聖堂（ドゥオーモ）</div><span class="badge">世界的建築・必見</span></div>
+      <div class="num-row"><span class="num">MIL 01</span><span class="badge">世界的建築・必見</span></div>
+      <div class="name-row"><div class="name">ミラノ大聖堂（ドゥオーモ）</div></div>
       <div class="desc">600年以上の歳月をかけて建てられたゴシック建築の傑作。無数の尖塔と彫刻に覆われた外観は圧巻で、屋上テラスからはミラノ市街とアルプス山脈を望める。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミラノ大聖堂（ドゥオーモ）.webp" alt="ミラノ大聖堂（ドゥオーモ）" loading="lazy"><a href="https://maps.google.com/?q=Milan+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="milan" data-stype="townscape" data-spot-num="MIL 02">
       <div class="must-badge">⭐</div>
-      <div class="num">MIL 02</div>
-      <div class="name-row"><div class="name">ヴィットーリオ・エマヌエーレ2世のガレリア</div><span class="badge">優雅なアーケード</span></div>
+      <div class="num-row"><span class="num">MIL 02</span><span class="badge">優雅なアーケード</span></div>
+      <div class="name-row"><div class="name">ヴィットーリオ・エマヌエーレ2世のガレリア</div></div>
       <div class="desc">ドゥオーモに隣接する19世紀のショッピングアーケード。ガラス張りの美しい天井とモザイクの床で「世界最古のショッピングモール」とも呼ばれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヴィットーリオ・エマヌエーレ2世のガレリア.webp" alt="ヴィットーリオ・エマヌエーレ2世のガレリア" loading="lazy"><a href="https://maps.google.com/?q=Galleria+Vittorio+Emanuele+II,+Milan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="milan" data-stype="museum" data-spot-num="MIL 03">
       <div class="must-badge">⭐</div>
-      <div class="num">MIL 03</div>
-      <div class="name-row"><div class="name">最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">MIL 03</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）</div></div>
       <div class="desc">レオナルド・ダ・ヴィンチが描いた世界的名画。教会の食堂の壁に直接描かれており、鑑賞は完全予約制・入替制で15分間のみという貴重な体験。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）.webp" alt="最後の晩餐（サンタ・マリア・デッレ・グラツィエ教会）" loading="lazy"><a href="https://maps.google.com/?q=Santa+Maria+delle+Grazie,+Milan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="milan" data-stype="heritage" data-spot-num="MIL 04">
       
-      <div class="num">MIL 04</div>
-      <div class="name-row"><div class="name">スフォルツェスコ城</div><span class="badge">歴史的居城</span></div>
+      <div class="num-row"><span class="num">MIL 04</span><span class="badge">歴史的居城</span></div>
+      <div class="name-row"><div class="name">スフォルツェスコ城</div></div>
       <div class="desc">15世紀にミラノ公国を治めたスフォルツァ家の居城。現在は美術館・博物館として公開されており、ミケランジェロ最後の彫刻作品も収蔵する。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スフォルツェスコ城.webp" alt="スフォルツェスコ城" loading="lazy"><a href="https://maps.google.com/?q=Sforza+Castle,+Milan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="milan" data-stype="activity" data-spot-num="MIL 05">
       
-      <div class="num">MIL 05</div>
-      <div class="name-row"><div class="name">ナヴィリオ運河地区</div><span class="badge">夜のアペリティーボ</span></div>
+      <div class="num-row"><span class="num">MIL 05</span><span class="badge">夜のアペリティーボ</span></div>
+      <div class="name-row"><div class="name">ナヴィリオ運河地区</div></div>
       <div class="desc">レオナルド・ダ・ヴィンチが設計に関わったとされる運河沿いのエリア。夕方から夜にかけてバールが賑わい、アペリティーボ文化を楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナヴィリオ運河地区.webp" alt="ナヴィリオ運河地区" loading="lazy"><a href="https://maps.google.com/?q=Navigli,+Milan" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="milan" data-stype="nature" data-spot-num="MIL 06">
       
-      <div class="num">MIL 06</div>
-      <div class="name-row"><div class="name">コモ湖（ヴィラ・デル・バルビアネッロ）</div><span class="badge">日帰り絶景・必見</span></div>
+      <div class="num-row"><span class="num">MIL 06</span><span class="badge">日帰り絶景・必見</span></div>
+      <div class="name-row"><div class="name">コモ湖（ヴィラ・デル・バルビアネッロ）</div></div>
       <div class="desc">ミラノから日帰りで人気の高級湖水リゾート、コモ湖。映画のロケ地としても有名な湖畔の別荘ヴィラ・デル・バルビアネッロのテラスからの眺めは、コモ湖観光のハイライト。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コモ湖（ヴィラ・デル・バルビアネッロ）.webp" alt="コモ湖（ヴィラ・デル・バルビアネッロ）" loading="lazy"><a href="https://maps.google.com/?q=Villa+del+Balbianello,+Lenno" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="milan" data-stype="townscape" data-spot-num="MIL 07">
       
-      <div class="num">MIL 07</div>
-      <div class="name-row"><div class="name">ベッラージオ</div><span class="badge">コモ湖の真珠</span></div>
+      <div class="num-row"><span class="num">MIL 07</span><span class="badge">コモ湖の真珠</span></div>
+      <div class="name-row"><div class="name">ベッラージオ</div></div>
       <div class="desc">「コモ湖の真珠」と称される、三方を湖に囲まれた小さな村。石畳の路地とパステルカラーの家々が旅情を誘う、日帰り観光の定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ベッラージオ.webp" alt="ベッラージオ" loading="lazy"><a href="https://maps.google.com/?q=Bellagio,+Italy" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -832,32 +881,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="torino" data-stype="townscape" data-spot-num="TOR 01">
       <div class="must-badge">⭐</div>
-      <div class="num">TOR 01</div>
-      <div class="name-row"><div class="name">モーレ・アントネリアーナ（国立映画博物館）</div><span class="badge">街のシンボル・必見</span></div>
+      <div class="num-row"><span class="num">TOR 01</span><span class="badge">街のシンボル・必見</span></div>
+      <div class="name-row"><div class="name">モーレ・アントネリアーナ（国立映画博物館）</div></div>
       <div class="desc">トリノのシンボルとなっている尖塔状の建築物。内部は国立映画博物館になっており、最上階の展望台からはアルプス山脈まで見渡せる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/モーレ・アントネリアーナ（国立映画博物館）.webp" alt="モーレ・アントネリアーナ（国立映画博物館）" loading="lazy"><a href="https://maps.google.com/?q=Mole+Antonelliana,+Turin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="torino" data-stype="heritage" data-spot-num="TOR 02">
       
-      <div class="num">TOR 02</div>
-      <div class="name-row"><div class="name">王宮広場（パラッツォ・レアーレ）</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">TOR 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">王宮広場（パラッツォ・レアーレ）</div></div>
       <div class="desc">サヴォイア王家が居城とした壮麗な宮殿。豪華な内装の各部屋が公開されており、隣接するサン・ジョヴァンニ大聖堂には聖骸布も保管されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/王宮広場（パラッツォ・レアーレ）.webp" alt="王宮広場（パラッツォ・レアーレ）" loading="lazy"><a href="https://maps.google.com/?q=Palazzo+Reale,+Turin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="torino" data-stype="museum" data-spot-num="TOR 03">
       
-      <div class="num">TOR 03</div>
-      <div class="name-row"><div class="name">エジプト博物館</div><span class="badge">世界屈指のコレクション</span></div>
+      <div class="num-row"><span class="num">TOR 03</span><span class="badge">世界屈指のコレクション</span></div>
+      <div class="name-row"><div class="name">エジプト博物館</div></div>
       <div class="desc">カイロに次ぐ規模を誇る、エジプト国外最大級のエジプト文物コレクション。ミイラや黄金の副葬品など見応えのある展示が並ぶ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/エジプト博物館.webp" alt="エジプト博物館" loading="lazy"><a href="https://maps.google.com/?q=Museo+Egizio,+Turin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="torino" data-stype="nature" data-spot-num="TOR 04">
       
-      <div class="num">TOR 04</div>
-      <div class="name-row"><div class="name">ヴァレンティーノ公園</div><span class="badge">市民公園</span></div>
+      <div class="num-row"><span class="num">TOR 04</span><span class="badge">市民公園</span></div>
+      <div class="name-row"><div class="name">ヴァレンティーノ公園</div></div>
       <div class="desc">ポー川沿いに広がる緑豊かな公園。中世の城を再現した「ボルゴ・メディエヴァーレ」があり、散策にもぴったりの憩いの場。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヴァレンティーノ公園.webp" alt="ヴァレンティーノ公園" loading="lazy"><a href="https://maps.google.com/?q=Parco+del+Valentino,+Turin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -908,32 +957,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="bologna" data-stype="religious" data-spot-num="BOL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BOL 01</div>
-      <div class="name-row"><div class="name">マッジョーレ広場・サン・ペトロニオ聖堂</div><span class="badge">街の中心・必見</span></div>
+      <div class="num-row"><span class="num">BOL 01</span><span class="badge">街の中心・必見</span></div>
+      <div class="name-row"><div class="name">マッジョーレ広場・サン・ペトロニオ聖堂</div></div>
       <div class="desc">ボローニャの中心に広がる広場と、未完成のファサードが特徴的な巨大聖堂。周囲には歴史的建造物が立ち並び、街歩きの起点になる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マッジョーレ広場・サン・ペトロニオ聖堂.webp" alt="マッジョーレ広場・サン・ペトロニオ聖堂" loading="lazy"><a href="https://maps.google.com/?q=Piazza+Maggiore,+Bologna" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="bologna" data-stype="heritage" data-spot-num="BOL 02">
       <div class="must-badge">⭐</div>
-      <div class="num">BOL 02</div>
-      <div class="name-row"><div class="name">アジネッリの塔とガリゼンダの塔（デュエ・トッリ）</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">BOL 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">アジネッリの塔とガリゼンダの塔（デュエ・トッリ）</div></div>
       <div class="desc">中世に建てられた斜塔で、ボローニャのシンボル。アジネッリの塔は498段の階段を登ると旧市街を一望できる展望台がある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アジネッリの塔とガリゼンダの塔（デュエ・トッリ）.webp" alt="アジネッリの塔とガリゼンダの塔（デュエ・トッリ）" loading="lazy"><a href="https://maps.google.com/?q=Due+Torri,+Bologna" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="bologna" data-stype="townscape" data-spot-num="BOL 03">
       
-      <div class="num">BOL 03</div>
-      <div class="name-row"><div class="name">ボローニャのポルティコ（回廊）</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">BOL 03</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ボローニャのポルティコ（回廊）</div></div>
       <div class="desc">総延長38kmにも及ぶ、雨に濡れずに歩ける柱廊建築群。街全体を覆うこのユニークな景観は世界遺産にも登録されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボローニャのポルティコ（回廊）.webp" alt="ボローニャのポルティコ（回廊）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bologna" data-stype="market" data-spot-num="BOL 04">
       
-      <div class="num">BOL 04</div>
-      <div class="name-row"><div class="name">クアドリラテロ（旧市場地区）</div><span class="badge">グルメの聖地</span></div>
+      <div class="num-row"><span class="num">BOL 04</span><span class="badge">グルメの聖地</span></div>
+      <div class="name-row"><div class="name">クアドリラテロ（旧市場地区）</div></div>
       <div class="desc">中世から続く食の市場が集まるエリア。生ハムやパルミジャーノを量り売りする店が軒を連ね、食べ歩きにもぴったり。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クアドリラテロ（旧市場地区）.webp" alt="クアドリラテロ（旧市場地区）" loading="lazy"><a href="https://maps.google.com/?q=Quadrilatero,+Bologna" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -984,32 +1033,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="verona" data-stype="heritage" data-spot-num="VRN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">VRN 01</div>
-      <div class="name-row"><div class="name">アレーナ・ディ・ヴェローナ</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">VRN 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">アレーナ・ディ・ヴェローナ</div></div>
       <div class="desc">紀元1世紀に建てられた古代ローマの円形闘技場。現在も夏には世界最大級の野外オペラ会場として使われ、2000年前の遺構で本場のオペラを楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アレーナ・ディ・ヴェローナ.webp" alt="アレーナ・ディ・ヴェローナ" loading="lazy"><a href="https://maps.google.com/?q=Verona+Arena" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="verona" data-stype="townscape" data-spot-num="VRN 02">
       <div class="must-badge">⭐</div>
-      <div class="num">VRN 02</div>
-      <div class="name-row"><div class="name">ジュリエットの家</div><span class="badge">恋物語の舞台</span></div>
+      <div class="num-row"><span class="num">VRN 02</span><span class="badge">恋物語の舞台</span></div>
+      <div class="name-row"><div class="name">ジュリエットの家</div></div>
       <div class="desc">シェイクスピア『ロミオとジュリエット』のヒロインの家とされる邸宅。有名なバルコニーと中庭の銅像は、世界中から集まる観光客の記念撮影スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジュリエットの家.webp" alt="ジュリエットの家" loading="lazy"><a href="https://maps.google.com/?q=Juliet%27s+House,+Verona" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="verona" data-stype="townscape" data-spot-num="VRN 03">
       
-      <div class="num">VRN 03</div>
-      <div class="name-row"><div class="name">ポンテ・ピエトラ</div><span class="badge">古代の石橋</span></div>
+      <div class="num-row"><span class="num">VRN 03</span><span class="badge">古代の石橋</span></div>
+      <div class="name-row"><div class="name">ポンテ・ピエトラ</div></div>
       <div class="desc">アディジェ川に架かる古代ローマ時代からの石橋。夕暮れ時、川面に映る旧市街の景色は特に美しく、写真撮影の穴場としても人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ポンテ・ピエトラ.webp" alt="ポンテ・ピエトラ" loading="lazy"><a href="https://maps.google.com/?q=Ponte+Pietra,+Verona" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="verona" data-stype="market" data-spot-num="VRN 04">
       
-      <div class="num">VRN 04</div>
-      <div class="name-row"><div class="name">エルベ広場</div><span class="badge">中心広場</span></div>
+      <div class="num-row"><span class="num">VRN 04</span><span class="badge">中心広場</span></div>
+      <div class="name-row"><div class="name">エルベ広場</div></div>
       <div class="desc">かつてローマ時代のフォルムがあった場所に広がる市場広場。カラフルな建物に囲まれ、朝は青果市場、夜はバールで賑わう。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/エルベ広場.webp" alt="エルベ広場" loading="lazy"><a href="https://maps.google.com/?q=Piazza+delle+Erbe,+Verona" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1060,32 +1109,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="genova" data-stype="activity" data-spot-num="GEN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">GEN 01</div>
-      <div class="name-row"><div class="name">ジェノバ水族館</div><span class="badge">欧州最大級</span></div>
+      <div class="num-row"><span class="num">GEN 01</span><span class="badge">欧州最大級</span></div>
+      <div class="name-row"><div class="name">ジェノバ水族館</div></div>
       <div class="desc">ヨーロッパ最大級の規模を誇る水族館。旧港エリアのシンボルで、イルカやサメなど多彩な海洋生物を間近で観察できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジェノバ水族館.webp" alt="ジェノバ水族館" loading="lazy"><a href="https://maps.google.com/?q=Genoa+Aquarium" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="genova" data-stype="heritage" data-spot-num="GEN 02">
       <div class="must-badge">⭐</div>
-      <div class="num">GEN 02</div>
-      <div class="name-row"><div class="name">ガリバルディ通り（ロッリの宮殿群）</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">GEN 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ガリバルディ通り（ロッリの宮殿群）</div></div>
       <div class="desc">16〜17世紀に建てられた貴族の邸宅が立ち並ぶ通り。豪華なフレスコ画や中庭を持つ宮殿群は世界遺産に登録されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ガリバルディ通り（ロッリの宮殿群）.webp" alt="ガリバルディ通り（ロッリの宮殿群）" loading="lazy"><a href="https://maps.google.com/?q=Via+Garibaldi,+Genoa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="genova" data-stype="townscape" data-spot-num="GEN 03">
       
-      <div class="num">GEN 03</div>
-      <div class="name-row"><div class="name">旧港（ポルト・アンティコ）</div><span class="badge">ウォーターフロント</span></div>
+      <div class="num-row"><span class="num">GEN 03</span><span class="badge">ウォーターフロント</span></div>
+      <div class="name-row"><div class="name">旧港（ポルト・アンティコ）</div></div>
       <div class="desc">レンゾ・ピアノが手掛けた港湾の再開発エリア。海沿いの遊歩道からの眺めが美しく、散策やカフェ休憩に最適なスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/旧港（ポルト・アンティコ）.webp" alt="旧港（ポルト・アンティコ）" loading="lazy"><a href="https://maps.google.com/?q=Porto+Antico,+Genoa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="genova" data-stype="nature" data-spot-num="GEN 04">
       
-      <div class="num">GEN 04</div>
-      <div class="name-row"><div class="name">ボッカダッセ</div><span class="badge">漁村の絶景</span></div>
+      <div class="num-row"><span class="num">GEN 04</span><span class="badge">漁村の絶景</span></div>
+      <div class="name-row"><div class="name">ボッカダッセ</div></div>
       <div class="desc">カラフルな家々が小さな入り江を囲む、絵葉書のような漁村の風景。中心部から近いながら別世界のような静けさが魅力。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボッカダッセ.webp" alt="ボッカダッセ" loading="lazy"><a href="https://maps.google.com/?q=Boccadasse,+Genoa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1136,24 +1185,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="pisa" data-stype="heritage" data-spot-num="PIS 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PIS 01</div>
-      <div class="name-row"><div class="name">ピサの斜塔・奇跡の広場</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">PIS 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">ピサの斜塔・奇跡の広場</div></div>
       <div class="desc">建設中の地盤沈下により傾いたまま完成した、世界的に有名な鐘楼。隣接する大聖堂・洗礼堂とともに芝生の広場に建ち並ぶ光景は圧巻。事前予約で塔の内部にも登れる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピサの斜塔・奇跡の広場.webp" alt="ピサの斜塔・奇跡の広場" loading="lazy"><a href="https://maps.google.com/?q=Piazza+dei+Miracoli,+Pisa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pisa" data-stype="religious" data-spot-num="PIS 02">
       
-      <div class="num">PIS 02</div>
-      <div class="name-row"><div class="name">ピサ大聖堂</div><span class="badge">ロマネスク建築</span></div>
+      <div class="num-row"><span class="num">PIS 02</span><span class="badge">ロマネスク建築</span></div>
+      <div class="name-row"><div class="name">ピサ大聖堂</div></div>
       <div class="desc">斜塔と並んで建つロマネスク様式の大聖堂。白と灰色の縞模様の外壁と、精緻な彫刻が施された正面扉が見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピサ大聖堂.webp" alt="ピサ大聖堂" loading="lazy"><a href="https://maps.google.com/?q=Pisa+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pisa" data-stype="heritage" data-spot-num="PIS 03">
       
-      <div class="num">PIS 03</div>
-      <div class="name-row"><div class="name">カンポサント・モヌメンターレ</div><span class="badge">歴史的墓地</span></div>
+      <div class="num-row"><span class="num">PIS 03</span><span class="badge">歴史的墓地</span></div>
+      <div class="name-row"><div class="name">カンポサント・モヌメンターレ</div></div>
       <div class="desc">「奇跡の広場」に隣接する回廊式の墓地。聖地エルサレムの土を運んだと伝わる白亜の回廊に、中世のフレスコ画が残る。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カンポサント・モヌメンターレ.webp" alt="カンポサント・モヌメンターレ" loading="lazy"><a href="https://maps.google.com/?q=Camposanto+Monumentale,+Pisa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1204,24 +1253,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="siena" data-stype="townscape" data-spot-num="SIE 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SIE 01</div>
-      <div class="name-row"><div class="name">カンポ広場</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">SIE 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">カンポ広場</div></div>
       <div class="desc">扇形に広がる中世ヨーロッパ屈指の美しい広場。年2回開催される伝統の競馬「パリオ」の舞台としても知られ、周囲をカフェやレストランが囲む。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カンポ広場.webp" alt="カンポ広場" loading="lazy"><a href="https://maps.google.com/?q=Piazza+del+Campo,+Siena" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="siena" data-stype="religious" data-spot-num="SIE 02">
       <div class="must-badge">⭐</div>
-      <div class="num">SIE 02</div>
-      <div class="name-row"><div class="name">シエナ大聖堂</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">SIE 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">シエナ大聖堂</div></div>
       <div class="desc">白と黒と緑の大理石を使った縞模様が特徴的なゴシック建築の傑作。内部の床に描かれた精緻なモザイク画も見応えがある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シエナ大聖堂.webp" alt="シエナ大聖堂" loading="lazy"><a href="https://maps.google.com/?q=Siena+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="siena" data-stype="townscape" data-spot-num="SIE 03">
       
-      <div class="num">SIE 03</div>
-      <div class="name-row"><div class="name">マンジャの塔</div><span class="badge">展望台</span></div>
+      <div class="num-row"><span class="num">SIE 03</span><span class="badge">展望台</span></div>
+      <div class="name-row"><div class="name">マンジャの塔</div></div>
       <div class="desc">カンポ広場に面してそびえる、市庁舎に付属する塔。400段近い階段を登った先の展望台からは、トスカーナの田園風景まで一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マンジャの塔.webp" alt="マンジャの塔" loading="lazy"><a href="https://maps.google.com/?q=Torre+del+Mangia,+Siena" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1272,24 +1321,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="assisi" data-stype="religious" data-spot-num="ASS 01">
       <div class="must-badge">⭐</div>
-      <div class="num">ASS 01</div>
-      <div class="name-row"><div class="name">サン・フランチェスコ聖堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">ASS 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">サン・フランチェスコ聖堂</div></div>
       <div class="desc">聖フランチェスコの遺体が眠る、上下2層構造の聖堂。ジョットらによる壮麗なフレスコ画が壁一面を彩る、キリスト教美術の宝庫。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サン・フランチェスコ聖堂.webp" alt="サン・フランチェスコ聖堂" loading="lazy"><a href="https://maps.google.com/?q=Basilica+of+San+Francesco,+Assisi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="assisi" data-stype="heritage" data-spot-num="ASS 02">
       
-      <div class="num">ASS 02</div>
-      <div class="name-row"><div class="name">ロッカ・マッジョーレ</div><span class="badge">中世要塞</span></div>
+      <div class="num-row"><span class="num">ASS 02</span><span class="badge">中世要塞</span></div>
+      <div class="name-row"><div class="name">ロッカ・マッジョーレ</div></div>
       <div class="desc">丘の頂上にそびえる中世の要塞。城壁の上からはウンブリアの田園風景とアッシジの街並みを一望できる、隠れた絶景スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ロッカ・マッジョーレ.webp" alt="ロッカ・マッジョーレ" loading="lazy"><a href="https://maps.google.com/?q=Rocca+Maggiore,+Assisi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="assisi" data-stype="townscape" data-spot-num="ASS 03">
       
-      <div class="num">ASS 03</div>
-      <div class="name-row"><div class="name">コムーネ広場</div><span class="badge">旧市街広場</span></div>
+      <div class="num-row"><span class="num">ASS 03</span><span class="badge">旧市街広場</span></div>
+      <div class="name-row"><div class="name">コムーネ広場</div></div>
       <div class="desc">古代ローマの神殿の柱がそのまま残る、町の中心広場。ピンクがかった石造りの建物に囲まれた、静かで美しい町の顔。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コムーネ広場.webp" alt="コムーネ広場" loading="lazy"><a href="https://maps.google.com/?q=Piazza+del+Comune,+Assisi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1340,32 +1389,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="napoli" data-stype="townscape" data-spot-num="NAP 01">
       <div class="must-badge">⭐</div>
-      <div class="num">NAP 01</div>
-      <div class="name-row"><div class="name">スパッカナポリ（旧市街）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">NAP 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">スパッカナポリ（旧市街）</div></div>
       <div class="desc">旧市街を一直線に貫く歴史的な通り。猥雑でエネルギッシュな路地に教会や邸宅が密集し、ナポリらしい生活感あふれる空気を体感できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スパッカナポリ（旧市街）.webp" alt="スパッカナポリ（旧市街）" loading="lazy"><a href="https://maps.google.com/?q=Spaccanapoli,+Naples" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="napoli" data-stype="heritage" data-spot-num="NAP 02">
       <div class="must-badge">⭐</div>
-      <div class="num">NAP 02</div>
-      <div class="name-row"><div class="name">ポンペイ遺跡</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">NAP 02</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">ポンペイ遺跡</div></div>
       <div class="desc">西暦79年のヴェスヴィオ火山噴火で一瞬にして埋没した古代都市の遺跡。当時の生活がそのまま保存された街並みは圧巻のスケール。ナポリから日帰り可能。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ポンペイ遺跡.webp" alt="ポンペイ遺跡" loading="lazy"><a href="https://maps.google.com/?q=Pompeii,+Italy" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="napoli" data-stype="heritage" data-spot-num="NAP 03">
       
-      <div class="num">NAP 03</div>
-      <div class="name-row"><div class="name">卵城（カステル・デロヴォ）</div><span class="badge">海上の城塞</span></div>
+      <div class="num-row"><span class="num">NAP 03</span><span class="badge">海上の城塞</span></div>
+      <div class="name-row"><div class="name">卵城（カステル・デロヴォ）</div></div>
       <div class="desc">海に突き出た岩の上に建つ、ナポリ最古の城塞。夕暮れ時、ヴェスヴィオ山を背景にしたシルエットは絶好のフォトスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/卵城（カステル・デロヴォ）.webp" alt="卵城（カステル・デロヴォ）" loading="lazy"><a href="https://maps.google.com/?q=Castel+dell%27Ovo,+Naples" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="napoli" data-stype="activity" data-spot-num="NAP 04">
       
-      <div class="num">NAP 04</div>
-      <div class="name-row"><div class="name">地下のナポリ（ナポリ・ソッテッラーネア）</div><span class="badge">地下ツアー</span></div>
+      <div class="num-row"><span class="num">NAP 04</span><span class="badge">地下ツアー</span></div>
+      <div class="name-row"><div class="name">地下のナポリ（ナポリ・ソッテッラーネア）</div></div>
       <div class="desc">古代ローマ時代の水道跡や第二次大戦時の防空壕として使われた地下空間を巡るツアー。地上とはまったく違う歴史の層に触れられる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/地下のナポリ（ナポリ・ソッテッラーネア）.webp" alt="地下のナポリ（ナポリ・ソッテッラーネア）" loading="lazy"><a href="https://maps.google.com/?q=Napoli+Sotterranea" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1416,32 +1465,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="amalfi" data-stype="nature" data-spot-num="AMA 01">
       <div class="must-badge">⭐</div>
-      <div class="num">AMA 01</div>
-      <div class="name-row"><div class="name">ポジターノの旧市街とビーチ</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">AMA 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">ポジターノの旧市街とビーチ</div></div>
       <div class="desc">断崖に張り付くようにパステルカラーの家々が積み重なる、アマルフィ海岸を代表する景観。細い路地を下った先のビーチからは絵葉書のような眺めが広がる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ポジターノの旧市街とビーチ.webp" alt="ポジターノの旧市街とビーチ" loading="lazy"><a href="https://maps.google.com/?q=Positano,+Italy" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="amalfi" data-stype="religious" data-spot-num="AMA 02">
       <div class="must-badge">⭐</div>
-      <div class="num">AMA 02</div>
-      <div class="name-row"><div class="name">アマルフィ大聖堂</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">AMA 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">アマルフィ大聖堂</div></div>
       <div class="desc">アマルフィ海岸のかつての中心都市の顔となる大聖堂。ムーア様式の華やかなファサードと62段の大階段が印象的。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アマルフィ大聖堂.webp" alt="アマルフィ大聖堂" loading="lazy"><a href="https://maps.google.com/?q=Amalfi+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="amalfi" data-stype="nature" data-spot-num="AMA 03">
       
-      <div class="num">AMA 03</div>
-      <div class="name-row"><div class="name">ラヴェッロ（ヴィッラ・ルフォロ）</div><span class="badge">絶景庭園</span></div>
+      <div class="num-row"><span class="num">AMA 03</span><span class="badge">絶景庭園</span></div>
+      <div class="name-row"><div class="name">ラヴェッロ（ヴィッラ・ルフォロ）</div></div>
       <div class="desc">海岸線を見下ろす高台の町。ヴィラ・ルフォロの庭園から望むティレニア海の絶景は、ワーグナーも愛したと伝わる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ラヴェッロ（ヴィッラ・ルフォロ）.webp" alt="ラヴェッロ（ヴィッラ・ルフォロ）" loading="lazy"><a href="https://maps.google.com/?q=Villa+Rufolo,+Ravello" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="amalfi" data-stype="activity" data-spot-num="AMA 04">
       
-      <div class="num">AMA 04</div>
-      <div class="name-row"><div class="name">神々の道（センティエロ・デッリ・デイ）</div><span class="badge">ハイキング</span></div>
+      <div class="num-row"><span class="num">AMA 04</span><span class="badge">ハイキング</span></div>
+      <div class="name-row"><div class="name">神々の道（センティエロ・デッリ・デイ）</div></div>
       <div class="desc">断崖沿いを歩くハイキングコース。眼下に広がる紺碧の海と山脈の景色を独り占めできる、アマルフィ屈指の健脚向けルート。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/神々の道（センティエロ・デッリ・デイ）.webp" alt="神々の道（センティエロ・デッリ・デイ）" loading="lazy"></div>
     </div>
@@ -1492,24 +1541,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="bari" data-stype="religious" data-spot-num="BAR 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BAR 01</div>
-      <div class="name-row"><div class="name">サン・ニコラ聖堂</div><span class="badge">巡礼地</span></div>
+      <div class="num-row"><span class="num">BAR 01</span><span class="badge">巡礼地</span></div>
+      <div class="name-row"><div class="name">サン・ニコラ聖堂</div></div>
       <div class="desc">サンタクロースのモデルとされる聖ニコラウスの聖遺物が納められたロマネスク様式の聖堂。カトリックと東方正教会双方の巡礼地となっている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サン・ニコラ聖堂.webp" alt="サン・ニコラ聖堂" loading="lazy"><a href="https://maps.google.com/?q=Basilica+of+San+Nicola,+Bari" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bari" data-stype="townscape" data-spot-num="BAR 02">
       
-      <div class="num">BAR 02</div>
-      <div class="name-row"><div class="name">旧市街（バーリ・ヴェッキア）</div><span class="badge">パスタ手作り体験</span></div>
+      <div class="num-row"><span class="num">BAR 02</span><span class="badge">パスタ手作り体験</span></div>
+      <div class="name-row"><div class="name">旧市街（バーリ・ヴェッキア）</div></div>
       <div class="desc">迷路のように入り組んだ石畳の路地が広がる旧市街。軒先で地元のおばちゃんたちが手作りするオレキエッテ（耳たぶ型パスタ）の光景が名物。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/旧市街（バーリ・ヴェッキア）.webp" alt="旧市街（バーリ・ヴェッキア）" loading="lazy"><a href="https://maps.google.com/?q=Bari+Vecchia" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="bari" data-stype="heritage" data-spot-num="BAR 03">
       
-      <div class="num">BAR 03</div>
-      <div class="name-row"><div class="name">スヴェーヴォ城</div><span class="badge">中世の要塞</span></div>
+      <div class="num-row"><span class="num">BAR 03</span><span class="badge">中世の要塞</span></div>
+      <div class="name-row"><div class="name">スヴェーヴォ城</div></div>
       <div class="desc">神聖ローマ皇帝フリードリヒ2世が築いた要塞。堀に囲まれた重厚な外観は、アドリア海を見張る港町の歴史を今に伝える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スヴェーヴォ城.webp" alt="スヴェーヴォ城" loading="lazy"><a href="https://maps.google.com/?q=Castello+Svevo,+Bari" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1560,16 +1609,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="alberobello" data-stype="townscape" data-spot-num="ALB 01">
       <div class="must-badge">⭐</div>
-      <div class="num">ALB 01</div>
-      <div class="name-row"><div class="name">リオーネ・モンティ（トゥルッリ地区）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">ALB 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">リオーネ・モンティ（トゥルッリ地区）</div></div>
       <div class="desc">円錐屋根の白い家「トゥルッリ」が1000軒以上密集する、世界でここだけの景観。屋根には魔除けのシンボルが描かれたものもあり、隅々まで見て回りたい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/リオーネ・モンティ（トゥルッリ地区）.webp" alt="リオーネ・モンティ（トゥルッリ地区）" loading="lazy"><a href="https://maps.google.com/?q=Rione+Monti,+Alberobello" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="alberobello" data-stype="museum" data-spot-num="ALB 02">
       
-      <div class="num">ALB 02</div>
-      <div class="name-row"><div class="name">トゥルッロ・ソヴラーノ</div><span class="badge">建築博物館</span></div>
+      <div class="num-row"><span class="num">ALB 02</span><span class="badge">建築博物館</span></div>
+      <div class="name-row"><div class="name">トゥルッロ・ソヴラーノ</div></div>
       <div class="desc">唯一2階建てのトゥルッロで、内部を博物館として公開。伝統的な生活道具の展示から、この独特な建築様式の成り立ちを学べる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トゥルッロ・ソヴラーノ.webp" alt="トゥルッロ・ソヴラーノ" loading="lazy"><a href="https://maps.google.com/?q=Trullo+Sovrano,+Alberobello" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1620,24 +1669,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="matera" data-stype="heritage" data-spot-num="MAT 01">
       <div class="must-badge">⭐</div>
-      <div class="num">MAT 01</div>
-      <div class="name-row"><div class="name">サッシ・ディ・マテーラ</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">MAT 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">サッシ・ディ・マテーラ</div></div>
       <div class="desc">断崖の岩肌をくり抜いた洞窟住居群が街全体に重なる圧巻の景観。旧石器時代から続く独特な街並みは世界遺産で、映画のロケ地にも。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サッシ・ディ・マテーラ.webp" alt="サッシ・ディ・マテーラ" loading="lazy"><a href="https://maps.google.com/?q=Sassi+di+Matera" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="matera" data-stype="religious" data-spot-num="MAT 02">
       
-      <div class="num">MAT 02</div>
-      <div class="name-row"><div class="name">マテーラ大聖堂</div><span class="badge">大聖堂</span></div>
+      <div class="num-row"><span class="num">MAT 02</span><span class="badge">大聖堂</span></div>
+      <div class="name-row"><div class="name">マテーラ大聖堂</div></div>
       <div class="desc">サッシの街並みを見下ろす高台に建つ、プーリア・ロマネスク様式の大聖堂。塔からの眺めはマテーラ観光のハイライトのひとつ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マテーラ大聖堂.webp" alt="マテーラ大聖堂" loading="lazy"><a href="https://maps.google.com/?q=Matera+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="matera" data-stype="museum" data-spot-num="MAT 03">
       
-      <div class="num">MAT 03</div>
-      <div class="name-row"><div class="name">カーサ・グロッタ（洞窟住居博物館）</div><span class="badge">洞窟博物館</span></div>
+      <div class="num-row"><span class="num">MAT 03</span><span class="badge">洞窟博物館</span></div>
+      <div class="name-row"><div class="name">カーサ・グロッタ（洞窟住居博物館）</div></div>
       <div class="desc">かつての洞窟住居の暮らしをそのまま再現した博物館。電気も水道もなかった時代の生活道具が並び、この街の歴史をリアルに体感できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カーサ・グロッタ（洞窟住居博物館）.webp" alt="カーサ・グロッタ（洞窟住居博物館）" loading="lazy"><a href="https://maps.google.com/?q=Casa+Grotta+di+Vico+Solitario,+Matera" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1688,32 +1737,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="palermo" data-stype="religious" data-spot-num="PAL 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PAL 01</div>
-      <div class="name-row"><div class="name">パレルモ大聖堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">PAL 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">パレルモ大聖堂</div></div>
       <div class="desc">ノルマン・アラブ・ゴシックなど複数の建築様式が混在する、シチリアの複雑な歴史を体現した大聖堂。歴代の王や皇帝の石棺も安置されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パレルモ大聖堂.webp" alt="パレルモ大聖堂" loading="lazy"><a href="https://maps.google.com/?q=Palermo+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="palermo" data-stype="religious" data-spot-num="PAL 02">
       <div class="must-badge">⭐</div>
-      <div class="num">PAL 02</div>
-      <div class="name-row"><div class="name">パラティーナ礼拝堂（ノルマン王宮）</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">PAL 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">パラティーナ礼拝堂（ノルマン王宮）</div></div>
       <div class="desc">黄金のモザイクで壁一面が覆われた、ノルマン=アラブ様式建築の最高傑作とされる礼拝堂。ビザンツ・イスラム・ラテンの美が融合した圧倒的な空間。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パラティーナ礼拝堂（ノルマン王宮）.webp" alt="パラティーナ礼拝堂（ノルマン王宮）" loading="lazy"><a href="https://maps.google.com/?q=Cappella+Palatina,+Palermo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="palermo" data-stype="market" data-spot-num="PAL 03">
       
-      <div class="num">PAL 03</div>
-      <div class="name-row"><div class="name">バッラーロ市場</div><span class="badge">地元グルメの宝庫</span></div>
+      <div class="num-row"><span class="num">PAL 03</span><span class="badge">地元グルメの宝庫</span></div>
+      <div class="name-row"><div class="name">バッラーロ市場</div></div>
       <div class="desc">シチリア最大級の青空市場。威勢のいい売り子の呼び声が響く中、新鮮な魚介や名物ストリートフードを味わえる、パレルモの活気を体感できるスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バッラーロ市場.webp" alt="バッラーロ市場" loading="lazy"><a href="https://maps.google.com/?q=Ballaro+Market,+Palermo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="palermo" data-stype="townscape" data-spot-num="PAL 04">
       
-      <div class="num">PAL 04</div>
-      <div class="name-row"><div class="name">マッシモ劇場</div><span class="badge">オペラハウス</span></div>
+      <div class="num-row"><span class="num">PAL 04</span><span class="badge">オペラハウス</span></div>
+      <div class="name-row"><div class="name">マッシモ劇場</div></div>
       <div class="desc">イタリア最大級の規模を誇るオペラハウス。映画『ゴッドファーザーPART III』のラストシーンの舞台としても有名な、荘厳な劇場建築。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マッシモ劇場.webp" alt="マッシモ劇場" loading="lazy"><a href="https://maps.google.com/?q=Teatro+Massimo,+Palermo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1764,24 +1813,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="taormina" data-stype="heritage" data-spot-num="TAO 01">
       <div class="must-badge">⭐</div>
-      <div class="num">TAO 01</div>
-      <div class="name-row"><div class="name">タオルミーナ古代劇場</div><span class="badge">絶景・必見</span></div>
+      <div class="num-row"><span class="num">TAO 01</span><span class="badge">絶景・必見</span></div>
+      <div class="name-row"><div class="name">タオルミーナ古代劇場</div></div>
       <div class="desc">紀元前3世紀に築かれた古代ギリシャの劇場跡。舞台の向こうにエトナ火山とイオニア海が広がる眺めは、世界屈指の絶景劇場とも称される。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タオルミーナ古代劇場.webp" alt="タオルミーナ古代劇場" loading="lazy"><a href="https://maps.google.com/?q=Ancient+Theatre+of+Taormina" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="taormina" data-stype="nature" data-spot-num="TAO 02">
       
-      <div class="num">TAO 02</div>
-      <div class="name-row"><div class="name">イゾラ・ベッラ</div><span class="badge">離島ビーチ</span></div>
+      <div class="num-row"><span class="num">TAO 02</span><span class="badge">離島ビーチ</span></div>
+      <div class="name-row"><div class="name">イゾラ・ベッラ</div></div>
       <div class="desc">「地中海の真珠」と呼ばれる小島とビーチ。干潮時には陸続きになる砂洲を歩いて渡ることができ、透き通った海でのシュノーケリングも人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イゾラ・ベッラ.webp" alt="イゾラ・ベッラ" loading="lazy"><a href="https://maps.google.com/?q=Isola+Bella,+Taormina" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="taormina" data-stype="townscape" data-spot-num="TAO 03">
       
-      <div class="num">TAO 03</div>
-      <div class="name-row"><div class="name">ウンベルト通り</div><span class="badge">石畳の通り</span></div>
+      <div class="num-row"><span class="num">TAO 03</span><span class="badge">石畳の通り</span></div>
+      <div class="name-row"><div class="name">ウンベルト通り</div></div>
       <div class="desc">街のメインストリートを彩る石畳の通り。シチリア雑貨の店やジェラート店が並び、夕暮れ時の散策（パッセッジャータ）が地元流の過ごし方。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウンベルト通り.webp" alt="ウンベルト通り" loading="lazy"><a href="https://maps.google.com/?q=Corso+Umberto,+Taormina" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1832,24 +1881,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="cagliari" data-stype="townscape" data-spot-num="CAG 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CAG 01</div>
-      <div class="name-row"><div class="name">イル・カステッロ地区</div><span class="badge">旧市街・必見</span></div>
+      <div class="num-row"><span class="num">CAG 01</span><span class="badge">旧市街・必見</span></div>
+      <div class="name-row"><div class="name">イル・カステッロ地区</div></div>
       <div class="desc">丘の上に広がる中世の城塞地区。カラフルな建物が並ぶ石畳の路地から、カリアリの街とティレニア海を一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イル・カステッロ地区.webp" alt="イル・カステッロ地区" loading="lazy"><a href="https://maps.google.com/?q=Il+Castello,+Cagliari" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="cagliari" data-stype="nature" data-spot-num="CAG 02">
       <div class="must-badge">⭐</div>
-      <div class="num">CAG 02</div>
-      <div class="name-row"><div class="name">ポエット海岸</div><span class="badge">絶景ビーチ</span></div>
+      <div class="num-row"><span class="num">CAG 02</span><span class="badge">絶景ビーチ</span></div>
+      <div class="name-row"><div class="name">ポエット海岸</div></div>
       <div class="desc">街の中心からほど近い、真っ白な砂浜が続くビーチ。透明度の高いエメラルドグリーンの海は、地中海屈指の美しさと評される。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ポエット海岸.webp" alt="ポエット海岸" loading="lazy"><a href="https://maps.google.com/?q=Poetto+Beach,+Cagliari" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cagliari" data-stype="heritage" data-spot-num="CAG 03">
       
-      <div class="num">CAG 03</div>
-      <div class="name-row"><div class="name">ヌラーゲ遺跡（ス・ヌラージ）</div><span class="badge">古代遺跡</span></div>
+      <div class="num-row"><span class="num">CAG 03</span><span class="badge">古代遺跡</span></div>
+      <div class="name-row"><div class="name">ヌラーゲ遺跡（ス・ヌラージ）</div></div>
       <div class="desc">サルデーニャ島独自の青銅器時代の巨石建造物。石を積み上げた塔状の遺構が今も島内各地に点在し、謎に満ちた古代文明の痕跡を伝える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヌラーゲ遺跡（ス・ヌラージ）.webp" alt="ヌラーゲ遺跡（ス・ヌラージ）" loading="lazy"><a href="https://maps.google.com/?q=Su+Nuraxi+di+Barumini" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1900,16 +1949,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="sangimignano" data-stype="townscape" data-spot-num="SGM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SGM 01</div>
-      <div class="name-row"><div class="name">塔の街並み（トッレ）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">SGM 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">塔の街並み（トッレ）</div></div>
       <div class="desc">中世の富豪たちが競って建てた高塔が今も14基残り、独特のスカイラインを形成する。丘の上から眺める塔群のシルエットは必見。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/塔の街並み（トッレ）.webp" alt="塔の街並み（トッレ）" loading="lazy"><a href="https://maps.google.com/?q=San+Gimignano,+Italy" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sangimignano" data-stype="townscape" data-spot-num="SGM 02">
       
-      <div class="num">SGM 02</div>
-      <div class="name-row"><div class="name">チステルナ広場</div><span class="badge">旧市街広場</span></div>
+      <div class="num-row"><span class="num">SGM 02</span><span class="badge">旧市街広場</span></div>
+      <div class="name-row"><div class="name">チステルナ広場</div></div>
       <div class="desc">貝殻状の石畳が広がる旧市街の中心広場。周囲を中世の塔と邸宅が取り囲み、名物ジェラート店も軒を連ねる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チステルナ広場.webp" alt="チステルナ広場" loading="lazy"><a href="https://maps.google.com/?q=Piazza+della+Cisterna,+San+Gimignano" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1960,24 +2009,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="capri" data-stype="nature" data-spot-num="CAP 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CAP 01</div>
-      <div class="name-row"><div class="name">青の洞窟（グロッタ・アズーラ）</div><span class="badge">世界的絶景・必見</span></div>
+      <div class="num-row"><span class="num">CAP 01</span><span class="badge">世界的絶景・必見</span></div>
+      <div class="name-row"><div class="name">青の洞窟（グロッタ・アズーラ）</div></div>
       <div class="desc">海面から差し込む太陽光が洞窟内の海水を鮮やかな青色に染める、世界的に有名な海食洞。小舟に乗り換えて狭い入口をくぐる体験も旅の思い出になる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/青の洞窟（グロッタ・アズーラ）.webp" alt="青の洞窟（グロッタ・アズーラ）" loading="lazy"><a href="https://maps.google.com/?q=Blue+Grotto,+Capri" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="capri" data-stype="nature" data-spot-num="CAP 02">
       
-      <div class="num">CAP 02</div>
-      <div class="name-row"><div class="name">ファラリオーニ</div><span class="badge">絶景スポット</span></div>
+      <div class="num-row"><span class="num">CAP 02</span><span class="badge">絶景スポット</span></div>
+      <div class="name-row"><div class="name">ファラリオーニ</div></div>
       <div class="desc">海上にそびえる3つの奇岩。カプリ島を象徴する景観で、展望台やボートツアーから間近に眺めることができる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ファラリオーニ.webp" alt="ファラリオーニ" loading="lazy"><a href="https://maps.google.com/?q=Faraglioni,+Capri" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="capri" data-stype="nature" data-spot-num="CAP 03">
       
-      <div class="num">CAP 03</div>
-      <div class="name-row"><div class="name">アウグストの庭園</div><span class="badge">絶景庭園</span></div>
+      <div class="num-row"><span class="num">CAP 03</span><span class="badge">絶景庭園</span></div>
+      <div class="name-row"><div class="name">アウグストの庭園</div></div>
       <div class="desc">断崖の上に広がる庭園から、ファラリオーニと入り組んだ海岸線を一望できる、カプリ随一の絶景スポットとして知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アウグストの庭園.webp" alt="アウグストの庭園" loading="lazy"><a href="https://maps.google.com/?q=Gardens+of+Augustus,+Capri" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -2028,24 +2077,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="sorrento" data-stype="townscape" data-spot-num="SOR 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SOR 01</div>
-      <div class="name-row"><div class="name">ソレント旧市街とタッソ広場</div><span class="badge">街歩きの定番</span></div>
+      <div class="num-row"><span class="num">SOR 01</span><span class="badge">街歩きの定番</span></div>
+      <div class="name-row"><div class="name">ソレント旧市街とタッソ広場</div></div>
       <div class="desc">崖の上に広がる旧市街の中心広場。石畳の路地には陶器店やレモン製品の店が並び、地中海らしい雰囲気に満ちている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ソレント旧市街とタッソ広場.webp" alt="ソレント旧市街とタッソ広場" loading="lazy"><a href="https://maps.google.com/?q=Piazza+Tasso,+Sorrento" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sorrento" data-stype="nature" data-spot-num="SOR 02">
       
-      <div class="num">SOR 02</div>
-      <div class="name-row"><div class="name">マリーナ・グランデ</div><span class="badge">漁港の町</span></div>
+      <div class="num-row"><span class="num">SOR 02</span><span class="badge">漁港の町</span></div>
+      <div class="name-row"><div class="name">マリーナ・グランデ</div></div>
       <div class="desc">カラフルな漁船が並ぶ港町の風景。新鮮なシーフードを味わえるレストランが軒を連ね、散策にもぴったりのエリア。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マリーナ・グランデ.webp" alt="マリーナ・グランデ" loading="lazy"><a href="https://maps.google.com/?q=Marina+Grande,+Sorrento" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="sorrento" data-stype="activity" data-spot-num="SOR 03">
       
-      <div class="num">SOR 03</div>
-      <div class="name-row"><div class="name">レモン農園めぐり</div><span class="badge">農園体験</span></div>
+      <div class="num-row"><span class="num">SOR 03</span><span class="badge">農園体験</span></div>
+      <div class="name-row"><div class="name">レモン農園めぐり</div></div>
       <div class="desc">ソレント名物リモンチェッロの原料となる巨大レモンの農園。畑を眺めながらの試飲体験ができる農園もある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/レモン農園めぐり.webp" alt="レモン農園めぐり" loading="lazy"></div>
     </div>
@@ -2096,16 +2145,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="agrigento" data-stype="heritage" data-spot-num="AGR 01">
       <div class="must-badge">⭐</div>
-      <div class="num">AGR 01</div>
-      <div class="name-row"><div class="name">神殿の谷（ヴァッレ・デイ・テンプリ）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">AGR 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">神殿の谷（ヴァッレ・デイ・テンプリ）</div></div>
       <div class="desc">古代ギリシャ植民都市の壮大な神殿群が今も残る、世界最大級の考古学公園。特にコンコルディア神殿はほぼ完全な姿で残り、夕暮れ時のライトアップは必見。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/神殿の谷（ヴァッレ・デイ・テンプリ）.webp" alt="神殿の谷（ヴァッレ・デイ・テンプリ）" loading="lazy"><a href="https://maps.google.com/?q=Valley+of+the+Temples,+Agrigento" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="agrigento" data-stype="heritage" data-spot-num="AGR 02">
       
-      <div class="num">AGR 02</div>
-      <div class="name-row"><div class="name">コンコルディア神殿</div><span class="badge">ギリシャ神殿</span></div>
+      <div class="num-row"><span class="num">AGR 02</span><span class="badge">ギリシャ神殿</span></div>
+      <div class="name-row"><div class="name">コンコルディア神殿</div></div>
       <div class="desc">紀元前5世紀に建てられた、ギリシャ本土以外で最も保存状態の良いドーリア式神殿のひとつとして知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コンコルディア神殿.webp" alt="コンコルディア神殿" loading="lazy"><a href="https://maps.google.com/?q=Temple+of+Concordia,+Agrigento" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -2289,7 +2338,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -2298,6 +2347,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -2311,12 +2382,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -2324,6 +2396,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -2370,6 +2443,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -2445,16 +2528,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -2629,23 +2750,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

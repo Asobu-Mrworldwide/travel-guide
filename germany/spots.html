@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ドイツの観光スポット｜ドイツ旅行ガイド">
 <meta name="twitter:description" content="おとぎ話のような古城、石畳の中世都市、そしてビールと共にある陽気な文化——ドイツは地域ごとにまったく違う顔を見せる国だ。首都ベルリンでは激動の20世紀史を、南部バイエルンでは絵本のような街並みを楽しめる。鉄道網が発達し都市間の移動もスムー…">
 <meta name="twitter:image" content="https://worldmappy.com/germany/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #eee;line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3"><path d="M0 0h5v3H0z"/><path fill="#D00" d="M0 1h5v2H0z"/><path fill="#FFCE00" d="M0 2h5v1H0z"/></svg></div></span><span class="site-country-name">ドイツ</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=germany">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">ドイツを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=germany">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,48 +272,66 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>ドイツ観光スポット図鑑</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="berlin" onclick="filterSpots('city','berlin',this)">ベルリン</button>
+              
+              <button class="filter-btn " data-filter="munich" onclick="filterSpots('city','munich',this)">ミュンヘン</button>
+              
+              <button class="filter-btn " data-filter="cologne" onclick="filterSpots('city','cologne',this)">ケルン</button>
+              
+              <button class="filter-btn " data-filter="frankfurt" onclick="filterSpots('city','frankfurt',this)">フランクフルト</button>
+              
+              <button class="filter-btn " data-filter="stuttgart" onclick="filterSpots('city','stuttgart',this)">シュトゥットガルト</button>
+              
+              <button class="filter-btn " data-filter="rothenburg" onclick="filterSpots('city','rothenburg',this)">ロマンティック街道</button>
+              
+              <button class="filter-btn " data-filter="hamburg" onclick="filterSpots('city','hamburg',this)">ハンブルク</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="berlin" onclick="filterSpots('city','berlin',this)">ベルリン</button>
-      
-      <button class="filter-btn " data-filter="munich" onclick="filterSpots('city','munich',this)">ミュンヘン</button>
-      
-      <button class="filter-btn " data-filter="cologne" onclick="filterSpots('city','cologne',this)">ケルン</button>
-      
-      <button class="filter-btn " data-filter="frankfurt" onclick="filterSpots('city','frankfurt',this)">フランクフルト</button>
-      
-      <button class="filter-btn " data-filter="stuttgart" onclick="filterSpots('city','stuttgart',this)">シュトゥットガルト</button>
-      
-      <button class="filter-btn " data-filter="rothenburg" onclick="filterSpots('city','rothenburg',this)">ロマンティック街道</button>
-      
-      <button class="filter-btn " data-filter="hamburg" onclick="filterSpots('city','hamburg',this)">ハンブルク</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">40</span> / <span id="spots-count-total">40</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -291,6 +339,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -337,64 +386,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="berlin" data-stype="heritage" data-spot-num="BER 01">
       <div class="must-badge">⭐</div>
-      <div class="num">BER 01</div>
-      <div class="name-row"><div class="name">ブランデンブルク門</div><span class="badge">ベルリンの象徴・必見</span></div>
+      <div class="num-row"><span class="num">BER 01</span><span class="badge">ベルリンの象徴・必見</span></div>
+      <div class="name-row"><div class="name">ブランデンブルク門</div></div>
       <div class="desc">ベルリンを象徴する新古典主義の門。かつて東西分断の象徴だった場所が、今では統一ドイツの象徴として多くの観光客で賑わう。夜のライトアップも美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブランデンブルク門.webp" alt="ブランデンブルク門" loading="lazy"><a href="https://maps.google.com/?q=Brandenburg+Gate+Berlin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="berlin" data-stype="heritage" data-spot-num="BER 02">
       <div class="must-badge">⭐</div>
-      <div class="num">BER 02</div>
-      <div class="name-row"><div class="name">国会議事堂（ガラスドーム）</div><span class="badge">無料の展望スポット</span></div>
+      <div class="num-row"><span class="num">BER 02</span><span class="badge">無料の展望スポット</span></div>
+      <div class="name-row"><div class="name">国会議事堂（ガラスドーム）</div></div>
       <div class="desc">ドイツ連邦議会が置かれる歴史的建造物。屋上のガラスドームは無料で見学でき、螺旋スロープを登りながらベルリン市街を一望できる（事前予約推奨）。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/国会議事堂（ガラスドーム）.webp" alt="国会議事堂（ガラスドーム）" loading="lazy"><a href="https://maps.google.com/?q=Reichstag+Building+Berlin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="berlin" data-stype="museum" data-spot-num="BER 03">
       <div class="must-badge">⭐</div>
-      <div class="num">BER 03</div>
-      <div class="name-row"><div class="name">博物館島（ペルガモン博物館）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">BER 03</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">博物館島（ペルガモン博物館）</div></div>
       <div class="desc">シュプレー川の中州に5つの美術館・博物館が集まる世界遺産エリア。中でもペルガモン博物館は古代バビロンのイシュタール門など、実物大の巨大遺構展示が圧巻。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/博物館島（ペルガモン博物館）.webp" alt="博物館島（ペルガモン博物館）" loading="lazy"><a href="https://maps.google.com/?q=Museum+Island+Berlin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="berlin" data-stype="heritage" data-spot-num="BER 04">
       <div class="must-badge">⭐</div>
-      <div class="num">BER 04</div>
-      <div class="name-row"><div class="name">イーストサイドギャラリー</div><span class="badge">ベルリンの壁アート</span></div>
+      <div class="num-row"><span class="num">BER 04</span><span class="badge">ベルリンの壁アート</span></div>
+      <div class="name-row"><div class="name">イーストサイドギャラリー</div></div>
       <div class="desc">崩壊したベルリンの壁の一部に、世界中のアーティストがペイントを施した野外ギャラリー。「兄弟のキス」など象徴的な壁画が並び、1.3kmにわたる壁沿いを歩ける。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イーストサイドギャラリー.webp" alt="イーストサイドギャラリー" loading="lazy"><a href="https://maps.google.com/?q=East+Side+Gallery+Berlin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="berlin" data-stype="heritage" data-spot-num="BER 05">
       
-      <div class="num">BER 05</div>
-      <div class="name-row"><div class="name">チェックポイント・チャーリー</div><span class="badge">冷戦の史跡</span></div>
+      <div class="num-row"><span class="num">BER 05</span><span class="badge">冷戦の史跡</span></div>
+      <div class="name-row"><div class="name">チェックポイント・チャーリー</div></div>
       <div class="desc">冷戦時代、東西ベルリンを隔てた検問所の跡地。当時の看板の複製や周辺の博物館展示を通じて、分断の時代の緊張感を今に伝える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チェックポイント・チャーリー.webp" alt="チェックポイント・チャーリー" loading="lazy"><a href="https://maps.google.com/?q=Checkpoint+Charlie+Berlin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="berlin" data-stype="religious" data-spot-num="BER 06">
       
-      <div class="num">BER 06</div>
-      <div class="name-row"><div class="name">ベルリン大聖堂</div><span class="badge">壮麗なドーム教会</span></div>
+      <div class="num-row"><span class="num">BER 06</span><span class="badge">壮麗なドーム教会</span></div>
+      <div class="name-row"><div class="name">ベルリン大聖堂</div></div>
       <div class="desc">シュプレー川沿いにそびえる壮麗なドーム型のプロテスタント教会。内部の豪華な装飾とオルガン、地下の皇帝家の棺が安置された墓所も見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ベルリン大聖堂.webp" alt="ベルリン大聖堂" loading="lazy"><a href="https://maps.google.com/?q=Berlin+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="berlin" data-stype="heritage" data-spot-num="BER 07">
       
-      <div class="num">BER 07</div>
-      <div class="name-row"><div class="name">ホロコースト記念碑</div><span class="badge">追悼のメモリアル</span></div>
+      <div class="num-row"><span class="num">BER 07</span><span class="badge">追悼のメモリアル</span></div>
+      <div class="name-row"><div class="name">ホロコースト記念碑</div></div>
       <div class="desc">2,711本の高さの異なるコンクリート柱が並ぶ、ナチス政権下の犠牲者を追悼する記念碑。柱の間を歩くと迷路のような不安な感覚に包まれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ホロコースト記念碑.webp" alt="ホロコースト記念碑" loading="lazy"><a href="https://maps.google.com/?q=Memorial+to+the+Murdered+Jews+of+Europe+Berlin" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="berlin" data-stype="heritage" data-spot-num="BER 08">
       
-      <div class="num">BER 08</div>
-      <div class="name-row"><div class="name">サンスーシ宮殿（ポツダム）</div><span class="badge">世界遺産・日帰り離宮</span></div>
+      <div class="num-row"><span class="num">BER 08</span><span class="badge">世界遺産・日帰り離宮</span></div>
+      <div class="name-row"><div class="name">サンスーシ宮殿（ポツダム）</div></div>
       <div class="desc">ベルリンから日帰りできる、プロイセン王フリードリヒ大王が築いたロココ様式の離宮。「プロイセンのヴェルサイユ」とも呼ばれる世界遺産。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サンスーシ宮殿（ポツダム）.webp" alt="サンスーシ宮殿（ポツダム）" loading="lazy"><a href="https://maps.google.com/?q=Sanssouci+Palace+Potsdam" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -445,72 +494,72 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="munich" data-stype="heritage" data-spot-num="MUC 01">
       <div class="must-badge">⭐</div>
-      <div class="num">MUC 01</div>
-      <div class="name-row"><div class="name">ノイシュヴァンシュタイン城</div><span class="badge">ドイツ随一の人気スポット・必見</span></div>
+      <div class="num-row"><span class="num">MUC 01</span><span class="badge">ドイツ随一の人気スポット・必見</span></div>
+      <div class="name-row"><div class="name">ノイシュヴァンシュタイン城</div></div>
       <div class="desc">ミュンヘンから日帰りで行ける、アルプスの山肌にそびえる白亜の城。「夢見る王」ルートヴィヒ2世が築いた、ディズニー城のモデル。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ノイシュヴァンシュタイン城.webp" alt="ノイシュヴァンシュタイン城" loading="lazy"><a href="https://maps.google.com/?q=Neuschwanstein+Castle" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="munich" data-stype="townscape" data-spot-num="MUC 02">
       <div class="must-badge">⭐</div>
-      <div class="num">MUC 02</div>
-      <div class="name-row"><div class="name">マリエン広場・新市庁舎</div><span class="badge">ミュンヘンの中心・必見</span></div>
+      <div class="num-row"><span class="num">MUC 02</span><span class="badge">ミュンヘンの中心・必見</span></div>
+      <div class="name-row"><div class="name">マリエン広場・新市庁舎</div></div>
       <div class="desc">ミュンヘンの中心広場。ネオゴシック様式の新市庁舎ではからくり時計「グロッケンシュピール」が1日数回作動し、人形たちが繰り広げる中世の物語を見物できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マリエン広場・新市庁舎.webp" alt="マリエン広場・新市庁舎" loading="lazy"><a href="https://maps.google.com/?q=Marienplatz+Munich" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="munich" data-stype="activity" data-spot-num="MUC 03">
       <div class="must-badge">⭐</div>
-      <div class="num">MUC 03</div>
-      <div class="name-row"><div class="name">ホフブロイハウス</div><span class="badge">定番のビアホール体験</span></div>
+      <div class="num-row"><span class="num">MUC 03</span><span class="badge">定番のビアホール体験</span></div>
+      <div class="name-row"><div class="name">ホフブロイハウス</div></div>
       <div class="desc">1589年創業、王室御用達だった歴史ある大型ビアホール。1リットルジョッキのビールと生演奏が作る賑やかさはバイエルンらしい体験。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ホフブロイハウス.webp" alt="ホフブロイハウス" loading="lazy"><a href="https://maps.google.com/?q=Hofbrauhaus+Munich" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="munich" data-stype="religious" data-spot-num="MUC 04">
       
-      <div class="num">MUC 04</div>
-      <div class="name-row"><div class="name">フラウエン教会</div><span class="badge">ミュンヘンのシンボル</span></div>
+      <div class="num-row"><span class="num">MUC 04</span><span class="badge">ミュンヘンのシンボル</span></div>
+      <div class="name-row"><div class="name">フラウエン教会</div></div>
       <div class="desc">2本の特徴的な塔がミュンヘンの街のシンボルとなっている、後期ゴシック様式の大聖堂。塔の高さを超える建物を街中に建てない条例があるほど、市民に愛されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フラウエン教会.webp" alt="フラウエン教会" loading="lazy"><a href="https://maps.google.com/?q=Frauenkirche+Munich" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="munich" data-stype="heritage" data-spot-num="MUC 05">
       
-      <div class="num">MUC 05</div>
-      <div class="name-row"><div class="name">ニンフェンブルク宮殿</div><span class="badge">王家の夏の離宮</span></div>
+      <div class="num-row"><span class="num">MUC 05</span><span class="badge">王家の夏の離宮</span></div>
+      <div class="name-row"><div class="name">ニンフェンブルク宮殿</div></div>
       <div class="desc">バイエルン王家の夏の離宮として使われた、広大な庭園を持つバロック様式の宮殿。運河沿いに整備されたフランス式庭園を散策するのも心地よい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ニンフェンブルク宮殿.webp" alt="ニンフェンブルク宮殿" loading="lazy"><a href="https://maps.google.com/?q=Nymphenburg+Palace+Munich" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="munich" data-stype="nature" data-spot-num="MUC 06">
       
-      <div class="num">MUC 06</div>
-      <div class="name-row"><div class="name">イングリッシュガーデン</div><span class="badge">市民の憩いの大公園</span></div>
+      <div class="num-row"><span class="num">MUC 06</span><span class="badge">市民の憩いの大公園</span></div>
+      <div class="name-row"><div class="name">イングリッシュガーデン</div></div>
       <div class="desc">ニューヨークのセントラルパークより広いとも言われる大規模な公園。人工の川では市民がサーフィンを楽しむ光景も見られ、ビアガーデンでくつろぐ地元の人々の姿が印象的。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イングリッシュガーデン.webp" alt="イングリッシュガーデン" loading="lazy"><a href="https://maps.google.com/?q=English+Garden+Munich" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="munich" data-stype="museum" data-spot-num="MUC 07">
       
-      <div class="num">MUC 07</div>
-      <div class="name-row"><div class="name">ダッハウ強制収容所記念館</div><span class="badge">歴史を学ぶ記念館</span></div>
+      <div class="num-row"><span class="num">MUC 07</span><span class="badge">歴史を学ぶ記念館</span></div>
+      <div class="name-row"><div class="name">ダッハウ強制収容所記念館</div></div>
       <div class="desc">ナチス政権が最初に開設した強制収容所の跡地を保存・公開する資料館。ミュンヘンから電車で日帰りでき、歴史の負の側面と向き合う静かな時間を過ごせる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ダッハウ強制収容所記念館.webp" alt="ダッハウ強制収容所記念館" loading="lazy"><a href="https://maps.google.com/?q=Dachau+Concentration+Camp+Memorial" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="munich" data-stype="nature" data-spot-num="MUC 08">
       
-      <div class="num">MUC 08</div>
-      <div class="name-row"><div class="name">ツークシュピッツェ</div><span class="badge">ドイツ最高峰・日帰り絶景</span></div>
+      <div class="num-row"><span class="num">MUC 08</span><span class="badge">ドイツ最高峰・日帰り絶景</span></div>
+      <div class="name-row"><div class="name">ツークシュピッツェ</div></div>
       <div class="desc">標高2,962m、ドイツ最高峰の山。ミュンヘンから日帰りでき、山頂からはドイツ・オーストリア・スイス・イタリアの4カ国を望める。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ツークシュピッツェ.webp" alt="ツークシュピッツェ" loading="lazy"><a href="https://maps.google.com/?q=Zugspitze+Germany" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="munich" data-stype="heritage" data-spot-num="MUC 09">
       
-      <div class="num">MUC 09</div>
-      <div class="name-row"><div class="name">ミュンヘン・レジデンツ</div><span class="badge">バイエルン王家の宮殿</span></div>
+      <div class="num-row"><span class="num">MUC 09</span><span class="badge">バイエルン王家の宮殿</span></div>
+      <div class="name-row"><div class="name">ミュンヘン・レジデンツ</div></div>
       <div class="desc">バイエルン王家が600年以上にわたり暮らした、ドイツ最大級の宮殿建築群。130を超える部屋に宝物館や祖先の間など見どころが密集。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミュンヘン・レジデンツ.webp" alt="ミュンヘン・レジデンツ" loading="lazy"><a href="https://maps.google.com/?q=Munich+Residenz" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -561,40 +610,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="cologne" data-stype="religious" data-spot-num="CGN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CGN 01</div>
-      <div class="name-row"><div class="name">ケルン大聖堂</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">CGN 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">ケルン大聖堂</div></div>
       <div class="desc">600年以上かけて完成した、世界最大級のゴシック様式大聖堂。世界遺産で、533段の階段の先の展望台からライン川と街並みを一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ケルン大聖堂.webp" alt="ケルン大聖堂" loading="lazy"><a href="https://maps.google.com/?q=Cologne+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="cologne" data-stype="townscape" data-spot-num="CGN 02">
       <div class="must-badge">⭐</div>
-      <div class="num">CGN 02</div>
-      <div class="name-row"><div class="name">ホーエンツォレルン橋</div><span class="badge">愛の南京錠スポット</span></div>
+      <div class="num-row"><span class="num">CGN 02</span><span class="badge">愛の南京錠スポット</span></div>
+      <div class="name-row"><div class="name">ホーエンツォレルン橋</div></div>
       <div class="desc">ライン川に架かる鉄道橋で、フェンスに無数の南京錠が取り付けられた「愛の南京錠」で有名。夕暮れ時、大聖堂を背にした風景は絶好の撮影スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ホーエンツォレルン橋.webp" alt="ホーエンツォレルン橋" loading="lazy"><a href="https://maps.google.com/?q=Hohenzollern+Bridge+Cologne" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="cologne" data-stype="activity" data-spot-num="CGN 03">
       
-      <div class="num">CGN 03</div>
-      <div class="name-row"><div class="name">ライン川クルーズ</div><span class="badge">定番のリバークルーズ</span></div>
+      <div class="num-row"><span class="num">CGN 03</span><span class="badge">定番のリバークルーズ</span></div>
+      <div class="name-row"><div class="name">ライン川クルーズ</div></div>
       <div class="desc">ケルンから出発し、川沿いの古城やぶどう畑の風景を船上から楽しむクルーズ。世界遺産のライン渓谷中流上部エリアまで足を延ばすコースも人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ライン川クルーズ.webp" alt="ライン川クルーズ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cologne" data-stype="museum" data-spot-num="CGN 04">
       
-      <div class="num">CGN 04</div>
-      <div class="name-row"><div class="name">チョコレート博物館</div><span class="badge">甘い体験型ミュージアム</span></div>
+      <div class="num-row"><span class="num">CGN 04</span><span class="badge">甘い体験型ミュージアム</span></div>
+      <div class="name-row"><div class="name">チョコレート博物館</div></div>
       <div class="desc">カカオ豆からチョコレートができるまでの工程を、実際に稼働する製造ラインと共に学べる博物館。試食コーナーや、噴水から流れるチョコレートの展示も人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チョコレート博物館.webp" alt="チョコレート博物館" loading="lazy"><a href="https://maps.google.com/?q=Chocolate+Museum+Cologne" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cologne" data-stype="townscape" data-spot-num="CGN 05">
       
-      <div class="num">CGN 05</div>
-      <div class="name-row"><div class="name">旧市街（アルトシュタット）</div><span class="badge">ケルシュビール横丁</span></div>
+      <div class="num-row"><span class="num">CGN 05</span><span class="badge">ケルシュビール横丁</span></div>
+      <div class="name-row"><div class="name">旧市街（アルトシュタット）</div></div>
       <div class="desc">カラフルな建物が並ぶライン川沿いの旧市街エリア。ケルシュビールを提供する伝統的な居酒屋「ブラウハウス」が軒を連ね、夜は陽気な賑わいに包まれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/旧市街（アルトシュタット）.webp" alt="旧市街（アルトシュタット）" loading="lazy"><a href="https://maps.google.com/?q=Cologne+Altstadt" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -645,24 +694,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="frankfurt" data-stype="townscape" data-spot-num="FRA 01">
       <div class="must-badge">⭐</div>
-      <div class="num">FRA 01</div>
-      <div class="name-row"><div class="name">レーマー広場</div><span class="badge">旧市街の中心・必見</span></div>
+      <div class="num-row"><span class="num">FRA 01</span><span class="badge">旧市街の中心・必見</span></div>
+      <div class="name-row"><div class="name">レーマー広場</div></div>
       <div class="desc">木組みの建物が三角屋根を連ねる、フランクフルト旧市街の中心地。市庁舎「レーマー」は神聖ローマ帝国の戴冠式にも使われた由緒ある建物。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/レーマー広場.webp" alt="レーマー広場" loading="lazy"><a href="https://maps.google.com/?q=Romerberg+Frankfurt" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="frankfurt" data-stype="museum" data-spot-num="FRA 02">
       
-      <div class="num">FRA 02</div>
-      <div class="name-row"><div class="name">ゲーテハウス</div><span class="badge">文豪ゲーテ生誕の家</span></div>
+      <div class="num-row"><span class="num">FRA 02</span><span class="badge">文豪ゲーテ生誕の家</span></div>
+      <div class="name-row"><div class="name">ゲーテハウス</div></div>
       <div class="desc">文豪ゲーテが生まれ育った邸宅。当時の家具や調度品がそのまま保存され、『若きウェルテルの悩み』などの名作が生まれた書斎も見学できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ゲーテハウス.webp" alt="ゲーテハウス" loading="lazy"><a href="https://maps.google.com/?q=Goethe+House+Frankfurt" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="frankfurt" data-stype="activity" data-spot-num="FRA 03">
       
-      <div class="num">FRA 03</div>
-      <div class="name-row"><div class="name">つぐみ横丁（リューデスハイム）</div><span class="badge">ライン川ワイン街道の名物路地</span></div>
+      <div class="num-row"><span class="num">FRA 03</span><span class="badge">ライン川ワイン街道の名物路地</span></div>
+      <div class="name-row"><div class="name">つぐみ横丁（リューデスハイム）</div></div>
       <div class="desc">フランクフルトから日帰りできる、世界遺産「ライン渓谷」起点リューデスハイムの名物路地。ワイン酒場がひしめき生演奏も楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/つぐみ横丁（リューデスハイム）.webp" alt="つぐみ横丁（リューデスハイム）" loading="lazy"><a href="https://maps.google.com/?q=Drosselgasse+Rudesheim" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -713,16 +762,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="stuttgart" data-stype="museum" data-spot-num="STR 01">
       <div class="must-badge">⭐</div>
-      <div class="num">STR 01</div>
-      <div class="name-row"><div class="name">メルセデス・ベンツ博物館</div><span class="badge">自動車史を体感できる世界的名所</span></div>
+      <div class="num-row"><span class="num">STR 01</span><span class="badge">自動車史を体感できる世界的名所</span></div>
+      <div class="name-row"><div class="name">メルセデス・ベンツ博物館</div></div>
       <div class="desc">自動車の発明者カール・ベンツから最新モデルまで、自動車史を体感できる人気の博物館。螺旋状のスロープを下りながら年代順に名車を巡る。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/メルセデス・ベンツ博物館.webp" alt="メルセデス・ベンツ博物館" loading="lazy"><a href="https://maps.google.com/?q=Mercedes-Benz+Museum+Stuttgart" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="stuttgart" data-stype="museum" data-spot-num="STR 02">
       
-      <div class="num">STR 02</div>
-      <div class="name-row"><div class="name">ポルシェ博物館</div><span class="badge">車好きの聖地</span></div>
+      <div class="num-row"><span class="num">STR 02</span><span class="badge">車好きの聖地</span></div>
+      <div class="name-row"><div class="name">ポルシェ博物館</div></div>
       <div class="desc">創業以来の名車が一堂に会する、車好きの聖地とされる博物館。宙に浮くようなガラス張りの建築も見どころで、幅広いラインナップを間近で見られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ポルシェ博物館.webp" alt="ポルシェ博物館" loading="lazy"><a href="https://maps.google.com/?q=Porsche+Museum+Stuttgart" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -773,64 +822,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="rothenburg" data-stype="heritage" data-spot-num="ROT 01">
       <div class="must-badge">⭐</div>
-      <div class="num">ROT 01</div>
-      <div class="name-row"><div class="name">ローテンブルクの旧市街・城壁</div><span class="badge">絵本のような旧市街・必見</span></div>
+      <div class="num-row"><span class="num">ROT 01</span><span class="badge">絵本のような旧市街・必見</span></div>
+      <div class="name-row"><div class="name">ローテンブルクの旧市街・城壁</div></div>
       <div class="desc">中世の姿をほぼ完全な形で保つ、ロマンティック街道最大のハイライト。城壁の上を歩いて一周でき、木組みの家と石畳の路地が続く街並みはまさに絵本の世界。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ローテンブルクの旧市街・城壁.webp" alt="ローテンブルクの旧市街・城壁" loading="lazy"><a href="https://maps.google.com/?q=Rothenburg+ob+der+Tauber" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="rothenburg" data-stype="townscape" data-spot-num="ROT 02">
       <div class="must-badge">⭐</div>
-      <div class="num">ROT 02</div>
-      <div class="name-row"><div class="name">プレーンライン</div><span class="badge">街道随一のフォトスポット</span></div>
+      <div class="num-row"><span class="num">ROT 02</span><span class="badge">街道随一のフォトスポット</span></div>
+      <div class="name-row"><div class="name">プレーンライン</div></div>
       <div class="desc">2つの塔と木組みの家が織りなす、ロマンティック街道で最も撮影される絶景ポイント。ドイツの観光ポスターにも度々登場する景観。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/プレーンライン.webp" alt="プレーンライン" loading="lazy"><a href="https://maps.google.com/?q=Ploenlein+Rothenburg" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="rothenburg" data-stype="activity" data-spot-num="ROT 03">
       
-      <div class="num">ROT 03</div>
-      <div class="name-row"><div class="name">夜警のナイトウォッチマンツアー</div><span class="badge">定番のナイトツアー</span></div>
+      <div class="num-row"><span class="num">ROT 03</span><span class="badge">定番のナイトツアー</span></div>
+      <div class="name-row"><div class="name">夜警のナイトウォッチマンツアー</div></div>
       <div class="desc">中世の衣装を纏った「夜警」がランタン片手に旧市街を案内するガイドツアー。ユーモアを交えながら街の歴史や伝説を語ってくれる、ロマンティック街道ならではの体験。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/夜警のナイトウォッチマンツアー.webp" alt="夜警のナイトウォッチマンツアー" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rothenburg" data-stype="heritage" data-spot-num="ROT 04">
       
-      <div class="num">ROT 04</div>
-      <div class="name-row"><div class="name">ヴュルツブルク・レジデンツ</div><span class="badge">世界遺産の宮殿</span></div>
+      <div class="num-row"><span class="num">ROT 04</span><span class="badge">世界遺産の宮殿</span></div>
+      <div class="name-row"><div class="name">ヴュルツブルク・レジデンツ</div></div>
       <div class="desc">ロマンティック街道の起点に建つ、世界遺産の壮麗な宮殿。天井画の巨匠ティエポロが手掛けた大階段の天井フレスコ画は、ヨーロッパ屈指の規模を誇る。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヴュルツブルク・レジデンツ.webp" alt="ヴュルツブルク・レジデンツ" loading="lazy"><a href="https://maps.google.com/?q=Wurzburg+Residence" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rothenburg" data-stype="heritage" data-spot-num="ROT 05">
       
-      <div class="num">ROT 05</div>
-      <div class="name-row"><div class="name">ネルトリンゲン</div><span class="badge">隕石クレーターの街</span></div>
+      <div class="num-row"><span class="num">ROT 05</span><span class="badge">隕石クレーターの街</span></div>
+      <div class="name-row"><div class="name">ネルトリンゲン</div></div>
       <div class="desc">隕石クレーターの上に築かれた、円形の城壁が完全な形で残る珍しい町。城壁の上を1周歩けるほか、教会の塔からは街全体の円形の姿を一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ネルトリンゲン.webp" alt="ネルトリンゲン" loading="lazy"><a href="https://maps.google.com/?q=Nordlingen+Germany" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="rothenburg" data-stype="townscape" data-spot-num="ROT 06">
       <div class="must-badge">⭐</div>
-      <div class="num">ROT 06</div>
-      <div class="name-row"><div class="name">ハイデルベルクの旧市街とアルテ橋</div><span class="badge">ドイツ屈指の人気古都・必見</span></div>
+      <div class="num-row"><span class="num">ROT 06</span><span class="badge">ドイツ屈指の人気古都・必見</span></div>
+      <div class="name-row"><div class="name">ハイデルベルクの旧市街とアルテ橋</div></div>
       <div class="desc">ネッカー川に架かる石造りの古橋と、丘の上の古城が織りなす絶景で知られるドイツ屈指の人気古都。学生街の旧市街は活気に満ちている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハイデルベルクの旧市街とアルテ橋.webp" alt="ハイデルベルクの旧市街とアルテ橋" loading="lazy"><a href="https://maps.google.com/?q=Heidelberg+Old+Bridge" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rothenburg" data-stype="heritage" data-spot-num="ROT 07">
       
-      <div class="num">ROT 07</div>
-      <div class="name-row"><div class="name">ハイデルベルク城</div><span class="badge">廃墟の美・世界最大級のワイン樽</span></div>
+      <div class="num-row"><span class="num">ROT 07</span><span class="badge">廃墟の美・世界最大級のワイン樽</span></div>
+      <div class="name-row"><div class="name">ハイデルベルク城</div></div>
       <div class="desc">赤砂岩造りの古城が丘の中腹に廃墟の姿で残る、ロマン主義の詩人や画家を魅了してきたスポット。テラスからは旧市街とネッカー川を一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハイデルベルク城.webp" alt="ハイデルベルク城" loading="lazy"><a href="https://maps.google.com/?q=Heidelberg+Castle" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="rothenburg" data-stype="activity" data-spot-num="ROT 08">
       
-      <div class="num">ROT 08</div>
-      <div class="name-row"><div class="name">ニュルンベルクのクリスマスマーケット</div><span class="badge">ドイツ最大級のクリスマスマーケット</span></div>
+      <div class="num-row"><span class="num">ROT 08</span><span class="badge">ドイツ最大級のクリスマスマーケット</span></div>
+      <div class="name-row"><div class="name">ニュルンベルクのクリスマスマーケット</div></div>
       <div class="desc">ドイツ最大級・最も有名とされるクリスマスマーケット「クリストキンドレスマルクト」。木造の屋台とソーセージやレープクーヘンの香りが冬の風物詩。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ニュルンベルクのクリスマスマーケット.webp" alt="ニュルンベルクのクリスマスマーケット" loading="lazy"><a href="https://maps.google.com/?q=Nuremberg+Christmas+Market" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -881,40 +930,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="hamburg" data-stype="townscape" data-spot-num="HAM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">HAM 01</div>
-      <div class="name-row"><div class="name">シュパイヒャーシュタット・エルプフィルハーモニー</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">HAM 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">シュパイヒャーシュタット・エルプフィルハーモニー</div></div>
       <div class="desc">世界遺産の赤レンガ倉庫街と、波打つガラス屋根のコンサートホール「エルプフィルハーモニー」が並ぶ港湾エリア。展望プラザは無料で入場できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シュパイヒャーシュタット・エルプフィルハーモニー.webp" alt="シュパイヒャーシュタット・エルプフィルハーモニー" loading="lazy"><a href="https://maps.google.com/?q=Elbphilharmonie+Hamburg" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="hamburg" data-stype="museum" data-spot-num="HAM 02">
       <div class="must-badge">⭐</div>
-      <div class="num">HAM 02</div>
-      <div class="name-row"><div class="name">ミニチュアワンダーランド</div><span class="badge">世界最大級のジオラマ</span></div>
+      <div class="num-row"><span class="num">HAM 02</span><span class="badge">世界最大級のジオラマ</span></div>
+      <div class="name-row"><div class="name">ミニチュアワンダーランド</div></div>
       <div class="desc">世界最大級の鉄道模型ジオラマ博物館。ドイツ各地から世界の主要都市まで精巧に再現され、昼夜が切り替わる演出や動く飛行機・車など見飽きない仕掛けが満載。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミニチュアワンダーランド.webp" alt="ミニチュアワンダーランド" loading="lazy"><a href="https://maps.google.com/?q=Miniatur+Wunderland+Hamburg" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hamburg" data-stype="market" data-spot-num="HAM 03">
       
-      <div class="num">HAM 03</div>
-      <div class="name-row"><div class="name">ハンブルク魚市場</div><span class="badge">日曜限定の名物朝市</span></div>
+      <div class="num-row"><span class="num">HAM 03</span><span class="badge">日曜限定の名物朝市</span></div>
+      <div class="name-row"><div class="name">ハンブルク魚市場</div></div>
       <div class="desc">日曜早朝のみ開催される、100年以上の歴史を持つ朝市。威勢のいい掛け声の競り売りと朝からのライブ演奏が名物で、独特の熱気に包まれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハンブルク魚市場.webp" alt="ハンブルク魚市場" loading="lazy"><a href="https://maps.google.com/?q=Hamburg+Fischmarkt" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hamburg" data-stype="townscape" data-spot-num="HAM 04">
       
-      <div class="num">HAM 04</div>
-      <div class="name-row"><div class="name">レーパーバーン</div><span class="badge">夜の歓楽街</span></div>
+      <div class="num-row"><span class="num">HAM 04</span><span class="badge">夜の歓楽街</span></div>
+      <div class="name-row"><div class="name">レーパーバーン</div></div>
       <div class="desc">「世界一の罪深い1マイル」とも呼ばれる歓楽街。ミュージカル劇場やライブハウスが多く集まり、ビートルズが下積み時代を過ごした街。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/レーパーバーン.webp" alt="レーパーバーン" loading="lazy"><a href="https://maps.google.com/?q=Reeperbahn+Hamburg" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hamburg" data-stype="heritage" data-spot-num="HAM 05">
       
-      <div class="num">HAM 05</div>
-      <div class="name-row"><div class="name">ハンブルク市庁舎</div><span class="badge">壮麗な市庁舎</span></div>
+      <div class="num-row"><span class="num">HAM 05</span><span class="badge">壮麗な市庁舎</span></div>
+      <div class="name-row"><div class="name">ハンブルク市庁舎</div></div>
       <div class="desc">647もの部屋を持つ、ネオルネサンス様式の壮麗な市庁舎。内部見学ツアーで豪華な会議室や祝典ホールを見られ、前庭は市民の待ち合わせ場所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハンブルク市庁舎.webp" alt="ハンブルク市庁舎" loading="lazy"><a href="https://maps.google.com/?q=Hamburg+Rathaus" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1098,7 +1147,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -1107,6 +1156,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -1120,12 +1191,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -1133,6 +1205,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1179,6 +1252,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1254,16 +1337,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1438,23 +1559,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

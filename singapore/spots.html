@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="シンガポールの観光スポット｜シンガポール旅行ガイド">
 <meta name="twitter:description" content="東京23区ほどの小さな島に、未来都市のような高層ビル群と中華・マレー・インドの多文化が詰め込まれた都市国家。世界トップクラスの治安と清潔さ、英語が通じる安心感、そしてホーカー（屋台街）の絶品グルメで、初めての海外にも家族旅行にも死角があり…">
 <meta name="twitter:image" content="https://worldmappy.com/singapore/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -117,47 +117,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <use xlink:href="#star" transform="translate(107.99953,342.74883)"/>
 <use xlink:href="#star" transform="translate(469.18853,342.74883)"/>
 </svg></div></span><span class="site-country-name">シンガポール</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=singapore">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">シンガポールを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=singapore">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -252,46 +282,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>シンガポール 観光スポット</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="marina_bay" onclick="filterSpots('city','marina_bay',this)">マリーナベイ</button>
+              
+              <button class="filter-btn " data-filter="chinatown" onclick="filterSpots('city','chinatown',this)">チャイナタウン</button>
+              
+              <button class="filter-btn " data-filter="little_india" onclick="filterSpots('city','little_india',this)">リトルインディア・アラブスト</button>
+              
+              <button class="filter-btn " data-filter="sentosa" onclick="filterSpots('city','sentosa',this)">セントーサ島</button>
+              
+              <button class="filter-btn " data-filter="orchard" onclick="filterSpots('city','orchard',this)">オーチャード・郊外</button>
+              
+              <button class="filter-btn " data-filter="katong" onclick="filterSpots('city','katong',this)">カトン</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="marina_bay" onclick="filterSpots('city','marina_bay',this)">マリーナベイ</button>
-      
-      <button class="filter-btn " data-filter="chinatown" onclick="filterSpots('city','chinatown',this)">チャイナタウン</button>
-      
-      <button class="filter-btn " data-filter="little_india" onclick="filterSpots('city','little_india',this)">リトルインディア・アラブスト</button>
-      
-      <button class="filter-btn " data-filter="sentosa" onclick="filterSpots('city','sentosa',this)">セントーサ島</button>
-      
-      <button class="filter-btn " data-filter="orchard" onclick="filterSpots('city','orchard',this)">オーチャード・郊外</button>
-      
-      <button class="filter-btn " data-filter="katong" onclick="filterSpots('city','katong',this)">カトン</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">37</span> / <span id="spots-count-total">37</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -299,6 +347,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -333,88 +382,88 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="marina_bay" data-stype="nature" data-spot-num="MRN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">MRN 01</div>
-      <div class="name-row"><div class="name">ガーデンズ・バイ・ザ・ベイ</div><span class="badge">近未来植物園</span></div>
+      <div class="num-row"><span class="num">MRN 01</span><span class="badge">近未来植物園</span></div>
+      <div class="name-row"><div class="name">ガーデンズ・バイ・ザ・ベイ</div></div>
       <div class="desc">高さ最大50mの人工樹スーパーツリーが林立する近未来植物園。夜の光と音のショー「ガーデンラプソディ」は無料で楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ガーデンズ・バイ・ザ・ベイ.webp" alt="ガーデンズ・バイ・ザ・ベイ" loading="lazy"><a href="https://maps.google.com/?q=Gardens+by+the+Bay+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="marina_bay" data-stype="townscape" data-spot-num="MRN 02">
       <div class="must-badge">⭐</div>
-      <div class="num">MRN 02</div>
-      <div class="name-row"><div class="name">マーライオン公園</div><span class="badge">シンボル</span></div>
+      <div class="num-row"><span class="num">MRN 02</span><span class="badge">シンボル</span></div>
+      <div class="name-row"><div class="name">マーライオン公園</div></div>
       <div class="desc">シンガポールの象徴、上半身ライオン・下半身魚のマーライオン像。対岸のマリーナベイ・サンズと一緒に収める構図が定番の撮影スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マーライオン公園.webp" alt="マーライオン公園" loading="lazy"><a href="https://maps.google.com/?q=Merlion+Park+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="marina_bay" data-stype="townscape" data-spot-num="MRN 03">
       
-      <div class="num">MRN 03</div>
-      <div class="name-row"><div class="name">マリーナベイ・サンズ スカイパーク</div><span class="badge">展望デッキ</span></div>
+      <div class="num-row"><span class="num">MRN 03</span><span class="badge">展望デッキ</span></div>
+      <div class="name-row"><div class="name">マリーナベイ・サンズ スカイパーク</div></div>
       <div class="desc">3棟のタワーの上に船が乗った奇抜な建築の屋上展望デッキ。地上約200mからマリーナベイとガーデンズを見下ろせる。名物インフィニティプールは宿泊者専用なので注意。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マリーナベイ・サンズ スカイパーク.webp" alt="マリーナベイ・サンズ スカイパーク" loading="lazy"><a href="https://maps.google.com/?q=Marina+Bay+Sands+SkyPark" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="marina_bay" data-stype="activity" data-spot-num="MRN 04">
       <div class="must-badge">⭐</div>
-      <div class="num">MRN 04</div>
-      <div class="name-row"><div class="name">スペクトラ（噴水ショー）</div><span class="badge">無料ショー</span></div>
+      <div class="num-row"><span class="num">MRN 04</span><span class="badge">無料ショー</span></div>
+      <div class="name-row"><div class="name">スペクトラ（噴水ショー）</div></div>
       <div class="desc">マリーナベイ・サンズ前のイベントプラザで毎晩開催される光と水のショー。噴水・レーザー・音楽が湾を舞台に繰り広げられ、これが無料とは信じがたいクオリティ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スペクトラ（噴水ショー）.webp" alt="スペクトラ（噴水ショー）" loading="lazy"><a href="https://maps.google.com/?q=Marina+Bay+Sands+Event+Plaza+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="marina_bay" data-stype="townscape" data-spot-num="MRN 05">
       
-      <div class="num">MRN 05</div>
-      <div class="name-row"><div class="name">シンガポールフライヤー</div><span class="badge">大観覧車</span></div>
+      <div class="num-row"><span class="num">MRN 05</span><span class="badge">大観覧車</span></div>
+      <div class="name-row"><div class="name">シンガポールフライヤー</div></div>
       <div class="desc">高さ165m、アジア最大級の観覧車。1周約30分でマリーナベイと海峡を一望できる。カプセル内での食事プランなど変わり種の楽しみ方も。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シンガポールフライヤー.webp" alt="シンガポールフライヤー" loading="lazy"><a href="https://maps.google.com/?q=Singapore+Flyer" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="marina_bay" data-stype="museum" data-spot-num="MRN 06">
       
-      <div class="num">MRN 06</div>
-      <div class="name-row"><div class="name">ナショナル・ギャラリー・シンガポール</div><span class="badge">美術館</span></div>
+      <div class="num-row"><span class="num">MRN 06</span><span class="badge">美術館</span></div>
+      <div class="name-row"><div class="name">ナショナル・ギャラリー・シンガポール</div></div>
       <div class="desc">旧最高裁判所と市庁舎をリノベした東南アジア最大級の美術館。建物自体が見どころで、屋上からはマリーナベイの絶景も。暑さとスコールを避ける昼の避難先としても優秀。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナショナル・ギャラリー・シンガポール.webp" alt="ナショナル・ギャラリー・シンガポール" loading="lazy"><a href="https://maps.google.com/?q=National+Gallery+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="marina_bay" data-stype="museum" data-spot-num="MRN 07">
       
-      <div class="num">MRN 07</div>
-      <div class="name-row"><div class="name">アートサイエンス・ミュージアム</div><span class="badge">デジタルアート</span></div>
+      <div class="num-row"><span class="num">MRN 07</span><span class="badge">デジタルアート</span></div>
+      <div class="name-row"><div class="name">アートサイエンス・ミュージアム</div></div>
       <div class="desc">マリーナベイ・サンズの目の前に建つ、蓮の花の形をしたユニークな博物館。日本のteamLab（チームラボ）による常設のデジタルアート展が人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アートサイエンス・ミュージアム.webp" alt="アートサイエンス・ミュージアム" loading="lazy"><a href="https://maps.google.com/?q=ArtScience+Museum+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="marina_bay" data-stype="townscape" data-spot-num="MRN 08">
       
-      <div class="num">MRN 08</div>
-      <div class="name-row"><div class="name">ラッフルズ・ホテル</div><span class="badge">最高級ホテル</span></div>
+      <div class="num-row"><span class="num">MRN 08</span><span class="badge">最高級ホテル</span></div>
+      <div class="name-row"><div class="name">ラッフルズ・ホテル</div></div>
       <div class="desc">シンガポール最高峰の最高級名門ホテル。宿泊者以外も、名物カクテル「シンガポール・スリング」発祥のロング・バーや中庭の散策が楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ラッフルズ・ホテル.webp" alt="ラッフルズ・ホテル" loading="lazy"><a href="https://maps.google.com/?q=Raffles+Hotel+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="marina_bay" data-stype="townscape" data-spot-num="MRN 09">
       
-      <div class="num">MRN 09</div>
-      <div class="name-row"><div class="name">チジムス</div><span class="badge">ゴシック建築</span></div>
+      <div class="num-row"><span class="num">MRN 09</span><span class="badge">ゴシック建築</span></div>
+      <div class="name-row"><div class="name">チジムス</div></div>
       <div class="desc">元修道院と学校をリノベーションした、ゴシック様式の美しい教会建築。現在は敷地内に洗練されたレストランやバーが集まるおしゃれスポットになっている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チジムス.webp" alt="チジムス" loading="lazy"><a href="https://maps.google.com/?q=CHIJMES+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="marina_bay" data-stype="townscape" data-spot-num="MRN 10">
       
-      <div class="num">MRN 10</div>
-      <div class="name-row"><div class="name">ヘリックス・ブリッジ</div><span class="badge">DNA型の歩道橋</span></div>
+      <div class="num-row"><span class="num">MRN 10</span><span class="badge">DNA型の歩道橋</span></div>
+      <div class="name-row"><div class="name">ヘリックス・ブリッジ</div></div>
       <div class="desc">マリーナベイ・サンズとシンガポール・フライヤーを繋ぐ、人間のDNA構造を模したデザインの歩道橋。夜のライトアップとベイエリアの夜景が抜群。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヘリックス・ブリッジ.webp" alt="ヘリックス・ブリッジ" loading="lazy"><a href="https://maps.google.com/?q=Helix+Bridge+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="marina_bay" data-stype="market" data-spot-num="MRN 11">
       
-      <div class="num">MRN 11</div>
-      <div class="name-row"><div class="name">ラウパサ・フェスティバル・パビリオン</div><span class="badge">19世紀建築のホーカー</span></div>
+      <div class="num-row"><span class="num">MRN 11</span><span class="badge">19世紀建築のホーカー</span></div>
+      <div class="name-row"><div class="name">ラウパサ・フェスティバル・パビリオン</div></div>
       <div class="desc">金融街のど真ん中にある、19世紀の鋳鉄製の建築が美しい大型ホーカー。夜になると裏手の道路が封鎖され、サテ（東南アジア風焼き鳥）の屋台街に変わる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ラウパサ・フェスティバル・パビリオン.webp" alt="ラウパサ・フェスティバル・パビリオン" loading="lazy"><a href="https://maps.google.com/?q=Lau+Pa+Sat+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -453,48 +502,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="chinatown" data-stype="religious" data-spot-num="CHN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CHN 01</div>
-      <div class="name-row"><div class="name">佛牙寺龍華院</div><span class="badge">無料で圧巻</span></div>
+      <div class="num-row"><span class="num">CHN 01</span><span class="badge">無料で圧巻</span></div>
+      <div class="name-row"><div class="name">佛牙寺龍華院</div></div>
       <div class="desc">仏陀の歯が祀られているとされる唐代様式の大寺院。無料で内部見学でき、金色に輝く仏歯舎利塔（しゃりとう）と屋上庭園は必見。チャイナタウン散策の起点にちょうどいい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/佛牙寺龍華院.webp" alt="佛牙寺龍華院" loading="lazy"><a href="https://maps.google.com/?q=Buddha+Tooth+Relic+Temple+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="chinatown" data-stype="market" data-spot-num="CHN 02">
       <div class="must-badge">⭐</div>
-      <div class="num">CHN 02</div>
-      <div class="name-row"><div class="name">マックスウェル・フードセンター</div><span class="badge">ホーカーの聖地</span></div>
+      <div class="num-row"><span class="num">CHN 02</span><span class="badge">ホーカーの聖地</span></div>
+      <div class="name-row"><div class="name">マックスウェル・フードセンター</div></div>
       <div class="desc">チキンライスの超有名店・天天海南鶏飯を擁するホーカーの代表格。100軒超の屋台から選び放題で、1食500〜900円。ホーカーデビューはここからが鉄板。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マックスウェル・フードセンター.webp" alt="マックスウェル・フードセンター" loading="lazy"><a href="https://maps.google.com/?q=Maxwell+Food+Centre+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="chinatown" data-stype="religious" data-spot-num="CHN 03">
       
-      <div class="num">CHN 03</div>
-      <div class="name-row"><div class="name">スリ・マリアマン寺院</div><span class="badge">最古の寺院</span></div>
+      <div class="num-row"><span class="num">CHN 03</span><span class="badge">最古の寺院</span></div>
+      <div class="name-row"><div class="name">スリ・マリアマン寺院</div></div>
       <div class="desc">シンガポール最古のヒンドゥー教寺院がチャイナタウンのど真ん中にあるのが多民族国家らしいところ。神々の彫像が積み上がった極彩色の塔門（ゴープラム）は圧巻。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スリ・マリアマン寺院.webp" alt="スリ・マリアマン寺院" loading="lazy"><a href="https://maps.google.com/?q=Sri+Mariamman+Temple+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="chinatown" data-stype="activity" data-spot-num="CHN 04">
       
-      <div class="num">CHN 04</div>
-      <div class="name-row"><div class="name">クラーク・キー</div><span class="badge">ナイトライフ</span></div>
+      <div class="num-row"><span class="num">CHN 04</span><span class="badge">ナイトライフ</span></div>
+      <div class="name-row"><div class="name">クラーク・キー</div></div>
       <div class="desc">シンガポール川沿いに広がる、夜遊び・ナイトライフの中心地。歴史的な倉庫街がカラフルな飲食店街に生まれ変わり、リバークルーズの拠点にもなっている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クラーク・キー.webp" alt="クラーク・キー" loading="lazy"><a href="https://maps.google.com/?q=Clarke+Quay+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="chinatown" data-stype="market" data-spot-num="CHN 05">
       
-      <div class="num">CHN 05</div>
-      <div class="name-row"><div class="name">チャイナタウン・コンプレックス・フードセンター</div><span class="badge">最大級のホーカー</span></div>
+      <div class="num-row"><span class="num">CHN 05</span><span class="badge">最大級のホーカー</span></div>
+      <div class="name-row"><div class="name">チャイナタウン・コンプレックス・フードセンター</div></div>
       <div class="desc">260軒以上の屋台がひしめく、シンガポール最大規模のホーカーセンター。ミシュランのビブグルマン屋台も複数入り、中華系グルメが特に充実。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Chinatown+Complex+Food+Centre+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="chinatown" data-stype="townscape" data-spot-num="CHN 06">
       
-      <div class="num">CHN 06</div>
-      <div class="name-row"><div class="name">パゴダストリート</div><span class="badge">定番の街並み</span></div>
+      <div class="num-row"><span class="num">CHN 06</span><span class="badge">定番の街並み</span></div>
+      <div class="name-row"><div class="name">パゴダストリート</div></div>
       <div class="desc">赤提灯とショップハウスが連なる、チャイナタウンで最も写真映えする通り。お土産物屋や漢方薬局が軒を連ね、散策の入り口として歩きやすい。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Pagoda+Street+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -533,32 +582,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img " data-city="little_india" data-stype="religious" data-spot-num="LIT 01">
       
-      <div class="num">LIT 01</div>
-      <div class="name-row"><div class="name">スリ・ヴィラマカリアマン寺院</div><span class="badge">インド世界</span></div>
+      <div class="num-row"><span class="num">LIT 01</span><span class="badge">インド世界</span></div>
+      <div class="name-row"><div class="name">スリ・ヴィラマカリアマン寺院</div></div>
       <div class="desc">リトルインディアの中心に建つカーリー女神の寺院。極彩色の塔門と、線香とジャスミンの香りに包まれた濃密な空気は、ここが東南アジアであることを忘れさせる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スリ・ヴィラマカリアマン寺院.webp" alt="スリ・ヴィラマカリアマン寺院" loading="lazy"><a href="https://maps.google.com/?q=Sri+Veeramakaliamman+Temple+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="little_india" data-stype="religious" data-spot-num="LIT 02">
       <div class="must-badge">⭐</div>
-      <div class="num">LIT 02</div>
-      <div class="name-row"><div class="name">サルタン・モスク</div><span class="badge">黄金ドーム</span></div>
+      <div class="num-row"><span class="num">LIT 02</span><span class="badge">黄金ドーム</span></div>
+      <div class="name-row"><div class="name">サルタン・モスク</div></div>
       <div class="desc">黄金のドームが輝くシンガポール最大級のモスク。礼拝時間外は内部見学も可能（服装規定あり・貸出あり）。モスク前のバッソーラ・ストリートから望む構図が美しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サルタン・モスク.webp" alt="サルタン・モスク" loading="lazy"><a href="https://maps.google.com/?q=Sultan+Mosque+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="little_india" data-stype="townscape" data-spot-num="LIT 03">
       
-      <div class="num">LIT 03</div>
-      <div class="name-row"><div class="name">ハジ・レーン</div><span class="badge">映えスポット</span></div>
+      <div class="num-row"><span class="num">LIT 03</span><span class="badge">映えスポット</span></div>
+      <div class="name-row"><div class="name">ハジ・レーン</div></div>
       <div class="desc">壁一面のストリートアートと個性派ショップが並ぶ細い路地。アラブストリートのすぐ隣で、カフェ休憩と写真撮影に最適。夕方からはバーストリートに変わる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハジ・レーン.webp" alt="ハジ・レーン" loading="lazy"><a href="https://maps.google.com/?q=Haji+Lane+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="little_india" data-stype="market" data-spot-num="LIT 04">
       
-      <div class="num">LIT 04</div>
-      <div class="name-row"><div class="name">リトルインディア・アーケード</div><span class="badge">インド雑貨市場</span></div>
+      <div class="num-row"><span class="num">LIT 04</span><span class="badge">インド雑貨市場</span></div>
+      <div class="name-row"><div class="name">リトルインディア・アーケード</div></div>
       <div class="desc">香辛料・サリー・アクセサリーなどインド雑貨が所狭しと並ぶ屋根付きマーケット。ばらまき土産探しにちょうどよく、テッカセンターとセットで回りたい。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Little+India+Arcade+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -597,56 +646,56 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="sentosa" data-stype="activity" data-spot-num="SEN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SEN 01</div>
-      <div class="name-row"><div class="name">ユニバーサル・スタジオ・シンガポール</div><span class="badge">テーマパーク</span></div>
+      <div class="num-row"><span class="num">SEN 01</span><span class="badge">テーマパーク</span></div>
+      <div class="name-row"><div class="name">ユニバーサル・スタジオ・シンガポール</div></div>
       <div class="desc">東南アジア唯一のユニバーサル・スタジオ。日本より空いていることが多く、人気アトラクションも比較的短い待ち時間で楽しめる。チケットは事前購入がスムーズ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ユニバーサル・スタジオ・シンガポール.webp" alt="ユニバーサル・スタジオ・シンガポール" loading="lazy"><a href="https://maps.google.com/?q=Universal+Studios+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sentosa" data-stype="activity" data-spot-num="SEN 02">
       
-      <div class="num">SEN 02</div>
-      <div class="name-row"><div class="name">スカイライン・リュージュ</div><span class="badge">絶叫系ライト</span></div>
+      <div class="num-row"><span class="num">SEN 02</span><span class="badge">絶叫系ライト</span></div>
+      <div class="name-row"><div class="name">スカイライン・リュージュ</div></div>
       <div class="desc">専用カートで坂道を滑り降りるアクティビティ。スピード調整は自分次第で、子どもから大人まで想像以上に盛り上がる。リフトからの海の眺めもセットで楽しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スカイライン・リュージュ.webp" alt="スカイライン・リュージュ" loading="lazy"><a href="https://maps.google.com/?q=Skyline+Luge+Sentosa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sentosa" data-stype="nature" data-spot-num="SEN 03">
       
-      <div class="num">SEN 03</div>
-      <div class="name-row"><div class="name">シロソ・ビーチ</div><span class="badge">ビーチ</span></div>
+      <div class="num-row"><span class="num">SEN 03</span><span class="badge">ビーチ</span></div>
+      <div class="name-row"><div class="name">シロソ・ビーチ</div></div>
       <div class="desc">ヤシの木が並ぶセントーサ随一のビーチ。ビーチバーでのんびりするのが定番の過ごし方で、都市観光の合間のリゾート気分にちょうどいい。夕暮れ時が特に気持ちいい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シロソ・ビーチ.webp" alt="シロソ・ビーチ" loading="lazy"><a href="https://maps.app.goo.gl/RUGvZ1d9BCDXX8h87" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sentosa" data-stype="activity" data-spot-num="SEN 04">
       
-      <div class="num">SEN 04</div>
-      <div class="name-row"><div class="name">スカイヘリックス・セントーサ</div><span class="badge">回転式展望タワー</span></div>
+      <div class="num-row"><span class="num">SEN 04</span><span class="badge">回転式展望タワー</span></div>
+      <div class="name-row"><div class="name">スカイヘリックス・セントーサ</div></div>
       <div class="desc">セントーサ島にできた新名所。足がぶら下がった状態で地上79mまで回転しながら上昇する、オープンエアの展望アトラクション。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/スカイヘリックス・セントーサ.webp" alt="スカイヘリックス・セントーサ" loading="lazy"><a href="https://maps.google.com/?q=SkyHelix+Sentosa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sentosa" data-stype="townscape" data-spot-num="SEN 05">
       
-      <div class="num">SEN 05</div>
-      <div class="name-row"><div class="name">マウント・フェーバー</div><span class="badge">隠れた絶景ポイント</span></div>
+      <div class="num-row"><span class="num">SEN 05</span><span class="badge">隠れた絶景ポイント</span></div>
+      <div class="name-row"><div class="name">マウント・フェーバー</div></div>
       <div class="desc">セントーサ島へ渡るケーブルカーの始発駅がある山頂。シンガポールの街並みや港を一望でき、「幸福の鐘」がある隠れたデートスポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/マウント・フェーバー.webp" alt="マウント・フェーバー" loading="lazy"><a href="https://maps.google.com/?q=Mount+Faber+Peak+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sentosa" data-stype="activity" data-spot-num="SEN 06">
       
-      <div class="num">SEN 06</div>
-      <div class="name-row"><div class="name">シンガポール・オーシャナリウム</div><span class="badge">アジア最大級の水族館</span></div>
+      <div class="num-row"><span class="num">SEN 06</span><span class="badge">アジア最大級の水族館</span></div>
+      <div class="name-row"><div class="name">シンガポール・オーシャナリウム</div></div>
       <div class="desc">旧S.E.A.アクアリウムが2025年に大規模拡張してリニューアルした水族館。22のゾーンに分かれた展示規模はアジア最大級を誇る。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Singapore+Oceanarium" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sentosa" data-stype="activity" data-spot-num="SEN 07">
       
-      <div class="num">SEN 07</div>
-      <div class="name-row"><div class="name">ウィングス・オブ・タイム</div><span class="badge">ビーチの夜ショー</span></div>
+      <div class="num-row"><span class="num">SEN 07</span><span class="badge">ビーチの夜ショー</span></div>
+      <div class="name-row"><div class="name">ウィングス・オブ・タイム</div></div>
       <div class="desc">シロソ・ビーチを舞台にした夜の野外ショー。噴水・レーザー・炎の演出に3D映像投影まで組み合わせた約25分のスペクタクル。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Wings+of+Time+Sentosa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -685,56 +734,56 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img " data-city="orchard" data-stype="market" data-spot-num="ORC 01">
       
-      <div class="num">ORC 01</div>
-      <div class="name-row"><div class="name">オーチャードロード</div><span class="badge">買い物天国</span></div>
+      <div class="num-row"><span class="num">ORC 01</span><span class="badge">買い物天国</span></div>
+      <div class="name-row"><div class="name">オーチャードロード</div></div>
       <div class="desc">約2.2kmにわたって巨大モールが連なるシンガポール随一のショッピング街。高島屋や伊勢丹もあり日本人にも歩きやすい。冷房の効いたモール間を渡り歩けば暑さ知らず。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/オーチャードロード.webp" alt="オーチャードロード" loading="lazy"><a href="https://maps.google.com/?q=Orchard+Road+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="orchard" data-stype="nature" data-spot-num="ORC 02">
       
-      <div class="num">ORC 02</div>
-      <div class="name-row"><div class="name">シンガポール動物園</div><span class="badge">世界的動物園</span></div>
+      <div class="num-row"><span class="num">ORC 02</span><span class="badge">世界的動物園</span></div>
+      <div class="name-row"><div class="name">シンガポール動物園</div></div>
       <div class="desc">檻や柵を極力使わない「オープンズー」の世界的先駆者。オランウータンと一緒に朝食を食べられるプログラムが名物。緑の中を歩くだけでも気持ちいい設計。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シンガポール動物園.webp" alt="シンガポール動物園" loading="lazy"><a href="https://maps.google.com/?q=Singapore+Zoo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="orchard" data-stype="nature" data-spot-num="ORC 03">
       <div class="must-badge">⭐</div>
-      <div class="num">ORC 03</div>
-      <div class="name-row"><div class="name">ナイトサファリ</div><span class="badge">世界初の夜動物園</span></div>
+      <div class="num-row"><span class="num">ORC 03</span><span class="badge">世界初の夜動物園</span></div>
+      <div class="name-row"><div class="name">ナイトサファリ</div></div>
       <div class="desc">世界初の夜行性動物園。トラムに乗って夜の森を巡り、闇の中で活動する動物たちを間近に観察できる。日本語トラムの時間帯もあり。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ナイトサファリ.webp" alt="ナイトサファリ" loading="lazy"><a href="https://maps.google.com/?q=Night+Safari+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="orchard" data-stype="townscape" data-spot-num="ORC 04">
       <div class="must-badge">⭐</div>
-      <div class="num">ORC 04</div>
-      <div class="name-row"><div class="name">ジュエル・チャンギ・エアポート</div><span class="badge">空港の絶景</span></div>
+      <div class="num-row"><span class="num">ORC 04</span><span class="badge">空港の絶景</span></div>
+      <div class="name-row"><div class="name">ジュエル・チャンギ・エアポート</div></div>
       <div class="desc">チャンギ空港直結の巨大複合施設。中央の屋内滝「レイン・ボルテックス」（高さ40m・世界最大級）は空港とは思えない絶景を誇る。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ジュエル・チャンギ・エアポート.webp" alt="ジュエル・チャンギ・エアポート" loading="lazy"><a href="https://maps.google.com/?q=Jewel+Changi+Airport" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="orchard" data-stype="heritage" data-spot-num="ORC 05">
       <div class="must-badge">⭐</div>
-      <div class="num">ORC 05</div>
-      <div class="name-row"><div class="name">シンガポール植物園</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">ORC 05</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">シンガポール植物園</div></div>
       <div class="desc">シンガポール唯一の世界文化遺産で、160年以上の歴史を誇る植物園。有料エリアの「ナショナル・オーキッド・ガーデン」は国賓も訪れる美しさ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シンガポール植物園.webp" alt="シンガポール植物園" loading="lazy"><a href="https://maps.google.com/?q=Singapore+Botanic+Gardens" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="orchard" data-stype="nature" data-spot-num="ORC 06">
       
-      <div class="num">ORC 06</div>
-      <div class="name-row"><div class="name">リバーワンダーズ</div><span class="badge">パンダ・リバー動物園</span></div>
+      <div class="num-row"><span class="num">ORC 06</span><span class="badge">パンダ・リバー動物園</span></div>
+      <div class="name-row"><div class="name">リバーワンダーズ</div></div>
       <div class="desc">動物園・ナイトサファリと同じ敷地内にある、世界有数の大河をテーマにした川の動物園。ジャイアントパンダの観賞や、園内を巡るボートライドが楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/リバーワンダーズ.webp" alt="リバーワンダーズ" loading="lazy"><a href="https://maps.google.com/?q=River+Wonders+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="orchard" data-stype="museum" data-spot-num="ORC 07">
       
-      <div class="num">ORC 07</div>
-      <div class="name-row"><div class="name">アイスクリーム博物館</div><span class="badge">SNS映え・食べ放題</span></div>
+      <div class="num-row"><span class="num">ORC 07</span><span class="badge">SNS映え・食べ放題</span></div>
+      <div class="name-row"><div class="name">アイスクリーム博物館</div></div>
       <div class="desc">女子旅やSNS映えを狙うユーザーに人気の、ピンク一色で統一された体験型ミュージアム。館内のアイスクリームは食べ放題。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アイスクリーム博物館.webp" alt="アイスクリーム博物館" loading="lazy"><a href="https://maps.google.com/?q=Museum+of+Ice+Cream+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -767,16 +816,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img " data-city="katong" data-stype="townscape" data-spot-num="KAT 01">
       
-      <div class="num">KAT 01</div>
-      <div class="name-row"><div class="name">カトン地区／クーン・セン・ロード</div><span class="badge">パステルカラーの街並み</span></div>
+      <div class="num-row"><span class="num">KAT 01</span><span class="badge">パステルカラーの街並み</span></div>
+      <div class="name-row"><div class="name">カトン地区／クーン・セン・ロード</div></div>
       <div class="desc">中華とマレーの文化が融合した「プラナカン文化」の色鮮やかなパステルカラーのショップハウスが並ぶ、写真映えの聖地。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カトン地区／クーン・セン・ロード.webp" alt="カトン地区／クーン・セン・ロード" loading="lazy"><a href="https://maps.google.com/?q=Koon+Seng+Road+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="katong" data-stype="market" data-spot-num="KAT 02">
       
-      <div class="num">KAT 02</div>
-      <div class="name-row"><div class="name">328カトン・ラクサ</div><span class="badge">ラクサの名店</span></div>
+      <div class="num-row"><span class="num">KAT 02</span><span class="badge">ラクサの名店</span></div>
+      <div class="name-row"><div class="name">328カトン・ラクサ</div></div>
       <div class="desc">カトン発祥のラクサを代表する有名店。麺を箸ではなくレンゲだけで食べられるよう短く切ってあるのが特徴。行列必至だが回転は速い。</div>
       <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=328+Katong+Laksa+Singapore" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -960,7 +1009,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -969,6 +1018,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -982,12 +1053,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -995,6 +1067,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1041,6 +1114,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1116,16 +1199,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1300,23 +1421,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

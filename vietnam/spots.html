@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ベトナムの観光スポット｜ベトナム旅行ガイド">
 <meta name="twitter:description" content="南北に約1,650km、細長く伸びるインドシナ半島の国ベトナム。北部ハノイの古都情緒、中部ホイアンのランタン、南部ホーチミンの熱気とバイクの奔流——同じ国とは思えないほど表情豊かな旅ができる。朝から晩まで途切れないバイクのクラクション、道…">
 <meta name="twitter:image" content="https://worldmappy.com/vietnam/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-15 -10 30 20"><path fill="#DA251d" d="M-20-15h40v30h-40z"/><g id="b" transform="translate(0 -6)"><path id="a" fill="#FF0" transform="rotate(18)" d="M0 0v6h4"/><use xlink:href="#a" transform="scale(-1 1)"/></g><g id="c" transform="rotate(72)"><use xlink:href="#b"/><use xlink:href="#b" transform="rotate(72)"/></g><use xlink:href="#c" transform="scale(-1 1)"/></svg></div></span><span class="site-country-name">ベトナム</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=vietnam">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">ベトナムを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=vietnam">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,48 +272,66 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>ベトナム観光スポット図鑑</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="hanoi" onclick="filterSpots('city','hanoi',this)">ハノイ</button>
+              
+              <button class="filter-btn " data-filter="hcmc" onclick="filterSpots('city','hcmc',this)">ホーチミン</button>
+              
+              <button class="filter-btn " data-filter="danang" onclick="filterSpots('city','danang',this)">ダナン・ホイアン</button>
+              
+              <button class="filter-btn " data-filter="haiphong" onclick="filterSpots('city','haiphong',this)">ハロン湾・ハイフォン</button>
+              
+              <button class="filter-btn " data-filter="cantho" onclick="filterSpots('city','cantho',this)">カントー</button>
+              
+              <button class="filter-btn " data-filter="phuquoc" onclick="filterSpots('city','phuquoc',this)">フーコック島</button>
+              
+              <button class="filter-btn " data-filter="sapa" onclick="filterSpots('city','sapa',this)">サパ</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="hanoi" onclick="filterSpots('city','hanoi',this)">ハノイ</button>
-      
-      <button class="filter-btn " data-filter="hcmc" onclick="filterSpots('city','hcmc',this)">ホーチミン</button>
-      
-      <button class="filter-btn " data-filter="danang" onclick="filterSpots('city','danang',this)">ダナン・ホイアン</button>
-      
-      <button class="filter-btn " data-filter="haiphong" onclick="filterSpots('city','haiphong',this)">ハロン湾・ハイフォン</button>
-      
-      <button class="filter-btn " data-filter="cantho" onclick="filterSpots('city','cantho',this)">カントー</button>
-      
-      <button class="filter-btn " data-filter="phuquoc" onclick="filterSpots('city','phuquoc',this)">フーコック島</button>
-      
-      <button class="filter-btn " data-filter="sapa" onclick="filterSpots('city','sapa',this)">サパ</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">38</span> / <span id="spots-count-total">38</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -291,6 +339,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -337,64 +386,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="hanoi" data-stype="townscape" data-spot-num="HAN 01">
       <div class="must-badge">⭐</div>
-      <div class="num">HAN 01</div>
-      <div class="name-row"><div class="name">ホアンキエム湖・旧市街</div><span class="badge">ハノイの顔</span></div>
+      <div class="num-row"><span class="num">HAN 01</span><span class="badge">ハノイの顔</span></div>
+      <div class="name-row"><div class="name">ホアンキエム湖・旧市街</div></div>
       <div class="desc">赤い橋がかかる伝説の湖を中心に、36の職人通りが広がる旧市街。バイクが行き交う雑踏と、朝の太極拳の静けさが同居する。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ホアンキエム湖・旧市街.webp" alt="ホアンキエム湖・旧市街" loading="lazy"><a href="https://maps.google.com/?q=Hoan+Kiem+Lake,+Hanoi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="hanoi" data-stype="heritage" data-spot-num="HAN 02">
       <div class="must-badge">⭐</div>
-      <div class="num">HAN 02</div>
-      <div class="name-row"><div class="name">ホーチミン廟</div><span class="badge">国家の聖地</span></div>
+      <div class="num-row"><span class="num">HAN 02</span><span class="badge">国家の聖地</span></div>
+      <div class="name-row"><div class="name">ホーチミン廟</div></div>
       <div class="desc">初代国家主席ホー・チ・ミンの遺体が安置された壮麗な霊廟。衛兵が守る厳粛な雰囲気の中、見学時は肌の露出を控えるなど服装規定がある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ホーチミン廟.webp" alt="ホーチミン廟" loading="lazy"><a href="https://maps.google.com/?q=Ho+Chi+Minh+Mausoleum,+Hanoi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hanoi" data-stype="activity" data-spot-num="HAN 03">
       
-      <div class="num">HAN 03</div>
-      <div class="name-row"><div class="name">タンロン水上人形劇</div><span class="badge">伝統芸能</span></div>
+      <div class="num-row"><span class="num">HAN 03</span><span class="badge">伝統芸能</span></div>
+      <div class="name-row"><div class="name">タンロン水上人形劇</div></div>
       <div class="desc">池に浮かぶ舞台で人形使いが操る、ベトナム北部発祥の伝統芸能。生演奏の伝統楽器とともに農村の暮らしや民話が表現される。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タンロン水上人形劇.webp" alt="タンロン水上人形劇" loading="lazy"><a href="https://maps.google.com/?q=Thang+Long+Water+Puppet+Theatre,+Hanoi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hanoi" data-stype="heritage" data-spot-num="HAN 04">
       
-      <div class="num">HAN 04</div>
-      <div class="name-row"><div class="name">文廟（バンミウ）</div><span class="badge">最古の大学</span></div>
+      <div class="num-row"><span class="num">HAN 04</span><span class="badge">最古の大学</span></div>
+      <div class="name-row"><div class="name">文廟（バンミウ）</div></div>
       <div class="desc">11世紀創建のベトナム最古の大学。科挙合格者の名を刻んだ石碑が並び、受験合格祈願のスポットとしても人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/文廟（バンミウ）.webp" alt="文廟（バンミウ）" loading="lazy"><a href="https://maps.google.com/?q=Temple+of+Literature,+Hanoi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hanoi" data-stype="market" data-spot-num="HAN 05">
       
-      <div class="num">HAN 05</div>
-      <div class="name-row"><div class="name">ドンスアン市場</div><span class="badge">ローカル市場</span></div>
+      <div class="num-row"><span class="num">HAN 05</span><span class="badge">ローカル市場</span></div>
+      <div class="name-row"><div class="name">ドンスアン市場</div></div>
       <div class="desc">旧市街最大の卸売市場。衣類・雑貨から乾物・食材まで所狭しと並び、地元の生活を垣間見られる活気ある場所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ドンスアン市場.webp" alt="ドンスアン市場" loading="lazy"><a href="https://maps.google.com/?q=Dong+Xuan+Market,+Hanoi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hanoi" data-stype="religious" data-spot-num="HAN 06">
       
-      <div class="num">HAN 06</div>
-      <div class="name-row"><div class="name">タイ湖（西湖）とチャンクオック寺</div><span class="badge">湖畔の名刹</span></div>
+      <div class="num-row"><span class="num">HAN 06</span><span class="badge">湖畔の名刹</span></div>
+      <div class="name-row"><div class="name">タイ湖（西湖）とチャンクオック寺</div></div>
       <div class="desc">ハノイ最大の湖のほとりに建つベトナム最古の仏教寺院。夕暮れ時は地元の若者がジョギングやデートを楽しむ憩いの場になる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/タイ湖（西湖）とチャンクオック寺.webp" alt="タイ湖（西湖）とチャンクオック寺" loading="lazy"><a href="https://maps.google.com/?q=Tran+Quoc+Pagoda,+Hanoi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="hanoi" data-stype="nature" data-spot-num="HAN 07">
       
-      <div class="num">HAN 07</div>
-      <div class="name-row"><div class="name">チャンアンの景観複合体</div><span class="badge">世界遺産・日帰り定番</span></div>
+      <div class="num-row"><span class="num">HAN 07</span><span class="badge">世界遺産・日帰り定番</span></div>
+      <div class="name-row"><div class="name">チャンアンの景観複合体</div></div>
       <div class="desc">「陸のハロン湾」と称される世界遺産。石灰岩の奇岩の中を小舟で水路を進み洞窟をくぐる静かなクルーズが人気で、ハノイから日帰り定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/チャンアンの景観複合体.webp" alt="チャンアンの景観複合体" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hanoi" data-stype="religious" data-spot-num="HAN 08">
       
-      <div class="num">HAN 08</div>
-      <div class="name-row"><div class="name">セント・ジョセフ大聖堂</div><span class="badge">旧市街のランドマーク</span></div>
+      <div class="num-row"><span class="num">HAN 08</span><span class="badge">旧市街のランドマーク</span></div>
+      <div class="name-row"><div class="name">セント・ジョセフ大聖堂</div></div>
       <div class="desc">1886年建立、パリのノートルダム大聖堂を模したネオゴシック様式の教会。周辺のカフェから塔を眺めエッグコーヒーを楽しむのが定番。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/セント・ジョセフ大聖堂.webp" alt="セント・ジョセフ大聖堂" loading="lazy"><a href="https://maps.google.com/?q=St.+Joseph%27s+Cathedral,+Hanoi" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -445,32 +494,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card no-map has-spot-img must" data-city="haiphong" data-stype="nature" data-spot-num="HPH 01">
       <div class="must-badge">⭐</div>
-      <div class="num">HPH 01</div>
-      <div class="name-row"><div class="name">ハロン湾クルーズ</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">HPH 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">ハロン湾クルーズ</div></div>
       <div class="desc">南シナ海に約1,600の石灰岩の奇岩が林立する世界遺産。1〜2泊のクルーズ船で鍾乳洞・カヤック・海上での朝食を楽しむのが定番の過ごし方。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハロン湾クルーズ.webp" alt="ハロン湾クルーズ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="haiphong" data-stype="nature" data-spot-num="HPH 02">
       
-      <div class="num">HPH 02</div>
-      <div class="name-row"><div class="name">カットバ島</div><span class="badge">自然・アクティビティ</span></div>
+      <div class="num-row"><span class="num">HPH 02</span><span class="badge">自然・アクティビティ</span></div>
+      <div class="name-row"><div class="name">カットバ島</div></div>
       <div class="desc">ハロン湾の玄関口に浮かぶベトナム最大の島。国立公園でのトレッキングや、ラン・ハ湾でのカヤックなどアクティブに楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カットバ島.webp" alt="カットバ島" loading="lazy"><a href="https://maps.google.com/?q=Cat+Ba+Island,+Vietnam" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="haiphong" data-stype="heritage" data-spot-num="HPH 03">
       
-      <div class="num">HPH 03</div>
-      <div class="name-row"><div class="name">ハイフォン大劇場</div><span class="badge">仏植民地建築</span></div>
+      <div class="num-row"><span class="num">HPH 03</span><span class="badge">仏植民地建築</span></div>
+      <div class="name-row"><div class="name">ハイフォン大劇場</div></div>
       <div class="desc">フランス統治時代の1912年に建てられたコロニアル建築。パリのオペラ座を模した優美な外観は旧市街のランドマーク。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハイフォン大劇場.webp" alt="ハイフォン大劇場" loading="lazy"><a href="https://maps.google.com/?q=Hai+Phong+Opera+House" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="haiphong" data-stype="nature" data-spot-num="HPH 04">
       
-      <div class="num">HPH 04</div>
-      <div class="name-row"><div class="name">ドーソン・ビーチ</div><span class="badge">ローカルビーチ</span></div>
+      <div class="num-row"><span class="num">HPH 04</span><span class="badge">ローカルビーチ</span></div>
+      <div class="name-row"><div class="name">ドーソン・ビーチ</div></div>
       <div class="desc">ハイフォン市街から車で約20分の海岸リゾート。松林に囲まれたビーチで地元の家族連れに人気の休日スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ドーソン・ビーチ.webp" alt="ドーソン・ビーチ" loading="lazy"><a href="https://maps.google.com/?q=Do+Son+Beach,+Hai+Phong" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -521,56 +570,56 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="danang" data-stype="heritage" data-spot-num="DAD 01">
       <div class="must-badge">⭐</div>
-      <div class="num">DAD 01</div>
-      <div class="name-row"><div class="name">ホイアン旧市街（ランタンの街）</div><span class="badge">世界遺産・必見</span></div>
+      <div class="num-row"><span class="num">DAD 01</span><span class="badge">世界遺産・必見</span></div>
+      <div class="name-row"><div class="name">ホイアン旧市街（ランタンの街）</div></div>
       <div class="desc">17〜19世紀の交易港として栄えた街並みがそのまま残る世界遺産。夜になると軒先に色とりどりのランタンが灯り、幻想的な光景に包まれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ホイアン旧市街（ランタンの街）.webp" alt="ホイアン旧市街（ランタンの街）" loading="lazy"><a href="https://maps.google.com/?q=Hoi+An+Ancient+Town" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="danang" data-stype="activity" data-spot-num="DAD 02">
       <div class="must-badge">⭐</div>
-      <div class="num">DAD 02</div>
-      <div class="name-row"><div class="name">バーナーヒルズ（黄金橋）</div><span class="badge">SNS映え・必見</span></div>
+      <div class="num-row"><span class="num">DAD 02</span><span class="badge">SNS映え・必見</span></div>
+      <div class="name-row"><div class="name">バーナーヒルズ（黄金橋）</div></div>
       <div class="desc">巨大な石の手が支える「黄金橋」が話題のテーマパーク。ロープウェイで雲の上まで登り、フランス風の庭園やアトラクションを楽しめる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バーナーヒルズ（黄金橋）.webp" alt="バーナーヒルズ（黄金橋）" loading="lazy"><a href="https://maps.google.com/?q=Golden+Bridge,+Ba+Na+Hills" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="danang" data-stype="nature" data-spot-num="DAD 03">
       
-      <div class="num">DAD 03</div>
-      <div class="name-row"><div class="name">ミーケービーチ</div><span class="badge">ビーチリゾート</span></div>
+      <div class="num-row"><span class="num">DAD 03</span><span class="badge">ビーチリゾート</span></div>
+      <div class="name-row"><div class="name">ミーケービーチ</div></div>
       <div class="desc">フォーブス誌が選ぶ世界の美しいビーチにも選出された白砂のビーチ。ダナン市街から近く、リゾートホテルが立ち並ぶ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミーケービーチ.webp" alt="ミーケービーチ" loading="lazy"><a href="https://maps.google.com/?q=My+Khe+Beach,+Da+Nang" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="danang" data-stype="heritage" data-spot-num="DAD 04">
       
-      <div class="num">DAD 04</div>
-      <div class="name-row"><div class="name">ミーソン聖域</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">DAD 04</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ミーソン聖域</div></div>
       <div class="desc">4〜14世紀に栄えたチャンパ王国のヒンドゥー教遺跡群。密林に埋もれるように点在する赤レンガの塔は世界遺産に登録されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミーソン聖域.webp" alt="ミーソン聖域" loading="lazy"><a href="https://maps.google.com/?q=My+Son+Sanctuary" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="danang" data-stype="nature" data-spot-num="DAD 05">
       
-      <div class="num">DAD 05</div>
-      <div class="name-row"><div class="name">ハイヴァン峠</div><span class="badge">絶景ドライブ</span></div>
+      <div class="num-row"><span class="num">DAD 05</span><span class="badge">絶景ドライブ</span></div>
+      <div class="name-row"><div class="name">ハイヴァン峠</div></div>
       <div class="desc">ダナンとフエを隔てる「海の雲」を意味する峠道。曲がりくねった山道から見下ろす海と山の絶景は、バイクツーリングの人気ルート。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ハイヴァン峠.webp" alt="ハイヴァン峠" loading="lazy"><a href="https://maps.google.com/?q=Hai+Van+Pass,+Vietnam" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="danang" data-stype="religious" data-spot-num="DAD 06">
       
-      <div class="num">DAD 06</div>
-      <div class="name-row"><div class="name">ダナン大聖堂（ピンクチャーチ）</div><span class="badge">フォトスポット</span></div>
+      <div class="num-row"><span class="num">DAD 06</span><span class="badge">フォトスポット</span></div>
+      <div class="name-row"><div class="name">ダナン大聖堂（ピンクチャーチ）</div></div>
       <div class="desc">淡いピンク色の外壁が愛らしいカトリック教会。フランス統治時代の1923年に建てられ、街のシンボルとして親しまれている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ダナン大聖堂（ピンクチャーチ）.webp" alt="ダナン大聖堂（ピンクチャーチ）" loading="lazy"><a href="https://maps.google.com/?q=Da+Nang+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="danang" data-stype="heritage" data-spot-num="DAD 07">
       
-      <div class="num">DAD 07</div>
-      <div class="name-row"><div class="name">フエの建造物群</div><span class="badge">世界遺産・中部3大遺産</span></div>
+      <div class="num-row"><span class="num">DAD 07</span><span class="badge">世界遺産・中部3大遺産</span></div>
+      <div class="name-row"><div class="name">フエの建造物群</div></div>
       <div class="desc">阮（グエン）朝の都として栄えたベトナム屈指の歴史都市。堀に囲まれた王宮フエ・シタデルや歴代皇帝陵が広がる世界遺産で、中部3大世界遺産のひとつ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フエの建造物群.webp" alt="フエの建造物群" loading="lazy"><a href="https://maps.google.com/?q=Hue+Imperial+City" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -621,48 +670,48 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="hcmc" data-stype="heritage" data-spot-num="HCM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">HCM 01</div>
-      <div class="name-row"><div class="name">統一会堂</div><span class="badge">戦争の歴史・必見</span></div>
+      <div class="num-row"><span class="num">HCM 01</span><span class="badge">戦争の歴史・必見</span></div>
+      <div class="name-row"><div class="name">統一会堂</div></div>
       <div class="desc">ベトナム戦争終結を象徴する旧南ベトナム大統領官邸。1975年に北ベトナム軍の戦車が正門を突破した歴史的建造物で、当時の内部がそのまま保存されている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/統一会堂.webp" alt="統一会堂" loading="lazy"><a href="https://maps.google.com/?q=Independence+Palace,+Ho+Chi+Minh+City" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="hcmc" data-stype="townscape" data-spot-num="HCM 02">
       <div class="must-badge">⭐</div>
-      <div class="num">HCM 02</div>
-      <div class="name-row"><div class="name">中央郵便局・聖母マリア教会</div><span class="badge">仏植民地建築・必見</span></div>
+      <div class="num-row"><span class="num">HCM 02</span><span class="badge">仏植民地建築・必見</span></div>
+      <div class="name-row"><div class="name">中央郵便局・聖母マリア教会</div></div>
       <div class="desc">フランス統治時代に建てられた赤レンガの大聖堂と、優美な郵便局が向かい合う旧市街のランドマーク。フォトスポットとしても人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/中央郵便局・聖母マリア教会.webp" alt="中央郵便局・聖母マリア教会" loading="lazy"><a href="https://maps.google.com/?q=Saigon+Notre-Dame+Cathedral" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hcmc" data-stype="market" data-spot-num="HCM 03">
       
-      <div class="num">HCM 03</div>
-      <div class="name-row"><div class="name">ベンタイン市場</div><span class="badge">ショッピング</span></div>
+      <div class="num-row"><span class="num">HCM 03</span><span class="badge">ショッピング</span></div>
+      <div class="name-row"><div class="name">ベンタイン市場</div></div>
       <div class="desc">ホーチミンを代表するランドマーク市場。雑貨・お土産・ローカルグルメの屋台が集まり、値切り交渉も旅の醍醐味。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ベンタイン市場.webp" alt="ベンタイン市場" loading="lazy"><a href="https://maps.google.com/?q=Ben+Thanh+Market" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hcmc" data-stype="heritage" data-spot-num="HCM 04">
       
-      <div class="num">HCM 04</div>
-      <div class="name-row"><div class="name">クチトンネル</div><span class="badge">戦争遺跡</span></div>
+      <div class="num-row"><span class="num">HCM 04</span><span class="badge">戦争遺跡</span></div>
+      <div class="name-row"><div class="name">クチトンネル</div></div>
       <div class="desc">ベトナム戦争時にゲリラ戦の拠点となった全長250kmの地下トンネル網。実際にトンネル内を這って見学する体験ができる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クチトンネル.webp" alt="クチトンネル" loading="lazy"><a href="https://maps.google.com/?q=Cu+Chi+Tunnels" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hcmc" data-stype="museum" data-spot-num="HCM 05">
       
-      <div class="num">HCM 05</div>
-      <div class="name-row"><div class="name">戦争証跡博物館</div><span class="badge">歴史・学び</span></div>
+      <div class="num-row"><span class="num">HCM 05</span><span class="badge">歴史・学び</span></div>
+      <div class="name-row"><div class="name">戦争証跡博物館</div></div>
       <div class="desc">ベトナム戦争の実相を伝える写真・資料・兵器を展示する博物館。枯葉剤の影響など、戦争の悲惨さを直視させる展示が多い。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/戦争証跡博物館.webp" alt="戦争証跡博物館" loading="lazy"><a href="https://maps.google.com/?q=War+Remnants+Museum" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="hcmc" data-stype="activity" data-spot-num="HCM 06">
       
-      <div class="num">HCM 06</div>
-      <div class="name-row"><div class="name">ブイビエン通り</div><span class="badge">ナイトライフ</span></div>
+      <div class="num-row"><span class="num">HCM 06</span><span class="badge">ナイトライフ</span></div>
+      <div class="name-row"><div class="name">ブイビエン通り</div></div>
       <div class="desc">バーやクラブが並ぶ、夜まで賑わうバックパッカー通り。屋台グルメと生ビールを片手に旅人同士の交流が生まれる夜の名所。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブイビエン通り.webp" alt="ブイビエン通り" loading="lazy"><a href="https://maps.google.com/?q=Bui+Vien+Street,+Ho+Chi+Minh+City" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -713,32 +762,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="cantho" data-stype="market" data-spot-num="CTO 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CTO 01</div>
-      <div class="name-row"><div class="name">カイラン水上マーケット</div><span class="badge">水上マーケット・必見</span></div>
+      <div class="num-row"><span class="num">CTO 01</span><span class="badge">水上マーケット・必見</span></div>
+      <div class="name-row"><div class="name">カイラン水上マーケット</div></div>
       <div class="desc">メコンデルタ最大級の水上マーケット。早朝、野菜や果物を満載した小舟が運河にひしめき合う光景は必見。竿の先に商品を吊るす「バンボーサイン」が目印。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カイラン水上マーケット.webp" alt="カイラン水上マーケット" loading="lazy"><a href="https://maps.google.com/?q=Cai+Rang+Floating+Market" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="cantho" data-stype="nature" data-spot-num="CTO 02">
       
-      <div class="num">CTO 02</div>
-      <div class="name-row"><div class="name">メコン運河クルーズ</div><span class="badge">自然・アクティビティ</span></div>
+      <div class="num-row"><span class="num">CTO 02</span><span class="badge">自然・アクティビティ</span></div>
+      <div class="name-row"><div class="name">メコン運河クルーズ</div></div>
       <div class="desc">小舟に乗り換えて水路の奥へ分け入り、ヤシ砂糖工房や養蜂園を巡るツアー。両岸に広がるマングローブと運河沿いの暮らしを間近に見られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/メコン運河クルーズ.webp" alt="メコン運河クルーズ" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cantho" data-stype="townscape" data-spot-num="CTO 03">
       
-      <div class="num">CTO 03</div>
-      <div class="name-row"><div class="name">ニンキエウ埠頭</div><span class="badge">夜市・散策</span></div>
+      <div class="num-row"><span class="num">CTO 03</span><span class="badge">夜市・散策</span></div>
+      <div class="name-row"><div class="name">ニンキエウ埠頭</div></div>
       <div class="desc">カントー川沿いに整備された遊歩道。夜はライトアップされ、屋台や夜市が立ち並ぶ地元の憩いの場になっている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ニンキエウ埠頭.webp" alt="ニンキエウ埠頭" loading="lazy"><a href="https://maps.google.com/?q=Ninh+Kieu+Wharf,+Can+Tho" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cantho" data-stype="townscape" data-spot-num="CTO 04">
       
-      <div class="num">CTO 04</div>
-      <div class="name-row"><div class="name">カントー橋</div><span class="badge">近代建築</span></div>
+      <div class="num-row"><span class="num">CTO 04</span><span class="badge">近代建築</span></div>
+      <div class="name-row"><div class="name">カントー橋</div></div>
       <div class="desc">メコン川に架かる東南アジア最長クラスの斜張橋。ライトアップされた美しい夜景は川沿いの遊歩道から一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カントー橋.webp" alt="カントー橋" loading="lazy"><a href="https://maps.google.com/?q=Can+Tho+Bridge" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -789,40 +838,40 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="phuquoc" data-stype="activity" data-spot-num="PQ 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PQ 01</div>
-      <div class="name-row"><div class="name">フーコック・ケーブルカー</div><span class="badge">世界最長級・必見</span></div>
+      <div class="num-row"><span class="num">PQ 01</span><span class="badge">世界最長級・必見</span></div>
+      <div class="name-row"><div class="name">フーコック・ケーブルカー</div></div>
       <div class="desc">本島とアンタイ諸島を結ぶ、世界最長級（約8km）の海上ロープウェイ。眼下に広がる島々とグラデーションの海を一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/フーコック・ケーブルカー.webp" alt="フーコック・ケーブルカー" loading="lazy"><a href="https://maps.google.com/?q=Phu+Quoc+Cable+Car" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="phuquoc" data-stype="nature" data-spot-num="PQ 02">
       <div class="must-badge">⭐</div>
-      <div class="num">PQ 02</div>
-      <div class="name-row"><div class="name">サオビーチ</div><span class="badge">島随一のビーチ</span></div>
+      <div class="num-row"><span class="num">PQ 02</span><span class="badge">島随一のビーチ</span></div>
+      <div class="name-row"><div class="name">サオビーチ</div></div>
       <div class="desc">粉砂糖のような白砂と遠浅のエメラルドグリーンの海が広がる、島南部の定番ビーチ。のんびり過ごすのも沖まで歩くのも人気。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サオビーチ.webp" alt="サオビーチ" loading="lazy"><a href="https://maps.google.com/?q=Sao+Beach+Phu+Quoc" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="phuquoc" data-stype="market" data-spot-num="PQ 03">
       
-      <div class="num">PQ 03</div>
-      <div class="name-row"><div class="name">ズオンドン・ナイトマーケット</div><span class="badge">夜市グルメ</span></div>
+      <div class="num-row"><span class="num">PQ 03</span><span class="badge">夜市グルメ</span></div>
+      <div class="name-row"><div class="name">ズオンドン・ナイトマーケット</div></div>
       <div class="desc">新鮮な魚介の炭火焼きや屋台グルメが並ぶ、島最大のナイトマーケット。目の前で選んだシーフードをその場で調理してもらえる屋台も多く、夕方から賑わい始める。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ズオンドン・ナイトマーケット.webp" alt="ズオンドン・ナイトマーケット" loading="lazy"><a href="https://maps.google.com/?q=Duong+Dong+Night+Market+Phu+Quoc" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="phuquoc" data-stype="activity" data-spot-num="PQ 04">
       
-      <div class="num">PQ 04</div>
-      <div class="name-row"><div class="name">アンタイ諸島アイランドホッピング</div><span class="badge">定番アイランドホッピング</span></div>
+      <div class="num-row"><span class="num">PQ 04</span><span class="badge">定番アイランドホッピング</span></div>
+      <div class="name-row"><div class="name">アンタイ諸島アイランドホッピング</div></div>
       <div class="desc">ケーブルカーの発着点でもある小島群をボートで巡るシュノーケリングツアー。透明度の高い海で熱帯魚を観察できる日帰りアクティビティ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アンタイ諸島アイランドホッピング.webp" alt="アンタイ諸島アイランドホッピング" loading="lazy"></div>
     </div>
     
     <div class="item-card no-map has-spot-img " data-city="phuquoc" data-stype="activity" data-spot-num="PQ 05">
       
-      <div class="num">PQ 05</div>
-      <div class="name-row"><div class="name">ヌクマム（魚醤）醸造所</div><span class="badge">特産品の醸造所見学</span></div>
+      <div class="num-row"><span class="num">PQ 05</span><span class="badge">特産品の醸造所見学</span></div>
+      <div class="name-row"><div class="name">ヌクマム（魚醤）醸造所</div></div>
       <div class="desc">カタクチイワシと塩を大樽で長期熟成させる、フーコック特産の高級魚醤の醸造所見学。ずらりと並ぶ木樽と独特の香りが漂う光景は、ベトナム食文化の奥深さを体感できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヌクマム（魚醤）醸造所.webp" alt="ヌクマム（魚醤）醸造所" loading="lazy"></div>
     </div>
@@ -873,32 +922,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="sapa" data-stype="nature" data-spot-num="SPA 01">
       <div class="must-badge">⭐</div>
-      <div class="num">SPA 01</div>
-      <div class="name-row"><div class="name">ファンシーパン（インドシナ最高峰）</div><span class="badge">インドシナ最高峰・必見</span></div>
+      <div class="num-row"><span class="num">SPA 01</span><span class="badge">インドシナ最高峰・必見</span></div>
+      <div class="name-row"><div class="name">ファンシーパン（インドシナ最高峰）</div></div>
       <div class="desc">標高3,147m、インドシナ半島最高峰の山。世界最長級のロープウェイで山頂近くまで一気に登れ、頂上からは棚田と雲海が織りなす大パノラマを一望できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ファンシーパン（インドシナ最高峰）.webp" alt="ファンシーパン（インドシナ最高峰）" loading="lazy"><a href="https://maps.google.com/?q=Fansipan+Mountain+Sapa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="sapa" data-stype="nature" data-spot-num="SPA 02">
       <div class="must-badge">⭐</div>
-      <div class="num">SPA 02</div>
-      <div class="name-row"><div class="name">ムオンホア渓谷の棚田</div><span class="badge">絶景の棚田</span></div>
+      <div class="num-row"><span class="num">SPA 02</span><span class="badge">絶景の棚田</span></div>
+      <div class="name-row"><div class="name">ムオンホア渓谷の棚田</div></div>
       <div class="desc">少数民族が幾世代にもわたって切り拓いた、山の斜面に連なる棚田地帯。田植え前後は水鏡、稲刈り前は黄金色と季節で表情を変える。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ムオンホア渓谷の棚田.webp" alt="ムオンホア渓谷の棚田" loading="lazy"><a href="https://maps.google.com/?q=Muong+Hoa+Valley+Sapa" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card no-map has-spot-img must" data-city="sapa" data-stype="activity" data-spot-num="SPA 03">
       <div class="must-badge">⭐</div>
-      <div class="num">SPA 03</div>
-      <div class="name-row"><div class="name">少数民族の村トレッキング（カットカット村）</div><span class="badge">定番トレッキング</span></div>
+      <div class="num-row"><span class="num">SPA 03</span><span class="badge">定番トレッキング</span></div>
+      <div class="name-row"><div class="name">少数民族の村トレッキング（カットカット村）</div></div>
       <div class="desc">モン族・ザオ族など少数民族の伝統集落を巡るトレッキングツアー。棚田の畦道を歩き藍染めの民族衣装や機織りを見学できる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/少数民族の村トレッキング（カットカット村）.webp" alt="少数民族の村トレッキング（カットカット村）" loading="lazy"></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="sapa" data-stype="religious" data-spot-num="SPA 04">
       
-      <div class="num">SPA 04</div>
-      <div class="name-row"><div class="name">サパ教会（ドンズオン教会）</div><span class="badge">町のランドマーク</span></div>
+      <div class="num-row"><span class="num">SPA 04</span><span class="badge">町のランドマーク</span></div>
+      <div class="name-row"><div class="name">サパ教会（ドンズオン教会）</div></div>
       <div class="desc">フランス統治時代に建てられた石造りの教会。町の中心部にそびえ、週末の夜は少数民族の若者たちが集う「ラブマーケット」の舞台としても知られる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/サパ教会（ドンズオン教会）.webp" alt="サパ教会（ドンズオン教会）" loading="lazy"><a href="https://maps.google.com/?q=Sapa+Stone+Church" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -1082,7 +1131,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -1091,6 +1140,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -1104,12 +1175,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -1117,6 +1189,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -1163,6 +1236,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -1238,16 +1321,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1422,23 +1543,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

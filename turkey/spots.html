@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="トルコの観光スポット｜トルコ旅行ガイド">
 <meta name="twitter:description" content="直行便で約13時間、時差6時間のトルコはヨーロッパとアジアの文化が交わる国。荘厳なアヤソフィアやブルーモスク、香辛料の香るグランドバザール、熱気球が舞うカッパドキアの奇岩地帯、そして絶品のケバブや紅茶まで、ひとつの国で異なる文化と絶景が幾…">
 <meta name="twitter:image" content="https://worldmappy.com/turkey/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8"><path fill="#E30A17" d="M0 0h12v8H0z"/><circle cx="4.25" cy="4" r="2" fill="#fff"/><circle cx="4.75" cy="4" r="1.6" fill="#e30a17"/><path fill="#fff" d="M5.83334 4l1.80901 .58779-1.11804-1.53885v1.90212l1.11804-1.53885z"/></svg></div></span><span class="site-country-name">トルコ</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="active">観光スポット</a>
-    <a href="food.html" class="">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=turkey">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">トルコを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=turkey">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -242,44 +272,62 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
   <h2>トルコ 観光スポット</h2>
   <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="spots-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
-      
-      <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
-      
-      <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
-      
-      <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
-      
-      <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
-      
-      <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
-      
-      <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="spots-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterSpots('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn" data-filter="heritage" onclick="filterSpots('type','heritage',this)">世界遺産・史跡</button>
+              
+              <button class="filter-btn" data-filter="religious" onclick="filterSpots('type','religious',this)">宗教施設</button>
+              
+              <button class="filter-btn" data-filter="nature" onclick="filterSpots('type','nature',this)">自然</button>
+              
+              <button class="filter-btn" data-filter="market" onclick="filterSpots('type','market',this)">ショッピング</button>
+              
+              <button class="filter-btn" data-filter="museum" onclick="filterSpots('type','museum',this)">博物館・美術館</button>
+              
+              <button class="filter-btn" data-filter="townscape" onclick="filterSpots('type','townscape',this)">街並み・建築</button>
+              
+              <button class="filter-btn" data-filter="activity" onclick="filterSpots('type','activity',this)">アクティビティ</button>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア</div>
+            <div class="filter-row" id="spots-filter-row">
+              
+              <button class="filter-btn " data-filter="istanbul" onclick="filterSpots('city','istanbul',this)">イスタンブール</button>
+              
+              <button class="filter-btn " data-filter="cappadocia" onclick="filterSpots('city','cappadocia',this)">カッパドキア</button>
+              
+              <button class="filter-btn " data-filter="pamukkale" onclick="filterSpots('city','pamukkale',this)">パムッカレ</button>
+              
+              <button class="filter-btn " data-filter="antalya" onclick="filterSpots('city','antalya',this)">アンタルヤ</button>
+              
+              <button class="filter-btn " data-filter="izmir" onclick="filterSpots('city','izmir',this)">イズミル・エフェソス</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetSpotFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  
-  <div class="filter-group">
-    <div class="filter-label">エリア</div>
-    <div class="filter-row" id="spots-filter-row">
-      
-      <button class="filter-btn " data-filter="istanbul" onclick="filterSpots('city','istanbul',this)">イスタンブール</button>
-      
-      <button class="filter-btn " data-filter="cappadocia" onclick="filterSpots('city','cappadocia',this)">カッパドキア</button>
-      
-      <button class="filter-btn " data-filter="pamukkale" onclick="filterSpots('city','pamukkale',this)">パムッカレ</button>
-      
-      <button class="filter-btn " data-filter="antalya" onclick="filterSpots('city','antalya',this)">アンタルヤ</button>
-      
-      <button class="filter-btn " data-filter="izmir" onclick="filterSpots('city','izmir',this)">イズミル・エフェソス</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="spots-count-shown">23</span> / <span id="spots-count-total">23</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
@@ -287,6 +335,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
       <button data-view="list" onclick="setItemView('spots','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
+  </div>
   </div>
   <div id="spots-grid">
     
@@ -321,64 +370,64 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="istanbul" data-stype="heritage" data-spot-num="IST 01">
       <div class="must-badge">⭐</div>
-      <div class="num">IST 01</div>
-      <div class="name-row"><div class="name">アヤソフィア</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">IST 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">アヤソフィア</div></div>
       <div class="desc">6世紀のビザンツ大聖堂からモスクへと姿を変えた世界遺産。巨大なドームとモザイク壁画が織りなす荘厳な空間。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アヤソフィア.webp" alt="アヤソフィア" loading="lazy"><a href="https://maps.google.com/?q=Hagia+Sophia" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="istanbul" data-stype="religious" data-spot-num="IST 02">
       <div class="must-badge">⭐</div>
-      <div class="num">IST 02</div>
-      <div class="name-row"><div class="name">ブルーモスク（スルタンアフメト・モスク）</div><span class="badge">現役の礼拝所</span></div>
+      <div class="num-row"><span class="num">IST 02</span><span class="badge">現役の礼拝所</span></div>
+      <div class="name-row"><div class="name">ブルーモスク（スルタンアフメト・モスク）</div></div>
       <div class="desc">内壁を彩る青いイズニックタイルからその名がついた、6本のミナレットを持つ壮麗なモスク。現役の礼拝所でもある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ブルーモスク（スルタンアフメト・モスク）.webp" alt="ブルーモスク（スルタンアフメト・モスク）" loading="lazy"><a href="https://maps.google.com/?q=Blue+Mosque+Istanbul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="istanbul" data-stype="museum" data-spot-num="IST 03">
       <div class="must-badge">⭐</div>
-      <div class="num">IST 03</div>
-      <div class="name-row"><div class="name">トプカプ宮殿</div><span class="badge">オスマン帝国の宮殿</span></div>
+      <div class="num-row"><span class="num">IST 03</span><span class="badge">オスマン帝国の宮殿</span></div>
+      <div class="name-row"><div class="name">トプカプ宮殿</div></div>
       <div class="desc">オスマン帝国のスルタンが約400年暮らした宮殿。宝物館の巨大ダイヤモンドやハーレムの装飾は必見の見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/トプカプ宮殿.webp" alt="トプカプ宮殿" loading="lazy"><a href="https://maps.google.com/?q=Topkapi+Palace" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="istanbul" data-stype="market" data-spot-num="IST 04">
       
-      <div class="num">IST 04</div>
-      <div class="name-row"><div class="name">グランドバザール</div><span class="badge">世界最大級の市場</span></div>
+      <div class="num-row"><span class="num">IST 04</span><span class="badge">世界最大級の市場</span></div>
+      <div class="name-row"><div class="name">グランドバザール</div></div>
       <div class="desc">4000店以上がひしめく世界最大級の屋根付き市場。絨毯・貴金属・陶器など見て回るだけでも数時間かかる迷宮。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/グランドバザール.webp" alt="グランドバザール" loading="lazy"><a href="https://maps.google.com/?q=Grand+Bazaar+Istanbul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="istanbul" data-stype="activity" data-spot-num="IST 05">
       
-      <div class="num">IST 05</div>
-      <div class="name-row"><div class="name">ボスポラス海峡クルーズ</div><span class="badge">海峡クルーズ</span></div>
+      <div class="num-row"><span class="num">IST 05</span><span class="badge">海峡クルーズ</span></div>
+      <div class="name-row"><div class="name">ボスポラス海峡クルーズ</div></div>
       <div class="desc">ヨーロッパとアジアを分かつ海峡を船で行き来するクルーズ。海上から眺めるオスマン建築の宮殿群は格別の景色。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ボスポラス海峡クルーズ.webp" alt="ボスポラス海峡クルーズ" loading="lazy"><a href="https://maps.google.com/?q=Bosphorus+Cruise+Istanbul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="istanbul" data-stype="townscape" data-spot-num="IST 06">
       
-      <div class="num">IST 06</div>
-      <div class="name-row"><div class="name">ガラタ塔</div><span class="badge">夕景の名スポット</span></div>
+      <div class="num-row"><span class="num">IST 06</span><span class="badge">夕景の名スポット</span></div>
+      <div class="name-row"><div class="name">ガラタ塔</div></div>
       <div class="desc">新市街にそびえる中世の石造りの塔。展望フロアからは旧市街とボスポラス海峡を一望できる、夕景の名スポット。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ガラタ塔.webp" alt="ガラタ塔" loading="lazy"><a href="https://maps.google.com/?q=Galata+Tower" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="istanbul" data-stype="heritage" data-spot-num="IST 07">
       
-      <div class="num">IST 07</div>
-      <div class="name-row"><div class="name">バシリカ・シスタン（地下宮殿）</div><span class="badge">幻想的な地下貯水槽</span></div>
+      <div class="num-row"><span class="num">IST 07</span><span class="badge">幻想的な地下貯水槽</span></div>
+      <div class="name-row"><div class="name">バシリカ・シスタン（地下宮殿）</div></div>
       <div class="desc">ビザンツ帝国時代の巨大な地下貯水槽。336本の円柱が薄暗い水面に映り込む幻想的な空間で、メデューサの顔の柱台も見どころ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/バシリカ・シスタン（地下宮殿）.webp" alt="バシリカ・シスタン（地下宮殿）" loading="lazy"><a href="https://maps.google.com/?q=Basilica+Cistern+Istanbul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="istanbul" data-stype="market" data-spot-num="IST 08">
       
-      <div class="num">IST 08</div>
-      <div class="name-row"><div class="name">エジプシャンバザール（スパイスバザール）</div><span class="badge">香り立つ香辛料市場</span></div>
+      <div class="num-row"><span class="num">IST 08</span><span class="badge">香り立つ香辛料市場</span></div>
+      <div class="name-row"><div class="name">エジプシャンバザール（スパイスバザール）</div></div>
       <div class="desc">17世紀創建のL字型市場。色とりどりのスパイスやトルコ菓子、ドライフルーツが山積みにされ、香りに包まれながら歩くだけでも楽しい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/エジプシャンバザール（スパイスバザール）.webp" alt="エジプシャンバザール（スパイスバザール）" loading="lazy"><a href="https://maps.google.com/?q=Egyptian+Spice+Bazaar+Istanbul" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -417,32 +466,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="cappadocia" data-stype="activity" data-spot-num="CAP 01">
       <div class="must-badge">⭐</div>
-      <div class="num">CAP 01</div>
-      <div class="name-row"><div class="name">カッパドキア熱気球ツアー</div><span class="badge">早朝のハイライト</span></div>
+      <div class="num-row"><span class="num">CAP 01</span><span class="badge">早朝のハイライト</span></div>
+      <div class="name-row"><div class="name">カッパドキア熱気球ツアー</div></div>
       <div class="desc">日の出とともに数十機の熱気球が奇岩地帯を埋め尽くす、カッパドキア観光の象徴的な体験。天候により欠航もある。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カッパドキア熱気球ツアー.webp" alt="カッパドキア熱気球ツアー" loading="lazy"><a href="https://maps.google.com/?q=Cappadocia+Hot+Air+Balloon" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img must" data-city="cappadocia" data-stype="heritage" data-spot-num="CAP 02">
       <div class="must-badge">⭐</div>
-      <div class="num">CAP 02</div>
-      <div class="name-row"><div class="name">ギョレメ野外博物館</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">CAP 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ギョレメ野外博物館</div></div>
       <div class="desc">岩をくり抜いた教会群が点在する世界遺産。ビザンツ時代のフレスコ画が今も鮮やかに残る、修道院跡の集合体。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ギョレメ野外博物館.webp" alt="ギョレメ野外博物館" loading="lazy"><a href="https://maps.google.com/?q=Goreme+Open+Air+Museum" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cappadocia" data-stype="heritage" data-spot-num="CAP 03">
       
-      <div class="num">CAP 03</div>
-      <div class="name-row"><div class="name">カイマクル地下都市</div><span class="badge">地下8層の迷宮</span></div>
+      <div class="num-row"><span class="num">CAP 03</span><span class="badge">地下8層の迷宮</span></div>
+      <div class="name-row"><div class="name">カイマクル地下都市</div></div>
       <div class="desc">迫害から逃れた古代の人々が掘った、地下8層にも及ぶ巨大な地下都市。狭い通路を進む探検気分が味わえる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カイマクル地下都市.webp" alt="カイマクル地下都市" loading="lazy"><a href="https://maps.google.com/?q=Kaymakli+Underground+City" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="cappadocia" data-stype="nature" data-spot-num="CAP 04">
       
-      <div class="num">CAP 04</div>
-      <div class="name-row"><div class="name">ウフララ渓谷</div><span class="badge">渓谷ハイキング</span></div>
+      <div class="num-row"><span class="num">CAP 04</span><span class="badge">渓谷ハイキング</span></div>
+      <div class="name-row"><div class="name">ウフララ渓谷</div></div>
       <div class="desc">深く切れ込んだ緑豊かな渓谷をハイキングできる自然スポット。岩壁に刻まれた教会跡も点在し、気球観光とは違う静けさが魅力。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ウフララ渓谷.webp" alt="ウフララ渓谷" loading="lazy"><a href="https://maps.google.com/?q=Ihlara+Valley" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -481,24 +530,24 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="pamukkale" data-stype="nature" data-spot-num="PAM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">PAM 01</div>
-      <div class="name-row"><div class="name">パムッカレ石灰棚</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">PAM 01</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">パムッカレ石灰棚</div></div>
       <div class="desc">「綿の城」を意味する名の通り、石灰華が段々畑状に広がる真っ白な絶景。温泉水を湛えた棚田を素足で歩いて楽しむ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/パムッカレ石灰棚.webp" alt="パムッカレ石灰棚" loading="lazy"><a href="https://maps.google.com/?q=Pamukkale" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pamukkale" data-stype="heritage" data-spot-num="PAM 02">
       
-      <div class="num">PAM 02</div>
-      <div class="name-row"><div class="name">ヒエラポリス古代都市</div><span class="badge">世界遺産</span></div>
+      <div class="num-row"><span class="num">PAM 02</span><span class="badge">世界遺産</span></div>
+      <div class="name-row"><div class="name">ヒエラポリス古代都市</div></div>
       <div class="desc">丘の上に広がる古代ローマの温泉保養都市跡。大劇場や墓地遺跡、コロナード通りが残り、往時の繁栄を今に伝えている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ヒエラポリス古代都市.webp" alt="ヒエラポリス古代都市" loading="lazy"><a href="https://maps.google.com/?q=Hierapolis+Ancient+City" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="pamukkale" data-stype="activity" data-spot-num="PAM 03">
       
-      <div class="num">PAM 03</div>
-      <div class="name-row"><div class="name">クレオパトラ・プール</div><span class="badge">古代遺構の温泉プール</span></div>
+      <div class="num-row"><span class="num">PAM 03</span><span class="badge">古代遺構の温泉プール</span></div>
+      <div class="name-row"><div class="name">クレオパトラ・プール</div></div>
       <div class="desc">古代の柱が沈む温泉プールで泳げる珍しいスポット。伝説ではクレオパトラも入浴したとされ、有料だが人気が高い。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/クレオパトラ・プール.webp" alt="クレオパトラ・プール" loading="lazy"><a href="https://maps.google.com/?q=Cleopatra+Pool+Pamukkale" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -537,32 +586,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img " data-city="antalya" data-stype="townscape" data-spot-num="ANT 01">
       
-      <div class="num">ANT 01</div>
-      <div class="name-row"><div class="name">カレイチ旧市街</div><span class="badge">旧市街散策</span></div>
+      <div class="num-row"><span class="num">ANT 01</span><span class="badge">旧市街散策</span></div>
+      <div class="name-row"><div class="name">カレイチ旧市街</div></div>
       <div class="desc">オスマン様式の木造家屋が並ぶ石畳の旧市街。小さな港にヨットが並ぶ光景は地中海リゾートらしい雰囲気にあふれる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/カレイチ旧市街.webp" alt="カレイチ旧市街" loading="lazy"><a href="https://maps.google.com/?q=Kaleici+Antalya" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="antalya" data-stype="nature" data-spot-num="ANT 02">
       
-      <div class="num">ANT 02</div>
-      <div class="name-row"><div class="name">デュデン滝</div><span class="badge">海に落ちる滝</span></div>
+      <div class="num-row"><span class="num">ANT 02</span><span class="badge">海に落ちる滝</span></div>
+      <div class="name-row"><div class="name">デュデン滝</div></div>
       <div class="desc">地中海へ直接流れ落ちる珍しい海岸の滝。崖の裏側から滝を眺められる洞窟があり、涼しく爽快な体験ができる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/デュデン滝.webp" alt="デュデン滝" loading="lazy"><a href="https://maps.google.com/?q=Duden+Waterfalls+Antalya" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="antalya" data-stype="nature" data-spot-num="ANT 03">
       
-      <div class="num">ANT 03</div>
-      <div class="name-row"><div class="name">コンヤアルトゥ・ビーチ</div><span class="badge">市街地から徒歩圏</span></div>
+      <div class="num-row"><span class="num">ANT 03</span><span class="badge">市街地から徒歩圏</span></div>
+      <div class="name-row"><div class="name">コンヤアルトゥ・ビーチ</div></div>
       <div class="desc">市街地から徒歩圏の砂利ビーチ。背後にタウルス山脈がそびえる眺めが特徴的で、地中海リゾート気分を手軽に味わえる。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コンヤアルトゥ・ビーチ.webp" alt="コンヤアルトゥ・ビーチ" loading="lazy"><a href="https://maps.google.com/?q=Konyaalti+Beach" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="antalya" data-stype="heritage" data-spot-num="ANT 04">
       
-      <div class="num">ANT 04</div>
-      <div class="name-row"><div class="name">アスペンドス古代劇場</div><span class="badge">保存状態随一の古代劇場</span></div>
+      <div class="num-row"><span class="num">ANT 04</span><span class="badge">保存状態随一の古代劇場</span></div>
+      <div class="name-row"><div class="name">アスペンドス古代劇場</div></div>
       <div class="desc">現存する古代ローマ劇場の中でも保存状態が随一とされる遺跡。今も夏には音楽祭やオペラの舞台として使われている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アスペンドス古代劇場.webp" alt="アスペンドス古代劇場" loading="lazy"><a href="https://maps.google.com/?q=Aspendos+Theatre" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -601,32 +650,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     
     <div class="item-card spot has-spot-img must" data-city="izmir" data-stype="heritage" data-spot-num="IZM 01">
       <div class="must-badge">⭐</div>
-      <div class="num">IZM 01</div>
-      <div class="name-row"><div class="name">エフェソス古代遺跡（ケルスス図書館）</div><span class="badge">世界遺産級の古代都市</span></div>
+      <div class="num-row"><span class="num">IZM 01</span><span class="badge">世界遺産級の古代都市</span></div>
+      <div class="name-row"><div class="name">エフェソス古代遺跡（ケルスス図書館）</div></div>
       <div class="desc">古代地中海世界屈指の規模を誇る都市遺跡。2階建てのケルスス図書館のファサードは、トルコ観光を象徴する光景のひとつ。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/エフェソス古代遺跡（ケルスス図書館）.webp" alt="エフェソス古代遺跡（ケルスス図書館）" loading="lazy"><a href="https://maps.google.com/?q=Ephesus+Ancient+City" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="izmir" data-stype="religious" data-spot-num="IZM 02">
       
-      <div class="num">IZM 02</div>
-      <div class="name-row"><div class="name">聖母マリアの家</div><span class="badge">巡礼地</span></div>
+      <div class="num-row"><span class="num">IZM 02</span><span class="badge">巡礼地</span></div>
+      <div class="name-row"><div class="name">聖母マリアの家</div></div>
       <div class="desc">聖母マリアが晩年を過ごしたと伝わる小さな石造りの家。宗教を問わず巡礼者が訪れる、山中の静かな祈りの場。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/聖母マリアの家.webp" alt="聖母マリアの家" loading="lazy"><a href="https://maps.google.com/?q=House+of+Virgin+Mary+Ephesus" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="izmir" data-stype="townscape" data-spot-num="IZM 03">
       
-      <div class="num">IZM 03</div>
-      <div class="name-row"><div class="name">シリンジェ村</div><span class="badge">ワインと陶器の村</span></div>
+      <div class="num-row"><span class="num">IZM 03</span><span class="badge">ワインと陶器の村</span></div>
+      <div class="name-row"><div class="name">シリンジェ村</div></div>
       <div class="desc">ワイン造りと陶器で知られる、丘の斜面に石造りの家々が連なる小さな村。エフェソス観光の合間に立ち寄りやすい。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/シリンジェ村.webp" alt="シリンジェ村" loading="lazy"><a href="https://maps.google.com/?q=Sirince+Village" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     <div class="item-card spot has-spot-img " data-city="izmir" data-stype="townscape" data-spot-num="IZM 04">
       
-      <div class="num">IZM 04</div>
-      <div class="name-row"><div class="name">コナック広場・時計塔</div><span class="badge">イズミルのシンボル</span></div>
+      <div class="num-row"><span class="num">IZM 04</span><span class="badge">イズミルのシンボル</span></div>
+      <div class="name-row"><div class="name">コナック広場・時計塔</div></div>
       <div class="desc">イズミルの街のシンボルである時計塔が立つ広場。海沿いの遊歩道が続き、地元の人々の憩いの場としても親しまれている。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/コナック広場・時計塔.webp" alt="コナック広場・時計塔" loading="lazy"><a href="https://maps.google.com/?q=Konak+Square+Izmir" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
@@ -810,7 +859,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -819,6 +868,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -832,12 +903,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -845,6 +917,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -891,6 +964,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -966,16 +1049,54 @@ var PAGE_INDEX = 1;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1150,23 +1271,6 @@ var PAGE_INDEX = 1;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

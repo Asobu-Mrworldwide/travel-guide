@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ウズベキスタンのグルメ｜ウズベキスタン旅行ガイド">
 <meta name="twitter:description" content="中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた古都が点在する国。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知ら…">
 <meta name="twitter:image" content="https://worldmappy.com/uzbekistan/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="200" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 250"><path fill="#1eb53a" d="M0 0h500v250H0z"/><path fill="#0099b5" d="M0 0h500v125H0z"/><path fill="#ce1126" d="M0 80h500v90H0z"/><path fill="#fff" d="M0 85h500v80H0z"/><circle cx="70" cy="40" r="30" fill="#fff"/><circle cx="80" cy="40" r="30" fill="#0099b5"/><g fill="#fff" transform="translate(136 64)"><g id="e"><g id="d"><g id="c"><g id="b"><path id="a" d="M0-6v6h3" transform="rotate(18 0 -6)"/><use xlink:href="#a" transform="scale(-1 1)"/></g><use xlink:href="#b" transform="rotate(72)"/></g><use xlink:href="#b" transform="rotate(-72)"/><use xlink:href="#c" transform="rotate(144)"/></g><use xlink:href="#d" y="-24"/><use xlink:href="#d" y="-48"/></g><use xlink:href="#e" x="24"/><use xlink:href="#e" x="48"/><use xlink:href="#d" x="-48"/><use xlink:href="#d" x="-24"/><use xlink:href="#d" x="-24" y="-24"/></g></svg></div></span><span class="site-country-name">ウズベキスタン</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="">観光スポット</a>
-    <a href="food.html" class="active">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=uzbekistan">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">ウズベキスタンを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=uzbekistan">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -213,48 +243,66 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Uzbekistan / 03</span></div>
   <div class="tab-body">
   <h2>ウズベキスタン グルメ</h2>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="food-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn " data-filter="rice" onclick="filterFood('type','rice',this)">ご飯もの</button>
-      
-      <button class="filter-btn " data-filter="meat" onclick="filterFood('type','meat',this)">肉料理</button>
-      
-      <button class="filter-btn " data-filter="noodle" onclick="filterFood('type','noodle',this)">麺料理</button>
-      
-      <button class="filter-btn " data-filter="dumpling" onclick="filterFood('type','dumpling',this)">点心</button>
-      
-      <button class="filter-btn " data-filter="bread" onclick="filterFood('type','bread',this)">パン・焼き物</button>
-      
-      <button class="filter-btn " data-filter="salad" onclick="filterFood('type','salad',this)">サラダ</button>
-      
-      <button class="filter-btn " data-filter="sweet" onclick="filterFood('type','sweet',this)">スイーツ</button>
-      
-      <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">飲み物</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="food-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn " data-filter="rice" onclick="filterFood('type','rice',this)">ご飯もの</button>
+              
+              <button class="filter-btn " data-filter="meat" onclick="filterFood('type','meat',this)">肉料理</button>
+              
+              <button class="filter-btn " data-filter="noodle" onclick="filterFood('type','noodle',this)">麺料理</button>
+              
+              <button class="filter-btn " data-filter="dumpling" onclick="filterFood('type','dumpling',this)">点心</button>
+              
+              <button class="filter-btn " data-filter="bread" onclick="filterFood('type','bread',this)">パン・焼き物</button>
+              
+              <button class="filter-btn " data-filter="salad" onclick="filterFood('type','salad',this)">サラダ</button>
+              
+              <button class="filter-btn " data-filter="sweet" onclick="filterFood('type','sweet',this)">スイーツ</button>
+              
+              <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">飲み物</button>
+              
+            </div>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア限定</div>
+            <div class="filter-row" id="food-filter-city">
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
+              
+              <button class="filter-btn" data-filter="tashkent" onclick="filterFood('city','tashkent',this)">タシュケント</button>
+              
+              <button class="filter-btn" data-filter="samarkand" onclick="filterFood('city','samarkand',this)">サマルカンド</button>
+              
+              <button class="filter-btn" data-filter="bukhara" onclick="filterFood('city','bukhara',this)">ブハラ</button>
+              
+              <button class="filter-btn" data-filter="khiva" onclick="filterFood('city','khiva',this)">ヒヴァ</button>
+              
+              <button class="filter-btn" data-filter="fergana" onclick="filterFood('city','fergana',this)">フェルガナ</button>
+              
+              <button class="filter-btn" data-filter="nukus" onclick="filterFood('city','nukus',this)">ヌクス</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetFoodFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-label">エリア限定</div>
-    <div class="filter-row" id="food-filter-city">
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
-      
-      <button class="filter-btn" data-filter="tashkent" onclick="filterFood('city','tashkent',this)">タシュケント</button>
-      
-      <button class="filter-btn" data-filter="samarkand" onclick="filterFood('city','samarkand',this)">サマルカンド</button>
-      
-      <button class="filter-btn" data-filter="bukhara" onclick="filterFood('city','bukhara',this)">ブハラ</button>
-      
-      <button class="filter-btn" data-filter="khiva" onclick="filterFood('city','khiva',this)">ヒヴァ</button>
-      
-      <button class="filter-btn" data-filter="fergana" onclick="filterFood('city','fergana',this)">フェルガナ</button>
-      
-      <button class="filter-btn" data-filter="nukus" onclick="filterFood('city','nukus',this)">ヌクス</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="food-count-shown">19</span> / <span id="food-count-total">19</span> 品を表示</span>
     <div class="view-toggle" id="foodViewToggle">
@@ -263,12 +311,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
   </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
     <div class="item-card has-img must" data-ftype="rice" data-fcity="national" data-food-num="No.01">
-      <div class="num">No.01</div>
-      <div class="name-row"><div class="name">プロフ</div><span class="badge">国民食</span></div>
+      <div class="num-row"><span class="num">No.01</span><span class="badge">国民食</span></div>
+      <div class="name-row"><div class="name">プロフ</div></div>
       <div class="desc">「プロフなしに祝宴なし」と言われるほど愛される米料理。羊肉・人参・玉ねぎを大鍋で炒め米を加えて蒸し炊きにする、シルクロードの旅人を支えてきた味。</div>
       <img src="素材/グルメ/プロフ.webp" alt="プロフ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%97%E3%83%AD%E3%83%95%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -278,8 +327,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="meat" data-fcity="national" data-food-num="No.02">
-      <div class="num">No.02</div>
-      <div class="name-row"><div class="name">シャシリク</div><span class="badge">炭火焼き</span></div>
+      <div class="num-row"><span class="num">No.02</span><span class="badge">炭火焼き</span></div>
+      <div class="name-row"><div class="name">シャシリク</div></div>
       <div class="desc">炭火で豪快に焼いた串焼き肉。バザールや路上でもうもうと煙が上がる光景が旅の定番風景で、羊・牛・鶏など種類も多くシンプルな塩スパイスが肉の旨みを引き出す。</div>
       <img src="素材/グルメ/シャシリク.webp" alt="シャシリク" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B7%E3%83%A3%E3%82%B7%E3%83%AA%E3%82%AF%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -289,8 +338,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="bread" data-fcity="national" data-food-num="No.03">
-      <div class="num">No.03</div>
-      <div class="name-row"><div class="name">サムサ</div><span class="badge">焼きたて必食</span></div>
+      <div class="num-row"><span class="num">No.03</span><span class="badge">焼きたて必食</span></div>
+      <div class="name-row"><div class="name">サムサ</div></div>
       <div class="desc">タンドール窯で焼いたウズベキスタン版肉まん。三角形に折られた生地の中にスパイシーな羊肉と玉ねぎがぎっしり詰まっている。バザールの窯の前で焼きたてを買ってその場で食べるのが現地流。</div>
       <img src="素材/グルメ/サムサ.webp" alt="サムサ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B5%E3%83%A0%E3%82%B5%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -300,8 +349,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="noodle" data-fcity="fergana" data-food-num="No.04">
-      <div class="num">No.04</div>
-      <div class="name-row"><div class="name">ラグマン</div><span class="badge">フェルガナ名物</span></div>
+      <div class="num-row"><span class="num">No.04</span><span class="badge">フェルガナ名物</span></div>
+      <div class="name-row"><div class="name">ラグマン</div></div>
       <div class="desc">フェルガナ渓谷発祥の手打ち麺料理。小麦粉を手で引き伸ばした太めの麺に、羊肉・パプリカ・トマト・人参などの野菜を炒め合わせたソースをかける。汁あり・汁なし両方ある。</div>
       <img src="素材/グルメ/ラグマン.webp" alt="ラグマン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%A9%E3%82%B0%E3%83%9E%E3%83%B3%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -311,8 +360,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dumpling" data-fcity="national" data-food-num="No.05">
-      <div class="num">No.05</div>
-      <div class="name-row"><div class="name">マンティ</div><span class="badge">点心</span></div>
+      <div class="num-row"><span class="num">No.05</span><span class="badge">点心</span></div>
+      <div class="name-row"><div class="name">マンティ</div></div>
       <div class="desc">蒸し器で蒸し上げた大型の包み料理。薄い皮の中に羊肉と玉ねぎのみじん切りが包まれており、一個がかなりのボリューム。ヨーグルトソースや赤唐辛子オイルをつけて食べる。</div>
       <img src="素材/グルメ/マンティ.webp" alt="マンティ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9E%E3%83%B3%E3%83%86%E3%82%A3%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -322,8 +371,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="meat" data-fcity="national" data-food-num="No.06">
-      <div class="num">No.06</div>
-      <div class="name-row"><div class="name">シュルパ</div><span class="badge">定番スープ</span></div>
+      <div class="num-row"><span class="num">No.06</span><span class="badge">定番スープ</span></div>
+      <div class="name-row"><div class="name">シュルパ</div></div>
       <div class="desc">羊肉をじっくり煮込んだ塩気のあるスープ。骨付き肉ごとと野菜が丸ごと入った見た目のインパクトも大きい。バザールの食堂の定番で、朝から食べている地元の人も多い。</div>
       <img src="素材/グルメ/シュルパ.webp" alt="シュルパ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%AB%E3%83%91%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -333,8 +382,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="bread" data-fcity="national" data-food-num="No.07">
-      <div class="num">No.07</div>
-      <div class="name-row"><div class="name">ナン</div><span class="badge">主食</span></div>
+      <div class="num-row"><span class="num">No.07</span><span class="badge">主食</span></div>
+      <div class="name-row"><div class="name">ナン</div></div>
       <div class="desc">タンドール窯の側面に貼り付けて焼くウズベキスタンの丸いパン。中央にスタンプで模様が押されているのが特徴で、焼きたては外がカリッ・中がもちっとしている。食卓に必ず登場する主食。</div>
       <img src="素材/グルメ/ナン.webp" alt="ナン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8A%E3%83%B3%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -344,8 +393,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dumpling" data-fcity="tashkent" data-food-num="No.08">
-      <div class="num">No.08</div>
-      <div class="name-row"><div class="name">チュチバラ</div><span class="badge">タシュケント名物</span></div>
+      <div class="num-row"><span class="num">No.08</span><span class="badge">タシュケント名物</span></div>
+      <div class="name-row"><div class="name">チュチバラ</div></div>
       <div class="desc">マンティより一回り小さい水餃子風の包み料理。スープに浮かべて出てくることが多く、上にヨーグルトと乾燥ミントをのせるのがウズベキスタン式。繊細な皮と肉の風味が合わさって優しい味。</div>
       <img src="素材/グルメ/チュチバラ.webp" alt="チュチバラ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%A5%E3%83%81%E3%83%90%E3%83%A9%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -355,8 +404,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="noodle" data-fcity="tashkent" data-food-num="No.09">
-      <div class="num">No.09</div>
-      <div class="name-row"><div class="name">ノリン</div><span class="badge">郷土料理</span></div>
+      <div class="num-row"><span class="num">No.09</span><span class="badge">郷土料理</span></div>
+      <div class="name-row"><div class="name">ノリン</div></div>
       <div class="desc">手打ち麺に馬肉または羊肉の薄切りと細かく刻んだ玉ねぎをのせた料理。冷たくして食べることが多く、さっぱりとした味わい。お祝いの席にも出てくる伝統的な一皿。</div>
       <img src="素材/グルメ/ノリン.webp" alt="ノリン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8E%E3%83%AA%E3%83%B3%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -366,8 +415,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="sweet" data-fcity="national" data-food-num="No.10">
-      <div class="num">No.10</div>
-      <div class="name-row"><div class="name">ハルバ</div><span class="badge">お土産に◎</span></div>
+      <div class="num-row"><span class="num">No.10</span><span class="badge">お土産に◎</span></div>
+      <div class="name-row"><div class="name">ハルバ</div></div>
       <div class="desc">胡麻・砂糖・油脂を混ぜて固めた伝統菓子。口の中でほろりとくずれる食感と濃厚な胡麻の香りが特徴で、バザールで量り売りで買えるお土産の定番菓子。</div>
       <img src="素材/グルメ/ハルバ.webp" alt="ハルバ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8F%E3%83%AB%E3%83%90%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -377,8 +426,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="sweet" data-fcity="samarkand" data-food-num="No.11">
-      <div class="num">No.11</div>
-      <div class="name-row"><div class="name">ニショルダ</div><span class="badge">サマルカンド名物</span></div>
+      <div class="num-row"><span class="num">No.11</span><span class="badge">サマルカンド名物</span></div>
+      <div class="name-row"><div class="name">ニショルダ</div></div>
       <div class="desc">卵白・砂糖・甘草の根を泡立てて作った雪のような白い菓子。軽くてふわっとしており、甘さも控えめ。春になるとバザールに並びはじめ、チャイとセットで食べるのが定番。</div>
       <img src="素材/グルメ/ニショルダ.webp" alt="ニショルダ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%8B%E3%82%B7%E3%83%A7%E3%83%AB%E3%83%80%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -388,8 +437,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.12">
-      <div class="num">No.12</div>
-      <div class="name-row"><div class="name">チョイ（緑茶）</div><span class="badge">食後の定番</span></div>
+      <div class="num-row"><span class="num">No.12</span><span class="badge">食後の定番</span></div>
+      <div class="name-row"><div class="name">チョイ（緑茶）</div></div>
       <div class="desc">ウズベキスタンでは食後や来客時に必ずといっていいほど出てくる緑茶。「ピアラ」と呼ばれる取っ手のない小さな陶器に注がれ、砂糖なしで飲むのが本来のスタイル。ハーブを混ぜたものも人気。</div>
       <img src="素材/グルメ/チョイ（緑茶）.webp" alt="チョイ（緑茶）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%A7%E3%82%A4%EF%BC%88%E7%B7%91%E8%8C%B6%EF%BC%89%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -399,8 +448,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="salad" data-fcity="national" data-food-num="No.13">
-      <div class="num">No.13</div>
-      <div class="name-row"><div class="name">アチク・チュチュク</div><span class="badge">定番サラダ</span></div>
+      <div class="num-row"><span class="num">No.13</span><span class="badge">定番サラダ</span></div>
+      <div class="name-row"><div class="name">アチク・チュチュク</div></div>
       <div class="desc">トマト・玉ねぎ・きゅうりを薄切りにして塩だけで和えたフレッシュサラダ。現地の食卓にほぼ毎日登場する定番で、プロフやシャシリクの油っぽさをリセットしてくれる名脇役。</div>
       <img src="素材/グルメ/アチク・チュチュク.webp" alt="アチク・チュチュク" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%81%E3%82%AF%E3%83%BB%E3%83%81%E3%83%A5%E3%83%81%E3%83%A5%E3%82%AF%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -410,8 +459,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="salad" data-fcity="national" data-food-num="No.14">
-      <div class="num">No.14</div>
-      <div class="name-row"><div class="name">マルコフチャ（人参サラダ）</div><span class="badge">バザール定番</span></div>
+      <div class="num-row"><span class="num">No.14</span><span class="badge">バザール定番</span></div>
+      <div class="name-row"><div class="name">マルコフチャ（人参サラダ）</div></div>
       <div class="desc">酢とスパイスを効かせた人参のラペ風サラダ。旧ソ連時代に韓国系移民（高麗人）が広めた料理で、どこのバザールでも山盛りで量り売りされている。ピリ辛の酸味が肉料理と相性抜群。</div>
       <img src="素材/グルメ/マルコフチャ（人参サラダ）.webp" alt="マルコフチャ（人参サラダ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%82%B3%E3%83%95%E3%83%81%E3%83%A3%EF%BC%88%E4%BA%BA%E5%8F%82%E3%82%B5%E3%83%A9%E3%83%80%EF%BC%89%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -421,8 +470,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="noodle" data-fcity="khiva" data-food-num="No.15">
-      <div class="num">No.15</div>
-      <div class="name-row"><div class="name">シュヴィト・オシュ</div><span class="badge">ヒヴァ名物</span></div>
+      <div class="num-row"><span class="num">No.15</span><span class="badge">ヒヴァ名物</span></div>
+      <div class="name-row"><div class="name">シュヴィト・オシュ</div></div>
       <div class="desc">香草ディルを練り込んだ鮮やかな緑色の手打ち麺に、トマトベースの肉野菜ソースをかけるヒヴァ（ホレズム地方）名物。見た目のインパクト抜群で、イチャン・カラ観光とセットで味わいたい一皿。</div>
       <img src="素材/グルメ/シュヴィト・オシュ.webp" alt="シュヴィト・オシュ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B7%E3%83%A5%E3%83%B4%E3%82%A3%E3%83%88%E3%83%BB%E3%82%AA%E3%82%B7%E3%83%A5%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -432,8 +481,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="rice" data-fcity="national" data-food-num="No.16">
-      <div class="num">No.16</div>
-      <div class="name-row"><div class="name">ガンファン</div><span class="badge">あんかけ飯</span></div>
+      <div class="num-row"><span class="num">No.16</span><span class="badge">あんかけ飯</span></div>
+      <div class="name-row"><div class="name">ガンファン</div></div>
       <div class="desc">ラグマンの具（肉野菜のトマト煮込み）を麺ではなく白米にかけた、いわばウズベク風あんかけご飯。中央アジアの中華系文化から生まれた料理で、旅の途中で白いご飯が恋しくなったらこれ。</div>
       <img src="素材/グルメ/ガンファン.webp" alt="ガンファン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AC%E3%83%B3%E3%83%95%E3%82%A1%E3%83%B3%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -443,8 +492,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="rice" data-fcity="national" data-food-num="No.17">
-      <div class="num">No.17</div>
-      <div class="name-row"><div class="name">マスタヴァ</div><span class="badge">雑炊風スープ</span></div>
+      <div class="num-row"><span class="num">No.17</span><span class="badge">雑炊風スープ</span></div>
+      <div class="name-row"><div class="name">マスタヴァ</div></div>
       <div class="desc">米と刻んだ肉・野菜が入ったトマト風味の優しい雑炊風スープ。胃に染みる味わいで、脂っこい食事が続いたときや体調を崩したときの救世主。サワークリームを溶かして食べるのが現地流。</div>
       <img src="素材/グルメ/マスタヴァ.webp" alt="マスタヴァ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%B4%E3%82%A1%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -454,8 +503,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="meat" data-fcity="national" data-food-num="No.18">
-      <div class="num">No.18</div>
-      <div class="name-row"><div class="name">ディムラマ</div><span class="badge">家庭の味</span></div>
+      <div class="num-row"><span class="num">No.18</span><span class="badge">家庭の味</span></div>
+      <div class="name-row"><div class="name">ディムラマ</div></div>
       <div class="desc">羊肉と野菜を鍋に層状に重ねて蓋を密閉しじっくり蒸し煮にする家庭料理。素材自身の水分だけで火を通すため野菜の甘みが凝縮され、干し杏を加える家庭もある。</div>
       <img src="素材/グルメ/ディムラマ.webp" alt="ディムラマ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%87%E3%82%A3%E3%83%A0%E3%83%A9%E3%83%9E%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -465,8 +514,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="meat" data-fcity="national" data-food-num="No.19">
-      <div class="num">No.19</div>
-      <div class="name-row"><div class="name">カザン・カボブ（ケバブ）</div><span class="badge">鉄鍋料理</span></div>
+      <div class="num-row"><span class="num">No.19</span><span class="badge">鉄鍋料理</span></div>
+      <div class="name-row"><div class="name">カザン・カボブ（ケバブ）</div></div>
       <div class="desc">鋳鉄製大鍋でじゃがいもと羊肉のかたまりを高温で炒めてから蒸し焼きにする料理。串焼きではなく煮込み寄りの調理法で、表面はカリッと中はホロホロに仕上がる。</div>
       <img src="素材/グルメ/カザン・カボブ.webp" alt="カザン・カボブ（ケバブ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%82%B6%E3%83%B3%E3%82%AB%E3%83%9C%E3%83%96%20%E3%82%A6%E3%82%BA%E3%83%99%E3%82%AD%E3%82%B9%E3%82%BF%E3%83%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -655,7 +704,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -664,6 +713,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -677,12 +748,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -690,6 +762,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -736,6 +809,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -811,16 +894,54 @@ var PAGE_INDEX = 2;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -995,23 +1116,6 @@ var PAGE_INDEX = 2;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

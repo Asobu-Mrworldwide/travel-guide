@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="メキシコのグルメ｜メキシコ旅行ガイド">
 <meta name="twitter:description" content="直行便で約13時間、時差15時間のメキシコは、古代マヤ・アステカ文明の遺跡とスペイン統治時代のカラフルな街並みが同居する広大な国。ピラミッドが並ぶチチェン・イッツァや極彩色の旧市街、屋台のタコスやメスカル、テキーラまで、陽気な国民性と鮮や…">
 <meta name="twitter:image" content="https://worldmappy.com/mexico/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><img src="素材/国旗.svg" width="175" height="100" alt="メキシコ国旗"></div></span><span class="site-country-name">メキシコ</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="">観光スポット</a>
-    <a href="food.html" class="active">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=mexico">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">メキシコを旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=mexico">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -213,34 +243,52 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Mexico / 03</span></div>
   <div class="tab-body">
   <h2>メキシコグルメ</h2>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="food-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">メイン料理</button>
-      
-      <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">軽食・スナック</button>
-      
-      <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">スイーツ</button>
-      
-      <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">ドリンク</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="food-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">メイン料理</button>
+              
+              <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">軽食・スナック</button>
+              
+              <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">スイーツ</button>
+              
+              <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">ドリンク</button>
+              
+            </div>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア限定</div>
+            <div class="filter-row" id="food-filter-city">
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
+              
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">全国共通</button>
+              
+              <button class="filter-btn" data-filter="oaxaca" onclick="filterFood('city','oaxaca',this)">オアハカ</button>
+              
+              <button class="filter-btn" data-filter="yucatan" onclick="filterFood('city','yucatan',this)">ユカタン半島</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetFoodFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-label">エリア限定</div>
-    <div class="filter-row" id="food-filter-city">
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
-      
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">全国共通</button>
-      
-      <button class="filter-btn" data-filter="oaxaca" onclick="filterFood('city','oaxaca',this)">オアハカ</button>
-      
-      <button class="filter-btn" data-filter="yucatan" onclick="filterFood('city','yucatan',this)">ユカタン半島</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="food-count-shown">23</span> / <span id="food-count-total">23</span> 品を表示</span>
     <div class="view-toggle" id="foodViewToggle">
@@ -249,12 +297,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
   </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.1">
-      <div class="num">No.1</div>
-      <div class="name-row"><div class="name">タコス・アル・パストール</div><span class="badge">メキシコの国民食</span></div>
+      <div class="num-row"><span class="num">No.1</span><span class="badge">メキシコの国民食</span></div>
+      <div class="name-row"><div class="name">タコス・アル・パストール</div></div>
       <div class="desc">回転する肉の塊を薄く削ぎ切りにし、パイナップルを添えた屋台の定番タコス。パクチーとサルサをかけて食べるのが定番で、苦手なら「Sin cilantro」と伝えよう。</div>
       <img src="素材/グルメ/タコス・アル・パストール.webp" alt="タコス・アル・パストール" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%BF%E3%82%B3%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%AB%E3%83%BB%E3%83%91%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -264,8 +313,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="snack" data-fcity="national" data-food-num="No.2">
-      <div class="num">No.2</div>
-      <div class="name-row"><div class="name">ワカモレ</div><span class="badge">アボカドの定番ディップ</span></div>
+      <div class="num-row"><span class="num">No.2</span><span class="badge">アボカドの定番ディップ</span></div>
+      <div class="name-row"><div class="name">ワカモレ</div></div>
       <div class="desc">熟したアボカドを潰し、ライムやコリアンダー、玉ねぎを混ぜたディップ。トルティーヤチップスと一緒に前菜として食べるのが定番で、家庭ごとに味が異なる。</div>
       <img src="素材/グルメ/ワカモレ.webp" alt="ワカモレ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%AF%E3%82%AB%E3%83%A2%E3%83%AC%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -275,8 +324,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="oaxaca" data-food-num="No.3">
-      <div class="num">No.3</div>
-      <div class="name-row"><div class="name">モーレ・ポブラーノ</div><span class="badge">プエブラ・オアハカ発祥の伝統ソース</span></div>
+      <div class="num-row"><span class="num">No.3</span><span class="badge">プエブラ・オアハカ発祥の伝統ソース</span></div>
+      <div class="name-row"><div class="name">モーレ・ポブラーノ</div></div>
       <div class="desc">唐辛子やチョコレート、スパイスなど20種以上の材料を煮込んだ濃厚な伝統ソース。厳密にはプエブラ州発祥だが、オアハカは「7種のモーレ」で名高い本場でもある。</div>
       <img src="素材/グルメ/モーレ・ポブラーノ.webp" alt="モーレ・ポブラーノ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%A2%E3%83%BC%E3%83%AC%E3%83%BB%E3%83%9D%E3%83%96%E3%83%A9%E3%83%BC%E3%83%8E%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -286,8 +335,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.4">
-      <div class="num">No.4</div>
-      <div class="name-row"><div class="name">タマレス</div><span class="badge">トウモロコシの葉包み蒸し料理</span></div>
+      <div class="num-row"><span class="num">No.4</span><span class="badge">トウモロコシの葉包み蒸し料理</span></div>
+      <div class="name-row"><div class="name">タマレス</div></div>
       <div class="desc">トウモロコシ生地に肉や野菜を詰め、葉で包んで蒸し上げる伝統料理。朝食の屋台でよく売られており、地域ごとに具材や包む葉（バナナの葉等）が異なる。</div>
       <img src="素材/グルメ/タマレス.webp" alt="タマレス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%BF%E3%83%9E%E3%83%AC%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -297,8 +346,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.5">
-      <div class="num">No.5</div>
-      <div class="name-row"><div class="name">ケサディーヤ</div><span class="badge">とろけるチーズの軽食</span></div>
+      <div class="num-row"><span class="num">No.5</span><span class="badge">とろけるチーズの軽食</span></div>
+      <div class="name-row"><div class="name">ケサディーヤ</div></div>
       <div class="desc">トルティーヤにチーズや具材を挟んで焼いた軽食。屋台では花（キノコの一種のワカシュ等）やひき肉を挟むこともあり、日本で知られる形とはやや違う個性がある。</div>
       <img src="素材/グルメ/ケサディーヤ.webp" alt="ケサディーヤ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B1%E3%82%B5%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A4%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -308,8 +357,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.6">
-      <div class="num">No.6</div>
-      <div class="name-row"><div class="name">チュロス</div><span class="badge">揚げたてシナモンスイーツ</span></div>
+      <div class="num-row"><span class="num">No.6</span><span class="badge">揚げたてシナモンスイーツ</span></div>
+      <div class="name-row"><div class="name">チュロス</div></div>
       <div class="desc">揚げたての生地にシナモンシュガーをまぶした定番スイーツ。チョコレートソースに浸して食べるのが人気で、市場や屋台で焼きたてを頬張るのが旅の楽しみになる。</div>
       <img src="素材/グルメ/チュロス.webp" alt="チュロス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%A5%E3%83%AD%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E3%81%8A%E8%8F%93%E5%AD%90" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -319,8 +368,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="drink" data-fcity="national" data-food-num="No.7">
-      <div class="num">No.7</div>
-      <div class="name-row"><div class="name">テキーラ</div><span class="badge">リュウゼツランの蒸留酒</span></div>
+      <div class="num-row"><span class="num">No.7</span><span class="badge">リュウゼツランの蒸留酒</span></div>
+      <div class="name-row"><div class="name">テキーラ</div></div>
       <div class="desc">アガベ（リュウゼツラン）を原料とする世界的に有名な蒸留酒。テキーラ町周辺が原産地として法律で保護されており、塩とライムを添えたショットが定番の飲み方。</div>
       <img src="素材/グルメ/テキーラ.webp" alt="テキーラ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%86%E3%82%AD%E3%83%BC%E3%83%A9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -330,8 +379,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="oaxaca" data-food-num="No.8">
-      <div class="num">No.8</div>
-      <div class="name-row"><div class="name">メスカル</div><span class="badge">オアハカの燻香蒸留酒</span></div>
+      <div class="num-row"><span class="num">No.8</span><span class="badge">オアハカの燻香蒸留酒</span></div>
+      <div class="name-row"><div class="name">メスカル</div></div>
       <div class="desc">野生のアガベを地中の窯で焼いてから蒸留する、オアハカ発祥のスモーキーな蒸留酒。テキーラより種類が多彩で、専門バー（メスカレリア）で飲み比べる旅行者も多い。</div>
       <img src="素材/グルメ/メスカル.webp" alt="メスカル" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%A1%E3%82%B9%E3%82%AB%E3%83%AB%20%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%E9%A3%B2%E3%81%BF%E7%89%A9" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -341,8 +390,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.9">
-      <div class="num">No.9</div>
-      <div class="name-row"><div class="name">チレス・エン・ノガダ</div><span class="badge">国旗色の祝祭料理</span></div>
+      <div class="num-row"><span class="num">No.9</span><span class="badge">国旗色の祝祭料理</span></div>
+      <div class="name-row"><div class="name">チレス・エン・ノガダ</div></div>
       <div class="desc">ひき肉と果物を詰めたポブラーノ唐辛子に、白いクルミソースとザクロをかけた一皿。緑・白・赤の国旗色になることから独立記念日前後の季節料理として親しまれる。</div>
       <img src="素材/グルメ/チレス・エン・ノガダ.webp" alt="チレス・エン・ノガダ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%AC%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%B3%E3%83%BB%E3%83%8E%E3%82%AC%E3%83%80%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -352,8 +401,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.10">
-      <div class="num">No.10</div>
-      <div class="name-row"><div class="name">ポソレ</div><span class="badge">粒トウモロコシのスープ</span></div>
+      <div class="num-row"><span class="num">No.10</span><span class="badge">粒トウモロコシのスープ</span></div>
+      <div class="name-row"><div class="name">ポソレ</div></div>
       <div class="desc">殻を取り除いた粒トウモロコシ（カカワジントレ）を豚肉や鶏肉と煮込んだ伝統スープ。刻みキャベツやラディッシュ、ライムを好みで加えて味を調えながら食べる。</div>
       <img src="素材/グルメ/ポソレ.webp" alt="ポソレ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9D%E3%82%BD%E3%83%AC%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -363,8 +412,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.11">
-      <div class="num">No.11</div>
-      <div class="name-row"><div class="name">エロテ・エスキーテス</div><span class="badge">屋台のとうもろこし</span></div>
+      <div class="num-row"><span class="num">No.11</span><span class="badge">屋台のとうもろこし</span></div>
+      <div class="name-row"><div class="name">エロテ・エスキーテス</div></div>
       <div class="desc">茹でたトウモロコシにマヨネーズ、チーズ、チリパウダーをまぶした屋台グルメ。串に刺した「エロテ」と、カップ入りの実だけの「エスキーテス」の2スタイルがある。</div>
       <img src="素材/グルメ/エロテ・エスキーテス.webp" alt="エロテ・エスキーテス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A8%E3%83%AD%E3%83%86%20%E3%82%A8%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%86%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -374,8 +423,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.12">
-      <div class="num">No.12</div>
-      <div class="name-row"><div class="name">チャンプラード</div><span class="badge">トウモロコシのホットチョコ</span></div>
+      <div class="num-row"><span class="num">No.12</span><span class="badge">トウモロコシのホットチョコ</span></div>
+      <div class="name-row"><div class="name">チャンプラード</div></div>
       <div class="desc">トウモロコシ粉とチョコレートを煮込んだとろみのある温かい飲み物。シナモンの香りが効いており、朝食のタマレスと一緒に飲むのがメキシコの朝の定番。</div>
       <img src="素材/グルメ/チャンプラード.webp" alt="チャンプラード" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%83%B3%E3%83%97%E3%83%A9%E3%83%BC%E3%83%89%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -385,8 +434,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.13">
-      <div class="num">No.13</div>
-      <div class="name-row"><div class="name">セビーチェ</div><span class="badge">海沿いの爽やかな一皿</span></div>
+      <div class="num-row"><span class="num">No.13</span><span class="badge">海沿いの爽やかな一皿</span></div>
+      <div class="name-row"><div class="name">セビーチェ</div></div>
       <div class="desc">白身魚やエビをライム果汁でマリネし、トマトや玉ねぎと和えた爽やかな料理。カンクンなど沿岸部の名物で、トスターダ（揚げトルティーヤ）にのせて食べるのが定番。</div>
       <img src="素材/グルメ/セビーチェ.webp" alt="セビーチェ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%BB%E3%83%93%E3%83%BC%E3%83%81%E3%82%A7%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -396,8 +445,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="yucatan" data-food-num="No.14">
-      <div class="num">No.14</div>
-      <div class="name-row"><div class="name">コチニータ・ピビル</div><span class="badge">ユカタン半島の蒸し豚</span></div>
+      <div class="num-row"><span class="num">No.14</span><span class="badge">ユカタン半島の蒸し豚</span></div>
+      <div class="name-row"><div class="name">コチニータ・ピビル</div></div>
       <div class="desc">アチオテペーストに漬け込んだ豚肉をバナナの葉で包み、じっくり蒸し焼きにするユカタン半島の郷土料理。酸味のある紫玉ねぎのピクルスを添えて食べるのが定番。</div>
       <img src="素材/グルメ/コチニータ・ピビル.webp" alt="コチニータ・ピビル" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B3%E3%83%81%E3%83%8B%E3%83%BC%E3%82%BF%E3%83%BB%E3%83%94%E3%83%93%E3%83%AB%20%E3%83%A6%E3%82%AB%E3%82%BF%E3%83%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -407,8 +456,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.15">
-      <div class="num">No.15</div>
-      <div class="name-row"><div class="name">チラキーレス</div><span class="badge">定番の朝食プレート</span></div>
+      <div class="num-row"><span class="num">No.15</span><span class="badge">定番の朝食プレート</span></div>
+      <div class="name-row"><div class="name">チラキーレス</div></div>
       <div class="desc">揚げたトルティーヤチップスをサルサで煮込み、目玉焼きやチーズ、サワークリームをのせた朝食の定番。二日酔いにも効くと言われる、メキシコの家庭の味。</div>
       <img src="素材/グルメ/チラキーレス.webp" alt="チラキーレス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%A9%E3%82%AD%E3%83%BC%E3%83%AC%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -418,8 +467,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.16">
-      <div class="num">No.16</div>
-      <div class="name-row"><div class="name">オルチャータ</div><span class="badge">米で作る乳白色の甘い飲み物</span></div>
+      <div class="num-row"><span class="num">No.16</span><span class="badge">米で作る乳白色の甘い飲み物</span></div>
+      <div class="name-row"><div class="name">オルチャータ</div></div>
       <div class="desc">米を水に浸してすり潰し、シナモンや砂糖で甘く仕上げた冷たい飲み物。辛い料理の合間に飲むと口の中がリセットされる、屋台や食堂の定番ドリンク。</div>
       <img src="素材/グルメ/オルチャータ.webp" alt="オルチャータ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AA%E3%83%AB%E3%83%81%E3%83%A3%E3%83%BC%E3%82%BF%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -429,8 +478,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.17">
-      <div class="num">No.17</div>
-      <div class="name-row"><div class="name">ミチェラーダ</div><span class="badge">ビールベースのカクテル</span></div>
+      <div class="num-row"><span class="num">No.17</span><span class="badge">ビールベースのカクテル</span></div>
+      <div class="name-row"><div class="name">ミチェラーダ</div></div>
       <div class="desc">ビールにライム果汁やホットソース、塩を加えたピリ辛カクテル。グラスの縁に塩とチリパウダーをまぶすのが定番で、暑い日の昼下がりに飲むのが心地よい。</div>
       <img src="素材/グルメ/ミチェラーダ.webp" alt="ミチェラーダ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9F%E3%83%81%E3%82%A7%E3%83%A9%E3%83%BC%E3%83%80%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E9%A3%B2%E3%81%BF%E7%89%A9" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -440,8 +489,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.18">
-      <div class="num">No.18</div>
-      <div class="name-row"><div class="name">エンチラーダス</div><span class="badge">サルサに浸したロール料理</span></div>
+      <div class="num-row"><span class="num">No.18</span><span class="badge">サルサに浸したロール料理</span></div>
+      <div class="name-row"><div class="name">エンチラーダス</div></div>
       <div class="desc">具材を巻いたトルティーヤをサルサに浸して焼いた家庭料理。緑（サルサベルデ）や赤（サルサロハ）などソースの種類が豊富で、チーズをたっぷりかけて食べる。</div>
       <img src="素材/グルメ/エンチラーダス.webp" alt="エンチラーダス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A8%E3%83%B3%E3%83%81%E3%83%A9%E3%83%BC%E3%83%80%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -451,8 +500,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="oaxaca" data-food-num="No.19">
-      <div class="num">No.19</div>
-      <div class="name-row"><div class="name">トラユーダ</div><span class="badge">オアハカ風ピザ</span></div>
+      <div class="num-row"><span class="num">No.19</span><span class="badge">オアハカ風ピザ</span></div>
+      <div class="name-row"><div class="name">トラユーダ</div></div>
       <div class="desc">薄く大きなトウモロコシ生地に豆ペーストと肉、オアハカチーズをのせて焼いた「オアハカ風ピザ」。パリッとした生地とチーズのコクが人気。</div>
       <img src="素材/グルメ/トラユーダ.webp" alt="トラユーダ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%88%E3%83%A9%E3%83%A6%E3%83%BC%E3%83%80%20%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -462,8 +511,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="oaxaca" data-food-num="No.20">
-      <div class="num">No.20</div>
-      <div class="name-row"><div class="name">ケソ・オアハカ（オアハカチーズ）</div><span class="badge">さけるチーズの元祖</span></div>
+      <div class="num-row"><span class="num">No.20</span><span class="badge">さけるチーズの元祖</span></div>
+      <div class="name-row"><div class="name">ケソ・オアハカ（オアハカチーズ）</div></div>
       <div class="desc">メキシコ中で愛される「さけるチーズ」の元祖。裂いて焼くととろけて糸を引き、ケサディーヤやトラユーダなど様々な料理に使われる万能チーズ。</div>
       <img src="素材/グルメ/ケソ・オアハカ（オアハカチーズ）.webp" alt="ケソ・オアハカ（オアハカチーズ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B1%E3%82%BD%E3%83%BB%E3%82%AA%E3%82%A2%E3%83%8F%E3%82%AB%20%E3%83%81%E3%83%BC%E3%82%BA" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -473,8 +522,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="yucatan" data-food-num="No.21">
-      <div class="num">No.21</div>
-      <div class="name-row"><div class="name">ソパ・デ・リマ</div><span class="badge">ユカタンの定番ライムスープ</span></div>
+      <div class="num-row"><span class="num">No.21</span><span class="badge">ユカタンの定番ライムスープ</span></div>
+      <div class="name-row"><div class="name">ソパ・デ・リマ</div></div>
       <div class="desc">ライムの酸味が効いたユカタン半島の伝統スープ。鶏肉と揚げトルティーヤが入り、さっぱりした味わいは暑い気候でも食欲をそそる日本人好みの一杯。</div>
       <img src="素材/グルメ/ソパ・デ・リマ.webp" alt="ソパ・デ・リマ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%BD%E3%83%91%E3%83%BB%E3%83%87%E3%83%BB%E3%83%AA%E3%83%9E%20%E3%83%A6%E3%82%AB%E3%82%BF%E3%83%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -484,8 +533,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.22">
-      <div class="num">No.22</div>
-      <div class="name-row"><div class="name">カルニータス</div><span class="badge">タコスの定番具材</span></div>
+      <div class="num-row"><span class="num">No.22</span><span class="badge">タコスの定番具材</span></div>
+      <div class="name-row"><div class="name">カルニータス</div></div>
       <div class="desc">豚肉をラードでじっくり煮込み、外はカリッと中はホロホロに仕上げた煮込み料理。タコスの具材としても定番で、屋台や食堂で必ず見かける味。</div>
       <img src="素材/グルメ/カルニータス.webp" alt="カルニータス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AB%E3%83%AB%E3%83%8B%E3%83%BC%E3%82%BF%E3%82%B9%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -495,8 +544,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.23">
-      <div class="num">No.23</div>
-      <div class="name-row"><div class="name">サルサ（赤・緑）</div><span class="badge">辛さの基準</span></div>
+      <div class="num-row"><span class="num">No.23</span><span class="badge">辛さの基準</span></div>
+      <div class="name-row"><div class="name">サルサ（赤・緑）</div></div>
       <div class="desc">青唐辛子ベースの緑（サルサ・ベルデ）と辛いチリの赤（サルサ・ロハ）は辛さの系統が違う。ハバネロ入りは特に強烈なので少量から試したい。</div>
       <img src="素材/グルメ/サルサ（赤・緑）.webp" alt="サルサ（赤・緑）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B5%E3%83%AB%E3%82%B5%20%E3%83%A1%E3%82%AD%E3%82%B7%E3%82%B3%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -685,7 +734,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -694,6 +743,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -707,12 +778,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -720,6 +792,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -766,6 +839,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -841,16 +924,54 @@ var PAGE_INDEX = 2;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1025,23 +1146,6 @@ var PAGE_INDEX = 2;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();

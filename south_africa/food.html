@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="南アフリカ共和国のグルメ｜南アフリカ共和国旅行ガイド">
 <meta name="twitter:description" content="未舗装路？道端に野生動物？命の保証は？まだそんなイメージの人は今すぐチケットを取りましょう。ケープタウンのテーブルマウンテン、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、圧倒的なスケールの自然と…">
 <meta name="twitter:image" content="https://worldmappy.com/south_africa/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788443907">
+<link rel="stylesheet" href="../assets/style.css?v=1788626502">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788443907" defer></script>
-<script src="../assets/affiliates.js?v=1788443907" defer></script>
+<script src="../assets/affiliates-data.js?v=1788626502" defer></script>
+<script src="../assets/affiliates.js?v=1788626502" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -107,47 +107,77 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <header class="site-header">
   <div class="site-logo"><a href="../index.html" style="color:inherit;text-decoration:none"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:6px;display:inline-block"><span>World</span> Mappy</a></div>
   <a href="index.html" class="site-country-badge" style="text-decoration:none;cursor:pointer"><span class="site-country-flag"><div style="display:inline-block;border:1px solid #ddd;box-shadow:0 1px 5px rgba(0,0,0,0.18);line-height:0;overflow:hidden"><svg width="150" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 9 6"><clipPath id="c"><path d="M0 0l4.5 3L0 6" id="b"/></clipPath><clipPath id="a"><path d="M0 0h9v6H0z"/></clipPath><g clip-path="url(#a)"><path d="M0 0v6h9V0z" fill="#001489"/><path d="M0 0v3h9V0z" fill="#e03c31"/><g stroke-width="2" stroke="#fff"><path d="M0 0l4.5 3L0 6m4.5-3H9" id="d"/><use xlink:href="#b" stroke="#ffb81c" clip-path="url(#c)"/></g><use xlink:href="#d" fill="none" stroke="#007749" stroke-width="1.2"/></g></svg></div></span><span class="site-country-name">南アフリカ共和国</span></a>
-  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー">
+  <button type="button" id="hb-toggle-btn" class="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer">
     <span></span><span></span><span></span>
   </button>
 </header>
 
-<div id="hb-drawer" class="hb-drawer">
-  <div class="hb-col">
-    <span class="hb-label">GUIDE</span>
-    <a href="../common/checklist.html">持ち物チェックリスト</a>
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/index.html">旅行タイプ診断</a> -->
-    <!-- 診断ページ未公開のため無効化: <a href="../diagnosis/types.html">旅行タイプ一覧</a> -->
-    <a href="../common/faq.html">よくある質問</a>
-    <a href="../common/contact.html">お問い合わせ</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">このページ</span>
-    
-    <a href="index.html" class="">基本情報</a>
-    <a href="spots.html" class="">観光スポット</a>
-    <a href="food.html" class="active">グルメ</a>
-    <a href="course.html" class="">モデルコース</a>
-    <a href="budget.html" class="">予算・費用</a>
-    <a href="practical.html" class="">旅の準備</a>
-    <a href="phrases.html" class="">フレーズ</a>
-    
-    
-    <a href="../common/checklist.html?from=south_africa">持ち物リスト</a>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">近隣の国</span>
-    <div id="hb-nearby"></div>
-  </div>
-  <div class="hb-col">
-    <span class="hb-label">ABOUT</span>
-    <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-    <a href="#">このサイトについて →</a>
-    <a href="../common/contact.html">お問い合わせ →</a>
-  </div>
 </div>
 
-</div>
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <div class="hb-drawer__brand">
+      <span class="hb-logo"><b>World</b> Mappy</span>
+      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
+    </div>
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">南アフリカ共和国を旅する</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+    
+      <a class="hb-item " href="index.html"><span class="hb-item__dot"></span><span class="hb-item__label">基本情報</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="spots.html"><span class="hb-item__dot"></span><span class="hb-item__label">観光スポット</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item active" href="food.html"><span class="hb-item__dot"></span><span class="hb-item__label">グルメ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="course.html"><span class="hb-item__dot"></span><span class="hb-item__label">モデルコース</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="budget.html"><span class="hb-item__dot"></span><span class="hb-item__label">予算・費用</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="practical.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅の準備</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item " href="phrases.html"><span class="hb-item__dot"></span><span class="hb-item__label">フレーズ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    
+    
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html?from=south_africa">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="area" aria-expanded="false" aria-controls="hbSecArea">
+      <span class="hb-sec__label">ほかの国を探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecArea" hidden>
+      <div id="hb-nearby"></div>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">このサイトについて →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
+    </div>
+  </div>
+</aside>
 
 
 <nav>
@@ -213,34 +243,52 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">South Africa / 03</span></div>
   <div class="tab-body">
   <h2>南アフリカ グルメ</h2>
-  <div class="filter-group">
-    <div class="filter-label">カテゴリー</div>
-    <div class="filter-row" id="food-filter-type">
-      <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
-      
-      <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">メイン料理</button>
-      
-      <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">スナック</button>
-      
-      <button class="filter-btn " data-filter="side" onclick="filterFood('type','side',this)">サイドメニュー</button>
-      
-      <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">デザート</button>
-      
-      <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">飲み物</button>
-      
+  <div class="filter-bar">
+  <details class="filter-toggle">
+    <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
+      <span class="ft-btn"><svg class="ft-funnel" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l-7.2 8.4V21l-3.6-1.8v-6.8z"/></svg>絞り込み<span class="ft-caret"></span></span>
+    </summary>
+    <div class="filter-toggle-body">
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">カテゴリ</div>
+            <div class="filter-row" id="food-filter-type">
+              <button class="filter-btn" data-filter="must" onclick="filterFood('type','must',this)">⭐ おすすめ</button>
+              
+              <button class="filter-btn " data-filter="main" onclick="filterFood('type','main',this)">メイン料理</button>
+              
+              <button class="filter-btn " data-filter="snack" onclick="filterFood('type','snack',this)">スナック</button>
+              
+              <button class="filter-btn " data-filter="side" onclick="filterFood('type','side',this)">サイドメニュー</button>
+              
+              <button class="filter-btn " data-filter="dessert" onclick="filterFood('type','dessert',this)">デザート</button>
+              
+              <button class="filter-btn " data-filter="drink" onclick="filterFood('type','drink',this)">飲み物</button>
+              
+            </div>
+          </div>
+        </div>
+        <div class="ft-col">
+          <div class="filter-group">
+            <div class="filter-label">エリア限定</div>
+            <div class="filter-row" id="food-filter-city">
+              <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
+              
+              <button class="filter-btn" data-filter="cape_town" onclick="filterFood('city','cape_town',this)">ケープタウン</button>
+              
+              <button class="filter-btn" data-filter="durban" onclick="filterFood('city','durban',this)">ダーバン</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ft-actions">
+        <button type="button" class="ft-reset" onclick="resetFoodFilters()">条件をリセット</button>
+        <button type="button" class="ft-apply" onclick="this.closest('details').removeAttribute('open')">この条件で見る</button>
+      </div>
     </div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-label">エリア限定</div>
-    <div class="filter-row" id="food-filter-city">
-      <button class="filter-btn" data-filter="national" onclick="filterFood('city','national',this)">どこでも</button>
-      
-      <button class="filter-btn" data-filter="cape_town" onclick="filterFood('city','cape_town',this)">ケープタウン</button>
-      
-      <button class="filter-btn" data-filter="durban" onclick="filterFood('city','durban',this)">ダーバン</button>
-      
-    </div>
-  </div>
+  </details>
   <div class="items-count-row">
     <span class="items-count-text"><span id="food-count-shown">21</span> / <span id="food-count-total">21</span> 品を表示</span>
     <div class="view-toggle" id="foodViewToggle">
@@ -249,12 +297,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <button data-view="list" onclick="setItemView('food','list')" aria-label="リスト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>リスト</span></button>
     </div>
   </div>
+  </div>
   <div class="s-card" style="padding:16px">
   <div class="item-grid" id="food-grid">
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="national" data-food-num="No.1">
-      <div class="num">No.1</div>
-      <div class="name-row"><div class="name">ブライ</div><span class="badge">国民食</span></div>
+      <div class="num-row"><span class="num">No.1</span><span class="badge">国民食</span></div>
+      <div class="name-row"><div class="name">ブライ</div></div>
       <div class="desc">南アフリカ版BBQ。毎週末に家族・友人と炭火を囲む国民的な食文化で、羊・牛・鶏などさまざまな肉を豪快に焼き上げながらワインやビールで楽しむ。</div>
       <img src="素材/グルメ/ブライ.webp" alt="ブライ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%96%E3%83%A9%E3%82%A4%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -264,8 +313,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.2">
-      <div class="num">No.2</div>
-      <div class="name-row"><div class="name">ボーワース</div><span class="badge">BBQの定番</span></div>
+      <div class="num-row"><span class="num">No.2</span><span class="badge">BBQの定番</span></div>
+      <div class="name-row"><div class="name">ボーワース</div></div>
       <div class="desc">コリアンダーとナツメグで香りをつけた牛・豚のコイル状ソーセージ。ブライに欠かせない定番の一品で、炭火でじっくり焼いた香ばしさが食欲をそそる。</div>
       <img src="素材/グルメ/ボーワース.webp" alt="ボーワース" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9C%E3%83%BC%E3%83%AF%E3%83%BC%E3%82%B9%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -275,8 +324,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="snack" data-fcity="national" data-food-num="No.3">
-      <div class="num">No.3</div>
-      <div class="name-row"><div class="name">ビルトン</div><span class="badge">定番スナック</span></div>
+      <div class="num-row"><span class="num">No.3</span><span class="badge">定番スナック</span></div>
+      <div class="name-row"><div class="name">ビルトン</div></div>
       <div class="desc">ビネガーとコリアンダーで味付けして乾燥熟成させた牛肉の干し肉。ジャーキーより柔らかくスパイシーで、スーパーでも手軽に買えるお土産の定番。</div>
       <img src="素材/グルメ/ビルトン.webp" alt="ビルトン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%93%E3%83%AB%E3%83%88%E3%83%B3%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -286,8 +335,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="durban" data-food-num="No.4">
-      <div class="num">No.4</div>
-      <div class="name-row"><div class="name">バニーチョウ</div><span class="badge">ダーバン名物</span></div>
+      <div class="num-row"><span class="num">No.4</span><span class="badge">ダーバン名物</span></div>
+      <div class="name-row"><div class="name">バニーチョウ</div></div>
       <div class="desc">ダーバン発祥のインド系料理。食パンをくり抜いてカレーを詰めた豪快なB級グルメで、手でちぎりながらカレーに浸して食べるのがダーバン流のスタイル。</div>
       <img src="素材/グルメ/バニーチョウ.webp" alt="バニーチョウ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%90%E3%83%8B%E3%83%BC%E3%83%81%E3%83%A7%E3%82%A6%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -297,8 +346,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="main" data-fcity="cape_town" data-food-num="No.5">
-      <div class="num">No.5</div>
-      <div class="name-row"><div class="name">ボボティ</div><span class="badge">ケープマレー料理</span></div>
+      <div class="num-row"><span class="num">No.5</span><span class="badge">ケープマレー料理</span></div>
+      <div class="name-row"><div class="name">ボボティ</div></div>
       <div class="desc">スパイスとドライフルーツを混ぜたひき肉の上にエッグカスタードをかけてオーブン焼きにした料理。南アフリカの国民料理のひとつ。</div>
       <img src="素材/グルメ/ボボティ.webp" alt="ボボティ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9C%E3%83%9C%E3%83%86%E3%82%A3%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -308,8 +357,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.6">
-      <div class="num">No.6</div>
-      <div class="name-row"><div class="name">ポトジェコス</div><span class="badge">郷土料理</span></div>
+      <div class="num-row"><span class="num">No.6</span><span class="badge">郷土料理</span></div>
+      <div class="name-row"><div class="name">ポトジェコス</div></div>
       <div class="desc">三本脚の鋳鉄鍋「ポトジェ」で肉・野菜をじっくり炭火で煮込んだシチュー。アウトドアやキャンプ文化に欠かせない料理で、南アフリカの大自然に合う一品。</div>
       <img src="素材/グルメ/ポトジェコス.webp" alt="ポトジェコス" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9D%E3%83%88%E3%82%B8%E3%82%A7%E3%82%B3%E3%82%B9%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -319,8 +368,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="side" data-fcity="national" data-food-num="No.7">
-      <div class="num">No.7</div>
-      <div class="name-row"><div class="name">ミーリーパップ</div><span class="badge">主食</span></div>
+      <div class="num-row"><span class="num">No.7</span><span class="badge">主食</span></div>
+      <div class="name-row"><div class="name">ミーリーパップ</div></div>
       <div class="desc">トウモロコシ粉で作った白い粥状の主食。手で握って肉料理やスープと絡めて食べるのが現地流で、南アフリカ全土の家庭料理に欠かせないスープルフード。</div>
       <img src="素材/グルメ/ミーリーパップ.webp" alt="ミーリーパップ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9F%E3%83%BC%E3%83%AA%E3%83%BC%E3%83%91%E3%83%83%E3%83%97%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -330,8 +379,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="cape_town" data-food-num="No.8">
-      <div class="num">No.8</div>
-      <div class="name-row"><div class="name">ケープマレーカレー</div><span class="badge">ケープタウン名物</span></div>
+      <div class="num-row"><span class="num">No.8</span><span class="badge">ケープタウン名物</span></div>
+      <div class="name-row"><div class="name">ケープマレーカレー</div></div>
       <div class="desc">マレー系移民が伝えた甘みとスパイスのカレー。シナモン・カルダモン・ドライアプリコットが独特の風味をもたらす、ケープタウンならではの歴史的な一皿。</div>
       <img src="素材/グルメ/ケープマレーカレー.webp" alt="ケープマレーカレー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B1%E3%83%BC%E3%83%97%E3%83%9E%E3%83%AC%E3%83%BC%E3%82%AB%E3%83%AC%E3%83%BC%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -341,8 +390,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.9">
-      <div class="num">No.9</div>
-      <div class="name-row"><div class="name">マルバプディング</div><span class="badge">定番デザート</span></div>
+      <div class="num-row"><span class="num">No.9</span><span class="badge">定番デザート</span></div>
+      <div class="name-row"><div class="name">マルバプディング</div></div>
       <div class="desc">アプリコットジャムを使ったしっとり甘いスポンジプディング。温かいバタークリームソースをかけて食べる南アフリカの定番デザート。</div>
       <img src="素材/グルメ/マルバプディング.webp" alt="マルバプディング" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9E%E3%83%AB%E3%83%90%E3%83%97%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -352,8 +401,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img must" data-ftype="drink" data-fcity="national" data-food-num="No.10">
-      <div class="num">No.10</div>
-      <div class="name-row"><div class="name">ロイボスティー</div><span class="badge">国産ハーブティー</span></div>
+      <div class="num-row"><span class="num">No.10</span><span class="badge">国産ハーブティー</span></div>
+      <div class="name-row"><div class="name">ロイボスティー</div></div>
       <div class="desc">南アフリカ原産の赤いハーブティー。カフェインゼロで抗酸化作用が高く、世界中で人気が高まっているお茶で、現地のスーパーで様々なブレンドを購入できる。</div>
       <img src="素材/グルメ/ロイボスティー.webp" alt="ロイボスティー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%AD%E3%82%A4%E3%83%9C%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -363,8 +412,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="national" data-food-num="No.11">
-      <div class="num">No.11</div>
-      <div class="name-row"><div class="name">ペリペリチキン</div><span class="badge">スパイシーグリル</span></div>
+      <div class="num-row"><span class="num">No.11</span><span class="badge">スパイシーグリル</span></div>
+      <div class="name-row"><div class="name">ペリペリチキン</div></div>
       <div class="desc">アフリカン・バードズアイペッパーで味付けしたグリルチキン。ポルトガル植民地文化の影響を受けた料理で、辛さの中にスパイスの深みがある定番の一品。</div>
       <img src="素材/グルメ/ペリペリチキン.webp" alt="ペリペリチキン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9A%E3%83%AA%E3%83%9A%E3%83%AA%E3%83%81%E3%82%AD%E3%83%B3%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -374,8 +423,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="durban" data-food-num="No.12">
-      <div class="num">No.12</div>
-      <div class="name-row"><div class="name">サモサ</div><span class="badge">インド系スナック</span></div>
+      <div class="num-row"><span class="num">No.12</span><span class="badge">インド系スナック</span></div>
+      <div class="name-row"><div class="name">サモサ</div></div>
       <div class="desc">インド系南アフリカ人が広めた三角形の揚げ餃子。スパイシーな肉・野菜の具材入りで、チャツネをつけて食べる軽食として街中の屋台や市場で親しまれている。</div>
       <img src="素材/グルメ/サモサ.webp" alt="サモサ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%B5%E3%83%A2%E3%82%B5%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -385,8 +434,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="cape_town" data-food-num="No.13">
-      <div class="num">No.13</div>
-      <div class="name-row"><div class="name">ギャツビー</div><span class="badge">ケープタウン発祥</span></div>
+      <div class="num-row"><span class="num">No.13</span><span class="badge">ケープタウン発祥</span></div>
+      <div class="name-row"><div class="name">ギャツビー</div></div>
       <div class="desc">1976年ケープタウン発祥、大きなフランスパンにフライドポテト（スラップチップス）と肉・ソースを豪快に挟んだ超巨大サンドイッチ。若者やバックパッカーに人気のソウルフード。</div>
       <img src="素材/グルメ/ギャツビー.webp" alt="ギャツビー" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AE%E3%83%A3%E3%83%84%E3%83%93%E3%83%BC%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -396,8 +445,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="snack" data-fcity="national" data-food-num="No.14">
-      <div class="num">No.14</div>
-      <div class="name-row"><div class="name">ベットクック</div><span class="badge">揚げパン</span></div>
+      <div class="num-row"><span class="num">No.14</span><span class="badge">揚げパン</span></div>
+      <div class="name-row"><div class="name">ベットクック</div></div>
       <div class="desc">小麦粉の生地を揚げた「揚げパン」に、ひき肉カレー（マインス）やジャムを挟んで食べる伝統スナック。コサ語・ズールー語では「アムグウィニャ」とも呼ばれる。</div>
       <img src="素材/グルメ/ベットクック.webp" alt="ベットクック" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%99%E3%83%83%E3%83%88%E3%82%AF%E3%83%83%E3%82%AF%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -407,8 +456,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.15">
-      <div class="num">No.15</div>
-      <div class="name-row"><div class="name">ミルクタルト</div><span class="badge">国民的スイーツ</span></div>
+      <div class="num-row"><span class="num">No.15</span><span class="badge">国民的スイーツ</span></div>
+      <div class="name-row"><div class="name">ミルクタルト</div></div>
       <div class="desc">オランダ系移民が伝えた、シナモンの香る甘く優しい味わいのミルクカスタードタルト。南アフリカのスーパーやカフェで必ず見かける国民的スイーツ。</div>
       <img src="素材/グルメ/ミルクタルト.webp" alt="ミルクタルト" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%9F%E3%83%AB%E3%82%AF%E3%82%BF%E3%83%AB%E3%83%88%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -418,8 +467,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="dessert" data-fcity="national" data-food-num="No.16">
-      <div class="num">No.16</div>
-      <div class="name-row"><div class="name">クックシスター</div><span class="badge">伝統菓子</span></div>
+      <div class="num-row"><span class="num">No.16</span><span class="badge">伝統菓子</span></div>
+      <div class="name-row"><div class="name">クックシスター</div></div>
       <div class="desc">生地を三つ編みにして揚げ、冷たいシロップにたっぷり浸した伝統菓子。非常に甘くコーヒーや紅茶との相性が抜群で、南アフリカを代表する甘い焼き菓子。</div>
       <img src="素材/グルメ/クックシスター.webp" alt="クックシスター" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%AF%E3%83%83%E3%82%AF%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%BC%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -429,8 +478,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.17">
-      <div class="num">No.17</div>
-      <div class="name-row"><div class="name">南アフリカワイン</div><span class="badge">ワインランド産</span></div>
+      <div class="num-row"><span class="num">No.17</span><span class="badge">ワインランド産</span></div>
+      <div class="name-row"><div class="name">南アフリカワイン</div></div>
       <div class="desc">ステレンボッシュなどワインランド産の世界最高峰ワイン。南ア固有品種「ピノタージュ」の赤ワインや、高級スパークリング「キャップ・クラシック（MCC）」は必飲。</div>
       <img src="素材/グルメ/南アフリカワイン.webp" alt="南アフリカワイン" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%E3%83%AF%E3%82%A4%E3%83%B3%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -440,8 +489,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="drink" data-fcity="national" data-food-num="No.18">
-      <div class="num">No.18</div>
-      <div class="name-row"><div class="name">アマルーラ</div><span class="badge">クリームリキュール</span></div>
+      <div class="num-row"><span class="num">No.18</span><span class="badge">クリームリキュール</span></div>
+      <div class="name-row"><div class="name">アマルーラ</div></div>
       <div class="desc">野生の果実「マルーラ」から作られる世界的に有名なクリームリキュール。ロックで飲むほか、ミルクタルトやアイスクリームにかけるのも定番。</div>
       <img src="素材/グルメ/アマルーラ.webp" alt="アマルーラ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A2%E3%83%9E%E3%83%AB%E3%83%BC%E3%83%A9%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -451,8 +500,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="side" data-fcity="national" data-food-num="No.19">
-      <div class="num">No.19</div>
-      <div class="name-row"><div class="name">チャカラカ</div><span class="badge">定番の付け合わせ</span></div>
+      <div class="num-row"><span class="num">No.19</span><span class="badge">定番の付け合わせ</span></div>
+      <div class="name-row"><div class="name">チャカラカ</div></div>
       <div class="desc">玉ねぎ・にんじん・豆をピリ辛スパイスで煮込んだ南アフリカ版スパイシー野菜レリッシュ。ブライやミーリーパップに添える定番の付け合わせで家庭ごとに味が異なる。</div>
       <img src="素材/グルメ/チャカラカ.webp" alt="チャカラカ" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%83%81%E3%83%A3%E3%82%AB%E3%83%A9%E3%82%AB%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -462,8 +511,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="side" data-fcity="national" data-food-num="No.20">
-      <div class="num">No.20</div>
-      <div class="name-row"><div class="name">ウムングクショ（サンプ＆ビーンズ）</div><span class="badge">コサの伝統料理</span></div>
+      <div class="num-row"><span class="num">No.20</span><span class="badge">コサの伝統料理</span></div>
+      <div class="name-row"><div class="name">ウムングクショ（サンプ＆ビーンズ）</div></div>
       <div class="desc">砕いたトウモロコシ（サンプ）と豆をじっくり煮込んだコサ族の伝統料理。ネルソン・マンデラの大好物としても知られ、素朴だが滋味深い南アフリカの家庭の味。</div>
       <img src="素材/グルメ/ウムングクショ（サンプ＆ビーンズ）.webp" alt="ウムングクショ（サンプ＆ビーンズ）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=%E3%82%A6%E3%83%A0%E3%83%B3%E3%82%B0%E3%82%AF%E3%82%B7%E3%83%A7%EF%BC%88%E3%82%B5%E3%83%B3%E3%83%97%EF%BC%86%E3%83%93%E3%83%BC%E3%83%B3%E3%82%BA%EF%BC%89%20%E5%8D%97%E3%82%A2%E3%83%95%E3%83%AA%E3%82%AB%20%E6%96%99%E7%90%86" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -473,8 +522,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     
     <div class="item-card has-img " data-ftype="main" data-fcity="cape_town" data-food-num="No.21">
-      <div class="num">No.21</div>
-      <div class="name-row"><div class="name">スヌーク（ケープの燻製魚）</div><span class="badge">ケープタウン名物</span></div>
+      <div class="num-row"><span class="num">No.21</span><span class="badge">ケープタウン名物</span></div>
+      <div class="name-row"><div class="name">スヌーク（ケープの燻製魚）</div></div>
       <div class="desc">南大西洋で獲れる細長い白身魚を炭火で焼いたり燻製にしたりするケープタウンの郷土料理。アプリコットジャムを塗って焼く「スヌーク・ブライ」が初夏の風物詩。</div>
       <img src="素材/グルメ/スヌーク（ケープの燻製魚）.webp" alt="スヌーク（ケープの燻製魚）" class="food-img" loading="lazy">
       <a href="https://www.google.com/search?q=snoek+braai&num=10&sca_esv=0ad63b511fd14da8&udm=2&biw=1536&bih=695&sxsrf=APpeQnszJs-7yFA1kgZi6ejaG-GhIVZ4og%3A1785044642010&ei=op5laoYi1rmt9w-89JDQDw&oq=Snoek+BR&gs_lp=Egtnd3Mtd2l6LWltZyIIU25vZWsgQlIqAggBMgcQABiABBgTMgcQABiABBgTMgcQABiABBgTMgcQABiABBgTMgcQABiABBgTMgcQABiABBgTMgcQABiABBgTMgcQABiABBgTMgcQABiABBgTMgcQABiABBgTSLQuUIQKWN8acAJ4AJABAZgBqgWgAfEOqgEJMi0xLjEuMC4yuAEByAEA-AEBmAIFoAKaCsICBxAjGMkCGCfCAgYQABgHGB6YAwCIBgGSBwsyLjAuMS4xLjAuMaAHngqyBwkyLTEuMS4wLjG4B5EKwgcFMC4yLjPIBxCACAE&sclient=gws-wiz-img" target="_blank" rel="noopener" class="wiki-link">詳しく調べる →</a>
@@ -663,7 +712,7 @@ function closeSpotPopup() {
 }
 
 document.addEventListener('click', function(e) {
-  const card = e.target.closest('.item-grid.view-list .item-card');
+  const card = e.target.closest('.item-grid.view-list .item-card, .item-grid.view-compact .item-card');
   if (!card || e.target.closest('a,button')) return;
   if (card.dataset.foodNum) showFood(card.dataset.foodNum);
   else if (card.dataset.spotNum) showSpot(card.dataset.spotNum);
@@ -672,6 +721,28 @@ document.addEventListener('click', function(e) {
 function itemViewBreakpoint() {
   return window.innerWidth <= 620 ? 'mobile' : 'pc';
 }
+// コンパクト表示(PC): タイトル+説明を約4行の固定高さに揃える（1行タイトル→説明3行 / 2行タイトル→説明2行）
+function fitCompactText() {
+  const isNarrow = window.matchMedia('(max-width:620px)').matches;
+  document.querySelectorAll('.item-grid.view-compact').forEach(grid => {
+    grid.querySelectorAll('.item-card').forEach(card => {
+      const nameEl = card.querySelector('.name');
+      const d = card.querySelector('.desc');
+      if (!nameEl || !d) return;
+      if (isNarrow) { d.style.height = ''; d.style.webkitLineClamp = ''; return; }
+      const lh = parseFloat(getComputedStyle(d).lineHeight) || 20;
+      const nameLh = parseFloat(getComputedStyle(nameEl).lineHeight) || 16;
+      const nameLines = Math.max(1, Math.round(nameEl.offsetHeight / nameLh));
+      const lines = nameLines >= 2 ? 2 : 3;
+      d.style.webkitLineClamp = lines;
+      d.style.height = (lines * lh) + 'px';
+    });
+  });
+}
+window.addEventListener('load', fitCompactText);
+let _fitTO;
+window.addEventListener('resize', () => { clearTimeout(_fitTO); _fitTO = setTimeout(fitCompactText, 150); });
+
 function setItemView(kind, view) {
   localStorage.setItem(kind + 'ItemView_' + itemViewBreakpoint(), view);
   const grids = kind === 'food'
@@ -685,12 +756,13 @@ function setItemView(kind, view) {
   document.querySelectorAll('#' + kind + 'ViewToggle button').forEach(b => {
     b.classList.toggle('on', b.dataset.view === view);
   });
+  fitCompactText();
 }
 (function() {
   ['food', 'spots'].forEach(kind => {
     const bp = itemViewBreakpoint();
     const saved = localStorage.getItem(kind + 'ItemView_' + bp);
-    const defaultView = saved || (bp === 'mobile' ? 'compact' : 'standard');
+    const defaultView = saved || 'compact';
     const grids = kind === 'food'
       ? document.querySelectorAll('#food-grid')
       : document.querySelectorAll('#spots-grid .item-grid');
@@ -698,6 +770,7 @@ function setItemView(kind, view) {
     else if (defaultView === 'list') grids.forEach(grid => grid.classList.add('view-list'));
     document.querySelectorAll('#' + kind + 'ViewToggle button[data-view="' + defaultView + '"]').forEach(b => b.classList.add('on'));
   });
+  try { fitCompactText(); } catch (e) {}
 })();
 
 function filterSpots(dim, value, btn) {
@@ -744,6 +817,16 @@ function filterFood(dim, value, btn) {
   });
   const shownEl = document.getElementById('food-count-shown');
   if (shownEl) shownEl.textContent = document.querySelectorAll('#food-grid .item-card:not([style*="display: none"])').length;
+}
+
+function _ftFakeBtn() { return { classList: { contains: function() { return false; }, add: function() {}, remove: function() {} } }; }
+function resetSpotFilters() {
+  document.querySelectorAll('#spots-filter-type .filter-btn.active, #spots-filter-region .filter-btn.active, #spots-filter-row .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterSpots('type', 'all', _ftFakeBtn());
+}
+function resetFoodFilters() {
+  document.querySelectorAll('#food-filter-type .filter-btn.active, #food-filter-city .filter-btn.active').forEach(b => b.classList.remove('active'));
+  filterFood('type', 'all', _ftFakeBtn());
 }
 
 
@@ -819,16 +902,54 @@ var PAGE_INDEX = 2;
 </script>
 
 <script>
-/* ハンバーガーメニュー開閉 */
+/* ハンバーガーメニュー: 右スライドのドロワー */
 (function(){
-  const btn = document.getElementById('hb-toggle-btn');
-  const drawer = document.getElementById('hb-drawer');
-  if (!btn || !drawer) return;
-  btn.addEventListener('click', function(){
-    const open = drawer.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-    if (window._wmHeaderPin) window._wmHeaderPin(open);
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  var lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    scrim.hidden = false;
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+
+  /* アコーディオン: 同時に開くのは1セクションのみ */
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) panel.hidden = !willOpen;
+      });
+    });
   });
 })();
 </script>
@@ -1003,23 +1124,6 @@ var PAGE_INDEX = 2;
     if (y <= 0) hideOffset = 0; // ページ最上部では必ず全表示
     if (!ticking) { ticking = true; requestAnimationFrame(apply); }
   }, { passive: true });
-
-  // ハンバーガードロワーの開閉と連動: 開いている間はヘッダーを常時表示に固定し、
-  // 背面のページスクロールも止める（ドロワーの高さがheaderHに混入して
-  // nav位置がズレる不具合を防ぐ）
-  window._wmHeaderPin = function(on){
-    pinned = on;
-    if (on) {
-      hideOffset = 0;
-      header.style.transform = 'translateY(0)';
-      headerH = header.offsetHeight;
-      if (navEl) navEl.style.top = headerH + 'px';
-    } else {
-      lastY = window.scrollY;
-      headerH = header.offsetHeight - (document.getElementById('hb-drawer')?.offsetHeight || 0);
-      apply();
-    }
-  };
 
   apply();
 })();
