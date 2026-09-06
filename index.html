@@ -921,13 +921,13 @@
     const shown = rows.slice(0, state.limit);
     let html = '';
     if (state.view === 'list') {
-      html += '<div class="wm-row head"><span>DESTINATION</span><span>ABOUT</span><span>BEST SEASON</span><span>FLIGHT / BUDGET</span><span></span></div>';
       shown.forEach((d) => {
+        const rthumb = d.img
+          ? '<span class="rthumb" style="background-image:url(' + esc(d.img) + ')"></span>'
+          : '<span class="rthumb rthumb-illus">🗺</span>';
         html += '<div class="wm-row' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '" data-url="' + esc(d.url) + '">'
+          + rthumb
           + '<a class="nm" href="' + esc(d.url) + '">' + esc(d.name) + '</a>'
-          + '<span class="bl">' + esc(d.blurb) + '</span>'
-          + '<span class="mono" style="font-size:12px;color:#56625A;">' + esc(seasonLabelOf(d)) + '</span>'
-          + '<span style="font-size:12px;color:#45514A;">✈ <span class="mono">' + d.hours.toFixed(1) + 'h</span>　<span style="color:#14503C;">' + YEN[d.budget] + '</span> ' + esc(d.budget) + '</span>'
           + '<button type="button" class="rfav" data-fav="' + esc(d.id) + '">' + heartSvg(d.id) + '</button>'
           + '</div>';
       });
