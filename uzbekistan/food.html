@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ウズベキスタンのグルメ｜ウズベキスタン旅行ガイド">
 <meta name="twitter:description" content="中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた古都が点在する国。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知ら…">
 <meta name="twitter:image" content="https://worldmappy.com/uzbekistan/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788669474">
+<link rel="stylesheet" href="../assets/style.css?v=1788669846">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788669474" defer></script>
-<script src="../assets/affiliates.js?v=1788669474" defer></script>
+<script src="../assets/affiliates-data.js?v=1788669846" defer></script>
+<script src="../assets/affiliates.js?v=1788669846" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -1183,6 +1183,36 @@ function closeFoodModal() {
     </div>
   </div>
 </div>
+<div id="city-popup" onclick="if(event.target===this)closeCityPopup()">
+  <div class="cp-panel">
+    <button class="cp-close" type="button" onclick="closeCityPopup()" aria-label="閉じる">&times;</button>
+    <div class="city-section-header cp-body"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var pop = document.getElementById('city-popup');
+  if (!pop) return;
+  var body = pop.querySelector('.cp-body');
+  function onKey(e){ if (e.key === 'Escape') closeCityPopup(); }
+  window.closeCityPopup = function(){
+    pop.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+  };
+  document.addEventListener('click', function(e){
+    var head = e.target.closest('.city-section-header');
+    if (!head || e.target.closest('a,button')) return;
+    var grid = head.parentElement;
+    if (!grid || !grid.classList.contains('item-grid') || !grid.classList.contains('view-compact')) return;
+    body.innerHTML = head.innerHTML;
+    pop.querySelector('.cp-panel').scrollTop = 0;
+    pop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKey);
+  });
+})();
+</script>
 <!-- デザイン確認中のため一時停止: <div data-sticky-banner="trifa"></div> -->
 </body>
 </html>

@@ -205,6 +205,8 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
                 issues.append(f'[spot desc {n}字, 目安50-80] {sp.get("num")} {sp.get("name")}')
             if not sp.get('badge'):
                 issues.append(f'[spot badge空] {sp.get("num")} {sp.get("name")}')
+            elif len(sp.get('badge', '')) > 10:
+                issues.append(f'[spot badge {len(sp["badge"])}字, 10字以内] {sp.get("num")} {sp.get("badge")}')
             img = sp.get('image', '')
             if img and not img.startswith('素材/観光スポット/'):
                 issues.append(f'[spot image フォルダ名誤り] {sp.get("num")} {img}')
@@ -225,6 +227,8 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
             issues.append(f'[food desc {n}字, 目安60-90] {it.get("num")} {it.get("name")}')
         if not it.get('badge'):
             issues.append(f'[food badge空] {it.get("num")} {it.get("name")}')
+        elif len(it.get('badge', '')) > 10:
+            issues.append(f'[food badge {len(it["badge"])}字, 10字以内] {it.get("num")} {it.get("badge")}')
         img = it.get('image', '')
         if img and not img.startswith('素材/グルメ/'):
             issues.append(f'[food image フォルダ名誤り] {it.get("num")} {img}')
