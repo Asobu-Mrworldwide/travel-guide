@@ -119,10 +119,6 @@ h2{border-top:none;padding-top:0;margin-top:0}
 <div class="hb-scrim" id="hb-scrim" hidden></div>
 <aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
   <div class="hb-drawer__head">
-    <div class="hb-drawer__brand">
-      <span class="hb-logo"><b>World</b> Mappy</span>
-      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
-    </div>
     <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
   </div>
   <div class="hb-drawer__body">
@@ -552,10 +548,12 @@ updateProgress();
   var scrim  = document.getElementById('hb-scrim');
   var closeB = document.getElementById('hb-close');
   if (!burger || !drawer || !scrim) return;
+  function _hbRestart(el){ if(!el) return; el.style.animation='none'; void el.offsetWidth; el.style.animation=''; }
   var lastFocus = null;
   function openDrawer(){
     lastFocus = document.activeElement;
     drawer.hidden = false; scrim.hidden = false;
+    _hbRestart(drawer); _hbRestart(scrim);
     burger.setAttribute('aria-expanded', 'true');
     burger.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -584,7 +582,7 @@ updateProgress();
         h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
         var caret = h.querySelector('.hb-sec__caret');
         if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
-        if (panel) panel.hidden = !willOpen;
+        if (panel) { panel.hidden = !willOpen; if (willOpen) _hbRestart(panel); }
       });
     });
   });

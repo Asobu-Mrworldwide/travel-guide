@@ -117,10 +117,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <div class="hb-scrim" id="hb-scrim" hidden></div>
 <aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
   <div class="hb-drawer__head">
-    <div class="hb-drawer__brand">
-      <span class="hb-logo"><b>World</b> Mappy</span>
-      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
-    </div>
     <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
   </div>
 
@@ -296,11 +292,9 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">BASIC INFO</span><span class="tab-eyebrow-sub">旅行・観光の基本情報</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 01</span></div>
   <h1 class="page-h1">{{name}}の旅行ガイド</h1>
   <div class="page-h1-bar"><span></span><span></span><span></span></div>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">{{overview.description_html}}</div>
   </div>
   <div class="s-body">
   <div class="s-card">
-  <h2>{{name}}ってどんなところ？</h2>
 
     {% if spot_points %}
     <div class="sp-points-wrap">
@@ -315,9 +309,13 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     {% endfor %}
     <div style="padding:10px 16px;text-align:right;display:flex;flex-direction:row;justify-content:flex-end;flex-wrap:wrap;gap:10px"><button class="see-more" style="margin:0" onclick="show('spots',document.querySelectorAll('nav button')[1])">観光スポットを見る →</button><button class="see-more" style="margin:0" onclick="show('food',document.querySelectorAll('nav button')[2])">グルメを見る →</button></div>
     </div>
-    {% endif %}
+  </div>
 
-    <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
+  <div class="s-card">
+  {% endif %}
+
+  <h2>{{name}}ってどんなところ？</h2>
+  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">{{overview.description_html}}</div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -334,9 +332,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="qs-card"><div class="qs-ico" style="color:#1a3a5c"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><g fill="currentColor"><path d="M12 3a10 10 0 0 0-7.071 17.071l.707.707l2.421-2.421l-1.414-1.414l-.963.962A8 8 0 0 1 4.063 14H6v-2H4.063A8 8 0 0 1 5.68 8.095l.613.612l.5.5l1.414-1.414L7.095 6.68A8 8 0 0 1 11 5.063V6.5h2V5.063a8 8 0 0 1 3.905 1.617l-1.112 1.113l1.414 1.414l1.113-1.112A8 8 0 0 1 19.937 12H18v2h1.937a8 8 0 0 1-1.618 3.906l-.962-.963l-1.414 1.414l2.421 2.421l.707-.707A10.001 10.001 0 0 0 12 3" /><path d="M12.707 12.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414-1.414z" /></g></svg></div><div style="flex:1"><div class="qs-lbl">旅行難易度</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;background:#e8e8e8;border-radius:20px;height:10px;overflow:hidden"><div style="width:{{overview.difficulty_pct}}%;height:100%;background:{{overview.difficulty_bar}};border-radius:20px"></div></div><span style="background:{{overview.difficulty_label_bg}};color:{{overview.difficulty_label_color}};font-size:0.75em;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap">{{overview.difficulty_label}}</span></div><div style="display:flex;justify-content:space-between;font-size:0.68em;color:#bbb;margin-top:2px"><span>← やさしい</span><span>むずかしい →</span></div></div></div>
     </div>
 
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><span style="display:inline-flex;align-items:center;gap:5px;vertical-align:middle"><span style="display:inline-block;line-height:0;border-radius:2px;overflow:hidden;flex-shrink:0"><svg width="15" height="10" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff" height="600" width="900"/><circle fill="#bc002d" cx="450" cy="300" r="180"/></svg></span>日本人に人気？</span></span><p style="font-size:0.82em;line-height:1.7;color:#444">{{overview.japan_popularity_html}}</p></div>
+
   </div><!-- end s-card どんなところ？上 -->
 
-  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><span style="display:inline-flex;align-items:center;gap:5px;vertical-align:middle"><span style="display:inline-block;line-height:0;border-radius:2px;overflow:hidden;flex-shrink:0"><svg width="15" height="10" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff" height="600" width="900"/><circle fill="#bc002d" cx="450" cy="300" r="180"/></svg></span>日本人に人気？</span></span><p style="font-size:0.82em;line-height:1.7;color:#444">{{overview.japan_popularity_html}}</p></div>
+  <div class="infeed-ad"><span class="infeed-ad-label">SPONSORED</span><div class="infeed-ad-box">広告 728 × 90（インフィード）</div></div>
 
   <div class="s-card">
     <!-- 主要都市 -->
@@ -453,9 +453,9 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
     </div>
 
-  </div><!-- end s-card どんなところ？ -->
-
   <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:plane-fly}} {{season.tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{season.tip_body}}</p></div>
+
+  </div><!-- end s-card どんなところ？ -->
 
   <div class="s-card">
     <!-- 基本データ -->
@@ -1673,12 +1673,14 @@ document.addEventListener('keydown', function(e){
   var scrim  = document.getElementById('hb-scrim');
   var closeB = document.getElementById('hb-close');
   if (!burger || !drawer || !scrim) return;
+  function _hbRestart(el){ if(!el) return; el.style.animation='none'; void el.offsetWidth; el.style.animation=''; }
   var lastFocus = null;
 
   function openDrawer(){
     lastFocus = document.activeElement;
     drawer.hidden = false;
     scrim.hidden = false;
+    _hbRestart(drawer); _hbRestart(scrim);
     burger.setAttribute('aria-expanded', 'true');
     burger.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1711,7 +1713,7 @@ document.addEventListener('keydown', function(e){
         h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
         var caret = h.querySelector('.hb-sec__caret');
         if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
-        if (panel) panel.hidden = !willOpen;
+        if (panel) { panel.hidden = !willOpen; if (willOpen) _hbRestart(panel); }
       });
     });
   });

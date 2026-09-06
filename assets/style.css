@@ -106,6 +106,9 @@ a:hover{color:var(--green)}
   #slides-wrap>section:has(.tab-body)>.infeed-ad{margin:16px 10px 0 !important}
   .s-body>.tab-cta,
   #slides-wrap>section:has(.tab-body)>.tab-cta{margin:16px 10px 20px !important}
+  /* 基本情報タブ: 見出し(.s-lead)と直後の観光のポイント(.s-card:first-child)を1枚のカードに繋げる */
+  .s-lead:has(+ .s-body > .s-card){margin-bottom:0;padding-bottom:6px;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:0 1px 2px rgba(20,40,30,0.06)}
+  .s-lead + .s-body > .s-card:first-child{margin-top:0;padding-top:2px;border-top-left-radius:0;border-top-right-radius:0}
 }
 
 /* カード */
@@ -136,6 +139,7 @@ a:hover{color:var(--green)}
 /* 見出し */
 h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.5em;color:var(--text);margin:44px 0 16px;padding:24px 0 9px;letter-spacing:0.01em;border-top:1px solid #D8D2C4;border-bottom:solid 2px var(--green);position:relative}
 .tab-eyebrow + h2,.tab-eyebrow + .tab-body > h2:first-child,.s-lead + .s-body > .s-card:first-child > h2:first-child,.csh-title{margin-top:0;padding-top:0;border-top:none}
+.s-body > .s-card > h2{border-top:none;padding-top:0}
 h2::after{content:none}
 h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 
@@ -201,7 +205,7 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
 .hb-scrim[hidden]{display:none}
 .hb-drawer{position:fixed;top:0;right:0;bottom:0;z-index:1091;width:400px;max-width:88vw;display:flex;flex-direction:column;background:var(--green-dark);box-shadow:-18px 0 44px rgba(10,30,22,0.28);animation:hb-slide .28s cubic-bezier(.2,.7,.2,1) both}
 .hb-drawer[hidden]{display:none}
-.hb-drawer__head{flex:none;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:18px 22px 6px}
+.hb-drawer__head{flex:none;display:flex;align-items:flex-start;justify-content:flex-end;gap:14px;padding:14px 16px 4px}
 .hb-drawer__brand{flex:1;display:grid;gap:5px;justify-items:center;padding-left:34px;text-align:center}
 .hb-drawer__brand .hb-logo{font-weight:900;font-size:21px;line-height:1;letter-spacing:-0.01em;color:#fff}
 .hb-drawer__brand .hb-logo b{color:#E0A63C;font-weight:900}
@@ -480,7 +484,7 @@ section.active{display:block}
 .filter-toggle-body{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:40;background:#fff;border:1px solid #e0e0e0;border-radius:14px;padding:16px 16px 14px;box-shadow:0 10px 30px rgba(20,40,30,0.16)}
 .ft-cols{display:flex;gap:14px 26px;flex-wrap:wrap}
 .ft-col{flex:1;min-width:210px}
-.ft-actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}
+.ft-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:16px}
 .ft-reset{background:#fff;border:1px solid #d5d5d5;color:#666;font-size:0.8em;font-weight:700;padding:9px 18px;border-radius:9px;cursor:pointer}
 .ft-reset:hover{background:#f0f0f0}
 .ft-apply{background:var(--green);border:none;color:#fff;font-size:0.82em;font-weight:700;padding:9px 24px;border-radius:9px;cursor:pointer}

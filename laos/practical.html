@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ラオス人民民主共和国の旅の準備｜ラオス旅行ガイド">
 <meta name="twitter:description" content="東南アジアで唯一の内陸国。ゆったりと流れるメコン川・托鉢僧の列・金色の仏塔が今も日常に溶け込む「微笑みの国」です。フランス統治時代の面影が残るルアンパバーンの旧市街は街ごと世界遺産、山岳地帯にはカルスト地形の絶景も広がります。バンコクやハ…">
 <meta name="twitter:image" content="https://worldmappy.com/laos/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788674260">
+<link rel="stylesheet" href="../assets/style.css?v=1788695793">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788674260" defer></script>
-<script src="../assets/affiliates.js?v=1788674260" defer></script>
+<script src="../assets/affiliates-data.js?v=1788695793" defer></script>
+<script src="../assets/affiliates.js?v=1788695793" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -117,10 +117,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 <div class="hb-scrim" id="hb-scrim" hidden></div>
 <aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
   <div class="hb-drawer__head">
-    <div class="hb-drawer__brand">
-      <span class="hb-logo"><b>World</b> Mappy</span>
-      <span class="hb-drawer__tagline">旅で、世界をおもしろく。</span>
-    </div>
     <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
   </div>
 
@@ -969,12 +965,14 @@ document.addEventListener('keydown', function(e){
   var scrim  = document.getElementById('hb-scrim');
   var closeB = document.getElementById('hb-close');
   if (!burger || !drawer || !scrim) return;
+  function _hbRestart(el){ if(!el) return; el.style.animation='none'; void el.offsetWidth; el.style.animation=''; }
   var lastFocus = null;
 
   function openDrawer(){
     lastFocus = document.activeElement;
     drawer.hidden = false;
     scrim.hidden = false;
+    _hbRestart(drawer); _hbRestart(scrim);
     burger.setAttribute('aria-expanded', 'true');
     burger.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1007,7 +1005,7 @@ document.addEventListener('keydown', function(e){
         h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
         var caret = h.querySelector('.hb-sec__caret');
         if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
-        if (panel) panel.hidden = !willOpen;
+        if (panel) { panel.hidden = !willOpen; if (willOpen) _hbRestart(panel); }
       });
     });
   });

@@ -144,17 +144,52 @@
   <a href="./" class="site-logo"><img src="../assets/site-logo.png" alt="" style="height:1.3em;width:auto;vertical-align:-0.25em;margin-right:4px;display:inline-block"><span>World</span> Mappy</a>
   <span class="site-tagline">世界の旅行ガイド</span>
   <a class="header-diag-link" href="types.html">旅行タイプ一覧</a>
-  <div class="hb-wrap">
-    <button class="hb-btn" id="hb-btn" aria-label="メニューを開く" onclick="toggleHbMenu()">
-      <span></span><span></span><span></span>
+  <button type="button" class="hb-toggle-btn" id="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer"><span></span><span></span><span></span></button>
+</header>
+
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">旅行タイプ診断</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
     </button>
-    <div class="hb-panel" id="hb-panel">
-      <a href="../index.html">World Mappy トップ</a>
-      <a href="quiz.html">旅行タイプを診断する</a>
-      <a href="types.html">旅行タイプ一覧</a>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+      <a class="hb-item" href="quiz.html"><span class="hb-item__dot"></span><span class="hb-item__label">診断を受ける</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item" href="types.html"><span class="hb-item__dot"></span><span class="hb-item__label">旅行タイプ一覧</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="../common/checklist.html">持ち物チェックリスト</a>
+      <a class="hb-link" href="../common/faq.html">よくある質問</a>
+      <a class="hb-link" href="../common/contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="../common/about.html">運営者情報 →</a>
+        <a href="../common/contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+    <div class="hb-cta-wrap">
+      <a class="hb-cta" href="../index.html">すべての国を見る　→</a>
     </div>
   </div>
-</header>
+</aside>
 
 <div class="lp-wrap">
 
@@ -371,17 +406,52 @@ try {
 </script>
 
 <script>
-function toggleHbMenu() {
-  document.getElementById('hb-btn').classList.toggle('open');
-  document.getElementById('hb-panel').classList.toggle('open');
-}
-document.addEventListener('click', e => {
-  const wrap = document.querySelector('.hb-wrap');
-  if (wrap && !wrap.contains(e.target)) {
-    document.getElementById('hb-btn').classList.remove('open');
-    document.getElementById('hb-panel').classList.remove('open');
+/* ハンバーガー: 右スライドのドロワー */
+(function(){
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  function _hbRestart(el){ if(!el) return; el.style.animation='none'; void el.offsetWidth; el.style.animation=''; }
+  var lastFocus = null;
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false; scrim.hidden = false;
+    _hbRestart(drawer); _hbRestart(scrim);
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
   }
-});
+  function closeDrawer(){
+    drawer.hidden = true; scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) { panel.hidden = !willOpen; if (willOpen) _hbRestart(panel); }
+      });
+    });
+  });
+})();
 </script>
 </body>
 </html>

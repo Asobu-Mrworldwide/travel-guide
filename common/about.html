@@ -58,36 +58,53 @@
       <img src="../assets/site-logo.png" width="30" height="30" alt="World Mappy">
       <span class="wm-logo-text"><span class="gold">World</span><span>Mappy</span></span>
     </a>
-    <button class="wm-hb" id="hbBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
-  </div>
-  <div class="wm-menu" id="wmMenu" style="display:none;">
-    <div class="wm-menu-col">
-      <span class="wm-menu-label">GUIDE</span>
-      <a href="checklist.html">持ち物チェックリスト</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="contact.html">お問い合わせ</a>
-    </div>
-    <div class="wm-menu-col">
-      <span class="wm-menu-label">このページ</span>
-      <a href="#ab-site">サイトの概要</a>
-      <a href="#ab-why">なぜ作ったのか</a>
-      <a href="#ab-policy">運営の方針</a>
-      <a href="#ab-money">収益について</a>
-      <a href="#ab-info">情報の作り方</a>
-    </div>
-    <div class="wm-menu-col">
-      <span class="wm-menu-label">MORE</span>
-      <a href="../index.html">すべての旅先を見る →</a>
-    </div>
-    <div class="wm-menu-col wm-menu-about">
-      <span class="wm-menu-label">ABOUT</span>
-      <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
-      <a href="about.html" style="color:#fff">運営者情報 →</a>
-      <a href="privacy.html">プライバシーポリシー →</a>
-      <a href="disclaimer.html">免責事項 →</a>
-    </div>
+    <button type="button" class="hb-toggle-btn" id="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<div class="hb-scrim" id="hb-scrim" hidden></div>
+<aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
+  <div class="hb-drawer__head">
+    <button class="hb-drawer__close" id="hb-close" type="button" aria-label="閉じる">&times;</button>
+  </div>
+  <div class="hb-drawer__body">
+
+    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+      <span class="hb-sec__label">このページ</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecPage">
+      <a class="hb-item" href="#ab-site"><span class="hb-item__dot"></span><span class="hb-item__label">サイトの概要</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item" href="#ab-why"><span class="hb-item__dot"></span><span class="hb-item__label">なぜ作ったのか</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item" href="#ab-policy"><span class="hb-item__dot"></span><span class="hb-item__label">運営の方針</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item" href="#ab-money"><span class="hb-item__dot"></span><span class="hb-item__label">収益について</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+      <a class="hb-item" href="#ab-info"><span class="hb-item__dot"></span><span class="hb-item__label">情報の作り方</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+    </div>
+
+    <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
+      <span class="hb-sec__label">旅のガイド</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecGuide" hidden>
+      <a class="hb-link" href="checklist.html">持ち物チェックリスト</a>
+      <a class="hb-link" href="faq.html">よくある質問</a>
+      <a class="hb-link" href="contact.html">お問い合わせ</a>
+    </div>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <p>情報が湢れるこの時代に、本当に必要な旅行情報だけをまとめた個人サイトです。</p>
+        <a href="about.html">運営者情報 →</a>
+        <a href="contact.html">お問い合わせ →</a>
+      </div>
+    </div>
+
+  </div>
+</aside>
 
   <div class="wm-hero" style="position: relative; height: 218px; background: #FAF8EF; overflow: hidden;">
     <img class="wm-hero-deco" src="../assets/common/22_cloud.png" alt="" style="position: absolute; left: 176px; top: 34px; width: 68px; object-fit: contain; opacity: 0.75;">
@@ -205,13 +222,51 @@
 </div>
 
 <script>
+/* ハンバーガー: 右スライドのドロワー */
 (function(){
-  var btn=document.getElementById('hbBtn'), menu=document.getElementById('wmMenu');
-  if(!btn||!menu)return;
-  function set(o){ menu.style.display=o?'grid':'none'; btn.classList.toggle('open',o); }
-  btn.addEventListener('click',function(e){ e.stopPropagation(); set(menu.style.display==='none'); });
-  document.addEventListener('click',function(e){ if(menu.style.display!=='none' && !e.target.closest('#wmMenu')) set(false); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+  var burger = document.getElementById('hb-toggle-btn');
+  var drawer = document.getElementById('hb-drawer');
+  var scrim  = document.getElementById('hb-scrim');
+  var closeB = document.getElementById('hb-close');
+  if (!burger || !drawer || !scrim) return;
+  function _hbRestart(el){ if(!el) return; el.style.animation='none'; void el.offsetWidth; el.style.animation=''; }
+  var lastFocus = null;
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    drawer.hidden = false; scrim.hidden = false;
+    _hbRestart(drawer); _hbRestart(scrim);
+    burger.setAttribute('aria-expanded', 'true');
+    burger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (closeB) closeB.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function closeDrawer(){
+    drawer.hidden = true; scrim.hidden = true;
+    burger.setAttribute('aria-expanded', 'false');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function onKey(e){ if (e.key === 'Escape') closeDrawer(); }
+  burger.addEventListener('click', function(){ drawer.hidden ? openDrawer() : closeDrawer(); });
+  scrim.addEventListener('click', closeDrawer);
+  if (closeB) closeB.addEventListener('click', closeDrawer);
+  var heads = drawer.querySelectorAll('[data-sec]');
+  Array.prototype.forEach.call(heads, function(head){
+    head.addEventListener('click', function(){
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+      Array.prototype.forEach.call(heads, function(h){
+        var panel = document.getElementById(h.getAttribute('aria-controls'));
+        var willOpen = (h === head) && !isOpen;
+        h.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        var caret = h.querySelector('.hb-sec__caret');
+        if (caret) caret.innerHTML = willOpen ? '&#9650;' : '&#9660;';
+        if (panel) { panel.hidden = !willOpen; if (willOpen) _hbRestart(panel); }
+      });
+    });
+  });
 })();
 </script>
 </body>

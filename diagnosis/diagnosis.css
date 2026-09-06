@@ -18,22 +18,13 @@ body { background: #f0f4f2; }
 .header-diag-link { font-size: 0.8em; color: rgba(255,255,255,0.85); text-decoration: none; border: 1px solid rgba(255,255,255,0.35); padding: 5px 14px; border-radius: 20px; white-space: nowrap; }
 .header-diag-link:hover { background: rgba(255,255,255,0.15); }
 
-/* ハンバーガーメニュー */
-.hb-wrap { position: relative; margin-left: 10px; }
-.hb-btn { width: 28px; height: 28px; background: none; border: none; cursor: pointer; padding: 5px 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3px; }
-.hb-btn span { display: block; width: 15px; height: 2px; background: rgba(255,255,255,0.9); border-radius: 2px; transition: transform 0.22s, opacity 0.22s; }
-.hb-btn.open span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
-.hb-btn.open span:nth-child(2) { opacity: 0; }
-.hb-btn.open span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
-.hb-panel { display: none; position: absolute; top: calc(100% + 10px); right: 0; background: #fff; border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,0.18); padding: 8px 0; min-width: 190px; z-index: 200; }
-.hb-panel.open { display: block; }
-.hb-panel a { display: flex; align-items: center; gap: 10px; padding: 11px 18px; color: #333; text-decoration: none; font-size: 0.85em; font-weight: 600; transition: background 0.15s; }
-.hb-panel a:hover { background: var(--green-light); color: var(--green); }
+/* ハンバーガー: 共通ドロワー（assets/style.css の .hb-* を使用）を右寄せ */
+.site-header .hb-toggle-btn { margin-left: auto; }
+.header-diag-link + .hb-toggle-btn { margin-left: 10px; }
 /* スマホ: tagline と diag-link を隠してハンバーガーを確保 */
 @media (max-width: 520px) {
   .site-tagline { display: none; }
   .header-diag-link { display: none; }
-  .hb-wrap { margin-left: auto; }
 }
 
 /* ページラッパー */
