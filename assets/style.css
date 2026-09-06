@@ -330,6 +330,25 @@ nav button,nav a{flex-shrink:0;background:none;border:none;border-bottom:6px sol
 nav button:not(:last-child)::after,nav a:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:16px;background:#d8e2ee}
 nav button.active,nav a.active{color:var(--green);border-bottom-color:var(--green);background-color:var(--green-light);border-radius:10px 10px 0 0}
 nav button:hover,nav a:hover{color:var(--green);border-bottom-color:var(--green)}
+/* タブアイコン（素材/タブバー → assets/tabbar） */
+nav a,nav button{display:flex;flex-direction:column;align-items:center;padding-top:9px;padding-bottom:9px}
+nav a::before,nav button::before{content:"";display:block;width:24px;height:24px;margin:0 auto 4px;background-repeat:no-repeat;background-position:center;background-size:contain;opacity:0.92;transition:background-image 0s}
+nav button:last-of-type::before{background-image:url(tabbar/item_green.png);width:30px;height:30px;margin:-3px auto 1px}
+nav button:last-of-type:hover::before{background-image:url(tabbar/item_amber.png)}
+nav a:nth-of-type(1)::before,nav button:not(:last-of-type):nth-of-type(1)::before{background-image:url(tabbar/basic_green.png)}
+nav a:nth-of-type(2)::before,nav button:not(:last-of-type):nth-of-type(2)::before{background-image:url(tabbar/spots_green.png)}
+nav a:nth-of-type(3)::before,nav button:not(:last-of-type):nth-of-type(3)::before{background-image:url(tabbar/food_green.png)}
+nav a:nth-of-type(4)::before,nav button:not(:last-of-type):nth-of-type(4)::before{background-image:url(tabbar/course_green.png)}
+nav a:nth-of-type(5)::before,nav button:not(:last-of-type):nth-of-type(5)::before{background-image:url(tabbar/budget_green.png)}
+nav a:nth-of-type(6)::before,nav button:not(:last-of-type):nth-of-type(6)::before{background-image:url(tabbar/practical_green.png)}
+nav a:nth-of-type(7)::before,nav button:not(:last-of-type):nth-of-type(7)::before{background-image:url(tabbar/phrases_green.png)}
+:is(nav a:nth-of-type(1).active,nav a:nth-of-type(1):hover,nav button:not(:last-of-type):nth-of-type(1).active,nav button:not(:last-of-type):nth-of-type(1):hover)::before{background-image:url(tabbar/basic_amber.png)}
+:is(nav a:nth-of-type(2).active,nav a:nth-of-type(2):hover,nav button:not(:last-of-type):nth-of-type(2).active,nav button:not(:last-of-type):nth-of-type(2):hover)::before{background-image:url(tabbar/spots_amber.png)}
+:is(nav a:nth-of-type(3).active,nav a:nth-of-type(3):hover,nav button:not(:last-of-type):nth-of-type(3).active,nav button:not(:last-of-type):nth-of-type(3):hover)::before{background-image:url(tabbar/food_amber.png)}
+:is(nav a:nth-of-type(4).active,nav a:nth-of-type(4):hover,nav button:not(:last-of-type):nth-of-type(4).active,nav button:not(:last-of-type):nth-of-type(4):hover)::before{background-image:url(tabbar/course_amber.png)}
+:is(nav a:nth-of-type(5).active,nav a:nth-of-type(5):hover,nav button:not(:last-of-type):nth-of-type(5).active,nav button:not(:last-of-type):nth-of-type(5):hover)::before{background-image:url(tabbar/budget_amber.png)}
+:is(nav a:nth-of-type(6).active,nav a:nth-of-type(6):hover,nav button:not(:last-of-type):nth-of-type(6).active,nav button:not(:last-of-type):nth-of-type(6):hover)::before{background-image:url(tabbar/practical_amber.png)}
+:is(nav a:nth-of-type(7).active,nav a:nth-of-type(7):hover,nav button:not(:last-of-type):nth-of-type(7).active,nav button:not(:last-of-type):nth-of-type(7):hover)::before{background-image:url(tabbar/phrases_amber.png)}
 .nav-fade{position:absolute;top:0;bottom:0;width:32px;pointer-events:none;opacity:0;transition:opacity 0.2s;display:flex;align-items:center}
 .nav-fade-left{left:0;background:linear-gradient(to right,rgba(246,244,239,0.95),rgba(246,244,239,0));justify-content:flex-start}
 .nav-fade-right{right:0;background:linear-gradient(to left,rgba(246,244,239,0.95),rgba(246,244,239,0));justify-content:flex-end}
@@ -678,8 +697,8 @@ section.active{display:block}
 
 /* 都市グリッド */
 .city-grid-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:transparent}
-.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:9px;padding:14px 15px 15px;border:1px solid #E8E2D8;border-radius:8px;background:#fff;transition:all .25s ease;cursor:pointer}
-.city-item:hover{border-color:var(--green);box-shadow:0 6px 18px rgba(26,26,26,0.08)}
+.city-item{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:9px;padding:14px 15px 15px;border:1px solid #E8E2D8;border-radius:8px;background:#fff;box-shadow:0 2px 0 rgba(20,40,30,0.05),0 6px 14px rgba(20,40,30,0.06);transition:all .25s ease;cursor:pointer}
+.city-item:hover{border-color:var(--green);box-shadow:0 2px 0 rgba(20,40,30,0.06),0 8px 20px rgba(20,40,30,0.10)}
 .ci-badge{display:inline-flex;align-items:center;width:fit-content;font-size:0.62em;font-weight:700;color:var(--green-dark);background:var(--green-light);border-radius:3px;padding:2px 8px;vertical-align:middle;margin-left:6px}
 .ci-badge.green{color:var(--green-dark);background:var(--green-light)}
 .ci-name-row{margin-bottom:0;line-height:1.35}
@@ -768,7 +787,9 @@ section.active{display:block}
   .md-t{font-size:0.75em}
   /* スマホではタブバーを画面下部に固定表示する */
   nav{justify-content:flex-start;position:fixed !important;top:auto !important;bottom:0;left:0;right:0;transform:none !important;border-bottom:none;border-top:1px solid rgba(30,136,229,0.15);box-shadow:0 -4px 20px rgba(26,37,48,0.10);padding-bottom:env(safe-area-inset-bottom)}
-  nav button,nav a{font-size:0.82em;padding:11px 10px;border-bottom:none;border-top:4px solid transparent;margin-bottom:0;margin-top:-1px}
+  nav button,nav a{font-size:0.82em;padding:7px 10px;border-bottom:none;border-top:4px solid transparent;margin-bottom:0;margin-top:-1px}
+  nav a::before,nav button::before{width:21px;height:21px;margin-bottom:3px}
+  nav button:last-of-type::before{width:27px;height:27px;margin:-3px auto 0}
   nav button.active,nav a.active{border-bottom-color:transparent;border-top-color:var(--green);border-radius:0 0 10px 10px}
   .nav-fade-left{background:linear-gradient(to right,rgba(246,244,239,0.95),rgba(246,244,239,0))}
   .nav-fade-right{background:linear-gradient(to left,rgba(246,244,239,0.95),rgba(246,244,239,0))}
