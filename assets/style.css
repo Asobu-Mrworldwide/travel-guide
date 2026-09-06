@@ -48,7 +48,7 @@ a:hover{color:var(--green)}
 .page-grid{max-width:1440px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:196px minmax(0,1fr) 300px;gap:30px;align-items:start}
 .page-grid-spots,.page-grid-food{grid-template-columns:196px minmax(0,1fr)}
 .page-grid-spots .side-rail,.page-grid-food .side-rail{display:none}
-.page-grid .container{margin:20px 0 40px;max-width:none}
+.page-grid .container{margin:20px 0 40px;max-width:none;background:transparent;box-shadow:none;border-radius:0;padding:0;overflow:visible}
 .toc-sidebar{position:sticky;top:88px;display:grid;gap:12px;background:#fff;border-radius:10px;padding:18px;margin-top:20px;box-shadow:0 2px 0 rgba(20,40,30,0.05),0 6px 16px rgba(20,40,30,0.06)}
 .toc-sidebar .toc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;color:#A39D93}
 .toc-list{display:grid;gap:2px;border-left:1px solid #E8E2D8}
@@ -85,38 +85,44 @@ a:hover{color:var(--green)}
 
 @media(max-width:1240px){.page-grid{grid-template-columns:196px minmax(0,1fr)}.side-rail{display:none}}
 @media(max-width:1020px){.page-grid{grid-template-columns:1fr;padding:0}.toc-sidebar{display:none}.page-grid .container{margin:16px auto;max-width:calc(100% - 32px)}}
-/* .s-lead / .s-body: PC では存在しないものとして扱い、スマホでのみカード分割に使う */
-.s-lead,.s-body,.tab-body{display:contents}
+/* セクションを見出しごとの白カードに分割（PC・スマホ共通） */
+#slides-wrap{overflow-x:clip}
+.s-body{display:contents}
+.s-lead,
+.s-body>.s-card,
+.tab-body,
+#slides-wrap>section:not(:has(.s-lead)):not(:has(.tab-body)){
+  display:block;background:var(--card);border-radius:12px;padding:24px 26px;margin:0 0 18px;
+  box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07)}
+#slides-wrap>section:has(.tab-body){display:contents}
+.s-body>.s-card>h2:first-child,.tab-body>h2:first-child{margin-top:0 !important;padding-top:0;border-top:none}
+.tab-body>.s-card,.tab-body .spot-section-card{background:none !important;border:none !important;box-shadow:none !important;padding:0 !important;margin:0 !important}
+.s-body>.season-tip-box,.s-body>.infeed-ad,
+#slides-wrap>section:has(.tab-body)>.infeed-ad{margin:18px 0 0 !important}
+.s-body>.tab-cta,
+#slides-wrap>section:has(.tab-body)>.tab-cta{margin:18px 0 22px !important}
+/* 基本情報タブ: 見出し(.s-lead)と直後の観光のポイント(.s-card:first-child)を1枚のカードに繋げる */
+.s-lead:has(+ .s-body > .s-card){margin-bottom:0;padding-bottom:8px;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:0 1px 2px rgba(20,40,30,0.06)}
+.s-lead + .s-body > .s-card:first-child{margin-top:0;padding-top:4px;border-top-left-radius:0;border-top-right-radius:0}
+/* 予算・旅の準備タブ: セクションごとの白カードへ分割（見出しはカード内） */
+.tab-body--carded{display:block;background:transparent;box-shadow:none;padding:0;margin:0;border-radius:0}
+.tab-body--carded .tb-sec{display:block}
+.tab-body--carded .tb-card{display:block;background:var(--card);border-radius:12px;box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07);padding:24px 26px;margin:0 0 18px}
+.tab-body--carded .tb-card > h2:first-child{margin-top:0;padding-top:0;border-top:none}
+.tab-body--carded .tb-card > *:first-child{margin-top:0}
+.tab-body--carded .tb-card .s-card{background:none;border:none;box-shadow:none;padding:0;margin:0}
+.tab-body--carded .tb-card .season-tip-box{margin-left:0;margin-right:0}
 @media(max-width:520px){
   .page-grid{padding:0 0 26px;background:var(--bg-page)}
-  .page-grid .container{margin:0;max-width:none;border-radius:0;box-shadow:none;padding:0;overflow:visible;background:transparent;min-height:0}
-  #slides-wrap{overflow-x:clip}
-  /* スマホ: セクションを白カードに分割（基本情報タブは s-card ごと、その他タブは tab-body ごと） */
-  .s-lead,
-  .s-body>.s-card,
-  .tab-body,
-  #slides-wrap>section:not(:has(.s-lead)):not(:has(.tab-body)){
-    display:block;background:var(--card);border-radius:12px;padding:16px 14px;margin:16px 10px 0;
-    box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07)}
-  #slides-wrap>section:has(.tab-body){display:contents}
-  .s-body{display:contents}
-  .s-body>.s-card>h2:first-child,.tab-body>h2:first-child{margin-top:0 !important;padding-top:0;border-top:none}
-  .tab-body>.s-card,.tab-body .spot-section-card{background:none !important;border:none !important;box-shadow:none !important;padding:0 !important;margin:0 !important}
+  .page-grid .container{margin:0;max-width:none;min-height:0}
+  /* スマホ: 余白を詰める・左右10pxインセット */
+  .s-lead,.s-body>.s-card,.tab-body,
+  #slides-wrap>section:not(:has(.s-lead)):not(:has(.tab-body)),
+  .tab-body--carded .tb-card{padding:16px 14px;margin:16px 10px 0}
   .s-body>.season-tip-box,.s-body>.infeed-ad,
   #slides-wrap>section:has(.tab-body)>.infeed-ad{margin:16px 10px 0 !important}
   .s-body>.tab-cta,
   #slides-wrap>section:has(.tab-body)>.tab-cta{margin:16px 10px 20px !important}
-  /* 基本情報タブ: 見出し(.s-lead)と直後の観光のポイント(.s-card:first-child)を1枚のカードに繋げる */
-  .s-lead:has(+ .s-body > .s-card){margin-bottom:0;padding-bottom:6px;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:0 1px 2px rgba(20,40,30,0.06)}
-  .s-lead + .s-body > .s-card:first-child{margin-top:0;padding-top:2px;border-top-left-radius:0;border-top-right-radius:0}
-  /* 予算・旅の準備タブ: 基本情報タブと同様に、セクションごとの白カードへ分割（見出しはカード内） */
-  .tab-body--carded{display:block;background:transparent;box-shadow:none;padding:0;margin:0;border-radius:0}
-  .tab-body--carded .tb-sec{display:block}
-  .tab-body--carded .tb-card{display:block;background:var(--card);border-radius:12px;box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07);padding:16px 14px;margin:16px 10px 0}
-  .tab-body--carded .tb-card > h2:first-child{margin-top:0;padding-top:0;border-top:none}
-  .tab-body--carded .tb-card > *:first-child{margin-top:0}
-  .tab-body--carded .tb-card .s-card{background:none;border:none;box-shadow:none;padding:0;margin:0}
-  .tab-body--carded .tb-card .season-tip-box{margin-left:0;margin-right:0}
 }
 
 /* カード */
@@ -137,7 +143,7 @@ a:hover{color:var(--green)}
 .tab-eyebrow-sub{font-size:0.72em;letter-spacing:0.02em;color:var(--sub)}
 .tab-eyebrow-line{flex:1;height:1px;background:#E8E2D8;min-width:20px}
 .tab-eyebrow-num{font-family:'JetBrains Mono',monospace;font-size:0.66em;letter-spacing:0.1em;color:#A39D93;white-space:nowrap;text-transform:uppercase}
-@media(max-width:520px){.tab-eyebrow{display:none}}
+.tab-eyebrow{display:none}
 .page-h1{margin:0;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.55em;line-height:1.3;letter-spacing:0.01em;color:var(--text);border-bottom:none;padding-bottom:0}
 .page-h1-bar{display:grid;grid-template-columns:2.4fr 1fr 6fr;gap:4px;height:5px;margin-top:12px}
 .page-h1-bar span:nth-child(1){background:var(--green)}
@@ -149,32 +155,33 @@ h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.5em;
 .tab-eyebrow + h2,.tab-eyebrow + .tab-body > h2:first-child,.s-lead + .s-body > .s-card:first-child > h2:first-child,.csh-title{margin-top:0;padding-top:0;border-top:none}
 .s-body > .s-card > h2{border-top:none;padding-top:0}
 h2::after{content:none}
-/* PC版のみ: 装飾バナー見出し */
-@media(min-width:1021px){
-  .container h2:not(.csh-title){
-    border-bottom:none;padding:0 6% 0 10.5%;
-    min-height:56px;display:flex;align-items:center;
-    background:url(../素材/見出し/h2_bar.webp) left center/100% 100% no-repeat;
-  }
-  .container h2:not(.csh-title)::before{content:none}
+/* 見出し: 英字ラベル行＋金の縦バー＋タイトル（PC・スマホ共通、引き継ぎデザイン .wm-h2sp 準拠） */
+.container h2:not(.csh-title){
+  border-bottom:none;position:relative;
+  margin-top:40px;
+  padding:26px 0 3px 15px!important;
+  font-size:1.42em;line-height:1.38;font-weight:700;letter-spacing:0.01em;color:#14503C;
+  background:linear-gradient(#F5C63C,#F5C63C) left top/7px 100% no-repeat;
 }
-/* スマホ版のみ: 金の縦バー＋罫線＋3本アクセントの見出し（フォントは既存のまま） */
-@media(max-width:1020px){
-  .container h2:not(.csh-title){
-    border-bottom:none;position:relative;
-    padding-left:17px;padding-bottom:18px;
-    font-weight:700;color:#14503C;
-  }
-  .container h2:not(.csh-title)::before{
-    content:'';position:absolute;left:0;top:0;bottom:0;width:7px;
-    border-radius:4px;background:#F5C63C;
-  }
-  .container h2:not(.csh-title)::after{
-    content:'';position:absolute;left:17px;right:0;bottom:0;height:17px;
-    background:
-      url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='15'%20height='17'%20viewBox='0%200%2015%2017'%3E%3Crect%20x='5'%20y='0'%20width='2.5'%20height='7'%20rx='1.25'%20fill='%23F5C63C'%20transform='rotate(26%206.25%203.5)'/%3E%3Crect%20x='5'%20y='7'%20width='9'%20height='2.5'%20rx='1.25'%20fill='%23F5C63C'%20transform='rotate(-20%209.5%208.25)'/%3E%3Crect%20x='6'%20y='12'%20width='7'%20height='2.5'%20rx='1.25'%20fill='%23F5C63C'%20transform='rotate(-6%209.5%2013.25)'/%3E%3C/svg%3E") right bottom/15px 17px no-repeat,
-      linear-gradient(#A9C0AE,#A9C0AE) left bottom/calc(100% - 20px) 3px no-repeat;
-  }
+.s-body>.s-card>h2:not(.csh-title):first-child,
+.tab-body>h2:not(.csh-title):first-child,
+.tab-body--carded .tb-card>h2:not(.csh-title):first-child,
+.s-lead h2:not(.csh-title),
+.tab-eyebrow + h2:not(.csh-title){margin-top:0}
+/* ラベル行の罫線＋金3本アクセント（タイトルの背後に敷く） */
+.container h2:not(.csh-title)::before{
+  content:'';position:absolute;left:15px;right:0;top:5px;height:15px;
+  background:
+    url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='15'%20height='17'%20viewBox='0%200%2015%2017'%3E%3Crect%20x='5'%20y='0'%20width='2.5'%20height='7'%20rx='1.25'%20fill='%23F5C63C'%20transform='rotate(26%206.25%203.5)'/%3E%3Crect%20x='5'%20y='7'%20width='9'%20height='2.5'%20rx='1.25'%20fill='%23F5C63C'%20transform='rotate(-20%209.5%208.25)'/%3E%3Crect%20x='6'%20y='12'%20width='7'%20height='2.5'%20rx='1.25'%20fill='%23F5C63C'%20transform='rotate(-6%209.5%2013.25)'/%3E%3C/svg%3E") right center/13px 15px no-repeat,
+    linear-gradient(#A9C0AE,#A9C0AE) left center/calc(100% - 20px) 3px no-repeat;
+}
+/* 英字ラベル（罫線の左側を自身の背景で隠す） */
+.container h2:not(.csh-title)::after{
+  content:attr(data-label);
+  position:absolute;left:15px;top:5px;height:15px;line-height:15px;
+  padding-right:9px;background:var(--card);
+  font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;color:#1D7A63;white-space:nowrap;
 }
 h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 

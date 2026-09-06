@@ -290,7 +290,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {{custom_top_basic}}
   <div class="s-lead">
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">BASIC INFO</span><span class="tab-eyebrow-sub">旅行・観光の基本情報</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 01</span></div>
-  <h2>{{name}}観光のポイント</h2>
+  <h2 data-label="BASIC INFO">{{name}}観光のポイント</h2>
   </div>
   <div class="s-body">
   <div class="s-card">
@@ -313,7 +313,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="s-card">
   {% endif %}
 
-  <h2>{{name}}ってどんなところ？</h2>
+  <h2 data-label="ABOUT {{name_en}}">{{name}}ってどんなところ？</h2>
   <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">{{overview.description_html}}</div>
 
     <!-- クイックスペック -->
@@ -339,7 +339,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="s-card">
     <!-- 主要都市 -->
-    <h2 id="my-cities">主要都市</h2>
+    <h2 data-label="MAJOR CITIES" id="my-cities">主要都市</h2>
     <div style="overflow:hidden">
     <div style="position:relative">
       <div id="{{map.element_id}}" style="width:100%;height:300px"></div>
@@ -420,7 +420,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="s-card">
     <!-- ベストシーズン -->
-    <h2 id="season">ベストシーズン</h2>
+    <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
     <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
@@ -458,7 +458,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="s-card">
     <!-- 基本データ -->
-    <h2>基本データ</h2>
+    <h2 data-label="BASIC DATA">基本データ</h2>
     <div style="background:#fff;padding:4px 0">
     <div style="text-align:center;padding:20px 16px;border-bottom:1px solid #e0e0e0">
       {{overview.flag_html}}
@@ -494,7 +494,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="tb-sec">
   <div class="tb-card">
-  <h2>旅行費用の目安</h2>
+  <h2 data-label="TRAVEL BUDGET">旅行費用の目安</h2>
   {% if budget.intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{budget.intro}}</p>{% endif %}
   <div style="overflow-x:auto">
   <table style="width:100%;border-collapse:collapse;font-size:0.82em;min-width:320px">
@@ -546,7 +546,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="tb-sec">
   <div class="tb-card">
-  <h2 id="money">両替・支払い</h2>
+  <h2 data-label="MONEY &amp; PAYMENT" id="money">両替・支払い</h2>
   {% if practical.money_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 8px">{{practical.money_intro}}</p>{% endif %}
   <div class="s-card" style="padding-top:16px">
   <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap">
@@ -581,7 +581,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="tb-sec">
   <div class="tb-card">
-  <h2 id="flights">航空券の予約</h2>
+  <h2 data-label="FLIGHT BOOKING" id="flights">航空券の予約</h2>
   {% if practical.flight_lead %}<p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:8px 0 16px">{{practical.flight_lead}}</p>{% endif %}
   <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
@@ -604,7 +604,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="tb-sec">
   <div class="tb-card">
-  <h2>ホテルの選び方</h2>
+  <h2 data-label="HOTEL GUIDE">ホテルの選び方</h2>
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{% if practical.hotel_intro %}{{practical.hotel_intro}}{% else %}宿を選ぶとき、値段だけ見ていませんか？ 安さだけで選ぶと治安の悪いエリアに当たりやすいので注意が必要です。特に夜着の日程ではリスクが上がります。初日くらいは安心して休めるよう、エリアの特徴を事前に把握しておきましょう。{% endif %}</p>
   <div class="s-card">
     {% if practical.hotel_map_center %}
@@ -709,7 +709,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="tb-sec">
   <div class="tb-card">
-  <h2>準備は早めに</h2>
+  <h2 data-label="BEFORE YOU GO">準備は早めに</h2>
 
   <div class="prac-grid">
     {% for card in practical.prac_cards %}
@@ -775,7 +775,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="tb-sec">
   <div class="tb-card">
-  <h2>持ち物・アプリ準備</h2>
+  <h2 data-label="PACKING LIST">持ち物・アプリ準備</h2>
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</p>
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
@@ -818,7 +818,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="tb-sec">
   <div class="tb-card">
-  <h2 id="sim">SIM・Wi-Fi</h2>
+  <h2 data-label="SIM &amp; WI-FI" id="sim">SIM・Wi-Fi</h2>
   <div class="grid2">
     <div data-affiliate-card="trifa"></div>
     <div data-affiliate-card="airalo"></div>
@@ -828,7 +828,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="tb-sec">
   <div class="tb-card">
-  <h2 id="transport">現地交通ガイド</h2>
+  <h2 data-label="LOCAL TRANSPORT" id="transport">現地交通ガイド</h2>
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
     {% for item in transport_items %}
@@ -864,7 +864,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {% if show.phrases %}<section id="phrases" class="{{sec_active.phrases}}">
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">PHRASES</span><span class="tab-eyebrow-sub">旅行フレーズ集</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 07</span></div>
   <div class="tab-body">
-  <h2>旅行フレーズ集</h2>
+  <h2 data-label="TRAVEL PHRASES">旅行フレーズ集</h2>
   {% if phrases.multi %}
   <div class="filter-row" id="phrase-deck-tabs" style="margin-bottom:12px">
     {% for deck in phrases.decks %}
@@ -903,7 +903,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {{custom_top_food}}
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">FOOD</span><span class="tab-eyebrow-sub">グルメ</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 03</span></div>
   <div class="tab-body">
-  <h2>{{food_section_title}}</h2>
+  <h2 data-label="LOCAL FOOD">{{food_section_title}}</h2>
   <div class="filter-bar">
   <details class="filter-toggle">
     <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
@@ -984,7 +984,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">SIGHTSEEING SPOTS</span><span class="tab-eyebrow-sub">{{spots_eyebrow_meta}}</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 02</span></div>
 {{custom_top_spots}}
   <div class="tab-body">
-  <h2>{{spots_section_title}}</h2>
+  <h2 data-label="SIGHTSEEING SPOTS">{{spots_section_title}}</h2>
   <div class="filter-bar">
   <details class="filter-toggle">
     <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
@@ -1087,7 +1087,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {{custom_top_course}}
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">COURSE</span><span class="tab-eyebrow-sub">モデルコース</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 04</span></div>
   <div class="tab-body">
-  <h2>モデルコース</h2>
+  <h2 data-label="MODEL COURSE">モデルコース</h2>
   <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">{{courses.intro}}</p>
   <div class="course-type">
     <div class="course-type-title">{{courses.stable_title}}</div>
