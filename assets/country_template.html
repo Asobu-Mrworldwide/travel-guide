@@ -126,7 +126,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="hb-drawer__body">
 
-    <button class="hb-sec--primary" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
+    <button class="hb-sec" type="button" data-sec="page" aria-expanded="true" aria-controls="hbSecPage">
       <span class="hb-sec__label">{{name}}を旅する</span>
       <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
     </button>
@@ -169,7 +169,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div id="hb-nearby"></div>
     </div>
 
-    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+    <button class="hb-sec" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
       <span class="hb-sec__label">World Mappyについて</span>
       <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
     </button>
@@ -1013,6 +1013,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div id="spots-grid">
     {% for section in spot_sections %}
     <div class="s-card spot-section-card" data-city="{{section.city_id}}" data-region="{{section.region}}" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="item-grid">
     <div class="city-section-header" data-city="{{section.city_id}}">
       {% if section.city_image %}<img src="{{section.city_image}}" alt="{{section.city_name}}" class="csh-img">{% endif %}
       <h2 class="csh-title" data-city-filter="{{section.city_id}}" data-count="{{section.spot_count}}">{{section.city_name}}</h2>
@@ -1027,7 +1028,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         {% endfor %}
       </div>
     </div>
-    <div class="item-grid">
     {% for spot in section.spots %}
     <div class="item-card {% if spot.no_map %}no-map {% else %}spot {% endif %}has-spot-img {% if spot.must %}must{% endif %}" data-city="{{section.city_id}}" data-stype="{{spot.type}}" data-spot-num="{{spot.num}}">
       {% if spot.must %}<div class="must-badge">{{icon:star}}</div>{% endif %}
