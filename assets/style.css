@@ -702,9 +702,9 @@ section.active{display:block}
 #city-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:2000;align-items:center;justify-content:center;padding:16px}
 #city-popup.open{display:flex}
 #city-popup .cp-panel{position:relative;width:100%;max-width:430px;max-height:86vh;overflow-y:auto;background:#FAF7F2;border:1px solid #CFE0D7;border-radius:10px;box-shadow:0 14px 44px rgba(0,0,0,0.32)}
-#city-popup .cp-panel .city-section-header{grid-column:auto;background:none;border:none;box-shadow:none;border-radius:0;padding:0 18px 18px}
-#city-popup .cp-panel .city-section-header .csh-img{display:block;width:100%;margin:0 0 14px;height:170px;border-radius:10px 10px 0 0}
-#city-popup .cp-panel .city-section-header .csh-grid{display:grid}
+#city-popup .cp-panel .city-section-header{grid-column:auto;background:none;border:none;box-shadow:none;border-radius:0;padding:16px 18px 18px}
+#city-popup .cp-panel .city-section-header .csh-img{display:block;width:calc(100% + 36px);margin:-16px -18px 14px;height:170px;border-radius:10px 10px 0 0}
+#city-popup .cp-panel .city-section-header .csh-grid{display:grid;grid-template-columns:1fr}
 #city-popup .cp-close{position:absolute;top:9px;right:11px;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border:none;border-radius:50%;background:rgba(0,0,0,0.4);color:#fff;font-size:1em;line-height:1;cursor:pointer;z-index:1}
 /* スマホは1列なので通常バナーに戻す */
 @media(max-width:620px){
