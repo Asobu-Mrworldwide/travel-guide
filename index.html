@@ -211,10 +211,12 @@
 
   .wm-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
   .wm-grid.compact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .wm-grid.compact .wm-card { grid-template-columns: 132px 1fr; grid-template-rows: 1fr auto; min-height: 124px; align-content: stretch; }
-  .wm-grid.compact .wm-card-media { grid-column: 1; grid-row: 1 / span 2; height: 100%; }
+  .wm-grid.compact .wm-card { grid-template-columns: 132px 1fr; grid-template-rows: 1fr auto auto; min-height: 124px; align-content: stretch; }
+  .wm-grid.compact .wm-card-media { grid-column: 1; grid-row: 1 / span 3; height: 100%; }
+  .wm-grid.compact .wm-card-seasonblock { grid-column: 2; grid-row: 2; padding: 0 14px 4px; }
+  .wm-grid.compact .wm-card-seasonblock + .wm-card-foot { margin-top: 0; }
   .wm-grid.compact .wm-card-link { grid-column: 2; grid-row: 1; padding: 12px 14px 6px; gap: 6px; }
-  .wm-grid.compact .wm-card-foot { grid-column: 2; grid-row: 2; margin-top: 0; padding: 0 14px 12px; border-top: none; background: transparent; }
+  .wm-grid.compact .wm-card-foot { grid-column: 2; grid-row: 3; margin-top: 0; padding: 0 14px 12px; border-top: none; background: transparent; }
   .wm-grid.compact .wm-card { min-height: 138px; }
   .wm-grid.compact .wm-months-row { margin-top: 2px; gap: 5px; }
   .wm-grid.compact .wm-card-months span { height: 6px; }
@@ -242,6 +244,8 @@
   .wm-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; padding: 11px 14px; border-top: 1px solid #EEF2EB; background: #FCFDFB; font-size: 12px; color: #45514A; }
   .wm-card-foot .k { display: inline-flex; align-items: center; gap: 6px; }
   .wm-card-foot .k b { color: #14503C; font-weight: 700; }
+  .wm-card-seasonblock { display: grid; gap: 5px; padding: 10px 14px 0; }
+  .wm-card-seasonblock + .wm-card-foot { margin-top: 12px; }
 
   .wm-row { display: grid; grid-template-columns: 220px 1fr 150px 140px 44px; gap: 18px; align-items: center; padding: 13px 8px; border-bottom: 1px solid #EEF2EB; color: #23211C; }
   .wm-row.head { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #8A968D; border-bottom: 2px solid #EEF2EB; }
@@ -939,9 +943,11 @@
           + '<span class="name">' + esc(d.name) + '</span>'
           + (state.view === 'compact' ? '' : '<p class="blurb">' + esc(d.blurb) + '</p>')
           + '<span class="tags">' + d.tags.slice(0, 3).map((t) => '<span>' + esc(t) + '</span>').join('') + '</span>'
-          + '<span class="wm-months-row"><i class="mtick">1月</i><span class="wm-card-months">' + Array.from({ length: 12 }, (_, i) => '<span style="background:' + (inSeason(d, i + 1) ? '#1D7A63' : '#EAF3EE') + '"></span>').join('') + '</span><i class="mtick">12月</i></span>'
-          + '<span class="wm-card-season">ベストシーズン　' + esc(seasonLabelOf(d)) + '</span>'
           + '</a>'
+          + '<div class="wm-card-seasonblock">'
+          + '<span class="wm-card-season">ベストシーズン　' + esc(seasonLabelOf(d)) + '</span>'
+          + '<span class="wm-months-row"><i class="mtick">1月</i><span class="wm-card-months">' + Array.from({ length: 12 }, (_, i) => '<span style="background:' + (inSeason(d, i + 1) ? '#1D7A63' : '#EAF3EE') + '"></span>').join('') + '</span><i class="mtick">12月</i></span>'
+          + '</div>'
           + '<div class="wm-card-foot"><span class="k"><b>✈</b>' + d.hours.toFixed(1) + 'h</span><span class="k"><b>¥</b>予算：' + esc(d.budget) + '</span></div>'
           + '</div>';
       });
