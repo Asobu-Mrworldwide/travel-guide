@@ -644,7 +644,7 @@
   const CORE_TAGS_PRESENT = CORE_TAGS.filter((t) => TAGS.indexOf(t) >= 0);
   const EXTRA_TAGS = TAGS.filter((t) => CORE_TAGS.indexOf(t) < 0);
 
-  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: 'card', sort: 'おすすめ', favs: [], limit: 15, tagExpand: false };
+  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 760px)').matches) ? 'compact' : 'card', sort: 'おすすめ', favs: [], limit: 15, tagExpand: false };
 
   function loadFavs() { try { return JSON.parse(localStorage.getItem('wm-favs') || '[]'); } catch (e) { return []; } }
   function saveFavs(list) { try { localStorage.setItem('wm-favs', JSON.stringify(list)); } catch (e) {} }

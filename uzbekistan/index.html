@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ウズベキスタン旅行ガイド">
 <meta name="twitter:description" content="中央アジアの内陸部に位置するウズベキスタンは、かつてシルクロードの要衝として栄えた古都が点在する国。サマルカンド・ブハラ・ヒヴァのイスラム建築は今なお世界を魅了し、ユネスコ世界遺産にも登録されている。青タイルの霊廟が建ち並ぶ景観と、見知ら…">
 <meta name="twitter:image" content="https://worldmappy.com/uzbekistan/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788695793">
+<link rel="stylesheet" href="../assets/style.css?v=1788728508">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788695793" defer></script>
-<script src="../assets/affiliates.js?v=1788695793" defer></script>
+<script src="../assets/affiliates-data.js?v=1788728508" defer></script>
+<script src="../assets/affiliates.js?v=1788728508" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -230,8 +230,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="s-lead">
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">BASIC INFO</span><span class="tab-eyebrow-sub">旅行・観光の基本情報</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Uzbekistan / 01</span></div>
-  <h1 class="page-h1">ウズベキスタンの旅行ガイド</h1>
-  <div class="page-h1-bar"><span></span><span></span><span></span></div>
+  <h2>ウズベキスタン観光のポイント</h2>
   </div>
   <div class="s-body">
   <div class="s-card">
@@ -1145,36 +1144,66 @@ document.addEventListener('keydown', function(e){
 /* 目次サイドバー: 表示中セクション内の h2 から自動生成 */
 (function(){
   function slugify(text, idx){ return 'toc-' + idx; }
+  var _scrollHandler = null;
+  function topOffset(){
+    // ヘッダーはスクロールで隠れるが、上方向へジャンプすると必ず再表示される。
+    // そのため現在の表示状態ではなく「ヘッダー＋タブナビが全表示された時の高さ」で
+    // 固定して余白を取る（下方向ジャンプ時に多少余白が増える分は許容）。
+    var navEl = document.querySelector('nav');
+    var header = document.getElementById('site-top-bar');
+    var navH = navEl && getComputedStyle(navEl).position === 'sticky' ? navEl.offsetHeight : 0;
+    var headH = header ? header.offsetHeight : 52;
+    return navH + headH + 12;
+  }
   function build(){
     const list = document.getElementById('toc-list');
     if (!list) return;
     const activeSection = document.querySelector('section.active') || document.querySelector('.container section');
     if (!activeSection) { list.parentElement.style.display = 'none'; return; }
-    const heads = activeSection.querySelectorAll('h2, h3.toc-sub');
+    const heads = Array.from(activeSection.querySelectorAll('h1.page-h1, h2, h3.toc-sub'));
     if (!heads.length) { list.parentElement.style.display = 'none'; return; }
+    list.parentElement.style.display = '';
     list.innerHTML = '';
     heads.forEach(function(h, i){
       if (!h.id) h.id = slugify(h.textContent, i);
-      h.style.scrollMarginTop = '96px';
       const isSub = h.tagName === 'H3';
       const a = document.createElement('a');
       a.href = '#' + h.id;
       const firstSpan = h.querySelector('span:first-child');
       a.textContent = firstSpan ? firstSpan.textContent : h.textContent;
       if (isSub) a.classList.add('toc-sub-link');
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var y = h.getBoundingClientRect().top + window.pageYOffset - topOffset();
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        setActive(a);
+      });
       list.appendChild(a);
     });
     const links = Array.from(list.querySelectorAll('a'));
-    const obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          links.forEach(function(l){ l.classList.remove('active'); });
-          const match = links.find(function(l){ return l.getAttribute('href') === '#' + entry.target.id; });
-          if (match) match.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-110px 0px -70% 0px' });
-    heads.forEach(function(h){ obs.observe(h); });
+    function setActive(a){
+      links.forEach(function(l){ l.classList.remove('active'); });
+      if (a) a.classList.add('active');
+    }
+    function updateActive(){
+      var line = topOffset() + 4;
+      var current = heads[0];
+      for (var i = 0; i < heads.length; i++){
+        if (heads[i].getBoundingClientRect().top <= line) current = heads[i];
+        else break;
+      }
+      setActive(links[heads.indexOf(current)]);
+    }
+    var _ticking = false;
+    function onScroll(){
+      if (_ticking) return;
+      _ticking = true;
+      requestAnimationFrame(function(){ _ticking = false; updateActive(); });
+    }
+    if (_scrollHandler) window.removeEventListener('scroll', _scrollHandler);
+    _scrollHandler = onScroll;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateActive();
   }
   document.addEventListener('DOMContentLoaded', build);
   

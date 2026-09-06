@@ -109,6 +109,14 @@ a:hover{color:var(--green)}
   /* 基本情報タブ: 見出し(.s-lead)と直後の観光のポイント(.s-card:first-child)を1枚のカードに繋げる */
   .s-lead:has(+ .s-body > .s-card){margin-bottom:0;padding-bottom:6px;border-bottom-left-radius:0;border-bottom-right-radius:0;box-shadow:0 1px 2px rgba(20,40,30,0.06)}
   .s-lead + .s-body > .s-card:first-child{margin-top:0;padding-top:2px;border-top-left-radius:0;border-top-right-radius:0}
+  /* 予算・旅の準備タブ: 基本情報タブと同様に、セクションごとの白カードへ分割（見出しはカード内） */
+  .tab-body--carded{display:block;background:transparent;box-shadow:none;padding:0;margin:0;border-radius:0}
+  .tab-body--carded .tb-sec{display:block}
+  .tab-body--carded .tb-card{display:block;background:var(--card);border-radius:12px;box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07);padding:16px 14px;margin:16px 10px 0}
+  .tab-body--carded .tb-card > h2:first-child{margin-top:0;padding-top:0;border-top:none}
+  .tab-body--carded .tb-card > *:first-child{margin-top:0}
+  .tab-body--carded .tb-card .s-card{background:none;border:none;box-shadow:none;padding:0;margin:0}
+  .tab-body--carded .tb-card .season-tip-box{margin-left:0;margin-right:0}
 }
 
 /* カード */
@@ -137,10 +145,27 @@ a:hover{color:var(--green)}
 .page-h1-bar span:nth-child(3){background:#DCE8E2}
 
 /* 見出し */
-h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.5em;color:var(--text);margin:44px 0 16px;padding:24px 0 9px;letter-spacing:0.01em;border-top:1px solid #D8D2C4;border-bottom:solid 2px var(--green);position:relative}
+h2{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:1.5em;color:var(--text);margin:44px 0 16px;padding:0 0 9px;letter-spacing:0.01em;border-bottom:solid 2px var(--green);position:relative}
 .tab-eyebrow + h2,.tab-eyebrow + .tab-body > h2:first-child,.s-lead + .s-body > .s-card:first-child > h2:first-child,.csh-title{margin-top:0;padding-top:0;border-top:none}
 .s-body > .s-card > h2{border-top:none;padding-top:0}
 h2::after{content:none}
+/* PC版のみ: 装飾バナー見出し */
+@media(min-width:1021px){
+  .container h2:not(.csh-title){
+    border-bottom:none;padding:0 6% 0 10.5%;
+    min-height:56px;display:flex;align-items:center;
+    background:url(../素材/見出し/h2_bar.webp) left center/100% 100% no-repeat;
+  }
+  .container h2:not(.csh-title)::before{content:none}
+}
+/* スマホ版のみ: 装飾下線見出し */
+@media(max-width:1020px){
+  .container h2:not(.csh-title){
+    border-bottom:none;padding:0 9% 40px 3%;
+    background:url(../素材/見出し/h2_bar_sp.webp) left bottom/100% 42px no-repeat;
+  }
+  .container h2:not(.csh-title)::before{content:none}
+}
 h3{font-size:0.93em;font-weight:700;color:#333;margin:18px 0 8px}
 
 /* ボタン共通 */
@@ -331,9 +356,9 @@ nav button:not(:last-child)::after,nav a:not(:last-child)::after{content:'';posi
 nav button.active,nav a.active{color:var(--green);border-bottom-color:var(--green);background-color:var(--green-light);border-radius:10px 10px 0 0}
 nav button:hover,nav a:hover{color:var(--green);border-bottom-color:var(--green)}
 /* タブアイコン（素材/タブバー → assets/tabbar） */
-nav a,nav button{display:flex;flex-direction:column;align-items:center;padding-top:9px;padding-bottom:9px}
-nav a::before,nav button::before{content:"";display:block;width:24px;height:24px;margin:0 auto 4px;background-repeat:no-repeat;background-position:center;background-size:contain;opacity:0.92;transition:background-image 0s}
-nav button:last-of-type::before{background-image:url(tabbar/item_green.png);width:30px;height:30px;margin:-3px auto 1px}
+nav a,nav button{display:flex;flex-direction:row;align-items:center;justify-content:center;gap:7px;padding-top:12px;padding-bottom:12px}
+nav a::before,nav button::before{content:"";display:block;width:18px;height:18px;flex-shrink:0;margin:0;background-repeat:no-repeat;background-position:center;background-size:contain;opacity:0.92;transition:background-image 0s}
+nav button:last-of-type::before{background-image:url(tabbar/item_green.png);width:22px;height:22px;margin:0}
 nav button:last-of-type:hover::before{background-image:url(tabbar/item_amber.png)}
 nav a:nth-of-type(1)::before,nav button:not(:last-of-type):nth-of-type(1)::before{background-image:url(tabbar/basic_green.png)}
 nav a:nth-of-type(2)::before,nav button:not(:last-of-type):nth-of-type(2)::before{background-image:url(tabbar/spots_green.png)}
@@ -360,6 +385,8 @@ nav.has-right .nav-fade-right{opacity:1}
 section{display:none;animation:fadeIn 0.25s}
 section.active{display:block}
 .s-card{background:transparent;border-radius:0;padding:0;margin-top:8px}
+/* 予算タブ: セクション囲み（PCでは無、スマホでカード分割） */
+.tb-sec,.tb-card{display:contents}
 .s-card>h2:first-child{margin-top:0}
 @media(max-width:700px){.s-card{margin-left:0;margin-right:0;padding:0}}
 #div_admane_async_1734_658_2971 img{max-width:100%;height:auto}
@@ -787,7 +814,7 @@ section.active{display:block}
   .md-t{font-size:0.75em}
   /* スマホではタブバーを画面下部に固定表示する */
   nav{justify-content:flex-start;position:fixed !important;top:auto !important;bottom:0;left:0;right:0;transform:none !important;border-bottom:none;border-top:1px solid rgba(30,136,229,0.15);box-shadow:0 -4px 20px rgba(26,37,48,0.10);padding-bottom:env(safe-area-inset-bottom)}
-  nav button,nav a{font-size:0.82em;padding:7px 10px;border-bottom:none;border-top:4px solid transparent;margin-bottom:0;margin-top:-1px}
+  nav button,nav a{font-size:0.82em;padding:7px 10px;border-bottom:none;border-top:4px solid transparent;margin-bottom:0;margin-top:-1px;flex-direction:column;gap:0}
   nav a::before,nav button::before{width:21px;height:21px;margin-bottom:3px}
   nav button:last-of-type::before{width:27px;height:27px;margin:-3px auto 0}
   nav button.active,nav a.active{border-bottom-color:transparent;border-top-color:var(--green);border-radius:0 0 10px 10px}
