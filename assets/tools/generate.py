@@ -271,7 +271,7 @@ def build_spot_data_js(data):
             else:
                 q = ' '.join(x for x in [name, city, country_label] if x)
                 map_url = 'https://maps.google.com/?q=' + urllib.parse.quote(q, safe='')
-            obj[num] = {'num': num, 'name': name, 'desc': desc, 'img': img, 'mapUrl': map_url}
+            obj[num] = {'num': num, 'name': name, 'desc': desc, 'img': img, 'mapUrl': map_url, 'must': bool(sp.get('must'))}
     # <script> 内に安全に埋め込めるよう '<' をエスケープ
     return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
 
@@ -302,6 +302,7 @@ def build_food_data_js(data):
             'img': item.get('image', '') or '',
             'wikiUrl': item.get('wiki_url', '') or '',
             'orderParams': order_params,
+            'must': bool(item.get('must')),
         }
     return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
 

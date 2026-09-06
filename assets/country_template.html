@@ -955,7 +955,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {{custom_top_spots}}
   <div class="tab-body">
   <h2>{{spots_section_title}}</h2>
-  <p style="margin:0 0 12px;font-size:0.85em;line-height:1.9;color:var(--sub)">エリア・カテゴリーで絞り込んで、気になるスポットを探せます。</p>
   <div class="filter-bar">
   <details class="filter-toggle">
     <summary onclick="if(!event.target.closest('.ft-btn'))event.preventDefault()">
@@ -1276,6 +1275,7 @@ function showSpot(numId) {
   document.getElementById('sp-pop-num').textContent = num;
   document.getElementById('sp-pop-name').textContent = name;
   document.getElementById('sp-pop-desc').textContent = desc;
+  document.getElementById('sp-pop-star').style.display = card.classList.contains('must') ? 'block' : 'none';
   const popImg = document.getElementById('sp-pop-img');
   if (imgUrl) { popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
@@ -1306,6 +1306,7 @@ function showFood(numId) {
   document.getElementById('sp-pop-num').textContent = num;
   document.getElementById('sp-pop-name').textContent = name;
   document.getElementById('sp-pop-desc').textContent = desc;
+  document.getElementById('sp-pop-star').style.display = card.classList.contains('must') ? 'block' : 'none';
   const popImg = document.getElementById('sp-pop-img');
   if (imgUrl) { popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
@@ -1342,12 +1343,14 @@ function showSpot(numId) {
       name: (card.querySelector('.name') || {}).textContent || '',
       desc: (card.querySelector('.desc') || {}).textContent || '',
       img:  imgEl ? imgEl.src : '',
-      mapUrl: mapBtn ? mapBtn.href : ''
+      mapUrl: mapBtn ? mapBtn.href : '',
+      must: card.classList.contains('must')
     };
   }
   document.getElementById('sp-pop-num').textContent  = o.num  || '';
   document.getElementById('sp-pop-name').textContent = o.name || '';
   document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  document.getElementById('sp-pop-star').style.display = o.must ? 'block' : 'none';
   var popImg = document.getElementById('sp-pop-img');
   if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
@@ -1378,12 +1381,14 @@ function showFood(numId) {
       desc: (card.querySelector('.desc') || {}).textContent || '',
       img:  imgEl ? imgEl.src : '',
       wikiUrl: wikiBtn ? wikiBtn.href : '',
-      orderOnclick: orderBtnEl ? orderBtnEl.getAttribute('onclick') : null
+      orderOnclick: orderBtnEl ? orderBtnEl.getAttribute('onclick') : null,
+      must: card.classList.contains('must')
     };
   }
   document.getElementById('sp-pop-num').textContent  = o.num  || '';
   document.getElementById('sp-pop-name').textContent = o.name || '';
   document.getElementById('sp-pop-desc').textContent = o.desc || '';
+  document.getElementById('sp-pop-star').style.display = o.must ? 'block' : 'none';
   var popImg = document.getElementById('sp-pop-img');
   if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
@@ -1451,6 +1456,7 @@ function setItemView(kind, view) {
     : document.querySelectorAll('#spots-grid .item-grid');
   grids.forEach(grid => {
     grid.classList.remove('view-compact', 'view-list');
+    grid.querySelectorAll('.desc').forEach(d => { d.style.height = ''; d.style.webkitLineClamp = ''; });
     if (view === 'compact') grid.classList.add('view-compact');
     else if (view === 'list') grid.classList.add('view-list');
   });
@@ -1645,6 +1651,18 @@ var PAGE_INDEX = {{page_index}};
   }
 })();
 {% endif %}
+
+/* 絞り込みパネル: 外側クリック / Esc で閉じる */
+document.addEventListener('click', function(e){
+  var closed = false;
+  document.querySelectorAll('details.filter-toggle[open]').forEach(function(d){
+    if (!d.contains(e.target)) { d.removeAttribute('open'); closed = true; }
+  });
+  if (closed) { e.preventDefault(); e.stopPropagation(); }
+}, true);
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') document.querySelectorAll('details.filter-toggle[open]').forEach(function(d){ d.removeAttribute('open'); });
+});
 </script>
 
 <script>
@@ -1929,9 +1947,10 @@ function closeFoodModal() {
   <div style="background:#fff;border-radius:6px;max-width:380px;width:100%;overflow:hidden;position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.25)">
     <button onclick="closeSpotPopup()" style="position:absolute;top:8px;right:10px;background:rgba(0,0,0,0.35);border:none;border-radius:50%;width:28px;height:28px;font-size:1em;cursor:pointer;color:#fff;z-index:1;line-height:1;display:flex;align-items:center;justify-content:center">✕</button>
     <div id="sp-pop-img" style="width:100%;aspect-ratio:16/9;background-size:cover;background-position:center"></div>
-    <div style="padding:16px 18px 18px">
-      <div id="sp-pop-num" style="font-size:0.68em;color:#999;margin-bottom:3px;font-weight:600;letter-spacing:0.05em"></div>
-      <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4"></div>
+    <div style="padding:16px 18px 18px;position:relative">
+      <div id="sp-pop-star" style="display:none;position:absolute;top:13px;right:16px;font-size:1.4em;line-height:1" aria-label="おすすめ">⭐</div>
+      <div id="sp-pop-num" style="display:none"></div>
+      <div id="sp-pop-name" style="font-size:1em;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4;padding-right:26px"></div>
       <div id="sp-pop-desc" style="font-size:0.82em;color:#444;line-height:1.75"></div>
       <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap">
         <button id="sp-pop-order" style="display:none;align-items:center;gap:3px;padding:6px 12px;background:#fff;border:1.5px solid #dadce0;color:#5f6368;font-size:0.78em;font-weight:600;border-radius:20px;cursor:pointer;white-space:nowrap">🌐 店員に聞く</button>
