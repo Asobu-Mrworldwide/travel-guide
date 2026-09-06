@@ -1822,7 +1822,7 @@ document.addEventListener('keydown', function(e){
     if (!list) return;
     const activeSection = document.querySelector('section.active') || document.querySelector('.container section');
     if (!activeSection) { list.parentElement.style.display = 'none'; return; }
-    const heads = activeSection.querySelectorAll('h2, h3.toc-sub');
+    const heads = activeSection.querySelectorAll('h1.page-h1, h2, h3.toc-sub');
     if (!heads.length) { list.parentElement.style.display = 'none'; return; }
     list.innerHTML = '';
     heads.forEach(function(h, i){
