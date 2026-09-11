@@ -97,8 +97,7 @@
           <p>このページが役に立ったら、旅の相談相手に送ってあげてください。</p>
           <button type="button" id="cl-share-copy" class="sf-copy-btn"><span>このページのリンクをコピー</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l1-1"/></svg></button>
           <div class="sf-share-links">
-            <a id="cl-share-x" href="#" target="_blank" rel="noopener">X で共有</a>
-            <a id="cl-share-line" href="#" target="_blank" rel="noopener">LINE で送る</a>
+            <button type="button" id="cl-share-btn" class="sf-share-btn" hidden>共有する</button>
           </div>
         </div>
       </div>
@@ -120,10 +119,13 @@
 
   const shareUrl = encodeURIComponent(location.href);
   const shareText = encodeURIComponent(document.title);
-  const xLink = document.getElementById("cl-share-x");
-  if (xLink) xLink.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
-  const lineLink = document.getElementById("cl-share-line");
-  if (lineLink) lineLink.href = `https://social-plugins.line.me/lineit/share?url=${shareUrl}`;
+  const shareBtn = document.getElementById("cl-share-btn");
+  if (shareBtn && navigator.share) {
+    shareBtn.hidden = false;
+    shareBtn.addEventListener("click", () => {
+      navigator.share({ title: document.title, url: location.href }).catch(() => {});
+    });
+  }
 
   // 共通ページ・診断ページのヘッダーを、国ページと同じ「スクロール量に連動して隠れる／現れる」挙動に統一する。
   // 国ページ(#site-top-bar)とトップページ(index.html)はそれぞれ独自スクリプトで制御しているため対象外。

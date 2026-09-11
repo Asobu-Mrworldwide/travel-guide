@@ -270,7 +270,7 @@
 
   /* ===== 診断 / シェア パネル ===== */
   .wm-cta-wrap { padding: 34px 44px 46px; }
-  .wm-cta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 30px; padding: 30px 34px; border-radius: 16px; background: #F4F7EF; }
+  .wm-cta { display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; padding: 30px 34px; border-radius: 16px; background: #F4F7EF; }
   .wm-cta-quiz { position: relative; display: grid; grid-template-columns: 124px minmax(0, 1fr); gap: 18px; align-items: center; }
   .wm-cta-quiz .illus { width: 124px; object-fit: contain; }
   .wm-cta-quiz .pa { position: absolute; left: -6px; bottom: -6px; width: 84px; object-fit: contain; opacity: 0.9; }
@@ -279,16 +279,6 @@
   .wm-cta-quiz .hd { font-weight: 900; font-size: 25px; line-height: 1.4; color: #14503C; }
   .wm-cta-quiz p { margin: 0; font-size: 12.5px; line-height: 1.95; color: #56625A; }
   .wm-cta-quiz .go { justify-self: start; display: inline-flex; align-items: center; gap: 14px; height: 44px; padding: 0 24px; border-radius: 999px; background: #14503C; font-size: 13.5px; font-weight: 700; color: #fff; }
-  .wm-cta-share { display: grid; grid-template-columns: minmax(0, 1fr) 104px; gap: 16px; align-items: center; border-left: 1px solid #E1E7DA; padding-left: 30px; }
-  .wm-cta-share .bd { display: grid; gap: 12px; }
-  .wm-cta-share p { margin: 0; font-size: 13px; line-height: 1.95; color: #45514A; }
-  .wm-cta-share .copy { justify-self: start; display: inline-flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; min-height: 44px; padding: 10px 18px; border: 1.5px solid #14503C; border-radius: 999px; background: #fff; font-family: inherit; font-size: 13px; font-weight: 700; color: #14503C; cursor: pointer; }
-  .wm-cta-share .copy.done { background: #14503C; color: #fff; }
-  .wm-cta-share .copy svg { width: 16px; height: 16px; flex: none; }
-  .wm-cta-share .links { display: flex; flex-wrap: wrap; gap: 10px; }
-  .wm-cta-share .links a { display: inline-flex; align-items: center; gap: 10px; height: 42px; padding: 0 18px; border: 1px solid #DDE4D9; border-radius: 999px; background: #fff; font-size: 12.5px; font-weight: 700; color: #23211C; white-space: nowrap; }
-  .wm-cta-share .links a img { width: 22px; height: 22px; object-fit: contain; }
-  .wm-cta-share .illus { width: 104px; object-fit: contain; }
 
   /* ===== モバイル ===== */
   @media (max-width: 760px) {
@@ -377,8 +367,6 @@
 
     .wm-cta-wrap { padding: 24px 18px 34px; }
     .wm-cta { grid-template-columns: 1fr; gap: 22px; padding: 24px 18px; }
-    .wm-cta-share { grid-template-columns: 1fr; border-left: none; border-top: 1px solid #E1E7DA; padding-left: 0; padding-top: 22px; }
-    .wm-cta-share .illus { display: none; }
     .wm-cta-quiz { grid-template-columns: 88px 1fr; gap: 14px; }
     .wm-cta-quiz .illus { width: 88px; height: 88px; }
 
@@ -408,8 +396,8 @@
   .sf-copy-btn{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 15px;border:1px solid rgba(255,255,255,0.35);border-radius:6px;background:transparent;font-family:inherit;font-size:0.78em;color:#fff;cursor:pointer;transition:all .2s ease}
   .sf-copy-btn:hover{background:rgba(255,255,255,0.1)}
   .sf-share-links{display:flex;gap:8px}
-  .sf-share-links a{flex:1;text-align:center;padding:10px 8px;border:1px solid rgba(255,255,255,0.35);border-radius:6px;font-size:0.76em;color:#fff}
-  .sf-share-links a:hover{background:rgba(255,255,255,0.12)}
+  .sf-share-btn{flex:1;text-align:center;padding:10px 8px;border:1px solid rgba(255,255,255,0.35);border-radius:6px;font-size:0.76em;color:#fff;background:transparent;font-family:inherit;cursor:pointer;transition:all .2s ease}
+  .sf-share-btn:hover{background:rgba(255,255,255,0.12)}
   .sf-bottom{border-top:1px solid rgba(255,255,255,0.18);padding:16px 44px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:0.72em;color:rgba(255,255,255,0.7)}
   .sf-legal{display:flex;gap:18px}
   .sf-legal a{color:rgba(255,255,255,0.7);text-decoration:none}
@@ -586,7 +574,7 @@
     </div>
   </section>
 
-  <!-- 診断 / シェア -->
+  <!-- 診断 -->
   <div class="wm-cta-wrap">
     <div class="wm-cta">
       <!-- 診断ページ未公開のため無効化（公開時: onclick/style/aria-disabled を削除） -->
@@ -600,25 +588,6 @@
           <span class="go">診断する <span>→</span></span>
         </div>
       </a>
-      <div class="wm-cta-share">
-        <div class="bd">
-          <span class="en">SHARE</span>
-          <p>このページが役に立ったら、<br>旅の相談相手に送ってあげてください。</p>
-          <button class="copy" id="ctaCopy">
-            <span id="ctaCopyLabel">このページのリンクをコピー</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="8.5" y="8.5" width="11" height="12" rx="2"></rect><path d="M15.5 5.5H6.2a1.7 1.7 0 0 0-1.7 1.7v9.6"></path></svg>
-          </button>
-          <div class="links">
-            <a id="shareX" href="#" target="_blank" rel="noopener">
-              <img src="assets/top/icon-x.png" alt="">で共有
-            </a>
-            <a id="shareLine" href="#" target="_blank" rel="noopener">
-              <img src="assets/top/icon-line.png" alt="">LINE で送る
-            </a>
-          </div>
-        </div>
-        <img class="illus" src="assets/top/illustration-globe-flag.png" alt="">
-      </div>
     </div>
   </div>
 
@@ -1099,17 +1068,6 @@
       slowScrollIntoView(card || $('wm-index'), 1300);
       if (card) { card.classList.remove('wm-flash'); void card.offsetWidth; card.classList.add('wm-flash'); }
     });
-  });
-
-  // シェア
-  const shareUrl = () => encodeURIComponent(location.href);
-  const shareText = () => encodeURIComponent('World Mappy - 世界の旅行ガイド');
-  $('shareX').href = 'https://twitter.com/intent/tweet?text=' + shareText() + '&url=' + shareUrl();
-  $('shareLine').href = 'https://social-plugins.line.me/lineit/share?url=' + shareUrl();
-  $('ctaCopy').addEventListener('click', () => {
-    try { navigator.clipboard && navigator.clipboard.writeText(location.href); } catch (e) {}
-    const btn = $('ctaCopy'); btn.classList.add('done'); $('ctaCopyLabel').textContent = 'コピーしました';
-    clearTimeout(btn._t); btn._t = setTimeout(() => { btn.classList.remove('done'); $('ctaCopyLabel').textContent = 'このページのリンクをコピー'; }, 1800);
   });
 
   // 地図の海／背景をヒーローのクリーム色に合わせ、境界が見えないようにする（デザイン準拠）
