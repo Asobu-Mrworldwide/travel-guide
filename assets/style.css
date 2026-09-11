@@ -357,11 +357,11 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
 .sf-col a:hover{color:#fff}
 .sf-gold-link{color:var(--yellow) !important}
 .sf-share p{margin:0;font-size:0.78em;line-height:1.9;color:rgba(255,255,255,0.78)}
-.sf-copy-btn{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 15px;border:1px solid rgba(255,255,255,0.35);border-radius:6px;background:transparent;font-family:inherit;font-size:0.78em;color:#fff;cursor:pointer;transition:all .2s ease}
-.sf-copy-btn:hover{background:rgba(255,255,255,0.1)}
-.sf-share-links{display:flex;gap:8px}
-.sf-share-btn{flex:1;text-align:center;padding:10px 8px;border:1px solid rgba(255,255,255,0.35);border-radius:6px;font-size:0.76em;color:#fff;background:transparent;font-family:inherit;cursor:pointer;transition:all .2s ease}
-.sf-share-btn:hover{background:rgba(255,255,255,0.12)}
+.sf-share-icons{display:flex;gap:18px}
+.sf-icon-btn{display:flex;flex-direction:column;align-items:center;gap:6px;background:transparent;border:none;padding:0;font-family:inherit;color:#fff;cursor:pointer}
+.sf-icon-circle{display:grid;place-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,0.35);border-radius:999px;transition:all .2s ease}
+.sf-icon-btn:hover .sf-icon-circle{background:var(--yellow);border-color:var(--yellow);color:#514238}
+.sf-icon-label{font-size:0.68em;color:rgba(255,255,255,0.78);white-space:nowrap}
 .sf-bottom{border-top:1px solid rgba(255,255,255,0.18);padding:16px 32px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:0.72em;color:rgba(255,255,255,0.7)}
 .sf-legal{display:flex;gap:18px}
 .sf-legal a{color:rgba(255,255,255,0.7);text-decoration:none}
@@ -371,6 +371,7 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
 @media(max-width:520px){
   .sf-grid{grid-template-columns:1fr;gap:0;padding:6px 18px 18px}
   .sf-col-area{display:none}
+  .sf-col-guide{display:none}
   .sf-grid>div{padding:22px 0;border-top:1px solid rgba(255,255,255,0.13)}
   .sf-grid>div:first-child{border-top:none}
   .sf-brand{gap:12px}
@@ -650,6 +651,67 @@ section.active{display:block}
 .td-price{display:block;font-weight:700;color:var(--green);font-size:1.05em}
 .td-name{font-weight:700;display:block;margin-bottom:4px}
 .td-sub{font-size:0.84em;color:var(--sub);line-height:1.6;display:block}
+
+/* ---- 旅行費用タブカード (budget tabs) ---- */
+.bt-wrap{display:grid;gap:14px;justify-items:center}
+.bt-tabs{display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:#F2F4F1;flex-wrap:wrap;justify-content:center}
+.bt-tab{display:flex;align-items:center;gap:9px;min-height:48px;padding:0 18px;border:0;border-radius:999px;background:#fff;box-shadow:0 1px 3px rgba(20,40,30,.10);font-family:inherit;text-align:left;cursor:pointer}
+.bt-tab[aria-pressed="true"]{background:var(--green);box-shadow:0 4px 12px rgba(20,60,40,.22)}
+.bt-tab .bt-tab-ic{flex:none;width:32px;height:32px;background-size:contain;background-repeat:no-repeat;background-position:center}
+.bt-tab .bt-tab-tx{display:grid;gap:1px}
+.bt-tab .bt-tab-nm{font-size:0.88em;font-weight:700;white-space:nowrap;color:var(--text)}
+.bt-tab .bt-tab-nt{font-size:0.68em;white-space:nowrap;color:var(--sub)}
+.bt-tab[aria-pressed="true"] .bt-tab-nm{color:#fff}
+.bt-tab[aria-pressed="true"] .bt-tab-nt{color:rgba(255,255,255,.86)}
+
+.bt-plan{width:100%;border:1px solid #CFE0D7;border-radius:16px;background:#fff;overflow:hidden;box-shadow:0 2px 0 rgba(20,40,30,.05),0 10px 24px rgba(20,40,30,.08)}
+.bt-plan-head{display:flex;align-items:center;gap:14px;padding:20px 22px 18px}
+.bt-plan-ic{flex:none;width:44px;height:44px;background-size:contain;background-repeat:no-repeat;background-position:center}
+.bt-plan-tx{display:grid;gap:5px;min-width:0}
+.bt-plan-ttl{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
+.bt-plan-nm{font-weight:700;font-size:1.2em;color:var(--green)}
+.bt-plan-nt{font-size:0.72em;color:#6A756E}
+.bt-plan-bl{font-size:0.72em;line-height:1.7;color:#5E6B63}
+
+.bt-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:0 16px;padding:12px 22px;border-top:1px solid #EEF1EC}
+.bt-row-l{display:flex;align-items:center;gap:13px;min-width:0}
+.bt-row-ic{flex:none;font-size:1.3em;width:28px;text-align:center;line-height:1}
+.bt-row-ic svg{width:1em;height:1em;vertical-align:middle}
+.bt-row-lb{display:grid;gap:2px;min-width:0}
+.bt-row-nm{font-size:0.85em;font-weight:700;color:#2B302C}
+.bt-row-ds{font-size:0.68em;line-height:1.5;color:#7A8480}
+.bt-row-v{justify-self:end;font-size:0.85em;font-weight:700;white-space:nowrap;color:var(--green)}
+
+.bt-total{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:0 12px;margin:14px;padding:14px 14px;border-radius:14px;background:#E4F1E7}
+.bt-total-nm{display:block;font-size:0.92em;font-weight:700;color:var(--green)}
+.bt-total-ds{display:block;font-size:0.68em;color:#5A7565}
+.bt-total-v{font-weight:700;font-size:1.5em;white-space:nowrap;color:var(--green)}
+.bt-note{margin:0;font-size:0.68em;line-height:1.85;color:var(--sub)}
+
+@media (max-width:560px){
+  .bt-row{grid-template-columns:1fr;gap:6px}
+  .bt-row-v{justify-self:end;text-align:right}
+  .bt-total{grid-template-columns:1fr;gap:2px;justify-items:start}
+  .bt-total-v{font-size:1.7em;margin-top:4px}
+}
+
+/* ---- 現地現金カード (highlighter amount) ---- */
+.bc-stepper{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
+.bc-stepper button{width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.2em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0}
+.bc-stepper-val{display:flex;align-items:baseline;gap:6px}
+.bc-stepper-val #cash-days{font-size:2em;font-weight:700;color:var(--green)}
+.bc-stepper-unit{font-size:0.82em;color:var(--sub)}
+.bc-out{display:grid;justify-items:center;gap:8px;padding-top:14px;border-top:1px solid #EDF1EC}
+.bc-cap{font-size:0.75em;color:#4C5D53}
+.bc-amount{position:relative;display:flex;align-items:baseline;gap:3px}
+.bc-amount .bc-mk1,.bc-amount .bc-mk2{position:absolute;pointer-events:none}
+.bc-amount .bc-mk1{left:32px;right:22px;top:8%;bottom:-2%;background:#FBE59B;opacity:.92;transform:rotate(-1.2deg);
+  clip-path:polygon(1.5% 18%,8% 6%,22% 12%,38% 4%,55% 11%,72% 3%,88% 10%,97% 4%,100% 30%,99% 62%,96% 92%,82% 97%,66% 89%,48% 98%,30% 90%,14% 99%,3% 88%,0% 52%)}
+.bc-amount .bc-mk2{left:42px;right:32px;top:48%;bottom:6%;background:#F8DC7E;opacity:.75;transform:rotate(-.6deg);
+  clip-path:polygon(0% 30%,12% 6%,30% 22%,52% 4%,74% 20%,92% 8%,100% 34%,97% 76%,80% 96%,58% 78%,36% 98%,16% 80%,2% 96%)}
+.bc-amount .bc-sm{position:relative;font-weight:700;font-size:0.9em;color:var(--green)}
+.bc-amount .bc-big{position:relative;font-weight:700;font-size:1.9em;line-height:1.1;color:var(--green)}
+.bc-sub{font-size:0.76em;color:#7C8A81}
 
 /* マナー */
 .manner-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}

@@ -276,6 +276,46 @@ def build_spot_data_js(data):
     return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
 
 
+def build_budget_tabs_js(data):
+    """budget.plan_rows / budget.items から節約・標準・こだわり派タブ用のJSデータを作る"""
+    budget = data.get('budget', {}) or {}
+    plan_rows = budget.get('plan_rows', []) or []
+    items = budget.get('items', []) or []
+    def _norm(s):
+        return (s or '').replace('費', '').replace('・アクティビティ', '')
+    rows_by_label = {_norm(r.get('label', '')): r for r in plan_rows}
+
+    styles = [
+        {'key': 'eco', 'name': '節約', 'note': '屋台めし中心・LCC',
+         'total': budget.get('total_eco', ''),
+         'blurb': '屋台や公共交通を使い倒す、費用最優先の旅行スタイルです。'},
+        {'key': 'std', 'name': '標準', 'note': 'バランス重視',
+         'total': budget.get('total_std', ''),
+         'blurb': '快適さと費用のバランスを大切にした、定番の旅行スタイルです。'},
+        {'key': 'lux', 'name': 'こだわり派', 'note': '高級ホテル・FSC',
+         'total': budget.get('total_lux', ''),
+         'blurb': '移動も宿も妥協しない、ゆったり過ごす旅行スタイルです。'},
+    ]
+    rows = []
+    for item in items:
+        name = item.get('name', '')
+        plan_row = rows_by_label.get(_norm(name))
+        vals = {}
+        for key in ('eco', 'std', 'lux'):
+            if plan_row and plan_row.get(key):
+                vals[key] = plan_row[key]
+            else:
+                vals[key] = item.get('price', '')
+        rows.append({
+            'icon': _load_icon(item.get('icon', ''), data),
+            'name': name,
+            'desc': item.get('detail_html', '').split('<br>')[0],
+            'vals': vals,
+        })
+    obj = {'styles': styles, 'rows': rows}
+    return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
+
+
 def build_food_data_js(data):
     """food_items から num→{name,desc,img,wikiUrl,orderParams} の JS オブジェクトリテラルを作る"""
     obj = {}
@@ -643,6 +683,7 @@ def generate(country_id):
         name          = data.get('name', '')
         spot_data_js  = build_spot_data_js(data)
         food_data_js  = build_food_data_js(data)
+        budget_tabs_js = build_budget_tabs_js(data)
         page_order_js = json.dumps([p[1] for p in pages])
         for idx, (slug, outfile, label) in enumerate(pages):
             ctx = dict(data)
@@ -650,6 +691,7 @@ def generate(country_id):
             ctx['singlepage']      = False
             ctx['spot_data_js']    = spot_data_js
             ctx['food_data_js']    = food_data_js
+            ctx['budget_tabs_js']  = budget_tabs_js
             ctx['page_order_js']   = page_order_js
             ctx['page_index']      = idx
             ctx['page_slug']       = slug

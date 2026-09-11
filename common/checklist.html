@@ -76,12 +76,12 @@
 .info-box-title{font-size:0.8em;font-weight:700;color:var(--green);margin-bottom:5px}
 .info-box ul{font-size:0.76em;color:#4A5F55;line-height:1.85;padding-left:16px;margin:0}
 .qs-section-title{font-size:18px;font-weight:700;color:var(--text);letter-spacing:0.04em}
-.s-card.category{padding-top:6px;padding-bottom:12px;scroll-margin-top:96px}
+.s-card.category{background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(20,40,30,0.06),0 6px 16px rgba(20,40,30,0.07);padding:20px 24px 22px;margin:0 0 18px;scroll-margin-top:96px}
 .s-card{margin-top:0}
 @media(max-width:700px){.items-inner,.rule-grid{grid-template-columns:1fr}.items-inner .item-ad:has(.item-ad-product){grid-row:auto}}
 h2{border-top:none;padding-top:0;margin-top:0}
 /* 機内持ち込みルール: 白カード1枚。中の個別カード（枠・背景）はすべてフラット化 */
-#rules{border:1px solid #E8E2D8;border-radius:12px;background:#fff;box-shadow:0 2px 0 rgba(20,40,30,0.05),0 6px 16px rgba(20,40,30,0.06);padding:18px 20px}
+#rules{border:1px solid #E8E2D8;border-radius:12px;background:#fff;box-shadow:0 2px 0 rgba(20,40,30,0.05),0 6px 16px rgba(20,40,30,0.06);padding:18px 20px;margin-bottom:18px}
 #rules .rule-grid{gap:8px 32px;margin-bottom:14px}
 #rules .rule-cell,#rules .info-box{border:none;box-shadow:none;background:none;padding:0}
 #rules .info-box+.info-box{margin-top:12px}
@@ -115,6 +115,19 @@ h2{border-top:none;padding-top:0;margin-top:0}
     <span></span><span></span><span></span>
   </button>
 </header>
+
+<nav id="cl-nav" hidden>
+  <a id="cl-nav-basic">基本情報</a>
+  <a id="cl-nav-spots">観光スポット</a>
+  <a id="cl-nav-food">グルメ</a>
+  <a id="cl-nav-course">モデルコース</a>
+  <a id="cl-nav-budget">予算・費用</a>
+  <a id="cl-nav-practical">旅の準備</a>
+  <a id="cl-nav-phrases">フレーズ</a>
+  <button class="active">持ち物リスト</button>
+  <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
+  <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
+</nav>
 
 <div class="hb-scrim" id="hb-scrim" hidden></div>
 <aside class="hb-drawer" id="hb-drawer" role="dialog" aria-modal="true" aria-label="メニュー" hidden>
@@ -174,11 +187,23 @@ h2{border-top:none;padding-top:0;margin-top:0}
   <span class="toc-label">CONTENTS</span>
   <div class="toc-list" id="toc-list"></div>
 </aside>
+<button type="button" class="toc-fab" id="toc-fab" aria-haspopup="true" aria-expanded="false" aria-controls="toc-sheet" hidden>
+  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h12M2 8h12M2 12.5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  <span>目次</span>
+</button>
+<div class="toc-sheet-overlay" id="toc-sheet-overlay" hidden></div>
+<aside class="toc-sheet" id="toc-sheet" role="dialog" aria-modal="true" aria-label="目次" hidden>
+  <div class="toc-sheet-head">
+    <span class="toc-label">CONTENTS</span>
+    <button type="button" class="toc-sheet-close" id="toc-sheet-close" aria-label="閉じる">✕</button>
+  </div>
+  <div class="toc-list" id="toc-list-m"></div>
+</aside>
 <div class="container">
 
   <!-- 機内持ち込みルール -->
   <div class="s-card" id="rules" style="padding-top:20px;scroll-margin-top:96px">
-    <h2 style="margin-top:0">機内持ち込みルール</h2>
+    <h2 style="margin-top:0" data-label="CARRY-ON RULES">機内持ち込みルール</h2>
     <div class="rule-grid">
       <div class="rule-cell"><div class="rule-cell-lbl">サイズ（目安）</div><div class="rule-cell-val">55×40×25 cm</div><div class="rule-cell-note">3辺合計115cm以内が目安</div></div>
       <div class="rule-cell"><div class="rule-cell-lbl">重量（目安）</div><div class="rule-cell-val">7〜10 kg</div><div class="rule-cell-note">LCCは7kg・一般航空は10kg前後</div></div>
@@ -200,7 +225,7 @@ h2{border-top:none;padding-top:0;margin-top:0}
 
   <!-- 必須書類 -->
   <div class="s-card category" id="cat-docs">
-    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">必須書類</h2><span style="flex:1"></span><span class="cat-count" id="count-docs"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0" data-label="ESSENTIAL DOCUMENTS">必須書類</h2><span style="flex:1"></span><span class="cat-count" id="count-docs"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">パスポート</div><div class="item-note">入国時点で残存有効期間6ヶ月以上・査証スタンプ用の空白ページ2ページ以上が必要。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">航空券の予約番号（印刷 or スクショ）</div><div class="item-note">予約確認メールを残しておくかスクショを撮っておくとスムーズ。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -221,7 +246,7 @@ h2{border-top:none;padding-top:0;margin-top:0}
 
   <!-- 電子機器・充電 -->
   <div class="s-card category" id="cat-elec">
-    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">電子機器・充電</h2><span style="flex:1"></span><span class="cat-count" id="count-elec"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0" data-label="ELECTRONICS & CHARGING">電子機器・充電</h2><span style="flex:1"></span><span class="cat-count" id="count-elec"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">スマートフォン・充電ケーブル</div><div class="item-note">地図・翻訳・配車アプリなどに必須。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">変換アダプター</div><div class="item-note">全世界対応タイプを1つ持っておくと、どの国でも使えて便利。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -249,7 +274,7 @@ h2{border-top:none;padding-top:0;margin-top:0}
 
   <!-- 衛生・健康 -->
   <div class="s-card category" id="cat-health">
-    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">衛生・健康</h2><span style="flex:1"></span><span class="cat-count" id="count-health"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0" data-label="HEALTH & HYGIENE">衛生・健康</h2><span style="flex:1"></span><span class="cat-count" id="count-health"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">常備薬（頭痛・胃腸薬など）</div><div class="item-note">海外の薬は成分や量が異なることも。使い慣れた薬を持参。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">日焼け止め</div><div class="item-note">強い紫外線対策に。SPF50+を推奨。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -264,7 +289,7 @@ h2{border-top:none;padding-top:0;margin-top:0}
 
   <!-- 衣類・身の回り -->
   <div class="s-card category" id="cat-clothes">
-    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">衣類・身の回り</h2><span style="flex:1"></span><span class="cat-count" id="count-clothes"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0" data-label="CLOTHING & PERSONAL ITEMS">衣類・身の回り</h2><span style="flex:1"></span><span class="cat-count" id="count-clothes"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ボディバッグ</div><div class="item-note">街歩きに便利。前掛けにするとスリ対策にもなる。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item-ad">
@@ -293,7 +318,7 @@ h2{border-top:none;padding-top:0;margin-top:0}
 
   <!-- 洗面・お風呂 -->
   <div class="s-card category" id="cat-toiletry">
-    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">洗面・お風呂・洗濯</h2><span style="flex:1"></span><span class="cat-count" id="count-toiletry"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0" data-label="TOILETRIES & LAUNDRY">洗面・お風呂・洗濯</h2><span style="flex:1"></span><span class="cat-count" id="count-toiletry"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">歯ブラシ・歯磨き粉</div><div class="item-note">ホテルによっては用意されていない場合がある。</div></div><span class="item-tag tag-must">必須</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">シャンプー・コンディショナー</div><div class="item-note">多くのホテルに備え付けあり。品質が気になる場合は持参を。</div></div><span class="item-tag tag-must">必須</span></div>
@@ -315,7 +340,7 @@ h2{border-top:none;padding-top:0;margin-top:0}
 
   <!-- 機内・移動用 -->
   <div class="s-card category" id="cat-flight">
-    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">機内・移動用</h2><span style="flex:1"></span><span class="cat-count" id="count-flight"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0" data-label="IN-FLIGHT & TRAVEL">機内・移動用</h2><span style="flex:1"></span><span class="cat-count" id="count-flight"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">ネックピロー</div><div class="item-note">LCCはヘッドレストが簡素なので重宝するが、FSC（一般航空）はヘッドレストがしっかりしているので不要なことも多い。</div></div><span class="item-tag tag-opt">任意</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">アイマスク・耳栓</div><div class="item-note">夜行便・長距離移動での睡眠の質を上げる。ホットアイマスクがあるとより快適。</div></div><span class="item-tag tag-opt">任意</span></div>
@@ -333,7 +358,7 @@ h2{border-top:none;padding-top:0;margin-top:0}
 
   <!-- あると便利なアプリ -->
   <div class="s-card category" id="cat-useful">
-    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">あると便利なアプリ</h2><span style="flex:1"></span><span class="cat-count" id="count-useful"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0" data-label="USEFUL APPS">あると便利なアプリ</h2><span style="flex:1"></span><span class="cat-count" id="count-useful"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">配車アプリ（Grab・Uber など）</div><div class="item-note">出発前にDLしておこう。流しのタクシーより安全・安心で料金も事前確定。</div></div><span class="item-tag tag-opt">任意</span></div>
       <div class="item-ad">
@@ -351,7 +376,7 @@ h2{border-top:none;padding-top:0;margin-top:0}
 
   <!-- その他 -->
   <div class="s-card category" id="cat-goods">
-    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0">その他</h2><span style="flex:1"></span><span class="cat-count" id="count-goods"></span></div>
+    <div style="display:flex;align-items:baseline;gap:12px;margin:0 0 8px;border-bottom:solid 2px var(--green);padding-bottom:9px"><h2 style="margin:0;border-bottom:none;padding-bottom:0" data-label="OTHERS">その他</h2><span style="flex:1"></span><span class="cat-count" id="count-goods"></span></div>
     <div class="items-inner">
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">エコバッグ・折りたたみトート</div><div class="item-note">お土産を買いすぎた際のセカンドバッグとしても活躍。</div></div><span class="item-tag tag-opt">任意</span></div>
       <div class="item" onclick="toggle(this, event)"><input type="checkbox" class="sr-only"><span class="item-box"></span><div class="item-text"><div class="item-name">南京錠・鍵</div><div class="item-note">ゲストハウスや荷物の盗難対策に。</div></div><span class="item-tag tag-opt">任意</span></div>
@@ -478,6 +503,32 @@ function resetAll(){
 load();
 updateProgress();
 
+// フッタータブバー: 国ページから来た場合（?from=国スラッグ）に、その国の他タブへ同一タブで遷移できるようにする
+(function(){
+  const nav = document.getElementById('cl-nav');
+  if (!nav) return;
+  const params = new URLSearchParams(location.search);
+  const from = params.get('from');
+  if (!from || !/^[a-z_]+$/.test(from)) return;
+  const pages = {basic:'index.html',spots:'spots.html',food:'food.html',course:'course.html',budget:'budget.html',practical:'practical.html',phrases:'phrases.html'};
+  Object.keys(pages).forEach(function(key){
+    const a = document.getElementById('cl-nav-' + key);
+    if (a) a.href = '../' + from + '/' + pages[key];
+  });
+  // 現在地（持ち物リスト）だけをアクティブ表示にする。どこから来たかのタブは光らせない
+  // （二重ハイライトで「どちらが現在地か」混乱を招いていたため 2026-09 撤回）
+  nav.hidden = false;
+
+  function updateNavFade() {
+    const max = nav.scrollWidth - nav.clientWidth;
+    nav.classList.toggle('has-left', nav.scrollLeft > 4);
+    nav.classList.toggle('has-right', nav.scrollLeft < max - 4);
+  }
+  updateNavFade();
+  nav.addEventListener('scroll', updateNavFade, { passive: true });
+  window.addEventListener('resize', updateNavFade);
+})();
+
 // チェック状況バー: スマホでは「必須書類」の直前へ移動し、sticky で追従させる
 (function(){
   const bar = document.getElementById('progress-wrap');
@@ -503,31 +554,67 @@ updateProgress();
   window.addEventListener('resize', syncPinned);
 })();
 
-// 目次サイドバー: h2 から自動生成
+// 目次サイドバー（PC）＋ 目次FAB/ボトムシート（スマホ）: h2 から自動生成
 (function(){
   const list = document.getElementById('toc-list');
   if (!list) return;
+  const listM = document.getElementById('toc-list-m');
+  const fab = document.getElementById('toc-fab');
+  const targets = [list].concat(listM ? [listM] : []);
   const heads = document.querySelectorAll('.container h2');
-  if (!heads.length) { list.parentElement.style.display = 'none'; return; }
+  if (!heads.length) { list.parentElement.style.display = 'none'; if (fab) fab.hidden = true; return; }
+  list.parentElement.style.display = '';
+  if (fab) fab.hidden = false;
+  const linkGroups = targets.map(function(){ return []; });
   heads.forEach(function(h, i){
     if (!h.id) h.id = 'toc-' + i;
     h.style.scrollMarginTop = '96px';
-    const a = document.createElement('a');
-    a.href = '#' + h.id;
-    a.textContent = h.textContent;
-    list.appendChild(a);
+    targets.forEach(function(t, ti){
+      const a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        if (_closeSheet) _closeSheet();
+        const y = h.getBoundingClientRect().top + window.pageYOffset - 96;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      });
+      t.appendChild(a);
+      linkGroups[ti].push(a);
+    });
   });
-  const links = Array.from(list.querySelectorAll('a'));
   const obs = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if (entry.isIntersecting) {
-        links.forEach(function(l){ l.classList.remove('active'); });
-        const match = links.find(function(l){ return l.getAttribute('href') === '#' + entry.target.id; });
-        if (match) match.classList.add('active');
+        const idx = Array.prototype.indexOf.call(heads, entry.target);
+        linkGroups.forEach(function(g){ g.forEach(function(l, li){ l.classList.toggle('active', li === idx); }); });
       }
     });
   }, { rootMargin: '-110px 0px -70% 0px' });
   heads.forEach(function(h){ obs.observe(h); });
+
+  var sheet = document.getElementById('toc-sheet');
+  var overlay = document.getElementById('toc-sheet-overlay');
+  var closeBtn = document.getElementById('toc-sheet-close');
+  var _closeSheet = null;
+  if (!fab || !sheet || !overlay) return;
+  function open(){
+    overlay.hidden = false; sheet.hidden = false;
+    requestAnimationFrame(function(){ overlay.classList.add('open'); sheet.classList.add('open'); });
+    fab.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    overlay.classList.remove('open'); sheet.classList.remove('open');
+    fab.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    setTimeout(function(){ overlay.hidden = true; sheet.hidden = true; }, 220);
+  }
+  _closeSheet = close;
+  fab.addEventListener('click', open);
+  overlay.addEventListener('click', close);
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
 })();
 
 /* ヘッダー: 下スクロールで隠す・上スクロールで表示 */

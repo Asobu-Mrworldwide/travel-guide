@@ -268,17 +268,20 @@
   .wm-more button:hover { background: #14503C; color: #fff; }
   .wm-more .cnt { font-size: 11.5px; color: #8A968D; }
 
-  /* ===== 診断 / シェア パネル ===== */
-  .wm-cta-wrap { padding: 34px 44px 46px; }
-  .wm-cta { display: grid; grid-template-columns: minmax(0, 1fr); gap: 30px; padding: 30px 34px; border-radius: 16px; background: #F4F7EF; }
-  .wm-cta-quiz { position: relative; display: grid; grid-template-columns: 124px minmax(0, 1fr); gap: 18px; align-items: center; }
-  .wm-cta-quiz .illus { width: 124px; object-fit: contain; }
-  .wm-cta-quiz .pa { position: absolute; left: -6px; bottom: -6px; width: 84px; object-fit: contain; opacity: 0.9; }
-  .wm-cta-quiz .bd { display: grid; gap: 10px; }
-  .wm-cta .en { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; color: #8A968D; }
-  .wm-cta-quiz .hd { font-weight: 900; font-size: 25px; line-height: 1.4; color: #14503C; }
-  .wm-cta-quiz p { margin: 0; font-size: 12.5px; line-height: 1.95; color: #56625A; }
-  .wm-cta-quiz .go { justify-self: start; display: inline-flex; align-items: center; gap: 14px; height: 44px; padding: 0 24px; border-radius: 999px; background: #14503C; font-size: 13.5px; font-weight: 700; color: #fff; }
+  /* ===== 診断カード（旅先グリッドに混在表示） ===== */
+  .wm-diag-card { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 22px 20px; border: 1.5px solid #125F4E; border-radius: 12px; background: #125F4E; box-shadow: 0 3px 12px rgba(20,60,40,0.18); }
+  .wm-diag-card .en { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; color: rgba(255,255,255,0.72); }
+  .wm-diag-card .hd { font-weight: 900; font-size: 18px; line-height: 1.4; color: #fff; }
+  .wm-diag-card p { margin: 0; font-size: 12px; line-height: 1.85; color: rgba(255,255,255,0.82); }
+  .wm-diag-card .go { justify-self: center; display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 38px; padding: 0 18px; border-radius: 999px; background: #F5B921; font-size: 12.5px; font-weight: 700; color: #14503C; margin-top: 4px; }
+  .wm-grid.compact .wm-diag-card { min-height: 138px; padding: 16px 18px; }
+  .wm-grid.compact .wm-diag-card p { display: none; }
+  .wm-diag-row { display: grid; grid-template-columns: 64px 1fr 60px; gap: 16px; align-items: center; padding: 10px 8px; border-bottom: 1px solid #EEF2EB; }
+  .wm-diag-row .ic { width: 64px; height: 44px; border-radius: 7px; background: #125F4E; display: grid; place-items: center; font-size: 18px; }
+  .wm-diag-row .nm { font-weight: 900; font-size: 16px; color: #14503C; }
+  .wm-diag-row .go { font-size: 11px; color: #14503C; font-weight: 700; justify-self: end; white-space: nowrap; }
+  .wm-grid.list .wm-diag-row { grid-template-columns: 48px 1fr 60px; padding: 8px 10px; border: 1px solid #E3EADD; border-radius: 10px; }
+  .wm-grid.list .wm-diag-row .ic { width: 48px; height: 40px; font-size: 15px; }
 
   /* ===== モバイル ===== */
   @media (max-width: 760px) {
@@ -364,11 +367,9 @@
     .wm-row { grid-template-columns: 56px 1fr 40px; gap: 12px; padding: 12px 2px; border-bottom: 1px solid #C7D3C0; }
     .wm-row .rthumb { width: 56px; height: 40px; }
     .wm-row .nm { font-size: 17px; }
-
-    .wm-cta-wrap { padding: 24px 18px 34px; }
-    .wm-cta { grid-template-columns: 1fr; gap: 22px; padding: 24px 18px; }
-    .wm-cta-quiz { grid-template-columns: 88px 1fr; gap: 14px; }
-    .wm-cta-quiz .illus { width: 88px; height: 88px; }
+    .wm-diag-row { grid-template-columns: 56px 1fr 60px; gap: 12px; padding: 12px 2px; border-bottom: 1px solid #C7D3C0; }
+    .wm-diag-row .ic { width: 56px; height: 40px; }
+    .wm-diag-row .nm { font-size: 17px; }
 
     .sf-grid { grid-template-columns: 1fr; padding: 28px 18px 24px; }
     .sf-bottom { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 18px 20px; }
@@ -393,11 +394,11 @@
   .sf-col a:hover{color:#fff}
   .sf-gold-link{color:#F5B921 !important}
   .sf-share p{margin:0;font-size:0.78em;line-height:1.9;color:rgba(255,255,255,0.78)}
-  .sf-copy-btn{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 15px;border:1px solid rgba(255,255,255,0.35);border-radius:6px;background:transparent;font-family:inherit;font-size:0.78em;color:#fff;cursor:pointer;transition:all .2s ease}
-  .sf-copy-btn:hover{background:rgba(255,255,255,0.1)}
-  .sf-share-links{display:flex;gap:8px}
-  .sf-share-btn{flex:1;text-align:center;padding:10px 8px;border:1px solid rgba(255,255,255,0.35);border-radius:6px;font-size:0.76em;color:#fff;background:transparent;font-family:inherit;cursor:pointer;transition:all .2s ease}
-  .sf-share-btn:hover{background:rgba(255,255,255,0.12)}
+  .sf-share-icons{display:flex;gap:18px}
+  .sf-icon-btn{display:flex;flex-direction:column;align-items:center;gap:6px;background:transparent;border:none;padding:0;font-family:inherit;color:#fff;cursor:pointer}
+  .sf-icon-circle{display:grid;place-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,0.35);border-radius:999px;transition:all .2s ease}
+  .sf-icon-btn:hover .sf-icon-circle{background:#F5B921;border-color:#F5B921;color:#514238}
+  .sf-icon-label{font-size:0.68em;color:rgba(255,255,255,0.78);white-space:nowrap}
   .sf-bottom{border-top:1px solid rgba(255,255,255,0.18);padding:16px 44px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:0.72em;color:rgba(255,255,255,0.7)}
   .sf-legal{display:flex;gap:18px}
   .sf-legal a{color:rgba(255,255,255,0.7);text-decoration:none}
@@ -407,6 +408,7 @@
     .sf-grid { grid-template-columns: 1fr; gap: 0; padding: 6px 20px 20px; }
     /* エリアで探す列はスマホでは非表示（上部の検索・地図・エリアフィルターで代替） */
     .sf-col-area { display: none; }
+    .sf-col-guide { display: none; }
     .sf-grid > div { padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.13); }
     .sf-grid > div:first-child { border-top: none; }
     .sf-brand { gap: 12px; }
@@ -416,8 +418,8 @@
     .sf-col:not(.sf-share) > a:last-child { border-bottom: none; }
     .sf-label { margin-bottom: 6px; }
     .sf-share p { font-size: 0.8em; line-height: 1.9; }
-    .sf-bottom { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 20px 22px; }
-    .sf-legal { flex-wrap: wrap; gap: 10px 16px; }
+    .sf-bottom { flex-direction: column; align-items: center; gap: 10px; padding: 16px 20px 22px; text-align: center; }
+    .sf-legal { flex-wrap: wrap; justify-content: center; gap: 10px 16px; }
   }
 </style>
 </head>
@@ -573,23 +575,6 @@
       <span class="cnt" id="moreShown"></span>
     </div>
   </section>
-
-  <!-- 診断 -->
-  <div class="wm-cta-wrap">
-    <div class="wm-cta">
-      <!-- 診断ページ未公開のため無効化（公開時: onclick/style/aria-disabled を削除） -->
-      <a class="wm-cta-quiz" href="diagnosis/index.html" onclick="return false;" aria-disabled="true" style="pointer-events:none">
-        <img class="pa" src="assets/top/paper-airplane.png" alt="">
-        <img class="illus" src="assets/top/illustration-checklist.png" alt="">
-        <div class="bd">
-          <span class="en">TRAVEL TYPE</span>
-          <span class="hd">どこへ行くか<br>迷ったら。</span>
-          <p>診断が終わるとあなたの旅行タイプとおすすめの旅行先がわかります。</p>
-          <span class="go">診断する <span>→</span></span>
-        </div>
-      </a>
-    </div>
-  </div>
 
   <!-- フッター（国別ページ共通コンポーネント） -->
   <script src="assets/country-links.js"></script>
@@ -892,24 +877,24 @@
     const grid = $('grid');
     grid.className = 'wm-grid' + (state.view === 'compact' ? ' compact' : state.view === 'list' ? ' list' : '');
     const shown = rows.slice(0, state.limit);
-    let html = '';
+    const parts = [];
     if (state.view === 'list') {
       shown.forEach((d) => {
         const rthumb = d.img
           ? '<span class="rthumb" style="background-image:url(' + esc(d.img) + ')"></span>'
           : '<span class="rthumb rthumb-illus">🗺</span>';
-        html += '<div class="wm-row' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '" data-url="' + esc(d.url) + '">'
+        parts.push('<div class="wm-row' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '" data-url="' + esc(d.url) + '">'
           + rthumb
           + '<a class="nm" href="' + esc(d.url) + '">' + esc(d.name) + '</a>'
           + '<button type="button" class="rfav" data-fav="' + esc(d.id) + '">' + heartSvg(d.id) + '</button>'
-          + '</div>';
+          + '</div>');
       });
     } else {
       shown.forEach((d) => {
         const ph = d.img
           ? '<div class="ph" style="background-image:url(' + esc(d.img) + ')"></div>'
           : '<div class="ph illus">🗺</div>';
-        html += '<div class="wm-card' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '" data-url="' + esc(d.url) + '">'
+        parts.push('<div class="wm-card' + (state.sel === d.id ? ' sel' : '') + '" data-dest-id="' + esc(d.id) + '" data-url="' + esc(d.url) + '">'
           + '<div class="wm-card-media"><a class="wm-card-media-link" href="' + esc(d.url) + '" tabindex="-1" aria-hidden="true">' + ph + '</a>'
           + '<button type="button" class="wm-fav-btn" data-fav="' + esc(d.id) + '" aria-label="お気に入り">' + heartSvg(d.id) + '</button></div>'
           + '<a class="wm-card-link" href="' + esc(d.url) + '">'
@@ -922,10 +907,24 @@
           + '<span class="wm-months-row"><i class="mtick">1月</i><span class="wm-card-months">' + Array.from({ length: 12 }, (_, i) => '<span style="background:' + (inSeason(d, i + 1) ? '#1D7A63' : '#EAF3EE') + '"></span>').join('') + '</span><i class="mtick">12月</i></span>'
           + '</div>'
           + '<div class="wm-card-foot"><span class="k"><b>✈</b>' + d.hours.toFixed(1) + 'h</span><span class="k"><b>¥</b>予算：' + esc(d.budget) + '</span></div>'
-          + '</div>';
+          + '</div>');
       });
     }
-    grid.innerHTML = html;
+
+    // 診断カード（未公開機能の予告）をグリッド中間に1枚だけ混在表示
+    // 診断ページ公開時: aria-disabled/pointer-events:none を外し、href="diagnosis/index.html" へのリンクに戻す
+    if (parts.length) {
+      const diagHtml = state.view === 'list'
+        ? '<div class="wm-diag-row" aria-disabled="true"><span class="ic">🧭</span><a class="nm" href="diagnosis/index.html" onclick="return false;" style="pointer-events:none">どこへ行くか迷ったら診断</a><span class="go">近日公開</span></div>'
+        : '<div class="wm-diag-card" aria-disabled="true">'
+          + '<span class="en">TRAVEL TYPE</span>'
+          + '<span class="hd">どこへ行くか迷ったら。</span>'
+          + (state.view === 'compact' ? '' : '<p>診断が終わるとあなたの旅行タイプとおすすめの旅行先がわかります。</p>')
+          + '<a class="go" href="diagnosis/index.html" onclick="return false;" style="pointer-events:none">近日公開</a>'
+          + '</div>';
+      parts.splice(Math.floor(parts.length / 2), 0, diagHtml);
+    }
+    grid.innerHTML = parts.join('');
 
     grid.querySelectorAll('[data-fav]').forEach((el) => {
       el.onclick = (e) => { e.preventDefault(); e.stopPropagation(); toggleFav(el.getAttribute('data-fav')); };

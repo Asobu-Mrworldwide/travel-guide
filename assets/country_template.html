@@ -194,7 +194,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <a href="budget.html" class="{{nav_active.budget}}">予算・費用</a>
   <a href="practical.html" class="{{nav_active.practical}}">旅の準備</a>
   <a href="phrases.html" class="{{nav_active.phrases}}">フレーズ</a>
-  <button onclick="window.open('../common/checklist.html?from={{id}}','_blank')">持ち物リスト</button>
+  <button onclick="location.href='../common/checklist.html?from={{id}}&amp;page={{page_slug}}'">持ち物リスト</button>
   <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
   <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
 </nav>
@@ -224,7 +224,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <button class="{{nav_active.practical}}" onclick="show('practical',this)">旅の準備</button>
   <button class="{{nav_active.phrases}}" onclick="show('phrases',this)">フレーズ</button>
 
-  <button onclick="window.open('../common/checklist.html?from={{id}}','_blank')">持ち物リスト</button>
+  <button onclick="var s=document.querySelector('section.active');location.href='../common/checklist.html?from={{id}}'+(s?'&section='+s.id:'')">持ち物リスト</button>
   <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
   <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
 </nav>
@@ -510,57 +510,32 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-card">
   <h2 data-label="TRAVEL BUDGET">旅行費用の目安</h2>
   {% if budget.intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{budget.intro}}</p>{% endif %}
-  <div style="overflow-x:auto">
-  <table class="budget-compare" style="width:100%;border-collapse:collapse;font-size:0.82em;background:#FFFFFF;color:#4C504D">
-    <thead>
-      <tr>
-        <th style="padding:8px 10px;text-align:left;background:#FAFAF7;border-bottom:2px solid #E7E9E5;width:30%"></th>
-        <th style="padding:8px 10px;text-align:center;background:#F3F6F1;border-bottom:2px solid #E7E9E5;color:#52635B">節約</th>
-        <th style="padding:8px 10px;text-align:center;background:#E2F0E8;border-bottom:2px solid #E7E9E5;color:#087A5B">標準</th>
-        <th style="padding:8px 10px;text-align:center;background:#FFF4D6;border-bottom:2px solid #E7E9E5;color:#A66B00">こだわり派</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for row in budget.plan_rows %}
-      <tr style="border-bottom:1px solid #E7E9E5">
-        <td style="padding:9px 10px;font-weight:700;color:#4C504D;font-size:0.92em;background:#FAFAF7">{{row.label}}</td>
-        <td style="padding:9px 10px;text-align:center;color:#52635B">{{row.eco}}</td>
-        <td style="padding:9px 10px;text-align:center;color:#087A5B;background:#F1F8F4">{{row.std}}</td>
-        <td style="padding:9px 10px;text-align:center;color:#A66B00">{{row.lux}}</td>
-      </tr>
-      {% endfor %}
-      <tr style="background:#FAFAF7;font-weight:700;border-top:2px solid #E7E9E5">
-        <td style="padding:10px 10px;font-weight:700;color:#4C504D">合計目安</td>
-        <td style="padding:10px 10px;text-align:center;color:#52635B;font-size:1.05em">{{budget.total_eco}}</td>
-        <td style="padding:10px 10px;text-align:center;color:#087A5B;font-size:1.05em;background:#E2F0E8">{{budget.total_std}}</td>
-        <td style="padding:10px 10px;text-align:center;color:#A66B00;font-size:1.05em">{{budget.total_lux}}</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
 
-  <div class="s-card">
-    <div style="background:#fff;padding:20px 24px">
-    <table class="budget-table">
-      <tbody>
-        {% for item in budget.items %}
-        <tr>
-          <td class="ico-col">{{icon:item.icon}}</td>
-          <td><span class="td-name">{{item.name}}</span><span class="td-sub">{{item.detail_html}}</span></td>
-          <td class="price-col"><span class="td-price">{{item.price}}</span></td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+  <div class="bt-wrap">
+    <div class="bt-tabs" id="budget-tabs" role="group" aria-label="旅行スタイル"></div>
+    <div class="bt-plan">
+      <div class="bt-plan-head">
+        <span class="bt-plan-ic" id="bt-plan-icon" aria-hidden="true"></span>
+        <span class="bt-plan-tx">
+          <span class="bt-plan-ttl"><span class="bt-plan-nm" id="bt-plan-name"></span><span class="bt-plan-nt" id="bt-plan-note"></span></span>
+          <span class="bt-plan-bl" id="bt-plan-blurb"></span>
+        </span>
+      </div>
+      <div id="bt-plan-rows"></div>
+      <div class="bt-total">
+        <span class="bt-total-l">
+          <span class="bt-total-nm">合計目安</span>
+          <span class="bt-total-ds">上記の目安をもとにした概算です。</span>
+        </span>
+        <span class="bt-total-v" id="bt-plan-total"></span>
+      </div>
     </div>
   </div>
-  <div class="season-tip-box"><span class="season-tip-title">{{icon:tip}} 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
-  </div><!-- /tb-card -->
-  </div><!-- /tb-sec -->
 
-  <div class="tb-sec">
-  <div class="tb-card">
-  <h2 data-label="MONEY &amp; PAYMENT" id="money">両替・支払い</h2>
+  <div class="season-tip-box" style="margin-top:16px"><span class="season-tip-title">{{icon:tip}} 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
+  <script>var BUDGET_TABS = {{budget_tabs_js}};</script>
+
+  <div id="money"></div>
   {% if practical.money_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 8px">{{practical.money_intro}}</p>{% endif %}
   <div class="s-card" style="padding-top:16px">
   <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap">
@@ -569,20 +544,19 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
     <div style="background:#fff;padding:20px 24px">
 
-    <div style="display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:16px">
-      <button onclick="changeDays(-1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">−</button>
-      <div style="text-align:center;min-width:60px">
-        <span id="cash-days" style="font-size:2.2em;font-weight:700;color:var(--green)">5</span>
-        <span style="font-size:0.82em;color:var(--sub)"> 日間</span>
-      </div>
-      <button onclick="changeDays(1)" style="width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.3em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0">＋</button>
+    <div class="bc-stepper">
+      <button type="button" onclick="changeDays(-1)" aria-label="日数を減らす">−</button>
+      <span class="bc-stepper-val"><span id="cash-days">5</span><span class="bc-stepper-unit">日間</span></span>
+      <button type="button" onclick="changeDays(1)" aria-label="日数を増やす">＋</button>
     </div>
-    <div style="text-align:center;background:#e8f5ee;border-radius:10px;padding:16px 12px;border:1px solid #a8d5b5;margin-bottom:12px">
-      <div id="cash-range-cur" style="font-size:1.2em;font-weight:700;color:var(--green)">-</div>
-      <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;margin-top:4px;flex-wrap:wrap">
-        <span id="cash-range-jpy" style="font-size:0.8em;color:var(--green)">-</span>
-        <span style="font-size:0.66em;color:var(--green);opacity:0.75">（{{practical.cash_note}}）</span>
-      </div>
+    <div class="bc-out">
+      <span class="bc-cap">{{practical.cash_note}}</span>
+      <span class="bc-amount">
+        <span class="bc-mk1" aria-hidden="true"></span>
+        <span class="bc-mk2" aria-hidden="true"></span>
+        <span class="bc-sm">約</span><span class="bc-big" id="cash-range-jpy">-</span><span class="bc-sm">円</span>
+      </span>
+      <span class="bc-sub" id="cash-range-cur">-</span>
     </div>
     <div style="font-size:0.72em;color:var(--sub);line-height:1.8;margin-top:4px">※ ホテルやレストランなどカードが使える場所はカード払いする前提で、屋台・市場・交通機関など現金が必要になる分の目安です。足りなくなっても、<span data-affiliate="wise" data-affiliate-class="inline-affiliate-link" data-affiliate-label="Wiseカード"></span>なら現地ATMで気軽に引き出せて安心です。</div>
     </div>
@@ -1236,6 +1210,42 @@ function filterPhraseDeck(deckId, btn) {
   });
 }
 
+/* 旅行費用の目安タブ */
+if (typeof BUDGET_TABS !== 'undefined' && document.getElementById('budget-tabs')) {
+  const BT_ICON_KEYS = ['save', 'standard', 'premium'];
+  const btIconUrl = (i, on) => '../assets/budget-icons/ic-budget-' + BT_ICON_KEYS[i] + (on ? '-on' : '') + '.png';
+  let btStyle = 1;
+  const btTabsEl = document.getElementById('budget-tabs');
+  BUDGET_TABS.styles.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'bt-tab';
+    b.innerHTML = '<span class="bt-tab-ic"></span><span class="bt-tab-tx"><span class="bt-tab-nm"></span><span class="bt-tab-nt"></span></span>';
+    b.querySelector('.bt-tab-nm').textContent = s.name;
+    b.querySelector('.bt-tab-nt').textContent = s.note;
+    b.addEventListener('click', () => { btStyle = i; renderBudgetTabs(); });
+    btTabsEl.appendChild(b);
+  });
+  function renderBudgetTabs() {
+    [...btTabsEl.children].forEach((b, i) => {
+      const on = i === btStyle;
+      b.setAttribute('aria-pressed', on);
+      b.querySelector('.bt-tab-ic').style.backgroundImage = 'url(' + btIconUrl(i, on) + ')';
+    });
+    const s = BUDGET_TABS.styles[btStyle];
+    document.getElementById('bt-plan-icon').style.backgroundImage = 'url(' + btIconUrl(btStyle, true) + ')';
+    document.getElementById('bt-plan-name').textContent = s.name + 'プラン';
+    document.getElementById('bt-plan-note').textContent = s.note;
+    document.getElementById('bt-plan-blurb').textContent = s.blurb;
+    document.getElementById('bt-plan-total').textContent = s.total;
+    document.getElementById('bt-plan-rows').innerHTML = BUDGET_TABS.rows.map(row =>
+      '<div class="bt-row"><span class="bt-row-l"><span class="bt-row-ic">' + row.icon + '</span>' +
+      '<span class="bt-row-lb"><span class="bt-row-nm">' + row.name + '</span><span class="bt-row-ds">' + row.desc + '</span></span></span>' +
+      '<span class="bt-row-v">' + row.vals[s.key] + '</span></div>'
+    ).join('');
+  }
+  renderBudgetTabs();
+}
+
 /* 現金目安カード */
 let cashDays = 5;
 const CURRENCY = '{{practical.currency_code}}';
@@ -1248,7 +1258,7 @@ function changeDays(d) {
   document.getElementById('cash-days').textContent = cashDays;
   document.getElementById('cash-range-cur').textContent = low.toLocaleString() + '〜' + high.toLocaleString() + ' ' + CURRENCY;
   const lowJpy = Math.round(low * RATE / 1000) * 1000, highJpy = Math.round(high * RATE / 1000) * 1000;
-  document.getElementById('cash-range-jpy').textContent = '約' + lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString() + '円';
+  document.getElementById('cash-range-jpy').textContent = lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString();
 }
 if (document.getElementById('cash-days')) { changeDays(0); }
 

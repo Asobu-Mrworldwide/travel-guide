@@ -80,7 +80,7 @@
             <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           </div>
         </div>
-        <div class="sf-col">
+        <div class="sf-col sf-col-guide">
           <span class="sf-label">GUIDE</span>
           <a href="${base}common/checklist.html">持ち物チェックリスト</a>
           <!-- 診断ページ未公開のため無効化: <a href="${base}diagnosis/index.html">旅行タイプ診断</a> -->
@@ -95,9 +95,15 @@
         <div class="sf-col sf-share">
           <span class="sf-label">SHARE</span>
           <p>このページが役に立ったら、旅の相談相手に送ってあげてください。</p>
-          <button type="button" id="cl-share-copy" class="sf-copy-btn"><span>このページのリンクをコピー</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l1-1"/></svg></button>
-          <div class="sf-share-links">
-            <button type="button" id="cl-share-btn" class="sf-share-btn" hidden>共有する</button>
+          <div class="sf-share-icons">
+            <button type="button" id="cl-share-copy" class="sf-icon-btn">
+              <span class="sf-icon-circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l1-1"/></svg></span>
+              <span class="sf-icon-label">リンクをコピー</span>
+            </button>
+            <button type="button" id="cl-share-btn" class="sf-icon-btn" hidden>
+              <span class="sf-icon-circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></span>
+              <span class="sf-icon-label">共有する</span>
+            </button>
           </div>
         </div>
       </div>
@@ -120,7 +126,8 @@
   const shareUrl = encodeURIComponent(location.href);
   const shareText = encodeURIComponent(document.title);
   const shareBtn = document.getElementById("cl-share-btn");
-  if (shareBtn && navigator.share) {
+  const isTouchDevice = window.matchMedia && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+  if (shareBtn && navigator.share && isTouchDevice) {
     shareBtn.hidden = false;
     shareBtn.addEventListener("click", () => {
       navigator.share({ title: document.title, url: location.href }).catch(() => {});
@@ -155,14 +162,15 @@
   const shareCopyBtn = document.getElementById("cl-share-copy");
   if (shareCopyBtn) shareCopyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(location.href).then(() => {
-      const original = shareCopyBtn.innerHTML;
-      // ボタン内のテキストが短くなって幅が縮み、レイアウトが崩れるのを防ぐため、
-      // 切り替え前の幅を固定してから文言を変える
-      shareCopyBtn.style.width = shareCopyBtn.offsetWidth + "px";
-      shareCopyBtn.innerHTML = "<span>コピーしました！</span>";
+      const label = shareCopyBtn.querySelector(".sf-icon-label");
+      const circle = shareCopyBtn.querySelector(".sf-icon-circle");
+      const originalLabel = label.textContent;
+      const originalCircle = circle.innerHTML;
+      label.textContent = "コピーしました";
+      circle.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9 17 20 6"/></svg>';
       setTimeout(() => {
-        shareCopyBtn.innerHTML = original;
-        shareCopyBtn.style.width = "";
+        label.textContent = originalLabel;
+        circle.innerHTML = originalCircle;
       }, 2000);
     });
   });
