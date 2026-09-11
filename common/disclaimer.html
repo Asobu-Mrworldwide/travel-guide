@@ -50,15 +50,17 @@
   }
   @media (max-width:1180px){
     .wm-shell{min-width:0 !important}
-    .wm-hero{height:auto !important;padding:24px 0 26px !important}
-    .wm-hero-copy{padding:0 18px !important}
+    .wm-hero{height:auto !important;min-height:158px !important;padding:14px 0 !important;display:flex !important;align-items:center !important}
+    .wm-hero-copy{padding:0 154px 0 18px !important}
+    img.wm-hero-main{display:block !important;left:auto !important;right:14px !important;top:50% !important;bottom:auto !important;transform:translateY(-50%) !important;width:126px !important;opacity:1 !important}
     .wm-hero-h1{font-size:27px !important}
+    .wm-hero-ey{display:none !important}
     .wm-hero-deco{display:none !important}
     .wm-content{grid-template-columns:1fr !important;gap:0 !important;padding:28px 18px 8px !important}
     .wm-main{padding-left:0 !important}
     .wm-toc{display:none !important}
     .wm-deftable{grid-template-columns:1fr !important}
-    .wm-band{flex-direction:column !important;align-items:flex-start !important}
+    .wm-band{flex-direction:column !important;align-items:flex-end !important}
     .wm-foot-top{grid-template-columns:1fr 1fr !important;padding:32px 20px 24px !important}
     .wm-foot-bottom{flex-direction:column !important;align-items:flex-start !important;gap:10px !important;padding:16px 20px !important}
   }
@@ -131,14 +133,13 @@
     <img class="wm-hero-deco" src="../assets/common/22_cloud.png" alt="" style="position: absolute; left: 176px; top: 34px; width: 68px; object-fit: contain; opacity: 0.75;">
     <img class="wm-hero-deco wm-float" src="../assets/common/30_airplane.png" alt="" style="position: absolute; left: 148px; top: 104px; width: 84px; object-fit: contain;">
     <img class="wm-hero-deco" src="../assets/common/22_cloud.png" alt="" style="position: absolute; right: 396px; top: 40px; width: 62px; object-fit: contain; opacity: 0.8;">
-    <img class="wm-hero-deco" src="../assets/common/hero-disclaimer.png" alt="" style="position: absolute; right: 110px; top: 26px; width: 232px; object-fit: contain;">
+    <img class="wm-hero-deco wm-hero-main" src="../assets/common/hero-disclaimer.png" alt="" style="position: absolute; right: 110px; top: 26px; width: 232px; object-fit: contain;">
 
     <div class="wm-hero-copy" style="position: relative; display: grid; gap: 12px; align-content: center; height: 100%; padding: 0 0 0 316px;">
       <div style="display: flex; align-items: baseline; gap: 18px;">
         <h1 class="wm-hero-h1" style="margin: 0; font-weight: 900; font-size: 40px; line-height: 1.05; letter-spacing: -0.01em; color: #1F2A44;">免責事項</h1>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: #A99672;">DISCLAIMER</span>
+        <span class="wm-hero-ey" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: #A99672;">DISCLAIMER</span>
       </div>
-      <p style="margin: 0; max-width: 400px; font-size: 14.5px; line-height: 1.85; letter-spacing: 0.02em; color: #4B5563;">掲載情報の性質と、ご利用にあたっての注意をまとめています。</p>
     </div>
   </div>
 
