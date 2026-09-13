@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ブラジルのフレーズ｜ブラジル旅行ガイド">
 <meta name="twitter:description" content="乗継で約25〜28時間、時差12時間のブラジルは南米大陸の約半分を占める広大な国。丘に立つコルコバードのキリスト像、白砂が続くコパカバーナ海岸、轟音とどろく世界遺産イグアスの滝、炭火でじっくり焼き上げるシュラスコまで、サンバのリズムと陽気…">
 <meta name="twitter:image" content="https://worldmappy.com/brazil/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1789310738">
+<link rel="stylesheet" href="../assets/style.css?v=1789319307">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1789310738" defer></script>
-<script src="../assets/affiliates.js?v=1789310738" defer></script>
+<script src="../assets/affiliates-data.js?v=1789319307" defer></script>
+<script src="../assets/affiliates.js?v=1789319307" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -39,7 +39,7 @@ a.keyword-link{color:var(--green);text-decoration:underline;cursor:pointer;font-
 a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
 blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
-blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
+blockquote.special-note::before{display:inline-block;position:absolute;top:-14px;left:9px;width:36px;height:36px;content:"";background:url(../assets/tips-icons/passport-ticket.png) center/contain no-repeat}
 blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
 blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
 blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal;word-break:break-all}
@@ -440,7 +440,6 @@ if (typeof BUDGET_TABS !== 'undefined' && document.getElementById('budget-tabs')
 
 /* 現金目安カード */
 let cashDays = 5;
-const CURRENCY = 'BRL';
 const RATE = 31;
 const CASH_LOW = 30;
 const CASH_HIGH = 45;
@@ -448,9 +447,9 @@ function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;
   document.getElementById('cash-days').textContent = cashDays;
-  document.getElementById('cash-range-cur').textContent = low.toLocaleString() + '〜' + high.toLocaleString() + ' ' + CURRENCY;
+  document.getElementById('cash-range').textContent = low.toLocaleString() + '〜' + high.toLocaleString();
   const lowJpy = Math.round(low * RATE / 1000) * 1000, highJpy = Math.round(high * RATE / 1000) * 1000;
-  document.getElementById('cash-range-jpy').textContent = lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString();
+  document.getElementById('cash-yen').textContent = '約 ' + lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString() + '円';
 }
 if (document.getElementById('cash-days')) { changeDays(0); }
 

@@ -39,7 +39,7 @@ a.keyword-link{color:var(--green);text-decoration:underline;cursor:pointer;font-
 a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
 blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
-blockquote.special-note::before{display:inline-block;position:absolute;top:-8px;left:9px;width:40px;height:30px;text-align:center;content:"\f10d";font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:18px;line-height:30px;background:#6fcdd9}
+blockquote.special-note::before{display:inline-block;position:absolute;top:-14px;left:9px;width:36px;height:36px;content:"";background:url(../assets/tips-icons/passport-ticket.png) center/contain no-repeat}
 blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
 blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
 blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal;word-break:break-all}
@@ -345,7 +345,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="qs-card"><div class="qs-ico" style="color:#1a3a5c"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><g fill="currentColor"><path d="M12 3a10 10 0 0 0-7.071 17.071l.707.707l2.421-2.421l-1.414-1.414l-.963.962A8 8 0 0 1 4.063 14H6v-2H4.063A8 8 0 0 1 5.68 8.095l.613.612l.5.5l1.414-1.414L7.095 6.68A8 8 0 0 1 11 5.063V6.5h2V5.063a8 8 0 0 1 3.905 1.617l-1.112 1.113l1.414 1.414l1.113-1.112A8 8 0 0 1 19.937 12H18v2h1.937a8 8 0 0 1-1.618 3.906l-.962-.963l-1.414 1.414l2.421 2.421l.707-.707A10.001 10.001 0 0 0 12 3" /><path d="M12.707 12.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414-1.414z" /></g></svg></div><div style="flex:1"><div class="qs-lbl">旅行難易度</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;background:#e8e8e8;border-radius:20px;height:10px;overflow:hidden"><div style="width:{{overview.difficulty_pct}}%;height:100%;background:{{overview.difficulty_bar}};border-radius:20px"></div></div><span style="background:{{overview.difficulty_label_bg}};color:{{overview.difficulty_label_color}};font-size:0.75em;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap">{{overview.difficulty_label}}</span></div><div style="display:flex;justify-content:space-between;font-size:0.68em;color:#bbb;margin-top:2px"><span>← やさしい</span><span>むずかしい →</span></div></div></div>
     </div>
 
-  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><span style="display:inline-flex;align-items:center;gap:5px;vertical-align:middle"><span style="display:inline-block;line-height:0;border-radius:2px;overflow:hidden;flex-shrink:0"><svg width="15" height="10" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff" height="600" width="900"/><circle fill="#bc002d" cx="450" cy="300" r="180"/></svg></span>日本人に人気？</span></span><p style="font-size:0.82em;line-height:1.7;color:#444">{{overview.japan_popularity_html}}</p></div>
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><span style="display:inline-flex;align-items:center;gap:5px;vertical-align:middle"><span style="display:inline-block;line-height:0;border-radius:2px;overflow:hidden;flex-shrink:0"><svg width="15" height="10" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff" height="600" width="900"/><circle fill="#bc002d" cx="450" cy="300" r="180"/></svg></span>日本人に人気？</span></span><p style="font-size:0.82em;line-height:1.55;color:#444">{{overview.japan_popularity_html}}</p></div>
 
   </div><!-- end s-card どんなところ？上 -->
 
@@ -466,7 +466,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
     </div>
 
-  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:plane-fly}} {{season.tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{season.tip_body}}</p></div>
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:plane-fly}} {{season.tip_title}}</span><p style="font-size:0.8em;line-height:1.55;color:#444">{{season.tip_body}}</p></div>
 
   </div><!-- end s-card どんなところ？ -->
 
@@ -531,36 +531,60 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
   </div>
 
-  <div class="season-tip-box" style="margin-top:16px"><span class="season-tip-title">{{icon:tip}} 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
+  <div class="season-tip-box" style="margin-top:16px"><span class="season-tip-title">{{icon:tip}} 節約ポイント</span><p style="font-size:0.8em;line-height:1.55;color:#444">{{budget.savings_tips_html}}</p></div>
   <script>var BUDGET_TABS = {{budget_tabs_js}};</script>
+  </div><!-- /tb-card -->
+  </div><!-- /tb-sec -->
 
-  <h3 class="section-subhead" id="money" style="margin:28px 0 8px">両替・支払い</h3>
+  <div class="tb-sec">
+  <div class="tb-card">
+  <h2 data-label="MONEY EXCHANGE" id="money">両替・支払い</h2>
   {% if practical.money_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 8px">{{practical.money_intro}}</p>{% endif %}
-  <div class="s-card" style="padding-top:16px">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap">
-    <h3 class="section-subhead" style="margin:0 0 8px">現地現金の目安</h3>
-    {% if practical.cash_dependency %}<span style="font-size:0.72em;font-weight:700;color:#fff;background:{{practical.cash_dependency_color}};padding:3px 12px;border-radius:20px;white-space:nowrap">現金依存度：{{practical.cash_dependency}}</span>{% endif %}
-  </div>
-    <div style="background:#fff;padding:20px 24px">
+  <div class="cash-card">
+    <div class="cash-head">
+      <img class="wallet" src="../assets/cash-sim/cash-wallet-t.png" alt="" aria-hidden="true">
+      <span class="ttl">現地現金の目安</span>
+      {% if practical.cash_dependency %}
+      <span class="cash-level dep-{% if practical.cash_dependency == '高' %}high{% elif practical.cash_dependency == '中' %}mid{% else %}low{% endif %}">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        現金依存度：{{practical.cash_dependency}}
+      </span>
+      {% endif %}
+    </div>
 
-    <div class="bc-stepper">
+    <div class="cash-stepper">
       <button type="button" onclick="changeDays(-1)" aria-label="日数を減らす">−</button>
-      <span class="bc-stepper-val"><span id="cash-days">5</span><span class="bc-stepper-unit">日間</span></span>
+      <span class="val"><span class="num" id="cash-days">5</span><span class="unit">日間</span></span>
       <button type="button" onclick="changeDays(1)" aria-label="日数を増やす">＋</button>
     </div>
-    <div class="bc-out">
-      <span class="bc-cap">{{practical.cash_note}}</span>
-      <span class="bc-amount">
-        <span class="bc-mk1" aria-hidden="true"></span>
-        <span class="bc-mk2" aria-hidden="true"></span>
-        <span class="bc-sm">約</span><span class="bc-big" id="cash-range-jpy">-</span><span class="bc-sm">円</span>
+
+    <div class="cash-amount-block">
+      <span class="cash-amount">
+        <span class="n" id="cash-range">-</span>
+        <span class="c">{{practical.currency_code}}</span>
       </span>
-      <span class="bc-sub" id="cash-range-cur">-</span>
+      <span class="cash-sub">
+        <span id="cash-yen">-</span>
+        {% if practical.cash_note %}<span class="sep" aria-hidden="true"></span><span>{{practical.cash_note}}</span>{% endif %}
+      </span>
     </div>
-    <div style="font-size:0.72em;color:var(--sub);line-height:1.8;margin-top:4px">※ ホテルやレストランなどカードが使える場所はカード払いする前提で、屋台・市場・交通機関など現金が必要になる分の目安です。足りなくなっても、<span data-affiliate="wise" data-affiliate-class="inline-affiliate-link" data-affiliate-label="Wiseカード"></span>なら現地ATMで気軽に引き出せて安心です。</div>
+
+    <div class="cash-foot">
+      <img src="../assets/cash-sim/ic-info-circle.png" alt="" aria-hidden="true">
+      <p>ホテルやレストランなどカードが使える場所はカード払いする前提で、屋台・市場・交通機関など現金が必要になる分の目安です。足りなくなっても、<span data-affiliate="wise" data-affiliate-class="inline-affiliate-link" data-affiliate-label="Wiseカード"></span>なら現地ATMで気軽に引き出せて安心です。</p>
     </div>
   </div>
-  <div class="season-tip-box"><span class="season-tip-title">{{icon:banknote}} {{practical.cash_tip_title}}</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.cash_tip_body}}</p></div>
+
+  {% if practical.cash_tip_title %}
+  <div class="cash-prep">
+    <span class="pill">
+      <img src="../assets/tips-icons/card-coins.png" alt="" aria-hidden="true">
+      <span>{{practical.cash_tip_title}}</span>
+    </span>
+    <span class="body">{{practical.cash_tip_body}}</span>
+  </div>
+  {% endif %}
+
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:24px 0 0">海外でクレジットカードを使うたびに不正利用のリスクは高まります。筆者自身も海外渡航後に2回不正利用を経験したことをきっかけに、現在は海外ではWiseカードをメインに使うようにしています。チャージした分しか使えないため万が一の際も被害が限定的で、<strong>旅好きの友人たちの間でも最近かなり普及してきています</strong>。</p>
   <div class="s-card" data-affiliate-card="wise"></div>
   </div><!-- /tb-card -->
@@ -585,7 +609,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div data-affiliate-box="flights" data-dest="{{overview.iata_code}}"></div>
     </div>
   </div>
-  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:calendar}} 予約タイミングの目安</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.flight_tip_html}}</p></div>
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:calendar}} 予約タイミングの目安</span><p style="font-size:0.8em;line-height:1.55;color:#444">{{practical.flight_tip_html}}</p></div>
   </div><!-- /tb-card -->
   </div><!-- /tb-sec -->
 
@@ -676,7 +700,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div data-affiliate-box="hotels"></div>
   </div>
 
-  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:tip}} 選び方のコツ</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{practical.hotel_tip}}</p></div>
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title">{{icon:hotel-tip}} 選び方のコツ</span><p style="font-size:0.8em;line-height:1.55;color:#444">{{practical.hotel_tip}}</p></div>
   </div><!-- /tb-card -->
   </div><!-- /tb-sec -->
   </div><!-- /tab-body -->
@@ -1247,7 +1271,6 @@ if (typeof BUDGET_TABS !== 'undefined' && document.getElementById('budget-tabs')
 
 /* 現金目安カード */
 let cashDays = 5;
-const CURRENCY = '{{practical.currency_code}}';
 const RATE = {{practical.exchange_rate}};
 const CASH_LOW = {{practical.cash_daily_low}};
 const CASH_HIGH = {{practical.cash_daily_high}};
@@ -1255,9 +1278,9 @@ function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;
   document.getElementById('cash-days').textContent = cashDays;
-  document.getElementById('cash-range-cur').textContent = low.toLocaleString() + '〜' + high.toLocaleString() + ' ' + CURRENCY;
+  document.getElementById('cash-range').textContent = low.toLocaleString() + '〜' + high.toLocaleString();
   const lowJpy = Math.round(low * RATE / 1000) * 1000, highJpy = Math.round(high * RATE / 1000) * 1000;
-  document.getElementById('cash-range-jpy').textContent = lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString();
+  document.getElementById('cash-yen').textContent = '約 ' + lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString() + '円';
 }
 if (document.getElementById('cash-days')) { changeDays(0); }
 
