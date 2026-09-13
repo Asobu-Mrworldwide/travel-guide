@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="韓国のグルメ｜韓国 旅行完全ガイド｜World Mappy">
 <meta name="twitter:description" content="日本から一番近い海外、韓国。飛行機で2時間ちょっと、時差もゼロの気軽さで、新しいカフェが並ぶ通りと李氏朝鮮時代の宮殿が同居する街。サムギョプサルからチーズトッポッキまで「今食べたいもの」が揃う食の国でもあり、ソウルの都会的な熱量と地方のロ…">
 <meta name="twitter:image" content="https://worldmappy.com/korea/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1788965051">
+<link rel="stylesheet" href="../assets/style.css?v=1789310738">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1788965051" defer></script>
-<script src="../assets/affiliates.js?v=1788965051" defer></script>
+<script src="../assets/affiliates-data.js?v=1789310738" defer></script>
+<script src="../assets/affiliates.js?v=1789310738" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -186,7 +186,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <a href="budget.html" class="">予算・費用</a>
   <a href="practical.html" class="">旅の準備</a>
   <a href="phrases.html" class="">フレーズ</a>
-  <button onclick="window.open('../common/checklist.html?from=korea','_blank')">持ち物リスト</button>
+  <button onclick="location.href='../common/checklist.html?from=korea&amp;page=food'">持ち物リスト</button>
   <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
   <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
 </nav>
@@ -585,6 +585,42 @@ function filterPhraseDeck(deckId, btn) {
   });
 }
 
+/* 旅行費用の目安タブ */
+if (typeof BUDGET_TABS !== 'undefined' && document.getElementById('budget-tabs')) {
+  const BT_ICON_KEYS = ['save', 'standard', 'premium'];
+  const btIconUrl = (i, on) => '../assets/budget-icons/ic-budget-' + BT_ICON_KEYS[i] + (on ? '-on' : '') + '.png';
+  let btStyle = 1;
+  const btTabsEl = document.getElementById('budget-tabs');
+  BUDGET_TABS.styles.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'bt-tab';
+    b.innerHTML = '<span class="bt-tab-ic"></span><span class="bt-tab-tx"><span class="bt-tab-nm"></span><span class="bt-tab-nt"></span></span>';
+    b.querySelector('.bt-tab-nm').textContent = s.name;
+    b.querySelector('.bt-tab-nt').textContent = s.note;
+    b.addEventListener('click', () => { btStyle = i; renderBudgetTabs(); });
+    btTabsEl.appendChild(b);
+  });
+  function renderBudgetTabs() {
+    [...btTabsEl.children].forEach((b, i) => {
+      const on = i === btStyle;
+      b.setAttribute('aria-pressed', on);
+      b.querySelector('.bt-tab-ic').style.backgroundImage = 'url(' + btIconUrl(i, on) + ')';
+    });
+    const s = BUDGET_TABS.styles[btStyle];
+    document.getElementById('bt-plan-icon').style.backgroundImage = 'url(' + btIconUrl(btStyle, true) + ')';
+    document.getElementById('bt-plan-name').textContent = s.name + 'プラン';
+    document.getElementById('bt-plan-note').textContent = s.note;
+    document.getElementById('bt-plan-blurb').textContent = s.blurb;
+    document.getElementById('bt-plan-total').textContent = s.total;
+    document.getElementById('bt-plan-rows').innerHTML = BUDGET_TABS.rows.map(row =>
+      '<div class="bt-row"><span class="bt-row-l"><span class="bt-row-ic">' + row.icon + '</span>' +
+      '<span class="bt-row-lb"><span class="bt-row-nm">' + row.name + '</span><span class="bt-row-ds">' + row.desc + '</span></span></span>' +
+      '<span class="bt-row-v">' + row.vals[s.key] + '</span></div>'
+    ).join('');
+  }
+  renderBudgetTabs();
+}
+
 /* 現金目安カード */
 let cashDays = 5;
 const CURRENCY = 'KRW';
@@ -597,7 +633,7 @@ function changeDays(d) {
   document.getElementById('cash-days').textContent = cashDays;
   document.getElementById('cash-range-cur').textContent = low.toLocaleString() + '〜' + high.toLocaleString() + ' ' + CURRENCY;
   const lowJpy = Math.round(low * RATE / 1000) * 1000, highJpy = Math.round(high * RATE / 1000) * 1000;
-  document.getElementById('cash-range-jpy').textContent = '約' + lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString() + '円';
+  document.getElementById('cash-range-jpy').textContent = lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString();
 }
 if (document.getElementById('cash-days')) { changeDays(0); }
 
@@ -1231,6 +1267,40 @@ document.addEventListener('keydown', function(e){
 })();
 </script>
 <script src="../assets/country-links.js"></script>
+<script>
+(function(){
+  var fab = document.getElementById('toc-fab');
+  var footer = document.querySelector('.wm-footer');
+  if (!fab || !footer) return;
+  var ticking = false;
+  function baseBottom(){
+    // 画面下部固定のタブバー（スマホ）があれば、その実測の高さ分を避ける
+    var navEl = document.querySelector('nav');
+    if (navEl) {
+      var cs = getComputedStyle(navEl);
+      if (cs.position === 'fixed' && Math.round(navEl.getBoundingClientRect().bottom) >= window.innerHeight) {
+        return navEl.getBoundingClientRect().height + 16;
+      }
+    }
+    var prev = fab.style.bottom;
+    fab.style.bottom = '';
+    var v = parseFloat(getComputedStyle(fab).bottom) || 16;
+    fab.style.bottom = prev;
+    return v;
+  }
+  function update(){
+    ticking = false;
+    var base = baseBottom();
+    var overlap = window.innerHeight - footer.getBoundingClientRect().top;
+    fab.style.bottom = Math.max(base, overlap > 0 ? overlap + 16 : 0) + 'px';
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 
 <!-- 指差しモーダル -->
 <div id="food-modal" class="food-modal-overlay" onclick="closeFoodModal()">

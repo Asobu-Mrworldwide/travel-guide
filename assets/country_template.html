@@ -525,7 +525,6 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="bt-total">
         <span class="bt-total-l">
           <span class="bt-total-nm">合計目安</span>
-          <span class="bt-total-ds">上記の目安をもとにした概算です。</span>
         </span>
         <span class="bt-total-v" id="bt-plan-total"></span>
       </div>
@@ -535,11 +534,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="season-tip-box" style="margin-top:16px"><span class="season-tip-title">{{icon:tip}} 節約ポイント</span><p style="font-size:0.8em;line-height:1.7;color:#444">{{budget.savings_tips_html}}</p></div>
   <script>var BUDGET_TABS = {{budget_tabs_js}};</script>
 
-  <div id="money"></div>
+  <h3 class="section-subhead" id="money" style="margin:28px 0 8px">両替・支払い</h3>
   {% if practical.money_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 8px">{{practical.money_intro}}</p>{% endif %}
   <div class="s-card" style="padding-top:16px">
   <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap">
-    <div class="section-subhead" style="margin:0 0 8px">現地現金の目安</div>
+    <h3 class="section-subhead" style="margin:0 0 8px">現地現金の目安</h3>
     {% if practical.cash_dependency %}<span style="font-size:0.72em;font-weight:700;color:#fff;background:{{practical.cash_dependency_color}};padding:3px 12px;border-radius:20px;white-space:nowrap">現金依存度：{{practical.cash_dependency}}</span>{% endif %}
   </div>
     <div style="background:#fff;padding:20px 24px">
@@ -2050,6 +2049,40 @@ document.addEventListener('keydown', function(e){
 })();
 </script>
 <script src="../assets/country-links.js"></script>
+<script>
+(function(){
+  var fab = document.getElementById('toc-fab');
+  var footer = document.querySelector('.wm-footer');
+  if (!fab || !footer) return;
+  var ticking = false;
+  function baseBottom(){
+    // 画面下部固定のタブバー（スマホ）があれば、その実測の高さ分を避ける
+    var navEl = document.querySelector('nav');
+    if (navEl) {
+      var cs = getComputedStyle(navEl);
+      if (cs.position === 'fixed' && Math.round(navEl.getBoundingClientRect().bottom) >= window.innerHeight) {
+        return navEl.getBoundingClientRect().height + 16;
+      }
+    }
+    var prev = fab.style.bottom;
+    fab.style.bottom = '';
+    var v = parseFloat(getComputedStyle(fab).bottom) || 16;
+    fab.style.bottom = prev;
+    return v;
+  }
+  function update(){
+    ticking = false;
+    var base = baseBottom();
+    var overlap = window.innerHeight - footer.getBoundingClientRect().top;
+    fab.style.bottom = Math.max(base, overlap > 0 ? overlap + 16 : 0) + 'px';
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 
 <!-- 指差しモーダル -->
 <div id="food-modal" class="food-modal-overlay" onclick="closeFoodModal()">

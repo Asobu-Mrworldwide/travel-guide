@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="マレーシアのモデルコース｜マレーシア旅行ガイド">
 <meta name="twitter:description" content="東南アジアの中心に位置するマレーシアは、マレー系・中国系・インド系が共存する多民族・多文化国家。熱帯雨林の大自然、世界遺産の古都、近代的な都市が一度に楽しめる。「多民族国家」って言葉、ピンとこないですよね？ 私は現地でインド系のおじさんが…">
 <meta name="twitter:image" content="https://worldmappy.com/malaysia/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1789135675">
+<link rel="stylesheet" href="../assets/style.css?v=1789310738">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1789135675" defer></script>
-<script src="../assets/affiliates.js?v=1789135675" defer></script>
+<script src="../assets/affiliates-data.js?v=1789310738" defer></script>
+<script src="../assets/affiliates.js?v=1789310738" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -1354,6 +1354,40 @@ document.addEventListener('keydown', function(e){
 })();
 </script>
 <script src="../assets/country-links.js"></script>
+<script>
+(function(){
+  var fab = document.getElementById('toc-fab');
+  var footer = document.querySelector('.wm-footer');
+  if (!fab || !footer) return;
+  var ticking = false;
+  function baseBottom(){
+    // 画面下部固定のタブバー（スマホ）があれば、その実測の高さ分を避ける
+    var navEl = document.querySelector('nav');
+    if (navEl) {
+      var cs = getComputedStyle(navEl);
+      if (cs.position === 'fixed' && Math.round(navEl.getBoundingClientRect().bottom) >= window.innerHeight) {
+        return navEl.getBoundingClientRect().height + 16;
+      }
+    }
+    var prev = fab.style.bottom;
+    fab.style.bottom = '';
+    var v = parseFloat(getComputedStyle(fab).bottom) || 16;
+    fab.style.bottom = prev;
+    return v;
+  }
+  function update(){
+    ticking = false;
+    var base = baseBottom();
+    var overlap = window.innerHeight - footer.getBoundingClientRect().top;
+    fab.style.bottom = Math.max(base, overlap > 0 ? overlap + 16 : 0) + 'px';
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 
 <!-- 指差しモーダル -->
 <div id="food-modal" class="food-modal-overlay" onclick="closeFoodModal()">

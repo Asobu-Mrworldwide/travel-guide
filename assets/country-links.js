@@ -61,60 +61,66 @@
   } else {
     const regionOrder = [];
     COUNTRIES.forEach(c => { if (!regionOrder.includes(c.region)) regionOrder.push(c.region); });
-    thirdColHtml = '<div class="sf-area-grid">' + regionOrder.map(region =>
+    thirdColHtml = '<div class="wm-area-grid">' + regionOrder.map(region =>
       `<a href="${base}index.html?region=${encodeURIComponent(region)}">${region}</a>`
     ).join("") + '</div>';
   }
+  const thirdColClass = "ja";
 
   const html = `
-    <footer class="site-footer-main">
-      <div class="sf-grid">
-        <div class="sf-brand">
-          <div class="sf-brand-logo">
-            <img src="${base}assets/site-logo.png" width="26" height="26" alt="World Mappy">
-            <span><span class="gold">World</span> Mappy</span>
-          </div>
-          <p>情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめました。気候・飛行時間・予算の三つから、次の旅先を。</p>
-          <div class="sf-social">
-            <a href="#" target="_blank" rel="noopener" aria-label="X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <footer class="wm-footer">
+      <img class="bg-globe" src="${base}assets/top/footer-globe-plane.png" alt="" aria-hidden="true">
+      <div class="wm-footer-inner">
+        <div class="wm-col brand-col">
+          <span class="wm-brand">
+            <img class="mark" src="${base}assets/site-logo.png" alt="" aria-hidden="true">
+            <span class="name"><b>World</b> Mappy</span>
+          </span>
+          <p class="wm-tagline">情報が溢れるこの時代に、本当に必要な旅行情報だけをまとめました。フィルター機能で行きたい国を絞れます。</p>
+          <div class="wm-sns-block">
+            <span class="wm-sns-cap">公式SNSで最新情報をチェック</span>
+            <div class="wm-sns">
+              <a href="#" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg></a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
+            </div>
           </div>
         </div>
-        <div class="sf-col sf-col-guide">
-          <span class="sf-label">GUIDE</span>
+        <div class="wm-col wm-col-hide-sp">
+          <span class="wm-col-h en">GUIDE</span>
           <a href="${base}common/checklist.html">持ち物チェックリスト</a>
           <!-- 診断ページ未公開のため無効化: <a href="${base}diagnosis/index.html">旅行タイプ診断</a> -->
           <!-- 診断ページ未公開のため無効化: <a href="${base}diagnosis/types.html">旅行タイプ一覧</a> -->
           <a href="${base}common/faq.html">よくある質問</a>
+          <a href="${base}common/contact.html">お問い合わせ</a>
         </div>
-        <div class="sf-col${currentCountry ? '' : ' sf-col-area'}">
-          <span class="sf-label">${thirdColLabel}</span>
+        <div class="wm-col">
+          <span class="wm-col-h ${thirdColClass}">${thirdColLabel}</span>
           ${thirdColHtml}
-          ${currentCountry ? `<a href="${base}index.html" class="sf-gold-link">すべての旅先を見る →</a>` : ''}
+          ${currentCountry ? `<a href="${base}index.html" class="more">すべての旅先を見る →</a>` : ''}
         </div>
-        <div class="sf-col sf-share">
-          <span class="sf-label">SHARE</span>
-          <p>このページが役に立ったら、旅の相談相手に送ってあげてください。</p>
-          <div class="sf-share-icons">
-            <button type="button" id="cl-share-copy" class="sf-icon-btn">
-              <span class="sf-icon-circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a3.5 3.5 0 0 0 5 0l4-4a3.5 3.5 0 0 0-5-5l-1 1"/><path d="M14 10a3.5 3.5 0 0 0-5 0l-4 4a3.5 3.5 0 0 0 5 5l1-1"/></svg></span>
-              <span class="sf-icon-label">リンクをコピー</span>
+        <div class="wm-col wm-share-col">
+          <span class="wm-col-h en wm-col-hide-sp">SHARE</span>
+          <p class="wm-col-hide-sp">このページが役に立ったら、一緒に行く人に送ってあげてください。</p>
+          <div class="wm-pills">
+            <button type="button" id="cl-share-copy" class="wm-pill">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 13.5a4 4 0 0 0 5.66 0l3-3a4 4 0 1 0-5.66-5.66l-1.3 1.3"/><path d="M14 10.5a4 4 0 0 0-5.66 0l-3 3a4 4 0 1 0 5.66 5.66l1.3-1.3"/></svg>
+              <span id="cl-share-copy-label">リンクをコピー</span>
             </button>
-            <button type="button" id="cl-share-btn" class="sf-icon-btn" hidden>
-              <span class="sf-icon-circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.6" x2="15.4" y2="6.4"/><line x1="8.6" y1="13.4" x2="15.4" y2="17.6"/></svg></span>
-              <span class="sf-icon-label">共有する</span>
+            <button type="button" id="cl-share-btn" class="wm-pill">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8 15.7 6.3M8.3 13.2l7.4 4.5"/></svg>
+              共有する
             </button>
           </div>
         </div>
       </div>
-      <div class="sf-bottom">
-        <div class="sf-legal">
-          <a href="${base}common/privacy.html">プライバシーポリシー</a>
-          <a href="${base}common/disclaimer.html">免責事項</a>
-          <a href="${base}common/about.html">運営者情報</a>
+      <div class="wm-legal">
+        <div class="links">
+          <a href="${base}common/privacy.html">プライバシーポリシー</a><span class="sep" aria-hidden="true"></span>
+          <a href="${base}common/disclaimer.html">免責事項</a><span class="sep" aria-hidden="true"></span>
+          <a href="${base}common/about.html">運営者情報</a><span class="sep" aria-hidden="true"></span>
           <a href="${base}common/contact.html">お問い合わせ</a>
         </div>
-        <span class="sf-copyright">© 2026 World Mappy　<span class="gold">楽しい旅を！</span></span>
+        <span>© 2026 World Mappy</span>
       </div>
     </footer>`;
   document.currentScript.insertAdjacentHTML("beforebegin", html);
@@ -123,14 +129,14 @@
   const hbNearby = document.getElementById("hb-nearby");
   if (hbNearby) hbNearby.innerHTML = thirdColHtml + `<a href="${base}index.html" class="active">すべての旅先を見る →</a>`;
 
-  const shareUrl = encodeURIComponent(location.href);
-  const shareText = encodeURIComponent(document.title);
   const shareBtn = document.getElementById("cl-share-btn");
-  const isTouchDevice = window.matchMedia && window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-  if (shareBtn && navigator.share && isTouchDevice) {
-    shareBtn.hidden = false;
+  if (shareBtn) {
     shareBtn.addEventListener("click", () => {
-      navigator.share({ title: document.title, url: location.href }).catch(() => {});
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: location.href }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(location.href);
+      }
     });
   }
 
@@ -162,16 +168,10 @@
   const shareCopyBtn = document.getElementById("cl-share-copy");
   if (shareCopyBtn) shareCopyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(location.href).then(() => {
-      const label = shareCopyBtn.querySelector(".sf-icon-label");
-      const circle = shareCopyBtn.querySelector(".sf-icon-circle");
-      const originalLabel = label.textContent;
-      const originalCircle = circle.innerHTML;
+      const label = document.getElementById("cl-share-copy-label");
+      if (!label) return;
       label.textContent = "コピーしました";
-      circle.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 12 9 17 20 6"/></svg>';
-      setTimeout(() => {
-        label.textContent = originalLabel;
-        circle.innerHTML = originalCircle;
-      }, 2000);
+      setTimeout(() => { label.textContent = "リンクをコピー"; }, 1800);
     });
   });
 })();

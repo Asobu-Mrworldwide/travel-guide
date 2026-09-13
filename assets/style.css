@@ -339,48 +339,76 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
   .wm-menu-about{border-left:none;padding-left:0;grid-column:1/-1}
 }
 
-/* フッター（4カラム: ブランド／GUIDE／近隣の国／SHARE） */
-.site-footer-main{background:#514238;color:#fff}
-.sf-grid{max-width:1320px;margin:0 auto;padding:38px 32px 30px;display:grid;grid-template-columns:1.25fr 1fr 1fr 1.1fr;gap:32px}
-.sf-brand{display:grid;gap:14px;align-content:start}
-.sf-brand-logo{display:flex;align-items:center;gap:11px;font-weight:900;font-size:20px;line-height:1;color:#fff}
-.sf-brand-logo .gold{color:var(--yellow)}
-.sf-brand p{margin:0;font-size:0.78em;line-height:1.95;color:rgba(255,255,255,0.78)}
-.sf-social{display:flex;gap:10px}
-.sf-social a{display:grid;place-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,0.35);border-radius:999px;color:#fff;text-decoration:none;transition:all .2s ease}
-.sf-social a:hover{background:var(--yellow);border-color:var(--yellow);color:#514238}
-.sf-col{display:grid;gap:10px;align-content:start}
-.sf-label{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;letter-spacing:0.14em;color:var(--yellow)}
-.sf-col a{font-size:0.8em;color:rgba(255,255,255,0.85);text-decoration:none}
-.sf-area-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
-@media(min-width:1021px){.sf-grid>div{min-height:216px}}
-.sf-col a:hover{color:#fff}
-.sf-gold-link{color:var(--yellow) !important}
-.sf-share p{margin:0;font-size:0.78em;line-height:1.9;color:rgba(255,255,255,0.78)}
-.sf-share-icons{display:flex;gap:18px}
-.sf-icon-btn{display:flex;flex-direction:column;align-items:center;gap:6px;background:transparent;border:none;padding:0;font-family:inherit;color:#fff;cursor:pointer}
-.sf-icon-circle{display:grid;place-content:center;width:38px;height:38px;border:1px solid rgba(255,255,255,0.35);border-radius:999px;transition:all .2s ease}
-.sf-icon-btn:hover .sf-icon-circle{background:var(--yellow);border-color:var(--yellow);color:#514238}
-.sf-icon-label{font-size:0.68em;color:rgba(255,255,255,0.78);white-space:nowrap}
-.sf-bottom{border-top:1px solid rgba(255,255,255,0.18);padding:16px 32px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:0.72em;color:rgba(255,255,255,0.7)}
-.sf-legal{display:flex;gap:18px}
-.sf-legal a{color:rgba(255,255,255,0.7);text-decoration:none}
-.sf-legal a:hover{color:#fff}
-.sf-copyright .gold{letter-spacing:0.16em;color:var(--yellow)}
-@media(max-width:1020px){.sf-grid{grid-template-columns:1fr 1fr;padding:28px 20px 24px}}
-@media(max-width:520px){
-  .sf-grid{grid-template-columns:1fr;gap:0;padding:6px 18px 18px}
-  .sf-col-area{display:none}
-  .sf-col-guide{display:none}
-  .sf-grid>div{padding:22px 0;border-top:1px solid rgba(255,255,255,0.13)}
-  .sf-grid>div:first-child{border-top:none}
-  .sf-brand{gap:12px}
-  .sf-col:not(.sf-share){gap:4px}
-  .sf-col:not(.sf-share)>a{font-size:0.92em;line-height:1;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
-  .sf-col:not(.sf-share)>a:last-child{border-bottom:none}
-  .sf-label{margin-bottom:6px}
-  .sf-bottom{flex-direction:column;align-items:center;gap:10px;padding:16px 18px 20px;text-align:center}
-  .sf-legal{flex-wrap:wrap;justify-content:center;gap:10px 16px}
+/* フッター（4カラム: ブランド／GUIDE／近隣の国 or 人気の国／SHARE） */
+.wm-footer{
+  --footer-bg:#473829;
+  --footer-gold:#E8B44A;      /* ロゴ・リンク */
+  --footer-gold-label:#F0C368;/* 列見出し */
+  --footer-green:#15735B;     /* 白ピル内の文字 */
+  position:relative;background:var(--footer-bg);color:#fff;overflow:hidden
+}
+.wm-footer a{text-decoration:none}
+.wm-footer .bg-globe{position:absolute;right:-77px;top:37px;width:760px;height:520px;opacity:.42;object-fit:contain;pointer-events:none}
+.wm-brand{display:flex;align-items:center;gap:11px}
+.wm-brand .mark{width:32px;height:32px;object-fit:contain}
+.wm-brand .name{font-weight:900;font-size:23px;line-height:1;letter-spacing:-.01em}
+.wm-brand .name b{color:var(--footer-gold);font-weight:900}
+.wm-tagline{margin:0;max-width:300px;font-size:13px;line-height:1.9;color:rgba(255,255,255,.88)}
+.wm-sns-cap{font-size:11.5px;color:rgba(255,255,255,.78)}
+.wm-sns-block{display:grid;gap:11px;justify-items:start;padding-top:2px}
+.wm-sns{display:flex;gap:12px}
+.wm-sns a{display:grid;place-content:center;width:44px;height:44px;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;color:#fff;transition:background .2s,border-color .2s,color .2s}
+.wm-sns a:hover{background:var(--footer-gold);border-color:var(--footer-gold);color:var(--footer-bg)}
+
+/* 列見出し: 欧文は和文より 1.5px 大きく（x-height 差の補正） */
+.wm-col-h{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--footer-gold-label)}
+.wm-col-h.en{font-size:14px;letter-spacing:.18em}
+.wm-col-h.ja{font-size:12.5px;letter-spacing:.08em}
+.wm-col{display:grid;gap:10px;align-content:start}
+.wm-col a{font-size:12.5px;color:rgba(255,255,255,.85)}
+.wm-col a:hover{color:#fff}
+.wm-col .note{font-size:10.5px;color:rgba(255,255,255,.5)}
+.wm-col .more{padding-top:4px;color:#fff}
+.wm-area-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
+
+/* 白ピルボタン（リンクをコピー / 共有する） */
+.wm-pill{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:0 17px;
+  border:none;border-radius:999px;background:#fff;font-family:inherit;font-size:12.5px;font-weight:700;
+  white-space:nowrap;color:var(--footer-green);cursor:pointer}
+.wm-pills{display:flex;flex-wrap:wrap;gap:9px}
+#cl-share-btn{display:none}
+.wm-share-col{display:grid;gap:14px;align-content:start}
+.wm-share-col p{margin:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,.82)}
+
+/* 下段（法的リンク + ©） */
+.wm-legal{position:relative;border-top:1px solid rgba(255,255,255,.2);font-size:11.5px;color:rgba(255,255,255,.7);
+  padding:18px 32px 22px;display:flex;align-items:center;justify-content:center;gap:20px}
+.wm-legal a{color:rgba(255,255,255,.82)}
+.wm-legal .links{display:flex;align-items:center;gap:0 8px}
+.wm-legal .sep{width:1px;height:12px;background:rgba(255,255,255,.3)}
+
+.wm-footer-inner{position:relative;max-width:1440px;margin:0 auto;padding:44px 32px 34px;
+  display:grid;grid-template-columns:1.25fr 1fr 1.1fr 1.15fr;gap:36px}
+.wm-footer-inner>*{min-width:0}
+.wm-footer .brand-col{display:grid;gap:16px;align-content:start}
+
+@media(max-width:900px){
+  .wm-footer-inner{grid-template-columns:1fr 1fr;gap:28px}
+  .wm-legal{flex-direction:column;align-items:center;gap:12px;text-align:center}
+  .wm-legal .links{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:760px){
+  .wm-footer-inner{grid-template-columns:1fr;gap:26px;padding:30px 18px 26px}
+  .wm-footer .bg-globe{right:auto;left:45px;top:41px;width:415px;height:300px;opacity:.55}
+  .wm-footer .brand-col{gap:14px}
+  .wm-footer .wm-col-hide-sp{display:none}
+  .wm-brand .name{font-size:22px}
+  .wm-brand .mark{width:30px;height:30px}
+  .wm-sns-block .wm-sns a{width:46px;height:46px}
+  .wm-share-col .wm-pills{display:grid;grid-template-columns:1fr 1fr;gap:9px;max-width:320px;margin:0 auto}
+  #cl-share-btn:not([hidden]){display:inline-flex}
+  .wm-legal{display:grid;gap:14px;justify-items:center;padding:18px 18px 26px;text-align:center}
+  .wm-legal .links{flex-wrap:wrap;justify-content:center;gap:6px 8px;font-size:10.5px}
 }
 
 /* ラベルタグ */
@@ -691,27 +719,68 @@ section.active{display:block}
 @media (max-width:560px){
   .bt-row{grid-template-columns:1fr;gap:6px}
   .bt-row-v{justify-self:end;text-align:right}
-  .bt-total{grid-template-columns:1fr;gap:2px;justify-items:start}
-  .bt-total-v{font-size:1.7em;margin-top:4px}
+  .bt-total-v{font-size:1.3em}
 }
 
-/* ---- 現地現金カード (highlighter amount) ---- */
-.bc-stepper{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px}
-.bc-stepper button{width:34px;height:34px;border-radius:50%;border:2px solid var(--green);background:#fff;color:var(--green);font-size:1.2em;font-weight:700;cursor:pointer;line-height:1;flex-shrink:0}
-.bc-stepper-val{display:flex;align-items:baseline;gap:6px}
-.bc-stepper-val #cash-days{font-size:2em;font-weight:700;color:var(--green)}
-.bc-stepper-unit{font-size:0.82em;color:var(--sub)}
-.bc-out{display:grid;justify-items:center;gap:8px;padding-top:14px;border-top:1px solid #EDF1EC}
-.bc-cap{font-size:0.75em;color:#4C5D53}
-.bc-amount{position:relative;display:flex;align-items:baseline;gap:3px}
-.bc-amount .bc-mk1,.bc-amount .bc-mk2{position:absolute;pointer-events:none}
-.bc-amount .bc-mk1{left:32px;right:22px;top:8%;bottom:-2%;background:#FBE59B;opacity:.92;transform:rotate(-1.2deg);
-  clip-path:polygon(1.5% 18%,8% 6%,22% 12%,38% 4%,55% 11%,72% 3%,88% 10%,97% 4%,100% 30%,99% 62%,96% 92%,82% 97%,66% 89%,48% 98%,30% 90%,14% 99%,3% 88%,0% 52%)}
-.bc-amount .bc-mk2{left:42px;right:32px;top:48%;bottom:6%;background:#F8DC7E;opacity:.75;transform:rotate(-.6deg);
-  clip-path:polygon(0% 30%,12% 6%,30% 22%,52% 4%,74% 20%,92% 8%,100% 34%,97% 76%,80% 96%,58% 78%,36% 98%,16% 80%,2% 96%)}
-.bc-amount .bc-sm{position:relative;font-weight:700;font-size:0.9em;color:var(--green)}
-.bc-amount .bc-big{position:relative;font-weight:700;font-size:1.9em;line-height:1.1;color:var(--green)}
-.bc-sub{font-size:0.76em;color:#7C8A81}
+/* ---- 現地現金の目安（シミュレーター） ---- */
+.cash-card{--cash-green-900:#14503C;--cash-green-700:#15603F;--cash-green-600:#2E6B4F;--cash-green-500:#2E7A5E;
+  --cash-tint:#E8F0E6;--cash-tint-2:#E7F1E6;--cash-tint-3:#E4F1E7;--cash-ink:#2B3A32;--cash-ink-body:#3A4A40;--cash-line:#E6EAE4;
+  position:relative;border-radius:26px;background:#FBFAF7;box-shadow:0 10px 30px rgba(20,40,30,.07);
+  padding:26px 30px 24px;display:grid;gap:18px;overflow:hidden;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;color:var(--cash-ink)}
+
+.cash-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cash-head .wallet{flex:none;width:58px;height:55px;object-fit:contain}
+.cash-head .ttl{flex:1;min-width:0;font-size:22px;font-weight:700;letter-spacing:.01em;color:var(--cash-green-900)}
+.cash-level{display:inline-flex;align-items:center;gap:9px;height:40px;padding:0 18px;border-radius:999px;
+  background:var(--cash-tint-2);font-size:14px;font-weight:700;white-space:nowrap;color:var(--cash-green-600)}
+.cash-level .bars{display:flex;align-items:flex-end;gap:2px;height:15px}
+.cash-level .bars i{width:4px;border-radius:1px;background:#D8E4DC}
+.cash-level .bars i:nth-child(1){height:7px}
+.cash-level .bars i:nth-child(2){height:11px}
+.cash-level .bars i:nth-child(3){height:15px}
+.cash-level.dep-low .bars i:nth-child(1){background:#2E8B5F}
+.cash-level.dep-mid .bars i:nth-child(1),.cash-level.dep-mid .bars i:nth-child(2){background:#2E8B5F}
+.cash-level.dep-high .bars i{background:#2E8B5F}
+
+.cash-stepper{display:flex;align-items:center;justify-content:center;gap:20px}
+.cash-stepper button{width:58px;height:58px;border:none;border-radius:999px;background:var(--cash-tint);
+  font-family:inherit;font-size:30px;line-height:1;color:var(--cash-green-500);cursor:pointer}
+.cash-stepper .val{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.cash-stepper .num{font-size:50px;font-weight:900;line-height:1;color:var(--cash-green-900)}
+.cash-stepper .unit{font-size:21px;font-weight:500;white-space:nowrap;color:var(--cash-ink)}
+
+.cash-amount-block{position:relative;display:grid;justify-items:center;gap:14px}
+.cash-amount{display:inline-flex;align-items:baseline;justify-content:center;gap:10px;max-width:100%;
+  padding:30px 66px 34px;background:url(cash-sim/cash-banner.png) center/100% 100% no-repeat}
+.cash-amount .n{font-size:52px;font-weight:900;line-height:1.05;letter-spacing:-.01em;white-space:nowrap;color:var(--cash-green-700)}
+.cash-amount .c{font-size:34px;font-weight:900;line-height:1.05;color:var(--cash-green-700)}
+.cash-sub{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;font-size:18px;color:var(--cash-ink-body)}
+.cash-sub .sep{width:1px;height:20px;background:#CFD8D1}
+
+.cash-foot{position:relative;display:flex;align-items:flex-start;gap:16px;padding-top:20px;border-top:1px solid var(--cash-line)}
+.cash-foot img{flex:none;width:34px;height:34px;object-fit:contain}
+.cash-foot p{margin:0;font-size:14.5px;line-height:1.85;color:var(--cash-ink-body)}
+
+.cash-prep{border:1px solid #E4EDE6;border-radius:14px;box-shadow:0 2px 0 rgba(20,40,30,.04),0 6px 16px rgba(20,40,30,.05);
+  background:#FAFAF6;padding:16px 20px 18px;display:grid;gap:10px;justify-items:start;margin-top:12px;
+  font-family:'Zen Kaku Gothic New',system-ui,sans-serif}
+.cash-prep .pill{display:inline-flex;align-items:center;gap:9px;padding:6px 16px 6px 10px;border-radius:999px;background:var(--cash-tint-3,#E4F1E7)}
+.cash-prep .pill img{flex:none;width:30px;height:26px;object-fit:contain}
+.cash-prep .pill span{font-size:14.5px;font-weight:700;letter-spacing:.01em;color:#17694E}
+.cash-prep .body{font-size:13.5px;line-height:1.85;color:#2F3A33}
+
+@media (max-width:560px){
+  .cash-card{border-radius:20px;padding:20px 18px}
+  .cash-head .ttl{font-size:19px;flex:1 1 100%;order:2}
+  .cash-level{order:3}
+  .cash-stepper{gap:14px}
+  .cash-stepper button{width:52px;height:52px;font-size:26px}
+  .cash-stepper .num{font-size:42px}
+  .cash-amount{padding:22px 34px 26px}
+  .cash-amount .n{font-size:36px}
+  .cash-amount .c{font-size:24px}
+  .cash-sub{font-size:15px}
+}
 
 /* マナー */
 .manner-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
