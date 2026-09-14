@@ -196,7 +196,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <a href="phrases.html" class="{{nav_active.phrases}}">フレーズ</a>
   <button onclick="location.href='../common/checklist.html?from={{id}}&amp;page={{page_slug}}'">持ち物リスト</button>
   <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
-  <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
+  <div class="nav-fade nav-fade-right" aria-hidden="true"></div>
 </nav>
 <script>
   (function() {
@@ -226,7 +226,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <button onclick="var s=document.querySelector('section.active');location.href='../common/checklist.html?from={{id}}'+(s?'&section='+s.id:'')">持ち物リスト</button>
   <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
-  <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
+  <div class="nav-fade nav-fade-right" aria-hidden="true"></div>
 </nav>
 <script>
   (function() {
@@ -585,7 +585,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
   {% endif %}
 
-  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:24px 0 0">海外でクレジットカードを使うたびに不正利用のリスクは高まります。筆者自身も海外渡航後に2回不正利用を経験したことをきっかけに、現在は海外ではWiseカードをメインに使うようにしています。チャージした分しか使えないため万が一の際も被害が限定的で、<strong>旅好きの友人たちの間でも最近かなり普及してきています</strong>。</p>
+  <h3 style="margin:24px 0 8px">海外でのカード利用リスクに備える</h3>
+  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 0">海外でクレジットカードを使うたびに不正利用のリスクは高まります。筆者自身も海外渡航後に2回不正利用を経験したことをきっかけに、現在は海外ではWiseカードをメインに使うようにしています。チャージした分しか使えないため万が一の際も被害が限定的で、<strong>旅好きの友人たちの間でも最近かなり普及してきています</strong>。</p>
   <div class="s-card" data-affiliate-card="wise"></div>
   </div><!-- /tb-card -->
   </div><!-- /tb-sec -->
@@ -596,13 +597,15 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   {% if practical.flight_lead %}<p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:8px 0 16px">{{practical.flight_lead}}</p>{% endif %}
   <div class="s-card">
     <div style="background:#fff;padding:20px 24px">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+    <div class="flight-cards">
       {% for airline in practical.airlines %}
-      <div style="background:#f9fafb;border-radius:10px;padding:12px;display:flex;flex-direction:column">
-        <div style="font-weight:700;font-size:0.9em;color:var(--text);margin-bottom:4px">{{airline.name}}</div>
-        <div style="font-size:0.75em;color:var(--sub);line-height:1.5;margin-bottom:8px">{{airline.desc}}</div>
-        {% if airline.logo %}<div style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px"><img src="{{airline.logo}}" alt="{{airline.name}}" style="height:{% if airline.logo2 %}56px{% else %}44px{% endif %};width:auto;max-width:{% if airline.logo2 %}45%{% else %}90%{% endif %};object-fit:contain">{% if airline.logo2 %}<img src="{{airline.logo2}}" alt="" style="height:56px;width:auto;max-width:45%;object-fit:contain">{% endif %}</div>{% endif %}
-        <div style="font-size:0.85em;color:var(--green);font-weight:700;text-align:right;margin-top:auto">{{airline.price}}</div>
+      <div class="flight-card">
+        {% if airline.logo %}<div class="flight-card-logo"><img src="{{airline.logo}}" alt="{{airline.name}}" style="height:{% if airline.logo2 %}40px{% else %}32px{% endif %};width:auto;max-width:{% if airline.logo2 %}45%{% else %}90%{% endif %};object-fit:contain">{% if airline.logo2 %}<img src="{{airline.logo2}}" alt="" style="height:40px;width:auto;max-width:45%;object-fit:contain">{% endif %}</div>{% endif %}
+        <div class="flight-card-body">
+          <div class="flight-card-name">{{airline.name}}</div>
+          <div class="flight-card-desc">{{airline.desc}}</div>
+          <div class="flight-card-price">{{airline.price}}</div>
+        </div>
       </div>
       {% endfor %}
     </div>
@@ -625,7 +628,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
     <script>
       var _hotelMap = null;
-      var _hotelAreas = [{% for area in practical.hotel_areas %}{ id:'{{area.id}}', name:'{{area.name}}', lat:{{area.lat}}, lng:{{area.lng}} },{% endfor %}];
+      var _hotelAreas = [{% for area in practical.hotel_areas %}{ id:'{{area.id}}', name:'{{area.map_label}}{% if not area.map_label %}{{area.name}}{% endif %}', lat:{{area.lat}}, lng:{{area.lng}} },{% endfor %}];
       var _hotelCenter = { lat:{{practical.hotel_map_center.lat}}, lng:{{practical.hotel_map_center.lng}} };
       var _hotelZoom = {{practical.hotel_map_center.zoom}};
       window._initHotelMap = function() {
@@ -1655,78 +1658,6 @@ function showFilteredSpots(city) {
 function showFilteredSpots(city) {
   location.href = 'spots.html?city=' + encodeURIComponent(city);
 }
-
-/* 分割ページモード: 横スワイプで前後のページへ遷移 */
-var PAGE_ORDER = {{page_order_js}};
-var PAGE_INDEX = {{page_index}};
-(function() {
-  let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
-  const THRESHOLD = 90;
-
-  document.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isMultiTouch = e.touches.length > 1;
-    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#{{map.element_id}}') || e.target.closest('#hotel-map'));
-  }, { passive: true });
-
-  document.addEventListener('touchmove', e => {
-    if (e.touches.length > 1) isMultiTouch = true;
-  }, { passive: true });
-
-  document.addEventListener('touchend', e => {
-    if (startedOnExcluded || isMultiTouch) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    const dy = e.changedTouches[0].clientY - startY;
-    if (Math.abs(dx) < THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
-
-    let nextIdx;
-    if (dx < 0) {
-      nextIdx = Math.min(PAGE_INDEX + 1, PAGE_ORDER.length - 1);
-    } else {
-      nextIdx = Math.max(PAGE_INDEX - 1, 0);
-    }
-    if (nextIdx !== PAGE_INDEX) location.href = PAGE_ORDER[nextIdx];
-  }, { passive: true });
-})();
-{% endif %}
-
-{% if singlepage %}
-(function() {
-  let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
-  const THRESHOLD = 90;
-
-  document.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isMultiTouch = e.touches.length > 1;
-    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#{{map.element_id}}') || e.target.closest('#hotel-map'));
-  }, { passive: true });
-
-  document.addEventListener('touchmove', e => {
-    if (e.touches.length > 1) isMultiTouch = true;
-  }, { passive: true });
-
-  document.addEventListener('touchend', e => {
-    if (startedOnExcluded || isMultiTouch) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    const dy = e.changedTouches[0].clientY - startY;
-    if (Math.abs(dx) < THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
-
-    const btns = Array.from(document.querySelectorAll('nav button'));
-    const currentIdx = btns.findIndex(b => b.classList.contains('active'));
-    if (currentIdx === -1) return;
-
-    let nextIdx;
-    if (dx < 0) {
-      nextIdx = Math.min(currentIdx + 1, btns.length - 1);
-    } else {
-      nextIdx = Math.max(currentIdx - 1, 0);
-    }
-
-    if (nextIdx !== currentIdx) btns[nextIdx].click();
-  }, { passive: true });
-})();
 {% endif %}
 {% if multipage %}
 /* 分割ページモード: spots.html 到達時に ?spot= / ?city= を反映 */

@@ -18,7 +18,7 @@ const AFFILIATES_CSS = `
   background:#FAF7F2;
   border-radius:10px;
   border:1px solid #E8E2D8;
-  box-shadow:inset 0 0 0 1px #fff;
+  box-shadow:inset 0 0 0 1px #fff,0 2px 0 rgba(20,40,30,0.07),0 6px 14px rgba(20,40,30,0.08);
   overflow:hidden;
   margin-top:12px;
   display:flex;

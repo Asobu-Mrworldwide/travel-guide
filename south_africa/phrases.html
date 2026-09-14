@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="南アフリカ共和国のフレーズ｜南アフリカ共和国旅行ガイド">
 <meta name="twitter:description" content="未舗装路？道端に野生動物？命の保証は？まだそんなイメージの人は今すぐチケットを取りましょう。ケープタウンのテーブルマウンテン、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、圧倒的なスケールの自然と…">
 <meta name="twitter:image" content="https://worldmappy.com/south_africa/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1789319307">
+<link rel="stylesheet" href="../assets/style.css?v=1789397051">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1789319307" defer></script>
-<script src="../assets/affiliates.js?v=1789319307" defer></script>
+<script src="../assets/affiliates-data.js?v=1789397051" defer></script>
+<script src="../assets/affiliates.js?v=1789397051" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -188,7 +188,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <a href="phrases.html" class="active">フレーズ</a>
   <button onclick="location.href='../common/checklist.html?from=south_africa&amp;page=phrases'">持ち物リスト</button>
   <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
-  <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
+  <div class="nav-fade nav-fade-right" aria-hidden="true"></div>
 </nav>
 <script>
   (function() {
@@ -807,42 +807,6 @@ function resetFoodFilters() {
 function showFilteredSpots(city) {
   location.href = 'spots.html?city=' + encodeURIComponent(city);
 }
-
-/* 分割ページモード: 横スワイプで前後のページへ遷移 */
-var PAGE_ORDER = ["index.html", "spots.html", "food.html", "course.html", "budget.html", "practical.html", "phrases.html"];
-var PAGE_INDEX = 6;
-(function() {
-  let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
-  const THRESHOLD = 90;
-
-  document.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isMultiTouch = e.touches.length > 1;
-    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#south_africa-map') || e.target.closest('#hotel-map'));
-  }, { passive: true });
-
-  document.addEventListener('touchmove', e => {
-    if (e.touches.length > 1) isMultiTouch = true;
-  }, { passive: true });
-
-  document.addEventListener('touchend', e => {
-    if (startedOnExcluded || isMultiTouch) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    const dy = e.changedTouches[0].clientY - startY;
-    if (Math.abs(dx) < THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
-
-    let nextIdx;
-    if (dx < 0) {
-      nextIdx = Math.min(PAGE_INDEX + 1, PAGE_ORDER.length - 1);
-    } else {
-      nextIdx = Math.max(PAGE_INDEX - 1, 0);
-    }
-    if (nextIdx !== PAGE_INDEX) location.href = PAGE_ORDER[nextIdx];
-  }, { passive: true });
-})();
-
-
 
 
 /* 分割ページモード: spots.html 到達時に ?spot= / ?city= を反映 */

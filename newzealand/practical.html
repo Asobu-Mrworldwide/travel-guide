@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ニュージーランドの旅の準備｜ニュージーランド旅行ガイド">
 <meta name="twitter:description" content="手つかずの大自然と、映画『ロード・オブ・ザ・リング』のロケ地として知られる雄大な風景が広がる南半球の島国。北島では地熱地帯とマオリ文化を、南島ではフィヨルドと雪山、アドベンチャースポーツを楽しめる。人口より羊が多いと言われるほど自然豊かな…">
 <meta name="twitter:image" content="https://worldmappy.com/newzealand/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1789319307">
+<link rel="stylesheet" href="../assets/style.css?v=1789397051">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1789319307" defer></script>
-<script src="../assets/affiliates.js?v=1789319307" defer></script>
+<script src="../assets/affiliates-data.js?v=1789397051" defer></script>
+<script src="../assets/affiliates.js?v=1789397051" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -188,7 +188,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <a href="phrases.html" class="">フレーズ</a>
   <button onclick="location.href='../common/checklist.html?from=newzealand&amp;page=practical'">持ち物リスト</button>
   <div class="nav-fade nav-fade-left" aria-hidden="true"></div>
-  <div class="nav-fade nav-fade-right" aria-hidden="true"><span class="nav-fade-arrow">›</span></div>
+  <div class="nav-fade nav-fade-right" aria-hidden="true"></div>
 </nav>
 <script>
   (function() {
@@ -953,42 +953,6 @@ function resetFoodFilters() {
 function showFilteredSpots(city) {
   location.href = 'spots.html?city=' + encodeURIComponent(city);
 }
-
-/* 分割ページモード: 横スワイプで前後のページへ遷移 */
-var PAGE_ORDER = ["index.html", "spots.html", "food.html", "course.html", "budget.html", "practical.html", "phrases.html"];
-var PAGE_INDEX = 5;
-(function() {
-  let startX = 0, startY = 0, startedOnExcluded = false, isMultiTouch = false;
-  const THRESHOLD = 90;
-
-  document.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isMultiTouch = e.touches.length > 1;
-    startedOnExcluded = !!(e.target.closest('nav') || e.target.closest('#newzealand-map') || e.target.closest('#hotel-map'));
-  }, { passive: true });
-
-  document.addEventListener('touchmove', e => {
-    if (e.touches.length > 1) isMultiTouch = true;
-  }, { passive: true });
-
-  document.addEventListener('touchend', e => {
-    if (startedOnExcluded || isMultiTouch) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    const dy = e.changedTouches[0].clientY - startY;
-    if (Math.abs(dx) < THRESHOLD || Math.abs(dx) < Math.abs(dy)) return;
-
-    let nextIdx;
-    if (dx < 0) {
-      nextIdx = Math.min(PAGE_INDEX + 1, PAGE_ORDER.length - 1);
-    } else {
-      nextIdx = Math.max(PAGE_INDEX - 1, 0);
-    }
-    if (nextIdx !== PAGE_INDEX) location.href = PAGE_ORDER[nextIdx];
-  }, { passive: true });
-})();
-
-
 
 
 /* 分割ページモード: spots.html 到達時に ?spot= / ?city= を反映 */
