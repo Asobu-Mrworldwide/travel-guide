@@ -681,7 +681,7 @@ section.active{display:block}
 .td-sub{font-size:0.84em;color:var(--sub);line-height:1.6;display:block}
 
 /* ---- 旅行費用タブカード (budget tabs) ---- */
-.bt-wrap{display:grid;gap:14px;justify-items:center}
+.bt-wrap{display:grid;gap:14px;justify-items:center;margin-top:32px}
 .bt-tabs{display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:#F2F4F1;flex-wrap:wrap;justify-content:center}
 .bt-tab{display:flex;align-items:center;gap:9px;min-height:48px;padding:0 18px;border:0;border-radius:999px;background:#fff;box-shadow:0 1px 3px rgba(20,40,30,.10);font-family:inherit;text-align:left;cursor:pointer}
 .bt-tab[aria-pressed="true"]{background:var(--green);box-shadow:0 4px 12px rgba(20,60,40,.22)}
@@ -693,7 +693,7 @@ section.active{display:block}
 .bt-tab[aria-pressed="true"] .bt-tab-nt{color:rgba(255,255,255,.86)}
 
 .bt-plan{width:100%}
-.bt-plan-head{display:flex;align-items:center;gap:14px;padding:20px 22px 18px}
+.bt-plan-head{display:flex;align-items:center;gap:14px;padding:22px 22px 22px}
 .bt-plan-ic{flex:none;width:44px;height:44px;background-size:contain;background-repeat:no-repeat;background-position:center}
 .bt-plan-tx{display:grid;gap:5px;min-width:0}
 .bt-plan-ttl{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
@@ -725,7 +725,7 @@ section.active{display:block}
 /* ---- 現地現金の目安（シミュレーター） ---- */
 .cash-card{--cash-green-900:#14503C;--cash-green-700:#15603F;--cash-green-600:#2E6B4F;--cash-green-500:#2E7A5E;
   --cash-tint:#E8F0E6;--cash-tint-2:#E7F1E6;--cash-tint-3:#E4F1E7;--cash-ink:#2B3A32;--cash-ink-body:#3A4A40;--cash-line:#E6EAE4;
-  position:relative;padding:0;display:grid;gap:18px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;color:var(--cash-ink)}
+  position:relative;padding:0;margin:40px 0;display:grid;gap:18px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;color:var(--cash-ink)}
 
 .cash-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .cash-head .wallet{flex:none;width:58px;height:55px;object-fit:contain;margin-top:-6px}
