@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
 
 <meta charset="UTF-8">
 <!-- Google AdSense -->
@@ -28,20 +28,18 @@
 <meta name="twitter:title" content="ラオス人民民主共和国の観光スポット｜ラオス旅行ガイド">
 <meta name="twitter:description" content="東南アジアで唯一の内陸国。ゆったりと流れるメコン川・托鉢僧の列・金色の仏塔が今も日常に溶け込む「微笑みの国」です。フランス統治時代の面影が残るルアンパバーンの旧市街は街ごと世界遺産、山岳地帯にはカルスト地形の絶景も広がります。バンコクやハ…">
 <meta name="twitter:image" content="https://worldmappy.com/laos/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1789397051">
+<link rel="stylesheet" href="../assets/style.css?v=1789485748">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1789397051" defer></script>
-<script src="../assets/affiliates.js?v=1789397051" defer></script>
+<script src="../assets/affiliates-data.js?v=1789485748" defer></script>
+<script src="../assets/affiliates.js?v=1789485748" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
 a.keyword-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:700}
 a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
-blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
-blockquote.special-note::before{display:inline-block;position:absolute;top:-14px;left:9px;width:36px;height:36px;content:"";background:url(../assets/tips-icons/passport-ticket.png) center/contain no-repeat}
-blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
-blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
+blockquote.special-note{position:relative;padding:12px 16px;box-sizing:border-box;background:#FAF7F2;border:1px solid #CFE0D7;border-radius:8px;box-shadow:0 2px 0 rgba(20,40,30,0.07),0 6px 14px rgba(20,40,30,0.08);font-style:normal;margin:14px 0 0}
+blockquote.special-note p{position:relative;padding:0;margin:0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
 blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal;word-break:break-all}
 
 /* イラスト下の説明文 */
@@ -906,9 +904,8 @@ if (typeof BUDGET_TABS !== 'undefined' && document.getElementById('budget-tabs')
   BUDGET_TABS.styles.forEach((s, i) => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'bt-tab';
-    b.innerHTML = '<span class="bt-tab-ic"></span><span class="bt-tab-tx"><span class="bt-tab-nm"></span><span class="bt-tab-nt"></span></span>';
+    b.innerHTML = '<span class="bt-tab-ic"></span><span class="bt-tab-tx"><span class="bt-tab-nm"></span></span>';
     b.querySelector('.bt-tab-nm').textContent = s.name;
-    b.querySelector('.bt-tab-nt').textContent = s.note;
     b.addEventListener('click', () => { btStyle = i; renderBudgetTabs(); });
     btTabsEl.appendChild(b);
   });

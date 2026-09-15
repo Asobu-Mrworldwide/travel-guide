@@ -61,19 +61,15 @@ const AFFILIATES_CSS = `
 
 /* ── 予約ボタンボックス ── */
 .booking-box{
-  margin:20px 0;
-  padding:16px;
-  background-color:#f8f9fa;
-  border-radius:8px;
-  border:1px solid #e9ecef;
+  margin:0;
+  padding:0;
 }
 .booking-title{
-  margin-top:0;
-  margin-bottom:12px;
-  font-size:14px;
-  font-weight:bold;
-  color:#495057;
-  text-align:center;
+  margin:0 0 12px;
+  font-size:0.93em;
+  font-weight:700;
+  color:#333;
+  text-align:left;
 }
 .booking-buttons{
   display:flex;
@@ -273,6 +269,7 @@ function initAffiliates() {
 
     const card = document.createElement('div');
     card.className = 'aff-card';
+    if (el.getAttribute('style')) card.setAttribute('style', card.getAttribute('style') ? card.getAttribute('style') + ';' + el.getAttribute('style') : el.getAttribute('style'));
     card.innerHTML = `
       <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
         ${c.logo ? `
@@ -361,7 +358,7 @@ function initAffiliates() {
     if (key === 'flights' && dest) {
       const skyscannerBtn = box.buttons.find(b => b.className === 'btn-skyscanner');
       wrap.innerHTML = `
-        <p class="booking-title">${box.title}</p>
+        <h3 class="booking-title">${box.title}</h3>
         <div class="booking-buttons">
           <div class="booking-btn-group">
             <a href="${skyscannerBtn.url}" target="_blank" rel="noopener" class="btn-booking btn-skyscanner">Skyscannerで見る →</a>
@@ -379,7 +376,7 @@ function initAffiliates() {
     }
 
     wrap.innerHTML = `
-      <p class="booking-title">${box.title}</p>
+      <h3 class="booking-title">${box.title}</h3>
       <div class="booking-buttons">
         ${box.buttons.map(b => `
         <div class="booking-btn-group">

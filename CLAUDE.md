@@ -4,6 +4,28 @@
 
 > **新規国の`courses`（モデルコース）・`phrases`の設計方針は`.claude/skills/new-country-page/SKILL.md`に移動済み。** 新しい国のページを書き起こすときはそのスキルを参照する。既存ページのcourses/phrasesを軽微に直すだけなら以下の常時ルール（廃止済みフィールド・transitアイコン重複箇所）だけ押さえておけばよい。
 
+## `country_template.html`の余白（margin/padding）ルール
+
+2026-09制定。`style="margin:..."`のようなインラインスタイルがブロックごとに感覚値でバラバラに設定されており（例: `budget.intro`下12px、航空券説明文下16px、cash-card上下40px、節約ポイントbox上36px…）、見た目の詰まり・不揃いが繰り返し見つかった。以後、コンテンツブロック間の余白は**8の倍数の5段階スケール**に統一する。
+
+| 用途 | 値 | 例 |
+|---|---|---|
+| 密接な要素間（見出し直下の一言、ラベルと値など） | `8px` | — |
+| 通常のブロック間（デフォルト） | `16px` | — |
+| 小見出し・説明文とその下のコンポーネントの区切り | `24px` | `.bt-plan-head`の下余白、`h3`の上余白 |
+| タブ切替・カードヘッダーなど「サブブロック」の前後区切り | `32px` | `.bt-wrap`のタブ上余白 |
+| cash-cardのような独立した大きなブロックの前後 | `40px` | `.cash-card`の`margin` |
+
+**例外（変更しない）**: `h2~h2`のセクション間隔（[country_template.html:85](../../../../assets/country_template.html)、`margin-top:36px`）と`.season-tip-box`の上余白（`margin-top:36px`、複数箇所）は、上記スケール制定以前から全ページ共通で定着している「見出しレベルの固定値」であり、8の倍数スケールとは別枠の慣習として維持する。新しい`season-tip-box`を追加する際もこれに倣い`36px`のままでよい。
+
+新しい余白を追加・調整する際は、まず上表のどの用途に当たるかを判断してから値を決めること（感覚で12pxや18pxのような半端な値を新設しない）。
+
+### 共通ファイル編集後は必ず`generate.py`で全国再生成する
+
+2026-09制定。`country_template.html`・`style.css`・`affiliates.js`・`affiliates-data.js`のような全国共通ファイルは、編集しただけでは各国の`index.html`/`spots.html`/`budget.html`等の実ファイルに反映されない（`generate.py`が`country_template.html`を元に静的HTMLへ書き出す仕組みのため）。加えて`affiliates.js`等のキャッシュバスター用クエリ（`<script src="...affiliates.js?v=...">`）は`generate.py`実行時点のファイル更新時刻で決まるため、**JS/CSSを編集した後に再生成しないと、ブラウザが古いキャッシュ済みファイルを読み込み続けて変更が反映されない**（2026-09にaffiliates.jsの`<p class="booking-title">`→`<h3>`変更が反映されず発覚）。
+
+**How to apply**: 上記いずれかの共通ファイルを編集したら、確認や次の作業に進む前に必ず対象国（複数国に影響する変更なら全国）で`generate.py`を実行し、生成結果（`NGなし`等）を確認してから完了とする。編集→再生成→確認、を1セットの作業として扱うこと。
+
 ### `days[].badge_class`（Dayバッジの色）は廃止済み
 
 2026-09削除。`days[].badge_class`（`""`/`"green"`/`"red"`/`"gray"`）でDay番号バッジを緑・赤に塗り分けていたが、**赤の付け方が国ごとにバラバラ**（スペイン=緑赤交互で見た目のリズム、韓国=帰国日だけ赤、イタリア=丸一日観光の日を赤…）で、凡例もなく初見で意味不明だったため、`country_template.html`から`{{day.badge_class}}`を削除し**全バッジを緑に統一**した（`.tl-badge.red`のCSSも削除、全22 course.htmlから`tl-badge red/green/gray`を除去済み）。新しい国のJSONで`badge_class`を書いても無視される（書かなくてよい）。

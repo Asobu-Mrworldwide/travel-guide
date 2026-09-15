@@ -120,6 +120,7 @@ a:hover{color:var(--green)}
 #slides-wrap>section:has(.tab-body){display:contents}
 .s-body>.s-card>h2:first-child,.tab-body>h2:first-child{margin-top:0 !important;padding-top:0;border-top:none}
 .tab-body>.s-card,.tab-body .spot-section-card{background:none !important;border:none !important;box-shadow:none !important;padding:0 !important;margin:0 !important}
+.tab-body .spot-section-card~.spot-section-card{margin-top:32px !important}
 .s-body>.season-tip-box,.s-body>.infeed-ad,
 #slides-wrap>section:has(.tab-body)>.infeed-ad{margin:18px 0 0 !important}
 .s-body>.tab-cta,
@@ -683,17 +684,21 @@ section.active{display:block}
 /* ---- 旅行費用タブカード (budget tabs) ---- */
 .bt-wrap{display:grid;gap:14px;justify-items:center;margin-top:32px}
 .bt-tabs{display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:#F2F4F1;flex-wrap:wrap;justify-content:center}
-.bt-tab{display:flex;align-items:center;gap:9px;min-height:48px;padding:0 18px;border:0;border-radius:999px;background:#fff;box-shadow:0 1px 3px rgba(20,40,30,.10);font-family:inherit;text-align:left;cursor:pointer}
+.bt-tab{display:flex;align-items:center;gap:9px;min-height:44px;padding:0 18px;border:0;border-radius:999px;background:#fff;box-shadow:0 1px 3px rgba(20,40,30,.10);font-family:inherit;text-align:left;cursor:pointer}
 .bt-tab[aria-pressed="true"]{background:var(--green);box-shadow:0 4px 12px rgba(20,60,40,.22)}
-.bt-tab .bt-tab-ic{flex:none;width:32px;height:32px;background-size:contain;background-repeat:no-repeat;background-position:center}
-.bt-tab .bt-tab-tx{display:grid;gap:1px}
+.bt-tab .bt-tab-ic{flex:none;width:28px;height:28px;background-size:contain;background-repeat:no-repeat;background-position:center}
 .bt-tab .bt-tab-nm{font-size:0.88em;font-weight:700;white-space:nowrap;color:var(--text)}
-.bt-tab .bt-tab-nt{font-size:0.68em;white-space:nowrap;color:var(--sub)}
 .bt-tab[aria-pressed="true"] .bt-tab-nm{color:#fff}
-.bt-tab[aria-pressed="true"] .bt-tab-nt{color:rgba(255,255,255,.86)}
+
+@media(max-width:560px){
+  .bt-wrap{max-width:100%}
+  .bt-tabs{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:100%}
+  .bt-tabs::-webkit-scrollbar{display:none}
+  .bt-tab{flex:none}
+}
 
 .bt-plan{width:100%}
-.bt-plan-head{display:flex;align-items:center;gap:14px;padding:22px 22px 22px}
+.bt-plan-head{display:flex;align-items:center;gap:14px;padding:8px 22px 22px}
 .bt-plan-ic{flex:none;width:44px;height:44px;background-size:contain;background-repeat:no-repeat;background-position:center}
 .bt-plan-tx{display:grid;gap:5px;min-width:0}
 .bt-plan-ttl{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
@@ -725,7 +730,7 @@ section.active{display:block}
 /* ---- 現地現金の目安（シミュレーター） ---- */
 .cash-card{--cash-green-900:#14503C;--cash-green-700:#15603F;--cash-green-600:#2E6B4F;--cash-green-500:#2E7A5E;
   --cash-tint:#E8F0E6;--cash-tint-2:#E7F1E6;--cash-tint-3:#E4F1E7;--cash-ink:#2B3A32;--cash-ink-body:#3A4A40;--cash-line:#E6EAE4;
-  position:relative;padding:0;margin:40px 0;display:grid;gap:18px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;color:var(--cash-ink)}
+  position:relative;padding:0;margin:40px 0 24px;display:grid;gap:18px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;color:var(--cash-ink)}
 
 .cash-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .cash-head .wallet{flex:none;width:58px;height:55px;object-fit:contain;margin-top:-6px}
@@ -977,10 +982,10 @@ section.active{display:block}
 .rmr-title{font-size:0.85em;font-weight:700;margin-bottom:3px}
 .rmr-desc{font-size:0.73em;color:var(--sub);line-height:1.6}
 
-.flight-cards{display:flex;flex-direction:column;margin-bottom:14px}
+.flight-cards{display:flex;flex-direction:column;margin-bottom:24px}
 .flight-card{padding:14px 0;border-bottom:1px solid #E8E2D8;display:flex;flex-direction:row;align-items:center;gap:16px}
 .flight-card:first-child{padding-top:0}
-.flight-card-logo{flex:0 0 110px;display:flex;align-items:center;justify-content:center;gap:8px}
+.flight-card-logo{flex:0 0 110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
 .flight-card-body{flex:1;min-width:0}
 .flight-card-name{font-weight:700;font-size:0.9em;color:var(--text);margin-bottom:4px}
 .flight-card-desc{font-size:0.75em;color:var(--sub);line-height:1.5;margin-bottom:4px}

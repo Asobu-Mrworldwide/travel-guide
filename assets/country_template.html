@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
 
 <meta charset="UTF-8">
 <!-- Google AdSense -->
@@ -38,10 +38,8 @@ a.spot-link:hover{opacity:0.75}
 a.keyword-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:700}
 a.keyword-link:hover{opacity:0.75}
 /* special noteブロック */
-blockquote.special-note{position:relative;padding:15px 10px 5px;box-sizing:border-box;background:#f3f3f3;font-style:normal;margin:14px 0 0}
-blockquote.special-note::before{display:inline-block;position:absolute;top:-14px;left:9px;width:36px;height:36px;content:"";background:url(../assets/tips-icons/passport-ticket.png) center/contain no-repeat}
-blockquote.special-note::after{position:absolute;content:'';top:-8px;left:49px;border:none;border-bottom:solid 8px #6cacb5;border-right:solid 9px transparent}
-blockquote.special-note p{position:relative;padding:0;margin:10px 0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
+blockquote.special-note{position:relative;padding:12px 16px;box-sizing:border-box;background:#FAF7F2;border:1px solid #CFE0D7;border-radius:8px;box-shadow:0 2px 0 rgba(20,40,30,0.07),0 6px 14px rgba(20,40,30,0.08);font-style:normal;margin:14px 0 0}
+blockquote.special-note p{position:relative;padding:0;margin:0;z-index:3;line-height:1.7;font-size:0.82em;color:#333}
 blockquote.special-note cite{display:block;text-align:right;color:#888;font-size:0.85em;font-style:normal;word-break:break-all}
 
 /* イラスト下の説明文 */
@@ -345,7 +343,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="qs-card"><div class="qs-ico" style="color:#1a3a5c"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" /><g fill="currentColor"><path d="M12 3a10 10 0 0 0-7.071 17.071l.707.707l2.421-2.421l-1.414-1.414l-.963.962A8 8 0 0 1 4.063 14H6v-2H4.063A8 8 0 0 1 5.68 8.095l.613.612l.5.5l1.414-1.414L7.095 6.68A8 8 0 0 1 11 5.063V6.5h2V5.063a8 8 0 0 1 3.905 1.617l-1.112 1.113l1.414 1.414l1.113-1.112A8 8 0 0 1 19.937 12H18v2h1.937a8 8 0 0 1-1.618 3.906l-.962-.963l-1.414 1.414l2.421 2.421l.707-.707A10.001 10.001 0 0 0 12 3" /><path d="M12.707 12.293a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.414-1.414z" /></g></svg></div><div style="flex:1"><div class="qs-lbl">旅行難易度</div><div style="display:flex;align-items:center;gap:8px;margin-top:4px"><div style="flex:1;background:#e8e8e8;border-radius:20px;height:10px;overflow:hidden"><div style="width:{{overview.difficulty_pct}}%;height:100%;background:{{overview.difficulty_bar}};border-radius:20px"></div></div><span style="background:{{overview.difficulty_label_bg}};color:{{overview.difficulty_label_color}};font-size:0.75em;font-weight:700;padding:2px 10px;border-radius:20px;white-space:nowrap">{{overview.difficulty_label}}</span></div><div style="display:flex;justify-content:space-between;font-size:0.68em;color:#bbb;margin-top:2px"><span>← やさしい</span><span>むずかしい →</span></div></div></div>
     </div>
 
-  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><span style="display:inline-flex;align-items:center;gap:5px;vertical-align:middle"><span style="display:inline-block;line-height:0;border-radius:2px;overflow:hidden;flex-shrink:0"><svg width="15" height="10" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff" height="600" width="900"/><circle fill="#bc002d" cx="450" cy="300" r="180"/></svg></span>日本人に人気？</span></span><p style="font-size:0.82em;line-height:1.55;color:#444">{{overview.japan_popularity_html}}</p></div>
+  <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><span style="display:inline-flex;align-items:center;gap:5px;vertical-align:middle"><span style="display:inline-block;line-height:0;border-radius:2px;overflow:hidden;flex-shrink:0"><svg width="27" height="18" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg"><rect fill="#fff" height="600" width="900"/><circle fill="#bc002d" cx="450" cy="300" r="180"/></svg></span>日本人に人気？</span></span><p style="font-size:0.82em;line-height:1.55;color:#444">{{overview.japan_popularity_html}}</p></div>
 
   </div><!-- end s-card どんなところ？上 -->
 
@@ -587,7 +585,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <h3 style="margin:40px 0 8px">海外でのカード利用リスクに備える</h3>
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 0">海外でクレジットカードを使うたびに不正利用のリスクは高まります。筆者自身も海外渡航後に2回不正利用を経験したことをきっかけに、現在は海外ではWiseカードをメインに使うようにしています。チャージした分しか使えないため万が一の際も被害が限定的で、<strong>旅好きの友人たちの間でも最近かなり普及してきています</strong>。</p>
-  <div class="s-card" data-affiliate-card="wise"></div>
+  <div class="s-card" data-affiliate-card="wise" style="margin-top:32px"></div>
   </div><!-- /tb-card -->
   </div><!-- /tb-sec -->
 
@@ -596,11 +594,11 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <h2 data-label="FLIGHT BOOKING" id="flights">航空券の予約</h2>
   {% if practical.flight_lead %}<p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:8px 0 24px">{{practical.flight_lead}}</p>{% endif %}
   <div class="s-card">
-    <div style="background:#fff;padding:20px 24px">
+    <div style="background:#fff;padding:0">
     <div class="flight-cards">
       {% for airline in practical.airlines %}
       <div class="flight-card">
-        {% if airline.logo %}<div class="flight-card-logo"><img src="{{airline.logo}}" alt="{{airline.name}}" style="height:{% if airline.logo2 %}40px{% else %}32px{% endif %};width:auto;max-width:{% if airline.logo2 %}45%{% else %}90%{% endif %};object-fit:contain">{% if airline.logo2 %}<img src="{{airline.logo2}}" alt="" style="height:40px;width:auto;max-width:45%;object-fit:contain">{% endif %}</div>{% endif %}
+        {% if airline.logo %}<div class="flight-card-logo"><img src="{{airline.logo}}" alt="{{airline.name}}" style="height:{% if airline.logo2 %}28px{% else %}32px{% endif %};width:auto;max-width:90%;object-fit:contain">{% if airline.logo2 %}<img src="{{airline.logo2}}" alt="" style="height:28px;width:auto;max-width:90%;object-fit:contain">{% endif %}</div>{% endif %}
         <div class="flight-card-body">
           <div class="flight-card-name">{{airline.name}}</div>
           <div class="flight-card-desc">{{airline.desc}}</div>
@@ -684,7 +682,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       })();
     </script>
     {% endif %}
-    <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px">
+    <div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e0e0e0;margin-top:12px;margin-bottom:24px">
       {% for area in practical.hotel_areas %}
       <div style="padding:14px 16px;border-bottom:1px solid #e0e0e0;cursor:pointer" {% if area.lat %}onclick="zoomToHotelArea({{area.lat}},{{area.lng}},'{{area.maps_url}}')"{% endif %}>
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:6px">
@@ -754,7 +752,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
   </div>
 
-  <div class="aff-card" style="margin-top:16px">
+  <div style="margin-top:24px">
+    <h3 style="margin:0 0 8px">一度持ったら手放せないプライオリティパス</h3>
+    <p style="font-size:0.85em;color:#555;line-height:1.7;margin:0">世界1,400ヶ所以上の空港ラウンジが使える会員制サービス。単体で申し込むと年会費が数万円かかるが、対応するクレジットカードを持っていれば無料〜割引価格で付帯することが多く、上位ランクのカードを持つきっかけの一つになっている。</p>
+  </div>
+
+  <div class="aff-card" style="margin-top:24px">
     <div class="aff-card-header" style="position:relative">
       <span style="position:absolute;top:8px;right:12px;font-size:0.58em;color:#999;border:1px solid #cbcbcb;border-radius:3px;padding:1px 6px;font-weight:700;letter-spacing:0.08em">広告</span>
       <div>
@@ -766,9 +769,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <ul class="aff-card-points">
         <li>年会費が永年無料で維持コストゼロ</li>
         <li>旅行費用の支払いで海外旅行保険が付帯（利用付帯）</li>
-        <li>保険目的のサブカードとして持つ人が多い</li>
+        <li>ゴールド・プラチナに育てるとプライオリティ・パスが付帯</li>
       </ul>
-      <div style="background:#fbf3e6;border:1px solid #f0dcae;border-radius:6px;padding:10px 12px;font-size:0.76em;color:#7a5a1e;line-height:1.7;margin-bottom:12px">さらに使い込んで<strong style="color:#b8860b">ゴールドカード</strong>になると国内主要空港のラウンジが無料に、<strong style="color:#b8860b">プラチナカード</strong>になると<strong style="color:#b8860b">プライオリティ・パス</strong>が付帯して世界中の空港ラウンジが使えるように。まずは年会費無料の一般カードから始めるのが定番です。</div>
       <div class="aff-card-note">※ 補償内容・付帯条件は公式サイトでご確認ください</div>
       <div style="display:flex;justify-content:center;margin-top:auto">
         <script type="text/javascript" async src="https://ad-verification.a8.net/ad/js/brandsafe.js"></script>
@@ -784,7 +786,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
   </div>
 
-  {% if practical.special_note_title %}<blockquote class="special-note" style="margin-top:16px"><p><strong>{{practical.special_note_title}}</strong><br>{{practical.special_note_html}}</p><cite>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#6cacb5;font-weight:700">{{practical.special_note_url_label}}</a>　（2026年5月時点）</cite></blockquote>{% endif %}
+  {% if practical.special_note_title %}<blockquote class="special-note" style="margin-top:16px"><p><span style="display:inline-flex;align-items:center;gap:6px"><img src="../assets/tips-icons/passport-ticket.png" alt="" style="width:20px;height:20px;flex-shrink:0;vertical-align:middle"><strong>{{practical.special_note_title}}</strong></span><br>{{practical.special_note_html}}</p><cite>URL: <a href="{{practical.special_note_url}}" target="_blank" style="color:#6cacb5;font-weight:700">{{practical.special_note_url_label}}</a>　（2026年5月時点）</cite></blockquote>{% endif %}
   </div><!-- /tb-card -->
   </div><!-- /tb-sec -->
 
@@ -799,7 +801,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="lbl" style="margin-bottom:10px">{{practical.country_items_label}}</div>
       <ul class="check-list">
         {% for item in practical.country_items %}
-        <li>{{item}}</li>
+        <li><strong>{{item.icon}} {{item.name}}</strong><br><span style="font-size:0.92em;color:var(--sub)">{{item.desc}}</span></li>
         {% endfor %}
       </ul>
     </div>
@@ -1245,9 +1247,8 @@ if (typeof BUDGET_TABS !== 'undefined' && document.getElementById('budget-tabs')
   BUDGET_TABS.styles.forEach((s, i) => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'bt-tab';
-    b.innerHTML = '<span class="bt-tab-ic"></span><span class="bt-tab-tx"><span class="bt-tab-nm"></span><span class="bt-tab-nt"></span></span>';
+    b.innerHTML = '<span class="bt-tab-ic"></span><span class="bt-tab-tx"><span class="bt-tab-nm"></span></span>';
     b.querySelector('.bt-tab-nm').textContent = s.name;
-    b.querySelector('.bt-tab-nt').textContent = s.note;
     b.addEventListener('click', () => { btStyle = i; renderBudgetTabs(); });
     btTabsEl.appendChild(b);
   });

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="google-site-verification" content="cswgJ8fPsFfHMtJB4HYCRX4ZBEXtLzndpL14GKMPXs4" />
 <!-- Google AdSense -->
@@ -191,7 +191,7 @@
   .wm-index-controls { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
   .wm-ctrl { display: flex; align-items: center; gap: 10px; }
   .wm-ctrl .lbl { flex: none; font-size: 12.5px; letter-spacing: 0.06em; color: #6B776F; }
-  .wm-pill { height: 34px; padding: 0 18px; border: 1px solid #DDE4D9; border-radius: 999px; background: #fff; font-family: inherit; font-size: 12.5px; font-weight: 700; color: #45514A; cursor: pointer; transition: all .2s ease; white-space: nowrap; }
+  .wm-pill { height: 34px; padding: 0 18px; border: 1px solid #C4C9C2; border-radius: 999px; background: #fff; font-family: inherit; font-size: 12.5px; font-weight: 700; color: #45514A; cursor: pointer; transition: all .2s ease; white-space: nowrap; }
   .wm-pill.on { border-color: #14503C; background: #E4EFE4; color: #14503C; }
   .wm-view { display: inline-flex; align-items: center; gap: 5px; min-height: 34px; padding: 0 2px 4px; border: none; background: none; font-family: inherit; font-size: 12.5px; color: #6B776F; border-bottom: 1.5px solid transparent; cursor: pointer; transition: all .2s ease; white-space: nowrap; }
   .wm-view svg { width: 15px; height: 15px; }
@@ -312,7 +312,7 @@
     .wm-stat .ic img { width: 34px; height: 34px; }
     .wm-stat .num { font-size: 20px; }
     .wm-stat .lbl { font-size: 10px; white-space: nowrap; }
-    .wm-searchband { position: sticky; top: 52px; z-index: 30; max-width: none; margin: 0; padding: 11px 18px 12px; background: #fff; border-bottom: 1px solid #eee; transition: top .28s ease; }
+    .wm-searchband { position: sticky; top: 52px; z-index: 30; max-width: none; margin: 0; padding: 11px 18px 12px; background: #fff; transition: top .28s ease; }
     .wm-search-frame { height: 48px; padding: 0 6px 0 6px; border: 2px solid #DCE3D7; box-shadow: none; }
     .wm-search-frame.focus { border-color: #14503C; }
     .wm-search-frame svg.mag { margin-left: 10px; }
@@ -341,14 +341,19 @@
     .wm-detail-foot .hint { display: none; }
     .wm-detail-foot button { flex: 1; height: 42px; }
 
-    .wm-index { padding: 20px 18px 34px; }
+    .wm-index { padding: 0 18px 34px; }
     .wm-index-head { margin-bottom: 16px; }
     .wm-index-head .ttl span.emo { display: none; }
-    .wm-index-head h2 { font-size: 20px; }
-    .wm-index-count { display: block; margin-left: auto; }
-    .wm-index-controls { flex-direction: column; align-items: stretch; gap: 14px; width: 100%; order: 3; }
+    .wm-index-head h2 { display: none; }
+    .wm-index-count { display: block; order: 2; margin-left: auto; }
+    .wm-index-controls { display: contents; }
+    .wm-index-controls .wm-ctrl:has(#viewBtns) { order: 1; }
+    .wm-index-controls .wm-ctrl:has(#sortBtns) { order: 2; width: 100%; }
     .wm-ctrl { flex-wrap: wrap; row-gap: 8px; align-items: flex-start; }
+    .wm-ctrl:has(#viewBtns) { width: 100%; }
     .wm-ctrl .lbl { width: 100%; margin-bottom: 2px; }
+    .wm-ctrl:has(#viewBtns) .lbl { width: 100%; margin-bottom: 8px; }
+    .wm-ctrl:has(#viewBtns) #viewBtns { order: 1; width: auto; }
     #sortBtns, #viewBtns { flex-wrap: wrap; row-gap: 8px; }
     .wm-map-toggle { display: inline-flex; }
     .wm-hero-inner { transition: opacity .35s ease; }
@@ -406,6 +411,9 @@
     border:none;border-radius:999px;background:#fff;font-family:inherit;font-size:12.5px;font-weight:700;
     white-space:nowrap;color:var(--footer-green);cursor:pointer}
   .wm-pills{display:flex;flex-wrap:wrap;gap:9px}
+  #sortBtns .wm-pill, #viewBtns .wm-pill { border: 1px solid #C4C9C2; background: #fff; color: #45514A; }
+  #sortBtns .wm-pill.on, #viewBtns .wm-pill.on { border-color: #14503C; background: #E4EFE4; color: #14503C; }
+  #sortBtns .wm-pill.fav.on, #viewBtns .wm-pill.fav.on { border-color: #F5B921; background: #FCEFC0; color: #14503C; }
   #cl-share-btn{display:none}
   .wm-share-col{display:grid;gap:14px;align-content:start}
   .wm-share-col p{margin:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,.82)}
@@ -570,10 +578,9 @@
   <section id="wm-index" class="wm-index">
     <div class="wm-index-head">
       <div class="ttl"><span class="emo">🚩</span><h2>旅先の索引</h2></div>
-      <span class="wm-index-count" id="indexCount"></span>
       <div class="wm-index-controls">
         <div class="wm-ctrl"><span class="lbl">並び順</span><div style="display:flex;gap:8px;" id="sortBtns"></div></div>
-        <div class="wm-ctrl"><span class="lbl">表示</span><div style="display:flex;gap:15px;" id="viewBtns"></div></div>
+        <div class="wm-ctrl"><span class="lbl">表示</span><span class="wm-index-count" id="indexCount"></span><div style="display:flex;gap:15px;" id="viewBtns"></div></div>
       </div>
     </div>
 
@@ -614,6 +621,8 @@
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   const all = window.WM_DESTINATIONS || [];
+  // 「おすすめ」同順位内の並びをページ読み込みごとにランダム化するためのシード
+  const randomOrder = new Map(all.map((d) => [d.id, Math.random()]));
   const AREAS = Array.from(new Set(all.map((d) => d.area)));
   const TAGS = Array.from(new Set(all.reduce((a, d) => a.concat(d.tags), [])));
   // コアタグ（固定8種）は常時表示、それ以外の個性タグはプルダウンで開閉する
@@ -621,7 +630,7 @@
   const CORE_TAGS_PRESENT = CORE_TAGS.filter((t) => TAGS.indexOf(t) >= 0);
   const EXTRA_TAGS = TAGS.filter((t) => CORE_TAGS.indexOf(t) < 0);
 
-  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 760px)').matches) ? 'compact' : 'card', sort: 'おすすめ', favs: [], limit: 15, tagExpand: false };
+  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 760px)').matches) ? 'compact' : 'card', sort: 'ランダム', favs: [], limit: 15, tagExpand: false };
 
   function loadFavs() { try { return JSON.parse(localStorage.getItem('wm-favs') || '[]'); } catch (e) { return []; } }
   function saveFavs(list) { try { localStorage.setItem('wm-favs', JSON.stringify(list)); } catch (e) {} }
@@ -629,7 +638,7 @@
     const i = state.favs.indexOf(id);
     state.favs = i >= 0 ? state.favs.filter((x) => x !== id) : state.favs.concat([id]);
     saveFavs(state.favs);
-    if (!state.favs.length && state.sort === 'お気に入り') state.sort = 'おすすめ';
+    if (!state.favs.length && state.sort === 'お気に入り') state.sort = 'ランダム';
     render();
   }
 
@@ -710,15 +719,18 @@
     const recommendCmp = (a, b) => (inSeason(b, nowMonth) ? 1 : 0) - (inSeason(a, nowMonth) ? 1 : 0)
       || (b.rec ? 1 : 0) - (a.rec ? 1 : 0)
       || a.months.length - b.months.length
-      || all.indexOf(a) - all.indexOf(b);
+      || randomOrder.get(a.id) - randomOrder.get(b.id);
+    // 「ランダム」= 初期状態（並び順未選択）。季節等は考慮せずページ読み込みごとに完全ランダム。
+    const randomCmp = (a, b) => randomOrder.get(a.id) - randomOrder.get(b.id);
     const SORTS = {
+      'ランダム': randomCmp,
       'おすすめ': recommendCmp,
       '飛行時間が短い': (a, b) => a.hours - b.hours,
       '予算が安い': (a, b) => BUDGETS.indexOf(a.budget) - BUDGETS.indexOf(b.budget) || a.hours - b.hours,
       // お気に入り登録した国を先頭へ。グループ内は「おすすめ」順。
       'お気に入り': (a, b) => (state.favs.indexOf(b.id) >= 0 ? 1 : 0) - (state.favs.indexOf(a.id) >= 0 ? 1 : 0) || recommendCmp(a, b),
     };
-    rows = rows.slice().sort(SORTS[state.sort] || SORTS['おすすめ']);
+    rows = rows.slice().sort(SORTS[state.sort] || SORTS['ランダム']);
     // フリーワード検索中は、国名一致を説明文だけの一致より上に出す
     if (q) rows.sort((a, b) => relevance(b, q) - relevance(a, q));
     if (state.sel) {
@@ -875,7 +887,7 @@
     const sortDefs = [['おすすめ', 'おすすめ'], ['飛行時間が短い', '飛行時間が短い'], ['予算が安い', '予算が安い']];
     if (state.favs.length) sortDefs.push(['お気に入り', heartIc + 'お気に入り ' + state.favs.length]);
     sb.innerHTML = sortDefs.map(([v, label]) => '<button type="button" class="' + pillCls(state.sort === v) + (v === 'お気に入り' ? ' fav' : '') + '" data-sort="' + esc(v) + '">' + label + '</button>').join('');
-    sb.querySelectorAll('[data-sort]').forEach((el) => { el.onclick = () => { const v = el.getAttribute('data-sort'); state.sort = (v === state.sort && v !== 'おすすめ') ? 'おすすめ' : v; state.sel = null; state.limit = 15; render(); }; });
+    sb.querySelectorAll('[data-sort]').forEach((el) => { el.onclick = () => { const v = el.getAttribute('data-sort'); state.sort = (v === state.sort) ? 'ランダム' : v; state.sel = null; state.limit = 15; render(); }; });
     $('indexCount').textContent = rows.length + 'ヵ国';
     const VIEW_IC = {
       card: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"></rect><rect x="9" y="2" width="5" height="5" rx="1"></rect><rect x="2" y="9" width="5" height="5" rx="1"></rect><rect x="9" y="9" width="5" height="5" rx="1"></rect></svg>',
