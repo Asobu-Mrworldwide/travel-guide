@@ -172,6 +172,70 @@ def food_dir(country_id: str) -> Path:
 
 
 # ──────────────────────────────────────────────────────────
+# 広告管理タブ用のヘルパー
+# ──────────────────────────────────────────────────────────
+import affiliates_data_io as aff_io
+from audit_affiliates import compute_usage as aff_compute_usage, write_usage_report as aff_write_usage_report
+
+AFF_ATTR_BY_CONST = {
+    "AFFILIATES": ("data-affiliate", "affiliate"),
+    "AFFILIATE_CARDS": ("data-affiliate-card", "affiliate-card"),
+    "BOOKING_BOXES": ("data-affiliate-box", "affiliate-box"),
+}
+
+
+def aff_preview_html_for_key(const_name: str, key: str) -> str:
+    """assets/affiliates-data.js・affiliates.js の中身をそのまま埋め込み、
+    既に登録済みのキーを実際の描画コードでプレビューする"""
+    attr, _ = AFF_ATTR_BY_CONST[const_name]
+    js_data = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
+    js_render = (ASSETS_DIR / "affiliates.js").read_text(encoding="utf-8")
+    return f"""
+<div style="font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">
+  <div {attr}="{key}"></div>
+</div>
+<script>{js_data}</script>
+<script>{js_render}</script>
+"""
+
+
+def aff_preview_html_for_draft(const_name: str, value: dict) -> str:
+    """まだ保存していない入力中の内容を、一時キーとして描画コードに流し込みプレビューする"""
+    attr, _ = AFF_ATTR_BY_CONST[const_name]
+    js_data = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
+    js_render = (ASSETS_DIR / "affiliates.js").read_text(encoding="utf-8")
+    value_json = json.dumps(value, ensure_ascii=False)
+    return f"""
+<div style="font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">
+  <div {attr}="__draft__"></div>
+</div>
+<script>{js_data}</script>
+<script>{const_name}['__draft__'] = {value_json};</script>
+<script>{js_render}</script>
+"""
+
+
+def aff_inline_preview_page(height: int = 1800):
+    """assets/affiliates-preview.html をそのまま管理画面内に埋め込む（script src をインライン化）"""
+    import streamlit.components.v1 as _components
+    html = (ASSETS_DIR / "affiliates-preview.html").read_text(encoding="utf-8")
+    for fname in ("affiliates-data.js", "affiliates.js", "affiliate-usage-data.js"):
+        js_content = (ASSETS_DIR / fname).read_text(encoding="utf-8")
+        html = html.replace(f'<script src="{fname}"></script>', f"<script>{js_content}</script>")
+    _components.html(html, height=height, scrolling=True)
+
+
+def aff_validate_required(const_name: str, value: dict) -> bool:
+    if const_name == "AFFILIATES":
+        return all(value.get(f) for f in ("name", "label", "desc", "btn", "url"))
+    if const_name == "AFFILIATE_CARDS":
+        return all(value.get(f) for f in ("icon", "name", "tagline", "btn", "url", "color")) and bool(value.get("points"))
+    if const_name == "BOOKING_BOXES":
+        return bool(value.get("title")) and bool(value.get("buttons"))
+    return False
+
+
+# ──────────────────────────────────────────────────────────
 # ページ設定
 # ──────────────────────────────────────────────────────────
 st.set_page_config(page_title="Recraft 画像生成ツール", layout="wide")
@@ -320,7 +384,7 @@ components.html(f"""
 # ──────────────────────────────────────────────────────────
 # タブ
 # ──────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4 = st.tabs(["📋 一覧", "✨ 画像生成", "🖼️ 画像管理", "🌍 新規作成"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 一覧", "✨ 画像生成", "🖼️ 画像管理", "🌍 新規作成", "📢 広告管理"])
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1640,3 +1704,203 @@ with tab4:
             st.code(str(_jpath), language=None)
             st.info("F5 でドロップダウンに反映されます。グルメ・都市の追加はチャットでClaudeに依頼してください。")
             load_json.clear()
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# タブ5: 広告管理
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+with tab5:
+    _AFF_SECTIONS = ["📋 一覧・使用状況", "➕ 新規登録", "🗂️ ページ別使用状況"]
+    aff_section = st.radio("表示", _AFF_SECTIONS, horizontal=True, key="aff_section")
+
+    # ── a. 一覧・使用状況 ──
+    if aff_section == _AFF_SECTIONS[0]:
+        st.caption("assets/affiliates-data.js の内容と、各ページでの使用状況です（開くたびに最新集計）。")
+        _aff_result = aff_compute_usage()
+        aff_write_usage_report(_aff_result)
+        aff_inline_preview_page(height=1800)
+
+    # ── b. 新規登録 ──
+    elif aff_section == _AFF_SECTIONS[1]:
+        st.caption(
+            "新しい広告リンク・カードを affiliates-data.js に登録します。"
+            "実際にページへ表示する作業（国別データへの追記＋サイト再生成）は、これまで通り手動で行ってください。\n\n"
+            "※ ロゴ画像・生の広告タグ（rawAdWidget）など特殊な形のカードはこのフォームでは作れません。"
+            "既存の同種カード（skyscanner・epos）を参考に affiliates-data.js を直接編集してください。"
+        )
+
+        CATEGORY_MAP = {
+            "テキストリンク（シンプルなリンク）": "AFFILIATES",
+            "説明カード（詳しい説明つきのカード）": "AFFILIATE_CARDS",
+            "予約ボタンの並び": "BOOKING_BOXES",
+        }
+        category_label = st.radio("種類", list(CATEGORY_MAP.keys()), key="aff_new_category")
+        const_name = CATEGORY_MAP[category_label]
+
+        existing_keys = aff_io.list_all_keys()[const_name]
+
+        new_key = st.text_input(
+            "キー（半角小文字英数字とアンダースコアのみ。例: my_new_link）",
+            key="aff_new_key",
+        ).strip()
+
+        key_error = None
+        if new_key:
+            if not aff_io.is_valid_key(new_key):
+                key_error = "半角小文字英数字とアンダースコアのみ、先頭は英字にしてください"
+            elif new_key in existing_keys:
+                key_error = f"このキーはすでに「{category_label}」の中で使われています"
+            if key_error:
+                st.error(key_error)
+
+        st.markdown("##### 内容")
+        value = {}
+
+        if const_name == "AFFILIATES":
+            c1, c2 = st.columns(2)
+            with c1:
+                f_name = st.text_input("名前（内部管理用）", key="aff_new_name")
+                f_label = st.text_input("リンクの文言", placeholder="〇〇を見る →", key="aff_new_label")
+                f_btn = st.text_input("ボタンの文言", placeholder="見る →", key="aff_new_btn")
+            with c2:
+                f_url = st.text_input("リンク先URL", key="aff_new_url")
+                f_desc = st.text_area("説明文", key="aff_new_desc", height=80)
+            has_banner = st.checkbox("バナー画像も設定する", key="aff_new_has_banner")
+            value = {"name": f_name, "label": f_label, "desc": f_desc, "btn": f_btn, "url": f_url}
+            if has_banner:
+                b_img = st.text_input("バナー画像URL", key="aff_new_banner_img")
+                b_url = st.text_input("バナーのリンク先URL", key="aff_new_banner_url")
+                b_pixel = st.text_input("計測用ピクセルURL（なければ空欄）", key="aff_new_banner_pixel")
+                banner = {"img": b_img, "url": b_url}
+                if b_pixel:
+                    banner["pixel"] = b_pixel
+                value["banner"] = banner
+
+        elif const_name == "AFFILIATE_CARDS":
+            c1, c2 = st.columns(2)
+            with c1:
+                f_icon = st.text_input("アイコン（絵文字1文字、例: 🚗）", key="aff_new_icon")
+                f_name = st.text_input("名前", key="aff_new_name")
+                f_tagline = st.text_input("一言キャッチ", key="aff_new_tagline")
+                f_color = st.color_picker("テーマカラー", value="#006847", key="aff_new_color")
+            with c2:
+                f_btn = st.text_input("ボタンの文言", placeholder="見る →", key="aff_new_btn")
+                f_url = st.text_input("リンク先URL", key="aff_new_url")
+                f_note = st.text_input("補足（注釈。なければ空欄でOK）", key="aff_new_note")
+            f_points = st.text_area(
+                "特徴（1行に1つずつ）", key="aff_new_points", height=100,
+                placeholder="現地ATMで現地通貨をその場で引き出せる\nアプリで残高・履歴をリアルタイム管理",
+            )
+            points_list = [p.strip() for p in f_points.split("\n") if p.strip()]
+
+            f_desc = ""
+            has_banner = False
+            banner = None
+            banner_side = False
+            with st.expander("詳細設定（説明文・バナー画像。必要な場合だけ開く）"):
+                f_desc = st.text_area("詳しい説明文（任意）", key="aff_new_desc2", height=80)
+                has_banner = st.checkbox("バナー画像を追加する", key="aff_new_card_has_banner")
+                if has_banner:
+                    b_img = st.text_input("バナー画像URL", key="aff_new_card_banner_img")
+                    b_url = st.text_input("バナーのリンク先URL", key="aff_new_card_banner_url")
+                    b_pixel = st.text_input("計測用ピクセルURL（なければ空欄）", key="aff_new_card_banner_pixel")
+                    banner_side = st.checkbox(
+                        "バナーをカードの横に並べる（未チェックなら単独表示）", key="aff_new_card_banner_side",
+                    )
+                    banner = {"img": b_img, "url": b_url}
+                    if b_pixel:
+                        banner["pixel"] = b_pixel
+
+            value = {
+                "icon": f_icon, "name": f_name, "tagline": f_tagline,
+                "points": points_list, "note": f_note, "btn": f_btn, "url": f_url, "color": f_color,
+            }
+            if f_desc:
+                value["desc"] = f_desc
+            if has_banner:
+                value["banner"] = banner
+                if banner_side:
+                    value["bannerSide"] = True
+
+        else:  # BOOKING_BOXES
+            f_title = st.text_input("タイトル", key="aff_new_box_title")
+            st.caption("ボタンの色は仮の青色（Skyscannerと同じ）で表示されます。特定の色にしたい場合は保存後にaffiliates.jsのCSSを調整してください。")
+            box_rows = st.data_editor(
+                [{"ラベル": "", "URL": "", "説明（任意）": ""}],
+                num_rows="dynamic", use_container_width=True, key="aff_new_box_rows",
+            )
+            buttons = []
+            for _i, _row in enumerate(box_rows):
+                _label = (_row.get("ラベル") or "").strip()
+                _url = (_row.get("URL") or "").strip()
+                if not _label or not _url:
+                    continue
+                _btn = {"className": "btn-skyscanner", "label": _label, "url": _url}
+                _desc = (_row.get("説明（任意）") or "").strip()
+                if _desc:
+                    _btn["desc"] = _desc
+                buttons.append(_btn)
+            value = {"title": f_title, "buttons": buttons}
+
+        st.markdown("##### プレビュー")
+        if new_key and not key_error and aff_validate_required(const_name, value):
+            import streamlit.components.v1 as _components
+            _components.html(
+                aff_preview_html_for_draft(const_name, value),
+                height=420 if const_name == "AFFILIATE_CARDS" else 260,
+                scrolling=True,
+            )
+        else:
+            st.info("キーと必須項目を入力するとプレビューが表示されます")
+
+        can_save = bool(new_key) and not key_error and aff_validate_required(const_name, value)
+        if st.button("💾 登録する", type="primary", disabled=not can_save, key="aff_new_save"):
+            try:
+                aff_io.save_new_entry(const_name, new_key, value)
+            except Exception as e:
+                st.error(f"保存に失敗しました: {e}")
+            else:
+                _result = aff_compute_usage()
+                aff_write_usage_report(_result)
+                st.success("✅ 登録しました（バックアップ: affiliates-data.js.bak）")
+                st.info(
+                    f"この広告を実際にページへ表示するには、対象国の `<国名>.json` の "
+                    f"`practical.apps` などに `\"affiliate\": \"{new_key}\"` を追記してから "
+                    f"`python assets/tools/generate.py <国名>` を実行してください。"
+                )
+
+    # ── c. ページ別使用状況 ──
+    else:
+        st.caption("国を選ぶと、その国の各ページに実際に表示されている広告の一覧を確認できます。")
+        _aff_result = aff_compute_usage()
+        _usage = _aff_result["usage"]
+        _attr_labels = _aff_result["attr_labels"]
+
+        from collections import defaultdict as _defaultdict
+        _pages_index = _defaultdict(list)
+        for _attr_type, _keys in _usage.items():
+            for _key, _u in _keys.items():
+                for _p in _u.get("pages", []):
+                    _pages_index[_p["file"]].append({"type": _attr_type, "key": _key, "count": _p["count"]})
+
+        _countries = detect_countries()
+        sel_country = st.selectbox("国", ["すべて"] + _countries, key="aff_page_country")
+
+        target_files = sorted(_pages_index.keys())
+        if sel_country != "すべて":
+            target_files = [f for f in target_files if f.startswith(sel_country + "/")]
+
+        if not target_files:
+            st.info("対象のページで広告の使用が見つかりませんでした。")
+        for f in target_files:
+            items = _pages_index[f]
+            st.markdown(f"**{f}**")
+            st.table([
+                {"種類": _attr_labels.get(it["type"], it["type"]), "キー": it["key"], "回数": it["count"]}
+                for it in items
+            ])
+
+        if _aff_result["unused"]:
+            with st.expander(f"⚠️ どのページにも配置されていないキー（{len(_aff_result['unused'])}件）"):
+                for u in _aff_result["unused"]:
+                    st.write(f"- [{_attr_labels.get(u['type'], u['type'])}] {u['key']}")

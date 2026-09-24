@@ -66,6 +66,31 @@ const AFFILIATES_CSS = `
   .aff-card-flexrow{display:block}
   .aff-card-bannercol{width:100%;padding:0 16px 16px}
 }
+/* bannerPosition:'bottom'のカード：PCは横長バナー、スマホは小さくなりすぎるため通常の誘導ボタンに差し替え */
+.aff-card-bottom-banner{display:block}
+.aff-card-bottom-btn{display:none}
+@media(max-width:640px){
+  .aff-card-bottom-banner{display:none}
+  .aff-card-bottom-btn{display:block}
+}
+/* Wise紹介セクションまでスクロールしたら画面下部にポップアップ表示するバナー（スマホのみ） */
+.wise-popup-banner{
+  position:fixed;left:0;right:0;bottom:0;z-index:900;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));
+  transform:translateY(120%);
+  transition:transform 0.35s ease;
+  pointer-events:none;
+}
+.wise-popup-banner.visible{transform:translateY(0);pointer-events:auto}
+.wise-popup-banner-inner{position:relative;max-width:480px;margin:0 auto}
+.wise-popup-banner-inner img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 -2px 14px rgba(0,0,0,0.2)}
+.wise-popup-close{
+  position:absolute;top:-9px;right:-9px;background:#fff;border:1px solid #ddd;
+  border-radius:50%;width:20px;height:20px;display:flex;align-items:center;
+  justify-content:center;font-size:0.7em;box-shadow:0 1px 4px rgba(0,0,0,0.15);
+  cursor:pointer;padding:0;color:#666;
+}
+@media(min-width:641px){.wise-popup-banner{display:none}}
 /* アプリ行の下：PCはカード（内部にバナー）のみ、スマホはバナー単体のみ表示 */
 .aff-row-banner{display:block}
 .aff-row-banner.aff-row-banner-mobile-only{display:none}
@@ -268,7 +293,7 @@ function buildAffCard(c, extraStyle) {
 
   card.className = 'aff-card' + (c.banner && c.bannerSide ? ' has-side-banner' : '');
   const bannerRowHtml = (c.banner && c.bannerPosition === 'bottom')
-    ? `<a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block;margin-top:12px"><img src="${c.banner.img}" width="${c.banner.w || 1456}" height="${c.banner.h || 180}" alt="${c.name}" style="width:100%;height:auto;border:none;border-radius:8px;display:block"></a>${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">` : ''}`
+    ? `<div class="aff-card-bottom-banner" style="margin-top:12px"><a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block"><img src="${c.banner.img}" width="${c.banner.w || 1456}" height="${c.banner.h || 180}" alt="${c.name}" style="width:100%;height:auto;border:none;border-radius:8px;display:block"></a>${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">` : ''}</div>`
     : '';
   const cardMain = `
     <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
@@ -295,11 +320,10 @@ function buildAffCard(c, extraStyle) {
         ${c.points.map(p => `<li>${p}</li>`).join('')}
       </ul>
       ${c.note ? `<div class="aff-card-note">${c.note}</div>` : ''}
-      ${c.bannerPosition === 'bottom' ? '' : `
       <a href="${c.url}" target="_blank" rel="noopener"
-         class="aff-card-btn" style="background:${c.color}">
+         class="aff-card-btn${c.bannerPosition === 'bottom' ? ' aff-card-bottom-btn' : ''}" style="background:${c.color}">
         ${c.btn}
-      </a>`}
+      </a>
       ${bannerRowHtml}
     </div>`;
 
@@ -366,6 +390,32 @@ function initAffiliates() {
 
     const card = buildAffCard(c, el.getAttribute('style'));
     el.replaceWith(card);
+
+    // bannerPosition:'bottom'のカードはPC内蔵バナーが小さくなりすぎるので非表示にしている分、
+    // スマホではこのカード（紹介セクション）までスクロールしたら画面下部にバナーをポップアップ表示する
+    if (c.banner && c.bannerPosition === 'bottom' && !document.querySelector(`.wise-popup-banner[data-key="${key}"]`)) {
+      const popup = document.createElement('div');
+      popup.className = 'wise-popup-banner';
+      popup.dataset.key = key;
+      popup.innerHTML = `
+        <div class="wise-popup-banner-inner">
+          <a href="${c.banner.url}" target="_blank" rel="noopener nofollow"><img src="${c.banner.img}" width="${c.banner.w || 1456}" height="${c.banner.h || 180}" alt="${c.name}"></a>
+          ${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">` : ''}
+          <button type="button" class="wise-popup-close" aria-label="閉じる">✕</button>
+        </div>`;
+      document.body.appendChild(popup);
+      popup.querySelector('.wise-popup-close').addEventListener('click', () => popup.remove());
+
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            popup.classList.add('visible');
+            io.disconnect();
+          }
+        });
+      }, { rootMargin: '0px 0px -30% 0px' });
+      io.observe(card);
+    }
   });
 
   // ── 統合カード用：外枠なし・中身だけ描画 ──

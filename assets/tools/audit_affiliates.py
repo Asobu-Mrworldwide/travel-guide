@@ -20,10 +20,10 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
+from affiliates_data_io import extract_top_level_entries, DATA_JS, ROOT
+
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-ROOT = Path(__file__).resolve().parents[2]
-DATA_JS = ROOT / "assets" / "affiliates-data.js"
 OUTPUT_JS = ROOT / "assets" / "affiliate-usage-data.js"
 
 # スキャン対象から除外するディレクトリ
@@ -44,48 +44,6 @@ ATTR_LABELS = {
 }
 
 
-def extract_top_level_entries(js_text, const_name):
-    """affiliates-data.js の `const NAME = { key: {...}, ... };` からトップレベルの
-    key → その中身(文字列) の対応を取り出す"""
-    m = re.search(r"const\s+" + re.escape(const_name) + r"\s*=\s*\{", js_text)
-    if not m:
-        return {}
-    start = m.end()
-    depth = 1
-    i = start
-    while depth > 0 and i < len(js_text):
-        if js_text[i] == "{":
-            depth += 1
-        elif js_text[i] == "}":
-            depth -= 1
-        i += 1
-    body = js_text[start:i - 1]
-    # depth 1（トップレベル）の `key: { ... }` だけを拾う
-    entries = {}
-    depth = 0
-    j = 0
-    key_re = re.compile(r"([a-zA-Z0-9_]+)\s*:\s*\{")
-    while j < len(body):
-        if depth == 0:
-            mm = key_re.match(body, j)
-            if mm:
-                key = mm.group(1)
-                entry_start = mm.end()
-                d = 1
-                k = entry_start
-                while d > 0 and k < len(body):
-                    if body[k] == "{":
-                        d += 1
-                    elif body[k] == "}":
-                        d -= 1
-                    k += 1
-                entries[key] = body[entry_start:k - 1]
-                j = k
-                continue
-        j += 1
-    return entries
-
-
 def collect_html_files():
     files = []
     for p in ROOT.rglob("*.html"):
@@ -98,7 +56,9 @@ def collect_html_files():
     return sorted(files)
 
 
-def main():
+def compute_usage() -> dict:
+    """affiliates-data.js の全キーについて、サイト内での使用状況を集計して dict で返す。
+    assets/tools/app.py の「広告管理」タブから直接importして再利用する想定。"""
     js_text = DATA_JS.read_text(encoding="utf-8")
     affiliates_entries = extract_top_level_entries(js_text, "AFFILIATES")
     booking_entries = extract_top_level_entries(js_text, "BOOKING_BOXES")
@@ -158,7 +118,7 @@ def main():
             if u["total"] == 0 and not is_auto_covered:
                 unused.append({"type": attr_type, "key": key})
 
-    result = {
+    return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "scanned_files": len(html_files),
         "usage": usage,
@@ -167,6 +127,8 @@ def main():
         "attr_labels": ATTR_LABELS,
     }
 
+
+def write_usage_report(result: dict) -> None:
     OUTPUT_JS.write_text(
         "// 自動生成ファイル。手で編集しない。\n"
         "// 生成: assets/tools/audit_affiliates.py\n"
@@ -174,8 +136,15 @@ def main():
         encoding="utf-8",
     )
 
-    print(f"走査ファイル数: {len(html_files)}")
+
+def main():
+    result = compute_usage()
+    write_usage_report(result)
+
+    print(f"走査ファイル数: {result['scanned_files']}")
     print(f"出力: {OUTPUT_JS.relative_to(ROOT)}")
+    unused = result["unused"]
+    unknown_refs = result["unknown_refs"]
     if unused:
         print(f"\n⚠️ 未使用のキー（{len(unused)}件）:")
         for u in unused:
