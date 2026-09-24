@@ -58,6 +58,19 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 .page-chip-list{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
 .page-chip{font-size:0.66em;font-family:monospace;background:#f0f2f4;color:#556;padding:2px 7px;border-radius:5px}
 .usage-toggle{font-size:0.7em;color:#0770e3;cursor:pointer;margin-top:6px;display:inline-block;user-select:none}
+.brand-nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.brand-chip{font-size:0.75em;font-weight:700;background:#fff;border:1px solid #d5dbe1;color:#345;padding:4px 10px;border-radius:14px;cursor:pointer;text-decoration:none}
+.brand-chip:hover{background:#eaf1f8}
+.brand-chip .n{color:#999;font-weight:400;margin-left:4px}
+.brand-sec{background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,0.08);margin-bottom:16px;overflow:hidden}
+.brand-head{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#eef3f8;border-bottom:1px solid #e0e4e8}
+.brand-head h2{font-size:1em;font-weight:900;color:#1a3a5c}
+.brand-head .cat{font-size:0.68em;background:#1a3a5c;color:#fff;padding:2px 8px;border-radius:10px}
+.brand-head .cnt{margin-left:auto;font-size:0.72em;color:#778}
+.style-block{padding:12px 16px;border-bottom:1px solid #f0f2f4}
+.style-block:last-child{border-bottom:none}
+.style-label{font-size:0.7em;font-weight:700;color:#fff;background:#8a99a8;display:inline-block;padding:1px 8px;border-radius:4px;margin-bottom:8px}
+.style-label.text{background:#0770e3}.style-label.box{background:#e8790f}.style-label.card{background:#00a86b}
 </style>
 </head>
 <body>
@@ -76,17 +89,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 
   <div id="usageSummary"></div>
 
-  <!-- テキストリンク -->
-  <div class="section-title">テキストリンク（AFFILIATES）</div>
-  <div class="link-preview-list" id="linkList"></div>
-
-  <!-- 予約ボタンボックス -->
-  <div class="section-title">予約ボタンボックス（BOOKING_BOXES）</div>
-  <div class="cards-list" id="boxList"></div>
-
-  <!-- 説明カード -->
-  <div class="section-title">説明カード（AFFILIATE_CARDS）</div>
-  <div class="cards-list" id="cardList"></div>
+  <div class="brand-nav" id="brandNav"></div>
+  <div id="brandList"></div>
 
 </div>
 
@@ -149,41 +153,41 @@ document.addEventListener('DOMContentLoaded', () => {
     summaryEl.innerHTML = `<div class="usage-summary warn">使用状況データが見つかりません。<code>python assets/tools/audit_affiliates.py</code> を一度実行してください。</div>`;
   }
 
-  // ── テキストリンク一覧 ──
-  const linkList = document.getElementById('linkList');
-  Object.entries(AFFILIATES).forEach(([key, aff]) => {
-    const isPlaceholder = aff.url === '#';
-    linkList.innerHTML += `
-      <div class="link-preview-item">
-        <div class="link-preview-key">key: "${key}"</div>
-        <span data-affiliate="${key}"></span>
-        <div class="link-preview-url ${isPlaceholder ? 'placeholder' : ''}">
-          ${isPlaceholder ? '⚠️ URL未設定（#）' : '🔗 ' + aff.url}
-        </div>
-        ${usageBoxHtml('affiliate', key)}
-      </div>`;
-  });
+  // ── ブランド別に分類して表示 ──
+  const BRANDS = [
+    ['Klook','現地ツアー',['klook']],['KKday','現地ツアー',['kkday']],
+    ['GetYourGuide','現地ツアー',['getyourguide']],['Viator','現地ツアー',['viator']],
+    ['Wise','決済・お金',['wise']],['エポスカード','決済・お金',['epos']],
+    ['trifa','通信',['trifa']],['Airalo','通信',['airalo']],['モバイルWi-Fi','通信',['wifi1','wifi2']],
+    ['Skyscanner','航空券',['skyscanner']],
+    ['Grab','配車・地図',['grab']],['Uber','配車・地図',['uber']],['PickMe','配車・地図',['pickme']],
+    ['Yandex','配車・地図',['yandex_go','yandex_maps']],['Google','アプリ',['google_maps','google_translate']],
+    ['Telegram','アプリ',['telegram']],['WhatsApp','アプリ',['whatsapp']],
+    ['比較ページ（汎用）','比較',['flights','hotels','sim','sim_compare']]
+  ];
+  const STYLES = [
+    ['text','テキストリンク',AFFILIATES,k=>`<div class="link-preview-item" style="box-shadow:none;padding:0"><div class="link-preview-key">key: "${k}"</div><span data-affiliate="${k}"></span><div class="link-preview-url">${AFFILIATES[k].url==='#'?'⚠️ URL未設定（#）':'🔗 '+AFFILIATES[k].url}</div>${usageBoxHtml('affiliate',k)}</div>`],
+    ['box','予約ボタン',BOOKING_BOXES,k=>`<div class="link-preview-key">key: "${k}"</div><div data-affiliate-box="${k}" ${k==='flights'?'data-dest="bkk"':''}></div>${usageBoxHtml('affiliate-box',k)}`],
+    ['card','説明カード',AFFILIATE_CARDS,k=>`<div class="link-preview-key">key: "${k}"</div><div data-affiliate-card="${k}"></div>${usageBoxHtml('affiliate-card',k)}`]
+  ];
+  const mapped = new Set(BRANDS.flatMap(b => b[2]));
+  const others = new Set();
+  STYLES.forEach(st => Object.keys(st[2]).forEach(k => { if (!mapped.has(k)) others.add(k); }));
+  if (others.size) BRANDS.push(['その他','その他',[...others]]);
 
-  // ── 予約ボタンボックス一覧 ──
-  const boxList = document.getElementById('boxList');
-  Object.entries(BOOKING_BOXES).forEach(([key, box]) => {
-    boxList.innerHTML += `
-      <div class="card-item">
-        <div class="link-preview-key">key: "${key}"</div>
-        <div data-affiliate-box="${key}" ${key === 'flights' ? 'data-dest="bkk"' : ''}></div>
-        ${usageBoxHtml('affiliate-box', key)}
-      </div>`;
-  });
-
-  // ── 説明カード一覧 ──
-  const cardList = document.getElementById('cardList');
-  Object.entries(AFFILIATE_CARDS).forEach(([key, c]) => {
-    cardList.innerHTML += `
-      <div>
-        <div style="font-size:0.68em;font-weight:700;color:#aaa;font-family:monospace;margin-bottom:6px">key: "${key}"</div>
-        <div data-affiliate-card="${key}"></div>
-        <div style="background:#fff;padding:0 14px 12px;border-radius:0 0 10px 10px;margin-top:-1px">${usageBoxHtml('affiliate-card', key)}</div>
-      </div>`;
+  const nav = document.getElementById('brandNav');
+  const list = document.getElementById('brandList');
+  BRANDS.forEach(([name, cat, keys], i) => {
+    let blocks = '', total = 0;
+    STYLES.forEach(([cls, label, data, render]) => {
+      keys.filter(k => data[k]).forEach(k => {
+        total++;
+        blocks += `<div class="style-block"><span class="style-label ${cls}">${label}</span>${render(k)}</div>`;
+      });
+    });
+    if (!total) return;
+    nav.innerHTML += `<a class="brand-chip" href="#brand-${i}">${name}<span class="n">${total}</span></a>`;
+    list.innerHTML += `<div class="brand-sec" id="brand-${i}"><div class="brand-head"><h2>${name}</h2><span class="cat">${cat}</span><span class="cnt">保存スタイル ${total}件</span></div>${blocks}</div>`;
   });
 
   // 描画実行

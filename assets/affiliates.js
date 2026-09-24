@@ -73,13 +73,22 @@ const AFFILIATES_CSS = `
   .aff-card-bottom-banner{display:none}
   .aff-card-bottom-btn{display:block}
 }
-/* Wise紹介セクションまでスクロールしたら画面下部にポップアップ表示するバナー（スマホのみ） */
+/* Wise紹介セクションまでスクロールしたら画面下部にポップアップ表示するバナー（スマホのみ）
+   navの実測やmatchMediaでの精密な逃げ幅計算は機種・ブラウザ差でズレやすく何度も後ろに隠れる/前に被る
+   問題を繰り返したため撤回。代わりに、下部固定タブバー(nav)の高さは padding-bottom を広めに
+   取ることで常に避ける（値はstyle.cssの.toc-fabが同じ目的で使っている calc(72px + セーフエリア) に合わせた）。
+   z-indexは.toc-fab（1200）より前面・.toc-sheet（開いた時の目次シート、1201）より背面にする：
+   目次FABはバナーの後ろに回ってよいが、目次シートを開いた時はそちらが優先されるべきため */
 .wise-popup-banner{
-  position:fixed;left:0;right:0;bottom:0;z-index:900;
-  padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));
+  position:fixed;left:0;right:0;bottom:0;z-index:1200;
+  padding:10px 12px calc(78px + env(safe-area-inset-bottom,0px));
   transform:translateY(120%);
   transition:transform 0.35s ease;
   pointer-events:none;
+}
+@media(min-width:521px){
+  /* この幅ではnavは画面下部に固定されないため、余白は最小限でよい */
+  .wise-popup-banner{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
 }
 .wise-popup-banner.visible{transform:translateY(0);pointer-events:auto}
 .wise-popup-banner-inner{position:relative;max-width:480px;margin:0 auto}
@@ -665,7 +674,24 @@ function _initStickyBannerFooterAvoidance(banner) {
   });
 }
 
+function renderSideBanners() {
+  document.querySelectorAll('[data-affiliate-side]').forEach(el => {
+    const b = (typeof SIDE_BANNERS !== 'undefined') ? SIDE_BANNERS[el.dataset.affiliateSide] : null;
+    if (!b) return;
+    const wide = b.width > b.height;
+    const imgStyle = wide
+      ? 'border:none;width:100%;height:auto;border-radius:6px'
+      : 'border:none;max-width:100%;height:auto';
+    let html = '<a href="' + b.url + '" rel="sponsored nofollow"><img src="' + b.img + '" width="' + b.width + '" height="' + b.height + '" style="' + imgStyle + '" alt="' + (b.alt || '') + '" /></a>';
+    if (b.pixel) {
+      html += '<img src="' + b.pixel + '" width="1" height="1" style="border:none;position:absolute;width:1px;height:1px" alt="" />';
+    }
+    el.insertAdjacentHTML('beforeend', html);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', initAffiliates);
+document.addEventListener('DOMContentLoaded', renderSideBanners);
 
 document.addEventListener('click', e => {
   document.querySelectorAll('.flight-choice.open').forEach(el => {
