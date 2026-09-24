@@ -58,6 +58,22 @@ const AFFILIATES_CSS = `
   margin-top:auto;
 }
 .aff-card-btn:hover{opacity:0.85}
+.aff-card-flexrow{display:flex;align-items:stretch}
+.aff-card-main{flex:1;min-width:0;display:flex;flex-direction:column}
+.aff-card-bannercol{flex-shrink:0;width:150px;display:flex;align-items:center;justify-content:center;padding:16px 16px 16px 0}
+.aff-card-bannercol img{width:100%;height:auto;border-radius:8px;display:block}
+@media(max-width:640px){
+  .aff-card-flexrow{display:block}
+  .aff-card-bannercol{width:100%;padding:0 16px 16px}
+}
+/* アプリ行の下：PCはカード（内部にバナー）のみ、スマホはバナー単体のみ表示 */
+.aff-row-banner{display:block}
+.aff-row-banner.aff-row-banner-mobile-only{display:none}
+.aff-card-desktop-only{display:block}
+@media(max-width:640px){
+  .aff-row-banner.aff-row-banner-mobile-only{display:block}
+  .aff-card-desktop-only{display:none}
+}
 
 /* ── 予約ボタンボックス ── */
 .booking-box{
@@ -239,6 +255,69 @@ const AFFILIATES_CSS = `
 /* =====================================================
    初期化
    ===================================================== */
+// 説明カードのDOM要素を組み立てる（data-affiliate-card / アプリ行下の差し込み両方で使う）
+function buildAffCard(c, extraStyle) {
+  const card = document.createElement('div');
+  if (extraStyle) card.setAttribute('style', extraStyle);
+
+  if (c.banner && !c.bannerSide && c.bannerPosition !== 'bottom') {
+    card.innerHTML = `
+      <a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block"><img src="${c.banner.img}" width="300" height="250" alt="${c.name}" style="width:100%;height:auto;border:none;border-radius:10px;display:block"></a><img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute">`;
+    return card;
+  }
+
+  card.className = 'aff-card' + (c.banner && c.bannerSide ? ' has-side-banner' : '');
+  const bannerRowHtml = (c.banner && c.bannerPosition === 'bottom')
+    ? `<a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block;margin-top:12px"><img src="${c.banner.img}" width="${c.banner.w || 1456}" height="${c.banner.h || 180}" alt="${c.name}" style="width:100%;height:auto;border:none;border-radius:8px;display:block"></a>${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute">` : ''}`
+    : '';
+  const cardMain = `
+    <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
+      ${c.logo ? `
+      <div style="line-height:1">${c.logo}</div>` : c.name_large ? `
+      <div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="aff-card-icon">${c.icon}</span>
+          <div class="aff-card-name" style="font-size:1.5em;line-height:1">${c.name}</div>
+        </div>
+        <div class="aff-card-tagline" style="margin-top:4px">${c.tagline}</div>
+      </div>` : `
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="aff-card-icon">${c.icon}</span>
+        <div>
+          <div class="aff-card-name">${c.name}</div>
+          <div class="aff-card-tagline">${c.tagline}</div>
+        </div>
+      </div>`}
+    </div>
+    <div class="aff-card-body">
+      ${c.desc ? `<p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:0 0 12px">${c.desc}</p>` : ''}
+      <ul class="aff-card-points">
+        ${c.points.map(p => `<li>${p}</li>`).join('')}
+      </ul>
+      ${c.note ? `<div class="aff-card-note">${c.note}</div>` : ''}
+      ${c.bannerPosition === 'bottom' ? '' : `
+      <a href="${c.url}" target="_blank" rel="noopener"
+         class="aff-card-btn" style="background:${c.color}">
+        ${c.btn}
+      </a>`}
+      ${bannerRowHtml}
+    </div>`;
+
+  if (c.banner && c.bannerSide) {
+    card.innerHTML = `
+    <div class="aff-card-flexrow">
+      <div class="aff-card-main">${cardMain}</div>
+      <div class="aff-card-bannercol">
+        <a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block;width:100%"><img src="${c.banner.img}" width="300" height="250" alt="${c.name}"></a>${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute">` : ''}
+      </div>
+    </div>`;
+  } else {
+    card.innerHTML = cardMain;
+  }
+
+  return card;
+}
+
 function initAffiliates() {
   // CSS注入
   const style = document.createElement('style');
@@ -258,7 +337,25 @@ function initAffiliates() {
     a.className = linkClass;
     a.textContent = el.dataset.affiliateLabel || aff.label;
 
+    const row = el.closest('.aff-app-row');
     el.replaceWith(a);
+
+    if (aff.banner && row) {
+      const bannerWrap = document.createElement('a');
+      bannerWrap.href = aff.banner.url; bannerWrap.target = '_blank'; bannerWrap.rel = 'noopener nofollow';
+      bannerWrap.className = 'aff-row-banner';
+      bannerWrap.style.cssText = 'margin:12px auto 0';
+      bannerWrap.innerHTML = `<img src="${aff.banner.img}" width="300" height="250" alt="${aff.name}" style="width:90%;max-width:280px;height:auto;border:none;border-radius:6px;display:block;margin:0 auto"><img src="${aff.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute">`;
+      const fullCard = AFFILIATE_CARDS[key];
+      if (fullCard) bannerWrap.classList.add('aff-row-banner-mobile-only');
+      let anchor = row.insertAdjacentElement('afterend', bannerWrap);
+
+      if (fullCard) {
+        const card = buildAffCard(fullCard, 'margin-top:16px');
+        card.classList.add('aff-card-desktop-only');
+        anchor.insertAdjacentElement('afterend', card);
+      }
+    }
   });
 
   // ── 説明カード ──
@@ -267,40 +364,7 @@ function initAffiliates() {
     const c = AFFILIATE_CARDS[key];
     if (!c) { console.warn('affiliates.js: unknown card key →', key); return; }
 
-    const card = document.createElement('div');
-    card.className = 'aff-card';
-    if (el.getAttribute('style')) card.setAttribute('style', card.getAttribute('style') ? card.getAttribute('style') + ';' + el.getAttribute('style') : el.getAttribute('style'));
-    card.innerHTML = `
-      <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
-        ${c.logo ? `
-        <div style="line-height:1">${c.logo}</div>` : c.name_large ? `
-        <div>
-          <div style="display:flex;align-items:center;gap:10px">
-            <span class="aff-card-icon">${c.icon}</span>
-            <div class="aff-card-name" style="font-size:1.5em;line-height:1">${c.name}</div>
-          </div>
-          <div class="aff-card-tagline" style="margin-top:4px">${c.tagline}</div>
-        </div>` : `
-        <div style="display:flex;align-items:center;gap:10px">
-          <span class="aff-card-icon">${c.icon}</span>
-          <div>
-            <div class="aff-card-name">${c.name}</div>
-            <div class="aff-card-tagline">${c.tagline}</div>
-          </div>
-        </div>`}
-      </div>
-      <div class="aff-card-body">
-        ${c.desc ? `<p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:0 0 12px">${c.desc}</p>` : ''}
-        <ul class="aff-card-points">
-          ${c.points.map(p => `<li>${p}</li>`).join('')}
-        </ul>
-        ${c.note ? `<div class="aff-card-note">${c.note}</div>` : ''}
-        <a href="${c.url}" target="_blank" rel="noopener"
-           class="aff-card-btn" style="background:${c.color}">
-          ${c.btn}
-        </a>
-      </div>`;
-
+    const card = buildAffCard(c, el.getAttribute('style'));
     el.replaceWith(card);
   });
 

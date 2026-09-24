@@ -592,7 +592,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-sec">
   <div class="tb-card">
   <h2 data-label="FLIGHT BOOKING" id="flights">航空券の予約</h2>
-  {% if practical.flight_lead %}<p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:8px 0 24px">{{practical.flight_lead}}</p>{% endif %}
+  {% if practical.flight_lead %}<p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:8px 0 8px">{{practical.flight_lead}}</p>{% endif %}
+  <p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:0 0 24px">航空券を比較・予約するなら、ほぼこれ一択！<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4P+D8W8C2+5WOE+60OXE" rel="nofollow" style="text-decoration:underline">スカイスキャナーの公式サイトはこちら</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B8B4P+D8W8C2+5WOE+60OXE" alt=""></p>
   <div class="s-card">
     <div style="background:#fff;padding:0">
     <div class="flight-cards">
@@ -694,7 +695,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           {% endif %}
         </div>
         <div style="font-size:0.78em;color:var(--sub);line-height:1.7">{{area.desc}}</div>
-        <div style="font-size:0.75em;color:var(--sub);margin-top:6px">{{area.price}}</div>
+        <div style="font-size:0.85em;color:var(--green);font-weight:700;margin-top:6px;text-align:right">{{area.price}}</div>
       </div>
       {% endfor %}
     </div>
@@ -801,7 +802,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="lbl" style="margin-bottom:10px">{{practical.country_items_label}}</div>
       <ul class="check-list">
         {% for item in practical.country_items %}
-        <li><strong>{{item.icon}} {{item.name}}</strong><br><span style="font-size:0.92em;color:var(--sub)">{{item.desc}}</span></li>
+        <li><strong>{{item.name}}</strong><br><span style="font-size:0.92em;color:var(--sub)">{{item.desc}}</span></li>
         {% endfor %}
       </ul>
     </div>
@@ -816,7 +817,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <h3 style="margin-top:28px">事前にDLすべきアプリ</h3>
   <div>
     {% for app in practical.apps %}
-    <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;{% if app.is_last %}{% else %}border-bottom:1px solid #d8d8d8{% endif %}">
+    <div class="aff-app-row" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;{% if app.is_last %}{% else %}border-bottom:1px solid #d8d8d8{% endif %}">
       <span style="font-size:1.4em;flex-shrink:0;width:28px;text-align:center">{{icon:app.icon}}</span>
       <div style="flex:1">
         <div style="font-size:0.84em;font-weight:700">{{app.name}}</div>
@@ -1197,9 +1198,9 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 </div><!-- /container -->
 
 <aside class="side-rail">
-  <div class="rail-ad">
+  <div class="rail-ad" style="border:none;box-shadow:none;background:transparent;padding:0">
     <span class="rail-ad-label">SPONSORED</span>
-    <div class="rail-ad-box" style="height:250px">広告 300 × 250</div>
+    <a href="https://wise.prf.hn/click/camref:1011l5NvUx/creativeref:1011l108088" rel="sponsored nofollow"><img src="https://wise-creative.prf.hn/source/camref:1011l5NvUx/creativeref:1011l108088" width="1200" height="628" style="border:none;width:100%;height:auto;border-radius:6px" alt="Wise" /></a>
   </div>
 
   <div class="rail-wish" id="rail-wish">
@@ -1221,9 +1222,9 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     {% endif %}
   </div>
 
-  <div class="rail-ad sticky">
+  <div class="rail-ad sticky" style="border:none;box-shadow:none;background:transparent;padding:0">
     <span class="rail-ad-label">SPONSORED</span>
-    <div class="rail-ad-box" style="height:600px">広告 300 × 600</div>
+    <a href="https://track.affiliate-b.com/visit.php?a=64334T-M5322214&p=o988181W" rel="nofollow"><img src="https://www.affiliate-b.com/upload_image/4334-1782216552-3.jpg" width="300" height="600" style="border:none;max-width:100%;height:auto" alt="海外旅行" /></a><img src="https://track.affiliate-b.com/lead/64334T/o988181W/M5322214" width="1" height="1" style="border:none;position:absolute" alt="" />
   </div>
 </aside>
 
