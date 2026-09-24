@@ -1,7 +1,7 @@
 // 自動生成ファイル。手で編集しない。
 // 生成: assets/tools/audit_affiliates.py
 const AFFILIATE_USAGE = {
-  "generated_at": "2026-09-24T22:14:14",
+  "generated_at": "2026-09-24T22:29:31",
   "scanned_files": 163,
   "usage": {
     "affiliate": {
