@@ -292,7 +292,7 @@ def build_budget_tabs_js(data):
         {'key': 'std', 'name': '標準', 'note': 'バランス重視',
          'total': budget.get('total_std', ''),
          'blurb': '快適さと費用のバランスを大切にした、定番の旅行スタイルです。'},
-        {'key': 'lux', 'name': 'こだわり派', 'note': '高級ホテル・FSC',
+        {'key': 'lux', 'name': 'こだわり派', 'note': '高級ホテル',
          'total': budget.get('total_lux', ''),
          'blurb': '移動も宿も妥協しない、ゆったり過ごす旅行スタイルです。'},
     ]

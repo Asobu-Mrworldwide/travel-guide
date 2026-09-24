@@ -44,7 +44,7 @@ description: World Mappy（海外情報サイト）で新しい国の紹介ペ�
 
 判断基準: 前後の`transit`の`duration`が「その日の観光と地続きの移動」なら`transport_note`/`pre_transit`、「宿泊地を移す移動」なら独立`transit`行。
 
-アイコンフラグ: `plane`/`taxi`/`ferry`/`walk`/`train`（新幹線・高速鉄道など明示的に高速鉄道と呼べるものだけ）/`local_train`（🚆、在来線・普通列車）。どれも立てなければバス扱い。**`country_template.html`側のこの分岐は`stable_plans`用と`adventure_plan`用で2箇所に重複定義されている**ため、テンプレート側を修正する場合は両方に反映すること。
+アイコンフラグ: `plane`/`taxi`/`ferry`/`walk`/`train`（新幹線・高速鉄道など明示的に高速鉄道と呼べるものだけ）/`local_train`（🚆、在来線・普通列車）。どれも立てなければバス扱い。フラグ→アイコンSVGの解決ロジックは`generate.py`の`TRANSIT_ICONS`辞書・`_resolve_transit_icon()`関数に一本化されている（`country_template.html`側に分岐は残っていない）ため、新しいアイコン種別を追加する場合は`generate.py`側だけ直せばよい。ただし`stable_plans`用・`adventure_plan`用のtransit行のHTML構造（マークアップ・クラス名）自体は`country_template.html`内に2箇所並記されているため、行の見た目・構造を変える場合はその2箇所は引き続き両方直すこと。
 
 ### courses.introの型
 ```
@@ -129,7 +129,7 @@ description: World Mappy（海外情報サイト）で新しい国の紹介ペ�
 
 ## 8. practical.country_items（国特有の持ち物）
 
-`country_items_label`は`"🇽🇽 {国名}特有の持ち物"`の型（絵文字は国旗、`overview.flag_html`と同じ2文字国コード）。
+`country_items_label`は`"{国旗アイコン} {国名}特有の持ち物"`の型。**絵文字は使わない**（`overview.flag_html`と同じ理由でWindows環境で正しく描画されない）。既存22か国は全てインラインSVGまたは`<img src="素材/国旗.svg">`の小さな国旗アイコンを`<span style="display:inline-flex;align-items:center;gap:6px;vertical-align:middle">`で包み、アイコン部分はさらに`<span style="display:inline-block;line-height:0;border:1px solid #ddd;border-radius:2px;overflow:hidden;flex-shrink:0">`（17×11px程度の小バッジ）で囲む形式を踏襲する。国旗のSVG自体は`overview.flag_html`で使ったものを流用してよい（座標を自分で作り直さない）。
 
 `country_items`は5〜6項目。**一般的な持ち物チェックリストと重複する項目（パスポート・充電器・常備薬等）は書かない**。実績のある切り口: プラグ形状に合う変換アダプター、気候特有の装備（紫外線・乾燥・防寒・雨具）、その国特有のマナー対策（寺院での服装・脱靴）、感染症・虫対策、レンタカー移動が基本の国なら国際運転免許証。理由を括弧書きで添える（例:「サンダルまたは脱ぎやすい靴（寺院は入場時に脱靴が必須）」）。特殊枠の国（北朝鮮等）でも空欄にせず、その国ならではの必須事項を持ち物目線で言い換えて埋める。
 
@@ -201,7 +201,7 @@ description: World Mappy（海外情報サイト）で新しい国の紹介ペ�
 - **`practical.cash_daily_low`/`cash_daily_high`は全国共通の計算式で機械的に算出する**（個別の現地情報での上書きはしない）:
   1. 「食費（1日）」の`price`は**中央値**（下限と上限の平均）を取る。「交通費（1日）」も基本は中央値だが、`detail_html`の上限側が国内線・レンタカー・隣島船のような都市間・地域間移動を指す場合は**下限のみ**を使う（大口移動費が現金の目安に混入するのを防ぐため）。
   2. `practical.cash_dependency`に応じて係数を掛ける: `低`（カード・タッチ決済中心）×0.2 / `中`（都市部はカードOKだが屋台・市場は現金中心）×0.7 / `高`（現金がないと困る）×1.0。
-  3. `overview.exchange_rate`で現地通貨に変換した値を`cash_daily_low`とする。
+  3. `practical.exchange_rate`で現地通貨に変換した値を`cash_daily_low`とする。
   4. `cash_daily_high`はさらに3割ほど上乗せして切り上げる（両替忘れ・予定外の出費への備え）。
   5. 現地でよく流通する紙幣単位に合わせてキリの良い数字に丸める。
 

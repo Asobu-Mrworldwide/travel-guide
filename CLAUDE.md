@@ -32,7 +32,9 @@
 
 ### 移動日（transit）のアイコン指定
 
-`day.transit: true`の行は`plane`/`taxi`/`ferry`/`walk`/`train`（新幹線・高速鉄道のイラスト）/`local_train`（🚆絵文字、在来線・普通列車用）のいずれかのフラグを立てる。`train`は新幹線・KTX・Afrosiyob高速鉄道など**明示的に高速鉄道と呼べるものだけ**に使い、それ以外の在来線（台湾の台鉄、スリランカの高原鉄道など）は`local_train`を使うこと。どのフラグも立てない場合はバスアイコンがデフォルトになる。テンプレート内でこの分岐は`stable_plans`用と`adventure_plan`用で**2箇所に重複定義**されているため、`country_template.html`側を修正する場合は必ず両方に同じ変更を反映すること（`{% if day.ferry %}`で検索すると2件ヒットするはず）。
+`day.transit: true`の行は`plane`/`taxi`/`ferry`/`walk`/`train`（新幹線・高速鉄道のイラスト）/`local_train`（🚆絵文字、在来線・普通列車用）のいずれかのフラグを立てる。`train`は新幹線・KTX・Afrosiyob高速鉄道など**明示的に高速鉄道と呼べるものだけ**に使い、それ以外の在来線（台湾の台鉄、スリランカの高原鉄道など）は`local_train`を使うこと。どのフラグも立てない場合はバスアイコンがデフォルトになる。
+
+フラグ→アイコンSVGの解決ロジックは`assets/tools/generate.py`の`TRANSIT_ICONS`辞書・`_resolve_transit_icon()`関数に一本化されている（2026-09以前は`country_template.html`側に`{% if day.ferry %}`のような分岐が`stable_plans`用・`adventure_plan`用で重複定義されていたが、Python側に統合済み。新しいアイコン種別を追加する場合は`generate.py`側だけ直せばよい）。ただし`stable_plans`用・`adventure_plan`用のtransit行のHTML構造（マークアップ・クラス名）自体は`country_template.html`内に2箇所並記されたままのため、行の見た目・構造を変える場合はその2箇所は引き続き両方直すこと。
 
 ## `index_card.catch`（国一覧カードのキャッチ文）
 

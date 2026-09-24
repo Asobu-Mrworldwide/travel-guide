@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="南アフリカ共和国の予算・費用｜南アフリカ共和国旅行ガイド">
 <meta name="twitter:description" content="未舗装路？道端に野生動物？命の保証は？まだそんなイメージの人は今すぐチケットを取りましょう。ケープタウンのテーブルマウンテン、クルーガー国立公園のビッグファイブサファリ、インド洋・大西洋に挟まれた美しい海岸線など、圧倒的なスケールの自然と…">
 <meta name="twitter:image" content="https://worldmappy.com/south_africa/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1790221015">
+<link rel="stylesheet" href="../assets/style.css?v=1790227547">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1790221015" defer></script>
-<script src="../assets/affiliates.js?v=1790221015" defer></script>
+<script src="../assets/affiliates-data.js?v=1790227547" defer></script>
+<script src="../assets/affiliates.js?v=1790227547" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -643,6 +643,25 @@ let cashDays = 5;
 const RATE = 9.8;
 const CASH_LOW = 150;
 const CASH_HIGH = 200;
+function fitCashAmount() {
+  const wrap = document.querySelector('.cash-amount');
+  const numEl = document.getElementById('cash-range');
+  if (!wrap || !numEl) return;
+  const codeEl = wrap.querySelector('.c');
+  numEl.style.fontSize = '';
+  if (codeEl) codeEl.style.fontSize = '';
+  let guard = 0;
+  while (wrap.scrollWidth > wrap.clientWidth && guard < 40) {
+    const curN = parseFloat(getComputedStyle(numEl).fontSize);
+    if (curN <= 13) break;
+    numEl.style.fontSize = (curN - 1) + 'px';
+    if (codeEl) {
+      const curC = parseFloat(getComputedStyle(codeEl).fontSize);
+      codeEl.style.fontSize = Math.max(11, curC - 0.65) + 'px';
+    }
+    guard++;
+  }
+}
 function changeDays(d) {
   cashDays = Math.max(1, Math.min(30, cashDays + d));
   const low = cashDays * CASH_LOW, high = cashDays * CASH_HIGH;
@@ -650,8 +669,16 @@ function changeDays(d) {
   document.getElementById('cash-range').textContent = low.toLocaleString() + '〜' + high.toLocaleString();
   const lowJpy = Math.round(low * RATE / 1000) * 1000, highJpy = Math.round(high * RATE / 1000) * 1000;
   document.getElementById('cash-yen').textContent = '約 ' + lowJpy.toLocaleString() + '〜' + highJpy.toLocaleString() + '円';
+  fitCashAmount();
 }
-if (document.getElementById('cash-days')) { changeDays(0); }
+if (document.getElementById('cash-days')) {
+  changeDays(0);
+  let cashResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(cashResizeTimer);
+    cashResizeTimer = setTimeout(fitCashAmount, 150);
+  });
+}
 
 
 

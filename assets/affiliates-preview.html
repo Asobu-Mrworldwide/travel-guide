@@ -13,7 +13,7 @@
   gtag('config', 'G-ZNX5SY0GSK');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>アフィリエイト プレビュー</title>
+<title>広告・アフィリエイト管理</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:#f4f6f8;color:#222;font-size:14px}
@@ -22,7 +22,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 .header h1{font-size:1em;font-weight:900}
 .header p{font-size:0.78em;opacity:0.7;margin-top:2px}
 
-.container{max-width:680px;margin:0 auto;padding:24px 16px 60px}
+.container{max-width:760px;margin:0 auto;padding:24px 16px 60px}
 
 .section-title{font-size:0.72em;font-weight:700;color:#aaa;letter-spacing:0.08em;text-transform:uppercase;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid #e0e4e8}
 
@@ -35,31 +35,54 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 
 /* カードプレビュー */
 .cards-list{display:flex;flex-direction:column;gap:12px}
+.card-item{background:#fff;border-radius:10px;padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,0.08)}
 
 /* 共通 budget-link スタイル（プレビュー用） */
 .budget-link{display:block;width:100%;text-align:right;font-size:0.75em;font-weight:700;color:#006847;text-decoration:none;margin-top:2px}
 
 .edit-hint{background:#fffbe6;border:1px solid #ffc200;border-radius:8px;padding:12px 14px;font-size:0.8em;color:#665500;line-height:1.7;margin-bottom:20px}
 .edit-hint code{background:#fff3cc;padding:1px 5px;border-radius:4px;font-family:monospace;font-size:0.9em}
+
+/* 使用状況サマリー */
+.usage-summary{border-radius:8px;padding:12px 14px;font-size:0.8em;line-height:1.8;margin-bottom:20px}
+.usage-summary.ok{background:#e8f5ee;color:#0a6b3f;border:1px solid #b8e0c8}
+.usage-summary.warn{background:#fdeaea;color:#a01515;border:1px solid #f3c2c2}
+.usage-summary .meta{color:#888;font-size:0.85em;display:block;margin-top:4px}
+
+/* 使用状況バッジ */
+.usage-box{margin-top:10px;padding-top:10px;border-top:1px dashed #e5e5e5}
+.usage-count{display:inline-block;font-size:0.7em;font-weight:700;padding:2px 8px;border-radius:10px;margin-right:6px}
+.usage-count.used{background:#e8f5ee;color:#0a6b3f}
+.usage-count.unused{background:#fdeaea;color:#a01515}
+.usage-count.auto{background:#fff4e0;color:#8a6300}
+.page-chip-list{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.page-chip{font-size:0.66em;font-family:monospace;background:#f0f2f4;color:#556;padding:2px 7px;border-radius:5px}
+.usage-toggle{font-size:0.7em;color:#0770e3;cursor:pointer;margin-top:6px;display:inline-block;user-select:none}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>📋 アフィリエイト プレビュー</h1>
-  <p>affiliates-data.js の内容をリアルタイムで確認できます</p>
+  <h1>📋 広告・アフィリエイト管理</h1>
+  <p>affiliates-data.js の内容と、各ページでの使用状況をまとめて確認できます</p>
 </div>
 
 <div class="container">
 
   <div class="edit-hint">
-    ✏️ 編集するファイル：<code>assets/affiliates-data.js</code><br>
-    保存後にこのページをリロードすると反映されます。
+    ✏️ リンク・バナー画像を編集するファイル：<code>assets/affiliates-data.js</code><br>
+    追加・変更したら保存 →「使用状況」を最新化するため <code>python assets/tools/audit_affiliates.py</code> を実行 → このページをリロード。
   </div>
+
+  <div id="usageSummary"></div>
 
   <!-- テキストリンク -->
   <div class="section-title">テキストリンク（AFFILIATES）</div>
   <div class="link-preview-list" id="linkList"></div>
+
+  <!-- 予約ボタンボックス -->
+  <div class="section-title">予約ボタンボックス（BOOKING_BOXES）</div>
+  <div class="cards-list" id="boxList"></div>
 
   <!-- 説明カード -->
   <div class="section-title">説明カード（AFFILIATE_CARDS）</div>
@@ -69,8 +92,62 @@ body{font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;backgroun
 
 <script src="affiliates-data.js"></script>
 <script src="affiliates.js"></script>
+<script src="affiliate-usage-data.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+
+  const usageData = (typeof AFFILIATE_USAGE !== 'undefined') ? AFFILIATE_USAGE : null;
+
+  // ── 使用状況バッジのHTMLを組み立てる ──
+  function usageBoxHtml(type, key) {
+    if (!usageData) {
+      return '<div class="usage-box" style="color:#bbb;font-size:0.72em">使用状況データなし（audit_affiliates.py 未実行）</div>';
+    }
+    const u = (usageData.usage[type] || {})[key];
+    if (!u) return '';
+
+    const chips = (pages, extraClass) => pages.map(p => {
+      const short = p.file.replace(/\.html$/, '').replace(/\//g, ' / ');
+      return `<span class="page-chip${extraClass ? ' ' + extraClass : ''}">${short}${p.count > 1 ? ' ×' + p.count : ''}</span>`;
+    }).join('');
+
+    let html = '<div class="usage-box">';
+    if (u.total > 0) {
+      html += `<span class="usage-count used">${u.total}箇所で使用</span>`;
+    } else if (u.auto_via_text_link && u.auto_pages && u.auto_pages.length) {
+      html += `<span class="usage-count auto">テキストリンク経由で自動表示（${u.auto_pages.length}箇所）</span>`;
+    } else {
+      html += '<span class="usage-count unused">⚠️ どのページからも未使用</span>';
+    }
+
+    const allChips = chips(u.pages || []) + (u.auto_via_text_link ? chips(u.auto_pages || [], 'auto-chip') : '');
+    if (allChips) {
+      const listId = `pages-${type}-${key}`.replace(/[^a-zA-Z0-9_-]/g, '');
+      html += `<span class="usage-toggle" onclick="var l=document.getElementById('${listId}');l.style.display=(l.style.display==='none'?'flex':'none');">配置ページを表示/非表示</span>`;
+      html += `<div class="page-chip-list" id="${listId}" style="display:none">${allChips}</div>`;
+    }
+    html += '</div>';
+    return html;
+  }
+
+  // ── 使用状況サマリー ──
+  const summaryEl = document.getElementById('usageSummary');
+  if (usageData) {
+    const unusedCount = usageData.unused.length;
+    const cls = unusedCount > 0 ? 'warn' : 'ok';
+    let html = `<div class="usage-summary ${cls}">`;
+    html += unusedCount > 0
+      ? `⚠️ どのページにも配置されていないキーが ${unusedCount} 件あります`
+      : '✅ 定義済みキーは全て何かしらのページで使われています';
+    if (unusedCount > 0) {
+      html += '<br>' + usageData.unused.map(u => `<code>[${u.type}] ${u.key}</code>`).join('　');
+    }
+    html += `<span class="meta">走査ファイル数: ${usageData.scanned_files} ／ 集計日時: ${usageData.generated_at}</span>`;
+    html += '</div>';
+    summaryEl.innerHTML = html;
+  } else {
+    summaryEl.innerHTML = `<div class="usage-summary warn">使用状況データが見つかりません。<code>python assets/tools/audit_affiliates.py</code> を一度実行してください。</div>`;
+  }
 
   // ── テキストリンク一覧 ──
   const linkList = document.getElementById('linkList');
@@ -83,6 +160,18 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="link-preview-url ${isPlaceholder ? 'placeholder' : ''}">
           ${isPlaceholder ? '⚠️ URL未設定（#）' : '🔗 ' + aff.url}
         </div>
+        ${usageBoxHtml('affiliate', key)}
+      </div>`;
+  });
+
+  // ── 予約ボタンボックス一覧 ──
+  const boxList = document.getElementById('boxList');
+  Object.entries(BOOKING_BOXES).forEach(([key, box]) => {
+    boxList.innerHTML += `
+      <div class="card-item">
+        <div class="link-preview-key">key: "${key}"</div>
+        <div data-affiliate-box="${key}" ${key === 'flights' ? 'data-dest="bkk"' : ''}></div>
+        ${usageBoxHtml('affiliate-box', key)}
       </div>`;
   });
 
@@ -93,6 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div>
         <div style="font-size:0.68em;font-weight:700;color:#aaa;font-family:monospace;margin-bottom:6px">key: "${key}"</div>
         <div data-affiliate-card="${key}"></div>
+        <div style="background:#fff;padding:0 14px 12px;border-radius:0 0 10px 10px;margin-top:-1px">${usageBoxHtml('affiliate-card', key)}</div>
       </div>`;
   });
 

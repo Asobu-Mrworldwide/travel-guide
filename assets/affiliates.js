@@ -262,13 +262,13 @@ function buildAffCard(c, extraStyle) {
 
   if (c.banner && !c.bannerSide && c.bannerPosition !== 'bottom') {
     card.innerHTML = `
-      <a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block"><img src="${c.banner.img}" width="300" height="250" alt="${c.name}" style="width:100%;height:auto;border:none;border-radius:10px;display:block"></a><img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute">`;
+      <a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block"><img src="${c.banner.img}" width="300" height="250" alt="${c.name}" style="width:100%;height:auto;border:none;border-radius:10px;display:block"></a><img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">`;
     return card;
   }
 
   card.className = 'aff-card' + (c.banner && c.bannerSide ? ' has-side-banner' : '');
   const bannerRowHtml = (c.banner && c.bannerPosition === 'bottom')
-    ? `<a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block;margin-top:12px"><img src="${c.banner.img}" width="${c.banner.w || 1456}" height="${c.banner.h || 180}" alt="${c.name}" style="width:100%;height:auto;border:none;border-radius:8px;display:block"></a>${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute">` : ''}`
+    ? `<a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block;margin-top:12px"><img src="${c.banner.img}" width="${c.banner.w || 1456}" height="${c.banner.h || 180}" alt="${c.name}" style="width:100%;height:auto;border:none;border-radius:8px;display:block"></a>${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">` : ''}`
     : '';
   const cardMain = `
     <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
@@ -308,7 +308,7 @@ function buildAffCard(c, extraStyle) {
     <div class="aff-card-flexrow">
       <div class="aff-card-main">${cardMain}</div>
       <div class="aff-card-bannercol">
-        <a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block;width:100%"><img src="${c.banner.img}" width="300" height="250" alt="${c.name}"></a>${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute">` : ''}
+        <a href="${c.banner.url}" target="_blank" rel="noopener nofollow" style="display:block;width:100%"><img src="${c.banner.img}" width="300" height="250" alt="${c.name}"></a>${c.banner.pixel ? `<img src="${c.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">` : ''}
       </div>
     </div>`;
   } else {
@@ -345,7 +345,7 @@ function initAffiliates() {
       bannerWrap.href = aff.banner.url; bannerWrap.target = '_blank'; bannerWrap.rel = 'noopener nofollow';
       bannerWrap.className = 'aff-row-banner';
       bannerWrap.style.cssText = 'margin:12px auto 0';
-      bannerWrap.innerHTML = `<img src="${aff.banner.img}" width="300" height="250" alt="${aff.name}" style="width:90%;max-width:280px;height:auto;border:none;border-radius:6px;display:block;margin:0 auto"><img src="${aff.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute">`;
+      bannerWrap.innerHTML = `<img src="${aff.banner.img}" width="300" height="250" alt="${aff.name}" style="width:90%;max-width:280px;height:auto;border:none;border-radius:6px;display:block;margin:0 auto"><img src="${aff.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">`;
       const fullCard = AFFILIATE_CARDS[key];
       if (fullCard) bannerWrap.classList.add('aff-row-banner-mobile-only');
       let anchor = row.insertAdjacentElement('afterend', bannerWrap);
