@@ -468,3 +468,34 @@ const AFFILIATE_CARDS = {
   },
 
 };
+
+/* =====================================================
+   サイドバナー定義（PC表示の右サイドレール広告）
+   HTML: <div data-affiliate-side="wise_side"></div>
+   全国ページ共通。country_template.html から参照される。
+   pixel は計測用1x1画像（なければ省略）。
+   ===================================================== */
+const SIDE_BANNERS = {
+
+  wise_side: {
+    brand:  'Wise',
+    name:   'Wise 為替レートバナー',
+    alt:    'Wise',
+    img:    'https://wise-creative.prf.hn/source/camref:1011l5NvUx/creativeref:1011l108088',
+    url:    'https://wise.prf.hn/click/camref:1011l5NvUx/creativeref:1011l108088',
+    width:  1200,
+    height: 628,
+  },
+
+  travel_side: {
+    brand:  '海外旅行（affiliate-b）',
+    name:   '海外旅行 縦長バナー',
+    alt:    '海外旅行',
+    img:    'https://www.affiliate-b.com/upload_image/4334-1782216552-3.jpg',
+    url:    'https://track.affiliate-b.com/visit.php?a=64334T-M5322214&p=o988181W',
+    pixel:  'https://track.affiliate-b.com/lead/64334T/o988181W/M5322214',
+    width:  300,
+    height: 600,
+  },
+
+};

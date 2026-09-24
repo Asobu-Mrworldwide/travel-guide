@@ -1716,9 +1716,74 @@ with tab5:
     # ── a. 一覧・使用状況 ──
     if aff_section == _AFF_SECTIONS[0]:
         st.caption("assets/affiliates-data.js の内容と、各ページでの使用状況です（開くたびに最新集計）。")
-        _aff_result = aff_compute_usage()
-        aff_write_usage_report(_aff_result)
-        aff_inline_preview_page(height=1800)
+        if st.button("🔄 使用状況を再集計", key="aff_recalc") or "aff_usage_cache" not in st.session_state:
+            with st.spinner("全ページを集計中…"):
+                _r = aff_compute_usage()
+                aff_write_usage_report(_r)
+                st.session_state["aff_usage_cache"] = _r
+        _aff_result = st.session_state["aff_usage_cache"]
+        _usage = _aff_result["usage"]
+        _BRANDS = [
+            ("Klook", ["klook"]), ("KKday", ["kkday"]), ("GetYourGuide", ["getyourguide"]),
+            ("Viator", ["viator"]), ("Wise", ["wise"]), ("エポスカード", ["epos"]),
+            ("trifa", ["trifa"]), ("Airalo", ["airalo"]), ("モバイルWi-Fi", ["wifi1", "wifi2"]),
+            ("Skyscanner", ["skyscanner"]), ("Grab", ["grab"]), ("Uber", ["uber"]),
+            ("PickMe", ["pickme"]), ("Yandex", ["yandex_go", "yandex_maps"]),
+            ("Google", ["google_maps", "google_translate"]), ("Telegram", ["telegram"]),
+            ("WhatsApp", ["whatsapp"]), ("比較ページ（汎用）", ["flights", "hotels", "sim", "sim_compare"]),
+        ]
+        _STYLES = [("AFFILIATES", "テキストリンク", "affiliate"),
+                   ("BOOKING_BOXES", "予約ボタン", "affiliate-box"),
+                   ("AFFILIATE_CARDS", "説明カード", "affiliate-card")]
+        _all = aff_io.list_all_keys()
+        _known = {k for _, ks in _BRANDS for k in ks}
+        _rest = sorted({k for c in _all.values() for k in c} - _known)
+        if _rest:
+            _BRANDS.append(("その他", _rest))
+        _unused = [u for u in (_aff_result.get("unused") or [])]
+        if _unused:
+            st.warning(f"未使用のキーが {len(_unused)} 件あります")
+        import re as _re2
+        _dtxt = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
+        _sm = _re2.search(r"const SIDE_BANNERS = \{(.*?)\n\};", _dtxt, _re2.S)
+        _rail = {}  # ブランド名 -> [サイドバナーのキー]
+        if _sm:
+            for _km in _re2.finditer(r"^  (\w+): \{\s*\n\s*brand:\s*'([^']*)'", _sm.group(1), _re2.M):
+                _rail.setdefault(_km.group(2), []).append(_km.group(1))
+        for _b in _rail:
+            if _b not in [n for n, _ in _BRANDS]:
+                _BRANDS.append((_b, []))
+        _BRANDS = [(n, ks) for n, ks in _BRANDS if n in _rail or any(k in _all[c] for k in ks for c, _, _ in _STYLES)]
+        _names = [n for n, _ in _BRANDS]
+        @st.fragment
+        def _aff_brand_view(_BRANDS, _all, _usage):
+            _sel = st.radio("ブランド", _names, horizontal=True, key="aff_brand_sel")
+            _keys = dict(_BRANDS)[_sel]
+            _rows = [(c, lbl, t, k) for k in _keys for c, lbl, t in _STYLES if k in _all[c]]
+            _parts = []
+            for _sk in _rail.get(_sel, []):
+                _parts.append('<div style="font:12px sans-serif;color:#888;margin:14px 0 4px">サイドバナー: ' + _sk + '</div><div data-affiliate-side="' + _sk + '" style="max-width:300px"></div>')
+                st.markdown(f"**サイドバナー**　`{_sk}`　全ページ共通表示")
+            for c, lbl, t, k in _rows:
+                u = (_usage.get(t) or {}).get(k) or {}
+                n = u.get("total", 0)
+                badge = f"✅ {n}箇所で使用" if n else ("🔁 テキストリンク経由で自動表示" if u.get("auto_via_text_link") else "⚠️ 未使用")
+                st.markdown(f"**{lbl}**　`{k}`　{badge}")
+                attr = AFF_ATTR_BY_CONST[c][0]
+                _parts.append(
+                    f'<div style="font:12px sans-serif;color:#888;margin:14px 0 4px">{lbl}: {k}</div>'
+                    f'<div {attr}="{k}"></div>'
+                )
+            import streamlit.components.v1 as _components
+            _js_data = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
+            _js_render = (ASSETS_DIR / "affiliates.js").read_text(encoding="utf-8")
+            _components.html(
+                "<div style=\"font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;max-width:760px\">"
+                + "".join(_parts) + f"</div><script>{_js_data}</script><script>{_js_render}</script>",
+                height=200 + 260 * (len(_rows) + len(_rail.get(_sel, []))), scrolling=True,
+            )
+
+        _aff_brand_view(_BRANDS, _all, _usage)
 
     # ── b. 新規登録 ──
     elif aff_section == _AFF_SECTIONS[1]:
