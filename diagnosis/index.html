@@ -342,10 +342,10 @@ import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebase
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 const TYPE_NAMES = {
-  PCSH:'中間管理職', PCSW:'特派員', PCLH:'茶道部', PCLW:'妖怪ガイドブック喰い',
+  PCSH:'中間管理職', PCSW:'別班員', PCLH:'茶道部', PCLW:'妖怪ガイドブック喰い',
   PNSH:'工場長', PNSW:'シェルパ', PNLH:'温泉ソムリエ', PNLW:'週末仙人',
   FCSH:'ゴールデンレトリバー', FCSW:'お祭り男', FCLH:'街のトリュフ犬', FCLW:'風来坊',
-  FNSH:'副本部長', FNSW:'桃太郎', FNLH:'独身貴族', FNLW:'ターザン',
+  FNSH:'副本部長', FNSW:'桃太郎', FNLH:'独身貴族', FNLW:'タンポポの綿毛',
 };
 function normalizeTypeCode(code) {
   if (!code || code.length !== 4) return code;
