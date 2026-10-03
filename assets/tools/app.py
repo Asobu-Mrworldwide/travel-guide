@@ -2226,7 +2226,7 @@ if tab5:
                 def _fmt(name):
                     if name == _NEW_BRAND:
                         return name
-                    return f"{name}（{len(brand_map.get(name, []))}）"
+                    return name
 
                 _default = st.session_state.get("aff_brand_sel", _opts[0] if _opts else _NEW_BRAND)
                 if _default not in _opts:
