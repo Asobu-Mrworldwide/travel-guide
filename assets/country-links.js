@@ -30,13 +30,16 @@
 
   const available = COUNTRIES.filter(c => c.available && c.path);
   const knownSlugs = available.map(c => c.path.split("/")[0]);
+  // COUNTRIESにまだ掲載していない（トップページ未公開の）国フォルダ。
+  // base相対パス（../の付与）の判定だけに使う。トップページのナビ・エリア一覧には影響しない。
+  const unlistedCountrySlugs = ["brazil", "mexico"];
 
   // 現在のページの直上フォルダ名が既知の国スラッグと一致するかで判定する
   // （サイトのホスティング階層の深さやfile://での直接閲覧に影響されないようにするため）
   const pathParts = location.pathname.split("/").filter(Boolean);
   const parentDir = pathParts.length >= 2 ? pathParts[pathParts.length - 2] : null;
   const currentSlug = parentDir && knownSlugs.includes(parentDir) ? parentDir : null;
-  const isCountryPage = currentSlug !== null;
+  const isCountryPage = currentSlug !== null || (parentDir && unlistedCountrySlugs.includes(parentDir));
   const isDiagPage = parentDir === "diagnosis";
   const isCommonPage = parentDir === "common";
   const base = (isCountryPage || isDiagPage || isCommonPage) ? "../" : "";

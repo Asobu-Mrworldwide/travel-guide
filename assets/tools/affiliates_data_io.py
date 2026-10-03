@@ -18,7 +18,7 @@ ASSETS_DIR = TOOLS_DIR.parent
 ROOT = ASSETS_DIR.parent
 DATA_JS = ASSETS_DIR / "affiliates-data.js"
 
-CONST_NAMES = ("AFFILIATES", "BOOKING_BOXES", "AFFILIATE_CARDS")
+CONST_NAMES = ("AFFILIATES", "BOOKING_BOXES", "AFFILIATE_CARDS", "SIDE_BANNERS")
 
 _KEY_RE = re.compile(r"^[a-z][a-z0-9_]*$")
 _IDENT_RE = re.compile(r"^[A-Za-z_$][A-Za-z0-9_$]*$")
@@ -153,6 +153,87 @@ def insert_entry(js_text: str, const_name: str, key: str, value_dict: dict) -> s
     return js_text[:close_idx] + entry_text + js_text[close_idx:]
 
 
+def _entry_span(js_text: str, const_name: str, key: str) -> tuple[int, int]:
+    """const_name ブロック内の `key: { ... },` の開始・終了位置（js_text全体でのindex）を返す。
+    末尾の空行も含めて削除できるよう、後続の改行もできるだけ飲み込む。"""
+    start = _find_const_open_index(js_text, const_name)
+    close = _find_const_close_index(js_text, const_name)
+    body = js_text[start:close]
+
+    key_re = re.compile(r"(?:^|\n)(\s*)" + re.escape(key) + r":\s*\{")
+    m = key_re.search(body)
+    if not m:
+        raise ValueError(f"キー「{key}」が {const_name} に見つかりません")
+    entry_start_in_body = m.start() + (1 if body[m.start()] == "\n" else 0)
+    brace_start = m.end()
+    depth = 1
+    k = brace_start
+    while depth > 0 and k < len(body):
+        if body[k] == "{":
+            depth += 1
+        elif body[k] == "}":
+            depth -= 1
+        k += 1
+    # 閉じ `}` の直後、カンマと改行（空行含む）を飲み込む
+    end_in_body = k
+    if end_in_body < len(body) and body[end_in_body] == ",":
+        end_in_body += 1
+    while end_in_body < len(body) and body[end_in_body] == "\n":
+        end_in_body += 1
+    return start + entry_start_in_body, start + end_in_body
+
+
+def delete_entry(const_name: str, key: str) -> None:
+    """既存エントリを affiliates-data.js から安全に削除する。
+
+    - 書き込み前に .bak バックアップを1世代作成
+    - 書き込み後に再パースして壊れていないか検証。失敗時はバックアップから復元して例外を送出
+    """
+    if const_name not in CONST_NAMES:
+        raise ValueError(f"不明な const_name です: {const_name}")
+
+    js_text = read_data_js_text()
+    existing = extract_top_level_entries(js_text, const_name)
+    if key not in existing:
+        raise ValueError(f"キー「{key}」は {const_name} に存在しません")
+
+    span_start, span_end = _entry_span(js_text, const_name, key)
+    new_text = js_text[:span_start] + js_text[span_end:]
+
+    backup_path = DATA_JS.with_suffix(".js.bak")
+    shutil.copy2(DATA_JS, backup_path)
+    DATA_JS.write_text(new_text, encoding="utf-8")
+
+    try:
+        verify_text = DATA_JS.read_text(encoding="utf-8")
+        ok = True
+        for cn in CONST_NAMES:
+            entries = extract_top_level_entries(verify_text, cn)
+            if not entries and cn in js_text:
+                ok = False
+            if cn == const_name and key in entries:
+                ok = False
+        if not ok:
+            raise RuntimeError("書き込み後の内容が想定と一致しません")
+    except Exception as e:
+        shutil.copy2(backup_path, DATA_JS)
+        raise RuntimeError(f"削除に失敗したため変更を元に戻しました（{e}）") from e
+
+
+def detect_asp(url: str) -> str:
+    """リンクURLのドメインからASP（アフィリエイトサイト）名を判定する。判別できなければ「不明」"""
+    u = (url or "").lower()
+    if "a8.net" in u or "a8mat=" in u:
+        return "A8.net"
+    if "afi-b.com" in u or "affiliate-b.com" in u:
+        return "afb（アフィリエイトB）"
+    if "prf.hn" in u or "camref:" in u:
+        return "Partnerize"
+    if "tpo.li" in u:
+        return "Travelpayouts"
+    return "不明"
+
+
 def save_new_entry(const_name: str, key: str, value_dict: dict) -> None:
     """新しいエントリを affiliates-data.js に安全に追記する。
 
@@ -163,6 +244,9 @@ def save_new_entry(const_name: str, key: str, value_dict: dict) -> None:
     """
     if const_name not in CONST_NAMES:
         raise ValueError(f"不明な const_name です: {const_name}")
+    if "asp" not in value_dict:
+        ref_url = value_dict.get("url") or (value_dict.get("banner") or {}).get("url") or ""
+        value_dict = {**value_dict, "asp": detect_asp(ref_url)}
     if not _KEY_RE.match(key):
         raise ValueError("キーは半角小文字英数字とアンダースコアのみ、先頭は英字にしてください（例: my_new_link）")
 

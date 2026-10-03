@@ -5,6 +5,7 @@ Recraft 画像生成管理アプリ
 import io
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -181,57 +182,498 @@ AFF_ATTR_BY_CONST = {
     "AFFILIATES": ("data-affiliate", "affiliate"),
     "AFFILIATE_CARDS": ("data-affiliate-card", "affiliate-card"),
     "BOOKING_BOXES": ("data-affiliate-box", "affiliate-box"),
+    "SIDE_BANNERS": ("data-affiliate-side", "affiliate-side"),
 }
 
 
-def aff_preview_html_for_key(const_name: str, key: str) -> str:
-    """assets/affiliates-data.js・affiliates.js の中身をそのまま埋め込み、
-    既に登録済みのキーを実際の描画コードでプレビューする"""
-    attr, _ = AFF_ATTR_BY_CONST[const_name]
-    js_data = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
-    js_render = (ASSETS_DIR / "affiliates.js").read_text(encoding="utf-8")
-    return f"""
-<div style="font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">
-  <div {attr}="{key}"></div>
-</div>
-<script>{js_data}</script>
-<script>{js_render}</script>
-"""
+# ──────────────────────────────────────────────────────────
+# 広告プレビューの描画（iframeを使わず、affiliates.jsのロジックをPythonに移植して
+# st.markdown に直接描画する。iframeだと固定高さ・スクロールバーで見た目が崩れるため）
+# ──────────────────────────────────────────────────────────
+AFF_PREVIEW_SCOPE = "wm-adprev"
+AFF_SITE_BASE = "https://worldmappy.com/"  # ../assets/... 等の相対パス解決用
 
 
-def aff_preview_html_for_draft(const_name: str, value: dict) -> str:
-    """まだ保存していない入力中の内容を、一時キーとして描画コードに流し込みプレビューする"""
-    attr, _ = AFF_ATTR_BY_CONST[const_name]
-    js_data = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
-    js_render = (ASSETS_DIR / "affiliates.js").read_text(encoding="utf-8")
-    value_json = json.dumps(value, ensure_ascii=False)
-    return f"""
-<div style="font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif">
-  <div {attr}="__draft__"></div>
-</div>
-<script>{js_data}</script>
-<script>{const_name}['__draft__'] = {value_json};</script>
-<script>{js_render}</script>
-"""
+def _aff_scope_css(css: str, scope_selector: str) -> str:
+    """CSSの各セレクタに scope_selector を前置して、ページ全体への影響を防ぐ
+    （style.css の `.container` のような汎用的なクラス名が管理画面側と衝突しないようにする）。
+    @media/@supports は中身を再帰的にスコープし、@keyframes等はそのまま通す。"""
+    out = []
+    i, n = 0, len(css)
+    while i < n:
+        if css[i:i + 2] == "/*":
+            end = css.find("*/", i + 2)
+            end = n if end == -1 else end + 2
+            i = end
+            continue
+        brace = css.find("{", i)
+        semi = css.find(";", i)
+        if brace == -1:
+            i = n
+            break
+        if semi != -1 and semi < brace:
+            i = semi + 1
+            continue
+        selector = css[i:brace]
+        depth, j = 1, brace + 1
+        while depth > 0 and j < n:
+            if css[j] == "{":
+                depth += 1
+            elif css[j] == "}":
+                depth -= 1
+            j += 1
+        body = css[brace + 1:j - 1]
+        sel = selector.strip()
+        if sel.startswith("@media") or sel.startswith("@supports"):
+            out.append(f"{selector}{{{_aff_scope_css(body, scope_selector)}}}")
+        elif sel.startswith("@"):
+            pass  # @keyframes / @font-face 等は影響が限定的なのでそのまま捨てる（重複防止）
+        else:
+            parts = []
+            for p in selector.split(","):
+                p = p.strip()
+                if not p:
+                    continue
+                parts.append(scope_selector if p in (":root", "html", "body", "*") else f"{scope_selector} {p}")
+            if parts:
+                out.append(",".join(parts) + "{" + body + "}")
+        i = j
+    return "".join(out)
 
 
-def aff_inline_preview_page(height: int = 1800):
-    """assets/affiliates-preview.html をそのまま管理画面内に埋め込む（script src をインライン化）"""
-    import streamlit.components.v1 as _components
-    html = (ASSETS_DIR / "affiliates-preview.html").read_text(encoding="utf-8")
-    for fname in ("affiliates-data.js", "affiliates.js", "affiliate-usage-data.js"):
-        js_content = (ASSETS_DIR / fname).read_text(encoding="utf-8")
-        html = html.replace(f'<script src="{fname}"></script>', f"<script>{js_content}</script>")
-    _components.html(html, height=height, scrolling=True)
+@st.cache_data(show_spinner=False)
+def _aff_preview_css() -> str:
+    """style.css と affiliates.js内のAFFILIATES_CSSを合体してスコープ付きCSSを作る（キャッシュ）"""
+    site_css = (ASSETS_DIR / "style.css").read_text(encoding="utf-8")
+    js_text = (ASSETS_DIR / "affiliates.js").read_text(encoding="utf-8")
+    m = re.search(r"const AFFILIATES_CSS = `(.*?)`;", js_text, re.S)
+    aff_css = m.group(1) if m else ""
+    return _aff_scope_css(site_css + "\n" + aff_css, f".{AFF_PREVIEW_SCOPE}")
+
+
+def _aff_fix_relative_paths(html: str) -> str:
+    """'../assets/...' のような相対パスを実サイトの絶対URLに書き換える"""
+    return re.sub(r'(src|href)="\.\./([^"]*)"', rf'\1="{AFF_SITE_BASE}\2"', html)
+
+
+def aff_get_entry(const_name: str, key: str) -> dict | None:
+    """affiliates-data.js から既存エントリ1件をPythonのdictとして取得する（JS object literal → dict）"""
+    import json5
+    js_text = aff_io.read_data_js_text()
+    entries = aff_io.extract_top_level_entries(js_text, const_name)
+    body = entries.get(key)
+    if body is None:
+        return None
+    try:
+        return json5.loads("{" + body + "}")
+    except Exception:
+        return None
+
+
+def _aff_render_link(v: dict) -> str:
+    return f'<a href="{v.get("url", "")}" target="_blank" rel="noopener" class="budget-link" style="text-align:left;width:auto">{v.get("label", "")}</a>'
+
+
+def _aff_render_card(c: dict) -> str:
+    icon, name, tagline = c.get("icon", ""), c.get("name", ""), c.get("tagline", "")
+    logo, name_large = c.get("logo", ""), c.get("name_large")
+    desc, note, btn, url, color = c.get("desc", ""), c.get("note", ""), c.get("btn", ""), c.get("url", ""), c.get("color", "#006847")
+    points_html = "".join(f"<li>{p}</li>" for p in c.get("points", []))
+    # affiliates.js の buildAffCard() と同じ分岐: logo優先 → name_large → icon+name+tagline
+    if logo:
+        header_inner = f'<div style="line-height:1">{logo}</div>'
+    elif name_large:
+        header_inner = (
+            f'<div><div style="display:flex;align-items:center;gap:10px">'
+            f'<span class="aff-card-icon">{icon}</span>'
+            f'<div class="aff-card-name" style="font-size:1.5em;line-height:1">{name}</div>'
+            f'</div><div class="aff-card-tagline" style="margin-top:4px">{tagline}</div></div>'
+        )
+    else:
+        header_inner = (
+            f'<div style="display:flex;align-items:center;gap:10px">'
+            f'<span class="aff-card-icon">{icon}</span>'
+            f'<div><div class="aff-card-name">{name}</div><div class="aff-card-tagline">{tagline}</div></div>'
+            f'</div>'
+        )
+    return f'''<div class="aff-card">
+  <div class="aff-card-header" style="display:flex;align-items:center;justify-content:space-between">
+    {header_inner}
+  </div>
+  <div class="aff-card-body">
+    {f'<p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:0 0 12px">{desc}</p>' if desc else ''}
+    <ul class="aff-card-points">{points_html}</ul>
+    {f'<div class="aff-card-note">{note}</div>' if note else ''}
+    <a href="{url}" target="_blank" rel="noopener" class="aff-card-btn" style="background:{color}">{btn}</a>
+  </div>
+</div>'''
+
+
+def _aff_render_booking_box(box: dict) -> str:
+    buttons_html = ""
+    for b in box.get("buttons", []):
+        desc = f'<p class="booking-btn-desc">{b["desc"]}</p>' if b.get("desc") else ""
+        buttons_html += f'<div class="booking-btn-group">{desc}<a href="{b.get("url", "")}" target="_blank" rel="noopener" class="btn-booking {b.get("className", "")}">{b.get("label", "")}</a></div>'
+    return f'<div class="booking-box"><h3 class="booking-title">{box.get("title", "")}</h3><div class="booking-buttons">{buttons_html}</div></div>'
+
+
+def _aff_render_side_banner(v: dict) -> str:
+    w, h = v.get("width", 300), v.get("height", 250)
+    html = (
+        f'<a href="{v.get("url", "")}" target="_blank" rel="noopener nofollow">'
+        f'<img src="{v.get("img", "")}" width="{w}" height="{h}" alt="{v.get("alt", "")}" '
+        f'style="width:100%;height:auto;border-radius:6px;display:block"></a>'
+    )
+    if v.get("pixel"):
+        html += f'<img src="{v["pixel"]}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">'
+    return html
+
+
+def aff_render_preview(const_name: str, value: dict):
+    """広告1件のプレビューをiframeなしでそのままページに描画する（st.markdown直書き）"""
+    renderers = {
+        "AFFILIATES": _aff_render_link,
+        "AFFILIATE_CARDS": _aff_render_card,
+        "BOOKING_BOXES": _aff_render_booking_box,
+        "SIDE_BANNERS": _aff_render_side_banner,
+    }
+    renderer = renderers.get(const_name)
+    if not renderer:
+        return
+    inner = _aff_fix_relative_paths(renderer(value))
+    # st.markdownはMarkdownパーサーを通すため、改行+インデント入りのHTMLを渡すと
+    # 4スペース以上のインデント行がコードブロック扱いされてタグが素通しされず文字化けする。
+    # 改行を潰して1行にまとめ、Markdown側に解釈させず素のHTMLとして扱わせる。
+    inner = re.sub(r"\n\s*", "", inner)
+    # 実サイトの幅に合わせる：サイドレール 300px − 左右パディング18px×2 = 264px、本文 740px − 左右28px×2 = 684px
+    max_w = "264px" if const_name == "SIDE_BANNERS" else "684px"
+    st.markdown(f"<style>{_aff_preview_css()}</style>", unsafe_allow_html=True)
+    st.markdown(
+        f'<div class="{AFF_PREVIEW_SCOPE}" style="max-width:{max_w};margin:4px 0 4px;'
+        f"font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif\">{inner}</div>",
+        unsafe_allow_html=True,
+    )
 
 
 def aff_validate_required(const_name: str, value: dict) -> bool:
+    if not value.get("brand"):
+        return False
     if const_name == "AFFILIATES":
-        return all(value.get(f) for f in ("name", "label", "desc", "btn", "url"))
+        return all(value.get(f) for f in ("name", "label", "url"))
     if const_name == "AFFILIATE_CARDS":
         return all(value.get(f) for f in ("icon", "name", "tagline", "btn", "url", "color")) and bool(value.get("points"))
     if const_name == "BOOKING_BOXES":
         return bool(value.get("title")) and bool(value.get("buttons"))
+    if const_name == "SIDE_BANNERS":
+        return all(value.get(f) for f in ("name", "img", "url", "width", "height"))
+    return False
+
+
+def aff_read_brand_map() -> dict:
+    """affiliates-data.js を走査し、ブランド名 -> [(const_name, key), ...] を返す"""
+    js_text = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
+    brand_map: dict[str, list[tuple[str, str]]] = {}
+    for const_name in ("AFFILIATES", "BOOKING_BOXES", "AFFILIATE_CARDS", "SIDE_BANNERS"):
+        entries = aff_io.extract_top_level_entries(js_text, const_name)
+        for key, body in entries.items():
+            m = re.search(r"brand:\s*'((?:[^'\\]|\\.)*)'", body)
+            brand = m.group(1).replace("\\'", "'") if m else "その他"
+            brand_map.setdefault(brand, []).append((const_name, key))
+    return brand_map
+
+
+def _aff_parse_raw_tag(raw_tag: str) -> dict | None:
+    """貼り付けられた広告タグ（<a><img>やテキストリンク）から種類・項目を自動判別する"""
+    raw_tag = raw_tag.strip()
+    if not raw_tag:
+        return None
+
+    def _attr(tag_str, name):
+        m = re.search(name + r'="([^"]*)"', tag_str, re.I)
+        return m.group(1) if m else ""
+
+    _imgs = re.findall(r'<img\s+([^>]*)>', raw_tag, re.I)
+    _hrefs = re.findall(r'<a\s+[^>]*href="([^"]+)"', raw_tag, re.I)
+
+    # 画像タグがあれば、1x1の計測ピクセル以外の「実体のある画像」を探す
+    _banner_img, _bw, _bh = "", "", ""
+    for _t in _imgs:
+        _w, _h, _src = _attr(_t, "width"), _attr(_t, "height"), _attr(_t, "src")
+        if not _src:
+            continue
+        if _w in ("1", "0") or _h in ("1", "0"):
+            continue  # 計測ピクセルはバナー画像扱いしない
+        if not _banner_img:
+            _banner_img, _bw, _bh = _src, _w, _h
+
+    if _banner_img and _hrefs:
+        # 実体のあるバナー画像が見つかった → 画像バナーとして解析
+        _pixel_img = next(
+            (_attr(_t, "src") for _t in _imgs
+             if _attr(_t, "width") in ("1", "0") or _attr(_t, "height") in ("1", "0")),
+            "",
+        )
+        return {
+            "kind": "banner", "img": _banner_img, "url": _hrefs[0], "pixel": _pixel_img,
+            "width": int(_bw) if _bw.isdigit() else 0, "height": int(_bh) if _bh.isdigit() else 0,
+        }
+
+    # 実体のあるバナー画像がない（計測ピクセルのみ、または画像なし）→ テキストリンクとして扱う
+    _url = _hrefs[0] if _hrefs else (raw_tag if re.match(r'^https?://\S+$', raw_tag) else "")
+    if _url:
+        # <a>タグの中身（表示テキスト）があれば、ASP側が用意した実際の文言をそのまま使う
+        _anchor_m = re.search(r'<a\s+[^>]*href="[^"]+"[^>]*>(.*?)</a>', raw_tag, re.I | re.S)
+        _anchor_text = re.sub(r'<[^>]+>', '', _anchor_m.group(1)).strip() if _anchor_m else ""
+        return {"kind": "link", "url": _url, "text": _anchor_text}
+    return None
+
+
+def _aff_auto_key(brand: str, kind: str, url: str, taken: set) -> str:
+    """キーを `{brand}_{banner|text}_{n}` 形式で自動採番する（ブランドが英数字でなければURLのドメインで代用）"""
+    from urllib.parse import urlparse
+    base = re.sub(r"[^a-z0-9]+", "_", (brand or "").lower()).strip("_")
+    if not base:
+        host = urlparse(url).netloc.lower()
+        base = re.sub(r"[^a-z0-9]+", "_", host).strip("_") or "ad"
+    if not base[0].isalpha():
+        base = "ad_" + base
+    kind_s = "banner" if kind == "banner" else "text"
+    n = 1
+    while f"{base}_{kind_s}_{n}" in taken:
+        n += 1
+    return f"{base}_{kind_s}_{n}"
+
+
+def aff_registration_form(default_brand: str | None, key_prefix: str):
+    """広告エントリ登録フォーム。default_brand を渡すとブランド名を固定して追加できる。
+    保存できたら True を返す（呼び出し側で rerun・キャッシュ破棄などを行う）"""
+    if default_brand is not None:
+        brand = default_brand
+        st.caption(f"ブランド「{brand}」に追加します")
+    else:
+        brand = st.text_input("ブランド名（新規）", key=f"{key_prefix}_brand").strip()
+
+    st.caption(
+        "ASPサイトでコピーした広告タグ（`<a>...<img>...</a>`）や、アフィリエイトのURLを貼り付けてください。"
+        "複数まとめて登録する場合は、1件ごとに空行（改行2回）で区切ってください。"
+    )
+    raw_tag = st.text_area(
+        "広告タグ／URLを貼り付け（複数は空行区切り）", key=f"{key_prefix}_raw_tag", height=140,
+        placeholder='<a href="...">...<img ... src="..."></a>\n\nhttps://...\n\nhttps://...',
+    )
+
+    # ASPの埋め込みコードはhref/src等の属性値の途中に改行が混入していることがある
+    # （a8.net等でよく発生）ため、引用符内の改行は先に除去してから分割する
+    _normalized = re.sub(r'"[^"]*"', lambda m: m.group(0).replace("\n", "").replace("\r", ""),
+                          raw_tag.strip(), flags=re.S)
+    _chunks = [c.strip() for c in re.split(r"\n\s*\n", _normalized)] if _normalized else []
+    _chunks = [c for c in _chunks if c]
+    _items = []
+    _taken_by_const: dict[str, set] = {}
+    for _chunk in _chunks:
+        _p = _aff_parse_raw_tag(_chunk)
+        if not _p:
+            _items.append({"ok": False, "raw": _chunk})
+            continue
+        if _p["kind"] == "banner":
+            _cn = "SIDE_BANNERS"
+            _v = {
+                "brand": brand, "name": brand, "alt": brand,
+                "img": _p["img"], "url": _p["url"],
+                "width": _p["width"], "height": _p["height"],
+            }
+            if _p["pixel"]:
+                _v["pixel"] = _p["pixel"]
+        else:
+            _cn = "AFFILIATES"
+            _label = _p.get("text") or f"{brand}を見る →"
+            _v = {"brand": brand, "name": brand, "label": _label, "btn": "見る →", "url": _p["url"]}
+        _taken = _taken_by_const.setdefault(_cn, set(aff_io.list_all_keys()[_cn]))
+        _k = _aff_auto_key(brand, _p["kind"], _v["url"], _taken)
+        _taken.add(_k)
+        _items.append({"ok": True, "const_name": _cn, "value": _v, "key": _k, "kind": _p["kind"]})
+
+    if _chunks and not brand:
+        st.info("ブランド名を入力すると読み取り結果が表示されます")
+    elif _items:
+        _ok_count = sum(1 for it in _items if it["ok"])
+        st.markdown(f"##### 読み取り結果（{_ok_count} / {len(_items)} 件）")
+        for it in _items:
+            if not it["ok"]:
+                st.warning(f"⚠️ 読み取れませんでした: {it['raw'][:60]}")
+                continue
+            with st.container(border=True):
+                st.markdown(
+                    f'<code>{it["key"]}</code>',
+                    unsafe_allow_html=True,
+                )
+                aff_render_preview(it["const_name"], it["value"])
+
+    _ok_items = [it for it in _items if it["ok"]] if brand else []
+
+    with st.expander("詳しい形式を手動で入力（説明カード・予約ボタンなど、自動判別できない形式）"):
+        CATEGORY_MAP = {
+            "テキストリンク（シンプルなリンク）": "AFFILIATES",
+            "説明カード（詳しい説明つきのカード）": "AFFILIATE_CARDS",
+            "予約ボタンの並び": "BOOKING_BOXES",
+            "画像バナー（手動入力）": "SIDE_BANNERS",
+        }
+        _use_manual = st.checkbox("手動入力を使う（貼り付けた内容より優先）", key=f"{key_prefix}_use_manual")
+        category_label = st.radio("種類", list(CATEGORY_MAP.keys()), key=f"{key_prefix}_category")
+        manual_const_name = CATEGORY_MAP[category_label]
+
+        manual_value = {}
+        if manual_const_name == "AFFILIATES":
+            c1, c2 = st.columns(2)
+            with c1:
+                f_name = st.text_input("名前（内部管理用）", key=f"{key_prefix}_name")
+                f_label = st.text_input("リンクの文言", placeholder="〇〇を見る →", key=f"{key_prefix}_label")
+                f_btn = st.text_input("ボタンの文言", placeholder="見る →", key=f"{key_prefix}_btn")
+            with c2:
+                f_url = st.text_input("リンク先URL", key=f"{key_prefix}_url")
+                f_desc = st.text_area("説明文", key=f"{key_prefix}_desc", height=80)
+            has_banner = st.checkbox("バナー画像も設定する", key=f"{key_prefix}_has_banner")
+            manual_value = {"brand": brand, "name": f_name, "label": f_label, "desc": f_desc, "btn": f_btn, "url": f_url}
+            if has_banner:
+                b_img = st.text_input("バナー画像URL", key=f"{key_prefix}_banner_img")
+                b_url = st.text_input("バナーのリンク先URL", key=f"{key_prefix}_banner_url")
+                b_pixel = st.text_input("計測用ピクセルURL（なければ空欄）", key=f"{key_prefix}_banner_pixel")
+                banner = {"img": b_img, "url": b_url}
+                if b_pixel:
+                    banner["pixel"] = b_pixel
+                manual_value["banner"] = banner
+
+        elif manual_const_name == "AFFILIATE_CARDS":
+            c1, c2 = st.columns(2)
+            with c1:
+                f_icon = st.text_input("アイコン（絵文字1文字、例: 🚗）", key=f"{key_prefix}_icon")
+                f_name = st.text_input("名前", key=f"{key_prefix}_name")
+                f_tagline = st.text_input("一言キャッチ", key=f"{key_prefix}_tagline")
+                f_color = st.color_picker("テーマカラー", value="#006847", key=f"{key_prefix}_color")
+            with c2:
+                f_btn = st.text_input("ボタンの文言", placeholder="見る →", key=f"{key_prefix}_btn")
+                f_url = st.text_input("リンク先URL", key=f"{key_prefix}_url")
+                f_note = st.text_input("補足（注釈。なければ空欄でOK）", key=f"{key_prefix}_note")
+            f_points = st.text_area(
+                "特徴（1行に1つずつ）", key=f"{key_prefix}_points", height=100,
+                placeholder="現地ATMで現地通貨をその場で引き出せる\nアプリで残高・履歴をリアルタイム管理",
+            )
+            points_list = [p.strip() for p in f_points.split("\n") if p.strip()]
+            f_desc = ""
+            has_banner = False
+            banner = None
+            banner_side = False
+            with st.expander("詳細設定（説明文・バナー画像。必要な場合だけ開く）"):
+                f_desc = st.text_area("詳しい説明文（任意）", key=f"{key_prefix}_desc2", height=80)
+                has_banner = st.checkbox("バナー画像を追加する", key=f"{key_prefix}_card_has_banner")
+                if has_banner:
+                    b_img = st.text_input("バナー画像URL", key=f"{key_prefix}_card_banner_img")
+                    b_url = st.text_input("バナーのリンク先URL", key=f"{key_prefix}_card_banner_url")
+                    b_pixel = st.text_input("計測用ピクセルURL（なければ空欄）", key=f"{key_prefix}_card_banner_pixel")
+                    banner_side = st.checkbox(
+                        "バナーをカードの横に並べる（未チェックなら単独表示）", key=f"{key_prefix}_card_banner_side",
+                    )
+                    banner = {"img": b_img, "url": b_url}
+                    if b_pixel:
+                        banner["pixel"] = b_pixel
+            manual_value = {
+                "brand": brand, "icon": f_icon, "name": f_name, "tagline": f_tagline,
+                "points": points_list, "note": f_note, "btn": f_btn, "url": f_url, "color": f_color,
+            }
+            if f_desc:
+                manual_value["desc"] = f_desc
+            if has_banner:
+                manual_value["banner"] = banner
+                if banner_side:
+                    manual_value["bannerSide"] = True
+
+        elif manual_const_name == "SIDE_BANNERS":
+            c1, c2 = st.columns(2)
+            with c1:
+                f_name = st.text_input("名前（内部管理用）", key=f"{key_prefix}_side_name")
+                f_alt = st.text_input("alt（画像の説明）", key=f"{key_prefix}_side_alt")
+            with c2:
+                f_img = st.text_input("バナー画像URL", key=f"{key_prefix}_side_img")
+                f_url = st.text_input("リンク先URL", key=f"{key_prefix}_side_url")
+            c3, c4, c5 = st.columns(3)
+            with c3:
+                f_w = st.number_input("画像の幅(px)", min_value=1, value=300, key=f"{key_prefix}_side_w")
+            with c4:
+                f_h = st.number_input("画像の高さ(px)", min_value=1, value=250, key=f"{key_prefix}_side_h")
+            with c5:
+                f_pixel = st.text_input("計測用ピクセルURL（任意）", key=f"{key_prefix}_side_pixel")
+            manual_value = {
+                "brand": brand, "name": f_name, "alt": f_alt,
+                "img": f_img, "url": f_url, "width": int(f_w), "height": int(f_h),
+            }
+            if f_pixel:
+                manual_value["pixel"] = f_pixel
+
+        else:  # BOOKING_BOXES
+            f_title = st.text_input("タイトル", key=f"{key_prefix}_box_title")
+            st.caption("ボタンの色は仮の青色（Skyscannerと同じ）で表示されます。特定の色にしたい場合は保存後にaffiliates.jsのCSSを調整してください。")
+            box_rows = st.data_editor(
+                [{"ラベル": "", "URL": "", "説明（任意）": ""}],
+                num_rows="dynamic", use_container_width=True, key=f"{key_prefix}_box_rows",
+            )
+            buttons = []
+            for _row in box_rows:
+                _label = (_row.get("ラベル") or "").strip()
+                _url = (_row.get("URL") or "").strip()
+                if not _label or not _url:
+                    continue
+                _btn = {"className": "btn-skyscanner", "label": _label, "url": _url}
+                _desc = (_row.get("説明（任意）") or "").strip()
+                if _desc:
+                    _btn["desc"] = _desc
+                buttons.append(_btn)
+            manual_value = {"brand": brand, "title": f_title, "buttons": buttons}
+
+        if _use_manual:
+            if "brand" not in manual_value:
+                manual_value["brand"] = brand
+            if not aff_validate_required(manual_const_name, manual_value):
+                st.info("必須項目が足りません")
+            else:
+                st.markdown("##### プレビュー")
+                aff_render_preview(manual_const_name, manual_value)
+                _manual_existing = aff_io.list_all_keys()[manual_const_name]
+                _manual_key = st.text_input(
+                    "キー（半角小文字英数字とアンダースコアのみ。例: my_new_link）", key=f"{key_prefix}_manual_key",
+                ).strip()
+                _manual_key_error = None
+                if _manual_key:
+                    if not aff_io.is_valid_key(_manual_key):
+                        _manual_key_error = "半角小文字英数字とアンダースコアのみ、先頭は英字にしてください"
+                    elif _manual_key in _manual_existing:
+                        _manual_key_error = "このキーはすでに使われています"
+                    if _manual_key_error:
+                        st.error(_manual_key_error)
+                if _manual_key and not _manual_key_error and st.button("💾 登録する", type="primary", key=f"{key_prefix}_manual_save"):
+                    try:
+                        aff_io.save_new_entry(manual_const_name, _manual_key, manual_value)
+                    except Exception as e:
+                        st.error(f"保存に失敗しました: {e}")
+                    else:
+                        st.success(f"✅ キー「{_manual_key}」として登録しました（バックアップ: affiliates-data.js.bak）")
+                        return True
+
+    if not _ok_items:
+        return False
+
+    if st.button(f"💾 {len(_ok_items)}件をまとめて登録する", type="primary", key=f"{key_prefix}_save"):
+        _errors = []
+        for it in _ok_items:
+            try:
+                aff_io.save_new_entry(it["const_name"], it["key"], it["value"])
+            except Exception as e:
+                _errors.append(f"{it['key']}: {e}")
+        if _errors:
+            st.error("一部の登録に失敗しました:\n" + "\n".join(_errors))
+            return False
+        else:
+            st.success(f"✅ {len(_ok_items)}件登録しました（バックアップ: affiliates-data.js.bak）")
+            return True
     return False
 
 
@@ -241,12 +683,203 @@ def aff_validate_required(const_name: str, value: dict) -> bool:
 st.set_page_config(page_title="Recraft 画像生成ツール", layout="wide")
 st.markdown("""
 <style>
-.stApp { background-color: #ddeaf5; }
-[data-testid="stSidebar"] { background-color: #ccdff0; }
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+.stApp { background-color: #F1F5EA; font-family: 'Zen Kaku Gothic New', sans-serif; color: #22302A; }
 textarea { font-size: 1.25rem !important; line-height: 1.75 !important; }
+
+/* ── 管理画面の共通デザイントークン（Content Studio の配色に合わせる） ── */
+:root {
+  --wm-admin-primary: #14503C;
+  --wm-admin-primary-dark: #0E3A2B;
+  --wm-admin-gold: #F5B921;
+  --wm-admin-radius: 10px;
+}
+
+/* ── サイドバー（緑地・ナビ・クレジット） ── */
+[data-testid="stSidebar"] { background-color: #14503C; }
+[data-testid="stSidebar"] * { color: #E6EFE2; }
+[data-testid="stSidebarUserContent"] {
+  display: flex; flex-direction: column; min-height: calc(100vh - 40px);
+}
+.wm-brand { display: flex; align-items: center; gap: 10px; padding: 4px 8px 22px; }
+.wm-brand-mark {
+  width: 34px; height: 34px; border-radius: 10px; background: var(--wm-admin-gold);
+  color: #14503C; font-weight: 900; font-size: 17px; display: grid; place-items: center;
+}
+.wm-brand-name { font-weight: 900; font-size: 15px; color: #fff; line-height: 1.2; }
+.wm-brand-sub { font-size: 11px; color: #A9C4B5; letter-spacing: .08em; line-height: 1.2; }
+[data-testid="stSidebar"] div[data-testid="stRadio"] [role="radiogroup"] {
+  flex-direction: column !important; gap: 4px !important; flex-wrap: nowrap !important;
+}
+[data-testid="stSidebar"] div[data-testid="stRadio"] [role="radiogroup"] label {
+  position: relative; width: 100%; border: 0 !important; background: transparent !important;
+  border-radius: 10px !important; padding: 11px 12px 11px 22px !important;
+}
+[data-testid="stSidebar"] div[data-testid="stRadio"] [role="radiogroup"] label p {
+  color: #BFD3C6 !important; font-size: 14px !important; font-weight: 700 !important;
+}
+[data-testid="stSidebar"] div[data-testid="stRadio"] [role="radiogroup"] label:has(input:checked) {
+  background: rgba(255,255,255,.12) !important; border: 0 !important;
+}
+[data-testid="stSidebar"] div[data-testid="stRadio"] [role="radiogroup"] label:has(input:checked) p { color: #fff !important; }
+[data-testid="stSidebar"] div[data-testid="stRadio"] [role="radiogroup"] label:has(input:checked)::before {
+  content: ""; position: absolute; left: 8px; top: 50%; transform: translateY(-50%);
+  width: 6px; height: 6px; border-radius: 3px; background: var(--wm-admin-gold);
+}
+.wm-credit {
+  margin-top: auto; background: rgba(255,255,255,.07); border-radius: 12px; padding: 16px 16px 14px;
+}
+.wm-credit-label { font-size: 11px; color: #A9C4B5; letter-spacing: .06em; line-height: 1.4; }
+.wm-credit-value {
+  display: flex; align-items: baseline; gap: 6px; margin-top: 8px;
+  font-size: 26px; font-weight: 900; color: #fff; line-height: 1.1; font-variant-numeric: tabular-nums;
+}
+.wm-credit-value span { font-size: 12px; color: #A9C4B5; font-weight: 500; }
+.wm-credit-value .wm-credit-jpy { font-size: 16px; color: #CFE0D5; font-weight: 700; margin-left: 6px; }
+
+/* ── トップバー（白・下線・固定） ── */
+.st-key-wm_topbar {
+  background: #fff; border-bottom: 1px solid #DDE5D3; padding: 12px 20px;
+  position: sticky; top: 0; z-index: 5; margin-bottom: 16px;
+}
+/* ── 生成画面：金のCTA・費用行 ── */
+.st-key-hero_gen button, .st-key-spot_gen button, .st-key-food_gen button {
+  background: var(--wm-admin-primary) !important; color: #fff !important;
+  border: 0 !important; font-weight: 900 !important;
+}
+.st-key-hero_gen button *, .st-key-spot_gen button *, .st-key-food_gen button * {
+  color: #fff !important;
+}
+.st-key-hero_gen button:hover, .st-key-spot_gen button:hover, .st-key-food_gen button:hover {
+  background: var(--wm-admin-primary-dark) !important;
+}
+.wm-blank-tile { aspect-ratio: 1 / 1; background: #F4F7F0; border: 1px solid #E4EBDD; border-radius: 12px; }
+.wm-cost-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-top: 1px solid #E4EBDD; padding-top: 12px; font-size: 13px; color: #5E6E64;
+}
+.wm-cost-row b { font-size: 20px; font-weight: 900; color: #22302A; }
+.wm-cost-row small { font-size: 12px; font-weight: 500; color: #8A968E; margin-left: 4px; }
+[data-testid="stVerticalBlockBorderWrapper"] { background: #fff; }
+.wm-stats { display: flex; gap: 16px; font-size: 13px; color: #5E6E64; flex-wrap: wrap; white-space: nowrap; }
+.wm-stats b { color: #22302A; font-size: 15px; }
+.wm-stats b.ok { color: #2F8A5F; font-size: 13px; }
+.wm-stats b.ng { color: #E0892B; font-size: 13px; }
+.st-key-wm_topbar div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+  background: #F7FAF3 !important; border-color: #C9D6C1 !important; border-radius: 9px !important;
+  font-weight: 700; color: #14503C !important;
+}
+div.stButton > button, div.stDownloadButton > button {
+  border-radius: var(--wm-admin-radius) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 2px rgba(20,40,30,0.08) !important;
+  transition: filter 0.15s ease !important;
+}
+div.stButton > button:hover, div.stDownloadButton > button:hover {
+  filter: brightness(0.97);
+}
+div.stButton > button[kind="primary"] {
+  background: var(--wm-admin-primary) !important;
+  border-color: var(--wm-admin-primary) !important;
+}
+div.stButton > button[kind="primary"]:hover {
+  background: var(--wm-admin-primary-dark) !important;
+  border-color: var(--wm-admin-primary-dark) !important;
+}
+[data-testid="stExpander"] {
+  border-radius: var(--wm-admin-radius) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+}
+[data-testid="stVerticalBlockBorderWrapper"] {
+  border-radius: var(--wm-admin-radius) !important;
+}
+
+/* ── ラジオボタンをピル型チップに（Claude Designの参考デザインに合わせる） ── */
+div[data-testid="stRadio"] [role="radiogroup"] {
+  gap: 8px !important;
+  flex-wrap: wrap;
+}
+div[data-testid="stRadio"] [role="radiogroup"] label {
+  border: 1px solid #D7E6DC;
+  background: #fff;
+  border-radius: 16px !important;
+  padding: 6px 14px !important;
+  margin: 0 !important;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+div[data-testid="stRadio"] [role="radiogroup"] label > div:first-child {
+  display: none;
+}
+div[data-testid="stRadio"] [role="radiogroup"] label:has(input:checked) {
+  background: var(--wm-admin-primary);
+  border-color: var(--wm-admin-primary);
+}
+div[data-testid="stRadio"] [role="radiogroup"] label:has(input:checked) p {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+/* ── 広告の種類バッジ ── */
+.wm-use-pill { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 99px; padding: 3px 10px; }
+.wm-use-pill.used { background: #E3F1E8; color: #2F6B4C; }
+.wm-use-pill.unused { background: #FFF1DA; color: #A35F0E; }
+.wm-type-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fff;
+  border-radius: 6px;
+  padding: 3px 8px;
+  vertical-align: middle;
+}
+.wm-type-badge.aff   { background: var(--wm-admin-primary); }
+.wm-type-badge.card  { background: #2563EB; }
+.wm-type-badge.side  { background: #7C3AED; }
+.wm-type-badge.box   { background: #D97706; }
 </style>
 """, unsafe_allow_html=True)
 st.title("🎨 Recraft 画像生成ツール")
+
+# ── ナビ（サイドバー）─ 5画面。生成系3画面はカテゴリをナビから決める ──
+_NAV_ITEMS = [
+    ("hero", "ヒーロー画像生成"),
+    ("spot", "観光スポット画像"),
+    ("food", "グルメ画像"),
+    ("new",  "国を追加"),
+    ("ads",  "広告管理"),
+]
+_NAV_LABELS = [lbl for _, lbl in _NAV_ITEMS]
+_CAT_BY_NAV = {"hero": "🏔️ ヒーロー画像", "spot": "🗺️ 観光スポット", "food": "🍜 グルメ"}
+_qp_tab = st.query_params.get("tab", _NAV_LABELS[0])
+if _qp_tab not in _NAV_LABELS:
+    _qp_tab = _NAV_LABELS[0]
+
+
+def _on_main_nav_change():
+    st.query_params["tab"] = st.session_state["main_nav"]
+
+
+with st.sidebar:
+    st.markdown(
+        '<div class="wm-brand"><div class="wm-brand-mark">W</div>'
+        '<div><div class="wm-brand-name">World Mappy</div>'
+        '<div class="wm-brand-sub">CONTENT STUDIO</div></div></div>',
+        unsafe_allow_html=True,
+    )
+    _nav = st.radio(
+        "ページ", _NAV_LABELS, index=_NAV_LABELS.index(_qp_tab),
+        key="main_nav", on_change=_on_main_nav_change, label_visibility="collapsed",
+    )
+st.query_params["tab"] = _nav
+_nav_key = {lbl: key for key, lbl in _NAV_ITEMS}[_nav]
+tab2 = _nav_key in _CAT_BY_NAV   # 生成系3画面
+tab4 = _nav_key == "new"
+tab5 = _nav_key == "ads"
+gen_category = _CAT_BY_NAV.get(_nav_key, "🍜 グルメ")
+st.session_state["gen_category_global"] = gen_category
+save_last_state({"category": gen_category})
 
 # 国選択
 countries  = detect_countries()
@@ -255,60 +888,37 @@ if not countries:
     st.error("国フォルダが見つかりません。World guide/ 直下に <country>/<country>.json を用意してください。")
     st.stop()
 
-col_sel, col_info, col_cr, col_update = st.columns([2, 3, 2, 2])
-with col_sel:
-    last_country = last_state.get("country", countries[0])
-    country_idx  = countries.index(last_country) if last_country in countries else 0
-    country_id   = st.selectbox("国を選択", countries, index=country_idx)
+# ── トップバー：国選択 ・ 状態 ・ サイト更新 ──
+with st.container(key="wm_topbar"):
+    col_sel, col_info, col_update = st.columns([3, 4, 4], vertical_alignment="center")
+    with col_sel:
+        last_country = last_state.get("country", countries[0])
+        country_idx  = countries.index(last_country) if last_country in countries else 0
+        country_id   = st.selectbox("対象の国", countries, index=country_idx)
 
 data       = load_json(country_id)
 food_items = data.get("food_items", [])
 
-_cat_options_early = ["🍜 グルメ", "🏔️ ヒーロー画像", "🗺️ 観光スポット"]
-_current_cat = st.session_state.get(
-    "gen_category_global",
-    last_state.get("category", _cat_options_early[0]),
-)
-if _current_cat not in _cat_options_early:
-    _current_cat = _cat_options_early[0]
-
 with col_info:
-    if _current_cat == "🍜 グルメ":
-        total   = len(food_items)
-        has_img = sum(1 for item in food_items if image_exists(country_id, item))
-        st.metric("料理数", total)
-        st.caption(f"画像あり: {has_img} / {total}")
-    elif _current_cat == "🏔️ ヒーロー画像":
-        _hero_img = data.get("hero_image", "")
-        has_img   = 1 if (_hero_img and (ROOT_DIR / country_id / _hero_img).exists()) else 0
-        st.metric("ヒーロー画像", 1)
-        st.caption(f"画像あり: {has_img} / 1")
-    else:
-        _all_spots = [sp for sec in data.get("spot_sections", []) for sp in sec.get("spots", [])]
-        total      = len(_all_spots)
-        has_img    = sum(1 for sp in _all_spots if image_exists(country_id, sp))
-        st.metric("スポット数", total)
-        st.caption(f"画像あり: {has_img} / {total}")
-
-with col_cr:
-    try:
-        credits = recraft_api.get_credits()
-    except Exception:
-        credits = -1
-    if credits >= 0:
-        yen = credits * 0.16
-        st.metric("Recraftクレジット", f"{credits:,} cr")
-        st.markdown(f"<p style='font-size:1.4em;font-weight:700;margin-top:-12px;color:#1a6fa8;'>≈ ¥{yen:,.0f}</p>", unsafe_allow_html=True)
-    else:
-        st.metric("Recraftクレジット", "取得失敗")
+    _all_spots = [sp for sec in data.get("spot_sections", []) for sp in sec.get("spots", [])]
+    _spot_done = sum(1 for sp in _all_spots if image_exists(country_id, sp))
+    _hero_img  = data.get("hero_image", "")
+    _hero_ok   = bool(_hero_img and (ROOT_DIR / country_id / _hero_img).exists())
+    _food_done = sum(1 for item in food_items if image_exists(country_id, item))
+    st.markdown(
+        f'<div class="wm-stats">'
+        f'<span>ヒーロー <b class="{"ok" if _hero_ok else "ng"}">{"設定済" if _hero_ok else "未設定"}</b></span>'
+        f'<span>観光 <b>{_spot_done}</b>/{len(_all_spots)}</span>'
+        f'<span>グルメ <b>{_food_done}</b>/{len(food_items)}</span>'
+        f'</div>',
+        unsafe_allow_html=True,
+    )
 
 with col_update:
-    st.markdown("**サイト更新**")
     _all_c = detect_countries()
-    st.caption(f"全 {len(_all_c)} か国を再生成")
     _col_upd_one, _col_upd_all = st.columns(2)
     with _col_upd_one:
-        if st.button(f"🔄 {country_id} のみ更新", key="top_update_one"):
+        if st.button(f"{country_id} のみ更新", key="top_update_one", use_container_width=True):
             with st.spinner(f"{country_id} を再生成中..."):
                 _rc, _out, _err = _run_generate(country_id)
             if _rc == 0:
@@ -316,7 +926,7 @@ with col_update:
             else:
                 st.error(f"❌ {country_id} 失敗\n{_err}")
     with _col_upd_all:
-        if st.button(f"🌏 全国更新", key="top_update_all", type="primary"):
+        if st.button(f"全{len(_all_c)}か国を更新", key="top_update_all", type="primary", use_container_width=True):
             _log = []
             _prog = st.progress(0, text="準備中...")
             for _i, _cid in enumerate(_all_c):
@@ -330,19 +940,23 @@ with col_update:
             else:
                 st.warning("\n".join(_log))
 
-# カテゴリ選択（全タブ共通）— 起動時に前回値を復元
-_cat_options = ["🍜 グルメ", "🏔️ ヒーロー画像", "🗺️ 観光スポット"]
-_last_cat    = last_state.get("category", _cat_options[0])
-if "gen_category_global" not in st.session_state:
-    st.session_state["gen_category_global"] = _last_cat if _last_cat in _cat_options else _cat_options[0]
-gen_category = st.radio(
-    "カテゴリ",
-    _cat_options,
-    horizontal=True,
-    label_visibility="collapsed",
-    key="gen_category_global",
-)
-save_last_state({"category": gen_category})
+# ── サイドバー下部：Recraft クレジット ──
+try:
+    credits = recraft_api.get_credits()
+except Exception:
+    credits = -1
+with st.sidebar:
+    if credits >= 0:
+        st.markdown(
+            f'<div class="wm-credit"><div class="wm-credit-label">RECRAFT クレジット</div>'
+            f'<div class="wm-credit-value">{credits:,}<span>cr</span>'
+            f'<span class="wm-credit-jpy">≈ ¥{credits * 0.16:,.0f}</span></div></div>',
+            unsafe_allow_html=True,
+        )
+    else:
+        st.markdown('<div class="wm-credit"><div class="wm-credit-label">RECRAFT クレジット</div>'
+                    '<div class="wm-credit-value">取得失敗</div></div>', unsafe_allow_html=True)
+
 
 # gen_results 管理（初回ロード復元 / カテゴリ切り替えリセット）
 if "gen_results" not in st.session_state:
@@ -354,161 +968,10 @@ elif st.session_state.get("_gen_cat") != gen_category:
 
 st.divider()
 
-# ──────────────────────────────────────────────────────────
-# タブ復元（毎描画で発火、ただし既に正しいタブなら何もしない）
-# ──────────────────────────────────────────────────────────
-last_tab   = last_state.get("tab", 1)
-active_tab = st.session_state.get("active_tab", last_tab)
-
-import streamlit.components.v1 as components
-components.html(f"""
-<script>
-(function() {{
-    var target = {active_tab};
-    var tries  = 0;
-    var timer  = setInterval(function() {{
-        var tabs = window.parent.document.querySelectorAll('[data-baseweb="tab"]');
-        if (tabs && tabs.length > target) {{
-            var current = Array.from(tabs).findIndex(function(t) {{
-                return t.getAttribute('aria-selected') === 'true';
-            }});
-            if (current !== target) tabs[target].click();
-            clearInterval(timer);
-        }}
-        if (++tries > 20) clearInterval(timer);
-    }}, 120);
-}})();
-</script>
-""", height=0, scrolling=False)
-
-# ──────────────────────────────────────────────────────────
-# タブ
-# ──────────────────────────────────────────────────────────
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["📋 一覧", "✨ 画像生成", "🖼️ 画像管理", "🌍 新規作成", "📢 広告管理"])
-
-
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # タブ1: 一覧 / プロンプト編集（カテゴリ対応）
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-with tab1:
-    # ── グルメ ──
-    if gen_category == "🍜 グルメ":
-        st.subheader("料理一覧・プロンプト編集")
-        # 既存アイテムを名前でインデックス（フィールド保全用）
-        _orig_by_name = {item.get("name"): item for item in food_items if item.get("name")}
-        rows = []
-        for item in food_items:
-            rows.append({
-                "name":        item.get("name", ""),
-                "画像":        "✅" if image_exists(country_id, item) else "❌",
-                "plate_color": item.get("plate_color", ""),
-                "prompt_en":   item.get("prompt_en", ""),
-            })
-        edited = st.data_editor(
-            rows,
-            column_config={
-                "name":        st.column_config.TextColumn("料理名", width="medium"),
-                "画像":        st.column_config.TextColumn("画像", disabled=True, width="small"),
-                "plate_color": st.column_config.TextColumn("皿の色（英語）", width="medium"),
-                "prompt_en":   st.column_config.TextColumn("プロンプト（英語）", width="large"),
-            },
-            use_container_width=True,
-            num_rows="dynamic",
-            key="food_editor",
-        )
-        if st.button("💾 JSONを保存", type="primary", key="t1_food_save"):
-            new_food_items = []
-            for row in edited:
-                name = (row.get("name") or "").strip()
-                if not name:          # 空行はスキップ
-                    continue
-                orig = _orig_by_name.get(name, {})
-                new_food_items.append({
-                    "num":         f"No.{len(new_food_items)+1}",
-                    "name":        name,
-                    "badge":       orig.get("badge", ""),
-                    "type":        orig.get("type", "main"),
-                    "city":        orig.get("city", "national"),
-                    "desc":        orig.get("desc", ""),
-                    "image":       orig.get("image", ""),
-                    "plate_color": (row.get("plate_color") or orig.get("plate_color", "")).strip(),
-                    "prompt_en":   (row.get("prompt_en")   or orig.get("prompt_en",   "")).strip(),
-                })
-            data["food_items"] = new_food_items
-            save_json(country_id, data)
-            save_last_state({"tab": 0})
-            for k in list(st.session_state.keys()):
-                if k.startswith("gen_prompt_"):
-                    del st.session_state[k]
-            st.success("✅ 保存しました（バックアップ: .json.bak）")
-            st.rerun()
-
-    # ── ヒーロー画像 ──
-    elif gen_category == "🏔️ ヒーロー画像":
-        st.subheader("ヒーロー画像・プロンプト編集")
-        _hpk = f"t1_hero_prompt_{country_id}"
-        if not st.session_state.get(_hpk):
-            st.session_state[_hpk] = data.get("hero_prompt", "")
-        st.text_area("プロンプト（英語）", height=200, key=_hpk,
-                     placeholder="e.g. Aerial panoramic view of...")
-        if st.button("💾 JSONを保存", type="primary", key="t1_hero_save"):
-            data["hero_prompt"] = st.session_state.get(_hpk, "")
-            save_json(country_id, data)
-            st.success("✅ 保存しました")
-
-    # ── 観光スポット ──
-    elif gen_category == "🗺️ 観光スポット":
-        st.subheader("観光スポット・プロンプト編集")
-        spot_secs = data.get("spot_sections", [])
-        # 全セクションのスポットをフラット化
-        spot_rows = []
-        for s in spot_secs:
-            cid   = s.get("city_id", "")
-            cname = s.get("city_name", "")
-            for spot in s.get("spots", []):
-                sname = spot.get("name", "")
-                spot_rows.append({
-                    "city_id":   cid,
-                    "都市":      cname,
-                    "スポット名": sname,
-                    "画像":      "✅" if (ROOT_DIR / country_id / spot.get("image", "X")).exists() else "❌",
-                    "prompt_en": spot.get("prompt_en", ""),
-                })
-        if not spot_rows:
-            st.warning("スポットが登録されていません。JSONの spot_sections > spots を確認してください。")
-        else:
-            edited_spots = st.data_editor(
-                spot_rows,
-                column_config={
-                    "city_id":   None,
-                    "都市":      st.column_config.TextColumn("都市", disabled=True, width="small"),
-                    "スポット名": st.column_config.TextColumn("スポット名", disabled=True, width="medium"),
-                    "画像":      st.column_config.TextColumn("画像", disabled=True, width="small"),
-                    "prompt_en": st.column_config.TextColumn("プロンプト（英語）", width="large"),
-                },
-                use_container_width=True,
-                key="spot_editor",
-            )
-            if st.button("💾 JSONを保存", type="primary", key="t1_spot_save"):
-                # (city_id, spot_name) → prompt_en のルックアップを構築
-                prompt_lookup = {
-                    (r.get("city_id", ""), r.get("スポット名", "")): r.get("prompt_en", "")
-                    for r in edited_spots
-                }
-                for s in data.get("spot_sections", []):
-                    cid = s.get("city_id", "")
-                    for spot in s.get("spots", []):
-                        key = (cid, spot.get("name", ""))
-                        if key in prompt_lookup:
-                            spot["prompt_en"] = prompt_lookup[key]
-                save_json(country_id, data)
-                st.success("✅ 保存しました")
-
-
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# タブ2: 画像生成
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-with tab2:
+if tab2:
     st.subheader("画像生成")
 
     with st.expander(f"🚀 画像を一括生成（{country_id} / {gen_category} の未生成分のみ）", expanded=False):
@@ -582,15 +1045,33 @@ with tab2:
             return (1 if image_exists(country_id, item) else 0, item.get("num", ""))
 
         sorted_items  = sorted(food_items, key=sort_key)
-        item_labels   = [
-            f"{'✅' if image_exists(country_id, i) else '❌'} {i.get('num','')} {i.get('name','')}"
-            for i in sorted_items
-        ]
-        last_dish    = last_state.get("dish") if last_state.get("country") == country_id else None
-        default_dish = next((i for i, lbl in enumerate(item_labels) if last_dish and last_dish in lbl), 0)
-        selected_label = st.selectbox("料理を選択", item_labels, index=default_dish, key="gen_select")
-        sel_idx        = item_labels.index(selected_label)
-        sel_item       = sorted_items[sel_idx]
+        # 料理の選択：プルダウンをやめ、画像タイルから「選択」ボタンで選ぶ（未生成はブランク表示）
+        _sel_key  = f"food_pick_{country_id}"
+        _nums     = [i.get("num", "") for i in sorted_items]
+        _last_dish = last_state.get("dish") if last_state.get("country") == country_id else None
+        _default_num = next((i.get("num", "") for i in sorted_items if _last_dish and i.get("name") == _last_dish),
+                            _nums[0] if _nums else "")
+        if st.session_state.get(_sel_key) not in _nums:
+            st.session_state[_sel_key] = _default_num
+        sel_item = next(i for i in sorted_items if i.get("num", "") == st.session_state[_sel_key])
+        def _render_food_grid():
+            _per_row = 4
+            for _r0 in range(0, len(sorted_items), _per_row):
+                _row_cols = st.columns(_per_row)
+                for _col, _it in zip(_row_cols, sorted_items[_r0:_r0 + _per_row]):
+                    _num = _it.get("num", "")
+                    with _col:
+                        if image_exists(country_id, _it):
+                            st.image(str(ROOT_DIR / country_id / _it["image"]), use_container_width=True)
+                        else:
+                            st.markdown('<div class="wm-blank-tile"></div>', unsafe_allow_html=True)
+                        _is_sel = st.session_state[_sel_key] == _num
+                        st.caption(("✓ " if _is_sel else "") + f"{_num} {_it.get('name', '')}")
+                        if st.button("選択", key=f"pick_{_num}", type="primary" if _is_sel else "secondary",
+                                     use_container_width=True):
+                            st.session_state[_sel_key] = _num
+                            st.rerun()
+
 
         save_last_state({"country": country_id, "dish": sel_item.get("name", ""), "tab": 1})
 
@@ -759,6 +1240,25 @@ with tab2:
                 if existing_path.exists() and sel_item.get("image"):
                     st.caption("現在の画像")
                     st.image(str(existing_path), use_container_width=True)
+                    if st.session_state.get("food_del_pending"):
+                        _c1, _c2 = st.columns(2)
+                        with _c1:
+                            if st.button("本当に削除", key="food_img_del_confirm", type="primary", use_container_width=True):
+                                existing_path.unlink()
+                                sel_item["image"] = ""
+                                data["food_items"] = food_items
+                                save_json(country_id, data)
+                                st.session_state.pop("food_del_pending", None)
+                                st.success("画像を削除しました")
+                                st.rerun()
+                        with _c2:
+                            if st.button("✕", key="food_img_del_cancel", use_container_width=True):
+                                st.session_state.pop("food_del_pending", None)
+                                st.rerun()
+                    else:
+                        if st.button("🗑️ この画像を削除", key="food_img_del"):
+                            st.session_state["food_del_pending"] = True
+                            st.rerun()
                 else:
                     st.info("画像未生成")
 
@@ -865,7 +1365,15 @@ with tab2:
             with st.expander("📤 送信プロンプト確認（クリックで展開）", expanded=False):
                 st.code(_preview_full, language=None)
                 st.caption(f"皿: {plate_color_val or '（指定なし）'}　サイズ: {gen_width}×{gen_height}")
-            gen_btn = st.button("🎨 生成実行", type="primary", disabled=not prompt_val.strip())
+            _food_cr = {"recraft20b": 22, "recraftv3": 40, "watercolor20b": 22}.get(model_key_r)
+            _food_cost_txt = f"{_food_cr}cr" if _food_cr else "未計測"
+            _food_yen_txt  = f' <small>≈ ¥{_food_cr * 0.16:,.1f}</small>' if _food_cr else ""
+            st.markdown(
+                f'<div class="wm-cost-row"><span>1枚 × {_food_cost_txt}</span>'
+                f'<b>{_food_cost_txt}{_food_yen_txt}</b></div>',
+                unsafe_allow_html=True,
+            )
+            gen_btn = st.button("生成実行", type="primary", key="food_gen", disabled=not prompt_val.strip())
 
         if gen_btn:
             if not prompt_val.strip():
@@ -896,6 +1404,10 @@ with tab2:
 
 
     # ────────────────── 🏔️ ヒーロー画像 ──────────────────
+        st.divider()
+        st.markdown("##### 料理を選ぶ")
+        _render_food_grid()
+
     elif gen_category == "🏔️ ヒーロー画像":
 
         hero_prompt_key = f"hero_prompt_{country_id}"
@@ -980,6 +1492,24 @@ with tab2:
                 if hero_path and hero_path.exists() and hero_path.is_file():
                     st.caption("現在のヒーロー画像")
                     st.image(str(hero_path), use_container_width=True)
+                    if st.session_state.get("hero_del_pending"):
+                        _c1, _c2 = st.columns(2)
+                        with _c1:
+                            if st.button("本当に削除", key="hero_img_del_confirm", type="primary", use_container_width=True):
+                                hero_path.unlink()
+                                data["hero_image"] = ""
+                                save_json(country_id, data)
+                                st.session_state.pop("hero_del_pending", None)
+                                st.success("画像を削除しました")
+                                st.rerun()
+                        with _c2:
+                            if st.button("✕", key="hero_img_del_cancel", use_container_width=True):
+                                st.session_state.pop("hero_del_pending", None)
+                                st.rerun()
+                    else:
+                        if st.button("🗑️ この画像を削除", key="hero_img_del"):
+                            st.session_state["hero_del_pending"] = True
+                            st.rerun()
                 else:
                     st.info("ヒーロー画像未設定")
 
@@ -1030,8 +1560,15 @@ with tab2:
             hero_ratio_sel = st.selectbox("縦横比", list(_hero_ratios.keys()), index=0, key="hero_ratio")
             hero_w, hero_h = _hero_ratios[hero_ratio_sel]
             hero_prompt_val = st.session_state.get(hero_prompt_key, "")
+            _hero_cr = {"recraft20b": 22, "recraftv3": 40, "vector_art": 40, "style_spot": 22,
+                        "style_spot3": 40, "style_spot4": 40, "style_spot5": 40}.get(hero_model_key, 40)
+            st.markdown(
+                f'<div class="wm-cost-row"><span>1枚 × {_hero_cr}cr</span>'
+                f'<b>{_hero_cr}cr <small>≈ ¥{_hero_cr * 0.16:,.1f}</small></b></div>',
+                unsafe_allow_html=True,
+            )
             hero_gen_btn    = st.button(
-                "🎨 生成実行", type="primary", key="hero_gen",
+                "生成実行", type="primary", key="hero_gen",
                 disabled=not hero_prompt_val.strip(),
             )
 
@@ -1083,14 +1620,16 @@ with tab2:
                 return bool(img) and (ROOT_DIR / country_id / img).exists()
 
             _sorted_spots  = sorted(_all_spots_flat, key=lambda e: (1 if _spot_has_img(e) else 0, e["city_name"]))
-            _spot_labels   = [
-                f"{'✅' if _spot_has_img(e) else '❌'} {e['city_name']} / {e['spot'].get('name','')}"
-                for e in _sorted_spots
-            ]
-            _last_spot    = last_state.get("spot") if last_state.get("country") == country_id else None
-            _default_spot = next((i for i, lbl in enumerate(_spot_labels) if _last_spot and _last_spot in lbl), 0)
-            sel_spot_label = st.selectbox("スポットを選択", _spot_labels, index=_default_spot, key="spot_sel")
-            sel_spot_entry = _sorted_spots[_spot_labels.index(sel_spot_label)]
+            def _spot_id(e):
+                return f"{e['city_id']}|{e['spot'].get('name', '')}"
+            _spot_key = f"spot_pick_{country_id}"
+            _spot_ids = [_spot_id(e) for e in _sorted_spots]
+            _last_spot = last_state.get("spot") if last_state.get("country") == country_id else None
+            _default_id = next((_spot_id(e) for e in _sorted_spots if _last_spot and e["spot"].get("name") == _last_spot),
+                               _spot_ids[0])
+            if st.session_state.get(_spot_key) not in _spot_ids:
+                st.session_state[_spot_key] = _default_id
+            sel_spot_entry = next(e for e in _sorted_spots if _spot_id(e) == st.session_state[_spot_key])
             sel_spot       = sel_spot_entry["spot"]
             spot_name      = sel_spot.get("name", "")
             spot_city_name = sel_spot_entry["city_name"]
@@ -1185,6 +1724,24 @@ with tab2:
                     if spot_img_path and spot_img_path.exists():
                         st.caption("現在のスポット画像")
                         st.image(str(spot_img_path), use_container_width=True)
+                        if st.session_state.get("spot_del_pending"):
+                            _c1, _c2 = st.columns(2)
+                            with _c1:
+                                if st.button("本当に削除", key="spot_img_del_confirm", type="primary", use_container_width=True):
+                                    spot_img_path.unlink()
+                                    sel_spot["image"] = ""
+                                    save_json(country_id, data)
+                                    st.session_state.pop("spot_del_pending", None)
+                                    st.success("画像を削除しました")
+                                    st.rerun()
+                            with _c2:
+                                if st.button("✕", key="spot_img_del_cancel", use_container_width=True):
+                                    st.session_state.pop("spot_del_pending", None)
+                                    st.rerun()
+                        else:
+                            if st.button("🗑️ この画像を削除", key="spot_img_del"):
+                                st.session_state["spot_del_pending"] = True
+                                st.rerun()
                     else:
                         st.info(f"{spot_name} の画像未設定")
 
@@ -1240,8 +1797,15 @@ with tab2:
                 spot_ratio_sel      = st.selectbox("縦横比", list(_spot_ratios.keys()), index=2, key="spot_ratio")
                 spot_w, spot_h      = _spot_ratios[spot_ratio_sel]
                 spot_prompt_val_now = st.session_state.get(spot_prompt_key, "")
+                _spot_cr = {"recraft20b": 22, "recraftv3": 40, "watercolor20b": 22, "style_spot": 22,
+                            "style_spot3": 40, "style_spot4": 40, "style_spot5": 40}.get(spot_model_key, 40)
+                st.markdown(
+                    f'<div class="wm-cost-row"><span>1枚 × {_spot_cr}cr</span>'
+                    f'<b>{_spot_cr}cr <small>≈ ¥{_spot_cr * 0.16:,.1f}</small></b></div>',
+                    unsafe_allow_html=True,
+                )
                 spot_gen_btn        = st.button(
-                    "🎨 生成実行", type="primary", key="spot_gen",
+                    "生成実行", type="primary", key="spot_gen",
                     disabled=not spot_prompt_val_now.strip(),
                 )
 
@@ -1271,132 +1835,26 @@ with tab2:
 
 
 
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# タブ3: 画像管理（カテゴリ対応）
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-with tab3:
-    st.subheader("画像管理")
-    exts = {".webp", ".png", ".jpg", ".jpeg"}
-
-    def _img_grid(files, del_key_prefix, json_rel_prefix=None):
-        """画像グリッド表示（削除・背景除去・元に戻すボタン付き）"""
-        if not files:
-            st.info("画像ファイルがありません。")
-            return
-        st.caption(f"{len(files)} 枚")
-        cols = st.columns(4)
-        for i, fpath in enumerate(files):
-            with cols[i % 4]:
-                st.image(str(fpath), caption=fpath.name, use_container_width=True)
-                orig_backup = fpath.parent / f"{fpath.stem}_orig.webp"
-                has_orig = orig_backup.exists()
-                _del_pending_key = f"{del_key_prefix}del_pending_{fpath.name}"
-                b1, b2, b3 = st.columns(3)
-                with b1:
-                    if st.session_state.get(_del_pending_key):
-                        # 2段階目: 確認ボタン
-                        if st.button("本当に削除", key=f"{del_key_prefix}del_confirm_{fpath.name}",
-                                     type="primary", help="クリックで完全削除"):
-                            fpath.unlink()
-                            if orig_backup.exists():
-                                orig_backup.unlink()
-                            st.session_state.pop(_del_pending_key, None)
+            st.divider()
+            st.markdown("##### スポットを選ぶ")
+            _per_row = 4
+            for _r0 in range(0, len(_sorted_spots), _per_row):
+                _row_cols = st.columns(_per_row)
+                for _k, (_col, _e) in enumerate(zip(_row_cols, _sorted_spots[_r0:_r0 + _per_row])):
+                    _idx = _r0 + _k
+                    _sp = _e["spot"]
+                    _sid = _spot_id(_e)
+                    with _col:
+                        if _spot_has_img(_e):
+                            st.image(str(ROOT_DIR / country_id / _sp["image"]), use_container_width=True)
+                        else:
+                            st.markdown('<div class="wm-blank-tile"></div>', unsafe_allow_html=True)
+                        _is_sel = st.session_state[_spot_key] == _sid
+                        st.caption(("✓ " if _is_sel else "") + f"{_e['city_name']} / {_sp.get('name', '')}")
+                        if st.button("選択", key=f"spick_{_idx}", type="primary" if _is_sel else "secondary",
+                                     use_container_width=True):
+                            st.session_state[_spot_key] = _sid
                             st.rerun()
-                        if st.button("✕", key=f"{del_key_prefix}del_cancel_{fpath.name}", help="キャンセル"):
-                            st.session_state.pop(_del_pending_key, None)
-                            st.rerun()
-                    else:
-                        # 1段階目: 削除ボタン
-                        if st.button("🗑️", key=f"{del_key_prefix}del_{fpath.name}", help="削除（確認あり）"):
-                            st.session_state[_del_pending_key] = True
-                            st.rerun()
-                with b2:
-                    if st.button("✂️", key=f"{del_key_prefix}bg_{fpath.name}", help="背景除去"):
-                        with st.spinner("処理中（ローカル処理）..."):
-                            try:
-                                orig_bytes = fpath.read_bytes()
-                                bg_bytes   = rembg_remove(orig_bytes, session=_get_rembg_session())
-                                webp_bytes = to_webp(bg_bytes)
-                                new_path   = fpath.with_suffix(".webp")
-                                # 元画像をバックアップ（まだバックアップがない場合のみ）
-                                bak_path = new_path.parent / f"{new_path.stem}_orig.webp"
-                                if not bak_path.exists():
-                                    bak_path.write_bytes(orig_bytes)
-                                new_path.write_bytes(webp_bytes)
-                                if json_rel_prefix:
-                                    rel_old = f"{json_rel_prefix}{fpath.name}"
-                                    rel_new = f"{json_rel_prefix}{new_path.name}"
-                                    for fi in food_items:
-                                        if fi.get("image") == rel_old:
-                                            fi["image"] = rel_new
-                                            break
-                                    data["food_items"] = food_items
-                                    save_json(country_id, data)
-                                if fpath != new_path:
-                                    fpath.unlink()
-                                st.success(f"完了 → {new_path.name}")
-                                st.rerun()
-                            except Exception as e:
-                                st.error(str(e))
-                with b3:
-                    if has_orig:
-                        if st.button("↩️", key=f"{del_key_prefix}undo_{fpath.name}", help="元に戻す"):
-                            fpath.write_bytes(orig_backup.read_bytes())
-                            orig_backup.unlink()
-                            st.success(f"元に戻しました: {fpath.name}")
-                            st.rerun()
-
-    # ── グルメ ──
-    if gen_category == "🍜 グルメ":
-        img_dir = food_dir(country_id)
-        if not img_dir.exists():
-            st.info("素材/グルメ/ フォルダがまだ存在しません。")
-        else:
-            files   = sorted([f for f in img_dir.iterdir() if f.suffix.lower() in exts])
-            non_webp = [f for f in files if f.suffix.lower() in {".png", ".jpg", ".jpeg"}]
-            if non_webp:
-                if st.button(f"🔄 WebP一括変換（{len(non_webp)}枚）", type="primary"):
-                    converted = 0
-                    for fpath in non_webp:
-                        try:
-                            new_path = fpath.with_suffix(".webp")
-                            new_path.write_bytes(to_webp(fpath.read_bytes()))
-                            rel_old = f"素材/グルメ/{fpath.name}"
-                            rel_new = f"素材/グルメ/{new_path.name}"
-                            for fi in food_items:
-                                if fi.get("image") == rel_old:
-                                    fi["image"] = rel_new; break
-                            if fpath != new_path: fpath.unlink()
-                            converted += 1
-                        except Exception as e:
-                            st.error(f"{fpath.name}: {e}")
-                    if converted:
-                        data["food_items"] = food_items
-                        save_json(country_id, data)
-                        st.success(f"✅ {converted}枚をWebPに変換しました")
-                        st.rerun()
-            _img_grid(files, "g3_", "素材/グルメ/")
-
-    # ── ヒーロー画像 ──
-    elif gen_category == "🏔️ ヒーロー画像":
-        hero_path = ROOT_DIR / country_id / "素材" / "ヒーロー.webp"
-        if hero_path.exists():
-            st.image(str(hero_path), caption="ヒーロー.webp", use_container_width=True)
-            if st.button("🗑️ 削除", key="t3_hero_del"):
-                hero_path.unlink()
-                st.success("削除しました")
-                st.rerun()
-        else:
-            st.info("ヒーロー画像がまだありません。")
-
-    # ── 観光スポット ──
-    elif gen_category == "🗺️ 観光スポット":
-        spot_img_dir = ROOT_DIR / country_id / "素材" / "観光スポット"
-        if not spot_img_dir.exists():
-            st.info("素材/観光スポット/ フォルダがまだ存在しません。")
-        else:
-            files = sorted([f for f in spot_img_dir.iterdir() if f.suffix.lower() in exts])
-            _img_grid(files, "g3s_")
 
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -1572,7 +2030,7 @@ def _new_country_from_template(cid: str, name_ja: str, name_en: str) -> dict:
     return tmpl
 
 
-with tab4:
+if tab4:
     st.subheader("新しい国のページを作成")
 
     # ════════════════════════════════
@@ -1709,13 +2167,27 @@ with tab4:
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # タブ5: 広告管理
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-with tab5:
-    _AFF_SECTIONS = ["📋 一覧・使用状況", "➕ 新規登録", "🗂️ ページ別使用状況"]
-    aff_section = st.radio("表示", _AFF_SECTIONS, horizontal=True, key="aff_section")
+if tab5:
+    _AFF_SECTIONS = ["🏷️ ブランド別", "📄 ページ別"]
+    _qp_aff = st.query_params.get("aff", _AFF_SECTIONS[0])
+    if _qp_aff not in _AFF_SECTIONS:
+        _qp_aff = _AFF_SECTIONS[0]
+
+    def _on_aff_section_change():
+        st.query_params["aff"] = st.session_state["aff_section"]
+
+    aff_section = st.radio(
+        "表示", _AFF_SECTIONS, horizontal=True, index=_AFF_SECTIONS.index(_qp_aff),
+        key="aff_section", on_change=_on_aff_section_change,
+    )
+    st.query_params["aff"] = aff_section
 
     # ── a. 一覧・使用状況 ──
     if aff_section == _AFF_SECTIONS[0]:
-        st.caption("assets/affiliates-data.js の内容と、各ページでの使用状況です（開くたびに最新集計）。")
+        st.caption(
+            "assets/affiliates-data.js の内容と、各ページでの使用状況です（開くたびに最新集計）。"
+            "ブランドを選んで「このブランドに追加」から新しい広告を登録できます。"
+        )
         if st.button("🔄 使用状況を再集計", key="aff_recalc") or "aff_usage_cache" not in st.session_state:
             with st.spinner("全ページを集計中…"):
                 _r = aff_compute_usage()
@@ -1723,219 +2195,114 @@ with tab5:
                 st.session_state["aff_usage_cache"] = _r
         _aff_result = st.session_state["aff_usage_cache"]
         _usage = _aff_result["usage"]
-        _BRANDS = [
-            ("Klook", ["klook"]), ("KKday", ["kkday"]), ("GetYourGuide", ["getyourguide"]),
-            ("Viator", ["viator"]), ("Wise", ["wise"]), ("エポスカード", ["epos"]),
-            ("trifa", ["trifa"]), ("Airalo", ["airalo"]), ("モバイルWi-Fi", ["wifi1", "wifi2"]),
-            ("Skyscanner", ["skyscanner"]), ("Grab", ["grab"]), ("Uber", ["uber"]),
-            ("PickMe", ["pickme"]), ("Yandex", ["yandex_go", "yandex_maps"]),
-            ("Google", ["google_maps", "google_translate"]), ("Telegram", ["telegram"]),
-            ("WhatsApp", ["whatsapp"]), ("比較ページ（汎用）", ["flights", "hotels", "sim", "sim_compare"]),
-        ]
-        _STYLES = [("AFFILIATES", "テキストリンク", "affiliate"),
-                   ("BOOKING_BOXES", "予約ボタン", "affiliate-box"),
-                   ("AFFILIATE_CARDS", "説明カード", "affiliate-card")]
-        _all = aff_io.list_all_keys()
-        _known = {k for _, ks in _BRANDS for k in ks}
-        _rest = sorted({k for c in _all.values() for k in c} - _known)
-        if _rest:
-            _BRANDS.append(("その他", _rest))
-        _unused = [u for u in (_aff_result.get("unused") or [])]
-        if _unused:
-            st.warning(f"未使用のキーが {len(_unused)} 件あります")
-        import re as _re2
-        _dtxt = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
-        _sm = _re2.search(r"const SIDE_BANNERS = \{(.*?)\n\};", _dtxt, _re2.S)
-        _rail = {}  # ブランド名 -> [サイドバナーのキー]
-        if _sm:
-            for _km in _re2.finditer(r"^  (\w+): \{\s*\n\s*brand:\s*'([^']*)'", _sm.group(1), _re2.M):
-                _rail.setdefault(_km.group(2), []).append(_km.group(1))
-        for _b in _rail:
-            if _b not in [n for n, _ in _BRANDS]:
-                _BRANDS.append((_b, []))
-        _BRANDS = [(n, ks) for n, ks in _BRANDS if n in _rail or any(k in _all[c] for k in ks for c, _, _ in _STYLES)]
-        _names = [n for n, _ in _BRANDS]
-        @st.fragment
-        def _aff_brand_view(_BRANDS, _all, _usage):
-            _sel = st.radio("ブランド", _names, horizontal=True, key="aff_brand_sel")
-            _keys = dict(_BRANDS)[_sel]
-            _rows = [(c, lbl, t, k) for k in _keys for c, lbl, t in _STYLES if k in _all[c]]
-            _parts = []
-            for _sk in _rail.get(_sel, []):
-                _parts.append('<div style="font:12px sans-serif;color:#888;margin:14px 0 4px">サイドバナー: ' + _sk + '</div><div data-affiliate-side="' + _sk + '" style="max-width:300px"></div>')
-                st.markdown(f"**サイドバナー**　`{_sk}`　全ページ共通表示")
-            for c, lbl, t, k in _rows:
-                u = (_usage.get(t) or {}).get(k) or {}
-                n = u.get("total", 0)
-                badge = f"✅ {n}箇所で使用" if n else ("🔁 テキストリンク経由で自動表示" if u.get("auto_via_text_link") else "⚠️ 未使用")
-                st.markdown(f"**{lbl}**　`{k}`　{badge}")
-                attr = AFF_ATTR_BY_CONST[c][0]
-                _parts.append(
-                    f'<div style="font:12px sans-serif;color:#888;margin:14px 0 4px">{lbl}: {k}</div>'
-                    f'<div {attr}="{k}"></div>'
-                )
-            import streamlit.components.v1 as _components
-            _js_data = (ASSETS_DIR / "affiliates-data.js").read_text(encoding="utf-8")
-            _js_render = (ASSETS_DIR / "affiliates.js").read_text(encoding="utf-8")
-            _components.html(
-                "<div style=\"font-family:'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;max-width:760px\">"
-                + "".join(_parts) + f"</div><script>{_js_data}</script><script>{_js_render}</script>",
-                height=200 + 260 * (len(_rows) + len(_rail.get(_sel, []))), scrolling=True,
-            )
+        _STYLES = [("AFFILIATES", "テキストリンク", "affiliate", "aff"),
+                   ("BOOKING_BOXES", "予約ボタン", "affiliate-box", "box"),
+                   ("AFFILIATE_CARDS", "説明カード", "affiliate-card", "card"),
+                   ("SIDE_BANNERS", "画像バナー", "affiliate-side", "side")]
 
-        _aff_brand_view(_BRANDS, _all, _usage)
+        _NEW_BRAND = "＋ 新しいブランド"
 
-    # ── b. 新規登録 ──
-    elif aff_section == _AFF_SECTIONS[1]:
-        st.caption(
-            "新しい広告リンク・カードを affiliates-data.js に登録します。"
-            "実際にページへ表示する作業（国別データへの追記＋サイト再生成）は、これまで通り手動で行ってください。\n\n"
-            "※ ロゴ画像・生の広告タグ（rawAdWidget）など特殊な形のカードはこのフォームでは作れません。"
-            "既存の同種カード（skyscanner・epos）を参考に affiliates-data.js を直接編集してください。"
-        )
+        def _is_unused(const_name, k):
+            t = _STYLES_BY_CONST[const_name][1]
+            u = (_usage.get(t) or {}).get(k) or {}
+            if const_name == "SIDE_BANNERS":
+                return False
+            return u.get("total", 0) == 0 and not u.get("auto_via_text_link")
 
-        CATEGORY_MAP = {
-            "テキストリンク（シンプルなリンク）": "AFFILIATES",
-            "説明カード（詳しい説明つきのカード）": "AFFILIATE_CARDS",
-            "予約ボタンの並び": "BOOKING_BOXES",
-        }
-        category_label = st.radio("種類", list(CATEGORY_MAP.keys()), key="aff_new_category")
-        const_name = CATEGORY_MAP[category_label]
+        _STYLES_BY_CONST = {c: (lbl, t, cls) for c, lbl, t, cls in _STYLES}
 
-        existing_keys = aff_io.list_all_keys()[const_name]
+        def _aff_brand_page():
+            brand_map = aff_read_brand_map()
+            _brand_names = sorted(brand_map.keys())
+            _unused_brands = {b for b, items in brand_map.items() if any(_is_unused(c, k) for c, k in items)}
 
-        new_key = st.text_input(
-            "キー（半角小文字英数字とアンダースコアのみ。例: my_new_link）",
-            key="aff_new_key",
-        ).strip()
+            col_list, col_main = st.columns([1, 3], gap="large")
 
-        key_error = None
-        if new_key:
-            if not aff_io.is_valid_key(new_key):
-                key_error = "半角小文字英数字とアンダースコアのみ、先頭は英字にしてください"
-            elif new_key in existing_keys:
-                key_error = f"このキーはすでに「{category_label}」の中で使われています"
-            if key_error:
-                st.error(key_error)
+            with col_list:
+                _q = st.text_input("ブランド検索", key="aff_brand_search", placeholder="検索")
+                _filtered = [b for b in _brand_names if _q.strip().lower() in b.lower()] if _q.strip() else _brand_names
+                _opts = _filtered + [_NEW_BRAND]
 
-        st.markdown("##### 内容")
-        value = {}
+                def _fmt(name):
+                    if name == _NEW_BRAND:
+                        return name
+                    return f"{name}（{len(brand_map.get(name, []))}）"
 
-        if const_name == "AFFILIATES":
-            c1, c2 = st.columns(2)
-            with c1:
-                f_name = st.text_input("名前（内部管理用）", key="aff_new_name")
-                f_label = st.text_input("リンクの文言", placeholder="〇〇を見る →", key="aff_new_label")
-                f_btn = st.text_input("ボタンの文言", placeholder="見る →", key="aff_new_btn")
-            with c2:
-                f_url = st.text_input("リンク先URL", key="aff_new_url")
-                f_desc = st.text_area("説明文", key="aff_new_desc", height=80)
-            has_banner = st.checkbox("バナー画像も設定する", key="aff_new_has_banner")
-            value = {"name": f_name, "label": f_label, "desc": f_desc, "btn": f_btn, "url": f_url}
-            if has_banner:
-                b_img = st.text_input("バナー画像URL", key="aff_new_banner_img")
-                b_url = st.text_input("バナーのリンク先URL", key="aff_new_banner_url")
-                b_pixel = st.text_input("計測用ピクセルURL（なければ空欄）", key="aff_new_banner_pixel")
-                banner = {"img": b_img, "url": b_url}
-                if b_pixel:
-                    banner["pixel"] = b_pixel
-                value["banner"] = banner
+                _default = st.session_state.get("aff_brand_sel", _opts[0] if _opts else _NEW_BRAND)
+                if _default not in _opts:
+                    _default = _opts[0] if _opts else _NEW_BRAND
+                _sel = st.radio("ブランド", _opts, format_func=_fmt, key="aff_brand_sel",
+                                index=_opts.index(_default), label_visibility="collapsed")
 
-        elif const_name == "AFFILIATE_CARDS":
-            c1, c2 = st.columns(2)
-            with c1:
-                f_icon = st.text_input("アイコン（絵文字1文字、例: 🚗）", key="aff_new_icon")
-                f_name = st.text_input("名前", key="aff_new_name")
-                f_tagline = st.text_input("一言キャッチ", key="aff_new_tagline")
-                f_color = st.color_picker("テーマカラー", value="#006847", key="aff_new_color")
-            with c2:
-                f_btn = st.text_input("ボタンの文言", placeholder="見る →", key="aff_new_btn")
-                f_url = st.text_input("リンク先URL", key="aff_new_url")
-                f_note = st.text_input("補足（注釈。なければ空欄でOK）", key="aff_new_note")
-            f_points = st.text_area(
-                "特徴（1行に1つずつ）", key="aff_new_points", height=100,
-                placeholder="現地ATMで現地通貨をその場で引き出せる\nアプリで残高・履歴をリアルタイム管理",
-            )
-            points_list = [p.strip() for p in f_points.split("\n") if p.strip()]
+            with col_main:
+                if _sel == _NEW_BRAND:
+                    st.markdown("#### 新しいブランドを追加")
+                    if aff_registration_form(default_brand=None, key_prefix="newbrand"):
+                        st.session_state.pop("aff_usage_cache", None)
+                        st.rerun()
+                    return
 
-            f_desc = ""
-            has_banner = False
-            banner = None
-            banner_side = False
-            with st.expander("詳細設定（説明文・バナー画像。必要な場合だけ開く）"):
-                f_desc = st.text_area("詳しい説明文（任意）", key="aff_new_desc2", height=80)
-                has_banner = st.checkbox("バナー画像を追加する", key="aff_new_card_has_banner")
-                if has_banner:
-                    b_img = st.text_input("バナー画像URL", key="aff_new_card_banner_img")
-                    b_url = st.text_input("バナーのリンク先URL", key="aff_new_card_banner_url")
-                    b_pixel = st.text_input("計測用ピクセルURL（なければ空欄）", key="aff_new_card_banner_pixel")
-                    banner_side = st.checkbox(
-                        "バナーをカードの横に並べる（未チェックなら単独表示）", key="aff_new_card_banner_side",
-                    )
-                    banner = {"img": b_img, "url": b_url}
-                    if b_pixel:
-                        banner["pixel"] = b_pixel
+                st.markdown(f"#### {_sel}")
+                _rows = brand_map.get(_sel, [])
+                for const_name, k in _rows:
+                    lbl, t, cls = _STYLES_BY_CONST[const_name]
+                    u = (_usage.get(t) or {}).get(k) or {}
+                    n = u.get("total", 0)
+                    if const_name == "SIDE_BANNERS":
+                        pill = '<span class="wm-use-pill used">全ページ共通</span>'
+                    elif n:
+                        pill = f'<span class="wm-use-pill used">使用中 {n}箇所</span>'
+                    elif u.get("auto_via_text_link"):
+                        pill = '<span class="wm-use-pill used">自動表示</span>'
+                    else:
+                        pill = '<span class="wm-use-pill unused">未使用</span>'
 
-            value = {
-                "icon": f_icon, "name": f_name, "tagline": f_tagline,
-                "points": points_list, "note": f_note, "btn": f_btn, "url": f_url, "color": f_color,
-            }
-            if f_desc:
-                value["desc"] = f_desc
-            if has_banner:
-                value["banner"] = banner
-                if banner_side:
-                    value["bannerSide"] = True
+                    _entry_value = aff_get_entry(const_name, k)
+                    with st.container(border=True):
+                        _pv, _meta = st.columns([4, 1.3], gap="medium")
+                        with _pv:
+                            if _entry_value is None:
+                                st.caption("⚠️ プレビューの読み込みに失敗しました")
+                            else:
+                                aff_render_preview(const_name, _entry_value)
+                        with _meta:
+                            st.markdown(
+                                f'<div>{pill}</div>',
+                                unsafe_allow_html=True,
+                            )
+                            st.caption(f"ASP: {(_entry_value or {}).get('asp', '不明')}")
+                            st.code(k, language=None)
+                            _del_key = f"aff_del_pending_{const_name}_{k}"
+                            if st.session_state.get(_del_key):
+                                if st.button("本当に削除", key=f"aff_del_confirm_{const_name}_{k}", type="primary",
+                                             use_container_width=True):
+                                    try:
+                                        aff_io.delete_entry(const_name, k)
+                                    except Exception as e:
+                                        st.error(f"削除に失敗しました: {e}")
+                                    else:
+                                        st.session_state.pop(_del_key, None)
+                                        st.session_state.pop("aff_usage_cache", None)
+                                        st.rerun()
+                                if st.button("✕", key=f"aff_del_cancel_{const_name}_{k}", use_container_width=True):
+                                    st.session_state.pop(_del_key, None)
+                                    st.rerun()
+                            else:
+                                if st.button("🗑️ 削除", key=f"aff_del_{const_name}_{k}", use_container_width=True):
+                                    st.session_state[_del_key] = True
+                                    st.rerun()
 
-        else:  # BOOKING_BOXES
-            f_title = st.text_input("タイトル", key="aff_new_box_title")
-            st.caption("ボタンの色は仮の青色（Skyscannerと同じ）で表示されます。特定の色にしたい場合は保存後にaffiliates.jsのCSSを調整してください。")
-            box_rows = st.data_editor(
-                [{"ラベル": "", "URL": "", "説明（任意）": ""}],
-                num_rows="dynamic", use_container_width=True, key="aff_new_box_rows",
-            )
-            buttons = []
-            for _i, _row in enumerate(box_rows):
-                _label = (_row.get("ラベル") or "").strip()
-                _url = (_row.get("URL") or "").strip()
-                if not _label or not _url:
-                    continue
-                _btn = {"className": "btn-skyscanner", "label": _label, "url": _url}
-                _desc = (_row.get("説明（任意）") or "").strip()
-                if _desc:
-                    _btn["desc"] = _desc
-                buttons.append(_btn)
-            value = {"title": f_title, "buttons": buttons}
+                with st.container(border=True):
+                    st.markdown(f"##### ＋ 「{_sel}」に広告を追加")
+                    if aff_registration_form(default_brand=_sel, key_prefix=f"add_{_sel}"):
+                        st.session_state.pop("aff_usage_cache", None)
+                        st.rerun()
 
-        st.markdown("##### プレビュー")
-        if new_key and not key_error and aff_validate_required(const_name, value):
-            import streamlit.components.v1 as _components
-            _components.html(
-                aff_preview_html_for_draft(const_name, value),
-                height=420 if const_name == "AFFILIATE_CARDS" else 260,
-                scrolling=True,
-            )
-        else:
-            st.info("キーと必須項目を入力するとプレビューが表示されます")
+        _aff_brand_page()
 
-        can_save = bool(new_key) and not key_error and aff_validate_required(const_name, value)
-        if st.button("💾 登録する", type="primary", disabled=not can_save, key="aff_new_save"):
-            try:
-                aff_io.save_new_entry(const_name, new_key, value)
-            except Exception as e:
-                st.error(f"保存に失敗しました: {e}")
-            else:
-                _result = aff_compute_usage()
-                aff_write_usage_report(_result)
-                st.success("✅ 登録しました（バックアップ: affiliates-data.js.bak）")
-                st.info(
-                    f"この広告を実際にページへ表示するには、対象国の `<国名>.json` の "
-                    f"`practical.apps` などに `\"affiliate\": \"{new_key}\"` を追記してから "
-                    f"`python assets/tools/generate.py <国名>` を実行してください。"
-                )
-
-    # ── c. ページ別使用状況 ──
+    # ── b. ページ別使用状況 ──
     else:
+
         st.caption("国を選ぶと、その国の各ページに実際に表示されている広告の一覧を確認できます。")
         _aff_result = aff_compute_usage()
         _usage = _aff_result["usage"]

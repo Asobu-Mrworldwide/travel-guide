@@ -1,3 +1,4 @@
+import re
 #!/usr/bin/env python3
 """
 check_rules.py — 国ページの執筆ルール一括検証スクリプト
@@ -291,6 +292,8 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
 
     # ── tour_platforms キー名チェック ──
     platforms = prac.get('tour_platforms', [])
+    # 新しいカードキー（例: klook_card_1）から素の名前（klook）を取り出して照合する
+    platforms = [re.sub(r'_card_1$', '', p) for p in platforms]
     for p in platforms:
         if p not in VALID_PLATFORMS:
             issues.append(f'[tour_platforms 不正なキー] "{p}"（klook / getyourguide / viator のいずれか）')

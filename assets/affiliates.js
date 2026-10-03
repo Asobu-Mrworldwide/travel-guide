@@ -379,7 +379,7 @@ function initAffiliates() {
       bannerWrap.className = 'aff-row-banner';
       bannerWrap.style.cssText = 'margin:12px auto 0';
       bannerWrap.innerHTML = `<img src="${aff.banner.img}" width="300" height="250" alt="${aff.name}" style="width:90%;max-width:280px;height:auto;border:none;border-radius:6px;display:block;margin:0 auto"><img src="${aff.banner.pixel}" width="1" height="1" alt="" style="border:none;position:absolute;width:1px;height:1px">`;
-      const fullCard = AFFILIATE_CARDS[key];
+      const fullCard = AFFILIATE_CARDS[key + '_card_1'];
       if (fullCard) bannerWrap.classList.add('aff-row-banner-mobile-only');
       let anchor = row.insertAdjacentElement('afterend', bannerWrap);
 
@@ -478,7 +478,7 @@ function initAffiliates() {
     const wrap = document.createElement('div');
     wrap.className = 'booking-box';
 
-    if (key === 'flights' && dest) {
+    if (key === 'flights_box_1' && dest) {
       const skyscannerBtn = box.buttons.find(b => b.className === 'btn-skyscanner');
       wrap.innerHTML = `
         <h3 class="booking-title">${box.title}</h3>
