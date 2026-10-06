@@ -90,8 +90,10 @@ const AFFILIATES_CSS = `
   /* この幅ではnavは画面下部に固定されないため、余白は最小限でよい */
   .wise-popup-banner{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
 }
-.wise-popup-banner.visible{transform:translateY(0);pointer-events:auto}
-.wise-popup-banner-inner{position:relative;max-width:480px;margin:0 auto}
+.wise-popup-banner.visible{transform:translateY(0)}
+/* 外枠のpadding（タブバー回避用の下余白）はタブバーに被さるため、外枠自体はタップを通し、バナー本体だけ受け付ける */
+.wise-popup-banner-inner{position:relative;max-width:480px;margin:0 auto;pointer-events:none}
+.wise-popup-banner.visible .wise-popup-banner-inner{pointer-events:auto}
 .wise-popup-banner-inner img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 -2px 14px rgba(0,0,0,0.2)}
 .wise-popup-close{
   position:absolute;top:-9px;right:-9px;background:#fff;border:1px solid #ddd;
