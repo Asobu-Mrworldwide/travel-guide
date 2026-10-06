@@ -793,17 +793,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-card">
   <h2 data-label="PACKING LIST">持ち物・アプリ準備</h2>
   <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の完全版リストをぜひ活用してください。</p>
+  {% if practical.country_items_html %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 16px">{{practical.country_items_html}}</p>{% endif %}
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
-  <div class="grid2">
-    <div class="card" style="padding:16px;height:100%;box-sizing:border-box">
-      <div class="lbl" style="margin-bottom:10px">{{practical.country_items_label}}</div>
-      <ul class="check-list">
-        {% for item in practical.country_items %}
-        <li><strong>{{item.name}}</strong><br><span style="font-size:0.92em;color:var(--sub)">{{item.desc}}</span></li>
-        {% endfor %}
-      </ul>
-    </div>
+  <div class="grid2" style="grid-template-columns:1fr">
     <div class="card" style="padding:16px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:12px;background:#f8faf8">
       <div style="font-size:1.6em">📋</div>
       <div style="font-size:0.85em;font-weight:700;color:var(--text)">一般的な持ち物</div>

@@ -1953,7 +1953,7 @@ def _build_template_from(base_id: str) -> dict:
         airline.update({"name": "", "desc": "", "price": ""})
     for area in p.get("hotel_areas", []):
         area.update({"name": "", "tag": "", "desc": "", "price": "", "maps_url": ""})
-    p["country_items_label"] = ""; p["country_items"] = []
+    p["country_items_html"] = ""
     for app_ in p.get("apps", []):
         app_.update({"name": "", "type_label": "", "desc": ""})
     for k in ("currency_code","exchange_rate","eco_daily","std_daily","lux_daily"):

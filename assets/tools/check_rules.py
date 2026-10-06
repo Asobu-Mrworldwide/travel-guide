@@ -29,7 +29,7 @@ generate.py の末尾から自動的に呼び出される（generate() の最後
   - practical.prac_cards の10枚構成チェック
   - practical.tour_platforms のキー名バリデーション
   - practical.apps[] と tour_platforms の対応チェック
-  - practical.country_items の空欄チェック
+  - practical.country_items_html の空欄・文字数チェック
   - overview.currency_name の括弧が半角かチェック
   - overview.danger_label の文言チェック（レベルに応じた統一表現）
   - phrases カテゴリの項目数（_country_template.json との一致）
@@ -304,9 +304,12 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
         if p not in app_icons:
             issues.append(f'[apps 未登録] tour_platforms に "{p}" があるが apps[] に対応エントリがない')
 
-    # ── country_items 空欄チェック ──
-    if not prac.get('country_items'):
-        issues.append('[country_items 空欄] practical.country_items が未設定')
+    # ── country_items_html 空欄・文字数チェック ──
+    _ci = prac.get('country_items_html', '')
+    if not _ci:
+        issues.append('[country_items_html 空欄] practical.country_items_html が未設定')
+    elif not (40 <= len(_ci) <= 200):
+        issues.append(f'[country_items_html 文字数] {len(_ci)}文字（目安80〜150文字、40〜200文字を外れている）')
 
     # ── overview.currency_name の括弧チェック（全角→NG） ──
     cn = _get(data, 'overview.currency_name')
