@@ -270,10 +270,10 @@
           <img src="img/deco-cloud.png" alt="">
         </div>
         <div class="lp-preview-grid">
-          <a href="types.html"><img src="img/traveler-phone.png" alt="計画重視タイプ"><span class="l">計画重視タイプ</span><span class="c">PCSH</span></a>
+          <a href="types.html"><img src="img/traveler-phone.png" alt="計画重視タイプ"><span class="l">計画重視タイプ</span><span class="c">PCSR</span></a>
           <a href="types.html"><img src="img/traveler-hero.png" alt="自由探検タイプ"><span class="l">自由探検タイプ</span><span class="c">FCLW</span></a>
           <a href="types.html"><img src="img/traveler-suitcase.png" alt="協調サポートタイプ"><span class="l">協調サポートタイプ</span><span class="c">PCSW</span></a>
-          <a href="types.html"><img src="img/traveler-map.png" alt="知的探究タイプ"><span class="l">知的探究タイプ</span><span class="c">PNSH</span></a>
+          <a href="types.html"><img src="img/traveler-map.png" alt="知的探究タイプ"><span class="l">知的探究タイプ</span><span class="c">PNSR</span></a>
         </div>
       </div>
     </div>
@@ -291,7 +291,7 @@
           <span class="no">01</span>
           <img src="img/icon-globe.png" alt="">
           <span class="t">あなたの旅人モデル</span>
-          <p>PCSH型・FCLW型など、16種類の旅人モデルからあなたのタイプを判定します。</p>
+          <p>PCSR型・FCLW型など、16種類の旅人モデルからあなたのタイプを判定します。</p>
         </div>
         <div class="lp-know-item">
           <span class="no">02</span>
@@ -308,7 +308,7 @@
         <div class="lp-manual-wrap">
           <div class="lp-manual">
             <span class="mono">TRAVELER MANUAL</span>
-            <span class="code"><b>PCSH</b><span>型</span></span>
+            <span class="code"><b>PCSR</b><span>型</span></span>
             <span class="ttl">旅人取扱説明書</span>
             <img src="img/traveler-hero.png" alt="">
             <span class="foot"><img src="img/icon-globe.png" alt=""><span>World Mappy</span></span>
@@ -342,10 +342,10 @@ import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebase
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 const TYPE_NAMES = {
-  PCSH:'中間管理職', PCSW:'別班員', PCLH:'茶道部', PCLW:'妖怪ガイドブック喰い',
-  PNSH:'工場長', PNSW:'シェルパ', PNLH:'熱燗', PNLW:'週末仙人',
-  FCSH:'ゴールデンレトリバー', FCSW:'イエスマン', FCLH:'街のトリュフ犬', FCLW:'迷ってない人',
-  FNSH:'副本部長', FNSW:'桃太郎', FNLH:'吾輩', FNLW:'タンポポの綿毛',
+  PCSR:'中間管理職', PCSW:'別班員', PCLR:'茶道部', PCLW:'妖怪ガイドブック喰い',
+  PNSR:'工場長', PNSW:'シェルパ', PNLR:'熱燗', PNLW:'週末仙人',
+  FCSR:'ゴールデンレトリバー', FCSW:'イエスマン', FCLR:'街のトリュフ犬', FCLW:'迷ってない人',
+  FNSR:'副本部長', FNSW:'桃太郎', FNLR:'吾輩', FNLW:'タンポポの綿毛',
 };
 function normalizeTypeCode(code) {
   if (!code || code.length !== 4) return code;

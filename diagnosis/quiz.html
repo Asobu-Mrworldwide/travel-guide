@@ -206,9 +206,9 @@ const BASE_QUESTIONS = {
     {yesVal:'L', text:'旅先であっても、起きる時間やご飯を食べるタイミングは、自分のペースで決めたい'},
   ],
   HW: [
-    {yesVal:'H', text:'宿はただ寝るだけの場所ではなく、清潔で設備が整った空間でホテルステイそのものも快適に楽しみたい'},
+    {yesVal:'R', text:'宿はただ寝るだけの場所ではなく、清潔で設備が整った空間でホテルステイそのものも快適に楽しみたい'},
     {yesVal:'W', text:'観光地化されていない、現地らしい不便な場所にこそ行ってみたい'},
-    {yesVal:'H', text:'移動で体力を削られたくないので、お金を払ってでも快適な移動手段を選びたい'},
+    {yesVal:'R', text:'移動で体力を削られたくないので、お金を払ってでも快適な移動手段を選びたい'},
     {yesVal:'W', text:'言葉が通じない、停電が起きるといった「想定外のハプニング」ほど燃える'},
   ],
 };
@@ -250,7 +250,7 @@ let touchEndHandler = null;
 let mouseDownHandler = null;
 
 function getOppositeVal(v) {
-  return {P:'F',F:'P',C:'N',N:'C',S:'L',L:'S',H:'W',W:'H'}[v];
+  return {P:'F',F:'P',C:'N',N:'C',S:'L',L:'S',R:'W',W:'R'}[v];
 }
 
 
@@ -258,7 +258,7 @@ function initSwipe() {
   questionQueue = buildShuffledBase();
   currentIdx = 0;
   totalQuestions = 16;
-  axisVotes = {PF:{P:0,F:0}, CN:{C:0,N:0}, SL:{S:0,L:0}, HW:{H:0,W:0}};
+  axisVotes = {PF:{P:0,F:0}, CN:{C:0,N:0}, SL:{S:0,L:0}, HW:{R:0,W:0}};
   // updateProgress(0, 16);
 
   const stack = document.getElementById('card-stack');
@@ -470,7 +470,7 @@ function finishQuiz() {
   const pf = axisVotes.PF.P >= axisVotes.PF.F ? 'P' : 'F';
   const cn = axisVotes.CN.C >= axisVotes.CN.N ? 'C' : 'N';
   const sl = axisVotes.SL.S >= axisVotes.SL.L ? 'S' : 'L';
-  const hw = axisVotes.HW.H >= axisVotes.HW.W ? 'H' : 'W';
+  const hw = axisVotes.HW.R >= axisVotes.HW.W ? 'R' : 'W';
   const type = pf + cn + sl + hw;
   sessionStorage.setItem('myType', type);
   sessionStorage.setItem('myVotes', JSON.stringify(axisVotes));
