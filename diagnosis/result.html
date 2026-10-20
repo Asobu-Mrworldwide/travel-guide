@@ -209,6 +209,7 @@ body{background:#FAF7F2}
 .id-quote::before{content:"\201C";position:absolute;left:0;top:-2px;font-size:22px;color:#C9C2B4}
 .id-hero{height:380px;display:grid;place-items:end center}
 .id-hero img{max-height:380px;max-width:100%;object-fit:contain}
+.id-hero img.illust{mix-blend-mode:multiply}
 .id-side{border:1px solid #E3DCCE;border-radius:10px;background:#FBF8F1;padding:20px 22px 24px;display:grid;gap:12px}
 .id-side .head{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:#3C3A34;border-bottom:1px solid #E3DCCE;padding-bottom:11px}
 .id-side .row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:10px;align-items:baseline;padding-bottom:9px;border-bottom:1px solid #EDE7DC}
@@ -607,6 +608,7 @@ body{background:#FAF7F2}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
+<script src="type-images.js"></script>
 <script src="../assets/country-links.js"></script>
 
 <script>
@@ -1258,6 +1260,8 @@ function renderSpecSheet(rt){
   set('id-code', rt + '<span>型</span>');
   set('id-name', t.name);
   set('id-chips', (t.traits||[]).map((x,i) => '<span><img src="'+RES_ICON[i]+'" alt="">'+x+'</span>').join(''));
+  const heroImg = document.getElementById('id-hero-img');
+  if (heroImg) { const u = typeImg(rt); heroImg.src = u || TYPE_IMG_FALLBACK; heroImg.classList.toggle('illust', !!u); }
   set('id-quote', t.quote || '');
   set('id-side-rows', [
     ['MODEL NAME', t.name, '#23211C'],
@@ -1331,14 +1335,8 @@ function layoutSpecCols(){
 /* ===== 旅人取扱説明書シート（07 付属品から開く） =====
    中身はこのページで確定済みの文言を組み合わせる（新規の文言は作らない）。
    使用上の注意のみ、旧自動文 TIP_TEXT の前半（同行者とのズレの注意）を流用している。 */
-// 製品イメージ図：タイプ別イラスト（素材/タイプイラスト/{コード}_{タイプ名}.webp）。未作成のタイプは仮画像を表示する
-const MANUAL_IMG = {};
-Object.entries({
-  PCSR:'中間管理職', PCSW:'別班員', PCLR:'茶道部', PCLW:'妖怪ガイドブック喰い',
-  PNSR:'工場長', PNSW:'シェルパ', PNLR:'熱燗', PNLW:'週末仙人',
-  FCSR:'ゴールデンレトリバー', FCSW:'イエスマン', FNSW:'桃太郎',
-}).forEach(([c, n]) => { MANUAL_IMG[c] = '素材/タイプイラスト/' + c + '_' + n + '.webp'; });
-const MANUAL_IMG_FALLBACK = 'img/r/model-hero.png';
+// 製品イメージ図：タイプ別イラスト（type-images.js）。未作成のタイプは仮画像を表示する
+const MANUAL_IMG_FALLBACK = TYPE_IMG_FALLBACK;
 
 function buildManual(rt){
   const t = TYPES[rt]; if (!t) return;
@@ -1387,7 +1385,7 @@ function buildManual(rt){
     + '<div class="mn-code-row"><span class="mn-code">'+rt+'</span><span class="mn-name">'+t.name+'</span></div>'
     + '<span class="mn-tagline">'+(t.quote || '')+'</span></div>'
     + '<div class="mn-prod-r"><span class="mn-lb">■ 製品イメージ図</span>'
-    + '<div class="mn-figure"><img src="'+(MANUAL_IMG[rt] || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
+    + '<div class="mn-figure"><img src="'+(typeImg(rt) || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
 
     + '<div class="mn-sec"><span class="mn-lb">■ 基本仕様</span><div class="mn-table">'+specRows+'</div></div>'
     + '<div class="mn-caution"><span class="lb">⚠ 使用上の注意</span><span class="tx">'+caution+'</span></div>'
