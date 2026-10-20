@@ -1331,9 +1331,13 @@ function layoutSpecCols(){
 /* ===== 旅人取扱説明書シート（07 付属品から開く） =====
    中身はこのページで確定済みの文言を組み合わせる（新規の文言は作らない）。
    使用上の注意のみ、旧自動文 TIP_TEXT の前半（同行者とのズレの注意）を流用している。 */
-// 製品イメージ図：タイプ別イラスト（img/types/{コード}.webp）。未作成のタイプは仮画像を表示する
+// 製品イメージ図：タイプ別イラスト（素材/タイプイラスト/{コード}_{タイプ名}.webp）。未作成のタイプは仮画像を表示する
 const MANUAL_IMG = {};
-['PCSR','PCSW','PCLR','PCLW','PNSR','PNSW','PNLR','PNLW','FCSR','FCSW','FNSW'].forEach(c => { MANUAL_IMG[c] = 'img/types/' + c + '.webp'; });
+Object.entries({
+  PCSR:'中間管理職', PCSW:'別班員', PCLR:'茶道部', PCLW:'妖怪ガイドブック喰い',
+  PNSR:'工場長', PNSW:'シェルパ', PNLR:'熱燗', PNLW:'週末仙人',
+  FCSR:'ゴールデンレトリバー', FCSW:'イエスマン', FNSW:'桃太郎',
+}).forEach(([c, n]) => { MANUAL_IMG[c] = '素材/タイプイラスト/' + c + '_' + n + '.webp'; });
 const MANUAL_IMG_FALLBACK = 'img/r/model-hero.png';
 
 function buildManual(rt){
