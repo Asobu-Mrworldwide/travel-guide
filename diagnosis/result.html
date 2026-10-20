@@ -257,10 +257,6 @@ body{background:#FAF7F2}
 .spec-cta-in{display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;border-radius:8px;background:#14503C;color:#fff;font-size:13.5px;font-weight:700;margin-top:12px}
 
 /* 06 ヒント */
-.spec-tip-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
-.spec-tip-cards > div{display:grid;gap:12px;justify-items:center;text-align:center;padding:16px 6px;border:1px solid #EFEBE3;border-radius:10px;background:#FBF9F4}
-.spec-tip-cards img{width:60px;height:60px;object-fit:contain}
-.spec-tip-cards span{font-size:12.5px;line-height:1.8;color:#3C3A34}
 .spec-h .en.tip{color:#8F6415}
 
 /* 07 INCLUDED 付属品 */
@@ -294,7 +290,7 @@ body{background:#FAF7F2}
   .id-hero{height:220px;order:-1}
   .id-hero img{max-height:220px}
   .id-code{font-size:44px}.id-name{font-size:30px}
-  .spec-micro,.spec-tip-cards,.spec-country-grid{grid-template-columns:1fr 1fr}
+  .spec-micro,.spec-country-grid{grid-template-columns:1fr 1fr}
   .spec-radar{grid-template-columns:1fr;justify-items:center;text-align:center}
   .spec-cta-band img{position:static;margin-top:8px}
 }
@@ -432,7 +428,6 @@ body{background:#FAF7F2}
   <div class="spec-panel spec-hidden" id="spec-tip-sec">
     <div class="spec-h"><span class="no">06</span><span class="en tip">PERFORMANCE TIP</span><span class="sep"></span><span class="ttl">開発者からのヒント</span></div>
     <p style="margin:0;font-size:13px;line-height:2;color:#55504A" id="spec-tip-text"></p>
-    <div class="spec-tip-cards" id="spec-tip-cards"></div>
   </div>
 
   </div><!-- /spec-col -->
@@ -530,6 +525,11 @@ body{background:#FAF7F2}
 
 <script>
 // ===== 軸情報 =====
+// タイプコードは4文字（PF・CN・SL・HWの順）。各文字の意味:
+//   PF: P=Plan（計画派）   / F=Feeling（直感派）
+//   CN: C=Culture（文化・学び） / N=Nature（絶景・リフレッシュ）
+//   SL: S=Social（協調派） / L=Lone（マイペース派）
+//   HW: R=Relax（快適志向） / W=Wild（ワイルド志向）
 const AXIS_INFO = {
   PF:{label:'計画性',
     P:{short:'計画派',desc:'行程・宿・交通を事前に固める安心型。計画通りに動くことで旅の満足度が高まる。'},
@@ -678,7 +678,7 @@ const TYPES = {
     traits:['直感派','絶景・リフレッシュ','マイペース派','ワイルド'],
     quote:'計画も快適さも気にせず、本能の赴くままに動く。自然や偶然の流れに身を任せる、自由な旅行者。',
     closing:'気になった方向へふらっと歩き出して、同行者が気づいたときには、もう豆粒になっている。',
-    travelStyle:'インドや中央アジア、南米大陸のような予定を立てても崩れることが前提の刺激的な旅先と特に相性がよく、行き先も宿も交通手段も何一つ決めずその日その場の流れに完全に身を委ねる旅が最も本領を発揮する。数ヶ月単位の長期放浪や帰国日を決めないオープンチケットの旅にも向いている。現地で意気投合した人がいたら、次の街まで誘われるまま一緒に行ってみると、忘れられない体験になることが多い。'},
+    travelStyle:'アイスランドの環状道路やパタゴニア、ネパールのトレッキングルートのように、天候や交通の変化がつきものの自然豊かな旅先と特に相性がよく、行き先は大まかに決めるだけで、あとはその日の天気や気分で動く旅が最も本領を発揮する。バックパック一つで数週間かけて巡る長めの旅にも向いている一方、予約や時間に縛られた団体ツアーには窮屈さを感じやすい。雨具と携帯の充電だけは持っておくと、気ままな足取りが、もっと遠くまで続く。'},
 };
 
 // ===== 相性計算 =====
@@ -1067,7 +1067,6 @@ function renderResult(type) {
    すべて型コード rt の4文字（P/F・C/N・S/L・R/W）から機械的に導出する。 */
 const RES_ICON = ['img/r/ic-plan.png','img/r/ic-culture.png','img/r/ic-group.png','img/r/ic-comfort.png'];
 const ENV_ICON = ['img/r/ic-culture.png','img/r/ic-heart.png','img/r/ic-group.png','img/r/ic-comfort.png','img/r/ic-calendar.png'];
-const TIP_ICON = ['img/r/ic-bulb.png','img/r/ic-heart.png','img/r/ic-plan.png'];
 const AXIS_EN  = ['PLANNING','CULTURE','GROUP','COMFORT'];
 
 function _stars(n){ n=Math.max(0,Math.min(5,n)); return '<span class="on">'+'★★★★★'.slice(0,n)+'</span><span class="off">'+'★★★★★'.slice(0,5-n)+'</span>'; }
@@ -1095,11 +1094,6 @@ function ENVIRON(rt){ return [
   {label:'グループ・家族旅行', n: rt[2]==='S'?5:3},
   {label:'快適な宿・移動環境', n: rt[3]==='R'?5:2},
   {label:'完全ノープラン旅', n: rt[0]==='F'?5:2},
-]; }
-function TIPS(rt){ return [
-  rt[0]==='P' ? {a:'予定の中に',b:'自分時間をつくる'} : {a:'要予約だけは',b:'先に押さえる'},
-  rt[1]==='C' ? {a:'地元の人に',b:'おすすめを聞く'} : {a:'天気で行き先を',b:'入れ替える'},
-  rt[2]==='S' ? {a:'感動はその場で',b:'しっかり共有する'} : {a:'一人時間を',b:'遠慮なく取る'},
 ]; }
 function TIP_TEXT(rt){
   const lead = rt[2]==='S'
@@ -1227,9 +1221,6 @@ function renderSpecSheet(rt){
   // --- 06 PERFORMANCE TIP ---
   document.getElementById('spec-tip-sec').classList.remove('spec-hidden');
   set('spec-tip-text', tsTip || TIP_TEXT(rt));
-  set('spec-tip-cards', TIPS(rt).map((x,i) =>
-    '<div><img src="'+TIP_ICON[i % TIP_ICON.length]+'" alt=""><span>'+x.a+'<br>'+x.b+'</span></div>'
-  ).join(''));
 
   // --- 07 INCLUDED 付属品 ---
   const book = document.getElementById('spec-incl-book'); if (book) book.alt = '旅人取扱説明書';
