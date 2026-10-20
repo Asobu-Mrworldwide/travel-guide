@@ -265,9 +265,10 @@ body{background:#FAF7F2}
 /* 旅人取扱説明書シート（07 付属品から開くモーダル。画像書き出し前提のため px 固定） */
 .mn-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(20,32,28,0.82);overflow-y:auto;padding:16px 12px 90px}
 .mn-ov.open{display:block}
-#manual-sheet{max-width:356px;margin:0 auto;background:#fff;border:1.5px solid #2B2B28;padding:14px;display:grid;gap:12px;box-sizing:border-box;color:#2B2B28;line-height:1.6;text-align:left}
-#manual-sheet *{box-sizing:border-box}
-#manual-sheet img{display:block}
+#manual-sheets{display:grid;gap:14px}
+.mn-sheet{max-width:356px;width:100%;margin:0 auto;background:#fff;border:1.5px solid #2B2B28;padding:14px;display:grid;gap:12px;box-sizing:border-box;color:#2B2B28;line-height:1.6;text-align:left}
+#manual-sheets *{box-sizing:border-box}
+#manual-sheets img{display:block}
 .mn-head{display:grid;gap:8px}
 .mn-head-top{display:flex;align-items:flex-start;gap:8px}
 .mn-head-l{flex:1;display:grid;gap:3px}
@@ -594,7 +595,7 @@ body{background:#FAF7F2}
 
 <!-- 旅人取扱説明書（07 付属品から開く） -->
 <div class="mn-ov" id="manual-overlay" role="dialog" aria-modal="true" aria-label="旅人取扱説明書">
-  <div id="manual-sheet"></div>
+  <div id="manual-sheets"><div class="mn-sheet" id="manual-front"></div><div class="mn-sheet" id="manual-back"></div></div>
   <div class="mn-actions">
     <button type="button" class="save" id="manual-save">画像として保存</button>
     <div class="sns">
@@ -1368,7 +1369,10 @@ function buildManual(rt){
     .map(c => '<div class="c"><div class="top"><span class="cd" style="color:'+c.info.color+'">'+c.code+'型</span>'
       + '<span class="pc">'+c.pct+'<small>%</small></span></div><span class="tx">'+c.text+'</span></div>').join('');
 
-  document.getElementById('manual-sheet').innerHTML =
+  const foot = right => '<div class="mn-foot"><span>WORLDMAPPY.COM</span><span>'+right+'</span></div>';
+
+  // 表面：ヘッダー〜基本仕様〜使用上の注意〜推奨環境 ／ 裏面：正しい扱い方〜相性（画像保存は2枚に分けて出力）
+  document.getElementById('manual-front').innerHTML =
     '<div class="mn-head"><div class="mn-head-top">'
     + '<div class="mn-head-l"><span class="mn-title">旅人取扱説明書</span><span class="mn-note">安全にご使用いただくために、必ずこの取扱説明書をよくお読みください。</span></div>'
     + '<div class="mn-head-r"><span class="mn-tag">TRAVELER MANUAL</span><span class="mn-model">型番：'+rt+'-2026</span></div>'
@@ -1381,13 +1385,16 @@ function buildManual(rt){
     + '<div class="mn-figure"><img src="'+(MANUAL_IMG[rt] || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
 
     + '<div class="mn-sec"><span class="mn-lb">■ 基本仕様</span><div class="mn-table">'+specRows+'</div></div>'
-    + '<div class="mn-sec"><span class="mn-lb">■ 正しい扱い方</span><div class="mn-how">'+howTo+'</div></div>'
     + '<div class="mn-caution"><span class="lb">⚠ 使用上の注意</span><span class="tx">'+caution+'</span></div>'
     + '<div class="mn-sec"><span class="mn-lb">■ 推奨環境（相性の良いエリア）</span><div class="mn-ctry-grid">'+countries+'</div></div>'
+    + foot('1 / 2');
+
+  document.getElementById('manual-back').innerHTML =
+    '<div class="mn-sec"><span class="mn-lb">■ 正しい扱い方</span><div class="mn-how">'+howTo+'</div></div>'
     + (styleLead ? '<div class="mn-sec"><span class="mn-lb">■ おすすめの旅スタイル</span><span class="mn-style">'+styleLead+'</span></div>' : '')
     + (styleTip ? '<div class="mn-advice"><span class="lb">💡 ワンポイントアドバイス</span><span class="tx">'+styleTip+'</span></div>' : '')
     + '<div class="mn-sec"><span class="mn-lb">■ 相性のいい旅行タイプ</span><div class="mn-compat">'+compat+'</div></div>'
-    + '<div class="mn-foot"><span>WORLDMAPPY.COM</span><span>'+rt+'-2026-TRAVELER</span></div>';
+    + foot(rt+'-2026-TRAVELER　2 / 2');
 }
 
 function setupManual(rt){
@@ -1413,23 +1420,29 @@ function setupManual(rt){
 
   const saveBtn = document.getElementById('manual-save');
   saveBtn.addEventListener('click', async () => {
-    const el = document.getElementById('manual-sheet');
     if (!window.htmlToImage) { alert('画像の保存機能を読み込めませんでした。スクリーンショットで保存してください。'); return; }
     const original = saveBtn.textContent;
     saveBtn.textContent = '作成中…'; saveBtn.disabled = true;
     try {
       if (document.fonts && document.fonts.ready) await document.fonts.ready;
-      const blob = await htmlToImage.toBlob(el, { pixelRatio: 2, backgroundColor: '#FAF7F2' });
-      const file = new File([blob], 'worldmappy-manual-' + rt + '.png', { type: 'image/png' });
+      // 表面・裏面の2枚を別々のPNGに書き出す
+      const files = [];
+      for (const [id, label] of [['manual-front', '表'], ['manual-back', '裏']]) {
+        const blob = await htmlToImage.toBlob(document.getElementById(id), { pixelRatio: 2, backgroundColor: '#fff' });
+        files.push(new File([blob], 'worldmappy-manual-' + rt + '-' + (label === '表' ? '1' : '2') + '.png', { type: 'image/png' }));
+      }
       const isMobile = /Android|iPhone|iPad|Mobi/i.test(navigator.userAgent);
-      if (isMobile && navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({ files: [file], title: 'World Mappy 旅人取扱説明書', text: shareText });
+      if (isMobile && navigator.canShare && navigator.canShare({ files })) {
+        await navigator.share({ files, title: 'World Mappy 旅人取扱説明書', text: shareText });
       } else {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url; a.download = file.name;
-        document.body.appendChild(a); a.click(); a.remove();
-        URL.revokeObjectURL(url);
+        for (const f of files) {
+          const url = URL.createObjectURL(f);
+          const a = document.createElement('a');
+          a.href = url; a.download = f.name;
+          document.body.appendChild(a); a.click(); a.remove();
+          URL.revokeObjectURL(url);
+          await new Promise(r => setTimeout(r, 400)); // 連続ダウンロードがブロックされにくいよう間隔を空ける
+        }
       }
     } catch (e) {
       if (!(e && e.name === 'AbortError')) alert('画像の保存に失敗しました。スクリーンショットで保存してください。');
