@@ -10,6 +10,9 @@
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="diagnosis.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet">
 <style>
 body{background:#FAF7F2}
 .page-wrap{max-width:1040px;margin:0 auto;padding:26px 20px 64px}
@@ -259,6 +262,74 @@ body{background:#FAF7F2}
 /* 06 ヒント */
 .spec-h .en.tip{color:#8F6415}
 
+/* 旅人取扱説明書シート（07 付属品から開くモーダル。画像書き出し前提のため px 固定） */
+.mn-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(20,32,28,0.82);overflow-y:auto;padding:16px 12px 90px}
+.mn-ov.open{display:block}
+#manual-sheet{max-width:356px;margin:0 auto;background:#fff;border:1.5px solid #2B2B28;padding:14px;display:grid;gap:12px;box-sizing:border-box;color:#2B2B28;line-height:1.6;text-align:left}
+#manual-sheet *{box-sizing:border-box}
+#manual-sheet img{display:block}
+.mn-head{display:grid;gap:8px}
+.mn-head-top{display:flex;align-items:flex-start;gap:8px}
+.mn-head-l{flex:1;display:grid;gap:3px}
+.mn-title{font-family:'Shippori Mincho B1',serif;font-size:21px;font-weight:700;line-height:1.2}
+.mn-note{font-size:9px;line-height:1.5;color:#7A756C}
+.mn-head-r{display:grid;gap:4px;justify-items:end}
+.mn-tag{background:#2B2B28;color:#fff;font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;padding:3px 7px}
+.mn-model{border:1px solid #2B2B28;font-size:9.5px;padding:3px 7px}
+.mn-rule{height:1.5px;background:#2B2B28}
+.mn-prod{display:grid;grid-template-columns:1fr 116px;gap:10px;align-items:start}
+.mn-prod-l{display:grid;gap:7px}
+.mn-lb{font-size:9.5px;font-weight:700;color:#55504A}
+.mn-code-row{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.mn-code{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;line-height:1}
+.mn-name{border:1px solid #2B2B28;border-radius:4px;padding:3px 7px;font-size:11px;font-weight:700}
+.mn-tagline{font-family:'Shippori Mincho B1',serif;font-size:12px;line-height:1.7;color:#3A3833}
+.mn-prod-r{display:grid;gap:4px}
+.mn-prod-r .mn-lb{font-size:9px}
+.mn-figure{aspect-ratio:3/4;border:1px solid #E8E2D8;overflow:hidden;background:#FAF9F6;display:grid;place-items:center}
+.mn-figure img{width:100%;height:100%;object-fit:contain}
+.mn-sec{display:grid;gap:6px}
+.mn-table{border:1px solid #2B2B28}
+.mn-table .r{display:grid;grid-template-columns:92px 1fr;border-top:1px solid #DDD8CE}
+.mn-table .r:first-child{border-top:none}
+.mn-table .k{padding:6px 8px;font-size:9.5px;background:#F4F2ED;border-right:1px solid #DDD8CE;color:#3A3833}
+.mn-table .v{padding:6px 8px;font-size:9.5px;line-height:1.6}
+.mn-how{display:grid}
+.mn-how .r{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:9px 0;border-top:1px solid #E8E2D8}
+.mn-how .no{width:22px;height:22px;background:#1D7A63;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;display:grid;place-content:center}
+.mn-how .ti{font-size:11.5px;font-weight:700}
+.mn-how .tx{font-size:10px;line-height:1.75;color:#55504A}
+.mn-how .r > div{display:grid;gap:3px}
+.mn-caution{border:1px solid #2B2B28;padding:10px;display:grid;gap:6px}
+.mn-caution .lb{font-size:9.5px;font-weight:700}
+.mn-caution .tx{font-size:10px;line-height:1.8;color:#3A3833}
+.mn-ctry-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.mn-ctry{display:grid;gap:4px}
+.mn-ctry-img{aspect-ratio:1/1;border:1px solid #E8E2D8;overflow:hidden;background:#FAF9F6}
+.mn-ctry-img img{width:100%;height:100%;object-fit:cover}
+.mn-ctry span{font-size:9.5px;text-align:center;color:#3A3833}
+.mn-style{font-size:10px;line-height:1.85;color:#3A3833}
+.mn-advice{background:#FAF5E8;border:1px solid #E8DCBE;padding:10px;display:grid;gap:5px}
+.mn-advice .lb{font-size:9.5px;font-weight:700;color:#8F6415}
+.mn-advice .tx{font-size:10px;line-height:1.8;color:#3A3833}
+.mn-compat{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.mn-compat .c{border:1px solid #E8E2D8;padding:9px;display:grid;gap:4px;align-content:start}
+.mn-compat .top{display:flex;align-items:baseline;gap:5px}
+.mn-compat .cd{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700}
+.mn-compat .pc{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700}
+.mn-compat .pc small{font-size:9px}
+.mn-compat .tx{font-size:9px;line-height:1.65;color:#55504A}
+.mn-foot{border-top:1.5px solid #2B2B28;padding-top:9px;display:flex;align-items:center;justify-content:space-between}
+.mn-foot span{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:#7A756C}
+.mn-actions{max-width:356px;margin:14px auto 0;display:grid;gap:8px}
+.mn-actions button{font-family:inherit;cursor:pointer;border:none;border-radius:8px}
+.mn-actions .save{width:100%;min-height:46px;background:#fff;font-size:13px;font-weight:700;color:#2B2B28}
+.mn-actions .sns{display:flex;gap:8px}
+.mn-actions .sns button{flex:1;min-height:44px;color:#fff;font-size:12.5px;font-weight:700}
+.mn-actions .x{background:#000}
+.mn-actions .line{background:#06c755}
+.mn-actions .close{width:100%;min-height:44px;border:1px solid rgba(255,255,255,.4);background:none;font-size:12.5px;color:#fff}
+
 /* 07 INCLUDED 付属品 */
 .spec-incl{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:center}
 .spec-incl-book{display:block;width:100%;max-width:200px;filter:drop-shadow(0 12px 22px rgba(35,33,28,0.18))}
@@ -458,7 +529,7 @@ body{background:#FAF7F2}
           <li>基本仕様</li><li>正しい扱い方</li><li>使用上の注意</li><li>推奨環境</li>
         </ul>
         <div class="spec-incl-btns">
-          <a class="primary" id="spec-incl-open" href="types.html">取扱説明書を開く<span>→</span></a>
+          <a class="primary" id="spec-incl-open" href="#manual">取扱説明書を開く<span>→</span></a>
           <a class="ghost" href="#share-block">この結果をシェアする<span>→</span></a>
         </div>
       </div>
@@ -521,6 +592,20 @@ body{background:#FAF7F2}
 
 </div><!-- /page-wrap -->
 
+<!-- 旅人取扱説明書（07 付属品から開く） -->
+<div class="mn-ov" id="manual-overlay" role="dialog" aria-modal="true" aria-label="旅人取扱説明書">
+  <div id="manual-sheet"></div>
+  <div class="mn-actions">
+    <button type="button" class="save" id="manual-save">画像として保存</button>
+    <div class="sns">
+      <button type="button" class="x" id="manual-x">𝕏 でシェア</button>
+      <button type="button" class="line" id="manual-line">LINEでシェア</button>
+    </div>
+    <button type="button" class="close" id="manual-close">閉じる</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
 <script src="../assets/country-links.js"></script>
 
 <script>
@@ -1242,6 +1327,118 @@ function layoutSpecCols(){
   });
 }
 
+/* ===== 旅人取扱説明書シート（07 付属品から開く） =====
+   中身はこのページで確定済みの文言を組み合わせる（新規の文言は作らない）。
+   使用上の注意のみ、旧自動文 TIP_TEXT の前半（同行者とのズレの注意）を流用している。 */
+// 製品イメージ図：タイプ別イラストができたら MANUAL_IMG['PCSR'] = 'img/...png' のように登録する（未登録は仮画像）
+const MANUAL_IMG = {};
+const MANUAL_IMG_FALLBACK = 'img/r/model-hero.png';
+
+function buildManual(rt){
+  const t = TYPES[rt]; if (!t) return;
+  const ts = (t.travelStyle || '').split('。').filter(Boolean);
+  const styleLead = ts.length > 1 ? ts.slice(0, -1).join('。') + '。' : '';
+  const styleTip = ts.length ? ts.slice(-1)[0] + '。' : '';
+  const caution = TIP_TEXT(rt).split('。')[0] + '。';
+
+  let levels = []; try { levels = computeAxisLevels(rt); } catch(e) {}
+  const howTo = ['PF','CN','SL','HW'].map((key, i) => {
+    const val = rt[i], info = AXIS_INFO[key], L = levels[i] || {};
+    const tier = (L.diff === undefined || L.diff >= 4) ? 4 : (L.diff >= 2 ? 2 : 1);
+    const text = (AXIS_TEXT[key] && AXIS_TEXT[key][val] && AXIS_TEXT[key][val][tier]) || info[val].desc;
+    return '<div class="r"><span class="no">0'+(i+1)+'</span><div><span class="ti">'+info[val].short+'</span><span class="tx">'+text+'</span></div></div>';
+  }).join('');
+
+  const specRows = [
+    ['型番', rt + '型'],
+    ['特性タグ', (t.traits || []).join(' / ')],
+  ].concat(MICRO(rt).map(m => [m.k, m.v])).concat([['製造元', 'World Mappy Inc.']])
+    .map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
+
+  const countries = COUNTRIES(rt).map(name => {
+    const id = COUNTRY_PAGE[name];
+    return '<div class="mn-ctry"><div class="mn-ctry-img">'
+      + (id ? '<img src="../'+id+'/素材/ヒーロー.webp" alt="'+name+'">' : '')
+      + '</div><span>'+name+'</span></div>';
+  }).join('');
+
+  const compat = Object.entries(TYPES).filter(([code]) => code !== rt)
+    .map(([code, info]) => ({ code, info, ...getCompat(rt, code) }))
+    .sort((a, b) => b.pct - a.pct).slice(0, 4)
+    .map(c => '<div class="c"><div class="top"><span class="cd" style="color:'+c.info.color+'">'+c.code+'型</span>'
+      + '<span class="pc">'+c.pct+'<small>%</small></span></div><span class="tx">'+c.text+'</span></div>').join('');
+
+  document.getElementById('manual-sheet').innerHTML =
+    '<div class="mn-head"><div class="mn-head-top">'
+    + '<div class="mn-head-l"><span class="mn-title">旅人取扱説明書</span><span class="mn-note">安全にご使用いただくために、必ずこの取扱説明書をよくお読みください。</span></div>'
+    + '<div class="mn-head-r"><span class="mn-tag">TRAVELER MANUAL</span><span class="mn-model">型番：'+rt+'-2026</span></div>'
+    + '</div><div class="mn-rule"></div></div>'
+
+    + '<div class="mn-prod"><div class="mn-prod-l"><span class="mn-lb">■ 製品名（旅人タイプ）</span>'
+    + '<div class="mn-code-row"><span class="mn-code">'+rt+'</span><span class="mn-name">'+t.name+'</span></div>'
+    + '<span class="mn-tagline">'+(t.quote || '')+'</span></div>'
+    + '<div class="mn-prod-r"><span class="mn-lb">■ 製品イメージ図</span>'
+    + '<div class="mn-figure"><img src="'+(MANUAL_IMG[rt] || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
+
+    + '<div class="mn-sec"><span class="mn-lb">■ 基本仕様</span><div class="mn-table">'+specRows+'</div></div>'
+    + '<div class="mn-sec"><span class="mn-lb">■ 正しい扱い方</span><div class="mn-how">'+howTo+'</div></div>'
+    + '<div class="mn-caution"><span class="lb">⚠ 使用上の注意</span><span class="tx">'+caution+'</span></div>'
+    + '<div class="mn-sec"><span class="mn-lb">■ 推奨環境（相性の良いエリア）</span><div class="mn-ctry-grid">'+countries+'</div></div>'
+    + (styleLead ? '<div class="mn-sec"><span class="mn-lb">■ おすすめの旅スタイル</span><span class="mn-style">'+styleLead+'</span></div>' : '')
+    + (styleTip ? '<div class="mn-advice"><span class="lb">💡 ワンポイントアドバイス</span><span class="tx">'+styleTip+'</span></div>' : '')
+    + '<div class="mn-sec"><span class="mn-lb">■ 相性のいい旅行タイプ</span><div class="mn-compat">'+compat+'</div></div>'
+    + '<div class="mn-foot"><span>WORLDMAPPY.COM</span><span>'+rt+'-2026-TRAVELER</span></div>';
+}
+
+function setupManual(rt){
+  const t = TYPES[rt]; if (!t) return;
+  const ov = document.getElementById('manual-overlay');
+  const openBtn = document.getElementById('spec-incl-open');
+  if (!ov || !openBtn) return;
+  const quizUrl = new URL('quiz.html', location.href).toString();
+  const shareText = '私の旅行タイプは「' + t.name + '」でした！あなたの旅行タイプは？ #WorldMappy 旅行タイプ診断';
+
+  const open = () => { buildManual(rt); ov.classList.add('open'); ov.scrollTop = 0; document.body.style.overflow = 'hidden'; };
+  const close = () => { ov.classList.remove('open'); document.body.style.overflow = ''; };
+  openBtn.addEventListener('click', e => { e.preventDefault(); open(); });
+  document.getElementById('manual-close').addEventListener('click', close);
+  addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+
+  document.getElementById('manual-x').addEventListener('click', () => {
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(quizUrl), '_blank');
+  });
+  document.getElementById('manual-line').addEventListener('click', () => {
+    window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(quizUrl) + '&text=' + encodeURIComponent(shareText), '_blank');
+  });
+
+  const saveBtn = document.getElementById('manual-save');
+  saveBtn.addEventListener('click', async () => {
+    const el = document.getElementById('manual-sheet');
+    if (!window.htmlToImage) { alert('画像の保存機能を読み込めませんでした。スクリーンショットで保存してください。'); return; }
+    const original = saveBtn.textContent;
+    saveBtn.textContent = '作成中…'; saveBtn.disabled = true;
+    try {
+      if (document.fonts && document.fonts.ready) await document.fonts.ready;
+      const blob = await htmlToImage.toBlob(el, { pixelRatio: 2, backgroundColor: '#FAF7F2' });
+      const file = new File([blob], 'worldmappy-manual-' + rt + '.png', { type: 'image/png' });
+      const isMobile = /Android|iPhone|iPad|Mobi/i.test(navigator.userAgent);
+      if (isMobile && navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: 'World Mappy 旅人取扱説明書', text: shareText });
+      } else {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = file.name;
+        document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+      }
+    } catch (e) {
+      if (!(e && e.name === 'AbortError')) alert('画像の保存に失敗しました。スクリーンショットで保存してください。');
+    } finally {
+      saveBtn.textContent = original; saveBtn.disabled = false;
+    }
+  });
+}
+
 (function init(){
   const rt = new URLSearchParams(location.search).get('type');
   if (rt && /^[PF][CN][SL]H$/.test(rt)) { location.replace('result.html?type=' + rt.slice(0,3) + 'R'); return; } // 旧コード(H→R)の共有リンク対応
@@ -1250,6 +1447,7 @@ function layoutSpecCols(){
   buildProfile(rt);
   renderSpecSheet(rt);
   layoutSpecCols();
+  setupManual(rt);
   let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(layoutSpecCols, 150); });
 })();
 </script>
