@@ -287,7 +287,7 @@ body{background:#FAF7F2}
 .mn-tagline{font-family:'Shippori Mincho B1',serif;font-size:12px;line-height:1.7;color:#3A3833}
 .mn-prod-r{display:grid;gap:4px}
 .mn-prod-r .mn-lb{font-size:9px}
-.mn-figure{aspect-ratio:3/4;border:1px solid #E8E2D8;overflow:hidden;background:#FAF9F6;display:grid;place-items:center}
+.mn-figure{aspect-ratio:3/4;border:1px solid #E8E2D8;overflow:hidden;background:#fff;display:grid;place-items:center}
 .mn-figure img{width:100%;height:100%;object-fit:contain}
 .mn-sec{display:grid;gap:6px}
 .mn-table{border:1px solid #2B2B28}
@@ -1331,8 +1331,9 @@ function layoutSpecCols(){
 /* ===== 旅人取扱説明書シート（07 付属品から開く） =====
    中身はこのページで確定済みの文言を組み合わせる（新規の文言は作らない）。
    使用上の注意のみ、旧自動文 TIP_TEXT の前半（同行者とのズレの注意）を流用している。 */
-// 製品イメージ図：タイプ別イラストができたら MANUAL_IMG['PCSR'] = 'img/...png' のように登録する（未登録は仮画像）
+// 製品イメージ図：タイプ別イラスト（img/types/{コード}.webp）。未作成のタイプは仮画像を表示する
 const MANUAL_IMG = {};
+['PCSR','PCSW','PCLR','PCLW','PNSR','PNSW','PNLR','PNLW','FCSR','FCSW','FNSW'].forEach(c => { MANUAL_IMG[c] = 'img/types/' + c + '.webp'; });
 const MANUAL_IMG_FALLBACK = 'img/r/model-hero.png';
 
 function buildManual(rt){
