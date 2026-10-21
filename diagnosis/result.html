@@ -1272,7 +1272,7 @@ function renderSpecSheet(rt){
   set('id-quote', t.quote || '');
   set('id-side-rows', [
     ['MODEL NAME', t.name, '#23211C'],
-    ['MODEL NO.', rt, '#23211C'],
+    ['MODEL NO.', rt + '-' + specDigits, '#23211C'],
     ['CATEGORY', CATEGORY(rt), '#23211C'],
     ['VERSION', '1.0', '#23211C'],
     ['STATUS', '● 正常稼働中', '#14503C'],
