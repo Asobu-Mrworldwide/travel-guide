@@ -174,9 +174,11 @@ body{background:#FAF7F2}
 .cmp-head .dot{width:8px;height:8px;border-radius:2px;flex-shrink:0}
 .cmp-head.good{color:#14503C} .cmp-head.good .dot{background:#14503C}
 .cmp-head.bad{color:#A8503A;margin-top:16px} .cmp-head.bad .dot{background:#A8503A}
-.cmp-row{line-height:1.5;text-align:left;width:100%;border:1px solid #E8E2D8;border-radius:10px;background:#FBF8F1;padding:13px 16px;display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:14px;align-items:center;margin-bottom:10px;color:inherit;text-decoration:none}
+.cmp-row{line-height:1.5;text-align:left;width:100%;border:1px solid #E8E2D8;border-radius:10px;background:#FBF8F1;padding:13px 16px;display:grid;grid-template-columns:104px minmax(0,1fr) auto;gap:14px;align-items:center;margin-bottom:10px;color:inherit;text-decoration:none}
 .cmp-row.bad{border-color:#EEDCD5;background:#FDF6F3}
-.cmp-row img{width:76px;height:76px;object-fit:contain}
+.cmp-row img{width:104px;height:104px;object-fit:contain}
+@media(max-width:480px){.cmp-row{grid-template-columns:76px minmax(0,1fr) auto}.cmp-row img{width:76px;height:76px}}
+@media(min-width:901px){.cmp-row .tx{min-height:6em}}  /* 2カラム時は解説文が狭くなり4行になるため、4行分に揃える */
 .cmp-row img.illust{mix-blend-mode:multiply}
 .cmp-row .nm{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
 .cmp-row .nm b{font-weight:900;font-size:16px;color:#23211C}
@@ -879,6 +881,15 @@ function buildAxisGrid(type) {
   }).join('');
 }
 
+// 相性カードの高さを揃える（解説文の行数が画面幅で変わるため、描画後に最大の高さへ合わせる）
+function equalizeCompat(){
+  const rows = [...document.querySelectorAll('#compat-auto .cmp-row')];
+  if (!rows.length) return;
+  rows.forEach(r => { r.style.minHeight = ''; });
+  const m = Math.max(...rows.map(r => r.getBoundingClientRect().height));
+  rows.forEach(r => { r.style.minHeight = m + 'px'; });
+}
+
 // ===== 相性ミニカード（クリックでそのタイプへ遷移） =====
 function buildAutoCompat(myType) {
   const scores = Object.entries(TYPES)
@@ -1460,7 +1471,9 @@ function setupManual(rt){
   renderSpecSheet(rt);
   layoutSpecCols();
   setupManual(rt);
-  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(layoutSpecCols, 150); });
+  equalizeCompat();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalizeCompat);
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { layoutSpecCols(); equalizeCompat(); }, 150); });
 })();
 </script>
 
