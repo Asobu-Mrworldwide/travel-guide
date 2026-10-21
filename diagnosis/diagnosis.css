@@ -25,6 +25,7 @@ body { background: #f0f4f2; }
 @media (max-width: 520px) {
   .site-tagline { display: none; }
   .header-diag-link { display: none; }
+  .header-diag-link + .hb-toggle-btn { margin-left: auto; } /* リンクを隠すと10px指定が残りロゴ横に寄るため、右寄せに戻す */
 }
 
 /* ページラッパー */
