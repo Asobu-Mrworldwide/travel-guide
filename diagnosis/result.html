@@ -147,7 +147,7 @@ body{background:#FAF7F2}
 
 /* ===== 正典スペックシート（旅人取扱説明書） ===== */
 .spec{max-width:1040px;margin:0 auto}
-.spec-steps{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 0 18px;flex-wrap:wrap}
+.spec-steps{min-height:44px;position:relative;display:flex;align-items:center;justify-content:center;gap:8px;padding:6px 0 18px;flex-wrap:wrap}
 .spec-steps .s{width:20px;height:20px;border-radius:999px;background:#DED8CC;color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;display:grid;place-content:center;flex-shrink:0}
 .spec-steps .s.done{background:#BEC7BE}
 .spec-steps .s.now{background:#14503C}
@@ -427,9 +427,6 @@ body{background:#FAF7F2}
 
   <!-- 診断ステップ -->
   <div class="spec spec-steps">
-    <span class="s done">1</span><span class="lb">タイプ診断</span><span class="ln"></span>
-    <span class="s done">2</span><span class="lb">診断中</span><span class="ln"></span>
-    <span class="s now">3</span><span class="lb">結果発表</span>
     <a class="spec-retry" href="quiz.html">もう一度診断する</a>
   </div>
 
