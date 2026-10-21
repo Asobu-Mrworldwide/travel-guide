@@ -877,6 +877,20 @@ function buildAxisGrid(type) {
   }).join('');
 }
 
+// タイプ名を1行に収める（幅に合わせて文字を小さくする。30pxより小さくなる長い名前は従来どおり折り返す）
+function fitTypeName(){
+  const el = document.getElementById('id-name');
+  if (!el) return;
+  el.style.fontSize = ''; el.style.whiteSpace = 'nowrap';
+  const base = parseFloat(getComputedStyle(el).fontSize);
+  const avail = el.parentElement.clientWidth;
+  const need = el.scrollWidth;
+  if (need <= avail) return;
+  const size = Math.floor(base * avail / need);
+  if (size >= 30) { el.style.fontSize = size + 'px'; }
+  else { el.style.whiteSpace = ''; }
+}
+
 // 相性カードの高さを揃える（解説文の行数が画面幅で変わるため、描画後に最大の高さへ合わせる）
 function equalizeCompat(){
   const rows = [...document.querySelectorAll('#compat-auto .cmp-row')];
@@ -1466,9 +1480,10 @@ function setupManual(rt){
   renderSpecSheet(rt);
   layoutSpecCols();
   setupManual(rt);
+  fitTypeName();
   equalizeCompat();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalizeCompat);
-  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { layoutSpecCols(); equalizeCompat(); }, 150); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitTypeName(); equalizeCompat(); });
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { layoutSpecCols(); fitTypeName(); equalizeCompat(); }, 150); });
 })();
 </script>
 
