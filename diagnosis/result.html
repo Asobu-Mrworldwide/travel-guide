@@ -197,10 +197,6 @@ body{background:#FAF7F2}
 .id-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px 300px;gap:20px;align-items:start}
 .id-grid > div{min-width:0}
 @media(max-width:1080px){.id-grid{grid-template-columns:1fr}}
-.id-modelno{display:flex;align-items:center;gap:10px;border-bottom:1px solid #E8E2D8;padding-bottom:10px;flex-wrap:wrap}
-.id-modelno .l1{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;color:#8C877E}
-.id-modelno .l2{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.06em;color:#A8A29A}
-.id-modelno .no{padding:3px 10px;border:1px solid #DCD6CA;border-radius:4px;background:#FBF8F1;color:#3C3A34;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700}
 .id-code{font-weight:900;font-size:60px;line-height:1.05;letter-spacing:-0.01em;color:#23211C;margin:14px 0 0;white-space:nowrap}
 .id-code span{font-size:27px}
 .id-name{font-weight:900;font-size:42px;line-height:1.2;color:#14503C;margin:2px 0 0}
@@ -443,7 +439,6 @@ body{background:#FAF7F2}
     <div class="spec-h"><span class="no">01</span><span class="ttl">あなたの旅人モデルは…</span></div>
     <div class="id-grid">
       <div>
-        <div class="id-modelno"><span class="l1">TRAVELER MODEL</span><span class="l2">MODEL NO.</span><span class="no" id="id-modelno">—</span></div>
         <div class="id-code" id="id-code">—<span>型</span></div>
         <div class="id-name" id="id-name">—</div>
         <div class="id-chips" id="id-chips"></div>
@@ -1263,7 +1258,6 @@ function renderSpecSheet(rt){
   const specDigits = [0,1,2,3].map(nOf).join('');
 
   // --- 01 IDENTITY ---
-  set('id-modelno', rt + '-' + specDigits);
   set('id-code', rt + '<span>型</span>');
   set('id-name', t.name);
   set('id-chips', (t.traits||[]).map((x,i) => '<span><img src="'+RES_ICON[i]+'" alt="">'+x+'</span>').join(''));
