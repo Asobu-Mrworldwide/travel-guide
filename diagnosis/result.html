@@ -177,6 +177,7 @@ body{background:#FAF7F2}
 .cmp-row{text-align:left;width:100%;border:1px solid #E8E2D8;border-radius:10px;background:#FBF8F1;padding:13px 16px;display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;margin-bottom:10px;color:inherit;text-decoration:none}
 .cmp-row.bad{border-color:#EEDCD5;background:#FDF6F3}
 .cmp-row img{width:52px;height:52px;object-fit:contain}
+.cmp-row img.illust{mix-blend-mode:multiply}
 .cmp-row .nm{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
 .cmp-row .nm b{font-weight:900;font-size:16px;color:#23211C}
 .cmp-row .nm span{font-size:11.5px;color:#8C877E}
@@ -891,7 +892,7 @@ function buildAutoCompat(myType) {
   function rows(items, bad, offset) {
     return items.map(({code, info, pct, text}, i) => `
     <a class="cmp-row${bad ? ' bad' : ''}" href="?type=${code}">
-      <img src="${BUSTS[(i + offset) % BUSTS.length]}" alt="">
+      <img src="${typeImg(code) || BUSTS[(i + offset) % BUSTS.length]}" alt=""${typeImg(code) ? ' class="illust"' : ''}>
       <span>
         <span class="nm"><b>${code}型</b><span>（${info.name}）</span></span>
         <span class="tx">${text}</span>
