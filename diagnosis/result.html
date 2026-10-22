@@ -332,6 +332,10 @@ body{background:#FAF7F2}
 .mn-good > .r{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start}
 .mn-good .mk{color:#1D7A63;font-weight:700;font-size:11px;line-height:1.7}
 .mn-good .tx{font-size:10px;line-height:1.75;color:#3A3833}
+.mn-good .ban{margin-top:2px;background:#FDF6F3;border:1px solid #EEDCD5;padding:9px 10px;display:grid;gap:5px}
+.mn-good .ban .lb{font-size:9.5px;font-weight:700;color:#B3402F}
+.mn-good .ban .r{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start}
+.mn-good .ban .mk{color:#B3402F}
 .mn-qa{display:grid;gap:8px}
 .mn-qa .qa{display:grid;gap:3px;padding-top:8px;border-top:1px solid #E8E2D8}
 .mn-qa .qa:first-child{border-top:none;padding-top:0}
@@ -1380,6 +1384,9 @@ function buildManualDoc(rt, t, doc){
 
   const warn = doc.warn.map(tx => '<div class="r"><span class="mk ng">✕</span><span class="tx">'+tx+'</span></div>').join('');
   const good = doc.good.map(tx => '<div class="r"><span class="mk">○</span><span class="tx">'+tx+'</span></div>').join('');
+  const ban = (doc.ban && doc.ban.length)
+    ? '<div class="ban"><span class="lb">⚠ 禁止事項</span>'+doc.ban.map(tx => '<div class="r"><span class="mk">✕</span><span class="tx">'+tx+'</span></div>').join('')+'</div>'
+    : '';
   const charge = doc.charge.map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
   const qa = doc.qa.map(([q, a]) =>
     '<div class="qa"><div class="q"><span class="b">Q</span><span>'+q+'</span></div><div class="a"><span class="b">A</span><span>'+a+'</span></div></div>').join('');
@@ -1397,11 +1404,11 @@ function buildManualDoc(rt, t, doc){
     + '<div class="mn-figure"><img src="'+(typeImg(rt) || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
 
     + '<div class="mn-sec"><span class="mn-lb">■ 基本仕様</span><div class="mn-table">'+specRows+'</div></div>'
-    + '<div class="mn-sec"><span class="mn-lb">■ 禁止事項</span><div class="mn-warn">'+warn+'</div></div>'
+    + '<div class="mn-sec"><span class="mn-lb">■ 使用方法</span><div class="mn-warn">'+warn+'</div></div>'
     + foot('1 / 2');
 
   document.getElementById('manual-back').innerHTML =
-    '<div class="mn-sec"><span class="mn-lb">■ 使用方法</span><div class="mn-good">'+good+'</div></div>'
+    '<div class="mn-sec"><span class="mn-lb">■ 上手な使い方</span><div class="mn-good">'+good+ban+'</div></div>'
     + '<div class="mn-sec"><span class="mn-lb">■ 充電方法</span><div class="mn-table">'+charge+'</div></div>'
     + '<div class="mn-sec"><span class="mn-lb">■ よくあるご質問（故障かな？と思ったら）</span><div class="mn-qa">'+qa+'</div></div>'
     + '<div class="mn-caution"><span class="lb">保証と免責</span><span class="tx">'+doc.waiver+'</span></div>'
