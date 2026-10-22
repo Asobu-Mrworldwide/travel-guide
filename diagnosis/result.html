@@ -332,10 +332,6 @@ body{background:#FAF7F2}
 .mn-good > .r{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start}
 .mn-good .mk{color:#1D7A63;font-weight:700;font-size:11px;line-height:1.7}
 .mn-good .tx{font-size:10px;line-height:1.75;color:#3A3833}
-.mn-good .cmd{margin-top:2px;background:#FAF5E8;border:1px solid #E8DCBE;padding:9px 10px;display:grid;gap:5px}
-.mn-good .cmd .lb{font-size:9.5px;font-weight:700;color:#8F6415}
-.mn-good .cmd .r{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start}
-.mn-good .cmd .k{font-size:9px;font-weight:700;color:#8F6415;border:1px solid #E8DCBE;background:#fff;text-align:center;padding:1px 0}
 .mn-qa{display:grid;gap:8px}
 .mn-qa .qa{display:grid;gap:3px;padding-top:8px;border-top:1px solid #E8E2D8}
 .mn-qa .qa:first-child{border-top:none;padding-top:0}
@@ -1384,9 +1380,6 @@ function buildManualDoc(rt, t, doc){
 
   const warn = doc.warn.map(tx => '<div class="r"><span class="mk ng">✕</span><span class="tx">'+tx+'</span></div>').join('');
   const good = doc.good.map(tx => '<div class="r"><span class="mk">○</span><span class="tx">'+tx+'</span></div>').join('');
-  const cmd = '<div class="cmd"><span class="lb">★ 隠しコマンド</span>'
-    + '<div class="r"><span class="k">入力</span><span class="tx">'+doc.cmd.input+'</span></div>'
-    + '<div class="r"><span class="k">効果</span><span class="tx">'+doc.cmd.effect+'</span></div></div>';
   const charge = doc.charge.map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
   const qa = doc.qa.map(([q, a]) =>
     '<div class="qa"><div class="q"><span class="b">Q</span><span>'+q+'</span></div><div class="a"><span class="b">A</span><span>'+a+'</span></div></div>').join('');
@@ -1404,11 +1397,11 @@ function buildManualDoc(rt, t, doc){
     + '<div class="mn-figure"><img src="'+(typeImg(rt) || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
 
     + '<div class="mn-sec"><span class="mn-lb">■ 基本仕様</span><div class="mn-table">'+specRows+'</div></div>'
-    + '<div class="mn-sec"><span class="mn-lb">■ 使用方法</span><div class="mn-warn">'+warn+'</div></div>'
+    + '<div class="mn-sec"><span class="mn-lb">■ 禁止事項</span><div class="mn-warn">'+warn+'</div></div>'
     + foot('1 / 2');
 
   document.getElementById('manual-back').innerHTML =
-    '<div class="mn-sec"><span class="mn-lb">■ 上手な使い方</span><div class="mn-good">'+good+cmd+'</div></div>'
+    '<div class="mn-sec"><span class="mn-lb">■ 使用方法</span><div class="mn-good">'+good+'</div></div>'
     + '<div class="mn-sec"><span class="mn-lb">■ 充電方法</span><div class="mn-table">'+charge+'</div></div>'
     + '<div class="mn-sec"><span class="mn-lb">■ よくあるご質問（故障かな？と思ったら）</span><div class="mn-qa">'+qa+'</div></div>'
     + '<div class="mn-caution"><span class="lb">保証と免責</span><span class="tx">'+doc.waiver+'</span></div>'
