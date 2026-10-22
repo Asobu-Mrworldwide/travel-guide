@@ -1237,7 +1237,7 @@ function RADAR(rt){
     .map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
 }
 // 軸の意味そのままではなく、4グループ(計画/直感 × 協調/マイペース)に共通する傾向で名付ける
-function CATEGORY(rt){ return rt[0]==='P' ? (rt[2]==='S'?'Leader Traveler':'Specialist Traveler')
+function CATEGORY(rt){ return rt[0]==='P' ? (rt[2]==='S'?'Lead Traveler':'Specialist Traveler')
                                           : (rt[2]==='S'?'Mood Maker Traveler':'Free Traveler'); }
 function RADAR_NOTE(rt){
   return (rt[0]==='P'?'計画力':'瞬発力')+'・'+(rt[2]==='S'?'協調性':'自立性')+'・'
