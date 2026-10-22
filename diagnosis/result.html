@@ -323,6 +323,7 @@ body{background:#FAF7F2}
 .mn-foot{border-top:1.5px solid #2B2B28;padding-top:9px;display:flex;align-items:center;justify-content:space-between}
 .mn-foot span{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:#7A756C}
 /* 新章立て用 */
+.mn-usage{border:1px solid #2B2B28;padding:10px;font-size:10px;line-height:1.85;color:#3A3833}
 .mn-warn{display:grid;border:1px solid #2B2B28}
 .mn-warn .r{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start;padding:8px;border-top:1px solid #DDD8CE}
 .mn-warn .r:first-child{border-top:none}
@@ -1382,7 +1383,7 @@ function buildManualDoc(rt, t, doc){
     .concat(MICRO(rt).filter(m => m.k !== '1日の平均行動距離').map(m => [m.k, m.v]))
     .map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
 
-  const warn = doc.warn.map(tx => '<div class="r"><span class="mk ng">✕</span><span class="tx">'+tx+'</span></div>').join('');
+  const usage = '<div class="mn-usage">'+doc.usage+'</div>';
   const good = doc.good.map(tx => '<div class="r"><span class="mk">○</span><span class="tx">'+tx+'</span></div>').join('');
   const ban = (doc.ban && doc.ban.length)
     ? '<div class="ban"><span class="lb">⚠ 禁止事項</span>'+doc.ban.map(tx => '<div class="r"><span class="mk">✕</span><span class="tx">'+tx+'</span></div>').join('')+'</div>'
@@ -1404,7 +1405,7 @@ function buildManualDoc(rt, t, doc){
     + '<div class="mn-figure"><img src="'+(typeImg(rt) || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
 
     + '<div class="mn-sec"><span class="mn-lb">■ 基本仕様</span><div class="mn-table">'+specRows+'</div></div>'
-    + '<div class="mn-sec"><span class="mn-lb">■ 使用方法</span><div class="mn-warn">'+warn+'</div></div>'
+    + '<div class="mn-sec"><span class="mn-lb">■ 使用方法</span>'+usage+'</div>'
     + foot('1 / 2');
 
   document.getElementById('manual-back').innerHTML =
