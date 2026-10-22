@@ -1236,8 +1236,9 @@ function RADAR(rt){
   return [[cx,cy-r*v[0]/5],[cx+r*v[1]/5,cy],[cx,cy+r*v[2]/5],[cx-r*v[3]/5,cy]]
     .map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
 }
-function CATEGORY(rt){ return rt[0]==='P' ? (rt[2]==='S'?'Balance Traveler':'Planner Traveler')
-                                          : (rt[2]==='S'?'Social Traveler':'Free Traveler'); }
+// 軸の意味そのままではなく、4グループ(計画/直感 × 協調/マイペース)に共通する傾向で名付ける
+function CATEGORY(rt){ return rt[0]==='P' ? (rt[2]==='S'?'Leader Traveler':'Specialist Traveler')
+                                          : (rt[2]==='S'?'Mood Maker Traveler':'Free Traveler'); }
 function RADAR_NOTE(rt){
   return (rt[0]==='P'?'計画力':'瞬発力')+'・'+(rt[2]==='S'?'協調性':'自立性')+'・'
     +(rt[1]==='C'?'文化探知':'絶景探知')+'のバランスが高く、旅の安定稼働を支える高性能モデル。';
