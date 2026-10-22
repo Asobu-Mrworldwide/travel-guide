@@ -324,22 +324,18 @@ body{background:#FAF7F2}
 .mn-foot span{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:#7A756C}
 /* 新章立て用 */
 .mn-warn{display:grid;border:1px solid #2B2B28}
-.mn-warn .r{display:grid;grid-template-columns:38px 1fr;gap:8px;align-items:start;padding:8px 8px;border-top:1px solid #DDD8CE}
+.mn-warn .r{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start;padding:8px;border-top:1px solid #DDD8CE}
 .mn-warn .r:first-child{border-top:none}
-.mn-warn .lv{font-size:9px;font-weight:700;color:#fff;text-align:center;padding:2px 0;border-radius:2px}
-.mn-warn .lv.dg{background:#B3402F}
-.mn-warn .lv.wn{background:#D9822B}
-.mn-warn .lv.ct{background:#8F6415}
+.mn-warn .mk{color:#B3402F;font-weight:700;font-size:11px;line-height:1.7}
 .mn-warn .tx{font-size:10px;line-height:1.75;color:#3A3833}
 .mn-good{display:grid;gap:6px}
-.mn-good .r{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start}
+.mn-good > .r{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start}
 .mn-good .mk{color:#1D7A63;font-weight:700;font-size:11px;line-height:1.7}
 .mn-good .tx{font-size:10px;line-height:1.75;color:#3A3833}
-.mn-cmd{background:#FAF5E8;border:1px solid #E8DCBE;padding:10px;display:grid;gap:6px}
-.mn-cmd .lb{font-size:9.5px;font-weight:700;color:#8F6415}
-.mn-cmd .r{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start}
-.mn-cmd .k{font-family:'JetBrains Mono','Zen Kaku Gothic New',monospace;font-size:9px;font-weight:700;color:#8F6415;border:1px solid #E8DCBE;background:#fff;text-align:center;padding:1px 0}
-.mn-cmd .tx{font-size:10px;line-height:1.75;color:#3A3833}
+.mn-good .cmd{margin-top:2px;background:#FAF5E8;border:1px solid #E8DCBE;padding:9px 10px;display:grid;gap:5px}
+.mn-good .cmd .lb{font-size:9.5px;font-weight:700;color:#8F6415}
+.mn-good .cmd .r{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start}
+.mn-good .cmd .k{font-size:9px;font-weight:700;color:#8F6415;border:1px solid #E8DCBE;background:#fff;text-align:center;padding:1px 0}
 .mn-qa{display:grid;gap:8px}
 .mn-qa .qa{display:grid;gap:3px;padding-top:8px;border-top:1px solid #E8E2D8}
 .mn-qa .qa:first-child{border-top:none;padding-top:0}
@@ -1381,15 +1377,16 @@ const MANUAL_IMG_FALLBACK = TYPE_IMG_FALLBACK;
 // 新しい章立て（manual-data.js に本文があるタイプ）
 function buildManualDoc(rt, t, doc){
   const foot = right => '<div class="mn-foot"><span>WORLDMAPPY.COM</span><span>'+right+'</span></div>';
-  const lvClass = { '危険':'dg', '警告':'wn', '注意':'ct' };
 
   const specRows = [['特性タグ', (t.traits || []).join(' / ')]]
     .concat(MICRO(rt).filter(m => m.k !== '1日の平均行動距離').map(m => [m.k, m.v]))
     .map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
 
-  const warn = doc.warn.map(([lv, tx]) =>
-    '<div class="r"><span class="lv '+(lvClass[lv] || 'ct')+'">'+lv+'</span><span class="tx">'+tx+'</span></div>').join('');
+  const warn = doc.warn.map(tx => '<div class="r"><span class="mk ng">✕</span><span class="tx">'+tx+'</span></div>').join('');
   const good = doc.good.map(tx => '<div class="r"><span class="mk">○</span><span class="tx">'+tx+'</span></div>').join('');
+  const cmd = '<div class="cmd"><span class="lb">★ 隠しコマンド</span>'
+    + '<div class="r"><span class="k">入力</span><span class="tx">'+doc.cmd.input+'</span></div>'
+    + '<div class="r"><span class="k">効果</span><span class="tx">'+doc.cmd.effect+'</span></div></div>';
   const charge = doc.charge.map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
   const qa = doc.qa.map(([q, a]) =>
     '<div class="qa"><div class="q"><span class="b">Q</span><span>'+q+'</span></div><div class="a"><span class="b">A</span><span>'+a+'</span></div></div>').join('');
@@ -1411,10 +1408,7 @@ function buildManualDoc(rt, t, doc){
     + foot('1 / 2');
 
   document.getElementById('manual-back').innerHTML =
-    '<div class="mn-sec"><span class="mn-lb">■ 上手な使い方</span><div class="mn-good">'+good+'</div></div>'
-    + '<div class="mn-cmd"><span class="lb">★ 隠しコマンド</span>'
-    + '<div class="r"><span class="k">入力</span><span class="tx">'+doc.cmd.input+'</span></div>'
-    + '<div class="r"><span class="k">効果</span><span class="tx">'+doc.cmd.effect+'</span></div></div>'
+    '<div class="mn-sec"><span class="mn-lb">■ 上手な使い方</span><div class="mn-good">'+good+cmd+'</div></div>'
     + '<div class="mn-sec"><span class="mn-lb">■ 充電方法</span><div class="mn-table">'+charge+'</div></div>'
     + '<div class="mn-sec"><span class="mn-lb">■ よくあるご質問（故障かな？と思ったら）</span><div class="mn-qa">'+qa+'</div></div>'
     + '<div class="mn-caution"><span class="lb">保証と免責</span><span class="tx">'+doc.waiver+'</span></div>'
