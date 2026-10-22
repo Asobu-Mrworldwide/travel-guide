@@ -322,6 +322,32 @@ body{background:#FAF7F2}
 .mn-compat .tx{font-size:9px;line-height:1.65;color:#55504A}
 .mn-foot{border-top:1.5px solid #2B2B28;padding-top:9px;display:flex;align-items:center;justify-content:space-between}
 .mn-foot span{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:#7A756C}
+/* 新章立て用 */
+.mn-warn{display:grid;border:1px solid #2B2B28}
+.mn-warn .r{display:grid;grid-template-columns:38px 1fr;gap:8px;align-items:start;padding:8px 8px;border-top:1px solid #DDD8CE}
+.mn-warn .r:first-child{border-top:none}
+.mn-warn .lv{font-size:9px;font-weight:700;color:#fff;text-align:center;padding:2px 0;border-radius:2px}
+.mn-warn .lv.dg{background:#B3402F}
+.mn-warn .lv.wn{background:#D9822B}
+.mn-warn .lv.ct{background:#8F6415}
+.mn-warn .tx{font-size:10px;line-height:1.75;color:#3A3833}
+.mn-good{display:grid;gap:6px}
+.mn-good .r{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start}
+.mn-good .mk{color:#1D7A63;font-weight:700;font-size:11px;line-height:1.7}
+.mn-good .tx{font-size:10px;line-height:1.75;color:#3A3833}
+.mn-cmd{background:#FAF5E8;border:1px solid #E8DCBE;padding:10px;display:grid;gap:6px}
+.mn-cmd .lb{font-size:9.5px;font-weight:700;color:#8F6415}
+.mn-cmd .r{display:grid;grid-template-columns:30px 1fr;gap:8px;align-items:start}
+.mn-cmd .k{font-family:'JetBrains Mono','Zen Kaku Gothic New',monospace;font-size:9px;font-weight:700;color:#8F6415;border:1px solid #E8DCBE;background:#fff;text-align:center;padding:1px 0}
+.mn-cmd .tx{font-size:10px;line-height:1.75;color:#3A3833}
+.mn-qa{display:grid;gap:8px}
+.mn-qa .qa{display:grid;gap:3px;padding-top:8px;border-top:1px solid #E8E2D8}
+.mn-qa .qa:first-child{border-top:none;padding-top:0}
+.mn-qa .q,.mn-qa .a{display:grid;grid-template-columns:16px 1fr;gap:6px;align-items:start;font-size:10px;line-height:1.75}
+.mn-qa .q{font-weight:700;color:#2B2B28}
+.mn-qa .a{color:#55504A}
+.mn-qa .b{width:16px;height:16px;display:grid;place-content:center;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;color:#fff;background:#1D7A63}
+.mn-qa .a .b{background:#8C877E}
 .mn-actions{max-width:356px;margin:14px auto 0;display:grid;gap:8px}
 .mn-actions button{font-family:inherit;cursor:pointer;border:none;border-radius:8px}
 .mn-actions .save{width:100%;min-height:46px;background:#fff;font-size:13px;font-weight:700;color:#2B2B28}
@@ -600,6 +626,7 @@ body{background:#FAF7F2}
 
 <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
 <script src="type-images.js"></script>
+<script src="manual-data.js"></script>
 <script src="../assets/country-links.js"></script>
 
 <script>
@@ -1351,8 +1378,52 @@ function layoutSpecCols(){
 // 製品イメージ図：タイプ別イラスト（type-images.js）。未作成のタイプは仮画像を表示する
 const MANUAL_IMG_FALLBACK = TYPE_IMG_FALLBACK;
 
+// 新しい章立て（manual-data.js に本文があるタイプ）
+function buildManualDoc(rt, t, doc){
+  const foot = right => '<div class="mn-foot"><span>WORLDMAPPY.COM</span><span>'+right+'</span></div>';
+  const lvClass = { '危険':'dg', '警告':'wn', '注意':'ct' };
+
+  const specRows = [['特性タグ', (t.traits || []).join(' / ')]]
+    .concat(MICRO(rt).filter(m => m.k !== '1日の平均行動距離').map(m => [m.k, m.v]))
+    .map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
+
+  const warn = doc.warn.map(([lv, tx]) =>
+    '<div class="r"><span class="lv '+(lvClass[lv] || 'ct')+'">'+lv+'</span><span class="tx">'+tx+'</span></div>').join('');
+  const good = doc.good.map(tx => '<div class="r"><span class="mk">○</span><span class="tx">'+tx+'</span></div>').join('');
+  const charge = doc.charge.map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
+  const qa = doc.qa.map(([q, a]) =>
+    '<div class="qa"><div class="q"><span class="b">Q</span><span>'+q+'</span></div><div class="a"><span class="b">A</span><span>'+a+'</span></div></div>').join('');
+
+  document.getElementById('manual-front').innerHTML =
+    '<div class="mn-head"><div class="mn-head-top">'
+    + '<div class="mn-head-l"><span class="mn-title">旅人取扱説明書</span><span class="mn-note">安全にご使用いただくために、必ずこの取扱説明書をよくお読みください。</span></div>'
+    + '<div class="mn-head-r"><span class="mn-tag">TRAVELER MANUAL</span><span class="mn-model">型番：'+rt+'-2026</span></div>'
+    + '</div><div class="mn-rule"></div></div>'
+
+    + '<div class="mn-prod"><div class="mn-prod-l"><span class="mn-lb">■ 製品名（旅人タイプ）</span>'
+    + '<div class="mn-code-row"><span class="mn-code">'+rt+'</span><span class="mn-name">'+t.name+'</span></div>'
+    + '<span class="mn-tagline">'+(t.quote || '')+'</span></div>'
+    + '<div class="mn-prod-r"><span class="mn-lb">■ 製品イメージ図</span>'
+    + '<div class="mn-figure"><img src="'+(typeImg(rt) || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
+
+    + '<div class="mn-sec"><span class="mn-lb">■ 基本仕様</span><div class="mn-table">'+specRows+'</div></div>'
+    + '<div class="mn-sec"><span class="mn-lb">■ 使用方法</span><div class="mn-warn">'+warn+'</div></div>'
+    + foot('1 / 2');
+
+  document.getElementById('manual-back').innerHTML =
+    '<div class="mn-sec"><span class="mn-lb">■ 上手な使い方</span><div class="mn-good">'+good+'</div></div>'
+    + '<div class="mn-cmd"><span class="lb">★ 隠しコマンド</span>'
+    + '<div class="r"><span class="k">入力</span><span class="tx">'+doc.cmd.input+'</span></div>'
+    + '<div class="r"><span class="k">効果</span><span class="tx">'+doc.cmd.effect+'</span></div></div>'
+    + '<div class="mn-sec"><span class="mn-lb">■ 充電方法</span><div class="mn-table">'+charge+'</div></div>'
+    + '<div class="mn-sec"><span class="mn-lb">■ よくあるご質問（故障かな？と思ったら）</span><div class="mn-qa">'+qa+'</div></div>'
+    + '<div class="mn-caution"><span class="lb">保証と免責</span><span class="tx">'+doc.waiver+'</span></div>'
+    + foot(rt+'-2026-TRAVELER　2 / 2');
+}
+
 function buildManual(rt){
   const t = TYPES[rt]; if (!t) return;
+  if (MANUAL_DOC[rt]) { buildManualDoc(rt, t, MANUAL_DOC[rt]); return; }
   const ts = (t.travelStyle || '').split('。').filter(Boolean);
   const styleLead = ts.length > 1 ? ts.slice(0, -1).join('。') + '。' : '';
   const styleTip = ts.length ? ts.slice(-1)[0] + '。' : '';
