@@ -1491,6 +1491,8 @@ function setupManual(rt){
   const close = () => { ov.classList.remove('open'); document.body.style.overflow = ''; };
   openBtn.addEventListener('click', e => { e.preventDefault(); open(); });
   document.getElementById('manual-close').addEventListener('click', close);
+  // シートの外側（背景・シート間の隙間）をクリックしたら閉じる
+  ov.addEventListener('click', e => { if (e.target === ov || e.target.id === 'manual-sheets') close(); });
   addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 
   document.getElementById('manual-x').addEventListener('click', () => {
