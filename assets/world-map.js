@@ -5,7 +5,16 @@
 (function () {
   const CSS = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css';
   const JS = 'https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js';
-  const STYLE = 'https://demotiles.maplibre.org/style.json';
+  // 外部デモタイルは本番でCORS拒否されることがあるため、自前のGeoJSONで描画する
+  const GEOJSON = new URL('top/world-countries.geojson', document.currentScript ? document.currentScript.src : location.href).href;
+  const STYLE = {
+    version: 8,
+    sources: { countries: { type: 'geojson', data: GEOJSON } },
+    layers: [
+      { id: 'background', type: 'background', paint: { 'background-color': '#D6E5DE' } },
+      { id: 'countries-fill', type: 'fill', source: 'countries', paint: { 'fill-color': '#FDFCF6', 'fill-outline-color': '#D9E2D3' } },
+    ],
+  };
   const GREEN = '#168B78', DARK = '#15735b', YELLOW = '#ffc200';
 
   let libP = null;
@@ -126,7 +135,6 @@
       });
       // demotiles の陸レイヤーを id 直指定で確実に上書き
       set('countries-fill', 'fill-color', LAND);
-      set('crimea-fill', 'fill-color', LAND);
     }
 
     makeMarkers(gl) {
