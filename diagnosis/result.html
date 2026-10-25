@@ -279,8 +279,8 @@ body{background:#FAF7F2}
 .mn-tagline{font-family:'Shippori Mincho B1',serif;font-size:12px;line-height:1.7;color:#3A3833}
 .mn-prod-r{display:grid;gap:4px}
 .mn-prod-r .mn-lb{font-size:9px}
-.mn-figure{aspect-ratio:3/4;border:1px solid #E8E2D8;overflow:hidden;background:#fff;display:grid;place-items:center}
-.mn-figure img{width:100%;height:100%;object-fit:contain}
+.mn-figure{position:relative;aspect-ratio:3/4;border:1px solid #E8E2D8;overflow:hidden;background:#fff}
+.mn-figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}  /* 枠いっぱいに置き、縦横比を保って全体を収める（枠より背が高くはみ出さない） */
 .mn-sec{display:grid;gap:6px}
 .mn-table{border:1px solid #2B2B28}
 .mn-table .r{display:grid;grid-template-columns:118px 1fr;border-top:1px solid #DDD8CE}
@@ -1417,7 +1417,10 @@ function setupManual(rt){
           placed.forEach(p => {
             const nw = p.img.naturalWidth, nh = p.img.naturalHeight; if (!nw || !nh) return;
             const sc = Math.min(p.w / nw, p.h / nh), dw = nw * sc, dh = nh * sc;   // object-fit:contain と同じ縮尺・位置
+            ctx.save();
+            ctx.beginPath(); ctx.rect(p.x * k, p.y * k, p.w * k, p.h * k); ctx.clip();   // 枠の内側からはみ出さない
             ctx.drawImage(p.img, (p.x + (p.w - dw) / 2) * k, (p.y + (p.h - dh) / 2) * k, dw * k, dh * k);
+            ctx.restore();
           });
           blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
         } finally { figImgs.forEach(img => { img.style.visibility = ''; }); restore(); }
