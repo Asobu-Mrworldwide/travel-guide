@@ -356,8 +356,12 @@ body{background:#FAF7F2}
 .spec-incl-btns a{display:flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 20px;border-radius:8px;font-size:13.5px;font-weight:900}
 .spec-share{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px}
 .spec-share[hidden]{display:none}
-.spec-share-lb{width:100%;text-align:center;font-size:11.5px;font-weight:700;color:#8C877E}
-.spec-incl-btns .spec-share a,.spec-share button{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 18px;border-radius:999px;font-size:13px;font-weight:900;cursor:pointer;border:1px solid transparent;font-family:inherit;text-decoration:none}
+#post-cards{display:grid;gap:16px;max-width:760px;margin:16px auto}
+#post-cards > .feedback-block{margin:0;max-width:none}
+.promo-share{background:#fff;border-radius:12px;border:1px solid var(--border);padding:20px;text-align:center}
+.promo-share .feedback-title{margin-bottom:12px}
+.spec-col #post-cards{max-width:none;margin:0;gap:20px}
+.spec-share a,.spec-share button{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 18px;border-radius:999px;font-size:13px;font-weight:900;cursor:pointer;border:1px solid transparent;font-family:inherit;text-decoration:none}
 .spec-share .x{background:#000;color:#fff}
 .spec-share .line{background:#06c755;color:#fff}
 .spec-share .copy{background:#fff;color:#3C3A34;border-color:#E3DCCE}
@@ -542,12 +546,6 @@ body{background:#FAF7F2}
       <div>
         <div class="spec-incl-btns">
           <a class="primary" id="spec-incl-open" href="#manual">取扱説明書を開く<span>→</span></a>
-          <div class="spec-share" id="spec-share" hidden>
-            <span class="spec-share-lb">結果をシェア</span>
-            <a class="x" id="spec-share-x" href="#" target="_blank" rel="noopener">𝕏</a>
-            <a class="line" id="spec-share-line" href="#" target="_blank" rel="noopener">LINE</a>
-            <button class="copy" id="spec-share-copy" type="button">リンクをコピー</button>
-          </div>
         </div>
       </div>
     </div>
@@ -560,6 +558,7 @@ body{background:#FAF7F2}
 
   <!-- フィードバック -->
   <span id="feedback-home" hidden></span>
+  <div id="post-cards">
   <div class="feedback-block" id="feedback-block" style="display:none">
     <div class="feedback-title">この診断は当たっていましたか？</div>
     <div class="feedback-btns" id="feedback-btns">
@@ -573,6 +572,15 @@ body{background:#FAF7F2}
         <a href="quiz.html" id="feedback-retry-link">もう一度診断する<span>→</span></a>
       </div>
     </div>
+  </div>
+  <div class="promo-share">
+    <div class="feedback-title">この診断をシェア</div>
+    <div class="spec-share" id="spec-share" hidden>
+      <a class="x" id="spec-share-x" href="#" target="_blank" rel="noopener">𝕏</a>
+      <a class="line" id="spec-share-line" href="#" target="_blank" rel="noopener">LINE</a>
+      <button class="copy" id="spec-share-copy" type="button">リンクをコピー</button>
+    </div>
+  </div>
   </div>
 
   <div class="spec" style="margin-top:24px">
@@ -916,7 +924,7 @@ function buildAutoCompat(myType) {
 
   function rows(items, bad, offset) {
     return items.map(({code, info, pct, text}, i) => `
-    <a class="cmp-row${bad ? ' bad' : ''}" href="?type=${code}" target="_blank" rel="noopener">
+    <a class="cmp-row${bad ? ' bad' : ''}" href="?type=${code}&from=compat" target="_blank" rel="noopener">
       <img src="${typeImg(code) || BUSTS[(i + offset) % BUSTS.length]}" alt=""${typeImg(code) ? ' class="illust"' : ''}>
       <span>
         <span class="nm"><b>${code}型</b><span>（${info.name}）</span></span>
@@ -1194,7 +1202,7 @@ function layoutSpecCols(){
     cols[mobile ? 0 : (n % 2 === 0 || n === 7 ? 0 : 1)].appendChild(p);
   });
   // PC幅では、フィードバックを右列の末尾（05カードの下の空き）へ。スマホ幅では元の位置（国を探すバナーの上）へ戻す
-  const fb = document.getElementById('feedback-block'), home = document.getElementById('feedback-home');
+  const fb = document.getElementById('post-cards'), home = document.getElementById('feedback-home');
   if (fb && home) { if (mobile) home.after(fb); else cols[1].appendChild(fb); }
 }
 
@@ -1344,16 +1352,20 @@ function setupManual(rt){
     }));
   };
 
-  // 結果ページ上のシェアボタン（自分の診断結果を見ているときだけ表示）
+  // 結果ページ上のシェアボタン：旅行タイプ診断そのものを広めるためのもの（誰が見ても表示）。
+  // 共有先は診断のトップ。流入元をアナリティクスで見分けられるようUTMを付ける。
   const sharePane = document.getElementById('spec-share');
-  if (sharePane && sessionStorage.getItem('myType') === rt) {
+  if (sharePane) {
     sharePane.hidden = false;
-    document.getElementById('spec-share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(quizUrl);
-    document.getElementById('spec-share-line').href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(quizUrl) + '&text=' + encodeURIComponent(shareText);
+    const promoText = 'あなたはどの旅人モデル？ 16種類から分かる「旅行タイプ診断」（約3分） #WorldMappy 旅行タイプ診断';
+    const promoUrl = medium => { const u = new URL('./', location.href); u.search = 'utm_source=share&utm_medium=' + medium + '&utm_campaign=diagnosis_share'; return u.toString(); };
+    document.getElementById('spec-share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(promoText) + '&url=' + encodeURIComponent(promoUrl('x'));
+    document.getElementById('spec-share-line').href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(promoUrl('line')) + '&text=' + encodeURIComponent(promoText);
     const copyBtn = document.getElementById('spec-share-copy');
     copyBtn.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(quizUrl); } catch (e) {
-        const ta = document.createElement('textarea'); ta.value = quizUrl; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+      const url = promoUrl('copy');
+      try { await navigator.clipboard.writeText(url); } catch (e) {
+        const ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
       }
       const orig = copyBtn.textContent; copyBtn.textContent = '✓ コピーしました'; copyBtn.classList.add('copied');
       setTimeout(() => { copyBtn.textContent = orig; copyBtn.classList.remove('copied'); }, 2000);
@@ -1431,9 +1443,11 @@ const FB_CONFIG = {
 const app = initializeApp(FB_CONFIG);
 const db = getDatabase(app);
 const urlType = new URLSearchParams(location.search).get('type');
+// 一覧・相性カードから開いた場合(fromあり)は、自分の結果と同じタイプでも、診断の集計とフィードバックの対象にしない
+const openedFromList = new URLSearchParams(location.search).has('from');
 
 // 診断カウント＋タイプ別カウント（クイズを実際に完了した本人のみ・1セッション1回）
-if (urlType && sessionStorage.getItem('myType') === urlType && !sessionStorage.getItem('diag_counted')) {
+if (urlType && !openedFromList && sessionStorage.getItem('myType') === urlType && !sessionStorage.getItem('diag_counted')) {
   sessionStorage.setItem('diag_counted', '1');
   sessionStorage.removeItem('diag_feedback');
   wmTrack('diagnosis_complete', { result_type: urlType });
@@ -1470,7 +1484,7 @@ if (urlType && sessionStorage.getItem('myType') === urlType && !sessionStorage.g
 
 // フィードバック（自分の結果のみ）
 const myType = sessionStorage.getItem('myType');
-if (urlType && myType === urlType) {
+if (urlType && myType === urlType && !openedFromList) {
   document.getElementById('feedback-block').style.display = '';
   if (sessionStorage.getItem('diag_feedback')) {
     const prev = sessionStorage.getItem('diag_feedback');

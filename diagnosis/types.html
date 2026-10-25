@@ -279,7 +279,7 @@ function buildCard(code) {
   const t = TYPES[code];
   const a = document.createElement('a');
   a.className = 'type-card';
-  a.href = `result.html?type=${code}`;
+  a.href = `result.html?type=${code}&from=list`;  // 一覧から開いたときは、結果ページでフィードバックカードを出さない
   a.innerHTML = `
     <div class="tc-fig"><img src="${typeImg(code) || TYPE_IMG_FALLBACK}" alt="${t.name}" loading="lazy"></div>
     <div class="tc-head" style="background:${t.color}">
