@@ -230,13 +230,6 @@ body{background:#FAF7F2}
 .spec-note img{width:20px;height:20px;object-fit:contain}
 
 /* 03 スペックバー + レーダー */
-.spec-bar-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #EFEBE3}
-.spec-bar-row img{width:30px;height:30px;object-fit:contain}
-.spec-bar-row .lab{flex:1;font-size:13px;color:#23211C}
-.spec-bar-row .lab small{color:#8C877E;font-size:11.5px}
-.spec-bar-row .dots{font-size:17px;letter-spacing:2px;white-space:nowrap}
-.spec-bar-row .dots .on{color:#F2B01E}
-.spec-bar-row .dots .off{color:#DED8CC}
 .spec-micro{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
 .spec-micro > div{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #E8E2D8;border-radius:7px;background:#FBF8F1;padding:10px 12px}
 .spec-micro .mk{font-size:11px;line-height:1.45;color:#55504A}
@@ -508,8 +501,6 @@ body{background:#FAF7F2}
   <div class="spec-panel spec-hidden" id="spec-country-sec">
     <div class="spec-h"><span class="no">04</span><span class="ttl">推奨動作環境</span></div>
     <p style="margin:0 0 16px;font-size:13px;line-height:2;color:#55504A;text-wrap:pretty" id="spec-env-lead"></p>
-    <span style="font-size:13px;font-weight:700;color:#3C3A34">このモデルが性能を発揮する環境</span>
-    <div id="spec-env" style="margin-top:8px"></div>
     <div style="display:grid;gap:3px;margin:14px 0 8px"><span style="font-size:13px;font-weight:700;color:#14503C" id="spec-country-title">おすすめの国</span><span style="font-size:11.5px;color:#8C877E">計画ページで旅のヒントをチェック！</span></div>
     <div class="spec-country-grid" id="spec-country-grid"></div>
     <a class="spec-cta-in" id="spec-country-cta" href="../">他のおすすめの国を見る<span>→</span></a>
@@ -1196,10 +1187,8 @@ function renderResult(type) {
    Claude Design 正典 "Travel Diagnosis PC.dc.html" の派生ロジックを忠実移植。
    すべて型コード rt の4文字（P/F・C/N・S/L・R/W）から機械的に導出する。 */
 const RES_ICON = ['img/r/ic-plan.png','img/r/ic-culture.png','img/r/ic-group.png','img/r/ic-comfort.png'];
-const ENV_ICON = ['img/r/ic-culture.png','img/r/ic-heart.png','img/r/ic-group.png','img/r/ic-comfort.png','img/r/ic-calendar.png'];
 const AXIS_EN  = ['PLANNING','CULTURE','GROUP','COMFORT'];
 
-function _stars(n){ n=Math.max(0,Math.min(5,n)); return '<span class="on">'+'★★★★★'.slice(0,n)+'</span><span class="off">'+'★★★★★'.slice(0,5-n)+'</span>'; }
 function SPEC(rt){ return [
   {label:'旅程制御性能', sub:'計画力', n: rt[0]==='P'?5:1},
   {label:rt[1]==='C'?'文化探知性能':'絶景探知性能', sub:rt[1]==='C'?'文化志向':'自然志向', n: 5},
@@ -1211,20 +1200,11 @@ function MICRO(rt){
   const P = rt[0]==='P', C = rt[1]==='C', S = rt[2]==='S', H = rt[3]==='R';
   return [
     {k:'最適な同行人数',     v: S ? (H?'3〜6人':'2〜4人') : (H?'1〜3人':'1〜2人'), c:'#2B2B28'},
-    {k:'旅程の予備日',       v: P ? (H?'0日':'1日') : (H?'2日':'2〜3日'), c:'#2B2B28'},
-    {k:'1日の平均行動距離',  v: C ? (H?'6〜8km':'8〜10km') : (H?'10〜12km':'15km+'), c:'#2B2B28'},
-    {k:'事前予約・手配の量', v: P ? (C?'多い':'ふつう') : (C?'少なめ':'ほぼ不要'), c: (P&&C) ? '#B3402F' : '#2B2B28'},
-    {k:'予算の主な配分先',   v: H ? (C?'宿・ガイド':'宿・移動') : (C?'入場料・食事':'アクティビティ'), c:'#2B2B28'},
+    {k:'1日の平均歩数',      v: C ? (H?'8,000〜10,000歩':'10,000〜13,000歩') : (H?'13,000〜16,000歩':'20,000歩+'), c:'#2B2B28'},
+    {k:'事前予約',           v: P ? (C?'多い':'ふつう') : (C?'少なめ':'ほぼ不要'), c: (P&&C) ? '#B3402F' : '#2B2B28'},
     {k:'向いている旅の長さ', v: P ? (H?'2〜4日':'4〜7日') : (H?'1週間前後':'長期・周遊'), c:'#1D7A63'},
   ];
 }
-function ENVIRON(rt){ return [
-  {label:'歴史・文化が豊かな都市', n: rt[1]==='C'?5:3},
-  {label:'絶景・大自然スポット', n: rt[1]==='N'?5:3},
-  {label:'グループ・家族旅行', n: rt[2]==='S'?5:1},
-  {label:'快適な宿・移動環境', n: rt[3]==='R'?5:1},
-  {label:'完全ノープラン旅', n: rt[0]==='F'?5:2},
-]; }
 function TIP_TEXT(rt){
   const lead = rt[2]==='S'
     ? '同行者の満足を優先しすぎると、自分の希望が後回しになることがあります。'
@@ -1236,9 +1216,14 @@ function TIP_TEXT(rt){
 }
 // タイプ一覧の4グループ(計画/直感 × 文化/絶景)に対応するカテゴリ名（MBTIのように1語で人柄が浮かぶ名前）
 function CATEGORY(rt){ return { PC:'Scholar', PN:'Pilot', FC:'Seeker', FN:'Drifter' }[rt[0] + rt[1]]; }
-function RADAR_NOTE(rt){
-  return (rt[0]==='P'?'計画力':'瞬発力')+'・'+(rt[2]==='S'?'協調性':'自立性')+'・'
-    +(rt[1]==='C'?'文化探知':'絶景探知')+'のバランスが高く、旅の安定稼働を支える高性能モデル。';
+// レーダー下の一文。目的軸(文化/自然)の偏りを主役に、残り3軸は自分側の特性語で並べる。
+// cn=[文化★,自然★]。★差が1以下なら「両方好き」と読む（回答なしの標準値は差4なので常に偏り表記）
+function RADAR_NOTE(rt, cn){
+  const lead = (cn && Math.abs(cn[0] - cn[1]) <= 1)
+    ? '文化も自然も等しく味わい、'
+    : (rt[1]==='C' ? '文化探知が突出し、' : '絶景探知が突出し、');
+  const body = [rt[0]==='P'?'計画力':'瞬発力', rt[2]==='S'?'協調性':'自立性', rt[3]==='R'?'快適志向':'ワイルド耐性'].join('・');
+  return lead + body + 'で動く高性能モデル。';
 }
 function COUNTRIES(rt){
   const key = rt[1] + rt[3];
@@ -1331,7 +1316,7 @@ function renderSpecSheet(rt){
       return (cx + r*n/5*Math.cos(ang)).toFixed(1) + ',' + (cy + r*n/5*Math.sin(ang)).toFixed(1);
     }).join(' '));
   }
-  set('spec-radar-note', RADAR_NOTE(rt)
+  set('spec-radar-note', RADAR_NOTE(rt, cn)
     + (personalized ? '' : '<br><span style="color:#8C877E;font-size:11.5px">※あなたの回答からではなく、このタイプの標準値を表示しています。</span>'));
   set('spec-micro', MICRO(rt).map(m =>
     '<div><span class="mk">'+m.k+'</span><span class="mv" style="color:'+m.c+'">'+m.v+'</span></div>'
@@ -1345,9 +1330,6 @@ function renderSpecSheet(rt){
   // --- 04 RECOMMENDED ENVIRONMENT + おすすめの国 ---
   document.getElementById('spec-country-sec').classList.remove('spec-hidden');
   set('spec-env-lead', tsLead);
-  set('spec-env', ENVIRON(rt).map((e,i) =>
-    '<div class="spec-bar-row"><img src="'+ENV_ICON[i % ENV_ICON.length]+'" alt=""><span class="lab">'+e.label+'</span><span class="dots">'+_stars(e.n)+'</span></div>'
-  ).join(''));
   set('spec-country-title', rt + '型におすすめの国');
   set('spec-country-grid', COUNTRIES(rt).map(name => {
     const id = COUNTRY_PAGE[name];
@@ -1392,7 +1374,7 @@ function buildManualDoc(rt, t, doc){
   const foot = right => '<div class="mn-foot"><span>WORLDMAPPY.COM</span><span>'+right+'</span></div>';
 
   const specRows = [['特性タグ', (t.traits || []).join(' / ')]]
-    .concat(MICRO(rt).filter(m => m.k !== '1日の平均行動距離').map(m => [m.k, m.v]))
+    .concat(MICRO(rt).map(m => [m.k, m.v]))
     .map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
 
   const usage = '<div class="mn-usage">'+doc.usage+'</div>';
