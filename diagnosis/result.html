@@ -1327,17 +1327,35 @@ function setupManual(rt){
   ov.addEventListener('click', e => { if (e.target === ov || e.target.id === 'manual-sheets') close(); });
   addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 
-  // 画像保存の前に、取説内の<img>をdata URL化して読み込み完了まで待つ。
-  // スマホ(特にiOS Safari)では、外部URLの画像が保存画像に写らず、イラストが消えるため。
-  const inlineImages = async (root) => {
+  // 画像保存の前処理。スマホ(特にiOS Safari)では、保存画像にイラストが写らないことがあるため、
+  //  1) <img>をPNGのdata URLにして読み込み完了まで待つ（webpや外部URLのままだと空になる端末がある）
+  //  2) イラスト枠(aspect-ratio)と画像の大きさを、いまの表示どおりのpx値に固定する（枠が潰れて見えなくなるのを防ぐ）
+  // 戻り値は、固定したスタイルを元に戻す関数。
+  const prepareForCapture = async (root) => {
+    const restores = [];
     await Promise.all([...root.querySelectorAll('img')].map(async (img) => {
-      if (!img.src || img.src.startsWith('data:')) return;
       try {
-        const blob = await (await fetch(img.src)).blob();
-        img.src = await new Promise((ok, ng) => { const fr = new FileReader(); fr.onload = () => ok(fr.result); fr.onerror = ng; fr.readAsDataURL(blob); });
-        if (img.decode) await img.decode();
+        if (!img.complete) await new Promise(r => { img.onload = r; img.onerror = r; });
+        if (img.decode) await img.decode().catch(() => {});
+        if (img.naturalWidth) {
+          const c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight;
+          const ctx = c.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, c.width, c.height); ctx.drawImage(img, 0, 0);
+          img.src = c.toDataURL('image/png');
+          if (img.decode) await img.decode().catch(() => {});
+        }
       } catch (e) {}
     }));
+    root.querySelectorAll('.mn-figure').forEach((fig) => {
+      const r = fig.getBoundingClientRect(), img = fig.querySelector('img');
+      const keep = [fig.getAttribute('style'), img && img.getAttribute('style')];
+      fig.style.aspectRatio = 'auto'; fig.style.width = r.width + 'px'; fig.style.height = r.height + 'px';
+      if (img) { const ir = img.getBoundingClientRect(); img.style.width = ir.width + 'px'; img.style.height = ir.height + 'px'; }
+      restores.push(() => {
+        keep[0] === null ? fig.removeAttribute('style') : fig.setAttribute('style', keep[0]);
+        if (img) keep[1] === null ? img.removeAttribute('style') : img.setAttribute('style', keep[1]);
+      });
+    });
+    return () => restores.forEach(f => f());
   };
 
   // 結果ページ上のシェアボタン：旅行タイプ診断そのものを広めるためのもの（誰が見ても表示）。
@@ -1384,10 +1402,12 @@ function setupManual(rt){
       const files = [];
       for (const [id, label] of [['manual-front', '表'], ['manual-back', '裏']]) {
         const node = document.getElementById(id);
-        await inlineImages(node);
-        // iOS Safariは1回目の描画で画像が空になることがあるため、軽い描画で一度ならしてから本番を出力する
-        if (/iPhone|iPad|iPod|Mac/i.test(navigator.userAgent) && 'ontouchend' in document) await htmlToImage.toBlob(node, { pixelRatio: 0.2, backgroundColor: '#fff' });
-        const blob = await htmlToImage.toBlob(node, { pixelRatio: 2, backgroundColor: '#fff' });
+        const restore = await prepareForCapture(node);
+        try {
+          // スマホは1回目の描画で画像が空になることがあるため、軽い描画で一度ならしてから本番を出力する
+          if (/Android|iPhone|iPad|iPod|Mac/i.test(navigator.userAgent) && 'ontouchend' in document) await htmlToImage.toBlob(node, { pixelRatio: 0.2, backgroundColor: '#fff' });
+          var blob = await htmlToImage.toBlob(node, { pixelRatio: 2, backgroundColor: '#fff' });
+        } finally { restore(); }
         files.push(new File([blob], 'worldmappy-manual-' + rt + '-' + (label === '表' ? '1' : '2') + '.png', { type: 'image/png' }));
       }
       const isMobile = /Android|iPhone|iPad|Mobi/i.test(navigator.userAgent);
