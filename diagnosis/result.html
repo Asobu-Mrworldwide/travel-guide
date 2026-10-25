@@ -485,15 +485,19 @@ body{background:#FAF7F2}
     <div class="spec-radar spec-radar-lg">
       <svg viewBox="-62 -10 244 136" aria-hidden="true">
         <circle cx="58" cy="58" r="47" fill="#F7F5EF" stroke="#EFEBE3" stroke-width="1"></circle>
-        <polygon points="58,12 104,58 58,104 12,58" fill="none" stroke="#E0DACD" stroke-width="1"></polygon>
-        <polygon points="58,30 86,58 58,86 30,58" fill="none" stroke="#EFEBE3" stroke-width="1"></polygon>
-        <line x1="58" y1="12" x2="58" y2="104" stroke="#EFEBE3" stroke-width="1"></line>
-        <line x1="12" y1="58" x2="104" y2="58" stroke="#EFEBE3" stroke-width="1"></line>
-        <polygon id="spec-radar-poly" points="58,58 58,58 58,58 58,58" fill="rgba(20,80,60,0.3)" stroke="#3E7A54" stroke-width="1.8"></polygon>
+        <polygon points="58,12 101.8,43.8 85,95.2 31,95.2 14.2,43.8" fill="none" stroke="#E0DACD" stroke-width="1"></polygon>
+        <polygon points="58,30 84.6,49.4 74.5,80.7 41.5,80.7 31.4,49.4" fill="none" stroke="#EFEBE3" stroke-width="1"></polygon>
+        <g stroke="#EFEBE3" stroke-width="1">
+          <line x1="58" y1="58" x2="58" y2="12"></line><line x1="58" y1="58" x2="101.8" y2="43.8"></line>
+          <line x1="58" y1="58" x2="85" y2="95.2"></line><line x1="58" y1="58" x2="31" y2="95.2"></line>
+          <line x1="58" y1="58" x2="14.2" y2="43.8"></line>
+        </g>
+        <polygon id="spec-radar-poly" points="58,58 58,58 58,58 58,58 58,58" fill="rgba(20,80,60,0.3)" stroke="#3E7A54" stroke-width="1.8"></polygon>
         <text x="58" y="4" text-anchor="middle" font-size="7" fill="#3C3A34" font-weight="700">計画力 <tspan id="rl-p"></tspan></text>
-        <text x="58" y="121" text-anchor="middle" font-size="7" fill="#3C3A34" font-weight="700">協調性 <tspan id="rl-s"></tspan></text>
-        <text x="114" y="60" text-anchor="start" font-size="7" fill="#3C3A34" font-weight="700">好奇心 <tspan id="rl-c"></tspan></text>
-        <text x="2" y="60" text-anchor="end" font-size="7" fill="#3C3A34" font-weight="700">快適性 <tspan id="rl-h"></tspan></text>
+        <text x="108" y="42" text-anchor="start" font-size="7" fill="#3C3A34" font-weight="700">文化志向 <tspan id="rl-cu"></tspan></text>
+        <text x="91" y="105" text-anchor="start" font-size="7" fill="#3C3A34" font-weight="700">自然志向 <tspan id="rl-na"></tspan></text>
+        <text x="25" y="105" text-anchor="end" font-size="7" fill="#3C3A34" font-weight="700">協調性 <tspan id="rl-s"></tspan></text>
+        <text x="8" y="42" text-anchor="end" font-size="7" fill="#3C3A34" font-weight="700">快適性 <tspan id="rl-h"></tspan></text>
       </svg>
       <p id="spec-radar-note"></p>
     </div>
@@ -1197,10 +1201,10 @@ const AXIS_EN  = ['PLANNING','CULTURE','GROUP','COMFORT'];
 
 function _stars(n){ n=Math.max(0,Math.min(5,n)); return '<span class="on">'+'★★★★★'.slice(0,n)+'</span><span class="off">'+'★★★★★'.slice(0,5-n)+'</span>'; }
 function SPEC(rt){ return [
-  {label:'旅程制御性能', sub:'計画力', n: rt[0]==='P'?5:2},
-  {label:'文化探知性能', sub:'好奇心', n: rt[1]==='C'?5:3},
-  {label:'同行者同期性能', sub:'協調性', n: rt[2]==='S'?5:3},
-  {label:'快適環境要求', sub:'快適性', n: rt[3]==='R'?5:2},
+  {label:'旅程制御性能', sub:'計画力', n: rt[0]==='P'?5:1},
+  {label:rt[1]==='C'?'文化探知性能':'絶景探知性能', sub:rt[1]==='C'?'文化志向':'自然志向', n: 5},
+  {label:'同行者同期性能', sub:'協調性', n: rt[2]==='S'?5:1},
+  {label:'快適環境要求', sub:'快適性', n: rt[3]==='R'?5:1},
 ]; }
 // マイクロスペック：★バー（＝各軸の寄り度）とは別に、2軸を掛け合わせた「旅の設計値」を出す。
 function MICRO(rt){
@@ -1217,8 +1221,8 @@ function MICRO(rt){
 function ENVIRON(rt){ return [
   {label:'歴史・文化が豊かな都市', n: rt[1]==='C'?5:3},
   {label:'絶景・大自然スポット', n: rt[1]==='N'?5:3},
-  {label:'グループ・家族旅行', n: rt[2]==='S'?5:3},
-  {label:'快適な宿・移動環境', n: rt[3]==='R'?5:2},
+  {label:'グループ・家族旅行', n: rt[2]==='S'?5:1},
+  {label:'快適な宿・移動環境', n: rt[3]==='R'?5:1},
   {label:'完全ノープラン旅', n: rt[0]==='F'?5:2},
 ]; }
 function TIP_TEXT(rt){
@@ -1229,12 +1233,6 @@ function TIP_TEXT(rt){
     ? '旅程にひとつだけ「自分のための予定」を足すと、あなた自身の満足度も大きく向上します。'
     : '要予約のものだけ先に押さえておくと、自由さを保ったまま失敗が減ります。';
   return lead + fix;
-}
-function RADAR(rt){
-  const v=[rt[0]==='P'?5:2, rt[1]==='C'?5:3, rt[2]==='S'?5:3, rt[3]==='R'?5:2];
-  const r=46,cx=58,cy=58;
-  return [[cx,cy-r*v[0]/5],[cx+r*v[1]/5,cy],[cx,cy+r*v[2]/5],[cx-r*v[3]/5,cy]]
-    .map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
 }
 // タイプ一覧の4グループ(計画/直感 × 文化/絶景)に対応するカテゴリ名（MBTIのように1語で人柄が浮かぶ名前）
 function CATEGORY(rt){ return { PC:'Scholar', PN:'Pilot', FC:'Seeker', FN:'Drifter' }[rt[0] + rt[1]]; }
@@ -1274,6 +1272,10 @@ function buildProfile(rt){
   set('spec-profile-note', t.closing || '');
 }
 
+// 型番の4桁（各軸の星数）。renderSpecSheet が表示中タイプ分をセットし、取説の型番でも共用する
+let SPEC_DIGITS = '';
+const modelNo = rt => rt + '-' + SPEC_DIGITS;
+
 function renderSpecSheet(rt){
   const t = (TYPES || {})[rt];
   if (!t) return;
@@ -1284,14 +1286,23 @@ function renderSpecSheet(rt){
   let lv = []; try { lv = computeAxisLevels(rt); } catch(e) {}
   const spec = SPEC(rt);
   // level===3 は「2:2で5問目に入り 3:2 で決着した僅差の軸」。勝敗によらず ★3 に寄せる。
+  // 旅の目的軸(CN)は文化・自然を別々の軸として、それぞれの側への投票比率で星を出す（3:2なら★3と★2）
+  const clamp5 = x => Math.max(1, Math.min(5, Math.round(x)));
+  const cn = (() => {
+    const L = lv[1];
+    if (!L || L.level == null) return rt[1] === 'C' ? [5, 1] : [1, 5];
+    return [clamp5(L.aPct / 20), clamp5((100 - L.aPct) / 20)];
+  })();
   const nOf = i => {
+    if (i === 1) return cn[rt[1] === 'C' ? 0 : 1];
     const L = lv[i];
     if (!L || L.level == null) return spec[i].n;
     if (L.level === 3) return 3;
-    return Math.max(1, Math.min(5, Math.round(L.aPct / 20)));
+    return clamp5(L.aPct / 20);
   };
   const personalized = lv.some(x => x && x.level != null);
   const specDigits = [0,1,2,3].map(nOf).join('');
+  SPEC_DIGITS = specDigits;
 
   // --- 01 IDENTITY ---
   set('id-code', rt + '<span>型</span>');
@@ -1309,15 +1320,16 @@ function renderSpecSheet(rt){
   ].map(([k,v,c]) => '<div class="row"><span class="k">'+k+'</span><span class="v" style="color:'+c+'">'+v+'</span></div>').join(''));
 
   // --- 02 PRODUCT SPEC（4軸レーダー + マイクロ） ---
-  const v = [0,1,2,3].map(nOf);   // 各軸の Lv.1〜5（回答比率ベース、僅差は3固定）
+  const v = [nOf(0), cn[0], cn[1], nOf(2), nOf(3)];   // 計画力・文化・自然・協調性・快適性の Lv.1〜5
   const dot = n => '<tspan fill="#EAB000">'+'★★★★★'.slice(0,n)+'</tspan><tspan fill="#D8D2C4">'+'★★★★★'.slice(0,5-n)+'</tspan>';
-  ['p','c','s','h'].forEach((k,i) => { const el = document.getElementById('rl-'+k); if (el) el.innerHTML = dot(v[i]); });
+  ['p','cu','na','s','h'].forEach((k,i) => { const el = document.getElementById('rl-'+k); if (el) el.innerHTML = dot(v[i]); });
   const poly = document.getElementById('spec-radar-poly');
   if (poly) {
     const r = 46, cx = 58, cy = 58;
-    poly.setAttribute('points', [
-      [cx, cy - r*v[0]/5], [cx + r*v[1]/5, cy], [cx, cy + r*v[2]/5], [cx - r*v[3]/5, cy]
-    ].map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' '));
+    poly.setAttribute('points', v.map((n,i) => {
+      const ang = (-90 + 72*i) * Math.PI / 180;
+      return (cx + r*n/5*Math.cos(ang)).toFixed(1) + ',' + (cy + r*n/5*Math.sin(ang)).toFixed(1);
+    }).join(' '));
   }
   set('spec-radar-note', RADAR_NOTE(rt)
     + (personalized ? '' : '<br><span style="color:#8C877E;font-size:11.5px">※あなたの回答からではなく、このタイプの標準値を表示しています。</span>'));
@@ -1395,7 +1407,7 @@ function buildManualDoc(rt, t, doc){
   document.getElementById('manual-front').innerHTML =
     '<div class="mn-head"><div class="mn-head-top">'
     + '<div class="mn-head-l"><span class="mn-title">旅人取扱説明書</span><span class="mn-note">安全にご使用いただくために、必ずこの取扱説明書をよくお読みください。</span></div>'
-    + '<div class="mn-head-r"><span class="mn-tag">TRAVELER MANUAL</span><span class="mn-model">型番：'+rt+'-2026</span></div>'
+    + '<div class="mn-head-r"><span class="mn-tag">TRAVELER MANUAL</span><span class="mn-model">型番：'+modelNo(rt)+'</span></div>'
     + '</div><div class="mn-rule"></div></div>'
 
     + '<div class="mn-prod"><div class="mn-prod-l"><span class="mn-lb">■ 製品名（旅人タイプ）</span>'
@@ -1413,7 +1425,7 @@ function buildManualDoc(rt, t, doc){
     + '<div class="mn-sec"><span class="mn-lb">■ 充電方法</span><div class="mn-table">'+charge+'</div></div>'
     + '<div class="mn-sec"><span class="mn-lb">■ よくあるご質問（故障かな？と思ったら）</span><div class="mn-qa">'+qa+'</div></div>'
     + '<div class="mn-caution"><span class="lb">保証と免責</span><span class="tx">'+doc.waiver+'</span></div>'
-    + foot(rt+'-2026-TRAVELER　2 / 2');
+    + foot(modelNo(rt)+'-TRAVELER　2 / 2');
 }
 
 function buildManual(rt){
@@ -1457,7 +1469,7 @@ function buildManual(rt){
   document.getElementById('manual-front').innerHTML =
     '<div class="mn-head"><div class="mn-head-top">'
     + '<div class="mn-head-l"><span class="mn-title">旅人取扱説明書</span><span class="mn-note">安全にご使用いただくために、必ずこの取扱説明書をよくお読みください。</span></div>'
-    + '<div class="mn-head-r"><span class="mn-tag">TRAVELER MANUAL</span><span class="mn-model">型番：'+rt+'-2026</span></div>'
+    + '<div class="mn-head-r"><span class="mn-tag">TRAVELER MANUAL</span><span class="mn-model">型番：'+modelNo(rt)+'</span></div>'
     + '</div><div class="mn-rule"></div></div>'
 
     + '<div class="mn-prod"><div class="mn-prod-l"><span class="mn-lb">■ 製品名（旅人タイプ）</span>'
@@ -1476,7 +1488,7 @@ function buildManual(rt){
     + (styleLead ? '<div class="mn-sec"><span class="mn-lb">■ おすすめの旅スタイル</span><span class="mn-style">'+styleLead+'</span></div>' : '')
     + (styleTip ? '<div class="mn-advice"><span class="lb">💡 ワンポイントアドバイス</span><span class="tx">'+styleTip+'</span></div>' : '')
     + '<div class="mn-sec"><span class="mn-lb">■ 相性のいい旅行タイプ</span><div class="mn-compat">'+compat+'</div></div>'
-    + foot(rt+'-2026-TRAVELER　2 / 2');
+    + foot(modelNo(rt)+'-TRAVELER　2 / 2');
 }
 
 function setupManual(rt){
