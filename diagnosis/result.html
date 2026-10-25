@@ -1403,11 +1403,24 @@ function setupManual(rt){
       for (const [id, label] of [['manual-front', '表'], ['manual-back', '裏']]) {
         const node = document.getElementById(id);
         const restore = await prepareForCapture(node);
+        const figImgs = [...node.querySelectorAll('.mn-figure img')];
+        let blob;
         try {
-          // スマホは1回目の描画で画像が空になることがあるため、軽い描画で一度ならしてから本番を出力する
-          if (/Android|iPhone|iPad|iPod|Mac/i.test(navigator.userAgent) && 'ontouchend' in document) await htmlToImage.toBlob(node, { pixelRatio: 0.2, backgroundColor: '#fff' });
-          var blob = await htmlToImage.toBlob(node, { pixelRatio: 2, backgroundColor: '#fff' });
-        } finally { restore(); }
+          // イラストは保存用の描画(SVG)に任せると、スマホで枠だけ残って空になることがある。
+          // そこで描画時は隠しておき、できあがった画像(canvas)へ、こちらで直接はり付ける。
+          const nr = node.getBoundingClientRect();
+          const placed = figImgs.map(img => { const r = img.getBoundingClientRect(); return { img, x: r.left - nr.left, y: r.top - nr.top, w: r.width, h: r.height }; });
+          figImgs.forEach(img => { img.style.visibility = 'hidden'; });
+          // style: シートの左右の自動余白(margin:0 auto)が実寸のpxとして描画側にコピーされ、スマホで枠が右にずれて右端が切れるのを防ぐ
+          const canvas = await htmlToImage.toCanvas(node, { pixelRatio: 2, backgroundColor: '#fff', style: { margin: '0', transform: 'none' } });
+          const k = canvas.width / nr.width, ctx = canvas.getContext('2d');
+          placed.forEach(p => {
+            const nw = p.img.naturalWidth, nh = p.img.naturalHeight; if (!nw || !nh) return;
+            const sc = Math.min(p.w / nw, p.h / nh), dw = nw * sc, dh = nh * sc;   // object-fit:contain と同じ縮尺・位置
+            ctx.drawImage(p.img, (p.x + (p.w - dw) / 2) * k, (p.y + (p.h - dh) / 2) * k, dw * k, dh * k);
+          });
+          blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+        } finally { figImgs.forEach(img => { img.style.visibility = ''; }); restore(); }
         files.push(new File([blob], 'worldmappy-manual-' + rt + '-' + (label === '表' ? '1' : '2') + '.png', { type: 'image/png' }));
       }
       const isMobile = /Android|iPhone|iPad|Mobi/i.test(navigator.userAgent);
