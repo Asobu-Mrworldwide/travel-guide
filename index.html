@@ -62,7 +62,7 @@
   @keyframes hb-drop { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
   .hb-scrim { position: fixed; inset: 0; z-index: 1090; background: rgba(20,35,28,0.5); animation: hb-fade .22s ease both; }
   .hb-scrim[hidden] { display: none; }
-  .hb-drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 1091; width: 400px; max-width: 88vw; display: flex; flex-direction: column; background: #125F4E; box-shadow: -18px 0 44px rgba(10,30,22,0.28); animation: hb-slide .28s cubic-bezier(.2,.7,.2,1) both; }
+  .hb-drawer { position: fixed; top: 0; right: 0; bottom: 0; max-height: 100dvh; z-index: 1091; width: 400px; max-width: 88vw; display: flex; flex-direction: column; background: #125F4E; box-shadow: -18px 0 44px rgba(10,30,22,0.28); animation: hb-slide .28s cubic-bezier(.2,.7,.2,1) both; }
   .hb-drawer[hidden] { display: none; }
   .hb-drawer__head { flex: none; display: flex; align-items: flex-start; justify-content: flex-end; gap: 14px; padding: 14px 16px 4px; }
   .hb-drawer__brand { flex: 1; display: grid; gap: 5px; justify-items: center; padding-left: 34px; text-align: center; }
@@ -70,7 +70,7 @@
   .hb-drawer__brand .hb-logo b { color: #E0A63C; font-weight: 900; }
   .hb-drawer__tagline { font-size: 11.5px; color: rgba(255,255,255,0.72); }
   .hb-drawer__close { flex: none; display: grid; place-content: center; width: 34px; height: 34px; border: none; background: none; font-family: inherit; font-size: 24px; line-height: 1; color: #fff; cursor: pointer; }
-  .hb-drawer__body { flex: 1; min-height: 0; overflow-y: auto; padding: 12px 20px 0; }
+  .hb-drawer__body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; padding: 12px 20px calc(40px + env(safe-area-inset-bottom)); }
   .hb-sec, .hb-sec--primary { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 54px; margin-top: 6px; padding: 0 16px; border: none; border-left: 3px solid transparent; border-radius: 8px; background: rgba(255,255,255,0.05); font-family: inherit; font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.88); text-align: left; cursor: pointer; transition: background .28s ease, border-left-color .28s ease, color .28s ease; }
   .hb-sec:first-child, .hb-sec--primary:first-child { margin-top: 0; }
   .hb-sec:hover, .hb-sec--primary:hover { background: rgba(255,255,255,0.12); }
@@ -182,7 +182,7 @@
   .wm-card-season { display: block; font-size: 11.5px; color: #566159; }
 
   /* ===== 索引 ===== */
-  .wm-index { background: #fff; padding: 40px 44px 8px; scroll-margin-top: 20px; }
+  .wm-index { background: #fff; padding: 40px 44px 40px; scroll-margin-top: 20px; }
   .wm-index-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 22px; flex-wrap: wrap; }
   .wm-index-head .ttl { display: flex; align-items: center; gap: 12px; }
   .wm-index-head .ttl span.emo { font-size: 25px; line-height: 1; }
