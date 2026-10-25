@@ -119,6 +119,7 @@ body{background:#FAF7F2}
 
 /* フィードバック */
 .feedback-block{background:#fff;border-radius:12px;border:1px solid var(--border);padding:20px;margin:16px 0;text-align:center}
+.spec-col .feedback-block{max-width:none;margin:0;box-sizing:border-box}  /* PC幅で右列に入るとき */
 .feedback-title{font-size:0.88em;font-weight:700;color:#333;margin-bottom:14px}
 .feedback-btns{display:flex;gap:10px;justify-content:center}
 .feedback-btn{flex:1;max-width:160px;padding:10px 0;border-radius:30px;border:1.5px solid var(--border);background:#fff;font-size:0.85em;font-weight:700;cursor:pointer;transition:all 0.15s;font-family:inherit;color:#444}
@@ -558,6 +559,7 @@ body{background:#FAF7F2}
   </div><!-- /spec -->
 
   <!-- フィードバック -->
+  <span id="feedback-home" hidden></span>
   <div class="feedback-block" id="feedback-block" style="display:none">
     <div class="feedback-title">この診断は当たっていましたか？</div>
     <div class="feedback-btns" id="feedback-btns">
@@ -1191,6 +1193,9 @@ function layoutSpecCols(){
     const n = +p.querySelector('.spec-h .no').textContent;
     cols[mobile ? 0 : (n % 2 === 0 || n === 7 ? 0 : 1)].appendChild(p);
   });
+  // PC幅では、フィードバックを右列の末尾（05カードの下の空き）へ。スマホ幅では元の位置（国を探すバナーの上）へ戻す
+  const fb = document.getElementById('feedback-block'), home = document.getElementById('feedback-home');
+  if (fb && home) { if (mobile) home.after(fb); else cols[1].appendChild(fb); }
 }
 
 /* ===== 旅人取扱説明書シート（07 付属品から開く） =====
