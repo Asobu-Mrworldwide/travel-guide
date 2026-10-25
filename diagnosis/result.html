@@ -1554,7 +1554,7 @@ function setupManual(rt){
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-import { getDatabase, ref, set, increment } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
+import { getDatabase, ref, set, update, increment } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-database.js";
 
 const FB_CONFIG = {
   apiKey: "AIzaSyBUhndaLEcGHW4SKzSsZ4--HW4zXM2plD0",
@@ -1583,6 +1583,27 @@ if (urlType && sessionStorage.getItem('myType') === urlType && !sessionStorage.g
       set(ref(db, 'types/' + urlType), increment(1)),
     ]);
   } catch(e) { console.error('diag write error:', e); }
+
+  // 詳細な統計（失敗しても診断結果の表示には影響させない）
+  //  - daily_types/{日付}/{タイプ}   : 日付×タイプの人数
+  //  - quiz/answers/{質問ID}/{yes|no} : 質問ごとの回答数（完走した人のみ）
+  //  - axes/{軸}/{n}                  : 軸ごとの「1文字目側(P/C/S/R)への票数 n」の人数分布
+  try {
+    const tasks = [set(ref(db, 'daily_types/' + today + '/' + urlType), increment(1))];
+    const answers = JSON.parse(sessionStorage.getItem('myAnswers') || '[]');
+    const qUpd = {};
+    answers.forEach(a => { if (a && a.id) qUpd[a.id + '/' + (a.yes ? 'yes' : 'no')] = increment(1); });
+    if (Object.keys(qUpd).length) tasks.push(update(ref(db, 'quiz/answers'), qUpd));
+    const votes = JSON.parse(sessionStorage.getItem('myVotes') || 'null');
+    if (votes) {
+      const aUpd = {};
+      [['PF','P'],['CN','C'],['SL','S'],['HW','R']].forEach(([axis, first]) => {
+        if (votes[axis]) aUpd[axis + '/' + (votes[axis][first] || 0)] = increment(1);
+      });
+      tasks.push(update(ref(db, 'axes'), aUpd));
+    }
+    await Promise.all(tasks);
+  } catch(e) { console.error('detail stats write error:', e); }
 }
 
 // フィードバック（自分の結果のみ）

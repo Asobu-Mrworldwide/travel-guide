@@ -194,6 +194,7 @@ body{background:#FCFAF4}
 
 <script>
 sessionStorage.removeItem('diag_counted');
+sessionStorage.removeItem('myAnswers');
 wmTrack('quiz_start');
 // ===== 質問データ =====
 const BASE_QUESTIONS = {
@@ -242,7 +243,7 @@ function shuffle(arr) {
 function buildShuffledBase() {
   const all = [];
   Object.entries(BASE_QUESTIONS).forEach(([axis, qs]) => {
-    qs.forEach(q => all.push({...q, axis}));
+    qs.forEach((q, i) => all.push({...q, axis, id: axis + i}));  // id: 集計用の固定ID（PF0〜HW3）。シャッフルしても同じ質問を追える
   });
   return shuffle(all);
 }
@@ -426,6 +427,12 @@ function commitSwipe(dir, card) {
   const q = questionQueue[currentIdx];
   const val = dir === 'right' ? q.yesVal : getOppositeVal(q.yesVal);
   axisVotes[q.axis][val]++;
+  // 質問ごとの回答（右＝はい／左＝いいえ）。結果ページで、完走した人の分だけ集計に送る
+  try {
+    const ans = JSON.parse(sessionStorage.getItem('myAnswers') || '[]');
+    ans.push({ id: q.id, yes: dir === 'right' });
+    sessionStorage.setItem('myAnswers', JSON.stringify(ans));
+  } catch (e) {}
   wmTrack('quiz_answer', { question_number: currentIdx + 1 });
 
   const flyX = dir === 'right' ? window.innerWidth + 100 : -(window.innerWidth + 100);
@@ -464,7 +471,7 @@ function commitSwipe(dir, card) {
         // updateProgress(currentIdx, totalQuestions);
         [...tiedAxes].reverse().forEach((axis, revIdx) => {
           const bIdx = tiedAxes.length - 1 - revIdx;
-          const bq = BACKUP_QUESTIONS[axis];
+          const bq = {...BACKUP_QUESTIONS[axis], id: axis + 'b'};
           questionQueue.push(bq);
           appendCard(bq, 16 + bIdx + 1, Math.min(bIdx, 3), true);
         });
