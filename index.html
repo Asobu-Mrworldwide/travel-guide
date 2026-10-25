@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="assets/destinations-data.js"></script>
-<script src="assets/world-map.js?v=20261024"></script>
+<script src="assets/world-map.js?v=20261026"></script>
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: #ffffff; }
@@ -408,8 +408,9 @@
   .wm-col .more{padding-top:4px;color:#fff}
   .wm-area-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
   .wm-pill{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:0 17px;
-    border:none;border-radius:999px;background:#fff;font-family:inherit;font-size:12.5px;font-weight:700;
-    white-space:nowrap;color:var(--footer-green);cursor:pointer}
+    border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.08);font-family:inherit;font-size:12.5px;font-weight:700;
+    white-space:nowrap;color:rgba(255,255,255,.92);cursor:pointer;transition:background .15s,border-color .15s}
+  .wm-pills .wm-pill:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.6)}
   .wm-pills{display:flex;flex-wrap:wrap;gap:9px}
   #sortBtns .wm-pill, #viewBtns .wm-pill { border: 1px solid #C4C9C2; background: #fff; color: #45514A; }
   #sortBtns .wm-pill.on, #viewBtns .wm-pill.on { border-color: #14503C; background: #E4EFE4; color: #14503C; }
@@ -527,7 +528,7 @@
         <div class="wm-stats">
           <div class="wm-stat">
             <span class="ic"><img src="assets/top/icon-globe-circle.png" alt=""></span>
-            <span><span class="num" id="statTotal">—</span><span class="lbl">掲載国・都市</span></span>
+            <span><span class="num" id="statTotal">—</span><span class="lbl">掲載国</span></span>
           </div>
           <div class="wm-stat">
             <span class="ic"><img src="assets/top/icon-passport-circle.png" alt=""></span>
@@ -630,7 +631,7 @@
   const CORE_TAGS_PRESENT = CORE_TAGS.filter((t) => TAGS.indexOf(t) >= 0);
   const EXTRA_TAGS = TAGS.filter((t) => CORE_TAGS.indexOf(t) < 0);
 
-  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 760px)').matches) ? 'compact' : 'card', sort: 'ランダム', favs: [], limit: 15, tagExpand: false };
+  const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 760px)').matches) ? 'compact' : 'card', sort: 'ランダム', favs: [], limit: 14, tagExpand: false };
 
   function loadFavs() { try { return JSON.parse(localStorage.getItem('wm-favs') || '[]'); } catch (e) { return []; } }
   function saveFavs(list) { try { localStorage.setItem('wm-favs', JSON.stringify(list)); } catch (e) {} }
@@ -663,7 +664,7 @@
   function set(field, value) {
     const cur = state.f[field] || [];
     state.f = Object.assign({}, state.f, { [field]: cur.indexOf(value) >= 0 ? cur.filter((x) => x !== value) : cur.concat([value]) });
-    state.limit = 15;
+    state.limit = 14;
     render();
   }
   function chipsFor(field, values) {
@@ -766,7 +767,7 @@
         el.onclick = (e) => {
           e.preventDefault();
           state.f = Object.assign(emptyF(), { area: [el.getAttribute('data-area')] });
-          state.q = ''; state.menuOpen = false; state.limit = 15; render();
+          state.q = ''; state.menuOpen = false; state.limit = 14; render();
           $('wm-index').scrollIntoView({ behavior: 'smooth' });
         };
       });
@@ -779,7 +780,7 @@
         el.onclick = (e) => {
           e.preventDefault();
           state.f = Object.assign(emptyF(), { season: [el.getAttribute('data-hol')] });
-          state.q = ''; state.menuOpen = false; state.limit = 15; render();
+          state.q = ''; state.menuOpen = false; state.limit = 14; render();
           $('wm-index').scrollIntoView({ behavior: 'smooth' });
         };
       });
@@ -822,7 +823,7 @@
     tr.querySelectorAll('[data-tok]').forEach((el) => {
       const k = el.getAttribute('data-tok');
       el.onclick = k === 'reset'
-        ? () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 15; render(); }
+        ? () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 14; render(); }
         : tokens[+k].onRemove;
     });
 
@@ -887,7 +888,7 @@
     const sortDefs = [['おすすめ', 'おすすめ'], ['飛行時間が短い', '飛行時間が短い'], ['予算が安い', '予算が安い']];
     if (state.favs.length) sortDefs.push(['お気に入り', heartIc + 'お気に入り ' + state.favs.length]);
     sb.innerHTML = sortDefs.map(([v, label]) => '<button type="button" class="' + pillCls(state.sort === v) + (v === 'お気に入り' ? ' fav' : '') + '" data-sort="' + esc(v) + '">' + label + '</button>').join('');
-    sb.querySelectorAll('[data-sort]').forEach((el) => { el.onclick = () => { const v = el.getAttribute('data-sort'); state.sort = (v === state.sort) ? 'ランダム' : v; state.sel = null; state.limit = 15; render(); }; });
+    sb.querySelectorAll('[data-sort]').forEach((el) => { el.onclick = () => { const v = el.getAttribute('data-sort'); state.sort = (v === state.sort) ? 'ランダム' : v; state.sel = null; state.limit = 14; render(); }; });
     $('indexCount').textContent = rows.length + 'ヵ国';
     const VIEW_IC = {
       card: '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"></rect><rect x="9" y="2" width="5" height="5" rx="1"></rect><rect x="2" y="9" width="5" height="5" rx="1"></rect><rect x="9" y="9" width="5" height="5" rx="1"></rect></svg>',
@@ -960,9 +961,9 @@
     const hasMore = rows.length > state.limit;
     $('moreWrap').classList.toggle('show', hasMore);
     if (hasMore) {
-      const add = Math.min(15, rows.length - state.limit);
+      const add = Math.min(14, rows.length - state.limit);
       $('moreBtn').innerHTML = 'さらに' + add + 'か国表示 <span>↓</span>';
-      $('moreBtn').onclick = () => { state.limit += 15; render(); };
+      $('moreBtn').onclick = () => { state.limit += 14; render(); };
     }
     $('moreShown').textContent = rows.length + '件中 ' + Math.min(state.limit, rows.length) + '件を表示中';
   }
@@ -1005,7 +1006,7 @@
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }, { passive: true });
   })();
-  $('searchInput').addEventListener('input', (e) => { state.q = e.target.value; state.focus = true; state.limit = 15; render(); });
+  $('searchInput').addEventListener('input', (e) => { state.q = e.target.value; state.focus = true; state.limit = 14; render(); });
   $('searchInput').addEventListener('focus', () => { state.focus = true; render(); });
   $('searchInput').addEventListener('blur', () => { setTimeout(() => { state.focus = false; render(); }, 140); });
   $('searchInput').addEventListener('keydown', (e) => {
@@ -1039,8 +1040,8 @@
     state.detailOpen = false; render();
   }, true);
   $('detailCloseBtn').addEventListener('click', () => { state.detailOpen = false; render(); });
-  $('detailClearBtn').addEventListener('click', () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 15; render(); });
-  $('emptyResetBtn').addEventListener('click', () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 15; render(); });
+  $('detailClearBtn').addEventListener('click', () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 14; render(); });
+  $('emptyResetBtn').addEventListener('click', () => { state.f = emptyF(); state.q = ''; state.sel = null; state.limit = 14; render(); });
 
   document.addEventListener('mouseover', (e) => {
     const row = e.target && e.target.closest && e.target.closest('[data-dest-id]');

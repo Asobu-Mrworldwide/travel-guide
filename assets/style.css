@@ -372,10 +372,11 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
 .wm-col .more{padding-top:4px;color:#fff}
 .wm-area-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
 
-/* 白ピルボタン（リンクをコピー / 共有する） */
+/* 半透明ピルボタン（リンクをコピー / 共有する）— フッターの茶背景になじむ落ち着いた配色 */
 .wm-pill{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:0 17px;
-  border:none;border-radius:999px;background:#fff;font-family:inherit;font-size:12.5px;font-weight:700;
-  white-space:nowrap;color:var(--footer-green);cursor:pointer}
+  border:1px solid rgba(255,255,255,.35);border-radius:999px;background:rgba(255,255,255,.08);font-family:inherit;font-size:12.5px;font-weight:700;
+  white-space:nowrap;color:rgba(255,255,255,.92);cursor:pointer;transition:background .15s,border-color .15s}
+.wm-pills .wm-pill:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.6)}
 .wm-pills{display:flex;flex-wrap:wrap;gap:9px}
 #cl-share-btn{display:none}
 .wm-share-col{display:grid;gap:14px;align-content:start}
