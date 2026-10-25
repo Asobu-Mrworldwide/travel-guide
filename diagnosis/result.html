@@ -126,6 +126,10 @@ body{background:#FAF7F2}
 .feedback-btn.selected-good{background:var(--green);color:#fff;border-color:var(--green)}
 .feedback-btn.selected-bad{background:#A8503A;color:#fff;border-color:#A8503A}
 .feedback-thanks{font-size:0.82em;color:var(--sub);margin-top:10px}
+.feedback-retry{margin-top:12px}
+.feedback-retry p{margin:0 0 10px;line-height:1.7}
+.feedback-retry p span{display:block}  /* 文の途中で折り返さず、1文ずつ改行する */
+.feedback-retry a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 24px;border-radius:999px;background:#14503C;color:#fff;font-weight:900;font-size:0.95em;text-decoration:none}
 
 /* レスポンシブ */
 @media(max-width:520px){
@@ -365,15 +369,12 @@ body{background:#FAF7F2}
 .spec-cta-wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:20px;align-items:end;margin-top:8px}
 .spec-cta-col{display:grid;gap:12px;min-width:0}
 .spec-cta-band{display:flex;align-items:center;justify-content:center;gap:16px;min-height:84px;padding:14px 24px;border-radius:10px;background:#14503C;color:#fff;text-align:center}
-.spec-cta-band .txt{display:grid;gap:4px}
+.spec-cta-band .txt{display:grid;gap:4px;flex:1;min-width:0}
 .spec-cta-band h2{margin:0;font-weight:900;font-size:25px;color:#fff;border:0;padding:0;line-height:1.25}
-.spec-cta-band p{margin:0;font-size:12.5px;color:rgba(255,255,255,0.8);line-height:1.7}
-.spec-cta-band .arw{font-size:22px;flex-shrink:0}
-.spec-cta-sub{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.spec-cta-sub a{display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:0 20px;border:1px solid #DCD6CA;border-radius:8px;background:#fff;font-size:13.5px;font-weight:700;color:#3C3A34}
+.spec-cta-band .arw{font-size:22px;flex-shrink:0;margin-left:auto}  /* 矢印は右端に */
 .spec-cta-wrap > img{width:240px;object-fit:contain;justify-self:end}
 @media(max-width:900px){.spec-cta-wrap{grid-template-columns:1fr}.spec-cta-wrap > img{display:none}}
-@media(max-width:600px){.spec-cta-band{flex-direction:column;gap:8px}.spec-cta-band h2{font-size:21px}.spec-cta-sub{grid-template-columns:1fr}}
+@media(max-width:600px){.spec-cta-band{gap:10px;padding:14px 18px}.spec-cta-band h2{font-size:18px}}
 
 @media(max-width:900px){
   .id-grid{grid-template-columns:1fr}
@@ -563,7 +564,13 @@ body{background:#FAF7F2}
       <button class="feedback-btn" id="fb-good" type="button">👍 当たってた</button>
       <button class="feedback-btn" id="fb-bad" type="button">👎 ちょっと違う</button>
     </div>
-    <div class="feedback-thanks" id="feedback-thanks" style="display:none">フィードバックありがとうございました！</div>
+    <div class="feedback-thanks" id="feedback-thanks" style="display:none">
+      <span>フィードバックありがとうございました！</span>
+      <div class="feedback-retry" id="feedback-retry" style="display:none">
+        <p><span>答え方で、結果が変わることもあります。</span><span>もう一度診断してみませんか？</span></p>
+        <a href="quiz.html" id="feedback-retry-link">もう一度診断する<span>→</span></a>
+      </div>
+    </div>
   </div>
 
   <div class="spec" style="margin-top:24px">
@@ -572,14 +579,9 @@ body{background:#FAF7F2}
         <a class="spec-cta-band" href="../index.html" id="spec-band-cta">
           <span class="txt">
             <h2>このモデルにおすすめの国を探す</h2>
-            <p>旅のヒントやモデルに合った過ごし方をチェック！</p>
           </span>
           <span class="arw">→</span>
         </a>
-        <div class="spec-cta-sub">
-          <a href="quiz.html">もう一度診断する<span>→</span></a>
-          <a href="types.html">16種類の旅人モデルを見る<span>→</span></a>
-        </div>
       </div>
       <img src="img/r/paperplane-kid.png" alt="">
     </div>
@@ -1470,12 +1472,16 @@ if (urlType && myType === urlType) {
     document.getElementById('fb-' + prev)?.classList.add('selected-' + prev);
     document.getElementById('feedback-btns').style.display = 'none';
     document.getElementById('feedback-thanks').style.display = '';
+    if (prev === 'bad') document.getElementById('feedback-retry').style.display = '';
   } else {
     ['good', 'bad'].forEach(kind => {
       document.getElementById('fb-' + kind).addEventListener('click', async () => {
         sessionStorage.setItem('diag_feedback', kind);
         document.getElementById('feedback-btns').style.display = 'none';
         document.getElementById('feedback-thanks').style.display = '';
+        // 「ちょっと違う」を選んだ人には、もう一度診断する案内を出す
+        if (kind === 'bad') document.getElementById('feedback-retry').style.display = '';
+        wmTrack('feedback_choice', { kind });
         try { await set(ref(db, 'feedback/' + kind), increment(1)); } catch(e) {}
       });
     });
