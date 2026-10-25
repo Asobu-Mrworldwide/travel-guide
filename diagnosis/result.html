@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZNX5SY0GSK');
+</script>
+<script src="analytics.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>旅行タイプ診断 結果 | World Mappy</title>
 <meta name="robots" content="noindex,follow">
@@ -532,7 +541,7 @@ body{background:#FAF7F2}
     <div class="spec-h"><span class="no">07</span><span class="ttl">付属品</span></div>
     <p style="margin:0 0 12px;font-size:13px;line-height:2;color:#55504A" id="spec-incl-lead">本製品には、取扱説明書が付属しています。ご家族やご友人に共有して、より良い旅のサポートを受けましょう。</p>
     <div class="spec-incl">
-      <div><img class="spec-incl-book" id="spec-incl-book" src="img/r/manual-book.png" alt="旅人取扱説明書"></div>
+      <div><img class="spec-incl-book" id="spec-incl-book" src="img/r/manual-book.webp" alt="旅人取扱説明書"></div>
       <div>
         <div class="spec-incl-btns">
           <a class="primary" id="spec-incl-open" href="#manual">取扱説明書を開く<span>→</span></a>
@@ -1565,6 +1574,7 @@ const urlType = new URLSearchParams(location.search).get('type');
 if (urlType && sessionStorage.getItem('myType') === urlType && !sessionStorage.getItem('diag_counted')) {
   sessionStorage.setItem('diag_counted', '1');
   sessionStorage.removeItem('diag_feedback');
+  wmTrack('diagnosis_complete', { result_type: urlType });
   const today = new Date().toLocaleDateString('sv-SE');
   try {
     await Promise.all([

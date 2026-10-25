@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9742001530468097" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNX5SY0GSK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZNX5SY0GSK');
+</script>
+<script src="analytics.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>旅行タイプ診断 | World Mappy</title>
 <meta name="description" content="計画性・旅の目的・行動スタイル・快適さの4軸から、あなたの旅スタイルを16の「旅人モデル」に診断します。無料・登録不要・約3分。">
@@ -23,27 +32,17 @@
   .lp-hero-copy { display: grid; gap: 24px; align-content: center; padding-bottom: 40px; position: relative; z-index: 2; }
   .lp-hero-copy h1 { margin: 0; font-weight: 900; font-size: 52px; line-height: 1.34; letter-spacing: -0.01em; color: #23211C; }
   .lp-hero-copy h1 .u { position: relative; display: inline-block; color: #14503C; }
-  .lp-hero-copy h1 .u::after { content: ""; position: absolute; left: 0; right: 0; bottom: 3px; height: 3px; background: #14503C; }
-  .lp-hero-copy h1 .q { position: relative; display: inline-block; }
-  .lp-hero-copy h1 .q::after { content: ""; position: absolute; left: -6px; right: 2px; bottom: 4px; height: 9px; border-radius: 999px; background: #F2C14E; z-index: -1; }
+  .lp-hero-copy h1 .u::after { content: ""; position: absolute; left: -2px; right: -2px; bottom: 4px; height: 12px; border-radius: 3px; background: #F2C14E; z-index: -1; }  /* 蛍光ペン風の黄色いライン */
   .lp-hero-copy .lead { margin: 0; font-size: 16.5px; line-height: 2; color: #55504A; }
-  .lp-hero-meta { display: flex; align-items: center; gap: 16px; font-size: 13px; color: #7A756C; }
-  .lp-hero-meta .dot { display: inline-grid; place-content: center; width: 17px; height: 17px; border: 1.5px solid #A8A29A; border-radius: 999px; font-size: 9px; color: #A8A29A; }
+  .lp-hero-meta { display: flex; align-items: center; gap: 18px; font-size: 14px; color: #55504A; }
+  .lp-hero-meta > span:not(.sep) { display: inline-flex; align-items: center; gap: 8px; }
+  .lp-hero-meta .ic { width: 20px; height: 20px; color: #14503C; flex: none; }
   .lp-hero-meta .sep { width: 1px; height: 14px; background: #DCD6CA; }
   .lp-btn-yellow { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 22px 30px; border: none; border-radius: 8px; background: #F2C14E; color: #23211C; font-family: inherit; font-size: 19px; font-weight: 900; letter-spacing: 0.02em; cursor: pointer; box-shadow: 0 10px 26px rgba(200,148,10,0.28); transition: transform .2s ease, box-shadow .2s ease; text-decoration: none; }
   .lp-btn-yellow:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(200,148,10,0.34); color: #23211C; }
-  .lp-hero-art { position: relative; min-height: 500px; }
-  .lp-hero-art .deco { position: absolute; pointer-events: none; }
-  .lp-hero-art .d-globe { right: -30px; top: 6px; width: 460px; opacity: 0.85; }
-  .lp-hero-art .d-route { left: -50px; top: 24px; width: 170px; opacity: 0.75; transform: rotate(-6deg); }
-  .lp-hero-art .d-pin { left: -6px; top: 4px; width: 28px; animation: wm-float 5.5s ease-in-out infinite; }
-  .lp-hero-art .d-plane { right: 4px; top: 84px; width: 44px; transform: rotate(-16deg); animation: wm-float 6.5s ease-in-out infinite; }
-  .lp-hero-art .travelers { position: absolute; left: 0; right: 0; bottom: 12px; height: 400px; display: flex; align-items: flex-end; justify-content: center; }
-  .lp-hero-art .travelers img { object-fit: contain; }
-  .lp-hero-art .t1 { height: 236px; margin-right: -34px; }
-  .lp-hero-art .t2 { height: 386px; position: relative; z-index: 3; }
-  .lp-hero-art .t3 { height: 226px; margin-left: -22px; }
-  .lp-hero-art .t4 { height: 218px; margin-left: -14px; }
+  .lp-hero-art { position: relative; display: flex; align-items: flex-end; align-self: end; }
+  .lp-hero-art picture { display: contents; }
+  .lp-hero-art .hero-illust { display: block; width: 116%; max-width: none; margin-left: -16%; height: auto; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 14%); mask-image: linear-gradient(to right, transparent 0, #000 14%); }  /* 右端は他セクションと同じ内側の端にそろえ、左へは文字側へ少し食い込ませる。切り抜きの左端は透過でぼかす */
 
   /* ===== STATS ===== */
   .lp-stats { max-width: 1140px; margin: 0 auto; padding: 12px 40px 76px; }
@@ -68,7 +67,7 @@
   .lp-variety-copy p.strong b { font-weight: 900; }
   .lp-btn-outline { justify-self: start; display: inline-flex; align-items: center; gap: 14px; padding: 17px 24px; border: 1.5px solid #14503C; border-radius: 8px; background: transparent; font-family: inherit; font-size: 15px; font-weight: 900; color: #14503C; cursor: pointer; transition: background .2s ease, color .2s ease; text-decoration: none; }
   .lp-btn-outline:hover { background: #14503C; color: #FAF7F2; }
-  .lp-preview-head { display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-bottom: 14px; }
+  .lp-preview-head { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 14px; }
   .lp-preview-head span { font-weight: 700; font-size: 17px; color: #3C3A34; }
   .lp-preview-head img:first-child { width: 40px; transform: rotate(-8deg); }
   .lp-preview-head img:last-child { width: 54px; }
@@ -76,8 +75,8 @@
   .lp-preview-grid a { display: grid; gap: 8px; justify-items: center; padding: 8px 2px; border-radius: 10px; transition: background .2s ease; }
   .lp-preview-grid a:hover { background: rgba(20,80,60,0.06); }
   .lp-preview-grid img { height: 160px; object-fit: contain; mix-blend-mode: multiply; }  /* 白背景のイラストを背景色になじませる */
-  .lp-preview-grid .l { font-size: 11.5px; line-height: 1.4; color: #7A756C; text-align: center; }  /* 長いタイプ名は折り返して横幅を押し広げない */
-  .lp-preview-grid img { max-width: 100%; }
+  .lp-preview-grid .l { font-size: 11.5px; line-height: 1.4; color: #7A756C; text-align: center; text-wrap: balance; }  /* 長いタイプ名は折り返して横幅を押し広げない（行の長さは均等に） */
+  .lp-preview-grid img { max-width: none; }  /* 横長のイラスト(イエスマン等)が列幅で小さく縮まないよう、高さを基準にそろえる */
   .lp-preview-more { display: flex; width: fit-content; margin: 20px auto 0; }  /* タイプ一覧のすぐ下に置く */
   .lp-preview-grid .c { font-weight: 900; font-size: 16px; letter-spacing: 0.02em; color: #14503C; }
 
@@ -86,7 +85,6 @@
   .lp-know-in { max-width: 1140px; margin: 0 auto; padding: 72px 40px 76px; }
   .lp-know-head { display: grid; gap: 14px; justify-items: center; text-align: center; margin-bottom: 44px; }
   .lp-know-head h2 { margin: 0; font-weight: 900; font-size: 27px; color: #23211C; }
-  .lp-know-head .rule { width: 46px; height: 3px; border-radius: 999px; background: #14503C; }
   .lp-know-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 268px; gap: 30px; align-items: start; }
   .lp-know-item { display: grid; gap: 14px; justify-items: center; text-align: center; padding: 0 6px; border-right: 1px solid #EDE7DC; }
   .lp-know-item .no { display: inline-grid; place-content: center; width: 30px; height: 30px; border-radius: 999px; background: #14503C; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: #fff; }
@@ -94,16 +92,7 @@
   .lp-know-item .t { font-weight: 900; font-size: 16.5px; color: #23211C; }
   .lp-know-item p { margin: 0; font-size: 12.5px; line-height: 1.95; color: #55504A; }
   .lp-manual-wrap { position: relative; padding-top: 8px; }
-  .lp-manual { position: relative; border: 1px solid #E3DCCE; border-radius: 4px; background: #FBF8F1; padding: 26px 20px 22px; box-shadow: 14px 14px 0 rgba(35,33,28,0.05), 0 10px 26px rgba(35,33,28,0.09); transform: rotate(2deg); display: grid; gap: 12px; justify-items: center; }
-  .lp-manual .mono { font-family: 'JetBrains Mono', monospace; font-size: 8px; letter-spacing: 0.22em; color: #A8A29A; }
-  .lp-manual .code { display: flex; align-items: baseline; gap: 4px; }
-  .lp-manual .code b { font-weight: 900; font-size: 34px; letter-spacing: -0.01em; color: #23211C; }
-  .lp-manual .code span { font-size: 15px; font-weight: 700; color: #23211C; }
-  .lp-manual .ttl { font-weight: 900; font-size: 19px; color: #23211C; }
-  .lp-manual > img { height: 104px; object-fit: contain; }
-  .lp-manual .foot { display: flex; align-items: center; gap: 6px; padding-top: 6px; border-top: 1px solid #E8E2D8; width: 100%; justify-content: center; }
-  .lp-manual .foot img { width: 14px; height: 14px; object-fit: contain; }
-  .lp-manual .foot span { font-weight: 700; font-size: 11.5px; color: #3C3A34; }
+  .lp-manual-img { display: block; width: 100%; height: auto; filter: drop-shadow(0 12px 22px rgba(35,33,28,0.18)); }
   .lp-seal { position: absolute; right: -30px; bottom: -34px; width: 118px; height: 118px; border-radius: 999px; background: #14503C; color: #fff; display: grid; place-content: center; text-align: center; font-size: 11.5px; font-weight: 700; line-height: 1.7; box-shadow: 0 8px 20px rgba(20,80,60,0.28); }
 
   /* ===== CTA ===== */
@@ -123,12 +112,15 @@
     .lp-hero-in { grid-template-columns: 1fr; padding: 28px 20px 0; min-height: 0; }
     .lp-hero-copy { padding-bottom: 8px; }
     .lp-hero-copy .lp-btn-yellow { justify-self: center !important; }  /* スマホでは診断ボタンを中央に（インライン指定を上書き） */
+    .lp-hero-meta { justify-content: center; }
     .lp-know-head { justify-items: start; text-align: left; }  /* スマホでは見出しを左詰め（他セクションの見出しとそろえる） */
-    .lp-hero-copy h1 { font-size: 34px; line-height: 1.3; }
-    .lp-hero-art { min-height: 300px; margin: 0 -20px; }
-    .lp-hero-art .d-globe { width: 300px; right: -40px; }
-    .lp-hero-art .travelers { height: 260px; }
-    .lp-hero-art .t1 { height: 150px; } .lp-hero-art .t2 { height: 240px; } .lp-hero-art .t3 { height: 144px; } .lp-hero-art .t4 { height: 138px; }
+    .lp-know-head h2 { justify-self: stretch; }  /* h2の下線を右端まで伸ばす */
+    .lp-hero-copy h1 { font-size: 38px; line-height: 1.35; }
+    .lp-hero-copy { gap: 20px; padding-bottom: 24px; }
+    .lp-hero-copy .lead { line-height: 1.7; }
+    .lp-hero-copy .lp-btn-yellow { padding: 17px 30px; font-size: 16px; line-height: 1.4; }
+    .lp-hero-art { margin: 0 -20px; }
+    .lp-hero-art .hero-illust { width: 100%; margin-left: 0; -webkit-mask-image: none; mask-image: none; }
     .lp-stats { padding: 4px 16px 44px; }
     .lp-stats-band { grid-template-columns: 1fr 1fr; gap: 22px 0; padding: 24px 12px; }
     .lp-stat:nth-child(odd) { border-left-color: transparent; }
@@ -140,6 +132,12 @@
     .lp-know-in { padding: 46px 20px 54px; }
     .lp-know-grid { grid-template-columns: 1fr; gap: 26px; }
     .lp-know-item { border-right: none; border-bottom: 1px solid #EDE7DC; padding-bottom: 22px; }
+    /* スマホでは アイコン左／文字右 の横並びにして縦の余白を詰める */
+    .lp-know-item { grid-template-columns: 56px minmax(0, 1fr); grid-template-areas: "img t" "img p"; column-gap: 16px; row-gap: 6px; justify-items: start; align-items: start; text-align: left; padding: 0 0 20px; }
+    .lp-know-item img { grid-area: img; width: 56px; height: 56px; }
+    .lp-know-item .t { grid-area: t; align-self: end; }
+    .lp-know-item p { grid-area: p; }
+    .lp-know-item .no { display: none; }  /* 縦に並ぶスマホでは番号がなくても順序が分かる */
     .lp-manual-wrap { justify-self: center; max-width: 268px; margin: 20px auto 40px; }
     .lp-cta-in { padding: 54px 20px 60px; }
     .lp-cta-in h2 { font-size: 24px; }
@@ -210,23 +208,17 @@
         <h1>あなたは、<br>どの<span class="u">旅人モデル</span><span class="q">？</span></h1>
         <p class="lead">16の旅人モデルから、<br>あなたの旅のクセを解析します。</p>
         <div class="lp-hero-meta">
-          <span style="display:inline-flex;align-items:center;gap:7px;"><span class="dot">◎</span>所要時間：約3分</span>
+          <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>所要時間：約3分</span>
           <span class="sep"></span>
-          <span>全16問</span>
+          <span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"></path><path d="M14 3v4h4"></path><path d="M9.5 12h5M9.5 15.5h5"></path></svg>全16問</span>
         </div>
         <a class="lp-btn-yellow" href="quiz.html" style="justify-self:start;min-width:292px;">旅人モデルを診断する<span style="font-size:20px;">→</span></a>
       </div>
       <div class="lp-hero-art">
-        <img class="deco d-globe" src="img/deco-globe.png" alt="">
-        <img class="deco d-route" src="img/deco-route.png" alt="">
-        <img class="deco d-pin" src="img/deco-pin.png" alt="">
-        <img class="deco d-plane" src="img/deco-plane.png" alt="">
-        <div class="travelers">
-          <img class="t1" src="img/traveler-map.png" alt="旅人モデル">
-          <img class="t2" src="img/traveler-hero.png" alt="旅人モデル">
-          <img class="t3" src="img/traveler-phone.png" alt="旅人モデル">
-          <img class="t4" src="img/traveler-suitcase.png" alt="旅人モデル">
-        </div>
+        <picture>
+          <source media="(max-width: 960px)" srcset="img/hero-illust-m.webp">
+          <img class="hero-illust" src="img/hero-illust.webp?v=2" alt="旅人モデルたちの冒険のイラスト">
+        </picture>
       </div>
     </div>
   </section>
@@ -291,7 +283,6 @@
     <div class="lp-know-in">
       <div class="lp-know-head">
         <h2>診断すると、<br>こんなことがわかります。</h2>
-        <span class="rule"></span>
       </div>
       <div class="lp-know-grid">
         <div class="lp-know-item">
@@ -313,13 +304,7 @@
           <p>診断結果からあなただけの「旅人取扱説明書」を発行。SNSでシェアもできます。</p>
         </div>
         <div class="lp-manual-wrap">
-          <div class="lp-manual">
-            <span class="mono">TRAVELER MANUAL</span>
-            <span class="code"><b>PCSR</b><span>型</span></span>
-            <span class="ttl">旅人取扱説明書</span>
-            <img src="img/traveler-hero.png" alt="">
-            <span class="foot"><img src="img/icon-globe.png" alt=""><span>World Mappy</span></span>
-          </div>
+          <img class="lp-manual-img" src="img/r/manual-book.webp" alt="旅人取扱説明書">
           <div class="lp-seal">友達との旅行で<br>役立つこと<br>間違いなし！</div>
         </div>
       </div>
@@ -335,8 +320,8 @@
     <img class="deco c5" src="img/deco-plane.png" alt="">
     <div class="lp-cta-in">
       <h2>あなたという旅人を、解析してみよう。</h2>
-      <span class="time">所要時間 約3分</span>
       <a class="lp-btn-yellow" href="quiz.html">旅人モデルを診断する<span style="font-size:22px;">→</span></a>
+      <span class="time">所要時間 約3分</span>
     </div>
   </section>
 
