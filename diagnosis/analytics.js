@@ -13,7 +13,7 @@ window.wmTrack = function (name, params) {
     ['#spec-country-cta',          'more_countries_click', () => ({})],
     ['#spec-incl-open',            'manual_open',          () => ({})],
     ['#spec-share a, #spec-share button', 'share_click', (el) => ({ label: 'promo_' + el.id.replace('spec-share-', '') })],
-    ['#manual-x, #manual-line, #manual-save', 'share_click', (el) => ({ label: el.id.replace('manual-', '') })],  // 取扱説明書からのシェア・画像保存
+    ['#manual-save', 'share_click', () => ({ label: 'manual_save' })],  // 取扱説明書の画像保存（スマホでは共有メニューが開く）
     ['.cmp-row',                   'compat_click',         (el) => ({ to_type: ((el.getAttribute('href') || '').match(/type=([A-Z]{4})/) || [])[1] || '' })],
     ['.cmp-all',                   'compat_all_click',     () => ({})],
     ['.lp-hero-copy .lp-btn-yellow', 'start_click',        () => ({ location: 'hero' })],

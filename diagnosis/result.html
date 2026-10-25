@@ -230,9 +230,9 @@ body{background:#FAF7F2}
 
 /* 03 スペックバー + レーダー */
 .spec-micro{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
-.spec-micro > div{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #E8E2D8;border-radius:7px;background:#FBF8F1;padding:10px 12px}
-.spec-micro .mk{font-size:11px;line-height:1.45;color:#55504A}
-.spec-micro .mv{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;white-space:nowrap;color:#14503C}
+.spec-micro > div{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2px 10px;border:1px solid #E8E2D8;border-radius:7px;background:#FBF8F1;padding:10px 12px}
+.spec-micro .mk{font-size:11px;line-height:1.45;color:#55504A;white-space:nowrap}  /* ラベルは折り返さず、入らない値のほうを次の行へ送る */
+.spec-micro .mv{font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;white-space:nowrap;color:#14503C;margin-left:auto}
 .spec-radar{display:grid;grid-template-columns:200px minmax(0,1fr);gap:18px;align-items:center;border-top:1px solid #EFEBE3;padding-top:16px;margin-top:6px}
 .spec-radar svg{width:200px;height:180px}
 .spec-radar-lg{grid-template-columns:1fr;justify-items:center;border-top:0;padding-top:0;margin-top:0;gap:0}
@@ -340,10 +340,6 @@ body{background:#FAF7F2}
 .mn-actions{max-width:356px;margin:14px auto 0;display:grid;gap:8px}
 .mn-actions button{font-family:inherit;cursor:pointer;border:none;border-radius:8px}
 .mn-actions .save{width:100%;min-height:46px;background:#fff;font-size:13px;font-weight:700;color:#2B2B28}
-.mn-actions .sns{display:flex;gap:8px}
-.mn-actions .sns button{flex:1;min-height:44px;color:#fff;font-size:12.5px;font-weight:700}
-.mn-actions .x{background:#000}
-.mn-actions .line{background:#06c755}
 .mn-actions .close{width:100%;min-height:44px;border:1px solid rgba(255,255,255,.4);background:none;font-size:12.5px;color:#fff}
 
 /* 07 INCLUDED 付属品 */
@@ -355,9 +351,10 @@ body{background:#FAF7F2}
 .spec-incl-btns{display:grid;gap:10px}
 .spec-incl-btns a{display:flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 20px;border-radius:8px;font-size:13.5px;font-weight:900}
 .spec-share{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px}
-.spec-share[hidden]{display:none}
+.spec-share[hidden],.spec-share button[hidden]{display:none}
 #post-cards{display:grid;gap:16px;max-width:760px;margin:16px auto}
 #post-cards > .feedback-block{margin:0;max-width:none}
+.promo-share[hidden]{display:none}
 .promo-share{background:#fff;border-radius:12px;border:1px solid var(--border);padding:20px;text-align:center}
 .promo-share .feedback-title{margin-bottom:12px}
 .spec-col #post-cards{max-width:none;margin:0;gap:20px}
@@ -365,6 +362,8 @@ body{background:#FAF7F2}
 .spec-share .x{background:#000;color:#fff}
 .spec-share .line{background:#06c755;color:#fff}
 .spec-share .copy{background:#fff;color:#3C3A34;border-color:#E3DCCE}
+.spec-share.native-mode #spec-share-x,.spec-share.native-mode #spec-share-line,.spec-share.native-mode #spec-share-copy{display:none}
+.spec-share .native{background:#14503C;color:#fff;min-width:200px}
 .spec-share .copy.copied{background:#14503C;color:#fff;border-color:#14503C}
 .spec-incl-btns .primary{background:#ffc200;color:#23211C}
 .spec-incl-btns .ghost{background:#fff;border:1px solid #E3DCCE;color:#3C3A34}
@@ -573,9 +572,10 @@ body{background:#FAF7F2}
       </div>
     </div>
   </div>
-  <div class="promo-share">
+  <div class="promo-share" hidden>
     <div class="feedback-title">この診断をシェア</div>
     <div class="spec-share" id="spec-share" hidden>
+      <button class="native" id="spec-share-native" type="button" hidden>📤 シェアする</button>
       <a class="x" id="spec-share-x" href="#" target="_blank" rel="noopener">𝕏</a>
       <a class="line" id="spec-share-line" href="#" target="_blank" rel="noopener">LINE</a>
       <button class="copy" id="spec-share-copy" type="button">リンクをコピー</button>
@@ -604,10 +604,6 @@ body{background:#FAF7F2}
   <div id="manual-sheets"><div class="mn-sheet" id="manual-front"></div><div class="mn-sheet" id="manual-back"></div></div>
   <div class="mn-actions">
     <button type="button" class="save" id="manual-save">画像として保存</button>
-    <div class="sns">
-      <button type="button" class="x" id="manual-x">𝕏 でシェア</button>
-      <button type="button" class="line" id="manual-line">LINEでシェア</button>
-    </div>
     <button type="button" class="close" id="manual-close">閉じる</button>
   </div>
 </div>
@@ -1321,7 +1317,6 @@ function setupManual(rt){
   const ov = document.getElementById('manual-overlay');
   const openBtn = document.getElementById('spec-incl-open');
   if (!ov || !openBtn) return;
-  const quizUrl = new URL('quiz.html', location.href).toString();
   const shareText = '私の旅行タイプは「' + t.name + '」でした！あなたの旅行タイプは？ #WorldMappy 旅行タイプ診断';
 
   const open = () => { buildManual(rt); ov.classList.add('open'); ov.scrollTop = 0; document.body.style.overflow = 'hidden'; };
@@ -1331,13 +1326,6 @@ function setupManual(rt){
   // シートの外側（背景・シート間の隙間）をクリックしたら閉じる
   ov.addEventListener('click', e => { if (e.target === ov || e.target.id === 'manual-sheets') close(); });
   addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-
-  document.getElementById('manual-x').addEventListener('click', () => {
-    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(quizUrl), '_blank');
-  });
-  document.getElementById('manual-line').addEventListener('click', () => {
-    window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(quizUrl) + '&text=' + encodeURIComponent(shareText), '_blank');
-  });
 
   // 画像保存の前に、取説内の<img>をdata URL化して読み込み完了まで待つ。
   // スマホ(特にiOS Safari)では、外部URLの画像が保存画像に写らず、イラストが消えるため。
@@ -1354,13 +1342,26 @@ function setupManual(rt){
 
   // 結果ページ上のシェアボタン：旅行タイプ診断そのものを広めるためのもの（誰が見ても表示）。
   // 共有先は診断のトップ。流入元をアナリティクスで見分けられるようUTMを付ける。
+  // PCでは診断のシェアカードごと出さない（スマホだけ表示）
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   const sharePane = document.getElementById('spec-share');
-  if (sharePane) {
+  if (sharePane && isMobile) {
     sharePane.hidden = false;
+    sharePane.closest('.promo-share').hidden = false;
     const promoText = 'あなたはどの旅人モデル？ 16種類から分かる「旅行タイプ診断」（約3分） #WorldMappy 旅行タイプ診断';
     const promoUrl = medium => { const u = new URL('./', location.href); u.search = 'utm_source=share&utm_medium=' + medium + '&utm_campaign=diagnosis_share'; return u.toString(); };
     document.getElementById('spec-share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(promoText) + '&url=' + encodeURIComponent(promoUrl('x'));
     document.getElementById('spec-share-line').href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(promoUrl('line')) + '&text=' + encodeURIComponent(promoText);
+    // スマホ（OSの共有メニューが使える端末）では、個別のボタンの代わりに「シェアする」1つにまとめる
+    if (navigator.share) {
+      sharePane.classList.add('native-mode');
+      const nativeBtn = document.getElementById('spec-share-native');
+      nativeBtn.hidden = false;
+      nativeBtn.addEventListener('click', async () => {
+        try { await navigator.share({ title: 'World Mappy 旅行タイプ診断', text: promoText, url: promoUrl('native') }); }
+        catch (e) { /* キャンセル(AbortError)などは何もしない */ }
+      });
+    }
     const copyBtn = document.getElementById('spec-share-copy');
     copyBtn.addEventListener('click', async () => {
       const url = promoUrl('copy');
