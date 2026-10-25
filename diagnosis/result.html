@@ -158,15 +158,14 @@ body{background:#FAF7F2}
 .spec-hidden{display:none}
 .spec-panel{border:1px solid #E8E2D8;border-radius:12px;background:#fff;padding:22px 24px 24px;margin-bottom:20px;box-shadow:0 2px 0 rgba(20,40,30,0.03),0 8px 20px rgba(20,40,30,0.05)}
 .spec-h{display:flex;align-items:center;gap:10px;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #E8E2D8;flex-wrap:wrap}
-.spec-h .no{width:26px;height:26px;border-radius:6px;background:#14503C;color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;display:grid;place-content:center;flex-shrink:0}
+.spec-h .no{width:30px;height:30px;border-radius:7px;background:#14503C;color:#fff;font-family:inherit;font-size:14px;font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:0.02em;display:grid;place-content:center;flex-shrink:0}
 .spec-h .en{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.1em;color:#14503C}
 .spec-h .sep{width:1px;height:13px;background:#DCD6CA}
 .spec-h .ttl{font-size:13px;font-weight:700;color:#3C3A34}
-.spec-grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.spec-grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .spec-col{display:flex;flex-direction:column;gap:20px;min-width:0}
 .spec-col > .spec-panel{margin:0}
-.spec-col > .spec-panel:last-child{flex:1}
-@media(max-width:900px){.spec-grid2{grid-template-columns:1fr}.spec-col > .spec-panel:last-child{flex:none}}
+@media(max-width:900px){.spec-grid2{grid-template-columns:1fr}}
 .id-stamp{position:absolute;right:-18px;bottom:-14px;width:108px;transform:rotate(-8deg)}
 .id-side{position:relative}
 /* 05 COMPATIBILITY */
@@ -210,7 +209,9 @@ body{background:#FAF7F2}
 .id-hero img{max-height:380px;max-width:100%;object-fit:contain}
 .id-hero img.illust{mix-blend-mode:multiply}
 .id-side{border:1px solid #E3DCCE;border-radius:10px;background:#FBF8F1;padding:20px 22px 24px;display:grid;gap:12px}
-@media(max-width:600px){.id-side{display:none}}  /* スマホではIDカードを非表示 */
+@media(max-width:600px){.id-side{display:none}}  /* スマホではIDカードを非表示（型番は見出し行に出す） */
+.spec-h-model{display:none;margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.04em;color:#8C877E}
+@media(max-width:600px){.spec-h-model{display:inline}}
 .id-side .head{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:#3C3A34;border-bottom:1px solid #E3DCCE;padding-bottom:11px}
 .id-side .row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:10px;align-items:baseline;padding-bottom:9px;border-bottom:1px solid #EDE7DC}
 .id-side .row .k{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:0.06em;color:#8C877E}
@@ -350,14 +351,11 @@ body{background:#FAF7F2}
 /* 07 INCLUDED 付属品 */
 .spec-incl{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:center}
 .spec-incl-book{display:block;width:100%;max-width:200px;filter:drop-shadow(0 12px 22px rgba(35,33,28,0.18))}
-.spec-incl-list{display:grid;gap:10px;margin:0 0 14px;padding:0;list-style:none}
-.spec-incl-list li{display:flex;align-items:center;gap:9px;font-size:13px;color:#3C3A34}
-.spec-incl-list li::before{content:"✓";color:#2E7D53;font-weight:900}
 .spec-incl-btns{display:grid;gap:10px}
 .spec-incl-btns a{display:flex;align-items:center;justify-content:space-between;min-height:50px;padding:0 20px;border-radius:8px;font-size:13.5px;font-weight:900}
 .spec-incl-btns .primary{background:#ffc200;color:#23211C}
 .spec-incl-btns .ghost{background:#fff;border:1px solid #E3DCCE;color:#3C3A34}
-@media(max-width:600px){.spec-incl{grid-template-columns:1fr;justify-items:center}}
+@media(max-width:600px){.spec-incl{grid-template-columns:1fr;justify-items:stretch;gap:16px}.spec-incl-book{margin:0 auto;max-width:170px}.spec-panel{padding:20px 16px 22px}}
 
 /* CTA バンド（正典: 緑帯84px + 下に2ボタン + 右に紙飛行機の子ども240px） */
 .spec-cta-wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:20px;align-items:end;margin-top:8px}
@@ -450,7 +448,7 @@ body{background:#FAF7F2}
 
   <!-- 01 IDENTITY -->
   <div class="spec-panel id-card">
-    <div class="spec-h"><span class="no">01</span><span class="ttl">あなたの旅人モデルは…</span></div>
+    <div class="spec-h"><span class="no">01</span><span class="ttl">あなたの旅人モデルは…</span><span class="spec-h-model" id="id-model-no"></span></div>
     <div class="id-grid">
       <div>
         <div class="id-code" id="id-code">—<span>型</span></div>
@@ -501,7 +499,7 @@ body{background:#FAF7F2}
   <div class="spec-panel spec-hidden" id="spec-country-sec">
     <div class="spec-h"><span class="no">04</span><span class="ttl">推奨動作環境</span></div>
     <p style="margin:0 0 16px;font-size:13px;line-height:2;color:#55504A;text-wrap:pretty" id="spec-env-lead"></p>
-    <div style="display:grid;gap:3px;margin:14px 0 8px"><span style="font-size:13px;font-weight:700;color:#14503C" id="spec-country-title">おすすめの国</span><span style="font-size:11.5px;color:#8C877E">計画ページで旅のヒントをチェック！</span></div>
+    <div style="display:grid;gap:3px;margin:14px 0 8px"><span style="font-size:13px;font-weight:700;color:#14503C" id="spec-country-title">おすすめの国</span><span style="font-size:11.5px;color:#8C877E">国別の旅行ガイドで、見どころや予算をチェック！</span></div>
     <div class="spec-country-grid" id="spec-country-grid"></div>
     <a class="spec-cta-in" id="spec-country-cta" href="../">他のおすすめの国を見る<span>→</span></a>
   </div>
@@ -536,9 +534,6 @@ body{background:#FAF7F2}
     <div class="spec-incl">
       <div><img class="spec-incl-book" id="spec-incl-book" src="img/r/manual-book.png" alt="旅人取扱説明書"></div>
       <div>
-        <ul class="spec-incl-list">
-          <li>基本仕様</li><li>正しい扱い方</li><li>使用上の注意</li><li>推奨環境</li>
-        </ul>
         <div class="spec-incl-btns">
           <a class="primary" id="spec-incl-open" href="#manual">取扱説明書を開く<span>→</span></a>
           <a class="ghost" href="#share-block">この結果をシェアする<span>→</span></a>
@@ -928,7 +923,7 @@ function buildAutoCompat(myType) {
 
   function rows(items, bad, offset) {
     return items.map(({code, info, pct, text}, i) => `
-    <a class="cmp-row${bad ? ' bad' : ''}" href="?type=${code}">
+    <a class="cmp-row${bad ? ' bad' : ''}" href="?type=${code}" target="_blank" rel="noopener">
       <img src="${typeImg(code) || BUSTS[(i + offset) % BUSTS.length]}" alt=""${typeImg(code) ? ' class="illust"' : ''}>
       <span>
         <span class="nm"><b>${code}型</b><span>（${info.name}）</span></span>
@@ -944,7 +939,7 @@ function buildAutoCompat(myType) {
     ${rows(top2, false, 0)}
     <div class="cmp-head bad"><span class="dot"></span>ひと工夫でうまくいくモデル ─ 役割分担がカギ</div>
     ${rows(bottom1, true, 2)}
-    <a class="cmp-all" href="types.html">全モデルとの相性を確認する<img src="img/r/ic-group.png" alt="" style="width:18px;height:18px;object-fit:contain"></a>`;
+    <a class="cmp-all" href="types.html" target="_blank" rel="noopener">全モデルとの相性を確認する<img src="img/r/ic-group.png" alt="" style="width:18px;height:18px;object-fit:contain"></a>`;
 }
 
 // ===== シェア画像生成 =====
@@ -1291,6 +1286,7 @@ function renderSpecSheet(rt){
 
   // --- 01 IDENTITY ---
   set('id-code', rt + '<span>型</span>');
+  set('id-model-no', '型番：' + rt + '-' + specDigits);
   set('id-name', t.name);
   set('id-chips', (t.traits||[]).map((x,i) => '<span><img src="'+RES_ICON[i]+'" alt="">'+x+'</span>').join(''));
   const heroImg = document.getElementById('id-hero-img');
@@ -1334,10 +1330,11 @@ function renderSpecSheet(rt){
   set('spec-country-grid', COUNTRIES(rt).map(name => {
     const id = COUNTRY_PAGE[name];
     return id
-      ? '<a href="../'+id+'/index.html"><img src="../'+id+'/素材/ヒーロー.webp" alt="'+name+'" loading="lazy"><span class="cap">'+name+'<span>→</span></span></a>'
-      : '<a href="../index.html" class="noimg"><span class="cap">'+name+'<span>→</span></span></a>';
+      ? '<a href="../'+id+'/index.html" target="_blank" rel="noopener"><img src="../'+id+'/素材/ヒーロー.webp" alt="'+name+'" loading="lazy"><span class="cap">'+name+'<span>→</span></span></a>'
+      : '<a href="../index.html" class="noimg" target="_blank" rel="noopener"><span class="cap">'+name+'<span>→</span></span></a>';
   }).join(''));
-  document.getElementById('spec-country-cta').href = '../index.html';
+  const ctaEl = document.getElementById('spec-country-cta');
+  ctaEl.href = '../index.html'; ctaEl.target = '_blank'; ctaEl.rel = 'noopener';
 
   // --- 06 PERFORMANCE TIP ---
   document.getElementById('spec-tip-sec').classList.remove('spec-hidden');
@@ -1350,7 +1347,7 @@ function renderSpecSheet(rt){
   const bandCta = document.getElementById('spec-band-cta'); if (bandCta) bandCta.href = '../index.html';
 }
 
-// §02〜§07 の配置：番号の偶数→左列 / 奇数→右列（固定）。スマホ幅では左列に番号順で集約。
+// §02〜§07 の配置：番号の偶数と§07(付属品)→左列 / それ以外の奇数→右列（固定）。スマホ幅では左列に番号順で集約。
 function layoutSpecCols(){
   const cols = document.querySelectorAll('.spec-grid2 .spec-col');
   if (cols.length < 2) return;
@@ -1359,7 +1356,7 @@ function layoutSpecCols(){
   const mobile = window.matchMedia('(max-width:900px)').matches;
   panels.forEach(p => {
     const n = +p.querySelector('.spec-h .no').textContent;
-    cols[mobile ? 0 : (n % 2 === 0 ? 0 : 1)].appendChild(p);
+    cols[mobile ? 0 : (n % 2 === 0 || n === 7 ? 0 : 1)].appendChild(p);
   });
 }
 
