@@ -12,7 +12,8 @@ window.wmTrack = function (name, params) {
     ['#spec-country-grid a',       'country_click',        (el) => ({ country: text(el) })],
     ['#spec-country-cta',          'more_countries_click', () => ({})],
     ['#spec-incl-open',            'manual_open',          () => ({})],
-    ['#share-block a, #share-block button', 'share_click', (el) => ({ label: text(el) })],
+    ['#spec-share a, #spec-share button', 'share_click', (el) => ({ label: 'result_' + el.id.replace('spec-share-', '') })],
+    ['#manual-x, #manual-line, #manual-save', 'share_click', (el) => ({ label: el.id.replace('manual-', '') })],  // 取扱説明書からのシェア・画像保存
     ['.cmp-row',                   'compat_click',         (el) => ({ to_type: (el.getAttribute('href') || '').replace('?type=', '') })],
     ['.cmp-all',                   'compat_all_click',     () => ({})],
     ['.lp-hero-copy .lp-btn-yellow', 'start_click',        () => ({ location: 'hero' })],

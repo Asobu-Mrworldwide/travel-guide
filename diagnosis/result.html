@@ -25,7 +25,7 @@
 <style>
 body{background:#FAF7F2}
 .page-wrap{max-width:1040px;margin:0 auto;padding:26px 20px 64px}
-.viewing-banner,.type-browser,.share-block,.feedback-block,.country-search-cta,#bottom-action-link{max-width:760px;margin-left:auto;margin-right:auto}
+.viewing-banner,.type-browser,.feedback-block,.country-search-cta,#bottom-action-link{max-width:760px;margin-left:auto;margin-right:auto}
 .result-manual-eyebrow,.result-card{max-width:760px;margin-left:auto;margin-right:auto}
 /* 診断結果 = 旅人取扱説明書。正典（Travel Diagnosis）の紙・スペックシート調に */
 .result-manual-eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.22em;color:#A8A29A}
@@ -105,24 +105,8 @@ body{background:#FAF7F2}
 .compat-note{font-size:0.74em;color:var(--sub);margin-top:14px;line-height:1.65;padding:10px 14px;background:#f8faf9;border-radius:8px;border:1px solid var(--border)}
 
 /* シェアブロック */
-.share-block{background:#f4f8f6;border-radius:12px;padding:16px 18px;margin:20px 0;border:1px solid var(--border)}
-.share-block-title{font-size:0.8em;font-weight:900;margin-bottom:4px;color:var(--text)}
-.share-block-sub{font-size:0.72em;color:var(--sub);margin-bottom:12px;line-height:1.6}
-.share-buttons{display:flex;gap:8px;flex-wrap:wrap}
-.share-btn{display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:20px;font-size:0.8em;font-weight:700;cursor:pointer;border:none;transition:opacity 0.15s;text-decoration:none;font-family:inherit}
-.share-btn:hover{opacity:0.85}
-.share-btn.x{background:#000;color:#fff}
-.share-btn.line{background:#06c755;color:#fff}
-.share-btn.copy{background:#fff;color:#444;border:1.5px solid var(--border)}
-.share-btn.copy.copied{background:var(--green);color:#fff;border-color:var(--green)}
-.share-btn.saveimg{background:#fff;color:#444;border:1.5px solid var(--border)}
-.share-btn.saveimg.saved{background:var(--green);color:#fff;border-color:var(--green)}
-.share-btn.native{background:var(--green);color:#fff;display:none}
 
 /* シェア画像プレビュー */
-.share-image-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
-.share-image-preview{width:120px;height:120px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.15);flex-shrink:0}
-.share-image-caption{font-size:0.72em;color:var(--sub);line-height:1.6}
 
 /* 国を探すCTAボタン */
 .country-search-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:16px 24px;border-radius:30px;font-size:0.92em;font-weight:900;margin:24px 0 12px;transition:background 0.2s;box-shadow:0 4px 16px rgba(29,144,116,0.28)}
@@ -359,12 +343,23 @@ body{background:#FAF7F2}
 
 /* 07 INCLUDED 付属品 */
 .spec-incl{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:center}
+.spec-incl-bookwrap{position:relative;container-type:inline-size;width:100%;max-width:200px}
+/* 表紙の「旅人取扱説明書」の上に、表紙の傾き(約7°)に合わせて型番を重ねる */
+.spec-incl-model{position:absolute;left:55%;top:20.5%;transform:translate(-50%,-50%) rotate(7deg);white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:9px;font-size:7.5cqw;font-weight:700;letter-spacing:0.08em;color:#5A5348;pointer-events:none}
 .spec-incl-book{display:block;width:100%;max-width:200px;filter:drop-shadow(0 12px 22px rgba(35,33,28,0.18))}
 .spec-incl-btns{display:grid;gap:10px}
-.spec-incl-btns a{display:flex;align-items:center;justify-content:space-between;min-height:50px;padding:0 20px;border-radius:8px;font-size:13.5px;font-weight:900}
+.spec-incl-btns a{display:flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 20px;border-radius:8px;font-size:13.5px;font-weight:900}
+.spec-share{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px}
+.spec-share[hidden]{display:none}
+.spec-share-lb{width:100%;text-align:center;font-size:11.5px;font-weight:700;color:#8C877E}
+.spec-incl-btns .spec-share a,.spec-share button{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 18px;border-radius:999px;font-size:13px;font-weight:900;cursor:pointer;border:1px solid transparent;font-family:inherit;text-decoration:none}
+.spec-share .x{background:#000;color:#fff}
+.spec-share .line{background:#06c755;color:#fff}
+.spec-share .copy{background:#fff;color:#3C3A34;border-color:#E3DCCE}
+.spec-share .copy.copied{background:#14503C;color:#fff;border-color:#14503C}
 .spec-incl-btns .primary{background:#ffc200;color:#23211C}
 .spec-incl-btns .ghost{background:#fff;border:1px solid #E3DCCE;color:#3C3A34}
-@media(max-width:600px){.spec-incl{grid-template-columns:1fr;justify-items:stretch;gap:16px}.spec-incl-book{margin:0 auto;max-width:170px}.spec-panel{padding:20px 16px 22px}}
+@media(max-width:600px){.spec-incl{grid-template-columns:1fr;justify-items:stretch;gap:16px}.spec-incl-bookwrap{margin:0 auto;max-width:170px}.spec-panel{padding:20px 16px 22px}}
 
 /* CTA バンド（正典: 緑帯84px + 下に2ボタン + 右に紙飛行機の子ども240px） */
 .spec-cta-wrap{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:20px;align-items:end;margin-top:8px}
@@ -541,11 +536,16 @@ body{background:#FAF7F2}
     <div class="spec-h"><span class="no">07</span><span class="ttl">付属品</span></div>
     <p style="margin:0 0 12px;font-size:13px;line-height:2;color:#55504A" id="spec-incl-lead">本製品には、取扱説明書が付属しています。ご家族やご友人に共有して、より良い旅のサポートを受けましょう。</p>
     <div class="spec-incl">
-      <div><img class="spec-incl-book" id="spec-incl-book" src="img/r/manual-book.webp" alt="旅人取扱説明書"></div>
+      <div><div class="spec-incl-bookwrap"><img class="spec-incl-book" id="spec-incl-book" src="img/r/manual-book.webp" alt="旅人取扱説明書"><div class="spec-incl-model" id="spec-incl-model"></div></div></div>
       <div>
         <div class="spec-incl-btns">
           <a class="primary" id="spec-incl-open" href="#manual">取扱説明書を開く<span>→</span></a>
-          <a class="ghost" href="#share-block">この結果をシェアする<span>→</span></a>
+          <div class="spec-share" id="spec-share" hidden>
+            <span class="spec-share-lb">結果をシェア</span>
+            <a class="x" id="spec-share-x" href="#" target="_blank" rel="noopener">𝕏</a>
+            <a class="line" id="spec-share-line" href="#" target="_blank" rel="noopener">LINE</a>
+            <button class="copy" id="spec-share-copy" type="button">リンクをコピー</button>
+          </div>
         </div>
       </div>
     </div>
@@ -555,26 +555,6 @@ body{background:#FAF7F2}
 
   </div><!-- /spec-grid2 -->
   </div><!-- /spec -->
-
-  <!-- 結果をシェアする -->
-  <div class="share-block" id="share-block">
-    <div class="share-block-title">結果をシェアする</div>
-    <div class="share-block-sub">友達を誘って、お互いの旅行タイプを比べてみませんか？</div>
-
-    <div class="share-image-row">
-      <img class="share-image-preview" id="share-image-preview" alt="シェア用画像プレビュー">
-      <div class="share-image-caption">この画像を保存して、SNSの投稿やストーリーズに使えます。</div>
-    </div>
-    <canvas id="share-canvas" width="1080" height="1080" style="display:none"></canvas>
-
-    <div class="share-buttons">
-      <button class="share-btn native" id="share-native" type="button">📤 共有する（Instagram等）</button>
-      <a class="share-btn x" id="share-x" href="#" target="_blank" rel="noopener">𝕏 でシェア</a>
-      <a class="share-btn line" id="share-line" href="#" target="_blank" rel="noopener">LINEでシェア</a>
-      <button class="share-btn copy" id="share-copy" type="button">🔗 リンクをコピー</button>
-      <button class="share-btn saveimg" id="share-saveimg" type="button">🖼️ 画像を保存</button>
-    </div>
-  </div>
 
   <!-- フィードバック -->
   <div class="feedback-block" id="feedback-block" style="display:none">
@@ -960,155 +940,6 @@ function shadeColor(hex, percent) {
   return '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0')).join('');
 }
 
-function roundRect(ctx, x, y, w, h, r) {
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.arcTo(x + w, y, x + w, y + h, r);
-  ctx.arcTo(x + w, y + h, x, y + h, r);
-  ctx.arcTo(x, y + h, x, y, r);
-  ctx.arcTo(x, y, x + w, y, r);
-  ctx.closePath();
-}
-
-function drawShareImage(type) {
-  const t = TYPES[type];
-  const canvas = document.getElementById('share-canvas');
-  const ctx = canvas.getContext('2d');
-  const W = canvas.width, H = canvas.height;
-  const jpFont = "'Noto Sans JP','Hiragino Sans','Yu Gothic Medium',YuGothic,Meiryo,sans-serif";
-
-  // 背景グラデーション
-  const grad = ctx.createLinearGradient(0, 0, W, H);
-  grad.addColorStop(0, t.color);
-  grad.addColorStop(1, shadeColor(t.color, -0.28));
-  ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, W, H);
-
-  ctx.textAlign = 'center';
-
-  // 上部タグ
-  ctx.fillStyle = 'rgba(255,255,255,0.75)';
-  ctx.font = `700 30px ${jpFont}`;
-  ctx.fillText('World Mappy 旅行タイプ診断', W/2, 130);
-
-  // アイコン円
-  const iconY = 330;
-  ctx.beginPath();
-  ctx.arc(W/2, iconY, 130, 0, Math.PI*2);
-  ctx.fillStyle = 'rgba(255,255,255,0.18)';
-  ctx.fill();
-  ctx.lineWidth = 5;
-  ctx.strokeStyle = 'rgba(255,255,255,0.4)';
-  ctx.stroke();
-  ctx.font = '150px sans-serif';
-  ctx.fillStyle = '#fff';
-  ctx.fillText(type[1] === 'C' ? '🏛️' : '🏖️', W/2, iconY + 55);
-
-  // タイプコード
-  ctx.font = "900 110px 'Courier New', monospace";
-  ctx.fillStyle = 'rgba(255,255,255,0.9)';
-  ctx.fillText(type, W/2, 590);
-
-  // タイプ名
-  ctx.font = `900 56px ${jpFont}`;
-  ctx.fillStyle = '#fff';
-  ctx.fillText(t.name, W/2, 670);
-
-  // トレイトバッジ（中央揃えで自前レイアウト）
-  ctx.font = `700 28px ${jpFont}`;
-  const padX = 26, gap = 14, chipH = 56, chipY = 730;
-  const widths = t.traits.map(tr => ctx.measureText(tr).width + padX*2);
-  const totalW = widths.reduce((a,b) => a+b, 0) + gap*(widths.length-1);
-  let cx = W/2 - totalW/2;
-  t.traits.forEach((tr, i) => {
-    const w = widths[i];
-    ctx.fillStyle = 'rgba(255,255,255,0.22)';
-    roundRect(ctx, cx, chipY, w, chipH, chipH/2);
-    ctx.fill();
-    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
-    ctx.lineWidth = 2;
-    roundRect(ctx, cx, chipY, w, chipH, chipH/2);
-    ctx.stroke();
-    ctx.fillStyle = '#fff';
-    ctx.fillText(tr, cx + w/2, chipY + chipH/2 + 10);
-    cx += w + gap;
-  });
-
-  // 下部の白いバー
-  const barH = 130;
-  ctx.fillStyle = '#fff';
-  ctx.fillRect(0, H - barH, W, barH);
-  ctx.fillStyle = '#1a1a1a';
-  ctx.font = `900 34px ${jpFont}`;
-  ctx.fillText('あなたの旅行タイプは？', W/2, H - barH/2 - 8);
-  ctx.font = `600 24px ${jpFont}`;
-  ctx.fillStyle = '#666';
-  ctx.fillText('16種類・無料診断 → World Mappy', W/2, H - barH/2 + 32);
-
-  return canvas;
-}
-
-// ===== シェア機能 =====
-function setupShare(myTypeCode) {
-  const quizUrl = new URL('quiz.html', location.href).toString();
-  const t = TYPES[myTypeCode];
-  const text = `私の旅行タイプは「${t.name}」でした！あなたの旅行タイプは？ #WorldMappy 旅行タイプ診断`;
-
-  document.getElementById('share-x').href =
-    'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(quizUrl);
-  document.getElementById('share-line').href =
-    'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(quizUrl) + '&text=' + encodeURIComponent(text);
-
-  document.getElementById('share-copy').addEventListener('click', () => {
-    navigator.clipboard.writeText(quizUrl).then(() => {
-      const btn = document.getElementById('share-copy');
-      const original = btn.textContent;
-      btn.textContent = '✓ コピーしました';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 2000);
-    });
-  });
-
-  // シェア用画像の生成・プレビュー・保存
-  const canvas = drawShareImage(myTypeCode);
-  document.getElementById('share-image-preview').src = canvas.toDataURL('image/png');
-
-  // 対応デバイスのみ「共有する」ボタンを表示（Web Share API）
-  if (navigator.share) {
-    canvas.toBlob(blob => {
-      const file = new File([blob], `worldmappy-${myTypeCode}.png`, {type:'image/png'});
-      if (!navigator.canShare || navigator.canShare({files:[file]})) {
-        const nativeBtn = document.getElementById('share-native');
-        nativeBtn.style.display = '';
-        nativeBtn.addEventListener('click', async () => {
-          try {
-            await navigator.share({files:[file], title:'World Mappy 旅行タイプ診断', text});
-          } catch (e) { /* ユーザーがキャンセルした場合は何もしない */ }
-        });
-      }
-    }, 'image/png');
-  }
-
-  document.getElementById('share-saveimg').addEventListener('click', () => {
-    canvas.toBlob(blob => {
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `worldmappy-${myTypeCode}.png`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-
-      const btn = document.getElementById('share-saveimg');
-      const original = btn.textContent;
-      btn.textContent = '✓ 保存しました';
-      btn.classList.add('saved');
-      setTimeout(() => { btn.textContent = original; btn.classList.remove('saved'); }, 2000);
-    }, 'image/png');
-  });
-}
-
 // ===== 総合解説文（軸本文を組み立てて締めの文を続ける、軸ごとに段落分け） =====
 function buildDescFromAxisText(type) {
   const t = TYPES[type];
@@ -1128,16 +959,6 @@ function renderResult(type) {
   buildAutoCompat(type);
 
   document.title = `${t.name}（${type}）診断結果 | World Mappy`;
-
-  // 自分の診断結果を表示中のときだけシェアブロックを出す
-  const myType = sessionStorage.getItem('myType');
-  const shareBlock = document.getElementById('share-block');
-  if (myType === type) {
-    shareBlock.style.display = '';
-    setupShare(type);
-  } else {
-    shareBlock.style.display = 'none';
-  }
 }
 
 /* ハンバーガー: 右スライドのドロワー */
@@ -1296,6 +1117,7 @@ function renderSpecSheet(rt){
   // --- 01 IDENTITY ---
   set('id-code', rt + '<span>型</span>');
   set('id-model-no', '型番：' + rt + '-' + specDigits);
+  set('spec-incl-model', rt + '型');
   set('id-name', t.name);
   set('id-chips', (t.traits||[]).map((x,i) => '<span><img src="'+RES_ICON[i]+'" alt="">'+x+'</span>').join(''));
   const heroImg = document.getElementById('id-hero-img');
@@ -1502,6 +1324,35 @@ function setupManual(rt){
     window.open('https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(quizUrl) + '&text=' + encodeURIComponent(shareText), '_blank');
   });
 
+  // 画像保存の前に、取説内の<img>をdata URL化して読み込み完了まで待つ。
+  // スマホ(特にiOS Safari)では、外部URLの画像が保存画像に写らず、イラストが消えるため。
+  const inlineImages = async (root) => {
+    await Promise.all([...root.querySelectorAll('img')].map(async (img) => {
+      if (!img.src || img.src.startsWith('data:')) return;
+      try {
+        const blob = await (await fetch(img.src)).blob();
+        img.src = await new Promise((ok, ng) => { const fr = new FileReader(); fr.onload = () => ok(fr.result); fr.onerror = ng; fr.readAsDataURL(blob); });
+        if (img.decode) await img.decode();
+      } catch (e) {}
+    }));
+  };
+
+  // 結果ページ上のシェアボタン（自分の診断結果を見ているときだけ表示）
+  const sharePane = document.getElementById('spec-share');
+  if (sharePane && sessionStorage.getItem('myType') === rt) {
+    sharePane.hidden = false;
+    document.getElementById('spec-share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(quizUrl);
+    document.getElementById('spec-share-line').href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(quizUrl) + '&text=' + encodeURIComponent(shareText);
+    const copyBtn = document.getElementById('spec-share-copy');
+    copyBtn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(quizUrl); } catch (e) {
+        const ta = document.createElement('textarea'); ta.value = quizUrl; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+      }
+      const orig = copyBtn.textContent; copyBtn.textContent = '✓ コピーしました'; copyBtn.classList.add('copied');
+      setTimeout(() => { copyBtn.textContent = orig; copyBtn.classList.remove('copied'); }, 2000);
+    });
+  }
+
   const saveBtn = document.getElementById('manual-save');
   saveBtn.addEventListener('click', async () => {
     if (!window.htmlToImage) { alert('画像の保存機能を読み込めませんでした。スクリーンショットで保存してください。'); return; }
@@ -1512,7 +1363,11 @@ function setupManual(rt){
       // 表面・裏面の2枚を別々のPNGに書き出す
       const files = [];
       for (const [id, label] of [['manual-front', '表'], ['manual-back', '裏']]) {
-        const blob = await htmlToImage.toBlob(document.getElementById(id), { pixelRatio: 2, backgroundColor: '#fff' });
+        const node = document.getElementById(id);
+        await inlineImages(node);
+        // iOS Safariは1回目の描画で画像が空になることがあるため、軽い描画で一度ならしてから本番を出力する
+        if (/iPhone|iPad|iPod|Mac/i.test(navigator.userAgent) && 'ontouchend' in document) await htmlToImage.toBlob(node, { pixelRatio: 0.2, backgroundColor: '#fff' });
+        const blob = await htmlToImage.toBlob(node, { pixelRatio: 2, backgroundColor: '#fff' });
         files.push(new File([blob], 'worldmappy-manual-' + rt + '-' + (label === '表' ? '1' : '2') + '.png', { type: 'image/png' }));
       }
       const isMobile = /Android|iPhone|iPad|Mobi/i.test(navigator.userAgent);
