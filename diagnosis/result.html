@@ -187,6 +187,9 @@ body{background:#FAF7F2}
 .cmp-row .pct{font-weight:900;font-size:28px;line-height:1;color:#23211C;white-space:nowrap}
 .cmp-row.bad .pct{color:#A8503A}
 .cmp-row .pct small{font-size:13px}
+/* 左右の下端をそろえるために伸ばされたとき、余った高さを下の余白に溜めず、行の間へ均等に配る */
+#spec-compat-sec[data-eq]{display:flex;flex-direction:column}
+#spec-compat-sec[data-eq] #compat-auto{flex:1;display:flex;flex-direction:column;justify-content:space-between}
 .cmp-all{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:50px;border:1px solid #DCD6CA;border-radius:8px;background:#fff;font-size:13.5px;font-weight:700;color:#3C3A34;margin-top:4px}
 
 /* 01 アイデンティティ */
@@ -334,7 +337,7 @@ body{background:#FAF7F2}
 #post-cards > .feedback-block{margin:0;max-width:none}
 .promo-share[hidden]{display:none}
 [data-eq]{box-sizing:border-box;display:flex;flex-direction:column}  /* 下端そろえで伸ばしたカード。中身は上から並べ、付属品の本・フィードバックは余白の中央に置く */
-[data-eq] .spec-incl{flex:1}
+[data-eq] .spec-incl{flex:1;align-content:end}  /* ボタンを下端に寄せ、右列の相性ボタンと下の余白をそろえる */
 .feedback-block[data-eq],.promo-share[data-eq]{justify-content:center}
 .promo-share{background:#fff;border-radius:12px;border:1px solid var(--border);padding:20px;text-align:center}
 .promo-share .feedback-title{margin-bottom:12px}
