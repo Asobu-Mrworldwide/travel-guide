@@ -341,7 +341,7 @@ body{background:#FAF7F2}
 .spec-share .line{background:#06c755;color:#fff}
 .spec-share .copy{background:#fff;color:#3C3A34;border-color:#E3DCCE}
 .spec-share.native-mode #spec-share-x,.spec-share.native-mode #spec-share-line,.spec-share.native-mode #spec-share-copy{display:none}
-.spec-share .native{background:#14503C;color:#fff;min-width:200px}
+.spec-share .native{background:#fff;color:#3C3A34;border-color:#E3DCCE;min-width:200px}  /* 下の「おすすめの国を探す」(濃い緑)や上の取説ボタン(黄)と競合しないよう、控えめな白い枠のボタンにする */
 .spec-share .copy.copied{background:#14503C;color:#fff;border-color:#14503C}
 .spec-incl-btns .primary{background:#ffc200;color:#23211C}
 .spec-incl-btns .ghost{background:#fff;border:1px solid #E3DCCE;color:#3C3A34}
@@ -571,7 +571,7 @@ body{background:#FAF7F2}
   <div class="promo-share" hidden>
     <div class="feedback-title">この診断をシェア</div>
     <div class="spec-share" id="spec-share" hidden>
-      <button class="native" id="spec-share-native" type="button" hidden>📤 シェアする</button>
+      <button class="native" id="spec-share-native" type="button" hidden>シェアする</button>
       <a class="x" id="spec-share-x" href="#" target="_blank" rel="noopener">𝕏</a>
       <a class="line" id="spec-share-line" href="#" target="_blank" rel="noopener">LINE</a>
       <button class="copy" id="spec-share-copy" type="button">リンクをコピー</button>
@@ -1279,8 +1279,8 @@ function setupManual(rt){
 
   // 結果ページ上のシェアボタン：旅行タイプ診断そのものを広めるためのもの（誰が見ても表示）。
   // 共有先は診断のトップ。流入元をアナリティクスで見分けられるようUTMを付ける。
-  // PCでは診断のシェアカードごと出さない（スマホだけ表示）
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  // PCでは診断のシェアカードごと出さない（スマホだけ表示）。端末がスマホか、画面幅が狭い(600px以下)ときに表示する
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.matchMedia('(max-width: 600px)').matches;
   const sharePane = document.getElementById('spec-share');
   if (sharePane && isMobile) {
     sharePane.hidden = false;
