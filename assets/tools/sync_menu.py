@@ -5,7 +5,7 @@
 
 共通の骨組み（どのページでも同じ順番・同じ名前）:
   [ページ固有ブロック]  国ガイド: ○○を旅する + 近くの国 / 共通ページ: このページ(ページ内リンクがある場合のみ)
-  エリアで探す / シーズンで探す / 旅行タイプ診断 / 持ち物チェックリスト(直接リンク) / World Mappyについて
+  エリアで探す / シーズンで探す / 旅行タイプ診断(未公開の間は診断ページのみ) / ツール(持ち物チェックリスト) / World Mappyについて
 
 対象: assets/country_template.html（国ガイドの元。反映後に generate.py で全国を再生成する）、
       index.html、diagnosis/*.html、common/*.html
@@ -73,9 +73,9 @@ def common_sections(kind, base, country=False):
         diag_inner = item(base + 'diagnosis/index.html', '診断を受ける') + item(base + 'diagnosis/types.html', '旅行タイプ一覧')
         out += accordion('diag', 'hbSecDiag', '旅行タイプ診断', diag_inner, expanded=(kind == 'diag'))
 
+    # 直接リンクだと誤タップしやすいので、「ツール」の中に入れる（今後ツールが増えたらここに足す）
     checklist_href = base + 'common/checklist.html' + ('?from={{id}}' if country else '')
-    out += ('    <a class="hb-sec hb-sec--link" href="%s"><span class="hb-sec__label">持ち物チェックリスト</span></a>\n\n'
-            % checklist_href)
+    out += accordion('tools', 'hbSecTools', 'ツール', item(checklist_href, '持ち物チェックリスト'))
 
     about = ''.join('<a href="%scommon/%s.html">%s →</a>' % (base, f, l) for f, l in [
         ('about', '運営者情報'), ('faq', 'よくある質問'), ('contact', 'お問い合わせ'),
