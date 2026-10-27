@@ -59,6 +59,7 @@ a:hover{color:var(--green)}
 
 /* スマホ用: 目次FAB＋ボトムシート（PCでは非表示） */
 .toc-fab{display:none}
+body:has(.hb-drawer:not([hidden])) .toc-fab{display:none!important}  /* ハンバーガーメニューを開いている間は、右下の「目次」ボタンを隠す */
 .toc-sheet-overlay,.toc-sheet{display:none}
 @media(max-width:1020px){
   .toc-fab{position:fixed;right:16px;bottom:16px;z-index:1200;display:inline-flex;align-items:center;gap:6px;padding:11px 16px;border:none;border-radius:999px;background:var(--green,#00a86b);color:#fff;font-size:13px;font-weight:700;box-shadow:0 4px 14px rgba(20,40,30,0.28);cursor:pointer}
@@ -284,6 +285,11 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
 .hb-sec:hover,.hb-sec--primary:hover{background:rgba(255,255,255,0.12)}
 .hb-sec[aria-expanded="true"],.hb-sec--primary[aria-expanded="true"]{background:var(--green);border-left-color:#F5C63C;color:#fff}
 .hb-sec__label{flex:1}
+.hb-sub{padding:4px 0 6px}
+.hb-sub__h{display:block;padding:10px 10px 4px;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:#F5C63C}  /* 「国を探す」の中の小見出し（メニューの強調色の黄色） */
+.hb-sec--soon{cursor:default;opacity:.6}
+.hb-sec--soon:hover{background:rgba(255,255,255,0.05)}
+.hb-sec__badge{flex:none;padding:2px 9px;border:1px solid rgba(255,255,255,0.45);border-radius:999px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.85)}  /* 未公開項目の「近日公開」表示 */
 .hb-sec__caret{flex:none;font-size:12px;color:rgba(255,255,255,0.55);transition:color .28s ease}
 .hb-sec[aria-expanded="true"] .hb-sec__caret,.hb-sec--primary[aria-expanded="true"] .hb-sec__caret{color:#F5C63C}
 .hb-panel{display:grid;padding:6px 0 12px;animation:hb-drop .3s cubic-bezier(.2,.7,.2,1) both}
@@ -299,8 +305,6 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
 .hb-link:last-child{border-bottom:none}
 .hb-link__note{margin-left:9px;font-size:10.5px;color:rgba(255,255,255,0.5)}
 #hb-nearby{display:grid}
-#hb-nearby a{display:flex;align-items:center;min-height:42px;padding:0 10px;border-bottom:1px solid rgba(255,255,255,0.1);font-size:13.5px;color:rgba(255,255,255,0.9);text-decoration:none}
-#hb-nearby a:last-child{border-bottom:none;color:#E0A63C;font-weight:700}
 .hb-about{display:grid;gap:10px;padding:14px 10px 12px}
 .hb-about p{margin:0;font-size:12.5px;line-height:1.95;color:rgba(255,255,255,0.82)}
 .hb-about a{font-size:13.5px;color:rgba(255,255,255,0.9)}

@@ -4,8 +4,8 @@
 ここで共通の骨組みを1か所に定義し、各ファイルのドロワー本体を書き換える（何度実行しても同じ結果になる）。
 
 共通の骨組み（どのページでも同じ順番・同じ名前）:
-  [ページ固有ブロック]  国ガイド: ○○を旅する + 近くの国 / 共通ページ: このページ(ページ内リンクがある場合のみ)
-  エリアで探す / シーズンで探す / 旅行タイプ診断(未公開の間は診断ページのみ) / ツール(持ち物チェックリスト) / World Mappyについて
+  [ページ固有ブロック]  共通ページ: このページ(ページ内リンクがある場合のみ)。国ガイドは固有ブロックなし(7つのタブは画面のタブバーにあるため)
+  国を探す(近くの国=国ガイドのみ / エリア / シーズン) / 旅行タイプ診断(未公開の間は「近日公開」の表示のみ。リンクは診断ページ自身のメニューだけ) / ツール(持ち物チェックリスト) / World Mappyについて
 
 対象: assets/country_template.html（国ガイドの元。反映後に generate.py で全国を再生成する）、
       index.html、diagnosis/*.html、common/*.html
@@ -24,7 +24,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 AREAS = ['東南アジア', '中央アジア', 'アフリカ', '東アジア', '南アジア', 'ヨーロッパ', 'オセアニア', '北アメリカ', '南米']
 HOLIDAYS = ['正月', 'GW', 'お盆', 'シルバーウィーク']
 
-# 旅行タイプ診断は未公開。False の間は、診断ページ自身のメニュー以外には診断へのリンクを出さない。
+# 旅行タイプ診断は未公開。False の間は、診断ページ自身のメニュー以外には「近日公開」の表示だけを出し、リンクは付けない。
 # 公開するときは True にして、このスクリプトと generate.py を実行する。
 SHOW_DIAG_IN_PUBLIC_MENU = False
 
@@ -36,14 +36,14 @@ def item(href, label):
             '<span class="hb-item__label">%s</span>%s</a>') % (href, label, CHEV)
 
 
-def accordion(sec, ident, label, panel_inner, expanded=False, primary=False, last=False):
+def accordion(sec, ident, label, panel_inner, expanded=False, primary=False, last=False, raw=False):
     btn_cls = 'hb-sec--primary' if primary else 'hb-sec'
     if last:
         btn_cls += ' hb-sec--last'
     panel_cls = 'hb-panel' + (' hb-panel--primary' if primary else '')
     caret = '&#9650;' if expanded else '&#9660;'
     hidden = '' if expanded else ' hidden'
-    if panel_inner:   # 読みやすいよう、項目ごとに改行して書き出す
+    if panel_inner and not raw:   # 読みやすいよう、項目ごとに改行して書き出す
         panel_inner = '\n      ' + panel_inner.replace('</a><a', '</a>\n      <a') + '\n    '
     return (
         '    <button class="%s" type="button" data-sec="%s" aria-expanded="%s" aria-controls="%s">\n'
@@ -57,21 +57,36 @@ def accordion(sec, ident, label, panel_inner, expanded=False, primary=False, las
 def common_sections(kind, base, country=False):
     """kind: top / diag / common / country。base: 'common/' などを付ける前の相対パス('' か '../')"""
     out = ''
-    if country:
-        out += accordion('nearby', 'hbSecNearby', '近くの国', '<div id="hb-nearby"></div>')
-
-    # エリア・シーズン：トップはページ内フィルタ(index.htmlのJSが中身を作る)、他ページは index.html へのリンク
+    # 「国を探す」: 近くの国(国ガイドのみ) / エリアで探す / シーズンで探す を1つのアコーディオンにまとめる。
+    # エリア・シーズン：トップはページ内フィルタ(index.htmlのJSが #hbSecArea / #hbSecSeason の中身を作る)、他ページは index.html へのリンク
     if kind == 'top':
         area_inner, season_inner = '', ''
     else:
         area_inner = ''.join(item('%sindex.html?region=%s#wm-index' % (base, quote(a)), a) for a in AREAS)
         season_inner = ''.join(item('%sindex.html?season=%s#wm-index' % (base, quote(h)), h) for h in HOLIDAYS)
-    out += accordion('area', 'hbSecArea', 'エリアで探す', area_inner, expanded=(kind == 'top'), primary=(kind == 'top'))
-    out += accordion('season', 'hbSecSeason', 'シーズンで探す', season_inner)
+
+    def sub(title, body):
+        body = body.replace('</a><a', '</a>\n          <a')
+        return ('\n      <div class="hb-sub">\n        <span class="hb-sub__h">%s</span>\n        %s\n      </div>'
+                % (title, body))
+
+    explore = ''
+    if country:
+        explore += sub('近くの国', '<div id="hb-nearby"></div>')
+    explore += sub('エリアで探す', '<div id="hbSecArea">%s</div>' % area_inner)
+    explore += sub('シーズンで探す', '<div id="hbSecSeason">%s</div>' % season_inner)
+    out += accordion('explore', 'hbSecExplore', '国を探す', explore + '\n    ',
+                     expanded=(kind == 'top'), primary=(kind == 'top'), raw=True)
 
     if kind == 'diag' or SHOW_DIAG_IN_PUBLIC_MENU:
         diag_inner = item(base + 'diagnosis/index.html', '診断を受ける') + item(base + 'diagnosis/types.html', '旅行タイプ一覧')
         out += accordion('diag', 'hbSecDiag', '旅行タイプ診断', diag_inner, expanded=(kind == 'diag'))
+    else:
+        # 未公開の間は「近日公開」の表示だけを出す（リンクなし・押せない）。公開時はフラグをTrueにして再実行
+        out += ('    <div class="hb-sec hb-sec--soon" aria-disabled="true">\n'
+                '      <span class="hb-sec__label">旅行タイプ診断</span>\n'
+                '      <span class="hb-sec__badge">近日公開</span>\n'
+                '    </div>\n\n')
 
     # 直接リンクだと誤タップしやすいので、「ツール」の中に入れる（今後ツールが増えたらここに足す）
     checklist_href = base + 'common/checklist.html' + ('?from={{id}}' if country else '')
@@ -104,9 +119,8 @@ def page_specific(path, body):
     """ページ固有ブロック（最初の1つ）をそのまま取り出す。なければ空文字。"""
     name = os.path.basename(path)
     if name == 'country_template.html':
-        # 最初のアコーディオン(○○を旅する)だけがページ固有。2つ目のボタンの手前までを取る（再実行しても増えない）
-        starts = [m.start() for m in re.finditer(r'<button class="hb-sec(?:--primary)?"', body)]
-        return body[:starts[1]] if len(starts) > 1 else body
+        # 国ガイドには、メニュー内のページ固有ブロックを置かない（7つのタブは画面のタブバー(<nav>)と重複するため。2026-10 廃止）
+        return ''
     m = re.search(r'<button class="hb-sec--primary"[^>]*data-sec="page"[^>]*>\s*<span class="hb-sec__label">([^<]*)', body)
     if not m:
         return ''

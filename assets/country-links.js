@@ -130,7 +130,9 @@
 
   // ハンバーガードロワーの「近隣の国」欄にも同じリストを流用する
   const hbNearby = document.getElementById("hb-nearby");
-  if (hbNearby) hbNearby.innerHTML = thirdColHtml + `<a href="${base}index.html" class="active">すべての旅先を見る →</a>`;
+  // （フッター用のリンクを、メニュー内の他の項目(エリア・シーズン)と同じ見た目の hb-item に変換して流用）
+  if (hbNearby) hbNearby.innerHTML = thirdColHtml.replace(/<a href="([^"]*)">([^<]*)<\/a>/g,
+    '<a class="hb-item" href="$1"><span class="hb-item__dot"></span><span class="hb-item__label">$2</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>');
 
   const shareBtn = document.getElementById("cl-share-btn");
   if (shareBtn) {

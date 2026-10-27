@@ -76,6 +76,11 @@
   .hb-sec:hover, .hb-sec--primary:hover { background: rgba(255,255,255,0.12); }
   .hb-sec[aria-expanded="true"], .hb-sec--primary[aria-expanded="true"] { background: #1D7A63; border-left-color: #F5C63C; color: #fff; }
   .hb-sec__label { flex: 1; }
+  .hb-sub { padding: 4px 0 6px; }
+  .hb-sub__h { display: block; padding: 10px 10px 4px; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; color: #F5C63C; }
+  .hb-sec--soon { cursor: default; opacity: .6; }
+  .hb-sec--soon:hover { background: rgba(255,255,255,0.05); }
+  .hb-sec__badge { flex: none; padding: 2px 9px; border: 1px solid rgba(255,255,255,0.45); border-radius: 999px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.85); }
   .hb-sec__caret { flex: none; font-size: 12px; color: rgba(255,255,255,0.55); transition: color .28s ease; }
   .hb-sec[aria-expanded="true"] .hb-sec__caret, .hb-sec--primary[aria-expanded="true"] .hb-sec__caret { color: #F5C63C; }
   .hb-panel { display: grid; padding: 6px 0 12px; animation: hb-drop .3s cubic-bezier(.2,.7,.2,1) both; }
@@ -469,17 +474,25 @@
     </div>
     <div class="hb-drawer__body">
 
-    <button class="hb-sec--primary" type="button" data-sec="area" aria-expanded="true" aria-controls="hbSecArea">
-      <span class="hb-sec__label">エリアで探す</span>
+    <button class="hb-sec--primary" type="button" data-sec="explore" aria-expanded="true" aria-controls="hbSecExplore">
+      <span class="hb-sec__label">国を探す</span>
       <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
     </button>
-    <div class="hb-panel hb-panel--primary" id="hbSecArea"></div>
+    <div class="hb-panel hb-panel--primary" id="hbSecExplore">
+      <div class="hb-sub">
+        <span class="hb-sub__h">エリアで探す</span>
+        <div id="hbSecArea"></div>
+      </div>
+      <div class="hb-sub">
+        <span class="hb-sub__h">シーズンで探す</span>
+        <div id="hbSecSeason"></div>
+      </div>
+    </div>
 
-    <button class="hb-sec" type="button" data-sec="season" aria-expanded="false" aria-controls="hbSecSeason">
-      <span class="hb-sec__label">シーズンで探す</span>
-      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
-    </button>
-    <div class="hb-panel" id="hbSecSeason" hidden></div>
+    <div class="hb-sec hb-sec--soon" aria-disabled="true">
+      <span class="hb-sec__label">旅行タイプ診断</span>
+      <span class="hb-sec__badge">近日公開</span>
+    </div>
 
     <button class="hb-sec" type="button" data-sec="tools" aria-expanded="false" aria-controls="hbSecTools">
       <span class="hb-sec__label">ツール</span>
