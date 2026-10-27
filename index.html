@@ -73,6 +73,7 @@
   .hb-drawer__body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y; padding: 12px 20px calc(40px + env(safe-area-inset-bottom)); }
   .hb-sec, .hb-sec--primary { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 54px; margin-top: 6px; padding: 0 16px; border: none; border-left: 3px solid transparent; border-radius: 8px; background: rgba(255,255,255,0.05); font-family: inherit; font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.88); text-align: left; cursor: pointer; transition: background .28s ease, border-left-color .28s ease, color .28s ease; }
   .hb-sec:first-child, .hb-sec--primary:first-child { margin-top: 0; }
+  .hb-sec--link { box-sizing: border-box; text-decoration: none; }
   .hb-sec:hover, .hb-sec--primary:hover { background: rgba(255,255,255,0.12); }
   .hb-sec[aria-expanded="true"], .hb-sec--primary[aria-expanded="true"] { background: #1D7A63; border-left-color: #F5C63C; color: #fff; }
   .hb-sec__label { flex: 1; }
@@ -469,41 +470,33 @@
     </div>
     <div class="hb-drawer__body">
 
-      <button class="hb-sec--primary" type="button" data-sec="area" aria-expanded="true" aria-controls="hbSecArea">
-        <span class="hb-sec__label">エリアで探す</span>
-        <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
-      </button>
-      <div class="hb-panel hb-panel--primary" id="hbSecArea"></div>
+    <button class="hb-sec--primary" type="button" data-sec="area" aria-expanded="true" aria-controls="hbSecArea">
+      <span class="hb-sec__label">エリアで探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9650;</span>
+    </button>
+    <div class="hb-panel hb-panel--primary" id="hbSecArea"></div>
 
-      <button class="hb-sec" type="button" data-sec="season" aria-expanded="false" aria-controls="hbSecSeason">
-        <span class="hb-sec__label">シーズンで探す</span>
-        <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
-      </button>
-      <div class="hb-panel" id="hbSecSeason" hidden></div>
+    <button class="hb-sec" type="button" data-sec="season" aria-expanded="false" aria-controls="hbSecSeason">
+      <span class="hb-sec__label">シーズンで探す</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecSeason" hidden></div>
 
-      <button class="hb-sec" type="button" data-sec="guide" aria-expanded="false" aria-controls="hbSecGuide">
-        <span class="hb-sec__label">旅のガイド</span>
-        <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
-      </button>
-      <div class="hb-panel" id="hbSecGuide" hidden>
-        <a class="hb-link" href="common/checklist.html">持ち物チェックリスト</a>
-        <a class="hb-link" href="common/faq.html">よくある質問</a>
-        <a class="hb-link" href="common/contact.html">お問い合わせ</a>
+    <a class="hb-sec hb-sec--link" href="common/checklist.html"><span class="hb-sec__label">持ち物チェックリスト</span></a>
+
+    <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
+      <span class="hb-sec__label">World Mappyについて</span>
+      <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
+    </button>
+    <div class="hb-panel" id="hbSecAbout" hidden>
+      <div class="hb-about">
+        <a href="common/about.html">運営者情報 →</a>
+        <a href="common/faq.html">よくある質問 →</a>
+        <a href="common/contact.html">お問い合わせ →</a>
+        <a href="common/disclaimer.html">免責事項 →</a>
+        <a href="common/privacy.html">プライバシーポリシー →</a>
       </div>
-
-      <button class="hb-sec hb-sec--last" type="button" data-sec="about" aria-expanded="false" aria-controls="hbSecAbout">
-        <span class="hb-sec__label">World Mappyについて</span>
-        <span class="hb-sec__caret" aria-hidden="true">&#9660;</span>
-      </button>
-      <div class="hb-panel" id="hbSecAbout" hidden>
-        <div class="hb-about">
-          <a href="common/about.html">運営者情報 →</a>
-          <a href="common/faq.html">よくある質問 →</a>
-          <a href="common/disclaimer.html">免責事項 →</a>
-          <a href="common/privacy.html">プライバシーポリシー →</a>
-          <a href="common/contact.html">お問い合わせ →</a>
-        </div>
-      </div>
+    </div>
 
     </div>
   </aside>
@@ -1130,6 +1123,8 @@
 
   const regionParam = new URLSearchParams(location.search).get('region');
   if (regionParam && AREAS.indexOf(regionParam) >= 0) state.f.area = [regionParam];
+  const seasonParam = new URLSearchParams(location.search).get('season');
+  if (seasonParam && HOLIDAYS.some((h) => h.label === seasonParam)) state.f.season = [seasonParam];
   state.favs = loadFavs();
   (function setUpdated() {
     const d = new Date(document.lastModified);

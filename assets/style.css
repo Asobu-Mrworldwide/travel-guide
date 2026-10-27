@@ -281,6 +281,7 @@ a.site-logo:hover,a.site-logo:focus,.site-logo>a:hover{color:#fff}
 /* セクション見出し: 4つとも同じ形。開いているものだけ色が変わる（aria-expanded） */
 .hb-sec,.hb-sec--primary{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;margin-top:6px;padding:0 16px;border:none;border-left:3px solid transparent;border-radius:8px;background:rgba(255,255,255,0.05);font-family:inherit;font-size:15px;font-weight:700;color:rgba(255,255,255,0.88);text-align:left;cursor:pointer;transition:background .28s ease,border-left-color .28s ease,color .28s ease}
 .hb-sec:first-child,.hb-sec--primary:first-child{margin-top:0}
+.hb-sec--link{box-sizing:border-box;text-decoration:none}  /* 「持ち物チェックリスト」など、開閉せず直接ページへ行く行（メニュー共通） */
 .hb-sec:hover,.hb-sec--primary:hover{background:rgba(255,255,255,0.12)}
 .hb-sec[aria-expanded="true"],.hb-sec--primary[aria-expanded="true"]{background:var(--green);border-left-color:#F5C63C;color:#fff}
 .hb-sec__label{flex:1}
