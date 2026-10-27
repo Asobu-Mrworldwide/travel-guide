@@ -321,11 +321,11 @@ body{background:#FAF7F2}
 .mn-actions .close{width:100%;min-height:44px;border:1px solid rgba(255,255,255,.4);background:none;font-size:12.5px;color:#fff}
 
 /* 06 INCLUDED 付属品 */
-.spec-incl{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:center}
-.spec-incl-bookwrap{position:relative;container-type:inline-size;width:100%;max-width:200px}
+.spec-incl{display:grid;grid-template-columns:minmax(0,1fr);justify-items:stretch;align-content:center;gap:18px}  /* 本の下にボタンを縦に並べる（カードが狭く、横並びだとボタン周りに空きができるため） */
+.spec-incl-bookwrap{position:relative;container-type:inline-size;width:100%;max-width:200px;margin:0 auto}
 /* 表紙の「旅人取扱説明書」の上に、表紙の傾き(約7°)に合わせて型番を重ねる */
 .spec-incl-model{position:absolute;left:55%;top:20.5%;transform:translate(-50%,-50%) rotate(7deg);white-space:nowrap;font-family:'JetBrains Mono',monospace;font-size:9px;font-size:7.5cqw;font-weight:700;letter-spacing:0.08em;color:#5A5348;pointer-events:none}
-.spec-incl-book{display:block;width:100%;max-width:200px;filter:drop-shadow(0 12px 22px rgba(35,33,28,0.18))}
+.spec-incl-book{display:block;width:100%;max-width:100%;filter:drop-shadow(0 12px 22px rgba(35,33,28,0.18))}
 .spec-incl-btns{display:grid;gap:10px}
 .spec-incl-btns a{display:flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 20px;border-radius:8px;font-size:13.5px;font-weight:900}
 .spec-share{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px}
@@ -333,6 +333,9 @@ body{background:#FAF7F2}
 #post-cards{display:grid;gap:16px;max-width:760px;margin:16px auto}
 #post-cards > .feedback-block{margin:0;max-width:none}
 .promo-share[hidden]{display:none}
+[data-eq]{box-sizing:border-box;display:flex;flex-direction:column}  /* 下端そろえで伸ばしたカード。中身は上から並べ、付属品の本・フィードバックは余白の中央に置く */
+[data-eq] .spec-incl{flex:1}
+.feedback-block[data-eq],.promo-share[data-eq]{justify-content:center}
 .promo-share{background:#fff;border-radius:12px;border:1px solid var(--border);padding:20px;text-align:center}
 .promo-share .feedback-title{margin-bottom:12px}
 .spec-col #post-cards{max-width:none;margin:0;gap:20px}
@@ -1178,6 +1181,37 @@ function layoutSpecCols(){
   // PC幅では、フィードバックを右列の末尾（05カードの下の空き）へ。スマホ幅では元の位置（国を探すバナーの上）へ戻す
   const fb = document.getElementById('post-cards'), home = document.getElementById('feedback-home');
   if (fb && home) { if (mobile) home.after(fb); else cols[1].appendChild(fb); }
+  equalizeSpecCols();
+}
+
+// PC幅の2列レイアウトで、短いほうの列の最後のカードを伸ばし、左右のカードの下端をそろえる。
+// （高さはタイプ・回答・フィードバック表示の有無で変わるため、そのたびに計算し直す）
+function equalizeSpecCols(){
+  const cols = [...document.querySelectorAll('.spec-grid2 .spec-col')];
+  if (cols.length < 2) return;
+  document.querySelectorAll('[data-eq]').forEach(e => { e.style.minHeight = ''; e.removeAttribute('data-eq'); });
+  const bookWrap = document.querySelector('.spec-incl-bookwrap'); if (bookWrap) bookWrap.style.maxWidth = '';
+  const shown = e => !e.hidden && getComputedStyle(e).display !== 'none';
+  const pc = document.getElementById('post-cards');   // 中身が全部非表示のときは、空の枠ごと隠す(余計な余白を作らない)
+  if (pc) pc.style.display = [...pc.children].some(shown) ? '' : 'none';
+  if (window.matchMedia('(max-width:900px)').matches) return;
+  const h = cols.map(c => c.getBoundingClientRect().height);
+  let diff = Math.abs(h[0] - h[1]);
+  if (diff < 2) return;
+  const shorter = h[0] < h[1] ? cols[0] : cols[1];
+  let last = [...shorter.children].filter(shown).pop();
+  if (last && last.id === 'post-cards') last = [...last.children].filter(shown).pop();
+  if (!last) return;
+  last.setAttribute('data-eq', '1');
+  if (last.id === 'spec-incl-sec' && bookWrap) {   // 付属品カードは、足りない高さの半分ほど(最大100px)を、本を大きくして埋める（余白だけが増えて不自然になるのを防ぐ）
+    bookWrap.style.maxWidth = (200 + Math.min(diff * 0.5, 100) / 1.25) + 'px';
+    const hh = cols.map(c => c.getBoundingClientRect().height);
+    diff = Math.max(0, shorter === cols[0] ? hh[1] - hh[0] : hh[0] - hh[1]);
+  }
+  last.style.minHeight = (last.getBoundingClientRect().height + diff) + 'px';
+  // 伸ばしたカードの中身(flex)の再配置で数pxずれることがあるため、もう一度測って詰める
+  const h2 = cols.map(c => c.getBoundingClientRect().height), d2 = h2[0] - h2[1];
+  if (Math.abs(d2) >= 1) last.style.minHeight = (last.getBoundingClientRect().height + (shorter === cols[0] ? -d2 : d2)) + 'px';
 }
 
 /* ===== 旅人取扱説明書シート（06 付属品から開く） =====
@@ -1378,6 +1412,7 @@ function setupManual(rt){
   fitTypeName();
   equalizeCompat();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitTypeName(); equalizeCompat(); });
+  addEventListener('load', equalizeSpecCols);
   let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { layoutSpecCols(); fitTypeName(); equalizeCompat(); }, 150); });
 })();
 </script>
@@ -1442,6 +1477,7 @@ if (urlType && !openedFromList && sessionStorage.getItem('myType') === urlType &
 const myType = sessionStorage.getItem('myType');
 if (urlType && myType === urlType && !openedFromList) {
   document.getElementById('feedback-block').style.display = '';
+  if (window.equalizeSpecCols) equalizeSpecCols();
   if (sessionStorage.getItem('diag_feedback')) {
     const prev = sessionStorage.getItem('diag_feedback');
     document.getElementById('fb-' + prev)?.classList.add('selected-' + prev);
