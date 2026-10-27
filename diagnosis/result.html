@@ -254,7 +254,7 @@ body{background:#FAF7F2}
 /* 06 ヒント */
 .spec-h .en.tip{color:#8F6415}
 
-/* 旅人取扱説明書シート（07 付属品から開くモーダル。画像書き出し前提のため px 固定） */
+/* 旅人取扱説明書シート（06 付属品から開くモーダル。画像書き出し前提のため px 固定） */
 .mn-ov{display:none;position:fixed;inset:0;z-index:5000;background:rgba(20,32,28,0.82);overflow-y:auto;padding:16px 12px 90px}
 .mn-ov.open{display:block}
 #manual-sheets{display:grid;gap:14px}
@@ -287,31 +287,9 @@ body{background:#FAF7F2}
 .mn-table .r:first-child{border-top:none}
 .mn-table .k{padding:5px 8px;white-space:nowrap;font-size:9.5px;background:#F4F2ED;border-right:1px solid #DDD8CE;color:#3A3833}
 .mn-table .v{padding:5px 8px;font-size:9.5px;line-height:1.6}
-.mn-how{display:grid}
-.mn-how .r{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:9px 0;border-top:1px solid #E8E2D8}
-.mn-how .no{width:22px;height:22px;background:#1D7A63;color:#fff;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:700;display:grid;place-content:center}
-.mn-how .ti{font-size:11.5px;font-weight:700}
-.mn-how .tx{font-size:10px;line-height:1.75;color:#55504A}
-.mn-how .r > div{display:grid;gap:3px}
 .mn-caution{border:1px solid #2B2B28;padding:10px;display:grid;gap:6px}
 .mn-caution .lb{font-size:9.5px;font-weight:700}
 .mn-caution .tx{font-size:10px;line-height:1.8;color:#3A3833}
-.mn-ctry-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-.mn-ctry{display:grid;gap:4px}
-.mn-ctry-img{aspect-ratio:1/1;border:1px solid #E8E2D8;overflow:hidden;background:#FAF9F6}
-.mn-ctry-img img{width:100%;height:100%;object-fit:cover}
-.mn-ctry span{font-size:9.5px;text-align:center;color:#3A3833}
-.mn-style{font-size:10px;line-height:1.85;color:#3A3833}
-.mn-advice{background:#FAF5E8;border:1px solid #E8DCBE;padding:10px;display:grid;gap:5px}
-.mn-advice .lb{font-size:9.5px;font-weight:700;color:#8F6415}
-.mn-advice .tx{font-size:10px;line-height:1.8;color:#3A3833}
-.mn-compat{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.mn-compat .c{border:1px solid #E8E2D8;padding:9px;display:grid;gap:4px;align-content:start}
-.mn-compat .top{display:flex;align-items:baseline;gap:5px}
-.mn-compat .cd{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700}
-.mn-compat .pc{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700}
-.mn-compat .pc small{font-size:9px}
-.mn-compat .tx{font-size:9px;line-height:1.65;color:#55504A}
 .mn-foot{border-top:1.5px solid #2B2B28;padding-top:9px;display:flex;align-items:center;justify-content:space-between}
 .mn-foot span{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:#7A756C}
 /* 新章立て用 */
@@ -342,7 +320,7 @@ body{background:#FAF7F2}
 .mn-actions .save{width:100%;min-height:46px;background:#fff;font-size:13px;font-weight:700;color:#2B2B28}
 .mn-actions .close{width:100%;min-height:44px;border:1px solid rgba(255,255,255,.4);background:none;font-size:12.5px;color:#fff}
 
-/* 07 INCLUDED 付属品 */
+/* 06 INCLUDED 付属品 */
 .spec-incl{display:grid;grid-template-columns:200px minmax(0,1fr);gap:22px;align-items:center}
 .spec-incl-bookwrap{position:relative;container-type:inline-size;width:100%;max-width:200px}
 /* 表紙の「旅人取扱説明書」の上に、表紙の傾き(約7°)に合わせて型番を重ねる */
@@ -532,12 +510,6 @@ body{background:#FAF7F2}
     <a class="spec-cta-in" id="spec-country-cta" href="../">他のおすすめの国を見る<span>→</span></a>
   </div>
 
-  <!-- 06 PERFORMANCE TIP -->
-  <div class="spec-panel spec-hidden" id="spec-tip-sec">
-    <div class="spec-h"><span class="no">06</span><span class="ttl">開発者からのヒント</span></div>
-    <p style="margin:0;font-size:13px;line-height:2;color:#55504A" id="spec-tip-text"></p>
-  </div>
-
   </div><!-- /spec-col -->
 
   <div class="spec-col">
@@ -555,9 +527,9 @@ body{background:#FAF7F2}
     <div id="compat-auto"></div>
   </div>
 
-  <!-- 07 INCLUDED -->
+  <!-- 06 INCLUDED -->
   <div class="spec-panel" id="spec-incl-sec">
-    <div class="spec-h"><span class="no">07</span><span class="ttl">付属品</span></div>
+    <div class="spec-h"><span class="no">06</span><span class="ttl">付属品</span></div>
     <p style="margin:0 0 12px;font-size:13px;line-height:2;color:#55504A" id="spec-incl-lead">本製品には、取扱説明書が付属しています。ご家族やご友人に共有して、より良い旅のサポートを受けましょう。</p>
     <div class="spec-incl">
       <div><div class="spec-incl-bookwrap"><img class="spec-incl-book" id="spec-incl-book" src="img/r/manual-book.webp" alt="旅人取扱説明書"><div class="spec-incl-model" id="spec-incl-model"></div></div></div>
@@ -618,7 +590,7 @@ body{background:#FAF7F2}
 
 </div><!-- /page-wrap -->
 
-<!-- 旅人取扱説明書（07 付属品から開く） -->
+<!-- 旅人取扱説明書（06 付属品から開く） -->
 <div class="mn-ov" id="manual-overlay" role="dialog" aria-modal="true" aria-label="旅人取扱説明書">
   <div id="manual-sheets"><div class="mn-sheet" id="manual-front"></div><div class="mn-sheet" id="manual-back"></div></div>
   <div class="mn-actions">
@@ -712,82 +684,82 @@ const TYPES = {
     traits:['計画派','文化・学び','協調派','快適志向'],
     quote:'行きたい場所がバラバラな仲間の希望を聞いて、全員が満足する旅程に組み上げる。グループ旅行では、自然と幹事を任される。',
     closing:'旅程が完成した夜、自分の行きたかった場所だけ入っていないことに気づく。',
-    travelStyle:'ヨーロッパの歴史都市や台北・京都のような文化資源が密集したエリアと特に相性がよく、入場券・ホテル・移動手段をすべて事前予約してから出発するスタイルが安定感をもたらす。友人・家族と計画を共有しながら進める周年旅行のような旅に向いている一方、行き先を当日に決めるような自由度の高い旅には落ち着かなさを感じやすい。全員の満足を優先しがちなタイプだからこそ、旅程の中に一つだけ自分のためのわがままな予定を混ぜてみると、旅の満足度がぐっと上がるかもしれない。'},
+    travelStyle:'ヨーロッパの歴史都市や台北・京都のような文化資源が密集したエリアと特に相性がよく、入場券・ホテル・移動手段をすべて事前予約してから出発するスタイルが安定感をもたらす。友人・家族と計画を共有しながら進める周年旅行のような旅に向いている一方、行き先を当日に決めるような自由度の高い旅には落ち着かなさを感じやすい。'},
   PCSW:{name:'別班員', color:'#1a6b3a',
     traits:['計画派','文化・学び','協調派','ワイルド'],
     quote:'事前にしっかり下調べして、仲間と一緒に現地の文化の奥まで踏み込む。移動や環境が厳しいほど、かえって気合いが入る。',
     closing:'バスが来なくても、道が崩れていても、「想定内」と言って、すぐ代わりのルートを出してくる。',
-    travelStyle:'シルクロードの遺跡群・東南アジアの秘境寺院・中南米の古代遺跡など、下調べと現地対応力の両方が問われる旅先と特に相性がよく、現地ガイドの手配を事前に固めたうえで仲間と徒歩や現地交通を使って踏み込む旅が理想的だ。研究や取材のような明確な目的を持った旅にも向いている一方、リゾートで何もしない休暇には物足りなさを感じやすい。出発前に現地の専門ガイドや研究者へメールで質問を送っておくと、ガイドブックに載らない見どころや最新の道路事情を教えてもらえることがある。'},
+    travelStyle:'シルクロードの遺跡群・東南アジアの秘境寺院・中南米の古代遺跡など、下調べと現地対応力の両方が問われる旅先と特に相性がよく、現地ガイドの手配を事前に固めたうえで仲間と徒歩や現地交通を使って踏み込む旅が理想的だ。研究や取材のような明確な目的を持った旅にも向いている一方、リゾートで何もしない休暇には物足りなさを感じやすい。'},
   PCLR:{name:'茶道部', color:'#7b5ea7',
     traits:['計画派','文化・学び','マイペース派','快適志向'],
     quote:'旅程を丁寧に組んで、歴史や美術にじっくり向き合う。急かされるのが苦手で、一人で静かに味わう時間を何より大切にする。',
     closing:'閉館のアナウンスが流れてから、好きな絵の前にもう一度戻ってしまう。',
-    travelStyle:'パリ・ウィーン・京都のような文化資源が密集したエリアと特に相性がよく、美術館・博物館の開館情報をリスト化して一人のペースで巡る旅が最も充実する。一人旅または信頼できる一人の友人との少人数旅に向いている一方、大人数のツアーバスには窮屈さを感じやすい。美術館や神社をじっくり見て回るのが好きなら、閉館間際まで残って人が少なくなった空間を独り占めしてみると、いつもと違う静けさを味わえるかもしれない。'},
+    travelStyle:'パリ・ウィーン・京都のような文化資源が密集したエリアと特に相性がよく、美術館・博物館の開館情報をリスト化して一人のペースで巡る旅が最も充実する。一人旅または信頼できる一人の友人との少人数旅に向いている一方、大人数のツアーバスには窮屈さを感じやすい。'},
   PCLW:{name:'妖怪ガイドブック喰い', color:'#4a7a59',
     traits:['計画派','文化・学び','マイペース派','ワイルド'],
     quote:'気になった場所は、出発前に徹底的に調べ上げる。現地では一人で黙々と深掘りし、多少の不便も気にならない。',
     closing:'調べすぎて、初めて訪れた遺跡なのに、なんだか懐かしい。',
-    travelStyle:'中央アジアのシルクロード遺跡・東南アジアの密林寺院・南米の古代遺跡など、調べるほど発見がある旅先と特に相性がよく、遺跡や史跡の周辺情報を綿密に調べたうえで一人でじっくり向き合う旅が最も力を発揮する。長期の一人旅や、研究・撮影など明確な目的を持った旅にも向いている。一人での行動が中心になるからこそ、緊急連絡先の共有や現地SIMの確保は事前に済ませておきたい。'},
+    travelStyle:'中央アジアのシルクロード遺跡・東南アジアの密林寺院・南米の古代遺跡など、調べるほど発見がある旅先と特に相性がよく、遺跡や史跡の周辺情報を綿密に調べたうえで一人でじっくり向き合う旅が最も力を発揮する。長期の一人旅や、研究・撮影など明確な目的を持った旅にも向いている。'},
   PNSR:{name:'工場長', color:'#e07b39',
     traits:['計画派','絶景・リフレッシュ','協調派','快適志向'],
     quote:'綿密な計画で、絶景スポットを効率よく回る。全員が楽しめるよう、予約や時間配分まで先回りして整えておく。',
     closing:'事前に組んだ旅程を完遂して、仲間から「ガイドを本業にしたほうがいい」と本気ですすめられる。',
-    travelStyle:'グランドキャニオンやモルディブのような予約制の絶景スポットが多い旅先と特に相性がよく、ホテル・アクティビティ・レストランを事前にすべて予約してから出発するスタイルが安定感をもたらす。友人グループの記念旅行や家族旅行のような、みんなで計画を進める旅や効率よく周れるツアー形式の旅程にも満足度が高い一方、行き先も宿も決めずに現地で流れに任せる旅にはストレスを感じやすい。絶景スポットを効率よく巡る計画を立てるのが得意なタイプだからこそ、定番だけでなく地元でしか知られていない穴場の絶景まで事前にリサーチしてみると、旅の満足度がさらに上がるかもしれない。'},
+    travelStyle:'グランドキャニオンやモルディブのような予約制の絶景スポットが多い旅先と特に相性がよく、ホテル・アクティビティ・レストランを事前にすべて予約してから出発するスタイルが安定感をもたらす。友人グループの記念旅行や家族旅行のような、みんなで計画を進める旅や効率よく周れるツアー形式の旅程にも満足度が高い一方、行き先も宿も決めずに現地で流れに任せる旅にはストレスを感じやすい。'},
   PNSW:{name:'シェルパ', color:'#3a7540',
     traits:['計画派','絶景・リフレッシュ','協調派','ワイルド'],
     quote:'事前準備を怠らず、仲間を連れて自然の奥地へ向かう。厳しい環境でも落ち着いていて、一緒にいると安心感がある。',
     closing:'山の天気が崩れてきても、「そろそろ来ると思ってた」と言って、仲間の分のレインウェアまで出す。',
-    travelStyle:'ニュージーランドの山岳トレッキングやアフリカのサファリツアーのような、準備が重要になる旅先と特に相性がよく、装備とルートを綿密に計画したうえで仲間とともに自然のアクティビティに挑む旅が最も充実する。会社や友人グループでのアウトドア企画にも向いている。仲間の希望を汲み取るのが得意なタイプだからこそ、たまには自分の希望を前面に出して旅程を組んでみると、新しい自分に気づけるかもしれない。'},
+    travelStyle:'ニュージーランドの山岳トレッキングやアフリカのサファリツアーのような、準備が重要になる旅先と特に相性がよく、装備とルートを綿密に計画したうえで仲間とともに自然のアクティビティに挑む旅が最も充実する。会社や友人グループでのアウトドア企画にも向いている。'},
   PNLR:{name:'熱燗', color:'#c8940a',
     traits:['計画派','絶景・リフレッシュ','マイペース派','快適志向'],
     quote:'旅程を細かく組んで、リフレッシュの質にとことんこだわる。誰にも邪魔されず、静かに過ごす時間を最高の贅沢だと思っている。',
     closing:'旅程表に「15時〜16時 景色を見てぼーっとする」と書いてある。',
-    travelStyle:'モルディブやセーシェルのようなプライベート感の強いリゾート、あるいはタイやスイスの静かな高原リゾートと特に相性がよく、高級スパリゾートや眺望の良いホテルを事前予約して一人または最小限の同行者とゆったり過ごす旅が最も力を発揮する。自分へのご褒美旅行や、忙しい日常から心身をリセットする一人旅にも向いている一方、大人数でのアクティブな周遊旅行には疲労を感じやすい。自然の中でリフレッシュするのが好きなら、たまには少し足を延ばしてあまり知られていない秘境まで向かってみると、いつもと違う体験ができるかもしれない。'},
+    travelStyle:'モルディブやセーシェルのようなプライベート感の強いリゾート、あるいはタイやスイスの静かな高原リゾートと特に相性がよく、高級スパリゾートや眺望の良いホテルを事前予約して一人または最小限の同行者とゆったり過ごす旅が最も力を発揮する。自分へのご褒美旅行や、忙しい日常から心身をリセットする一人旅にも向いている一方、大人数でのアクティブな周遊旅行には疲労を感じやすい。'},
   PNLW:{name:'週末仙人', color:'#607d8b',
     traits:['計画派','絶景・リフレッシュ','マイペース派','ワイルド'],
     quote:'計画を立てたうえで、一人で自然の中へ入っていく。にぎやかな観光地より、静けさの中で過ごす時間に旅の良さを感じる。',
     closing:'絶景スポットに自分以外の人が一人来ただけで、「混んできたな」と思って席を立つ。',
-    travelStyle:'ニュージーランドの南島やアイスランドのような人口密度の低い自然地帯と特に相性がよく、ルートと装備を綿密に準備したうえで単独で人の少ない山岳地帯や秘境に向かう旅が最も力を発揮する。写真・執筆など内省を伴う創作目的の旅にも向いている一方、賑やかな観光地やナイトライフが中心の旅には興味を持ちにくい。スマホの電波が届かない場所も多いため、大まかな行動予定を事前に家族や友人へ伝えておくと安心だ。'},
+    travelStyle:'ニュージーランドの南島やアイスランドのような人口密度の低い自然地帯と特に相性がよく、ルートと装備を綿密に準備したうえで単独で人の少ない山岳地帯や秘境に向かう旅が最も力を発揮する。写真・執筆など内省を伴う創作目的の旅にも向いている一方、賑やかな観光地やナイトライフが中心の旅には興味を持ちにくい。'},
   FCSR:{name:'ゴールデンレトリバー', color:'#c94a29',
     traits:['直感派','文化・学び','協調派','快適志向'],
     quote:'どこへ行っても仲間と盛り上がり、文化的な発見にも素直に感動する。人懐っこく好奇心旺盛で、旅先にもすぐなじむ。',
     closing:'現地の人に道を聞いたつもりが、気づけば家でごはんを食べている。',
-    travelStyle:'カフェ文化やアートシーンが豊かなヨーロッパの都市、屋台と博物館が近接する台北・バンコクのような都市型の旅先と特に相性がよく、仲間と一緒にその日の気分で文化スポットを巡り快適な宿でゆっくり過ごす旅が最も向いている。気の合う友人との弾丸旅行や、社交性を活かした一人旅にも向いている。気の合う旅仲間ができたら、そのまま行き先を変えてでも一緒に行動してみると、思わぬ良い旅になる。'},
+    travelStyle:'カフェ文化やアートシーンが豊かなヨーロッパの都市、屋台と博物館が近接する台北・バンコクのような都市型の旅先と特に相性がよく、仲間と一緒にその日の気分で文化スポットを巡り快適な宿でゆっくり過ごす旅が最も向いている。気の合う友人との弾丸旅行や、社交性を活かした一人旅にも向いている。'},
   FCSW:{name:'イエスマン', color:'#8b4513',
     traits:['直感派','文化・学び','協調派','ワイルド'],
     quote:'直感でどこへでも飛び込み、仲間と一緒に現地の文化を全身で楽しむ。テンションが高く、旅のムードメーカーになる。',
     closing:'屋台の人に勧められたものは、とりあえず全部食べてしまう。それが毎回当たりだ。',
-    travelStyle:'ホーチミンの旧市街やイスタンブールのバザール、路上文化が濃密な旅先と特に相性がよく、予定を固めすぎず仲間と一緒にその場の直感で路地裏や市場に飛び込む旅が最も力を発揮する。気の置けない友人との自由度の高いグループ旅行に向いている一方、分単位で管理された団体ツアーには物足りなさを感じやすい。現地の祭りやイベントに偶然出くわしたら、迷わず飛び込んでみると、旅の一番の思い出になることが多い。'},
+    travelStyle:'ホーチミンの旧市街やイスタンブールのバザール、路上文化が濃密な旅先と特に相性がよく、予定を固めすぎず仲間と一緒にその場の直感で路地裏や市場に飛び込む旅が最も力を発揮する。気の置けない友人との自由度の高いグループ旅行に向いている一方、分単位で管理された団体ツアーには物足りなさを感じやすい。'},
   FCLR:{name:'街のトリュフ犬', color:'#3a8a8a',
     traits:['直感派','文化・学び','マイペース派','快適志向'],
     quote:'計画なしに街を歩くだけで、なぜか面白い場所に行き当たる。偶然の発見を楽しみながら、気ままに文化に触れる。',
     closing:'ふらっと入った店で、用途不明の雑貨を連れて帰る。何に使うのか聞かれても、うまく言えない。',
-    travelStyle:'パリ・ウィーン・東京のような、歩くだけで文化的発見が絶えない都市と特に相性がよく、綿密な予定を組まず街を歩きながら気になった博物館・書店・カフェにふらりと立ち寄る旅が最も心地よい。快適な宿を拠点にした一人旅や長期滞在型の旅にも向いている一方、分刻みで観光地を回る弾丸ツアーには疲れを感じやすい。気になった路地を歩いていて店主と目が合ったら、勇気を出して一言だけ話しかけてみると、思わぬ発見があるかもしれない。'},
+    travelStyle:'パリ・ウィーン・東京のような、歩くだけで文化的発見が絶えない都市と特に相性がよく、綿密な予定を組まず街を歩きながら気になった博物館・書店・カフェにふらりと立ち寄る旅が最も心地よい。快適な宿を拠点にした一人旅や長期滞在型の旅にも向いている一方、分刻みで観光地を回る弾丸ツアーには疲れを感じやすい。'},
   FCLW:{name:'迷ってない人', color:'#5c4033',
     traits:['直感派','文化・学び','マイペース派','ワイルド'],
     quote:'大まかな行き先だけ決めて、あとは文化への好奇心の向くままに動く。予定に縛られず、気になった路地や街へふらっと足を向ける。',
     closing:'道に迷っても焦らない。歩いた先が、その日の目的地になるだけだ。',
-    travelStyle:'アジア・中東・中南米の旧市街は路地を曲がるたびに発見があるため特に相性がよく、「今日はどの街に行こうか」と朝に決めて夜になってから宿を探すスタイルを楽しめる胆力が最大の武器になる。語学留学や現地でのボランティア活動など「旅しながら何かを学ぶ」状態が最も充実する一方、観光バスで巡るパッケージ旅行やビーチで何もしない休暇は物足りなく感じやすい。誰も知らない廃寺や史跡を見つけると心が躍るタイプなら、次はガイドブックを完全に手放して地元の人に聞いた噂だけを頼りに歩いてみると、もっと濃い発見に出会えるかもしれない。'},
+    travelStyle:'アジア・中東・中南米の旧市街は路地を曲がるたびに発見があるため特に相性がよく、「今日はどの街に行こうか」と朝に決めて夜になってから宿を探すスタイルを楽しめる胆力が最大の武器になる。語学留学や現地でのボランティア活動など「旅しながら何かを学ぶ」状態が最も充実する一方、観光バスで巡るパッケージ旅行やビーチで何もしない休暇は物足りなく感じやすい。'},
   FNSR:{name:'副本部長', color:'#d47a00',
     traits:['直感派','絶景・リフレッシュ','協調派','快適志向'],
     quote:'細かい計画は立てず、現地のホテルでツアーを申し込んだり、おすすめを聞いたりして動く。仲間を誘って、快適に絶景を楽しむのが上手。',
     closing:'「いつの間に予約してたの？」と聞かれて、「昨日の夜」とは言えず、「まあね」と笑っている。',
-    travelStyle:'ハワイや東南アジアのリゾートアイランドのような、直感的に動いても外れが少ない旅先と特に相性がよく、細かい予定を組まず仲間とその場の直感でビーチや絶景スポットを楽しみながら快適に過ごす旅が最も向いている。仲の良い友人グループでの気軽な旅行に向いている一方、綿密な行程が組まれた文化ツアーには物足りなさを感じやすい。「なんとなくこっち」という勘が驚くほど当たるタイプなら、次に迷ったときは地図を確認する前に少しだけその勘を信じて歩いてみると、思いがけない発見があるかもしれない。'},
+    travelStyle:'ハワイや東南アジアのリゾートアイランドのような、直感的に動いても外れが少ない旅先と特に相性がよく、細かい予定を組まず仲間とその場の直感でビーチや絶景スポットを楽しみながら快適に過ごす旅が最も向いている。仲の良い友人グループでの気軽な旅行に向いている一方、綿密な行程が組まれた文化ツアーには物足りなさを感じやすい。'},
   FNSW:{name:'桃太郎', color:'#3a7044',
     traits:['直感派','絶景・リフレッシュ','協調派','ワイルド'],
     quote:'仲間を巻き込みながら、未知の場所へ次々と突き進む。体力があり、計画がなくても現場で考えて動ける。',
     closing:'乗り遅れたバスの停留所で出会った旅人と、そのまま次の街まで行ってしまう。',
-    travelStyle:'東南アジアのバックパッカー街道や南米の周遊ルートのような、旅人同士の交流が生まれやすい旅先と特に相性がよく、宿も行き先も当日決め、意気投合した旅人がいればそのまま予定を変えて一緒に次の街へ向かう旅が最も生きる。ゲストハウス・ホステルを拠点にした長期周遊にも向いている一方、決まった日程のパッケージツアーには窮屈さを感じやすい。体力に自信があるタイプなら、仲間より少し先を歩いて絶景ポイントに一番乗りしてみると、いつもと違う達成感を味わえるかもしれない。'},
+    travelStyle:'東南アジアのバックパッカー街道や南米の周遊ルートのような、旅人同士の交流が生まれやすい旅先と特に相性がよく、宿も行き先も当日決め、意気投合した旅人がいればそのまま予定を変えて一緒に次の街へ向かう旅が最も生きる。ゲストハウス・ホステルを拠点にした長期周遊にも向いている一方、決まった日程のパッケージツアーには窮屈さを感じやすい。'},
   FNLR:{name:'吾輩', color:'#5e7a8a',
     traits:['直感派','絶景・リフレッシュ','マイペース派','快適志向'],
     quote:'誰のペースにも合わせず、自分が快適に過ごすことを最優先に旅する。一人の時間を満喫できる、大人の旅行者。',
     closing:'のんびりしすぎて、気づけば今日は一言も話していない。それがちょうどいい。',
-    travelStyle:'バリ島やタイのリゾートアイランドのような、長期滞在にも対応した快適な宿が豊富な旅先と特に相性がよく、行き先も滞在日数も決めず気に入った場所があればそのまま延泊するスタイルが最も向いている。仕事や日常から距離を置く一人旅や長期滞在に向いている一方、決まった日程を仲間と共有するグループ旅行にはストレスを感じやすい。気に入った場所を見つけたら、当初の予定を忘れて滞在を延ばしてみると、その旅で一番の思い出になることが多い。'},
+    travelStyle:'バリ島やタイのリゾートアイランドのような、長期滞在にも対応した快適な宿が豊富な旅先と特に相性がよく、行き先も滞在日数も決めず気に入った場所があればそのまま延泊するスタイルが最も向いている。仕事や日常から距離を置く一人旅や長期滞在に向いている一方、決まった日程を仲間と共有するグループ旅行にはストレスを感じやすい。'},
   FNLW:{name:'タンポポの綿毛', color:'#6b5e62',
     traits:['直感派','絶景・リフレッシュ','マイペース派','ワイルド'],
     quote:'計画も快適さも気にせず、本能の赴くままに動く。自然や偶然の流れに身を任せる、自由な旅行者。',
     closing:'気になった方向へふらっと歩き出して、同行者が気づいたときには、もう豆粒になっている。',
-    travelStyle:'アイスランドの環状道路やパタゴニア、ネパールのトレッキングルートのように、天候や交通の変化がつきものの自然豊かな旅先と特に相性がよく、行き先は大まかに決めるだけで、あとはその日の天気や気分で動く旅が最も本領を発揮する。バックパック一つで数週間かけて巡る長めの旅にも向いている一方、予約や時間に縛られた団体ツアーには窮屈さを感じやすい。雨具と携帯の充電だけは持っておくと、気ままな足取りが、もっと遠くまで続く。'},
+    travelStyle:'アイスランドの環状道路やパタゴニア、ネパールのトレッキングルートのように、天候や交通の変化がつきものの自然豊かな旅先と特に相性がよく、行き先は大まかに決めるだけで、あとはその日の天気や気分で動く旅が最も本領を発揮する。バックパック一つで数週間かけて巡る長めの旅にも向いている一方、予約や時間に縛られた団体ツアーには窮屈さを感じやすい。'},
 };
 
 // ===== 相性計算 =====
@@ -1057,15 +1029,6 @@ function MICRO(rt){
     {k:'向いている旅の長さ', v: P ? (H?'2〜4日':'4〜7日') : (H?'1週間前後':'長期・周遊'), c:'#1D7A63'},
   ];
 }
-function TIP_TEXT(rt){
-  const lead = rt[2]==='S'
-    ? '同行者の満足を優先しすぎると、自分の希望が後回しになることがあります。'
-    : '自分のペースを保てる一方、同行者の期待とのズレが生まれることがあります。';
-  const fix = rt[0]==='P'
-    ? '旅程にひとつだけ「自分のための予定」を足すと、あなた自身の満足度も大きく向上します。'
-    : '要予約のものだけ先に押さえておくと、自由さを保ったまま失敗が減ります。';
-  return lead + fix;
-}
 // タイプ一覧の4グループ(計画/直感 × 文化/絶景)に対応するカテゴリ名（MBTIのように1語で人柄が浮かぶ名前）
 function CATEGORY(rt){ return { PC:'Scholar', PN:'Pilot', FC:'Seeker', FN:'Drifter' }[rt[0] + rt[1]]; }
 // レーダー下の一文。目的軸(文化/自然)の偏りを主役に、残り3軸は自分側の特性語で並べる。
@@ -1176,14 +1139,9 @@ function renderSpecSheet(rt){
     '<div><span class="mk">'+m.k+'</span><span class="mv" style="color:'+m.c+'">'+m.v+'</span></div>'
   ).join(''));
 
-  // --- travelStyle（原稿）を分割：前半＝相性のいい旅先（§04）／末尾＝実行アドバイス（§06） ---
-  const tsParts = (t.travelStyle || '').split('。').filter(Boolean);
-  const tsLead = tsParts.length > 1 ? tsParts.slice(0, -1).join('。') + '。' : '';
-  const tsTip  = tsParts.length ? tsParts.slice(-1)[0] + '。' : '';
-
   // --- 04 RECOMMENDED ENVIRONMENT + おすすめの国 ---
   document.getElementById('spec-country-sec').classList.remove('spec-hidden');
-  set('spec-env-lead', tsLead);
+  set('spec-env-lead', t.travelStyle || '');
   set('spec-country-title', rt + '型におすすめの国');
   set('spec-country-grid', COUNTRIES(rt).map(name => {
     const id = COUNTRY_PAGE[name];
@@ -1194,18 +1152,14 @@ function renderSpecSheet(rt){
   const ctaEl = document.getElementById('spec-country-cta');
   ctaEl.href = '../index.html'; ctaEl.target = '_blank'; ctaEl.rel = 'noopener';
 
-  // --- 06 PERFORMANCE TIP ---
-  document.getElementById('spec-tip-sec').classList.remove('spec-hidden');
-  set('spec-tip-text', tsTip || TIP_TEXT(rt));
-
-  // --- 07 INCLUDED 付属品 ---
+  // --- 06 INCLUDED 付属品 ---
   const book = document.getElementById('spec-incl-book'); if (book) book.alt = '旅人取扱説明書';
   set('spec-incl-lead', '本製品には、取扱説明書が付属しています。ご家族やご友人に共有して、より良い旅のサポートを受けましょう。');
 
   const bandCta = document.getElementById('spec-band-cta'); if (bandCta) bandCta.href = '../index.html';
 }
 
-// §02〜§07 の配置：番号の偶数と§07(付属品)→左列 / それ以外の奇数→右列（固定）。スマホ幅では左列に番号順で集約。
+// §02〜§06 の配置：番号の偶数→左列 / 奇数→右列（固定）。スマホ幅では左列に番号順で集約。
 function layoutSpecCols(){
   const cols = document.querySelectorAll('.spec-grid2 .spec-col');
   if (cols.length < 2) return;
@@ -1214,16 +1168,15 @@ function layoutSpecCols(){
   const mobile = window.matchMedia('(max-width:900px)').matches;
   panels.forEach(p => {
     const n = +p.querySelector('.spec-h .no').textContent;
-    cols[mobile ? 0 : (n % 2 === 0 || n === 7 ? 0 : 1)].appendChild(p);
+    cols[mobile ? 0 : (n % 2 === 0 ? 0 : 1)].appendChild(p);
   });
   // PC幅では、フィードバックを右列の末尾（05カードの下の空き）へ。スマホ幅では元の位置（国を探すバナーの上）へ戻す
   const fb = document.getElementById('post-cards'), home = document.getElementById('feedback-home');
   if (fb && home) { if (mobile) home.after(fb); else cols[1].appendChild(fb); }
 }
 
-/* ===== 旅人取扱説明書シート（07 付属品から開く） =====
-   中身はこのページで確定済みの文言を組み合わせる（新規の文言は作らない）。
-   使用上の注意のみ、旧自動文 TIP_TEXT の前半（同行者とのズレの注意）を流用している。 */
+/* ===== 旅人取扱説明書シート（06 付属品から開く） =====
+   本文は manual-data.js（MANUAL_DOC）から読み込む。 */
 // 製品イメージ図：タイプ別イラスト（type-images.js）。未作成のタイプは仮画像を表示する
 const MANUAL_IMG_FALLBACK = TYPE_IMG_FALLBACK;
 
@@ -1269,66 +1222,8 @@ function buildManualDoc(rt, t, doc){
 }
 
 function buildManual(rt){
-  const t = TYPES[rt]; if (!t) return;
-  if (MANUAL_DOC[rt]) { buildManualDoc(rt, t, MANUAL_DOC[rt]); return; }
-  const ts = (t.travelStyle || '').split('。').filter(Boolean);
-  const styleLead = ts.length > 1 ? ts.slice(0, -1).join('。') + '。' : '';
-  const styleTip = ts.length ? ts.slice(-1)[0] + '。' : '';
-  const caution = TIP_TEXT(rt).split('。')[0] + '。';
-
-  let levels = []; try { levels = computeAxisLevels(rt); } catch(e) {}
-  const howTo = ['PF','CN','SL','HW'].map((key, i) => {
-    const val = rt[i], info = AXIS_INFO[key], L = levels[i] || {};
-    const tier = (L.diff === undefined || L.diff >= 4) ? 4 : (L.diff >= 2 ? 2 : 1);
-    const text = (AXIS_TEXT[key] && AXIS_TEXT[key][val] && AXIS_TEXT[key][val][tier]) || info[val].desc;
-    return '<div class="r"><span class="no">0'+(i+1)+'</span><div><span class="ti">'+info[val].short+'</span><span class="tx">'+text+'</span></div></div>';
-  }).join('');
-
-  const specRows = [
-    ['型番', rt + '型'],
-    ['特性タグ', (t.traits || []).join(' / ')],
-  ].concat(MICRO(rt).map(m => [m.k, m.v])).concat([['製造元', 'World Mappy Inc.']])
-    .map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
-
-  const countries = COUNTRIES(rt).map(name => {
-    const id = COUNTRY_PAGE[name];
-    return '<div class="mn-ctry"><div class="mn-ctry-img">'
-      + (id ? '<img src="../'+id+'/素材/ヒーロー.webp" alt="'+name+'">' : '')
-      + '</div><span>'+name+'</span></div>';
-  }).join('');
-
-  const compat = Object.entries(TYPES).filter(([code]) => code !== rt)
-    .map(([code, info]) => ({ code, info, ...getCompat(rt, code) }))
-    .sort((a, b) => b.pct - a.pct).slice(0, 4)
-    .map(c => '<div class="c"><div class="top"><span class="cd" style="color:'+c.info.color+'">'+c.code+'型</span>'
-      + '<span class="pc">'+c.pct+'<small>%</small></span></div><span class="tx">'+c.text+'</span></div>').join('');
-
-  const foot = right => '<div class="mn-foot"><span>WORLDMAPPY.COM</span><span>'+right+'</span></div>';
-
-  // 表面：ヘッダー〜基本仕様〜使用上の注意〜推奨環境 ／ 裏面：正しい扱い方〜相性（画像保存は2枚に分けて出力）
-  document.getElementById('manual-front').innerHTML =
-    '<div class="mn-head"><div class="mn-head-top">'
-    + '<div class="mn-head-l"><span class="mn-title">旅人取扱説明書</span><span class="mn-note">安全にご使用いただくために、必ずこの取扱説明書をよくお読みください。</span></div>'
-    + '<div class="mn-head-r"><span class="mn-tag">TRAVELER MANUAL</span><span class="mn-model">型番：'+modelNo(rt)+'</span></div>'
-    + '</div><div class="mn-rule"></div></div>'
-
-    + '<div class="mn-prod"><div class="mn-prod-l"><span class="mn-lb">■ 製品名（旅人タイプ）</span>'
-    + '<div class="mn-code-row"><span class="mn-code">'+rt+'</span><span class="mn-name">'+t.name+'</span></div>'
-    + '<span class="mn-tagline">'+(t.quote || '')+'</span></div>'
-    + '<div class="mn-prod-r"><span class="mn-lb">■ 製品イメージ図</span>'
-    + '<div class="mn-figure"><img src="'+(typeImg(rt) || MANUAL_IMG_FALLBACK)+'" alt="'+t.name+'"></div></div></div>'
-
-    + '<div class="mn-sec"><span class="mn-lb">■ 基本仕様</span><div class="mn-table">'+specRows+'</div></div>'
-    + '<div class="mn-caution"><span class="lb">⚠ 使用上の注意</span><span class="tx">'+caution+'</span></div>'
-    + '<div class="mn-sec"><span class="mn-lb">■ 推奨環境（相性の良いエリア）</span><div class="mn-ctry-grid">'+countries+'</div></div>'
-    + foot('1 / 2');
-
-  document.getElementById('manual-back').innerHTML =
-    '<div class="mn-sec"><span class="mn-lb">■ 正しい扱い方</span><div class="mn-how">'+howTo+'</div></div>'
-    + (styleLead ? '<div class="mn-sec"><span class="mn-lb">■ おすすめの旅スタイル</span><span class="mn-style">'+styleLead+'</span></div>' : '')
-    + (styleTip ? '<div class="mn-advice"><span class="lb">💡 ワンポイントアドバイス</span><span class="tx">'+styleTip+'</span></div>' : '')
-    + '<div class="mn-sec"><span class="mn-lb">■ 相性のいい旅行タイプ</span><div class="mn-compat">'+compat+'</div></div>'
-    + foot(modelNo(rt)+'-TRAVELER　2 / 2');
+  const t = TYPES[rt]; if (!t || !MANUAL_DOC[rt]) return;
+  buildManualDoc(rt, t, MANUAL_DOC[rt]);
 }
 
 function setupManual(rt){
