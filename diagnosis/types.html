@@ -19,77 +19,114 @@
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="stylesheet" href="diagnosis.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-body{font-size:16px}
+/* 旅人モデル総合カタログ（design_handoff_traveler_types 準拠） */
+body{background:#FAF8F3;font-family:'Zen Kaku Gothic New',sans-serif;color:#2B2B28}
+.cat{--ink:#2B2B28;--body:#55504A;--sub:#7A756C;--faint:#A39D93;--line:#D9D3C7;--line2:#E8E2D8;--cta:#F5B921;--cta-t:#14503C}
+.cat a{text-decoration:none}
+.mono{font-family:'JetBrains Mono',monospace}
+.cat-wrap{max-width:1140px;margin:0 auto;padding:0 40px}
 
-/* ヒーロー */
-.hero{text-align:center;padding:52px 20px 40px;background:#fff;border-bottom:1px solid var(--border)}
-.hero-badge{display:inline-block;background:var(--green);color:#fff;font-size:0.72em;font-weight:700;padding:3px 14px;border-radius:20px;margin-bottom:16px}
-.hero h1{font-size:1.9em;font-weight:900;margin-bottom:12px;line-height:1.25}
-.hero p{font-size:0.88em;color:var(--sub);max-width:520px;margin:0 auto 24px;line-height:1.85}
-.hero-cta{display:inline-block;background:var(--green);color:#fff;font-size:0.88em;font-weight:700;padding:11px 28px;border-radius:24px;text-decoration:none;transition:background 0.2s}
-.hero-cta:hover{background:var(--green-dark)}
+/* 1. 表紙 */
+.cover{padding-top:52px}
+.cover-grid{display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:48px;align-items:end;padding-bottom:28px;border-bottom:2px solid var(--ink)}
+.cover-l{display:grid;gap:16px}
+.cover-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--sub)}
+.cover h1{margin:0;font-size:54px;font-weight:900;line-height:1.15;color:var(--ink)}
+.cover-lead{margin:0;max-width:520px;font-size:14px;line-height:1.95;color:var(--body);text-wrap:pretty}
+.cat-btn{justify-self:start;display:inline-flex;align-items:center;gap:8px;background:var(--cta);color:var(--cta-t)!important;font-weight:900;font-size:15px;padding:12px 24px;border-radius:6px;white-space:nowrap;transition:background .15s}
+.cat-btn:hover{background:#E9AC12}
 
-/* 軸説明バー */
-.axes-bar{background:#fff;border-bottom:1px solid var(--border);padding:18px 24px}
-.axes-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:center}
-.axis-chip{font-size:0.8em;color:var(--sub)}
-.axis-chip strong{color:var(--text)}
+/* 2. 型番の見かた */
+.legend{display:grid;gap:10px}
+.legend-h{display:grid;gap:4px}
+.legend-h b{font-size:11px;font-weight:700;color:var(--body)}
+.legend-h span{font-size:12px;line-height:1.7;color:var(--sub)}
+.legend-t{display:grid;border:1px solid var(--ink);background:#fff}
+.legend-t > div{padding:9px 14px;display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:12px;align-items:center;border-top:1px solid var(--line)}
+.legend-t > div:first-child{border-top:none}
+.legend-t .ch{grid-row:1 / span 2;font-size:22px;font-weight:700;line-height:1;color:var(--ink)}
+.legend-t .k{font-size:11px;font-weight:700;color:var(--body)}
+.legend-t .v{font-size:11px;line-height:1.5;color:var(--sub)}
 
-/* グループセクション */
-.group-section{padding:48px 20px}
-.group-section:nth-child(odd){background:#f8faf9}
-.group-section:nth-child(even){background:#fff}
-.group-inner{max-width:960px;margin:0 auto}
+/* 3. シリーズ */
+.series{padding-top:44px;padding-bottom:8px;scroll-margin-top:64px}
+.series-h{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:24px;align-items:end;padding-top:16px;border-top:2px solid var(--ink)}
+.series-t{display:flex;align-items:stretch;border-left:4px solid var(--sc)}
+.series-n{padding:2px 0 2px 14px;display:grid;gap:2px}
+.series-n .ax{font-size:11px;font-weight:700;letter-spacing:.14em}
+.series-n .nm{font-size:28px;font-weight:900;line-height:1.25;color:var(--ink)}
+.series-d{margin:0;font-size:13px;line-height:1.85;color:var(--body)}
+.series-c{font-size:11px;font-weight:700;color:var(--sub);white-space:nowrap}
 
-.group-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid}
-.group-icon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5em;flex-shrink:0}
-.group-title{font-size:1.3em;font-weight:900;margin-bottom:4px}
-.group-sub{font-size:0.82em;color:var(--sub);line-height:1.65}
+#grp-PC{padding-top:28px}
+#grp-PC .series-h{border-top:none;padding-top:0}
 
-/* カードグリッド */
-.card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-@media(max-width:800px){.card-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.card-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+/* 4. モデルカード */
+.models{margin-top:20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.model{display:grid;grid-template-rows:auto auto 1fr auto;background:#fff;border:1px solid var(--line);color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.model:hover{border-color:var(--ink);box-shadow:0 6px 0 rgba(43,43,40,.08)}
+.m-fig{position:relative;height:216px;border-top:4px solid var(--sc);background-color:#F6F4EE;background-image:linear-gradient(#ECE8DF 1px,transparent 1px),linear-gradient(90deg,#ECE8DF 1px,transparent 1px);background-size:18px 18px}
+.m-fig .no{position:absolute;left:10px;top:9px;font-size:9px;font-weight:700;color:var(--sub)}
+.m-fig .ix{position:absolute;right:10px;top:9px;font-size:9px;color:var(--faint)}
+.m-fig img{position:absolute;left:18px;right:18px;top:26px;bottom:6px;width:calc(100% - 36px);height:calc(100% - 32px);object-fit:contain;object-position:center bottom;mix-blend-mode:multiply}
+.m-name{padding:14px 14px 10px;display:grid;gap:4px;border-top:1px solid var(--line)}
+.m-code{font-size:24px;font-weight:700;line-height:1}
+.m-code small{font-family:'Zen Kaku Gothic New',sans-serif;font-size:13px;font-weight:900;margin-left:2px}
+.m-type{font-size:18px;font-weight:900;line-height:1.35;color:var(--sc)}
+.m-tag{font-size:11.5px;line-height:1.7;color:var(--body);text-wrap:pretty}
+.m-spec{margin:0 14px;border-top:1px solid var(--ink);align-self:start}
+.m-spec div{display:grid;grid-template-columns:58px minmax(0,1fr);border-bottom:1px solid var(--line2);font-size:11px}
+.m-spec dt,.m-spec dd{margin:0;padding:6px 0}
+.m-spec dt{color:var(--sub)}
+.m-spec dd{font-weight:700}
+.m-foot{padding:12px 14px;display:flex;align-items:center;justify-content:space-between}
+.m-foot .sr{font-size:10px;color:var(--faint)}
+.m-foot .go{font-size:12px;font-weight:700;color:var(--cta-t);margin-left:auto}
 
-/* タイプカード */
-.type-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.07);text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform 0.18s,box-shadow 0.18s;cursor:pointer}
-.type-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.13)}
+.legend-slot:empty{display:none}
+.legend-slot{padding-top:40px}
 
-.tc-fig{position:relative;background:#fff;aspect-ratio:1/1;overflow:hidden}
-.tc-fig img{position:absolute;left:6%;top:5%;width:88%;height:92%;object-fit:contain;object-position:center bottom}
-.tc-head{padding:14px 16px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
-.tc-code{font-size:1.85em;font-weight:900;font-family:monospace,sans-serif;color:#fff;letter-spacing:2px;text-shadow:0 1px 3px rgba(0,0,0,0.2);margin-bottom:6px}
-.tc-name{font-size:0.72em;font-weight:700;color:rgba(255,255,255,0.92);text-align:center;line-height:1.3}
+/* 5. 末尾CTA */
+.end{padding-top:56px;padding-bottom:72px}
+.end-box{border:1.5px solid var(--ink);background:#fff;padding:28px 32px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center}
+.end-box b{font-size:11px;font-weight:700;color:var(--body)}
+.end-box h2{margin:6px 0 0;font-size:24px;font-weight:900;line-height:1.5;color:var(--ink)}
+.end-box .cat-btn{padding:13px 26px}
 
-.tc-body{padding:14px 14px 16px;flex:1;display:flex;flex-direction:column;gap:10px}
-.tc-traits{display:flex;flex-wrap:wrap;gap:4px}
-.tc-trait{font-size:0.67em;background:#f0f4f2;color:#3a5a50;padding:2px 8px;border-radius:10px;font-weight:600}
-.tc-desc{font-size:0.75em;color:var(--sub);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-
-/* グループカラー */
-.g-pi .group-header{border-color:#2563a0}
-.g-pi .group-icon{background:#dbeafe}
-.g-pi .group-title{color:#1e3a6e}
-
-.g-po .group-header{border-color:#c8690a}
-.g-po .group-icon{background:#fde8cc}
-.g-po .group-title{color:#7a3a00}
-
-.g-fi .group-header{border-color:#9b3a1e}
-.g-fi .group-icon{background:#fde8e2}
-.g-fi .group-title{color:#6b2010}
-
-.g-fo .group-header{border-color:#2a7044}
-.g-fo .group-icon{background:#d4ede0}
-.g-fo .group-title{color:#1a4a2a}
-
+/* 狭い画面（ハンドオフはPCのみ。崩れない範囲で折りたたむ） */
+@media(max-width:1000px){
+  .models{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .cat-wrap{padding-left:16px;padding-right:16px}
+  .cover{padding-top:32px}
+  .cover h1{font-size:36px}
+  .cover-grid{grid-template-columns:1fr;gap:28px}
+  .series{padding-top:32px}
+  .series-h{grid-template-columns:1fr;gap:12px}
+  .series-n .nm{font-size:22px}
+  .series-c{display:none}
+  .models{gap:10px}
+  .m-fig{height:170px}
+  .m-code{font-size:20px}
+  .m-type{font-size:15px}
+  .m-name{padding:12px 10px 8px}
+  .m-spec{display:none}
+  .m-foot{padding:10px}
+  .m-foot .sr{display:none}
+  .end{padding-top:40px;padding-bottom:48px}
+  .end-box{grid-template-columns:1fr;padding:22px 20px}
+  .end-box h2{font-size:19px}
+}
 </style>
 </head>
 <body>
 
 <header class="site-header">
-  <a class="site-logo" href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" style="vertical-align:-0.15em;margin-right:4px"><path d="M0 0h512v512H0z" fill="none"/><path fill="#3BCCFF" d="M495.639 222.776a275 275 0 0 0-.868-6.73c-.069-.069-.145-.122-.215-.188c-8.679-50.682-33.118-95.976-68.089-130.674c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.797-23.417-7.283-29.333-28.946-29.161a246 246 0 0 0-.204 9.89c0 133.68 108.369 242.049 242.049 242.049S498.049 390.68 498.049 257c0-11.618-.827-23.043-2.41-34.224"/><path fill="#13A031" d="M14.155 247.11c2.103-52.273 20.789-100.271 50.932-138.894a243.5 243.5 0 0 1 25.867-28.268a243 243 0 0 1 27.207-21.941a241.4 241.4 0 0 1 49.774-26.517a240 240 0 0 1 28.715-9.205a241 241 0 0 1 33.659-5.98c1.483-.156 2.969-.303 4.459-.433a245 245 0 0 1 45.652.301c5.387.54 10.719 1.263 15.996 2.151a241 241 0 0 1 33.625 8.165c23.741 7.62 45.882 18.809 65.798 32.93q4.23 3.002 8.323 6.177a373 373 0 0 1 4.237 3.286a28 28 0 0 1 1.699 1.463a243 243 0 0 1 16.368 14.839c-4.011 4.41-9.514 5.057-18.374 2.71c-7.599-2.012-14.631-6.081-22.158-8.465c-22.014-6.972-36.926-.365-46.89 20.302c-.287.596-.659 1.172-.826 1.801c-3.88 14.599-21.478 15.486-27.615 27.108c-5.823 11.028-10.008 21.905-20.978 30.202c-10.618 8.031-18.926 19.898-26.114 31.412c-5.055 8.097-3.073 17.984 3.361 25.893c1.647 2.024 3.995 3.46 5.848 5.336c16.586 16.786 16.962 31.736-.016 47.707c-8.158 7.674-14.381 14.304-17.058 26.753c-2.922 13.585-15.997 16.079-29.821 14.882c-2.413-.209-4.618-1.502-5.873-3.573c-5.594-9.235-12.608-17.022-26.071-17.274c-4.607-.086-8.846-7.331-13.676-10.69c-9.655-6.713-18.92-14.614-29.573-19.135c-22.151-9.402-42.698.371-50.031 23.779c-4.093 13.065-5.305 27.072-7.35 40.724c-1.251 8.354.405 18.681-9.658 21.902c-10.822 3.463-16.598-5.548-22.4-12.78c-11.151-13.9-15.812-30.254-17.701-47.599c-.357-3.277-.139-6.613-.392-9.906c-1.796-23.419-7.282-29.336-28.945-29.163m327.041 101.077c-11.016 6.202-21.02 7.362-31.081-.798c-9.335-7.571-18.422-5.882-27.19.542c-9.041 6.624-17.767 13.683-26.545 20.659c-1.522 1.21-2.772 2.849-3.887 4.469c-10.113 14.685-2.818 32.851 14.975 33.325c18.821.501 36.346 3.037 53.307 11.635c6.787 3.44 15.31 3.454 19.192 4.243c26.194.65 39.793-10.659 39.512-32.801c-.144-11.332-3.902-23.469-9.098-33.678c-7.103-13.956-15.062-15.548-29.185-7.596m-39.301-126.693c1.91-.81 3.851-1.505 5.844-1.976c8.038-1.901 11.297-5.977 14.024-13.948c4.125-12.062 10.179-23.887 17.531-34.321c8.791-12.476 10.33-17.143 1.151-25.104c-3.842-3.333-9.346-4.044-13.883-1.745c-7.223 3.661-13.043 8.213-7.934 20.445c1.161 2.78-1.102 7.553-2.833 10.855c-2.446 4.664-5.422 9.05-8.851 14.311c-1.602 2.459-4.027 4.263-6.822 5.161c-9.908 3.183-15.045 7.477-15.724 13.758c-1.014 9.381 8.811 16.248 17.497 12.564m-33.615 94.611c14.82 2.168 29.641 4.498 44.55 5.734c2.388.198 6.665-4.305 7.507-7.344c1.711-6.176-2.485-10.673-8.296-10.982c-12.456-.664-25.022-.722-37.437.279c-2.369.191-4.558 2.606-6.71 4.96c-1.692 1.85-1.948 4.67-.458 6.686c.286.387.551.624.844.667m-156.921 18.856c-4.232 2.101-9.252 5.188-10.894 9.161c-1.079 2.61.084 6.147 1.25 10.44c.639 2.351 3.3 3.506 5.445 2.351c3.714-2 6.388-3.254 7.835-5.354c2.292-3.327 3.495-8.022 3.399-12.081c-.039-1.684-5.641-5.209-7.035-4.517m219.021-36.299c-2.982 1.548-3.572 5.575-1.199 7.953c5.207 5.219 11.002 5.375 17.249 3.686c2.718-.735 4.361-3.553 3.528-6.243c-3.056-9.866-8.148-11.328-19.578-5.396"/></svg><span>World</span> Mappy</a>
+  <a class="site-logo" href="index.html"><img src="../assets/site-logo.png" width="30" height="30" alt="" style="margin-right:2px"><span>World</span> Mappy</a>
   <span class="site-tagline">海外旅行ガイド</span>
   <a class="header-diag-link" href="index.html">診断を受ける</a>
   <button type="button" class="hb-toggle-btn" id="hb-toggle-btn" aria-label="メニュー" aria-expanded="false" aria-controls="hb-drawer"><span></span><span></span><span></span></button>
@@ -165,162 +202,100 @@ body{font-size:16px}
   </div>
 </aside>
 
-<div class="hero">
-  <div class="hero-badge">16タイプ</div>
-  <h1>あなたの旅行タイプは？</h1>
-  <p>計画性・旅の目的・ペース・快適さへのこだわり——4つの軸の組み合わせで、旅のスタイルは16通りに分かれます。あなたはどのタイプ？</p>
-  <a class="hero-cta" href="index.html">診断スタート</a>
-</div>
-
-<div class="axes-bar">
-  <div class="axes-inner">
-    <span class="axis-chip"><strong>軸1</strong>　計画派 P ／ 直感派 F</span>
-    <span class="axis-chip"><strong>軸2</strong>　文化・学び C ／ 絶景・リフレッシュ N</span>
-    <span class="axis-chip"><strong>軸3</strong>　協調派 S ／ マイペース派 L</span>
-    <span class="axis-chip"><strong>軸4</strong>　快適志向 R ／ ワイルド志向 W</span>
-  </div>
-</div>
-
-<!-- PI グループ -->
-<div class="group-section g-pi">
-  <div class="group-inner">
-    <div class="group-header">
-      <div class="group-icon">🏛️</div>
-      <div>
-        <div class="group-title">計画派 × 文化・学び</div>
-        <div class="group-sub">下調べと準備を欠かさず、歴史・芸術・文化への知的好奇心を旅の軸に置くタイプ群。<br>行程の精度が満足度に直結する、旅の設計者たち。</div>
-      </div>
+<main class="cat">
+<div class="cat-wrap cover">
+  <div class="cover-grid">
+    <div class="cover-l">
+      <span class="cover-eyebrow mono">WORLD MAPPY PRODUCT CATALOG ／ VOL.2026</span>
+      <h1>旅人モデル<br>総合カタログ</h1>
+      <p class="cover-lead">4シリーズ・全16モデルを収録。行動・目的・同行・環境の4つの仕様で、旅のしかたが決まります。あなたに合うモデルは診断で確かめられます。</p>
+      <a class="cat-btn" href="index.html">自分のモデルを診断する →</a>
     </div>
-    <div class="card-grid" id="grid-pi"></div>
+    <div class="legend">
+      <div class="legend-h"><b>■ 型番の見かた</b><span>型番の4文字が、そのモデルの基本仕様を表しています。</span></div>
+      <div class="legend-t" id="legend"></div>
+    </div>
   </div>
+
 </div>
 
-<!-- PO グループ -->
-<div class="group-section g-po">
-  <div class="group-inner">
-    <div class="group-header">
-      <div class="group-icon">🏔️</div>
-      <div>
-        <div class="group-title">計画派 × 絶景・リフレッシュ</div>
-        <div class="group-sub">しっかりと計画を立てたうえで、絶景・自然・リゾートでの回復を旅の目的とするタイプ群。<br>段取りの達人が、最高のリフレッシュを実現する。</div>
-      </div>
-    </div>
-    <div class="card-grid" id="grid-po"></div>
-  </div>
-</div>
+<div id="series-root"></div>
+<div class="cat-wrap legend-slot" id="legend-slot"></div>
 
-<!-- FI グループ -->
-<div class="group-section g-fi">
-  <div class="group-inner">
-    <div class="group-header">
-      <div class="group-icon">🧭</div>
-      <div>
-        <div class="group-title">直感派 × 文化・学び</div>
-        <div class="group-sub">計画より直感を信じ、路地裏・市場・美術館に自然と引き寄せられるタイプ群。<br>予定外の発見が、旅を最高の記憶に変える。</div>
-      </div>
-    </div>
-    <div class="card-grid" id="grid-fi"></div>
+<div class="cat-wrap end">
+  <div class="end-box">
+    <div><b>■ モデル選びにお困りの方へ</b><h2>20問・約3分で、ぴったりのモデルを判定します。</h2></div>
+    <a class="cat-btn" href="index.html">診断をはじめる →</a>
   </div>
 </div>
-
-<!-- FO グループ -->
-<div class="group-section g-fo">
-  <div class="group-inner">
-    <div class="group-header">
-      <div class="group-icon">🌊</div>
-      <div>
-        <div class="group-title">直感派 × 絶景・リフレッシュ</div>
-        <div class="group-sub">行き先も宿もその場で決め、絶景・自然・リゾートを感覚のまま満喫するタイプ群。<br>自由であること自体が、旅の醍醐味になる。</div>
-      </div>
-    </div>
-    <div class="card-grid" id="grid-fo"></div>
-  </div>
-</div>
+</main>
 
 <script src="type-images.js"></script>
 <script src="../assets/country-links.js"></script>
 
 <script>
 const TYPES = {
-  PCSR:{name:'中間管理職', color:'#2563a0',
-    traits:['計画派','文化・学び','協調派','快適志向'],
-    desc:'行きたい場所がバラバラな仲間の希望を聞いて、全員が満足する旅程に組み上げる。グループ旅行では、自然と幹事を任される。'},
-  PCSW:{name:'別班員', color:'#1a6b3a',
-    traits:['計画派','文化・学び','協調派','ワイルド'],
-    desc:'事前にしっかり下調べして、仲間と一緒に現地の文化の奥まで踏み込む。移動や環境が厳しいほど、かえって気合いが入る。'},
-  PCLR:{name:'茶道部', color:'#7b5ea7',
-    traits:['計画派','文化・学び','マイペース派','快適志向'],
-    desc:'旅程を丁寧に組んで、歴史や美術にじっくり向き合う。急かされるのが苦手で、一人で静かに味わう時間を何より大切にする。'},
-  PCLW:{name:'妖怪ガイドブック喰い', color:'#4a7a59',
-    traits:['計画派','文化・学び','マイペース派','ワイルド'],
-    desc:'気になった場所は、出発前に徹底的に調べ上げる。現地では一人で黙々と深掘りし、多少の不便も気にならない。'},
-  PNSR:{name:'工場長', color:'#e07b39',
-    traits:['計画派','絶景・リフレッシュ','協調派','快適志向'],
-    desc:'綿密な計画で、絶景スポットを効率よく回る。全員が楽しめるよう、予約や時間配分まで先回りして整えておく。'},
-  PNSW:{name:'シェルパ', color:'#3a7540',
-    traits:['計画派','絶景・リフレッシュ','協調派','ワイルド'],
-    desc:'事前準備を怠らず、仲間を連れて自然の奥地へ向かう。厳しい環境でも落ち着いていて、一緒にいると安心感がある。'},
-  PNLR:{name:'熱燗', color:'#c8940a',
-    traits:['計画派','絶景・リフレッシュ','マイペース派','快適志向'],
-    desc:'旅程を細かく組んで、リフレッシュの質にとことんこだわる。誰にも邪魔されず、静かに過ごす時間を最高の贅沢だと思っている。'},
-  PNLW:{name:'週末仙人', color:'#607d8b',
-    traits:['計画派','絶景・リフレッシュ','マイペース派','ワイルド'],
-    desc:'計画を立てたうえで、一人で自然の中へ入っていく。にぎやかな観光地より、静けさの中で過ごす時間に旅の良さを感じる。'},
-  FCSR:{name:'ゴールデンレトリバー', color:'#c94a29',
-    traits:['直感派','文化・学び','協調派','快適志向'],
-    desc:'どこへ行っても仲間と盛り上がり、文化的な発見にも素直に感動する。人懐っこく好奇心旺盛で、旅先にもすぐなじむ。'},
-  FCSW:{name:'イエスマン', color:'#8b4513',
-    traits:['直感派','文化・学び','協調派','ワイルド'],
-    desc:'直感でどこへでも飛び込み、仲間と一緒に現地の文化を全身で楽しむ。テンションが高く、旅のムードメーカーになる。'},
-  FCLR:{name:'街のトリュフ犬', color:'#3a8a8a',
-    traits:['直感派','文化・学び','マイペース派','快適志向'],
-    desc:'計画なしに街を歩くだけで、なぜか面白い場所に行き当たる。偶然の発見を楽しみながら、気ままに文化に触れる。'},
-  FCLW:{name:'迷ってない人', color:'#5c4033',
-    traits:['直感派','文化・学び','マイペース派','ワイルド'],
-    desc:'大まかな行き先だけ決めて、あとは文化への好奇心の向くままに動く。予定に縛られず、気になった路地や街へふらっと足を向ける。'},
-  FNSR:{name:'副本部長', color:'#d47a00',
-    traits:['直感派','絶景・リフレッシュ','協調派','快適志向'],
-    desc:'細かい計画は立てず、現地のホテルでツアーを申し込んだり、おすすめを聞いたりして動く。仲間を誘って、快適に絶景を楽しむのが上手。'},
-  FNSW:{name:'桃太郎', color:'#3a7044',
-    traits:['直感派','絶景・リフレッシュ','協調派','ワイルド'],
-    desc:'仲間を巻き込みながら、未知の場所へ次々と突き進む。体力があり、計画がなくても現場で考えて動ける。'},
-  FNLR:{name:'吾輩', color:'#5e7a8a',
-    traits:['直感派','絶景・リフレッシュ','マイペース派','快適志向'],
-    desc:'誰のペースにも合わせず、自分が快適に過ごすことを最優先に旅する。一人の時間を満喫できる、大人の旅行者。'},
-  FNLW:{name:'タンポポの綿毛', color:'#6b5e62',
-    traits:['直感派','絶景・リフレッシュ','マイペース派','ワイルド'],
-    desc:'計画も快適さも気にせず、本能の赴くままに動く。自然や偶然の流れに身を任せる、自由な旅行者。'},
+  PCSR:'中間管理職', PCSW:'別班員', PCLR:'茶道部', PCLW:'妖怪ガイドブック喰い',
+  PNSR:'工場長', PNSW:'シェルパ', PNLR:'熱燗', PNLW:'週末仙人',
+  FCSR:'ゴールデンレトリバー', FCSW:'イエスマン', FCLR:'街のトリュフ犬', FCLW:'迷ってない人',
+  FNSR:'副本部長', FNSW:'桃太郎', FNLR:'吾輩', FNLW:'タンポポの綿毛',
 };
+const GROUPS = [
+  { key:'PC', name:'文化プランナー', axis:'PLANNING × CULTURE', color:'#3A6FA8', desc:'下調べを重ね、歴史や街の文化をじっくり味わうモデル群。行程の正確さに定評があります。' },
+  { key:'PN', name:'絶景プランナー', axis:'PLANNING × NATURE',  color:'#17788F', desc:'準備は万全に。狙った絶景や大自然へ確実にたどり着く、到達性能に優れたモデル群。' },
+  { key:'FC', name:'街歩きの自由人', axis:'FEELING × CULTURE', color:'#A8503A', desc:'予定は決めず、路地裏や地元の店で偶然の出会いを拾う、感度の高いモデル群。' },
+  { key:'FN', name:'大自然の冒険家', axis:'FEELING × NATURE',  color:'#8F6415', desc:'気の向くまま、まだ見ぬ景色へ飛び出す。悪路走破性に優れたモデル群。' },
+];
+const LEGEND = [
+  { ch:'P/F',   k:'1文字目：行動', v:'P＝計画派 ／ F＝直感派' },
+  { ch:'C/N',   k:'2文字目：目的', v:'C＝文化・学び ／ N＝絶景・自然' },
+  { ch:'S/L',   k:'3文字目：同行', v:'S＝協調派 ／ L＝マイペース' },
+  { ch:'R/W',   k:'4文字目：環境', v:'R＝快適志向 ／ W＝ワイルド' },
+  { ch:'-0000', k:'製造番号',      v:'モデルごとの固有番号' },
+];
+const tagline = c => (c[0]==='P' ? '計画に忠実な' : '風まかせの') + (c[1]==='C' ? '文化探索型' : '絶景追跡型') + '。'
+  + (c[2]==='S' ? '仲間と感動を分かち合い' : '自分のペースを守り') + '、' + (c[3]==='R' ? '快適さも大切にする。' : '多少の不便も楽しめる。');
+const SPEC = c => [
+  ['行動', c[0]==='P' ? '計画派' : '直感派'],
+  ['目的', c[1]==='C' ? '文化・学び' : '絶景・自然'],
+  ['同行', c[2]==='S' ? '協調派（2〜6人）' : 'マイペース（1〜3人）'],
+  ['環境', c[3]==='R' ? '快適志向' : 'ワイルド'],
+];
+// 結果ページの MODEL NO. と同じ標準値（計画5/1・目的5・同行5/1・快適5/1）
+const MODEL_NO = c => c + '-' + [c[0]==='P'?5:1, 5, c[2]==='S'?5:1, c[3]==='R'?5:1].join('');
 
-const GROUPS = {
-  pi: ['PCSR','PCSW','PCLR','PCLW'],
-  po: ['PNSR','PNSW','PNLR','PNLW'],
-  fi: ['FCSR','FCSW','FCLR','FCLW'],
-  fo: ['FNSR','FNSW','FNLR','FNLW'],
-};
-
-function buildCard(code) {
-  const t = TYPES[code];
-  const a = document.createElement('a');
-  a.className = 'type-card';
-  a.href = `result.html?type=${code}&from=list`;  // 一覧から開いたときは、結果ページでフィードバックカードを出さない
-  a.innerHTML = `
-    <div class="tc-fig"><img src="${typeImg(code) || TYPE_IMG_FALLBACK}" alt="${t.name}" loading="lazy"></div>
-    <div class="tc-head" style="background:${t.color}">
-      <div class="tc-code">${code}</div>
-      <div class="tc-name">${t.name}</div>
+const pad = n => String(n).padStart(2, '0');
+document.getElementById('legend').innerHTML = LEGEND.map(l =>
+  `<div><span class="ch mono">${l.ch}</span><span class="k">${l.k}</span><span class="v">${l.v}</span></div>`).join('');
+document.getElementById('series-root').innerHTML = GROUPS.map((g, gi) => {
+  const codes = Object.keys(TYPES).filter(c => c.startsWith(g.key));
+  const cards = codes.map((code, i) => {
+    const sp = SPEC(code).map(s => `<div><dt>${s[0]}</dt><dd>${s[1]}</dd></div>`).join('');
+    return `<a class="model" style="--sc:${g.color}" href="result.html?type=${code}&from=list">
+      <div class="m-fig"><span class="no mono">${MODEL_NO(code)}</span><span class="ix mono">${pad(gi*4+i+1)}/16</span><img src="${typeImg(code) || TYPE_IMG_FALLBACK}" alt="${TYPES[code]}" loading="lazy"></div>
+      <div class="m-name"><span class="m-code mono">${code}<small>型</small></span><span class="m-type">${TYPES[code]}</span><span class="m-tag">${tagline(code)}</span></div>
+      <dl class="m-spec">${sp}</dl>
+      <div class="m-foot"><span class="go">詳しく見る →</span></div>
+    </a>`;
+  }).join('');
+  return `<div class="cat-wrap series" id="grp-${g.key}">
+    <div class="series-h">
+      <div class="series-t" style="--sc:${g.color}"><span class="series-n"><span class="ax mono" style="color:${g.color}">${g.axis}</span><span class="nm">${g.name}シリーズ</span></span></div>
+      <p class="series-d">${g.desc}</p>
+      <span class="series-c mono">4 MODELS ／ P.${pad(gi+1)}</span>
     </div>
-    <div class="tc-body">
-      <div class="tc-traits">${t.traits.map(tr=>`<span class="tc-trait">${tr}</span>`).join('')}</div>
-      <div class="tc-desc">${t.desc}</div>
-    </div>`;
-  return a;
-}
+    <div class="models">${cards}</div>
+  </div>`;
+}).join('');
 
-Object.entries(GROUPS).forEach(([key, codes]) => {
-  const grid = document.getElementById(`grid-${key}`);
-  codes.forEach(code => grid.appendChild(buildCard(code)));
-});
+// スマホ幅では「型番の見かた」をページ最下部へ移す
+(function(){
+  const lg = document.querySelector('.legend'), home = lg.parentNode, slot = document.getElementById('legend-slot');
+  const mq = window.matchMedia('(max-width:760px)');
+  const place = () => (mq.matches ? slot : home).appendChild(lg);
+  place();
+  mq.addEventListener ? mq.addEventListener('change', place) : mq.addListener(place);
+})();
 
 /* ハンバーガー: 右スライドのドロワー */
 (function(){
