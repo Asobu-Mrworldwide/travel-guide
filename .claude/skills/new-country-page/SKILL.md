@@ -1,6 +1,6 @@
 ---
 name: new-country-page
-description: World Mappy（海外情報サイト）で新しい国の紹介ページを一から書き起こすときの執筆手順書。courses（モデルコース）の3段階構成、phrasesの5カテゴリ雛形、spot_points/hotel_intro/special_note/prep_steps/tour_platforms/country_items/overview系フィールド/difficulty_bar/index_card.catch/tags/flag_html/prompt_enの書き方方針をまとめている。「新しい国を追加したい」「〇〇国のページを作って」「新規国のJSONを書きたい」「courses/phrases/spot_pointsを埋めたい」といった依頼が来たら必ずこのスキルを読み込んでから執筆する。既存ページの軽微な修正（文字数調整・誤字修正・1フィールドだけ直す等）の場合はこのスキルを読まずCLAUDE.mdの常時ルールだけで対応してよい。
+description: World Mappy（海外情報サイト）で新しい国の紹介ページを一から書き起こすときの執筆手順書。モデルコースタブの扱い（通常はAIプロンプト自動生成・書くのはcitiesとflight_hoursのみ）、phrasesの5カテゴリ雛形、spot_points/hotel_intro/special_note/prep_steps/tour_platforms/country_items/overview系フィールド/difficulty_bar/index_card.catch/tags/flag_html/prompt_enの書き方方針をまとめている。「新しい国を追加したい」「〇〇国のページを作って」「新規国のJSONを書きたい」「courses/phrases/spot_pointsを埋めたい」といった依頼が来たら必ずこのスキルを読み込んでから執筆する。既存ページの軽微な修正（文字数調整・誤字修正・1フィールドだけ直す等）の場合はこのスキルを読まずCLAUDE.mdの常時ルールだけで対応してよい。
 ---
 
 # World Mappy 新規国ページ執筆スキル
@@ -10,50 +10,29 @@ description: World Mappy（海外情報サイト）で新しい国の紹介ペ�
 **必ず`assets/tools/_country_template.json`を実際に開いて、その構造に沿って埋めていくこと。** このスキルは各セクションの「なぜそう書くか」の方針を説明するもので、JSONスキーマそのものではない。ビルド手順・フィールドの技術的な意味は`assets/tools/generate.py`のdocstringを参照する。
 
 新規国を1本仕上げるときの作業順序の目安:
-1. `overview`（基本情報カード群）→ 2. `basic_data` → 3. `courses`（モデルコース）→ 4. `spot_sections`/`food_items` → 5. `spot_points` → 6. `season` → 7. `budget`/`practical` → 8. `phrases` → 9. `index_card.catch`・`index.html`の`tags` → 10. `overview.flag_html`・各`prompt_en`
+1. `overview`（基本情報カード群）→ 2. `basic_data` → 3. `courses`（`cta_title`/`cta_desc`のみ。本文は書かない）→ 4. `spot_sections`/`food_items` → 5. `spot_points` → 6. `season` → 7. `budget`/`practical` → 8. `phrases` → 9. `index_card.catch`・`index.html`の`tags` → 10. `overview.flag_html`・各`prompt_en`
 
 以下、セクションごとの方針。
 
 ## 1. courses（モデルコース）
 
-`courses.stable_plans[]`は配列だが、**3段階の温度差**で統一する:
+**2026-10方針転換: 通常の国は`courses`の本文を書かない。** モデルコースタブは「日数・人数・テーマ等を選ぶとAI用プロンプトができるページ」になり、`stable_plans`/`adventure_plan`等は表示されない。プロンプトに埋め込まれる情報は`generate.py`の`build_course_ai_js()`が集めるので、書くのは次だけ:
 
-- **プラン1（配列の最初）**: 拠点を絞って身軽に周る初心者・王道向け。ホテル連泊が基本、スーツケース移動は少なめ。
-- **プラン2以降**: プラン1より一段階、行動範囲を広げる。「一都市一泊」「新幹線で縦断」のような移動を伴うルート。**わざわざ「バックパッカー向け」と銘打つ必要はない**——移動を増やす設計にすれば自然とその色になる。
-- **`adventure_plan`（`stable_plans`とは別の単数フィールド）**: 冒険枠。ページ最下部の専用スロットに必ず表示される。管理人の実体験ルートがあればそれを書き（南アフリカの前例）、なければ一般的な「上級者向けの尖ったルート」（台湾の環島、マレーシアの半島縦断のような）を書く。
+- `cities[].name`: プロンプトの「行きたいエリア」の選択肢になる。名前だけで場所が伝わる表記にする。
+- `overview.flight_hours`: プロンプトに「直行便の所要時間の目安」として入る。
+- `courses.cta_title` / `courses.cta_desc`: タブ末尾の予算タブへの誘導。これは従来どおり国ごとに書く。
 
-理想形は台湾の3段構成: 週末プラン（3泊4日・拠点集中）→縦断プラン（5泊6日・移動多め）→環島（adventure_plan・上級者の憧れルート）。
+`courses.stable_plans`などのコース本文は空でよい。仕組み・文面の変更は`assets/country_template.html`の`#course`内スクリプトで全国一括で行う（直したら`generate.py`で全国再生成）。
 
-### タイトルの書き方
-- `courses.stable_title`は毎回書き下ろす。「定番の2大プラン」のような中身を説明しない汎用文言にしない。プラン1・2に共通するスタイルが一言で伝わる見出しにする（例:「拠点を絞ってじっくりプラン」）。
-- `stable_plans[].title`には**そのプランで実際に訪れる都市名を全て列挙**する（例:「バンコク・アユタヤ」「KL＋ペナン」）。「〇〇満喫」のような都市名を含まない抽象タイトルにしない。
+### 例外: 固定コースを載せる国（`courses.fixed_plans: true`）
 
-### 語尾トーン（体験談風にしない）
-`courses`内の全テキスト（`content_html`/`summary`/`tip`含む）は、**「管理人がすでに行ったかのような一人称・過去形の締め」を使わない**。「〜な旅になった」「〜と感じた」「〜が正解だった」のような回想調は禁止。プラン紹介の締めは「〜する密度の濃いプランである」のように客観的・現在形・体言止めにする。
+一般観光が成立せずAIに任せられない国（現状は北朝鮮のみ。団体ツアー例を載せている）だけ、`courses`に`"fixed_plans": true`を足すと、AIプロンプトの代わりに従来の固定コースが表示される。この場合のみ以下の従来ルールで書く。
 
-- 例外1: 町や土地の**歴史**を述べる過去形（「かつては漁業で栄えた港町だった」）はOK。「朝食を楽しんだ後、〜へ」のような行程の「〜した後」も普通の指示表現なのでOK。
-- 例外2: 南アフリカの`adventure_plan`だけは実体験の一人称回想として意図的に残されている。中立化しない。
-
-チェック方法: `courses`を再帰的に走査し、各文（`。`区切り）の末尾が過去形・体験談調（`〜になった`/`〜だった`/`〜はず`/`〜した旅`等）で終わっていないか確認する。`content_html`だけでなく`tip`・`summary`等の全フィールドが対象。
-
-### 移動の表現（transit / transport_note / pre_transit）
-- **日をまたぐ移動**（宿泊地が変わる）: `{"transit": true, "duration": "...", "train": true}`を日と日の間に独立行として挟む（矢印付き）。
-- **同じ都市に戻る日帰り**（例: KL→マラッカ→KL）: 独立行にせず、その日のdayオブジェクトに`transport_note`（`pre_transit`と同形式）を追加する。矢印なしのアイコン付きボックスとして説明文の下に表示。
-- **拠点が変わり午前中に移動**（例: 台北前泊→翌朝花蓮へ）: 到着日のdayオブジェクトに`pre_transit`を追加。Dayバッジ直後・説明文の直前に矢印なしで表示。
-- **拠点が変わり午後に移動**（例: 台南観光後に高雄へ）: 従来通り独立`transit`行を前の日の直後に挟む（矢印付き）。
-
-判断基準: 前後の`transit`の`duration`が「その日の観光と地続きの移動」なら`transport_note`/`pre_transit`、「宿泊地を移す移動」なら独立`transit`行。
-
-アイコンフラグ: `plane`/`taxi`/`ferry`/`walk`/`train`（新幹線・高速鉄道など明示的に高速鉄道と呼べるものだけ）/`local_train`（🚆、在来線・普通列車）。どれも立てなければバス扱い。フラグ→アイコンSVGの解決ロジックは`generate.py`の`TRANSIT_ICONS`辞書・`_resolve_transit_icon()`関数に一本化されている（`country_template.html`側に分岐は残っていない）ため、新しいアイコン種別を追加する場合は`generate.py`側だけ直せばよい。ただし`stable_plans`用・`adventure_plan`用のtransit行のHTML構造（マークアップ・クラス名）自体は`country_template.html`内に2箇所並記されているため、行の見た目・構造を変える場合はその2箇所は引き続き両方直すこと。
-
-### courses.introの型
-```
-[直行便時間・時差など基本情報]の[国名]は「[その国らしい旅の強み]」のが最大の強み。
-初めてなら[エリア]に絞った<strong>[プラン1名]</strong>、
-[2回目以降/連休が取れるなら]は[内容]を巡る<strong>[プラン2名]</strong>がおすすめ。
-（adventure_planへの一言布石。国ごとに書き分ける。定型文にしない）
-```
-冒頭の「強み」の一言（台湾＝短い休みでも成立する等）も国ごとに変える。直行便が少ない・遠い国は「便数は少ないが現地移動はコンパクト」のようなその国ならではの利点に置き換える。「どちらもアレンジ自由です」のような蛇足の締めは入れない。
+- **`stable_plans[]`は温度差をつける**: プラン1は拠点を絞った初心者・王道向け、プラン2以降は一段階行動範囲を広げる。`adventure_plan`（冒険枠）は`adventure_title`がある場合だけ表示される。不要なら`adventure_title`・`adventure_note_html`・`adventure_plan`ごと削除してよい（北朝鮮は削除済み）。
+- **タイトル**: `stable_title`は毎回書き下ろし、`stable_plans[].title`には実際に訪れる都市名を全て列挙する。
+- **語尾トーン**: 体験談風（「〜な旅になった」等の一人称・過去形の締め）は禁止。客観的・現在形・体言止め。歴史の過去形や行程の「〜した後」はOK。
+- **移動表現**: 宿泊地が変わる移動は独立`transit`行、同じ都市に戻る日帰りは`transport_note`、午前に拠点移動する日は`pre_transit`。アイコンフラグは`plane`/`taxi`/`ferry`/`walk`/`train`（高速鉄道のみ）/`local_train`、未指定はバス。解決ロジックは`generate.py`の`TRANSIT_ICONS`・`_resolve_transit_icon()`。
+- **`courses.intro`**: 直行便時間などの基本情報→その国らしい強み→プラン1・2の紹介、の順。定型文にしない。
 
 ## 2. phrases（フレーズタブ）
 

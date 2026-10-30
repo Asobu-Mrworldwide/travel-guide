@@ -4,7 +4,7 @@
 
 > **新規国の`courses`（モデルコース）・`phrases`の設計方針は`.claude/skills/new-country-page/SKILL.md`に移動済み。** 新しい国のページを書き起こすときはそのスキルを参照する。既存ページのcourses/phrasesを軽微に直すだけなら以下の常時ルール（廃止済みフィールド・transitアイコン重複箇所）だけ押さえておけばよい。
 
-> **2026-10方針転換: モデルコースタブは「AIプロンプト生成ページ」に変更済み。** `courses.stable_plans`/`adventure_plan`等の具体的なコース本文は**どのページにも表示されなくなった**（JSONには残っているが新規国で書く必要はない）。タブには日数・人数・テーマ等を選ぶとプロンプトができるフォームと、コピペ用おすすめプロンプト6種が出る。内容は`country_template.html`の`#course`内スクリプトと`generate.py`の`build_course_ai_js()`（国名・`cities[].name`・`overview.flight_hours`を埋め込む）で決まるため、国ごとのJSONは`cities`と`flight_hours`さえ正しければよい。`courses.cta_title`/`cta_desc`は引き続き使用。
+> **2026-10方針転換: モデルコースタブは「AIプロンプト生成ページ」に変更済み。** `courses.stable_plans`/`adventure_plan`等の具体的なコース本文は**どのページにも表示されなくなった**（JSONには残っているが新規国で書く必要はない）。タブには日数・人数・テーマ等を選ぶとプロンプトができるフォームと、コピペ用おすすめプロンプト6種が出る。内容は`country_template.html`の`#course`内スクリプトと`generate.py`の`build_course_ai_js()`（国名・`cities[].name`・`overview.flight_hours`を埋め込む）で決まるため、国ごとのJSONは`cities`と`flight_hours`さえ正しければよい。`courses.cta_title`/`cta_desc`は引き続き使用。**例外**: `courses.fixed_plans: true`を付けた国（現状は北朝鮮のみ、団体ツアー例を表示）は従来の固定コース表示になる。拡張プラン（`adventure_title`）は値がある国だけ表示される。
 
 ## `country_template.html`の余白（margin/padding）ルール
 

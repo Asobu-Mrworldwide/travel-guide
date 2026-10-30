@@ -1089,8 +1089,83 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 {{custom_top_course}}
   <div class="tab-eyebrow"><span class="tab-eyebrow-badge">COURSE</span><span class="tab-eyebrow-sub">モデルコース</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">{{name_en}} / 04</span></div>
   <div class="tab-body">
+{% if courses.fixed_plans %}
   <h2 data-label="MODEL COURSE">モデルコース</h2>
-  <p class="ai-lead">{{name}}の旅は、日数・同行者・好みによって「ベストなコース」が大きく変わります。そこで固定のコースを載せる代わりに、<strong>AIにあなた専用のモデルコースを作ってもらうためのプロンプト</strong>を用意しました。条件を選ぶだけで文章ができあがるので、コピーしてChatGPT・Claude・Geminiなどに貼り付けてください。</p>
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">{{courses.intro}}</p>
+  <div class="course-type">
+    <div class="course-type-title">{{courses.stable_title}}</div>
+  </div>
+  {% if courses.stable_intro %}
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.stable_intro}}</p>
+  {% endif %}
+  <div class="s-card" style="padding-top:6px">
+
+  {% for plan in courses.stable_plans %}
+  <h3 class="section-subhead plan-title-row toc-sub" style="margin:6px 0 8px"><span>{{plan.title}}</span>{% if plan.tip %}<span class="plan-tip-tag">{{icon:check-green}}{{plan.tip}}</span>{% endif %}</h3>
+  <div style="background:#fff;padding:20px 24px">
+    <div class="course-timeline">
+      {% for day in plan.days %}
+      {% if day.transit %}
+      <div class="tl-transit">
+        <div class="tl-transit-lbl"><span class="tl-pre-transit-ico">{{day._icon_svg}}</span><span>{{day.duration}}</span></div>
+      </div>
+      {% else %}
+      <div class="tl-day">
+        <div class="tl-badge">{{day.label}}</div>
+        <div class="tl-body">
+        {% if day.pre_transit %}<div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico">{{day.pre_transit._icon_svg}}</span><span>{{day.pre_transit.duration}}</span></div></div>{% endif %}
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0">{{day.content_html}}{% if day.transport_note %}<div class="tl-transport-note"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico">{{day.transport_note._icon_svg}}</span><span>{{day.transport_note.duration}}</span></div></div>{% endif %}</div>
+            {% if day.image %}<img src="{{day.image}}" alt="" class="tl-day-img">{% endif %}
+          </div>
+        </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+
+{% if courses.adventure_title %}
+  <div class="course-type" style="margin-top:22px">
+    <div class="course-type-title">{{courses.adventure_title}}</div>
+  </div>
+  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.adventure_note_html}}</p>
+  <div class="s-card" style="padding-top:6px">
+  {% if courses.adventure_plan.title %}<h3 class="section-subhead plan-title-row toc-sub" style="margin:6px 0 8px"><span>{{courses.adventure_plan.title}}</span>{% if courses.adventure_plan.tip %}<span class="plan-tip-tag">{{icon:check-green}}{{courses.adventure_plan.tip}}</span>{% endif %}</h3>{% endif %}
+  <div style="background:#fff;padding:20px 24px">
+    <div class="course-timeline">
+      {% for day in courses.adventure_plan.days %}
+      {% if day.transit %}
+      <div class="tl-transit">
+        <div class="tl-transit-lbl"><span class="tl-pre-transit-ico">{{day._icon_svg}}</span><span>{{day.duration}}</span></div>
+      </div>
+      {% endif %}
+{% else %}
+      <div class="tl-day">
+        <div class="tl-badge">{{day.label}}</div>
+        <div class="tl-body">
+        {% if day.pre_transit %}<div class="tl-pre-transit"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico">{{day.pre_transit._icon_svg}}</span><span>{{day.pre_transit.duration}}</span></div></div>{% endif %}
+        <div class="tl-content">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="flex:1;min-width:0">{{day.content_html}}{% if day.transport_note %}<div class="tl-transport-note"><div class="tl-pre-transit-lbl"><span class="tl-pre-transit-ico">{{day.transport_note._icon_svg}}</span><span>{{day.transport_note.duration}}</span></div></div>{% endif %}</div>
+            {% if day.image %}<img src="{{day.image}}" alt="" class="tl-day-img">{% endif %}
+          </div>
+        </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  </div>
+{% else %}
+  <h2 data-label="MODEL COURSE">モデルコース</h2>
+  <p class="ai-lead">旅の「ベストなコース」は、日数・同行者・好みによって大きく変わります。そこで固定のコースを載せる代わりに、<strong>AIにあなた専用のモデルコースを作ってもらうためのプロンプト</strong>を用意しました。条件を選ぶだけで文章ができあがるので、コピーしてChatGPT・Claude・Geminiなどに貼り付けてください。</p>
 
   <h3 class="section-subhead toc-sub ai-h3">条件を選んでプロンプトを作る</h3>
   <div class="ai-builder" id="aiBuilder">
@@ -1327,6 +1402,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     refresh();
   })();
   </script>
+{% endif %}
   </div><!-- /tab-body -->
 
 
