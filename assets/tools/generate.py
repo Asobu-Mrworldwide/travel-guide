@@ -276,6 +276,17 @@ def build_spot_data_js(data):
     return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
 
 
+def build_course_ai_js(data):
+    """モデルコースタブ（AIプロンプト生成）用に、国名・都市・所要時間のJSONを作る"""
+    overview = data.get('overview', {}) or {}
+    obj = {
+        'name': data.get('name', ''),
+        'cities': [c.get('name', '') for c in data.get('cities', []) if c.get('name')],
+        'flight': overview.get('flight_hours', '') or '',
+    }
+    return json.dumps(obj, ensure_ascii=False).replace('<', '\\u003c')
+
+
 def build_budget_tabs_js(data):
     """budget.plan_rows / budget.items から節約・標準・こだわり派タブ用のJSデータを作る"""
     budget = data.get('budget', {}) or {}
@@ -637,6 +648,7 @@ def generate(country_id):
     _break_duration(data.get('courses', {}).get('adventure_plan', {}).get('days', []))
 
     data['__root_dir__'] = os.path.normpath(root_dir)
+    data['course_ai_js'] = build_course_ai_js(data)
 
     # グルメタブの「すべて」ボタンは表示しない（未選択時に全件表示されるため不要）
     data['food_filter_types'] = [

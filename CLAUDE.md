@@ -4,6 +4,8 @@
 
 > **新規国の`courses`（モデルコース）・`phrases`の設計方針は`.claude/skills/new-country-page/SKILL.md`に移動済み。** 新しい国のページを書き起こすときはそのスキルを参照する。既存ページのcourses/phrasesを軽微に直すだけなら以下の常時ルール（廃止済みフィールド・transitアイコン重複箇所）だけ押さえておけばよい。
 
+> **2026-10方針転換: モデルコースタブは「AIプロンプト生成ページ」に変更済み。** `courses.stable_plans`/`adventure_plan`等の具体的なコース本文は**どのページにも表示されなくなった**（JSONには残っているが新規国で書く必要はない）。タブには日数・人数・テーマ等を選ぶとプロンプトができるフォームと、コピペ用おすすめプロンプト6種が出る。内容は`country_template.html`の`#course`内スクリプトと`generate.py`の`build_course_ai_js()`（国名・`cities[].name`・`overview.flight_hours`を埋め込む）で決まるため、国ごとのJSONは`cities`と`flight_hours`さえ正しければよい。`courses.cta_title`/`cta_desc`は引き続き使用。
+
 ## `country_template.html`の余白（margin/padding）ルール
 
 2026-09制定。`style="margin:..."`のようなインラインスタイルがブロックごとに感覚値でバラバラに設定されており（例: `budget.intro`下12px、航空券説明文下16px、cash-card上下40px、節約ポイントbox上36px…）、見た目の詰まり・不揃いが繰り返し見つかった。以後、コンテンツブロック間の余白は**8の倍数の5段階スケール**に統一する。
