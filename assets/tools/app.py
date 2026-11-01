@@ -1078,7 +1078,7 @@ if tab2:
         st.divider()
 
         item_key   = sel_item.get("num", "0").replace(".", "_")
-        key_prompt = f"gen_prompt_{item_key}"
+        key_prompt = f"gen_prompt_{country_id}_{item_key}"
         if not st.session_state.get(key_prompt):
             # 優先順: last_state（前回編集値）→ JSON（保存済み）
             _saved_prompt = last_state.get("prompts", {}).get(f"{country_id}_{item_key}", "")
