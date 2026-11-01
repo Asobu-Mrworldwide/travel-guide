@@ -47,6 +47,9 @@ STYLE_IDS = {
     "style_spot4": "3765cf6e-0cf9-49ed-8b44-9200c2f68289",  # 観光スポット用スタイル v4
     "style_spot5": "0fa21982-70a8-4857-b62f-093dac9c7771",  # 観光スポット用スタイル v5
     "style_food_0710": "568daa6a-9631-44e7-a615-ce547146ae52",  # グルメイラスト用スタイル (2026-07-10追加)
+    "style_spot_1004": "7c939c55-d770-415b-aaf6-21c96075c09d",  # v4 style 観光スポット 2026/10/04
+    "style_food_1101": "5efade2f-d039-46ab-9529-2d7b31b4a9cf",  # v4 style グルメ 2026/11/01(ラスター版。旧ベクター版は0bb3f2ce-8ea9-40e1-9f4e-00af5e0f9ffd)
+    "style_spot_1101": "f20b5526-f520-4bd9-86b1-2c8452b1110a",  # v4 style 観光スポット 2026/11/01(ラスター)
     # watercolor20b は style_id なし（プロンプト強化で代替）
 }
 
@@ -64,6 +67,9 @@ BASE_MODELS = {
     "style_spot4":  "recraftv3",    # 観光スポット用スタイル v4: recraftv3 ベース
     "style_spot5":  "recraftv3",    # 観光スポット用スタイル v5: recraftv3 ベース
     "style_food_0710": "recraftv2",  # グルメイラスト用スタイル (2026-07-10追加): recraftv2 ベース
+    "style_spot_1004": "recraftv4_styles_vector",  # v4 style 観光スポット 2026/10/04: V4 Styles ベクター(SVG→PNG変換)
+    "style_spot_1101": "recraftv4_styles",  # v4 style 観光スポット 2026/11/01: V4 Styles ラスター
+    "style_food_1101": "recraftv4_styles",  # v4 style グルメ 2026/11/01: V4 Styles ラスター
 }
 
 # モデルキーごとにプロンプト先頭に自動付与するプレフィックス
@@ -76,7 +82,24 @@ PROMPT_PREFIXES = {
         "plain solid white background, no colored background, no background scenery, "
         "no background pattern, isolated food illustration on white,"
     ),
+    "style_food_1101": (
+        "plain solid white background, no colored background, no background scenery, "
+        "no background pattern, isolated food illustration on white, "
+        "no signature, no watermark, no text,"
+    ),
+    "style_spot_1004": "no signature, no watermark, no text, no logo, no lettering,",
+    "style_spot_1101": "no signature, no watermark, no text, no logo, no lettering,",
 }
+
+
+_V4_RATIOS = ["1:1", "2:1", "1:2", "3:2", "2:3", "4:3", "3:4", "5:4", "4:5",
+              "6:10", "14:10", "10:14", "16:9", "9:16"]
+
+
+def _v4_ratio(width: int, height: int) -> str:
+    """V4系は 1820x1024 のようなV3用サイズを受け付けないため、最も近い縦横比(w:h)に変換する。"""
+    target = width / height
+    return min(_V4_RATIOS, key=lambda r: abs(int(r.split(":")[0]) / int(r.split(":")[1]) - target))
 
 
 def _auth_headers() -> dict:
@@ -114,7 +137,7 @@ def generate_image(prompt: str, plate_color: str, model: str = "recraft20b",
     payload = {
         "prompt": full_prompt,
         "model":  actual_model,
-        "size":   f"{width}x{height}",
+        "size":   _v4_ratio(width, height) if actual_model.startswith("recraftv4") else f"{width}x{height}",
     }
     if use_style and model in STYLE_IDS:
         payload["style_id"] = STYLE_IDS[model]
@@ -129,6 +152,12 @@ def generate_image(prompt: str, plate_color: str, model: str = "recraft20b",
     dl = _request_with_retry("GET", url)
     if dl.status_code != 200:
         raise RuntimeError(f"ダウンロード失敗 ({dl.status_code})")
+    if dl.content.lstrip()[:5] == b"<?xml" or dl.content.lstrip()[:4] == b"<svg":
+        # ベクタースタイルはSVGで返るため、サイト用にPNGへ変換する
+        import resvg_py
+        png = resvg_py.svg_to_bytes(svg_string=dl.content.decode("utf-8"),
+                                    width=width, background="white")
+        return bytes(png), credits
     return dl.content, credits
 
 

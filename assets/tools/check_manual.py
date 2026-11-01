@@ -44,8 +44,8 @@ def load():
 def main():
     issues = []
     for code, items in load():
-        if not re.fullmatch(r'[^。（）]+は、保証対象外です。', items['waiver']):
-            issues.append(f'[{code} waiver 型違い（「〜は、保証対象外です。」のみ）] {items["waiver"]}')
+        if not re.fullmatch(r'[^。（）]+は、(保証対象外です|保証します)。', items['waiver']):
+            issues.append(f'[{code} waiver 型違い（「〜は、保証対象外です。」か「〜は、保証します。」）] {items["waiver"]}')
         for k, (lo, hi) in RANGES.items():
             n = len(items.get(k, ''))
             if not lo <= n <= hi:
