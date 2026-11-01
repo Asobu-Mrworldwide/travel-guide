@@ -14,14 +14,14 @@ RANGES = {
     'good1':             (30, 40),    # 上手な使い方 1つ目
     'good2':             (25, 35),    # 上手な使い方 2つ目
     'ban':               (38, 50),    # 禁止事項
-    'charge:充電スポット':  (4, 10),
+    'charge:充電のしかた':  (4, 11),
     'charge:所要時間':     (2, 6),
-    'charge:満充電のサイン': (12, 18),
+    'charge:満充電のサイン': (9, 18),
     'qa1Q':              (14, 20),    # よくある質問 1問目の質問
     'qa1A':              (32, 42),    # 　　　　　　　　 回答
     'qa2Q':              (12, 19),    # 2問目の質問
     'qa2A':              (22, 35),    # 　　　　 回答
-    'waiver':            (27, 40),    # 保証と免責
+    'waiver':            (12, 30),    # 保証と免責
 }
 
 def load():
@@ -44,8 +44,8 @@ def load():
 def main():
     issues = []
     for code, items in load():
-        if not re.fullmatch(r'[^。（）]+は、保証対象外です。（[^（）]+）', items['waiver']):
-            issues.append(f'[{code} waiver 型違い（「〜は、保証対象外です。（本人の様子）」）] {items["waiver"]}')
+        if not re.fullmatch(r'[^。（）]+は、保証対象外です。', items['waiver']):
+            issues.append(f'[{code} waiver 型違い（「〜は、保証対象外です。」のみ）] {items["waiver"]}')
         for k, (lo, hi) in RANGES.items():
             n = len(items.get(k, ''))
             if not lo <= n <= hi:
