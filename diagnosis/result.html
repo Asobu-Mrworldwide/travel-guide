@@ -263,6 +263,8 @@ body{background:#FAF7F2}
 #manual-sheets{display:grid;gap:14px}
 .mn-sheet{max-width:356px;width:100%;margin:0 auto;background:#fff;border:1.5px solid #2B2B28;padding:14px;display:grid;gap:12px;box-sizing:border-box;color:#2B2B28;line-height:1.6;text-align:left}
 #manual-sheets *{box-sizing:border-box}
+#manual-back{align-content:space-between}  /* 表面に高さを合わせて裏面が余るときだけ、ブロック間隔に分ける（表面の余白は元のまま） */
+#manual-sheets [hidden]{display:none!important}
 #manual-sheets img{display:block}
 .mn-head{display:grid;gap:8px}
 .mn-head-top{display:flex;align-items:flex-start;gap:8px}
@@ -293,7 +295,7 @@ body{background:#FAF7F2}
 .mn-caution{border:1px solid #2B2B28;padding:10px;display:grid;gap:6px}
 .mn-caution .lb{font-size:9.5px;font-weight:700}
 .mn-caution .tx{font-size:10px;line-height:1.8;color:#3A3833}
-.mn-foot{border-top:1.5px solid #2B2B28;padding-top:9px;display:flex;align-items:center;justify-content:space-between}
+.mn-foot{align-self:end;border-top:1.5px solid #2B2B28;padding-top:9px;display:flex;align-items:center;justify-content:space-between}
 .mn-foot span{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.12em;color:#7A756C}
 /* 新章立て用 */
 .mn-usage{border:1px solid #2B2B28;padding:10px;font-size:10px;line-height:1.85;color:#3A3833}
@@ -322,6 +324,14 @@ body{background:#FAF7F2}
 .mn-actions button{font-family:inherit;cursor:pointer;border:none;border-radius:8px}
 .mn-actions .save{width:100%;min-height:46px;background:#fff;font-size:13px;font-weight:700;color:#2B2B28}
 .mn-actions .close{width:100%;min-height:44px;border:1px solid rgba(255,255,255,.4);background:none;font-size:12.5px;color:#fff}
+/* PC幅では表面・裏面を横に並べ、1画面に収まる倍率(--mn-zoom。fitManualが計算)で表示する。
+   画像保存時は.capturingで倍率を外し、書き出し画像の大きさはスマホ表示と同じにする */
+@media (min-width:900px){
+  .mn-ov{padding:16px 24px}
+  #manual-sheets{grid-template-columns:repeat(2,356px);justify-content:center;align-items:stretch;gap:14px;zoom:var(--mn-zoom,1)}  /* 左右の用紙は高さをそろえる（足りない分はブロック間の間隔に均等に分ける） */
+  .mn-actions{max-width:726px;grid-template-columns:1fr 1fr;margin-top:12px}
+  .mn-ov.capturing #manual-sheets{zoom:1;align-items:start}  /* 画像保存時はスマホ表示と同じ高さで書き出す */
+}
 
 /* 06 INCLUDED 付属品 */
 .spec-incl{display:grid;grid-template-columns:minmax(0,1fr);justify-items:stretch;align-content:center;gap:18px}  /* 本の下にボタンを縦に並べる（カードが狭く、横並びだとボタン周りに空きができるため） */
@@ -1236,7 +1246,7 @@ function buildManualDoc(rt, t, doc){
     ? '<div class="ban"><span class="lb">⚠ 禁止事項</span>'+doc.ban.map(tx => '<div class="r"><span class="mk">✕</span><span class="tx">'+tx+'</span></div>').join('')+'</div>'
     : '';
   const charge = doc.charge.map(([k, v]) => '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>').join('');
-  const qa = doc.qa.map(([q, a]) =>
+  const qa = doc.qa.slice(0, 2).map(([q, a]) =>   // よくある質問は2問まで（裏面が表面より長くならないように）
     '<div class="qa"><div class="q"><span class="b">Q</span><span>'+q+'</span></div><div class="a"><span class="b">A</span><span>'+a+'</span></div></div>').join('');
 
   document.getElementById('manual-front').innerHTML =
@@ -1261,6 +1271,18 @@ function buildManualDoc(rt, t, doc){
     + '<div class="mn-sec"><span class="mn-lb">■ よくあるご質問（故障かな？と思ったら）</span><div class="mn-qa">'+qa+'</div></div>'
     + '<div class="mn-caution"><span class="lb">保証と免責</span><span class="tx">'+doc.waiver+'</span></div>'
     + foot(modelNo(rt)+'-TRAVELER　2 / 2');
+  equalizeManualSheets();
+}
+
+// 表裏の用紙の高さをそろえる。項目の数はタイプによらず同じにし、足りない高さは余白で調整する：
+// 短いほうの用紙は、裏面ならブロック間隔（#manual-back）、表面なら下端に余白を足す。
+function equalizeManualSheets(){
+  const a = document.getElementById('manual-front'), b = document.getElementById('manual-back');
+  a.style.minHeight = b.style.minHeight = '';
+  a.style.alignSelf = b.style.alignSelf = 'start';   // PC幅の2枚並びでは、短いほうが自動で伸びるため、本来の高さで測る
+  const h = Math.max(a.offsetHeight, b.offsetHeight);
+  a.style.alignSelf = b.style.alignSelf = '';
+  a.style.minHeight = b.style.minHeight = h + 'px';
 }
 
 function buildManual(rt){
@@ -1275,7 +1297,18 @@ function setupManual(rt){
   if (!ov || !openBtn) return;
   const shareText = '私の旅行タイプは「' + t.name + '」でした！あなたの旅行タイプは？ #WorldMappy 旅行タイプ診断';
 
-  const open = () => { buildManual(rt); ov.classList.add('open'); ov.scrollTop = 0; document.body.style.overflow = 'hidden'; };
+  // PC幅：表裏2枚を横に並べたまま、画面の高さ・幅に収まる倍率を求める（最大1.8倍、縮小はしない）
+  const fitManual = () => {
+    const box = document.getElementById('manual-sheets');
+    box.style.removeProperty('--mn-zoom');
+    if (innerWidth < 900) return;
+    const h = Math.max(document.getElementById('manual-front').offsetHeight, document.getElementById('manual-back').offsetHeight);
+    const actionsH = 44 + 12 + 16;   // ボタン行＋余白
+    const z = Math.min(1.8, (innerHeight - 32 - actionsH) / h, (innerWidth - 48) / (356 * 2 + 14));
+    box.style.setProperty('--mn-zoom', Math.max(1, z).toFixed(3));
+  };
+  const open = () => { buildManual(rt); ov.classList.add('open'); ov.scrollTop = 0; document.body.style.overflow = 'hidden'; equalizeManualSheets(); fitManual(); };
+  addEventListener('resize', () => { if (ov.classList.contains('open')) { equalizeManualSheets(); fitManual(); } });
   const close = () => { ov.classList.remove('open'); document.body.style.overflow = ''; };
   openBtn.addEventListener('click', e => { e.preventDefault(); open(); });
   document.getElementById('manual-close').addEventListener('click', close);
@@ -1287,17 +1320,19 @@ function setupManual(rt){
   //  1) <img>をPNGのdata URLにして読み込み完了まで待つ（webpや外部URLのままだと空になる端末がある）
   //  2) イラスト枠(aspect-ratio)と画像の大きさを、いまの表示どおりのpx値に固定する（枠が潰れて見えなくなるのを防ぐ）
   // 戻り値は、固定したスタイルを元に戻す関数。
+  // img.decode() は、ブラウザの状態によって解決しないことがあるため、待つのは最大1.5秒までにする（止まらないように）
+  const decodeSoon = (img) => Promise.race([img.decode().catch(() => {}), new Promise(r => setTimeout(r, 1500))]);
   const prepareForCapture = async (root) => {
     const restores = [];
     await Promise.all([...root.querySelectorAll('img')].map(async (img) => {
       try {
-        if (!img.complete) await new Promise(r => { img.onload = r; img.onerror = r; });
-        if (img.decode) await img.decode().catch(() => {});
+        if (!img.complete) await new Promise(r => { img.onload = r; img.onerror = r; setTimeout(r, 4000); });
+        if (img.decode) await decodeSoon(img);
         if (img.naturalWidth) {
           const c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight;
           const ctx = c.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, c.width, c.height); ctx.drawImage(img, 0, 0);
           img.src = c.toDataURL('image/png');
-          if (img.decode) await img.decode().catch(() => {});
+          if (img.decode) await decodeSoon(img);
         }
       } catch (e) {}
     }));
@@ -1352,6 +1387,7 @@ function setupManual(rt){
     if (!window.htmlToImage) { alert('画像の保存機能を読み込めませんでした。スクリーンショットで保存してください。'); return; }
     const original = saveBtn.textContent;
     saveBtn.textContent = '作成中…'; saveBtn.disabled = true;
+    ov.classList.add('capturing');
     try {
       if (document.fonts && document.fonts.ready) await document.fonts.ready;
       // 表面・裏面の2枚を別々のPNGに書き出す
@@ -1396,8 +1432,13 @@ function setupManual(rt){
         }
       }
     } catch (e) {
-      if (!(e && e.name === 'AbortError')) alert('画像の保存に失敗しました。スクリーンショットで保存してください。');
+      if (!(e && e.name === 'AbortError')) {
+        console.error('manual save failed', e);
+        // 原因の切り分けのため、エラーの種類を括弧内に添える
+        alert('画像の保存に失敗しました。スクリーンショットで保存してください。' + (e ? '（' + (e.name || '') + ' ' + (e.message || e) + '）' : ''));
+      }
     } finally {
+      ov.classList.remove('capturing');
       saveBtn.textContent = original; saveBtn.disabled = false;
     }
   });

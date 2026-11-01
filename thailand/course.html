@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="タイのモデルコース｜タイ旅行ガイド">
 <meta name="twitter:description" content="東南アジアの中心に位置するタイは、「微笑みの国」として知られる仏教国。黄金の寺院群、熱帯ジャングル、白砂のビーチ、屋台グルメ——旅の要素が全部ある。旅好きの知人がこう言っていた。「結局戻ってくるんはタイなんよ」と。料理は旨い、物価は安い、…">
 <meta name="twitter:image" content="https://worldmappy.com/thailand/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793116886">
+<link rel="stylesheet" href="../assets/style.css?v=1793517106">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793116886" defer></script>
-<script src="../assets/affiliates.js?v=1793116886" defer></script>
+<script src="../assets/affiliates-data.js?v=1793517106" defer></script>
+<script src="../assets/affiliates.js?v=1793517106" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -266,41 +266,50 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
 
   <h2 data-label="MODEL COURSE">モデルコース</h2>
-  <p class="ai-lead">旅の「ベストなコース」は、日数・同行者・好みによって大きく変わります。そこで固定のコースを載せる代わりに、<strong>AIにあなた専用のモデルコースを作ってもらうためのプロンプト</strong>を用意しました。条件を選ぶだけで文章ができあがるので、コピーしてChatGPT・Claude・Geminiなどに貼り付けてください。</p>
+  <p class="ai-lead">AIに作ってもらう、あなた専用のモデルコース。</p>
 
-  <h3 class="section-subhead toc-sub ai-h3">条件を選んでプロンプトを作る</h3>
-  <div class="ai-builder" id="aiBuilder">
-    <div class="ai-row"><div class="ai-lbl">日数</div><div class="ai-chips" data-key="days"></div></div>
-    <div class="ai-row"><div class="ai-lbl">人数</div><div class="ai-chips" data-key="people"></div></div>
-    <div class="ai-row"><div class="ai-lbl">同行者</div><div class="ai-chips" data-key="who"></div></div>
-    <div class="ai-row"><div class="ai-lbl">旅のテーマ<span class="ai-lbl-sub">複数選択OK</span></div><div class="ai-chips" data-key="tags" data-multi="1"></div></div>
-    <div class="ai-row"><div class="ai-lbl">旅のペース</div><div class="ai-chips" data-key="pace"></div></div>
-    <div class="ai-row"><div class="ai-lbl">予算感</div><div class="ai-chips" data-key="budget"></div></div>
-    <div class="ai-row" id="aiCityRow"><div class="ai-lbl">行きたいエリア<span class="ai-lbl-sub">未選択ならAIにおまかせ</span></div><div class="ai-chips" data-key="cities" data-multi="1"></div></div>
-    <div class="ai-row ai-row-inline">
-      <label class="ai-field"><span class="ai-lbl">旅行時期</span><select id="aiMonth"></select></label>
-      <label class="ai-field"><span class="ai-lbl">出発地</span><select id="aiOrigin"></select></label>
+  <h3 class="section-subhead toc-sub ai-h3">すぐ使えるおすすめプロンプト</h3>
+  <div class="ai-presets" id="aiPresets"></div>
+
+  <div class="ai-maker">
+  <h3 class="section-subhead toc-sub ai-h3 ai-maker-title">条件を調整してプロンプトを作る</h3>
+  <div class="ai-flow" id="aiBuilder">
+    <div class="ai-step">
+      <header class="ai-step-head"><div><h4>基本の条件</h4></div></header>
+      <div class="ai-row ai-row-inline"><label class="ai-field"><span class="ai-lbl">日数</span><select class="ai-sel" data-key="days"></select></label><label class="ai-field"><span class="ai-lbl">人数</span><select class="ai-sel" data-key="people"></select></label><label class="ai-field"><span class="ai-lbl">同行者</span><select class="ai-sel" data-key="who"></select></label></div>
     </div>
-    <div class="ai-row"><label class="ai-lbl" for="aiFree">その他の希望<span class="ai-lbl-sub">任意</span></label><textarea id="aiFree" rows="2" placeholder="例：朝は苦手なので遅めのスタートがいい／マッサージに行きたい／辛い料理は苦手"></textarea></div>
+    <div class="ai-step">
+      <header class="ai-step-head"><div><h4>旅のスタイル</h4></div></header>
+      <div class="ai-row"><div class="ai-lbl">旅のテーマ<span class="ai-lbl-sub">複数選択OK</span></div><div class="ai-chips" data-key="tags" data-multi="1"></div></div>
+      <div class="ai-row ai-row-inline"><label class="ai-field"><span class="ai-lbl">旅のペース</span><select class="ai-sel" data-key="pace"></select></label><label class="ai-field"><span class="ai-lbl">予算感</span><select class="ai-sel" data-key="budget"></select></label></div>
+    </div>
+    <div class="ai-step">
+      <header class="ai-step-head"><div><h4>こだわり条件</h4><p>任意</p></div></header>
+      <div class="ai-row" id="aiCityRow"><div class="ai-lbl">行きたいエリア<span class="ai-lbl-sub">未選択ならおまかせ</span></div><div class="ai-chips" data-key="cities" data-multi="1"></div></div>
+      <div class="ai-row ai-row-inline">
+        <label class="ai-field"><span class="ai-lbl">旅行時期</span><select id="aiMonth"></select></label>
+        <label class="ai-field"><span class="ai-lbl">出発地</span><select id="aiOrigin"></select></label>
+      </div>
+      <div class="ai-row"><label class="ai-lbl" for="aiFree">その他の希望</label><textarea id="aiFree" rows="2" placeholder="例：朝は苦手なので遅めのスタートがいい／マッサージに行きたい／辛い料理は苦手"></textarea></div>
+    </div>
   </div>
 
   <div class="ai-out">
-    <div class="ai-out-head">
-      <span class="ai-out-title">できあがったプロンプト</span>
+    <header class="ai-out-head">
+      <div><span class="ai-out-title">📋 できあがったプロンプト</span><span class="ai-out-sub">ここをコピーしてAIに貼り付けるだけ</span></div>
       <span class="ai-out-count" id="aiCount"></span>
+    </header>
+    <div class="ai-out-body">
+      <textarea id="aiOut" readonly rows="10" aria-label="できあがったプロンプト"></textarea>
+      <div class="ai-actions">
+        <button type="button" class="ai-btn ai-btn-main" id="aiCopy">プロンプトをコピー</button>
+        <a class="ai-btn" id="aiGpt" target="_blank" rel="noopener noreferrer">ChatGPTで開く</a>
+        <a class="ai-btn" id="aiClaude" target="_blank" rel="noopener noreferrer">Claudeで開く</a>
+      </div>
     </div>
-    <textarea id="aiOut" readonly rows="12"></textarea>
-    <div class="ai-actions">
-      <button type="button" class="ai-btn ai-btn-main" id="aiCopy">プロンプトをコピー</button>
-      <a class="ai-btn" id="aiGpt" target="_blank" rel="noopener noreferrer">ChatGPTで開く</a>
-      <a class="ai-btn" id="aiClaude" target="_blank" rel="noopener noreferrer">Claudeで開く</a>
-    </div>
-    <p class="ai-note">「で開く」ボタンはプロンプトを入力済みの状態でAIの画面を開きます（ログインが必要な場合があります）。Geminiなどは、コピーして貼り付けてください。</p>
   </div>
 
-  <h3 class="section-subhead toc-sub ai-h3">すぐ使えるおすすめプロンプト</h3>
-  <p class="ai-lead">条件を選ぶのが面倒なときは、定番のパターンをそのままコピーしてください。「条件を編集」を押すと、上のフォームに内容が反映されます。</p>
-  <div class="ai-presets" id="aiPresets"></div>
+  </div><!-- /ai-maker -->
 
   <div class="season-tip-box" style="margin-top:36px"><span class="season-tip-title"><img src="../assets/tips-icons/bulb.png" alt="" style="width:32px;height:32px;object-fit:contain;vertical-align:middle;flex:none;margin-top:-3px"> AIをうまく使うコツ</span>
     <ul class="ai-tips">
@@ -315,13 +324,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     var C = {"name": "タイ", "cities": ["バンコク", "チェンマイ", "プーケット", "パタヤ", "アユタヤ", "クラビ", "コ・チャン", "サムイ島", "スコータイ"], "flight": "直行便で約6〜7時間（乗継便あり）"};
     var OPTS = {
       days:   ['2泊3日','3泊4日','4泊5日','5泊6日','6泊7日','7泊8日','10泊11日以上'],
-      people: ['1人','2人','3〜4人','5人以上'],
+      people: ['1人','2人','3人','4人','5人以上'],
       who:    ['一人旅','カップル・夫婦','友達同士','家族（子連れ）','親・祖父母と'],
       tags:   ['グルメ','世界遺産・歴史','絶景・自然','ビーチ・リゾート','街歩き・カフェ','ショッピング','ナイトライフ','写真映え','アクティブ体験'],
       pace:   ['ゆったり','ほどよく','詰め込み'],
       budget: ['節約重視','標準','ちょっと贅沢']
     };
-    var ORIGINS = ['東京（成田・羽田）','大阪（関西）','名古屋（中部）','福岡','札幌（新千歳）','その他の日本の空港'];
+    var ORIGINS = ['大阪（関西）','東京（成田・羽田）','名古屋（中部）','福岡','札幌（新千歳）','その他の日本の空港'];
+    var override = '';
     var state = { days:['4泊5日'], people:['2人'], who:['カップル・夫婦'], tags:[], pace:['ほどよく'], budget:['標準'], cities:[] };
     var $ = function(id){ return document.getElementById(id); };
     var cityLabel = function(n){ return n.replace(/（[^）]*）/g,''); };
@@ -337,7 +347,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
         box.appendChild(b);
       });
     }
-    Object.keys(OPTS).forEach(function(k){ renderChips(k, OPTS[k]); });
+    Object.keys(OPTS).forEach(function(k){
+      if(k === 'tags'){ renderChips(k, OPTS[k]); return; }
+      var sel = document.querySelector('.ai-sel[data-key="'+k+'"]');
+      sel.innerHTML = OPTS[k].map(function(o){ return '<option>'+o+'</option>'; }).join('');
+      sel.addEventListener('change', function(){ override = ''; state[k] = [sel.value]; refresh(); });
+    });
     if(C.cities.length){ renderChips('cities', C.cities, cityLabel); } else { $('aiCityRow').style.display = 'none'; }
 
     var monthSel = $('aiMonth'), originSel = $('aiOrigin');
@@ -345,6 +360,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     originSel.innerHTML = ORIGINS.map(function(o){ return '<option>'+o+'</option>'; }).join('');
 
     function syncChips(){
+      document.querySelectorAll('#aiBuilder .ai-sel').forEach(function(sel){ sel.value = state[sel.dataset.key][0]; });
       document.querySelectorAll('#aiBuilder .ai-chip').forEach(function(b){
         var key = b.parentNode.dataset.key;
         b.classList.toggle('on', state[key].indexOf(b.dataset.v) >= 0);
@@ -413,7 +429,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     }
 
     function refresh(){
-      var text = build(current());
+      var text = override || build(current());
       $('aiOut').value = text;
       $('aiCount').textContent = text.length + '文字';
       var q = encodeURIComponent(text);
@@ -443,14 +459,15 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     document.getElementById('aiBuilder').addEventListener('click', function(e){
       var b = e.target.closest('.ai-chip');
       if(!b) return;
+      override = '';
       var key = b.parentNode.dataset.key, multi = b.parentNode.dataset.multi, v = b.dataset.v;
       var i = state[key].indexOf(v);
       if(multi){ if(i >= 0) state[key].splice(i,1); else state[key].push(v); }
       else { state[key] = [v]; }
       refresh();
     });
-    [monthSel, originSel].forEach(function(el){ el.addEventListener('change', refresh); });
-    $('aiFree').addEventListener('input', refresh);
+    [monthSel, originSel].forEach(function(el){ el.addEventListener('change', function(){ override = ''; refresh(); }); });
+    $('aiFree').addEventListener('input', function(){ override = ''; refresh(); });
     $('aiCopy').addEventListener('click', function(){ copy($('aiOut').value, this, 'プロンプトをコピー'); });
 
     // ── おすすめプロンプト（プリセット） ──
@@ -463,39 +480,49 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       { title:'週末・3連休の弾丸プラン', desc:'休みが短い人向け。移動を減らして1〜2都市に絞る。',
         s:{ days:'2泊3日', people:'1人', who:'一人旅', tags:['グルメ','絶景・自然'], pace:'詰め込み', budget:'標準', cities:C.cities.slice(0,1) } },
       { title:'子連れ家族ののんびり旅', desc:'移動と歩く距離を抑え、子どもも楽しめる場所を中心に。',
-        s:{ days:'5泊6日', people:'3〜4人', who:'家族（子連れ）', tags:['ビーチ・リゾート','アクティブ体験'], pace:'ゆったり', budget:'標準', cities:C.cities.slice(0,2), free:'子ども連れなので、昼寝や休憩の時間を入れてほしい。ベビーカーや小さな子どもでも行きやすい場所を優先したい。' } },
+        s:{ days:'5泊6日', people:'4人', who:'家族（子連れ）', tags:['ビーチ・リゾート','アクティブ体験'], pace:'ゆったり', budget:'標準', cities:C.cities.slice(0,2), free:'子ども連れなので、昼寝や休憩の時間を入れてほしい。ベビーカーや小さな子どもでも行きやすい場所を優先したい。' } },
       { title:'一人旅・コスパ重視', desc:'宿・食事・移動をできるだけ安く、それでも満足度の高いコース。',
         s:{ days:'6泊7日', people:'1人', who:'一人旅', tags:['街歩き・カフェ','世界遺産・歴史','写真映え'], pace:'ほどよく', budget:'節約重視', cities:[] } },
       { title:'まずAIから質問してもらう', desc:'何を伝えればいいか分からないときに。AIが質問しながら一緒に決めてくれる。',
         s:{ interview:true } }
     ];
-    function presetSummary(s){
-      if(s.interview) return ['AIが質問→プラン作成'];
-      return [s.days, s.people, s.pace, s.budget].concat(s.tags.slice(0,3));
+    function glideTo(el, block){
+      var rect = el.getBoundingClientRect();
+      var off = block === 'center' ? (window.innerHeight - rect.height) / 2 : 120;
+      var from = window.pageYOffset, to = Math.max(0, from + rect.top - Math.max(off, 80));
+      var dist = to - from, dur = Math.min(900, 350 + Math.abs(dist) * 0.25), t0 = null;
+      if(!dist) return;
+      function step(t){
+        if(t0 === null) t0 = t;
+        var k = Math.min(1, (t - t0) / dur), e = k < .5 ? 2*k*k : 1 - Math.pow(-2*k + 2, 2) / 2;
+        window.scrollTo(0, from + dist * e);
+        if(k < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     }
+
     var host = $('aiPresets');
     PRESETS.forEach(function(p, idx){
       var full = Object.assign({ people:'2人', who:'カップル・夫婦', tags:[], pace:'ほどよく', budget:'標準', cities:[], month:'', origin:ORIGINS[0], free:'' }, p.s);
       var card = document.createElement('div'); card.className = 'ai-preset';
       card.innerHTML =
-        '<div class="ai-preset-title"></div><p class="ai-preset-desc"></p><div class="ai-preset-tags"></div>' +
-        '<details class="ai-preset-det"><summary>プロンプトを見る</summary><pre></pre></details>' +
-        '<div class="ai-actions"><button type="button" class="ai-btn ai-btn-main ai-copy">コピー</button>' +
-        (p.s.interview ? '' : '<button type="button" class="ai-btn ai-edit">条件を編集</button>') + '</div>';
+        '<div class="ai-preset-main"><div class="ai-preset-title"></div><p class="ai-preset-desc"></p></div>' +
+        '<div class="ai-actions"><button type="button" class="ai-btn ai-btn-main ai-edit" title="' + (p.s.interview ? 'AIに質問してもらうプロンプトを、下のプロンプト欄に表示します' : 'この条件を下の入力欄に入れて、プロンプトを作ります') + '">' + (p.s.interview ? 'このプロンプトを使う ↓' : 'この条件で作る ↓') + '</button></div>';
       card.querySelector('.ai-preset-title').textContent = p.title;
       card.querySelector('.ai-preset-desc').textContent = p.desc;
-      card.querySelector('.ai-preset-tags').innerHTML = presetSummary(full).map(function(t){ return '<span class="ai-tag"></span>'; }).join('');
-      Array.prototype.forEach.call(card.querySelectorAll('.ai-tag'), function(el, i){ el.textContent = presetSummary(full)[i]; });
-      var text = build(full);
-      card.querySelector('pre').textContent = text;
-      card.querySelector('.ai-copy').addEventListener('click', function(){ copy(text, this, 'コピー'); });
-      var ed = card.querySelector('.ai-edit');
-      if(ed) ed.addEventListener('click', function(){
+      card.querySelector('.ai-edit').addEventListener('click', function(){
+        if(p.s.interview){
+          override = build(full);
+          refresh();
+          glideTo(document.querySelector('.ai-out'), 'center');
+          return;
+        }
+        override = '';
         state.days=[full.days]; state.people=[full.people]; state.who=[full.who]; state.tags=full.tags.slice();
         state.pace=[full.pace]; state.budget=[full.budget]; state.cities=full.cities.slice();
         $('aiFree').value = full.free || '';
         refresh();
-        $('aiBuilder').scrollIntoView({behavior:'smooth', block:'start'});
+        glideTo(document.querySelector('.ai-maker'), 'start');
       });
       host.appendChild(card);
     });
