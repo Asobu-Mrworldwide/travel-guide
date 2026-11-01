@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ベトナムのモデルコース｜ベトナム旅行ガイド">
 <meta name="twitter:description" content="南北に約1,650km、細長く伸びるインドシナ半島の国ベトナム。北部ハノイの古都情緒、中部ホイアンのランタン、南部ホーチミンの熱気とバイクの奔流——同じ国とは思えないほど表情豊かな旅ができる。朝から晩まで途切れないバイクのクラクション、道…">
 <meta name="twitter:image" content="https://worldmappy.com/vietnam/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793517106">
+<link rel="stylesheet" href="../assets/style.css?v=1793534421">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793517106" defer></script>
-<script src="../assets/affiliates.js?v=1793517106" defer></script>
+<script src="../assets/affiliates-data.js?v=1793534421" defer></script>
+<script src="../assets/affiliates.js?v=1793534421" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -266,9 +266,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
 
   <h2 data-label="MODEL COURSE">モデルコース</h2>
-  <p class="ai-lead">AIに作ってもらう、あなた専用のモデルコース。</p>
+  <p class="ai-lead">AIに作ってもらう、あなた専用のモデルコース。使い方は3ステップです。<br>① 下のコースから近いものを選んで「この条件で作る」を押す<br>② 人数・日数・行きたい場所など、自分の条件に合わせて調整する<br>③ できあがったプロンプトをコピーして、ChatGPTやClaudeに貼り付ける</p>
 
-  <h3 class="section-subhead toc-sub ai-h3">すぐ使えるおすすめプロンプト</h3>
   <div class="ai-presets" id="aiPresets"></div>
 
   <div class="ai-maker">
@@ -296,15 +295,16 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
   <div class="ai-out">
     <header class="ai-out-head">
-      <div><span class="ai-out-title">📋 できあがったプロンプト</span><span class="ai-out-sub">ここをコピーしてAIに貼り付けるだけ</span></div>
-      <span class="ai-out-count" id="aiCount"></span>
+      <img class="ai-out-ico" src="../assets/course/clipboard.png" alt="">
+      <div><span class="ai-out-title">できあがったプロンプト</span><span class="ai-out-sub">ここをコピーしてAIに貼り付けるだけ</span></div>
+      <span class="ai-out-count"><img src="../assets/course/doc.png" alt=""><span id="aiCount"></span></span>
     </header>
     <div class="ai-out-body">
-      <textarea id="aiOut" readonly rows="10" aria-label="できあがったプロンプト"></textarea>
+      <textarea id="aiOut" rows="10" aria-label="できあがったプロンプト"></textarea>
       <div class="ai-actions">
-        <button type="button" class="ai-btn ai-btn-main" id="aiCopy">プロンプトをコピー</button>
-        <a class="ai-btn" id="aiGpt" target="_blank" rel="noopener noreferrer">ChatGPTで開く</a>
-        <a class="ai-btn" id="aiClaude" target="_blank" rel="noopener noreferrer">Claudeで開く</a>
+        <button type="button" class="ai-btn ai-btn-main" id="aiCopy"><img src="../assets/course/copy.png" alt=""><span class="ai-btn-lbl">プロンプトをコピー</span></button>
+        <a class="ai-btn ai-btn-ext" id="aiGpt" target="_blank" rel="noopener noreferrer"><img src="../assets/course/chatgpt.png" alt=""><span class="ai-btn-lbl">ChatGPTで開く</span><img class="ai-ext" src="../assets/course/ext.png" alt=""></a>
+        <a class="ai-btn ai-btn-ext" id="aiClaude" target="_blank" rel="noopener noreferrer"><img src="../assets/course/claude.png" alt=""><span class="ai-btn-lbl">Claudeで開く</span><img class="ai-ext" src="../assets/course/ext.png" alt=""></a>
       </div>
     </div>
   </div>
@@ -428,21 +428,25 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       };
     }
 
+    function syncLinks(){
+      var text = $('aiOut').value, q = encodeURIComponent(text);
+      $('aiCount').textContent = text.length + '文字';
+      $('aiGpt').href = 'https://chatgpt.com/?q=' + q;
+      $('aiClaude').href = 'https://claude.ai/new?q=' + q;
+    }
     function refresh(){
       var text = override || build(current());
       $('aiOut').value = text;
       $('aiCount').textContent = text.length + '文字';
-      var q = encodeURIComponent(text);
-      $('aiGpt').href = 'https://chatgpt.com/?q=' + q;
-      $('aiClaude').href = 'https://claude.ai/new?q=' + q;
+      syncLinks();
       syncChips();
     }
 
     function copy(text, btn, label){
       var done = function(){
-        var old = label;
-        btn.textContent = 'コピーしました ✓'; btn.classList.add('done');
-        setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1800);
+        var lb = btn.querySelector('.ai-btn-lbl') || btn;
+        lb.textContent = 'コピーしました'; btn.classList.add('done');
+        setTimeout(function(){ lb.textContent = label; btn.classList.remove('done'); }, 1800);
       };
       if(navigator.clipboard && window.isSecureContext){
         navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
@@ -468,6 +472,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     });
     [monthSel, originSel].forEach(function(el){ el.addEventListener('change', function(){ override = ''; refresh(); }); });
     $('aiFree').addEventListener('input', function(){ override = ''; refresh(); });
+    $('aiOut').addEventListener('input', syncLinks);
     $('aiCopy').addEventListener('click', function(){ copy($('aiOut').value, this, 'プロンプトをコピー'); });
 
     // ── おすすめプロンプト（プリセット） ──
