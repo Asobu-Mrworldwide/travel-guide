@@ -19,9 +19,12 @@ generate.py の末尾から自動的に呼び出される（generate() の最後
   - spot_sections[] の city_desc / city_info 必須
   - spot_points[] の件数（3〜4個）
   - transport_items[] のフィールド名（name であって title ではない）
+  - food_filter_types の個数（4〜7。北朝鮮・ウズベキスタンは例外）
   - must フラグの比率（spot 20〜45% / food 20〜35%）
   - 死んだフィールドの残存（manner_cards 等）
-  - courses.stable_title の汎用文言チェック
+  - courses.cta_title / cta_desc の記入、cities[].name と overview.flight_hours の記入
+    （モデルコースタブのAIプロンプトに埋め込まれるため必須）
+  - courses.stable_title の汎用文言チェック（fixed_plans: true の国のみ意味を持つ）
   - courses.stable_plans[].title の抽象語チェック（満喫・堪能等）
   - courses 全テキストの体験談調語尾チェック（南アフリカ adventure_plan は除外）
   - index_card.catch の文字数（44〜54文字）
@@ -236,6 +239,11 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
         if not it.get('wiki_url'):
             issues.append(f'[food wiki_url欠落] {it.get("num")} {it.get("name")}')
 
+    # ── food_filter_types の個数（「すべて」を除いて4〜7） ──
+    _ff = [x for x in data.get('food_filter_types', []) if x.get('label') != 'すべて']
+    if _ff and country_id not in ('north_korea', 'uzbekistan') and not (4 <= len(_ff) <= 7):
+        issues.append(f'[food_filter_types {len(_ff)}個, 目安4-7]')
+
     # ── must比率 ──
     if spots:
         must_pct = sum(1 for sp in spots if sp.get('must')) / len(spots) * 100
@@ -260,6 +268,15 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
             issues.append(f'[死んだフィールド残存] {key}')
     if 'cta_title' in data.get('practical', {}) or 'cta_desc' in data.get('practical', {}):
         issues.append('[死んだフィールド残存] practical.cta_title/cta_desc')
+
+    # ── モデルコースタブ（AIプロンプト）に必要な項目 ──
+    for key in ('cta_title', 'cta_desc'):
+        if not _get(data, f'courses.{key}'):
+            issues.append(f'[courses.{key} 空欄]')
+    if not [c for c in data.get('cities', []) if c.get('name')]:
+        issues.append('[cities 空欄（AIプロンプトの「行きたいエリア」が出ない）]')
+    if not _get(data, 'overview.flight_hours'):
+        issues.append('[overview.flight_hours 空欄（AIプロンプトに入る）]')
 
     # ── stable_title 汎用文言 ──
     st = _get(data, 'courses.stable_title')

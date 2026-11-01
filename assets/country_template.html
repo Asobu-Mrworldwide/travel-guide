@@ -1143,8 +1143,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="tl-transit">
         <div class="tl-transit-lbl"><span class="tl-pre-transit-ico">{{day._icon_svg}}</span><span>{{day.duration}}</span></div>
       </div>
-      {% endif %}
-{% else %}
+      {% else %}
       <div class="tl-day">
         <div class="tl-badge">{{day.label}}</div>
         <div class="tl-body">
@@ -1163,6 +1162,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   </div>
 
   </div>
+{% endif %}
 {% else %}
   <h2 data-label="MODEL COURSE">モデルコース</h2>
   <p class="ai-lead">旅の「ベストなコース」は、日数・同行者・好みによって大きく変わります。そこで固定のコースを載せる代わりに、<strong>AIにあなた専用のモデルコースを作ってもらうためのプロンプト</strong>を用意しました。条件を選ぶだけで文章ができあがるので、コピーしてChatGPT・Claude・Geminiなどに貼り付けてください。</p>
