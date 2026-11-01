@@ -11,7 +11,7 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 NON_COUNTRY_DIRS = {'assets', 'common', 'compare', 'diagnosis', '.git', '__pycache__'}
 
 # 準備中の国（ページ・JSONはあるが未公開＝サイトマップに載せない）。公開時にここから外す。
-DRAFT_COUNTRIES = {'indonesia'}
+DRAFT_COUNTRIES = set()
 
 def _discover_countries():
     """<dir>/<dir>.json が存在するトップレベルディレクトリを国ページとして自動検出する"""

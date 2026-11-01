@@ -17,7 +17,7 @@
     { name: "ドイツ",                    region: "ヨーロッパ", path: "germany/index.html",      available: true },
     { name: "ニュージーランド",           region: "オセアニア", path: "newzealand/index.html",   available: true },
     { name: "カナダ",                    region: "北アメリカ", path: "canada/index.html",       available: true },
-    { name: "バリ島（インドネシア）",      region: "東南アジア", path: null,                      available: false },
+    { name: "インドネシア",                region: "東南アジア", path: "indonesia/index.html",    available: true },
     { name: "フランス",                  region: "ヨーロッパ", path: null,                      available: false },
     { name: "モルディブ",                region: "南アジア",   path: null,                      available: false },
     { name: "オーストラリア",            region: "オセアニア", path: null,                      available: false },
