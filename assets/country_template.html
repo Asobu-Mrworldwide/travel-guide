@@ -1646,7 +1646,7 @@ function showSpot(numId) {
   document.getElementById('sp-pop-desc').textContent = desc;
   document.getElementById('sp-pop-star').style.display = card.classList.contains('must') ? 'block' : 'none';
   const popImg = document.getElementById('sp-pop-img');
-  if (imgUrl) { popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
+  if (imgUrl) { popImg.style.aspectRatio = '16 / 9'; popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
   const popMap = document.getElementById('sp-pop-map');
   popMap.textContent = 'Googleマップで開く →';
@@ -1677,7 +1677,7 @@ function showFood(numId) {
   document.getElementById('sp-pop-desc').textContent = desc;
   document.getElementById('sp-pop-star').style.display = card.classList.contains('must') ? 'block' : 'none';
   const popImg = document.getElementById('sp-pop-img');
-  if (imgUrl) { popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
+  if (imgUrl) { popImg.style.aspectRatio = '1 / 1'; popImg.style.backgroundImage = 'url(' + imgUrl + ')'; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
   const popMap = document.getElementById('sp-pop-map');
   popMap.textContent = '詳しく調べる →';
@@ -1721,7 +1721,7 @@ function showSpot(numId) {
   document.getElementById('sp-pop-desc').textContent = o.desc || '';
   document.getElementById('sp-pop-star').style.display = o.must ? 'block' : 'none';
   var popImg = document.getElementById('sp-pop-img');
-  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  if (o.img) { popImg.style.aspectRatio = '16 / 9'; popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
   var popMap = document.getElementById('sp-pop-map');
   popMap.textContent = 'Googleマップで開く →';
@@ -1759,7 +1759,7 @@ function showFood(numId) {
   document.getElementById('sp-pop-desc').textContent = o.desc || '';
   document.getElementById('sp-pop-star').style.display = o.must ? 'block' : 'none';
   var popImg = document.getElementById('sp-pop-img');
-  if (o.img) { popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
+  if (o.img) { popImg.style.aspectRatio = '1 / 1'; popImg.style.backgroundImage = "url('" + o.img + "')"; popImg.style.display = 'block'; }
   else { popImg.style.display = 'none'; }
   var popMap = document.getElementById('sp-pop-map');
   popMap.textContent = '詳しく調べる →';

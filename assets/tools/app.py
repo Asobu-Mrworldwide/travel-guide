@@ -1323,22 +1323,14 @@ if tab2:
                 "モデル",
                 [
                     "recraft20b       22cr ≈ ¥3.5/枚  （水彩）",
-                    "recraftv3        40cr ≈ ¥6.4/枚  （水彩）",
-                    "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
-                    "style_food_0710  未計測cr  （グルメ用新スタイル・2026-07-10追加）",
                     "style_food_1101  35cr ≈ ¥5.6/枚  （v4 style グルメ 2026/11/01）",
                 ],
+                index=1,
                 horizontal=False,
                 key=f"gen_model_{item_key}",
             )
-            if "watercolor20b" in model_val:
-                model_key_r = "watercolor20b"
-            elif "style_food_0710" in model_val:
-                model_key_r = "style_food_0710"
-            elif "style_food_1101" in model_val:
+            if "style_food_1101" in model_val:
                 model_key_r = "style_food_1101"
-            elif "recraftv3" in model_val:
-                model_key_r = "recraftv3"
             else:
                 model_key_r = "recraft20b"
             ASPECT_RATIOS = {
@@ -1528,38 +1520,17 @@ if tab2:
             hero_model_val = st.radio(
                 "モデル",
                 [
-                    "recraft20b   22cr ≈ ¥3.5/枚  （水彩）",
-                    "recraftv3    40cr ≈ ¥6.4/枚  （水彩）",
-                    "vector_art   40cr ≈ ¥6.4/枚  （フラットベクターイラスト）",
                     "style_spot   22cr ≈ ¥3.5/枚  （フラットベクター）",
-                    "style_spot3  40cr ≈ ¥6.4/枚  （フラットベクター v3）",
-                    "style_spot4  40cr ≈ ¥6.4/枚  （フラットベクター v4）",
-                    "style_spot5  40cr ≈ ¥6.4/枚  （フラットベクター v5）",
-                    "style_spot_1004  50cr ≈ ¥8.0/枚  （v4 style 観光スポット 2026/10/04）",
                     "style_spot_1101  35cr ≈ ¥5.6/枚  （v4 style 観光スポット 2026/11/01）",
                 ],
-                index=3,
+                index=1,
                 horizontal=False,
                 key="hero_model",
             )
             if "style_spot_1101" in hero_model_val:
                 hero_model_key = "style_spot_1101"
-            elif "style_spot_1004" in hero_model_val:
-                hero_model_key = "style_spot_1004"
-            elif "style_spot5" in hero_model_val:
-                hero_model_key = "style_spot5"
-            elif "style_spot4" in hero_model_val:
-                hero_model_key = "style_spot4"
-            elif "style_spot3" in hero_model_val:
-                hero_model_key = "style_spot3"
-            elif "style_spot" in hero_model_val:
-                hero_model_key = "style_spot"
-            elif "recraft20b" in hero_model_val:
-                hero_model_key = "recraft20b"
-            elif "vector_art" in hero_model_val:
-                hero_model_key = "vector_art"
             else:
-                hero_model_key = "recraftv3"
+                hero_model_key = "style_spot"
             _hero_ratios = {
                 "16:9 (1820×1024)": (1820, 1024),
                 "1:1  (1024×1024)": (1024, 1024),
@@ -1570,7 +1541,7 @@ if tab2:
             hero_w, hero_h = _hero_ratios[hero_ratio_sel]
             hero_prompt_val = st.session_state.get(hero_prompt_key, "")
             _hero_cr = {"recraft20b": 22, "recraftv3": 40, "vector_art": 40, "style_spot": 22,
-                        "style_spot3": 40, "style_spot4": 40, "style_spot5": 40, "style_spot_1004": 50, "style_spot_1101": 35}.get(hero_model_key, 40)
+                        "style_spot3": 40, "style_spot4": 40, "style_spot5": 40, "style_spot_1101": 35}.get(hero_model_key, 40)
             st.markdown(
                 f'<div class="wm-cost-row"><span>1枚 × {_hero_cr}cr</span>'
                 f'<b>{_hero_cr}cr <small>≈ ¥{_hero_cr * 0.16:,.1f}</small></b></div>',
@@ -1766,38 +1737,17 @@ if tab2:
                 spot_model_val = st.radio(
                     "モデル",
                     [
-                        "recraft20b       22cr ≈ ¥3.5/枚  （水彩）",
-                        "recraftv3        40cr ≈ ¥6.4/枚  （水彩）",
-                        "watercolor20b    22cr ≈ ¥3.5/枚  (スタイルIDなし・色指示が通りやすい)",
                         "style_spot       22cr ≈ ¥3.5/枚  （フラットベクター）",
-                        "style_spot3      40cr ≈ ¥6.4/枚  （フラットベクター v3）",
-                        "style_spot4      40cr ≈ ¥6.4/枚  （フラットベクター v4）",
-                        "style_spot5      40cr ≈ ¥6.4/枚  （フラットベクター v5）",
-                        "style_spot_1004  50cr ≈ ¥8.0/枚  （v4 style 観光スポット 2026/10/04）",
                         "style_spot_1101  35cr ≈ ¥5.6/枚  （v4 style 観光スポット 2026/11/01）",
                     ],
                     horizontal=False,
-                    index=3,
+                    index=1,
                     key="spot_model",
                 )
-                if "watercolor20b" in spot_model_val:
-                    spot_model_key = "watercolor20b"
-                elif "style_spot_1101" in spot_model_val:
+                if "style_spot_1101" in spot_model_val:
                     spot_model_key = "style_spot_1101"
-                elif "style_spot_1004" in spot_model_val:
-                    spot_model_key = "style_spot_1004"
-                elif "style_spot5" in spot_model_val:
-                    spot_model_key = "style_spot5"
-                elif "style_spot4" in spot_model_val:
-                    spot_model_key = "style_spot4"
-                elif "style_spot3" in spot_model_val:
-                    spot_model_key = "style_spot3"
-                elif "recraftv3" in spot_model_val:
-                    spot_model_key = "recraftv3"
-                elif "style_spot" in spot_model_val:
-                    spot_model_key = "style_spot"
                 else:
-                    spot_model_key = "recraft20b"
+                    spot_model_key = "style_spot"
                 spot_use_style = st.toggle(
                     "スタイルID を使用",
                     value=True,
@@ -1813,7 +1763,7 @@ if tab2:
                 spot_w, spot_h      = _spot_ratios[spot_ratio_sel]
                 spot_prompt_val_now = st.session_state.get(spot_prompt_key, "")
                 _spot_cr = {"recraft20b": 22, "recraftv3": 40, "watercolor20b": 22, "style_spot": 22,
-                            "style_spot3": 40, "style_spot4": 40, "style_spot5": 40, "style_spot_1004": 50, "style_spot_1101": 35}.get(spot_model_key, 40)
+                            "style_spot3": 40, "style_spot4": 40, "style_spot5": 40, "style_spot_1101": 35}.get(spot_model_key, 40)
                 st.markdown(
                     f'<div class="wm-cost-row"><span>1枚 × {_spot_cr}cr</span>'
                     f'<b>{_spot_cr}cr <small>≈ ¥{_spot_cr * 0.16:,.1f}</small></b></div>',
