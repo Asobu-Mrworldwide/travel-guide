@@ -283,7 +283,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 
 <!-- 観光地 -->
 <section id="spots" class="active">
-  <div class="tab-eyebrow"><span class="tab-eyebrow-badge">SIGHTSEEING SPOTS</span><span class="tab-eyebrow-sub">ブラジル 7都市・34スポット</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Brazil / 02</span></div>
+  <div class="tab-eyebrow"><span class="tab-eyebrow-badge">SIGHTSEEING SPOTS</span><span class="tab-eyebrow-sub">ブラジル 9都市・55スポット</span><span class="tab-eyebrow-line"></span><span class="tab-eyebrow-num">Brazil / 02</span></div>
 
   <div class="tab-body">
   <h2 data-label="SIGHTSEEING SPOTS">ブラジル 観光スポット</h2>
@@ -337,6 +337,10 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
               
               <button class="filter-btn " data-filter="lencois" onclick="filterSpots('city','lencois',this)">レンソイス・マラニャンセス</button>
               
+              <button class="filter-btn " data-filter="noronha" onclick="filterSpots('city','noronha',this)">フェルナンド・デ・ノローニャ</button>
+              
+              <button class="filter-btn " data-filter="pantanal" onclick="filterSpots('city','pantanal',this)">パンタナル・ボニート</button>
+              
             </div>
           </div>
         </div>
@@ -348,7 +352,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     </div>
   </details>
   <div class="items-count-row">
-    <span class="items-count-text"><span id="spots-count-shown">34</span> / <span id="spots-count-total">34</span> 件を表示</span>
+    <span class="items-count-text"><span id="spots-count-shown">55</span> / <span id="spots-count-total">55</span> 件を表示</span>
     <div class="view-toggle" id="spotsViewToggle">
       <button data-view="standard" onclick="setItemView('spots','standard')" aria-label="通常表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>通常</span></button>
       <button data-view="compact" onclick="setItemView('spots','compact')" aria-label="コンパクト表示"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg><span>コンパクト</span></button>
@@ -362,7 +366,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="item-grid">
     <div class="city-section-header" data-city="rio">
       
-      <h2 class="csh-title" data-city-filter="rio" data-count="8">リオデジャネイロ</h2>
+      <h2 class="csh-title" data-city-filter="rio" data-count="11">リオデジャネイロ</h2>
       <div class="csh-desc">山と海が織りなす絶景に、キリスト像とコパカバーナ海岸が揃うブラジル観光の顔。サンバとカーニバルの熱気が根付く旧首都</div>
       <div class="csh-grid">
         
@@ -451,6 +455,30 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イルハ・グランデ.webp" alt="イルハ・グランデ" loading="lazy"><a href="https://maps.google.com/?q=Ilha+Grande+Brazil" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
+    <div class="item-card spot has-spot-img " data-city="rio" data-stype="museum" data-spot-num="RIO 09">
+      
+      <div class="num-row"><span class="num">RIO 09</span><span class="badge">未来の博物館</span></div>
+      <div class="name-row"><div class="name">明日博物館（ムゼウ・ド・アマニャン）</div></div>
+      <div class="desc">港のそばに突き出す、白い骨組みのような建物。地球と人類の未来をテーマにした展示で、リオの新しい観光名所になっている。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Museu+do+Amanha+Rio+de+Janeiro" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="rio" data-stype="townscape" data-spot-num="RIO 10">
+      
+      <div class="num-row"><span class="num">RIO 10</span><span class="badge">丘の上の芸術街</span></div>
+      <div class="name-row"><div class="name">サンタ・テレーザ地区</div></div>
+      <div class="desc">丘の上に広がる芸術家の街。黄色い路面電車と石畳の坂道、カラフルな家々が続き、リオの違う顔を感じられる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Santa+Teresa+Rio+de+Janeiro" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="rio" data-stype="nature" data-spot-num="RIO 11">
+      
+      <div class="num-row"><span class="num">RIO 11</span><span class="badge">ヤシ並木の園</span></div>
+      <div class="name-row"><div class="name">ジャルジン・ボタニコ（植物園）</div></div>
+      <div class="desc">19世紀に開園した広大な植物園。ヤシ並木の道と熱帯植物が続き、コルコバードの丘を背景にした景色も見られる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Jardim+Botanico+Rio+de+Janeiro" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
     </div>
     </div>
     
@@ -458,7 +486,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="item-grid">
     <div class="city-section-header" data-city="sao_paulo">
       
-      <h2 class="csh-title" data-city-filter="sao_paulo" data-count="7">サンパウロ</h2>
+      <h2 class="csh-title" data-city-filter="sao_paulo" data-count="9">サンパウロ</h2>
       <div class="csh-desc">南半球最大の巨大都市。美食とアートシーンが集積する経済の中心地で、世界最大級の日系人コミュニティが根付く街でもある</div>
       <div class="csh-grid">
         
@@ -539,6 +567,22 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ピナコテッカ.webp" alt="ピナコテッカ" loading="lazy"><a href="https://maps.google.com/?q=Pinacoteca+de+Sao+Paulo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
+    <div class="item-card spot has-spot-img " data-city="sao_paulo" data-stype="museum" data-spot-num="SAO 08">
+      
+      <div class="num-row"><span class="num">SAO 08</span><span class="badge">言葉の博物館</span></div>
+      <div class="name-row"><div class="name">ポルトガル語博物館</div></div>
+      <div class="desc">駅舎を利用した、ポルトガル語をテーマにした博物館。言葉の成り立ちを映像や音で体験でき、レンガ造りの建物も美しい。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Museu+da+Lingua+Portuguesa+Sao+Paulo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="sao_paulo" data-stype="museum" data-spot-num="SAO 09">
+      
+      <div class="num-row"><span class="num">SAO 09</span><span class="badge">サッカー王国</span></div>
+      <div class="name-row"><div class="name">サッカー博物館</div></div>
+      <div class="desc">パカエンブー競技場の下にあるサッカーの博物館。ブラジル人の熱い思いを、映像や展示でたどれる体験型のスポット。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Museu+do+Futebol+Sao+Paulo" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
     </div>
     </div>
     
@@ -546,7 +590,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="item-grid">
     <div class="city-section-header" data-city="iguacu">
       
-      <h2 class="csh-title" data-city-filter="iguacu" data-count="4">フォス・ド・イグアス</h2>
+      <h2 class="csh-title" data-city-filter="iguacu" data-count="6">フォス・ド・イグアス</h2>
       <div class="csh-desc">世界三大瀑布のひとつイグアスの滝への玄関口。ブラジル・アルゼンチン・パラグアイの国境が接する三角地帯に位置する</div>
       <div class="csh-grid">
         
@@ -603,6 +647,22 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/イタイプ・ダム.webp" alt="イタイプ・ダム" loading="lazy"><a href="https://maps.google.com/?q=Itaipu+Dam" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
+    <div class="item-card spot has-spot-img " data-city="iguacu" data-stype="nature" data-spot-num="IGU 05">
+      
+      <div class="num-row"><span class="num">IGU 05</span><span class="badge">悪魔ののど笛</span></div>
+      <div class="name-row"><div class="name">アルゼンチン側イグアスの滝</div></div>
+      <div class="desc">「悪魔ののど笛」の真上まで歩道が伸びる、アルゼンチン側のイグアス国立公園。ブラジル側より間近で滝の迫力を感じられる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Iguazu+Falls+Argentina+Devil%27s+Throat" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="iguacu" data-stype="townscape" data-spot-num="IGU 06">
+      
+      <div class="num-row"><span class="num">IGU 06</span><span class="badge">三国の国境</span></div>
+      <div class="name-row"><div class="name">三国国境標識</div></div>
+      <div class="desc">アルゼンチン・パラグアイ・ブラジルの国境が川で交わる地点。三色に塗られた記念碑と、夕暮れのイグアス川の眺めが楽しめる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Marco+das+Tres+Fronteiras+Foz+do+Iguacu" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
     </div>
     </div>
     
@@ -610,7 +670,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="item-grid">
     <div class="city-section-header" data-city="salvador">
       
-      <h2 class="csh-title" data-city-filter="salvador" data-count="5">サルバドール</h2>
+      <h2 class="csh-title" data-city-filter="salvador" data-count="7">サルバドール</h2>
       <div class="csh-desc">ブラジル最初の首都として栄えた港町。カラフルな旧市街ペロウリーニョを中心に、アフリカ系文化と信仰が色濃く息づく</div>
       <div class="csh-grid">
         
@@ -675,6 +735,22 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ポルト・ダ・バーハ海岸.webp" alt="ポルト・ダ・バーハ海岸" loading="lazy"><a href="https://maps.google.com/?q=Praia+do+Porto+da+Barra" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
+    <div class="item-card spot has-spot-img " data-city="salvador" data-stype="religious" data-spot-num="SSA 06">
+      
+      <div class="num-row"><span class="num">SSA 06</span><span class="badge">リボンの教会</span></div>
+      <div class="name-row"><div class="name">ボンフィン教会</div></div>
+      <div class="desc">願いを込めたカラフルなリボンが門に結ばれる、バイーアの信仰の場。リボンが風にゆれる光景は、サルバドールらしい風物詩。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Igreja+do+Senhor+do+Bonfim+Salvador" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="salvador" data-stype="townscape" data-spot-num="SSA 07">
+      
+      <div class="num-row"><span class="num">SSA 07</span><span class="badge">夕日の名所</span></div>
+      <div class="name-row"><div class="name">バーハ灯台</div></div>
+      <div class="desc">サルバドールの南端に立つ、17世紀築の灯台。夕暮れどきに海へ沈む夕日が美しく、市民が集まる夕景の名所になっている。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Farol+da+Barra+Salvador" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
     </div>
     </div>
     
@@ -682,7 +758,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="item-grid">
     <div class="city-section-header" data-city="ouro_preto">
       
-      <h2 class="csh-title" data-city-filter="ouro_preto" data-count="3">オウロ・プレット</h2>
+      <h2 class="csh-title" data-city-filter="ouro_preto" data-count="5">オウロ・プレット</h2>
       <div class="csh-desc">18世紀の金鉱で栄えたバロック建築の街。丘の斜面に教会と石畳の坂道が積み重なる、ミナス・ジェライス州随一の世界遺産都市</div>
       <div class="csh-grid">
         
@@ -731,6 +807,22 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/ミナ・ダ・パッサジェン（古鉱山ツアー）.webp" alt="ミナ・ダ・パッサジェン（古鉱山ツアー）" loading="lazy"><a href="https://maps.google.com/?q=Mina+da+Passagem+Ouro+Preto" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
+    <div class="item-card spot has-spot-img " data-city="ouro_preto" data-stype="townscape" data-spot-num="OPO 04">
+      
+      <div class="num-row"><span class="num">OPO 04</span><span class="badge">古い町並み</span></div>
+      <div class="name-row"><div class="name">マリアナ旧市街</div></div>
+      <div class="desc">オウロ・プレットの近くにある、ミナス地方で最も古い町のひとつ。バロック様式の教会と石畳の広場が、のんびり歩くのに向いている。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Mariana+Minas+Gerais+Brazil" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="ouro_preto" data-stype="religious" data-spot-num="OPO 05">
+      
+      <div class="num-row"><span class="num">OPO 05</span><span class="badge">黄金の祭壇</span></div>
+      <div class="name-row"><div class="name">ピラール教会</div></div>
+      <div class="desc">金の装飾が惜しみなく使われた、ミナス・バロックの傑作。内部を埋め尽くす金色の祭壇は、黄金の時代の繁栄を伝えている。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Matriz+de+Nossa+Senhora+do+Pilar+Ouro+Preto" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
     </div>
     </div>
     
@@ -738,7 +830,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="item-grid">
     <div class="city-section-header" data-city="manaus">
       
-      <h2 class="csh-title" data-city-filter="manaus" data-count="3">マナウス</h2>
+      <h2 class="csh-title" data-city-filter="manaus" data-count="4">マナウス</h2>
       <div class="csh-desc">アマゾン川流域最大の都市。熱帯雨林クルーズやジャングルロッジへの拠点で、ゴム景気時代のヨーロッパ調建築が今も残る</div>
       <div class="csh-grid">
         
@@ -787,6 +879,14 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アマゾン・ジャングルロッジ滞在.webp" alt="アマゾン・ジャングルロッジ滞在" loading="lazy"><a href="https://maps.google.com/?q=Amazon+Jungle+Lodge+Manaus" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
+    <div class="item-card spot has-spot-img " data-city="manaus" data-stype="market" data-spot-num="MAO 04">
+      
+      <div class="num-row"><span class="num">MAO 04</span><span class="badge">アマゾンの市場</span></div>
+      <div class="name-row"><div class="name">アドルフォ・リスボア市場</div></div>
+      <div class="desc">川魚や果物が並ぶ、マナウスの港近くの市場。アマゾンならではの食材を眺めながら、地元の暮らしを覗ける。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Mercado+Adolpho+Lisboa+Manaus" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
     </div>
     </div>
     
@@ -794,7 +894,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <div class="item-grid">
     <div class="city-section-header" data-city="lencois">
       
-      <h2 class="csh-title" data-city-filter="lencois" data-count="4">レンソイス・マラニャンセス</h2>
+      <h2 class="csh-title" data-city-filter="lencois" data-count="5">レンソイス・マラニャンセス</h2>
       <div class="csh-desc">純白の砂丘とエメラルドグリーンのラグーンが織りなす、2024年に世界遺産登録された北東部の絶景エリア。乾季限定で現れる幻想的な光景で知られる</div>
       <div class="csh-grid">
         
@@ -849,6 +949,142 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       <div class="name-row"><div class="name">アチンス</div></div>
       <div class="desc">砂漠の最果てにひっそりと佇む小さな漁村。ハンモックで昼寝を楽しむ、旅の終着点にふさわしいのどかなリゾート。</div>
       <div class="spot-img-wrap"><img class="spot-img" src="素材/観光スポット/アチンス.webp" alt="アチンス" loading="lazy"><a href="https://maps.google.com/?q=Atins+Maranhao" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="lencois" data-stype="townscape" data-spot-num="LEN 05">
+      
+      <div class="num-row"><span class="num">LEN 05</span><span class="badge">砂丘への拠点</span></div>
+      <div class="name-row"><div class="name">バヘリーニャス</div></div>
+      <div class="desc">レンソイス・マラニャンセスへの玄関口になる町。ここを拠点にして、砂丘のツアーやリオ・プレギサスのクルーズに出かけられる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Barreirinhas+Maranhao+Brazil" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div class="s-card spot-section-card" data-city="noronha" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="item-grid">
+    <div class="city-section-header" data-city="noronha">
+      
+      <h2 class="csh-title" data-city-filter="noronha" data-count="4">フェルナンド・デ・ノローニャ</h2>
+      <div class="csh-desc">大西洋に浮かぶ火山島の群島。入島に環境保護料がかかり、人数も制限される、透き通った海とウミガメ、イルカが魅力の世界遺産</div>
+      <div class="csh-grid">
+        
+        <div class="csh-item">
+          <div class="csh-lbl">アクセス</div>
+          <div class="csh-val">レシフェまたはナタールから国内線で約1〜1.5時間</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">おすすめ時期</div>
+          <div class="csh-val">8〜1月（乾季）</div>
+          <button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">宿泊エリア</div>
+          <div class="csh-val">ヴィラ・ドス・レメディオス周辺</div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="noronha" data-stype="nature" data-spot-num="FNO 01">
+      <div class="must-badge">⭐</div>
+      <div class="num-row"><span class="num">FNO 01</span><span class="badge">絶景の入り江</span></div>
+      <div class="name-row"><div class="name">バイア・ド・サンショ</div></div>
+      <div class="desc">崖に囲まれた小さな入り江で、世界で最も美しいビーチの上位に選ばれる。透明な海ではシュノーケリングも楽しめる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Baia+do+Sancho+Fernando+de+Noronha" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="noronha" data-stype="nature" data-spot-num="FNO 02">
+      
+      <div class="num-row"><span class="num">FNO 02</span><span class="badge">島のシンボル</span></div>
+      <div class="name-row"><div class="name">ドイス・イルマオンス</div></div>
+      <div class="desc">島のシンボルとなる、二つの尖った岩山。海岸線から眺める夕景が人気で、島の火山の成り立ちを感じられる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Morro+Dois+Irmaos+Fernando+de+Noronha" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="noronha" data-stype="nature" data-spot-num="FNO 03">
+      
+      <div class="num-row"><span class="num">FNO 03</span><span class="badge">ウミガメの浜</span></div>
+      <div class="name-row"><div class="name">プライア・ド・レオン</div></div>
+      <div class="desc">ウミガメが産卵や休息に訪れる砂浜。波が荒く泳げないが、岩場のシルエットと海の青のコントラストが美しい。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Praia+do+Leao+Fernando+de+Noronha" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="noronha" data-stype="nature" data-spot-num="FNO 04">
+      
+      <div class="num-row"><span class="num">FNO 04</span><span class="badge">イルカの入り江</span></div>
+      <div class="name-row"><div class="name">バイア・ドス・ゴルフィーニョス</div></div>
+      <div class="desc">朝早く、群れで回遊するイルカを展望台から見られる入り江。島の自然を保護しながら観察する、ゆったりした時間が流れる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Baia+dos+Golfinhos+Fernando+de+Noronha" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div class="s-card spot-section-card" data-city="pantanal" data-region="" style="padding:16px;margin-top:2px;margin-bottom:28px">
+    <div class="item-grid">
+    <div class="city-section-header" data-city="pantanal">
+      
+      <h2 class="csh-title" data-city-filter="pantanal" data-count="4">パンタナル・ボニート</h2>
+      <div class="csh-desc">南米大陸の中央に広がる世界最大級の湿原。ジャガーやカピバラなど野生動物の観察と、透明な川でのシュノーケリングが楽しめる</div>
+      <div class="csh-grid">
+        
+        <div class="csh-item">
+          <div class="csh-lbl">アクセス</div>
+          <div class="csh-val">サンパウロから国内線でクイアバまたはカンポ・グランデ空港まで約2時間</div>
+          
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">おすすめ時期</div>
+          <div class="csh-val">5〜9月（乾季）</div>
+          <button onclick="show('season',document.querySelectorAll('nav button')[4])" style="font-size:0.72em;font-weight:700;color:var(--green);background:none;border:none;cursor:pointer;padding:0;text-decoration:underline;white-space:nowrap;margin-left:auto;flex-shrink:0">詳しく見る</button>
+        </div>
+        
+        <div class="csh-item">
+          <div class="csh-lbl">宿泊エリア</div>
+          <div class="csh-val">ポコネ / ボニート</div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="item-card spot has-spot-img must" data-city="pantanal" data-stype="nature" data-spot-num="PAN 01">
+      <div class="must-badge">⭐</div>
+      <div class="num-row"><span class="num">PAN 01</span><span class="badge">ジャガーを探す</span></div>
+      <div class="name-row"><div class="name">パンタナル野生動物サファリ</div></div>
+      <div class="desc">ジャガーやカピバラ、ワニなど、野生動物の宝庫。ボートや車で探す、乾季がもっともおすすめの野生動物観察ツアー。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Pantanal+Wildlife+Safari+Brazil" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="pantanal" data-stype="nature" data-spot-num="PAN 02">
+      
+      <div class="num-row"><span class="num">PAN 02</span><span class="badge">湿原を貫く道</span></div>
+      <div class="name-row"><div class="name">トランスパンタネイラ</div></div>
+      <div class="desc">湿原の中を貫く、木橋が続く未舗装の道。道中の水辺には、ワニや水鳥が集まり、ドライブしながら自然を楽しめる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Transpantaneira+Highway+Pantanal" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="pantanal" data-stype="activity" data-spot-num="PAN 03">
+      
+      <div class="num-row"><span class="num">PAN 03</span><span class="badge">透明な川の遊び</span></div>
+      <div class="name-row"><div class="name">リオ・スクリのシュノーケリング</div></div>
+      <div class="desc">透明度の高い川を泳ぐ、ボニートの人気アクティビティ。魚の群れとともに流れに身をまかせる、自然体験がよろこばれる。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Rio+Sucuri+Bonito+Brazil" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
+    </div>
+    
+    <div class="item-card spot has-spot-img " data-city="pantanal" data-stype="nature" data-spot-num="PAN 04">
+      
+      <div class="num-row"><span class="num">PAN 04</span><span class="badge">青い地底湖</span></div>
+      <div class="name-row"><div class="name">ラゴア・アズール洞窟</div></div>
+      <div class="desc">ボニート郊外の地下に広がる、青く澄んだ地底湖の洞窟。光が差し込む時間帯には、水がまるで宝石のような色に輝く。</div>
+      <div class="spot-img-wrap spot-img-placeholder"><a href="https://maps.google.com/?q=Gruta+do+Lago+Azul+Bonito" target="_blank" rel="noopener" class="spot-map-btn">Googleマップ →</a><span class="spot-map-btn" style="display:none"></span></div>
     </div>
     
     </div>
@@ -947,9 +1183,9 @@ if (typeof BUDGET_TABS !== 'undefined' && document.getElementById('budget-tabs')
 
 /* 現金目安カード */
 let cashDays = 5;
-const RATE = 31;
+const RATE = 29;
 const CASH_LOW = 30;
-const CASH_HIGH = 45;
+const CASH_HIGH = 50;
 function fitCashAmount() {
   const wrap = document.querySelector('.cash-amount');
   const numEl = document.getElementById('cash-range');
@@ -1006,7 +1242,7 @@ function show(id, btn) {
 
 
 /* 分割ページモード: 埋め込みSPOT_DATAから、どのページ（モデルコース含む）でもその場でポップアップ */
-var SPOT_DATA = {"RIO 01": {"num": "RIO 01", "name": "コルコバードのキリスト像", "desc": "710mの丘の頂に立つ新・世界七不思議のひとつ。両手を広げた姿からリオの街と入江を一望できる絶景スポット。", "img": "素材/観光スポット/コルコバードのキリスト像.webp", "mapUrl": "https://maps.google.com/?q=Christ+the+Redeemer+Rio", "must": true}, "RIO 02": {"num": "RIO 02", "name": "ポン・デ・アスーカル（シュガーローフ山）", "desc": "2基のロープウェイで登る奇岩の山。夕暮れ時は山頂から街と海が黄金色に染まる絶景を眺められる人気スポット。", "img": "素材/観光スポット/ポン・デ・アスーカル（シュガーローフ山）.webp", "mapUrl": "https://maps.google.com/?q=Sugarloaf+Mountain+Rio", "must": true}, "RIO 03": {"num": "RIO 03", "name": "コパカバーナ／イパネマ海岸", "desc": "波型の遊歩道が続く白砂のビーチ。ビーチバレーやフットボレイを楽しむ地元民と観光客が入り混じる、リオの日常の縮図。", "img": "素材/観光スポット/コパカバーナ／イパネマ海岸.webp", "mapUrl": "https://maps.google.com/?q=Copacabana+Beach", "must": true}, "RIO 04": {"num": "RIO 04", "name": "セラロン階段", "desc": "チリ人芸術家が世界中のタイルで埋め尽くした約250段の階段。1段ごとに異なる色彩が続く、フォトジェニックな名物スポット。", "img": "素材/観光スポット/セラロン階段.webp", "mapUrl": "https://maps.google.com/?q=Selaron+Steps+Rio", "must": false}, "RIO 05": {"num": "RIO 05", "name": "マラカナン・スタジアム", "desc": "ワールドカップの決勝も行われたブラジルサッカーの聖地。試合がない日もスタジアムツアーで内部を見学できる。", "img": "素材/観光スポット/マラカナン・スタジアム.webp", "mapUrl": "https://maps.google.com/?q=Maracana+Stadium", "must": false}, "RIO 06": {"num": "RIO 06", "name": "ティジュカ国立公園", "desc": "市街地を囲む世界最大級の都市林。滝やハイキングコースが広がり、展望台からはリオの街と海を一望できる自然のオアシス。", "img": "素材/観光スポット/ティジュカ国立公園.webp", "mapUrl": "https://maps.google.com/?q=Tijuca+National+Park+Rio", "must": false}, "RIO 07": {"num": "RIO 07", "name": "コパカバーナ・フォート", "desc": "コパカバーナ海岸の南端に立つ要塞。海岸線を一望できる展望台があり、館内の老舗カフェ「コロンボ」でひと休みするのも定番。", "img": "素材/観光スポット/コパカバーナ・フォート.webp", "mapUrl": "https://maps.google.com/?q=Forte+de+Copacabana", "must": true}, "RIO 08": {"num": "RIO 08", "name": "イルハ・グランデ", "desc": "リオから船で行ける美しい離島。透明度抜群のビーチと熱帯雨林トレイルが広がり、車の乗り入れ禁止で静かな時間が流れる。", "img": "素材/観光スポット/イルハ・グランデ.webp", "mapUrl": "https://maps.google.com/?q=Ilha+Grande+Brazil", "must": true}, "SP 01": {"num": "SP 01", "name": "アヴェニーダ・パウリスタとMASP", "desc": "サンパウロの目抜き通りに立つ、赤い柱で宙に浮くような外観が特徴の近代美術館。周辺は週末に歩行者天国となり賑わう。", "img": "素材/観光スポット/アヴェニーダ・パウリスタとMASP.webp", "mapUrl": "https://maps.google.com/?q=MASP+Sao+Paulo", "must": true}, "SP 02": {"num": "SP 02", "name": "メルカドン（市営市場）", "desc": "ステンドグラスが美しい歴史的市場。名物モルタデーラ・サンドイッチや南米各地のフルーツを味わえる、食べ歩きにぴったりのスポット。", "img": "素材/観光スポット/メルカドン（市営市場）.webp", "mapUrl": "https://maps.google.com/?q=Mercado+Municipal+Sao+Paulo", "must": false}, "SP 03": {"num": "SP 03", "name": "ベコ・ド・バットマン", "desc": "ヴィラ・マダレーナ地区の路地を埋め尽くすグラフィティアート街。アーティストが今も描き替え続ける、生きたストリートアート空間。", "img": "素材/観光スポット/ベコ・ド・バットマン.webp", "mapUrl": "https://maps.google.com/?q=Beco+do+Batman+Sao+Paulo", "must": false}, "SP 04": {"num": "SP 04", "name": "イビラプエラ公園", "desc": "オスカー・ニーマイヤー設計の建築群が点在する、サンパウロ市民憩いの大公園。週末は家族連れやジョギングをする人々で賑わう。", "img": "素材/観光スポット/イビラプエラ公園.webp", "mapUrl": "https://maps.google.com/?q=Ibirapuera+Park", "must": false}, "SP 05": {"num": "SP 05", "name": "リベルダーデ（日本人街）", "desc": "赤い鳥居と提灯が並ぶ、世界最大級の日系人コミュニティが築いた街並み。週末の東洋市は日本食材や雑貨を扱う屋台で賑わう。", "img": "素材/観光スポット/リベルダーデ（日本人街）.webp", "mapUrl": "https://maps.google.com/?q=Liberdade+Sao+Paulo", "must": false}, "SP 06": {"num": "SP 06", "name": "サンパウロ大聖堂（カテドラル・セ）", "desc": "旧市街の中心に立つネオ・ゴシック様式の巨大聖堂。8,000人を収容できる内部空間と壮麗なステンドグラスが見どころ。", "img": "素材/観光スポット/サンパウロ大聖堂（カテドラル・セ）.webp", "mapUrl": "https://maps.google.com/?q=Catedral+da+Se+Sao+Paulo", "must": true}, "SP 07": {"num": "SP 07", "name": "ピナコテッカ", "desc": "ブラジル最古の美術館のひとつで、MASPと並ぶアート鑑賞の名所。19〜20世紀のブラジル絵画・彫刻の充実したコレクションを誇る。", "img": "素材/観光スポット/ピナコテッカ.webp", "mapUrl": "https://maps.google.com/?q=Pinacoteca+de+Sao+Paulo", "must": false}, "IGU 01": {"num": "IGU 01", "name": "イグアス国立公園（ブラジル側）", "desc": "大小275の滝が幅2.7kmにわたり轟音を響かせる世界遺産。遊歩道からパノラマで滝群全体を見渡せるのがブラジル側の魅力。", "img": "素材/観光スポット/イグアス国立公園（ブラジル側）.webp", "mapUrl": "https://maps.google.com/?q=Iguazu+National+Park+Brazil", "must": true}, "IGU 02": {"num": "IGU 02", "name": "マクコ・サファリ（ボートツアー）", "desc": "滝壺のすぐ下まで接近するスリル満点のボートツアー。全身ずぶ濡れ覚悟で「悪魔の喉笛」の水しぶきを間近に体感できる。", "img": "素材/観光スポット/マクコ・サファリ（ボートツアー）.webp", "mapUrl": "https://maps.google.com/?q=Macuco+Safari+Iguazu", "must": true}, "IGU 03": {"num": "IGU 03", "name": "パルケ・ダス・アヴェス（野鳥公園）", "desc": "オオハシやフラミンゴなど中南米の野鳥を間近で観察できる大型ネット式ビオパーク。イグアスの滝とあわせて訪れやすい立地。", "img": "素材/観光スポット/パルケ・ダス・アヴェス（野鳥公園）.webp", "mapUrl": "https://maps.google.com/?q=Parque+das+Aves+Foz+do+Iguacu", "must": false}, "IGU 04": {"num": "IGU 04", "name": "イタイプ・ダム", "desc": "パラグアイとの国境をまたぐ世界最大級の水力発電ダム。展望台から見る堤体のスケールは圧巻で、夜のライトアップツアーも人気。", "img": "素材/観光スポット/イタイプ・ダム.webp", "mapUrl": "https://maps.google.com/?q=Itaipu+Dam", "must": false}, "SAL 01": {"num": "SAL 01", "name": "ペロウリーニョ歴史地区", "desc": "パステルカラーのポルトガル植民地建築が丘の斜面に並ぶ世界遺産地区。カポエイラやサンバの生演奏が路上に響く活気ある街並み。", "img": "素材/観光スポット/ペロウリーニョ歴史地区.webp", "mapUrl": "https://maps.google.com/?q=Pelourinho+Salvador", "must": true}, "SAL 02": {"num": "SAL 02", "name": "サン・フランシスコ教会", "desc": "内部を覆う金箔装飾が圧巻のバロック様式教会。植民地時代の富の象徴とされる豪奢な内装は、ブラジル屈指の見応え。", "img": "素材/観光スポット/サン・フランシスコ教会.webp", "mapUrl": "https://maps.google.com/?q=Igreja+de+Sao+Francisco+Salvador", "must": false}, "SAL 03": {"num": "SAL 03", "name": "エレヴァドール・ラセルダ", "desc": "高台の旧市街と海沿いの下町を結ぶ、1873年開業のアールデコ調エレベーター。乗るだけで街のパノラマビューが楽しめる名物施設。", "img": "素材/観光スポット/エレヴァドール・ラセルダ.webp", "mapUrl": "https://maps.google.com/?q=Elevador+Lacerda+Salvador", "must": false}, "SAL 04": {"num": "SAL 04", "name": "メルカド・モデロ", "desc": "かつて奴隷貿易の税関だった建物を利用した工芸品市場。カポエイラの実演も行われ、バイーア土産を探すのに最適なスポット。", "img": "素材/観光スポット/メルカド・モデロ.webp", "mapUrl": "https://maps.google.com/?q=Mercado+Modelo+Salvador", "must": false}, "SAL 05": {"num": "SAL 05", "name": "ポルト・ダ・バーハ海岸", "desc": "旧市街から徒歩圏内にある都市型ビーチ。灯台を望む夕日スポットとしても人気で、地元の若者で賑わう気軽なビーチライフを味わえる。", "img": "素材/観光スポット/ポルト・ダ・バーハ海岸.webp", "mapUrl": "https://maps.google.com/?q=Praia+do+Porto+da+Barra", "must": false}, "OP 01": {"num": "OP 01", "name": "サン・フランシスコ・デ・アシス教会", "desc": "彫刻家アレイジャジーニョが手がけたロココ様式の傑作。曲線的なファサードと内部の壁画が見事な、ブラジルバロック建築の最高峰。", "img": "素材/観光スポット/サン・フランシスコ・デ・アシス教会.webp", "mapUrl": "https://maps.google.com/?q=Igreja+Sao+Francisco+de+Assis+Ouro+Preto", "must": true}, "OP 02": {"num": "OP 02", "name": "プラサ・チラデンテスとインコンフィデンシア博物館", "desc": "独立運動の志士チラデンテスの名を冠した中心広場。旧市庁舎を利用した博物館で、ブラジル独立運動の歴史を学べる。", "img": "素材/観光スポット/プラサ・チラデンテスとインコンフィデンシア博物館.webp", "mapUrl": "https://maps.google.com/?q=Praca+Tiradentes+Ouro+Preto", "must": false}, "OP 03": {"num": "OP 03", "name": "ミナ・ダ・パッサジェン（古鉱山ツアー）", "desc": "18世紀に実際に採掘されていた地下坑道をトロッコで巡るツアー。地底湖など幻想的な光景とともに、ゴールドラッシュの歴史を体感できる。", "img": "素材/観光スポット/ミナ・ダ・パッサジェン（古鉱山ツアー）.webp", "mapUrl": "https://maps.google.com/?q=Mina+da+Passagem+Ouro+Preto", "must": false}, "MAO 01": {"num": "MAO 01", "name": "アマゾナス劇場", "desc": "19世紀末のゴム景気で栄えた富の象徴、密林の中に忽然と現れるヨーロッパ様式の歌劇場。ドーム屋根の陶器タイルはすべて欧州から運ばれた。", "img": "素材/観光スポット/アマゾナス劇場.webp", "mapUrl": "https://maps.google.com/?q=Teatro+Amazonas+Manaus", "must": true}, "MAO 02": {"num": "MAO 02", "name": "二つの川の出会い（エンコントロ・ダス・アグアス）", "desc": "黒褐色のネグロ川と黄土色のソリモンイス川が、水温と流速の違いから数kmにわたり混ざらず並走する不思議な現象。ボートツアーで間近に観察できる。", "img": "素材/観光スポット/二つの川の出会い（エンコントロ・ダス・アグアス）.webp", "mapUrl": "https://maps.google.com/?q=Meeting+of+Waters+Manaus", "must": true}, "MAO 03": {"num": "MAO 03", "name": "アマゾン・ジャングルロッジ滞在", "desc": "熱帯雨林の奥に建つロッジに1〜2泊し、カヌーでのワニ探し・野鳥観察・先住民集落訪問を楽しむ定番アクティビティ。夜の虫や鳥の合唱も密林ならではの魅力。", "img": "素材/観光スポット/アマゾン・ジャングルロッジ滞在.webp", "mapUrl": "https://maps.google.com/?q=Amazon+Jungle+Lodge+Manaus", "must": false}, "LEN 01": {"num": "LEN 01", "name": "レンソイス・マラニャンセス国立公園", "desc": "純白の砂丘が地平線まで広がる2024年世界遺産の絶景公園。雨季にはあちこちに透明なラグーンが現れる。", "img": "素材/観光スポット/レンソイス・マラニャンセス国立公園.webp", "mapUrl": "https://maps.google.com/?q=Lencois+Maranhenses+National+Park", "must": true}, "LEN 02": {"num": "LEN 02", "name": "ラゴア・アズール（ブルーラグーン）", "desc": "透明度抜群のコバルトブルーのラグーン。人気ルート「ラゴア・アズール・サーキット」の主役で、遊泳も楽しめる。", "img": "素材/観光スポット/ラゴア・アズール（ブルーラグーン）.webp", "mapUrl": "https://maps.google.com/?q=Lagoa+Azul+Lencois+Maranhenses", "must": true}, "LEN 03": {"num": "LEN 03", "name": "ラゴア・ボニータ", "desc": "砂丘の頂から沈む夕日を見渡せる、レンソイス随一の夕景スポット。刻々と染まる空とラグーンの色彩が美しい。", "img": "素材/観光スポット/ラゴア・ボニータ.webp", "mapUrl": "https://maps.google.com/?q=Lagoa+Bonita+Lencois+Maranhenses", "must": false}, "LEN 04": {"num": "LEN 04", "name": "アチンス", "desc": "砂漠の最果てにひっそりと佇む小さな漁村。ハンモックで昼寝を楽しむ、旅の終着点にふさわしいのどかなリゾート。", "img": "素材/観光スポット/アチンス.webp", "mapUrl": "https://maps.google.com/?q=Atins+Maranhao", "must": false}};
+var SPOT_DATA = {"RIO 01": {"num": "RIO 01", "name": "コルコバードのキリスト像", "desc": "710mの丘の頂に立つ新・世界七不思議のひとつ。両手を広げた姿からリオの街と入江を一望できる絶景スポット。", "img": "素材/観光スポット/コルコバードのキリスト像.webp", "mapUrl": "https://maps.google.com/?q=Christ+the+Redeemer+Rio", "must": true}, "RIO 02": {"num": "RIO 02", "name": "ポン・デ・アスーカル（シュガーローフ山）", "desc": "2基のロープウェイで登る奇岩の山。夕暮れ時は山頂から街と海が黄金色に染まる絶景を眺められる人気スポット。", "img": "素材/観光スポット/ポン・デ・アスーカル（シュガーローフ山）.webp", "mapUrl": "https://maps.google.com/?q=Sugarloaf+Mountain+Rio", "must": true}, "RIO 03": {"num": "RIO 03", "name": "コパカバーナ／イパネマ海岸", "desc": "波型の遊歩道が続く白砂のビーチ。ビーチバレーやフットボレイを楽しむ地元民と観光客が入り混じる、リオの日常の縮図。", "img": "素材/観光スポット/コパカバーナ／イパネマ海岸.webp", "mapUrl": "https://maps.google.com/?q=Copacabana+Beach", "must": true}, "RIO 04": {"num": "RIO 04", "name": "セラロン階段", "desc": "チリ人芸術家が世界中のタイルで埋め尽くした約250段の階段。1段ごとに異なる色彩が続く、フォトジェニックな名物スポット。", "img": "素材/観光スポット/セラロン階段.webp", "mapUrl": "https://maps.google.com/?q=Selaron+Steps+Rio", "must": false}, "RIO 05": {"num": "RIO 05", "name": "マラカナン・スタジアム", "desc": "ワールドカップの決勝も行われたブラジルサッカーの聖地。試合がない日もスタジアムツアーで内部を見学できる。", "img": "素材/観光スポット/マラカナン・スタジアム.webp", "mapUrl": "https://maps.google.com/?q=Maracana+Stadium", "must": false}, "RIO 06": {"num": "RIO 06", "name": "ティジュカ国立公園", "desc": "市街地を囲む世界最大級の都市林。滝やハイキングコースが広がり、展望台からはリオの街と海を一望できる自然のオアシス。", "img": "素材/観光スポット/ティジュカ国立公園.webp", "mapUrl": "https://maps.google.com/?q=Tijuca+National+Park+Rio", "must": false}, "RIO 07": {"num": "RIO 07", "name": "コパカバーナ・フォート", "desc": "コパカバーナ海岸の南端に立つ要塞。海岸線を一望できる展望台があり、館内の老舗カフェ「コロンボ」でひと休みするのも定番。", "img": "素材/観光スポット/コパカバーナ・フォート.webp", "mapUrl": "https://maps.google.com/?q=Forte+de+Copacabana", "must": true}, "RIO 08": {"num": "RIO 08", "name": "イルハ・グランデ", "desc": "リオから船で行ける美しい離島。透明度抜群のビーチと熱帯雨林トレイルが広がり、車の乗り入れ禁止で静かな時間が流れる。", "img": "素材/観光スポット/イルハ・グランデ.webp", "mapUrl": "https://maps.google.com/?q=Ilha+Grande+Brazil", "must": true}, "RIO 09": {"num": "RIO 09", "name": "明日博物館（ムゼウ・ド・アマニャン）", "desc": "港のそばに突き出す、白い骨組みのような建物。地球と人類の未来をテーマにした展示で、リオの新しい観光名所になっている。", "img": "", "mapUrl": "https://maps.google.com/?q=Museu+do+Amanha+Rio+de+Janeiro", "must": false}, "RIO 10": {"num": "RIO 10", "name": "サンタ・テレーザ地区", "desc": "丘の上に広がる芸術家の街。黄色い路面電車と石畳の坂道、カラフルな家々が続き、リオの違う顔を感じられる。", "img": "", "mapUrl": "https://maps.google.com/?q=Santa+Teresa+Rio+de+Janeiro", "must": false}, "RIO 11": {"num": "RIO 11", "name": "ジャルジン・ボタニコ（植物園）", "desc": "19世紀に開園した広大な植物園。ヤシ並木の道と熱帯植物が続き、コルコバードの丘を背景にした景色も見られる。", "img": "", "mapUrl": "https://maps.google.com/?q=Jardim+Botanico+Rio+de+Janeiro", "must": false}, "SP 01": {"num": "SP 01", "name": "アヴェニーダ・パウリスタとMASP", "desc": "サンパウロの目抜き通りに立つ、赤い柱で宙に浮くような外観が特徴の近代美術館。周辺は週末に歩行者天国となり賑わう。", "img": "素材/観光スポット/アヴェニーダ・パウリスタとMASP.webp", "mapUrl": "https://maps.google.com/?q=MASP+Sao+Paulo", "must": true}, "SP 02": {"num": "SP 02", "name": "メルカドン（市営市場）", "desc": "ステンドグラスが美しい歴史的市場。名物モルタデーラ・サンドイッチや南米各地のフルーツを味わえる、食べ歩きにぴったりのスポット。", "img": "素材/観光スポット/メルカドン（市営市場）.webp", "mapUrl": "https://maps.google.com/?q=Mercado+Municipal+Sao+Paulo", "must": false}, "SP 03": {"num": "SP 03", "name": "ベコ・ド・バットマン", "desc": "ヴィラ・マダレーナ地区の路地を埋め尽くすグラフィティアート街。アーティストが今も描き替え続ける、生きたストリートアート空間。", "img": "素材/観光スポット/ベコ・ド・バットマン.webp", "mapUrl": "https://maps.google.com/?q=Beco+do+Batman+Sao+Paulo", "must": false}, "SP 04": {"num": "SP 04", "name": "イビラプエラ公園", "desc": "オスカー・ニーマイヤー設計の建築群が点在する、サンパウロ市民憩いの大公園。週末は家族連れやジョギングをする人々で賑わう。", "img": "素材/観光スポット/イビラプエラ公園.webp", "mapUrl": "https://maps.google.com/?q=Ibirapuera+Park", "must": false}, "SP 05": {"num": "SP 05", "name": "リベルダーデ（日本人街）", "desc": "赤い鳥居と提灯が並ぶ、世界最大級の日系人コミュニティが築いた街並み。週末の東洋市は日本食材や雑貨を扱う屋台で賑わう。", "img": "素材/観光スポット/リベルダーデ（日本人街）.webp", "mapUrl": "https://maps.google.com/?q=Liberdade+Sao+Paulo", "must": false}, "SP 06": {"num": "SP 06", "name": "サンパウロ大聖堂（カテドラル・セ）", "desc": "旧市街の中心に立つネオ・ゴシック様式の巨大聖堂。8,000人を収容できる内部空間と壮麗なステンドグラスが見どころ。", "img": "素材/観光スポット/サンパウロ大聖堂（カテドラル・セ）.webp", "mapUrl": "https://maps.google.com/?q=Catedral+da+Se+Sao+Paulo", "must": true}, "SP 07": {"num": "SP 07", "name": "ピナコテッカ", "desc": "ブラジル最古の美術館のひとつで、MASPと並ぶアート鑑賞の名所。19〜20世紀のブラジル絵画・彫刻の充実したコレクションを誇る。", "img": "素材/観光スポット/ピナコテッカ.webp", "mapUrl": "https://maps.google.com/?q=Pinacoteca+de+Sao+Paulo", "must": false}, "SAO 08": {"num": "SAO 08", "name": "ポルトガル語博物館", "desc": "駅舎を利用した、ポルトガル語をテーマにした博物館。言葉の成り立ちを映像や音で体験でき、レンガ造りの建物も美しい。", "img": "", "mapUrl": "https://maps.google.com/?q=Museu+da+Lingua+Portuguesa+Sao+Paulo", "must": false}, "SAO 09": {"num": "SAO 09", "name": "サッカー博物館", "desc": "パカエンブー競技場の下にあるサッカーの博物館。ブラジル人の熱い思いを、映像や展示でたどれる体験型のスポット。", "img": "", "mapUrl": "https://maps.google.com/?q=Museu+do+Futebol+Sao+Paulo", "must": false}, "IGU 01": {"num": "IGU 01", "name": "イグアス国立公園（ブラジル側）", "desc": "大小275の滝が幅2.7kmにわたり轟音を響かせる世界遺産。遊歩道からパノラマで滝群全体を見渡せるのがブラジル側の魅力。", "img": "素材/観光スポット/イグアス国立公園（ブラジル側）.webp", "mapUrl": "https://maps.google.com/?q=Iguazu+National+Park+Brazil", "must": true}, "IGU 02": {"num": "IGU 02", "name": "マクコ・サファリ（ボートツアー）", "desc": "滝壺のすぐ下まで接近するスリル満点のボートツアー。全身ずぶ濡れ覚悟で「悪魔の喉笛」の水しぶきを間近に体感できる。", "img": "素材/観光スポット/マクコ・サファリ（ボートツアー）.webp", "mapUrl": "https://maps.google.com/?q=Macuco+Safari+Iguazu", "must": true}, "IGU 03": {"num": "IGU 03", "name": "パルケ・ダス・アヴェス（野鳥公園）", "desc": "オオハシやフラミンゴなど中南米の野鳥を間近で観察できる大型ネット式ビオパーク。イグアスの滝とあわせて訪れやすい立地。", "img": "素材/観光スポット/パルケ・ダス・アヴェス（野鳥公園）.webp", "mapUrl": "https://maps.google.com/?q=Parque+das+Aves+Foz+do+Iguacu", "must": false}, "IGU 04": {"num": "IGU 04", "name": "イタイプ・ダム", "desc": "パラグアイとの国境をまたぐ世界最大級の水力発電ダム。展望台から見る堤体のスケールは圧巻で、夜のライトアップツアーも人気。", "img": "素材/観光スポット/イタイプ・ダム.webp", "mapUrl": "https://maps.google.com/?q=Itaipu+Dam", "must": false}, "IGU 05": {"num": "IGU 05", "name": "アルゼンチン側イグアスの滝", "desc": "「悪魔ののど笛」の真上まで歩道が伸びる、アルゼンチン側のイグアス国立公園。ブラジル側より間近で滝の迫力を感じられる。", "img": "", "mapUrl": "https://maps.google.com/?q=Iguazu+Falls+Argentina+Devil%27s+Throat", "must": false}, "IGU 06": {"num": "IGU 06", "name": "三国国境標識", "desc": "アルゼンチン・パラグアイ・ブラジルの国境が川で交わる地点。三色に塗られた記念碑と、夕暮れのイグアス川の眺めが楽しめる。", "img": "", "mapUrl": "https://maps.google.com/?q=Marco+das+Tres+Fronteiras+Foz+do+Iguacu", "must": false}, "SAL 01": {"num": "SAL 01", "name": "ペロウリーニョ歴史地区", "desc": "パステルカラーのポルトガル植民地建築が丘の斜面に並ぶ世界遺産地区。カポエイラやサンバの生演奏が路上に響く活気ある街並み。", "img": "素材/観光スポット/ペロウリーニョ歴史地区.webp", "mapUrl": "https://maps.google.com/?q=Pelourinho+Salvador", "must": true}, "SAL 02": {"num": "SAL 02", "name": "サン・フランシスコ教会", "desc": "内部を覆う金箔装飾が圧巻のバロック様式教会。植民地時代の富の象徴とされる豪奢な内装は、ブラジル屈指の見応え。", "img": "素材/観光スポット/サン・フランシスコ教会.webp", "mapUrl": "https://maps.google.com/?q=Igreja+de+Sao+Francisco+Salvador", "must": false}, "SAL 03": {"num": "SAL 03", "name": "エレヴァドール・ラセルダ", "desc": "高台の旧市街と海沿いの下町を結ぶ、1873年開業のアールデコ調エレベーター。乗るだけで街のパノラマビューが楽しめる名物施設。", "img": "素材/観光スポット/エレヴァドール・ラセルダ.webp", "mapUrl": "https://maps.google.com/?q=Elevador+Lacerda+Salvador", "must": false}, "SAL 04": {"num": "SAL 04", "name": "メルカド・モデロ", "desc": "かつて奴隷貿易の税関だった建物を利用した工芸品市場。カポエイラの実演も行われ、バイーア土産を探すのに最適なスポット。", "img": "素材/観光スポット/メルカド・モデロ.webp", "mapUrl": "https://maps.google.com/?q=Mercado+Modelo+Salvador", "must": false}, "SAL 05": {"num": "SAL 05", "name": "ポルト・ダ・バーハ海岸", "desc": "旧市街から徒歩圏内にある都市型ビーチ。灯台を望む夕日スポットとしても人気で、地元の若者で賑わう気軽なビーチライフを味わえる。", "img": "素材/観光スポット/ポルト・ダ・バーハ海岸.webp", "mapUrl": "https://maps.google.com/?q=Praia+do+Porto+da+Barra", "must": false}, "SSA 06": {"num": "SSA 06", "name": "ボンフィン教会", "desc": "願いを込めたカラフルなリボンが門に結ばれる、バイーアの信仰の場。リボンが風にゆれる光景は、サルバドールらしい風物詩。", "img": "", "mapUrl": "https://maps.google.com/?q=Igreja+do+Senhor+do+Bonfim+Salvador", "must": false}, "SSA 07": {"num": "SSA 07", "name": "バーハ灯台", "desc": "サルバドールの南端に立つ、17世紀築の灯台。夕暮れどきに海へ沈む夕日が美しく、市民が集まる夕景の名所になっている。", "img": "", "mapUrl": "https://maps.google.com/?q=Farol+da+Barra+Salvador", "must": false}, "OP 01": {"num": "OP 01", "name": "サン・フランシスコ・デ・アシス教会", "desc": "彫刻家アレイジャジーニョが手がけたロココ様式の傑作。曲線的なファサードと内部の壁画が見事な、ブラジルバロック建築の最高峰。", "img": "素材/観光スポット/サン・フランシスコ・デ・アシス教会.webp", "mapUrl": "https://maps.google.com/?q=Igreja+Sao+Francisco+de+Assis+Ouro+Preto", "must": true}, "OP 02": {"num": "OP 02", "name": "プラサ・チラデンテスとインコンフィデンシア博物館", "desc": "独立運動の志士チラデンテスの名を冠した中心広場。旧市庁舎を利用した博物館で、ブラジル独立運動の歴史を学べる。", "img": "素材/観光スポット/プラサ・チラデンテスとインコンフィデンシア博物館.webp", "mapUrl": "https://maps.google.com/?q=Praca+Tiradentes+Ouro+Preto", "must": false}, "OP 03": {"num": "OP 03", "name": "ミナ・ダ・パッサジェン（古鉱山ツアー）", "desc": "18世紀に実際に採掘されていた地下坑道をトロッコで巡るツアー。地底湖など幻想的な光景とともに、ゴールドラッシュの歴史を体感できる。", "img": "素材/観光スポット/ミナ・ダ・パッサジェン（古鉱山ツアー）.webp", "mapUrl": "https://maps.google.com/?q=Mina+da+Passagem+Ouro+Preto", "must": false}, "OPO 04": {"num": "OPO 04", "name": "マリアナ旧市街", "desc": "オウロ・プレットの近くにある、ミナス地方で最も古い町のひとつ。バロック様式の教会と石畳の広場が、のんびり歩くのに向いている。", "img": "", "mapUrl": "https://maps.google.com/?q=Mariana+Minas+Gerais+Brazil", "must": false}, "OPO 05": {"num": "OPO 05", "name": "ピラール教会", "desc": "金の装飾が惜しみなく使われた、ミナス・バロックの傑作。内部を埋め尽くす金色の祭壇は、黄金の時代の繁栄を伝えている。", "img": "", "mapUrl": "https://maps.google.com/?q=Matriz+de+Nossa+Senhora+do+Pilar+Ouro+Preto", "must": false}, "MAO 01": {"num": "MAO 01", "name": "アマゾナス劇場", "desc": "19世紀末のゴム景気で栄えた富の象徴、密林の中に忽然と現れるヨーロッパ様式の歌劇場。ドーム屋根の陶器タイルはすべて欧州から運ばれた。", "img": "素材/観光スポット/アマゾナス劇場.webp", "mapUrl": "https://maps.google.com/?q=Teatro+Amazonas+Manaus", "must": true}, "MAO 02": {"num": "MAO 02", "name": "二つの川の出会い（エンコントロ・ダス・アグアス）", "desc": "黒褐色のネグロ川と黄土色のソリモンイス川が、水温と流速の違いから数kmにわたり混ざらず並走する不思議な現象。ボートツアーで間近に観察できる。", "img": "素材/観光スポット/二つの川の出会い（エンコントロ・ダス・アグアス）.webp", "mapUrl": "https://maps.google.com/?q=Meeting+of+Waters+Manaus", "must": true}, "MAO 03": {"num": "MAO 03", "name": "アマゾン・ジャングルロッジ滞在", "desc": "熱帯雨林の奥に建つロッジに1〜2泊し、カヌーでのワニ探し・野鳥観察・先住民集落訪問を楽しむ定番アクティビティ。夜の虫や鳥の合唱も密林ならではの魅力。", "img": "素材/観光スポット/アマゾン・ジャングルロッジ滞在.webp", "mapUrl": "https://maps.google.com/?q=Amazon+Jungle+Lodge+Manaus", "must": false}, "MAO 04": {"num": "MAO 04", "name": "アドルフォ・リスボア市場", "desc": "川魚や果物が並ぶ、マナウスの港近くの市場。アマゾンならではの食材を眺めながら、地元の暮らしを覗ける。", "img": "", "mapUrl": "https://maps.google.com/?q=Mercado+Adolpho+Lisboa+Manaus", "must": false}, "LEN 01": {"num": "LEN 01", "name": "レンソイス・マラニャンセス国立公園", "desc": "純白の砂丘が地平線まで広がる2024年世界遺産の絶景公園。雨季にはあちこちに透明なラグーンが現れる。", "img": "素材/観光スポット/レンソイス・マラニャンセス国立公園.webp", "mapUrl": "https://maps.google.com/?q=Lencois+Maranhenses+National+Park", "must": true}, "LEN 02": {"num": "LEN 02", "name": "ラゴア・アズール（ブルーラグーン）", "desc": "透明度抜群のコバルトブルーのラグーン。人気ルート「ラゴア・アズール・サーキット」の主役で、遊泳も楽しめる。", "img": "素材/観光スポット/ラゴア・アズール（ブルーラグーン）.webp", "mapUrl": "https://maps.google.com/?q=Lagoa+Azul+Lencois+Maranhenses", "must": true}, "LEN 03": {"num": "LEN 03", "name": "ラゴア・ボニータ", "desc": "砂丘の頂から沈む夕日を見渡せる、レンソイス随一の夕景スポット。刻々と染まる空とラグーンの色彩が美しい。", "img": "素材/観光スポット/ラゴア・ボニータ.webp", "mapUrl": "https://maps.google.com/?q=Lagoa+Bonita+Lencois+Maranhenses", "must": false}, "LEN 04": {"num": "LEN 04", "name": "アチンス", "desc": "砂漠の最果てにひっそりと佇む小さな漁村。ハンモックで昼寝を楽しむ、旅の終着点にふさわしいのどかなリゾート。", "img": "素材/観光スポット/アチンス.webp", "mapUrl": "https://maps.google.com/?q=Atins+Maranhao", "must": false}, "LEN 05": {"num": "LEN 05", "name": "バヘリーニャス", "desc": "レンソイス・マラニャンセスへの玄関口になる町。ここを拠点にして、砂丘のツアーやリオ・プレギサスのクルーズに出かけられる。", "img": "", "mapUrl": "https://maps.google.com/?q=Barreirinhas+Maranhao+Brazil", "must": false}, "FNO 01": {"num": "FNO 01", "name": "バイア・ド・サンショ", "desc": "崖に囲まれた小さな入り江で、世界で最も美しいビーチの上位に選ばれる。透明な海ではシュノーケリングも楽しめる。", "img": "", "mapUrl": "https://maps.google.com/?q=Baia+do+Sancho+Fernando+de+Noronha", "must": true}, "FNO 02": {"num": "FNO 02", "name": "ドイス・イルマオンス", "desc": "島のシンボルとなる、二つの尖った岩山。海岸線から眺める夕景が人気で、島の火山の成り立ちを感じられる。", "img": "", "mapUrl": "https://maps.google.com/?q=Morro+Dois+Irmaos+Fernando+de+Noronha", "must": false}, "FNO 03": {"num": "FNO 03", "name": "プライア・ド・レオン", "desc": "ウミガメが産卵や休息に訪れる砂浜。波が荒く泳げないが、岩場のシルエットと海の青のコントラストが美しい。", "img": "", "mapUrl": "https://maps.google.com/?q=Praia+do+Leao+Fernando+de+Noronha", "must": false}, "FNO 04": {"num": "FNO 04", "name": "バイア・ドス・ゴルフィーニョス", "desc": "朝早く、群れで回遊するイルカを展望台から見られる入り江。島の自然を保護しながら観察する、ゆったりした時間が流れる。", "img": "", "mapUrl": "https://maps.google.com/?q=Baia+dos+Golfinhos+Fernando+de+Noronha", "must": false}, "PAN 01": {"num": "PAN 01", "name": "パンタナル野生動物サファリ", "desc": "ジャガーやカピバラ、ワニなど、野生動物の宝庫。ボートや車で探す、乾季がもっともおすすめの野生動物観察ツアー。", "img": "", "mapUrl": "https://maps.google.com/?q=Pantanal+Wildlife+Safari+Brazil", "must": true}, "PAN 02": {"num": "PAN 02", "name": "トランスパンタネイラ", "desc": "湿原の中を貫く、木橋が続く未舗装の道。道中の水辺には、ワニや水鳥が集まり、ドライブしながら自然を楽しめる。", "img": "", "mapUrl": "https://maps.google.com/?q=Transpantaneira+Highway+Pantanal", "must": false}, "PAN 03": {"num": "PAN 03", "name": "リオ・スクリのシュノーケリング", "desc": "透明度の高い川を泳ぐ、ボニートの人気アクティビティ。魚の群れとともに流れに身をまかせる、自然体験がよろこばれる。", "img": "", "mapUrl": "https://maps.google.com/?q=Rio+Sucuri+Bonito+Brazil", "must": false}, "PAN 04": {"num": "PAN 04", "name": "ラゴア・アズール洞窟", "desc": "ボニート郊外の地下に広がる、青く澄んだ地底湖の洞窟。光が差し込む時間帯には、水がまるで宝石のような色に輝く。", "img": "", "mapUrl": "https://maps.google.com/?q=Gruta+do+Lago+Azul+Bonito", "must": false}};
 function showSpot(numId) {
   var o = (window.SPOT_DATA && SPOT_DATA[numId]) ? SPOT_DATA[numId] : null;
   if (!o) {

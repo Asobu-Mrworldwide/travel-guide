@@ -31,7 +31,7 @@
     "budget_range": "25〜45万円",
     "language": "スペイン語（英語は観光地で通じるが限定的）",
     "currency_name": "メキシコペソ(MXN)",
-    "currency_rate": "1MXN ≈ 9.3円",
+    "currency_rate": "1MXN ≈ 8.5円",
     "danger_level": 1,
     "danger_label": "レベル1：十分注意",
     "danger_color": "#f2b90c",
@@ -114,6 +114,32 @@
       "badge": "世界遺産の街並み",
       "badge_class": "green",
       "description": "パステルカラーの家並みが丘の斜面を埋める旧鉱山都市。サンミゲル・デ・アジェンデも近い"
+    },
+    {
+      "id": "chiapas",
+      "name": "チアパス（サン・クリストバル・パレンケ）",
+      "lat": "16.737",
+      "lng": "-92.6376",
+      "zoom": "11",
+      "color": "#8d6e63",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "密林の遺跡",
+      "badge_class": "green",
+      "description": "マヤ遺跡と先住民文化が残る、南部の高原と密林の州"
+    },
+    {
+      "id": "los_cabos",
+      "name": "ロスカボス",
+      "lat": "22.8905",
+      "lng": "-109.9167",
+      "zoom": "11",
+      "color": "#0099cc",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "岩のアーチ",
+      "badge_class": "green",
+      "description": "太平洋とカリフォルニア湾が出会う、バハの先端のリゾート"
     }
   ],
   "season_mini": {
@@ -440,6 +466,142 @@
             "type": "t-warm"
           }
         ]
+      },
+      {
+        "name": "チアパス（サン・クリストバル・パレンケ）",
+        "city_id": "chiapas",
+        "best_note": "ベスト：11〜4月の乾季（雨が少なく遺跡や渓谷を回りやすい）／ 5〜10月は雨季で、毎日スコールが降る。",
+        "note": "高原のサン・クリストバルは標高が高く、一年中涼しく朝晩は冷え込む。密林のパレンケは暑く湿度が高い。雨季は午後にスコールがあり、道がぬかるむこともある。乾季でも高原は朝晩冷えるので、薄手の上着と雨具があると安心。",
+        "months": [
+          {
+            "icon": "⛅",
+            "temp": "13°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "14°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "15°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "16°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "17°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "17°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "16°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "16°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "16°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "15°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "14°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "13°C",
+            "type": "t-mild"
+          }
+        ]
+      },
+      {
+        "name": "ロスカボス",
+        "city_id": "los_cabos",
+        "best_note": "ベスト：11〜5月（晴天が続き海も穏やか）／ 8〜10月はハリケーンシーズンで荒天のおそれがある。",
+        "note": "砂漠気候で降水量が非常に少なく、一年を通じて晴天が続く。夏は30°C前後まで上がるが、乾燥しているため過ごしやすい。8〜10月はハリケーンの影響を受けることがあり、欠航や海のツアー中止も起こりうるため、この時期は旅程に余裕を持たせたい。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "21°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "25°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "30°C",
+            "type": "t-hot2"
+          },
+          {
+            "icon": "☀️",
+            "temp": "29°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "27°C",
+            "type": "t-hot1"
+          },
+          {
+            "icon": "☀️",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "20°C",
+            "type": "t-warm"
+          }
+        ]
       }
     ]
   },
@@ -728,13 +890,13 @@
     ],
     "country_items_html": "セノーテで泳いだりビーチで遊んだりする日は、濡れてもいい靴があると便利だ。メキシコシティなど標高の高い都市は朝晩冷え込むだろう。羽織れる上着も1枚持っておくと安心です。",
     "currency_code": "MXN",
-    "exchange_rate": "9.3",
+    "exchange_rate": "8.48",
     "cash_dependency": "中",
     "cash_dependency_color": "#b09000",
     "cash_dependency_note": "都市部の店舗・ホテルはカードOK、屋台や市場、チップ、地方の小店は現金が中心",
     "cash_daily_low": "300",
     "cash_daily_high": "400",
-    "cash_note": "1 MXN ≈ 9.3円で計算",
+    "cash_note": "1 MXN ≈ 8.48円で計算",
     "money_intro": "メキシコペソは日本の空港ではほぼ両替できないため、現地の空港や街の両替所（Casa de Cambio）で調達します。両替所ごとにレート差があるので、複数箇所を比較するのがコツ。都市部はカード払いも広く普及しています。",
     "hotel_intro": "宿はまず地区で選ぶのが重要。メキシコシティは地区によって治安差が大きく、ローマ・ノルテやポランコなど評判の良いエリアを選びたい。カンクンは繁華街のダウンタウンより、安全に管理されたゾナ・オテレラ（ホテルゾーン）が旅行者には無難。",
     "cash_tip_title": "チップ用の小額紙幣を常に持っておこう",
@@ -1405,6 +1567,16 @@
       "id": "guanajuato",
       "label": "グアナファト",
       "active": false
+    },
+    {
+      "id": "chiapas",
+      "label": "チアパス（サン・クリストバル・パレンケ）",
+      "active": false
+    },
+    {
+      "id": "los_cabos",
+      "label": "ロスカボス",
+      "active": false
     }
   ],
   "spot_sections": [
@@ -1514,6 +1686,54 @@
           "image": "素材/観光スポット/国立人類学博物館.webp",
           "type": "museum",
           "map_url": "https://maps.google.com/?q=Museo+Nacional+de+Antropologia+Mexico+City"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "CDMX 08",
+          "name": "テンプロ・マヨール",
+          "desc": "アステカ帝国の大神殿跡。ソカロのすぐ隣で発掘され、博物館とあわせて、首都がかつて湖上の都だったことを実感できる。",
+          "badge": "アステカの神殿",
+          "prompt_en": "Templo Mayor Aztec temple ruins with stone platforms next to colonial cathedral, a few tourists as small figures, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Templo+Mayor+Mexico+City",
+          "image": "素材/観光スポット/テンプロ・マヨール.webp"
+        },
+        {
+          "must": false,
+          "icon": "🎺",
+          "num": "CDMX 09",
+          "name": "ガリバルディ広場",
+          "desc": "夜になるとマリアッチの楽団が集まり、観客のリクエストで演奏する広場。本場の音楽とテキーラを楽しめる夜の名所。",
+          "badge": "マリアッチの広場",
+          "prompt_en": "Plaza Garibaldi mariachi musicians in charro costumes playing at night with colorful lights, crowds of people, at night, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Plaza+Garibaldi+Mexico+City",
+          "image": "素材/観光スポット/ガリバルディ広場.webp"
+        },
+        {
+          "must": false,
+          "icon": "🤼",
+          "num": "CDMX 10",
+          "name": "ルチャリブレ観戦",
+          "desc": "覆面レスラーが空中技を繰り出すメキシコ版プロレス。アレナ・メヒコでの観戦は、観客の熱気ごと体験できるエンタメ。",
+          "badge": "覆面プロレス",
+          "prompt_en": "Lucha libre wrestling arena with masked wrestlers in the ring and cheering crowds, colorful lights, at night, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Arena+Mexico+Mexico+City",
+          "image": "素材/観光スポット/ルチャリブレ観戦.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌮",
+          "num": "CDMX 11",
+          "name": "コヨアカン市場",
+          "desc": "フリーダ・カーロ博物館の近くにある庶民的な市場。名物のトスターダや民芸品の店が並び、地元の日常を肌で感じられる。",
+          "badge": "庶民の市場",
+          "prompt_en": "Coyoacan market stalls with colorful tostadas and handicrafts, crowds of people walking, in the morning light, travel photography",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Mercado+de+Coyoacan+Mexico+City",
+          "image": "素材/観光スポット/コヨアカン市場.webp"
         }
       ]
     },
@@ -1587,6 +1807,42 @@
           "image": "素材/観光スポット/プラヤ・デル・カルメン キンタ・アベニーダ.webp",
           "type": "townscape",
           "map_url": "https://maps.google.com/?q=Quinta+Avenida+Playa+del+Carmen"
+        },
+        {
+          "must": false,
+          "icon": "⛴️",
+          "num": "CAN 05",
+          "name": "イスラ・ムヘーレス",
+          "desc": "カンクン沖に浮かぶ小さな島。ゴルフカートで島を巡り、透明度の高いビーチで過ごせる、日帰りに人気の離島リゾート。",
+          "badge": "透明な海の島",
+          "prompt_en": "Isla Mujeres turquoise beach with palm trees and golf carts along the shore, a few tourists in the distance, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Isla+Mujeres+Cancun",
+          "image": "素材/観光スポット/イスラ・ムヘーレス.webp"
+        },
+        {
+          "must": false,
+          "icon": "🤿",
+          "num": "CAN 06",
+          "name": "コスメル島のダイビング",
+          "desc": "世界有数のサンゴ礁が広がるダイビングの名所。ウミガメやカラフルな熱帯魚が泳ぐ、透明度の高い海中散歩を楽しめる。",
+          "badge": "サンゴ礁の海",
+          "prompt_en": "Cozumel coral reef underwater with a sea turtle and tropical fish, divers as small silhouettes, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Cozumel+Reef+Mexico",
+          "image": "素材/観光スポット/コスメル島のダイビング.webp"
+        },
+        {
+          "must": false,
+          "icon": "🕳️",
+          "num": "CAN 07",
+          "name": "ドス・オホス・セノーテ",
+          "desc": "二つの丸い穴がつながる洞窟状のセノーテ。澄んだ水の中をシュノーケルで泳ぐと、鍾乳石の幻想的な景色が目の前に広がる。",
+          "badge": "洞窟セノーテ",
+          "prompt_en": "Cenote Dos Ojos crystal clear water in a limestone cave with stalactites and light beams, a few swimmers as small figures, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Cenote+Dos+Ojos+Tulum",
+          "image": "素材/観光スポット/ドス・オホス・セノーテ.webp"
         }
       ]
     },
@@ -1660,6 +1916,42 @@
           "image": "素材/観光スポット/セノーテ・イキル.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Cenote+Ik+Kil"
+        },
+        {
+          "must": false,
+          "icon": "🟡",
+          "num": "YUC 05",
+          "name": "イサマル",
+          "desc": "建物が鮮やかな黄色に塗られた「黄色い町」。修道院を中心に、馬車や街並みを巡りながら、のんびり歩いて楽しめる。",
+          "badge": "黄色い町",
+          "prompt_en": "Izamal yellow painted colonial monastery and streets with a horse carriage, a few people walking, in the morning light, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Izamal+Yucatan",
+          "image": "素材/観光スポット/イサマル.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "YUC 06",
+          "name": "バジャドリード旧市街",
+          "desc": "カラフルなコロニアル建築が並ぶ小さな古都。セノーテへの拠点で、のんびりした町歩きにも向いていて、夕方の広場が心地よい。",
+          "badge": "コロニアルの町",
+          "prompt_en": "Valladolid colorful colonial buildings around a plaza with a church, a few people walking, at golden hour, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Valladolid+Yucatan",
+          "image": "素材/観光スポット/バジャドリード旧市街.webp"
+        },
+        {
+          "must": false,
+          "icon": "🦩",
+          "num": "YUC 07",
+          "name": "ラス・コロラダス",
+          "desc": "ピンク色に染まる塩田の湖。フラミンゴの群れも見られるリオ・ラガルトス周辺の自然スポットで、写真映えする珍しい景色が広がる。",
+          "badge": "ピンクの湖",
+          "prompt_en": "Las Coloradas pink salt lake with flamingos wading in the distance under a blue sky, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Las+Coloradas+Yucatan",
+          "image": "素材/観光スポット/ラス・コロラダス.webp"
         }
       ]
     },
@@ -1733,6 +2025,30 @@
           "image": "素材/観光スポット/メルカド・20・デ・ノビエンブレ.webp",
           "type": "market",
           "map_url": "https://maps.google.com/?q=Mercado+20+de+Noviembre+Oaxaca"
+        },
+        {
+          "must": false,
+          "icon": "🏺",
+          "num": "OAX 05",
+          "name": "ミトラ遺跡",
+          "desc": "幾何学模様の石組みが美しい、サポテカ文明の宗教遺跡。モンテ・アルバンとは違う繊細な装飾が、石の壁一面に広がっている。",
+          "badge": "幾何学模様の遺跡",
+          "prompt_en": "Mitla archaeological site with intricate geometric stone mosaic walls, a few tourists as small figures, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Mitla+Archaeological+Site+Oaxaca",
+          "image": "素材/観光スポット/ミトラ遺跡.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌳",
+          "num": "OAX 06",
+          "name": "トゥーレの大木",
+          "desc": "樹齢2,000年ともいわれる巨大なイトスギ。幹の太さは世界最大級とされ、教会の庭に堂々とそびえ立っている。",
+          "badge": "巨大な古木",
+          "prompt_en": "El Arbol del Tule giant ancient cypress tree next to a small church, tiny people for scale, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Arbol+del+Tule+Oaxaca",
+          "image": "素材/観光スポット/トゥーレの大木.webp"
         }
       ]
     },
@@ -1818,6 +2134,176 @@
           "image": "素材/観光スポット/ピピラの丘.webp",
           "type": "townscape",
           "map_url": "https://maps.google.com/?q=Monumento+al+Pipila+Guanajuato"
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "GTO 06",
+          "name": "ラ・バレンシアナ教会",
+          "desc": "銀鉱山の富で築かれたバロック教会。金色に輝く祭壇が並び、メキシコ屈指の華麗な内部装飾で知られている。",
+          "badge": "金色のバロック",
+          "prompt_en": "La Valenciana Baroque church facade with ornate carvings on a hilltop, a few visitors in the distance, at golden hour, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Templo+de+La+Valenciana+Guanajuato",
+          "image": "素材/観光スポット/ラ・バレンシアナ教会.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "GTO 07",
+          "name": "アロンディガ・デ・グラナディータス",
+          "desc": "メキシコ独立戦争の舞台になった旧穀物倉庫。いまは博物館として、独立運動の歴史を伝える展示を見られる。",
+          "badge": "独立戦争の舞台",
+          "prompt_en": "Alhondiga de Granaditas historic stone building in Guanajuato with colorful hillside houses behind, a few people in the distance, in the morning light, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Alhondiga+de+Granaditas+Guanajuato",
+          "image": "素材/観光スポット/アロンディガ・デ・グラナディータス.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "chiapas",
+      "city_name": "チアパス（サン・クリストバル・パレンケ）",
+      "city_image": "",
+      "city_prompt": "Palenque Maya temple rising from green jungle with mist, travel photography",
+      "city_desc": "南部の山と密林が広がる地域。ジャングルに立つパレンケ遺跡と、先住民の暮らしが息づく高原の古都サン・クリストバルを巡れる",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "メキシコシティから国内線でトゥストラ・グティエレス空港まで約2時間、そこから車でサン・クリストバルまで約1時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "11〜4月の乾季",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "サン・クリストバル・デ・ラス・カサス旧市街 / パレンケ"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏯",
+          "num": "CHI 01",
+          "name": "パレンケ遺跡",
+          "desc": "ジャングルに囲まれて立つマヤの神殿群。碑文の神殿の石段や宮殿の塔を、緑の森に響く鳥の声を聞きながら巡れる世界遺産。",
+          "badge": "密林のマヤ遺跡",
+          "prompt_en": "Palenque Temple of the Inscriptions pyramid in green jungle with mist, a few tourists as small figures, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Palenque+Archaeological+Site",
+          "image": "素材/観光スポット/パレンケ遺跡.webp"
+        },
+        {
+          "must": false,
+          "icon": "🛶",
+          "num": "CHI 02",
+          "name": "スミデロ渓谷",
+          "desc": "高さ1,000mを超える断崖に挟まれた渓谷をボートで巡る人気ツアー。ワニやクモザル、鳥の姿も見られ、迫力ある岩壁が続く。",
+          "badge": "断崖の渓谷",
+          "prompt_en": "Sumidero Canyon tall cliffs along a green river with a tour boat, tiny figures for scale, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Sumidero+Canyon+Chiapas",
+          "image": "素材/観光スポット/スミデロ渓谷.webp"
+        },
+        {
+          "must": true,
+          "icon": "🏘️",
+          "num": "CHI 03",
+          "name": "サン・クリストバル旧市街",
+          "desc": "標高2,200mに広がるカラフルなコロニアルの古都。石畳の路地と先住民の市場が混ざり合い、ゆったりした散策が心地よい。",
+          "badge": "高原のコロニアル",
+          "prompt_en": "San Cristobal de las Casas colorful colonial street with a yellow church on a hill, a few people walking, at golden hour, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=San+Cristobal+de+las+Casas",
+          "image": "素材/観光スポット/サン・クリストバル旧市街.webp"
+        },
+        {
+          "must": false,
+          "icon": "💧",
+          "num": "CHI 04",
+          "name": "アグア・アスール滝",
+          "desc": "青緑色の水が段々に落ちる、パレンケ近郊の滝。石灰質の水が作る、美しい水色のプールで泳ぐこともできる。",
+          "badge": "青緑の滝",
+          "prompt_en": "Agua Azul turquoise waterfalls cascading through jungle, a few swimmers as small figures, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Agua+Azul+Waterfalls+Chiapas",
+          "image": "素材/観光スポット/アグア・アスール滝.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "los_cabos",
+      "city_name": "ロスカボス",
+      "city_image": "",
+      "city_prompt": "El Arco rock arch at Cabo San Lucas where the Pacific meets the Sea of Cortez, travel photography",
+      "city_desc": "バハ・カリフォルニア半島の先端に広がるリゾート。岩のアーチ「エル・アルコ」や、クジラが回遊する海、砂漠と海が接する景色が魅力",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "メキシコシティから国内線でロスカボス国際空港まで約2.5時間、空港から市街まで車で約30分"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "11〜5月",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "カボ・サン・ルーカス / サン・ホセ・デル・カボ"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🪨",
+          "num": "CAB 01",
+          "name": "エル・アルコ",
+          "desc": "太平洋とカリフォルニア湾が出会う岬の先にそびえる岩のアーチ。ボートで近づき、周囲に集まるアシカの姿も眺められる。",
+          "badge": "海に立つ岩門",
+          "prompt_en": "El Arco rock arch at Cabo San Lucas with turquoise sea and boats, sea lions on the rocks, at golden hour, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=El+Arco+Cabo+San+Lucas",
+          "image": "素材/観光スポット/エル・アルコ.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏖️",
+          "num": "CAB 02",
+          "name": "ラバーズ・ビーチ",
+          "desc": "岩に囲まれた小さなビーチ。ボートや水上タクシーでだけ行ける、静かで穏やかな入り江で、浜辺の散歩や海遊びを楽しめる。",
+          "badge": "岩陰の入り江",
+          "prompt_en": "Lovers Beach small beach between rock formations with turquoise water, a few people on the sand, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Lovers+Beach+Cabo+San+Lucas",
+          "image": "素材/観光スポット/ラバーズ・ビーチ.webp"
+        },
+        {
+          "must": false,
+          "icon": "🐋",
+          "num": "CAB 03",
+          "name": "ホエールウォッチング",
+          "desc": "12〜4月にはコククジラやザトウクジラが姿を見せる。小型ボートで間近まで近づく、ダイナミックな自然体験。",
+          "badge": "クジラの回遊",
+          "prompt_en": "Humpback whale tail rising from the ocean next to a small tour boat, silhouettes of passengers, at golden hour, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Whale+Watching+Cabo+San+Lucas",
+          "image": "素材/観光スポット/ホエールウォッチング.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "CAB 04",
+          "name": "サン・ホセ・デル・カボ",
+          "desc": "ギャラリーとレストランが並ぶ、落ち着いた雰囲気の旧市街。広場に面した教会と石畳の路地が、静かな町歩きに向いている。",
+          "badge": "ギャラリーの町",
+          "prompt_en": "San Jose del Cabo plaza with a mission church and colorful gallery streets, a few people strolling, at sunset, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=San+Jose+del+Cabo+Plaza",
+          "image": "素材/観光スポット/サン・ホセ・デル・カボ.webp"
         }
       ]
     }

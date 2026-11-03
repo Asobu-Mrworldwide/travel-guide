@@ -222,6 +222,9 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
     sp_pts = data.get('spot_points', [])
     if sp_pts and (len(sp_pts) < 3 or len(sp_pts) > 4):
         issues.append(f'[spot_points 件数={len(sp_pts)}, 目安3-4個]')
+    # food_ref は1番目に置かない（先頭だと画像の余白が不自然になる）
+    if sp_pts and 'food_ref' in sp_pts[0]:
+        issues.append(f'[spot_points 1番目がfood_ref, グルメは2番目以降に置く] {sp_pts[0].get("food_ref")}')
 
     # ── food_items ──
     foods = data.get('food_items', [])

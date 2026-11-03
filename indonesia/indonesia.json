@@ -31,7 +31,7 @@
     "budget_range": "15〜28万円",
     "language": "インドネシア語（英語はバリ島など観光地で広く通じる）",
     "currency_name": "インドネシアルピア(IDR)",
-    "currency_rate": "1万IDR ≈ 90円",
+    "currency_rate": "1万IDR ≈ 87円",
     "danger_level": 1,
     "danger_label": "レベル1：十分注意",
     "danger_color": "#f2b90c",
@@ -684,7 +684,7 @@
         "timing_color": "#CE1126",
         "border_color": "#CE1126",
         "bar_color": "linear-gradient(to bottom,#CE1126,#ff6b35)",
-        "desc_html": "インドネシア入国には<strong>残存有効期間6ヶ月以上・未使用査証欄2ページ以上</strong>が必要。早めに確認しておこう。"
+        "desc_html": "インドネシア入国には<strong>残存有効期間6ヶ月以上・未使用査証欄2ページ以上</strong>が必要。出国便（復路）の航空券の提示も求められるので、帰国日は早めに決めておこう。"
       },
       {
         "title": "海外対応クレジットカードの申込",
@@ -720,17 +720,17 @@
         "desc_html": "eSIMなら出発前に購入・設定まで完了できて到着後すぐ使える。物理SIM派は空港のTelkomselカウンターで購入可能。"
       },
       {
-        "title": "e-VOA・All Indonesia登録",
+        "title": "e-VOA・All Indonesia・バリ観光税",
         "timing": "出発前〜到着直前まで",
         "timing_color": "#00b8d4",
         "border_color": "#00b8d4",
         "bar_color": "",
-        "desc_html": "e-VOA（電子到着ビザ）の取得と、入国カードを兼ねる「All Indonesia」のオンライン登録を済ませておく。どちらも公式サイトから無料〜安価に申請できる。"
+        "desc_html": "e-VOA（電子到着ビザ）の取得と、入国カードを兼ねる「All Indonesia」のオンライン登録を済ませておく。バリ島へ行く場合は、観光税（15万ルピア）も出発前に支払える。"
       }
     ],
     "tour_intro": "",
-    "special_note_title": "入国前にオンライン登録「All Indonesia」が必須",
-    "special_note_html": "2025年10月から、インドネシア入国時は全ての外国人に事前のオンライン登録「All Indonesia」が義務付けられました。税関申告・検疫申告・入国カードを一本化したシステムで、登録自体は無料です。e-VOA（電子到着ビザ、手数料50万ルピア）は別サイトでの申請が必要なので、あわせて出発前に済ませておきましょう。",
+    "special_note_title": "入国前にオンライン手続きが必要（All Indonesia・バリ観光税）",
+    "special_note_html": "2025年10月から、インドネシア入国時は全ての外国人に事前のオンライン登録「All Indonesia」が義務付けられました。税関申告・検疫申告・入国カードを一本化したシステムで、登録自体は無料です。e-VOA（電子到着ビザ、手数料50万ルピア）は別サイトでの申請が必要なので、あわせて出発前に済ませておきましょう。<br>バリ島へ向かう場合は、これらとは別に「バリ観光税」（1人15万ルピア、約1,300円）の支払いも必要です。公式サイト「Love Bali」で事前に支払えるので、届いたQRコードをすぐ見せられるようにしておきましょう。",
     "special_note_url": "https://allindonesia.imigrasi.go.id/",
     "special_note_url_label": "All Indonesia 公式サイト",
     "flight_lead": "成田・羽田からジャカルタへJAL・ANAが直行便を運航し所要約7時間30分、バリ島（デンパサール）へはガルーダ・インドネシア航空の直行便で約7時間25分。エアアジア等の経由便を使えば価格をさらに抑えやすくなります。",
@@ -848,13 +848,13 @@
     ],
     "country_items_html": "バリ島などの寺院では、肩と膝を隠す腰布（サロン）の着用が必須だ。入口で貸してくれる寺院もあるが、自分のものがあれば安心だろう。靴を脱ぐ場所も多いので、脱ぎ履きしやすいサンダルで回ると楽ですよ。",
     "currency_code": "IDR",
-    "exchange_rate": "0.009",
+    "exchange_rate": "0.0087",
     "cash_dependency": "中",
     "cash_dependency_color": "#b09000",
     "cash_dependency_note": "都市部やリゾートホテルはカード・QRIS決済が普及、ワルンや市場・寺院の入場料などは現金が中心",
     "cash_daily_low": "100000",
     "cash_daily_high": "150000",
-    "cash_note": "1万IDR ≈ 90円で計算",
+    "cash_note": "1万IDR ≈ 87円で計算",
     "money_intro": "ルピアはATMでの引き出しが基本で、空港や街の両替所（Money Changer）は必ず認可店を選びたい。都市部やリゾートホテルはカード・QRIS決済が急速に普及しているが、ワルンや市場は現金のみのことも多い。",
     "hotel_intro": "バリ島は宿泊エリアの個性が濃く、静かに過ごしたいならウブド、ビーチと夜遊びを楽しみたいならスミニャックが定番。クタ周辺の繁華街は夜も賑やかな反面スリの被害も多いため、初日くらいは安心できる立地を選びたい。",
     "cash_tip_title": "GrabアプリでGrabPayを使うと便利",
@@ -1148,6 +1148,18 @@
     {
       "id": "sumatra",
       "label": "スマトラ島"
+    },
+    {
+      "id": "east_java",
+      "label": "東ジャワ"
+    },
+    {
+      "id": "lombok",
+      "label": "ロンボク島"
+    },
+    {
+      "id": "papua",
+      "label": "パプア"
     }
   ],
   "food_modal_phrase_main": "Saya mau ini, terima kasih.（サヤ マウ イニ、トゥリマ カシ）",
@@ -1315,17 +1327,17 @@
     },
     {
       "num": "No.12",
-      "name": "テンペ・タフ料理",
+      "name": "テンペ・ゴレン",
       "badge": "大豆発酵食品の宝庫",
       "type": "snack",
       "city": "national",
-      "desc": "大豆を発酵させたテンペと豆腐（タフ）を素揚げにした軽食。インドネシア発祥のテンペは高タンパクな伝統食材として世界的にも注目されている。",
-      "image": "素材/グルメ/テンペ・タフ料理.webp",
+      "desc": "大豆を発酵させたテンペを素揚げにした定番の軽食。揚げ豆腐のタフ・ゴレンと並んで屋台で売られ、辛いサンバルを付けて食べる。",
+      "image": "素材/グルメ/テンペ・ゴレン.webp",
       "prompt_en": "Fried tempeh and tofu Indonesian snack, golden crispy pieces on plate with sweet soy dipping sauce, food photography",
       "plate_color": "small ceramic plate",
-      "wiki_url": "https://www.google.com/search?q=%E3%83%86%E3%83%B3%E3%83%9A%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E9%A3%9F%E5%93%81",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%86%E3%83%B3%E3%83%9A%E3%83%BB%E3%82%B4%E3%83%AC%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86",
       "order_ico": "🧈",
-      "order_name_en": "Tempeh & Tofu"
+      "order_name_en": "Tempe Goreng / Tahu Goreng"
     },
     {
       "num": "No.13",
@@ -1347,7 +1359,7 @@
       "badge": "屋台の甘辛パンケーキ",
       "type": "snack",
       "city": "national",
-      "desc": "薄い生地に卵やひき肉を包んで焼く食事系と、チョコやチーズを挟む甘いスイーツ系の2種類がある屋台の人気メニュー。夜市の定番として親しまれている。",
+      "desc": "薄い生地に卵とひき肉を包む食事系の「マルタバ・テロール」と、チョコやチーズを挟む甘い「マルタバ・マニス」がある屋台の人気メニュー。",
       "image": "素材/グルメ/マルタバ.webp",
       "prompt_en": "Martabak Indonesian stuffed pancake, thick folded dough with sweet chocolate and cheese filling, street stall at night, food photography",
       "plate_color": "paper wrapper",
@@ -1611,16 +1623,59 @@
     {
       "num": "No.33",
       "name": "コピルアック",
-      "badge": "希少なコーヒー",
+      "badge": "高価な希少コーヒー",
       "type": "drink",
       "city": "national",
-      "desc": "ジャコウネコが食べたコーヒー豆から作られる希少なコーヒー。まろやかな酸味と独特の香りが特徴で、高級品として観光客にも人気。",
+      "desc": "ジャコウネコが食べた豆から採る高級コーヒー。まろやかな香りが特徴だが価格は非常に高く、動物の飼育方法や偽物の問題も指摘される。",
       "image": "素材/グルメ/コピルアック.webp",
       "prompt_en": "Kopi luwak Indonesian civet coffee served in small cup, coffee beans on the side, food photography",
       "plate_color": "small cup",
       "wiki_url": "https://www.google.com/search?q=%E3%82%B3%E3%83%94%E3%83%AB%E3%82%A2%E3%83%83%E3%82%AF%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%20%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC",
       "order_ico": "☕",
       "order_name_en": "Kopi Luwak"
+    },
+    {
+      "num": "No.34",
+      "name": "ラウォン",
+      "badge": "黒い牛肉スープ",
+      "type": "main",
+      "city": "east_java",
+      "desc": "クルワック（黒い木の実）で黒く仕上げた、東ジャワ名物の牛肉スープ。香ばしくコクがあり、ご飯や塩卵、もやしを添えて食べる。",
+      "image": "素材/グルメ/ラウォン.webp",
+      "prompt_en": "Rawon East Javanese beef soup in a white bowl, very dark black-brown broth almost black in color, tender beef cubes, a halved salted egg, short bean sprouts and sliced green onion on top, a side of white rice, food photography",
+      "plate_color": "white",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%A9%E3%82%A6%E3%82%A9%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86",
+      "order_ico": "🍲",
+      "order_name_en": "Rawon",
+      "must": true
+    },
+    {
+      "num": "No.35",
+      "name": "アヤム・タリワン",
+      "badge": "ロンボクの炭火鶏",
+      "type": "main",
+      "city": "lombok",
+      "desc": "唐辛子とニンニクで味付けして炭火で焼く、ロンボク島名物の鶏肉料理。香ばしい焼き目とピリ辛の味で、ご飯や空心菜炒めと食べる。",
+      "image": "素材/グルメ/アヤム・タリワン.webp",
+      "prompt_en": "Ayam Taliwang Lombok grilled chicken with chili and garlic, charcoal grill marks, served with rice and water spinach, food photography",
+      "plate_color": "banana leaf plate",
+      "wiki_url": "https://www.google.com/search?q=%E3%82%A2%E3%83%A4%E3%83%A0%E3%83%BB%E3%82%BF%E3%83%AA%E3%83%AF%E3%83%B3%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86",
+      "order_ico": "🍗",
+      "order_name_en": "Ayam Taliwang"
+    },
+    {
+      "num": "No.36",
+      "name": "パペダ",
+      "badge": "粘りのある主食",
+      "type": "main",
+      "city": "papua",
+      "desc": "サゴヤシのでんぷんを熱湯で練った、パプアやマルク諸島の主食。透明で強い粘りがあり、酸味のある黄色い魚のスープをかけて食べる。",
+      "image": "素材/グルメ/パペダ.webp",
+      "prompt_en": "Papeda from Papua, a translucent pale glue-like mound of sago starch in a small white bowl, next to a separate bowl of clear yellow turmeric fish soup with a few fish pieces, two wooden chopsticks lifting a sticky strand of papeda, food photography",
+      "plate_color": "white",
+      "wiki_url": "https://www.google.com/search?q=%E3%83%91%E3%83%9A%E3%83%80%20%E3%82%A4%E3%83%B3%E3%83%89%E3%83%8D%E3%82%B7%E3%82%A2%E6%96%99%E7%90%86",
+      "order_ico": "🥣",
+      "order_name_en": "Papeda"
     }
   ],
   "spots_section_title": "インドネシア 観光スポット",
@@ -1840,6 +1895,42 @@
           "image": "素材/観光スポット/ヌサペニダ島日帰りツアー.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Nusa+Penida+Kelingking+Beach"
+        },
+        {
+          "must": true,
+          "icon": "🛕",
+          "num": "BAL 09",
+          "name": "ウルン・ダヌ・ブラタン寺院",
+          "desc": "ブラタン湖に浮かぶように建つ水の女神の寺院。朝霧に包まれる多重塔が幻想的で、インドネシアの紙幣にも描かれたバリの象徴。",
+          "badge": "湖に浮かぶ寺院",
+          "prompt_en": "Ulun Danu Beratan temple Bali, multi-tiered meru pagoda shrines on the edge of a calm lake, misty mountains behind, a few small tourists on the lakeside lawn, in the morning light, travel photography",
+          "image": "素材/観光スポット/ウルン・ダヌ・ブラタン寺院.webp",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Ulun+Danu+Beratan+Temple"
+        },
+        {
+          "must": false,
+          "icon": "🌾",
+          "num": "BAL 10",
+          "name": "ジャティルウィの棚田",
+          "desc": "伝統的な灌漑システム「スバック」が世界遺産に登録された、バリ最大級の棚田。広大な緑の斜面を、人の少ない中でゆっくり歩ける。",
+          "badge": "世界遺産の棚田",
+          "prompt_en": "Jatiluwih rice terraces Bali, vast green stepped paddies stretching across the hillside toward a distant volcano, a few tiny farmer figures for scale, in the morning light, travel photography",
+          "image": "素材/観光スポット/ジャティルウィの棚田.webp",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Jatiluwih+Rice+Terraces"
+        },
+        {
+          "must": false,
+          "icon": "🏝️",
+          "num": "BAL 11",
+          "name": "ヌサ・レンボンガン島",
+          "desc": "ヌサペニダ島の隣にある小さな島。マングローブ林やビーチ、シュノーケリングが楽しめ、ペニダ島より落ち着いた島時間を味わえる。",
+          "badge": "のんびり島時間",
+          "prompt_en": "Nusa Lembongan island, turquoise bay with traditional jukung boats and seaweed farm, palm trees along the shore, a few small figures in the distance, at golden hour, travel photography",
+          "image": "素材/観光スポット/ヌサ・レンボンガン島.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Nusa+Lembongan"
         }
       ]
     },
@@ -2120,6 +2211,18 @@
           "image": "素材/観光スポット/クタ・ロンボク・ビーチ.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Kuta+Lombok"
+        },
+        {
+          "must": false,
+          "icon": "🌋",
+          "num": "GIL 04",
+          "name": "リンジャニ山",
+          "desc": "標高3,726mの、インドネシア第2の高さを誇る火山。火口湖セガラ・アナクを望む2泊3日のトレッキングが人気で、山頂の朝焼けは格別。",
+          "badge": "火口湖の名峰",
+          "prompt_en": "Mount Rinjani Lombok, crater lake Segara Anak below the summit ridge, a tiny hiker figure on the trail, orange sunrise glow over the clouds, at sunrise, travel photography",
+          "image": "素材/観光スポット/リンジャニ山.webp",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Mount+Rinjani"
         }
       ]
     },
@@ -2336,7 +2439,7 @@
       "city_info": [
         {
           "label": "アクセス",
-          "value": "マカッサルから車で約8時間、ランテパオへの国内線もあり"
+          "value": "トラジャはマカッサルから車で約8時間、ランテパオへの国内線もある。ブナケンは北スラウェシのマナドから船で約30〜40分"
         },
         {
           "label": "おすすめ時期",
@@ -2392,6 +2495,18 @@
           "image": "素材/観光スポット/ブンタオ.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Buntao,+Toraja"
+        },
+        {
+          "must": false,
+          "icon": "🐠",
+          "num": "SUL 05",
+          "name": "ブナケン国立公園",
+          "desc": "マナド沖の海洋公園。海底の絶壁沿いにサンゴと熱帯魚が密集する、世界屈指のダイビング・シュノーケリングの名所として知られる。",
+          "badge": "世界屈指の海",
+          "prompt_en": "Bunaken marine park Sulawesi, coral wall reef with colorful tropical fish, a snorkeler as a small distant figure, clear blue water with sunbeams, travel photography",
+          "image": "素材/観光スポット/ブナケン国立公園.webp",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Bunaken+National+Park"
         }
       ]
     },
@@ -2833,12 +2948,6 @@
   },
   "spot_points": [
     {
-      "title": "ルンダンは「世界一の料理」に選ばれた実力派",
-      "body": "<a onclick=\"showFood('No.3')\" class=\"keyword-link\">ルンダン</a>は牛肉をココナッツミルクと香辛料でじっくり煮込んだスマトラ島パダン発祥の料理。CNNの「世界で最も美味しい料理」ランキングで1位に選ばれたこともある実力派で、じっくり煮詰めるほど味が凝縮し、日持ちする保存食としても親しまれている。",
-      "image": "素材/グルメ/ルンダン.webp",
-      "food_ref": "No.3"
-    },
-    {
       "title": "ボロブドゥールの日の出鑑賞は事前予約が鍵",
       "body": "<a onclick=\"showSpot('YOG 01')\" class=\"keyword-link\">ボロブドゥール寺院</a>の日の出鑑賞ツアーは人数限定で、近隣ホテル宿泊者向けの早朝プログラムを利用するのが定番。霧が立ち込める中に浮かぶストゥーパの姿は、日中の観光では味わえない特別な景観になる。徒歩での石段は段差が大きいため、歩きやすい靴を選んでおきたい。",
       "image": "素材/観光スポット/ボロブドゥール寺院.webp",
@@ -2849,6 +2958,12 @@
       "body": "<a onclick=\"showSpot('LAB 01')\" class=\"keyword-link\">コモド国立公園</a>では観察トレッキングに公園レンジャーの同行が義務付けられている。噛まれると強い毒性を持つ唾液で重症化するリスクがあるため、指示された距離を必ず守ること。乾季後半は個体に出会いやすく、レンジャーが安全な観察ポイントへ案内してくれる。",
       "image": "素材/観光スポット/コモド国立公園（コモドドラゴン）.webp",
       "spot_ref": "LAB 01"
+    },
+    {
+      "title": "ルンダンは「世界一の料理」に選ばれた実力派",
+      "body": "<a onclick=\"showFood('No.3')\" class=\"keyword-link\">ルンダン</a>は牛肉をココナッツミルクと香辛料でじっくり煮込んだスマトラ島パダン発祥の料理。CNNの「世界で最も美味しい料理」ランキングで1位に選ばれたこともある実力派で、じっくり煮詰めるほど味が凝縮し、日持ちする保存食としても親しまれている。",
+      "image": "素材/グルメ/ルンダン.webp",
+      "food_ref": "No.3"
     }
   ],
   "index_card": {

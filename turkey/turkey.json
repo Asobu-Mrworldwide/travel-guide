@@ -31,7 +31,7 @@
     "budget_range": "18〜35万円",
     "language": "トルコ語（英語は観光地で広く通じる）",
     "currency_name": "トルコリラ(TRY)",
-    "currency_rate": "1TRY ≈ 3.3円",
+    "currency_rate": "1TRY ≈ 3.2円",
     "danger_level": 1,
     "danger_label": "レベル1：十分注意",
     "danger_color": "#f2b90c",
@@ -114,6 +114,32 @@
       "badge": "古代遺跡",
       "badge_class": "green",
       "description": "エーゲ海沿岸の港町。古代都市エフェソスの遺跡群への玄関口"
+    },
+    {
+      "id": "fethiye",
+      "name": "フェティエ・オルデニズ",
+      "lat": "36.6218",
+      "lng": "29.1164",
+      "zoom": "11",
+      "color": "#0099cc",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "青の入り江",
+      "badge_class": "green",
+      "description": "ターコイズブルーの入り江とパラグライダーで知られる、地中海の人気リゾート"
+    },
+    {
+      "id": "trabzon",
+      "name": "トラブゾン",
+      "lat": "41.0027",
+      "lng": "39.7168",
+      "zoom": "11",
+      "color": "#2e7d32",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "スメラ修道院",
+      "badge_class": "green",
+      "description": "断崖に建つスメラ修道院を擁する、緑豊かな黒海沿岸の港町"
     }
   ],
   "season_mini": {
@@ -374,7 +400,7 @@
         ]
       },
       {
-        "name": "エーゲ海・地中海沿岸（パムッカレ・アンタルヤ・イズミル）",
+        "name": "エーゲ海・地中海沿岸（パムッカレ・アンタルヤ・フェティエ・イズミル）",
         "city_id": "antalya",
         "best_note": "ベスト：4〜6月・9〜10月（暑すぎず海も楽しめる）／ 7〜8月は35°C超の酷暑、12〜2月は雨が多いが氷点下にはならない。",
         "note": "地中海性気候で夏は乾燥した強い日差しが続き、日中35°C近くまで上がる。冬でも10°C台と温暖で降雪はほぼないが、雨の日が多くなる。パムッカレの石灰棚は素足で歩くため、冬でも足元が冷たいことは覚悟しておきたい。",
@@ -438,6 +464,74 @@
             "icon": "🌧️",
             "temp": "13°C",
             "type": "t-mild"
+          }
+        ]
+      },
+      {
+        "name": "黒海沿岸（トラブゾン）",
+        "city_id": "trabzon",
+        "best_note": "ベスト：6〜9月（雨が比較的少なく山あいも歩きやすい）／ 一年を通して雨が多く、冬は寒さが厳しい。",
+        "note": "黒海沿岸は年間を通じて雨が多く、夏でも日中25°C前後と涼しめ。湿度が高く、スメラ修道院のある山あいは霧が出やすいうえ気温も低めなので、薄手の上着と雨具が欠かせない。冬は寒さが厳しく、山間部は雪になることもある。",
+        "months": [
+          {
+            "icon": "🌧️",
+            "temp": "7°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "7°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "8°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "⛅",
+            "temp": "11°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "15°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "☀️",
+            "temp": "23°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "⛅",
+            "temp": "20°C",
+            "type": "t-warm"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "16°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "12°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌧️",
+            "temp": "9°C",
+            "type": "t-cold"
           }
         ]
       }
@@ -745,13 +839,13 @@
     ],
     "country_items_html": "モスクでは女性は頭を覆う必要があるため、スカーフが1枚あると便利だ。カッパドキアの早朝の気球ツアーはかなり冷え込むだろう。防寒着も用意しておきましょう。バザールや屋台を食べ歩くなら、ウェットティッシュもあると重宝します。",
     "currency_code": "TRY",
-    "exchange_rate": "3.3",
+    "exchange_rate": "3.16",
     "cash_dependency": "中",
     "cash_dependency_color": "#b09000",
     "cash_dependency_note": "都市部の店舗・ホテルはカードOK、バザールの屋台やチップ・地方の小店は現金が中心",
-    "cash_daily_low": "800",
-    "cash_daily_high": "1050",
-    "cash_note": "1 TRY ≈ 3.3円で計算",
+    "cash_daily_low": "850",
+    "cash_daily_high": "1100",
+    "cash_note": "1 TRY ≈ 3.16円で計算",
     "money_intro": "トルコリラは日本の空港ではほぼ両替できないため、現地の空港や街の両替所（Döviz）で調達します。両替所ごとにレート差があるので、複数箇所を比較するのがコツ。都市部ではカード払いも広く普及しています。",
     "hotel_intro": "宿はまず地区で選ぶのが重要。スルタンアフメットは観光に便利だが夜は落ち着いた雰囲気で、繁華街で遊びたいならベイオール周辺が向いています。観光地周辺は客引きやタクシーのぼったくりもあるため、初日くらいは駅や大通りに近い安心できる立地を選びましょう。",
     "cash_tip_title": "イスタンブールカードを最初に買おう",
@@ -1391,6 +1485,16 @@
       "id": "izmir",
       "label": "イズミル・エフェソス",
       "active": false
+    },
+    {
+      "id": "fethiye",
+      "label": "フェティエ・オルデニズ",
+      "active": false
+    },
+    {
+      "id": "trabzon",
+      "label": "トラブゾン",
+      "active": false
     }
   ],
   "spot_sections": [
@@ -1512,6 +1616,78 @@
           "image": "素材/観光スポット/エジプシャンバザール（スパイスバザール）.webp",
           "type": "market",
           "map_url": "https://maps.google.com/?q=Egyptian+Spice+Bazaar+Istanbul"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "IST 09",
+          "name": "ドルマバフチェ宮殿",
+          "desc": "19世紀にオスマン帝国が築いたボスポラス沿いの宮殿。大理石の外観と、きらびやかなシャンデリアが並ぶ内装が見どころ。",
+          "badge": "豪華な宮殿",
+          "prompt_en": "Dolmabahce Palace facade on the Bosphorus shore with ornate gates and gardens, a few tourists in the distance, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Dolmabahce+Palace+Istanbul",
+          "image": "素材/観光スポット/ドルマバフチェ宮殿.webp"
+        },
+        {
+          "must": false,
+          "icon": "🕌",
+          "num": "IST 10",
+          "name": "スレイマニエ・モスク",
+          "desc": "名建築家シナンが手がけたオスマン建築の最高傑作。旧市街を見下ろす丘に立ち、広い内部は静けさに満ちている。",
+          "badge": "建築の傑作",
+          "prompt_en": "Suleymaniye Mosque on a hill above the Golden Horn with domes and four minarets, a few tourists in the distance, at golden hour, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Suleymaniye+Mosque+Istanbul",
+          "image": "素材/観光スポット/スレイマニエ・モスク.webp"
+        },
+        {
+          "must": false,
+          "icon": "🚶",
+          "num": "IST 11",
+          "name": "イスティクラル通り",
+          "desc": "タクシム広場へ続く歩行者天国。レトロな路面電車が行き交い、老舗菓子店やカフェが並ぶ新市街のメインストリート。",
+          "badge": "新市街の目抜き通り",
+          "prompt_en": "Istiklal Avenue pedestrian street with a vintage red tram and crowds of people walking, historic buildings on both sides, at dusk, travel photography",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Istiklal+Avenue+Istanbul",
+          "image": "素材/観光スポット/イスティクラル通り.webp"
+        },
+        {
+          "must": false,
+          "icon": "🎣",
+          "num": "IST 12",
+          "name": "ガラタ橋",
+          "desc": "金角湾にかかる橋の上で、釣り人が並んで糸を垂らす。夕暮れにはシルエットの向こうにモスク群が浮かび、散策にちょうどいい。",
+          "badge": "釣り人と夕景",
+          "prompt_en": "Galata Bridge with silhouettes of fishermen along the railing, mosque skyline of old Istanbul in the background, at sunset, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Galata+Bridge+Istanbul",
+          "image": "素材/観光スポット/ガラタ橋.webp"
+        },
+        {
+          "must": false,
+          "icon": "☕",
+          "num": "IST 13",
+          "name": "カドキョイ",
+          "desc": "ボスポラス海峡のアジア側にある人気エリア。市場とカフェ、壁画アートの路地が続き、観光客の少ない地元の空気を味わえる。",
+          "badge": "アジア側の人気街",
+          "prompt_en": "Kadikoy neighborhood street with colorful cafes and street art murals, crowds of people walking, in the morning light, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Kadikoy+Istanbul",
+          "image": "素材/観光スポット/カドキョイ.webp"
+        },
+        {
+          "must": false,
+          "icon": "⛴️",
+          "num": "IST 14",
+          "name": "プリンスィズ諸島",
+          "desc": "マルマラ海に浮かぶ島々で、車は禁止され移動は馬車と自転車。海を見ながらのんびり過ごす日帰りにちょうどいい。",
+          "badge": "馬車の島",
+          "prompt_en": "Princes Islands with horse carriages on a seaside road and wooden Ottoman mansions, a ferry in the distance, in the morning light, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Princes+Islands+Istanbul",
+          "image": "素材/観光スポット/プリンスィズ諸島.webp"
         }
       ]
     },
@@ -1585,6 +1761,42 @@
           "image": "素材/観光スポット/ウフララ渓谷.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Ihlara+Valley"
+        },
+        {
+          "must": false,
+          "icon": "🏰",
+          "num": "CAP 05",
+          "name": "ウチヒサル城塞",
+          "desc": "ギョレメ周辺で最も高い巨大な岩山。無数の穴が開いた城塞の頂上からは、カッパドキアの大地を一望できる。",
+          "badge": "絶景の岩山",
+          "prompt_en": "Uchisar Castle rock fortress with countless window openings overlooking Cappadocia valleys, a tiny hiker figure visible near the top, at golden hour, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Uchisar+Castle+Cappadocia",
+          "image": "素材/観光スポット/ウチヒサル城塞.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌅",
+          "num": "CAP 06",
+          "name": "ローズバレー",
+          "desc": "夕暮れに岩肌がバラ色に染まる谷。夕日を眺める絶景ポイントとして人気で、ハイキングコースも整備されている。",
+          "badge": "夕日の名所",
+          "prompt_en": "Rose Valley Cappadocia with pink-hued rock formations glowing in the evening light, silhouettes of visitors on the ridge, at sunset, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Rose+Valley+Cappadocia",
+          "image": "素材/観光スポット/ローズバレー.webp"
+        },
+        {
+          "must": false,
+          "icon": "🍄",
+          "num": "CAP 07",
+          "name": "パシャバー（僧院の谷）",
+          "desc": "キノコ形の奇岩「妖精の煙突」が林立する谷。三つ首の岩が特に有名で、フォトスポットとして知られている。",
+          "badge": "キノコ形の奇岩",
+          "prompt_en": "Pasabag Monks Valley with mushroom-shaped fairy chimney rocks, a few tourists in the distance, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Pasabag+Monks+Valley+Cappadocia",
+          "image": "素材/観光スポット/パシャバー（僧院の谷）.webp"
         }
       ]
     },
@@ -1646,6 +1858,18 @@
           "image": "素材/観光スポット/クレオパトラ・プール.webp",
           "type": "activity",
           "map_url": "https://maps.google.com/?q=Cleopatra+Pool+Pamukkale"
+        },
+        {
+          "must": false,
+          "icon": "♨️",
+          "num": "PAM 04",
+          "name": "カラハユット",
+          "desc": "鉄分を含む赤茶色の温泉が湧く村。石灰棚とは対照的な赤い泉は、温泉施設や泥パックを体験できる穴場スポット。",
+          "badge": "赤い温泉",
+          "prompt_en": "Karahayit red travertine terraces with iron-rich reddish water flowing down, a few tourists in the distance, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Karahayit+Red+Springs+Pamukkale",
+          "image": "素材/観光スポット/カラハユット.webp"
         }
       ]
     },
@@ -1719,6 +1943,42 @@
           "image": "素材/観光スポット/アスペンドス古代劇場.webp",
           "type": "heritage",
           "map_url": "https://maps.google.com/?q=Aspendos+Theatre"
+        },
+        {
+          "must": false,
+          "icon": "🚪",
+          "num": "ANT 05",
+          "name": "ハドリアヌス門",
+          "desc": "2世紀にローマ皇帝を迎えるために建てられた三連アーチの門。カレイチ旧市街への入口として、街歩きの出発点になる。",
+          "badge": "ローマ時代の門",
+          "prompt_en": "Hadrian's Gate triple arch marble gateway at the entrance of Kaleici old town, a few tourists in the distance, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Hadrians+Gate+Antalya",
+          "image": "素材/観光スポット/ハドリアヌス門.webp"
+        },
+        {
+          "must": false,
+          "icon": "🔥",
+          "num": "ANT 06",
+          "name": "ヤナルタシュ",
+          "desc": "地面の岩の隙間から天然ガスの炎が燃え続ける不思議な山。夜に訪れると炎がはっきり見え、古代ギリシャ神話ゆかりの地でもある。",
+          "badge": "燃え続ける岩山",
+          "prompt_en": "Yanartas Chimaera flames burning from rock crevices on a mountainside, silhouettes of visitors nearby, at night, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Yanartas+Chimaera+Antalya",
+          "image": "素材/観光スポット/ヤナルタシュ.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏟️",
+          "num": "ANT 07",
+          "name": "ペルゲ古代都市",
+          "desc": "アンタルヤ郊外に残るローマ時代の遺跡。円柱が並ぶ大通りと競技場跡が、往時の暮らしの広がりを今に伝えている。",
+          "badge": "列柱の大通り",
+          "prompt_en": "Perge ancient city colonnaded street with marble columns and ruins, a few tourists in the distance, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Perge+Ancient+City+Antalya",
+          "image": "素材/観光スポット/ペルゲ古代都市.webp"
         }
       ]
     },
@@ -1792,6 +2052,200 @@
           "image": "素材/観光スポット/コナック広場・時計塔.webp",
           "type": "townscape",
           "map_url": "https://maps.google.com/?q=Konak+Square+Izmir"
+        },
+        {
+          "must": false,
+          "icon": "⛪",
+          "num": "IZM 05",
+          "name": "聖ヨハネ教会",
+          "desc": "セルチュクの丘に残る、使徒ヨハネの墓所とされる教会跡。丘の上からはエフェソス平野とセルチュクの町並みを見渡せる。",
+          "badge": "使徒の墓所",
+          "prompt_en": "Basilica of St John ruins on Selcuk hill with stone columns and arches, view over the plain, a few tourists in the distance, at golden hour, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Basilica+of+St+John+Selcuk",
+          "image": "素材/観光スポット/聖ヨハネ教会.webp"
+        },
+        {
+          "must": true,
+          "icon": "🏛️",
+          "num": "IZM 06",
+          "name": "ベルガマ・アクロポリス",
+          "desc": "急峻な丘に築かれた古代都市の遺跡群。急斜面に張りつく大劇場と、ロープウェイで登る眺めが印象的な世界遺産。",
+          "badge": "急斜面の劇場",
+          "prompt_en": "Pergamon Acropolis with the steep hillside theatre and ruins, a tiny group of tourists for scale, at golden hour, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Pergamon+Acropolis+Bergama",
+          "image": "素材/観光スポット/ベルガマ・アクロポリス.webp"
+        },
+        {
+          "must": false,
+          "icon": "🧿",
+          "num": "IZM 07",
+          "name": "ケメラルトゥ・バザール",
+          "desc": "イズミルの旧市街に広がる迷路状の市場。ナザール・ボンジュウや革製品、地元の軽食まで揃い、庶民の暮らしがのぞける。",
+          "badge": "迷路状の市場",
+          "prompt_en": "Kemeralti Bazaar narrow covered market alley with shops and hanging lanterns, crowds of people walking, in the morning light, travel photography",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Kemeralti+Bazaar+Izmir",
+          "image": "素材/観光スポット/ケメラルトゥ・バザール.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏖️",
+          "num": "IZM 08",
+          "name": "クシャダス",
+          "desc": "エーゲ海に面した人気のリゾート港町。エフェソスへ向かうクルーズ船の寄港地でもあり、ビーチと海辺の散策を楽しめる。",
+          "badge": "エーゲ海の港町",
+          "prompt_en": "Kusadasi harbor town on the Aegean coast with white buildings, boats and a pier, a few people strolling on the promenade, at sunset, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Kusadasi+Turkey",
+          "image": "素材/観光スポット/クシャダス.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "fethiye",
+      "city_name": "フェティエ・オルデニズ",
+      "city_image": "",
+      "city_prompt": "Oludeniz Blue Lagoon turquoise sea with paragliders in the sky above, golden hour, travel photography",
+      "city_desc": "トルコ南西部の地中海リゾート。オルデニズの青い入り江とパラグライダー、岩窟墓や渓谷など、海も山も遊べるエリア",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "イスタンブールから国内線でダラマン空港まで約1.5時間、空港からフェティエまで車で約1時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "5〜6月・9〜10月",
+          "link_section": "season",
+          "link_btn_index": 2
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "オルデニズ（ビーチ沿い） / フェティエ市街"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏝️",
+          "num": "FET 01",
+          "name": "オルデニズ・ブルーラグーン",
+          "desc": "三日月形の砂州に囲まれた、ターコイズブルーの穏やかな入り江。遊泳や日光浴、ボートでの遊覧を楽しめる。",
+          "badge": "地中海屈指の絶景",
+          "prompt_en": "Oludeniz Blue Lagoon turquoise lagoon with a sandbar and pine-covered hills, a few tourists swimming in the distance, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Oludeniz+Blue+Lagoon+Fethiye",
+          "image": "素材/観光スポット/オルデニズ・ブルーラグーン.webp"
+        },
+        {
+          "must": false,
+          "icon": "🪂",
+          "num": "FET 02",
+          "name": "バブダグ山パラグライダー",
+          "desc": "標高約1,960mのバブダグ山から、オルデニズの海へ向けて飛ぶタンデムフライト。世界有数の人気スポットとして知られる。",
+          "badge": "空から絶景",
+          "prompt_en": "Colorful paragliders soaring over Oludeniz coast and turquoise lagoon from Babadag mountain, tiny figures for scale, at golden hour, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Babadag+Mountain+Oludeniz+Fethiye",
+          "image": "素材/観光スポット/バブダグ山パラグライダー.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏚️",
+          "num": "FET 03",
+          "name": "カヤキョイ廃村",
+          "desc": "山の斜面に石造りの家々が崩れたまま残るゴーストタウン。20世紀初めの住民交換で人が去り、静かな廃墟が広がる。",
+          "badge": "静かな廃墟",
+          "prompt_en": "Kayakoy ghost village abandoned stone houses on a hillside with a ruined church, a few tourists in the distance, at golden hour, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Kayakoy+Ghost+Village+Fethiye",
+          "image": "素材/観光スポット/カヤキョイ廃村.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌊",
+          "num": "FET 04",
+          "name": "サクリケント渓谷",
+          "desc": "氷のように冷たい渓流が流れる、全長約18kmの深い峡谷。夏でも涼しく、川の中を歩くトレッキングが人気を集める。",
+          "badge": "渓流トレッキング",
+          "prompt_en": "Saklikent Gorge narrow canyon with a cold river flowing between tall rock walls, a tiny hiker figure for scale, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Saklikent+Gorge+Fethiye",
+          "image": "素材/観光スポット/サクリケント渓谷.webp"
+        }
+      ]
+    },
+    {
+      "city_id": "trabzon",
+      "city_name": "トラブゾン",
+      "city_image": "",
+      "city_prompt": "Sumela Monastery on a cliff face in misty green mountains near Trabzon, travel photography",
+      "city_desc": "黒海沿岸の港町。断崖に建つスメラ修道院や霧に包まれる山あいの湖、茶畑が広がる、地中海側とは違う緑の景色が魅力",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "イスタンブールから国内線でトラブゾン空港まで約2時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "6〜9月",
+          "link_section": "season",
+          "link_btn_index": 2
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "トラブゾン市街（海沿い）"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "⛪",
+          "num": "TRA 01",
+          "name": "スメラ修道院",
+          "desc": "標高1,200mの断崖に張りつくように建つ、4世紀創建のギリシャ正教の修道院。岩壁のフレスコ画と谷の眺めが見事。",
+          "badge": "断崖の修道院",
+          "prompt_en": "Sumela Monastery clinging to a cliff face in a forested mountain valley with mist, a few tourists as small figures, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Sumela+Monastery+Trabzon",
+          "image": "素材/観光スポット/スメラ修道院.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏞️",
+          "num": "TRA 02",
+          "name": "ウズンギョル湖",
+          "desc": "山々と針葉樹に囲まれた湖畔の村。モスクの尖塔が水面に映り、霧がかかる朝は静かで、黒海地方らしい景色が広がる。",
+          "badge": "山あいの湖",
+          "prompt_en": "Uzungol lake village with a mosque minaret reflected on the water, forested mountains and mist, a few people on the lakeside, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Uzungol+Trabzon",
+          "image": "素材/観光スポット/ウズンギョル湖.webp"
+        },
+        {
+          "must": false,
+          "icon": "🕍",
+          "num": "TRA 03",
+          "name": "トラブゾンのアヤソフィア",
+          "desc": "13世紀にビザンツ帝国が築いた教会で、海を見下ろす丘に立つ。内部に残るフレスコ画と、庭園からの黒海の眺めが見どころ。",
+          "badge": "ビザンツの教会",
+          "prompt_en": "Trabzon Hagia Sophia Byzantine church with a bell tower near the Black Sea coast, a few tourists in the garden, in the morning light, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Hagia+Sophia+Trabzon",
+          "image": "素材/観光スポット/トラブゾンのアヤソフィア.webp"
+        },
+        {
+          "must": false,
+          "icon": "🍵",
+          "num": "TRA 04",
+          "name": "ボズテペの丘",
+          "desc": "トラブゾンの市街と黒海を見下ろす展望の丘。茶畑が広がり、茶園のカフェで一杯飲みながら夕景を眺められる。",
+          "badge": "茶園の展望台",
+          "prompt_en": "Boztepe hill tea garden terrace overlooking Trabzon city and the Black Sea, silhouettes of visitors, at sunset, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Boztepe+Hill+Trabzon",
+          "image": "素材/観光スポット/ボズテペの丘.webp"
         }
       ]
     }

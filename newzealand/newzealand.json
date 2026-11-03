@@ -54,7 +54,7 @@
     "budget_range": "20〜35万円",
     "language": "英語・マオリ語（公用語）",
     "currency_name": "ニュージーランドドル(NZD)",
-    "currency_rate": "1NZD ≈ 94円",
+    "currency_rate": "1NZD ≈ 89円",
     "danger_level": 0,
     "danger_label": "特に危険情報なし",
     "danger_color": "var(--green)",
@@ -137,6 +137,32 @@
       "badge_class": "green",
       "description": "ワカティプ湖とサザンアルプスに抱かれた、絶景とアクティビティの街",
       "featured": true
+    },
+    {
+      "id": "bay_of_islands",
+      "name": "ベイ・オブ・アイランズ",
+      "lat": "-35.2833",
+      "lng": "174.0833",
+      "zoom": "11",
+      "color": "#0099cc",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "歴史と島々",
+      "badge_class": "green",
+      "description": "ニュージーランド建国の地と、青い海に点在する島々"
+    },
+    {
+      "id": "dunedin",
+      "name": "ダニーデン",
+      "lat": "-45.8788",
+      "lng": "170.5028",
+      "zoom": "11",
+      "color": "#8d6e63",
+      "marker_size": "11",
+      "marker_label": "●",
+      "badge": "スコットランド風の街",
+      "badge_class": "green",
+      "description": "ヴィクトリア様式の建物と、野生動物に出会えるオタゴ半島"
     }
   ],
   "season_mini": {
@@ -531,6 +557,74 @@
             "type": "t-warm"
           }
         ]
+      },
+      {
+        "name": "ダニーデン（南島南東部）",
+        "city_id": "dunedin",
+        "best_note": "ベスト：12〜2月（夏）／ 冬は寒く、朝晩は氷点下になる日もある。",
+        "note": "南島の南端に近く、夏でも涼しく、日中20°C前後。天気が変わりやすく、一日で四季が訪れるといわれる。冬は冷え込み、霜が降りる朝もあるので、重ね着と防風の上着を用意したい。半島の海沿いは風が強く、夏でも体感温度が下がるため、薄手のフリースがあると安心できる。",
+        "months": [
+          {
+            "icon": "☀️",
+            "temp": "15°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "15°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "14°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "12°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌥️",
+            "temp": "9°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "🌥️",
+            "temp": "7°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "🌥️",
+            "temp": "6°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "⛅",
+            "temp": "8°C",
+            "type": "t-cold"
+          },
+          {
+            "icon": "⛅",
+            "temp": "10°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "⛅",
+            "temp": "12°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "13°C",
+            "type": "t-mild"
+          },
+          {
+            "icon": "☀️",
+            "temp": "15°C",
+            "type": "t-mild"
+          }
+        ]
       }
     ]
   },
@@ -712,12 +806,12 @@
         "timing_color": "#cc0001",
         "border_color": "#cc0001",
         "bar_color": "",
-        "desc_html": "公式アプリ・サイトから電子渡航許可NZeTAを申請し、国際観光・保全税（IVL）も併せて支払う。出発直前だと承認が間に合わないこともあるため余裕を持って手続きしたい。"
+        "desc_html": "公式アプリ・サイトから電子渡航許可NZeTAを申請し（手数料はアプリNZD 17・ウェブNZD 23）、国際観光・保全税（IVL）も併せて支払う。出発直前だと承認が間に合わないこともあるため余裕を持って手続きしたい。"
       }
     ],
     "tour_intro": "個人旅行のハードルは低く英語も通じやすいが、都市間の距離が長いため国内線やレンタカーでの移動計画が旅の満足度を左右する。ミルフォード・サウンドクルーズやホビットン等の人気アクティビティは事前予約が安心。",
     "special_note_title": "NZeTA・IVLに加えNZTD（渡航者宣言）も必要",
-    "special_note_html": "観光ビザ免除に加え、渡航前にNZeTA（電子渡航許可）の申請とIVL（国際観光・環境保全税、NZD 100程度）の支払いが必須です。さらにNZeTAとは別に、出発前〜到着時までにオンラインで「ニュージーランド渡航者宣言（NZTD）」という無料の税関・検疫申告を完了させる必要があります。従来の紙の入国カードに代わる制度で、余裕を持って済ませておきましょう。",
+    "special_note_html": "観光ビザ免除に加え、渡航前にNZeTA（電子渡航許可）の申請とIVL（国際観光・環境保全税、NZD 100程度）の支払い（NZeTAの手数料は、アプリ申請NZD 17・ウェブ申請NZD 23）が必須です。さらにNZeTAとは別に、出発前〜到着時までにオンラインで「ニュージーランド渡航者宣言（NZTD）」という無料の税関・検疫申告を完了させる必要があります。従来の紙の入国カードに代わる制度で、余裕を持って済ませておきましょう。",
     "special_note_url": "https://nztd.govt.nz/",
     "special_note_url_label": "NZTD公式サイトで手続きを確認",
     "flight_lead": "日本〜ニュージーランドは、ニュージーランド航空が成田・羽田からオークランドへ直行便を運航しており、所要は約11時間です。夜に日本を発って翌朝着く便が多く、機内で一泊すれば現地時間に合わせやすいのが利点です。直行便のほか、シンガポールやオーストラリアの都市を経由するルートもあり、時期によっては経由便のほうが割安になることもあります。（乗継便あり）",
@@ -818,13 +912,13 @@
     ],
     "country_items_html": "山岳部や南島は天候が変わりやすく、防水のレインウェアと防水トレッキングシューズは必須だ。フィヨルドランドにはサンドフライという小さな虫が多いので、虫除けも忘れずに。移動はレンタカーが基本なので、国際運転免許証も取っておきましょう。",
     "currency_code": "NZD",
-    "exchange_rate": "94",
+    "exchange_rate": "88.8",
     "cash_dependency": "現金依存度: 低い",
     "cash_dependency_color": "var(--green)",
     "cash_dependency_note": "ほぼ全ての支払いをカード・タッチ決済で完結できる、キャッシュレス先進国のひとつ",
     "cash_daily_low": "15",
     "cash_daily_high": "20",
-    "cash_note": "1 NZD ≈ 94円で計算",
+    "cash_note": "1 NZD ≈ 88.8円で計算",
     "money_intro": "ニュージーランドはカード社会で、都市部・観光地ではほとんどの支払いがクレジットカードやタッチ決済で完結します。現金が要るのは一部のローカルマーケットやチップくらいです。ATMは都市部に豊富にあり、海外対応カードでの現地通貨（NZドル）引き出しが一般的。空港での両替は手数料が割高になりやすいため、必要最小限にとどめましょう。",
     "hotel_intro": "ニュージーランドはレンタカーで周遊するのが基本のため、宿は観光ルート沿いや次の目的地へ動きやすい立地で選ぶのがコツです。キッチン付きのホリデーパークやモーテルなら自炊で食費も抑えられます。クイーンズタウンなど人気地は夏（12〜2月）に一気に埋まるので繁忙期は早めの予約を。車上荒らし対策として、車内に荷物を残さない宿選び・駐車環境も要チェックです。",
     "cash_tip_title": "基本はカード払いでOK",
@@ -1348,6 +1442,16 @@
       "id": "queenstown",
       "label": "クイーンズタウン",
       "active": false
+    },
+    {
+      "id": "bay_of_islands",
+      "label": "ベイ・オブ・アイランズ",
+      "active": false
+    },
+    {
+      "id": "dunedin",
+      "label": "ダニーデン",
+      "active": false
     }
   ],
   "spot_sections": [
@@ -1471,6 +1575,28 @@
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Cathedral+Cove+Coromandel",
           "image": "素材/観光スポット/カテドラル・コーブ（コロマンデル半島）.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌋",
+          "num": "AKL 08",
+          "name": "マウント・イーデン",
+          "desc": "市街地近くにある休火山の丘。山頂の火口と、オークランドの街並みを360度見渡せる展望が人気の、気軽な景色スポット。",
+          "badge": "街を見渡す火山",
+          "prompt_en": "Mount Eden volcanic crater with grass and Auckland city skyline in the background, a few visitors as small figures, at sunset, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Mount+Eden+Auckland"
+        },
+        {
+          "must": false,
+          "icon": "🌸",
+          "num": "AKL 09",
+          "name": "ハミルトン・ガーデン",
+          "desc": "世界各国の様式を再現した、テーマ別の庭園。日本庭園や中国庭園などを歩きながら、世界の庭を旅するように楽しめる。",
+          "badge": "世界のテーマ庭園",
+          "prompt_en": "Hamilton Gardens Japanese garden with a pond and bridge, a few visitors as small figures, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Hamilton+Gardens+New+Zealand"
         }
       ]
     },
@@ -1594,6 +1720,17 @@
           "type": "activity",
           "map_url": "https://maps.google.com/?q=Waitomo+Glowworm+Caves",
           "image": "素材/観光スポット/ワイトモ・グロウワーム洞窟.webp"
+        },
+        {
+          "must": false,
+          "icon": "♨️",
+          "num": "ROT 08",
+          "name": "ワイマング火山谷",
+          "desc": "1886年の噴火で生まれた、世界最新の地熱地帯。湖と温泉、湯気の立つ谷を歩く遊歩道が整備されている。",
+          "badge": "新しい地熱の谷",
+          "prompt_en": "Waimangu Volcanic Valley steaming lake with green hills and a walking path, tiny hiker figures, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Waimangu+Volcanic+Valley+Rotorua"
         }
       ]
     },
@@ -1693,6 +1830,28 @@
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Mount+Victoria+Lookout+Wellington",
           "image": "素材/観光スポット/マウント・ビクトリア展望台.webp"
+        },
+        {
+          "must": false,
+          "icon": "🦜",
+          "num": "WLG 06",
+          "name": "ジーランディア",
+          "desc": "市街地に近い、外来種を排除した自然保護区。キウイやタカヘなど、固有の野鳥が暮らす森を安全に散策できる。",
+          "badge": "野鳥の保護区",
+          "prompt_en": "Zealandia sanctuary forest path with a native tui bird, a few visitors as small figures, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Zealandia+Wellington"
+        },
+        {
+          "must": false,
+          "icon": "⚓",
+          "num": "WLG 07",
+          "name": "ウェリントン・ウォーターフロント",
+          "desc": "港沿いに続く遊歩道に、カフェや美術館が並ぶ散歩エリア。海を眺めながらのんびり歩くのにちょうどよい、街の憩いの場。",
+          "badge": "海辺の遊歩道",
+          "prompt_en": "Wellington waterfront promenade with sailing boats and people walking and cafes, at sunset, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Wellington+Waterfront"
         }
       ]
     },
@@ -1804,6 +1963,28 @@
           "type": "townscape",
           "map_url": "https://maps.google.com/?q=Akaroa+New+Zealand",
           "image": "素材/観光スポット/アカロア.webp"
+        },
+        {
+          "must": false,
+          "icon": "🏛️",
+          "num": "CHC 07",
+          "name": "カンタベリー博物館",
+          "desc": "自然史やマオリ文化、南極探検の歴史を扱う博物館。植物園のすぐ隣にあり、クライストチャーチ観光とあわせて訪れやすい。",
+          "badge": "自然史の博物館",
+          "prompt_en": "Canterbury Museum Gothic revival stone building with trees, a few visitors as small figures, in the morning light, travel photography",
+          "type": "museum",
+          "map_url": "https://maps.google.com/?q=Canterbury+Museum+Christchurch"
+        },
+        {
+          "must": false,
+          "icon": "♨️",
+          "num": "CHC 08",
+          "name": "ハンマー・スプリングス",
+          "desc": "天然温泉と森の中のアクティビティが揃う、温泉保養地。山あいのリゾートでのんびり温泉に浸かる時間が楽しめる。",
+          "badge": "山あいの温泉",
+          "prompt_en": "Hanmer Springs thermal pools surrounded by trees and mountains, a few bathers as small figures, in the morning light, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Hanmer+Springs+Thermal+Pools"
         }
       ]
     },
@@ -1951,6 +2132,166 @@
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Franz+Josef+Glacier",
           "image": "素材/観光スポット/フランツ・ジョセフ氷河.webp"
+        },
+        {
+          "must": false,
+          "icon": "🌳",
+          "num": "ZQN 10",
+          "name": "ワナカ湖",
+          "desc": "湖畔の静かな保養地ワナカの人気スポット。湖面に一本だけ立つ柳の木と、山々を映す水面が、写真映えする景色をつくる。",
+          "badge": "湖畔の一本柳",
+          "prompt_en": "Lake Wanaka lone willow tree standing in the water with mountains behind, a few visitors in the distance, at sunrise, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Lake+Wanaka+Tree"
+        },
+        {
+          "must": false,
+          "icon": "🍂",
+          "num": "ZQN 11",
+          "name": "アロータウン",
+          "desc": "ゴールドラッシュ時代の面影が残る小さな町。秋は街路樹が色づき、古い石造りの店が並ぶ通りをのんびり歩いて楽しめる。",
+          "badge": "金鉱の面影",
+          "prompt_en": "Arrowtown historic main street with autumn trees and old stone buildings, a few people walking, at golden hour, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Arrowtown+New+Zealand"
+        }
+      ]
+    },
+    {
+      "city_id": "bay_of_islands",
+      "city_name": "ベイ・オブ・アイランズ",
+      "city_image": "",
+      "city_prompt": "Bay of Islands aerial view with many green islands and turquoise water, a few sailing boats, travel photography",
+      "city_desc": "北島の北端に位置する、144の島が点在する海。ニュージーランド建国の歴史を伝える地でもあり、クルーズやダイビングが楽しめる",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "オークランドから車で約3.5時間、または国内線でケリケリ空港まで約1時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "11〜4月（夏から秋）",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "パイヒア / ラッセル"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "📜",
+          "num": "BOI 01",
+          "name": "ワイタンギ条約グラウンド",
+          "desc": "1840年にマオリと英国が条約を結んだ、国の建国の地。マオリの集会所や大きなカヌーが見られる、歴史学習の拠点。",
+          "badge": "建国の歴史",
+          "prompt_en": "Waitangi Treaty Grounds Maori meeting house and large waka canoe on green lawn, a few visitors as small figures, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Waitangi+Treaty+Grounds"
+        },
+        {
+          "must": false,
+          "icon": "⛵",
+          "num": "BOI 02",
+          "name": "ホール・イン・ザ・ロック・クルーズ",
+          "desc": "岩に開いた穴をくぐり抜ける、ベイ・オブ・アイランズの名物クルーズ。運がよければイルカの群れとも出会える。",
+          "badge": "穴をくぐる船旅",
+          "prompt_en": "Hole in the Rock sea arch with a cruise boat passing through and dolphins nearby, small figures on the boat, in the morning light, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Hole+in+the+Rock+Bay+of+Islands"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "BOI 03",
+          "name": "ラッセル",
+          "desc": "かつて国の最初の首都だった、海辺の小さな町。白い木造の建物と海沿いの遊歩道が並び、のんびりした空気が流れる。",
+          "badge": "最初の首都",
+          "prompt_en": "Russell waterfront with white wooden colonial buildings and boats in the bay, a few people strolling, at sunset, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Russell+New+Zealand"
+        },
+        {
+          "must": false,
+          "icon": "🏝️",
+          "num": "BOI 04",
+          "name": "パイヒア",
+          "desc": "島めぐりクルーズの拠点になる港町。カフェやレストランが並ぶ海沿いの通りを歩きながら、旅の計画を立てやすい。",
+          "badge": "島めぐりの拠点",
+          "prompt_en": "Paihia waterfront with boats in the bay and cafes along the shore, a few people walking, at sunset, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Paihia+Bay+of+Islands"
+        }
+      ]
+    },
+    {
+      "city_id": "dunedin",
+      "city_name": "ダニーデン",
+      "city_image": "",
+      "city_prompt": "Dunedin railway station Victorian Gothic building with clock tower and gardens, a few people as small figures, in the morning light, travel photography",
+      "city_desc": "南島南東部の、スコットランド系の移民が築いた古都。重厚な石造りの建物とオタゴ半島での野生動物観察で、自然と歴史を一緒に楽しめる",
+      "city_info": [
+        {
+          "label": "アクセス",
+          "value": "クイーンズタウンまたはクライストチャーチから国内線でダニーデン空港まで約1時間"
+        },
+        {
+          "label": "おすすめ時期",
+          "value": "11〜3月（夏）",
+          "link_section": "season",
+          "link_btn_index": 4
+        },
+        {
+          "label": "宿泊エリア",
+          "value": "ダニーデン市街 / オタゴ半島"
+        }
+      ],
+      "spots": [
+        {
+          "must": true,
+          "icon": "🏰",
+          "num": "DUD 01",
+          "name": "ラーナック城",
+          "desc": "ニュージーランドで唯一の本格的な城とされる、半島の丘に立つ建物。庭園と内部の見学で、開拓者の暮らしを想像できる。",
+          "badge": "唯一の城",
+          "prompt_en": "Larnach Castle stone castle on a hill with gardens and sea view, a few visitors as small figures, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Larnach+Castle+Dunedin"
+        },
+        {
+          "must": false,
+          "icon": "🏁",
+          "num": "DUD 02",
+          "name": "ボールドウィン・ストリート",
+          "desc": "世界で最も急な住宅街の坂道として知られる。実際に登ると傾斜に驚き、頂上からの眺めで達成感を味わえる。",
+          "badge": "世界一急な坂",
+          "prompt_en": "Baldwin Street steep residential road with houses and a few people climbing as small figures, in the morning light, travel photography",
+          "type": "activity",
+          "map_url": "https://maps.google.com/?q=Baldwin+Street+Dunedin"
+        },
+        {
+          "must": false,
+          "icon": "🚉",
+          "num": "DUD 03",
+          "name": "ダニーデン駅",
+          "desc": "エドワード朝様式の、美しい石造りの駅舎。色鮮やかなステンドグラスやモザイク床など、鉄道ファン以外も楽しめる。",
+          "badge": "荘厳な駅舎",
+          "prompt_en": "Dunedin Railway Station ornate Edwardian stone building with a clock tower, a few visitors as small figures, in the morning light, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Dunedin+Railway+Station"
+        },
+        {
+          "must": false,
+          "icon": "🐧",
+          "num": "DUD 04",
+          "name": "オタゴ半島の野生動物",
+          "desc": "アホウドリやペンギン、アシカなどの野生動物が見られる半島。ボートや保護区のツアーで観察できる貴重な自然体験。",
+          "badge": "野生動物の半島",
+          "prompt_en": "Otago Peninsula coast with a royal albatross flying over a cliff and a few penguins on the shore, small figures of observers, at golden hour, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Otago+Peninsula+Albatross+Penguins"
         }
       ]
     }

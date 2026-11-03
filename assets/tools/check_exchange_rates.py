@@ -8,24 +8,44 @@
 
 各国JSONの practical.exchange_rate（保存済み・1単位=何円）を、無料為替API
 （open.er-api.com, JPY基準・APIキー不要）から取得した現在レートと比較する。
---apply を付けると、閾値を超えた国だけ overview.currency_rate と
-practical.exchange_rate を上書きする。budget内の物価プロス文（「屋台なら1食
-300〜500円」等）は自動更新の対象外なので、更新された国は手動で見直すこと。
-更新後は generate.py <country_id> を忘れずに実行する。
+対象国は <国>/<国>.json の practical.currency_code から自動検出する。
+
+--apply を付けると、閾値を超えた国だけ overview.currency_rate・
+practical.exchange_rate・practical.cash_note を上書きし、practical.cash_daily_low/high
+も「円換算の額を保ったまま新レートで現地通貨に直す」形で再計算する
+（元の値の丸め単位を引き継ぐ。食費・交通費の計算式そのものは変えない）。
+budget内の物価プロス文（「屋台なら1食300〜500円」等）は自動更新の対象外なので、
+更新された国は手動で見直すこと。更新後は generate.py <country_id> を忘れずに実行する。
 """
-import json, os, argparse, urllib.request
+import json, os, re, argparse, urllib.request
+from math import floor, log10
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-COUNTRIES = [
-    {"id": "malaysia",     "path": "malaysia/malaysia.json",        "code": "MYR", "unit_amount": 1,     "unit_label": "RM"},
-    {"id": "thailand",     "path": "thailand/thailand.json",        "code": "THB", "unit_amount": 1,     "unit_label": "THB"},
-    {"id": "uzbekistan",   "path": "uzbekistan/uzbekistan.json",    "code": "UZS", "unit_amount": 10000, "unit_label": "万UZS"},
-    {"id": "south_africa", "path": "south_africa/south_africa.json","code": "ZAR", "unit_amount": 1,     "unit_label": "ZAR"},
-    {"id": "taiwan",       "path": "taiwan/taiwan.json",            "code": "TWD", "unit_amount": 1,     "unit_label": "TWD"},
-    {"id": "singapore",    "path": "singapore/singapore.json",      "code": "SGD", "unit_amount": 1,     "unit_label": "SGD"},
-    {"id": "srilanka",     "path": "srilanka/srilanka.json",        "code": "LKR", "unit_amount": 1,     "unit_label": "LKR"},
-]
+_UNIT_AMOUNTS = {'1万': 10000, '1,000': 1000, '1': 1}
+
+
+def _discover_countries():
+    """<dir>/<dir>.json を持つ全国を自動検出し、通貨コードとレート表記の単位を読み取る。"""
+    out = []
+    for name in sorted(os.listdir(ROOT)):
+        path = os.path.join(ROOT, name, f'{name}.json')
+        if not os.path.isfile(path):
+            continue
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+        pr = data.get('practical', {})
+        m = re.search(r'[A-Z]{3}', str(pr.get('currency_code', '')))
+        if not m or 'exchange_rate' not in pr:
+            continue
+        unit_text, label = '1', m.group(0)
+        cm = re.match(r'^(1万|1,000|1)\s*(.+?)\s*≈', str(data.get('overview', {}).get('currency_rate', '')))
+        if cm:
+            unit_text, label = cm.group(1), cm.group(2)
+        out.append({"id": name, "path": f"{name}/{name}.json", "code": m.group(0),
+                    "unit_amount": _UNIT_AMOUNTS[unit_text], "unit_text": unit_text,
+                    "unit_label": label, "has_unit_display": bool(cm)})
+    return out
 
 
 def fetch_jpy_rates():
@@ -38,11 +58,65 @@ def fetch_jpy_rates():
 
 
 def fmt_num(x):
-    r = round(x, 4)
-    if r == int(r):
-        return str(int(r))
-    s = f"{r:.4f}".rstrip('0').rstrip('.')
-    return s
+    """有効数字3桁で文字列化（0.0071のような小さい値でも精度を落とさない）。"""
+    if x == 0:
+        return '0'
+    digits = 2 - int(floor(log10(abs(x))))
+    if digits <= 0:
+        return str(int(round(x, digits)))
+    return f"{round(x, digits):.{digits}f}".rstrip('0').rstrip('.')
+
+
+def fmt_display(x):
+    """『1BRL ≈ 29円』のような表示用。10円以上は整数、10円未満は小数1桁。"""
+    return str(int(round(x))) if x >= 10 else f"{x:.1f}".rstrip('0').rstrip('.')
+
+
+_UNITS = [100000, 50000, 10000, 5000, 1000, 500, 100, 50, 10, 5, 1]
+
+
+def _rounding_unit(*vals):
+    """元の値を割り切れる、最も大きいキリの良い単位（丸め単位）を返す。"""
+    for u in _UNITS:
+        if all(v % u == 0 for v in vals):
+            return u
+    return 1
+
+
+def rescale_cash(low, high, old_rate, new_rate):
+    """円換算額を保ったまま新レートの現地通貨額に直し、元の丸め単位で四捨五入する。"""
+    u = _rounding_unit(low, high)
+    conv = lambda v: max(u, int(round(v * old_rate / new_rate / u)) * u)
+    return conv(low), conv(high)
+
+
+def apply_update(c, stored, live):
+    path = os.path.join(ROOT, c['path'])
+    with open(path, encoding='utf-8') as f:
+        raw = f.read()
+    data = json.loads(raw)
+    pr, ov = data['practical'], data['overview']
+    pr['exchange_rate'] = fmt_num(live)
+    disp = fmt_display(live * c['unit_amount'])
+    if c['has_unit_display']:
+        ov['currency_rate'] = re.sub(r'≈\s*[\d.,]+\s*円', f'≈ {disp}円', str(ov['currency_rate']), count=1)
+    try:
+        low, high = int(pr['cash_daily_low']), int(pr['cash_daily_high'])
+        nl, nh = rescale_cash(low, high, stored, live)
+        pr['cash_daily_low'], pr['cash_daily_high'] = str(nl), str(nh)
+        cash_msg = f"cash_daily {low}〜{high} → {nl}〜{nh}"
+    except (KeyError, ValueError):
+        cash_msg = "cash_dailyは対象外"
+    note = str(pr.get('cash_note', ''))
+    if '円で計算' in note:
+        if c['unit_amount'] > 1:
+            label, val = f"{c['unit_text']}{c['unit_label']}", disp
+        else:
+            label, val = f"1 {c['code']}", fmt_num(live)
+        pr['cash_note'] = re.sub(r'^[^<]*?円で計算', f'{label} ≈ {val}円で計算', note, count=1)
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(json.dumps(data, ensure_ascii=False, indent=2) + ('\n' if raw.endswith('\n') else ''))
+    return cash_msg
 
 
 def main():
@@ -58,7 +132,7 @@ def main():
     changed = []
     print(f"{'国':<14}{'通貨':<6}{'保存レート':>10}{'現在レート':>12}{'変動率':>9}")
     print('-' * 55)
-    for c in COUNTRIES:
+    for c in _discover_countries():
         path = os.path.join(ROOT, c['path'])
         with open(path, encoding='utf-8') as f:
             data = json.load(f)
@@ -85,16 +159,8 @@ def main():
     if args.apply:
         print()
         for c, stored, live, pct in changed:
-            path = os.path.join(ROOT, c['path'])
-            with open(path, encoding='utf-8') as f:
-                data = json.load(f)
-            data['practical']['exchange_rate'] = fmt_num(live)
-            display_val = fmt_num(live * c['unit_amount'])
-            data['overview']['currency_rate'] = f"1{c['unit_label']} ≈ {display_val}円"
-            with open(path, 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
-                f.write('\n')
-            print(f"  ✅ {c['id']} のレート表記を更新しました → generate.py {c['id']} を実行してください")
+            cash_msg = apply_update(c, stored, live)
+            print(f"  ✅ {c['id']}: {stored} → {fmt_num(live)}円 / {cash_msg} → generate.py {c['id']} を実行してください")
         print("\n⚠️  budget内の物価プロス文（1食◯◯円など）は自動更新していません。上記の国は手動で見直してください。")
     else:
         print("\n--apply を付けて再実行すると、上記の国だけレート表記を自動更新します。")

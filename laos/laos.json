@@ -712,12 +712,20 @@
         "timing": "出発前",
         "timing_color": "#cc5500",
         "border_color": "#cc5500",
-        "bar_color": "",
+        "bar_color": "#cc5500",
         "desc_html": "2025年6月から日本人の観光ビザ免除期間が15日→<strong>30日</strong>に延長された。30日を超える滞在にはビザ取得が必要なので、日程が長い場合は要確認。"
+      },
+      {
+        "title": "入国フォーム（LDIF）の登録",
+        "timing": "到着の3日前〜",
+        "timing_color": "#cc5500",
+        "border_color": "#cc5500",
+        "bar_color": "",
+        "desc_html": "紙の入国カードに代わるオンライン入国フォーム。主要3空港と第1友好橋の利用者は、到着の3日前からラオス出入国管理局のサイトで無料登録できる。登録画面は公式サイトから開き、有料の代行サイトは使わない。"
       }
     ],
-    "special_note_title": "ビザ免除は30日間・条件に注意",
-    "special_note_html": "2025年6月からラオス政府は日本の一般旅券保持者への観光ビザ免除期間を15日間から30日間に延長しました。対象は観光目的のみで、パスポートの残存有効期間が入国時に6ヶ月以上あることが条件です。30日を超えて滞在したい場合は国内での延長ができないため、タイなど隣国へ一度出国してから再入国する必要があります。",
+    "special_note_title": "ビザ免除は30日間・入国フォーム（LDIF）の事前登録",
+    "special_note_html": "2025年6月からラオス政府は日本の一般旅券保持者への観光ビザ免除期間を15日間から30日間に延長しました。対象は観光目的のみで、パスポートの残存有効期間が入国時に6ヶ月以上あることが条件です。30日を超えて滞在したい場合は国内での延長ができないため、タイなど隣国へ一度出国してから再入国する必要があります。<br>また、2025年9月から、ワッタイ・ルアンパバーン・パクセーの3空港と第1ラオス・タイ友好橋では、紙の入国カードに代わるオンライン入国フォーム「LDIF」の事前登録が必要です。到着の3日前から、ラオス出入国管理局のサイトで無料で登録できます。2026年からは全ての国際国境に広げる予定とされているため、出発前に最新の対象を確認しておきましょう。",
     "special_note_url": "https://www.la.emb-japan.go.jp/itpr_ja/11_000001_01094.html",
     "special_note_url_label": "在ラオス日本国大使館 公式サイト",
     "flight_lead": "日本〜ラオス間の直行便はなく、バンコク・ハノイ・ホーチミン経由が一般的です。所要時間は乗継時間含めて約9〜13時間。タイ国際航空やベトナム航空を使えばマイルも貯まり、乗継都市での数時間の観光も楽しめます。",
@@ -1575,6 +1583,28 @@
           "type": "museum",
           "map_url": "https://maps.google.com/?q=Wat+Ho+Phra+Keo+Vientiane",
           "image": "素材/観光スポット/ホー・プラケオ.webp"
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "VTE 08",
+          "name": "ワット・シームアン",
+          "desc": "市民の信仰を集める、街の守護寺。祈りを捧げる人々が絶えず、花やお供え物が並ぶ活気ある雰囲気を味わえる。",
+          "badge": "市民の信仰の場",
+          "prompt_en": "Wat Si Muang temple with offerings and worshippers, a few people as small figures, in the morning light, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Si+Muang+Vientiane"
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "VTE 09",
+          "name": "ワット・インペン",
+          "desc": "市街の静かな一角に立つ寺院。観光客が少なく、僧侶の読経や祈りの落ち着いた時間が流れる、ビエンチャンの穴場スポット。",
+          "badge": "静かな穴場寺院",
+          "prompt_en": "Wat Inpeng quiet Lao temple with golden roof and garden, a monk in orange robes as a small figure, in the morning light, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Inpeng+Vientiane"
         }
       ]
     },
@@ -1695,6 +1725,39 @@
           "prompt_en": "Kuang Si Bear Rescue Centre Laos, Asiatic black bears in a forested sanctuary enclosure, travel photography",
           "type": "activity",
           "map_url": "https://maps.google.com/?q=Kuang+Si+Bear+Rescue+Centre"
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "LPQ 09",
+          "name": "ワット・マイ",
+          "desc": "金色の装飾が輝く、ルアンパバーンで最も美しいとされる寺院。五層の屋根と壁面の金の浮き彫りに、思わず見とれてしまう。",
+          "badge": "黄金の寺院",
+          "prompt_en": "Wat Mai golden decorated temple with multi-tiered roofs, a few visitors as small figures, in the morning light, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Mai+Suwannaphumaham+Luang+Prabang"
+        },
+        {
+          "must": false,
+          "icon": "🛕",
+          "num": "LPQ 10",
+          "name": "ワット・ヴィスンナラート",
+          "desc": "16世紀に建てられた、街で最古級の寺院。丸い塔「タート・パトゥム」が特徴で、静かな境内に古い歴史が漂う。",
+          "badge": "最古級の寺院",
+          "prompt_en": "Wat Visoun with a round stupa in a quiet temple compound, a few visitors in the distance, at golden hour, travel photography",
+          "type": "religious",
+          "map_url": "https://maps.google.com/?q=Wat+Visoun+Luang+Prabang"
+        },
+        {
+          "must": false,
+          "icon": "🥬",
+          "num": "LPQ 11",
+          "name": "ルアンパバーンの朝市",
+          "desc": "早朝に細い路地に並ぶ、地元の人の台所。野菜や川魚、お菓子が並び、托鉢のあとの時間に覗くのがおすすめ。",
+          "badge": "早朝の台所",
+          "prompt_en": "Luang Prabang morning market with fresh vegetables and local people shopping, crowds of people walking, in the morning light, travel photography",
+          "type": "market",
+          "map_url": "https://maps.google.com/?q=Luang+Prabang+Morning+Market"
         }
       ]
     },
@@ -1742,6 +1805,17 @@
           "prompt_en": "Nam Ou River boat cruise Nong Khiaw Laos, longtail boat winding through limestone karst gorge, travel photography",
           "type": "activity",
           "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "NKW 03",
+          "name": "ムアンゴイ・ヌア",
+          "desc": "ボートでしか行けない、のんびりした川沿いの村。電気も限られ、ハンモックでくつろぎながら、素朴な暮らしに触れられる。",
+          "badge": "秘境の川辺の村",
+          "prompt_en": "Muang Ngoi Neua riverside village with wooden guesthouses and green karst mountains, a few villagers in the distance, in the morning light, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Muang+Ngoi+Neua+Laos"
         }
       ]
     },
@@ -1887,6 +1961,17 @@
           "image": "素材/観光スポット/モン族の織物村.webp",
           "type": "market",
           "no_map": true
+        },
+        {
+          "must": false,
+          "icon": "🕳️",
+          "num": "PHS 04",
+          "name": "タム・ピウ洞窟",
+          "desc": "戦争中に避難した人々が犠牲になった洞窟。慰霊碑が静かに立ち、ラオスの歴史を考えるきっかけになる場所。",
+          "badge": "平和を考える場",
+          "prompt_en": "Tham Piu cave entrance with a memorial in a green valley, a few visitors as small figures, in the morning light, travel photography",
+          "type": "heritage",
+          "map_url": "https://maps.google.com/?q=Tham+Piu+Cave+Xieng+Khouang"
         }
       ]
     },
@@ -1971,6 +2056,17 @@
           "prompt_en": "Wat Phou Museum Champasak Laos, Khmer stone carvings and Hindu relief sculptures on display, travel photography",
           "type": "museum",
           "map_url": "https://maps.google.com/?q=Wat+Phou+Museum+Champasak"
+        },
+        {
+          "must": false,
+          "icon": "🏘️",
+          "num": "PKZ 06",
+          "name": "チャンパーサック",
+          "desc": "メコン川沿いの静かな古い町。コロニアル建築が点在し、世界遺産ワット・プーへの玄関口として滞在する人が多い。",
+          "badge": "メコン川の古い町",
+          "prompt_en": "Champasak riverside town with old French colonial buildings along the Mekong, a few people on bicycles, at sunset, travel photography",
+          "type": "townscape",
+          "map_url": "https://maps.google.com/?q=Champasak+Laos"
         }
       ]
     },
@@ -2032,6 +2128,17 @@
           "image": "素材/観光スポット/ドーンデット島の夕日.webp",
           "type": "nature",
           "map_url": "https://maps.google.com/?q=Don+Det+Island+Laos"
+        },
+        {
+          "must": false,
+          "icon": "🌊",
+          "num": "SPD 04",
+          "name": "コーンパペンの滝",
+          "desc": "メコン川を横切って流れ落ちる、東南アジア最大級の水量を誇る滝。雨期は轟音とともに茶色い水が勢いよく流れ落ちる。",
+          "badge": "メコンの大瀑布",
+          "prompt_en": "Khone Phapheng Falls wide powerful waterfall on the Mekong with mist, a few visitors on a viewing platform, in the morning light, travel photography",
+          "type": "nature",
+          "map_url": "https://maps.google.com/?q=Khone+Phapheng+Falls+Laos"
         }
       ]
     }
