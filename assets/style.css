@@ -1180,3 +1180,8 @@ section.active{display:block}
 .ai-out .ai-btn-main.done{background:#fff;border-color:#1f7a3f}
 @media(max-width:700px){.ai-out-head{padding:16px;gap:8px}.ai-out-ico{height:32px}.ai-out-sub{display:none}.ai-out-body{padding:16px}.ai-out .ai-btn{flex:1 1 100%}}
 @media(min-width:701px){.ai-out .ai-actions{flex-wrap:nowrap}.ai-out .ai-btn{flex:1 1 auto;white-space:nowrap;font-size:0.82em;padding:8px 12px}.ai-out .ai-btn-main{flex:1.2 1 auto}.ai-out .ai-btn-ext{gap:8px;padding-right:12px}}
+
+/* 主要都市マップ: PCでは縦を広く使う */
+@media (min-width:900px){
+  .city-map{height:520px !important}
+}
