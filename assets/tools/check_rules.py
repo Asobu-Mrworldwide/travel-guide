@@ -424,9 +424,21 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
         if not (2 <= n_core <= 4):
             issues.append(f'[tags コアタグ{n_core}個, 目安2-4] {tags}')
 
-    # カードに出るのは先頭3個。個性タグ（コア以外）がその中に無いと表示されない
-    if tags and country_id != 'north_korea' and all(t in core_tags for t in tags[:3]) and any(t not in core_tags for t in tags):
-        issues.append(f'[tags 個性タグが先頭3個の外] カードに出ない: {tags}')
+    # カードに出るのは先頭3個。先頭3個に「目玉」（その国の固有の名前）が1つ必要。
+    # コアタグ・広い種類の言葉（美術館、ダイビング等どの国にも付き得るもの）は目玉に数えない。
+    if tags and country_id != 'north_korea':
+        _vocab_themes = set()
+        _dp2 = os.path.join(root_dir, 'assets', 'destinations-data.js')
+        if os.path.exists(_dp2):
+            with open(_dp2, encoding='utf-8') as f:
+                _vm2 = re.search(r"WM_THEMES = \[(.*?)\]", f.read(), re.S)
+            if _vm2:
+                _vocab_themes = set(re.findall(r"'([^']+)'", _vm2.group(1)))
+        _generic = {'美術館', '博物館', '絶景', '夜景', 'シルクロード', '建築', '古城', '家族旅行',
+                    'ダイビング', 'サーフィン', 'スキー・スノボ', 'トレッキング', 'ショッピング', '島巡り', 'ワイナリー', 'スパ・マッサージ', 'クルーズ'}
+        _not_highlight = core_tags | _generic  # オーロラ・サファリのようにその国固有の体験はテーマ一覧と重なっても目玉に数える
+        if not any(t not in _not_highlight for t in tags[:3]):
+            issues.append(f'[tags 先頭3個に目玉が無い] コア/広い言葉のみ。国固有の名前を3個目までに: {tags[:3]}')
 
     # ── テーマタグ（やりたいこと）: destinations-data.js の WM_THEMES にある言葉だけ使う ──
     _dp = os.path.join(root_dir, 'assets', 'destinations-data.js')
