@@ -35,6 +35,9 @@ generate.py の末尾から自動的に呼び出される（generate() の最後
   - practical.country_items_html の空欄・文字数チェック
   - overview.currency_name の括弧が半角かチェック
   - overview.danger_label の文言チェック（レベルに応じた統一表現）
+  - overview.flag_html（空欄・絵文字・SVG/img無し）、hero_prompt / hero_image（未設定・ファイル無し）
+  - index_card.tags のコアタグ数（2〜4。北朝鮮は除外）、assets/destinations-data.js と country-links.js への登録
+  - index_card.themes（テーマタグ）が WM_THEMES の一覧内か、JSONと destinations-data.js が一致しているか
   - phrases カテゴリの項目数（_country_template.json との一致）
   - practical.cash_daily_low/high が budget.items（食費・交通費の中央値×現金依存度係数）の
     計算式から大きく外れていないか（実測値による個別上書きは±40%程度まで許容）
@@ -386,6 +389,72 @@ def check_country(country_id, data=None, root_dir=None, verbose=True):
                 got_n = len(cat.get('items', []))
                 if exp_n is not None and got_n < exp_n:
                     issues.append(f'[phrases 項目不足] {deck.get("id")} / {cat["label"]}: {got_n}/{exp_n}')
+
+    # ── overview.flag_html（国旗）: 空欄・絵文字NG ──
+    flag = _get(data, 'overview.flag_html')
+    if not flag:
+        issues.append('[flag_html 空欄] overview.flag_html が未設定')
+    elif re.search('[\U0001F1E6-\U0001F1FF]', flag):
+        issues.append('[flag_html 絵文字] 国旗絵文字はWindowsで描画されない（SVGを使う）')
+    elif '<svg' not in flag and '<img' not in flag:
+        issues.append('[flag_html SVG/img無し] 検証済みSVGをそのまま貼る')
+
+    # ── ヒーロー画像 ──
+    if not data.get('hero_prompt'):
+        issues.append('[hero_prompt 空欄]')
+    hero = data.get('hero_image', '')
+    if not hero:
+        issues.append('[hero_image 未設定] bulk_generate.py <国> --only hero で生成')
+    elif not os.path.exists(os.path.join(root_dir, country_id, hero)):
+        issues.append(f'[hero_image ファイル無し] {hero}')
+
+    # ── index_card.tags（コア8種から2〜4個） ──
+    core_tags = {'ビーチ', '世界遺産', 'グルメ', '自然', '都市', 'リゾート', '歴史', 'アウトドア'}
+    tags = _get(data, 'index_card.tags') or []
+    if not tags:
+        # JSON側が空の国は、トップ用の destinations-data.js のタグを検査対象にする
+        _dp = os.path.join(root_dir, 'assets', 'destinations-data.js')
+        if os.path.exists(_dp):
+            with open(_dp, encoding='utf-8') as f:
+                _m = re.search(r"id: '%s'.*?tags: \[([^\]]*)\]" % re.escape(country_id), f.read())
+            if _m:
+                tags = re.findall(r"'([^']+)'", _m.group(1))
+    if tags and country_id != 'north_korea':
+        n_core = sum(1 for t in tags if t in core_tags)
+        if not (2 <= n_core <= 4):
+            issues.append(f'[tags コアタグ{n_core}個, 目安2-4] {tags}')
+
+    # カードに出るのは先頭3個。個性タグ（コア以外）がその中に無いと表示されない
+    if tags and country_id != 'north_korea' and all(t in core_tags for t in tags[:3]) and any(t not in core_tags for t in tags):
+        issues.append(f'[tags 個性タグが先頭3個の外] カードに出ない: {tags}')
+
+    # ── テーマタグ（やりたいこと）: destinations-data.js の WM_THEMES にある言葉だけ使う ──
+    _dp = os.path.join(root_dir, 'assets', 'destinations-data.js')
+    if os.path.exists(_dp):
+        with open(_dp, encoding='utf-8') as f:
+            _dtxt = f.read()
+        _vm = re.search(r"WM_THEMES = \[(.*?)\]", _dtxt, re.S)
+        _vocab = set(re.findall(r"'([^']+)'", _vm.group(1))) if _vm else set()
+        _themes = list(_get(data, 'index_card.themes') or [])
+        _tm = re.search(r"id: '%s'.*?themes: \[([^\]]*)\]" % re.escape(country_id), _dtxt)
+        _dthemes = re.findall(r"'([^']+)'", _tm.group(1)) if _tm else []
+        for t in _themes + _dthemes:
+            if _vocab and t not in _vocab:
+                issues.append(f'[themes 一覧外] "{t}"（destinations-data.js の WM_THEMES から選ぶ。足すときは一覧に追加）')
+        if data.get('index_card') and set(_themes) != set(_dthemes):  # index_card が無い国（マレーシア・タイ）はトップ用ファイルのみ
+            issues.append(f'[themes JSONとトップ用ファイルが不一致] JSON={_themes} / destinations-data.js={_dthemes}')
+
+    # ── トップ（index.html）への登録 ──
+    # トップは2026-10のリニューアル以降 assets/destinations-data.js（地図・索引カード）と
+    # assets/country-links.js（メニュー等の国リンク）が正。index.html の COUNTRIES は廃止済みで、
+    # generate.py の update_index は何も追加しない。両ファイルへの追記は手作業。
+    for fname, needle in (('destinations-data.js', f"id: '{country_id}'"),
+                          ('country-links.js', f'path: "{country_id}/index.html"')):
+        p = os.path.join(root_dir, 'assets', fname)
+        if os.path.exists(p):
+            with open(p, encoding='utf-8') as f:
+                if needle not in f.read():
+                    issues.append(f'[トップ未登録] assets/{fname} に {country_id} が無い（手作業で追記）')
 
     if verbose:
         if issues:

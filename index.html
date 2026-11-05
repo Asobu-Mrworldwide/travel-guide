@@ -627,20 +627,24 @@
     { label: '10〜15時間', test: (h) => h > 10 && h <= 15 },
     { label: '15時間以上', test: (h) => h > 15 },
   ];
-  const FIELDS = ['area', 'season', 'flight', 'budget', 'tag'];
-  const emptyF = () => ({ area: [], season: [], flight: [], budget: [], tag: [] });
+  const FIELDS = ['area', 'season', 'flight', 'budget', 'theme', 'tag'];
+  const emptyF = () => ({ area: [], season: [], flight: [], budget: [], theme: [], tag: [] });
   const inSeason = (d, m) => d.months.indexOf(m) >= 0;
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   const all = window.WM_DESTINATIONS || [];
   // 「おすすめ」同順位内の並びをページ読み込みごとにランダム化するためのシード
   const randomOrder = new Map(all.map((d) => [d.id, Math.random()]));
-  const AREAS = Array.from(new Set(all.map((d) => d.area)));
+  const REAL_AREAS = Array.from(new Set(all.map((d) => d.area)));
+  // areaTags: 複数のエリアにまたがる地域タグ（例: シルクロード）。エリアの絞り込みチップに末尾から追加する
+  const AREAS = REAL_AREAS.concat(Array.from(new Set(all.reduce((a, d) => a.concat(d.areaTags || []), []))));
   const TAGS = Array.from(new Set(all.reduce((a, d) => a.concat(d.tags), [])));
   // コアタグ（固定8種）は常時表示、それ以外の個性タグはプルダウンで開閉する
   const CORE_TAGS = ['ビーチ', '世界遺産', 'グルメ', '自然', '都市', 'リゾート', '歴史', 'アウトドア'];
   const CORE_TAGS_PRESENT = CORE_TAGS.filter((t) => TAGS.indexOf(t) >= 0);
   const EXTRA_TAGS = TAGS.filter((t) => CORE_TAGS.indexOf(t) < 0);
+  // テーマタグ（やりたいこと）: WM_THEMES の並びで、2か国以上が持つものだけをボタンにする
+  const THEME_VALUES = (window.WM_THEMES || []).filter((t) => all.filter((d) => (d.themes || []).indexOf(t) >= 0).length >= 2);
 
   const state = { f: emptyF(), sel: null, q: '', focus: false, detailOpen: false, menuOpen: false, mapOn: false, view: (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(max-width: 760px)').matches) ? 'compact' : 'card', sort: 'ランダム', favs: [], limit: 14, tagExpand: false };
 
@@ -658,7 +662,7 @@
   const fold = (s) => (s || '').normalize('NFKC').toLowerCase().replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
 
   function matches(d, q) {
-    const hay = fold([d.name, d.nameEn, d.area, d.budget, d.blurb].concat(d.tags).join(' '));
+    const hay = fold([d.name, d.nameEn, d.area, d.budget, d.blurb].concat(d.tags, d.areaTags || [], d.themes || []).join(' '));
     return q.split(/\s+/).filter(Boolean).every((w0) => {
       const w = fold(w0);
       if (hay.indexOf(w) >= 0) return true;
@@ -690,7 +694,7 @@
     const nm = fold(d.name), en = fold(d.nameEn);
     if (nm.startsWith(w) || en.startsWith(w)) return 3;
     if (nm.indexOf(w) >= 0 || en.indexOf(w) >= 0) return 2;
-    if (fold((d.tags || []).concat(d.area).join(' ')).indexOf(w) >= 0) return 1;
+    if (fold((d.tags || []).concat(d.area, d.areaTags || [], d.themes || []).join(' ')).indexOf(w) >= 0) return 1;
     return 0;
   }
   function suggestGroups(q) {
@@ -718,10 +722,11 @@
     const q = state.q.trim().toLowerCase();
     const flights = (f.flight || []).map((l) => FLIGHTS.filter((c) => c.label === l)[0]).filter(Boolean);
     const monthsSel = (f.season || []).map((l) => (SEASONS.filter((c) => c.label === l)[0] || {}).month);
-    let rows = all.filter((d) => (!f.area.length || f.area.indexOf(d.area) >= 0)
+    let rows = all.filter((d) => (!f.area.length || f.area.some((a) => a === d.area || (d.areaTags || []).indexOf(a) >= 0))
       && (!monthsSel.length || monthsSel.some((mo) => inSeason(d, mo)))
       && (!flights.length || flights.some((c) => c.test(d.hours)))
       && (!f.budget.length || f.budget.indexOf(d.budget) >= 0)
+      && (!f.theme.length || f.theme.some((t) => (d.themes || []).indexOf(t) >= 0))
       && (!f.tag.length || f.tag.some((t) => d.tags.indexOf(t) >= 0))
       && (!q || matches(d, q)));
     const nowMonth = new Date().getMonth() + 1;
@@ -870,8 +875,9 @@
       { label: 'BEST SEASON / ベストシーズン', chips: chipsFor('season', SEASONS.map((c) => c.label)) },
       { label: 'FLIGHT TIME / 飛行時間', chips: chipsFor('flight', FLIGHTS.map((c) => c.label)) },
       { label: 'BUDGET / 予算', chips: chipsFor('budget', BUDGETS) },
+      { label: 'THEME / やりたいこと', chips: chipsFor('theme', THEME_VALUES) },
       { label: 'TAG / タグ', chips: chipsFor('tag', tagValues), tagToggle: EXTRA_TAGS.length > 0 },
-    ];
+    ].filter((g) => g.chips.length);  // 該当国が2か国未満のテーマ行は出さない
     const dg = $('detailGroups');
     dg.innerHTML = groupsDef.map((g, gi) => {
       let chips = g.chips.map((c, ci) => '<button type="button" class="wm-chip' + (c.on ? ' on' : '') + '" data-dg="' + gi + '" data-dc="' + ci + '">' + esc(c.label) + '</button>').join('');
@@ -890,7 +896,7 @@
     // 地図
     const map = $('wmMap');
     map.setAttribute('visible', active ? rows.map((d) => d.id).join(',') : '__all__');
-    map.setAttribute('focus-area', f.area.length === 1 ? f.area[0] : '');
+    map.setAttribute('focus-area', f.area.length === 1 && REAL_AREAS.indexOf(f.area[0]) >= 0 ? f.area[0] : '');
     map.setAttribute('selected', state.sel || '');
 
     // 並び順 / 表示

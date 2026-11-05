@@ -18,8 +18,11 @@
     { name: "ニュージーランド",           region: "オセアニア", path: "newzealand/index.html",   available: true },
     { name: "カナダ",                    region: "北アメリカ", path: "canada/index.html",       available: true },
     { name: "インドネシア",                region: "東南アジア", path: "indonesia/index.html",    available: true },
-    { name: "フランス",                  region: "ヨーロッパ", path: null,                      available: false },
-    { name: "モルディブ",                region: "南アジア",   path: null,                      available: false },
+    { name: "トルコ",                    region: "ヨーロッパ", path: "turkey/index.html",       available: true },
+    { name: "メキシコ",                  region: "北アメリカ", path: "mexico/index.html",       available: true },
+    { name: "ブラジル",                  region: "南米",       path: "brazil/index.html",       available: true },
+    { name: "フランス",                  region: "ヨーロッパ", path: "france/index.html",       available: true },
+    { name: "モルディブ",                region: "南アジア",   path: "maldives/index.html",     available: true },
     { name: "オーストラリア",            region: "オセアニア", path: null,                      available: false },
     { name: "ハワイ（アメリカ）",         region: "北アメリカ", path: null,                      available: false },
     { name: "カンボジア",                region: "東南アジア", path: null,                      available: false },
@@ -32,7 +35,7 @@
   const knownSlugs = available.map(c => c.path.split("/")[0]);
   // COUNTRIESにまだ掲載していない（トップページ未公開の）国フォルダ。
   // base相対パス（../の付与）の判定だけに使う。トップページのナビ・エリア一覧には影響しない。
-  const unlistedCountrySlugs = ["brazil", "mexico"];
+  const unlistedCountrySlugs = [];
 
   // 現在のページの直上フォルダ名が既知の国スラッグと一致するかで判定する
   // （サイトのホスティング階層の深さやfile://での直接閲覧に影響されないようにするため）
