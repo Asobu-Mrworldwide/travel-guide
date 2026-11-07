@@ -181,6 +181,7 @@
       fetch(GEOJSON).then((r) => r.json()).then((g) => {
         map.getSource('hl').setData({ type: 'FeatureCollection', features: this.matchCountries(g) });
         this.paintHL();
+        if (this.getAttribute('selected')) this.zoomToSelected();  // 範囲データが揃う前に選ばれていた場合のやり直し
       }).catch((e) => console.warn('[world-map] highlight skipped', e.message));
     }
 
@@ -235,8 +236,9 @@
       const vis = this.getAttribute('visible');
       const ids = vis != null && vis !== '__all__' && vis !== '' ? vis.split(',') : [];
       const f = ids.length ? ['in', ['get', 'wm'], ['literal', ids]] : ['==', ['get', 'wm'], '__none__'];
-      map.setFilter('hl-fill', f);
       const sel = this.getAttribute('selected');
+      // 選択中の国はエリア色を重ねず、黄色だけで塗る（重ねると黄色が濁るため）
+      map.setFilter('hl-fill', sel && ids.length ? ['all', f, ['!=', ['get', 'wm'], sel]] : f);
       map.setFilter('hl-sel', sel ? ['==', ['get', 'wm'], sel] : ['==', ['get', 'wm'], '__none__']);
     }
 

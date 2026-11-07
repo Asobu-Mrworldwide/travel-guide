@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="assets/destinations-data.js"></script>
-<script src="assets/world-map.js?v=20261107f"></script>
+<script src="assets/world-map.js?v=20261107h"></script>
 <style>
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: #ffffff; }
@@ -1078,11 +1078,9 @@
   function slowScrollIntoView(el, dur) {
     if (!el) return;
     dur = dur || 1300;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const r0 = el.getBoundingClientRect();
-      window.scrollTo(0, window.pageYOffset + r0.top + r0.height / 2 - window.innerHeight / 2);
-      return;
-    }
+    // OSの「アニメーション効果オフ」（Windowsの省電力設定などで自動的にオンになる）でも、
+    // 国を選んだ位置が分かるよう動きは残す。ただし短めにする（以前は一瞬で飛んでいた）。
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) dur = Math.min(dur, 700);
     const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
     let elapsed = 0, last = null, startY = null;
     const step = (ts) => {

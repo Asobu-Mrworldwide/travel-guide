@@ -8,7 +8,7 @@ const TYPE_IMG_NAMES = {
   FCSR:'ゴールデンレトリバー', FCSW:'イエスマン', FNSW:'桃太郎',
   FCLR:'街のトリュフ犬', FCLW:'迷ってない人', FNSR:'副本部長', FNLR:'吾輩', FNLW:'タンポポの綿毛',
 };
-const TYPE_IMG_FALLBACK = 'img/r/model-hero.png';
+const TYPE_IMG_FALLBACK = '素材/img/model-hero.png';
 function typeImg(code) {
   return TYPE_IMG_NAMES[code] ? '素材/タイプイラスト/' + code + '_' + TYPE_IMG_NAMES[code] + '.webp' : null;
 }

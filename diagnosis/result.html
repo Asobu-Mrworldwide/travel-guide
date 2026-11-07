@@ -489,7 +489,7 @@ body{background:#FAF7F2}
         <span class="head">IDENTITY CARD</span>
         <div id="id-side-rows"></div>
         <div><span class="mfg">MANUFACTURED BY</span><br><b>World Mappy Inc.</b></div>
-        <img class="id-stamp" src="img/r/stamp.png" alt="WORLD MAPPY APPROVED">
+        <img class="id-stamp" src="素材/img/stamp.png" alt="WORLD MAPPY APPROVED">
       </div>
     </div>
   </div>
@@ -540,7 +540,7 @@ body{background:#FAF7F2}
   <div class="spec-panel">
     <div class="spec-h"><span class="no">03</span><span class="ttl">総合タイプ解説</span></div>
     <div id="spec-axis-rows"></div>
-    <div class="spec-note"><img src="img/r/ic-heart.png" alt=""><span id="spec-profile-note"></span></div>
+    <div class="spec-note"><img src="素材/img/ic-heart.png" alt=""><span id="spec-profile-note"></span></div>
   </div>
 
   <!-- 05 COMPATIBILITY -->
@@ -554,7 +554,7 @@ body{background:#FAF7F2}
     <div class="spec-h"><span class="no">06</span><span class="ttl">付属品</span></div>
     <p style="margin:0 0 12px;font-size:13px;line-height:2;color:#55504A" id="spec-incl-lead">本製品には、取扱説明書が付属しています。ご家族やご友人に共有して、より良い旅のサポートを受けましょう。</p>
     <div class="spec-incl">
-      <div><div class="spec-incl-bookwrap"><img class="spec-incl-book" id="spec-incl-book" src="img/r/manual-book.webp" alt="旅人取扱説明書"><div class="spec-incl-model" id="spec-incl-model"></div></div></div>
+      <div><div class="spec-incl-bookwrap"><img class="spec-incl-book" id="spec-incl-book" src="素材/img/manual-book.webp" alt="旅人取扱説明書"><div class="spec-incl-model" id="spec-incl-model"></div></div></div>
       <div>
         <div class="spec-incl-btns">
           <a class="primary" id="spec-incl-open" href="#manual">取扱説明書を開く<span>→</span></a>
@@ -606,7 +606,7 @@ body{background:#FAF7F2}
           <span class="arw">→</span>
         </a>
       </div>
-      <img src="img/r/paperplane-kid.png" alt="">
+      <img src="素材/img/paperplane-kid.png" alt="">
     </div>
   </div>
 
@@ -949,7 +949,7 @@ function buildAutoCompat(myType) {
     ${rows(top2, false, 0)}
     <div class="cmp-head bad"><span class="dot"></span>ひと工夫でうまくいくモデル ─ 役割分担がカギ</div>
     ${rows(bottom1, true, 2)}
-    <a class="cmp-all" href="types.html" target="_blank" rel="noopener">全モデルとの相性を確認する<img src="img/r/ic-group.png" alt="" style="width:18px;height:18px;object-fit:contain"></a>`;
+    <a class="cmp-all" href="types.html" target="_blank" rel="noopener">全モデルとの相性を確認する<img src="素材/img/ic-group.png" alt="" style="width:18px;height:18px;object-fit:contain"></a>`;
 }
 
 // ===== シェア画像生成 =====
@@ -1032,7 +1032,7 @@ function renderResult(type) {
 /* ===== スペックシート（旅人取扱説明書）描画 =====
    Claude Design 正典 "Travel Diagnosis PC.dc.html" の派生ロジックを忠実移植。
    すべて型コード rt の4文字（P/F・C/N・S/L・R/W）から機械的に導出する。 */
-const RES_ICON = ['img/r/ic-plan.png','img/r/ic-culture.png','img/r/ic-group.png','img/r/ic-comfort.png'];
+const RES_ICON = ['素材/img/ic-plan.png','素材/img/ic-culture.png','素材/img/ic-group.png','素材/img/ic-comfort.png'];
 const AXIS_EN  = ['PLANNING','CULTURE','GROUP','COMFORT'];
 
 function SPEC(rt){ return [
@@ -1073,7 +1073,7 @@ function COUNTRIES(rt){
 const COUNTRY_PAGE = {
   'イタリア':'italy','台湾':'taiwan','ベトナム':'vietnam','ニュージーランド':'newzealand',
 };
-const BUSTS = ['img/r/bust-1.png','img/r/bust-2.png','img/r/bust-3.png','img/r/model-hero.png'];
+const BUSTS = ['素材/img/bust-1.png','素材/img/bust-2.png','素材/img/bust-3.png','素材/img/model-hero.png'];
 
 /* 02 TRAVELER PROFILE（4軸の解説行 + 締めの一文） */
 function buildProfile(rt){
