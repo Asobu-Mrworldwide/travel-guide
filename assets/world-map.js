@@ -202,16 +202,29 @@
         return m;
       };
       const out = [];
-      // 【色の比較用・仮】国ごとに5色を順番に割り当てる。色が決まったら単色にする
-      const PALETTE = ['#F2994A', '#EE7B7B', '#3C6FB5', '#8E6BBF', '#FFC200'];
-      this.points.forEach((p, idx) => {
+      // エリア（destinations の area）ごとの色。選択中の国は hl-sel の黄色が上に重なる
+      const AREA_COLORS = {
+        '東南アジア': '#F2994A', '東アジア': '#EE7B7B', '南アジア': '#A66BBE', '中央アジア': '#7C8CA3',
+        '中東': '#B07A52', 'ヨーロッパ': '#3C6FB5', 'アフリカ': '#7A9E3C', '北アメリカ': '#4DA6A0',
+        'オセアニア': '#5BB5E0', '南米': '#58B368',
+      };
+      this.points.forEach((p) => {
         if (p.noHL || p.lat == null || p.lon == null) return;
         let hit = feats.filter((f) => polysOf(f).some((poly) => inPoly(p.lon, p.lat, poly)))[0];
         if (!hit) {  // ピンが海岸の外にずれている場合は、4度以内の最寄りのポリゴンを使う
           let bd = 4;
           feats.forEach((f) => { const d = near(p.lon, p.lat, f); if (d < bd) { bd = d; hit = f; } });
         }
-        if (hit) out.push({ type: 'Feature', properties: { wm: p.id, c: PALETTE[idx % PALETTE.length] }, geometry: hit.geometry });
+        if (hit) {
+          // ピンを含む（無ければ最寄りの）ポリゴンの範囲を記録。ズーム量の自動決定に使う（飛び地・遠い島は無視）
+          const polys = polysOf(hit);
+          const main = polys.filter((poly) => inPoly(p.lon, p.lat, poly))[0]
+            || polys.slice().sort((x, y) => near(p.lon, p.lat, { geometry: { type: 'Polygon', coordinates: x } }) - near(p.lon, p.lat, { geometry: { type: 'Polygon', coordinates: y } }))[0];
+          let w = 180, e = -180, so = 90, n = -90;
+          main[0].forEach((pt) => { w = Math.min(w, pt[0]); e = Math.max(e, pt[0]); so = Math.min(so, pt[1]); n = Math.max(n, pt[1]); });
+          (this._bbox = this._bbox || {})[p.id] = [[w, so], [e, n]];
+        }
+        if (hit) out.push({ type: 'Feature', properties: { wm: p.id, c: AREA_COLORS[p.area] || GREEN }, geometry: hit.geometry });
       });
       return out;
     }
@@ -268,7 +281,14 @@
       if (!id) { this.focus(); return; }
       const p = this.points.filter((x) => x.id === id)[0];
       if (!p) return;
-      const z = Math.max(this._map.getZoom(), 3.8);
+      // 国土が広い国は points の selZoom（任意）で寄りの強さを弱める
+      // 国土が広い国ほど寄りを弱める：国の範囲が収まるズームを上限 3.8・下限 2.2 で採用（selZoom があれば優先）
+      let z = p.selZoom || 3.8;
+      const bb = this._bbox && this._bbox[id];
+      if (!p.selZoom && bb) {
+        const cam = this._map.cameraForBounds(bb, { padding: 40 });
+        if (cam && isFinite(cam.zoom)) z = Math.min(3.8, Math.max(2.2, cam.zoom - 0.3));
+      }
       // select-offset="x,y"（px）指定があればそれを優先。無ければコンテナ比率で右下に配置
       const raw = this.getAttribute('select-offset');
       let off;
