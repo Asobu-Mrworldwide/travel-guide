@@ -233,6 +233,7 @@ body{background:#FAF8F3;font-family:'Zen Kaku Gothic New',sans-serif;color:#2B2B
 </main>
 
 <script src="type-images.js"></script>
+<script src="dog-anim.js"></script>
 <script src="../assets/country-links.js"></script>
 
 <script>
@@ -289,6 +290,7 @@ document.getElementById('series-root').innerHTML = GROUPS.map((g, gi) => {
     <div class="models">${cards}</div>
   </div>`;
 }).join('');
+dogWatch(document.getElementById('series-root')); // ゴールデン：スクロールで画面に入ったら動く
 
 // スマホ幅では「型番の見かた」をページ最下部へ移す
 (function(){

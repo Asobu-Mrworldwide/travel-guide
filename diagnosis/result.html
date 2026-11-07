@@ -623,6 +623,7 @@ body{background:#FAF7F2}
 
 <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.js"></script>
 <script src="type-images.js"></script>
+<script src="dog-anim.js"></script>
 <script src="manual-data.js"></script>
 <script src="../assets/country-links.js"></script>
 
@@ -1133,7 +1134,7 @@ function renderSpecSheet(rt){
   set('id-name', t.name);
   set('id-chips', (t.traits||[]).map((x,i) => '<span><img src="'+RES_ICON[i]+'" alt="">'+x+'</span>').join(''));
   const heroImg = document.getElementById('id-hero-img');
-  if (heroImg) { const u = typeImg(rt); heroImg.classList.toggle('illust', !!u); heroImg.src = u || TYPE_IMG_FALLBACK; heroImg.style.visibility = ''; } // 既定の画像を先に出さない（別タイプの画像が一瞬映るのを防ぐ）
+  if (heroImg) { const u = typeImg(rt); heroImg.classList.toggle('illust', !!u); heroImg.src = u || TYPE_IMG_FALLBACK; heroImg.style.visibility = ''; dogOnOpen(heroImg); } // 既定の画像を先に出さない（別タイプの画像が一瞬映るのを防ぐ）
   set('id-quote', t.quote || '');
   set('id-side-rows', [
     ['MODEL NAME', t.name, '#23211C'],
