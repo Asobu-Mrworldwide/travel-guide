@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ブラジル旅行ガイド">
 <meta name="twitter:description" content="乗継で約25〜28時間、時差12時間のブラジルは南米大陸の約半分を占める広大な国。丘に立つコルコバードのキリスト像、白砂が続くコパカバーナ海岸、轟音とどろく世界遺産イグアスの滝、炭火でじっくり焼き上げるシュラスコまで、サンバのリズムと陽気…">
 <meta name="twitter:image" content="https://worldmappy.com/brazil/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793714688">
+<link rel="stylesheet" href="../assets/style.css?v=1794033775">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793714688" defer></script>
-<script src="../assets/affiliates.js?v=1793714688" defer></script>
+<script src="../assets/affiliates-data.js?v=1794033775" defer></script>
+<script src="../assets/affiliates.js?v=1794033775" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -97,6 +97,21 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-img-square{aspect-ratio:1/1}
 .sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
 @media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
+/* PC本文の大きさをそろえる（2026-11）。長文は15.5px、カード内の説明は14.5px。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  .prose,.desc-intro,.tab-cta-desc,.ai-lead,.tl-content,blockquote.special-note p{font-size:15.5px!important;line-height:1.85!important;color:#2B2B28!important;letter-spacing:0.02em;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  .item-card .desc,.trans-item .t-desc,.ci-desc,.csh-desc{font-size:14.5px!important;line-height:1.75!important;letter-spacing:0.01em;-webkit-text-stroke:0.3px currentColor}
+}
+/* PCの読みやすさ（2026-11）: 文章の列が約25字と狭く、単語の途中で改行され読みにくかった。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  body{font-family:'Zen Kaku Gothic Antique','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;font-weight:500}  /* 本文は線が細くならないよう太さ500 */
+  .sp-point:not(.sp-point-noimg){grid-template-columns:minmax(0,1fr) 240px}
+  .sp-point:not(.sp-point-noimg):nth-child(even){grid-template-columns:240px minmax(0,1fr)}
+  .sp-point-text{font-size:0.92em;line-height:1.85;letter-spacing:0.02em;color:#2B2B28;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  /* 本文を太さ500にしたぶん、小見出しは700＋濃い緑にして本文と見分けがつくようにする */
+  .sp-point-title,.section-subhead{font-weight:700;color:#14503C}
+  .sp-point-text a.keyword-link,.sp-point-text a.spot-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -139,7 +154,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           <a class="hb-item" href="../index.html?region=%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">ヨーロッパ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E3%82%AA%E3%82%BB%E3%82%A2%E3%83%8B%E3%82%A2#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">オセアニア</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E5%8C%97%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">北アメリカ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
-          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
+          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="hb-item" href="../index.html?region=%E4%B8%AD%E6%9D%B1#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">中東</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
       </div>
       <div class="hb-sub">
         <span class="hb-sub__h">シーズンで探す</span>
@@ -290,7 +306,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   
 
   <h2 data-label="ABOUT Brazil">ブラジルってどんなところ？</h2>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">乗継で約25〜28時間、時差12時間のブラジルは南米大陸の約半分を占める広大な国。<strong>丘に立つ<a onclick="showSpot('RIO 01')" class="keyword-link">コルコバードのキリスト像</a>、白砂が続くコパカバーナ海岸、轟音とどろく世界遺産イグアスの滝、炭火でじっくり焼き上げる<a onclick="showFood('No.2')" class="keyword-link">シュラスコ</a></strong>まで、サンバのリズムと陽気な国民性が旅人を熱く迎えてくれる南米大陸の大国。</div>
+  <div class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">乗継で約25〜28時間、時差12時間のブラジルは南米大陸の約半分を占める広大な国。<strong>丘に立つ<a onclick="showSpot('RIO 01')" class="keyword-link">コルコバードのキリスト像</a>、白砂が続くコパカバーナ海岸、轟音とどろく世界遺産イグアスの滝、炭火でじっくり焼き上げる<a onclick="showFood('No.2')" class="keyword-link">シュラスコ</a></strong>まで、サンバのリズムと陽気な国民性が旅人を熱く迎えてくれる南米大陸の大国。</div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -478,7 +494,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <!-- ベストシーズン -->
     <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">ブラジルは南半球にあるため<strong>季節が日本と真逆</strong>で、12〜3月が真夏、6〜8月が冬にあたります。国土が広く地域差も大きいため、旅先ごとにベストシーズンを確認しましょう。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
+    <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.6">ブラジルは南半球にあるため<strong>季節が日本と真逆</strong>で、12〜3月が真夏、6〜8月が冬にあたります。国土が広く地域差も大きいため、旅先ごとにベストシーズンを確認しましょう。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>
@@ -507,7 +523,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：6〜9月の冬（乾燥して過ごしやすい）／ 12〜3月は真夏で猛暑・にわか雨も多い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">季節は日本と真逆で12〜3月が夏、6〜8月が冬にあたる。夏は30°C超の猛暑に加え湿度も高く、午後は突然のスコールが降ることも多い。冬でも20°C前後あり厚手の上着は不要だが、朝晩はやや涼しく感じられる。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">季節は日本と真逆で12〜3月が夏、6〜8月が冬にあたる。夏は30°C超の猛暑に加え湿度も高く、午後は突然のスコールが降ることも多い。冬でも20°C前後あり厚手の上着は不要だが、朝晩はやや涼しく感じられる。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('rio')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -533,7 +549,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：4〜9月（乾季で晴天が多い）／ 12〜3月は雨季で午後のスコールが頻発、冬は朝晩10°C近くまで冷え込む。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高750m超の高原にあり、リオより涼しく過ごしやすい気候。12〜3月の雨季は毎日のように夕立があるが数十分で止むことが多く、6〜8月の乾季は空気が乾燥し朝晩は肌寒いため薄手の羽織りものが必須になる。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高750m超の高原にあり、リオより涼しく過ごしやすい気候。12〜3月の雨季は毎日のように夕立があるが数十分で止むことが多く、6〜8月の乾季は空気が乾燥し朝晩は肌寒いため薄手の羽織りものが必須になる。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('sao_paulo')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -559,7 +575,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：4〜9月（乾季で滝の水量・気温とも比較的穏やか）／ 12〜3月は高温多湿で35°C近くまで上がる日も。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">内陸の亜熱帯気候で、夏（12〜3月）は35°C近くまで上がり湿度も高く滝周辺は蒸し暑い。冬（6〜8月）でも日中20°C前後と過ごしやすいが、南極からの寒波が入ると急に冷え込むこともあるので上着があると安心。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">内陸の亜熱帯気候で、夏（12〜3月）は35°C近くまで上がり湿度も高く滝周辺は蒸し暑い。冬（6〜8月）でも日中20°C前後と過ごしやすいが、南極からの寒波が入ると急に冷え込むこともあるので上着があると安心。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('iguacu')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -585,7 +601,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：9〜3月（乾季でビーチ日和）／ 4〜7月は雨季で降水量が多く、大西洋からの湿った風で年中蒸し暑い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">他地域と雨季・乾季が逆転するのが特徴で、4〜7月が雨季にあたる。年間を通じて気温差が小さく常夏の気候だが、湿度が高いため体感的には数字以上に蒸し暑く感じやすいので、通気性の良い服装で過ごすのがおすすめ。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">他地域と雨季・乾季が逆転するのが特徴で、4〜7月が雨季にあたる。年間を通じて気温差が小さく常夏の気候だが、湿度が高いため体感的には数字以上に蒸し暑く感じやすいので、通気性の良い服装で過ごすのがおすすめ。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('salvador')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -611,7 +627,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：6〜9月（雨季で溜まった水がラグーンとして残る絶景シーズン）／ 10月以降は乾季で干上がり、1〜5月は雨季で増水しすぎて回れないことも。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">赤道に近い北東部の熱帯気候で、年間を通じ気温差は小さく常に暑い。1〜6月の雨季に溜まった雨水が6〜9月にラグーンとして残るが、10月以降は蒸発して真っ白な砂漠だけになるため、訪問時期の見極めがとても重要になる。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">赤道に近い北東部の熱帯気候で、年間を通じ気温差は小さく常に暑い。1〜6月の雨季に溜まった雨水が6〜9月にラグーンとして残るが、10月以降は蒸発して真っ白な砂漠だけになるため、訪問時期の見極めがとても重要になる。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('lencois')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -637,7 +653,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：8〜1月の乾季（海の透明度が高く、天気が安定する）／ 2〜7月は雨が多い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">赤道に近い熱帯の島で、一年中暑く、水温も高い。8〜1月は雨が少なく、海の透明度も高い。2〜7月は雨季で、突然のスコールに見舞われる。強い日差しが降りそそぐので、日焼け止めは欠かせない。島の環境保護のため、日焼け止めは海に優しいタイプを選びたい。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">赤道に近い熱帯の島で、一年中暑く、水温も高い。8〜1月は雨が少なく、海の透明度も高い。2〜7月は雨季で、突然のスコールに見舞われる。強い日差しが降りそそぐので、日焼け止めは欠かせない。島の環境保護のため、日焼け止めは海に優しいタイプを選びたい。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('noronha')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -663,7 +679,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：5〜9月の乾季（動物が水辺に集まり観察しやすい）／ 12〜3月は雨季で道が水没しやすい。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">内陸の湿地帯で、雨季と乾季がはっきり分かれる。乾季は雨が少なく動物観察に最適だが、朝晩は冷え込むこともある。雨季は蒸し暑く、湿原が水に浸かり、移動が難しくなる地域も多い。虫が多いので、長袖と虫除けを持っていくと安心できる。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">内陸の湿地帯で、雨季と乾季がはっきり分かれる。乾季は雨が少なく動物観察に最適だが、朝晩は冷え込むこともある。雨季は蒸し暑く、湿原が水に浸かり、移動が難しくなる地域も多い。虫が多いので、長袖と虫除けを持っていくと安心できる。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('pantanal')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
 

@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="メキシコ旅行ガイド">
 <meta name="twitter:description" content="直行便で約13時間、時差15時間のメキシコは、古代マヤ・アステカ文明の遺跡とスペイン統治時代のカラフルな街並みが同居する広大な国。ピラミッドが並ぶチチェン・イッツァや極彩色の旧市街、屋台のタコスやメスカル、テキーラまで、陽気な国民性と鮮や…">
 <meta name="twitter:image" content="https://worldmappy.com/mexico/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793714688">
+<link rel="stylesheet" href="../assets/style.css?v=1794033775">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793714688" defer></script>
-<script src="../assets/affiliates.js?v=1793714688" defer></script>
+<script src="../assets/affiliates-data.js?v=1794033775" defer></script>
+<script src="../assets/affiliates.js?v=1794033775" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -97,6 +97,21 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-img-square{aspect-ratio:1/1}
 .sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
 @media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
+/* PC本文の大きさをそろえる（2026-11）。長文は15.5px、カード内の説明は14.5px。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  .prose,.desc-intro,.tab-cta-desc,.ai-lead,.tl-content,blockquote.special-note p{font-size:15.5px!important;line-height:1.85!important;color:#2B2B28!important;letter-spacing:0.02em;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  .item-card .desc,.trans-item .t-desc,.ci-desc,.csh-desc{font-size:14.5px!important;line-height:1.75!important;letter-spacing:0.01em;-webkit-text-stroke:0.3px currentColor}
+}
+/* PCの読みやすさ（2026-11）: 文章の列が約25字と狭く、単語の途中で改行され読みにくかった。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  body{font-family:'Zen Kaku Gothic Antique','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;font-weight:500}  /* 本文は線が細くならないよう太さ500 */
+  .sp-point:not(.sp-point-noimg){grid-template-columns:minmax(0,1fr) 240px}
+  .sp-point:not(.sp-point-noimg):nth-child(even){grid-template-columns:240px minmax(0,1fr)}
+  .sp-point-text{font-size:0.92em;line-height:1.85;letter-spacing:0.02em;color:#2B2B28;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  /* 本文を太さ500にしたぶん、小見出しは700＋濃い緑にして本文と見分けがつくようにする */
+  .sp-point-title,.section-subhead{font-weight:700;color:#14503C}
+  .sp-point-text a.keyword-link,.sp-point-text a.spot-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -139,7 +154,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           <a class="hb-item" href="../index.html?region=%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">ヨーロッパ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E3%82%AA%E3%82%BB%E3%82%A2%E3%83%8B%E3%82%A2#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">オセアニア</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E5%8C%97%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">北アメリカ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
-          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
+          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="hb-item" href="../index.html?region=%E4%B8%AD%E6%9D%B1#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">中東</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
       </div>
       <div class="hb-sub">
         <span class="hb-sub__h">シーズンで探す</span>
@@ -290,7 +306,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   
 
   <h2 data-label="ABOUT Mexico">メキシコってどんなところ？</h2>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">直行便で約13時間、時差15時間のメキシコは、古代マヤ・アステカ文明の遺跡とスペイン統治時代のカラフルな街並みが同居する広大な国。<strong>ピラミッドが並ぶ<a onclick="showSpot('YUC 01')" class="keyword-link">チチェン・イッツァ</a>や極彩色の旧市街、屋台の<a onclick="showFood('No.1')" class="keyword-link">タコス</a>やメスカル、テキーラ</strong>まで、陽気な国民性と鮮やかな色彩がどこまでも旅人を温かく迎えてくれる。</div>
+  <div class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">直行便で約13時間、時差15時間のメキシコは、古代マヤ・アステカ文明の遺跡とスペイン統治時代のカラフルな街並みが同居する広大な国。<strong>ピラミッドが並ぶ<a onclick="showSpot('YUC 01')" class="keyword-link">チチェン・イッツァ</a>や極彩色の旧市街、屋台の<a onclick="showFood('No.1')" class="keyword-link">タコス</a>やメスカル、テキーラ</strong>まで、陽気な国民性と鮮やかな色彩がどこまでも旅人を温かく迎えてくれる。</div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -460,7 +476,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <!-- ベストシーズン -->
     <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">メキシコは国土が広く、地域によって気候がまったく異なります。高原の首都メキシコシティ・オアハカ・グアナファトは年中温暖でベストは<strong>乾季の11〜4月</strong>、カリブ海沿岸のカンクン・リビエラマヤは高温多湿で6〜11月はハリケーン季、内陸のユカタン半島は雨季前の4〜5月が特に高温になります。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
+    <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.6">メキシコは国土が広く、地域によって気候がまったく異なります。高原の首都メキシコシティ・オアハカ・グアナファトは年中温暖でベストは<strong>乾季の11〜4月</strong>、カリブ海沿岸のカンクン・リビエラマヤは高温多湿で6〜11月はハリケーン季、内陸のユカタン半島は雨季前の4〜5月が特に高温になります。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>
@@ -489,7 +505,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜4月の乾季（爽やかで観光しやすい）／ 5〜10月は雨季で午後にスコールが多く、朝晩は年中肌寒い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高2,000m超の高原気候で、日中は20°C前後と過ごしやすいが朝晩は10°C近くまで冷え込む。5〜10月の雨季は毎日午後にスコールが降るが数十分でやむことが多く、乾季は乾燥して紫外線も強いので日焼け対策を。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高2,000m超の高原気候で、日中は20°C前後と過ごしやすいが朝晩は10°C近くまで冷え込む。5〜10月の雨季は毎日午後にスコールが降るが数十分でやむことが多く、乾季は乾燥して紫外線も強いので日焼け対策を。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('mexico_city')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -515,7 +531,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜4月（湿度が下がりビーチ日和）／ 6〜11月はハリケーン季で特に8〜10月は暴風雨の危険、5〜9月は蒸し暑い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">年中高温多湿のカリブ海性気候で、日中は30°C前後まで上がる。6〜11月はハリケーン季にあたり、直撃すれば運休や施設閉鎖も起こりうるため天気予報の確認が欠かせない。乾季でも湿度は高めで、海風がないと蒸し暑さを感じやすい。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">年中高温多湿のカリブ海性気候で、日中は30°C前後まで上がる。6〜11月はハリケーン季にあたり、直撃すれば運休や施設閉鎖も起こりうるため天気予報の確認が欠かせない。乾季でも湿度は高めで、海風がないと蒸し暑さを感じやすい。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('cancun')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -541,7 +557,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜3月（比較的過ごしやすい）／ 4〜5月は雨季前の猛暑で40°C近くまで上がる日も、6〜10月はハリケーン季で蒸し暑い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">沿岸部より内陸で海風が届かない分、体感的にはより蒸し暑い。特に雨季直前の4〜5月は「乾季の暑さのピーク」と呼ばれ40°C近くまで気温が上がるため、遺跡観光は日陰の少ない日中を避け早朝の涼しい時間帯を狙うのがおすすめ。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">沿岸部より内陸で海風が届かない分、体感的にはより蒸し暑い。特に雨季直前の4〜5月は「乾季の暑さのピーク」と呼ばれ40°C近くまで気温が上がるため、遺跡観光は日陰の少ない日中を避け早朝の涼しい時間帯を狙うのがおすすめ。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('yucatan')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -567,7 +583,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜4月の乾季（雨が少なく遺跡や渓谷を回りやすい）／ 5〜10月は雨季で、毎日スコールが降る。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">高原のサン・クリストバルは標高が高く、一年中涼しく朝晩は冷え込む。密林のパレンケは暑く湿度が高い。雨季は午後にスコールがあり、道がぬかるむこともある。乾季でも高原は朝晩冷えるので、薄手の上着と雨具があると安心。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">高原のサン・クリストバルは標高が高く、一年中涼しく朝晩は冷え込む。密林のパレンケは暑く湿度が高い。雨季は午後にスコールがあり、道がぬかるむこともある。乾季でも高原は朝晩冷えるので、薄手の上着と雨具があると安心。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('chiapas')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -593,7 +609,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜5月（晴天が続き海も穏やか）／ 8〜10月はハリケーンシーズンで荒天のおそれがある。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">砂漠気候で降水量が非常に少なく、一年を通じて晴天が続く。夏は30°C前後まで上がるが、乾燥しているため過ごしやすい。8〜10月はハリケーンの影響を受けることがあり、欠航や海のツアー中止も起こりうるため、この時期は旅程に余裕を持たせたい。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">砂漠気候で降水量が非常に少なく、一年を通じて晴天が続く。夏は30°C前後まで上がるが、乾燥しているため過ごしやすい。8〜10月はハリケーンの影響を受けることがあり、欠航や海のツアー中止も起こりうるため、この時期は旅程に余裕を持たせたい。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('los_cabos')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
 

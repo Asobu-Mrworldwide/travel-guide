@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="ラオス旅行ガイド">
 <meta name="twitter:description" content="東南アジアで唯一の内陸国。ゆったりと流れるメコン川・托鉢僧の列・金色の仏塔が今も日常に溶け込む「微笑みの国」です。フランス統治時代の面影が残るルアンパバーンの旧市街は街ごと世界遺産、山岳地帯にはカルスト地形の絶景も広がります。バンコクやハ…">
 <meta name="twitter:image" content="https://worldmappy.com/laos/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793714688">
+<link rel="stylesheet" href="../assets/style.css?v=1794033775">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793714688" defer></script>
-<script src="../assets/affiliates.js?v=1793714688" defer></script>
+<script src="../assets/affiliates-data.js?v=1794033775" defer></script>
+<script src="../assets/affiliates.js?v=1794033775" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -97,6 +97,21 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-img-square{aspect-ratio:1/1}
 .sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
 @media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
+/* PC本文の大きさをそろえる（2026-11）。長文は15.5px、カード内の説明は14.5px。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  .prose,.desc-intro,.tab-cta-desc,.ai-lead,.tl-content,blockquote.special-note p{font-size:15.5px!important;line-height:1.85!important;color:#2B2B28!important;letter-spacing:0.02em;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  .item-card .desc,.trans-item .t-desc,.ci-desc,.csh-desc{font-size:14.5px!important;line-height:1.75!important;letter-spacing:0.01em;-webkit-text-stroke:0.3px currentColor}
+}
+/* PCの読みやすさ（2026-11）: 文章の列が約25字と狭く、単語の途中で改行され読みにくかった。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  body{font-family:'Zen Kaku Gothic Antique','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;font-weight:500}  /* 本文は線が細くならないよう太さ500 */
+  .sp-point:not(.sp-point-noimg){grid-template-columns:minmax(0,1fr) 240px}
+  .sp-point:not(.sp-point-noimg):nth-child(even){grid-template-columns:240px minmax(0,1fr)}
+  .sp-point-text{font-size:0.92em;line-height:1.85;letter-spacing:0.02em;color:#2B2B28;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  /* 本文を太さ500にしたぶん、小見出しは700＋濃い緑にして本文と見分けがつくようにする */
+  .sp-point-title,.section-subhead{font-weight:700;color:#14503C}
+  .sp-point-text a.keyword-link,.sp-point-text a.spot-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -139,7 +154,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           <a class="hb-item" href="../index.html?region=%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">ヨーロッパ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E3%82%AA%E3%82%BB%E3%82%A2%E3%83%8B%E3%82%A2#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">オセアニア</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E5%8C%97%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">北アメリカ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
-          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
+          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="hb-item" href="../index.html?region=%E4%B8%AD%E6%9D%B1#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">中東</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
       </div>
       <div class="hb-sub">
         <span class="hb-sub__h">シーズンで探す</span>
@@ -290,7 +306,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   
 
   <h2 data-label="ABOUT Laos">ラオス人民民主共和国ってどんなところ？</h2>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">東南アジアで唯一の内陸国。ゆったりと流れる<strong>メコン川・<a onclick="showSpot('LPQ 04')" class="keyword-link">托鉢僧の列</a>・金色の仏塔</strong>が今も日常に溶け込む「微笑みの国」です。フランス統治時代の面影が残るルアンパバーンの旧市街は街ごと世界遺産、山岳地帯にはカルスト地形の絶景も広がります。バンコクやハノイ経由で約9〜13時間、時差はわずか2時間。「東南アジア最後の秘境」と呼ばれる、時間がゆっくり流れる国です。</div>
+  <div class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">東南アジアで唯一の内陸国。ゆったりと流れる<strong>メコン川・<a onclick="showSpot('LPQ 04')" class="keyword-link">托鉢僧の列</a>・金色の仏塔</strong>が今も日常に溶け込む「微笑みの国」です。フランス統治時代の面影が残るルアンパバーンの旧市街は街ごと世界遺産、山岳地帯にはカルスト地形の絶景も広がります。バンコクやハノイ経由で約9〜13時間、時差はわずか2時間。「東南アジア最後の秘境」と呼ばれる、時間がゆっくり流れる国です。</div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -460,7 +476,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <!-- ベストシーズン -->
     <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">ラオスは大きく分けて<strong>乾季（11〜2月）・暑季（3〜4月）・雨季（5〜10月）</strong>の3シーズン。低地のビエンチャンやシーパンドンは年間を通じて蒸し暑く、標高1,200mのシェンクワン高原は<strong>朝晩かなり冷え込む</strong>ため服装に差が出ます。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
+    <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.6">ラオスは大きく分けて<strong>乾季（11〜2月）・暑季（3〜4月）・雨季（5〜10月）</strong>の3シーズン。低地のビエンチャンやシーパンドンは年間を通じて蒸し暑く、標高1,200mのシェンクワン高原は<strong>朝晩かなり冷え込む</strong>ため服装に差が出ます。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>
@@ -489,7 +505,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・過ごしやすい）／ 5〜10月は雨季でスコールが増える。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">首都ビエンチャンは年間を通じて蒸し暑いが、11〜2月の乾季は湿度が下がり観光しやすい。3〜4月は雨季直前で気温が最も上がり、日中は35°C近くになることも。5〜10月の雨季はスコール的な短時間の激しい雨が中心で、一日中降り続くことは少ない。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">首都ビエンチャンは年間を通じて蒸し暑いが、11〜2月の乾季は湿度が下がり観光しやすい。3〜4月は雨季直前で気温が最も上がり、日中は35°C近くになることも。5〜10月の雨季はスコール的な短時間の激しい雨が中心で、一日中降り続くことは少ない。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('vientiane')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -515,7 +531,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・朝は霧や雲海に包まれる）／ 5〜10月は雨季で川が増水しアクティビティが中止になることも</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高300m前後の盆地・渓谷に広がる北部エリアは、ビエンチャンよりやや涼しく朝晩は霧や雲海に包まれることも多い。11〜2月の乾季は托鉢・寺院巡り・チュービングに最適な快晴が続くが、雨季は川が増水し一部の運航が制限される。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高300m前後の盆地・渓谷に広がる北部エリアは、ビエンチャンよりやや涼しく朝晩は霧や雲海に包まれることも多い。11〜2月の乾季は托鉢・寺院巡り・チュービングに最適な快晴が続くが、雨季は川が増水し一部の運航が制限される。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('luang_prabang')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -541,7 +557,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・朝晩は防寒具が必須）／ 5〜10月は雨季で霧も出やすい。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高1,200mの高原にあるシェンクワンは、ラオスの中でも際立って涼しい気候。12〜1月の早朝は10°C近くまで冷え込むこともあり、薄手のジャケットが必須になる。乾季は空気が澄んで石壺群の撮影にも向くが、雨季は霧が出やすく視界が悪くなる日もある。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高1,200mの高原にあるシェンクワンは、ラオスの中でも際立って涼しい気候。12〜1月の早朝は10°C近くまで冷え込むこともあり、薄手のジャケットが必須になる。乾季は空気が澄んで石壺群の撮影にも向くが、雨季は霧が出やすく視界が悪くなる日もある。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('phonsavan')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -567,7 +583,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・島歩きや遺跡巡りが快適）／ 5〜10月は雨季で増水・滝の水量が増える</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">メコン下流域に広がる南部エリアは国内でも特に蒸し暑く、乾季の11〜2月が最も観光しやすい。標高1,000m前後のボラベン高原はやや涼しく朝晩は羽織りが役立つが、雨季は増水で島歩きや山道の移動に時間がかかる。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">メコン下流域に広がる南部エリアは国内でも特に蒸し暑く、乾季の11〜2月が最も観光しやすい。標高1,000m前後のボラベン高原はやや涼しく朝晩は羽織りが役立つが、雨季は増水で島歩きや山道の移動に時間がかかる。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('si_phan_don')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
 

@@ -25,11 +25,15 @@
     { id: 'mexico', visa: true, rec: false, name: 'メキシコ', nameEn: 'Mexico', area: '北アメリカ', hours: 14, budget: '高級', tags: ['世界遺産', 'グルメ', 'マヤ遺跡', '自然', '歴史'], themes: ['ダイビング', '祭り・カーニバル'], months: [11,12,1,2,3,4], lat: 19.43, lon: -99.13, blurb: 'ピラミッドの影が長く伸びる高原の夕暮れに、屋台のタコスと陽気なマリアッチの音色が街角を彩る', url: 'mexico/index.html', img: 'mexico/素材/ヒーロー.webp' },
     { id: 'brazil', visa: true, rec: false, name: 'ブラジル', nameEn: 'Brazil', area: '南米', hours: 28, budget: '高級', tags: ['ビーチ', '世界遺産', 'サンバ', '自然', 'グルメ'], themes: ['祭り・カーニバル', '絶景', '秘境'], months: [6,7,8,9], lat: -22.9, lon: -43.2, blurb: 'コパカバーナの白い波打ち際にサンバの太鼓が鳴り響き、丘の上からキリスト像がリオの夜景をそっと見守る', url: 'brazil/index.html', img: 'brazil/素材/ヒーロー.webp' },
     { id: 'france', visa: true, rec: false, name: 'フランス', nameEn: 'France', area: 'ヨーロッパ', hours: 14, budget: '中級', tags: ['世界遺産', 'グルメ', 'エッフェル塔', '都市'], themes: ['建築', 'ショッピング', 'ワイナリー'], months: [4,5,6,9,10], lat: 48.86, lon: 2.35, blurb: '石畳に黄金色の夕日が差し込む頃、焼きたてのバゲットの香りがセーヌ川沿いにふわりと立ちのぼる', url: 'france/index.html', img: 'france/素材/ヒーロー.webp' },
-    { id: 'maldives', visa: true, rec: false, name: 'モルディブ', nameEn: 'Maldives', area: '南アジア', hours: 14, budget: '高級', tags: ['ビーチ', 'リゾート', '水上コテージ', '自然'], themes: ['ダイビング', '島巡り'], months: [12,1,2,3,4], lat: 4.18, lon: 73.51, blurb: 'エメラルドの環礁に水上ヴィラが浮かび、桟橋を渡る潮風が、透きとおる海と白砂の上をやさしく撫でていく', url: 'maldives/index.html', img: 'maldives/素材/ヒーロー.webp' },
+    { id: 'maldives', visa: true, rec: false, name: 'モルディブ', nameEn: 'Maldives', area: '南アジア', hours: 14, budget: '高級', tags: ['ビーチ', 'リゾート', '水上ヴィラ', '自然'], themes: ['ダイビング', '島巡り'], months: [12,1,2,3,4], lat: 4.18, lon: 73.51, blurb: 'エメラルドの環礁に水上ヴィラが浮かび、桟橋を渡る潮風が、透きとおる海と白砂の上をやさしく撫でていく', url: 'maldives/index.html', img: 'maldives/素材/ヒーロー.webp' },
     { id: 'hongkong', visa: true, rec: false, name: '香港', nameEn: 'Hong Kong', area: '東アジア', hours: 4.5, budget: '中級', tags: ['グルメ', '都市', '飲茶', '歴史'], themes: ['ショッピング', '夜市・屋台', '家族旅行'], months: [10,11,12], lat: 22.32, lon: 114.17, blurb: '夕暮れのハーバーに高層ビルの灯りが滲む頃、点心の蒸籠から立ちのぼる湯気が、路地裏の露店街を白く染める', url: 'hongkong/index.html', img: 'hongkong/素材/ヒーロー.webp' },
     { id: 'macau', visa: true, rec: false, name: 'マカオ', nameEn: 'Macau', area: '東アジア', hours: 4.5, budget: '格安', tags: ['世界遺産', '都市', 'カジノ', 'グルメ', 'リゾート'], themes: [], months: [10,11,12], lat: 22.19, lon: 113.54, blurb: 'ポルトガル風の石畳に黄色い壁が連なる旧市街、夜は巨大リゾートの光が海に揺れ、エッグタルトの香りが通りに満ちる', url: 'macau/index.html', img: 'macau/素材/ヒーロー.webp' },
     { id: 'cambodia', visa: true, rec: false, name: 'カンボジア', nameEn: 'Cambodia', area: '東南アジア', hours: 11, budget: '格安', tags: ['世界遺産', '歴史', 'アンコール', '自然', 'ビーチ'], themes: ['建築'], months: [11,12,1,2], lat: 11.56, lon: 104.92, blurb: '朝焼けの池に五つの塔が逆さに映り、蓮の葉をゆらす風が、千年前の石の回廊を静かに通り抜ける', url: 'cambodia/index.html', img: 'cambodia/素材/ヒーロー.webp' },
     { id: 'indonesia', visa: true, rec: false, name: 'インドネシア', nameEn: 'Indonesia', area: '東南アジア', hours: 7.5, budget: '中級', tags: ['世界遺産', 'ビーチ', 'バリ島', '自然', 'リゾート'], themes: ['ダイビング', 'サーフィン', '島巡り', 'スパ・マッサージ', 'トレッキング'], months: [4,5,6,7,8,9,10], lat: -6.2, lon: 106.85, blurb: '早朝の寺院にくゆる線香の煙と棚田を渡る朝風に乗って、遠くのガムランの音色がそっとたゆたう', url: 'indonesia/index.html', img: 'indonesia/素材/ヒーロー.webp' },
+    { id: 'hawaii', visa: true, rec: false, name: 'ハワイ', nameEn: 'Hawaii', area: '北アメリカ', hours: 8, budget: '高級', tags: ['ビーチ', 'リゾート', 'ワイキキ', '自然', 'グルメ'], themes: ['サーフィン', 'ダイビング', '島巡り', 'トレッキング', '星空', 'ショッピング', '家族旅行', '絶景'], months: [4,5,6,9,10], lat: 21.31, lon: -157.86, blurb: 'ダイヤモンドヘッドを染める夕陽が、ワイキキの波打ち際とヤシの葉影を、ゆるやかに揺らしていく', url: 'hawaii/index.html', img: 'hawaii/素材/ヒーロー.webp' },
+    { id: 'uae', visa: true, rec: false, name: 'アラブ首長国連邦', nameEn: 'United Arab Emirates', area: '中東', hours: 11.5, budget: '高級', tags: ['都市', 'リゾート', 'ドバイ', '世界遺産'], themes: ['砂漠', 'ショッピング', '建築', '家族旅行'], months: [11,12,1,2,3], lat: 25.2, lon: 55.27, blurb: '金色の砂丘を渡る熱風が、超高層ビルの窓ガラスとモスクの白いドームを、夕陽のなかでまぶしく照らし出す', url: 'uae/index.html', img: 'uae/素材/ヒーロー.webp' },
+    { id: 'peru', visa: true, rec: false, name: 'ペルー', nameEn: 'Peru', area: '南米', hours: 30, budget: '高級', tags: ['世界遺産', '自然', 'マチュピチュ', 'グルメ', '歴史'], themes: ['トレッキング', '秘境', '絶景'], months: [5,6,7,8,9], lat: -13.16, lon: -72.54, blurb: '雲海をやぶるマチュピチュの朝日が、石積みの段々畑とリャマの背を、金色にゆっくり染め上げていく', url: 'peru/index.html', img: 'peru/素材/ヒーロー.webp' },
+    { id: 'australia', visa: true, rec: false, name: 'オーストラリア', nameEn: 'Australia', area: 'オセアニア', hours: 10, budget: '高級', tags: ['自然', '都市', 'コアラ', 'ビーチ', '世界遺産'], themes: ['ダイビング', 'サーフィン', 'ワイナリー', '星空', '絶景', 'トレッキング', '家族旅行'], months: [3,4,5,9,10,11], lat: -33.87, lon: 151.21, blurb: '赤い大地に沈む夕陽と、青い海に帆を広げる白い劇場が、南半球の澄んだ空気に溶けて広がる', url: 'australia/index.html', img: 'australia/素材/ヒーロー.webp' },
   ];
   window.WM_AREA_BOUNDS = {
     '東南アジア': [[92, -11], [141, 23]],
@@ -39,8 +43,9 @@
     'アフリカ': [[-18, -35], [52, 37]],
     'ヨーロッパ': [[-25, 34], [41, 69]],
     'オセアニア': [[110, -48], [179, -8]],
-    '北アメリカ': [[-125, 13], [-58, 51]],
+    '北アメリカ': [[-160, 13], [-58, 51]],
     '南米': [[-82, -34], [-34, 13]],
+    '中東': [[34, 12], [62, 38]],
   };
   // テーマタグ（「やりたいこと」で探す絞り込み用）の使用可能な一覧。国ごとの themes はここから選ぶ。
   // 並びがそのままトップの絞り込みボタンの並び。2か国以上に付いたテーマだけがボタンに出る。

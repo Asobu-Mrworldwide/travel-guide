@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="台湾旅行ガイド">
 <meta name="twitter:description" content="直行便で約3〜4時間、時差はたった1時間。機内食を食べて一眠りしたら、もう夜市の匂いの中にいます。小籠包や牛肉麺などの絶品グルメ、提灯が灯る九份、歴史ある寺廟、そして日本語すら通じることのある親日的な空気。友人にはじめての一人旅をしたいと…">
 <meta name="twitter:image" content="https://worldmappy.com/taiwan/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793714688">
+<link rel="stylesheet" href="../assets/style.css?v=1794033775">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793714688" defer></script>
-<script src="../assets/affiliates.js?v=1793714688" defer></script>
+<script src="../assets/affiliates-data.js?v=1794033775" defer></script>
+<script src="../assets/affiliates.js?v=1794033775" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -97,6 +97,21 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-img-square{aspect-ratio:1/1}
 .sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
 @media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
+/* PC本文の大きさをそろえる（2026-11）。長文は15.5px、カード内の説明は14.5px。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  .prose,.desc-intro,.tab-cta-desc,.ai-lead,.tl-content,blockquote.special-note p{font-size:15.5px!important;line-height:1.85!important;color:#2B2B28!important;letter-spacing:0.02em;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  .item-card .desc,.trans-item .t-desc,.ci-desc,.csh-desc{font-size:14.5px!important;line-height:1.75!important;letter-spacing:0.01em;-webkit-text-stroke:0.3px currentColor}
+}
+/* PCの読みやすさ（2026-11）: 文章の列が約25字と狭く、単語の途中で改行され読みにくかった。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  body{font-family:'Zen Kaku Gothic Antique','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;font-weight:500}  /* 本文は線が細くならないよう太さ500 */
+  .sp-point:not(.sp-point-noimg){grid-template-columns:minmax(0,1fr) 240px}
+  .sp-point:not(.sp-point-noimg):nth-child(even){grid-template-columns:240px minmax(0,1fr)}
+  .sp-point-text{font-size:0.92em;line-height:1.85;letter-spacing:0.02em;color:#2B2B28;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  /* 本文を太さ500にしたぶん、小見出しは700＋濃い緑にして本文と見分けがつくようにする */
+  .sp-point-title,.section-subhead{font-weight:700;color:#14503C}
+  .sp-point-text a.keyword-link,.sp-point-text a.spot-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -139,7 +154,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           <a class="hb-item" href="../index.html?region=%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">ヨーロッパ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E3%82%AA%E3%82%BB%E3%82%A2%E3%83%8B%E3%82%A2#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">オセアニア</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E5%8C%97%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">北アメリカ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
-          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
+          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="hb-item" href="../index.html?region=%E4%B8%AD%E6%9D%B1#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">中東</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
       </div>
       <div class="hb-sub">
         <span class="hb-sub__h">シーズンで探す</span>
@@ -290,7 +306,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   
 
   <h2 data-label="ABOUT Taiwan">台湾ってどんなところ？</h2>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">直行便で約3〜4時間、時差はたった1時間。機内食を食べて一眠りしたら、もう夜市の匂いの中にいます。<strong><a onclick="showFood('No.1')" class="keyword-link">小籠包</a>や<a onclick="showFood('No.2')" class="keyword-link">牛肉麺</a>などの絶品グルメ、提灯が灯る<a onclick="showSpot('JIU 01')" class="keyword-link">九份</a>、歴史ある寺廟、そして日本語すら通じることのある親日的な空気</strong>。友人にはじめての一人旅をしたいと相談されたら、とりあえず台湾と答えてしまうほど安牌です。</div>
+  <div class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">直行便で約3〜4時間、時差はたった1時間。機内食を食べて一眠りしたら、もう夜市の匂いの中にいます。<strong><a onclick="showFood('No.1')" class="keyword-link">小籠包</a>や<a onclick="showFood('No.2')" class="keyword-link">牛肉麺</a>などの絶品グルメ、提灯が灯る<a onclick="showSpot('JIU 01')" class="keyword-link">九份</a>、歴史ある寺廟、そして日本語すら通じることのある親日的な空気</strong>。友人にはじめての一人旅をしたいと相談されたら、とりあえず台湾と答えてしまうほど安牌です。</div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -487,7 +503,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <!-- ベストシーズン -->
     <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">台湾は亜熱帯〜熱帯気候で、<strong>一年中どこかしらが旅行シーズン</strong>。ただし夏（6〜9月）は蒸し暑さと台風、冬（12〜2月）の台北は曇天と小雨が続きます。全体のベストは<strong>秋（10〜11月）と春（3〜4月）</strong>。南部の高雄・台南は冬でも暖かく、避寒先としても優秀です。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
+    <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.6">台湾は亜熱帯〜熱帯気候で、<strong>一年中どこかしらが旅行シーズン</strong>。ただし夏（6〜9月）は蒸し暑さと台風、冬（12〜2月）の台北は曇天と小雨が続きます。全体のベストは<strong>秋（10〜11月）と春（3〜4月）</strong>。南部の高雄・台南は冬でも暖かく、避寒先としても優秀です。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>
@@ -516,7 +532,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：10〜11月（乾いて快適）・3〜4月／ 6〜9月は蒸し暑く台風シーズン。12〜2月は小雨と曇天が多い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">台北は盆地のため夏は蒸し風呂のような暑さで、夕立や台風も多い。冬は気温こそ15°C前後だが、曇天と小雨が続き体感は肌寒い。秋の10〜11月は湿度が下がり晴天も多く、街歩きに最適。九份など山あいへ行く日は年間を通じて雨具があると安心。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">台北は盆地のため夏は蒸し風呂のような暑さで、夕立や台風も多い。冬は気温こそ15°C前後だが、曇天と小雨が続き体感は肌寒い。秋の10〜11月は湿度が下がり晴天も多く、街歩きに最適。九份など山あいへ行く日は年間を通じて雨具があると安心。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('taipei')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -542,7 +558,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11月〜3月（乾季・冬でも暖かい）／ 5〜9月は雨季でスコールが多い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">南部は熱帯気候で、冬でも日中は20°Cを超える日が多く、台北が雨でも高雄は晴れということがよくある。冬の台湾旅行なら南部を組み込むと天気の当たり率が上がる。夏は午後のスコールと強烈な日差しに注意。湿度も高めで日中は汗ばむため、こまめな水分補給がおすすめ。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">南部は熱帯気候で、冬でも日中は20°Cを超える日が多く、台北が雨でも高雄は晴れということがよくある。冬の台湾旅行なら南部を組み込むと天気の当たり率が上がる。夏は午後のスコールと強烈な日差しに注意。湿度も高めで日中は汗ばむため、こまめな水分補給がおすすめ。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('kaohsiung')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -568,7 +584,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：10〜4月（台風シーズンを避けられる）／ 6〜9月は台風の通り道にあたり注意が必要。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">花蓮を含む東海岸は夏から秋にかけて台風の直撃・接近を受けやすく、太魯閣峡谷は増水や落石で歩道が通行止めになることもある。冬は北東季節風で雨が多くなる日もあるが、気温自体は年間を通じて比較的過ごしやすい。訪問前に太魯閣国家公園の公式サイトで最新の開放状況を確認するのが安心。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">花蓮を含む東海岸は夏から秋にかけて台風の直撃・接近を受けやすく、太魯閣峡谷は増水や落石で歩道が通行止めになることもある。冬は北東季節風で雨が多くなる日もあるが、気温自体は年間を通じて比較的過ごしやすい。訪問前に太魯閣国家公園の公式サイトで最新の開放状況を確認するのが安心。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('hualien')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
 

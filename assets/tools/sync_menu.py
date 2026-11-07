@@ -21,7 +21,7 @@ from urllib.parse import quote
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 # index.html の COUNTRIES/データのエリア順（destinations-data.js の area と同じ）
-AREAS = ['東南アジア', '中央アジア', 'アフリカ', '東アジア', '南アジア', 'ヨーロッパ', 'オセアニア', '北アメリカ', '南米']
+AREAS = ['東南アジア', '中央アジア', 'アフリカ', '東アジア', '南アジア', 'ヨーロッパ', 'オセアニア', '北アメリカ', '南米', '中東']
 HOLIDAYS = ['正月', 'GW', 'お盆', 'シルバーウィーク']
 
 # 旅行タイプ診断は未公開。False の間は、診断ページ自身のメニュー以外には「近日公開」の表示だけを出し、リンクは付けない。

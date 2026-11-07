@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="カンボジア旅行ガイド">
 <meta name="twitter:description" content="乗継で約9〜13時間、時差−2時間のカンボジアは、アンコール・ワットをはじめ世界遺産の遺跡群が広がる東南アジアの王国です。拠点のシェムリアップから巨大な石の寺院へ通い、首都プノンペンで王宮と近現代史に触れ、南部では島とビーチまで足を延ばせ…">
 <meta name="twitter:image" content="https://worldmappy.com/cambodia/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793714688">
+<link rel="stylesheet" href="../assets/style.css?v=1794033775">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793714688" defer></script>
-<script src="../assets/affiliates.js?v=1793714688" defer></script>
+<script src="../assets/affiliates-data.js?v=1794033775" defer></script>
+<script src="../assets/affiliates.js?v=1794033775" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -97,6 +97,21 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-img-square{aspect-ratio:1/1}
 .sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
 @media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
+/* PC本文の大きさをそろえる（2026-11）。長文は15.5px、カード内の説明は14.5px。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  .prose,.desc-intro,.tab-cta-desc,.ai-lead,.tl-content,blockquote.special-note p{font-size:15.5px!important;line-height:1.85!important;color:#2B2B28!important;letter-spacing:0.02em;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  .item-card .desc,.trans-item .t-desc,.ci-desc,.csh-desc{font-size:14.5px!important;line-height:1.75!important;letter-spacing:0.01em;-webkit-text-stroke:0.3px currentColor}
+}
+/* PCの読みやすさ（2026-11）: 文章の列が約25字と狭く、単語の途中で改行され読みにくかった。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  body{font-family:'Zen Kaku Gothic Antique','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;font-weight:500}  /* 本文は線が細くならないよう太さ500 */
+  .sp-point:not(.sp-point-noimg){grid-template-columns:minmax(0,1fr) 240px}
+  .sp-point:not(.sp-point-noimg):nth-child(even){grid-template-columns:240px minmax(0,1fr)}
+  .sp-point-text{font-size:0.92em;line-height:1.85;letter-spacing:0.02em;color:#2B2B28;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  /* 本文を太さ500にしたぶん、小見出しは700＋濃い緑にして本文と見分けがつくようにする */
+  .sp-point-title,.section-subhead{font-weight:700;color:#14503C}
+  .sp-point-text a.keyword-link,.sp-point-text a.spot-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -254,7 +269,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           <a class="hb-item" href="../index.html?region=%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">ヨーロッパ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E3%82%AA%E3%82%BB%E3%82%A2%E3%83%8B%E3%82%A2#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">オセアニア</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E5%8C%97%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">北アメリカ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
-          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
+          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="hb-item" href="../index.html?region=%E4%B8%AD%E6%9D%B1#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">中東</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
       </div>
       <div class="hb-sub">
         <span class="hb-sub__h">シーズンで探す</span>
@@ -405,7 +421,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   
 
   <h2 data-label="ABOUT Cambodia">カンボジアってどんなところ？</h2>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">乗継で約9〜13時間、時差−2時間のカンボジアは、<strong><a onclick="showSpot('SIE 01')" class="keyword-link">アンコール・ワット</a>をはじめ世界遺産の遺跡群が広がる</strong>東南アジアの王国です。拠点のシェムリアップから巨大な石の寺院へ通い、首都プノンペンで王宮と近現代史に触れ、南部では島とビーチまで足を延ばせる。米ドルがそのまま使えて、物価も穏やかで旅しやすい。</div>
+  <div class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">乗継で約9〜13時間、時差−2時間のカンボジアは、<strong><a onclick="showSpot('SIE 01')" class="keyword-link">アンコール・ワット</a>をはじめ世界遺産の遺跡群が広がる</strong>東南アジアの王国です。拠点のシェムリアップから巨大な石の寺院へ通い、首都プノンペンで王宮と近現代史に触れ、南部では島とビーチまで足を延ばせる。米ドルがそのまま使えて、物価も穏やかで旅しやすい。</div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -557,7 +573,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <!-- ベストシーズン -->
     <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">カンボジアは<strong>乾季（11〜4月）と雨季（5〜10月）</strong>に分かれます。観光のベストは、湿度が低く朝晩がしのぎやすい<strong>11〜2月</strong>。3〜5月は日中40°C近くまで上がる猛暑期で、遺跡は早朝か夕方に回るのが基本です。雨季は毎日スコールが降るものの、緑が濃く観光客も減ります。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
+    <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.6">カンボジアは<strong>乾季（11〜4月）と雨季（5〜10月）</strong>に分かれます。観光のベストは、湿度が低く朝晩がしのぎやすい<strong>11〜2月</strong>。3〜5月は日中40°C近くまで上がる猛暑期で、遺跡は早朝か夕方に回るのが基本です。雨季は毎日スコールが降るものの、緑が濃く観光客も減ります。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>
@@ -586,7 +602,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・朝晩が過ごしやすい）／ 3〜5月は猛暑、5〜10月は雨季でスコールが多い。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">内陸部は、乾季の11〜2月が湿度も低く最も過ごしやすい。3〜5月は日中の体感が40°C近くになり、遺跡は早朝か夕方に回るのが現実的。雨季は午後にスコールが来るが、数時間で止むことも多い。トンレサップ湖は雨季に水位が上がり、水上村の見え方が変わる。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">内陸部は、乾季の11〜2月が湿度も低く最も過ごしやすい。3〜5月は日中の体感が40°C近くになり、遺跡は早朝か夕方に回るのが現実的。雨季は午後にスコールが来るが、数時間で止むことも多い。トンレサップ湖は雨季に水位が上がり、水上村の見え方が変わる。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('siemreap')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -612,7 +628,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜2月（乾季・海が穏やか）／ 7〜10月は雨季のピークで海が荒れ、島の船が欠航することも。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">海に面した南部は、内陸より少し涼しく海風がある一方、雨季（特に7〜10月）の雨量は多い。島へ渡る船は波が高い時期に減便・欠航しやすく、ビーチ目的なら乾季が圧倒的におすすめ。ボコール山は霧が出やすく、天気で見え方が大きく変わる。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">海に面した南部は、内陸より少し涼しく海風がある一方、雨季（特に7〜10月）の雨量は多い。島へ渡る船は波が高い時期に減便・欠航しやすく、ビーチ目的なら乾季が圧倒的におすすめ。ボコール山は霧が出やすく、天気で見え方が大きく変わる。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('sihanoukville')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
 

@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="スリランカ旅行ガイド">
 <meta name="twitter:description" content="インド洋に浮かぶ「インドの涙」。古代遺跡・紅茶畑・野生のゾウ・南国のビーチが、九州よりやや小さい島土に凝縮されています。直行便で約9〜10時間、時差はわずか3時間半。隣がインドなのにこうも違うかとびっくりするほど、客引きも遠慮気味で逆に申…">
 <meta name="twitter:image" content="https://worldmappy.com/srilanka/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793714688">
+<link rel="stylesheet" href="../assets/style.css?v=1794033775">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793714688" defer></script>
-<script src="../assets/affiliates.js?v=1793714688" defer></script>
+<script src="../assets/affiliates-data.js?v=1794033775" defer></script>
+<script src="../assets/affiliates.js?v=1794033775" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -97,6 +97,21 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-img-square{aspect-ratio:1/1}
 .sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
 @media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
+/* PC本文の大きさをそろえる（2026-11）。長文は15.5px、カード内の説明は14.5px。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  .prose,.desc-intro,.tab-cta-desc,.ai-lead,.tl-content,blockquote.special-note p{font-size:15.5px!important;line-height:1.85!important;color:#2B2B28!important;letter-spacing:0.02em;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  .item-card .desc,.trans-item .t-desc,.ci-desc,.csh-desc{font-size:14.5px!important;line-height:1.75!important;letter-spacing:0.01em;-webkit-text-stroke:0.3px currentColor}
+}
+/* PCの読みやすさ（2026-11）: 文章の列が約25字と狭く、単語の途中で改行され読みにくかった。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  body{font-family:'Zen Kaku Gothic Antique','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;font-weight:500}  /* 本文は線が細くならないよう太さ500 */
+  .sp-point:not(.sp-point-noimg){grid-template-columns:minmax(0,1fr) 240px}
+  .sp-point:not(.sp-point-noimg):nth-child(even){grid-template-columns:240px minmax(0,1fr)}
+  .sp-point-text{font-size:0.92em;line-height:1.85;letter-spacing:0.02em;color:#2B2B28;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  /* 本文を太さ500にしたぶん、小見出しは700＋濃い緑にして本文と見分けがつくようにする */
+  .sp-point-title,.section-subhead{font-weight:700;color:#14503C}
+  .sp-point-text a.keyword-link,.sp-point-text a.spot-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -139,7 +154,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           <a class="hb-item" href="../index.html?region=%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">ヨーロッパ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E3%82%AA%E3%82%BB%E3%82%A2%E3%83%8B%E3%82%A2#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">オセアニア</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E5%8C%97%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">北アメリカ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
-          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
+          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="hb-item" href="../index.html?region=%E4%B8%AD%E6%9D%B1#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">中東</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
       </div>
       <div class="hb-sub">
         <span class="hb-sub__h">シーズンで探す</span>
@@ -290,7 +306,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   
 
   <h2 data-label="ABOUT Sri Lanka">スリランカ民主社会主義共和国ってどんなところ？</h2>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">インド洋に浮かぶ「インドの涙」。<strong>古代遺跡・紅茶畑・野生のゾウ・南国のビーチ</strong>が、九州よりやや小さい島土に凝縮されています。直行便で約9〜10時間、時差はわずか3時間半。隣がインドなのにこうも違うかとびっくりするほど、客引きも遠慮気味で逆に申し訳なくなるくらい、時間がゆっくり流れる雰囲気は唯一無二です。</div>
+  <div class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">インド洋に浮かぶ「インドの涙」。<strong>古代遺跡・紅茶畑・野生のゾウ・南国のビーチ</strong>が、九州よりやや小さい島土に凝縮されています。直行便で約9〜10時間、時差はわずか3時間半。隣がインドなのにこうも違うかとびっくりするほど、客引きも遠慮気味で逆に申し訳なくなるくらい、時間がゆっくり流れる雰囲気は唯一無二です。</div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -469,7 +485,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <!-- ベストシーズン -->
     <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">スリランカは島の<strong>どちら側にいるかで季節が逆転する</strong>珍しい国。西・南海岸（コロンボ・ゴール・ミリッサ方面）は<strong>12〜3月が乾季でベストシーズン</strong>、東海岸（トリンコマリー方面）は<strong>5〜9月がベストシーズン</strong>。中央高地のキャンディ・エラは標高が高く年間を通じて過ごしやすいが、雨も多め。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
+    <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.6">スリランカは島の<strong>どちら側にいるかで季節が逆転する</strong>珍しい国。西・南海岸（コロンボ・ゴール・ミリッサ方面）は<strong>12〜3月が乾季でベストシーズン</strong>、東海岸（トリンコマリー方面）は<strong>5〜9月がベストシーズン</strong>。中央高地のキャンディ・エラは標高が高く年間を通じて過ごしやすいが、雨も多め。<br><span style="font-weight:700;color:#555">色が濃いオレンジほど気温が高い</span>ことを示しています。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>
@@ -498,7 +514,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：12月〜3月（乾季・海も穏やか）／ 5〜9月は雨季でビーチコンディションが悪化。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">コロンボやゴール・ミリッサなど南西海岸は12〜3月が乾季で快晴が続き、海も穏やかで泳ぎやすい。5〜9月は南西モンスーンの影響で雨と高波が増え、多くのビーチリゾートがオフシーズン体制に入る。年間を通じて蒸し暑いため、こまめな水分補給が欠かせない。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">コロンボやゴール・ミリッサなど南西海岸は12〜3月が乾季で快晴が続き、海も穏やかで泳ぎやすい。5〜9月は南西モンスーンの影響で雨と高波が増え、多くのビーチリゾートがオフシーズン体制に入る。年間を通じて蒸し暑いため、こまめな水分補給が欠かせない。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('colombo')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -524,7 +540,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：1〜4月・7〜9月（比較的乾燥）／ 通年で朝晩は涼しく紅茶畑の緑が美しい。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高500〜1,500mの高原地帯にあるキャンディ・エラは、コロンボより気温が5〜10°C低く過ごしやすい。降雨は年間を通じてあるが、紅茶畑の緑が最も美しいのは雨上がりの晴れ間。朝晩は肌寒くなるので薄手の羽織りものが必須。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高500〜1,500mの高原地帯にあるキャンディ・エラは、コロンボより気温が5〜10°C低く過ごしやすい。降雨は年間を通じてあるが、紅茶畑の緑が最も美しいのは雨上がりの晴れ間。朝晩は肌寒くなるので薄手の羽織りものが必須。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('kandy')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -550,7 +566,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：1〜3月・7〜9月（乾燥・冷え込み対策必須）／ 通年で朝晩は10°C近くまで下がる。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高1,868mのヌワラエリヤはスリランカ随一の避暑地。日中も20°C前後までしか上がらず、朝晩は10°C近くまで冷え込むため防寒具が必須。乾季の1〜3月・7〜9月は霧が晴れやすく紅茶畑の眺望も良好。雨季でも激しい豪雨は少なく、霧雨程度で済むことが多い。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高1,868mのヌワラエリヤはスリランカ随一の避暑地。日中も20°C前後までしか上がらず、朝晩は10°C近くまで冷え込むため防寒具が必須。乾季の1〜3月・7〜9月は霧が晴れやすく紅茶畑の眺望も良好。雨季でも激しい豪雨は少なく、霧雨程度で済むことが多い。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('nuwara_eliya')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -576,7 +592,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：2〜7月（乾季でヒョウの遭遇率が上昇）／ 10〜1月は雨季で水場が分散し動物が見つけにくい。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">スリランカ南東部は他地域と違い乾燥した低地気候で、年間を通じて30°C前後まで気温が上がる。2〜7月の乾季は水場が限られ野生動物が集まりやすくサファリの当たり時期。10〜1月は雨季で緑は増えるが動物の分散で発見率が下がりやすい。強い日差し対策と水分補給が必須。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">スリランカ南東部は他地域と違い乾燥した低地気候で、年間を通じて30°C前後まで気温が上がる。2〜7月の乾季は水場が限られ野生動物が集まりやすくサファリの当たり時期。10〜1月は雨季で緑は増えるが動物の分散で発見率が下がりやすい。強い日差し対策と水分補給が必須。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('yala')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -602,7 +618,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：4〜9月（東海岸の乾季で海も穏やか）／ 10〜1月は雨季で海が荒れる。</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">西海岸とは雨季の時期が逆で、東海岸は4〜9月が乾季。年間を通じて気温は高く、日中30°C前後まで上がる。10〜1月は雨が多く海が荒れるため、シュノーケリングやビーチ中心の旅は乾季に計画したい。島内でも西側とは気候が逆になる点が、周遊計画の注意点になる。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">西海岸とは雨季の時期が逆で、東海岸は4〜9月が乾季。年間を通じて気温は高く、日中30°C前後まで上がる。10〜1月は雨が多く海が荒れるため、シュノーケリングやビーチ中心の旅は乾季に計画したい。島内でも西側とは気候が逆になる点が、周遊計画の注意点になる。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('trincomalee')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
 

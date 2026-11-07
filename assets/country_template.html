@@ -97,6 +97,21 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-img-square{aspect-ratio:1/1}
 .sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
 @media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
+/* PC本文の大きさをそろえる（2026-11）。長文は15.5px、カード内の説明は14.5px。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  .prose,.desc-intro,.tab-cta-desc,.ai-lead,.tl-content,blockquote.special-note p{font-size:15.5px!important;line-height:1.85!important;color:#2B2B28!important;letter-spacing:0.02em;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  .item-card .desc,.trans-item .t-desc,.ci-desc,.csh-desc{font-size:14.5px!important;line-height:1.75!important;letter-spacing:0.01em;-webkit-text-stroke:0.3px currentColor}
+}
+/* PCの読みやすさ（2026-11）: 文章の列が約25字と狭く、単語の途中で改行され読みにくかった。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  body{font-family:'Zen Kaku Gothic Antique','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;font-weight:500}  /* 本文は線が細くならないよう太さ500 */
+  .sp-point:not(.sp-point-noimg){grid-template-columns:minmax(0,1fr) 240px}
+  .sp-point:not(.sp-point-noimg):nth-child(even){grid-template-columns:240px minmax(0,1fr)}
+  .sp-point-text{font-size:0.92em;line-height:1.85;letter-spacing:0.02em;color:#2B2B28;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  /* 本文を太さ500にしたぶん、小見出しは700＋濃い緑にして本文と見分けがつくようにする */
+  .sp-point-title,.section-subhead{font-weight:700;color:#14503C}
+  .sp-point-text a.keyword-link,.sp-point-text a.spot-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -139,7 +154,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           <a class="hb-item" href="../index.html?region=%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">ヨーロッパ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E3%82%AA%E3%82%BB%E3%82%A2%E3%83%8B%E3%82%A2#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">オセアニア</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E5%8C%97%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">北アメリカ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
-          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
+          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="hb-item" href="../index.html?region=%E4%B8%AD%E6%9D%B1#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">中東</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
       </div>
       <div class="hb-sub">
         <span class="hb-sub__h">シーズンで探す</span>
@@ -326,7 +342,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   {% endif %}
 
   <h2 data-label="ABOUT {{name_en}}">{{name}}ってどんなところ？</h2>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">{{overview.description_html}}</div>
+  <div class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">{{overview.description_html}}</div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -433,7 +449,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <!-- ベストシーズン -->
     <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
+    <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.6">{{season.description_html}}</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>
@@ -457,7 +473,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
       </div>
       <div style="margin-top:6px;display:flex;align-items:center;gap:5px">{{icon:check-green}}<p style="font-size:0.75em;color:var(--sub);margin:0">{{city.best_note}}</p></div>
     </div>
-    {% if city.note %}<div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">{{city.note}}</div>{% endif %}
+    {% if city.note %}<div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">{{city.note}}</div>{% endif %}
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('{{city.city_id}}')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     {% endfor %}
 
@@ -505,7 +521,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-sec">
   <div class="tb-card">
   <h2 data-label="TRAVEL BUDGET">旅行費用の目安</h2>
-  {% if budget.intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{budget.intro}}</p>{% endif %}
+  {% if budget.intro %}<p class="prose" style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{{budget.intro}}</p>{% endif %}
 
   <div class="bt-wrap">
     <div class="bt-tabs" id="budget-tabs" role="group" aria-label="旅行スタイル"></div>
@@ -535,7 +551,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-sec">
   <div class="tb-card">
   <h2 data-label="MONEY EXCHANGE" id="money">両替・支払い</h2>
-  {% if practical.money_intro %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 8px">{{practical.money_intro}}</p>{% endif %}
+  {% if practical.money_intro %}<p class="prose" style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 8px">{{practical.money_intro}}</p>{% endif %}
   <div class="cash-card">
     <div class="cash-head">
       <img class="wallet" src="../assets/cash-sim/cash-wallet-t.png" alt="" aria-hidden="true">
@@ -584,7 +600,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   {% endif %}
 
   <h3 style="margin:40px 0 8px">海外でのカード利用リスクに備える</h3>
-  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 0">海外でクレジットカードを使うたびに不正利用のリスクは高まります。筆者自身も海外渡航後に2回不正利用を経験したことをきっかけに、現在は海外ではWiseカードをメインに使うようにしています。チャージした分しか使えないため万が一の際も被害が限定的で、<strong>旅好きの友人たちの間でも最近かなり普及してきています</strong>。</p>
+  <p class="prose" style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 0">海外でクレジットカードを使うたびに不正利用のリスクは高まります。筆者自身も海外渡航後に2回不正利用を経験したことをきっかけに、現在は海外ではWiseカードをメインに使うようにしています。チャージした分しか使えないため万が一の際も被害が限定的で、<strong>旅好きの友人たちの間でも最近かなり普及してきています</strong>。</p>
   <div class="s-card" data-affiliate-card="wise_card_1" style="margin-top:32px"></div>
   </div><!-- /tb-card -->
   </div><!-- /tb-sec -->
@@ -592,8 +608,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-sec">
   <div class="tb-card">
   <h2 data-label="FLIGHT BOOKING" id="flights">航空券の予約</h2>
-  {% if practical.flight_lead %}<p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:8px 0 8px">{{practical.flight_lead}}</p>{% endif %}
-  <p style="font-size:0.9em;line-height:1.8;color:var(--text);margin:0 0 24px">航空券を比較・予約するなら、ほぼこれ一択！<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4P+D8W8C2+5WOE+60OXE" rel="nofollow" style="text-decoration:underline">スカイスキャナーの公式サイトはこちら</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B8B4P+D8W8C2+5WOE+60OXE" alt=""></p>
+  {% if practical.flight_lead %}<p class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:8px 0 8px">{{practical.flight_lead}}</p>{% endif %}
+  <p class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:0 0 24px">航空券を比較・予約するなら、ほぼこれ一択！<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4P+D8W8C2+5WOE+60OXE" rel="nofollow" style="text-decoration:underline">スカイスキャナーの公式サイトはこちら</a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B8B4P+D8W8C2+5WOE+60OXE" alt=""></p>
   <div class="s-card">
     <div style="background:#fff;padding:0">
     <div class="flight-cards">
@@ -618,7 +634,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-sec">
   <div class="tb-card">
   <h2 data-label="HOTEL GUIDE">ホテルの選び方</h2>
-  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{% if practical.hotel_intro %}{{practical.hotel_intro}}{% else %}宿を選ぶとき、値段だけ見ていませんか？ 安さだけで選ぶと治安の悪いエリアに当たりやすいので注意が必要です。特に夜着の日程ではリスクが上がります。初日くらいは安心して休めるよう、エリアの特徴を事前に把握しておきましょう。{% endif %}</p>
+  <p class="prose" style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">{% if practical.hotel_intro %}{{practical.hotel_intro}}{% else %}宿を選ぶとき、値段だけ見ていませんか？ 安さだけで選ぶと治安の悪いエリアに当たりやすいので注意が必要です。特に夜着の日程ではリスクが上がります。初日くらいは安心して休めるよう、エリアの特徴を事前に把握しておきましょう。{% endif %}</p>
   <div class="s-card">
     {% if practical.hotel_map_center %}
     <div style="position:relative;margin:0 0 16px">
@@ -794,8 +810,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-sec">
   <div class="tb-card">
   <h2 data-label="PACKING LIST">持ち物・アプリ準備</h2>
-  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の<a href="../common/checklist.html?from={{id}}" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;text-decoration:underline">持ち物リスト</a>をぜひ活用してください。</p>
-  {% if practical.country_items_html %}<p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 16px">{{practical.country_items_html}}</p>{% endif %}
+  <p class="prose" style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">旅の準備で検索すると、どこも似たようなリストばかり。「パスポート・充電器・常備薬」──それだけじゃ足りないんです。旅先でパスポートをなくしたら？ 携帯を盗まれたら？ そんな最悪のシナリオにも対応できる、30カ国近くを旅した経験から作った、一段上の<a href="../common/checklist.html?from={{id}}" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;text-decoration:underline">持ち物リスト</a>をぜひ活用してください。</p>
+  {% if practical.country_items_html %}<p class="prose" style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 16px">{{practical.country_items_html}}</p>{% endif %}
   <div class="s-card">
   <div style="background:#fff;padding:20px 24px">
   <h3 style="margin-top:0">事前にDLすべきアプリ</h3>
@@ -821,12 +837,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tb-sec">
   <div class="tb-card">
   <h2 data-label="SIM &amp; WI-FI" id="sim">SIM・Wi-Fi</h2>
-  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">海外でネット接続がないと不安ですよね。少し前までは現地でSIMカードを買うところから旅が始まっていましたが、今ではeSIMという便利なものがあります。貴重な旅の時間を無駄にしないよう、渡航前に手続きを済ませておきましょう。eSIM会社はたくさんあり、比較しだすときりがありませんが、世界シェアNo.1のeSIM「Airalo」か、日本語サポートがある国内最大手の「trifa」を選んでおけばまず間違いありません。</p>
+  <p class="prose" style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:0 0 12px">海外でネット接続がないと不安ですよね。少し前までは現地でSIMカードを買うところから旅が始まっていましたが、今ではeSIMという便利なものがあります。貴重な旅の時間を無駄にしないよう、渡航前に手続きを済ませておきましょう。eSIM会社はたくさんあり、比較しだすときりがありませんが、世界シェアNo.1のeSIM「Airalo」か、日本語サポートがある国内最大手の「trifa」を選んでおけばまず間違いありません。</p>
   <div class="grid2">
     <div data-affiliate-card="trifa_card_1"></div>
     <div data-affiliate-card="airalo_card_1"></div>
   </div>
-  <p style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:20px 0 12px">スマホの設定が不安な人、複数人・複数端末でシェアしたい人、旅先でパソコンを使う予定がある人には、端末を受け取って電源を入れるだけで使えるモバイルWi-Fi（ポケットWi-Fi）レンタルという選択肢もあります。</p>
+  <p class="prose" style="font-size:0.85em;color:var(--sub);line-height:1.8;margin:20px 0 12px">スマホの設定が不安な人、複数人・複数端末でシェアしたい人、旅先でパソコンを使う予定がある人には、端末を受け取って電源を入れるだけで使えるモバイルWi-Fi（ポケットWi-Fi）レンタルという選択肢もあります。</p>
   <div class="grid2">
     <div data-affiliate-card="wifi1_card_1"></div>
     <div data-affiliate-card="wifi2_card_1"></div>
@@ -1093,12 +1109,12 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="tab-body">
 {% if courses.fixed_plans %}
   <h2 data-label="MODEL COURSE">モデルコース</h2>
-  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">{{courses.intro}}</p>
+  <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.7;margin-bottom:8px">{{courses.intro}}</p>
   <div class="course-type">
     <div class="course-type-title">{{courses.stable_title}}</div>
   </div>
   {% if courses.stable_intro %}
-  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.stable_intro}}</p>
+  <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.stable_intro}}</p>
   {% endif %}
   <div class="s-card" style="padding-top:6px">
 
@@ -1135,7 +1151,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   <div class="course-type" style="margin-top:22px">
     <div class="course-type-title">{{courses.adventure_title}}</div>
   </div>
-  <p style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.adventure_note_html}}</p>
+  <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.7;margin:8px 0">{{courses.adventure_note_html}}</p>
   <div class="s-card" style="padding-top:6px">
   {% if courses.adventure_plan.title %}<h3 class="section-subhead plan-title-row toc-sub" style="margin:6px 0 8px"><span>{{courses.adventure_plan.title}}</span>{% if courses.adventure_plan.tip %}<span class="plan-tip-tag">{{icon:check-green}}{{courses.adventure_plan.tip}}</span>{% endif %}</h3>{% endif %}
   <div style="background:#fff;padding:20px 24px">

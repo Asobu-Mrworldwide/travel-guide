@@ -28,10 +28,10 @@
 <meta name="twitter:title" content="フィリピン旅行ガイド">
 <meta name="twitter:description" content="7,000以上の島々からなる、東南アジア屈指のビーチリゾート大国フィリピン。エメラルド色のラグーンが広がるパラワン、世界屈指の白砂ボラカイ、スペイン統治の歴史が残るマニラ——島ごとにまったく違う表情に出会える。アジア唯一のキリスト教徒多数…">
 <meta name="twitter:image" content="https://worldmappy.com/philippines/%E7%B4%A0%E6%9D%90/%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC.webp">
-<link rel="stylesheet" href="../assets/style.css?v=1793714688">
+<link rel="stylesheet" href="../assets/style.css?v=1794033775">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="../assets/affiliates-data.js?v=1793714688" defer></script>
-<script src="../assets/affiliates.js?v=1793714688" defer></script>
+<script src="../assets/affiliates-data.js?v=1794033775" defer></script>
+<script src="../assets/affiliates.js?v=1794033775" defer></script>
 <style>
 a.spot-link{color:var(--green);text-decoration:underline;cursor:pointer;font-weight:600}
 a.spot-link:hover{opacity:0.75}
@@ -97,6 +97,21 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 .sp-point-img-square{aspect-ratio:1/1}
 .sp-point-noimg,.sp-point-noimg:nth-child(even){grid-template-columns:1fr}
 @media(max-width:700px){.sp-point,.sp-point:nth-child(even){grid-template-columns:1fr}.sp-point .sp-point-body,.sp-point:nth-child(even) .sp-point-body{order:1}.sp-point .sp-point-img,.sp-point:nth-child(even) .sp-point-img{order:2}}
+/* PC本文の大きさをそろえる（2026-11）。長文は15.5px、カード内の説明は14.5px。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  .prose,.desc-intro,.tab-cta-desc,.ai-lead,.tl-content,blockquote.special-note p{font-size:15.5px!important;line-height:1.85!important;color:#2B2B28!important;letter-spacing:0.02em;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  .item-card .desc,.trans-item .t-desc,.ci-desc,.csh-desc{font-size:14.5px!important;line-height:1.75!important;letter-spacing:0.01em;-webkit-text-stroke:0.3px currentColor}
+}
+/* PCの読みやすさ（2026-11）: 文章の列が約25字と狭く、単語の途中で改行され読みにくかった。スマホ（700px以下）は変更しない */
+@media(min-width:701px){
+  body{font-family:'Zen Kaku Gothic Antique','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;font-weight:500}  /* 本文は線が細くならないよう太さ500 */
+  .sp-point:not(.sp-point-noimg){grid-template-columns:minmax(0,1fr) 240px}
+  .sp-point:not(.sp-point-noimg):nth-child(even){grid-template-columns:240px minmax(0,1fr)}
+  .sp-point-text{font-size:0.92em;line-height:1.85;letter-spacing:0.02em;color:#2B2B28;-webkit-text-stroke:0.3px currentColor;line-break:strict;word-break:auto-phrase}
+  /* 本文を太さ500にしたぶん、小見出しは700＋濃い緑にして本文と見分けがつくようにする */
+  .sp-point-title,.section-subhead{font-weight:700;color:#14503C}
+  .sp-point-text a.keyword-link,.sp-point-text a.spot-link{font-weight:500;text-decoration-thickness:1px;text-underline-offset:3px}
+}
 </style>
 </head>
 <body>
@@ -139,7 +154,8 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
           <a class="hb-item" href="../index.html?region=%E3%83%A8%E3%83%BC%E3%83%AD%E3%83%83%E3%83%91#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">ヨーロッパ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E3%82%AA%E3%82%BB%E3%82%A2%E3%83%8B%E3%82%A2#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">オセアニア</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
           <a class="hb-item" href="../index.html?region=%E5%8C%97%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">北アメリカ</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
-          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
+          <a class="hb-item" href="../index.html?region=%E5%8D%97%E7%B1%B3#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">南米</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a>
+          <a class="hb-item" href="../index.html?region=%E4%B8%AD%E6%9D%B1#wm-index"><span class="hb-item__dot"></span><span class="hb-item__label">中東</span><span class="hb-item__chev" aria-hidden="true">&rsaquo;</span></a></div>
       </div>
       <div class="hb-sub">
         <span class="hb-sub__h">シーズンで探す</span>
@@ -290,7 +306,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
   
 
   <h2 data-label="ABOUT Philippines">フィリピンってどんなところ？</h2>
-  <div style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">7,000以上の島々からなる、東南アジア屈指のビーチリゾート大国フィリピン。エメラルド色のラグーンが広がるパラワン、世界屈指の白砂ボラカイ、スペイン統治の歴史が残るマニラ——島ごとにまったく違う表情に出会える。<span style='display:block;margin-top:0.5em'>アジア唯一のキリスト教徒多数派国家であり、英語も広く通じる。人懐っこい人々のホスピタリティと、南国らしいおおらかな時間の流れに、旅の疲れがすっとほどけていく。</span></div>
+  <div class="prose" style="font-size:0.9em;line-height:1.8;color:var(--text);margin:16px 0;padding:0 4px">7,000以上の島々からなる、東南アジア屈指のビーチリゾート大国フィリピン。エメラルド色のラグーンが広がるパラワン、世界屈指の白砂ボラカイ、スペイン統治の歴史が残るマニラ——島ごとにまったく違う表情に出会える。<span style='display:block;margin-top:0.5em'>アジア唯一のキリスト教徒多数派国家であり、英語も広く通じる。人懐っこい人々のホスピタリティと、南国らしいおおらかな時間の流れに、旅の疲れがすっとほどけていく。</span></div>
 
     <!-- クイックスペック -->
     <hr style="border:none;border-top:1px solid #E8E2D8;margin:16px 0">
@@ -451,7 +467,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
     <!-- ベストシーズン -->
     <h2 data-label="BEST SEASON" id="season">ベストシーズン</h2>
     <div style="background:#fff;padding:20px 24px">
-    <p style="font-size:0.82em;color:var(--sub);line-height:1.6">フィリピンは大きく<strong>乾季（11〜5月）</strong>と<strong>雨季（6〜10月）</strong>に分かれます。エリアによって台風の影響度も異なるため、旅程に合わせて選びましょう。</p>
+    <p class="prose" style="font-size:0.82em;color:var(--sub);line-height:1.6">フィリピンは大きく<strong>乾季（11〜5月）</strong>と<strong>雨季（6〜10月）</strong>に分かれます。エリアによって台風の影響度も異なるため、旅程に合わせて選びましょう。</p>
     <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;align-items:center;font-size:0.75em;color:var(--sub)">
       <span>☀️ 乾季　⛅ やや曇り　☔ 雨季</span>
     </div>
@@ -480,7 +496,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：12〜2月（乾季で比較的涼しい）／ 3〜5月は酷暑、7〜10月は台風シーズン</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">年間を通して高温多湿。<strong>3〜5月の乾季後半</strong>は気温35℃超の酷暑、<strong>12〜2月</strong>が最も過ごしやすい。<span style='display:block;margin-top:0.5em'>雨季（6〜10月）は突然のスコールと台風に注意。</span></div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">年間を通して高温多湿。<strong>3〜5月の乾季後半</strong>は気温35℃超の酷暑、<strong>12〜2月</strong>が最も過ごしやすい。<span style='display:block;margin-top:0.5em'>雨季（6〜10月）は突然のスコールと台風に注意。</span></div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('manila')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -506,7 +522,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜5月（乾季）／ 7〜10月は台風の影響でツアーが中止になることも</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">中部の島々は年間を通じて温暖で、乾季は海の透明度が高く<strong>ダイビング・アイランドホッピング日和</strong>が続く。台風シーズンでも直撃しなければ晴天のことが多いが、天気予報のこまめな確認が安心。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">中部の島々は年間を通じて温暖で、乾季は海の透明度が高く<strong>ダイビング・アイランドホッピング日和</strong>が続く。台風シーズンでも直撃しなければ晴天のことが多いが、天気予報のこまめな確認が安心。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('cebu')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -532,7 +548,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：11〜5月（乾季）／ 8〜11月はモンスーンの影響で海が荒れることも</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">エルニドのラグーン巡りは<strong>乾季の凪いだ海</strong>が絶対条件。雨季（6〜10月）は海況が悪化しツアーが欠航しやすく、特に8〜11月は波が高い日が多い。乾季でも朝夕は涼しく、日中との寒暖差に注意。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">エルニドのラグーン巡りは<strong>乾季の凪いだ海</strong>が絶対条件。雨季（6〜10月）は海況が悪化しツアーが欠航しやすく、特に8〜11月は波が高い日が多い。乾季でも朝夕は涼しく、日中との寒暖差に注意。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('palawan')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -558,7 +574,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：12〜3月（乾季で最も涼しい）／ 7〜9月は雨と土砂災害に注意</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高1,500mの高地にあり、平地より5〜10℃ほど涼しいのが最大の魅力。<strong>12〜2月</strong>は朝晩10℃台まで下がり防寒着が必要なことも。フィリピン人にとっても「夏の首都」と呼ばれる避暑地で、乾季は特に混雑する。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">標高1,500mの高地にあり、平地より5〜10℃ほど涼しいのが最大の魅力。<strong>12〜2月</strong>は朝晩10℃台まで下がり防寒着が必要なことも。フィリピン人にとっても「夏の首都」と呼ばれる避暑地で、乾季は特に混雑する。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('baguio')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
     <div class="city-season" style="margin-top:14px;padding-top:14px"><hr style="border:none;border-top:1px solid #E8E2D8;margin-bottom:14px">
@@ -584,7 +600,7 @@ blockquote.special-note cite{display:block;text-align:right;color:#888;font-size
 	<path fill="#FFF" d="m423.55 117.761l-52.135-30.434c-6.421-3.749-14.666-1.582-18.414 4.84L225.179 311.129l-84.155-49.126c-5.206-3.039-11.89-1.282-14.929 3.924l-33.004 56.537c-3.039 5.206-1.282 11.89 3.924 14.929l150.112 87.629c5.206 3.039 11.89 1.282 14.929-3.924l1.217-2.085c.024-.041.053-.077.077-.118l165.04-282.72c3.748-6.421 1.581-14.665-4.84-18.414" />
 </svg><p style="font-size:0.75em;color:var(--sub);margin:0">ベスト：3〜7月（波が穏やかで初心者向け）／ 8〜11月は本格的なうねりが届くサーファーのハイシーズン</p></div>
     </div>
-    <div style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">太平洋側に面するため西部のリゾート地とは季節が逆で、<strong>8〜11月</strong>に南半球からの本格的なうねりが届きサーファーで賑わう。<strong>3〜7月</strong>は波が穏やかで初心者や島巡り中心の旅行者向き。11〜1月は北東モンスーンの影響で雨や強風の日も増える。</div>
+    <div class="prose" style="margin-top:10px;font-size:0.82em;color:#444;line-height:1.75">太平洋側に面するため西部のリゾート地とは季節が逆で、<strong>8〜11月</strong>に南半球からの本格的なうねりが届きサーファーで賑わう。<strong>3〜7月</strong>は波が穏やかで初心者や島巡り中心の旅行者向き。11〜1月は北東モンスーンの影響で雨や強風の日も増える。</div>
     <div style="text-align:right;margin-top:4px;margin-bottom:-8px"><button onclick="showFilteredSpots('siargao')" class="see-more" style="margin:0">観光スポットを見る →</button></div>
     
 
