@@ -176,8 +176,7 @@
       this._hlInit = true;
       const map = this._map, none = ['==', ['get', 'wm'], '__none__'];
       map.addSource('hl', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
-      map.addLayer({ id: 'hl-fill', type: 'fill', source: 'hl', filter: none, paint: { 'fill-color': GREEN, 'fill-opacity': 0.42 } });
-      map.addLayer({ id: 'hl-line', type: 'line', source: 'hl', filter: none, paint: { 'line-color': DARK, 'line-width': 1.2, 'line-opacity': 0.85 } });
+      map.addLayer({ id: 'hl-fill', type: 'fill', source: 'hl', filter: none, paint: { 'fill-color': ['coalesce', ['get', 'c'], GREEN], 'fill-opacity': 0.6 } });
       map.addLayer({ id: 'hl-sel', type: 'fill', source: 'hl', filter: none, paint: { 'fill-color': YELLOW, 'fill-opacity': 0.55 } });
       fetch(GEOJSON).then((r) => r.json()).then((g) => {
         map.getSource('hl').setData({ type: 'FeatureCollection', features: this.matchCountries(g) });
@@ -203,14 +202,16 @@
         return m;
       };
       const out = [];
-      this.points.forEach((p) => {
+      // 【色の比較用・仮】国ごとに5色を順番に割り当てる。色が決まったら単色にする
+      const PALETTE = ['#F2994A', '#EE7B7B', '#3C6FB5', '#8E6BBF', '#FFC200'];
+      this.points.forEach((p, idx) => {
         if (p.noHL || p.lat == null || p.lon == null) return;
         let hit = feats.filter((f) => polysOf(f).some((poly) => inPoly(p.lon, p.lat, poly)))[0];
         if (!hit) {  // ピンが海岸の外にずれている場合は、4度以内の最寄りのポリゴンを使う
           let bd = 4;
           feats.forEach((f) => { const d = near(p.lon, p.lat, f); if (d < bd) { bd = d; hit = f; } });
         }
-        if (hit) out.push({ type: 'Feature', properties: { wm: p.id }, geometry: hit.geometry });
+        if (hit) out.push({ type: 'Feature', properties: { wm: p.id, c: PALETTE[idx % PALETTE.length] }, geometry: hit.geometry });
       });
       return out;
     }
@@ -222,7 +223,6 @@
       const ids = vis != null && vis !== '__all__' && vis !== '' ? vis.split(',') : [];
       const f = ids.length ? ['in', ['get', 'wm'], ['literal', ids]] : ['==', ['get', 'wm'], '__none__'];
       map.setFilter('hl-fill', f);
-      map.setFilter('hl-line', f);
       const sel = this.getAttribute('selected');
       map.setFilter('hl-sel', sel ? ['==', ['get', 'wm'], sel] : ['==', ['get', 'wm'], '__none__']);
     }
