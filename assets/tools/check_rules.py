@@ -63,6 +63,7 @@ RANGES = [
     ('overview.japan_popularity_html', 85, 140, True),
     ('budget.intro',                 100, 180, False),
     ('budget.savings_tips_html',      50,  90, True),
+    ('season.description_html',       60, 170, True),
     ('season_mini.description',       35,  60, False),
     ('practical.money_intro',        100, 180, False),
     ('practical.flight_lead',        100, 180, False),

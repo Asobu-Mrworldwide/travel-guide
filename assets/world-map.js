@@ -98,6 +98,7 @@
         this.dispatchEvent(new CustomEvent('mapready', { bubbles: true, composed: true }));
       };
       map.on('load', ready);
+      map.on('load', () => this.initHL());
       map.once('idle', ready);
       map.on('data', () => { if (map.areTilesLoaded && map.areTilesLoaded()) ready(); });
       // 初回 restyle がスタイル未ロードで空振りするケースがあるため、idle のたびに再適用（冪等）
@@ -118,6 +119,7 @@
       };
       map.getStyle().layers.forEach((l) => {
         const id = l.id, water = /water|ocean|sea|lake|bathymetry/i.test(id);
+        if (id.indexOf('hl-') === 0) return;  // 強調用レイヤーは再着色しない
         if (l.type === 'background') set(id, 'background-color', WATER);
         else if (l.type === 'fill') {
           set(id, 'fill-color', water ? WATER : LAND);
@@ -167,7 +169,66 @@
       });
     }
 
+    // 絞り込み中の国を地図上で色付けする（国ポリゴンは destinations の緯度経度から自動で特定）。
+    // 香港・マカオ・ハワイのように国のポリゴンが別の国全体になってしまう地域は、destinations-data.js で noHL: true を付ける。
+    initHL() {
+      if (this._hlInit) return;
+      this._hlInit = true;
+      const map = this._map, none = ['==', ['get', 'wm'], '__none__'];
+      map.addSource('hl', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+      map.addLayer({ id: 'hl-fill', type: 'fill', source: 'hl', filter: none, paint: { 'fill-color': GREEN, 'fill-opacity': 0.42 } });
+      map.addLayer({ id: 'hl-line', type: 'line', source: 'hl', filter: none, paint: { 'line-color': DARK, 'line-width': 1.2, 'line-opacity': 0.85 } });
+      map.addLayer({ id: 'hl-sel', type: 'fill', source: 'hl', filter: none, paint: { 'fill-color': YELLOW, 'fill-opacity': 0.55 } });
+      fetch(GEOJSON).then((r) => r.json()).then((g) => {
+        map.getSource('hl').setData({ type: 'FeatureCollection', features: this.matchCountries(g) });
+        this.paintHL();
+      }).catch((e) => console.warn('[world-map] highlight skipped', e.message));
+    }
+
+    matchCountries(g) {
+      const feats = g.features;
+      const inRing = (x, y, r) => {
+        let c = false;
+        for (let i = 0, j = r.length - 1; i < r.length; j = i++) {
+          const xi = r[i][0], yi = r[i][1], xj = r[j][0], yj = r[j][1];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) c = !c;
+        }
+        return c;
+      };
+      const inPoly = (x, y, p) => inRing(x, y, p[0]) && !p.slice(1).some((h) => inRing(x, y, h));
+      const polysOf = (f) => (f.geometry.type === 'MultiPolygon' ? f.geometry.coordinates : [f.geometry.coordinates]);
+      const near = (x, y, f) => {
+        let m = 1e9;
+        polysOf(f).forEach((p) => p[0].forEach((pt) => { const d = Math.hypot(pt[0] - x, pt[1] - y); if (d < m) m = d; }));
+        return m;
+      };
+      const out = [];
+      this.points.forEach((p) => {
+        if (p.noHL || p.lat == null || p.lon == null) return;
+        let hit = feats.filter((f) => polysOf(f).some((poly) => inPoly(p.lon, p.lat, poly)))[0];
+        if (!hit) {  // ピンが海岸の外にずれている場合は、4度以内の最寄りのポリゴンを使う
+          let bd = 4;
+          feats.forEach((f) => { const d = near(p.lon, p.lat, f); if (d < bd) { bd = d; hit = f; } });
+        }
+        if (hit) out.push({ type: 'Feature', properties: { wm: p.id }, geometry: hit.geometry });
+      });
+      return out;
+    }
+
+    paintHL() {
+      const map = this._map;
+      if (!map || !map.getLayer || !map.getLayer('hl-fill')) return;
+      const vis = this.getAttribute('visible');
+      const ids = vis != null && vis !== '__all__' && vis !== '' ? vis.split(',') : [];
+      const f = ids.length ? ['in', ['get', 'wm'], ['literal', ids]] : ['==', ['get', 'wm'], '__none__'];
+      map.setFilter('hl-fill', f);
+      map.setFilter('hl-line', f);
+      const sel = this.getAttribute('selected');
+      map.setFilter('hl-sel', sel ? ['==', ['get', 'wm'], sel] : ['==', ['get', 'wm'], '__none__']);
+    }
+
     paint() {
+      this.paintHL();
       if (!this._markers) return;
       const vis = this.getAttribute('visible');
       const filtered = vis != null && vis !== '__all__';
