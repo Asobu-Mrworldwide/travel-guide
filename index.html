@@ -47,7 +47,9 @@
   .wm-page { min-width: 1280px; background: #fff; color: #23211C; }
 
   /* ===== ヘッダー（サイト共通） ===== */
-  .wm-header { position: relative; z-index: 40; background: #125F4E; color: #fff; }
+  .wm-header { position: sticky; top: 0; z-index: 40; background: #125F4E; color: #fff; transition: transform .28s ease; }
+  /* 下にスクロールすると隠れ、上にスクロールすると戻る（他ページの #site-top-bar と同じ挙動。JSは hideHeaderOnScroll） */
+  body.hdr-hidden .wm-header { transform: translateY(-100%); }
   .wm-header-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 52px; }
   .wm-logo, .wm-logo:hover { display: flex; align-items: center; gap: 6px; color: #fff; }
   .wm-logo img { flex: none; display: block; }
